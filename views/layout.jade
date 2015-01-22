@@ -1,0 +1,22 @@
+doctype html
+html
+	head
+		- var title = title || "Bloomingdales.com"
+		title #{title}
+		script(src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js")
+		script(src='/javascripts/global.js')
+		script(src='/javascripts/test.js')
+		link(rel='stylesheet', href='/stylesheets/normalize.css')
+		link(rel='stylesheet', href='/stylesheets/foundation.min.css')
+		link(rel='stylesheet', href='/stylesheets/main.css')
+		link(rel='stylesheet', href='/stylesheets/base_layout.css')
+		link(rel='stylesheet', href='/stylesheets/custom_fonts.css')
+		link(rel='stylesheet', href='/stylesheets/style.css')
+
+		
+	body
+		block head
+			include head				
+		block content
+		block foot
+			include foot

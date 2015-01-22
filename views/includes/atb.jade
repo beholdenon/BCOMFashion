@@ -1,0 +1,92 @@
+link(rel='stylesheet', href='/stylesheets/includes.css')
+script(src="/javascripts/includes/atb.js")
+
+#singleATB.pF.atb.single(style="display: none;")
+	table.add
+		.close x
+		tbody.shell
+			tr.prime
+				td.thumbnails(rowspan="6") thumbnails
+				td.image(rowspan="6") 
+					img.main.product(src="")
+					.prodSwatch
+				td.RS
+					h3.name
+					span.price 
+						span.currency 
+						span.value 	
+			tr
+				td.RS.color
+					.text
+						span.title color: 
+						span.value 
+					ul.swatch.noselect
+			tr
+				td.RS.size
+					span.title size:
+					ul.options.noselect
+			tr
+				td.RS.quantity
+					span.title quantity:
+					select(dir="rtl")
+			tr
+				td.RS.availability
+			tr
+				td.RS.addBtn
+					p.atbLink.button(data-id="" data-upc="") add to brown bag
+			tr.footer
+				td.social(colspan="2")
+					span.title share:
+					a#facebook_icon.icon facebook
+					a#twitter_icon.icon twitter
+					a#pinterest_icon.icon pinterest
+				td.details
+					a.details_link go to full details
+
+//- #singleATB.pF.atb.single(style="display:none;")
+//- 	.add
+//- 		.close x
+//- 		.shell
+//- 			div.image.left
+//- 				.additional
+//- 				img.main.product(src="")
+//- 			div.RS.info
+//- 				h3.name 
+//- 				span.price 
+//- 					span.currency 
+//- 					span.value 
+//- 				div.options
+//- 					div.color
+//- 						.text
+//- 							span.title color: 
+//- 							span.value 
+//- 						ul.swatch
+//- 							li( alt="Black" data-color="651634" altimg="8564519_fpx.tif") Black
+//- 					div.size
+//- 						span.title size:
+//- 						ul.options
+//- 							li M
+//- 					div.quantity
+//- 						span.title quantity:
+//- 						select(dir="rtl")
+//- 							option 1
+//- 							option 2
+//- 							option 3
+//- 							option 4
+//- 							option 5
+//- 							option 6
+//- 				.errors
+//- 				p.atbLink.button(data-id="" data-upc="") add to brown bag
+//- 		.footer
+//- 			.social
+//- 				span.title share:
+//- 				a#facebook_icon.icon facebook
+//- 				a#twitter_icon.icon twitter
+//- 				a#pinterest_icon.icon pinterest
+//- 			.details
+//- 				a.details_link go to full details
+//- 	div.confirm.hidden
+//- 		p Confirm
+div#atbLoading.pF
+	div#loader
+div#atbOverlay.hidden

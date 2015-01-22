@@ -1,0 +1,28 @@
+doctype html
+html
+	head
+		- var title = title || "Bloomingdales.com"
+		title #{title}
+		link(rel='stylesheet', href='/stylesheets/style.css')
+		link(rel='stylesheet', href='/stylesheets/main.css')
+	body
+		section#mb-region-header
+			header#mb-j-header-container
+				div#mb-j-nav-button(data-cm-link-click="NAVIGATION_MEW-_-TOP_NAV-_-GLOBALNAVICON-n-n")
+					i#mb-j-nav-button-icon.icon-unselectedMenuButton
+				div#bagContainer
+					a#mb-j-bag-image(href="http://m.bloomingdales.com/bag/index.ognc?cm_sp=NAVIGATION_MEW-_-TOP_NAV-_-BAG-n-n")
+						div#mb-bag-count-container
+							div#mb-j-shopping-bag-image.icon-shoppingBag
+								div#b-shopping-bag-count 0
+				span#logoContainer
+					a(href="http://m.bloomingdales.com/?cm_sp=NAVIGATION_MEW-_-TOP_NAV-_-MAINICON-n-n")
+						img#mb-j-header-image(src="/mew20/images/bloomingdales.png")
+			section#mb-j-search-container
+				form#mb-keyword-search-form(method="get" action="/shop/search")
+					input(type="hidden" name="cm_sp" value="NAVIGATION_MEW-_-TOP_NAV-_-SEARCH-n-n")
+					span#mb-search-field-icon.icon-search
+					input#mb-j-search-field(type="search" maxlength="72" name="keyword" value="" placeholder="Search" autocorrect="off" autocomplete="off")
+					div#mb-j-search-clear.mb-search-clear.icon-searchClear.hide
+			section#mb-j-autocomplete-container.mb-autocomplete-outer-container
+		block content

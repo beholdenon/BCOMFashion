@@ -1,0 +1,148 @@
+@import url(https://fonts.googleapis.com/css?family=Muli:400,700|Montserrat:400,700|Hammersmith+One|Nunito:400,700|Cuprum:400,700|Raleway:100,200);
+@font-face {
+  font-family: 'helveticaLTStdBoldCond';
+  src: url("./fonts/helvetica_ltstd_bold_condensed.eot");
+  src: url("./fonts/helvetica_ltstd_bold_condensed.eot?#iefix") format("embedded-opentype"), url("./fonts/helvetica_ltstd_bold_condensed.woff") format("woff"), url("./fonts/helvetica_ltstd_bold_condensed.ttf") format("truetype"), url("./fonts/helvetica_ltstd_bold_condensed.svg#helveticaLTStdBoldCond") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'helveticaMedCond';
+  src: url("./fonts/HelveticaNeue67_medium_condensed.eot");
+  src: url("./fonts/HelveticaNeue67_medium_condensed.eot?#iefix") format("embedded-opentype"), url("./fonts/HelveticaNeue67_medium_condensed.woff") format("woff"), url("./fonts/HelveticaNeue67_medium_condensed.ttf") format("truetype"), url("./fonts/HelveticaNeue67_medium_condensed.svg#helveticaMedCond") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'helveticaLTStdCond';
+  src: url("./fonts/helvetiva_ltstd_condensed.eot");
+  src: url("./fonts/helvetiva_ltstd_condensed.eot?#iefix") format("embedded-opentype"), url("./fonts/helvetiva_ltstd_condensed.woff") format("woff"), url("./fonts/helvetiva_ltstd_condensed.ttf") format("truetype"), url("./fonts/helvetiva_ltstd_condensed.svg#helveticaLTStdCond") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+body {
+  font-size: 11px;
+  font-family: Arial,Helvetica,Verdana,Sans-serif; }
+
+.proper_nav_sprite {
+  background: url(/images/proper_nav_sprite.png);
+  background-repeat: no-repeat; }
+
+.content {
+  display: block;
+  min-height: 250px;
+  margin: 1em auto; }
+  @media screen and (min-width: 40.063em) {
+    .content {
+      width: auto; } }
+  @media screen and (min-width: 64.063em) {
+    .content {
+      width: 960px; } }
+
+.hidden {
+  display: none; }
+
+.blk {
+  display: block; }
+
+.iblk {
+  display: inline-block; }
+
+.pA {
+  position: absolute; }
+
+.pR {
+  position: relative; }
+
+.pF {
+  position: fixed; }
+
+/* ================================= */
+/* 			 	BUTTONS				 */
+/* ================================= */
+.button {
+  padding: 0 .75em;
+  font-size: 14px;
+  line-height: 2.25em;
+  width: auto;
+  cursor: pointer;
+  margin-bottom: .5em;
+  margin-right: .5em; }
+  .button .dark {
+    color: #fff;
+    background-color: #000; }
+    .button .dark .dark:active {
+      background-color: #444; }
+
+/* ================================= */
+/* 			 	HEADLINES			 */
+/* ================================= */
+h1, h2, h3, h4 {
+  font-family: Arial,Helvetica,Verdana,Sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  color: #333;
+  text-rendering: optimizeLegibility;
+  margin-top: 0;
+  margin-bottom: .75em;
+  line-height: 1.12727em; }
+
+h1 {
+  font-size: 2em;
+  /*16px from base 22px*/ }
+
+h2 {
+  font-size: 1.636em;
+  /*16px from base 18px*/ }
+
+h3 {
+  font-size: 1.455em;
+  /*16px from base 11px*/ }
+
+.blackBox {
+  font-size: 18px;
+  color: #fff;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-bottom: 1px solid #e6e6e6;
+  margin-bottom: 20px; }
+  .blackBox span {
+    background-color: #000;
+    display: inline-block;
+    padding: 0px 4px;
+    position: relative;
+    top: 1px; }
+
+/* ================================= */
+/* 			 	LEFTNAV				 */
+/* ================================= */
+.leftnav {
+  display: inline-block;
+  vertical-align: top; }
+  .leftnav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    font-size: 11px; }
+  .leftnav .header {
+    font-weight: bold;
+    padding: 0.25em 0;
+    text-transform: uppercase; }
+
+@font-face {
+  font-family: 'helveticaLTStdBoldCond';
+  src: url("fonts/helvetica_ltstd_bold_condensed.eot");
+  src: url("fonts/helvetica_ltstd_bold_condensed.eot?#iefix") format("embedded-opentype"), url("fonts/helvetica_ltstd_bold_condensed.woff") format("woff"), url("fonts/helvetica_ltstd_bold_condensed.ttf") format("truetype"), url("http://www.bloomingdales.com/styles/common/fonts/helvetica/helvetica_ltstd_bold_condensed.svg#helveticaLTStdBoldCond") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'helveticaMedCond';
+  src: url("fonts/HelveticaNeue67_medium_condensed.eot");
+  src: url("fonts/HelveticaNeue67_medium_condensed.eot?#iefix") format("embedded-opentype"), url("fonts/HelveticaNeue67_medium_condensed.woff") format("woff"), url("fonts/HelveticaNeue67_medium_condensed.ttf") format("truetype"), url("http://www.bloomingdales.com/styles/common/fonts/helvetica/HelveticaNeue67_medium_condensed.svg#helveticaMedCond") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'helveticaLTStdCond';
+  src: url("fonts/helvetiva_ltstd_condensed.eot");
+  src: url("fonts/helvetiva_ltstd_condensed.eot?#iefix") format("embedded-opentype"), url("fonts/helvetiva_ltstd_condensed.woff") format("woff"), url("fonts/helvetiva_ltstd_condensed.ttf") format("truetype"), url("http://www.bloomingdales.com/styles/common/fonts/helvetica/helvetiva_ltstd_condensed.svg#helveticaLTStdCond") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+/*# sourceMappingURL=base_layout.css.map */

@@ -1,0 +1,11 @@
+extends ../../../layout
+
+
+block content
+	script(src="/javascripts/includes/auth.js")
+	link(rel='stylesheet', href='/stylesheets/includes.css')
+	div.content 
+		h1 Test of the OAuth System
+		p
+			a.authRequest Sign In
+	div#signInOverlay.pF

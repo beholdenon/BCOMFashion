@@ -1,0 +1,51 @@
+extends ../layout
+
+block content
+	div.content
+		div.left
+			ul.group
+				div.header Internal
+				li <a href="../">Home</a>
+				li <a href="./">More Info</a>
+				div.header External
+				li <a href="http://www.bloomingdales.com/shop/tabletop-builder/set-your-table">Tabletop</a>
+		div.main
+			div.blackBox 
+				span Bloomingdale&apos;s Single Page Applications
+			p This is main repository for all of the single page applications for Bloomingdales.com.
+			p The primary intention of this repository is to provide a quick and easy method of buidling scalable, templatized lookbooks and applications. Once hosted on a subdomain, currently proposed as <em>apps.bloomingdales.com</em>, this hosting service will provide the development teams at Bloomingdale's to access, build, test and deploy applications without the overhead of the larger Macy's/Bloomingdales famework.
+			h3 Key Components
+			details
+				summary Heroku
+				div.info
+					h4 What is Heroku?
+					p Heroku (pronounced her-OH-koo) is a cloud application platform. Applications are hosted in a git repository hosted on Heroku servers.
+					h4 Dynos
+					p Dynos are the unit of computing power on Heroku, which Heroku states provide "lightweight, isolated containers that run apps". Avoiding marketing speak, Dynos are virtualized Ubuntu servers that live on Amazon Web Services. Heroku routes traffic between server instances in order to load balance.
+			details
+				summary Node.js
+				div.info
+					h4 What is Node?
+					p To quote <a href="http://nodejs.org">http://nodejs.org</a>:
+					p.quote <em>Node.js® is a platform built on Chrome's JavaScript runtime for easily building fast, scalable network applications. Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient, perfect for data-intensive real-time applications that run across distributed devices.</em>
+					h4 What does that mean for us?
+					p Node.js is a server-side platform that allows users to build and run servers entirely using JavaScript. This means that actions performed on both the client and server side of web applications can now operate entirely on a single language. Developers who know JavaScript can now skip dealing with services such as Apache and developer server-side tools entirely in a language they use to program on the client side. 
+					p To add to the accessibility, with the advent of Node Packet Manager (npm) users can download a variety of plugins and extensions from a wide community of developement professionals that make it easier to do more complex tasks without having to code them from scratch. NPM allows users to download and install node services through the command line in git, cygwin or powershell.
+					p Examples of tools used on this service:
+						ul
+							li <a href="http://expressjs.com/">express</a>
+							li <a href="https://www.npmjs.org/package/cookie-parser">cookie-parser</a>
+							li <a href="https://www.npmjs.org/package/request">request</a>
+							li <a href="http://gruntjs.com/">Grunt</a>
+
+			details
+				summary Jade templates
+				div.info
+					ul 
+						div Jade is a terse language for writing HTML templates.
+						li Produces HTML
+						li Supports dynamic code
+						li Supports reusability (DRY)
+
+
+				

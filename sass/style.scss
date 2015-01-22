@@ -1,0 +1,287 @@
+@font-face {
+    font-family: 'helveticaLTStdBoldCond';
+    src: 	url("fonts/helvetica_ltstd_bold_condensed.eot");
+    src: 	url("fonts/helvetica_ltstd_bold_condensed.eot?#iefix") format("embedded-opentype"),
+    		url("fonts/helvetica_ltstd_bold_condensed.woff") format("woff"),
+    		url("fonts/helvetica_ltstd_bold_condensed.ttf") format("truetype"),
+    		url("http://www.bloomingdales.com/styles/common/fonts/helvetica/helvetica_ltstd_bold_condensed.svg#helveticaLTStdBoldCond") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family:'helveticaMedCond';
+    src:	url("fonts/HelveticaNeue67_medium_condensed.eot");
+    src:	url("fonts/HelveticaNeue67_medium_condensed.eot?#iefix") format("embedded-opentype"),
+    		url("fonts/HelveticaNeue67_medium_condensed.woff") format("woff"),
+    		url("fonts/HelveticaNeue67_medium_condensed.ttf") format("truetype"),
+    		url("http://www.bloomingdales.com/styles/common/fonts/helvetica/HelveticaNeue67_medium_condensed.svg#helveticaMedCond") format("svg");
+    font-weight:normal;font-style:normal;
+}
+
+@font-face {
+    font-family:'helveticaLTStdCond';
+    src:	url("fonts/helvetiva_ltstd_condensed.eot");
+    src:	url("fonts/helvetiva_ltstd_condensed.eot?#iefix") format("embedded-opentype"),
+    		url("fonts/helvetiva_ltstd_condensed.woff") format("woff"),
+    		url("fonts/helvetiva_ltstd_condensed.ttf") format("truetype"),
+    		url("http://www.bloomingdales.com/styles/common/fonts/helvetica/helvetiva_ltstd_condensed.svg#helveticaLTStdCond") format("svg");
+    font-weight:normal;font-style:normal;
+}
+
+html {
+	overflow: -moz-scrollbars-vertical; 
+	overflow-y: scroll;
+}
+
+body {
+    padding: 0 0px;
+    margin: 0;
+    font-size: 11px;
+    font-family: helveticaMedCond,Arial,Helvetica,Verdana,Sans-serif;
+}
+
+h2 {
+    font-size: 20px;
+    margin: .5em 0 .75em 0;
+    font-family: helveticaMedCond,Arial,Helvetica,Verdana,Sans-serif;
+}
+
+h3 {
+    font-weight: bold;
+    margin: 0 0 .25em 0;
+    font-size: 18px;
+    font-family: helveticaMedCond,Arial,Helvetica,Verdana,Sans-serif;
+}
+
+h4 {
+    font-weight: bold;
+    margin: 0 0 .25em 0;
+    font-size: 14px;
+}
+
+.blk {display: block;}
+.iblk {
+    display: inline-block; 
+    vertical-align: top;
+}
+.hidden {display: none;}
+.pR {position: relative;}
+.pA {position: absolute;}
+.caps {text-transform: uppercase}
+
+div.clearBoth {
+    display: block;
+    clear: both;
+}
+
+a {
+    text-decoration: none;
+    color: #666;
+
+    &:hover {color: #D90EAC;}
+    &:visited {}
+    &:active {}
+}
+
+
+/* HTML5 Details Styles */
+
+details {
+    margin: 5px 0;
+}
+
+summary {
+  outline:none;
+  cursor: pointer;
+  margin-left: 10px;
+  text-transform: uppercase;
+  font-family: helveticaMedCond,Arial,Helvetica,Verdana,Sans-serif;
+  font-size: 16px;
+
+}
+
+details {
+
+    .info {
+        display: inline-block;
+        margin-top: 10px;
+        margin-left: 30px;
+        font-size: 12px;
+        padding: 0;
+    }
+
+    ul {
+        li { margin-left: 20px;}
+    }
+}
+
+/* End Details Styles */
+
+.proper_nav_sprite {
+    background: url(/images/proper_nav_sprite.png);
+    background-repeat: no-repeat;
+}
+
+.button {
+    padding: 0 .75em;
+    font-size: 14px;
+    line-height: 2.25em;
+    width: auto;
+    cursor: pointer;
+
+    &.dark {
+        color: #fff;
+        background-color: #000;
+
+        &:active {
+            background-color: #444;
+        }
+    }
+}
+
+.exp {
+    margin: 5px 0;
+}
+
+#overlay {
+    min-width: 600px;
+    min-height: 400px;
+    top: 105px;
+    overflow: hidden;
+    white-space: nowrap;
+    background-color: #FFFFFF;
+    box-shadow: 0 10px 15px rgba(51, 51, 51, 0.4);
+    border: 1px solid #ccc\9;
+    border-top: 0;
+    z-index: 102;
+
+    .close {
+        right: 10px;
+        top: 10px;
+        font-size: 14px;
+        font-weight: normal;
+        text-transform: uppercase;
+        font-family: Arial, Helvetica, Sans-serif;
+        cursor: pointer;
+        padding: 4px;
+        border-radius: 10px;
+    }
+}
+
+#overlayShield {
+    display: block;
+    height: 99vh;
+    width: 100%;
+    background-color: rgba(0,0,0,0.35);
+    top: 0;
+    left: 0;
+    z-index: 101;
+    display: none;
+}
+
+/* ======================================== */
+/*              CONTENT STYLES              */
+/* ======================================== */
+
+.blackBox {
+    font-size: 18px;
+    color: #fff;   
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-bottom: 1px solid #e6e6e6;
+    margin-bottom: 20px;
+
+    span {
+        background-color: #000;
+        display: inline-block;
+        padding: 0px 4px;
+        position: relative;
+        top: 1px;
+    }
+}
+
+.content {
+    max-width: 962px;
+    min-height: 250px;
+    margin: 1em auto;
+    font-size: 12px;
+    font-family: Arial, Helvetica, Verdana, sans-serif;
+    color: rgb(51, 51, 51);
+    line-height: 1.5;
+
+    .leftnav {
+        vertical-align: top;
+
+        .header {
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 11px;
+            color: #333;
+            padding: 0 0 1px 0px;
+            margin-top: 10px;
+        }
+
+        .group {
+            padding: 0;
+            margin: 0;
+
+            li {
+                text-decoration: none;
+                color: #333333;
+                list-style-type: none;
+                padding: 0;
+                margin: 0;
+                font-family: Arial, Helvetica, Verdana, sans-serif;
+                font-size: 11px;
+            }
+        }
+    }
+}
+
+.moovweb_footer,
+#mw_desktop_site_container {
+    display: none;
+}
+
+/* ======================================== */
+/*              GENERIC STYLES              */
+/* ======================================== */
+
+p {
+    margin-top:0.75em;
+    margin-bottom:0.75em;
+}
+
+.center {
+    vertical-align: top;
+    text-align: center;
+}
+
+.quote {
+    font-size: 12px;
+    margin-left: 4em;
+}
+
+img.small {height: 40px; width: auto; max-width: none;}
+img.medium {height: 80px; width: auto; max-width: none;}
+img.large {height: 160px; width: auto; max-width: none;}
+
+/* ============== test stuff ============== */
+
+#catID {
+    line-height: 20px;
+    padding-left: 5px;
+}
+
+#catGo {
+    margin: 0 5px;
+    padding: 0 8px;
+    background: #000;
+    font-size: 14px;
+    line-height: 26px;
+    color: #fff;
+    cursor: pointer;
+}
+
+

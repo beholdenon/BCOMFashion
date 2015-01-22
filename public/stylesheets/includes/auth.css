@@ -1,0 +1,62 @@
+#signInOverlay {
+  width: 762px;
+  overflow: hidden;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  top: 10vh;
+  background-color: white;
+  z-index: 20;
+  border: 1px solid #c3c3c3;
+  padding: 15px 0;
+  display: none; }
+
+#signInOverlay #header {
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ccc; }
+
+#signInOverlay #left,
+#signInOverlay #right {
+  padding-top: 10px;
+  display: inline-block;
+  vertical-align: top; }
+
+#signInOverlay #left {
+  width: 50%; }
+
+#signInOverlay #right {
+  width: 40%; }
+
+#signInOverlay .form-left,
+#signInOverlay .form-right {
+  display: inline-block; }
+
+#signInOverlay .form-left {
+  text-align: center;
+  width: 126px; }
+
+#signInOverlay #left {
+  padding-right: 1% px;
+  margin-right: 2%;
+  padding-left: 2%;
+  border-right: 1px solid #ccc; }
+
+#signInOverlay #header-text {
+  display: none; }
+
+#signInOverlay .form-row {
+  display: block;
+  margin-bottom: 12px; }
+
+#signInOverlay .form-row:first-of-type {
+  margin-top: 14px; }
+
+#signInOverlay input {
+  font-size: 12px;
+  height: 2.2em;
+  margin: 0; }
+
+#right #right-wrapper {
+  padding: 20px; }
+
+/*# sourceMappingURL=auth.css.map */

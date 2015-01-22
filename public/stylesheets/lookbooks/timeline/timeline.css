@@ -1,0 +1,258 @@
+html {
+  width: 100vw; }
+
+body {
+  background-color: #000;
+  width: 100vw;
+  overflow-x: hidden; }
+
+header {
+  position: fixed;
+  text-align: center;
+  font-family: "Raleway", Arial, Helvetica, sans-serif;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  width: 100vw;
+  background-color: #000;
+  z-index: 1000; }
+
+.scroll {
+  color: #fff;
+  margin: 20px auto 0;
+  position: relative;
+  display: block;
+  width: 100px;
+  height: 120px;
+  background-image: url(/images/timeline/down_arrow.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 0 28px;
+  font-family: "Raleway", Arial, sans-serif;
+  text-transform: uppercase;
+  font-size: 22px;
+  font-weight: 700;
+  text-align: center;
+  -webkit-animation: bounce 1s infinite;
+  /* Chrome, Safari, Opera */
+  animation: bounce 1s infinite; }
+
+.bcg {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  height: 100%;
+  width: 100%; }
+
+.hsContainer {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative; }
+
+.hsContent {
+  max-width: 450px;
+  margin: -150px auto 0 auto;
+  display: table-cell;
+  vertical-align: middle;
+  color: #ebebeb;
+  padding: 0 8%;
+  text-align: center; }
+
+h2 {
+  color: #fff;
+  font-size: 22px;
+  font-family: "Muli", Arial, sans-serif;
+  font-weight: 700;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 2em;
+  text-shadow: -1px -1px 2px #000, 0 0 2px #000, 1px 1px 1px #000, 2px 2px 1px #000, 3px 3px 1px #000; }
+  h2 em {
+    color: #D90EAC;
+    font-size: 2.2em;
+    font-family: "Raleway", Arial, sans-serif; }
+    h2 em.big {
+      font-size: 4em;
+      display: block; }
+  .dark h2 {
+    display: block;
+    width: 100vw;
+    background: rgba(0, 0, 0, 0.65);
+    padding: 20px 10px; }
+
+h3 {
+  font-family: "Hammersmith One", Arial, sans-serif;
+  font-weight: 700;
+  font-size: 80px;
+  color: #000;
+  text-shadow: -1px -1px 2px #fff, 0 0 2px #fff, 1px 1px 1px #fff, 2px 2px 1px #fff, 3px 3px 1px #fff; }
+
+.curtainContainer {
+  width: 100%;
+  height: 100%;
+  position: relative; }
+  .curtainContainer .curtain {
+    width: 300%;
+    height: 1px;
+    background-color: #000000;
+    position: absolute;
+    top: 25%;
+    left: 0;
+    opacity: 0; }
+  .curtainContainer .copy {
+    position: absolute;
+    bottom: 30%;
+    left: 0;
+    width: 100%;
+    text-align: center; }
+  .curtainContainer h2 {
+    text-shadow: 2px 2px 2px #000; }
+
+#slide-1 .bcg {
+  background-image: url(/images/timeline/background.jpg);
+  position: relative; }
+
+#slide-2 .bcg {
+  background: none;
+  background-color: #010101;
+  height: 450px;
+  text-align: center; }
+
+#slide-3 {
+  position: relative; }
+  #slide-3 .bcg {
+    background-image: url("/images/timeline/earlyNYC_bw.jpg"); }
+  #slide-3 h2 {
+    position: relative;
+    z-index: 3; }
+
+#slide-4 .bcg {
+  background-image: url(/images/timeline/bloomingdales-windows-exterior.jpg); }
+
+#slide-5 .bcg {
+  background-image: url(/images/timeline/escalator3.gif); }
+
+#slide-6 {
+  position: relative; }
+  #slide-6 .bcg {
+    background-image: url(/images/timeline/paris_alt.jpg); }
+  #slide-6 .snow {
+    background-image: url("http://www.wearewebstars.dk/codepen/img/s1.png"), url("http://www.wearewebstars.dk/codepen/img//s2.png"), url("http://www.wearewebstars.dk/codepen/img//s3.png");
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    -webkit-animation: snow 10s linear infinite;
+    -moz-animation: snow 10s linear infinite;
+    -ms-animation: snow 10s linear infinite;
+    animation: snow 10s linear infinite; }
+
+#slide-7 {
+  position: relative; }
+  #slide-7 .bcg {
+    background-image: url(/images/timeline/old_map.jpg); }
+  #slide-7 .pin {
+    position: absolute;
+    background-image: url(/images/timeline/pin.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 100%;
+    width: 100%; }
+
+#slide-8 .bcg {
+  background-image: url(/images/timeline/facade.jpg);
+  opacity: 0.2; }
+
+#slide-9 .bcg {
+  background-image: url(/images/timeline/1940s.jpg); }
+
+#slide-10 .bcg {
+  background-image: url(/images/timeline/bag.jpg); }
+  #slide-10 .bcg h2 {
+    position: relative; }
+
+#slide-11 .bcg {
+  background-image: url(/images/timeline/queen.jpg); }
+
+#slide-12 .bcg {
+  background-image: url(/images/timeline/b-way.jpg); }
+
+#slide-13 .bcg {
+  background-image: url(/images/timeline/antonio.jpg); }
+
+#slide-14 .bcg {
+  background-image: url(/images/timeline/code.gif); }
+#slide-14 img {
+  margin-top: 40px; }
+
+#subway-train {
+  position: relative;
+  width: 100vw;
+  overflow: hidden; }
+  #subway-train .tunnel {
+    background-image: url(/images/timeline/tunnel-1.jpg);
+    background-repeat: repeat-x;
+    opacity: 0.2;
+    border-top: 5px solid #000;
+    border-bottom: 5px solid #000; }
+  #subway-train .train {
+    background-image: url(/images/timeline/N-train.png);
+    background-repeat: no-repeat;
+    width: 4173px;
+    height: 80px;
+    position: absolute;
+    bottom: 4px;
+    left: -4200px; }
+
+@keyframes bounce {
+  0% {
+    top: 0px; }
+  50% {
+    top: 20px; }
+  100% {
+    top: 0px; } }
+@-webkit-keyframes bounce {
+  0% {
+    top: 0px; }
+  50% {
+    top: 20px; }
+  100% {
+    top: 0px; } }
+@keyframes snow {
+  0% {
+    background-position: 0px 0px, 0px 0px, 0px 0px; }
+  50% {
+    background-position: 500px 500px, 100px 200px, -100px 150px; }
+  100% {
+    background-position: 500px 1000px, 200px 400px, -100px 300px; } }
+@-moz-keyframes snow {
+  0% {
+    background-position: 0px 0px, 0px 0px, 0px 0px; }
+  50% {
+    background-position: 500px 500px, 100px 200px, -100px 150px; }
+  100% {
+    background-position: 400px 1000px, 200px 400px, 100px 300px; } }
+@-webkit-keyframes snow {
+  0% {
+    background-position: 0px 0px, 0px 0px, 0px 0px; }
+  50% {
+    background-position: 500px 500px, 100px 200px, -100px 150px; }
+  100% {
+    background-position: 500px 1000px, 200px 400px, -100px 300px; } }
+@-ms-keyframes snow {
+  0% {
+    background-position: 0px 0px, 0px 0px, 0px 0px; }
+  50% {
+    background-position: 500px 500px, 100px 200px, -100px 150px; }
+  100% {
+    background-position: 500px 1000px, 200px 400px, -100px 300px; } }
+
+/*# sourceMappingURL=timeline.css.map */

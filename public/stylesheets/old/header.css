@@ -1,0 +1,302 @@
+/* ================================
+BCOM HEADER STYLES
+================================ */
+
+#header {
+	width: 100%;
+	text-align: left;
+}
+
+img {
+	border: none;
+	display: inline-block;
+	vertical-align: middle;
+	border: 0;
+}
+
+img, object, embed {
+	max-width: 100%;
+	height: auto;
+}
+
+/* ==== TOP ==== */
+
+.topNav {
+	background-color: #000;
+	display: block;
+	height: 28px;
+	color: #fff;
+	text-align: right;
+}
+
+.topNav .shell {
+	max-width: 962px;
+	display: block;
+	margin: 0 auto;
+	line-height: 28px;
+	text-transform: uppercase;
+	font-size: 11px;
+	position: relative;
+	font-family: helveticaLTStdBoldCond, Arial, Helvetica, Verdana, sans-serif;
+	height: 28px;
+	text-align: right;
+}
+
+.topNav .shell .nav {
+	float: right;
+	padding: 0;
+	margin: 0;
+	font-size: 11px;
+	font-style: normal;
+	font-weight: normal;
+}
+
+.topNav .shell .nav li {
+	display: inline-block;
+	margin-left: 10px;
+}
+
+.topNav #headerCountryFlag {
+	margin: -1px 7px 0 0;
+	display: inline-block;
+	vertical-align: middle;
+	line-height: normal;
+}
+
+.topNav .brownBag {
+	width: 33px;
+	height: 33px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin-left: 10px;
+	background-image: url(http://assets.bloomingdales.com/img/nav/hfr/proper_nav_sprite.png);
+	background-position: 0px -50px;
+}
+
+.topNavBag {
+	background-position: 0 -50px;
+}
+
+.topNavBag img {
+	width: 33px;
+	height: 32px;
+}
+
+
+/* ==== MIDDLE ==== */
+
+.midNav {
+	display: block;
+	width: 87.455em;
+	margin: 0 auto;
+	padding: 2.091em 0;
+	position: relative;
+}
+
+.midNav .midIcon {
+	display: none;
+}
+
+#bloomiesLogo {
+	background: url(http://assets.bloomingdales.com/img/nav/hfr/proper_nav_sprite.png);
+	width: 300px;
+	height: 45px;
+}
+
+/* ==== CATEGORIES ==== */
+
+.navigation {
+	border-bottom: 0.09091rem #ccc solid;
+	height: 27px;
+}
+
+.navigation .categories .globalNavigation {
+	font-family: helveticaLTStdCond, Arial, Helvetica, Verdana, Sans-serif;
+	color: #000;
+	width: 962px;
+	margin: 0 auto;
+}
+
+.navigation .categories ul#mainNav {
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+	justify-content: space-between;
+	width: 962px;
+	height: 28px;
+	display: flex;
+}
+
+.navigation .categories ul#mainNav li {
+	text-transform: uppercase;
+	text-align: left;
+	display: inline-block;
+	zoom: 1;
+}
+
+.navigation .categories ul#mainNav li.selected {
+	background: url(http://assets.bloomingdales.com/img/nav/hfr/flyoutCarrot.png) center 20px no-repeat;
+}
+
+.navigation .categories ul#mainNav li a {
+	color: #000;
+	text-decoration: none;
+	font-family: helveticaMedCond, Arial, Helvetica, Verdana, Sans-serif;
+	width: auto;
+	font-size: 15px;
+}
+.navigation .flyouts ul li a:hover,
+.navigation .categories ul#mainNav li a:hover {
+	color: #D90EAC;
+}
+
+
+/* ==== FLYOUTS ==== */
+
+.navigation .flyouts .flyout-off {
+	display: none;
+}
+
+.navigation .flyouts .flyout-on {
+	display: block;
+	overflow: hidden;
+	white-space: nowrap;
+	background-color: #FFFFFF;
+	box-shadow: 0 10px 15px rgba(51, 51, 51, 0.4);
+	border: 1px solid #ccc\9;
+	border-top: 0;
+	height: auto;
+	position: absolute;
+	/*margin-top: 1px;*/
+	z-index: 100;
+}
+
+.navigation .flyouts .subnav {
+	padding: 10px 0px 0px 20px;
+	z-index: 9999;
+}
+
+.navigation .flyoutCol {
+	display: inline-block;
+	vertical-align: top;
+	text-align: left;
+	min-width: 166px;
+}
+
+.navigation .flyoutCol .flexLabelLinksContainer {
+	text-align: left;
+	margin-bottom: 10px;
+	padding-right: 25px;
+}
+
+.navigation .flyouts ul {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	list-style: none;
+}
+
+.navigation .flyouts ul li.gridLayout {
+	float: left;
+	padding-bottom: 4px;
+	padding-right: 23px;
+	width: 20px;
+}
+
+.navigation .flyoutCol .flexLabelLinksContainer {
+	text-align: left;
+	margin-bottom: 10px;
+	padding-right: 25px;
+}
+
+.navigation .flexLabelLinksContainer {
+	font-family: Arial, Helvetica, Verdana, sans-serif;
+}
+
+.navigation .flyouts ul li {
+	list-style: none;
+	margin: 0px 0 0 0;
+	padding: 5px 0 0 0;
+	font-family: Arial, Helvetica, Verdana, Sans-serif;
+	font-size: 11px;
+	font-weight: normal;
+	color: #333;
+}
+
+.navigation ul li.flyoutLabel {
+	border-bottom: 1px solid #ccc;
+	padding: 5px 0 7px 0;
+}
+
+.navigation .flyouts ul li label {
+	font-family: helveticaMedCond, Arial, Helvetica, Verdana, Sans-serif;
+	font-size: 12px;
+	font-weight: normal;
+	color: #000000;
+}
+
+.navigation .flyouts ul li a {
+	font-family: Arial, Helvetica, Verdana, Sans-serif;
+	font-size: 11px;
+	font-weight: normal;
+	color: #333;
+	text-decoration: none;
+	vertical-align: top;
+}
+
+.navigation .poolAssets {
+	display: block;
+}
+
+.navigation .flexLabelLinksContainer ul li.flyoutLink_GroupAdTypeImage {
+	height: auto;
+}
+
+header #adIcon {
+	text-decoration: none;
+	font-size: 11px;
+}
+
+header #nav .flexLabelLinksContainer ul li.flyoutLink_GroupAdTypeImage {
+	padding: 0;
+	height: auto;
+}
+
+header .flyouts ul {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	list-style: none;
+}
+
+/* ==== MOBILE ==== */
+
+@media screen and (max-width: 962px){
+
+	.midNav {
+		padding: 1em 0;
+		width: 100%;
+	}
+
+	.midNav .midIcon {
+		display: inline-block;
+		position: absolute;
+		right: 2em;
+		top: 2em;
+		width: 28px;
+		height: 28px;
+		background-image: url(../images/menu-28.png);
+		cursor: pointer;
+	}
+
+	.navigation {
+		display: block;
+		height: 0;
+	}
+	
+	.navigation .categories {
+		display: none;
+	}
+
+}
