@@ -5,7 +5,7 @@
    <parent>
       <groupId>com.macys</groupId>
       <artifactId>MacysParent</artifactId>
-      <version>2.5.4</version>
+      <version>2.5.0</version>
    </parent>
    
    <groupId>com.macys.BCOMDevPOC</groupId>
@@ -96,7 +96,6 @@
                     
                     <arguments>
                       <argument>${grunt.compile}</argument>
-                      <argument>--verbose</argument>
                     </arguments>
                   </configuration>
                 </execution>
