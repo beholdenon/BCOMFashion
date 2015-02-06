@@ -5,7 +5,7 @@
    <parent>
       <groupId>com.macys</groupId>
       <artifactId>MacysParent</artifactId>
-      <version>2.5.0</version>
+      <version>2.5.4</version>
    </parent>
    
    <groupId>com.macys.BCOMDevPOC</groupId>
@@ -49,8 +49,7 @@
           <npm.install>install</npm.install>
           <grunt.bin>grunt</grunt.bin>
           <!--<grunt.compile>buildfortar</grunt.compile>-->
-          <!--<grunt.compile>default</grunt.compile>-->
-          <grunt.compile>buildfortar</grunt.compile>
+          <grunt.compile>default</grunt.compile>
           <grunt.test>test</grunt.test>
           <grunt.clean>clean</grunt.clean>
         </properties>
@@ -59,7 +58,6 @@
      
     <build>
       <directory>target</directory>
-      
       <finalName>${artifactId}</finalName>
       <plugins>
 
