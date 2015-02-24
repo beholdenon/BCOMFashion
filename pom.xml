@@ -8,9 +8,9 @@
       <version>2.5.4</version>
    </parent>
    
-   <groupId>com.macys.BCOMDevPOC</groupId>
-   <artifactId>BCOMDevPOC</artifactId>
-   <name>BCOMDevPOC -- ${project.artifactId}</name>
+   <groupId>com.macys.BCOMFashion</groupId>
+   <artifactId>BCOMFashion</artifactId>
+   <name>BCOMFashion -- ${project.artifactId}</name>
    <version>1.0.0</version>
    <packaging>pom</packaging>
 
@@ -83,7 +83,7 @@
                 </execution>
               
                 <execution>
-                  <id>build-BCOMDevPOC</id>
+                  <id>build-BCOMFashion</id>
                   <phase>compile</phase>
                   <goals>
                     <goal>exec</goal>
