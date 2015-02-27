@@ -52,8 +52,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-contrib');
   grunt.loadNpmTasks('grunt-contrib-watch');
-  
-  //grunt.registerTask('default', ['sass']);
+  grunt.loadNpmTasks('grunt-sass-globbing');
   
   grunt.registerTask('default', 'build');
 	
