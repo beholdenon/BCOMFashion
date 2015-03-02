@@ -167,12 +167,12 @@
   background-color: transparent; }
 
 .lookbook-pagination .dummy-item:first-child:after {
-  content: url("/web20/assets/img/specialProjects/premium-shoes-handbags-spring-collections-2015/arrow-down.jpg");
+  content: url("http://assets.bloomingdales.com/web20/assets/img/specialProjects/premium-shoes-handbags-spring-collections-2015/arrow-down.jpg");
   margin-left: 7px;
   position: relative; }
 
 .lookbook-pagination.is-open .dummy-item:first-child:after {
-  content: url("/web20/assets/img/specialProjects/premium-shoes-handbags-spring-collections-2015/arrow-up.jpg"); }
+  content: url("http://assets.bloomingdales.com/web20/assets/img/specialProjects/premium-shoes-handbags-spring-collections-2015/arrow-down.jpg"); }
 
 .lookbook-pagination-bg.is-open {
   height: 100%;
@@ -259,20 +259,20 @@
   text-transform: uppercase; }
 
 .social-btn-facebook {
-  background-image: url("/web20/assets/img/specialProjects/premium-shoes-handbags-spring-collections-2015/facebook.png");
+  background-image: url("http://assets.bloomingdales.com/web20/assets/img/specialProjects/premium-shoes-handbags-spring-collections-2015/facebook.png");
   display: inline-block;
   height: 33px;
   width: 32px; }
 
 .social-btn-twitter {
-  background-image: url("/web20/assets/img/specialProjects/premium-shoes-handbags-spring-collections-2015/twitter.png");
+  background-image: url("http://assets.bloomingdales.com/web20/assets/img/specialProjects/premium-shoes-handbags-spring-collections-2015/twitter.png");
   display: inline-block;
   height: 32px;
   margin-left: 20px;
   width: 32px; }
 
 .social-btn-pinterest {
-  background-image: url("/web20/assets/img/specialProjects/premium-shoes-handbags-spring-collections-2015/pinterest.png");
+  background-image: url("http://assets.bloomingdales.com/web20/assets/img/specialProjects/premium-shoes-handbags-spring-collections-2015/pinterest.png");
   display: inline-block;
   height: 32px;
   margin-left: 18px;

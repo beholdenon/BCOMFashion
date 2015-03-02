@@ -532,7 +532,8 @@ body {
     font-weight: normal;
     font-style: normal;
     line-height: 1;
-    cursor: auto
+    cursor: auto;
+    text-align: center;
 }
 a:hover {
     cursor: pointer
@@ -1396,7 +1397,8 @@ select {
     display: inline-block;
     height: 15px;
     margin-right: 15px;
-    width: 15px
+    width: 15px;
+    padding: 0;
 }
 .lookbook-pagination *[data-for-page-number]:hover, .lookbook-pagination *[data-for-page-number].current-page {
     background-color: #000

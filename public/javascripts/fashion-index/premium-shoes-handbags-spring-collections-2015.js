@@ -1,8 +1,7 @@
+BLOOMIES.isTouch = Modernizr.touch;
+BLOOMIES.coremetrics.pageViewExploreAttributes = new BLOOMIES.coremetrics.exploreAttributes();
+
 $(document).ready(function(){
-  var BLOOMIES = {};
-  BLOOMIES.isTouch = Modernizr.touch;
-  BLOOMIES.isMEW = false;
-  
   var $ = jQuery,
       coreMetricsDefaultPageID = 'spring15_luxshoehandbag',
       pageViewFlag = Date.now(),

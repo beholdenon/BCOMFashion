@@ -1,4 +1,10 @@
 
+/**
+ * BLOOMIES global namespace object. Only create if it doesn't already exist.
+ * This governs the Singleton nature of this base object.
+ * @static
+ */
+
 if (typeof BLOOMIES === "undefined" || !BLOOMIES) {
     var BLOOMIES = {};
 }
@@ -26,4 +32,10 @@ if(!BLOOMIES.namespace){
         }
         return o;
     };
-}
+    
+    
+
+}   
+
+// Each MEW page's head will have class 'mw_page'
+BLOOMIES.isMEW = /(?:\s|^)mw_page(?:\s|$)/.test(document.getElementsByTagName("head")[0].className);
