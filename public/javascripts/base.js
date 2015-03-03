@@ -33,9 +33,34 @@ if(!BLOOMIES.namespace){
         return o;
     };
     
-    
-
 }   
 
 // Each MEW page's head will have class 'mw_page'
 BLOOMIES.isMEW = /(?:\s|^)mw_page(?:\s|$)/.test(document.getElementsByTagName("head")[0].className);
+
+BLOOMIES.cleanXSSCharacters = function(text) {
+	if(!text) {
+		return text;
+	}
+
+	var cleanedQuery,
+		htmlEntityAllowedChars = {
+			'"': "&#34;", // or &quot;
+			"'": "&#39;",
+			"/": "&#47;", // or &frasl;
+			"<": "&lt;",
+			">": "&gt"
+		};
+
+	// Get query param and replace all & first to avoid the HTML escapes getting
+	// replaced incorrectly later on
+	cleanedQuery = text.replace( /&/gmi, "&#38;" );
+	$.each( htmlEntityAllowedChars, function ( key, value ) {
+		// Using RegExp to take advantage of the gmi flags.
+		// Wrapped on [] to not break on the + char that is unescaped and is a
+		// special char on regexps
+		cleanedQuery = cleanedQuery.replace( new RegExp( '[' + key + ']', 'gmi' ), value );
+	} );
+	
+	return cleanedQuery;
+};
