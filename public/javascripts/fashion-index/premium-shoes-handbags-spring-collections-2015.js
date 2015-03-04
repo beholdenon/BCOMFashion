@@ -8,7 +8,7 @@ $(document).ready(function(){
       nua = navigator.userAgent,
       is_android = ((nua.indexOf('Mozilla/5.0') > -1 && nua.indexOf('Android ') > -1 && nua.indexOf('AppleWebKit') > -1) && !(nua.indexOf('Chrome') > -1)),
       lookbooks, currentLookbook;
-
+      
     function runDesktopLookbooks(){
       window.shoeLookBook = new BloomiesLookbook($('#qa-auto-look-book'), {
                                 initialLoop: false,
@@ -245,7 +245,7 @@ $(document).ready(function(){
 
     // START THE LOOKBOOK
 
-    if ( BLOOMIES && BLOOMIES.isMEW || $('body').hasClass('isMewInt')) {
+    if ( BLOOMIES && BLOOMIES.isMEW ) {
       loadCSS(window.location.origin + '/web20/assets/style/specialProjects/premium-shoes-handbags-spring-collections-2015/template_base.css');
       
       // This is the dirtiest thing ever. LoadCSS returns a <link> object whose href value I search for the string"web20"

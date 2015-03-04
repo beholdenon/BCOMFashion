@@ -3,9 +3,9 @@ $(document).ready(function(){
 	build.topnav();
 	build.flyouts();
 	
-	var userInfo = user.get();
-	var bagID = bag.get();
-	bag.count(bagID);
+	//var userInfo = user.get();
+	//var bagID = bag.get();
+	//bag.count(bagID);
 	
 	// test calls
 
