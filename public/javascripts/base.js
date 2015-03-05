@@ -63,8 +63,15 @@ BLOOMIES.cleanXSSCharacters = function(text) {
 };
 
 BLOOMIES.isMEW = (function() {
-	if( /Android|iPhone/i.test(navigator.userAgent) ) {
+	if( /iPhone/i.test(navigator.userAgent) ) {
 	  return true;
+	} else if (/Android/i.test(navigator.userAgent)){
+		if(/Mobile/i.test(navigator.userAgent)) {
+			return true;
+		}
+		else {
+			return false;
+		}
 	}
 	return false;
 })();
