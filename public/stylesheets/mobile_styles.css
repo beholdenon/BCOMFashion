@@ -50,8 +50,9 @@ body #headerDividerBackground {
 .icon-menuButton {
   width: 22px;
   height: 21px;
-  background-image: url('/images/menuButton.png');
+  background-image: url('/images/header/unselectedMenuButton.png');
   background-repeat: no-repeat;
+  background-size: 22px;
 }
 
 #mw-header-container {
@@ -67,10 +68,15 @@ body #headerDividerBackground {
   display: initial;
   float: right;
   margin: 5px 9px 0 9px;
+  width: 25px;
+  height: 31px;
+  background-image: url('/images/header/shoppingBag.png');
+  background-repeat: no-repeat;
+  background-size: 25px;
 }
 #mw-header-container #brownBagItemsTotal {
   padding-top: 6px;
-  line-height: 26px;
+  line-height: 36px;
 }
 #mw-header-container #mw-header-logo-image {
   display: inline-block;
@@ -89,9 +95,12 @@ body #headerDividerBackground {
 #mw-search-wrapper .aboveNavSearchBox {
   padding: 12px 0px 14px 38px;
   font-size: 14px;
+  height: 100%;
+	width: 100%;
 }
 #mw-search-wrapper .bl_nav_top_sub_search_input {
   height: 40px;
+  position: relative;
 }
 #mw-search-wrapper .mvBDHeader {
   border: none;
@@ -188,6 +197,7 @@ body.nav-toggle #mw-content-overlay {
   width: 100%;
   line-height: 16px;
   text-decoration: none;
+  font-size: 15px;
 }
 #mw-nav-menu li.headerRow {
   font-size: 15px;
@@ -240,6 +250,74 @@ body.nav-toggle #mw-content-overlay {
   position: absolute;
   z-index: 20;
   background-color: #ddd;
+}
+
+.bl_nav_top_sub_search_go {
+	position: absolute;
+	left: 14px;
+	top: 13px;
+	width: 14px;
+	height: 15px;
+	z-index: 12;
+}
+
+div.bl_nav_top_sub_search_go span.mw_go_icon {
+	height: 15px;
+   	width: 15px;
+  	display: inline-block;
+	background-image: url('/images/header/search.png');
+	background-repeat: no-repeat;
+  	background-size: 14px;
+}
+
+div.bl_nav_top_sub_search_go input {
+	position: absolute;
+	z-index: 100;
+	height: 0px;
+	width: 0px;
+	top: 0;
+	right: 0;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	appearance: none;
+	background: transparent;
+	border: none;
+	color: white;
+	left: 14px;
+}
+
+.bl_nav_top_sub_search .hide {
+	display: none;
+}
+
+.bl_nav_top_sub_search .clearSearchBoxIcon {
+	float: right;
+	background-image: url('/images/header/searchClear.png');
+	background-repeat: no-repeat;
+	width: 50px;
+	height: 41px;
+	position: inherit;
+	background-size: 30px;
+}
+
+.meow #bl_main_container {
+	-webkit-transition: -webkit-transform 0.3s ease-out;
+	-moz-transition: -moz-transform 0.3s ease-out;
+	-o-transition: -o-transform 0.3s ease-out;
+	transition: transform 0.3s ease-out;
+}
+
+body.nav-toggle #bl_main_container {
+	-webkit-transform: translate3d(167px, 0, 0);
+	-moz-transform: translate3d(167px, 0, 0);
+	-ms-transform: translate3d(167px, 0, 0);
+	-o-transform: translate3d(167px, 0, 0);
+	transform: translate3d(167px, 0, 0);
+}
+
+#qb_addToBagOverlayLabel {
+	text-decoration: none;
+	color: black;
 }
 
 /*******************************************************************************/

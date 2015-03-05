@@ -92,7 +92,7 @@ BLOOMIES.doMobileHeader = function() {
 				'    <div class="mvBDHeader">'+
 				'      <div class="bl_nav_top_sub_search">'+
 				'        <div id="mvBDSearchFormToggle">'+
-				'          <form id="keywordSearch" method="get" action="/shop/search">'+
+				'          <form id="keywordSearch" method="get" action="http://m.bloomingdales.com/shop/search">'+
 				'            <div class="bl_nav_top_sub_search_input">'+
 				'              <div class="bl_nav_top_sub_search_go">'+
 				'                <span class="mw_go_icon to_be_sprited-t_glass"></span>'+
@@ -185,10 +185,240 @@ BLOOMIES.doMobileFooter = function() {
 	$("footer").html(myvar);
 };
 
+BLOOMIES.doMobileNav = function() {
+	var myvar = '<nav id="mw-nav-container"><ul id="mw-nav-menu" class="nav nav-tabs nav-stacked menu" data-animating="false">'+
+				'<li id="top" class="headerRow fobtop">'+
+				'      <a class="mw-nav-link">'+
+				'        Menu'+
+				'      </a>'+
+				'    </li>'+
+				'    <li id="shop" class="fobshop firstlevel">'+
+				'      <a class="mw-nav-link" href="http://m.bloomingdales.com/">'+
+				'        Shop'+
+				'      </a>'+
+				'    </li>'+
+				'    <li id="deals" class="fobdeals firstlevel">'+
+				'      <a class="mw-nav-link" href="http://m.bloomingdales.com/shop/sales-offers?cm_sp=NAVIGATION-_-TOP_NAV-_-3977-SALES-%26-OFFERS-See-All">'+
+				'        Promotions'+
+				'      </a>'+
+				'    </li>'+
+				'    <li id="stores" class="fobstores firstlevel">'+
+				'      <a class="mw-nav-link" href="http://m.bloomingdales.com/store/index.ognc?cm_sp=NAVIGATION--TOP_NAV--STORES_EVENTS">'+
+				'        Stores'+
+				'      </a>'+
+				'    </li>'+
+				'    <li id="myAccount" class="fobmyAccount firstlevel">'+
+				'      <a class="mw-nav-link" href="https://m.bloomingdales.com/account/myaccount?cm_sp=navigation--top_nav--account">'+
+				'        My Account'+
+				'      </a>'+
+				'    </li>'+
+				'    <li id="mybWallet" class="fobmybWallet firstlevel">'+
+				'      <a class="mw-nav-link" href="https://m.bloomingdales.com/account/wallet?ocwallet=true&cm_sp=NAVIGATION_MEW--SIDE_NAV--MY_WALLET-n-n">'+
+				'        MY bWALLET'+
+				'      </a>'+
+				'    </li>'+
+				'    <li id="loyallist" class=" fobloyallist firstlevel">'+
+				'      <a class="mw-nav-link">'+
+				'        My Loyallist'+
+				'      </a>'+
+				'    </li>'+
+				'    <ul id="loyallist_children" class="no-show children_wrapper">'+
+				'<li id="viewpoints" class="fobloyallist children">'+
+				'        <a class="mw-nav-link" href="https://m.bloomingdales.com/loyallist/accountsummary">'+
+				'          View My Points'+
+				'        </a>'+
+				'      </li>'+
+				'      <li id="enroll" class="fobloyallist children">'+
+				'        <a class="mw-nav-link" href="https://m.bloomingdales.com/loyallist">'+
+				'          Enroll'+
+				'        </a>'+
+				'      </li>'+
+				'    </ul>'+
+				'<li id="registry" class="fobregistry firstlevel">'+
+				'      <a class="mw-nav-link">'+
+				'        The Registry'+
+				'      </a>'+
+				'    </li>'+
+				'    <ul id="registry_children" class="no-show children_wrapper">'+
+				'<li id="find" class="fobregistry children">'+
+				'        <a class="mw-nav-link" href="http://m.bloomingdales.com/registry/wedding/registrysearch?cm_re=give--n--n">'+
+				'          Find'+
+				'        </a>'+
+				'      </li>'+
+				'      <li id="manage" class="fobregistry children">'+
+				'        <a class="mw-nav-link" href="http://m.bloomingdales.com/registry/wedding/registrymanager">'+
+				'          Manage'+
+				'        </a>'+
+				'      </li>'+
+				'      <li id="create" class="fobregistry children">'+
+				'        <a class="mw-nav-link" href="http://m.bloomingdales.com/registry/wedding/registrycaptureemail?cm_re=register--n--n">'+
+				'          Create'+
+				'        </a>'+
+				'      </li>'+
+				'    </ul>'+
+				'</ul></nav>';
+				
+	$("#bl_main_container").prepend(myvar);
+};
+
+function toggleChildren (id_selector) {
+    $(id_selector).addClass("currentRow");
+    $(id_selector+"_children").slideDown("slow");
+    $(".firstlevel").addClass("no-show");
+}
+  
+function highlightChild(parent_id, child_id) {
+     $(parent_id).removeClass("currentRow no-show");
+     $(parent_id).addClass("headerRow");
+     $(parent_id+"_children li").addClass("no-show");
+     $(child_id).addClass("currentRow");
+}
+  
+BLOOMIES.MobileNav = function() {
+    // Add the height on some divs on the page to support the proper scrolling
+    var heightEqualizer = function(){
+        var pageHeight = window.innerHeight;
+        var regionMainHeight = pageHeight - $('#mb-region-header').outerHeight();
+        $('#bl_main_container').css("min-height", regionMainHeight);
+        if( $("body").hasClass("nav-toggle")) {
+            $('#mb-page-wrapper').css("height", pageHeight);
+            $('#bl_main_container').css("height", regionMainHeight);
+        } else {
+            $('#mb-page-wrapper').css("height", "");
+            $('#bl_main_container').css("height", "");
+        }
+    };
+
+    // Show/Hide the global navigation menu
+    var navToggle = function(){
+        $("body").toggleClass("nav-toggle");
+        heightEqualizer();
+    };
+
+    $( window ).on("orientationchange resize", function(){
+        heightEqualizer();
+    });
+
+    $("#mw-nav-button").on("click", function(event) {
+        event.preventDefault();
+        navToggle();
+    });
+
+    $(".row.layout-mobile").on("touchmove click", function(){
+        if($("body").hasClass("nav-toggle")) {
+            navToggle();
+        }
+        return false;
+    });
+
+        
+    if (window.location.pathname.match("(\/account\/)|(\/service\/)|(\/credit\/)") !=  null) {
+        if(window.location.pathname.match("/account/wallet") !=  null){
+            $(".firstlevel").addClass("no-show");
+            $("#mybWallet").addClass("currentRow");  
+        }
+        else {
+            $(".firstlevel").addClass("no-show");
+            $("#myAccount").addClass("currentRow");   
+        }
+    }
+
+    if(window.location.pathname.match("loyallist") !=  null || 
+        window.location.pathname.match("loyalty_program") !=  null) {
+        var signedIn = getCookie("SignedIn");
+        toggleChildren("#loyallist");
+        // While signed the following pages will have viewpoints highlighted
+        if(window.location.pathname.match("(loyallist\/offers)|(loyallist\/faq)|(loyallist\/rewardcards)|(loyallist\/benefits)") !=  null && signedIn == 1) {
+            $("#myAccount").removeClass("currentRow");
+            highlightChild("#loyallist", "#viewpoints");
+        }
+        else {
+            // While unsigned all pages will have enroll highlighted except the following
+            if(window.location.pathname.match("loyallist/accountsummary") !=  null) {
+                highlightChild("#loyallist", "#viewpoints");
+        }
+            else{
+                highlightChild("#loyallist", "#enroll");
+            }
+        }
+    }
+
+    if(window.location.pathname.match("/store") !=  null) {
+        $(".firstlevel").addClass("no-show");
+        $("#stores").addClass("currentRow");
+    }
+
+    if(window.location.pathname.match("shop/sales-offers") !=  null) {
+        $(".firstlevel").addClass("no-show");
+        $("#deals").addClass("currentRow");
+    }
+
+    if(window.location.pathname.match("registry") !=  null) {
+        toggleChildren("#registry");
+        if(window.location.pathname.match("(registry\/wedding\/registrysearch)|(registry\/wedding\/guest)") !=  null) {
+            highlightChild("#registry", "#find");
+        }
+        if(window.location.pathname.match("(registry\/wedding\/registrymanager)|(registry\/wedding\/registrysignin)|(registry\/wedding\/registrant)|(registry\/wedding\/registryeditaccount)") !=  null) {
+            highlightChild("#registry", "#manage");
+        }
+        if(window.location.pathname.match("(registry\/wedding\/registrycaptureemail)|(registry\/wedding\/registrycreateaccount)") !=  null) {
+            highlightChild("#registry", "#create");
+        }
+    }
+
+    if (window.location.pathname.match("account/signin") !=  null) {
+        var forward_page = $.cookie("FORWARDPAGE_KEY");
+
+        if (forward_page.match("%2Floyallist%2Faccountsummary")) {
+            toggleChildren("#loyallist");
+            $("#myAccount").removeClass("currentRow");
+            highlightChild("#loyallist", "#viewpoints");
+        }
+        if (forward_page.match("%2Faccount%2Fwallet")) {
+            $("#myAccount").removeClass("currentRow");
+            $("#mybWallet").addClass("currentRow");
+        }
+        if (forward_page.match("%2Faccount%2Fmyaccount") || 
+            forward_page.match("http")) {
+            $(".firstlevel").addClass("no-show");
+            $("#myAccount").addClass("currentRow");
+        }
+    }
+
+    $("#loyallist").on("click", function() {
+        $("#viewpoints").removeClass("currentRow no-show");
+        $("#enroll").removeClass("currentRow no-show");
+        toggleChildren("#loyallist");
+    });
+
+    $("#registry").on("click", function() {
+        $("#find").removeClass("currentRow no-show");
+        $("#manage").removeClass("currentRow no-show");
+        $("#create").removeClass("currentRow no-show");
+        toggleChildren("#registry");
+    });
+
+    $("#top").on("click", function() {
+        $(".children_wrapper").slideUp(0);
+        $(".firstlevel").removeClass("no-show");
+        $("#mw-nav-menu li").removeClass("currentRow");
+        $("#mw-nav-menu li:not(#top)").removeClass("headerRow");
+    });
+
+    $("#mvSearchField").bind("click", function(){
+        if($("body").hasClass("nav-toggle")) {
+            navToggle();
+        }
+    });
+};
+
 $(document).ready(function(){
 	if(BLOOMIES.isMEW) {
 		BLOOMIES.doMobileHeader();
     	BLOOMIES.doMobileFooter();
+    	BLOOMIES.doMobileNav();
+    	BLOOMIES.MobileNav();
+    	$('#brownBagItemsTotal').html(thisUser.getCartItemTotal());
 	}
-})();
+});
 
