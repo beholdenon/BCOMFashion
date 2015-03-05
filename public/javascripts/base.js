@@ -69,7 +69,7 @@ BLOOMIES.isMEW = (function() {
 	return false;
 })();
 
-BLOOMIES.doMobileHeader = function() {
+BLOOMIES.buildMobileHeader = function() {
 	var myvar = '<section id="mw-region-header"><header id="mw-header-container"><div id="mw-nav-button"><i id="mw-nav-button-icon" class="icon-menuButton"></i></div>'+
 				'<div id="mw-bag-status">'+
 				'      <div id="myBagLink" class=" mw_myBagLink to_be_sprited-t_bag">'+
@@ -112,7 +112,7 @@ BLOOMIES.doMobileHeader = function() {
  	$("header").html(myvar);
 };
 
-BLOOMIES.doMobileFooter = function() {
+BLOOMIES.buildMobileFooter = function() {
 	
 	var myvar = '<div class="footer-container">'+
 				'	<div id="footer-links">'+
@@ -185,7 +185,7 @@ BLOOMIES.doMobileFooter = function() {
 	$("footer").html(myvar);
 };
 
-BLOOMIES.doMobileNav = function() {
+BLOOMIES.buildMobileNav = function() {
 	var myvar = '<nav id="mw-nav-container"><ul id="mw-nav-menu" class="nav nav-tabs nav-stacked menu" data-animating="false">'+
 				'<li id="top" class="headerRow fobtop">'+
 				'      <a class="mw-nav-link">'+
@@ -274,7 +274,7 @@ function highlightChild(parent_id, child_id) {
      $(child_id).addClass("currentRow");
 }
   
-BLOOMIES.MobileNav = function() {
+BLOOMIES.initMobileNav = function() {
     // Add the height on some divs on the page to support the proper scrolling
     var heightEqualizer = function(){
         var pageHeight = window.innerHeight;
@@ -304,7 +304,7 @@ BLOOMIES.MobileNav = function() {
         navToggle();
     });
 
-    $(".row.layout-mobile").on("touchmove click", function(){
+    $("#mw-content-overlay").on("touchmove click", function(){
         if($("body").hasClass("nav-toggle")) {
             navToggle();
         }
@@ -414,11 +414,10 @@ BLOOMIES.MobileNav = function() {
 
 $(document).ready(function(){
 	if(BLOOMIES.isMEW) {
-		BLOOMIES.doMobileHeader();
-    	BLOOMIES.doMobileFooter();
-    	BLOOMIES.doMobileNav();
-    	BLOOMIES.MobileNav();
+		BLOOMIES.buildMobileHeader();
+    	BLOOMIES.buildMobileFooter();
+    	BLOOMIES.buildMobileNav();
+    	BLOOMIES.initMobileNav();
     	$('#brownBagItemsTotal').html(thisUser.getCartItemTotal());
 	}
 });
-

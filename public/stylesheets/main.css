@@ -9224,7 +9224,7 @@ header #nav ul#mainNav {
   height: 2.54545rem; }
 
 header #nav ul#mainNav li.selected {
-  background: url(/img/nav/hfr/flyoutCarrot.png) center 1.81818rem no-repeat; }
+  background: url(http://assets.bloomingdales.com/img/nav/hfr/flyoutCarrot.png) center 1.81818rem no-repeat; }
 
 header #nav ul#mainNav li {
   text-transform: uppercase;
@@ -10801,18 +10801,25 @@ div#r_nav_top_logo {
   font-style: normal; }
 header #nav {
   float: none; }
-  @media screen and (min-width: 40.063em) {
+
+
+@media screen and (min-width: 40.063em) {
     header #nav {
-      border-top: 1px solid #ccc;
-      border-bottom: 1px solid #ccc;
-      height: 40px; }
-      header #nav .row {
-        overflow: hidden; } }
-  @media screen and (min-width: 64.063em) {
+      height: 25px; 
+    }
+    
+    header #nav .row {
+        overflow: hidden; 
+    } 
+}
+@media screen and (min-width: 64.063em) {
     header #nav {
       border: 0;
-      border-bottom: 1px #ccc solid;
-      height: auto; } }
+      height: auto; 
+  } 
+}
+
+
 @media screen and (min-width: 0em) {
   header #zeroNav #innerZeroNav ul li.topNavBag {
     display: none; } }
@@ -10834,19 +10841,22 @@ header #nav {
 @media screen and (min-width: 64.063em) {
   header #globalNavigation {
     width: auto; } }
-@media screen and (min-width: 40.063em) {
-  header ul#mainNav li {
-    margin: 0.90909rem 1.36364rem 0 0.90909rem; } }
-@media screen and (min-width: 64.063em) {
-  header ul#mainNav li {
-    margin: 3px; } }
-@media screen and (min-width: 40.063em) {
-  header ul#mainNav li a {
-    font-size: 1.5rem !important; } }
-@media screen and (min-width: 64.063em) {
-  header ul#mainNav li a {
-    font-size: 1.4rem !important; } }
 
+  @media screen and (min-width: 30.063em) {
+    header ul#mainNav li a {
+      font-size: 1.0rem !important; 
+    }
+  }
+  @media screen and (min-width: 50.063em) {
+    header ul#mainNav li a {
+      font-size: 1.2rem !important; 
+    }
+  }
+  @media screen and (min-width: 64.063em) {
+    header ul#mainNav li a {
+      font-size: 1.4rem !important;
+    } 
+  }
 @media screen and (max-width: 40.063em) {
   header #aboveNav {
     padding: 0; } }

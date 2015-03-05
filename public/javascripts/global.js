@@ -127,7 +127,7 @@ var build = {
 		}).success(function(res){
 			$('#nav .row').html(res);
 
-			$('.navigation .categories .globalNavigation a').each(function(){
+			$('#nav #mainNav a').each(function(){
 				if ($(this).attr('href').charAt(0) == '/') {
 					$(this).attr('href', 'http://www.bloomingdales.com' + $(this).attr('href'));
 				}
