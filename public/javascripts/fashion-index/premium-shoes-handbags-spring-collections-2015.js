@@ -143,7 +143,7 @@ $(document).ready(function(){
           paginationWrapperBG = document.querySelectorAll('.lookbook-pagination-bg')[0],
           pagFlag = 0;
 
-      $(paginationWrapper).on('click touchstart', function(){
+      $(paginationWrapper).on('click', function(){
         if (Date.now() <= (pagFlag + 500)) { 
           
         } else {

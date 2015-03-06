@@ -10820,15 +10820,8 @@ header #nav {
 }
 
 
-@media screen and (min-width: 0em) {
   header #zeroNav #innerZeroNav ul li.topNavBag {
-    display: none; } }
-@media screen and (min-width: 40.063em) {
-  header #zeroNav #innerZeroNav ul li.topNavBag {
-    display: none; } }
-@media screen and (min-width: 64.063em) {
-  header #zeroNav #innerZeroNav ul li.topNavBag {
-    display: inline-block; } }
+    display: inline-block; }
 @media screen and (min-width: 40.063em) {
   header #user_prefs li {
     float: right; } }
