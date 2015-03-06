@@ -234,7 +234,7 @@ $(document).ready(function(){
 
     // SOCIAL
     var facebookURL = "https://www.facebook.com/sharer/sharer.php?u=" + window.location.origin + window.location.pathname,
-        pinterestMedia = window.location.origin + "/web20/assets/img/specialProjects/premium-shoes-handbags-spring-collections-2015/Pinterest.jpg",
+        pinterestMedia = "http://www.bloomiongdales.com/web20/assets/img/specialProjects/premium-shoes-handbags-spring-collections-2015/Pinterest.jpg",
         pinterestDescription = "PREMIUM SHOES & HANDBAGS: ALL THE EXTRAS | bloomingdales.com",
         pinterestURL = "http://pinterest.com/pin/create/button/?url=" + window.location.origin + window.location.pathname + "&media=" + pinterestMedia + "&description=" + pinterestDescription,
         twitterURL = "https://twitter.com/home?status=ALL THE EXTRAS: Bloomingdale's kicks it into high gear with revved-up shoes and carryalls that take you places. http://bit.ly/1yJg1cv";
