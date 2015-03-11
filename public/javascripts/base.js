@@ -87,7 +87,7 @@ BLOOMIES.buildMobileHeader = function() {
 				'      </div>'+
 				'    </div>'+
 				'    <div class="mvHiddenInRegistry" id="bl_nav_top_logo">'+
-				'      <a href="/?cm_sp=NAVIGATION-_-TOP_NAV-_-TOP_BLOOMIES_ICON"><img src="//assets.moovweb.net/bloomingdales/bcom-origin-prod/v30/images/bloomingdales.png" id="mw-header-logo-image">'+
+				'      <a href="http://m.bloomingdales.com/?cm_sp=NAVIGATION-_-TOP_NAV-_-TOP_BLOOMIES_ICON"><img src="//assets.moovweb.net/bloomingdales/bcom-origin-prod/v30/images/bloomingdales.png" id="mw-header-logo-image">'+
 				'      </a>'+
 				'    </div>'+
 				'    <div id="r_nav_top_logo" class="mvHiddenInSite">'+
