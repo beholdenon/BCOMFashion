@@ -119,9 +119,14 @@ app.use('/users', users);
 // app.get('/app-index', function(req, res, next){
 //     res.render('./app-index/', {title: 'Bloomingdales'});
 // });
-app.get('/*', function(req, res, next){
+app.get('/fashion-index/premium-shoes-handbags-spring-collections-2015', function(req, res, next){
     var path = req.params[0];
-    res.render('./'+path, {title: 'Bloomingdales'});
+    res.render('./fashion-index/premium-shoes-handbags-spring-collections-2015', {title: 'Bloomingdales'});
+});
+
+app.get('/', function(req, res, next){
+    var path = req.params[0];
+    res.render('', {title: 'Bloomingdales'});
 });
 
 // catch 404 and forward to error handler
