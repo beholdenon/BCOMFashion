@@ -1,3 +1,5 @@
+var path = require("path");
+
 module.exports = function(grunt) {
   var destination =  "target",
   	  source = "./";
@@ -46,21 +48,57 @@ module.exports = function(grunt) {
 	      }
 	    ]
   	  }
+	},
+
+	handlebars: {
+	  options: {
+	    // Remove folder path name from file
+	    processName: function(fileName) {
+	      return path.basename(fileName, ".hbs");
+	    },
+	    namespace: "Templates",
+	    wrapped: true,
+	    amd: true,
+	    partialsUseNamespace: true,
+	    partialRegex: /.*/,
+	    partialsPathRegex: /\/partials\//
+	  },
+	
+	  // Handlebars files to compile
+	  all: {
+	    files: [{
+	      src: [source + "public/templates/*.hbs", source + "public/templates/**/*.hbs"],
+	      dest: destination + "/public/templates/templates.js"
+	    }]
+	  }
+	},
+
+	compass: {
+	  options: {
+	    force: true,
+	    sassDir: source + "public/styles/",
+	    cssDir: destination + "/public/styles"
+	  }
 	}
+
   });
 
   grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-contrib');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-sass-globbing');
+  grunt.loadNpmTasks('grunt-contrib-handlebars');
+  grunt.loadNpmTasks('grunt-contrib-compass');
   
   grunt.registerTask('default', 'build');
 	
   grunt.registerTask('build', 'Builds a development version of the app.', function() {
     grunt.task.run([
       'clean',
+      'handlebars',
       //'sass',
-      'copy'
+      'copy',
+      'compass'
     ]);
   });
 
