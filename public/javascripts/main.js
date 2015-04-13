@@ -12,7 +12,11 @@
         "jquery": "libs/jquery",
         "require": "libs/requirejs",
         "underscore": "libs/lodash",
-        "global": "global"
+        "global": "global",
+        "base": "base",
+        "router": "router",
+        "views/fashionShoesView": "views/fashionShoesView",
+        "views/newView": "views/newView"
     },
     shim = {
         "backbone": {
@@ -34,20 +38,22 @@ define([
   'backbone',
   'jquery',
   'underscore',
-  'global'
-], function(Backbone, $, _, global) {
+  'global',
+  'base',
+  'router'
+], function(Backbone, $, _, Global, Base, Router) {
 
-  // Globally namespaced objects, please keep to absolute minimum
   window.App = {};
 
-  //new AppRouter();
-  console.log("erererer");
+  //TODO: Create a BACKBONE router
   
-  global();
+  Base();
+  new Router();
+  Global();
 
   Backbone.history.start({
-    pushState: true//,
-    // urlRoot: '/'
+    pushState: true,
+    urlRoot: '/'
   });
 
 });
