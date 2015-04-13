@@ -43,7 +43,7 @@ module.exports = function(grunt) {
 	      {
 	        expand: true,
 	        cwd: source,
-	        src: ['**'],
+	        src: ['**', '!public/styles/**/*.scss', '!public/styles/*.scss'],
 	        dest: destination + "/"
 	      }
 	    ]
@@ -74,11 +74,13 @@ module.exports = function(grunt) {
 	},
 
 	compass: {
-	  options: {
-	    force: true,
-	    sassDir: source + "public/styles/",
-	    cssDir: destination + "/public/styles"
-	  }
+		dist: {
+			options: {
+			    force: true,
+			    sassDir: source + "public/styles/",
+			    cssDir: destination + "/public/styles"
+		    }
+		}
 	}
 
   });
@@ -98,7 +100,7 @@ module.exports = function(grunt) {
       'handlebars',
       //'sass',
       'copy',
-      'compass'
+      'compass:dist'
     ]);
   });
 
