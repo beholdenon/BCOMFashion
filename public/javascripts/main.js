@@ -11,7 +11,8 @@
         "handlebars": "libs/handlebars",
         "jquery": "libs/jquery",
         "require": "libs/requirejs",
-        "underscore": "libs/lodash"
+        "underscore": "libs/lodash",
+        "global": "global"
     },
     shim = {
         "backbone": {
@@ -32,14 +33,17 @@
 define([
   'backbone',
   'jquery',
-  "underscore"
-], function(Backbone, $, _) {
+  'underscore',
+  'global'
+], function(Backbone, $, _, global) {
 
   // Globally namespaced objects, please keep to absolute minimum
   window.App = {};
 
   //new AppRouter();
   console.log("erererer");
+  
+  global();
 
   Backbone.history.start({
     pushState: true//,
