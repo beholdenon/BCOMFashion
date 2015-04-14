@@ -16,7 +16,8 @@
         "base": "base",
         "router": "router",
         "views/fashionShoesView": "views/fashionShoesView",
-        "views/newView": "views/newView"
+        "views/newView": "views/newView",
+        "templates": "templates/templates"
     },
     shim = {
         "backbone": {
@@ -40,17 +41,20 @@ define([
   'underscore',
   'global',
   'base',
-  'router'
-], function(Backbone, $, _, Global, Base, Router) {
+  'router',
+  'views/fashionShoesView',
+  'views/newView',
+  'templates'
+], function(Backbone, $, _, Global, Base, Router, FashionShoesView, NewView) {
 
   window.App = {};
 
   //TODO: Create a BACKBONE router
   
   Base();
-  new Router();
+  var app_router = new Router();
   Global();
-
+  
   Backbone.history.start({
     pushState: true,
     urlRoot: '/'

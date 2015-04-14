@@ -8,12 +8,12 @@ define([
   	
   	el: '#bl_main_wrapper',
 
-    init: function () {
+    initialize: function () {
       this.render();
     },
 
     render: function () {
-      this.$el.html(TEMPLATE.fashionShoes());
+      this.$el.html(Templates.fashionShoes());
     }
 
   });

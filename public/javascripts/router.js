@@ -12,12 +12,12 @@ define([
 
   return Backbone.Router.extend({
     routes: {
-      '/fashion-index/premium-shoes-handbags-spring-collections-2015': 'fashionShoes',
-      '/new': 'newUrl'
+      'fashion-index/premium-shoes-handbags-spring-collections-2015': 'fashionShoes',
+      'new': 'newUrl'
     },
 
     fashionShoes: function() {
-      new FashionShoesView();
+      //new FashionShoesView();
     },
 
     newUrl: function() {

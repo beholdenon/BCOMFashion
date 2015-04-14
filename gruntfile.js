@@ -68,7 +68,7 @@ module.exports = function(grunt) {
 	  all: {
 	    files: [{
 	      src: [source + "public/templates/*.hbs", source + "public/templates/**/*.hbs"],
-	      dest: destination + "/public/templates/templates.js"
+	      dest: destination + "/public/javascripts/templates/templates.js"
 	    }]
 	  }
 	},
@@ -88,7 +88,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-contrib');
   grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-sass-globbing');
   grunt.loadNpmTasks('grunt-contrib-handlebars');
   grunt.loadNpmTasks('grunt-contrib-compass');
   
@@ -97,9 +96,8 @@ module.exports = function(grunt) {
   grunt.registerTask('build', 'Builds a development version of the app.', function() {
     grunt.task.run([
       'clean',
-      'handlebars',
-      //'sass',
       'copy',
+      'handlebars',
       'compass:dist'
     ]);
   });
