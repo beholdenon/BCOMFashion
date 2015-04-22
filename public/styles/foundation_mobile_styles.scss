@@ -1,0 +1,196 @@
+.fixed {
+    background: #fff;
+}
+#href_wishList_tablet{
+	height: inherit;
+	line-height: 2.54545rem;
+}
+
+#aboveNav > div.aboveNavRight.row > div.headerTablet > a > img{
+	width: 6vw;
+}
+
+#nav{
+	border-bottom: 0.09091rem #ccc solid !important;
+}
+
+/*Small screens*/
+@media only screen and (max-width: 40em) { 
+	#mb-page-content-container{
+		position: relative;
+		width: 100%;
+		padding-top: 86px;
+	}
+	#mw-nav-container{
+		padding-top: 86px;
+	}
+	#footer-social-links{
+		display: block !important;
+	}
+	#footer-social-links span{
+		 padding: 0 8px;
+	}
+	#footer-social-links > span > a{
+		background-image: url('../../images/icon2x-s5983faaebb.png');
+		background-repeat: no-repeat;
+	}
+	.footer-phone {
+	    width: 165px;
+	    height: 20px !important;
+	    padding: 3px 0 0 8px !important;
+	    line-height: 16px;
+	    background-position: 0 -450px; 
+	    background-size: 150px auto;
+	}
+	.footer-pin {
+	    width: 20px;
+	    height: 17.5px;
+	    background-position: 0 -470px; 
+	    background-size: 150px auto;
+	}
+	.footer-facebook {
+	    width: 19px;
+	    height: 19px;
+	    background-position: 0 -187px;
+	    background-size: 150px auto;
+	}
+	.footer-instagram {
+	    width: 17.5px;
+	    height: 17.5px;
+	    background-position: 0 -269px;
+	    background-size: 150px auto;
+	}
+	.footer-twitter {
+	    width: 20px;
+	    height: 17.5px;
+	    background-position: 0 -659px;
+	    background-size: 150px auto;
+	}
+}
+/*Medium screens*/
+@media only screen and (min-width: 40.063em) and (max-width: 64em) { 
+	#aboveNav{
+		position: relative;
+		padding: 1vw 0!important;
+	}
+	.aboveNavRight {
+		display: table;
+	}
+	#aboveNavBanner, .headerTablet {
+		display: table-cell;
+		vertical-align: middle;
+		width: auto !important;
+	}
+	#aboveNavBanner {
+	  	padding-top: .38rem;
+	}
+	#aboveNavBanner > a > img{
+		width: 32vw !important;
+		max-width: 100%;
+		float: right;
+	}
+	#nav{
+		border-top: 0.09091rem #ccc solid;
+		height: 4vw !important;
+		width: 100%;
+	}
+	#mainNav > li {
+		line-height: 4vw !important;
+		margin: auto .6vw;
+	}
+	header ul#mainNav li a {
+	  	font-size: 1.47vw !important;
+	}
+	header #aboveNav > div.bloomiesLogo {
+		background-size: 40vw;
+		margin: 0;
+		position: absolute;
+		top: 50%;
+		transform: translate(0, -50%);
+		-webkit-transform: translate(0, -50%);
+		-moz-transform: translate(0, -50%);
+	}
+	header .bloomiesLogo img {
+		width: 40vw;
+		height: 4.4vw;
+	}
+	#footer-social-links span{
+		 padding: 0 8px;
+	}
+	#footer-social-links > span > a{
+		background-image: url('../../images/icon2x-s5983faaebb.png');
+		background-repeat: no-repeat;
+	}
+	.footer-phone {
+	    width: 165px;
+	    height: 20px !important;
+	    padding: 3px 0 0 8px !important;
+	    line-height: 16px;
+	    background-position: 0 -450px; 
+	    background-size: 150px auto;
+	}
+	.footer-pin {
+	    width: 20px;
+	    height: 17.5px;
+	    background-position: 0 -470px; 
+	    background-size: 150px auto;
+	}
+	.footer-facebook {
+	    width: 19px;
+	    height: 19px;
+	    background-position: 0 -187px;
+	    background-size: 150px auto;
+	}
+	.footer-instagram {
+	    width: 17.5px;
+	    height: 17.5px;
+	    background-position: 0 -269px;
+	    background-size: 150px auto;
+	}
+	.footer-twitter {
+	    width: 20px;
+	    height: 17.5px;
+	    background-position: 0 -659px;
+	    background-size: 150px auto;
+	}
+	.aboveNavSearch-tablet-style{
+		position: relative;
+		top: 0;
+		right: 1.09091rem;
+		width: 43vw;
+		z-index: 999;
+		border-top: 0 !important;
+		border-left: 0 !important;
+		border-right: 0 !important;
+		border-bottom: 0.18182rem solid black !important;;
+		background-color: white;
+		background-position: right;
+		background-size: 6vw;
+		background-image: url('http://assets.bloomingdales.com/web20/assets/img/header/headerTablet-magnifier@2x.png');
+		background-repeat: no-repeat;
+	}
+	#subnavSearchSubmit{
+		background: none;
+	}
+	.aboveNavSearch-tablet-style form,
+	.aboveNavSearch-tablet-style form .aboveNavSearchInput {
+		margin: 0;
+		border: 0;
+		padding: 0;
+	}
+	.aboveNavSearch-tablet-style form .aboveNavSearchInput input[type=text] {
+		width: 34vw;
+		/*height: 2.40909em;*/
+		height: 6vw;
+		border: 0;
+		padding: 0;
+		background-color: transparent;
+		box-shadow: none;
+		-moz-box-shadow: none;
+		-webkit-box-shadow: none;
+		letter-spacing: 0.09091rem;
+		font-family: "helveticaLTStdCond",Arial,Helvetica,Verdana,Sans-serif;
+		font-size: 1.7vw;
+		color: #999;
+	}
+}
