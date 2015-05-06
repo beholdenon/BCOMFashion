@@ -43,8 +43,20 @@ module.exports = function(grunt) {
 	      {
 	        expand: true,
 	        cwd: source,
-	        src: ['**', '!public/styles/**/*.scss', '!public/styles/*.scss'],
+	        src: ['public/**', '!public/styles/**/*.scss', '!public/styles/*.scss', 'views/**', 'package.json'],
 	        dest: destination + "/"
+	      },
+	      {
+	          expand: true,
+	          cwd: source + 'server/',
+	          src: 'index.js',
+	          dest: destination + "/"
+	      },
+	      {
+	          expand: true,
+	          cwd: source + 'server/',
+	          src: 'lib/**',
+	          dest: destination + "/"
 	      }
 	    ]
   	  }
@@ -81,6 +93,37 @@ module.exports = function(grunt) {
 			    cssDir: destination + "/public/styles"
 		    }
 		}
+	},
+	
+	concurrent: {
+	  dev: ['nodemon', 'node-inspector'],
+	  options: {
+	    logConcurrentOutput: true
+	  }
+	},
+	
+	'node-inspector': {
+	  dev: {
+	    options: {
+	      'web-port': 1337
+	    }
+	  }
+	},
+	
+	nodemon: {
+		dev: {
+		    script: destination + '/index.js' ,
+		    options: {
+		      nodeArgs: ['--debug'],
+		      ignore: [destination + '/lib'],
+		      //watch: ['target'],
+		      callback: function(nodemon) {
+		        nodemon.on('log', function(event) {
+		          console.log(event.colour);
+		        });
+		      }
+		    }
+		}
 	}
 
   });
@@ -90,6 +133,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-handlebars');
   grunt.loadNpmTasks('grunt-contrib-compass');
+  grunt.loadNpmTasks('grunt-concurrent');
+  grunt.loadNpmTasks('grunt-nodemon');
+  grunt.loadNpmTasks('grunt-node-inspector');
   
   grunt.registerTask('default', 'build');
 	
@@ -98,7 +144,8 @@ module.exports = function(grunt) {
       'clean',
       'copy',
       'handlebars',
-      'compass:dist'
+      'compass:dist',
+      'concurrent:dev'
     ]);
   });
 

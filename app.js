@@ -13,6 +13,24 @@ var request = require('request');
 
 var app = express();
 
+// Check if the user-agent is MOBILE or PC/Tablet
+app.isMobile = function(req, res) {
+    var ua = req.headers['user-agent'];
+    if( /iPhone/i.test(ua) ) {
+	  return true;
+	} else if (/Android/i.test(ua)){
+		if(/Mobile/i.test(ua)) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	} else  {
+		return false;
+	}
+};
+
+
 // view engine setup
 app.set('views', __dirname + '/views');
 app.set('view engine', 'jade');
@@ -127,10 +145,17 @@ app.get('/fashion-index/premium-shoes-handbags-spring-collections-2015', functio
 app.get('/', function(req, res, next){
     var path = req.params[0];
     res.render('', {title: 'Bloomingdales'});
+    console.log('asfasfasfssssssssssssssssssssssssssssssss');
 });
 
 app.get('/new', function(req, res) {
-    res.sendFile(path.join(__dirname+'/public/index.html'));
+	console.log('User-Agent:  ' + req.headers['user-agent']);
+	console.log('is MOBILE:  ' + app.isMobile(req, res));
+	if(app.isMobile(req, res)) {
+		res.sendFile(path.join(__dirname+'/public/index-mobile.html'));
+	} else {
+		res.sendFile(path.join(__dirname+'/public/index.html'));
+	}
 });
 
 

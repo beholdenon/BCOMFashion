@@ -30,7 +30,7 @@ define([
 	var build = {
 		topnav: function(){
 			$.ajax({
-				url: '/bcom/shop/topnav?application=SITE&jsonp=false',
+				url: '/shop/topnav?application=SITE&jsonp=false',
 				contentType: 'application/json; charset=utf-8',
 				dataType: "html",
 				method: 'GET',
@@ -56,7 +56,7 @@ define([
 		},
 		flyouts: function(){
 			$.ajax({
-				url: '/bcom/shop/flyout?application=SITE&jsonp=false',
+				url: '/shop/flyout?application=SITE&jsonp=false',
 				contentType: 'application/json; charset=utf-8',
 				dataType: "html",
 				method: 'GET',
