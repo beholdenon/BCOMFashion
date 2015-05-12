@@ -54,10 +54,18 @@ define([
   Base();
   var app_router = new Router();
   Global();
-  
+
   Backbone.history.start({
     pushState: true,
     urlRoot: '/'
+  });
+
+  $.ajax({
+	method: 'GET',
+	dataType:'json',
+	url: '/api/v3/catalog/category/5545',
+  }).success(function (res) {
+	console.log(res);
   });
 
 });

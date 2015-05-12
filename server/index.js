@@ -4,7 +4,7 @@ var Hapi    = require('hapi');
 var server = new Hapi.Server();
 
 server.connection({
-  port: 3000,
+  port: +process.env.PORT,
   routes: {
     files: { relativeTo: __dirname + '/public' },
     state: { failAction: 'ignore' }
@@ -15,7 +15,8 @@ server.connection({
 var routes = [
   { method: 'GET',    path: '/fashion/{path*}',        config: require('./lib/assets').fashion },
   { method: 'GET',    path: '/shop/{path*}',           config: require('./lib/assets').shop },
-  { method: 'GET',    path: '/',                       config: require('./lib/assets').fallback }
+  { method: 'GET',    path: '/',                       config: require('./lib/assets').fallback },
+  { method: 'GET',    path: '/api/{path*}',            config: require('./lib/category') }
 ];
 
 server.route(routes);

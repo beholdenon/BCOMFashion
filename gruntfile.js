@@ -3,6 +3,9 @@ var path = require("path");
 module.exports = function(grunt) {
   var destination =  "target",
   	  source = "./";
+  	  
+  // Sets the default config specified in the .env for runnning grunt tasks without having to set options
+  require('./build/setDefaultEnv')(grunt, '.env');
 
   grunt.initConfig ({
     sass: {

@@ -9,7 +9,6 @@ mewProxy.timeout = 20e3;
 mewProxy.getHeaders = function(request, apiKey) {
   var headers = {};
   var subDomain = process.env.API_SUBDOMAIN;
-  var apiMockService = process.env.API_MOCK_SERVICE;
 
   // Configure the service headers based on the the subdomain(api vs. services)
   if (subDomain === 'api') {
@@ -25,11 +24,6 @@ mewProxy.getHeaders = function(request, apiKey) {
       'x-macys-webservice-client-id': process.env.SERVICES_KEY,
       'x-macys-customer-id': process.env.SERVICES_KEY
     };
-  }
-
-  if(apiMockService) {
-    headers['api_origin'] = (process.env.API_HOST);
-    headers['env'] = (process.env.BRAND).toUpperCase();
   }
 
   if (request && request.headers && request.headers['content-length']) {
@@ -53,15 +47,9 @@ mewProxy.getHost = function(request, proxyHost) {
   //  - we are in production mode, but on a staging server (herokuapp), or
   //  - we are in dev mode, but using a host that does not contain a valid qa server (e.g., localhost)
   if ((process.env.NODE_ENV === 'production' && extractedHost === 'herokuapp.com') ||
-      (process.env.NODE_ENV === 'dev' && !/qa\d+code(macys|bloomingdales)/.test(extractedHost))) {
+      (process.env.NODE_ENV === 'dev' && !/qa\d+code(bloomingdales)/.test(extractedHost))) {
     useDynamicBinding = false;
   }
-
-  //if a mock service has been defined, then return the specified hostname.
-  if( process.env.API_MOCK_SERVICE) {
-    return process.env.API_MOCK_SERVICE;
-  }
-
 
   if (useDynamicBinding) {
     return envSubdomain + '.' + extractedHost;
@@ -127,7 +115,6 @@ mewProxy.parseHandler = function(parser, request, res, payload, reply) {
   try {
     return reply(parser._parse(request, JSON.parse(payload), res))
       .code(res.statusCode)
-      .header('Env-Config-Build', process.env.CONFIG_BUILD_VERSION)
       .header('Upstream-Host', request.url.format(request.url));
   } catch (err) {
     return reply(Boom.internal('Failed parsing JSON input: ' + err, err));
