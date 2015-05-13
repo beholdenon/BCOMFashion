@@ -2,11 +2,11 @@
 var Wreck    = require('wreck'),
     Zlib     = require('zlib'),
     Boom     = require('boom'),
-    mewProxy = exports;
+    serviceProxy = exports;
 
-mewProxy.timeout = 20e3;
+serviceProxy.timeout = 20e3;
 
-mewProxy.getHeaders = function(request, apiKey) {
+serviceProxy.getHeaders = function(request, apiKey) {
   var headers = {};
   var subDomain = process.env.API_SUBDOMAIN;
 
@@ -33,7 +33,7 @@ mewProxy.getHeaders = function(request, apiKey) {
   return headers;
 };
 
-mewProxy.getHost = function(request, proxyHost) {
+serviceProxy.getHost = function(request, proxyHost) {
   var extractedHost = request.headers.host
     .split('.')
     .slice(1)
@@ -58,14 +58,14 @@ mewProxy.getHost = function(request, proxyHost) {
   }
 };
 
-mewProxy.getReqHeaderCookie = function(requestCookies, cookieName) {
+serviceProxy.getReqHeaderCookie = function(requestCookies, cookieName) {
   if (requestCookies && requestCookies[cookieName]) {
     return requestCookies[cookieName];
   }
   return '';
 };
 
-mewProxy.errorHandler = function(statusCode, request, reply, payload) {
+serviceProxy.errorHandler = function(statusCode, request, reply, payload) {
   /* jshint camelcase:false */
   var message = payload,
   callSwitch = function() {
@@ -110,7 +110,7 @@ mewProxy.errorHandler = function(statusCode, request, reply, payload) {
   }
 };
 
-mewProxy.parseHandler = function(parser, request, res, payload, reply) {
+serviceProxy.parseHandler = function(parser, request, res, payload, reply) {
   // try/catch is synchronous, one of few cases its useful, JSON.parse
   try {
     return reply(parser._parse(request, JSON.parse(payload), res))
@@ -121,21 +121,21 @@ mewProxy.parseHandler = function(parser, request, res, payload, reply) {
   }
 };
 
-mewProxy.defaultOnResponse = function(err, res, request, reply) {
+serviceProxy.defaultOnResponse = function(err, res, request, reply) {
   // See recommendations, reviews, or bopsUpc if status codes require custom handling
-  if (err) { return mewProxy.errorHandler(err.output.statusCode, request, reply, err.output.payload); }
+  if (err) { return serviceProxy.errorHandler(err.output.statusCode, request, reply, err.output.payload); }
 
-  Wreck.read(res, { timeout: mewProxy.timeout }, function(err, payload) {
+  Wreck.read(res, { timeout: serviceProxy.timeout }, function(err, payload) {
     var statusCode = res.statusCode,
         uri = request.url.format(request.url);
 
-    if (err) { return mewProxy.errorHandler(err.output.statusCode, request, reply, err.output.payload); }
+    if (err) { return serviceProxy.errorHandler(err.output.statusCode, request, reply, err.output.payload); }
 
     switch (true) {
       case statusCode === 200:
-        return mewProxy.parseHandler(request.app.parser, request, res, payload, reply);
+        return serviceProxy.parseHandler(request.app.parser, request, res, payload, reply);
       case statusCode === 301 || (statusCode >= 400 && statusCode < 600):
-        return mewProxy.errorHandler(statusCode, request, reply, payload);
+        return serviceProxy.errorHandler(statusCode, request, reply, payload);
       default:
         return reply(payload)
           .code(statusCode)
@@ -145,16 +145,16 @@ mewProxy.defaultOnResponse = function(err, res, request, reply) {
   });
 };
 
-mewProxy.onResponseRedirect = function(err, res, request, reply) {
+serviceProxy.onResponseRedirect = function(err, res, request, reply) {
 
-  if (err) { return mewProxy.errorHandler(err.output.statusCode, request, reply, err.output.payload); }
+  if (err) { return serviceProxy.errorHandler(err.output.statusCode, request, reply, err.output.payload); }
 
-  Wreck.read(res, { timeout: mewProxy.timeout }, function(err, payload) {
+  Wreck.read(res, { timeout: serviceProxy.timeout }, function(err, payload) {
     var uri = request.info.host + request.url.format(request.url),
         location = res.headers.location,
         locationHost;
 
-    if (err) { return mewProxy.errorHandler(err.output.statusCode, request, reply, err.output.payload); }
+    if (err) { return serviceProxy.errorHandler(err.output.statusCode, request, reply, err.output.payload); }
 
     //Start setting response headers
     var response = reply(payload)
