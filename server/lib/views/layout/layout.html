@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	{{> head}}
+	
+</head>
+
+<body>
+	{{> header}}
+
+    <div class="container">
+        {{! Every view gets inserted here }}
+        {{{content}}}
+    </div>
+    
+    {{> footer}}
+    
+    <!-- inject -->
+	<!-- build:js ../../dist/client/scripts/main.js -->
+	<script data-main="/fashion/javascripts/main.js" src="/fashion/javascripts/libs/requirejs.js"></script>
+    <!-- endbuild -->
+
+</body>
+</html>

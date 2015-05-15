@@ -21,7 +21,8 @@
     "cheerio": "0.15.x",
     "lodash": "~2.4.1",
     "moment": "2.4.0",
-    "newrelic": "^1.5.3"
+    "newrelic": "^1.5.3",
+    "handlebars": "~3.0.3"
   },
   "devDependencies": {
     "grunt-cli": "^0.1.13",

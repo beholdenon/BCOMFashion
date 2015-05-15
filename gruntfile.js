@@ -46,7 +46,7 @@ module.exports = function(grunt) {
 	      {
 	        expand: true,
 	        cwd: source,
-	        src: ['public/**', '!public/styles/**/*.scss', '!public/styles/*.scss', 'views/**', 'package.json'],
+	        src: ['public/**', '!public/styles/**/*.scss', '!public/styles/*.scss', 'package.json'],
 	        dest: destination + "/"
 	      },
 	      {
@@ -58,7 +58,7 @@ module.exports = function(grunt) {
 	      {
 	          expand: true,
 	          cwd: source + 'server/',
-	          src: 'lib/**',
+	          src: ['lib/**'],
 	          dest: destination + "/"
 	      }
 	    ]

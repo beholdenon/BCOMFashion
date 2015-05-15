@@ -47,10 +47,13 @@ module.exports = {
     tags: ['fallback', 'static'],
     handler: function(request, reply) {
 	  // Pull in index and inject config properties
+	  return reply.view('index');
+	  
+	  /*
 	  var indexFileName = '/../public/index.html';
 	  if(device.detectDevice(request)) {
 	  	indexFileName = '/../public/index-mobile.html';
-	  }
+	  } 
 	  
       fs.readFile(__dirname + indexFileName, function(err, data) {
         // Better to at least throw the error than do nothing with it
@@ -75,11 +78,6 @@ module.exports = {
         // create a cheerio object from the index.html
         var $ = cheerio.load(data + '');
 
-        // https://docs.newrelic.com/docs/agents/nodejs-agent/supported-features/page-load-timing-nodejs
-        if (process.env.NEW_RELIC_LICENSE_KEY) {
-          $('meta[charset=utf-8]').after(newrelic.getBrowserTimingHeader());
-        }
-
         // If we have config properties to pass to the client, inject after main HTML content
         if (configStr) {
           $('#bl_main_container').after('<script type="text/javascript">' + configStr + '</script>');
@@ -87,6 +85,8 @@ module.exports = {
 
         request.log(request.route.tags, { uri: reply($.html()).source.path });
       });
+      
+      */
     }
   }
 };

@@ -1,5 +1,6 @@
 'use strict';
 var Hapi    = require('hapi');
+var Handlebars = require('handlebars');
 
 var server = new Hapi.Server();
 
@@ -10,6 +11,16 @@ server.connection({
     state: { failAction: 'ignore' }
   },
   state: { ignoreErrors: false, strictHeader: false }
+});
+
+server.views({
+  engines: {
+    html: Handlebars
+  },
+  path: __dirname + '/lib/views',
+  layoutPath: __dirname + '/lib/views/layout',
+  layout: 'layout',
+  partialsPath: __dirname + '/lib/views/partials'
 });
 
 var routes = [
