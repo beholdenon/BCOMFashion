@@ -47,7 +47,11 @@ module.exports = {
     tags: ['fallback', 'static'],
     handler: function(request, reply) {
 	  // Pull in index and inject config properties
-	  return reply.view('index');
+      if ( request.params.path == "" || request.params.path == undefined ) {
+        reply().redirect("http://www.bloomingdales.com");
+      } else {
+        return reply.view(request.url.path + 'index');
+      }
 	  
 	  /*
 	  var indexFileName = '/../public/index.html';

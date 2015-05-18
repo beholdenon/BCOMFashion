@@ -15,7 +15,7 @@ server.connection({
 
 server.views({
   engines: {
-    html: Handlebars
+    "html": Handlebars
   },
   path: __dirname + '/lib/views',
   layoutPath: __dirname + '/lib/views/layout',
@@ -26,7 +26,7 @@ server.views({
 var routes = [
   { method: 'GET',    path: '/fashion/{path*}',        config: require('./lib/assets').fashion },
   { method: 'GET',    path: '/shop/{path*}',           config: require('./lib/assets').shop },
-  { method: 'GET',    path: '/',                       config: require('./lib/assets').fallback },
+  { method: 'GET',    path: '/{path*}',                config: require('./lib/assets').fallback },
   { method: 'GET',    path: '/api/{path*}',            config: require('./lib/category') }
 ];
 
