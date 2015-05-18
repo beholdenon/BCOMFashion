@@ -38,6 +38,7 @@ server.ext('onPreHandler', function(request, reply) {
     request.url.protocol = 'http';
     request.url.pathname = request.url.pathname.replace(/^\/api\//, '');
   }
+  
   return reply.continue();
 });
 
