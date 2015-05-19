@@ -38,9 +38,36 @@ server.ext('onPreHandler', function(request, reply) {
     request.url.protocol = 'http';
     request.url.pathname = request.url.pathname.replace(/^\/api\//, '');
   }
-  
+
   return reply.continue();
 });
+
+server.ext('onPreResponse', function (request, reply) {
+	
+	var response = request.response;
+  
+  if (response.isBoom) {
+    
+    return reply.redirect('/errors/');
+  
+  } else if (response.variety === 'view') {
+
+  	var source = response.source;
+
+    // Pre-render the template and see if there's any errors
+    return server.render(source.template, source.context, function (err) {
+
+      if (err) {
+          return reply.view("/errors/index").code(404);
+      }
+
+      reply.continue();
+    });
+  }
+
+  return reply.continue();
+});
+
 
 server.on('request', function(request, event, tags) {
   if (tags.error) {

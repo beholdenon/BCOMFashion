@@ -4,6 +4,7 @@
 npm-debug.log
 .grunt
 .project
+node_modules
 node_modules/.bin
 .settings
 .settings/*
