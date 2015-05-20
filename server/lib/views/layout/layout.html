@@ -1,25 +1,33 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	
-	{{> head}}
-	
+    {{#if isMobile}}
+        {{> head-mobile}}
+    {{else}}
+        {{> head}}
+    {{/if}} 
 </head>
 
 <body>
-	{{> header}}
+    {{#if isMobile}}
+        {{> header-mobile}}
+    {{else}}
+        {{> header}}
+    {{/if}} 
 
     <div class="container">
         {{! Every view gets inserted here }}
         {{{content}}}
     </div>
     
-    {{> footer}}
+    {{#if isMobile}}
+        {{> footer-mobile}}
+    {{else}}
+        {{> footer}}
+    {{/if}}     
     
-    <!-- inject -->
-	<!-- build:js ../../dist/client/scripts/main.js -->
 	<script data-main="/fashion/javascripts/main.js" src="/fashion/javascripts/libs/requirejs.js"></script>
-    <!-- endbuild -->
-
 </body>
+
 </html>
