@@ -3,12 +3,12 @@
 .sass-cache
 npm-debug.log
 .grunt
-.project
 node_modules
 node_modules/.bin
 .settings
 .settings/*
 .metadata
+.tmp
 
 # Ignore everything in the target folder
 target
@@ -17,4 +17,6 @@ target
 Gemfile.lock
 
 # Don't want Sublime's generated files.
+.project
 *.sublime-workspace
+*.sublime-project
