@@ -24,10 +24,12 @@ server.views({
 });
 
 var routes = [
-  { method: 'GET',    path: '/fashion/{path*}',        config: require('./lib/assets').fashion },
-  { method: 'GET',    path: '/shop/{path*}',           config: require('./lib/assets').shop },
-  { method: 'GET',    path: '/{path*}',                config: require('./lib/assets').fallback },
-  { method: 'GET',    path: '/api/{path*}',            config: require('./lib/category') }
+  { method: 'GET',    path: '/fashion/{path*}',       config: require('./lib/assets').fashion },
+  { method: 'GET',    path: '/shop/{path*}',          config: require('./lib/assets').shop },
+  { method: 'GET',    path: '/v3/{path*}',            config: require('./lib/api').v3 },
+  { method: 'GET',    path: '/v4/{path*}',            config: require('./lib/api').v4 },
+  { method: 'GET',    path: '/order/v1/{path*}',      config: require('./lib/api').bag },
+  { method: 'GET',    path: '/{path*}',               config: require('./lib/assets').fallback }
 ];
 
 server.route(routes);
