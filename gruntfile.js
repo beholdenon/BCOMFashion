@@ -20,24 +20,6 @@ module.exports = function(grunt) {
             source: '.'
         },
 
-        //Grunt server settings
-        connect: {
-            options: {
-                port: 3000,
-                hostname: '0.0.0.0',
-                livereload: 35729
-            },
-            livereload: {
-            	options: {
-            		open: true,
-            		base: [
-            			'.tmp',
-            			'<%= node.source %>'
-            		]
-            	}
-            }
-        },
-
         //Empties folders to start fresh
         clean: {
             all: [
@@ -66,10 +48,12 @@ module.exports = function(grunt) {
         //Performs rewrites based on rev and the useminPrepare configuration
         usemin: {
             html: ['<%= node.destination %>/lib/views/partials/{,*/}*.html'],
-            css: ['<%= node.destination %>/public/styles/{,*/}*.css'],
-        	js: ['<%= node.destination %>/public/javascripts/{,*/}*.js'],
+            css: ['.tmp/styles/{,*/}*.css'],
             options: {
-                assetsDirs: ['<%= node.destination %>/lib/views/partials/']
+                assetsDirs: [
+                	'.tmp',
+                	'<%= node.destination %>/lib/views/partials/'
+                ]
             }
         },
 
@@ -101,7 +85,13 @@ module.exports = function(grunt) {
         },
 
         copy: {
-            raw: {
+            styles: {
+                expand: true,
+                cwd: '<%= node.source %>/public/styles',
+                dest: '.tmp/styles/',
+                src: '{,*/}*.css'
+            },        	
+            toTarget: {
                 files: [{
                     expand: true,
                     cwd: '<%= node.source %>/',
@@ -115,9 +105,11 @@ module.exports = function(grunt) {
                     expand: true,
                     cwd: '<%= node.source %>/public/javascripts/',
                     src: [
-                        'main.js',
-                        'loader.js',
-                        'libs/requirejs.js'
+                        // 'main.js',
+                        // 'base.js',
+                        // 'loader.js',
+                        // 'libs/requirejs.js'
+                    	'{,*/}*.js'
                     ],
                     dest: '<%= node.destination %>/public/javascripts/'
                 }, {
@@ -128,13 +120,14 @@ module.exports = function(grunt) {
                         'lib/**'
                     ],
                     dest: '<%= node.destination %>/'
+                }, {
+                    expand: true,
+                    cwd: '.tmp',
+                    src: [
+                        'styles/**'
+                    ],
+                    dest: '<%= node.destination %>/public'
                 }]
-            },
-            styles: {
-                expand: true,
-                cwd: '<%= node.source %>/public/styles',
-                dest: '.tmp/styles/',
-                src: '{,*/}*.css'
             }
         },
 
@@ -171,31 +164,6 @@ module.exports = function(grunt) {
                 dest: '.tmp/concat/public/javascripts/bloomies.js'
             },
             generated: {
-				files: [
-					{
-						src: [
-							'<%= node.source %>/public/javascripts/libs/jquery-1.9.1.min.js',
-							'<%= node.source %>/public/javascripts/libs/modernizr-2.6.2-min.js',
-							'<%= node.source %>/public/javascripts/libs/hammer-1.0.5-min.js'
-						],
-						dest: '<%= node.destination %>/public/javascripts/libs/libs.min.js'
-					}, {
-						src: [
-							'.tmp/styles/normalize.css',
-							'.tmp/styles/main.css',
-							'.tmp/styles/foundation_styles.css'
-						],
-						dest: '<%= node.destination %>/public/styles/main.css'
-					}, {
-						src: [
-							'.tmp/styles/normalize.css',
-							'.tmp/styles/main.css',
-							'.tmp/styles/mobile_styles.css',
-							'.tmp/styles/foundation_mobile_styles.css'
-						],
-						dest: '<%= node.destination %>/public/styles/main-mobile.css'
-					}		
-				],
                 nonull: true
             }
         },
@@ -264,9 +232,7 @@ module.exports = function(grunt) {
             dev: {
                 script: '<%= node.destination %>/index.js',
                 options: {
-                    nodeArgs: ['--debug'],
-                    ignore: ['<%= node.destination %>/lib'],
-                    //watch: ['target'],
+                    nodeArgs: ['--debug']
                 }
             }
         },
@@ -282,42 +248,73 @@ module.exports = function(grunt) {
         //Run predefined tasks whenever watched file patterns are added, changed or deleted.
 		watch: {
 		    js: {
-		        files: ['<%= node.source %>/public/javascripts/{,**/}*.js'],
-		        tasks: ['jshint']
+		        files: [
+					// '<%= node.source %>/public/javascripts/includes/{,**/}*.js',
+					'<%= node.source %>/public/javascripts/projects/{,**/}*.js'
+		    	],
+		        tasks: [
+		        	'jshint', 
+		        	'concat:generated'
+		        ]
 		    },
 		    compass: {
-		        files: ['<%= node.source %>/public/styles/{,**/}*.{scss,sass}'],
-		        tasks: ['compass:server']
+		        files: [
+		    		'<%= node.source %>/public/styles/{,**/}*.{scss,sass}'
+		    	],
+		        tasks: [
+		        	'compass:dist', 
+		        	// 'concat:generated'
+		        	'copy:toTarget'
+		        ]
 		    },
 		    styles: {
-		        files: ['<%= node.source %>/public/styles/{,**/}*.css'],
-		        tasks: ['copy:styles', 'autoprefixer']
-		    },
-		    livereload: {
-		        options: {
-		            livereload: '<%= connect.options.livereload %>'
-		        },
 		        files: [
-		            '<%= node.source %>/public/javascripts/{,**/}*.js',
-		            '<%= node.source %>/server/lib/views/{,**/}*.html',
-		            '.tmp/styles/{,**/}*.css',
-		            '<%= node.source %>/public/images/{,**/}*.{png,jpg,jpeg,gif,webp,svg}'
+		    		'<%= node.source %>/public/styles/{,**/}*.css'
+		    	],
+		        tasks: [
+		        	'copy:styles', 
+		        	'autoprefixer', 
+		        	'concat:generated'
 		        ]
-		    }
+		    },
+		    html: {
+		        files: [
+		    		'<%= node.source %>/server/lib/views/{,**/}*.html'
+		    	],
+		        tasks: [
+		        	'useminPrepare',
+		        	'htmlmin',
+		        	'usemin'
+		        ]
+		    },
+		    options: {
+		    	livereload: true,
+		    },
+			livereload: {
+				options: {
+					livereload: '35729'
+				},
+				files: [
+					'<%= node.source %>/public/images/{,**/}*.{png,jpg,jpeg,gif,webp,svg}',
+					'<%= node.source %>/public/javascripts/{,**/}*.js',
+					'.tmp/styles/{,**/}*.css',
+					'<%= node.source %>/server/lib/views/{,**/}*.html'
+				]
+			}
 		}
     });
 
     grunt.registerTask('build', [
         'clean:all',
-        // 'handlebars',
         'useminPrepare',
         'compass:dist',
         'copy:styles',
+        // 'autoprefixer',
         'htmlmin',   
+        // 'handlebars',
         'concat:generated',
         // 'concat:addHBStemplates',
-        'copy:raw',
-        'autoprefixer',
+        'copy:toTarget',
         // 'cssmin',
         // 'uglify',  
         // 'rev:dist',     
@@ -328,7 +325,6 @@ module.exports = function(grunt) {
         'jshint',
         'build',
         'concurrent:dev'
-        // 'connect:livereload'
     ]);
 
 };
