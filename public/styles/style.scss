@@ -189,6 +189,53 @@ details {
 }
 
 /* ======================================== */
+/*              STANDARD LAYOUT             */
+/* ======================================== */
+
+.standard {
+
+    max-width: 968px;
+    display: block;
+    min-height: 400px;
+    margin: 0 auto;
+    text-align: left;
+    font-size: 14px;
+
+    .button {
+        font-size: 14px;
+    }
+
+    .result {
+        ul {
+            margin: 1em 0;
+            padding: 0;
+        }
+
+        li {
+            margin: 0.5em 1em;
+            width: 20%;
+            display: inline-block;
+            vertical-align: top;
+
+            a {
+                text-decoration: none;
+            }
+            
+            img {
+                display: block;
+                margin: 0 auto;
+            }
+
+            span {
+                padding: 0.5em 1.5em 0;
+                display: block;
+            }
+        }
+    }
+
+}
+
+/* ======================================== */
 /*              CONTENT STYLES              */
 /* ======================================== */
 

@@ -204,40 +204,40 @@ define([
 	
 	
 		// =========== Proof of Concept Code
-		$('#catGo').click(function(){
-			$('.output').html('');
-			var val = $('#catID').val();
-			$.ajax({
-				method: 'GET',
-				dataType:'json',
-				url: '/api/v3/catalog/category/index',
-				data: { 
-					'category'	: val,
-					'depth'		: '3',
-				},
-				headers: {
-					'Content-Type': 'application/x-www-form-urlencoded',
-				}
-			}).success(function (res) {
-				for (var keys in res.category) {
-					$('.output').append("<h4>"+res.category[keys].name+"</h4>");
-					if (res.category[keys].category != undefined) {
-						var next = res.category[keys].category;
-						for (var keys in next) {
-							$('.output').append("<p>"+next[keys].name+"</p>");
-							if (next[keys].category!= undefined) {
-								var next2 = next[keys].category;
-								$('.output').append("<ul>");
-								for (var keys in next2) {
-									$('.output').append("<li>"+next2[keys].name+"</li>");
-								}
-								$('.output').append("</ul>");
-							}
-						}
-					}
-				}
-			});
-		});
+		// $('#catGo').click(function(){
+		// 	$('.output').html('');
+		// 	var val = $('#catID').val();
+		// 	$.ajax({
+		// 		method: 'GET',
+		// 		dataType:'json',
+		// 		url: '/api/v3/catalog/category/index',
+		// 		data: { 
+		// 			'category'	: val,
+		// 			'depth'		: '3',
+		// 		},
+		// 		headers: {
+		// 			'Content-Type': 'application/x-www-form-urlencoded',
+		// 		}
+		// 	}).success(function (res) {
+		// 		for (var keys in res.category) {
+		// 			$('.output').append("<h4>"+res.category[keys].name+"</h4>");
+		// 			if (res.category[keys].category != undefined) {
+		// 				var next = res.category[keys].category;
+		// 				for (var keys in next) {
+		// 					$('.output').append("<p>"+next[keys].name+"</p>");
+		// 					if (next[keys].category!= undefined) {
+		// 						var next2 = next[keys].category;
+		// 						$('.output').append("<ul>");
+		// 						for (var keys in next2) {
+		// 							$('.output').append("<li>"+next2[keys].name+"</li>");
+		// 						}
+		// 						$('.output').append("</ul>");
+		// 					}
+		// 				}
+		// 			}
+		// 		}
+		// 	});
+		// });
 	};
 	
 	return init;
