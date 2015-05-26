@@ -47,14 +47,18 @@ module.exports = {
         notes: 'This is the default fallback route if not explicitly captured',
         tags: ['fallback', 'static'],
         handler: function(request, reply) {
-            var isMobile = false, 
-                customView = 'index';
-            if (device.detectDevice(request)) {
-                isMobile = true;
-                customView = 'index-mobile';
-            }
+            if ( request.params.path == '' || request.params.path == undefined ) {
+               return reply.redirect('http://www.bloomingdales.com');
+            } else {
+                var isMobile = false, 
+                customView = request.params.path + 'index';
+                if (device.detectDevice(request)) {
+                    isMobile = true;
+                    customView = request.params.path + 'index-mobile';
+                }
 
-            return reply.view(customView, { isMobile: isMobile});
+                return reply.view(customView, { isMobile: isMobile});
+            }
 
 /*            
             fs.readFile(__dirname + indexFileName, function(err, data) {

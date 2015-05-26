@@ -8,11 +8,15 @@ last-edited: 		05/21/15
 
 $(document).ready(function() {
 
+    //  SERVICE TESTS
+
     $(".catIndex").on("click", function() {
         var target = $(this),
             catID = target.attr("data-id");
 
-        SERVICES.category.index(catID, function(output) { // services call with ID of category. Output variable is the resulting object from WSSG.
+        target.parent().find(".result").html("<img src='/fashion/images/loading-bar.gif'/>");
+
+        SERVICES.category.index(function(output) { // services call with ID of category. Output variable is the resulting object from WSSG.
 
             target.parent().find(".result").html("<ul></ul>");
 
@@ -21,7 +25,7 @@ $(document).ready(function() {
                 target.parent().find(".result ul").append('<h4><a href="' + output.category[i].categorypageurl + '">' + output.category[i].name + '</a></h4>');
             }
 
-        });
+        }, catID);
 
     });
 
@@ -31,8 +35,10 @@ $(document).ready(function() {
             resultsPerPage = 32,
             sortby = 'bestseller';
 
-        SERVICES.category.browseProduct(catID, function(output) { // services call with ID of category. Output variable is the resulting object from WSSG.
+        target.parent().find(".result").html("<img src='/fashion/images/loading-bar.gif'/>");
 
+        SERVICES.category.browseProduct(function(output) { // services call with ID of category. Output variable is the resulting object from WSSG.
+            target.parent().find(".result").html("");
             for (i = 0; i < output.category.length; i++) {
                 console.log(output.category[i]);
                 target.parent().find(".result").append('<h2>Category: ' + output.category[i].summary.name + '</h2>');
@@ -40,28 +46,72 @@ $(document).ready(function() {
                 target.parent().find(".result").append("<ul id=broPro" + i + "></ul>");
 
                 for (j = 0; j < output.category[i].product.product.length; j++) {
-                    target.parent().find(".result #broPro" + i).append('<li><a href="' + output.category[i].product.product[j].summary.producturl + '">' 
-                        + '<img src="'+output.category[i].product.product[j].image[0].imageurl+'"><span>'
-                        + output.category[i].product.product[j].summary.name + '</span></a></li>');
+                    target.parent().find(".result #broPro" + i).append('<li><a href="' + output.category[i].product.product[j].summary.producturl + '">' + '<img src="' + output.category[i].product.product[j].image[0].imageurl + '"><span>' + output.category[i].product.product[j].summary.name + '</span></a><div class="addToBag button" data-upc="'+output.category[i].product.product[j].id+'">Add to Bag</div></li>');
                 }
             }
 
-        }, resultsPerPage, sortby);
+        }, catID, resultsPerPage, sortby);
 
     });
 
+    $(".servicesCall").on("click", function() {
+        var target = $(this),
+            print = target.parent().find(".result");
 
+        print.html("<img src='/fashion/images/loading-bar.gif'/>");
+
+        SERVICES.bag.get(function(output) {
+            var bag = output.bag;
+            print.html("<h2>Bag Info:</h2><ul><li>Bag Id: " + bag.bagId + "</li><li>User Id: " + bag.owner.userId + "</li><li>Number of Items: " + bag.items.length + "</li><li>Bag Total: " + bag.bagSummary.grandTotal + "</li>");
+
+        }, '2180156589');
+    });
+
+    $(".result").on("click", ".addToBag", function() {
+        var target = $(this),
+            upcId = target.data("upc");
+
+        console.log(upcId);
+
+        SERVICES.bag.add( function(output) {
+
+        }, upcId, "1");
+
+    });
 
 });
 
-function getRequest(path, callback) {
+function getRequest(path, callback, body) {    
     // standard AJAX get request
     $.ajax({
-        method: 'GET',
+        method: "GET",
         dataType: 'json',
         url: path,
+        data: body,
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded',
+        }
+    }).success(function(data) {
+        callback(data);
+    });
+
+}
+
+function postRequest(path, callback, body) {
+    console.log("*****************************************");
+    console.log(path);
+    console.log(body);
+    console.log("*****************************************");
+    
+    // standard AJAX get request
+    $.ajax({
+        method: "POST",
+        dataType: 'json',
+        url: path,
+        data: body,
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
         }
     }).success(function(data) {
         callback(data);
@@ -73,30 +123,30 @@ var SERVICES = {
 
     category: {
 
-        index: function(catID, callback) {
+        index: function(callback, catID) {
             // Index is a call for basic information about a category by its ID.
             // catID can be a single ID or multiple, comma-separated IDs
             var path = '/v3/catalog/category/index?category=' + catID + '&depth=1';
-            getRequest(path, function(result) {
+            getRequest(path, "", function(result) {
                 callback(result);
             });
         },
 
-        browse: function(catID, callback) {
+        browse: function(callback, catID) {
             var path = '/v3/catalog/category/' + catID;
             getRequest(path, function(result) {
                 callback(result);
             });
         },
 
-        brandIndex: function(catID, referenceID, callback) {
+        brandIndex: function(callback, catID, referenceID) {
             var path = '/v4/catalog/category/brandindex/' + catID + '?refcatid=' + referenceID;
             getRequest(path, function(result) {
                 callback(result);
             });
         },
 
-        browseProduct: function(catID, callback, resultsPerPage, sortby) {
+        browseProduct: function(callback, catID, resultsPerPage, sortby) {
             // browseProduct is a call for product information based on a category call.
             // catID must be a single category ID.
 
@@ -136,36 +186,85 @@ var SERVICES = {
 
     bag: {
 
-        get: function() {
-            $.ajax({
-                method: 'GET',
-                dataType: 'json',
-                url: '/v2/shoppingbag',
-                data: {
-                    'userid': '64354129',
-                },
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded',
-                }
-            }).success(function(res) {
-                console.log(res);
-                return res.bagid;
+        get: function(callback, userID, userGuid, bagId, bagGuid, promocode, bagOptions) {
+            var params = [];
+
+            if (userID != undefined) {
+                userID = 'userId=' + userID;
+                params.push(userID);
+            }
+
+            if (userGuid != undefined) {
+                userGuid = 'userGuid=' + userGuid;
+                params.push(userGuid);
+            }
+
+            if (bagId != undefined) {
+                bagId = 'bagId=' + bagId;
+                params.push(bagId);
+            }
+
+            if (bagGuid != undefined) {
+                bagGuid = 'bagGuid=' + bagGuid;
+                params.push(bagGuid);
+            }
+
+            if (promocode != undefined) {
+                promocode = 'promocode=' + promocode;
+                params.push(promocode);
+            }
+
+            if (bagOptions != undefined) {
+                bagOptions = 'userId=' + bagOptions;
+                params.push(bagOptions);
+            }
+
+            var path = '/getBag/order/v1/bags?' + params.join("&");
+
+            getRequest(path, function(result) {
+                callback(result);
             });
+
         },
 
-        add: function(ev, add_id, add_color, add_size, add_type, add_quantity, add_promocode) {
-            console.log(add_id);
-            $.ajax({
-                method: 'POST',
-                url: '/v2/shoppingbag/item',
-                data: {
-                    'productid': add_id
-                }
-            }).success(function(res) {
-                console.log(res);
-            }).fail(function(res) {
-                console.log('atb failure');
-            });
+        add: function(callback, upcId, Quantity, promocode, RegistryID, WishlistID) {
+            var path = "/addToBag/";
+            var body = {};
+
+            // body["item"] = {};
+
+            // if (upcId != undefined) {
+            //     body.item['upcId'] = upcId;
+            // }
+
+            // if (Quantity != undefined) {
+            //     body.item['quantity'] = Quantity;
+            // }
+
+            // if (promocode != undefined) {
+            //     body.item['promocode'] = promocode;
+            // }
+
+            // if (RegistryID != undefined) {
+            //     body.item['registryID'] = RegistryID;
+            // }
+
+            // if (WishlistID != undefined) {
+            //     body.item['wishlistID'] = WishlistID;
+            // }
+
+            body = {
+                "item": 
+                {
+                    "quantity":1, 
+                    "upcId":185213 
+                 }
+            }
+
+            postRequest(path, function(result) {
+                callback(result);
+            }, body);
+
         },
 
         count: function() {
