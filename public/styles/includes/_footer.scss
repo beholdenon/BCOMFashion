@@ -1,0 +1,209 @@
+footer {
+    .footerBar {
+        height: 0.45455rem;
+        background-color: #000;
+    }
+
+    .mainFooter {
+        padding: 0.90909rem 0 1.45455rem 0;
+        margin: 0 auto;
+        text-align: left;
+        .footerLinks {
+            float: left;
+            color: #666;          
+            ul {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                border: 0;
+                > a {
+                    font-size: 0.90909rem;
+                }
+                li {
+                    &.footerMenu {
+                        margin-right: auto;
+                        float: left;
+                        ul {
+                            li {
+                                padding: 0;
+                                margin: 0.90909rem 0 0 0;  
+                                a {
+                                    color: #666;
+                                    text-decoration: none;
+                                    &:hover {
+                                        color: #D90EAC;
+                                    }             
+                                }                                
+                            }
+                        }
+                        .myLoyallist {
+                            background-position: 5.09091rem -34.45455rem;
+                            img {
+                                width: 1rem;
+                                height: 1.09091rem;
+                            }
+                        }
+                        h3 {
+                            margin: 0;
+                            font-size: 1rem;
+                            a {
+                                color: #333;
+                                font-weight: bold;
+                                text-decoration: none;
+                                &:hover {
+                                    color: #D90EAC;
+                                }                
+                            }                            
+                        }                        
+                    }
+                    &.footerMenuLast {
+                        margin-right: auto;
+                        float: left;
+                        li{
+                            padding: 0;
+                            margin: 0.90909rem 0 0 0;
+                        }
+                        ul {
+                            li {
+                                a{
+                                    color: #666;
+                                    text-decoration: none;
+                                    &:hover{
+                                        color: #D90EAC;
+                                    }
+                                }
+                            }
+                        }
+                        h3 {
+                            margin: 0;
+                            font-size: 1rem;
+                            a {
+                                color: #333;
+                                font-weight: bold;
+                                text-decoration: none;
+                                &a:hover {
+                                    color: #D90EAC;
+                                }                                
+                            }                        
+                        }                    
+                    }                    
+                }
+            }
+
+            ul.intl li.footerMenu {
+                float: left;
+                margin-right: auto;
+            }
+        }
+        .vertDivider {
+            float: left;
+            width: 0.09091rem;
+            height: 8.81818rem;
+            background-position: 0 -23.63636rem;
+        }        
+        .footerAdPool {
+            float: left;
+            width: auto;
+            padding: 0 1.81818rem;
+        }
+        a {
+            font-size: 0.90909rem;
+            &:link, &:active, &:visited {
+                font-size: 0.90909rem;
+            }
+        }
+        .footerSocialMedia {
+            float: right;
+            .sectionDivider {
+                height: 0.18182rem;
+                background-position: 0 -21.81818rem;
+                background-repeat: repeat-x;
+            }           
+        }
+    }
+
+    .footerDivider {
+        height: 0.18182rem;
+        background-position: 0 -21.81818rem;
+        background-repeat: repeat-x;
+        margin: 0 auto;
+    }
+
+    > .footerSocialMedia {
+        display: none;
+    }
+
+    .footerBottom {
+        max-width: 89.45455em;
+        text-align: left;
+        font-size: 0.81818rem;
+        color: #999;
+        margin: 1.36364rem auto 0 auto;
+        ul.footerBottomLinks {
+            margin: 0 auto;
+            padding: 0;
+            list-style-type: none;
+            li {
+                float: left;
+                padding-right: 0.36364rem;
+                &.essentialAccessibility {
+                    margin-left: -0.63636rem;
+                }
+                &.essentialAccessibilityImage {
+                    background-position: 0 -14.54545rem;
+                    img {
+                        width: 3.63636rem;
+                        height: 1.36364rem;
+                    }
+                }                
+            }
+            a{
+                color: #999;
+                padding-right: 0.36364rem;
+                text-decoration: none;
+                font-size: 0.81818rem;
+            }        
+        }         
+        .footerBottomCopyRight {
+            line-height: 1.45455rem;
+            text-align: center;
+            a {
+                color: #999;
+                padding-right: 0.36364rem;
+                text-decoration: none;
+                font-size: 0.81818rem;
+            }        
+        }        
+        .likeNoOtherStore {
+            margin: 1.27273rem auto;
+            width: 16.36364rem;
+            height: 1rem;
+            background-position: 0 -11.81818rem;
+            img {
+                width: 16.36364rem;
+                height: 0.90909rem;
+            }
+        }               
+    }
+
+    .footerSocialMedia {
+        .signUp {
+            margin: 1.45455rem 0 2.09091rem 0;
+            height: 1.09091rem;
+            background-position: 0 -17.27273rem;
+            img {
+                width: 18.9727rem;
+                height: 1.63636rem;
+            }
+        }
+        .socialLinks {
+            margin-top: 1.54545rem;
+            height: 1.63636rem;
+            background-position: -110px -216px;
+            img {
+                width: 18.72727rem;
+                height: 1.63636rem;
+            }
+        }        
+    }
+}

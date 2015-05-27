@@ -190,6 +190,7 @@ module.exports = function(grunt) {
                     imagesDir: '<%= node.source %>/public/images',
                     javascriptsDir: '<%= node.source %>/public/javascripts',
                     fontsDir: '<%= node.source %>/public/styles/fonts',
+                    noLineComments: true,
                     force: true,
                     relativeAssets: false
                 }
@@ -232,7 +233,7 @@ module.exports = function(grunt) {
             dev: {
                 script: '<%= node.destination %>/index.js',
                 options: {
-                    nodeArgs: ['--debug']
+                    nodeArgs: ['--debug']                   
                 }
             }
         },
@@ -257,24 +258,14 @@ module.exports = function(grunt) {
 		        	'concat:generated'
 		        ]
 		    },
-		    compass: {
+		    styles: {
 		        files: [
-		    		'<%= node.source %>/public/styles/{,**/}*.{scss,sass}'
+		    		'<%= node.source %>/public/styles/{,**/}*.{scss,sass,css}'
 		    	],
 		        tasks: [
 		        	'compass:dist', 
 		        	// 'concat:generated'
 		        	'copy:toTarget'
-		        ]
-		    },
-		    styles: {
-		        files: [
-		    		'<%= node.source %>/public/styles/{,**/}*.css'
-		    	],
-		        tasks: [
-		        	'copy:styles', 
-		        	'autoprefixer', 
-		        	'concat:generated'
 		        ]
 		    },
 		    html: {
@@ -287,20 +278,18 @@ module.exports = function(grunt) {
 		        	'usemin'
 		        ]
 		    },
-		    options: {
-		    	livereload: true,
-		    },
 			livereload: {
-				options: {
-					livereload: '35729'
-				},
 				files: [
 					'<%= node.source %>/public/images/{,**/}*.{png,jpg,jpeg,gif,webp,svg}',
 					'<%= node.source %>/public/javascripts/{,**/}*.js',
 					'.tmp/styles/{,**/}*.css',
 					'<%= node.source %>/server/lib/views/{,**/}*.html'
-				]
-			}
+				],
+                port: 35728
+			},
+            options: {
+                livereload: true
+            }            
 		}
     });
 

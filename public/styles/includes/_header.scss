@@ -1,0 +1,320 @@
+header {
+    #seasonalAdWrapper {
+        display: none;
+        height: 4.54545rem;
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+        #seasonalAdBanner {
+            width: 87.45455em;
+            margin: 0 auto;
+        }
+    }
+
+    #zeroNav {
+        font-family: helveticaLTStdBoldCond, Arial, Helvetica, Verdana, Sans-serif;
+        background-color: #000;
+        height: 2.54545rem;
+        color: #fff;
+        #innerZeroNav {
+            font-size: 1rem;
+            height: 2.54545rem;
+            /*     width: 87.45455em; */
+            margin: 0 auto;
+            text-align: right;
+            #seasonalActionPoolWrapper {
+                text-align: left;
+                float: left;
+                cursor: pointer;
+                #seasonalActionOn {
+                    display: none;
+                }
+            }            
+            .backToBloomies {
+                float: left;
+                line-height: 28px;
+            }  
+            ul {
+                margin: 0;
+                padding: 0;
+                border: 0;
+                list-style: none;
+                float: right;
+                li {
+                    display: inline-block;
+                    list-style: none;
+                    text-align: right;
+                    margin-left: 0.90909rem;
+                    line-height: 2.54545rem;
+                    &#bl_nav_account_flag span {
+                        display: inline-block;
+                        vertical-align: middle;
+                        line-height: normal;
+                    }      
+                    &.topNavBag {
+                        background-position: 0 -4.54545rem;
+                        img {
+                            width: 3rem;
+                            height: 2.90909rem;
+                        }
+                    }                                  
+                    #iShip_flag img {
+                        margin: -0.18182rem 0.63636rem 0 0;
+                    }                    
+                }
+            }
+            #href_wishList_tablet {
+                height: inherit;
+                line-height: 2.54545rem;
+            }            
+        }
+        a {
+            color: #fff;
+            text-decoration: none;
+            &:link, &:visited, &:hover, &:active {
+                color: #fff;
+                text-decoration: none;
+            }
+        }        
+    }
+
+    #aboveNav {
+        /*     width: 87.45455em; */
+        margin: 0 auto;
+        padding: 2.09091rem 0;
+        .bloomiesLogo {
+            float: left;
+            img {
+                display: block;
+                width: 26.81818rem;
+                height: 4.27273rem;
+            }
+        }
+        .aboveNavRight {
+            float: right;
+            #aboveNavBanner {
+                width: 30.36364rem;
+                height: 1.36364rem;
+                margin-bottom: 0.27273rem;
+            }
+            .aboveNavSearch {
+                border: 0.09091rem solid #ccc;
+                width: 30.18182rem;
+                .aboveNavSearchInput {
+                    text-align: left;
+                    float: left;
+                    input.aboveNavSearchBox {
+                        height: 2.36364rem;
+                        line-height: 2.36364rem;
+                        padding: 0 0 0 1.18182rem;
+                        width: 26.54545rem;
+                        border: 0;
+                        font-size: 1rem;
+                        color: #000;
+                        text-align: middle;
+                        margin: 0;
+                        background: none;
+                        box-shadow: none;
+                    }                    
+                    .ui-helper-hidden-accessible {
+                        display: none;
+                    }                    
+                }
+                .searchIcon {
+                    float: right;
+                    width: 2.18182rem;
+                    height: 2rem;
+                    background-position: 0.45455rem -8.54545rem;
+                }
+            }
+        }
+        .headerTablet > a > img {
+            width: 6vw;
+        }        
+    }
+
+    #nav {
+        border-bottom: 0.09091rem #ccc solid !important;
+        ul#mainNav {
+            list-style: none;
+            margin: 0;
+            text-align: justify;
+            -ms-text-justify: distribute-all-lines;
+            text-justify: distribute-all-lines;
+            height: 2.54545rem;
+            li {
+                &.selected {
+                    background: url(http://assets.bloomingdales.com/img/nav/hfr/flyoutCarrot.png) center 1.81818rem no-repeat;
+                    a {
+                        color: #D90EAC;
+                    }
+                }
+                text-transform: uppercase;
+                text-align: left;
+                -ms-text-justify: none;
+                text-justify: none;
+                display: inline-block;
+                *display: inline;
+                height: 2.81818rem;
+                zoom: 1;
+                a {
+                    font-family: helveticaMedCond, Arial, Helvetica, Verdana, Sans-serif;
+                    font-size: 1.36364rem;
+                    color: #000;
+                    text-decoration: none;
+                    &:hover {
+                        color: #D90EAC;
+                    }                    
+                    &.selectedFOB {
+                        color: #D90EAC;
+                    }
+                }
+                &.stretch {
+                    height: 0;
+                    width: 100%;
+                    display: inline-block;
+                    font-size: 0;
+                    line-height: 0;
+                }
+            }
+        }
+        #globalFlyouts {
+            text-align: left;
+            .flyout-on {
+                display: block;
+                overflow: hidden;
+                white-space: nowrap;
+                background-color: #FFF;
+                box-shadow: 0 0.90909rem 1.36364rem rgba(51, 51, 51, 0.4);
+                border: 0.09091rem solid #ccc \9;
+                border-top: 0;
+                height: auto;
+                position: absolute;
+                margin-top: 0.09091rem;
+                z-index: 100;
+                ul {
+                    margin: 0;
+                    padding: 0;
+                    border: 0;
+                    list-style: none;
+                    li {
+                        list-style: none;
+                        margin: 0;
+                        padding: 0.45455rem 0 0 0;
+                        font-family: Arial, Helvetica, Verdana, Sans-serif;
+                        font-size: 1rem;
+                        line-height: 1.27273rem;
+                        font-weight: normal;
+                        color: #333;
+                        &.flyoutLabel {
+                            border-bottom: 0.09091rem solid #ccc;
+                            padding: 0.45455rem 0 0.63636rem 0;
+                            line-height: normal;
+                            label {
+                                line-height: normal;
+                                font-family: helveticaMedCond, Arial, Helvetica, Verdana, Sans-serif;
+                                font-size: 1.09091rem;
+                                font-weight: normal;
+                                color: #000;                    
+                            }                           
+                        }
+                        &.gridLayout{
+                            float: left;
+                            padding-bottom: 0.36364rem;
+                            padding-right: 2.09091rem;
+                            width: 3.90909rem;
+                        }
+                        a {
+                            font-family: Arial, Helvetica, Verdana, Sans-serif;
+                            font-size: 1rem;
+                            font-weight: normal;
+                            color: #333;
+                            text-decoration: none;
+                            &:hover {
+                                color: #D90EAC;
+                            }
+                        }        
+                    }
+                }            
+            }
+            .flyout-off {
+                display: none;
+                ul {
+                    margin: 0;
+                    padding: 0;
+                    border: 0;
+                    list-style: none;
+                    li {
+                        list-style: none;
+                        margin: 0;
+                        padding: 0.45455rem 0 0 0;
+                        font-family: Arial, Helvetica, Verdana, Sans-serif;
+                        font-size: 1rem;
+                        line-height: 1.27273rem;
+                        font-weight: normal;
+                        color: #333;                    
+                        a{
+                            font-family: Arial, Helvetica, Verdana, Sans-serif;
+                            font-size: 1rem;
+                            font-weight: normal;
+                            color: #333;
+                            text-decoration: none;
+                        }
+                        &.flyoutLabel {
+                            border-bottom: 0.09091rem solid #ccc;
+                            padding: 0.45455rem 0 0.63636rem 0;
+                            label {
+                                font-family: helveticaMedCond, Arial, Helvetica, Verdana, Sans-serif;
+                                font-size: 1.09091rem;
+                                font-weight: normal;
+                                color: #000;
+                                line-height: normal;
+                            }
+                        }  
+                        &.gridLayout {
+                            float: left;
+                            padding-bottom: 0.36364rem;
+                            padding-right: 2.09091rem;
+                            width: 3.90909rem;
+                        }
+                    } 
+                }
+            } 
+            .flyoutCol {
+                display: inline-block;
+                vertical-align: top;
+                float: left;
+                text-align: left;
+                min-width: 15.09091rem;
+                .flexLabelLinksContainer {
+                    text-align: left;
+                    margin-bottom: 0.90909rem;
+                    padding-right: 2.27273rem;
+                    ul li {
+                        height: 2.09091rem;
+                        a {
+                            float: left;
+                        }
+                    }        
+                    ul li.flyoutLink_GroupAdTypeImage {
+                        padding: 0;
+                        height: auto;
+                    }
+                    #adIcon {
+                        text-decoration: none;
+                    }
+                }
+            }                        
+            .subnav {
+                padding: 0.90909rem 0 0 1.81818rem;
+                margin-top: 0.09091rem;
+                z-index: 9999;
+            }
+        } 
+        #globalNavigation {
+            font-family: helveticaLTStdCond, Arial, Helvetica, Verdana, Sans-serif;
+            color: #000;
+            margin: 0 auto;
+        }
+    }
+}
