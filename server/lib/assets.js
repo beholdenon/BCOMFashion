@@ -55,6 +55,21 @@ module.exports = {
             }
 
             return reply.view(customView, { isMobile: isMobile});
+            
+            // if (request.params.path == '' || request.params.path == undefined) {
+            //     return reply.redirect('http://www.bloomingdales.com');
+            // } else {
+            //     var isMobile = false,
+            //         customView = request.params.path + 'index';
+            //     if (device.detectDevice(request)) {
+            //         isMobile = true;
+            //         customView = request.params.path + 'index-mobile';
+            //     }
+
+            //     return reply.view(customView, {
+            //         isMobile: isMobile
+            //     });
+            // }
 
 /*            
             fs.readFile(__dirname + indexFileName, function(err, data) {

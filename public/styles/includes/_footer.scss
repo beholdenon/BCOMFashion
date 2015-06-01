@@ -119,6 +119,24 @@ footer {
                 background-position: 0 -21.81818rem;
                 background-repeat: repeat-x;
             }           
+            .signUp {
+                margin: 1.45455rem 0 2.09091rem 0;
+                height: 1.09091rem;
+                background-position: 0 -17.27273rem;
+                img {
+                    width: 18.9727rem;
+                    height: 1.63636rem;
+                }
+            }
+            .socialLinks {
+                margin-top: 1.54545rem;
+                height: 1.63636rem;
+                background-position: -110px -216px;
+                img {
+                    width: 18.72727rem;
+                    height: 1.63636rem;
+                }
+            }
         }
     }
 
@@ -127,10 +145,6 @@ footer {
         background-position: 0 -21.81818rem;
         background-repeat: repeat-x;
         margin: 0 auto;
-    }
-
-    > .footerSocialMedia {
-        display: none;
     }
 
     .footerBottom {
@@ -184,26 +198,5 @@ footer {
                 height: 0.90909rem;
             }
         }               
-    }
-
-    .footerSocialMedia {
-        .signUp {
-            margin: 1.45455rem 0 2.09091rem 0;
-            height: 1.09091rem;
-            background-position: 0 -17.27273rem;
-            img {
-                width: 18.9727rem;
-                height: 1.63636rem;
-            }
-        }
-        .socialLinks {
-            margin-top: 1.54545rem;
-            height: 1.63636rem;
-            background-position: -110px -216px;
-            img {
-                width: 18.72727rem;
-                height: 1.63636rem;
-            }
-        }        
     }
 }

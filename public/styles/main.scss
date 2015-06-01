@@ -4,7 +4,7 @@
         "mixins",
         "fonts",
 
-        //FOUNDATION COMPONENTS; INCLUDE ONLY WHAT YOU NEED
+        // FOUNDATION COMPONENTS; INCLUDE ONLY WHAT'S NEEDED
         "vendor/foundation/settings", // Foundation Settings
         "vendor/foundation/components/grid",
         // "vendor/foundation/components/accordion",
@@ -39,7 +39,7 @@
         "vendor/foundation/components/tabs",
         // "vendor/foundation/components/thumbs",
         // "vendor/foundation/components/tooltips",
-        "vendor/foundation/components/top-bar",
+        // "vendor/foundation/components/top-bar",
         "vendor/foundation/components/type",
         "vendor/foundation/components/offcanvas",
         "vendor/foundation/components/visibility",
@@ -50,5 +50,8 @@
         //BLOOMIES MODULES
         "includes/header",
         "includes/footer",
-        "includes/atb",
-        "includes/auth";
+        // "includes/atb",
+        // "includes/auth",
+
+        //PROJECT SPECIFIC STYLES
+        "projects/wssg";
