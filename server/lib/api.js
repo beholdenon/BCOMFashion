@@ -90,29 +90,26 @@ module.exports = {
         tags: ['developer.bloomingdales.com', 'api', 'bag'],
         payload: {
             output: 'data',
+            parse: false
         },
         handler: {
             proxy: {
                 protocol: 'http',
                 timeout: serviceProxy.timeout,
                 passThrough: true,
-                acceptEncoding: true,
+                acceptEncoding: false,
                 mapUri: function(request, callback) {
 
                     var headers = serviceProxy.getHeaders(request, process.env.SERVICES_KEY);
                     request.url.host = serviceProxy.getHost(request, process.env.CATEGORYINDEXV3_HOST || process.env.API_HOST);
 
                     request.app.parser = require('./parsers/category');
-                    request.url.pathname = request.url.pathname = 'order/v1/bags'
+                    request.url.pathname = request.url.pathname = 'order/v1/bags';
 
                     callback(null, request.url.format(request.url), headers);
                 },
 
-                onResponse: function (err, res, request, reply ){
-                    console.log(request);
-                }
-
-                // onResponse: serviceProxy.defaultOnResponse
+                onResponse: serviceProxy.defaultOnResponse
 
             }
         }

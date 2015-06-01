@@ -108,7 +108,7 @@ function postRequest(path, callback, body) {
         method: "POST",
         dataType: 'json',
         url: path,
-        data: body,
+        data: JSON.stringify(body),
         headers: {
             'Content-Type': 'application/json',
             'Accept': 'application/json',
