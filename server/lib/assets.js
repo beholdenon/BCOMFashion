@@ -46,15 +46,32 @@ module.exports = {
         description: 'Serve index page or brombone generated snapshot',
         notes: 'This is the default fallback route if not explicitly captured',
         tags: ['fallback', 'static'],
-        handler: function(request, reply) {
-            var isMobile = false, 
-                customView = 'index';
-            if (device.detectDevice(request)) {
-                isMobile = true;
-                customView = 'index-mobile';
-            }
+        handler: function(request, reply) {    
+            var deviceType = device.detectDevice(request), 
+                isMobile = false,
+                isTablet = false,
+                customView;
 
-            return reply.view(customView, { isMobile: isMobile});
+            if (deviceType === 'mobile') {
+                customView = 'index-mobile'; 
+                isMobile = true;
+            } else {
+                customView = 'index';
+            } 
+
+            (deviceType === 'tablet') ? isTablet = true : isTablet = false;
+            
+            return reply.view( customView, { isMobile:isMobile, isTablet:isTablet });
+
+                          
+            // var isMobile = false, 
+            //     customView = 'index';
+            // if (device.detectDevice(request)) {
+            //     isMobile = true;
+            //     customView = 'index-mobile';
+            // }
+
+            // return reply.view(customView, { isMobile: isMobile});
             
             // if (request.params.path == '' || request.params.path == undefined) {
             //     return reply.redirect('http://www.bloomingdales.com');

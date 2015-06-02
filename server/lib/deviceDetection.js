@@ -1,21 +1,26 @@
 'use strict';
 
 var device = {};
-// Check if the user-agent is MOBILE or PC/Tablet
 device.detectDevice = function(req) {
-    var ua = req.headers['user-agent'];
-    if( /iPhone/i.test(ua) ) {
-	  return true;
-	} else if (/Android/i.test(ua)){
-		if(/Mobile/i.test(ua)) {
-			return true;
+    var UA = req.headers['user-agent'],
+    	deviceType;
+
+    if( /iPhone/i.test(UA) ) {
+		deviceType = 'mobile';
+	} else if (  /iPad/i.test(UA) ){
+		deviceType = 'tablet';
+	} else if (/Android/i.test(UA)){
+		if(/Mobile/i.test(UA)) {
+			deviceType = 'mobile';
 		}
 		else {
-			return false;
+			deviceType = 'tablet';
 		}
-	} else  {
-		return false;
+	} else {
+		deviceType = 'desktop'
 	}
+
+	return deviceType;
 };
 
 module.exports = device;

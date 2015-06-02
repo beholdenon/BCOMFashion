@@ -9,7 +9,11 @@
     {{/if}} 
 </head>
 
-<body>
+{{#if isTablet}}
+    <body class="tablet">
+{{else}}
+    <body>
+{{/if}} 
     {{#if isMobile}}
         {{> header-mobile}}
     {{else}}
