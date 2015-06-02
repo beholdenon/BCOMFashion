@@ -105,11 +105,10 @@ module.exports = function(grunt) {
                     expand: true,
                     cwd: '<%= node.source %>/public/javascripts/',
                     src: [
-                        // 'main.js',
-                        // 'base.js',
-                        // 'loader.js',
-                        // 'libs/requirejs.js'
-                    	'{,*/}*.js'
+                        'main.js',
+                        'loader.js',
+                        'libs/requirejs.js',
+                        'includes/wssg.js'
                     ],
                     dest: '<%= node.destination %>/public/javascripts/'
                 }, {
@@ -160,7 +159,10 @@ module.exports = function(grunt) {
 
         concat: {
             addHBStemplates: {
-                src: ['.tmp/concat/public/javascripts/bloomies.js', '.tmp/templates.js'],
+                src: [
+                    '.tmp/concat/public/javascripts/bloomies.js', 
+                    '.tmp/templates.js'                  
+                    ],
                 dest: '.tmp/concat/public/javascripts/bloomies.js'
             },
             generated: {
