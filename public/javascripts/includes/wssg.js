@@ -10,7 +10,7 @@ $(document).ready(function() {
 
     //  SERVICE TESTS
 
-    $(".catIndex").on("click", function() {
+    $(".wssgCatalog").on("click", function() {
         var target = $(this),
             catID = target.attr("data-id");
 
@@ -29,7 +29,7 @@ $(document).ready(function() {
 
     });
 
-    $(".browseProduct").on("click", function() {
+    $(".wssgBrowse").on("click", function() {
         var target = $(this),
             catID = target.attr("data-id"),
             resultsPerPage = 32,
@@ -52,6 +52,15 @@ $(document).ready(function() {
 
         }, catID, resultsPerPage, sortby);
 
+    });
+
+    $(".wssgProduct").on("click", function() {
+        var target = $(this),
+            prodID = target.attr("data-id");
+
+        SERVICES.product.get(function(output) {
+            console.log(output);
+        }, prodID);
     });
 
     $(".servicesCall").on("click", function() {
@@ -82,28 +91,24 @@ $(document).ready(function() {
 });
 
 function getRequest(path, callback, body) {    
-    // standard AJAX get request
+    // standard AJAX GET request
     $.ajax({
         method: "GET",
         dataType: 'json',
         url: path,
-        data: body,
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded',
         }
     }).success(function(data) {
         callback(data);
+    }).fail(function(err){
+        console.log(err);
     });
 
 }
 
-function postRequest(path, callback, body) {
-    console.log("*****************************************");
-    console.log(path);
-    console.log(body);
-    console.log("*****************************************");
-    
-    // standard AJAX get request
+function postRequest(path, callback, body) {    
+    // standard AJAX POST request
     $.ajax({
         method: "POST",
         dataType: 'json',
@@ -115,6 +120,8 @@ function postRequest(path, callback, body) {
         }
     }).success(function(data) {
         callback(data);
+    }).fail(function(err){
+        console.log(err);
     });
 
 }
@@ -163,6 +170,15 @@ var SERVICES = {
             });
         }
 
+    },
+
+    product: {
+        get: function(callback, prodID ) {
+            var path = '/v4/catalog/product/' + prodID + '(productdetails,productcategory,reviews,rebates,promotions,categoryids)?retrieveallupcs=true';
+            getRequest(path, function(result) {
+                callback(result);
+            });
+        },
     },
 
     user: {
