@@ -28,7 +28,8 @@ var routes = [
   { method: 'GET',    path: '/shop/{path*}',          config: require('./lib/assets').shop },
   { method: 'GET',    path: '/v3/{path*}',            config: require('./lib/api').v3 },
   { method: 'GET',    path: '/v4/{path*}',            config: require('./lib/api').v4 },
-  { method: 'GET',    path: '/order/v1/{path*}',      config: require('./lib/api').bag },
+  { method: 'GET',    path: '/getBag/{path*}',        config: require('./lib/api').getbag },
+  { method: 'POST',   path: '/addToBag/{path*}',        config: require('./lib/api').addbag },
   { method: 'GET',    path: '/{path*}',               config: require('./lib/assets').fallback }
 ];
 
