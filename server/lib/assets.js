@@ -63,14 +63,6 @@ module.exports = {
             
             return reply.view( customView, { isMobile:isMobile, isTablet:isTablet });
 
-                          
-            // var isMobile = false, 
-            //     customView = 'index';
-            // if (device.detectDevice(request)) {
-            //     isMobile = true;
-            //     customView = 'index-mobile';
-            // }
-
             // return reply.view(customView, { isMobile: isMobile});
             
             // if (request.params.path == '' || request.params.path == undefined) {
