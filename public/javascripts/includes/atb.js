@@ -27,6 +27,7 @@ $(document).ready(function(){
 
 			console.log('Size: '+add_size);
 			console.log('Color: '+add_color);
+
 			var upcList = prodData.product[0].upcs;
 			for (a=0; a < upcList.length; a++) {
 				var subUPCs = upcList[a].upcDetails.attributes
@@ -43,17 +44,29 @@ $(document).ready(function(){
 			add_quantity = $(this).parents('.atb').find('.quantity select option:selected').text();
 			var dataVal = 	{"item": {"quantity": add_quantity,"upcId": upcID.toString()}}
 
-			$.ajax({
-				type: "POST",
-				dataType:'json',
-				contentType: "application/json",
-				url: '/v1service/order/v1/bags',
-				data: dataVal,
-			}).success(function (res) {
-				console.log(res);
-			}).fail(function (res){
-				console.log('atb failure');
-			});
+			var target = $(this);
+            	upcId = target.attr("data-upc");
+
+	        SERVICES.bag.add( function(output) {
+	        	console.log("Add to Bag:");
+	        	console.log(output);
+	        	console.log("---------------------------------");
+	        	
+	        	localStorage.setItem('bagUserID', output.bag.owner.userId);
+	        	localStorage.setItem('bagGUID', output.bag.bagGUID);
+	        	
+	        	setTimeout(function(){
+	        		SERVICES.bag.get(function(output){
+		        		console.log("Retrieve Bag:");
+	        			console.log(output);
+	        			console.log("---------------------------------");
+		        		// $('#brownBagItemsTotal').hide().text(output.bag.items[0].quantity).fadeIn(400);
+		        	}, '', '', '', localStorage.bagGUID);
+	        	}, 500);
+	        	
+
+	        }, upcId, add_quantity, localStorage.bagUserID);
+			
 		}
 	});
 
@@ -90,32 +103,24 @@ $(document).ready(function(){
 
 	// PDP OVERLAY BUILD
 	$('.atb_overlay').on('click', function(){
+		var target = $(this),
+			prodID = target.attr("data-id");
+
 		$('#atbLoading').show();
-		var item = $(this).data('id');
+		
+        SERVICES.product.get(function(output) {
+            // console.log(output);
+            $('#atbLoading').hide();
+            prodData = output;
 
-		$.ajax({
-			method: 'GET',
-			dataType:'json',
-			url: '/api/v4/catalog/product/'+item+'(productdetails(price,summary,availability,primaryimage,childproducts,SizeMap,colormap),upcs(upcdetails))',
-			data: { },
-			headers: {
-				'Content-Type': 'application/x-www-form-urlencoded',
-			}
-		}).success(function (res) {
-			console.log("******Product Data****************");
-			console.log(			res 					);
-			prodData = res;
-
-			$('#atbLoading').hide();
-			if (res.product[0].productDetails.childProducts != undefined) {
-				atb.master(res, item);
+            if (output.product[0].productDetails.childProducts != undefined) {
+				atb.master(output, prodID);
 			} else {
-				atb.member(res, item);
+				atb.member(output, prodID);
 			}
+        
+        }, prodID);
 
-		}).fail(function (res) {
-			console.log(res);
-		});
 	});
 
 	// product active element change, swatch and size
@@ -127,11 +132,13 @@ $(document).ready(function(){
 			$(this).find('.others img').clone().appendTo('.atb .thumbnails');
 			$('.atb .thumbnails img').attr('style','');
 		}
-
 	});
+
 	$('.atb .size').on('click','li', function(){
 		$(this).addClass('active').siblings().removeClass('active');
 	});
+
+
 
 	// product image change on swatch mouseover, switch back on mouseout
 	$('.atb .color').on('mouseenter','.swatch li', function () {
@@ -248,7 +255,7 @@ var atb = {
 					$('.atb .image .main.product').attr('src', url).attr('default',url);
 					setMain = false;
 				}
-				$('.atb.single ul.swatch').append('<li id="upc'+i+'" class="'+active+'" data-name="'+map[i].color+'" data-upc="" data-prodImg="'+map[i].upcprimaryimage.imagename+'"><img src="http://images.bloomingdales.com/is/image/BLM/products/0/optimized/'+map[i].swatchimage.imagename+'?wid=27&hei=27&op_sharpen=1&fit=fit,1"/></li>');
+				$('.atb.single ul.swatch').append('<li id="upc'+i+'" class="'+active+'" data-name="'+map[i].color+'" data-colorId="'+map[i].colorwayid+'" data-prodImg="'+map[i].upcprimaryimage.imagename+'"><img src="http://images.bloomingdales.com/is/image/BLM/products/0/optimized/'+map[i].swatchimage.imagename+'?wid=27&hei=27&op_sharpen=1&fit=fit,1"/></li>');
 				
 				// additional images
 				$('.atb ul.swatch #upc'+i).append("<div class='others'></div>");
@@ -271,9 +278,9 @@ var atb = {
 		$('.atb .size .options').attr('data-pos',0);
 		for (i=0;i<map.length; i++) {
 			if ( i<8 ) {
-				$('.atb .size .options').append('<li data-sizeid="'+map[i].sizeid+'">'+map[i].sizenormal+'</li>');
+				$('.atb .size .options').append('<li data-sizeId="'+map[i].sizeid+'">'+map[i].sizenormal+'</li>');
 			} else {
-				$('.atb .size .options').append('<li style="display:none" data-sizeid="'+map[i].sizeid+'">'+map[i].sizenormal+'</li>');
+				$('.atb .size .options').append('<li style="display:none" data-sizeId="'+map[i].sizeid+'">'+map[i].sizenormal+'</li>');
 			}
 		}
 
@@ -290,6 +297,9 @@ var atb = {
 		$('.footer .details_link').attr('href','http://www1.bloomingdales.com/shop/product/?ID='+item);
 		$('.atb.single img.product.main').attr('src','http://images.bloomingdales.com/is/image/BLM/products/9/optimized/'+res.product[0].productDetails.primaryImage.imagename+'?wid=400&qlt=80,0&layer=comp&op_sharpen=0&resMode=sharp2&op_usm=0.7,1.0,0.5,0&fmt=jpeg');
 		$('.atb.single .thumbnails').html("");
+
+		$(".atb.single .atbLink").attr("data-id",res.product[0].id);
+
 		if (res.product[0].productDetails.summary.additionalImageSource != undefined) {
 			$('.atb.single .thumbnails').append("<img class='thumb' data-info="+res.product[0].productDetails.primaryImage.imagename+" src='http://images.bloomingdales.com/is/image/BLM/products/9/optimized/"+res.product[0].productDetails.primaryImage.imagename+"?wid=95&qlt=90,0&layer=comp&op_sharpen=0&resMode=sharp2&op_usm=0.7,1.0,0.5,0&fmt=jpeg'/>");
 			for (j=0;j<res.product[0].productDetails.summary.additionalImageSource.length;j++) {

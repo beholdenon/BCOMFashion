@@ -53,32 +53,26 @@ module.exports = {
                 customView;
 
             if (deviceType === 'mobile') {
-                customView = 'index-mobile'; 
+                customView = request.params.path + 'index-mobile'; 
                 isMobile = true;
             } else {
-                customView = 'index';
+                customView = request.params.path + 'index';
             } 
 
             (deviceType === 'tablet') ? isTablet = true : isTablet = false;
             
-            return reply.view( customView, { isMobile:isMobile, isTablet:isTablet });
+            // return reply.view( customView, { isMobile:isMobile, isTablet:isTablet });
 
             // return reply.view(customView, { isMobile: isMobile});
             
-            // if (request.params.path == '' || request.params.path == undefined) {
-            //     return reply.redirect('http://www.bloomingdales.com');
-            // } else {
-            //     var isMobile = false,
-            //         customView = request.params.path + 'index';
-            //     if (device.detectDevice(request)) {
-            //         isMobile = true;
-            //         customView = request.params.path + 'index-mobile';
-            //     }
-
-            //     return reply.view(customView, {
-            //         isMobile: isMobile
-            //     });
-            // }
+            if (request.params.path == '' || request.params.path == undefined) {
+                return reply.redirect('http://www.bloomingdales.com');
+            } else {
+                
+                return reply.view(customView, {
+                    isMobile: isMobile, isTablet:isTablet
+                });
+            }
 
 /*            
             fs.readFile(__dirname + indexFileName, function(err, data) {

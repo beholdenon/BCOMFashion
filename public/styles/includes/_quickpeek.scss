@@ -413,6 +413,7 @@ table.add {
 	background-color: #fff;
 	z-index: 120;
 	top: 5%;
+	position: fixed;
 
 	.RS {
 		width: 374px;
@@ -433,6 +434,7 @@ table.add {
 	top: 40vh;
 	display: none;
 	z-index: 118;
+	position: fixed;
 }
 
 #loader {
@@ -446,7 +448,7 @@ table.add {
 
     border-radius: 50%;
     border: 3px solid transparent;
-    border-right-color: #ccc;
+    border-right-color: #D90EAC;
     -webkit-animation: spin 2s linear infinite; /* Chrome, Opera 15+, Safari 5+ */
     animation: spin 2s linear infinite; /* Chrome, Firefox 16+, IE 10+, Opera */
 
@@ -462,7 +464,7 @@ table.add {
     bottom: 5px;
     border-radius: 50%;
     border: 3px solid transparent;
-    border-bottom-color: #666;
+    border-bottom-color: #ff7fe1;
     -webkit-animation: spin 3s linear infinite; /* Chrome, Opera 15+, Safari 5+ */
       animation: spin 3s linear infinite; /* Chrome, Firefox 16+, IE 10+, Opera */
 }
@@ -476,7 +478,7 @@ table.add {
     bottom: 15px;
     border-radius: 50%;
     border: 3px solid transparent;
-    border-top-color: #000;
+    border-top-color: #8e006d;
     -webkit-animation: spin 1.5s linear infinite; /* Chrome, Opera 15+, Safari 5+ */
       animation: spin 1.5s linear infinite; /* Chrome, Firefox 16+, IE 10+, Opera */
 }
