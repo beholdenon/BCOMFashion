@@ -44,8 +44,6 @@ define([
     var app_router = new Router();
     window.App = {};
 
-    //TODO: Create a BACKBONE router
-
     if (BLOOMIES.isMobile) {
         MobileHeader()
     } else {

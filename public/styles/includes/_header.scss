@@ -10,7 +10,7 @@ header {
         margin-right: auto;
         margin-top: 0;
         margin-bottom: 0;
-        max-width: 87.45455em;  
+        max-width: 962px;  
     }    
 
     #seasonalAdWrapper {
@@ -20,7 +20,7 @@ header {
         margin-left: auto;
         margin-right: auto;
         #seasonalAdBanner {
-            width: 87.45455em;
+            width: 962px;
             margin: 0 auto;
         }
     }
@@ -33,7 +33,7 @@ header {
         #innerZeroNav {
             font-size: 1rem;
             height: 2.54545rem;
-            // width: 87.45455em;
+            // width: 962px;
             margin: 0 auto;
             text-align: right;
             .columns {
@@ -91,7 +91,7 @@ header {
     }
 
     #aboveNav {
-        // width: 87.45455em; 
+        // width: 962px; 
         margin: 0 auto;
         padding: 2.09091rem 0;
         .columns {
@@ -164,6 +164,7 @@ header {
 
     #nav {
         border-bottom: 0.09091rem #ccc solid !important;
+        box-shadow: none;
         min-height: 28.9844px;
         .row {         
             ul#mainNav {
@@ -219,12 +220,12 @@ header {
                 overflow: hidden;
                 white-space: nowrap;
                 background-color: #FFF;
-                box-shadow: 0 0.90909rem 1.36364rem rgba(51, 51, 51, 0.4);
                 border: 0.09091rem solid #ccc \9;
                 border-top: 0;
                 height: auto;
                 position: absolute;
                 margin-top: 0.09091rem;
+                box-shadow: 0 0.90909rem 1.36364rem rgba(51, 51, 51, 0.4);
                 z-index: 100;
                 ul {
                     margin: 0;
@@ -249,7 +250,8 @@ header {
                                 font-family: helveticaMedCond, Arial, Helvetica, Verdana, Sans-serif;
                                 font-size: 1.09091rem;
                                 font-weight: normal;
-                                color: #000;                    
+                                color: #000;     
+                                cursor: default;          
                             }                           
                         }
                         &.gridLayout{
@@ -303,6 +305,7 @@ header {
                                 font-weight: normal;
                                 color: #000;
                                 line-height: normal;
+                                cursor: default;
                             }
                         }  
                         &.gridLayout {
@@ -351,6 +354,40 @@ header {
             font-family: helveticaLTStdCond, Arial, Helvetica, Verdana, Sans-serif;
             color: #000;
             margin: 0 auto;
+        }
+    }
+}
+
+// ========================================= //
+// ========================================= //
+// =============[ tablet device ]=========== //
+// ==============[ above 980px ]============ //
+// ========================================= //
+// ========================================= //
+@media only screen and (min-width: 981px) {
+    body.tablet{
+        header {
+            #nav {
+                .row {
+                    flex: 1;
+                    max-width: 260px;
+                    ul#mainNav {
+                        li {
+                            width: auto;
+                            a {
+                                font-size: 1.36364rem;
+                            }
+                        }
+                    }
+                }
+
+                #globalFlyouts .flyout-off ul li.flyoutLabel label {
+                    font-size: 1.36364rem;
+                }
+                #globalFlyouts .flexLabelLinksContainer ul li:not(.gridLayout) a {
+                    font-size: 0.90909rem;
+                }
+            }
         }
     }
 }
@@ -488,6 +525,14 @@ header {
                                 font-family: "helveticaLTStdCond", Arial, Helvetica, Verdana, Sans-serif;
                                 font-size: 16px;
                                 color: #999;
+                                &:focus{
+                                    background: inherit; 
+                                    border-color: inherit;
+                                    outline: none;
+                                    -webkit-box-shadow: inherit;
+                                    -moz-box-shadow: inherit;
+                                    box-shadow: inherit;
+                                }
                             }
                         }
                     }
@@ -536,20 +581,24 @@ header {
             z-index: 100;
             top: initial;
             left: rem-calc(20);
-            background-color: #ECECEC;
-            &.visible{
-                display: block;
-                z-index: 101;
+            background-color: #f7f7f7;
+            box-shadow: 0 0.90909rem 1.36364rem rgba(51, 51, 51, 0.4);
+            z-index: 101;
+            &.active{
+                display: -ms-flex !important;
+                display: -webkit-flex !important;
+                display: flex !important;                
             }
             .row {
-                // display: none;
                 display: inline-block;
+                width: auto !important;
+                max-width: none !important;
                 float: left;
-                box-shadow: 0 0.90909rem 1.36364rem rgba(51,51,51,0.4);
-                ul {
+                background-color: #f7f7f7;
+                ul#mainNav {
                     margin-bottom: 0;
                     padding-bottom: 0;
-                    height: initial !important;
+                    height: 100%;
                     li {
                         width: 29vw;
                         height: initial !important;
@@ -588,11 +637,8 @@ header {
                 padding: rem-calc(15) rem-calc(7.7) rem-calc(15) rem-calc(0);
                 background-color: #ECECEC;
                 float: left;
-                overflow-y: auto;
-                height: 545px;
                 .subnav{
                     display:none;
-
                     &.activeNav {
                         display: block;
                     }
@@ -608,69 +654,103 @@ header {
 
                 .flexLabelLinksContainer {
                     text-align: left;
-
                     ul li {
-                        height: auto;
-                        
+                        height: auto;                        
                         &:not(.gridLayout) {
                             display: block;
                             padding-left: 12px;
-
                             a {
                                 display: block;
                                 text-decoration: none;
-                                font-size: rem-calc(13);
+                                font-size: 1.2vw;
                                 letter-spacing: rem-calc(1);    
                                 float: none;
-                                margin-bottom: rem-calc(8);
-
+                                margin-top: rem-calc(10);
+                                margin-bottom: rem-calc(20);
                                 &:active {
                                     text-decoration: underline;
                                 }
+                                &:hover {
+                                    color: #D90EAC;
+                                }
                             }
-                            
                         }
                     }
                 }
 
                 .gridLayout {
                     display: inline-block;
-
                     a {
                         float: left;
                         padding: rem-calc(8) rem-calc(10);
-                        font-size: rem-calc(14);
+                        font-size: 1.2vw;
                         text-decoration: none;
-                        width: rem-calc(30);
+                        width: 26px;
                         margin-right: rem-calc(2);
-                        
                         &:active {
                             text-decoration: underline;
                         }
-
                     }
                 }
 
                 .flyoutCol {
                     float: left;
-                    
-                    &:first-child {
-                        min-width: rem-calc(150);
-                    }
-
+                    min-width: 28vw !important;
                     &:not(:first-child) {
-                        margin-left: rem-calc(60);
+                        margin-left: 3vw;
                     }
                 }
 
-                .flyoutLabel label {
-                    font-size: 1.18182rem;
-                    font-family: Arial,sans-serif;
-                    font-weight: 700;
-                    text-decoration: none;
-                    letter-spacing: rem-calc(1);
-                    text-transform: capitalize;
-                }                   
+                .flyoutLabel {
+                    label {
+                        font-size: 1.3vw !important;
+                        font-family: Arial, sans-serif !important;
+                        font-weight: 700 !important;
+                        text-decoration: none;
+                        letter-spacing: rem-calc(1);
+                        text-transform: uppercase;
+                        cursor: default;
+                    }
+                }  
+
+                .flexLabelLinksContainer:not(:first-child) {
+                    .flyoutLabel {
+                        margin-top: 20px !important;
+                    }
+                } 
+
+                //HOME section
+                #flyout_3865{
+                    padding: 0.90909rem 0 0 0;
+                    > div > div.flyoutCol{
+                        min-width: 0 !important;
+                    }
+                    > div > div.flyoutCol:not(:first-child) {
+                        margin-left: -32px !important;
+                    }
+                } 
+
+                //DESIGNERS section
+                #flyout_1001351{
+                    padding: 0.90909rem 0 0 0;
+                    > div > div.flyoutCol{
+                        min-width: 0 !important;
+                    }
+                    > div > div.flyoutCol:not(:first-child) {
+                        margin-left: -16px !important;
+                    }
+                    .flexLabelLinksContainer {
+                        padding-right: 1.27273rem;
+                        ul li {
+                          height: 4vw;
+                          max-height: 28px;
+                        }
+                    }                    
+                    .gridLayout {
+                        width: 6vw;
+                        max-width: 40px;
+                    }                    
+                }                
             }
 
             .iconImg, .iconText, img {
@@ -687,6 +767,7 @@ header {
 // ========================================= //
 // ========================================= //
 // =============[ tablet device ]=========== //
+// ==============[ below 980px ]============ //
 // ========================================= //
 // ========================================= //
 body.tablet{
@@ -808,6 +889,7 @@ body.tablet{
                     background-repeat: no-repeat;
                     background-position: right -75px;
                     margin-right: 10.72727rem;
+                    z-index: 1;
                     form {
                         margin: 0;
                         border: 0;
@@ -829,6 +911,14 @@ body.tablet{
                                 font-family: "helveticaLTStdCond", Arial, Helvetica, Verdana, Sans-serif;
                                 font-size: 16px;
                                 color: #999;
+                                &:focus{
+                                    background: inherit; 
+                                    border-color: inherit;
+                                    outline: none;
+                                    -webkit-box-shadow: inherit;
+                                    -moz-box-shadow: inherit;
+                                    box-shadow: inherit;
+                                }                                
                             }
                         }
                         #subnavSearchSubmit {
@@ -879,16 +969,23 @@ body.tablet{
             z-index: 100;
             top: initial;
             left: rem-calc(20);
-            background-color: #ECECEC;
+            background-color: #f7f7f7;
+            box-shadow: 0 0.90909rem 1.36364rem rgba(51, 51, 51, 0.4);
+            z-index: 101;
+            &.active{
+                display: -ms-flex !important;
+                display: -webkit-flex !important;
+                display: flex !important;                
+            }            
             .row {
                 // display: none;
                 display: inline-block;
                 float: left;
-                box-shadow: 0 0.90909rem 1.36364rem rgba(51,51,51,0.4);
-                ul {
+                ul#mainNav {
                     margin-bottom: 0;
                     padding-bottom: 0;
-                    height: initial !important;
+                    height: 100%;
+                    background-color: #f7f7f7;
                     li {
                         width: 27.5vw;
                         height: initial !important;
@@ -927,16 +1024,15 @@ body.tablet{
                 padding: rem-calc(15) rem-calc(7.7) rem-calc(15) rem-calc(0);
                 background-color: #ECECEC;
                 float: left;
-                overflow-y: auto;
-                height: 545px;
+                // overflow-y: auto;
+                // overflow-x: hidden;                
+                // height: 620px;
                 .subnav{
                     display:none;
-
                     &.activeNav {
                         display: block;
                     }
                 }
-
                 .subnav > div {
                     display: -webkit-box;
                     display: -moz-box;
@@ -944,72 +1040,104 @@ body.tablet{
                     display: -webkit-flex;
                     display: flex;
                 }
-
                 .flexLabelLinksContainer {
                     text-align: left;
-
                     ul li {
                         height: auto;
-                        
                         &:not(.gridLayout) {
                             display: block;
                             padding-left: 12px;
-
                             a {
                                 display: block;
                                 text-decoration: none;
-                                font-size: rem-calc(13);
+                                font-size: 1.2vw;
                                 letter-spacing: rem-calc(1);    
                                 float: none;
-                                margin-bottom: rem-calc(8);
-
+                                margin-top: rem-calc(8);
+                                margin-bottom: rem-calc(4);
+                                &:hover {
+                                    color: #D90EAC;
+                                }
                                 &:active {
                                     text-decoration: underline;
                                 }
                             }
-                            
                         }
                     }
                 }
 
                 .gridLayout {
                     display: inline-block;
-
                     a {
                         float: left;
                         padding: rem-calc(8) rem-calc(10);
-                        font-size: rem-calc(14);
+                        font-size: 1.2vw;
                         text-decoration: none;
                         width: rem-calc(30);
                         margin-right: rem-calc(2);
-                        
                         &:active {
                             text-decoration: underline;
                         }
-
                     }
                 }
 
                 .flyoutCol {
-                    float: left;
-                    
-                    &:first-child {
-                        min-width: rem-calc(150);
-                    }
-
+                    float: left;                    
                     &:not(:first-child) {
-                        margin-left: rem-calc(60);
+                        margin-left: 3vw;
                     }
                 }
 
-                .flyoutLabel label {
-                    font-size: 1.18182rem;
-                    font-family: Arial,sans-serif;
-                    font-weight: 700;
-                    text-decoration: none;
-                    letter-spacing: rem-calc(1);
-                    text-transform: capitalize;
-                }                   
+                .flyoutLabel {
+                    label {
+                        font-size: 1.3vw !important;
+                        font-family: Arial,sans-serif !important;
+                        font-weight: 700 !important;
+                        text-decoration: none;
+                        letter-spacing: rem-calc(1);
+                        text-transform: uppercase;
+                        cursor: default;
+                    }    
+                }  
+
+                .flexLabelLinksContainer:not(:first-child) {
+                    .flyoutLabel {
+                        margin-top: 20px !important;
+                    }
+                } 
+
+                //HOME section
+                #flyout_3865{
+                    padding: 0.90909rem 0 0 0;
+                    > div > div.flyoutCol{
+                        min-width: 0 !important;
+                    }
+                    > div > div.flyoutCol:not(:first-child) {
+                        margin-left: -10px !important;
+                    }
+                } 
+
+                //DESIGNERS section
+                #flyout_1001351{
+                    // padding: 0.90909rem 0 0 0;
+                    > div > div.flyoutCol{
+                        min-width: 0 !important;
+                    }
+                    > div > div.flyoutCol {
+                        margin-left: 10px !important;
+                    }
+                    .flexLabelLinksContainer {
+                        padding-right: 1.27273rem;
+                        ul li {
+                          height: 4vw;
+                          max-height: 28px;
+                        }
+                    }                    
+                    .gridLayout {
+                        width: 6vw;
+                        max-width: 40px;
+                    }                    
+                }                             
             }
 
             .iconImg, .iconText, img {
@@ -1135,6 +1263,7 @@ body.tablet{
                     background-repeat: no-repeat;
                     background-position: right -73px;
                     margin-right: 10.72727rem;
+                    z-index: 1;
                     form {
                         margin: 0;
                         border: 0;
@@ -1204,21 +1333,28 @@ body.tablet{
             z-index: 100;
             top: initial;
             left: rem-calc(20);
-            background-color: #ECECEC;
-            &.visible{
-                display: block;
+            background-color: #f7f7f7;
+            box-shadow: 0 0.90909rem 1.36364rem rgba(51, 51, 51, 0.4);
+            z-index: 101;
+            &.active{
+                display: -webkit-box !important;
+                display: -moz-box !important;
+                display: -ms-flexbox !important;
+                display: -webkit-flex !important;
+                display: flex !important;
             }
             .row {
                 // display: none;
                 display: inline-block;
                 float: left;
-                box-shadow: 0 0.90909rem 1.36364rem rgba(51,51,51,0.4);
-                ul {
+                width: 180px;
+                ul#mainNav {
                     margin-bottom: 0;
                     padding-bottom: 0;
-                    height: initial !important;
+                    height: 100%;
+                    background-color: #f7f7f7;
                     li {
-                        width: 29vw;
+                        width:185.875px;
                         height: initial !important;
                         display: block !important;
                         &:first-child {
@@ -1231,7 +1367,7 @@ body.tablet{
                         }
                         a {
                             display: block;
-                            font-size: 1.3vw !important;
+                            font-size: 8.33300018310547px !important;
                             font-family: Arial, sans-serif !important;
                             font-weight: 700;
                             text-decoration: none;
@@ -1241,7 +1377,7 @@ body.tablet{
                             padding-right: rem-calc(25);
                             letter-spacing: rem-calc(1);
                             background-color: #f7f7f7;
-                             outline: none;
+                            outline: none;
                         }
                         &.active a, &:hover a {
                             background-color: #ECECEC;
@@ -1255,11 +1391,9 @@ body.tablet{
                 padding: rem-calc(15) rem-calc(7.7) rem-calc(15) rem-calc(0);
                 background-color: #ECECEC;
                 float: left;
-                overflow-y: auto;
-                height: 545px;
+                flex: 1;
                 .subnav{
                     display:none;
-
                     &.activeNav {
                         display: block;
                     }
@@ -1275,69 +1409,97 @@ body.tablet{
 
                 .flexLabelLinksContainer {
                     text-align: left;
-
                     ul li {
                         height: auto;
-                        
                         &:not(.gridLayout) {
                             display: block;
                             padding-left: 12px;
-
                             a {
                                 display: block;
                                 text-decoration: none;
-                                font-size: rem-calc(13);
+                                font-size: 7.69199991226196px;
                                 letter-spacing: rem-calc(1);    
                                 float: none;
-                                margin-bottom: rem-calc(8);
-
+                                margin-top: rem-calc(10);
+                                margin-bottom: 0;
+                                &:hover {
+                                    color: #D90EAC;
+                                }
                                 &:active {
                                     text-decoration: underline;
                                 }
                             }
-                            
                         }
                     }
                 }
 
                 .gridLayout {
                     display: inline-block;
-
+                    width: 2.90909rem !important;
                     a {
                         float: left;
                         padding: rem-calc(8) rem-calc(10);
-                        font-size: rem-calc(14);
+                        font-size: 7.69199991226196px;
                         text-decoration: none;
                         width: rem-calc(30);
                         margin-right: rem-calc(2);
-                        
                         &:active {
                             text-decoration: underline;
                         }
-
                     }
                 }
 
                 .flyoutCol {
-                    float: left;
-                    
-                    &:first-child {
-                        min-width: rem-calc(150);
-                    }
-
+                    float: left;                    
                     &:not(:first-child) {
-                        margin-left: rem-calc(60);
+                        margin-left: 3vw;
                     }
                 }
 
-                .flyoutLabel label {
-                    font-size: 1.18182rem;
-                    font-family: Arial,sans-serif;
-                    font-weight: 700;
-                    text-decoration: none;
-                    letter-spacing: rem-calc(1);
-                    text-transform: capitalize;
-                }                   
+                //HOME section
+                #flyout_3865{
+                    padding: 0.90909rem 0 0 0;
+                    > div > div.flyoutCol{
+                        min-width: 0 !important;
+                    }
+                    > div > div.flyoutCol:not(:first-child) {
+                        margin-left: -32px !important;
+                    }
+                } 
+
+                //DESIGNERS section
+                #flyout_1001351{
+                    padding: 0.90909rem 0 0 0;
+                    > div > div.flyoutCol{
+                        min-width: 0 !important;
+                    }
+                    > div > div.flyoutCol:not(:first-child) {
+                        margin-left: -16px !important;
+                    }
+                    .flexLabelLinksContainer {
+                        padding-right: 1.27273rem;
+                        ul li {
+                          height: 4vw;
+                          max-height: 28px;
+                        }
+                    }                    
+                    .gridLayout {
+                        width: 6vw;
+                        max-width: 40px;
+                    }                    
+                } 
+
+                .flyoutLabel {
+                    label {
+                        font-size: 8.33300018310547px !important;
+                        font-family: Arial,sans-serif !important;
+                        font-weight: 700 !important;
+                        text-decoration: none;
+                        letter-spacing: rem-calc(1);
+                        text-transform: uppercase;
+                        cursor: default;
+                    }         
+                }          
             }
 
             .iconImg, .iconText, img {
