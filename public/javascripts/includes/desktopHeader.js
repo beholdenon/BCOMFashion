@@ -153,7 +153,6 @@ define([
 	};
 	
 	var init = function() {
-
 		build.topnav();
 		build.flyouts();
 		
@@ -167,36 +166,55 @@ define([
 			test.checkRegistry();
 		});
 	
-		// =========== Flyout handling
+		// =========== FLYOUT HANDLING FOR DESKTOP NATIVE HEADER
 		var catNum = '',
 			delay = 200, // hover time before flyout appears.
 			timeoutConst;
-	
+
 		$('#nav').on('mouseenter', '#mainNav li', function(ev){
-			var thing = $(this);
-			timeoutConst = setTimeout(function() {
-				thing.addClass('selected').siblings().removeClass('selected');
-				catNum = thing.attr('id').substr( thing.attr('id').lastIndexOf('_')+1 );
-				$('#flyout_'+catNum).removeClass('flyout-off').addClass('flyout-on');
-	
-				adjustFlyoutPosition($('#flyout_'+catNum), $('#mainNav li').length-1, thing.index()+1, $('#nav .row').css('margin-left'), $('#flyout_'+catNum).width(),  962);
-			}, delay);
+			//bind this only to desktop native header
+			if (!$('body').hasClass('tablet')){
+				var thing = $(this);
+				timeoutConst = setTimeout(function() {
+					thing.addClass('selected').siblings().removeClass('selected');
+					catNum = thing.attr('id').substr( thing.attr('id').lastIndexOf('_')+1 );
+					$('#flyout_'+catNum).removeClass('flyout-off').addClass('flyout-on');
+		
+					adjustFlyoutPosition($('#flyout_'+catNum), $('#mainNav li').length-1, thing.index()+1, $('#nav .row').css('margin-left'), $('#flyout_'+catNum).width(),  962);
+				}, delay);
+			}
 		}).on('mouseleave', '#mainNav li', function(ev){
-			clearTimeout(timeoutConst);
-			$('#flyout_'+catNum).removeClass('flyout-on').addClass('flyout-off');
-			$(this).removeClass('selected');
+			if (!$('body').hasClass('tablet')){
+				clearTimeout(timeoutConst);
+				$('#flyout_'+catNum).removeClass('flyout-on').addClass('flyout-off');
+				$(this).removeClass('selected');
+			}
 		});
 	
 		$('#globalFlyouts').on('mouseenter', function(){
-			$('#flyout_'+catNum).addClass('flyout-on').removeClass('flyout-off');
-			$('#flexLabel_'+catNum).addClass('selected');
+			if (!$('body').hasClass('tablet')){
+				$('#flyout_'+catNum).addClass('flyout-on').removeClass('flyout-off');
+				$('#flexLabel_'+catNum).addClass('selected');
+			}
 		}).on('mouseleave', function(){
-			$('#flyout_'+catNum).removeClass('flyout-on').addClass('flyout-off');
-			$('#flexLabel_'+catNum).removeClass('selected');
+			if (!$('body').hasClass('tablet')){
+				$('#flyout_'+catNum).removeClass('flyout-on').addClass('flyout-off');
+				$('#flexLabel_'+catNum).removeClass('selected');
+			}
 		});
 	
+		// =========== FLYOUT HANDLING FOR HAMBURHER MENU
+		$('#hamburgerMenuIcon').on('click', function (){
+			$('#nav').toggleClass('visible');
+			$('#hamburger-content-overlay').toggleClass('active');
+		});		
+
+		$('#hamburger-content-overlay').on('click', function (){
+			$('#nav').toggleClass('visible');
+			$('#hamburger-content-overlay').toggleClass('active');
+		});
+
 		// =========== Overlay window close function
-	
 		$('#overlay .close').on('click', function (){
 			$(this).parent().hide();
 			$('#overlayShield').hide()

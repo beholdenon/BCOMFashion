@@ -1,6 +1,11 @@
 /* ======================================== */
 /*              STANDARD LAYOUT             */
 /* ======================================== */
+.button {
+    font-size: 14px;
+    background-color: #000;
+}
+
 .standard {
     max-width: 968px;
     display: block;
@@ -8,9 +13,11 @@
     margin: 0 auto;
     text-align: left;
     font-size: 14px;
+
     .button {
         font-size: 14px;
     }
+
     .result {
         ul {
             margin: 1em 0;

@@ -54,14 +54,9 @@ $(document).ready(function() {
 
     });
 
-    $(".wssgProduct").on("click", function() {
-        var target = $(this),
-            prodID = target.attr("data-id");
-
-        SERVICES.product.get(function(output) {
-            console.log(output);
-        }, prodID);
-    });
+    // $(".wssgProduct").on("click", function() {
+       
+    // });
 
     $(".servicesCall").on("click", function() {
         var target = $(this),
@@ -174,7 +169,7 @@ var SERVICES = {
 
     product: {
         get: function(callback, prodID ) {
-            var path = '/v4/catalog/product/' + prodID + '(productdetails,productcategory,reviews,rebates,promotions,categoryids)?retrieveallupcs=true';
+            var path = '/v4/catalog/product/' + prodID + '(productdetails,upcs(upcdetails),productcategory,reviews,rebates,promotions,categoryids)?retrieveallupcs=true';
             getRequest(path, function(result) {
                 callback(result);
             });
@@ -205,49 +200,48 @@ var SERVICES = {
         get: function(callback, userID, userGuid, bagId, bagGuid, promocode, bagOptions) {
             var params = [];
 
-            if (userID != undefined) {
+            if (userID != undefined && userID != '') {
                 userID = 'userId=' + userID;
                 params.push(userID);
             }
 
-            if (userGuid != undefined) {
+            if (userGuid != undefined && userGuid != '' ) {
                 userGuid = 'userGuid=' + userGuid;
                 params.push(userGuid);
             }
 
-            if (bagId != undefined) {
+            if (bagId != undefined && bagId != ''  ) {
                 bagId = 'bagId=' + bagId;
                 params.push(bagId);
             }
 
-            if (bagGuid != undefined) {
+            if (bagGuid != undefined && bagGuid != '' ) {
                 bagGuid = 'bagGuid=' + bagGuid;
                 params.push(bagGuid);
             }
 
-            if (promocode != undefined) {
+            if (promocode != undefined && promocode != '' ) {
                 promocode = 'promocode=' + promocode;
                 params.push(promocode);
             }
 
-            if (bagOptions != undefined) {
+            if (bagOptions != undefined && bagOptions != '' ) {
                 bagOptions = 'userId=' + bagOptions;
                 params.push(bagOptions);
             }
 
             var path = '/getBag/order/v1/bags?' + params.join("&");
-
             getRequest(path, function(result) {
                 callback(result);
             });
 
         },
 
-        add: function(callback, upcId, Quantity, promocode, RegistryID, WishlistID) {
+        add: function(callback, upcId, quantity, userId) {
             var path = "/addToBag/";
             var body = {};
 
-            // body["item"] = {};
+            if (userId != undefined && userId != '') path += "?userId="+userId;
 
             // if (upcId != undefined) {
             //     body.item['upcId'] = upcId;
@@ -269,13 +263,10 @@ var SERVICES = {
             //     body.item['wishlistID'] = WishlistID;
             // }
 
-            body = {
-                "item": 
-                {
-                    "quantity":1, 
-                    "upcId":185213 
-                 }
-            }
+            body.item = {
+                    "quantity":quantity, 
+                    "upcId":upcId 
+                 };
 
             postRequest(path, function(result) {
                 callback(result);

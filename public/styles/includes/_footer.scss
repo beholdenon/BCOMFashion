@@ -1,10 +1,18 @@
+// ========================================= //
+// ========================================= //
+// ========[ desktop:  above 980px ]======== //
+// ========================================= //
+// ========================================= //
 footer {
+    max-width: 962px;
+    margin: 0 auto;    
     .footerBar {
         height: 0.45455rem;
         background-color: #000;
     }
 
     .mainFooter {
+        max-width: 962px;
         padding: 0.90909rem 0 1.45455rem 0;
         margin: 0 auto;
         text-align: left;
@@ -199,4 +207,164 @@ footer {
             }
         }               
     }
+}
+
+// ========================================= //
+// ========================================= //
+// ========[ desktop:  below 980px ]======== //
+// ============[ tablet device ]============ //
+// ========================================= //
+// ========================================= //
+@media only screen and (min-width: 641px) and (max-width: 980px) {
+    footer {
+        .mainFooter{
+            position: relative;
+            .footerLinks{
+                width: 100%;
+                padding-bottom: rem-calc(20);
+            }
+            .footerAdPool {
+                position: absolute;
+                top: rem-calc(213);
+                right: 0; 
+            }  
+            .vertDivider {
+                display: none;
+            } 
+            div:nth-child(4)  { //.vertDivider - second occurence
+                display: block;
+                height: 0.18182rem;
+                background-position: 0 -21.81818rem;
+                background-repeat: repeat-x;
+                margin: 0 auto;
+                display: block;
+                width: 100%;
+            }     
+        }        
+        .footerBottom {
+            padding-left: 0.45455em;
+            padding-right: rem-calc(145);
+            float: left;
+            margin-right: 0;
+            width: 100%;
+            .footerBottomCopyRight {
+                text-align: left;
+                margin: 1.63636rem 0 0 0;  
+            }
+            .likeNoOtherStore{
+                width: auto;
+                margin: 1.63636rem auto 3.63636rem auto;
+            }
+        }
+        .footerSocialMedia{
+            float: left !important;
+            padding-left: 0.45455em;
+            width: 100%;
+            position: relative;
+            display: table;
+            padding-top: rem-calc(26);                        
+            .sectionDivider {
+                display: none;
+            }
+            .signUp {
+                display: table-cell;
+                background-position: 0 -16.9rem;
+            }
+            .socialLinks {
+                display: table-cell;
+                float: right !important;
+                margin-right: 0.45455em;
+                margin-top: 0 !important;
+                height: 1.63636rem;
+                background-position: rem-calc(-110) rem-calc(-215);          
+                img {
+                  width: 18.18182rem;
+                  height: 1.81818rem;
+                }
+            }            
+        }
+    }
+}
+
+// ========================================= //
+// ========================================= //
+// =======[ desktop:  below 640px  ]======== //
+// ========================================= //
+// ========================================= //
+@media only screen and (max-width: 640px) {
+    footer {
+        max-width: 640px;
+        width: 640px;
+    }
+
+    //an exact copy of the previous media query
+    footer {
+        .mainFooter{
+            position: relative;
+            max-width: 640px;
+            .footerLinks{
+                width: 100%;
+                padding-bottom: rem-calc(20);
+            }
+            .footerAdPool {
+                position: absolute;
+                top: rem-calc(213);
+                right: 0; 
+            }  
+            .vertDivider {
+                display: none;
+            } 
+            div:nth-child(4)  { //.vertDivider - second occurence
+                display: block;
+                height: 0.18182rem;
+                background-position: 0 -21.81818rem;
+                background-repeat: repeat-x;
+                margin: 0 auto;
+                display: block;
+                width: 100%;
+            }     
+        }        
+        .footerBottom {
+            padding-left: 0.45455em;
+            padding-right: rem-calc(145);
+            float: left;
+            margin-right: 0;
+            width: 100%;
+            .footerBottomCopyRight {
+                text-align: left;
+                margin: 1.63636rem 0 0 0;  
+            }
+            .likeNoOtherStore{
+                width: auto;
+                margin: 1.63636rem auto 3.63636rem auto;
+            }
+        }
+        .footerSocialMedia{
+            float: left !important;
+            padding-left: 0.45455em;
+            width: 100%;
+            position: relative;
+            display: table;
+            padding-top: rem-calc(26);                        
+            .sectionDivider {
+                display: none;
+            }
+            .signUp {
+                display: table-cell;
+                background-position: 0 -16.9rem;
+            }
+            .socialLinks {
+                display: table-cell;
+                float: right !important;
+                margin-right: 0.45455em;
+                margin-top: 0 !important;
+                height: 1.63636rem;
+                background-position: rem-calc(-110) rem-calc(-215);          
+                img {
+                  width: 18.18182rem;
+                  height: 1.81818rem;
+                }
+            }            
+        }
+    }    
 }

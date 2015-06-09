@@ -61,7 +61,7 @@ BLOOMIES.cleanXSSCharacters = function(text) {
 	return cleanedQuery;
 };
 
-BLOOMIES.isMEW = (function() {
+BLOOMIES.isMobile = (function() {
 	if( /iPhone/i.test(navigator.userAgent) ) {
 	  return true;
 	} else if (/Android/i.test(navigator.userAgent)){
