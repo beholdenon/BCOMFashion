@@ -45,7 +45,7 @@ module.exports = {
 
                     request.app.parser = require('./parsers/category');
 
-                    console.log(request.url);
+                    // console.log(request.url);
 
                     callback(null, request.url.format(request.url), headers);
 

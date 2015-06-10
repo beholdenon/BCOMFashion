@@ -13,8 +13,7 @@
             "require": "libs/requirejs",
             "underscore": "libs/lodash",
             "desktopHeader": "includes/desktopHeader",
-            "mobileHeader": "includes/mobileHeader",
-            "router": "router"
+            "mobileHeader": "includes/mobileHeader"
         },
         shim = {
             "backbone": {
@@ -37,11 +36,8 @@ define([
     'jquery',
     'underscore',
     'desktopHeader',
-    'mobileHeader',
-    'router'
-], function(Backbone, $, _, DesktopHeader, MobileHeader, Router) {
-
-    var app_router = new Router();
+    'mobileHeader'
+], function(Backbone, $, _, DesktopHeader, MobileHeader) {
     window.App = {};
 
     if (BLOOMIES.isMobile) {
