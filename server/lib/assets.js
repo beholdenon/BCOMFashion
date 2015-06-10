@@ -1,14 +1,9 @@
 'use strict';
-var Wreck = require('wreck'),
-    fs = require('fs'),
-    cheerio = require('cheerio'),
-    serviceProxy = require('./serviceProxy'),
+var serviceProxy = require('./serviceProxy'),
     config = require('./parsers/config'),
     device = require('./deviceDetection');
 
-
 module.exports = {
-
     fashion: {
         description: 'Server static assets',
         notes: 'All requests that begin with /fashion are assumed to be static assets in /public',
@@ -24,12 +19,12 @@ module.exports = {
         description: 'customer ui server proxy (for development only)',
         notes: 'Redirect api urls that should go to the server',
         tags: ['navapp'],
-
         handler: function(request, reply) {
             var headers = {
                 accept: 'application/json',
                 'Content-Type': 'application/json'
             };
+
             reply.proxy({
                 timeout: serviceProxy.timeout,
                 passThrough: true,
@@ -46,70 +41,29 @@ module.exports = {
         description: 'Serve index page or brombone generated snapshot',
         notes: 'This is the default fallback route if not explicitly captured',
         tags: ['fallback', 'static'],
-        handler: function(request, reply) {    
-            var deviceType = device.detectDevice(request), 
+        handler: function(request, reply) {
+            var deviceType = device.detectDevice(request),
                 isMobile = false,
                 isTablet = false,
                 customView;
 
             if (deviceType === 'mobile') {
-                customView = request.params.path + 'index-mobile'; 
+                customView = request.params.path + 'index-mobile';
                 isMobile = true;
             } else {
                 customView = request.params.path + 'index';
-            } 
+            }
 
-            (deviceType === 'tablet') ? isTablet = true : isTablet = false;
-            
-            // return reply.view( customView, { isMobile:isMobile, isTablet:isTablet });
+            (deviceType === 'tablet') ? isTablet = true: isTablet = false;
 
-            // return reply.view(customView, { isMobile: isMobile});
-            
             if (request.params.path == '' || request.params.path == undefined) {
                 return reply.redirect('http://www.bloomingdales.com');
             } else {
-                
                 return reply.view(customView, {
-                    isMobile: isMobile, isTablet:isTablet
+                    isMobile: isMobile,
+                    isTablet: isTablet
                 });
             }
-
-/*            
-            fs.readFile(__dirname + indexFileName, function(err, data) {
-                // Better to at least throw the error than do nothing with it
-                if (err) {
-                    throw err;
-                }   
-
-                // generate an object of all config properties set up
-                var config = {};
-
-                // Node way of iterating an object
-                Object.keys(process.env).forEach(function(key) {
-                    if (key.indexOf('CONFIG_') === 0) {
-                        config[key.toLowerCase().replace('config_', '')] = process.env[key];
-                    }
-                });
-
-                var configStr = '';
-                // Check that its not empty
-                if (Object.getOwnPropertyNames(config)) {
-                    configStr = 'var ENV_CONFIG = (function() { return ' + JSON.stringify(config) + '; })();';
-                }
-
-                // create a cheerio object from the index.html
-                var $ = cheerio.load(data + '');
-
-                // If we have config properties to pass to the client, inject after main HTML content
-                if (configStr) {
-                    $('#bl_main_container').after('<script type="text/javascript">' + configStr + '</script>');
-                }
-
-                request.log(request.route.tags, {
-                    uri: reply($.html()).source.path
-                });
-            });
-*/
         }
     }
 };

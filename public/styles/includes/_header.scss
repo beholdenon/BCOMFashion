@@ -4,6 +4,8 @@
 // ========================================= //
 // ========================================= //
 header {
+    border-bottom: 0.09091rem #ccc solid !important;
+
     .row {
         width: 100%;
         margin-left: auto;
@@ -163,7 +165,6 @@ header {
     }
 
     #nav {
-        border-bottom: 0.09091rem #ccc solid !important;
         box-shadow: none;
         min-height: 28.9844px;
         .row {         
@@ -1452,7 +1453,7 @@ body.tablet{
                 .flyoutCol {
                     float: left;                    
                     &:not(:first-child) {
-                        margin-left: 3vw;
+                        margin-left: 19.2900009155273px;
                     }
                 }
 
@@ -1479,12 +1480,12 @@ body.tablet{
                     .flexLabelLinksContainer {
                         padding-right: 1.27273rem;
                         ul li {
-                          height: 4vw;
+                          height: 25.625px;
                           max-height: 28px;
                         }
                     }                    
                     .gridLayout {
-                        width: 6vw;
+                        width: 25.625px;;
                         max-width: 40px;
                     }                    
                 } 
