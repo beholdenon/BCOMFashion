@@ -156,7 +156,7 @@ html {
     overflow-x: hidden;
 }
 
-.mobile#bl_main_container {
+.mobile#mobile-wrapper {
     max-width: initial;
     width: auto;
     background-color: white;
@@ -281,7 +281,7 @@ html {
         background-color: #ddd;
     }
 
-    #page-content-container {
+    #bl_main_container {
         position: relative;
         width: 100%;
         // padding-top: 86px;
@@ -297,7 +297,7 @@ html {
         opacity: 0.5;
         display: none;
         line-height: 0px;
-        background-image: url(../../images/ajax-loader.gif);
+        background-image: url("../../fashion/images/ajax-loader.gif");
         background-repeat: no-repeat;
         background-position: 50% 240px;
         z-index: 98;
@@ -305,7 +305,7 @@ html {
 }
 body.nav-toggle {
     overflow: hidden;
-    #bl_main_container {
+    #mobile-wrapper {
         -webkit-transform: translate3d(167px, 0, 0);
         -moz-transform: translate3d(167px, 0, 0);
         -ms-transform: translate3d(167px, 0, 0);

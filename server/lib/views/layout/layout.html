@@ -1,37 +1,39 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        {{#if isMobile}}
+            {{> head-mobile}}
+        {{else}}
+            {{> head}}
+        {{/if}} 
+    </head>
 
-<head>
-    {{#if isMobile}}
-        {{> head-mobile}}
+    {{#if isTablet}}
+        <body class="tablet">
     {{else}}
-        {{> head}}
-    {{/if}} 
-</head>
-
-{{#if isTablet}}
-    <body class="tablet">
-{{else}}
-    <body>
-{{/if}} 
-    {{#if isMobile}}
-        {{> header-mobile}}
-    {{else}}
-        {{> header}}
+        <body>
     {{/if}} 
 
-    <div class="container">
-        {{! Every view gets inserted here }}
-        {{{content}}}
-    </div>
-    
-    {{#if isMobile}}
-        {{> footer-mobile}}
-    {{else}}
-        {{> footer}}
-    {{/if}}     
-    
-	<script data-main="/fashion/javascripts/main.js" src="/fashion/javascripts/libs/requirejs.js"></script>
-</body>
+        {{#if isMobile}}
+            {{> header-mobile}}            
+            {{> sidenav-mobile-top}}            
+        {{else}}
+            {{> header}}
+        {{/if}} 
+
+        <div id="bl_main_container">
+            {{! Every view gets inserted here }}
+            {{{content}}}
+        </div>
+        
+        {{#if isMobile}}
+            {{> sidenav-mobile-bottom}} 
+            {{> footer-mobile}}
+        {{else}}
+            {{> footer}}
+        {{/if}}     
+        
+    	<script data-main="/fashion/javascripts/main.js" src="/fashion/javascripts/libs/requirejs.js"></script>
+    </body>
 
 </html>

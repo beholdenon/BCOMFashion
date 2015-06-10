@@ -10,13 +10,13 @@ define([
 	    var heightEqualizer = function(){
 	        var pageHeight = window.innerHeight;
 	        var regionMainHeight = pageHeight - $('#region-header').outerHeight();
-	        $('#bl_main_container').css("min-height", regionMainHeight);
+	        $('#mobile-wrapper').css("min-height", regionMainHeight);
 	        if( $("body").hasClass("nav-toggle")) {
 	            $('#page-wrapper').css("height", pageHeight);
-	            $('#bl_main_container').css("height", regionMainHeight);
+	            $('#mobile-wrapper').css("height", regionMainHeight);
 	        } else {
 	            $('#page-wrapper').css("height", "");
-	            $('#bl_main_container').css("height", "");
+	            $('#mobile-wrapper').css("height", "");
 	        }
 	    };
 	
