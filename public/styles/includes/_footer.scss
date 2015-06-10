@@ -11,7 +11,7 @@ footer {
     }
 
     .mainFooter {
-        max-width: 962px;
+        max-width: $BLOOMIES-main-container-width;
         padding: 0.90909rem 0 1.45455rem 0;
         margin: 0 auto;
         text-align: left;
@@ -214,7 +214,7 @@ footer {
 // ============[ tablet device ]============ //
 // ========================================= //
 // ========================================= //
-@media only screen and (min-width: 641px) and (max-width: 980px) {
+@media only screen and (min-width: ($BLOOMIES-breakpoint-small + 1)) and (max-width: $BLOOMIES-breakpoint-medium) {
     footer {
         .mainFooter{
             position: relative;
@@ -290,7 +290,7 @@ footer {
 // =======[ tablet device above 980px ]===== //
 // ========================================= //
 // ========================================= //
-@media only screen and (min-width: 981px) {
+@media only screen and (min-width: ($BLOOMIES-breakpoint-medium + 1)) {
     body.tablet{
         footer {
             width: auto;
@@ -304,17 +304,17 @@ footer {
 // =======[ desktop:  below 640px  ]======== //
 // ========================================= //
 // ========================================= //
-@media only screen and (max-width: 640px) {
+@media only screen and (max-width: $BLOOMIES-breakpoint-small) {
     footer {
-        max-width: 640px;
-        width: 640px;
+        max-width: $BLOOMIES-breakpoint-small;
+        width: $BLOOMIES-breakpoint-small;
     }
 
     //an exact copy of the previous media query
     footer {
         .mainFooter{
             position: relative;
-            max-width: 640px;
+            max-width: $BLOOMIES-breakpoint-small;
             .footerLinks{
                 width: 100%;
                 padding-bottom: rem-calc(20);

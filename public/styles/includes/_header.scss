@@ -5,14 +5,13 @@
 // ========================================= //
 header {
     border-bottom: 0.09091rem #ccc solid !important;
-
     .row {
         width: 100%;
         margin-left: auto;
         margin-right: auto;
         margin-top: 0;
         margin-bottom: 0;
-        max-width: 962px;  
+        max-width: $BLOOMIES-main-container-width;  
     }    
 
     #seasonalAdWrapper {
@@ -22,7 +21,7 @@ header {
         margin-left: auto;
         margin-right: auto;
         #seasonalAdBanner {
-            width: 962px;
+            width: $BLOOMIES-main-container-width;
             margin: 0 auto;
         }
     }
@@ -35,7 +34,7 @@ header {
         #innerZeroNav {
             font-size: 1rem;
             height: 2.54545rem;
-            // width: 962px;
+            // width: $BLOOMIES-main-container-width;
             margin: 0 auto;
             text-align: right;
             .columns {
@@ -93,7 +92,7 @@ header {
     }
 
     #aboveNav {
-        // width: 962px; 
+        // width: $BLOOMIES-main-container-width; 
         margin: 0 auto;
         padding: 2.09091rem 0;
         .columns {
@@ -365,7 +364,7 @@ header {
 // ==============[ above 980px ]============ //
 // ========================================= //
 // ========================================= //
-@media only screen and (min-width: 981px) {
+@media only screen and (min-width: ($BLOOMIES-breakpoint-medium + 1)) {
     body.tablet{
         header {
             #nav {
@@ -398,7 +397,7 @@ header {
 // ========[ desktop:  below 980px ]======== //
 // ========================================= //
 // ========================================= //
-@media only screen and (min-width: 641px) and (max-width: 980px) { 
+@media only screen and (min-width: ($BLOOMIES-breakpoint-small + 1)) and (max-width: $BLOOMIES-breakpoint-medium) { 
     header {
         #seasonalAdWrapper{
             z-index: 101;
@@ -1157,9 +1156,9 @@ body.tablet{
 // ======[ desktop:  below 640px  ]======= //
 // ========================================= //
 // ========================================= //
-@media only screen and (max-width: 640px) {
+@media only screen and (max-width: $BLOOMIES-breakpoint-small) {
     header:not(.mobile) {
-        min-width: 640px;
+        min-width: $BLOOMIES-breakpoint-small;
         #seasonalAdWrapper{
             z-index: 101;
         }
@@ -1510,7 +1509,7 @@ body.tablet{
     }     
 
     #bl_main_container {
-        max-width: 640px;
-        width: 640px;
+        max-width: $BLOOMIES-breakpoint-small;
+        width: $BLOOMIES-breakpoint-small;
     }
 }
