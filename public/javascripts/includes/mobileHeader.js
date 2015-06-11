@@ -80,11 +80,22 @@ define([
 	    });
 	
 		//HIDE NAVIGATION WHEN SEARCHING
-	    $("#mvSearchField").bind("click", function(){
+	    $("#mvSearchField").on("click", function(){
 	        if($("body").hasClass("nav-toggle")) {
 	            navToggle();
 	        }
 	    });
+
+	    //SHOW CLEAR SEARCH BUTTON
+	    $("#mvSearchField").on("keyup", function(){
+	        if($(".clearSearchBoxIcon").hasClass("hide")) {
+	            $('.clearSearchBoxIcon').toggleClass('hide');
+	        }
+	    });
+	    $(".clearSearchBoxIcon").on("click", function(){
+	    	$('#mvSearchField').val('');
+	        $(this).toggleClass('hide');
+	    });    
 	};
 	
 	var initMobile = function(){

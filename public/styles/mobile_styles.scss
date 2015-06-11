@@ -129,12 +129,16 @@ header.mobile{
                     }    
                     .clearSearchBoxIcon {
                         float: right;
-                        background-image: url('/fashion/images/header/searchClear.png');
+                        background-image: url("../../fashion/images/mobile-icon2x-s5983faaebb.png");
+                        background-position: 0 -577px;
+                        background-size: 150px auto;
                         background-repeat: no-repeat;
-                        width: 50px;
-                        height: 41px;
-                        position: inherit;
-                        background-size: 30px;
+                        position: absolute;
+                        top: 8px;
+                        right: 8px;
+                        height: 29px;
+                        cursor: pointer;
+                        width: 30px;                        
                     } 
                     .aboveNavSearchBox {
                         display: inline-block;
