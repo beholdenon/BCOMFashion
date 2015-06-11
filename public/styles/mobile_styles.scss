@@ -11,7 +11,7 @@ header.mobile{
         #header-container {
             min-width: 0;
             text-align: center;
-            border-bottom: 5px solid #000000;
+            border-bottom: 5px solid #000000 !important;
             height: 45px;
             box-sizing: border-box;
             #nav-button {
@@ -23,15 +23,14 @@ header.mobile{
                 #nav-button-icon {
                     margin: 11px 0 0 14px;
                     float: left;
-                }
-                .icon-menuButton {
                     width: 22px;
                     height: 21px;
-                    background-image: url('/fashion/images/header/unselectedMenuButton.png');
+                    background-image: url("../../fashion/images/mobile-icon2x-s5983faaebb.png");
+                    background-position: 0 -676px;
+                    background-size: 150px auto;
                     background-repeat: no-repeat;
-                    background-size: 22px;
                     &.active{
-                        background-image: url('/fashion/images/header/selectedMenuButton.png');
+                        background-position: 0 -607px;
                     }
                 }
             }            
@@ -47,9 +46,10 @@ header.mobile{
                     margin: 5px 11px 0 9px;
                     width: 25px;
                     height: 30px;
-                    background-image: url('/fashion/images/header/shoppingBag.png');
+                    background-image: url("../../fashion/images/mobile-icon2x-s5983faaebb.png");
+                    background-size: 150px auto;
+                    background-position: 0 -628px;
                     background-repeat: no-repeat;
-                    background-size: 25px;
                     font-weight: bold;
                     #brownBagItemsTotal {
                         padding-top: 6px;
@@ -65,6 +65,13 @@ header.mobile{
             }      
             #nav_logo {
                 display: inline-block;
+                background-image: url("../../fashion/images/mobile-icon2x-s5983faaebb.png");
+                background-size: 144px auto;
+                background-position: 0px -96px;
+                background-repeat: no-repeat;
+                width: 144px;
+                height: 23px;
+                margin-top: 8px;                
                 #header-logo-image {
                     display: inline-block;
                     height: 25px;
@@ -99,9 +106,10 @@ header.mobile{
                             height: 15.5px;
                             width: 14.5px;
                             display: inline-block;
-                            background-image: url('/fashion/images/header/search.png');
+                            background-image: url("../../fashion/images/mobile-icon2x-s5983faaebb.png");
+                            background-position: 0 -561px;
+                            background-size: 150px auto;
                             background-repeat: no-repeat;
-                            background-size: 14px;
                         }
                         input {
                             position: absolute;
@@ -361,7 +369,7 @@ footer.mobile{
             padding: 0 16px;
         }
         > span > a {
-            background-image: url('../../fashion/images/icon2x-s5983faaebb.png');
+            background-image: url('../../fashion/images/mobile-icon2x-s5983faaebb.png');
             background-repeat: no-repeat;
         }        
         .footer-icon {
