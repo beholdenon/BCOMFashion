@@ -1,0 +1,196 @@
+/*
+* @author Constantin Bigu
+* @date 2015-04-24
+*
+*	HOW TO USE IT:
+*		1. replace the 'uniquePrefix' string
+*		2. use utility classes for rapid customization; feel free to expand the collection
+*		3. use global classes to customize styles; eg. 
+*/
+.uniquePrefix_mobile_main_container-bl_main_container_reset{
+    width: 100% !important;
+	margin-left: 0 !important;
+	margin-right: 0 !important;
+    padding: 0 !important;
+}
+/*utility classes*/
+.uniquePrefix_padding_5{
+	padding: 5px !important;
+}
+.uniquePrefix_padding_10{
+	padding: 10px !important;
+}
+.uniquePrefix_padding_20{
+	padding: 20px !important;
+}
+.uniquePrefix_padding_50{
+	padding: 50px !important;
+}
+.uniquePrefix_padding_top_5{
+	padding-top: 5px !important;
+}
+.uniquePrefix_padding_top_10{
+	padding-top: 10px !important;
+}
+.uniquePrefix_padding_top_20{
+	padding-top: 20px !important;
+}
+.uniquePrefix_padding_bottom_5{
+	padding-bottom: 5px !important;
+}
+.uniquePrefix_padding_bottom_10{
+	padding-bottom: 10px !important;
+}
+.uniquePrefix_padding_bottom_20{
+	padding-bottom: 20px !important;
+}
+.uniquePrefix_padding_bottom_45{
+	padding-bottom: 45px !important;
+}
+.uniquePrefix_margin_5{
+	margin: 5px !important;
+}
+.uniquePrefix_margin_10{
+	margin: 10px !important;
+}
+.uniquePrefix_margin_20{
+	margin: 20px !important;
+}
+.uniquePrefix_margin_top_5{
+	margin-top: 5px !important;
+}
+.uniquePrefix_margin_top_10{
+	margin-top: 10px !important;
+}
+.uniquePrefix_margin_top_20{
+	margin-top: 20px !important;
+}
+.uniquePrefix_margin_bottom_5{
+	margin-bottom: 5px !important;
+}
+.uniquePrefix_margin_bottom_10{
+	margin-bottom: 10px !important;
+}
+.uniquePrefix_margin_bottom_20{
+	margin-bottom: 20px !important;
+}
+.uniquePrefix_margin_bottom_30{
+	margin-bottom: 30px !important;
+}
+.uniquePrefix_margin_bottom_45{
+	margin-bottom: 45px !important;
+}
+#uniquePrefix_mobile_main_container{
+	width: 100%;
+	overflow-x: hidden;
+    font-family: 'Lato', sans-serif !important;
+    -webkit-overflow-scrolling: touch;
+    position: relative;
+    text-align: center;
+}
+.lazy, .lazyM {
+    display: none;
+}
+#uniquePrefix_mobile_main_container img{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+#uniquePrefix_mobile_main_container > header{
+	width: 100%;
+}
+
+#uniquePrefix_mobile_main_container > header > img{
+	width: 100%;
+}
+#uniquePrefix_mobile_header > h2{
+	font-size: 15px;
+	font-weight: 300;
+	color: #000;
+	padding-left: 40px;
+	padding-right: 40px;
+	line-height: 1.5;
+}
+a.uniquePrefix_mobile_cta{
+	text-transform: uppercase;
+    font-weight: bold;
+    font-size: 15px;
+	padding: 35px 40px;
+	margin: 35px;
+	border: 1px solid #000;
+	color: #000;
+	text-decoration: none;
+	letter-spacing: 4px;
+	z-index: 3;
+	transition: all 0.3s ease 0s;
+	display: inline-block;
+	position: relative;
+}
+a:active, a:visited {
+  color: #000 !important;
+}
+#uniquePrefix_mobile_main_container > section > header{
+	padding: 25px 0;
+	font-size: 32px;
+	color: #000;
+	font-weight: bold;
+}
+#uniquePrefix_mobile_main_container > ul{
+	list-style-type: none;
+}
+ul#uniquePrefix_mobile_socialshare_container{
+	direction: rtl;
+	margin-bottom: 90px;
+}
+ul#uniquePrefix_mobile_socialshare_container li{
+	display: inline-block;
+	position:relative;
+	width: 64px;
+	height: 64px;
+	text-align:center;
+	border: 1px solid #000;
+	margin: 0 10px;
+	cursor:pointer;
+}
+ul#uniquePrefix_mobile_socialshare_container li:hover{
+	color: #fff;
+	background-color: #000;
+}
+ul#uniquePrefix_mobile_socialshare_container li i {
+	font-size: 36px;
+	line-height: 64px;
+}
+#uniquePrefix_mobile_socialshare_twitter{
+	border-right: 1px solid #000;
+}
+#uniquePrefix_mobile_socialshare_pinterest{
+	border-left: 2px solid #000;
+	border-right: 2px solid #000;
+}
+#uniquePrefix_mobile_shop_all{
+	padding: 35px 62px;
+}
+#uniquePrefix_mobile_back_to_top_container{
+	display: none;
+	width: 100%;
+	position: fixed;
+	height: 40px;
+	bottom: 0;	
+	z-index: 10000;
+}
+#uniquePrefix_mobile_back_to_top{
+    font-weight: bold;
+    font-size: 14px;
+	padding: 12px 0;
+	color: #000;
+	text-transform: uppercase;
+	width: 100%;
+	text-align: center;
+	display: inline-block;
+	background-color: rgba(255, 255, 255, .5);
+	text-decoration: none;
+	font-family: 'Lato', sans-serif;
+}
+.mvBloomMenuHeader {
+	margin-top: 0 !important;
+}
