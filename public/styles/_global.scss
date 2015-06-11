@@ -185,8 +185,8 @@ a {
     margin: 0 auto;
 }
 
-.proper_nav_sprite {
-    background: url(../images/proper_nav_sprite.png) no-repeat;
+.desktop_nav_sprite {
+    background: url("../images/desktop_nav_sprite.png") no-repeat;
 }
 
 #map_canvas, .map_canvas {
@@ -196,7 +196,7 @@ a {
 }
 
 .bl_loading {
-    background: url("http://www.bloomingdales.com/web20/assets/img/ajax-loader3.gif") center center no-repeat;
+    background: url("../images/ajax-loader.gif") center center no-repeat;
     min-height: 9.09091rem;
 }
 

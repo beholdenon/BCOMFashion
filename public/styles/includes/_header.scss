@@ -425,8 +425,10 @@ header {
                 left: 0;   
                 z-index: 100; 
                 #hamburgerMenuIcon{
-                    background-image: url(/fashion/images/header/tablet_hamburger.png);
-                    background-repeat: no-repeat;
+                    height: 19px;
+                    width: 26px;
+                    background-position: 0px -487px;
+                    background-size: 416px auto;
                     cursor: pointer;
                     position: absolute;
                     left: 1.81818rem;
@@ -497,11 +499,10 @@ header {
                     border-right: 0 !important;
                     border-bottom: 0.18182rem solid black !important;
                     background-color: white;
-                    background-position: right;
-                    background-size: 65px;
-                    background-image: url(../images/header/icons-hf.png);
+                    background-image: url("../images/desktop_nav_sprite.png");
                     background-repeat: no-repeat;
-                    background-position: right -73px;
+                    background-position: right -511px;
+                    background-size: 416px auto;
                     margin-right: 10.72727rem;
                     z-index: 1;
                     form {
@@ -549,7 +550,7 @@ header {
                         text-decoration: none;
                         font-size: 0.09091rem;
                         color: transparent;                        
-                        background: url(../images/header/icons-hf.png) no-repeat;
+                        background: url("../images/desktop_nav_sprite.png") no-repeat;
                     }
                     .basket {
                         padding: 2.36364rem 0 0 0;
@@ -561,12 +562,14 @@ header {
                         font-weight: 700;
                         font-style: normal;
                         color: black;
-                        background-position: 0 -130px;
+                        background-position: 0px -636px;
+                        background-size: 416px auto;
                         height: 65px;
                         width: 65px;                        
                     }
                     .person {
-                        background-position: 0 0;
+                        background-position: 0px -506px;
+                        background-size: 416px auto;
                         height: 65px;
                         width: 65px;                        
                     }
@@ -808,8 +811,10 @@ body.tablet{
                 left: 0; 
                 z-index: 100;   
                 #hamburgerMenuIcon{
-                    background-image: url(/fashion/images/header/tablet_hamburger.png);
-                    background-repeat: no-repeat;
+                    height: 19px;
+                    width: 26px;
+                    background-position: 0px -487px;
+                    background-size: 416px auto;
                     cursor: pointer;
                     position: absolute;
                     left: rem-calc(20);
@@ -883,11 +888,10 @@ body.tablet{
                     border-right: 0 !important;
                     border-bottom: 0.18182rem solid black !important;
                     background-color: white;
-                    background-position: right;
-                    background-size: 65px;
-                    background-image: url(../images/header/icons-hf.png);
+                    background-image: url("../images/desktop_nav_sprite.png");
                     background-repeat: no-repeat;
-                    background-position: right -75px;
+                    background-position: right -511px;
+                    background-size: 416px auto;
                     margin-right: 10.72727rem;
                     z-index: 1;
                     form {
@@ -939,7 +943,7 @@ body.tablet{
                         text-decoration: none;
                         font-size: 0.09091rem;
                         color: transparent;                        
-                        background: url(../images/header/icons-hf.png) no-repeat;
+                        background: url("../images/desktop_nav_sprite.png") no-repeat;
                     }
                     .basket {
                         padding: 2.36364rem 0 0 0;
@@ -951,12 +955,14 @@ body.tablet{
                         font-weight: 700;
                         font-style: normal;
                         color: black;
-                        background-position: 0 -130px;
+                        background-position: 0px -636px;
+                        background-size: 416px auto;
                         height: 65px;
                         width: 65px;                        
                     }
                     .person {
-                        background-position: 0 0;
+                        background-position: 0px -506px;
+                        background-size: 416px auto;
                         height: 65px;
                         width: 65px;                        
                     }
@@ -1185,8 +1191,10 @@ body.tablet{
                 left: 0;
                 z-index: 100;     
                 #hamburgerMenuIcon{
-                    background-image: url(/fashion/images/header/tablet_hamburger.png);
-                    background-repeat: no-repeat;
+                    height: 19px;
+                    width: 26px;
+                    background-position: 0px -487px;
+                    background-size: 416px auto;
                     cursor: pointer;
                     position: absolute;
                     left: 1.81818rem;
@@ -1257,11 +1265,10 @@ body.tablet{
                     border-right: 0 !important;
                     border-bottom: 0.18182rem solid black !important;
                     background-color: white;
-                    background-position: right;
-                    background-size: 65px;
-                    background-image: url(../images/header/icons-hf.png);
+                    background-image: url("../images/desktop_nav_sprite.png");
                     background-repeat: no-repeat;
-                    background-position: right -73px;
+                    background-position: right -511px;
+                    background-size: 416px auto;
                     margin-right: 10.72727rem;
                     z-index: 1;
                     form {
@@ -1301,7 +1308,7 @@ body.tablet{
                         text-decoration: none;
                         font-size: 0.09091rem;
                         color: transparent;                        
-                        background: url(../images/header/icons-hf.png) no-repeat;
+                        background: url("../images/desktop_nav_sprite.png") no-repeat;
                     }
                     .basket {
                         padding: 2.36364rem 0 0 0;
@@ -1313,12 +1320,14 @@ body.tablet{
                         font-weight: 700;
                         font-style: normal;
                         color: black;
-                        background-position: 0 -130px;
+                        background-position: 0px -636px;
+                        background-size: 416px auto;
                         height: 65px;
                         width: 65px;                        
                     }
                     .person {
-                        background-position: 0 0;
+                        background-position: 0px -506px;
+                        background-size: 416px auto;
                         height: 65px;
                         width: 65px;                        
                     }
