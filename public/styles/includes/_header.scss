@@ -468,6 +468,7 @@ header {
 
             .bloomiesLogo {
                 background-size: 40vw;
+                width: 29vw;
                 margin: .5vw 0 0 1.5vw;
                 left: rem-calc(47);
                 position: absolute;
@@ -475,7 +476,7 @@ header {
                 transform: translate(0, -50%);
                 -webkit-transform: translate(0, -50%);
                 -moz-transform: translate(0, -50%);
-                z-index: 100;
+                z-index: 1;
                 img {
                     width: 40vw;
                     height: 4.4vw;
@@ -501,7 +502,7 @@ header {
                     background-color: white;
                     background-image: url("../images/desktop_nav_sprite.png");
                     background-repeat: no-repeat;
-                    background-position: right -511px;
+                    background-position: right -911px;
                     background-size: 416px auto;
                     margin-right: 10.72727rem;
                     z-index: 1;
@@ -600,20 +601,13 @@ header {
                 background-color: #f7f7f7;
                 ul#mainNav {
                     margin-bottom: 0;
-                    padding-bottom: 0;
+                    padding-top: 15px;
+                    padding-bottom: 15px;
                     height: 100%;
                     li {
                         width: 29vw;
                         height: initial !important;
                         display: block !important;
-                        &:first-child {
-                            padding-top: 15px;
-                            background-color: #f7f7f7;
-                        }
-                        &:last-child {
-                            padding-bottom: 15px;
-                            background-color: #f7f7f7;
-                        }
                         a {
                             display: block;
                             font-size: 1.3vw !important;
@@ -745,8 +739,11 @@ header {
                     .flexLabelLinksContainer {
                         padding-right: 1.27273rem;
                         ul li {
-                          height: 4vw;
-                          max-height: 28px;
+                            height: 4vw;
+                            max-height: 28px;
+                            a:hover{
+                                color: #D90EAC;                            
+                            }
                         }
                     }                    
                     .gridLayout {
@@ -814,7 +811,7 @@ body.tablet{
                     height: 19px;
                     width: 26px;
                     background-position: 0px -487px;
-                    background-size: 416px auto;
+                    background-size: 416px auto !important;
                     cursor: pointer;
                     position: absolute;
                     left: rem-calc(20);
@@ -856,6 +853,7 @@ body.tablet{
 
             .bloomiesLogo {
                 background-size: 40vw;
+                width: 29vw;
                 margin: 5px 0 0 1.5vw;
                 left: rem-calc(47);
                 position: absolute;
@@ -890,7 +888,7 @@ body.tablet{
                     background-color: white;
                     background-image: url("../images/desktop_nav_sprite.png");
                     background-repeat: no-repeat;
-                    background-position: right -511px;
+                    background-position: right -911px;
                     background-size: 416px auto;
                     margin-right: 10.72727rem;
                     z-index: 1;
@@ -989,21 +987,14 @@ body.tablet{
                 float: left;
                 ul#mainNav {
                     margin-bottom: 0;
-                    padding-bottom: 0;
+                    padding-top: 15px;
+                    padding-bottom: 15px;
                     height: 100%;
                     background-color: #f7f7f7;
                     li {
                         width: 27.5vw;
                         height: initial !important;
                         display: block !important;
-                        &:first-child {
-                            padding-top: 15px;
-                            background-color: #f7f7f7;
-                        }
-                        &:last-child {
-                            padding-bottom: 15px;
-                            background-color: #f7f7f7;
-                        }
                         a {
                             display: block;
                             font-size: 1.3vw !important;
@@ -1135,8 +1126,11 @@ body.tablet{
                     .flexLabelLinksContainer {
                         padding-right: 1.27273rem;
                         ul li {
-                          height: 4vw;
-                          max-height: 28px;
+                            height: 4vw;
+                            max-height: 28px;
+                            a:hover{
+                                color: #D90EAC;                            
+                            }                          
                         }
                     }                    
                     .gridLayout {
@@ -1165,7 +1159,8 @@ body.tablet{
 @media only screen and (max-width: $BLOOMIES-breakpoint-small) {
     body{
         header:not(.mobile) {
-            // max-width: $BLOOMIES-breakpoint-small;
+            max-width: $BLOOMIES-breakpoint-small;
+            width: $BLOOMIES-breakpoint-small;            
             #seasonalAdWrapper{
                 z-index: 101;
             }
@@ -1235,6 +1230,7 @@ body.tablet{
 
                 .bloomiesLogo {
                     background-size: 256px;
+                    width: 185.875px;
                     margin: 3.20000004768372px 0 0 9.60000038146973px;
                     left: rem-calc(47);
                     position: absolute;
@@ -1242,7 +1238,7 @@ body.tablet{
                     transform: translate(0, -50%);
                     -webkit-transform: translate(0, -50%);
                     -moz-transform: translate(0, -50%);
-                    z-index: 100;
+                    z-index: 1;
                     img {
                         width: 256px;
                         height: 28.15625px;
@@ -1268,7 +1264,7 @@ body.tablet{
                         background-color: white;
                         background-image: url("../images/desktop_nav_sprite.png");
                         background-repeat: no-repeat;
-                        background-position: right -511px;
+                        background-position: right -911px;
                         background-size: 416px auto;
                         margin-right: 10.72727rem;
                         z-index: 1;
@@ -1354,27 +1350,19 @@ body.tablet{
                     display: flex !important;
                 }
                 .row {
-                    // display: none;
                     display: inline-block;
                     float: left;
                     width: 180px;
                     ul#mainNav {
                         margin-bottom: 0;
-                        padding-bottom: 0;
+                        padding-bottom: 15px;
+                        padding-top: 15px;
                         height: 100%;
                         background-color: #f7f7f7;
                         li {
                             width:185.875px;
                             height: initial !important;
                             display: block !important;
-                            &:first-child {
-                                padding-top: 15px;
-                                background-color: #f7f7f7;
-                            }
-                            &:last-child {
-                                padding-bottom: 15px;
-                                background-color: #f7f7f7;
-                            }
                             a {
                                 display: block;
                                 font-size: 8.33300018310547px !important;
@@ -1420,7 +1408,7 @@ body.tablet{
                     .flexLabelLinksContainer {
                         text-align: left;
                         ul li {
-                            height: auto;
+                            height: 2.09091rem;
                             &:not(.gridLayout) {
                                 display: block;
                                 padding-left: 12px;
@@ -1441,6 +1429,11 @@ body.tablet{
                                 }
                             }
                         }
+                        &:not(:first-child) {
+                            .flyoutLabel {
+                                margin-top: 20px !important;
+                            }                
+                        }        
                     }
 
                     .gridLayout {
@@ -1468,6 +1461,7 @@ body.tablet{
 
                     //HOME section
                     #flyout_3865{
+                        width: 404.03125px;
                         padding: 0.90909rem 0 0 0;
                         > div > div.flyoutCol{
                             min-width: 0 !important;
@@ -1480,6 +1474,7 @@ body.tablet{
                     //DESIGNERS section
                     #flyout_1001351{
                         padding: 0.90909rem 0 0 0;
+                        min-width: 382px;
                         > div > div.flyoutCol{
                             min-width: 0 !important;
                         }
@@ -1489,8 +1484,11 @@ body.tablet{
                         .flexLabelLinksContainer {
                             padding-right: 1.27273rem;
                             ul li {
-                              height: 25.625px;
-                              max-height: 28px;
+                                height: 25.625px;
+                                max-height: 28px;
+                                a:hover{
+                                    color: #D90EAC;                            
+                                }                                
                             }
                         }                    
                         .gridLayout {

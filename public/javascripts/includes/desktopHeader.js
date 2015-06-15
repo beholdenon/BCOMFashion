@@ -62,14 +62,19 @@ define([
                 dataType: 'html',
                 method: 'GET',
                 data: {
-                    '&categoryIds': '1003044,1001351,13668,2910,16961,16958,3376,2921,3864,3866,3865,394',
-                    // 'depth'		: '3',
+                    '&categoryIds': '1003044,1001351,13668,2910,16961,16958,3376,2921,3864,3866,3865,394'
                 },
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded',
                 }
             }).success(function(res) {
-                $('#globalFlyouts').html(res);
+                var resBlob = res;
+
+                //replace relative path for Loyalist popup in Beauty flyout
+                var relativePopup = '/popup.ognc?popupID=504191';
+                resBlob = resBlob.replace(relativePopup, 'http://www.bloomingdales.com' + relativePopup);
+
+                $('#globalFlyouts').html(resBlob);
                 $('#globalFlyouts a').each(function() {
                     if ($(this).attr('href').charAt(0) == '/') {
                         $(this).attr('href', 'http://www.bloomingdales.com' + $(this).attr('href'));
@@ -170,7 +175,7 @@ define([
 
         $('#nav').on('mouseenter', '#mainNav > li', function(ev) {
             //BIND ONLY TO DESKTOP EXPERIENCE
-            if ($(window).width() >= 980 && (!$('body').hasClass('tablet'))) {
+            if ($(window).width() > 980 && (!$('body').hasClass('tablet'))) {
                 if (hamburgerMinFOBSFlag == true) {
                     hamburgerMaxFOBS();
                 }
@@ -185,20 +190,27 @@ define([
                 }, delay);
             }
         }).on('mouseleave', '#mainNav > li', function(ev) {
-            if ($(window).width() >= 980 && (!$('body').hasClass('tablet'))) {
+            if ($(window).width() > 980 && (!$('body').hasClass('tablet'))) {
                 clearTimeout(timeoutConst);
                 $('#flyout_' + catNum).removeClass('flyout-on').addClass('flyout-off');
                 $(this).removeClass('selected');
             }
+        }).on('click', '#mainNav > li', function(ev) {
+            var target = ev.currentTarget;
+
+            if (($(window).width() <= 980 || $('body').hasClass('tablet')) && (!$(target).hasClass('active'))) {                    
+                ev.preventDefault();
+                hamburgerFlyoutAction(target);
+            }
         });
 
         $('#globalFlyouts').on('mouseenter', function() {
-            if ($(window).width() >= 980 && (!$('body').hasClass('tablet'))) {
+            if ($(window).width() > 980 && (!$('body').hasClass('tablet'))) {
                 $('#flyout_' + catNum).addClass('flyout-on').removeClass('flyout-off');
                 $('#flexLabel_' + catNum).addClass('selected');
             }
         }).on('mouseleave', function() {
-            if ($(window).width() >= 980 && (!$('body').hasClass('tablet'))) {
+            if ($(window).width() > 980 && (!$('body').hasClass('tablet'))) {
                 $('#flyout_' + catNum).removeClass('flyout-on').addClass('flyout-off');
                 $('#flexLabel_' + catNum).removeClass('selected');
             }
@@ -207,6 +219,7 @@ define([
         // =========== FLYOUT HANDLING FOR HAMBURHER MENU
         function hamburgerMenuAction(ev) {
             ev.preventDefault();
+            ev.stopImmediatePropagation();
 
             $('#hamburger-content-overlay').toggleClass('active');
 
@@ -273,62 +286,57 @@ define([
         function hamburgerMinFOBS() {
             //hide the sections containing images
             hamburgerMinFOBSFlag = true;
+
             $.each(fobs, function(index, value) {
                 $(value).hide();
             });
         }
 
         function hamburgerMaxFOBS() {
-            //hide the sections containing images
+            //show the sections containing images
             hamburgerMinFOBSFlag = false;
+
             $.each(fobs, function(index, value) {
-                $(value).hide();
+                $(value).show();
             });
         }
 
-        function hamburgerFlyoutAction(ev) {
-            ev.preventDefault();
-            ev.stopPropagation();
-            var target = ev.currentTarget;
+        function hamburgerFlyoutAction(target) {
+            var categoryID = target.id.substr(target.id.indexOf('_') + 1);
 
-            if (!$(target).hasClass('active')) {
-                var categoryID = target.id.substr(target.id.indexOf('_') + 1);
+            //Turn off current active main category
+            $('#mainNav li.active').removeClass('active');
+            //Add active class to selected category
 
-                //Turn off current active main category
-                $('#mainNav li.active').removeClass('active');
-                //Add active class to selected category
+            //Hide all Flyouts
+            $('#globalFlyouts > div').removeClass('activeNav');
 
-                //Hide all Flyouts
-                $('#globalFlyouts > div').removeClass('activeNav');
+            //Show the selected flyout
+            $('#flyout_' + categoryID).addClass('activeNav');
 
-                //Show the selected flyout
-                $('#flyout_' + categoryID).addClass('activeNav');
-
-                //If the hamburger flyouts are hidden, slide them out
-                if ($('#globalFlyouts').is(':hidden')) {
-                    $('#globalFlyouts').show();
-                }
-
-                $(target).addClass('active');
-
-                return false;
+            //If the hamburger flyouts are hidden, slide them out
+            if ($('#globalFlyouts').is(':hidden')) {
+                $('#globalFlyouts').show();
             }
+
+            $(target).addClass('active');
+
+            return false;
         }
 
-        try {
-            setTimeout(function() {
-                $('#mainNav > li').on('click', function(ev) {
-                    hamburgerFlyoutAction(ev);
-                });
-            }, 500);
-        } catch (e) {
-            console.log('============[ flyouts ajax response not received ]============');
-        }
-
-        // =========== Overlay window close function
+        // close overlay window 
         $('#overlay .close').on('click', function() {
             $(this).parent().hide();
             $('#overlayShield').hide()
+        });
+
+        //on desktop, resizing from tablet to desktop: show FOBs & Flyouts + hide hamburger active submenu
+        $(window).on('resize', function (){
+            if ($(window).width() > 980 && (!$('body').hasClass('tablet')) && ($('#nav').hasClass('active') || $('#nav').attr('style') === 'display: none;')){
+                $('#nav').removeClass('active').attr('style','');
+                $('#globalFlyouts').attr('style','');
+                $('#hamburgerMenuIcon, #mainNav li.active, #hamburger-content-overlay').removeClass('active');
+            }
         });
     };
 

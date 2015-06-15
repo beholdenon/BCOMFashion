@@ -5,7 +5,7 @@
 // ========================================= //
 header.mobile{
     background: #fff;
-    min-width: 0;
+    width: 100%;
     margin-bottom: 3px;
     #region-header {
         #header-container {
@@ -72,11 +72,10 @@ header.mobile{
                 width: 144px;
                 height: 23px;
                 margin-top: 8px;                
-                #header-logo-image {
-                    display: inline-block;
-                    height: 25px;
-                    margin-top: 7px;
-                    cursor: pointer;
+                a {
+                    display: block;
+                    height: 100%;
+                    width: 100%;                    
                 }
             }                  
         }
@@ -156,6 +155,11 @@ header.mobile{
                 }          
             }            
         }
+    }
+
+    section {
+        max-width: none;
+        width: 100%;        
     }
 }
 

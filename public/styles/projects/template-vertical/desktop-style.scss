@@ -394,15 +394,4 @@ a.uniquePrefix_desktop_cta:hover{
 		#uniquePrefix_desktop_back_to_top{
 			display: block;
 		}
-	}
-
-	@media only screen and (max-width: 980px) {
-		#uniquePrefix_desktop_loader {
-			top: 94px !important; 
-		}
-	}
-	@media only screen and (min-width: 981px) {
-		#uniquePrefix_desktop_loader {
-			top: 151px !important; 
-		}
 	}	
