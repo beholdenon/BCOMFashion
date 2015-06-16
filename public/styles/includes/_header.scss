@@ -738,11 +738,17 @@ header {
                     }
                     .flexLabelLinksContainer {
                         padding-right: 1.27273rem;
-                        ul li {
-                            height: 4vw;
-                            max-height: 28px;
-                            a:hover{
-                                color: #D90EAC;                            
+                        ul {
+                            li {
+                                height: 4vw;
+                                max-height: 28px;
+                                a {
+                                    font-size: 1.2vw;
+                                    margin-top: 3px;
+                                    &:hover{
+                                        color: #D90EAC;                            
+                                    }
+                                }
                             }
                         }
                     }                    
@@ -1389,7 +1395,7 @@ body.tablet{
                     padding: rem-calc(15) rem-calc(7.7) rem-calc(15) rem-calc(0);
                     background-color: #ECECEC;
                     float: left;
-                    flex: 1;
+                    // flex: 1;
                     .subnav{
                         display:none;
                         &.activeNav {

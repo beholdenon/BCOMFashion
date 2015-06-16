@@ -235,6 +235,13 @@ define([
                 }
             });
 
+            var body = $('body');
+            if (body.css('overflow') === 'visible') {
+                body.css('overflow','hidden');
+            } else {
+                body.css('overflow','visible');
+            }            
+
             return false;
         }
 
@@ -323,12 +330,6 @@ define([
 
             return false;
         }
-
-        // close overlay window 
-        $('#overlay .close').on('click', function() {
-            $(this).parent().hide();
-            $('#overlayShield').hide()
-        });
 
         //on desktop, resizing from tablet to desktop: show FOBs & Flyouts + hide hamburger active submenu
         $(window).on('resize', function (){
