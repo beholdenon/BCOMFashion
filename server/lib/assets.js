@@ -44,12 +44,20 @@ module.exports = {
         handler: function(request, reply) {
             var deviceType = device.detectDevice(request),
                 isMobile = false,
+                isMobileiOS = false,
+                isMobileAndroid = false,
                 isTablet = false,
                 customView;
 
-            if (deviceType === 'mobile') {
+            if (deviceType.indexOf('mobile') > -1) {
                 customView = request.params.path + 'index-mobile';
                 isMobile = true;
+                
+                if (deviceType.indexOf('Android') > -1) {
+                    isMobileAndroid = true;
+                } else if (deviceType.indexOf('iOS') > -1){
+                    isMobileiOS = true;
+                }
             } else {
                 customView = request.params.path + 'index';
             }
@@ -61,6 +69,8 @@ module.exports = {
             } else {
                 return reply.view(customView, {
                     isMobile: isMobile,
+                    isMobileAndroid: isMobileAndroid,
+                    isMobileiOS: isMobileiOS,
                     isTablet: isTablet
                 });
             }

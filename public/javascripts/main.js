@@ -7,21 +7,22 @@
 
 (function() {
     var paths = {
-            "backbone": "libs/backbone",
-            "handlebars": "libs/handlebars",
-            "jquery": "libs/jquery",
-            "require": "libs/requirejs",
-            "underscore": "libs/lodash",
-            "desktopHeader": "includes/desktopHeader",
-            "mobileHeader": "includes/mobileHeader"
+            'backbone': 'libs/backbone',
+            'handlebars': 'libs/handlebars',
+            'jquery': 'libs/jquery',
+            'require': 'libs/requirejs',
+            'underscore': 'libs/lodash',
+            'desktopHeader': 'includes/desktopHeader',
+            'mobileHeader': 'includes/mobileHeader',
+            'initCoreMetrics': 'includes/cmInit'
         },
         shim = {
-            "backbone": {
-                "deps": ["underscore", "jquery"],
-                "exports": "Backbone"
+            'backbone': {
+                'deps': ['underscore', 'jquery'],
+                'exports': 'Backbone'
             },
-            "handlebars": {
-                "exports": "Handlebars"
+            'handlebars': {
+                'exports': 'Handlebars'
             }
         };
 
@@ -36,8 +37,9 @@ define([
     'jquery',
     'underscore',
     'desktopHeader',
-    'mobileHeader'
-], function(Backbone, $, _, DesktopHeader, MobileHeader) {
+    'mobileHeader',
+    'initCoreMetrics'
+], function(Backbone, $, _, DesktopHeader, MobileHeader, initCoreMetrics) {
     window.App = {};
 
     if (BLOOMIES.isMobile) {
@@ -45,6 +47,12 @@ define([
     } else {
         DesktopHeader();
     }
+
+    // show/hide the DOWNLOAD THE BIG BROWN BAG APP footer btn based on the mobile OS detection
+    BLOOMIES.BBBappBtn();
+
+    // init CM: env setup; pageview; nav links clicks
+    initCoreMetrics();
 
     Backbone.history.start({
         pushState: true,

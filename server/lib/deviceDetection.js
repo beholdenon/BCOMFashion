@@ -6,12 +6,12 @@ device.detectDevice = function(req) {
     	deviceType;
 
     if( /iPhone/i.test(UA) ) {
-		deviceType = 'mobile';
+		deviceType = 'mobile.iOS';
 	} else if (  /iPad/i.test(UA) ){
 		deviceType = 'tablet';
 	} else if (/Android/i.test(UA)){
 		if(/Mobile/i.test(UA)) {
-			deviceType = 'mobile';
+			deviceType = 'mobile.Android';
 		}
 		else {
 			deviceType = 'tablet';

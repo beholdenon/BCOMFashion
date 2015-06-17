@@ -5,7 +5,6 @@ define([
 ], function(Backbone, $, _) {
 
 	BLOOMIES.initMobileNav = function() {
-
 	    // Add the height on some divs on the page to support the proper scrolling
 	    var heightEqualizer = function(){
 	        var pageHeight = window.innerHeight;
@@ -96,6 +95,23 @@ define([
 	    	$('#mvSearchField').val('');
 	        $(this).toggleClass('hide');
 	    });    
+	};
+
+	BLOOMIES.BBBappBtn = function() {
+		// show/hide the DOWNLOAD THE BIG BROWN BAG APP footer btn based on the mobile OS detection
+		var iOSbtn = $('#footer-app-ios'),
+			Androidbtn = $('#footer-app-android');
+
+		if ( BLOOMIES.mobileOS === 'iOS' ){
+			Androidbtn.addClass('hidden');
+			iOSbtn.removeClass('hidden');
+		} else if ( BLOOMIES.mobileOS === 'Android' ){
+			iOSbtn.addClass('hidden');
+			Androidbtn.removeClass('hidden');	
+		} else {
+			iOSbtn.addClass('hidden');
+			Androidbtn.addClass('hidden');
+		}
 	};
 	
 	var initMobile = function(){

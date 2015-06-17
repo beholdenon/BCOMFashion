@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html>
     <head>
+        {{> head}}
+
+        <!--============[ CSS: Mobile Specific ]============-->
         {{#if isMobile}}
-            {{> head-mobile}}
-        {{else}}
-            {{> head}}
-        {{/if}} 
+            <link rel="stylesheet" href="/fashion/styles/mobile_styles.css"/>
+        {{/if}}
+
+        <!--============[ JS: Require Modules ]============-->
     </head>
 
     {{#if isTablet}}
@@ -29,11 +32,18 @@
         {{#if isMobile}}
             {{> sidenav-mobile-bottom}} 
             {{> footer-mobile}}
+            
+            {{#if isMobileiOS}}
+            <script type="text/javascript">BLOOMIES.mobileOS = 'iOS'</script>
+            {{else}}
+                <script type="text/javascript">BLOOMIES.mobileOS = 'Android'</script>
+            {{/if}}            
         {{else}}
             {{> footer}}
         {{/if}}     
         
     	<script data-main="/fashion/javascripts/main.js" src="/fashion/javascripts/libs/requirejs.js"></script>
+       
     </body>
 
 </html>
