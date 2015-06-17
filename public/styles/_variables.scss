@@ -1,0 +1,21 @@
+$env: 'dev';
+
+//Paths
+$img-path: if($env == 'dev', '../img/', './_Assets/');
+
+
+// Colors
+$black: #000;
+$red: #ed1c24;
+$yellow: #faba2d;
+$white: #fff;
+$blue: #c5e3ee;
+
+
+// Calculated Colors
+
+
+// Breakpoints
+$BLOOMIES-breakpoint-small: 640px;
+$BLOOMIES-breakpoint-medium: 980px;
+$BLOOMIES-main-container-width: 962px;
