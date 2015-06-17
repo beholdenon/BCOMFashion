@@ -1,0 +1,23 @@
+# Don't commit OSX files or npm generated files
+.DS_Store
+.sass-cache
+npm-debug.log
+.grunt
+node_modules
+node_modules/.bin
+.settings
+.settings/*
+.metadata
+.tmp
+*.log
+
+# Ignore everything in the target folder
+target
+
+# Ignore generated ruby file
+Gemfile.lock
+
+# Don't want Sublime's generated files.
+.project
+*.sublime-workspace
+*.sublime-project
