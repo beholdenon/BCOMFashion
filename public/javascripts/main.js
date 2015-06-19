@@ -14,7 +14,7 @@
             'underscore': 'libs/lodash',
             'desktopHeader': 'includes/desktopHeader',
             'mobileHeader': 'includes/mobileHeader',
-            'initCoreMetrics': 'includes/cmInit'
+            'coremetrics': 'includes/coremetrics'
         },
         shim = {
             'backbone': {
@@ -38,10 +38,11 @@ define([
     'underscore',
     'desktopHeader',
     'mobileHeader',
-    'initCoreMetrics'
-], function(Backbone, $, _, DesktopHeader, MobileHeader, initCoreMetrics) {
-    window.App = {};
-
+    'coremetrics'
+], function(Backbone, $, _, DesktopHeader, MobileHeader, Coremetrics) {
+    // default namespace
+    window.Globals = {};
+    
     if (BLOOMIES.isMobile) {
         MobileHeader()
     } else {
@@ -52,7 +53,7 @@ define([
     BLOOMIES.BBBappBtn();
 
     // init CM: env setup; pageview; nav links clicks
-    initCoreMetrics();
+    Coremetrics.initCoreMetrics();
 
     Backbone.history.start({
         pushState: true,

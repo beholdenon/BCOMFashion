@@ -1,8 +1,9 @@
 define([
     'backbone',
     'jquery',
-    'underscore'
-], function(Backbone, $, _) {
+    'underscore',
+    'coremetrics'
+], function(Backbone, $, _, Coremetrics) {
 
     function adjustFlyoutPosition(flyout, totalFOBs, selectedFOBIndex, fobOffset, flyoutWidth, fobMenuWidth) {
         var flyoutPos,
@@ -35,8 +36,8 @@ define([
                 dataType: 'html',
                 method: 'GET',
                 data: {
-                    // 'category'	: val,
-                    // 'depth'		: '3',
+                    // 'category'   : val,
+                    // 'depth'      : '3',
                 },
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded',
@@ -144,7 +145,7 @@ define([
                 dataType: 'json',
                 url: '/api/v2/shoppingbag/bagItemCount',
                 data: {
-                    // 'bagid'	: ,
+                    // 'bagid'  : ,
                     'userid': '64354129',
                 },
                 headers: {
@@ -196,9 +197,13 @@ define([
                 $(this).removeClass('selected');
             }
         }).on('click', '#mainNav > li', function(ev) {
-            var target = ev.currentTarget;
+            var target = ev.currentTarget,
+                anchor = $(target).children();
 
-            if (($(window).width() <= 980 || $('body').hasClass('tablet')) && (!$(target).hasClass('active'))) {                    
+            //bind coremetrics listeners
+            Coremetrics.linkClickTag(anchor);
+
+            if (($(window).width() <= 980 || $('body').hasClass('tablet')) && (!$(target).hasClass('active'))) {
                 ev.preventDefault();
                 hamburgerFlyoutAction(target);
             }
@@ -214,7 +219,26 @@ define([
                 $('#flyout_' + catNum).removeClass('flyout-on').addClass('flyout-off');
                 $('#flexLabel_' + catNum).removeClass('selected');
             }
+        }).on('click', 'div > div > div > div > ul > li > a',function(ev) {
+            var target = this; 
+
+            //bind coremetrics listeners
+            Coremetrics.linkClickTag(target);
         });
+
+        function cmNavBtn() {
+            if ($('#hamburger-content-overlay').hasClass('active')) {
+                Coremetrics.elementTag({
+                    elementID: Globals.pageID || 'heroku',
+                    elementCategory: 'Tablet_Global_Navigation Open'
+                });
+            } else {
+                Coremetrics.elementTag({
+                    elementID: Globals.pageID || 'heroku',
+                    elementCategory: 'Tablet_Global_Navigation Close'
+                });
+            }
+        }
 
         // =========== FLYOUT HANDLING FOR HAMBURHER MENU
         function hamburgerMenuAction(ev) {
@@ -222,6 +246,9 @@ define([
             ev.stopImmediatePropagation();
 
             $('#hamburger-content-overlay').toggleClass('active');
+
+            //bind coremetrics on hamburger button
+            cmNavBtn();
 
             $('#nav').animate({
                 height: 'toggle'
@@ -235,12 +262,13 @@ define([
                 }
             });
 
+            // freeze the window when hamburger menu is opened
             var body = $('body');
             if (body.css('overflow') === 'visible') {
-                body.css('overflow','hidden');
+                body.css('overflow', 'hidden');
             } else {
-                body.css('overflow','visible');
-            }            
+                body.css('overflow', 'visible');
+            }
 
             return false;
         }
@@ -309,7 +337,9 @@ define([
         }
 
         function hamburgerFlyoutAction(target) {
-            var categoryID = target.id.substr(target.id.indexOf('_') + 1);
+            var categoryID = target.id.substr(target.id.indexOf('_') + 1),
+                anchor,
+                element_id; 
 
             //Turn off current active main category
             $('#mainNav li.active').removeClass('active');
@@ -328,16 +358,37 @@ define([
 
             $(target).addClass('active');
 
+            //bind coremetrics listener
+            anchor = $(target).children().attr('href');
+            element_id = anchor.split('_').pop(); 
+            element_id = element_id.split('-');
+            element_id = element_id[1];
+
+            Coremetrics.elementTag({
+                elementID: element_id,
+                elementCategory: 'Tablet_Global_Navigation'
+            });
+
             return false;
         }
 
         //on desktop, resizing from tablet to desktop: show FOBs & Flyouts + hide hamburger active submenu
-        $(window).on('resize', function (){
-            if ($(window).width() > 980 && (!$('body').hasClass('tablet')) && ($('#nav').hasClass('active') || $('#nav').attr('style') === 'display: none;')){
-                $('#nav').removeClass('active').attr('style','');
-                $('#globalFlyouts').attr('style','');
+        $(window).on('resize', function() {           
+            if ($(window).width() > 980 && (!$('body').hasClass('tablet')) && ($('#nav').hasClass('active') || $('#nav').attr('style') === 'display: none;')) {
+                $('#nav').removeClass('active').attr('style', '');
+                $('#globalFlyouts').attr('style', '');
                 $('#hamburgerMenuIcon, #mainNav li.active, #hamburger-content-overlay').removeClass('active');
             }
+
+            //pageview coremetrics on window resize
+            if ($(window).width() > 980 && Globals.coremetrics.attr_42 === 'Desktop Minimized'){
+                Coremetrics.pageViewTag(Globals.pageID, Globals.catID, '');
+                Globals.coremetrics.attr_42 = '';
+            }      
+            if ($(window).width() <= 980 && Globals.coremetrics.attr_42 === ''){
+                Coremetrics.pageViewTag(Globals.pageID, Globals.catID, 'Desktop Minimized');
+                Globals.coremetrics.attr_42 = 'Desktop Minimized';
+            }                       
         });
     };
 
