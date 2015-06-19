@@ -360,8 +360,7 @@ header {
 
 // ========================================= //
 // ========================================= //
-// =============[ tablet device ]=========== //
-// ==============[ above 980px ]============ //
+// =====[ tablet device:  above 980px]====== //
 // ========================================= //
 // ========================================= //
 @media only screen and (min-width: ($BLOOMIES-breakpoint-medium + 1)) {
@@ -394,7 +393,7 @@ header {
 
 // ========================================= //
 // ========================================= //
-// ========[ desktop:  below 980px ]======== //
+// ========[ desktop: below 980px ]======== //
 // ========================================= //
 // ========================================= //
 @media only screen and (min-width: ($BLOOMIES-breakpoint-small + 1)) and (max-width: $BLOOMIES-breakpoint-medium) { 
@@ -467,7 +466,7 @@ header {
             }
 
             .bloomiesLogo {
-                background-size: 40vw;
+                background-size: 40vw auto;
                 width: 29vw;
                 margin: .5vw 0 0 1.5vw;
                 left: rem-calc(47);
@@ -489,11 +488,11 @@ header {
                 }                  
                 .aboveNavSearch {
                     display: block !important;
-                    position: relative;
+                    position: absolute;
                     top: 0;
                     right: 1.09091rem;
                     width: 34vw;
-                    height: 4.10909rem;
+                    height: 55px;
                     z-index: 999;
                     border-top: 0 !important;
                     border-left: 0 !important;
@@ -502,7 +501,7 @@ header {
                     background-color: white;
                     background-image: url("../images/desktop_nav_sprite.png");
                     background-repeat: no-repeat;
-                    background-position: right -911px;
+                    background-position: right -902px;
                     background-size: 416px auto;
                     margin-right: 10.72727rem;
                     z-index: 1;
@@ -516,7 +515,7 @@ header {
                             padding: 0;
                             input[type=text] {
                                 width: 34vw;
-                                height: 4.10909rem;
+                                height: 70px;
                                 border: 0;
                                 padding: 0;
                                 background-color: transparent;
@@ -772,8 +771,7 @@ header {
 
 // ========================================= //
 // ========================================= //
-// =============[ tablet device ]=========== //
-// ==============[ below 980px ]============ //
+// ====[ tablet device:  below 980px ]====== //
 // ========================================= //
 // ========================================= //
 body.tablet{
@@ -810,6 +808,7 @@ body.tablet{
                 display: inline-block !important;
                 position: absolute;
                 width: 100%;
+                top: 9px;
                 top: 1.2vh;
                 left: 0; 
                 z-index: 100;   
@@ -820,8 +819,10 @@ body.tablet{
                     background-size: 416px auto !important;
                     cursor: pointer;
                     position: absolute;
-                    left: rem-calc(20);
+                    left: 20px;
+                    top: 7px;
                     top: .8vw;
+                    padding-top: 24px;
                     padding-top: 2.56vw;
                     background-size: 2.76vw;
                     font-family: helveticaMedCond, Arial, Helvetica, Verdana, Sans-serif;
@@ -858,8 +859,11 @@ body.tablet{
             }
 
             .bloomiesLogo {
-                background-size: 40vw;
+                background-size: 392.399993896484px;
+                background-size: 40vw auto;
+                width: 284.484375px;
                 width: 29vw;
+                margin: 5px 0 0 14.7150001525879px;
                 margin: 5px 0 0 1.5vw;
                 left: rem-calc(47);
                 position: absolute;
@@ -868,7 +872,9 @@ body.tablet{
                 -webkit-transform: translate(0, -50%);
                 -moz-transform: translate(0, -50%);
                 img {
+                    width: 284.484375px;
                     width: 40vw;
+                    height: 43.15625px;
                     height: 4.4vw;
                 }            
             }
@@ -881,11 +887,12 @@ body.tablet{
                 }                  
                 .aboveNavSearch {
                     display: block !important;
-                    position: relative;
+                    position: absolute;
                     top: 0;
                     right: 1.09091rem;
+                    width: 261.109375px;
                     width: 43vw;
-                    height: 4.10909rem;
+                    height: 55px;
                     z-index: 999;
                     border-top: 0 !important;
                     border-left: 0 !important;
@@ -894,7 +901,7 @@ body.tablet{
                     background-color: white;
                     background-image: url("../images/desktop_nav_sprite.png");
                     background-repeat: no-repeat;
-                    background-position: right -911px;
+                    background-position: right -902px;
                     background-size: 416px auto;
                     margin-right: 10.72727rem;
                     z-index: 1;
@@ -907,8 +914,9 @@ body.tablet{
                             border: 0;
                             padding: 0;
                             input[type=text] {
+                                width: 261.109375px;
                                 width: 34vw;
-                                height: 4.10909rem;
+                                height: 70px;
                                 border: 0;
                                 padding: 0;
                                 background-color: transparent;
@@ -975,6 +983,7 @@ body.tablet{
         }
 
         #nav {
+            display: none;
             position: absolute;
             z-index: 100;
             top: initial;
@@ -1235,7 +1244,7 @@ body.tablet{
                 }
 
                 .bloomiesLogo {
-                    background-size: 256px;
+                    background-size: 256px auto;
                     width: 185.875px;
                     margin: 3.20000004768372px 0 0 9.60000038146973px;
                     left: rem-calc(47);
@@ -1257,11 +1266,11 @@ body.tablet{
                     }                  
                     .aboveNavSearch {
                         display: block !important;
-                        position: relative;
+                        position: absolute;
                         top: 0;
                         right: 1.09091rem;
                         width: 217.59375px;
-                        height: 4.10909rem;
+                        height: 55px;
                         z-index: 999;
                         border-top: 0 !important;
                         border-left: 0 !important;
@@ -1270,7 +1279,7 @@ body.tablet{
                         background-color: white;
                         background-image: url("../images/desktop_nav_sprite.png");
                         background-repeat: no-repeat;
-                        background-position: right -911px;
+                        background-position: right -902px;
                         background-size: 416px auto;
                         margin-right: 10.72727rem;
                         z-index: 1;
@@ -1284,7 +1293,7 @@ body.tablet{
                                 padding: 0;
                                 input[type=text] {
                                     width: 217.59375px;
-                                    height: 4.10909rem;
+                                    height: 70px;
                                     border: 0;
                                     padding: 0;
                                     background-color: transparent;
