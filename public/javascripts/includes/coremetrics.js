@@ -45,9 +45,9 @@ define([
         return window.cmCreateManualLinkClickTag(href);
     }
 
-    function initCoreMetrics() {
+    function initCoreMetrics(categoryID) {
         var pageID = 'fashion_' + pageName(),
-            catID = 'xx-xx-xx-xx',
+            catID = categoryID || 'xx-xx-xx-xx',
             attr = '';
         
         //populate the Globals ns

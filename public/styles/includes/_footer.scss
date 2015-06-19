@@ -30,6 +30,9 @@ footer {
                     &.footerMenu {
                         margin-right: auto;
                         float: left;
+                        h3 {
+                            font-family: Arial, Helvetica, Verdana, sans-serif;
+                        }
                         ul {
                             li {
                                 padding: 0;
@@ -66,6 +69,9 @@ footer {
                     &.footerMenuLast {
                         margin-right: auto;
                         float: left;
+                        h3 {
+                            font-family: Arial, Helvetica, Verdana, sans-serif;
+                        }                        
                         li{
                             padding: 0;
                             margin: 0.90909rem 0 0 0;
