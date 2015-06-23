@@ -13,6 +13,12 @@ module.exports = function(grunt) {
     //Sets the default config specified in the .env for runnning grunt tasks without having to set options
     require('./build/setDefaultEnv')(grunt, '.env');
 
+    // Extracts build vars first looking at --option flags then foreman environment vars then defaults to reading .env
+    var brand = process.env.BRAND = grunt.option('brand') || process.env.BRAND;
+    var env = process.env.ENV = grunt.option('env') || process.env.ENV;
+    var buildVersion = process.env.BUILDID = grunt.option('build-version') || process.env.BUILDID;
+    process.env.PORT = grunt.option('port') || process.env.PORT;
+
     grunt.initConfig({
         //Project paths
         node: {
@@ -311,8 +317,7 @@ module.exports = function(grunt) {
 
     grunt.registerTask('default', [
         'jshint',
-        'build',
-        'concurrent:dev'
+        'build'
     ]);
 
 };
