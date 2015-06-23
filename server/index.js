@@ -1,12 +1,13 @@
 'use strict';
 var Hapi = require('hapi'),
     Handlebars = require('handlebars'),
+    Path = require('path'),
     server = new Hapi.Server();
 
 server.connection({
-  port: +process.env.PORT,
+  port: process.env.PORT,
   routes: {
-    files: { relativeTo: __dirname + '/public' },
+    files: { relativeTo: Path.join(__dirname, 'public') },
     state: { failAction: 'ignore' }
   },
   state: { ignoreErrors: false, strictHeader: false }
