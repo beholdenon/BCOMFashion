@@ -36,7 +36,7 @@ var routes = [
 server.route(routes);
 
 server.ext('onPreHandler', function(request, reply) {
-    var tagsArray = request.route.settings.tags;
+    var tagsArray = request.route.settings.tags; 
 
     if (tagsArray && tagsArray.indexOf('api') > -1) {
         request.url.protocol = 'http';
