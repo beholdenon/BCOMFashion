@@ -1,37 +1,35 @@
+'use strict';
+
 define([
     'underscore',
     'jquery'
 ], function(_, $) {
 
-    'use strict';
-
     function setEnvironment() {
-        Globals.env = 'dev';
-
-        if (Globals.env === 'dev') {
-            return cmSetTest();
-        } else if (Globals.env === 'production') {
-            return cmSetProduction();
+        if (window.Globals.env === 'dev') {
+            return cmSetTest(); // jshint ignore:line
+        } else if (window.Globals.env === 'prod') {
+            return cmSetProduction(); // jshint ignore:line
         } else {
-            throw 'ERROR: unidentified env variable'
+            throw 'ERROR: unidentified env variable';
         }
-    };
+    }
 
     function pageName() {
         //return the last segment of the page URL to be used as an pageview CM id
-        var path = window.location.pathname.split('/')
+        var path = window.location.pathname.split('/');
 
         return path[path.length - 2];
-    };
+    }
 
     function pageViewTag (pageID, catID, attr){
-        BLOOMIES.coremetrics.pageViewExploreAttributes = new BLOOMIES.coremetrics.exploreAttributes();
+        window.BLOOMIES.coremetrics.pageViewExploreAttributes = new window.BLOOMIES.coremetrics.exploreAttributes();
 
-        BLOOMIES.coremetrics.pageViewExploreAttributes.append({
+        window.BLOOMIES.coremetrics.pageViewExploreAttributes.append({
             42: attr
         });
 
-        BLOOMIES.coremetrics.cmCreatePageviewTag(pageID, catID, '', '');        
+        window.BLOOMIES.coremetrics.cmCreatePageviewTag(pageID, catID, '', '');        
     }
 
     function elementTag(element) {
@@ -51,29 +49,28 @@ define([
             attr = '';
         
         //populate the Globals ns
-        Globals.pageID = pageID;
-        Globals.catID = catID;
-        Globals.coremetrics = {};
+        window.Globals.Coremetrics.pageID = pageID;
+        window.Globals.Coremetrics.catID = catID;
 
-        if (BLOOMIES && BLOOMIES.coremetrics) {
-            new setEnvironment();
+        if (window.BLOOMIES && window.BLOOMIES.coremetrics) {
+            setEnvironment();
 
             if ($(window).width() < 980 && !$('body').children().hasClass('mobile')){
                 attr = 'Desktop Minimized';
             } else {
-                attr = ''
+                attr = '';
             }
 
-            Globals.coremetrics.attr_42 = attr;
+            window.Globals.Coremetrics.attr42 = attr;
 
             return pageViewTag(pageID, catID, attr);
         }
-    };
+    }
 
     return {
         initCoreMetrics: initCoreMetrics,
         pageViewTag: pageViewTag,
         elementTag: elementTag,
         linkClickTag: linkClickTag
-    }
+    };
 });

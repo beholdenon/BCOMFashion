@@ -12,6 +12,7 @@ module.exports = function(grunt) {
 
     //Sets the default config specified in the .env for runnning grunt tasks without having to set options
     require('./build/setDefaultEnv')(grunt, '.env');
+    var env = process.env.NODE_ENV = grunt.option('env') || process.env.NODE_ENV; // jshint ignore:line
 
     grunt.initConfig({
         //Project paths
@@ -53,7 +54,19 @@ module.exports = function(grunt) {
                 assetsDirs: [
                 	'.tmp',
                 	'<%= node.destination %>/lib/views/partials/'
-                ]
+                ],
+                blockReplacements: {
+                    js: function (block) { // jshint ignore:line
+                        grunt.log.write('...............................');
+                        // grunt.log.write(block);
+                        // grunt.log.write(JSON.stringify(block.dest));
+                        grunt.log.write(JSON.stringify(grunt.filerev.summary));
+
+                        // return '<script type="text/javascript">var ENV_CONFIG = "'+ env +'";</script>'
+                        // return '<script src="'+ env +'"></script>';
+                        // <script type="text/javascript">var ENV_CONFIG = "dev";</script> 
+                    }
+                }                
             }
         },
 
@@ -84,14 +97,8 @@ module.exports = function(grunt) {
             }
         },
 
-        copy: {
-            styles: {
-                expand: true,
-                cwd: '<%= node.source %>/public/styles',
-                dest: '.tmp/styles/',
-                src: '{,*/}*.css'
-            },        	
-            toTarget: {
+        copy: {      	
+            all: {
                 files: [{
                     expand: true,
                     cwd: '<%= node.source %>/',
@@ -117,6 +124,34 @@ module.exports = function(grunt) {
                     ],
                     dest: '<%= node.destination %>/'
                 }, {
+                    expand: true,
+                    cwd: '.tmp',
+                    src: [
+                        'styles/**'
+                    ],
+                    dest: '<%= node.destination %>/public'
+                }]
+            },
+            js: {
+                files: [{
+                    expand: true,
+                    cwd: '<%= node.source %>/public/javascripts/',
+                    src: [
+                        '**/*.js'
+                    ],
+                    dest: '<%= node.destination %>/public/javascripts/'
+                }, {
+                    expand: true,
+                    cwd: '<%= node.source %>/server/',
+                    src: [
+                        'index.js',
+                        'lib/**/*.js'
+                    ],
+                    dest: '<%= node.destination %>/'
+                }]
+            },
+            styles: {
+                files: [{
                     expand: true,
                     cwd: '.tmp',
                     src: [
@@ -173,7 +208,9 @@ module.exports = function(grunt) {
                 reporter: require('jshint-stylish')
             },
             all: [
-                // '<%= node.source %>/public/javascripts/includes/{,**/}*.js',
+                'gruntfile.js',
+                '<%= node.source %>/server/{,**/}*.js',
+                '<%= node.source %>/public/javascripts/includes/{,**/}*.js',
                 '<%= node.source %>/public/javascripts/projects/{,**/}*.js'
             ]
         },
@@ -215,18 +252,6 @@ module.exports = function(grunt) {
             }
         },
 
-        //Run some tasks in parallel to speed up the build process
-        concurrent: {
-            dev: [
-                'nodemon',
-                'node-inspector',
-                'watch'
-            ],
-            options: {
-                logConcurrentOutput: true
-            }
-        },
-
         //Monitor for any changes in your source and automatically restart your server
         nodemon: {
             dev: {
@@ -249,12 +274,15 @@ module.exports = function(grunt) {
 		watch: {
 		    js: {
 		        files: [
-					// '<%= node.source %>/public/javascripts/includes/{,**/}*.js',
+                    'gruntfile.js',
+                    '<%= node.source %>/server/{,**/}*.js',
+					'<%= node.source %>/public/javascripts/includes/{,**/}*.js',
 					'<%= node.source %>/public/javascripts/projects/{,**/}*.js'
 		    	],
 		        tasks: [
 		        	'jshint', 
-		        	'concat:generated'
+		        	// 'concat:generated',
+                    'copy:js'
 		        ]
 		    },
 		    styles: {
@@ -263,8 +291,7 @@ module.exports = function(grunt) {
 		    	],
 		        tasks: [
 		        	'compass:dist', 
-		        	// 'concat:generated'
-		        	'copy:toTarget'
+		        	'copy:styles'
 		        ]
 		    },
 		    html: {
@@ -278,31 +305,39 @@ module.exports = function(grunt) {
 		        ]
 		    },
 			livereload: {
+                options: {
+                    livereload: 35729
+                },                
 				files: [
-					'<%= node.source %>/public/images/{,**/}*.{png,jpg,jpeg,gif,webp,svg}',
-					'<%= node.source %>/public/javascripts/{,**/}*.js',
-					'.tmp/styles/{,**/}*.css',
-					'<%= node.source %>/server/lib/views/{,**/}*.html'
-				],
-                port: 35728
-			},
+					'<%= node.destination %>/lib/{,**/}*.{js, html}',
+					'<%= node.destination %>/public/{,**/}*.{js, css}'
+				]
+			}          
+		},
+
+        //Run some tasks in parallel to speed up the build process
+        concurrent: {
+            dev: [
+                'nodemon',
+                'node-inspector',
+                'watch'
+            ],
             options: {
-                livereload: true
-            }            
-		}
+                logConcurrentOutput: true
+            }
+        }        
     });
 
     grunt.registerTask('build', [
         'clean:all',
         'useminPrepare',
         'compass:dist',
-        'copy:styles',
         // 'autoprefixer',
         'htmlmin',   
         // 'handlebars',
-        'concat:generated',
+        // 'concat:generated',
         // 'concat:addHBStemplates',
-        'copy:toTarget',
+        'copy:all',
         // 'cssmin',
         // 'uglify',  
         // 'rev:dist',     

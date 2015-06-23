@@ -34,15 +34,15 @@
             {{> footer-mobile}}
             
             {{#if isMobileiOS}}
-            <script type="text/javascript">BLOOMIES.mobileOS = 'iOS'</script>
+            <script type="text/javascript">var MOBILE_OS = "iOS";</script>
             {{else}}
-                <script type="text/javascript">BLOOMIES.mobileOS = 'Android'</script>
+                <script type="text/javascript">var MOBILE_OS = "Android";</script>
             {{/if}}            
         {{else}}
             {{> footer}}
         {{/if}}     
         
-    	<script data-main="/fashion/javascripts/main.js" src="/fashion/javascripts/libs/requirejs.js"></script>
+        <script data-main="/fashion/javascripts/main.js" src="/fashion/javascripts/libs/requirejs.js"></script>
        
     </body>
 

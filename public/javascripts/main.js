@@ -12,6 +12,7 @@
             'jquery': 'libs/jquery',
             'require': 'libs/requirejs',
             'underscore': 'libs/lodash',
+            'globalns': 'includes/globalns',
             'desktopHeader': 'includes/desktopHeader',
             'mobileHeader': 'includes/mobileHeader',
             'coremetrics': 'includes/coremetrics'
@@ -40,10 +41,19 @@ define([
     'mobileHeader',
     'coremetrics'
 ], function(Backbone, $, _, DesktopHeader, MobileHeader, Coremetrics) {
-    // default namespace
-    window.Globals = {};
     
-    if (BLOOMIES.isMobile) {
+    // init global app namespace object
+    window.Globals = {
+        env: window.ENV_CONFIG || 'dev',
+        mobileOS: window.MOBILE_OS,
+        Coremetrics: {
+            pageID: null,
+            catID: null,
+            attr42: null
+        }
+    };
+    
+    if (typeof window.Globals.mobileOS !== "undefined") {
         MobileHeader()
     } else {
         DesktopHeader();

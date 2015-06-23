@@ -1,3 +1,5 @@
+/* jshint ignore:start */
+
 $(document).ready(function(){
 
 	// $('.gpsEvents .button').on('click', function(){
@@ -99,3 +101,5 @@ var storeList = [
 	},
 
 ]
+
+/* jshint ignore:end */

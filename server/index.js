@@ -1,35 +1,36 @@
 'use strict';
 var Hapi = require('hapi'),
     Handlebars = require('handlebars'),
+    Path = require('path'),
     server = new Hapi.Server();
 
 server.connection({
-  port: +process.env.PORT,
-  routes: {
-    files: { relativeTo: __dirname + '/public' },
-    state: { failAction: 'ignore' }
-  },
-  state: { ignoreErrors: false, strictHeader: false }
+    port: process.env.PORT,
+    routes: {
+        files: { relativeTo: Path.join(__dirname, 'public') },
+        state: { failAction: 'ignore' }
+    },
+    state: { ignoreErrors: false, strictHeader: false }
 });
 
 server.views({
     engines: {
-        "html": Handlebars
+        'html': Handlebars
     },
-    path: __dirname + '/lib/views',
-    layoutPath: __dirname + '/lib/views/layout',
+    path: Path.join(__dirname, 'lib/views'),
+    layoutPath: Path.join(__dirname, 'lib/views/layout'),
     layout: 'layout',
-    partialsPath: __dirname + '/lib/views/partials'
+    partialsPath: Path.join(__dirname, '/lib/views/partials')
 });
 
 var routes = [
-    { method: 'GET',    path: '/fashion/{path*}',       config: require('./lib/assets').fashion },
-    { method: 'GET',    path: '/shop/{path*}',          config: require('./lib/assets').shop },
-    { method: 'GET',    path: '/v3/{path*}',            config: require('./lib/api').v3 },
-    { method: 'GET',    path: '/v4/{path*}',            config: require('./lib/api').v4 },
-    { method: 'GET',    path: '/getBag/{path*}',        config: require('./lib/api').getbag },
-    { method: 'POST',   path: '/addToBag/{path*}',      config: require('./lib/api').addbag },
-    { method: 'GET',    path: '/{path*}',               config: require('./lib/assets').fallback }
+    { method: 'GET',      path: '/fashion/{path*}',       config: require('./lib/assets').fashion },
+    { method: 'GET',      path: '/shop/{path*}',          config: require('./lib/assets').shop },
+    { method: 'GET',      path: '/v3/{path*}',            config: require('./lib/api').v3 },
+    { method: 'GET',      path: '/v4/{path*}',            config: require('./lib/api').v4 },
+    { method: 'GET',      path: '/getBag/{path*}',        config: require('./lib/api').getbag },
+    { method: 'POST',     path: '/addToBag/{path*}',      config: require('./lib/api').addbag },
+    { method: 'GET',      path: '/{path*}',               config: require('./lib/assets').fallback }
 ];
 
 server.route(routes);
@@ -57,7 +58,7 @@ server.ext('onPreResponse', function(request, reply) {
         // Pre-render the template and see if there's any errors
         return server.render(source.template, source.context, function(err) {
             if (err) {
-                return reply.view("/errors/index").code(404);
+                return reply.view('/errors/index').code(404);
             }
 
             reply.continue();

@@ -1,6 +1,5 @@
 'use strict';
 var serviceProxy    = require('./serviceProxy');
-var Hapi            = require('hapi');
 
 module.exports = {
     v3: {
