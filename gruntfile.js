@@ -312,12 +312,11 @@ module.exports = function(grunt) {
         // 'cssmin',
         // 'uglify',  
         // 'rev:dist',     
-        'usemin'
+        'usemin' 
     ]);
 
     grunt.registerTask('default', [
         'jshint',
         'build'
     ]);
-
 };
