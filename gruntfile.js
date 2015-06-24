@@ -12,7 +12,7 @@ module.exports = function(grunt) {
 
     //Sets the default config specified in the .env for runnning grunt tasks without having to set options
     require('./build/setDefaultEnv')(grunt, '.env');
-    var env = process.env.NODE_ENV = grunt.option('env') || process.env.NODE_ENV; // jshint ignore:line
+    var NODE_ENV = process.env.NODE_ENV = grunt.option('env') || process.env.NODE_ENV; // jshint ignore:line
 
     grunt.initConfig({
         //Project paths
@@ -52,21 +52,9 @@ module.exports = function(grunt) {
             css: ['.tmp/styles/{,*/}*.css'],
             options: {
                 assetsDirs: [
-                	'.tmp',
-                	'<%= node.destination %>/lib/views/partials/'
-                ],
-                blockReplacements: {
-                    js: function (block) { // jshint ignore:line
-                        grunt.log.write('...............................');
-                        // grunt.log.write(block);
-                        // grunt.log.write(JSON.stringify(block.dest));
-                        grunt.log.write(JSON.stringify(grunt.filerev.summary));
-
-                        // return '<script type="text/javascript">var ENV_CONFIG = "'+ env +'";</script>'
-                        // return '<script src="'+ env +'"></script>';
-                        // <script type="text/javascript">var ENV_CONFIG = "dev";</script> 
-                    }
-                }                
+                    '<%= node.destination %>/lib/views/partials/',
+                	'.tmp'
+                ]               
             }
         },
 
@@ -252,6 +240,71 @@ module.exports = function(grunt) {
             }
         },
 
+        //Replace strings on files by using string or regex patters
+        'string-replace': {
+            inline: {
+                files: [{
+                  expand: true,
+                  cwd: '<%= node.destination %>/lib/views/layout/',
+                  src: 'layout.html',
+                  dest: '<%= node.destination %>/lib/views/layout/'
+                }],                
+                options: {
+                    replacements: [{
+                            pattern: '<script type="text/javascript">var ENV_CONFIG = "dev";</script>',
+                            replacement: '<script type="text/javascript">var ENV_CONFIG = "'+ NODE_ENV +'";</script>'
+                        }
+                    ]
+                }
+            }
+        },
+
+        //Automatic notifications when Grunt tasks execute/fail
+        notify: {
+            build: {
+                options: {
+                    title: 'Build complete',
+                    message: 'All the grunt tasks are finished.'
+                }
+            },
+            compass: {
+                options: {
+                    title: 'Compass',
+                    message: 'Tasks complete'
+                }
+            },
+            handlebars: {
+                options: {
+                    title: 'Handlebars',
+                    message: 'Tasks complete'
+                }
+            },
+            assets: {
+                options: {
+                    title: 'Assets',
+                    message: 'Client assets copy complete'
+                }
+            },
+            clientReload: {
+                options: {
+                    title: 'Client LiveReload',
+                    message: 'Reload complete'
+                }
+            },
+            serverReload: {
+                options: {
+                    title: 'Server LiveReload',
+                    message: 'Reload complete'
+                }
+            },
+            grunt: {
+                options: {
+                    title: 'Grunt',
+                    message: 'Grunt config change complete'
+                }
+            }
+        },
+
         //Monitor for any changes in your source and automatically restart your server
         nodemon: {
             dev: {
@@ -341,7 +394,8 @@ module.exports = function(grunt) {
         // 'cssmin',
         // 'uglify',  
         // 'rev:dist',     
-        'usemin'
+        'usemin',
+        'string-replace'
     ]);
 
     grunt.registerTask('default', [
