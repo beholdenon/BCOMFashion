@@ -10,9 +10,9 @@ server.connection({
         files: { relativeTo: Path.join(__dirname, 'public') },
         state: { failAction: 'ignore' }
     },
-    state: { ignoreErrors: false, strictHeader: false }
+    state: { ignoreErrors: false, strictHeader: false } 
 });
-
+  
 server.views({
     engines: {
         'html': Handlebars

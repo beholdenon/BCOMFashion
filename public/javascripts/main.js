@@ -52,7 +52,7 @@ define([
             attr42: null
         }
     };
-    
+
     if (typeof window.Globals.mobileOS !== "undefined") {
         MobileHeader()
     } else {

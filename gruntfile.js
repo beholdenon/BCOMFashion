@@ -12,13 +12,14 @@ module.exports = function(grunt) {
 
     //Sets the default config specified in the .env for runnning grunt tasks without having to set options
     require('./build/setDefaultEnv')(grunt, '.env');
-    var NODE_ENV = process.env.NODE_ENV = grunt.option('env') || process.env.NODE_ENV; // jshint ignore:line
+    var NODE_ENV = grunt.option('env') || process.env.NODE_ENV;
 
     grunt.initConfig({
         //Project paths
         node: {
             destination: 'target',
-            source: '.'
+            source: '.',
+            port: grunt.option('env') || process.env.PORT
         },
 
         //Empties folders to start fresh
@@ -70,21 +71,6 @@ module.exports = function(grunt) {
             }
         },
 
-        //Parse CSS and add vendor-prefixed CSS properties using the 'Can I Use' db
-        autoprefixer: {
-            options: {
-                browsers: ['last 1 version']
-            },
-            dist: {
-                files: [{
-                    expand: true,
-                    cwd: '.tmp/styles/',
-                    src: '{,**/}*.css',
-                    dest: '.tmp/styles/'
-                }]
-            }
-        },
-
         copy: {      	
             all: {
                 files: [{
@@ -120,7 +106,7 @@ module.exports = function(grunt) {
                     dest: '<%= node.destination %>/public'
                 }]
             },
-            js: {
+            jsClient: {
                 files: [{
                     expand: true,
                     cwd: '<%= node.source %>/public/javascripts/',
@@ -128,7 +114,10 @@ module.exports = function(grunt) {
                         '**/*.js'
                     ],
                     dest: '<%= node.destination %>/public/javascripts/'
-                }, {
+                }]
+            },
+            jsServer: {
+                files: [{
                     expand: true,
                     cwd: '<%= node.source %>/server/',
                     src: [
@@ -137,7 +126,7 @@ module.exports = function(grunt) {
                     ],
                     dest: '<%= node.destination %>/'
                 }]
-            },
+            },            
             styles: {
                 files: [{
                     expand: true,
@@ -193,7 +182,7 @@ module.exports = function(grunt) {
         jshint: {
             options: {
                 jshintrc: '.jshintrc',
-                reporter: require('jshint-stylish')
+                reporter: require('jshint-stylish') 
             },
             all: [
                 'gruntfile.js',
@@ -243,11 +232,14 @@ module.exports = function(grunt) {
         //Replace strings on files by using string or regex patters
         'string-replace': {
             inline: {
+                // files: {
+                //     '<%= node.destination %>/lib/views/layout/layout.html': '<%= node.destination %>/lib/views/layout/layout.html'
+                // },                
                 files: [{
                   expand: true,
-                  cwd: '<%= node.destination %>/lib/views/layout/',
+                  cwd: '<%= node.destination %>/lib/views/layout/layout.html',
                   src: 'layout.html',
-                  dest: '<%= node.destination %>/lib/views/layout/'
+                  dest: '<%= node.destination %>/lib/views/layout/layout.html'
                 }],                
                 options: {
                     replacements: [{
@@ -264,57 +256,91 @@ module.exports = function(grunt) {
             build: {
                 options: {
                     title: 'Build complete',
-                    message: 'All the grunt tasks are finished.'
+                    message: '_.____.____.  All the grunt tasks are finished.  .____.____._'
                 }
             },
             compass: {
                 options: {
                     title: 'Compass',
-                    message: 'Tasks complete'
+                    message: '_.____.____.  Compass tasks complete  .____.____._'
+                }
+            },
+            views: {
+                options: {
+                    title: 'Views',
+                    message: '_.____.____.  Views copy complete  .____.____._'
                 }
             },
             handlebars: {
                 options: {
                     title: 'Handlebars',
-                    message: 'Tasks complete'
-                }
-            },
-            assets: {
-                options: {
-                    title: 'Assets',
-                    message: 'Client assets copy complete'
+                    message: '_.____.____.  Handlebars tasks complete  .____.____._'
                 }
             },
             clientReload: {
                 options: {
                     title: 'Client LiveReload',
-                    message: 'Reload complete'
+                    message: '_.____.____.  Reload complete  .____.____._'
                 }
             },
             serverReload: {
                 options: {
                     title: 'Server LiveReload',
-                    message: 'Reload complete'
+                    message: '_.____.____.  Reload complete  .____.____._'
                 }
             },
             grunt: {
                 options: {
                     title: 'Grunt',
-                    message: 'Grunt config change complete'
+                    message: '_.____.____.  Grunt config change complete  .____.____._'
                 }
             }
         },
 
-        //Monitor for any changes in your source and automatically restart your server
+        //Inject scripts during development
+        inject: { 
+            livereload: {
+                scriptSrc: './build/inject.js',
+                files: {
+                    '<%= node.destination %>/lib/views/layout/layout.html': '<%= node.destination %>/lib/views/layout/layout.html'
+                }
+            }
+        },
+
+        //Monitor for any changes in the server-side code base to auto restart server & refresh browser
         nodemon: {
             dev: {
                 script: '<%= node.destination %>/index.js',
                 options: {
-                    nodeArgs: ['--debug']                   
+                    nodeArgs: ['--debug'],
+                    versobe: true,
+                    watch: ['<%= node.destination %>'],
+                    ignore: ['<%= node.destination %>/public/{,**/}*'],
+                    callback: function(nodemon) {
+                        nodemon.on('log', function(event) {
+                            console.log(event.colour);
+                        });
+
+                        // opens browser on initial server start
+                        nodemon.on('config:update', function() {
+                            // Delay before server listens on port
+                            setTimeout(function() {
+                                require('open')('http://localhost:3000/projects/quickpeek/');
+                            }, 1000);
+                        });
+
+                        // refreshes browser when server reboots
+                        nodemon.on('restart', function() {
+                            setTimeout(function() {
+                                require('fs').writeFileSync('.tmp/rebooted.file', 'node server rebooted');
+                            }, 1000);
+                        });
+                    }
                 }
             }
         },
 
+        //Node inspector URL: http://localhost:1337/
         'node-inspector': {
             dev: {
                 options: {
@@ -325,55 +351,88 @@ module.exports = function(grunt) {
 
         //Run predefined tasks whenever watched file patterns are added, changed or deleted.
 		watch: {
-		    js: {
+		    jsClient: {
 		        files: [
-                    'gruntfile.js',
-                    '<%= node.source %>/server/{,**/}*.js',
-					'<%= node.source %>/public/javascripts/includes/{,**/}*.js',
-					'<%= node.source %>/public/javascripts/projects/{,**/}*.js'
-		    	],
-		        tasks: [
-		        	'jshint', 
-		        	// 'concat:generated',
-                    'copy:js'
-		        ]
-		    },
+                    '<%= node.source %>/public/javascripts/main.js',
+                    '<%= node.source %>/public/javascripts/includes/{,**/}*.js',
+                    '<%= node.source %>/public/javascripts/projects/{,**/}*.js'
+                ],
+                tasks: [
+                    'jshint', 
+                    // 'concat:generated',
+                    'copy:jsClient'
+                ]
+            },
+            jsServer: {
+                files: [
+                    '<%= node.source %>/server/{,**/}*.js'
+                ],
+                tasks: [
+                    'jshint', 
+                    // 'concat:generated',
+                    'copy:jsServer'
+                ]
+            },            
 		    styles: {
 		        files: [
 		    		'<%= node.source %>/public/styles/{,**/}*.{scss,sass,css}'
 		    	],
 		        tasks: [
 		        	'compass:dist', 
-		        	'copy:styles'
+		        	'copy:styles',
+                    'notify:compass'
 		        ]
 		    },
-		    html: {
+		    views: {
 		        files: [
 		    		'<%= node.source %>/server/lib/views/{,**/}*.html'
 		    	],
 		        tasks: [
 		        	'useminPrepare',
 		        	'htmlmin',
-		        	'usemin'
+		        	'usemin',
+                    'notify:views'
 		        ]
 		    },
-			livereload: {
+            clientReload: {
+                // Limit the client reload files to one per type of file to prevent EMFILE error
+                files: [
+                    '<%= node.destination %>/lib/views/{,**/}*.html',
+                    '<%= node.destination %>/public/javascripts/{,**/}*.js',
+                    '<%= node.destination %>/public/styles/{,**/}*.css'
+                ],
                 options: {
-                    livereload: 35729
-                },                
-				files: [
-					'<%= node.destination %>/lib/{,**/}*.{js, html}',
-					'<%= node.destination %>/public/{,**/}*.{js, css}'
-				]
-			}          
+                    livereload: true
+                },
+                tasks: ['notify:clientReload']
+            },            
+            serverReload: {
+                files: ['.tmp/rebooted.file'],
+                options: {
+                    livereload: true
+                },
+                tasks: ['notify:serverReload']
+            },            
+            grunt: {
+                files: [
+                    '.env',
+                    'gruntfile.js',
+                    'grunt/**'
+                ],
+                tasks: ['notify:grunt'],
+                options: {
+                    reload: true
+                }
+            }                    
 		},
 
         //Run some tasks in parallel to speed up the build process
         concurrent: {
             dev: [
                 'nodemon',
+                'watch',
                 'node-inspector',
-                'watch'
+                'notify:build'
             ],
             options: {
                 logConcurrentOutput: true
@@ -385,7 +444,6 @@ module.exports = function(grunt) {
         'clean:all',
         'useminPrepare',
         'compass:dist',
-        // 'autoprefixer',
         'htmlmin',   
         // 'handlebars',
         // 'concat:generated',
@@ -395,7 +453,8 @@ module.exports = function(grunt) {
         // 'uglify',  
         // 'rev:dist',     
         'usemin',
-        'string-replace'
+        'string-replace',
+        'inject:livereload'
     ]);
 
     grunt.registerTask('default', [
