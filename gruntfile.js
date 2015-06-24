@@ -440,27 +440,34 @@ module.exports = function(grunt) {
         }        
     });
 
-    grunt.registerTask('build', [
-        'clean:all',
-        'useminPrepare',
-        'compass:dist',
-        'htmlmin',   
-        // 'handlebars',
-        // 'concat:generated',
-        // 'concat:addHBStemplates',
-        'copy:all',
-        // 'cssmin',
-        // 'uglify',  
-        // 'rev:dist',     
-        'usemin',
-        'string-replace',
-        'inject:livereload'
-    ]);
+    grunt.registerTask('default', 'build');
 
-    grunt.registerTask('default', [
-        'jshint',
-        'build',
-        'concurrent:dev'
-    ]);
+    grunt.registerTask('build', 'Build based on the NODE_ENV value.', function() {   
+        grunt.task.run([
+            'clean:all',
+            'useminPrepare',
+            'compass:dist',
+            'htmlmin',   
+            // 'handlebars',
+            // 'concat:generated',
+            // 'concat:addHBStemplates',
+            'copy:all',
+            // 'cssmin',
+            // 'uglify',  
+            // 'rev:dist',     
+            'usemin',
+            'string-replace'
+        ]);
 
+        if (NODE_ENV === 'dev') {
+            grunt.task.run([
+                'inject:livereload',
+                'concurrent:dev'
+            ]);
+        } else if (NODE_ENV === 'prod') {
+            grunt.task.run([
+                //add tasks
+            ]);
+        }
+    });
 };
