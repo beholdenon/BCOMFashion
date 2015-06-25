@@ -122,7 +122,7 @@ header {
                     float: left;
                     input.aboveNavSearchBox {
                         height: 2.36364rem;
-                        line-height: 2.36364rem;
+                        line-height: 12px;
                         padding: 0 0 0 1.18182rem;
                         width: 26.54545rem;
                         border: 0;
@@ -417,9 +417,10 @@ header {
             z-index: 101;
             background-color: white;
             #hamburgerMenuContainer{
-                display: inline-block;
+                display: inline-block !important;
                 position: absolute;
                 width: 100%;
+                top: 9px;
                 top: 1.7vw;
                 left: 0;   
                 z-index: 100; 
@@ -427,16 +428,18 @@ header {
                     height: 19px;
                     width: 26px;
                     background-position: 0px -487px;
-                    background-size: 416px auto;
+                    background-size: 416px auto !important;
                     cursor: pointer;
                     position: absolute;
-                    left: 1.81818rem;
+                    left: 20px;
                     top: 13px;
                     padding-top: 22px;
-                    font-family: helveticaMedCond, Arial, Helvetica, Verdana, Sans-serif;
+                    font-family: Arial, Helvetica, Verdana, Sans-serif;
+                    font-size: 8.4px;
                     text-transform: uppercase;
                     font-weight: 700;
                     text-align: center;
+                    margin-top: 0;
                     margin-top: -1vw;
                     &.active {
                         opacity: 0.75;
@@ -466,8 +469,11 @@ header {
             }
 
             .bloomiesLogo {
+                background-size: 256px auto;
                 background-size: 40vw auto;
+                width: 185.875px;
                 width: 29vw;
+                margin: 3.20000004768372px 0 0 9.60000038146973px;
                 margin: .5vw 0 0 1.5vw;
                 left: rem-calc(47);
                 position: absolute;
@@ -477,7 +483,9 @@ header {
                 -moz-transform: translate(0, -50%);
                 z-index: 1;
                 img {
+                    width: 256px;
                     width: 40vw;
+                    height: 28.15625px;
                     height: 4.4vw;
                 }            
             }
@@ -491,6 +499,7 @@ header {
                     position: absolute;
                     top: 0;
                     right: 1.09091rem;
+                    width: 261.109375px;
                     width: 34vw;
                     height: 55px;
                     z-index: 999;
@@ -514,6 +523,7 @@ header {
                             border: 0;
                             padding: 0;
                             input[type=text] {
+                                width: 261.109375px;
                                 width: 34vw;
                                 height: 70px;
                                 border: 0;
@@ -557,7 +567,7 @@ header {
                         text-align: center;
                         text-indent: 0;
                         letter-spacing: -0.09091rem;
-                        font-family: "helveticaMedCond",Arial,Helvetica,Verdana,Sans-serif;
+                        font-family: Arial,Helvetica,Verdana,Sans-serif;
                         font-size: 1.27273rem;
                         font-weight: 700;
                         font-style: normal;
@@ -609,6 +619,7 @@ header {
                         display: block !important;
                         a {
                             display: block;
+                            font-size: 10.3739995956421px;
                             font-size: 1.3vw !important;
                             font-family: Arial, sans-serif !important;
                             font-weight: 700;
@@ -619,7 +630,7 @@ header {
                             padding-right: rem-calc(25);
                             letter-spacing: rem-calc(1);
                             background-color: #f7f7f7;
-                             outline: none;
+                            outline: none;
                         }
                         &.active a, &:hover a {
                             background-color: #ECECEC;
@@ -699,6 +710,7 @@ header {
 
                 .flyoutLabel {
                     label {
+                        font-size: 10.3739995956421px;
                         font-size: 1.3vw !important;
                         font-family: Arial, sans-serif !important;
                         font-weight: 700 !important;
@@ -825,7 +837,8 @@ body.tablet{
                     padding-top: 24px;
                     padding-top: 2.56vw;
                     background-size: 2.76vw;
-                    font-family: helveticaMedCond, Arial, Helvetica, Verdana, Sans-serif;
+                    font-family: Arial, Helvetica, Verdana, Sans-serif;
+                    font-size: 8.4px !important;
                     text-transform: uppercase;
                     font-weight: 700;
                     font-size: 1.1vw;
@@ -962,7 +975,7 @@ body.tablet{
                         text-align: center;
                         text-indent: 0;
                         letter-spacing: -0.09091rem;
-                        font-family: "helveticaMedCond",Arial,Helvetica,Verdana,Sans-serif;
+                        font-family: Arial,Helvetica,Verdana,Sans-serif;
                         font-size: 1.27273rem;
                         font-weight: 700;
                         font-style: normal;
@@ -1211,7 +1224,8 @@ body.tablet{
                         left: 1.81818rem;
                         top: 13px;
                         padding-top: 22px;
-                        font-family: helveticaMedCond, Arial, Helvetica, Verdana, Sans-serif;
+                        font-family: Arial, Helvetica, Verdana, Sans-serif;
+                        font-size: 8.4px;
                         text-transform: uppercase;
                         font-weight: 700;
                         text-align: center;
@@ -1327,7 +1341,7 @@ body.tablet{
                             text-align: center;
                             text-indent: 0;
                             letter-spacing: -0.09091rem;
-                            font-family: "helveticaMedCond",Arial,Helvetica,Verdana,Sans-serif;
+                            font-family: Arial,Helvetica,Verdana,Sans-serif;
                             font-size: 1.27273rem;
                             font-weight: 700;
                             font-style: normal;
