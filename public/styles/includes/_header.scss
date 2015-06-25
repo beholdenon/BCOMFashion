@@ -595,6 +595,7 @@ header {
             top: initial;
             left: rem-calc(20);
             background-color: #f7f7f7;
+            background-color: #ECECEC;
             box-shadow: 0 0.90909rem 1.36364rem rgba(51, 51, 51, 0.4);
             z-index: 101;
             &.active{
@@ -652,7 +653,7 @@ header {
                 }
 
                 .subnav > div {
-                    display: -webkit-box;
+                    display: block;
                     display: -moz-box;
                     display: -ms-flexbox;
                     display: -webkit-flex;
@@ -1049,9 +1050,6 @@ body.tablet{
                 padding: rem-calc(15) rem-calc(7.7) rem-calc(15) rem-calc(0);
                 background-color: #ECECEC;
                 float: left;
-                // overflow-y: auto;
-                // overflow-x: hidden;                
-                // height: 620px;
                 .subnav{
                     display:none;
                     &.activeNav {
@@ -1059,7 +1057,7 @@ body.tablet{
                     }
                 }
                 .subnav > div {
-                    display: -webkit-box;
+                    display: block;
                     display: -moz-box;
                     display: -ms-flexbox;
                     display: -webkit-flex;
@@ -1427,7 +1425,7 @@ body.tablet{
                     }
 
                     .subnav > div {
-                        display: -webkit-box;
+                        display: block;
                         display: -moz-box;
                         display: -ms-flexbox;
                         display: -webkit-flex;
