@@ -2,7 +2,6 @@
   "name": "BCOMFashionApp",
   "version": "0.0.1",
   "private": true,
-  "main": "index",
   "engines": {
     "node": "~0.12.x",
     "npm": "2.7.x"
