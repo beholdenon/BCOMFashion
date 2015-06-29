@@ -129,6 +129,14 @@ module.exports = function(grunt) {
                         'styles/**'
                     ],
                     dest: '<%= node.destination %>/public'
+                },{
+                    expand: true,
+                    cwd: '<%= node.source %>/',
+                    src: [
+                        'package.json',
+                        'Procfile'
+                    ],
+                    dest: '<%= node.destination %>/'
                 }]
             }
         },
