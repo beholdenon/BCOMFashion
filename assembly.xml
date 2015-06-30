@@ -7,7 +7,7 @@
 	<fileSets>
 		<fileSet>
 			<directory>target</directory>
-			<outputDirectory>target/</outputDirectory>
+			<outputDirectory>/</outputDirectory>
 			<includes>
 				<include>**/*</include>
 			</includes>

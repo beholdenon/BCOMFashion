@@ -8,7 +8,7 @@ define([
     function setEnvironment() {
         if (window.Globals.env === 'dev') {
             return cmSetTest(); // jshint ignore:line
-        } else if (window.Globals.env === 'prod') {
+        } else if (window.Globals.env === 'prod' || window.Globals.env === 'production') {
             return cmSetProduction(); // jshint ignore:line
         } else {
             throw 'ERROR: unidentified env variable';

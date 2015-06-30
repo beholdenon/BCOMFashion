@@ -256,43 +256,43 @@ module.exports = function(grunt) {
             build: {
                 options: {
                     title: 'Build complete',
-                    message: '_.____.____.  All the grunt tasks are finished.  .____.____._'
+                    message: 'All the grunt tasks are finished.'
                 }
             },
             compass: {
                 options: {
                     title: 'Compass',
-                    message: '_.____.____.  Compass tasks complete  .____.____._'
+                    message: 'Compass tasks complete'
                 }
             },
             views: {
                 options: {
                     title: 'Views',
-                    message: '_.____.____.  Views copy complete  .____.____._'
+                    message: 'Views copy complete'
                 }
             },
             handlebars: {
                 options: {
                     title: 'Handlebars',
-                    message: '_.____.____.  Handlebars tasks complete  .____.____._'
+                    message: 'Handlebars tasks complete'
                 }
             },
             clientReload: {
                 options: {
                     title: 'Client LiveReload',
-                    message: '_.____.____.  Reload complete  .____.____._'
+                    message: 'Reload complete'
                 }
             },
             serverReload: {
                 options: {
                     title: 'Server LiveReload',
-                    message: '_.____.____.  Reload complete  .____.____._'
+                    message: 'Reload complete'
                 }
             },
             grunt: {
                 options: {
                     title: 'Grunt',
-                    message: '_.____.____.  Grunt config change complete  .____.____._'
+                    message: 'Grunt config change complete'
                 }
             }
         },
@@ -464,9 +464,9 @@ module.exports = function(grunt) {
                 'inject:livereload',
                 'concurrent:dev'
             ]);
-        } else if (NODE_ENV === 'prod') {
+        } else if (NODE_ENV === 'prod' || NODE_ENV === 'production') {
             grunt.task.run([
-                //add tasks
+                //add tasks: concat; minify; etc.
             ]);
         }
     });
