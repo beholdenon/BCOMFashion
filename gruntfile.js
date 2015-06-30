@@ -246,7 +246,22 @@ module.exports = function(grunt) {
             dev: {
                 script: '<%= node.destination %>/index.js',
                 options: {
-                    nodeArgs: ['--debug']                   
+                    nodeArgs: ['--debug'],
+                    versobe: true,
+                    watch: ['<%= node.destination %>'],
+                    ignore: ['<%= node.destination %>/public/{,**/}*'],
+                    callback: function(nodemon) {
+                        nodemon.on('log', function(event) {
+                            console.log(event.colour);
+                        });
+
+                        // refreshes browser when server reboots
+                        nodemon.on('restart', function() {
+                            setTimeout(function() {
+                                require('fs').writeFileSync('.tmp/rebooted.file', 'node server rebooted');
+                            }, 1000);
+                        });
+                    }
                 }
             }
         },
