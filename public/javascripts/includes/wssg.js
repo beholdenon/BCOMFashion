@@ -6,6 +6,8 @@ last-edited: 		05/21/15
 
 ======================================================================================*/
 
+/* jshint ignore:start */
+
 $(document).ready(function() {
 
     //  SERVICE TESTS
@@ -296,3 +298,5 @@ var SERVICES = {
         },
     },
 }
+
+/* jshint ignore:end */
