@@ -160,9 +160,7 @@ serviceProxy.onResponseRedirect = function(err, res, request, reply) {
     Wreck.read(res, {
         timeout: serviceProxy.timeout
     }, function(err, payload) {
-        var uri = request.info.host + request.url.format(request.url),
-            location = res.headers.location,
-            locationHost;
+        var uri = request.info.host + request.url.format(request.url);
 
         if (err) {
             return serviceProxy.errorHandler(err.output.statusCode, request, reply, err.output.payload);

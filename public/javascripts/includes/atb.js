@@ -1,3 +1,5 @@
+/* jshint ignore:start */
+
 $(document).ready(function(){
 	var prodData,
 		urlStart = "http://images.bloomingdales.com/is/image/BLM/products/9/optimized/",
@@ -379,3 +381,5 @@ Number.prototype.formatMoney = function(c, d, t){
 	    j = (j = i.length) > 3 ? j % 3 : 0;
    return s + (j ? i.substr(0, j) + t : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : "");
  };
+
+/* jshint ignore:end */

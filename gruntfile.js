@@ -12,18 +12,14 @@ module.exports = function(grunt) {
 
     //Sets the default config specified in the .env for runnning grunt tasks without having to set options
     require('./build/setDefaultEnv')(grunt, '.env');
-
-    // Extracts build vars first looking at --option flags then foreman environment vars then defaults to reading .env
-    var brand = process.env.BRAND = grunt.option('brand') || process.env.BRAND;
-    var env = process.env.ENV = grunt.option('env') || process.env.ENV;
-    var buildVersion = process.env.BUILDID = grunt.option('build-version') || process.env.BUILDID;
-    process.env.PORT = grunt.option('port') || process.env.PORT;
+    var NODE_ENV = grunt.option('env') || process.env.NODE_ENV;
 
     grunt.initConfig({
         //Project paths
         node: {
             destination: 'target',
-            source: '.'
+            source: '.',
+            port: grunt.option('env') || process.env.PORT
         },
 
         //Empties folders to start fresh
@@ -57,9 +53,9 @@ module.exports = function(grunt) {
             css: ['.tmp/styles/{,*/}*.css'],
             options: {
                 assetsDirs: [
-                	'.tmp',
-                	'<%= node.destination %>/lib/views/partials/'
-                ]
+                    '<%= node.destination %>/lib/views/partials/',
+                	'.tmp'
+                ]               
             }
         },
 
@@ -75,29 +71,8 @@ module.exports = function(grunt) {
             }
         },
 
-        //Parse CSS and add vendor-prefixed CSS properties using the 'Can I Use' db
-        autoprefixer: {
-            options: {
-                browsers: ['last 1 version']
-            },
-            dist: {
-                files: [{
-                    expand: true,
-                    cwd: '.tmp/styles/',
-                    src: '{,**/}*.css',
-                    dest: '.tmp/styles/'
-                }]
-            }
-        },
-
-        copy: {
-            styles: {
-                expand: true,
-                cwd: '<%= node.source %>/public/styles',
-                dest: '.tmp/styles/',
-                src: '{,*/}*.css'
-            },        	
-            toTarget: {
+        copy: {      	
+            all: {
                 files: [{
                     expand: true,
                     cwd: '<%= node.source %>/',
@@ -129,14 +104,37 @@ module.exports = function(grunt) {
                         'styles/**'
                     ],
                     dest: '<%= node.destination %>/public'
-                },{
+                }]
+            },
+            jsClient: {
+                files: [{
                     expand: true,
-                    cwd: '<%= node.source %>/',
+                    cwd: '<%= node.source %>/public/javascripts/',
                     src: [
-                        'package.json',
-                        'Procfile'
+                        '**/*.js'
+                    ],
+                    dest: '<%= node.destination %>/public/javascripts/'
+                }]
+            },
+            jsServer: {
+                files: [{
+                    expand: true,
+                    cwd: '<%= node.source %>/server/',
+                    src: [
+                        'index.js',
+                        'lib/**/*.js'
                     ],
                     dest: '<%= node.destination %>/'
+                }]
+            },            
+            styles: {
+                files: [{
+                    expand: true,
+                    cwd: '.tmp',
+                    src: [
+                        'styles/**'
+                    ],
+                    dest: '<%= node.destination %>/public'
                 }]
             }
         },
@@ -184,10 +182,12 @@ module.exports = function(grunt) {
         jshint: {
             options: {
                 jshintrc: '.jshintrc',
-                reporter: require('jshint-stylish')
+                reporter: require('jshint-stylish') 
             },
             all: [
-                // '<%= node.source %>/public/javascripts/includes/{,**/}*.js',
+                'gruntfile.js',
+                '<%= node.source %>/server/{,**/}*.js',
+                '<%= node.source %>/public/javascripts/includes/{,**/}*.js',
                 '<%= node.source %>/public/javascripts/projects/{,**/}*.js'
             ]
         },
@@ -229,19 +229,85 @@ module.exports = function(grunt) {
             }
         },
 
-        //Run some tasks in parallel to speed up the build process
-        concurrent: {
-            dev: [
-                'nodemon',
-                'node-inspector',
-                'watch'
-            ],
-            options: {
-                logConcurrentOutput: true
+        //Replace strings on files by using string or regex patters
+        'string-replace': {
+            inline: {
+                // files: {
+                //     '<%= node.destination %>/lib/views/layout/layout.html': '<%= node.destination %>/lib/views/layout/layout.html'
+                // },                
+                files: [{
+                  expand: true,
+                  cwd: '<%= node.destination %>/lib/views/layout/layout.html',
+                  src: 'layout.html',
+                  dest: '<%= node.destination %>/lib/views/layout/layout.html'
+                }],                
+                options: {
+                    replacements: [{
+                            pattern: '<script type="text/javascript">var ENV_CONFIG = "dev";</script>',
+                            replacement: '<script type="text/javascript">var ENV_CONFIG = "'+ NODE_ENV +'";</script>'
+                        }
+                    ]
+                }
             }
         },
 
-        //Monitor for any changes in your source and automatically restart your server
+        //Automatic notifications when Grunt tasks execute/fail
+        notify: {
+            build: {
+                options: {
+                    title: 'Build complete',
+                    message: 'All the grunt tasks are finished.'
+                }
+            },
+            compass: {
+                options: {
+                    title: 'Compass',
+                    message: 'Compass tasks complete'
+                }
+            },
+            views: {
+                options: {
+                    title: 'Views',
+                    message: 'Views copy complete'
+                }
+            },
+            handlebars: {
+                options: {
+                    title: 'Handlebars',
+                    message: 'Handlebars tasks complete'
+                }
+            },
+            clientReload: {
+                options: {
+                    title: 'Client LiveReload',
+                    message: 'Reload complete'
+                }
+            },
+            serverReload: {
+                options: {
+                    title: 'Server LiveReload',
+                    message: 'Reload complete'
+                }
+            },
+            grunt: {
+                options: {
+                    title: 'Grunt',
+                    message: 'Grunt config change complete'
+                }
+            }
+        },
+
+        //Inject scripts during development
+        inject: { 
+            livereload: {
+                scriptSrc: './build/inject.js',
+                files: {
+                    '<%= node.destination %>/lib/views/layout/layout.html': '<%= node.destination %>/lib/views/layout/layout.html'
+                }
+            }
+        },
+
+        //Monitor for any changes in the server-side code base to auto restart server & refresh browser
         nodemon: {
             dev: {
                 script: '<%= node.destination %>/index.js',
@@ -255,6 +321,14 @@ module.exports = function(grunt) {
                             console.log(event.colour);
                         });
 
+                        // opens browser on initial server start
+                        nodemon.on('config:update', function() {
+                            // Delay before server listens on port
+                            setTimeout(function() {
+                                require('open')('http://localhost:3000/projects/quickpeek/');
+                            }, 1000);
+                        });
+
                         // refreshes browser when server reboots
                         nodemon.on('restart', function() {
                             setTimeout(function() {
@@ -266,6 +340,7 @@ module.exports = function(grunt) {
             }
         },
 
+        //Node inspector URL: http://localhost:1337/
         'node-inspector': {
             dev: {
                 options: {
@@ -276,70 +351,123 @@ module.exports = function(grunt) {
 
         //Run predefined tasks whenever watched file patterns are added, changed or deleted.
 		watch: {
-		    js: {
+		    jsClient: {
 		        files: [
-					// '<%= node.source %>/public/javascripts/includes/{,**/}*.js',
-					'<%= node.source %>/public/javascripts/projects/{,**/}*.js'
-		    	],
-		        tasks: [
-		        	'jshint', 
-		        	'concat:generated'
-		        ]
-		    },
+                    '<%= node.source %>/public/javascripts/main.js',
+                    '<%= node.source %>/public/javascripts/includes/{,**/}*.js',
+                    '<%= node.source %>/public/javascripts/projects/{,**/}*.js'
+                ],
+                tasks: [
+                    'jshint', 
+                    // 'concat:generated',
+                    'copy:jsClient'
+                ]
+            },
+            jsServer: {
+                files: [
+                    '<%= node.source %>/server/{,**/}*.js'
+                ],
+                tasks: [
+                    'jshint', 
+                    // 'concat:generated',
+                    'copy:jsServer'
+                ]
+            },            
 		    styles: {
 		        files: [
 		    		'<%= node.source %>/public/styles/{,**/}*.{scss,sass,css}'
 		    	],
 		        tasks: [
 		        	'compass:dist', 
-		        	// 'concat:generated'
-		        	'copy:toTarget'
+		        	'copy:styles',
+                    'notify:compass'
 		        ]
 		    },
-		    html: {
+		    views: {
 		        files: [
 		    		'<%= node.source %>/server/lib/views/{,**/}*.html'
 		    	],
 		        tasks: [
 		        	'useminPrepare',
 		        	'htmlmin',
-		        	'usemin'
+		        	'usemin',
+                    'notify:views'
 		        ]
 		    },
-			livereload: {
-				files: [
-					'<%= node.source %>/public/images/{,**/}*.{png,jpg,jpeg,gif,webp,svg}',
-					'<%= node.source %>/public/javascripts/{,**/}*.js',
-					'.tmp/styles/{,**/}*.css',
-					'<%= node.source %>/server/lib/views/{,**/}*.html'
-				],
-                port: 35728
-			},
+            clientReload: {
+                // Limit the client reload files to one per type of file to prevent EMFILE error
+                files: [
+                    '<%= node.destination %>/lib/views/{,**/}*.html',
+                    '<%= node.destination %>/public/javascripts/{,**/}*.js',
+                    '<%= node.destination %>/public/styles/{,**/}*.css'
+                ],
+                options: {
+                    livereload: true
+                },
+                tasks: ['notify:clientReload']
+            },            
+            serverReload: {
+                files: ['.tmp/rebooted.file'],
+                options: {
+                    livereload: true
+                },
+                tasks: ['notify:serverReload']
+            },            
+            grunt: {
+                files: [
+                    '.env',
+                    'gruntfile.js',
+                    'grunt/**'
+                ],
+                tasks: ['notify:grunt'],
+                options: {
+                    reload: true
+                }
+            }                    
+		},
+
+        //Run some tasks in parallel to speed up the build process
+        concurrent: {
+            dev: [
+                'nodemon',
+                'watch',
+                'node-inspector',
+                'notify:build'
+            ],
             options: {
-                livereload: true
-            }            
-		}
+                logConcurrentOutput: true
+            }
+        }        
     });
 
-    grunt.registerTask('build', [
-        'clean:all',
-        'useminPrepare',
-        'compass:dist',
-        'copy:styles',
-        // 'autoprefixer',
-        'htmlmin',   
-        // 'handlebars',
-        'concat:generated',
-        // 'concat:addHBStemplates',
-        'copy:toTarget',
-        // 'cssmin',
-        // 'uglify',  
-        // 'rev:dist',     
-        'usemin' 
-    ]);
+    grunt.registerTask('default', 'build');
 
-    grunt.registerTask('default', [
-        'jshint',
-        'build'
-    ]);
+    grunt.registerTask('build', 'Build based on the NODE_ENV value.', function() {   
+        grunt.task.run([
+            'clean:all',
+            'useminPrepare',
+            'compass:dist',
+            'htmlmin',   
+            // 'handlebars',
+            // 'concat:generated',
+            // 'concat:addHBStemplates',
+            'copy:all',
+            // 'cssmin',
+            // 'uglify',  
+            // 'rev:dist',     
+            'usemin',
+            'string-replace'
+        ]);
+
+        if (NODE_ENV === 'dev') {
+            grunt.task.run([
+                'inject:livereload',
+                'concurrent:dev'
+            ]);
+        } else if (NODE_ENV === 'prod' || NODE_ENV === 'production') {
+            grunt.task.run([
+                //add tasks: concat; minify; etc.
+            ]);
+        }
+    });
 };

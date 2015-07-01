@@ -1,8 +1,11 @@
+'use strict';
+
 define([
     'backbone',
     'jquery',
-    'underscore'
-], function(Backbone, $, _) {
+    'underscore',
+    'coremetrics'
+], function(Backbone, $, _, Coremetrics) {
 
     function adjustFlyoutPosition(flyout, totalFOBs, selectedFOBIndex, fobOffset, flyoutWidth, fobMenuWidth) {
         var flyoutPos,
@@ -35,8 +38,8 @@ define([
                 dataType: 'html',
                 method: 'GET',
                 data: {
-                    // 'category'	: val,
-                    // 'depth'		: '3',
+                    // 'category'   : val,
+                    // 'depth'      : '3',
                 },
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded',
@@ -45,7 +48,7 @@ define([
                 $('#nav .row').html(res);
 
                 $('#nav #mainNav a').each(function() {
-                    if ($(this).attr('href').charAt(0) == '/') {
+                    if ($(this).attr('href').charAt(0) === '/') {
                         $(this).attr('href', 'http://www.bloomingdales.com' + $(this).attr('href'));
                     }
                 });
@@ -76,7 +79,7 @@ define([
 
                 $('#globalFlyouts').html(resBlob);
                 $('#globalFlyouts a').each(function() {
-                    if ($(this).attr('href').charAt(0) == '/') {
+                    if ($(this).attr('href').charAt(0) === '/') {
                         $(this).attr('href', 'http://www.bloomingdales.com' + $(this).attr('href'));
                     }
                 });
@@ -86,79 +89,79 @@ define([
         }
     };
 
-    var user = {
-        get: function() {
-            $.ajax({
-                method: 'GET',
-                dataType: 'json',
-                url: '/secure/v2/user',
-                data: {
-                    'show': 'summary',
-                },
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded',
-                }
-            }).success(function(res) {
-                console.log(res);
-                return res;
-            });
-        },
-    };
+    // var user = {
+    //     get: function() {
+    //         $.ajax({
+    //             method: 'GET',
+    //             dataType: 'json',
+    //             url: '/secure/v2/user',
+    //             data: {
+    //                 'show': 'summary',
+    //             },
+    //             headers: {
+    //                 'Content-Type': 'application/x-www-form-urlencoded',
+    //             }
+    //         }).success(function(res) {
+    //             console.log(res);
+    //             return res;
+    //         });
+    //     },
+    // };
 
-    var bag = {
-        get: function() {
-            $.ajax({
-                method: 'GET',
-                dataType: 'json',
-                url: '/api/v2/shoppingbag',
-                data: {
-                    'userid': '64354129',
-                },
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded',
-                }
-            }).success(function(res) {
-                console.log(res);
-                return res.bagid;
-            });
-        },
+    // var bag = {
+    //     get: function() {
+    //         $.ajax({
+    //             method: 'GET',
+    //             dataType: 'json',
+    //             url: '/api/v2/shoppingbag',
+    //             data: {
+    //                 'userid': '64354129',
+    //             },
+    //             headers: {
+    //                 'Content-Type': 'application/x-www-form-urlencoded',
+    //             }
+    //         }).success(function(res) {
+    //             console.log(res);
+    //             return res.bagid;
+    //         });
+    //     },
 
-        add: function(ev, add_id, add_color, add_size, add_type, add_quantity, add_promocode) {
-            console.log(add_id);
-            $.ajax({
-                method: 'POST',
-                url: '/api/v2/shoppingbag/item',
-                data: {
-                    'productid': add_id
-                }
-            }).success(function(res) {
-                console.log(res);
-            }).fail(function(res) {
-                console.log('atb failure');
-            });
-        },
+    //     add: function(ev, addID, addColor, addSize, addType, addQuantity, addPromocode) {
+    //         console.log(addID);
+    //         $.ajax({
+    //             method: 'POST',
+    //             url: '/api/v2/shoppingbag/item',
+    //             data: {
+    //                 'productid': addID
+    //             }
+    //         }).success(function(res) {
+    //             console.log(res);
+    //         }).fail(function(res) {
+    //             console.log('atb failure: ', res);
+    //         });
+    //     },
 
-        count: function() {
-            $.ajax({
-                method: 'GET',
-                dataType: 'json',
-                url: '/api/v2/shoppingbag/bagItemCount',
-                data: {
-                    // 'bagid'	: ,
-                    'userid': '64354129',
-                },
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded',
-                }
-            }).success(function(res) {
-                if (res.bagItemCount > 0) {
-                    $('#cartCount').html(res.bagItemCount + ' Items');
-                } else {
-                    $('#cartCount').html('(0)');
-                }
-            });
-        },
-    };
+    //     count: function() {
+    //         $.ajax({
+    //             method: 'GET',
+    //             dataType: 'json',
+    //             url: '/api/v2/shoppingbag/bagItemCount',
+    //             data: {
+    //                 // 'bagid'  : ,
+    //                 'userid': '64354129',
+    //             },
+    //             headers: {
+    //                 'Content-Type': 'application/x-www-form-urlencoded',
+    //             }
+    //         }).success(function(res) {
+    //             if (res.bagItemCount > 0) {
+    //                 $('#cartCount').html(res.bagItemCount + ' Items');
+    //             } else {
+    //                 $('#cartCount').html('(0)');
+    //             }
+    //         });
+    //     },
+    // };
 
     var init = function() {
         build.topnav();
@@ -173,10 +176,10 @@ define([
             delay = 200, // hover time before flyout appears.
             timeoutConst;
 
-        $('#nav').on('mouseenter', '#mainNav > li', function(ev) {
+        $('#nav').on('mouseenter', '#mainNav > li', function() {
             //BIND ONLY TO DESKTOP EXPERIENCE
             if ($(window).width() > 980 && (!$('body').hasClass('tablet'))) {
-                if (hamburgerMinFOBSFlag == true) {
+                if (hamburgerMinFOBSFlag === true) {
                     hamburgerMaxFOBS();
                 }
 
@@ -189,16 +192,20 @@ define([
                     adjustFlyoutPosition($('#flyout_' + catNum), $('#mainNav > li').length - 1, thing.index() + 1, $('#nav .row').css('margin-left'), $('#flyout_' + catNum).width(), 962);
                 }, delay);
             }
-        }).on('mouseleave', '#mainNav > li', function(ev) {
+        }).on('mouseleave', '#mainNav > li', function() {
             if ($(window).width() > 980 && (!$('body').hasClass('tablet'))) {
                 clearTimeout(timeoutConst);
                 $('#flyout_' + catNum).removeClass('flyout-on').addClass('flyout-off');
                 $(this).removeClass('selected');
             }
         }).on('click', '#mainNav > li', function(ev) {
-            var target = ev.currentTarget;
+            var target = ev.currentTarget,
+                anchor = $(target).children();
 
-            if (($(window).width() <= 980 || $('body').hasClass('tablet')) && (!$(target).hasClass('active'))) {                    
+            //bind coremetrics listeners
+            Coremetrics.linkClickTag(anchor);
+
+            if (($(window).width() <= 980 || $('body').hasClass('tablet')) && (!$(target).hasClass('active'))) {
                 ev.preventDefault();
                 hamburgerFlyoutAction(target);
             }
@@ -214,7 +221,26 @@ define([
                 $('#flyout_' + catNum).removeClass('flyout-on').addClass('flyout-off');
                 $('#flexLabel_' + catNum).removeClass('selected');
             }
+        }).on('click', 'div > div > div > div > ul > li > a',function() {
+            var target = this; 
+
+            //bind coremetrics listeners
+            Coremetrics.linkClickTag(target);
         });
+
+        function cmNavBtn() {
+            if ($('#hamburger-content-overlay').hasClass('active')) {
+                Coremetrics.elementTag({
+                    elementID: window.Globals.Coremetrics.pageID || 'heroku',
+                    elementCategory: 'Tablet_Global_Navigation Open'
+                });
+            } else {
+                Coremetrics.elementTag({
+                    elementID: window.Globals.Coremetrics.pageID || 'heroku',
+                    elementCategory: 'Tablet_Global_Navigation Close'
+                });
+            }
+        }
 
         // =========== FLYOUT HANDLING FOR HAMBURHER MENU
         function hamburgerMenuAction(ev) {
@@ -222,6 +248,9 @@ define([
             ev.stopImmediatePropagation();
 
             $('#hamburger-content-overlay').toggleClass('active');
+
+            //bind coremetrics on hamburger button
+            cmNavBtn();
 
             $('#nav').animate({
                 height: 'toggle'
@@ -235,12 +264,13 @@ define([
                 }
             });
 
+            // freeze the window when hamburger menu is opened
             var body = $('body');
             if (body.css('overflow') === 'visible') {
-                body.css('overflow','hidden');
+                body.css('overflow', 'hidden');
             } else {
-                body.css('overflow','visible');
-            }            
+                body.css('overflow', 'visible');
+            }
 
             return false;
         }
@@ -309,7 +339,9 @@ define([
         }
 
         function hamburgerFlyoutAction(target) {
-            var categoryID = target.id.substr(target.id.indexOf('_') + 1);
+            var categoryID = target.id.substr(target.id.indexOf('_') + 1),
+                anchor,
+                elementID; 
 
             //Turn off current active main category
             $('#mainNav li.active').removeClass('active');
@@ -328,19 +360,39 @@ define([
 
             $(target).addClass('active');
 
+            //bind coremetrics listener
+            anchor = $(target).children().attr('href');
+            elementID = anchor.split('_').pop(); 
+            elementID = elementID.split('-');
+            elementID = elementID[1];
+
+            Coremetrics.elementTag({
+                elementID: elementID,
+                elementCategory: 'Tablet_Global_Navigation'
+            });
+
             return false;
         }
 
         //on desktop, resizing from tablet to desktop: show FOBs & Flyouts + hide hamburger active submenu
-        $(window).on('resize', function (){
-            if ($(window).width() > 980 && (!$('body').hasClass('tablet')) && ($('#nav').hasClass('active') || $('#nav').attr('style') === 'display: none;')){
-                $('#nav').removeClass('active').attr('style','');
-                $('#globalFlyouts').attr('style','');
+        $(window).on('resize', function() {           
+            if ($(window).width() > 980 && (!$('body').hasClass('tablet')) && ($('#nav').hasClass('active') || $('#nav').attr('style') === 'display: none;')) {
+                $('#nav').removeClass('active').attr('style', '');
+                $('#globalFlyouts').attr('style', '');
                 $('#hamburgerMenuIcon, #mainNav li.active, #hamburger-content-overlay').removeClass('active');
             }
+
+            //pageview coremetrics on window resize
+            if ($(window).width() > 980 && window.Globals.Coremetrics.attr42 === 'Desktop Minimized'){
+                Coremetrics.pageViewTag(window.Globals.pageID, window.Globals.catID, '');
+                window.Globals.Coremetrics.attr42 = '';
+            }      
+            if ($(window).width() <= 980 && window.Globals.Coremetrics.attr42 === ''){
+                Coremetrics.pageViewTag(window.Globals.pageID, window.Globals.catID, 'Desktop Minimized');
+                window.Globals.Coremetrics.attr42 = 'Desktop Minimized';
+            }                       
         });
     };
 
     return init;
-
 });

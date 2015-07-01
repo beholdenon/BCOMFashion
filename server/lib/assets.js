@@ -1,7 +1,6 @@
 'use strict';
 var serviceProxy = require('./serviceProxy'),
-    config = require('./parsers/config'),
-    device = require('./deviceDetection');
+    device = require('./deviceDetection');    
 
 module.exports = {
     fashion: {
@@ -62,9 +61,11 @@ module.exports = {
                 customView = request.params.path + 'index';
             }
 
-            (deviceType === 'tablet') ? isTablet = true: isTablet = false;
+            if (deviceType === 'tablet'){
+                isTablet = true;
+            }
 
-            if (request.params.path == '' || request.params.path == undefined) {
+            if (request.params.path === '' || request.params.path === undefined) {
                 return reply.redirect('http://www.bloomingdales.com');
             } else {
                 return reply.view(customView, {
