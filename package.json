@@ -46,6 +46,7 @@
     "grunt-node-inspector": "0.2.0",
     "grunt-nodemon": "~0.4.0",
     "grunt-notify": "^0.4.1",
+    "grunt-open": "^0.2.3",
     "grunt-requirejs-config": "0.1.0",
     "grunt-rev": "^0.1.0",
     "grunt-shell": "^1.1.2",
@@ -54,6 +55,8 @@
     "jshint-stylish": "^2.0.0",
     "load-grunt-config": "^0.17.1",
     "load-grunt-tasks": "^3.2.0",
-    "time-grunt": "^1.2.1"
+    "time-grunt": "^1.2.1",
+    "connect-livereload": "^0.5.3",    
+    "open": "0.0.5"
   }
 }
