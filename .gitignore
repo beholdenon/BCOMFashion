@@ -9,6 +9,7 @@ node_modules/.bin
 .settings/*
 .metadata
 .tmp
+bin
 *.log
 
 # Ignore everything in the target folder
