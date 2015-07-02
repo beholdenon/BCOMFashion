@@ -1,4 +1,4 @@
-// Karma configuration
+// Karma configuration 
 
 module.exports = {
   options: {

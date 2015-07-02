@@ -1,5 +1,5 @@
 module.exports = {
-  options: {
+  options: { 
     force: true,
     sassDir: "<%= brandSrc %>/styles/",
     cssDir: "<%= clientDest %>/assets/styles",

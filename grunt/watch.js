@@ -3,7 +3,7 @@ module.exports = {
   compass: {
     files: [
       '<%= commonSrc %>/styles/**',
-      '<%= commonSrc %>/images/icon2x/*',
+      '<%= commonSrc %>/images/icon2x/*', 
       '<%= brandSrc %>/styles/**',
       '<%= brandSrc %>/images/icon2x/*'
     ],

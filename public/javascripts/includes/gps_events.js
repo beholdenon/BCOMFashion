@@ -7,7 +7,7 @@ $(document).ready(function(){
         	
 			navigator.geolocation.getCurrentPosition(function(position) {
 				// $('.gpsEvents .result').append('<p>'+position.coords.latitude+'</p>');
-				// $('.gpsEvents .result').append('<p>'+position.coords.longitude+'</p>');
+				// $('.gpsEvents .result').append('<p>'+position.coords.longitude+'</p>'); 
 
 					var latDistance=1000,
 						lonDistance=1000,

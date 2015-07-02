@@ -1,4 +1,4 @@
-'use strict';
+'use strict'; 
 var Hapi = require('hapi'),
     Handlebars = require('handlebars'),
     Path = require('path'),

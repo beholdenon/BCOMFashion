@@ -6,7 +6,7 @@ define([
 ], function(Backbone, $) {
 
     window.BLOOMIES.initMobileNav = function() {
-        // Add the height on some divs on the page to support the proper scrolling
+        // Add the height on some divs on the page to support the proper scrolling 
         var heightEqualizer = function() {
             var pageHeight = window.innerHeight;
             var regionMainHeight = pageHeight - $('#region-header').outerHeight();

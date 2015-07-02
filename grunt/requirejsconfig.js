@@ -1,7 +1,7 @@
 module.exports = {
   dev: {
     src: "<%= commonSrc %>/scripts/main.js",
-    dest: "<%= clientDest %>/assets/scripts/main.js",
+    dest: "<%= clientDest %>/assets/scripts/main.js", 
     options: {
       shim: '<%= shim %>',
       paths: '<%= paths %>',

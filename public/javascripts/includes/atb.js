@@ -1,4 +1,4 @@
-/* jshint ignore:start */
+/* jshint ignore:start */ 
 
 $(document).ready(function(){
 	var prodData,

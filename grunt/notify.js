@@ -2,7 +2,7 @@ module.exports = {
   build: {
     options: {
       title: 'Build complete',
-      message: 'All the grunt tasks are finished.'
+      message: 'All the grunt tasks are finished.' 
     }
   },
   jasmine: {

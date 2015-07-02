@@ -1,4 +1,4 @@
-// Gets default environment properties from a given heroku env file
+// Gets default environment properties from a given heroku env file 
 module.exports = function(grunt, file) {
   'use strict';
 

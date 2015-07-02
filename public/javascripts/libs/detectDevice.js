@@ -1,7 +1,7 @@
 /**
  * User: u029337 Sarah Becker
  * Date: 8/22/2013
- * Time: 11:41 AM
+ * Time: 11:41 AM 
  * Description:   Detect Device
  * Usage examples:
  *    str1  = Detect(); // -> 'tablet'

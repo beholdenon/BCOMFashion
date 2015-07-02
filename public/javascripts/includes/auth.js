@@ -1,4 +1,4 @@
-/* jshint ignore:start */
+/* jshint ignore:start */ 
 
 $(window).ready(function(){
 	$('.authRequest').on('click', function (ev){

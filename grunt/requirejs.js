@@ -2,7 +2,7 @@
 module.exports = {
   compile: {
     options: {
-      mainConfigFile: "<%= clientDest %>/assets/scripts/main.js",
+      mainConfigFile: "<%= clientDest %>/assets/scripts/main.js", 
       baseUrl: "<%= clientDest %>/assets/scripts",
       name: "main",
       out: "<%= clientDest %>/assets/scripts/main.js",

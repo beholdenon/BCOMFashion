@@ -1,4 +1,4 @@
-'use strict';
+'use strict'; 
 var Wreck = require('wreck'),
     Zlib = require('zlib'),
     Boom = require('boom'),

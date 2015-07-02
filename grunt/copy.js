@@ -1,5 +1,5 @@
 module.exports = {
-  // Copys the client source code into the target folder
+  // Copys the client source code into the target folder 
   client: {
     files: [
       // common images and scripts except templates and main.js

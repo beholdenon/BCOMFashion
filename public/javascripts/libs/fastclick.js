@@ -3,7 +3,7 @@
  *
  * @version 1.0.3
  * @codingstandard ftlabs-jsv2
- * @copyright The Financial Times Limited [All Rights Reserved]
+ * @copyright The Financial Times Limited [All Rights Reserved] 
  * @license MIT License (see LICENSE.txt)
  */
 

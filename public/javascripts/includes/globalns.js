@@ -3,7 +3,7 @@
 'use strict';
 
 /**
- * BLOOMIES global namespace object. Only create if it doesn't already exist.
+ * BLOOMIES global namespace object. Only create if it doesn't already exist. 
  * This governs the Singleton nature of this base object.
  * @static
  */

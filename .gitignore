@@ -22,3 +22,11 @@ Gemfile.lock
 .project
 *.sublime-workspace
 *.sublime-project
+
+# Gerrit Hook Restrictions
+*.jar
+*.class
+*.rar
+*.gzip
+*.zip
+*.project

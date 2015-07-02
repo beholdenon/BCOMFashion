@@ -1,5 +1,5 @@
 module.exports = {
- combine: {
+ combine: { 
    files: {
      "<%= clientDest %>/assets/styles/styles.css": ["<%= commonSrc %>/styles/*.css", "<%= clientDest %>/assets/styles/main.css"]
    }

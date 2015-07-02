@@ -2,7 +2,7 @@
  * @file
  * Register helpers to be used by the handlebars template library.
  *
- * @see http://handlebarsjs.com/block_helpers.html
+ * @see http://handlebarsjs.com/block_helpers.html 
  */
 
 /* jshint ignore:start */

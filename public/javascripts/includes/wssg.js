@@ -1,6 +1,6 @@
 /*====================================================================================
 
-author: 			Mike Curtis
+author: 			Mike Curtis 
 functionality: 		Standardized click events and calls for WSSG services.
 last-edited: 		05/21/15
 
