@@ -1,4 +1,4 @@
-'use strict'; 
+'use strict';
 var Hapi = require('hapi'),
     Handlebars = require('handlebars'),
     Path = require('path'),
@@ -58,7 +58,7 @@ server.ext('onPreResponse', function(request, reply) {
         // Pre-render the template and see if there's any errors
         return server.render(source.template, source.context, function(err) {
             if (err) {
-                return reply.view('/errors/index').code(404);
+                return reply.redirect('/errors/');
             }
 
             reply.continue();
@@ -70,21 +70,21 @@ server.ext('onPreResponse', function(request, reply) {
 
 server.on('request', function(request, event, tags) {
     if (tags.error) {
-        console.log('Tags:', Object.keys(tags).join(', '), '~', (event.data ? event.data.stack || JSON.stringify(event.data) : ''));
+        console.log('SERVER::error tags: ', Object.keys(tags).join(', '), '~', (event.data ? event.data.stack || JSON.stringify(event.data) : ''));
     }
 });
 
 server.on('request-internal', function(request, event, tags) {
     if (tags.error) {
-        console.log('Tags:', Object.keys(tags).join(', '), '~', (event.data ? event.data.stack || JSON.stringify(event.data) : ''));
+        console.log('SERVER::error tags: ', Object.keys(tags).join(', '), '~', (event.data ? event.data.stack || JSON.stringify(event.data) : ''));
     }
 });
 
 server.on('log', function(event) {
-    console.log('Event data: ', event.data);
+    console.log('SERVER::event data: ', event.data);
 });
 
 // Start the server
 server.start(function() {
-    console.log('Server running at:', server.info.uri);
+    console.log('SERVER::running at: ', server.info.uri);
 });

@@ -1,6 +1,6 @@
-'use strict'; 
+'use strict';
 
-var path = require('path'); 
+var path = require('path');
 
 module.exports = function(grunt) {
 
@@ -395,14 +395,15 @@ module.exports = function(grunt) {
 		        ]
 		    },
             clientReload: {
-                // Limit the client reload files to one per type of file to prevent EMFILE error
+                // Limit the client reload files to one per file type to prevent EMFILE error
                 files: [
                     '<%= node.destination %>/lib/views/{,**/}*.html',
                     '<%= node.destination %>/public/javascripts/{,**/}*.js',
                     '<%= node.destination %>/public/styles/{,**/}*.css'
                 ],
                 options: {
-                    livereload: true
+                    livereload: true,
+                    debounceDelay: 1000
                 },
                 tasks: ['notify:clientReload']
             },            
@@ -423,7 +424,7 @@ module.exports = function(grunt) {
                 options: {
                     reload: true
                 }
-            }                    
+            }
 		},
 
         //Run some tasks in parallel to speed up the build process
