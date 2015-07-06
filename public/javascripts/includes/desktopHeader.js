@@ -264,14 +264,6 @@ define([
                 }
             });
 
-            // freeze the window when hamburger menu is opened
-            var body = $('body');
-            if (body.css('overflow') === 'visible') {
-                body.css('overflow', 'hidden');
-            } else {
-                body.css('overflow', 'visible');
-            }
-
             return false;
         }
 
