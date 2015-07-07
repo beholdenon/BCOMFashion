@@ -1,3 +1,5 @@
+/* jshint ignore:start */
+
 define([ 
     'underscore',
     'jquery'
@@ -14,7 +16,7 @@ define([
         } else if (env === 'production') {
             return cmSetProduction();
         } else {
-            throw 'ERROR: unidentified env variable'
+            throw 'ERROR: unidentified env variable';
         }
     };
 
@@ -39,8 +41,10 @@ define([
         } else {
             BLOOMIES.coremetrics.cmCreatePageviewTag(page_ID, cat_ID, '', '');
         }
-    };
+    }
 
     return cmInit;
 
 });
+
+/* jshint ignore:end */

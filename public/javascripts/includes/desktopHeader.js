@@ -174,7 +174,8 @@ define([
         // =========== FLYOUT HANDLING FOR DESKTOP NATIVE HEADER
         var catNum = '',
             delay = 200, // hover time before flyout appears.
-            timeoutConst;
+            timeoutConst,
+            IS_TABLET_SAFARI_7 = !!navigator.userAgent.match(/i(Pad|Phone|Pod).+(Version\/7\.\d+ Mobile)/i);            
 
         $('#nav').on('mouseenter', '#mainNav > li', function() {
             //BIND ONLY TO DESKTOP EXPERIENCE
@@ -330,6 +331,17 @@ define([
             });
         }
 
+        function fixMobileSafari7Viewport (){
+            var elem = $('#globalFlyouts > div.activeNav > div > .flyoutCol');
+
+            elem.each (function (idx, el){
+                var self = $(el);
+                if (self.is(':visible')){
+                    self.css('min-width', 190);
+                }
+            });            
+        }
+
         function hamburgerFlyoutAction(target) {
             var categoryID = target.id.substr(target.id.indexOf('_') + 1),
                 anchor,
@@ -344,6 +356,13 @@ define([
 
             //Show the selected flyout
             $('#flyout_' + categoryID).addClass('activeNav');
+
+            //Workaround to solve the unsupported vw units on iOS7/Safari7 
+            if (IS_TABLET_SAFARI_7) {
+                setTimeout(function() {
+                    fixMobileSafari7Viewport();
+                }, 10);
+            }
 
             //If the hamburger flyouts are hidden, slide them out
             if ($('#globalFlyouts').is(':hidden')) {
@@ -383,6 +402,20 @@ define([
                 Coremetrics.pageViewTag(window.Globals.pageID, window.Globals.catID, 'Desktop Minimized');
                 window.Globals.Coremetrics.attr42 = 'Desktop Minimized';
             }                       
+        });
+
+        //Hamburger menu CSS fix for iOS7/Safari7
+        $(window).on('orientationchange', function() {     
+            if (IS_TABLET_SAFARI_7) {
+                $('.aboveNavSearch').css('width', '330px');
+                $('.bloomiesLogo').css({
+                    'background-size': '307px',
+                    'height': '34.78px',
+                    'margin-left': '11.52px',
+                    'width': '222.719px'
+
+                });
+            }
         });
     };
 
