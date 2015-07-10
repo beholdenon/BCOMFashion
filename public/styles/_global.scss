@@ -8,6 +8,7 @@ html {
     font-size: 11px;
     overflow: -moz-scrollbars-vertical;  
     overflow-y: scroll;
+    -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -21,6 +22,7 @@ body {
     font-style: normal;
     line-height: normal;
     cursor: auto;
+    -webkit-text-size-adjust: 100%;
 }
 
 img {

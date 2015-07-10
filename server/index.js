@@ -8,7 +8,7 @@ server.connection({
     port: process.env.PORT,
     routes: {
         files: { relativeTo: Path.join(__dirname, 'public') },
-        state: { failAction: 'ignore' }
+        state: { failAction: 'ignore' }       
     },
     state: { ignoreErrors: false, strictHeader: false } 
 });
@@ -70,21 +70,31 @@ server.ext('onPreResponse', function(request, reply) {
 
 server.on('request', function(request, event, tags) {
     if (tags.error) {
-        console.log('SERVER::error tags: ', Object.keys(tags).join(', '), '~', (event.data ? event.data.stack || JSON.stringify(event.data) : ''));
+        console.log('\n--------------------------------------------------\n' +
+                        'SERVER ON-REQUEST ERROR::\n'+
+                        Object.keys(tags).join(', '), '~', (event.data ? event.data.stack || JSON.stringify(event.data) : '') +
+                        '\n--------------------------------------------------\n');      
     }
 });
 
 server.on('request-internal', function(request, event, tags) {
     if (tags.error) {
-        console.log('SERVER::error tags: ', Object.keys(tags).join(', '), '~', (event.data ? event.data.stack || JSON.stringify(event.data) : ''));
+        console.log('\n--------------------------------------------------\n' +
+                        'SERVER INTERNAL ERROR::\n'+
+                        Object.keys(tags).join(', '), '~', (event.data ? event.data.stack || JSON.stringify(event.data) : '') +
+                        '\n--------------------------------------------------\n');       
     }
 });
 
 server.on('log', function(event) {
-    console.log('SERVER::event data: ', event.data);
+    console.log('\n--------------------------------------------------\n' +
+                '|   SERVER EVENT LOG:: ', event.data,'   |\n' +
+                '--------------------------------------------------\n');    
 });
 
 // Start the server
 server.start(function() {
-    console.log('SERVER::running at: ', server.info.uri);
+    console.log('\n--------------------------------------------------\n' +
+                '|   SERVER STARTED AT:: ', server.info.uri,'   |\n' +
+                '--------------------------------------------------\n');
 });

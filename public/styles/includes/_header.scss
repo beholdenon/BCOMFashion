@@ -624,7 +624,7 @@ header {
                         a {
                             display: block;
                             font-size: 10.3739995956421px;
-                            font-size: 1.3vw !important;
+                            font-size: 1.3vw;
                             font-family: Arial, sans-serif !important;
                             font-weight: 700;
                             text-decoration: none;
@@ -633,7 +633,6 @@ header {
                             padding-left: rem-calc(20);
                             padding-right: rem-calc(25);
                             letter-spacing: rem-calc(1);
-                            background-color: #f7f7f7;
                             outline: none;
                         }
                         &.active a, &:hover a {
@@ -1032,7 +1031,8 @@ body.tablet{
                         display: block !important;
                         a {
                             display: block;
-                            font-size: 1.3vw !important;
+                            font-size: 10.3739995956421px;
+                            font-size: 1.3vw;
                             font-family: Arial, sans-serif !important;
                             font-weight: 700;
                             text-decoration: none;
@@ -1041,8 +1041,7 @@ body.tablet{
                             padding-left: rem-calc(20);
                             padding-right: rem-calc(25);
                             letter-spacing: rem-calc(1);
-                            background-color: #f7f7f7;
-                             outline: none;
+                            outline: none;
                         }
                         &.active a, &:hover a {
                             background-color: #ECECEC;

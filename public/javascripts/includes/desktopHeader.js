@@ -337,7 +337,7 @@ define([
             elem.each (function (idx, el){
                 var self = $(el);
                 if (self.is(':visible')){
-                    self.css('min-width', 190);
+                    self.css('min-width', 210);
                 }
             });            
         }
@@ -415,6 +415,19 @@ define([
                     'width': '222.719px'
 
                 });
+
+                var windOrient = window.orientation;
+                if (windOrient === 0 || windOrient === 180) {
+                    //portrait mode
+                    $('#mainNav > li').css('width', '187px'); 
+                    $('#mainNav > li > a, #globalFlyouts > div.activeNav > div > .flyoutCol a,  #globalFlyouts > div.activeNav > div > .flyoutCol label').css('font-size', '9px');
+                } else {
+                    //landscape mode
+                    $('#mainNav > li').css('width', '281px');
+                    $('#mainNav > li > a').css('font-size', '11px');
+                }
+
+                fixMobileSafari7Viewport();
             }
         });
     };
