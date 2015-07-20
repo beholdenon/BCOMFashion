@@ -175,11 +175,12 @@ define([
         var catNum = '',
             delay = 200, // hover time before flyout appears.
             timeoutConst,
-            IS_TABLET_SAFARI_7 = !!navigator.userAgent.match(/i(Pad|Phone|Pod).+(Version\/7\.\d+ Mobile)/i);            
+            IS_TABLET_SAFARI_7 = !!navigator.userAgent.match(/i(Pad|Phone|Pod).+(Version\/7\.\d+ Mobile)/i),
+            windowWidth = $(window).width();            
 
         $('#nav').on('mouseenter', '#mainNav > li', function() {
             //BIND ONLY TO DESKTOP EXPERIENCE
-            if ($(window).width() > 980 && (!$('body').hasClass('tablet'))) {
+            if (windowWidth > 980 && (window.Globals.deviceType !== 'tablet')) {
                 if (hamburgerMinFOBSFlag === true) {
                     hamburgerMaxFOBS();
                 }
@@ -194,7 +195,7 @@ define([
                 }, delay);
             }
         }).on('mouseleave', '#mainNav > li', function() {
-            if ($(window).width() > 980 && (!$('body').hasClass('tablet'))) {
+            if (windowWidth > 980 && (window.Globals.deviceType !== 'tablet')) {
                 clearTimeout(timeoutConst);
                 $('#flyout_' + catNum).removeClass('flyout-on').addClass('flyout-off');
                 $(this).removeClass('selected');
@@ -206,19 +207,19 @@ define([
             //bind coremetrics listeners
             Coremetrics.linkClickTag(anchor);
 
-            if (($(window).width() <= 980 || $('body').hasClass('tablet')) && (!$(target).hasClass('active'))) {
+            if ((windowWidth <= 980 || window.Globals.deviceType === 'tablet') && (!$(target).hasClass('active'))) {
                 ev.preventDefault();
                 hamburgerFlyoutAction(target);
             }
         });
 
         $('#globalFlyouts').on('mouseenter', function() {
-            if ($(window).width() > 980 && (!$('body').hasClass('tablet'))) {
+            if (windowWidth > 980 && (window.Globals.deviceType !== 'tablet')) {
                 $('#flyout_' + catNum).addClass('flyout-on').removeClass('flyout-off');
                 $('#flexLabel_' + catNum).addClass('selected');
             }
         }).on('mouseleave', function() {
-            if ($(window).width() > 980 && (!$('body').hasClass('tablet'))) {
+            if (windowWidth > 980 && (window.Globals.deviceType !== 'tablet')) {
                 $('#flyout_' + catNum).removeClass('flyout-on').addClass('flyout-off');
                 $('#flexLabel_' + catNum).removeClass('selected');
             }
@@ -230,15 +231,18 @@ define([
         });
 
         function cmNavBtn() {
+            var deviceType = window.BLOOMIES.capitalize(window.Globals.deviceType);
+            deviceType = deviceType + '_Global_Navigation';
+
             if ($('#hamburger-content-overlay').hasClass('active')) {
                 Coremetrics.elementTag({
                     elementID: window.Globals.Coremetrics.pageID || 'heroku',
-                    elementCategory: 'Tablet_Global_Navigation Open'
+                    elementCategory: deviceType + ' Open'
                 });
             } else {
                 Coremetrics.elementTag({
                     elementID: window.Globals.Coremetrics.pageID || 'heroku',
-                    elementCategory: 'Tablet_Global_Navigation Close'
+                    elementCategory: deviceType + ' Close'
                 });
             }
         }
@@ -374,12 +378,15 @@ define([
             //bind coremetrics listener
             anchor = $(target).children().attr('href');
             elementID = anchor.split('_').pop(); 
-            elementID = elementID.split('-');
-            elementID = elementID[1];
+            elementID = elementID.substring(1, elementID.length);
+            elementID = elementID.replace('-n-n','');
+            elementID = elementID.replace('%26','&');
 
+            var deviceType = window.BLOOMIES.capitalize(window.Globals.deviceType);
+            deviceType = deviceType + '_Global_Navigation';
             Coremetrics.elementTag({
                 elementID: elementID,
-                elementCategory: 'Tablet_Global_Navigation'
+                elementCategory: deviceType
             });
 
             return false;
@@ -387,25 +394,39 @@ define([
 
         //on desktop, resizing from tablet to desktop: show FOBs & Flyouts + hide hamburger active submenu
         $(window).on('resize', function() {           
-            if ($(window).width() > 980 && (!$('body').hasClass('tablet')) && ($('#nav').hasClass('active') || $('#nav').attr('style') === 'display: none;')) {
+            if (windowWidth > 980 && (window.Globals.deviceType !== 'tablet') && ($('#nav').hasClass('active') || $('#nav').attr('style') === 'display: none;')) {
                 $('#nav').removeClass('active').attr('style', '');
                 $('#globalFlyouts').attr('style', '');
                 $('#hamburgerMenuIcon, #mainNav li.active, #hamburger-content-overlay').removeClass('active');
             }
 
             //pageview coremetrics on window resize
-            if ($(window).width() > 980 && window.Globals.Coremetrics.attr42 === 'Desktop Minimized'){
+            if (windowWidth > 980 && window.Globals.Coremetrics.attr42 === 'Desktop Minimized'){
                 Coremetrics.pageViewTag(window.Globals.pageID, window.Globals.catID, '');
                 window.Globals.Coremetrics.attr42 = '';
             }      
-            if ($(window).width() <= 980 && window.Globals.Coremetrics.attr42 === ''){
+            if (windowWidth <= 980 && window.Globals.Coremetrics.attr42 === ''){
                 Coremetrics.pageViewTag(window.Globals.pageID, window.Globals.catID, 'Desktop Minimized');
                 window.Globals.Coremetrics.attr42 = 'Desktop Minimized';
             }                       
         });
 
-        //Hamburger menu CSS fix for iOS7/Safari7
+        function deviceOrientation() {
+            var orientation = Math.abs(window.orientation);
+
+            if (orientation === 90) {
+                return 'landscape';
+            } else {
+                return 'portrait';
+            }
+        }
+
+        function orientationChangeCM(orientation) {
+            Coremetrics.pageViewTag(window.Globals.Coremetrics.pageID, 'Tablet', '13', 'Tablet-' + window.BLOOMIES.capitalize(orientation));
+        }
+
         $(window).on('orientationchange', function() {     
+            //Hamburger menu CSS fix for iOS7/Safari7
             if (IS_TABLET_SAFARI_7) {
                 $('.aboveNavSearch').css('width', '330px');
                 $('.bloomiesLogo').css({
@@ -413,7 +434,6 @@ define([
                     'height': '34.78px',
                     'margin-left': '11.52px',
                     'width': '222.719px'
-
                 });
 
                 var windOrient = window.orientation;
@@ -429,6 +449,10 @@ define([
 
                 fixMobileSafari7Viewport();
             }
+
+            // CM for tablet on orientation chnage
+            var orientation = deviceOrientation();
+            orientationChangeCM(orientation);            
         });
     };
 

@@ -45,6 +45,7 @@ define([
     // init global app namespace object
     window.Globals = {
         env: window.ENV_CONFIG || 'dev',
+        deviceType: null,
         mobileOS: window.MOBILE_OS,
         Coremetrics: {
             pageID: null,
@@ -52,6 +53,14 @@ define([
             attr42: null
         }
     };
+
+    if ($('body').hasClass('mobile')) {
+        window.Globals.deviceType = 'mobile';
+    } else if ($('body').hasClass('tablet')) {
+        window.Globals.deviceType = 'tablet';
+    } else {
+        window.Globals.deviceType = 'desktop';
+    }
 
     if (typeof window.Globals.mobileOS !== "undefined") {
         MobileHeader()

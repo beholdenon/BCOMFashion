@@ -22,12 +22,14 @@ define([
         return path[path.length - 2];
     }
 
-    function pageViewTag (pageID, catID, attr){
+    function pageViewTag (pageID, catID, attrID, attrData){
         window.BLOOMIES.coremetrics.pageViewExploreAttributes = new window.BLOOMIES.coremetrics.exploreAttributes();
 
-        window.BLOOMIES.coremetrics.pageViewExploreAttributes.append({
-            42: attr
-        });
+        var attr = parseInt(attrID);
+        var dataAttr = {};
+        dataAttr[attr] = attrData;
+
+        window.BLOOMIES.coremetrics.pageViewExploreAttributes.append(dataAttr);
 
         window.BLOOMIES.coremetrics.cmCreatePageviewTag(pageID, catID, '', '');        
     }
@@ -55,7 +57,7 @@ define([
         if (window.BLOOMIES && window.BLOOMIES.coremetrics) {
             setEnvironment();
 
-            if ($(window).width() < 980 && !$('body').children().hasClass('mobile')){
+            if ($(window).width() < 980 && window.Globals.deviceType !== 'mobile'){
                 attr = 'Desktop Minimized';
             } else {
                 attr = '';
@@ -63,7 +65,7 @@ define([
 
             window.Globals.Coremetrics.attr42 = attr;
 
-            return pageViewTag(pageID, catID, attr);
+            return pageViewTag(pageID, catID, '42', attr);
         }
     }
 

@@ -83,4 +83,10 @@ BLOOMIES.isMobile = (function() {
 	return false;
 })();
 
+BLOOMIES.capitalize = function (string) {
+    var capitalizedString = string.charAt( 0 ).toUpperCase() + string.substring( 1 ).toLowerCase();
+    return capitalizedString;
+};
+
+
 /* jshint ignore:end */
