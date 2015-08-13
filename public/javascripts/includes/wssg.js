@@ -203,12 +203,12 @@ var SERVICES = {
             var params = [];
 
             if (userID != undefined && userID != '') {
-                userID = 'userId=' + userID;
+                userID = 'userid=' + userID;
                 params.push(userID);
             }
 
             if (userGuid != undefined && userGuid != '' ) {
-                userGuid = 'userGuid=' + userGuid;
+                userGuid = 'user_guid=' + userGuid;
                 params.push(userGuid);
             }
 
@@ -228,7 +228,7 @@ var SERVICES = {
             }
 
             if (bagOptions != undefined && bagOptions != '' ) {
-                bagOptions = 'userId=' + bagOptions;
+                bagOptions = 'userid=' + bagOptions;
                 params.push(bagOptions);
             }
 
@@ -243,7 +243,7 @@ var SERVICES = {
             var path = "/addToBag/";
             var body = {};
 
-            if (userId != undefined && userId != '') path += "?userId="+userId;
+            if (userId != undefined && userId != '') path += "?userid="+userId;
 
             // if (upcId != undefined) {
             //     body.item['upcId'] = upcId;

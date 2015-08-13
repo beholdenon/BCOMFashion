@@ -1,6 +1,6 @@
 /* jshint ignore:start */ 
 
-$(document).ready(function(){
+$(document).ready( function () {
 	var prodData,
 		urlStart = "http://images.bloomingdales.com/is/image/BLM/products/9/optimized/",
 		urlEnd = "?wid=400&qlt=80,0&layer=comp&op_sharpen=0&resMode=sharp2&op_usm=0.7,1.0,0.5,0&fmt=jpeg";
@@ -15,12 +15,25 @@ $(document).ready(function(){
 			add_promocode='',
 			upcColor='',
 			upcSize='',
-			upcID='';
+			upcID='',
+			hasColor = true,
+			hasSize = true;
 
-		if ($(this).parents(".atb").find(".size .active").length <= 0) {
+		if ( $(this).parents('.atb').find(".color .swatch li").length <=0 ) hasColor = false;
+		if ( $(this).parents('.atb').find(".size .options li").length <=0 ) hasSize = false;
+
+		if ($(this).parents(".atb").find(".size .active").length <= 0 && hasSize == true ) {
+			
 			$(this).parents(".atb").find(".errors").html("<p class='errText'>Please select a size</p>");
 			$(this).parents(".atb").find('.size').addClass('error');
+
+		} else if ( $(this).parents(".atb").find(".color .active").length <= 0 && hasColor == true  ) {
+			
+			$(this).parents(".atb").find(".errors").html("<p class='errText'>Please select a color</p>");
+			$(this).parents(".atb").find('.color').addClass('error');
+
 		} else {
+			
 			$(this).parents(".atb").find('.error').removeClass('error');
 			$(this).parents(".atb").find(".errors").text('');
 
@@ -31,23 +44,38 @@ $(document).ready(function(){
 			console.log('Color: '+add_color);
 
 			var upcList = prodData.product[0].upcs;
+
 			for (a=0; a < upcList.length; a++) {
 				var subUPCs = upcList[a].upcDetails.attributes
-				for (b=0; b < subUPCs.length; b++){
-					if (subUPCs[b].name == 'SIZE_NORMAL') upcSize = subUPCs[b].values[0].value;
-					if (subUPCs[b].name == 'COLOR') upcColor = subUPCs[b].values[0].value;
+
+				// console.log(a);
+				// console.log(upcList[a]);
+				// console.log("+=============+");
+
+				if ( subUPCs != undefined ) {
+					for (b=0; b < subUPCs.length; b++){
+						
+						if (subUPCs[b].name == 'SIZE_NORMAL') upcSize = subUPCs[b].values[0].value;
+						if (subUPCs[b].name == 'COLOR') upcColor = subUPCs[b].values[0].value;
+
+					}
 				}
 
 				if (add_size == upcSize && add_color == upcColor) {
-					console.log(upcList[a].upcnumber);
-					upcID = upcList[a].upcnumber;
+					// console.log(upcList);
+					// console.log(a);
+					// console.log(upcList[a].upcnumber);
+					// console.log(upcList[a].upcDetails.skuid);
+					// upcID = upcList[a].upcnumber;
+					upcID = upcList[a].upcDetails.skuid;
 				}
 			}
+
 			add_quantity = $(this).parents('.atb').find('.quantity select option:selected').text();
 			var dataVal = 	{"item": {"quantity": add_quantity,"upcId": upcID.toString()}}
 
 			var target = $(this);
-            	upcId = target.attr("data-upc");
+            	// upcId = target.attr("data-upc");
 
 	        SERVICES.bag.add( function(output) {
 	        	console.log("Add to Bag:");
@@ -67,35 +95,10 @@ $(document).ready(function(){
 	        	}, 500);
 	        	
 
-	        }, upcId, add_quantity, localStorage.bagUserID);
+	        }, upcID, add_quantity, localStorage.bagUserID);
 			
 		}
 	});
-
-	// // Expand and Collapse View Details text ====NOTE: currently disabled due to removal from creative comps
-	// $('.details').on('click',function(){
-	// 	if ($('.details .description').height() > 40) {
-	// 		$('.details .description').animate({'height':'40'},300, function(){
-	// 			$('.atb .options, .atb .atbLink').fadeIn(1000);
-	// 		}); 
-	// 		$('.details .more').text('+');
-	// 	} else {
-	// 		var curHeight = $('.details .description').height();
-	// 		$('.details .description').css('height', 'auto');
-	// 		var autoHeight = $('.details .description').height();
-	// 		if ( $('.atb .details .description').height()+$('.atbLink').height()+$('.atb .name').height()+$('.atb .price').height()+$('.atb .options').height() > $('.atb .image.left').height() ) {
-	// 			$('.details .description').height(curHeight);
-	// 			$('.atb .options, .atb .atbLink').fadeOut(300)
-	// 				.promise()
-	// 				.done( function() {						
-	// 					$('.details .description').animate({'height':autoHeight},500); 
-	// 				});
-	// 		}
-			
-
-	// 		$('.details .more').text('-');
-	// 	}
-	// });
 
 	// close add to bag window
 
@@ -108,6 +111,8 @@ $(document).ready(function(){
 		var target = $(this),
 			prodID = target.attr("data-id");
 
+		currentThumbnailGroup = 1; //resets thumbnail arrows back to default
+
 		$('#atbLoading').show();
 		
         SERVICES.product.get(function(output) {
@@ -118,6 +123,7 @@ $(document).ready(function(){
             if (output.product[0].productDetails.childProducts != undefined) {
 				atb.master(output, prodID);
 			} else {
+				// console.log(output);
 				atb.member(output, prodID);
 			}
         
@@ -134,12 +140,27 @@ $(document).ready(function(){
 			$(this).find('.others img').clone().appendTo('.atb .thumbnails');
 			$('.atb .thumbnails img').attr('style','');
 		}
+
+		// checks for unavailable color/size combo.
+		if ( prodData.product[0].productDetails.SizeMap != undefined ) {
+			availability.color(prodData, $(this) );
+		}
 	});
 
 	$('.atb .size').on('click','li', function(){
 		$(this).addClass('active').siblings().removeClass('active');
+
+		availability.size(prodData, $(this) );
 	});
 
+
+	$(".atb .size").on("mouseenter", ".options li", function() {
+		if ( $(this).hasClass('unavailable') ) {
+			$(".size .modal.outofstock").show();
+		}
+	}).on("mouseout", ".options li", function() {
+		$(".size .modal.outofstock").hide();
+	});
 
 
 	// product image change on swatch mouseover, switch back on mouseout
@@ -153,25 +174,21 @@ $(document).ready(function(){
 			swatchImg = $(this).data('swatch');
 			$('.atb .image .prodSwatch').html("<img src='http://images.bloomingdales.com/is/image/BLM/products/9/optimized/"+swatchImg+"??wid=100&hei=100&op_sharpen=1&fit=fit,1'/>");
 		}
+
+		if ( $(this).hasClass('unavailable') ) {
+			$(".color .modal.outofstock").show();
+			$(".color .text .value").hide();
+		}
+
 		var swatchName= $(this).data('name');
 		$('.atb .color .text .value').text(swatchName);
 	})
-	.on('mouseenter','.swatch li .inner', function () {
-		var swatchImg;
-		if ($(this).parent().data('prodimg') != undefined) {
-			swatchImg = $(this).parent().data('prodimg');
-			$('.atb .image .prodSwatch').html('');
-			$('.atb .image .main.product').attr('src', urlStart+swatchImg+urlEnd);
-		} else if ($(this).data('swatch') != undefined) {
-			swatchImg = $(this).parent().data('swatch');
-			$('.atb .image .prodSwatch').html("<img src='http://images.bloomingdales.com/is/image/BLM/products/9/optimized/"+swatchImg+"??wid=100&hei=100&op_sharpen=1&fit=fit,1'/>");
-		}
-		var swatchName= $(this).parent().data('name');
-		$('.atb .color .text .value').text(swatchName);
-	})
-	.on('mouseout','.swatch li', function () {
+	.on('mouseleave','.swatch li', function () {
 		var swatchFront = "http://images.bloomingdales.com/is/image/BLM/products/9/optimized/",
 			swatchBack = "?wid=100&amp;hei=100&amp;op_sharpen=1&amp;fit=fit,1";
+		
+		$(".color .modal.outofstock").hide();
+		$(".color .text .value").show();
 
 		if ($(this).hasClass('active')) {
 			if ($(this).data('prodimg') != undefined) {
@@ -207,7 +224,7 @@ $(document).ready(function(){
 	});
 
 	$('#atbOverlay').on('click', function(){
-		$('.atb.single, #atbOverlay').hide();
+		$('.atb.single, .atb.master, #atbOverlay').hide();
 	});
 
 	$('.atb .thumbnails').on('click','.thumb', function(){
@@ -215,52 +232,66 @@ $(document).ready(function(){
 		$('.atb .image .main.product').attr('src', urlStart+swatchImg+urlEnd);
 	});
 
-	$('.atb .options').on('click','.rArrow', function(){
-		var location = $('.atb .options').attr('data-pos');
-		location++;
-		$('.atb .options').attr('data-pos', location);
-		// $('.atb .options li').eq(location).hide();
-		for (i=0;i<$('.atb .options li').length;i++) {
-			if (i<location || i>=location+8) {
-				$('.atb .options li').eq(i).hide();
-			} else {
-				$('.atb .options li').eq(i).show();
-			}
-		}
+	var currentThumbnailGroup = 1;
+	$('.atb .thumbnails').on('click','.thumbArrow', function(){
+		
+		currentThumbnailGroup = atb.moreThumbnails( $(this).data('direction'), $(this), currentThumbnailGroup );
 	});
 
 });
 
+//  ==== End document.ready ===== //
+
+
 var atb = {
 	currencyCheck: function() {
-		if ($('#bl_nav_account_flag > a span').text().toLowerCase() == 'usd') $('.atb.single .price .currency').text('$');
+		if ($('#bl_nav_account_flag > a span').text().toLowerCase() == 'usd') $('.atb .price .currency').text('$');
 		return false;
 	},
 	quantityBuilder: function (num) {
-		$('.atb.single .quantity select').html('');
+		$('.atb .quantity select').html('');
 		for (i=1;i <= num; i++) {
-			$('.atb.single .quantity select').append('<option value='+i+'>'+i+'</value>');
+			$('.atb .quantity select').append('<option value='+i+'>'+i+'</value>');
 		}
 	},
+
 	swatchMap: function (full) {
 		var map = full.product[0].productDetails.colorMap,
 			setMain = true,
 			urlStart = "http://images.bloomingdales.com/is/image/BLM/products/9/optimized/",
 			urlEnd = "?wid=400&qlt=80,0&layer=comp&op_sharpen=0&resMode=sharp2&op_usm=0.7,1.0,0.5,0&fmt=jpeg";
 
-		if (map.length>1) $('.atb.single .color').append("<ul class='swatch'></ul>");
+		if (map.length>1) $('.atb .color').append("<ul class='swatch'></ul>");
+	console.log(map);
+	console.log(full.product[0].upcs);
 		for (i=0;i<map.length; i++) {
 			(i==0) ? active = 'active' : active ='';
+
 			if (map[i].upcprimaryimage != undefined && map[i].swatchimage != undefined) {
+				
 				if (setMain == true) {
 					var url = urlStart+map[i].upcprimaryimage.imagename+urlEnd;
+					
+					// set primary image
 					$('.atb .image .main.product').attr('src', url).attr('default',url);
+					
+					// remove and reset thumbnail images
+					$(".atb .thumbnails").html("");
+					$('.atb .thumbnails').append("<img class='thumb' data-info="+map[i].upcprimaryimage.imagename+" src='http://images.bloomingdales.com/is/image/BLM/products/9/optimized/"+map[i].upcprimaryimage.imagename+"?wid=95&qlt=90,0&layer=comp&op_sharpen=0&resMode=sharp2&op_usm=0.7,1.0,0.5,0&fmt=jpeg'/>");
+					
+					if ( map[i].upcadditionalimage != undefined && map[i].upcadditionalimage.length>0) {
+						for (j=0; j< map[i].upcadditionalimage.length; j++) {
+							$('.atb .thumbnails').append("<img class='thumb' data-info="+map[i].upcadditionalimage[j].imagename+" src='http://images.bloomingdales.com/is/image/BLM/products/9/optimized/"+map[i].upcadditionalimage[j].imagename+"?wid=95&qlt=90,0&layer=comp&op_sharpen=0&resMode=sharp2&op_usm=0.7,1.0,0.5,0&fmt=jpeg'/>");
+						}
+					}
+
 					setMain = false;
 				}
-				$('.atb.single ul.swatch').append('<li id="upc'+i+'" class="'+active+'" data-name="'+map[i].color+'" data-colorId="'+map[i].colorwayid+'" data-prodImg="'+map[i].upcprimaryimage.imagename+'"><img src="http://images.bloomingdales.com/is/image/BLM/products/0/optimized/'+map[i].swatchimage.imagename+'?wid=27&hei=27&op_sharpen=1&fit=fit,1"/></li>');
-				
+				$('.atb ul.swatch').append('<li id="upc'+i+'" class="'+active+'" data-name="'+map[i].color+'" data-colorId="'+map[i].colorwayid+'" data-prodImg="'+map[i].upcprimaryimage.imagename+'"><img src="http://images.bloomingdales.com/is/image/BLM/products/0/optimized/'+map[i].swatchimage.imagename+'?wid=27&hei=27&op_sharpen=1&fit=fit,1"/></li>');
+
 				// additional images
 				$('.atb ul.swatch #upc'+i).append("<div class='others'></div>");
+
 				if (map[i].upcadditionalimage != undefined) {
 					$('.atb ul.swatch #upc'+i+' .others').append("<img id='"+map[i].color+"0'' class='thumb' data-info='"+map[i].upcprimaryimage.imagename+"' style='display:none' src='http://images.bloomingdales.com/is/image/BLM/products/9/optimized/"+map[i].upcprimaryimage.imagename+"?wid=95&qlt=90,0&layer=comp&op_sharpen=0&resMode=sharp2&op_usm=0.7,1.0,0.5,0&fmt=jpeg'/>");
 					for (j=0;j<map[i].upcadditionalimage.length; j++) {
@@ -269,29 +300,35 @@ var atb = {
 				}
 
 			} else if (map[i].upcprimaryimage == undefined && map[i].swatchimage != undefined) {
-				$('.atb.single ul.swatch').append('<li class="'+active+'" data-name="'+map[i].color+'" data-swatch="'+map[i].swatchimage.imagename+'"><img src="http://images.bloomingdales.com/is/image/BLM/products/0/optimized/'+map[i].swatchimage.imagename+'?wid=27&hei=27&op_sharpen=1&fit=fit,1"/></li>');
+				$('.atb ul.swatch').append('<li class="'+active+'" data-name="'+map[i].color+'" data-swatch="'+map[i].swatchimage.imagename+'"><img src="http://images.bloomingdales.com/is/image/BLM/products/0/optimized/'+map[i].swatchimage.imagename+'?wid=27&hei=27&op_sharpen=1&fit=fit,1"/></li>');
 				if (active == 'active') $('.atb .image .prodSwatch').html("<img src='http://images.bloomingdales.com/is/image/BLM/products/9/optimized/"+map[i].swatchimage.imagename+"??wid=100&hei=100&op_sharpen=1&fit=fit,1'/>");
 			}
 		}
+
+		if ( full.product[0].productDetails.SizeMap != undefined ) {
+			availability.color(full, $(" .atb .color .swatch li:first-child "));
+		}
 	},
+
 	sizeMap: function (full) {
 		var map = full.product[0].productDetails.SizeMap;
-		$('.atb.single .size .options').html('');
+		$('.atb .size .options').html('');
 		$('.atb .size .options').attr('data-pos',0);
 		for (i=0;i<map.length; i++) {
-			if ( i<8 ) {
+			// if ( i<8 ) {
 				$('.atb .size .options').append('<li data-sizeId="'+map[i].sizeid+'">'+map[i].sizenormal+'</li>');
-			} else {
-				$('.atb .size .options').append('<li style="display:none" data-sizeId="'+map[i].sizeid+'">'+map[i].sizenormal+'</li>');
-			}
+			// } else {
+			// 	$('.atb .size .options').append('<li style="display:none" data-sizeId="'+map[i].sizeid+'">'+map[i].sizenormal+'</li>');
+			// }
 		}
 
-		if ($('.atb.single .size .options li').length > 8) {
-			$('.atb.single .size .options').addClass('expandable').append('<div class="rArrow"></div>');
+		if ($('.atb .size .options li').length > 8) {
+			$('.atb .size .options').addClass('expandable').append('<div class="rArrow"></div>');
 		}
 	},
 
 	member: function (res, item) {
+
 		$('.atb.single .prime h3.name').text(res.product[0].productDetails.summary.name);
 		atb.currencyCheck(); //check and change currency based on header country flag
 		atb.quantityBuilder(res.product[0].productDetails.summary.maxQuantity);
@@ -315,7 +352,7 @@ var atb = {
 			atb.sizeMap(res);
 			$('.atb.single .size').show();
 		} else {
-			$('.atb.single .size').hide();
+			$('.atb.single .size').hide().find(".options").html("");
 		}
 
 		if (res.product[0].upcs[0].upcDetails.availability.upcAvailabilityMessage != undefined && res.product[0].upcs[0].upcDetails.availability.upcAvailabilityMessage != "") {
@@ -338,37 +375,162 @@ var atb = {
 		$('.atb.single, #atbOverlay').show();
 	},
 
+	// MASTER PRODUCTS
 	master: function (res, item) {
 		console.log("MASTER MODE");
+		console.log(res);
+
+		var product = res.product[0];
 		
-		$('.footer .details_link').attr('href','http://www1.bloomingdales.com/shop/product/?ID='+item);
-		$('.atb.single img.product.main').attr('src','http://images.bloomingdales.com/is/image/BLM/products/9/optimized/'+res.product[0].productDetails.primaryImage.imagename+'?wid=400&qlt=80,0&layer=comp&op_sharpen=0&resMode=sharp2&op_usm=0.7,1.0,0.5,0&fmt=jpeg');
-		$('.atb.single .thumbnails').html("");
+		$('.atb.master .footer .details_link').attr('href','http://www1.bloomingdales.com/shop/product/?ID='+item);
+		$('.atb.master img.product.main').attr('src','http://images.bloomingdales.com/is/image/BLM/products/9/optimized/'+product.productDetails.primaryImage.imagename+'?wid=400&qlt=80,0&layer=comp&op_sharpen=0&resMode=sharp2&op_usm=0.7,1.0,0.5,0&fmt=jpeg');
+		$('.atb.master .thumbnails').html("");
+		$(".atb.master .prime .RS .name").text( product.productDetails.summary.name );
+		$(".atb.master .info .content").text( product.productDetails.summary.description );
+		
+		$(".atb.master .thumbnails").hide();
+		$(".atb.master .footer .social").attr("colspan", 1);
+
+		if (product.productDetails.additionalImages != undefined && product.productDetails.additionalImages.length > 1) 
 
 		atb.currencyCheck(); //check and change currency based on header country flag
-		atb.quantityBuilder(res.product[0].productDetails.summary.maxQuantity);
+		atb.quantityBuilder(product.productDetails.summary.maxQuantity);
 
-		$('.atb.single .color .swatch').remove();
-		if (res.product[0].productDetails.colorMap != undefined) atb.swatchMap(res);
+		$('.atb.master .color .swatch').remove();
+		// if (product.productDetails.colorMap != undefined) atb.swatchMap(res);
 
-		if (res.product[0].productDetails.price.retail.pricevalue.high == undefined) {
-			$('.atb.single .price .value').text( (res.product[0].productDetails.price.retail.pricevalue.low).formatMoney(2,'.',',').toFixed(2) );
-		} else {
-			$('.atb.single .price .value').text(res.product[0].productDetails.price.retail.pricevalue.low.toFixed(2) + ' - ' + res.product[0].productDetails.price.retail.pricevalue.high.toFixed(2));
-		}
-		$('.atb.single, #atbOverlay').show();
+		var additionalThumbnails = 3;
 
-		if (res.product[0].productDetails.colorMap != undefined) {
-			var map = res.product[0].productDetails.colorMap;
-			for (q=0; q<map.length; q++) {
-				(q==0) ? active = 'active' : active ='';
-				
-				console.log(map[q]);
+		// other master-member thumbnails
+		if ( product.productDetails.additionalImages != undefined && product.productDetails.additionalImages.length > 1 ) {
+			$('.atb.master .thumbnails').append("<img class='thumb' data-info="+product.productDetails.primaryImage.imagename+" src='http://images.bloomingdales.com/is/image/BLM/products/9/optimized/"+product.productDetails.primaryImage.imagename+"?wid=95&qlt=90,0&layer=comp&op_sharpen=0&resMode=sharp2&op_usm=0.7,1.0,0.5,0&fmt=jpeg'/>");
+			$(".atb.master .thumbnails").show();
+			$(".atb.master .footer .social").attr("colspan", 2);
+
+			for ( p=0; p < product.productDetails.additionalImages.length ; p++ ) {
+				var hideThumb = "",
+					current = product.productDetails.additionalImages[p],
+					itemImg = current.imagename;
+
+				if ( p >= additionalThumbnails ) hideThumb = "style='display:none'";
+
+				$('.atb.master .thumbnails').append("<img "+hideThumb+"class='thumb' data-info="+itemImg+" src='http://images.bloomingdales.com/is/image/BLM/products/9/optimized/"+itemImg+"?wid=95&qlt=90,0&layer=comp&op_sharpen=0&resMode=sharp2&op_usm=0.7,1.0,0.5,0&fmt=jpeg'/>");
+
+			}
+			if ( p >= additionalThumbnails ) {
+				$('.atb.master .thumbnails').append("<img class='thumbArrow' data-direction='down' id='thumbBottomArrow' src='/fashion/images/atb/thumbnail_arrow.png'>").prepend("<img class='inactive thumbArrow' data-direction='up' id='thumbTopArrow' src='/fashion/images/atb/thumbnail_arrow.png'>");
 			}
 		}
 
+		if (product.productDetails.price.retail.pricevalue.high == undefined) {
+			$('.atb.master .price .value').text( (product.productDetails.price.retail.pricevalue.low).formatMoney(2,'.',',').toFixed(2) );
+		} else {
+			$('.atb.master .price .value').text(product.productDetails.price.retail.pricevalue.low.toFixed(2) + ' - ' + product.productDetails.price.retail.pricevalue.high.toFixed(2));
+		}
+		$('.atb.master, #atbOverlay').show();
+
+		// if (product.productDetails.colorMap != undefined) {
+		// 	var map = product.productDetails.colorMap;
+		// 	for (q=0; q<map.length; q++) {
+		// 		(q==0) ? active = 'active' : active ='';
+				
+		// 	}
+		// }
+
 		
 	},
+
+	moreThumbnails: function (direction, targ, currentThumbnailGroup) {
+		var tCount = targ.parents(".atb").find(".thumbnails .thumb").length,
+			thumbnailsPerPage = 4,
+			max = Math.ceil( tCount / thumbnailsPerPage );
+
+		if ( currentThumbnailGroup == 1 ) targ.parents(".thumbnails").css("height", targ.parents(".thumbnails").height() +35 );
+		
+		if ( direction === 'down' && currentThumbnailGroup < max && !targ.hasClass('inactive') ) {
+
+			currentThumbnailGroup++;
+			
+			if ( currentThumbnailGroup >= max ) {
+				targ.addClass('inactive');
+			}
+
+			if ( currentThumbnailGroup > 1 ) {
+				targ.siblings(".thumbArrow").removeClass('inactive');
+			}
+
+			thumbPagination(currentThumbnailGroup);
+
+		} else if ( direction === 'up' && currentThumbnailGroup > 1 && !targ.hasClass('inactive') ) {
+
+			currentThumbnailGroup--;
+			
+			if ( currentThumbnailGroup <= 1 ) {
+				targ.addClass('inactive');
+			}
+
+			if ( currentThumbnailGroup >= 1 ) {
+				targ.siblings(".thumbArrow").removeClass('inactive');
+			}
+
+			thumbPagination(currentThumbnailGroup);
+		}
+
+		// hide all thumbnails, then show the current "page"
+		function thumbPagination () {
+			targ.siblings(".thumb").hide();
+			var curPageStart = (currentThumbnailGroup-1)*thumbnailsPerPage,
+				curPageEnd = currentThumbnailGroup*thumbnailsPerPage-1;
+
+			for ( i=curPageStart; i <= curPageEnd; i++ ) {
+				console.log(i);
+				targ.siblings(".thumb").eq(i).show();
+			}
+
+		}
+
+		return currentThumbnailGroup;
+
+	}
+}
+
+var availability = { // checks for unavailable color/size combo.
+
+	color: function (prodData, targ) {
+		
+		for ( i=0; i < prodData.product[0].upcs.length; i++) {
+			for (j=0; j< prodData.product[0].upcs[i].upcDetails.attributes.length; j++) {
+				
+				if ( targ.data("name") ==  prodData.product[0].upcs[i].upcDetails.attributes[j].values[0].value) {
+					var sizeCk = prodData.product[0].upcs[i].upcDetails.sizeid;
+					
+					if ( prodData.product[0].upcs[i].upcDetails.availability.available === false ) {
+						$(".size .options").find("li[data-sizeid='"+sizeCk+"']").css("color", "#ed0000").addClass('unavailable');
+					} else {
+						$(".size .options").find("li[data-sizeid='"+sizeCk+"']").css("color","").removeClass('unavailable');
+					}
+					
+				}
+			}
+		}
+	},
+
+	size: function (prodData, targ) {
+		
+		for ( i=0; i < prodData.product[0].upcs.length; i++) {		
+				if ( targ.data("sizeid") ==  prodData.product[0].upcs[i].upcDetails.sizeid) {
+					var colorCk = prodData.product[0].upcs[i].upcDetails.colorwayid;
+					
+					if ( prodData.product[0].upcs[i].upcDetails.availability.available === false ) {
+						$(".color .swatch").find("li[data-colorid='"+colorCk+"']").addClass('unavailable');
+					} else {
+						$(".color .swatch").find("li[data-colorid='"+colorCk+"']").removeClass('unavailable');
+					}
+					
+				}
+		}	
+	}
+
 }
 
 Number.prototype.formatMoney = function(c, d, t){

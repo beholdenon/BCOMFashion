@@ -1,4 +1,5 @@
 $grey-border: #e4e4e4;
+$error-red: #ed0000;
 $window-width: 830px;
 
 .noselect {
@@ -73,7 +74,7 @@ table.add {
 		
 		.main.product {
 			min-width: 367px;
-			min-height: 400px;
+			// min-height: 400px;
 		}
 
 		.prodSwatch {
@@ -100,6 +101,7 @@ table.add {
 		font-family: "Raleway", Arial, sans-serif;
 		font-weight: 200;
 		cursor: pointer;
+		z-index: 2;
 	}
 
 	h3 {
@@ -110,11 +112,11 @@ table.add {
 		font-style: normal;
 		max-width: 85%;
 		padding-left: 10px;
-		margin-top: 8%;
+		margin-top: 4%;
 	}
 
 	.price {
-		font-family: "Cuprum", Arial, Helvetica, sans-serif;
+		font-family: "Lato", Arial, Helvetica, sans-serif;
 		font-size: 14px;
 		font-weight: 300;
 		font-style: normal;
@@ -127,7 +129,7 @@ table.add {
 		&.title,
 		&.value {
 			display: inline-block;
-			font-family: "Cuprum", Arial, Helvetica, sans-serif;
+			font-family: "Lato", Arial, Helvetica, sans-serif;
 			text-transform: uppercase;
 			font-style: normal;
 			font-size: 14px;
@@ -144,20 +146,46 @@ table.add {
 
 		.thumbnails {
 			vertical-align: top;
-			padding: 0 1px;
+			padding: 0 1px 35px;
 			min-width: 89px;
+			position: relative;
 
 			.thumb {
 				display: block;
 				margin-right: 1px;
 				margin-bottom: 1px;
 				cursor: pointer;
+				border: 2px solid transparent;
 
 				&:hover {
-					height: 109px;
-					width: 87px;
+					// height: 109px;
+					// width: 87px;
 					border: 2px solid rgba(217,14,172,1);
 				}
+			}
+
+			.thumbArrow {
+				width: 40%;
+			    display: block;
+			    cursor: pointer;
+
+			    &.inactive {
+			    	cursor: default;
+			    	opacity: 0.2;
+			    }
+			}
+
+			#thumbTopArrow {
+				margin: 0.5em auto 0;
+				position: relative;
+				transform: rotate(180deg);
+			}
+
+			#thumbBottomArrow {
+				margin: 0 auto 0.5em;
+				position: absolute;
+			    bottom: 0;
+			    left: 30%;
 			}
 		}
 	}
@@ -166,7 +194,7 @@ table.add {
 
 
 .atb .color {
-	padding: 1em 0 1em 10px;
+	padding: 0.5em 0 0.5em 10px;
 	vertical-align: bottom;
 
 	.title {
@@ -210,12 +238,46 @@ table.add {
 				width: 27px;
 				border: 1px solid #bfbfbf;
 			}
+
+			&.unavailable.active,
+			&.unavailable.active:hover,
+			&.unavailable:hover {
+				border: none;
+			}
+
+			&.unavailable:before {
+				content: "/";
+				font-size: 40px;
+				padding-top: 5px;
+				font-weight: 200;
+				color: rgba(0,0,0,0.5);
+				font-family: "Source Code Pro";
+				position: absolute;
+				width: 27px;
+				height: 27px;
+				background-color: rgba(255, 255, 255, 0.6);
+				border: 1px solid rgba(0, 0, 0, 0.25);
+			}
 		}
 	}
 }
 
+.outofstock {
+  position: absolute;
+  top: 9px;
+  left: 20%;
+  color: $error-red;
+  font-size: 12px;
+  font-family: "Muli", Arial, Helvetica, Verdana, sans-serif;
+
+  .color & {
+  	left: 21%;
+  }
+
+}
+
 .atb .size {
-	padding: 1.5em 0 1em 10px;
+	padding: 0.5em 0 0.5em 10px;
 	margin: 0;
 	height: 40px;
 
@@ -225,13 +287,17 @@ table.add {
 		font-size: 11px;
 		padding: 0;
 		margin: 0;
+		// overflow: hidden;
+    	// width: 100%;
+    	// height: 34px;
 
 		&.expandable {
 
 			.rArrow {
 				content: "";
-				display: inline-block;
-				margin-left: 15px;
+				// display: inline-block;
+				display: 	none;
+				margin-left: 10px;
 				position: relative;
 				cursor: pointer;
 				top: 3px;
@@ -251,32 +317,38 @@ table.add {
 			line-height: 22px;
 			padding: 3px 5px;
 			text-align: center;
-			margin: 3px 6px 5px 0;
+			margin: 3px 2px 5px 0;
 			cursor: pointer;
 			// border-radius: 100%;
 
 			&:hover{
-				background: rgba(217,14,172,0.4);
+				// background: rgba(217,14,172,0.4);
 				opacity: 30%;
-				// background: rgba(243,255,48,0.45);	
+				border-bottom: 3px solid $grey-border;
 			}
 
 			&.active {
-				background: rgba(217,14,172,1);
-				color: #fff;
-				// background: rgba(243,255,48,1);
+				// background: rgba(217,14,172,1);
+				// color: #fff;
+				border-bottom: 3px solid #000;
+
+				&.unavailable {
+					background-color: transparent;
+					border: none;
+				}
 			}
 			
+
 		}
 	}
 
 	&.error {
-		border-left: 3px solid #ED0000;
+		border-left: 3px solid $error-red;
 		padding-left: 1em;
 
 		.title {
 			font-weight: bold;
-			color: #ED0000;
+			color: $error-red;
 		}
 	}
 }
@@ -284,11 +356,11 @@ table.add {
 .atb .availability {
 	font-size: 12px;
 	font-style: italic;
-	padding: 1.5em 0 1.5em 10px;
+	padding: 1em 0 1em 10px;
 }
 
 .atb .quantity {
-	padding: 1em 0 1em 10px;
+	padding: 0.5em 0 0.5em 10px;
 	vertical-align: bottom;
 	margin: 0;
 	height: 40px;
@@ -339,7 +411,7 @@ table.add {
 .errors {
 	p {
 		font-weight: bold;
-		color: #ED0000;
+		color: $error-red;
 		
 		font-size: 14px;
 		margin-bottom: 0.5em;
@@ -405,7 +477,7 @@ table.add {
 /* 			 SINGLE ATB				 */
 /* ================================= */
 
-#singleATB {
+#singleATB, #masterATB {
 	left: 0;
 	right: 0;
 	margin: 0 auto;
@@ -416,11 +488,33 @@ table.add {
 	position: fixed;
 
 	.RS {
-		width: 374px;
+		width: auto;
+		// width: 374px;
 		vertical-align: middle;
+		position: relative;
 	}
 }
 
+/* ================================= */
+/* 			 MASTER ATB				 */
+/* ================================= */
+
+#masterATB {
+
+	.info {
+		height: 60%;
+
+		.RS {
+			vertical-align: top;			
+		}
+
+		.content {
+			padding: 0 1em;
+		}
+
+	}
+
+}
 
 /* ================================= */
 /* 		   LOADING ANIMATION		 */
