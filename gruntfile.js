@@ -136,6 +136,17 @@ module.exports = function(grunt) {
                     ],
                     dest: '<%= node.destination %>/public'
                 }]
+            },
+            prodSpecific: {
+                files: [{
+                    expand: true,
+                    cwd: '<%= node.source %>',
+                    src: [
+                        'package.json',
+                        'Procfile'
+                    ],
+                    dest: '<%= node.destination %>'
+                }]                
             }
         },
 
@@ -467,7 +478,7 @@ module.exports = function(grunt) {
             ]);
         } else if (NODE_ENV === 'prod' || NODE_ENV === 'production') {
             grunt.task.run([
-                //add tasks: concat; minify; etc.
+                'copy:prodSpecific'
             ]);
         }
     });
