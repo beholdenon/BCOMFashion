@@ -504,7 +504,24 @@
   /* For landscape layouts only */
 
   #canvas {
+    top: 150px;
+  }
+
+  .blockBG {
+    height: 840px;
+  }
+
+}
+
+@media only screen and (min-device-width: 481px) and (max-device-width: 1280px) and (-webkit-min-device-pixel-ratio: 2) {
+  /* For portait layouts only */
+
+  #canvas {
 		top: 150px;
+	}
+
+	.blockBG {
+		height: 840px;
 	}
 
 }

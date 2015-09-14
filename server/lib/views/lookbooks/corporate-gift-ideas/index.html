@@ -136,10 +136,20 @@
 		zoom.src = "/fashion/javascripts/vendor/turnjs/zoom.js";
 		document.body.appendChild(zoom);
 
-		setTimeout(function(){
-			loadApp()
-		}, 1000);
+		tryAgain();
 		
+		function tryAgain () {
+			setTimeout(function(){
+				if ( typeof flipbook != undefined ) {
+          console.log("defined");
+          loadApp();
+				} else {
+          console.log("undefined");
+					tryAgain();
+				}
+			}, 1000);
+		}
+
 	});
 
 function loadApp() {
