@@ -41,15 +41,22 @@ module.exports = {
         notes: 'This is the default fallback route if not explicitly captured',
         tags: ['fallback', 'static'],
         handler: function(request, reply) {
-            var deviceType = device.detectDevice(request),
+            var standalonePage = require('./standalonePage'),            
+                deviceType = device.detectDevice(request),
+                requestParams = request.params.path,
+                standalonePageURL = standalonePage.checkPath(requestParams),
                 isMobile = false,
                 isMobileiOS = false,
                 isMobileAndroid = false,
                 isTablet = false,
                 customView;
 
+            //render standalone pages
+            if (standalonePageURL !== null) return reply.file(standalonePageURL);
+
+            //render generic templates
             if (deviceType.indexOf('mobile') > -1) {
-                customView = request.params.path + 'index-mobile';
+                customView = requestParams + 'index-mobile';
                 isMobile = true;
                 
                 if (deviceType.indexOf('Android') > -1) {
@@ -58,14 +65,12 @@ module.exports = {
                     isMobileiOS = true;
                 }
             } else {
-                customView = request.params.path + 'index';
+                customView = requestParams + 'index';
             }
 
-            if (deviceType === 'tablet'){
-                isTablet = true;
-            }
+            if (deviceType === 'tablet') isTablet = true;
 
-            if (request.params.path === '' || request.params.path === undefined) {
+            if (requestParams === '' || requestParams === undefined) {
                 return reply.redirect('http://www.bloomingdales.com');
             } else {
                 return reply.view(customView, {
