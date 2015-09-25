@@ -1,0 +1,179 @@
+<html>
+<head>
+<meta HTTP-EQUIV="content-type" CONTENT="text/html; charset=UTF-8">
+<title> Akamai Route Optimization Test Object </title>
+
+<style><!--
+
+ul, li {
+	list-style-type: square;
+	}
+
+.formerror {
+	color: #FF0000;
+	}
+
+.formerrorgreen {
+	color: green;
+	}
+
+.formlabel {
+	font-family:verdana,arial,geneva,helvetica,sans-serif;
+	color: #669999;
+	font-size: 10px;
+}
+
+
+a			{color: #000066; text-decoration: none;}
+a:Visited	{color: #000066; text-decoration: none;}
+a:Active	{color: #000066; text-decoration: none;}
+a:Hover		{color: #000066; text-decoration: underline;}
+
+.level1 {
+    padding-left: 8px;
+    text-indent: -8px;
+    }
+
+.level2 {
+    padding-left: 20px;
+    text-indent: -10px;
+    }
+
+.level3 {
+    padding-left: 30px;
+    text-indent: -10px;
+    }
+
+.level4 {
+    padding-left: 40px;
+    text-indent: -10px;
+    }
+
+//-->
+</style>
+</head>
+<body>
+<H1>The content below is for testing purpose only.</H1>
+<br>
+
+<br>
+SureRoute for Performance SureRoute for Performance chooses the fastest path to the origin to ensure that your site is continuously accessible and that uncacheable content is delivered to end users with optimal performance. By leveraging Akamai's advanced mapping technologies to establish paths around Internet congestion spots and unnecessarily long routes, as well as failures, SureRoute for Performance selects the optimal path between origin and edge based on real-time data collected by Akamai.
+closer to the ... Furthermore, Akamai.s SureRoute technology determines the ... <br>
+
+<br>SureRoute for Failover SureRoute for Failover focuses exclusively on reliability, coming into play if the direct path to your Web site is not accessible; for instance, because of a failing router. SureRoute for Failover provides several alternatives for directing end users to an origin server, ensuring that even dynamic, uncacheable content can always be delivered. <br>...
+
+<br> Akamai SureRoute helps you avoid the costly problem of abandonment during complex transactions. Whether it is a purchase order, an online reservation, a customer survey, or an information update, SureRoute guarantees that the transaction is completed, and delivered with optimal performance to every end user. <br>
+
+<br> Akamai SureRoute speeds the delivery of both cacheable and uncacheable dynamic content. This unique advantage (no other delivery solution can improve the performance of uncacheable content) gives your site a measurable performance edge. .<br>
+
+The DSA features enabled for the Akamai configuration included the following:<br>
+<li>SureRoute<li>
+SureRoute for performances version 2 is enabled in order to maximize performance for a dynamic applications by automatically finding the best route between the edge and origin server. Sureroute for performances is mostly useful for non cacheable content. The Sureroute process calculates the fastest route from the edge to the origin by regularly requesting a test object. For cacheable content, sureroute for failover will be used to find I reliable route to the origin if the direct path is not available. The configured path for all the MCOM and BCOM environments is:
+	/akamai/akamai-sureroute-test-object.htm
+
+<li>Pre-fetching<li>
+When Prefetching is enabled, the Akamai server retrieves images and scripts embedded in HTML content at the same time it serves the HTML to the browser rather than waiting for the browser's request for these objects. This can significantly decrease the overall rendering time of the HTML page and improve the user experience of a Web site.
+
+HTML elements that will trigger prefetching: BASE IMG SCRIPT INPUT LINK TABLE TD TH
+
+Objects extension marked as prefetcheable: css dat dll doc exe flv gif html ico jpeg jpg js jsp mp3 ocx pdf png psd swf, tif.
+
+Note:
+For content to be prefetched, all content (base page + embedded content) must be using the same map and serial number. This means that if a HTML page served under the "www1" property triggers the prefetching engine, embedded object served unde rhte properties www1, images and assets will be prefetched (up to 100 per page). However, for HTML pages served under the "www" property, only embedded object under the "www" property will be prefetched, embedded objects servedunder the assets and images properties cannot be prefetched because assets / images are served through the non secured network and www is served through the secured network and are using completely different set of map / servers.
+
+<li>TCP Optimization<li>
+TCP optimization is enabled in all configurations. This features improves the TCP protocol to accelerate exchange of packets between edge servers.
+
+<li>LMA (Last Mile Acceleration)<li>
+LMA is enabled in all configuration, this ensure that support for compression is advertized to the origin server by sending the header " Accept-Encoding: gzip". When receiving this header, the origin server should serve the content compressed , if compression is enabled at the origin.
+LMA also ensure that compressible content is served compressed to the client that support compression in the case that the origin doesn't serve the content compressed to the Akamai servers. Currently only content with the following content types will be compressed:
+<li>Text/html*<li>
+	Application/x-javascript*
+	Text/css*
+
+
+
+<h3>Set up Service Level Agreement (SLA) and SureRoute Test Objects</h3>
+It is efficient but not essential to set up test objects on the origin server before you
+proceed with your edge server configuration as discussed in Step 3 beginning on
+page 17. The SureRoute test object, discussed on page 28, is not needed if you are not
+using SureRoute.
+Original Name Origin Server HostName for Akamai configuration
+www.example.com
+images.example.com
+origin-www.example.com
+origin-images.example.com
+Before using Akamai In Akamai Configuration
+www.example.com. IN A 1.2.3.4
+images.example.com. IN A 1.2.3.4
+origin-www.example.com. IN A 1.2.3.4
+origin-images.example.com. IN A 1.2.3.4
+The SLA test object, discussed in more detail on page 37, is used to verify Akamai
+performance. You can provision your tests, set up and view reports under the SLA
+Management link under your product link on EdgeControl. Sample test objects are
+linked under your product's Tools link on EdgeControl.
+? Set up Upload Directories and Users (Fast File Upload Module Only)
+If you are using Akamai's Fast File Upload module, you'll need to be able to specify an
+upload site and authorized upload users.
+If you are using your own origin, not Akamai NetStorage, for the uploads, it is
+strongly recommended that you have a separate IP address, upload domain, and a
+unique configuration and digital property specifically for your uploads. If you use
+NetStorage, your Akamai representative will need to set up the Upload directory.
+<br>
+
+Set Up Service Level Agreement (SLA) Test Objects
+SLA Test Objects are set up on the origin but are provisioned through EdgeControl
+or through your Akamai representative.
+<br>
+If you have existing testing procedures for application and content releases, you
+should follow them when testing Akamai content delivery.
+If you do not have existing testing procedures, you should create a simple test plan
+that verifies that you can:
+- access the site through regular entry pages, such as the home page.
+- view images and download files (Flash, PDF, etc.)
+- view pages in normal formatting (application of style sheets)
+- perform critical and common functions on the site, such as search, login, registration,
+posting
+- recreate functions and transactions that a typical end-user would perform
+In this Chapter
+Testing is essential and involves two aspects: functional testing and
+performance testing. Customers using Akamai's PCI Compliance Module
+will also want to test their configurations for PCI compliance.
+Testing
+You can verify the expected behavior and effectiveness of the Akamai content delivery
+configuration in the following ways:
+- Use the EdgeSuite Booster (for Microsoft Internet Explorer; Akamai provides
+related tools for other browsers as well) or similar tools to verify that your pages,
+images and script files are cached on the Akamai servers. These utilities can be
+downloaded by clicking Tools under your product link in the left sidebar in
+EdgeControl.
+- Use Akamai online reports to confirm that your content is served out of the Akamai
+server cache at an expected rate, for example, that the number of end-user
+requests to your origin servers is reduced by 60-80 percent.
+- If you are using Akamai's PCI Compliance module, use the PCI Compliance Validation
+tool to test your configuration. Click PCI Compliance Validation under
+your product link in the navigation menu.
+Test Using the Production Web Site Hostname (Recommended)
+Depending on your content, you can complete all testing by using the production
+hostname of your content/application, such as www.example.com, without affecting
+live end users. This can be done by changing the "hosts" file on a local computer to
+point your Web site/application hostname(s) to an IP address of an Akamai edge
+server. The hosts file controls the DNS resolution of the browser and overrides production
+DNS records.
+The location of the host file differs depending on the computer platform:
+- Windows NT/2000: /Winnt/System32/drivers/etc/Hosts
+- Windows 98: /Windows/Hosts
+- UNIX/Linux: /etc/hosts
+- Apple: Depends on version. Refer to http://kbase.info.apple.com
+You can obtain an Akamai edge server IP address by resolving an Akamai edge hostname
+using any command-line DNS resolution tool such as "nslookup", "dig", or any
+web-based IP lookup tool.
+For example, if you resolve www.example.
+
+<br> Akamai SureRoute helps you avoid the costly problem of abandonment during complex transactions. Whether it is a purchase order, an online reservation, a customer survey, or an information update, SureRoute guarantees that the transaction is completed, and delivered with optimal performance to every end user. <br>
+
+<br> Akamai SureRoute speeds the delivery of both cacheable and uncacheable dynamic content. This unique advantage (no other delivery solution can improve the performance of uncacheable content) gives your site a measurable performance edge. .<br>
+
+<H1>The content above is for testing purpose only.</H1>
+
+</body></html>
