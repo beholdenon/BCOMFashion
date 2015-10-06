@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {{> head}} 
+
+        <!--============[ CSS: Mobile Specific ]============-->
+        {{#if args.isMobile}}
+            <link rel="stylesheet" href="/fashion/styles/mobile_styles.css"/>
+        {{/if}}
+
+        <!--============[ JS: Require Modules ]============-->
+    </head>
+
+    {{#if isTablet}}
+        <body class="tablet">
+    {{else}}
+        <body>
+    {{/if}} 
+
+        {{#if args.isMobile}}
+            {{> header-mobile}}            
+            {{> sidenav-mobile-top}}            
+        {{else}}
+            {{> header}}
+        {{/if}} 
+
+        <div id="bl_main_container">
+            {{! Every view gets inserted here }}
+            {{{content}}}
+        </div>
+        
+        {{#if args.isMobile}}
+            {{> sidenav-mobile-bottom}} 
+            {{> footer-mobile}}
+            
+            {{#if args.isMobileiOS}}
+
+            <script type="text/javascript">var MOBILE_OS = "iOS";</script>
+            {{else}}
+                <script type="text/javascript">var MOBILE_OS = "Android";</script>
+            {{/if}}            
+        {{else}}
+            {{> footer}}
+        {{/if}}     
+        
+        <script data-main="/fashion/javascripts/main.js" src="/fashion/javascripts/libs/requirejs.js"></script>
+        <script type="text/javascript">var ENV_CONFIG = "dev";</script>
+
+        <!-- inject -->
+
+    </body>
+
+</html>

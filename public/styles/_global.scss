@@ -182,17 +182,27 @@ a {
 
 #bl_main_container {
     width: 962px;
-    min-height: 655px;
+    min-height: 180px;
+    min-height: 25vh;
     text-align: left;
     margin: 0 auto;
-
-    .mobile & {
-        min-height: 0;
-    }
 }
 
 .desktop_nav_sprite {
     background: url("../images/desktop_nav_sprite.png") no-repeat;
+}
+
+#error-page{
+    margin: 80px auto;
+    padding: 0 10%;
+    h1 {
+        text-align: center;
+        text-transform: uppercase;
+    }
+    
+    p {
+        text-align: center;
+    }
 }
 
 #map_canvas, .map_canvas {

@@ -1,6 +1,7 @@
-'use strict'; 
+'use strict';
 
 var device = {};
+
 device.detectDevice = function(req) {
     var UA = req.headers['user-agent'],
         deviceType;

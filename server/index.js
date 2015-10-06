@@ -4,6 +4,8 @@ var Hapi = require('hapi'),
     Path = require('path'),
     server = new Hapi.Server();
 
+require('./lib/helpers/handlebarsHelpers');    
+
 server.connection({
     port: process.env.PORT,
     routes: {
@@ -19,18 +21,22 @@ server.views({
     },
     path: Path.join(__dirname, 'lib/views'),
     layoutPath: Path.join(__dirname, 'lib/views/layout'),
-    layout: 'layout',
+    layout: 'standard',
     partialsPath: Path.join(__dirname, '/lib/views/partials')
 });
 
 var routes = [
-    { method: 'GET',      path: '/fashion/{path*}',       config: require('./lib/assets').fashion },
-    { method: 'GET',      path: '/shop/{path*}',          config: require('./lib/assets').shop },
-    { method: 'GET',      path: '/v3/{path*}',            config: require('./lib/api').v3 },
-    { method: 'GET',      path: '/v4/{path*}',            config: require('./lib/api').v4 },
-    { method: 'GET',      path: '/getBag/{path*}',        config: require('./lib/api').getbag },
-    { method: 'POST',     path: '/addToBag/{path*}',      config: require('./lib/api').addbag },
-    { method: 'GET',      path: '/{path*}',               config: require('./lib/assets').fallback }
+    { method: 'GET',  path: '/v3/{path*}',                                  config: require('./lib/handlers/api').v3 },
+    { method: 'GET',  path: '/v4/{path*}',                                  config: require('./lib/handlers/api').v4 },
+    { method: 'GET',  path: '/getBag/{path*}',                              config: require('./lib/handlers/api').getbag },
+    { method: 'POST', path: '/addToBag/{path*}',                            config: require('./lib/handlers/api').addbag },
+    { method: 'GET',  path: '/fashion/{path*}',                             config: require('./lib/handlers/assets').fashion },
+    { method: 'GET',  path: '/shop/{path*}',                                config: require('./lib/handlers/assets').shop },
+    { method: 'GET',  path: '/akamai/{path*}',                              config: require('./lib/handlers/akamai') },
+    // { method: 'GET',  path: '/{--path--}',                                  config: require('./lib/handlers/views').responsive },
+    // { method: 'GET',  path: '/{--path--}',                                  config: require('./lib/handlers/views').nonResponsiveCustomHF },
+    { method: 'GET',  path: '/international/china-brazil/',                 config: require('./lib/handlers/views').responsiveCustomHF },
+    { method: 'GET',  path: '/{path*}',                                     config: require('./lib/handlers/views').fallback }
 ];
 
 server.route(routes);

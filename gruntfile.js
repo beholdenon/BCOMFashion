@@ -242,15 +242,12 @@ module.exports = function(grunt) {
 
         //Replace strings on files by using string or regex patters
         'string-replace': {
-            inline: {
-                // files: {
-                //     '<%= node.destination %>/lib/views/layout/layout.html': '<%= node.destination %>/lib/views/layout/layout.html'
-                // },                
+            inline: {               
                 files: [{
                   expand: true,
-                  cwd: '<%= node.destination %>/lib/views/layout/layout.html',
-                  src: 'layout.html',
-                  dest: '<%= node.destination %>/lib/views/layout/layout.html'
+                  cwd: '<%= node.destination %>/lib/views/layout/',
+                  src: '*.html',
+                  dest: '<%= node.destination %>/lib/views/layout/'
                 }],                
                 options: {
                     replacements: [{
@@ -312,9 +309,12 @@ module.exports = function(grunt) {
         inject: { 
             livereload: {
                 scriptSrc: './build/inject.js',
-                files: {
-                    '<%= node.destination %>/lib/views/layout/layout.html': '<%= node.destination %>/lib/views/layout/layout.html'
-                }
+                files: [{
+                  expand: true,
+                  cwd: '<%= node.destination %>/lib/views/layout/',
+                  src: '*.html',
+                  dest: '<%= node.destination %>/lib/views/layout/'
+                }]
             }
         },
 
@@ -336,7 +336,7 @@ module.exports = function(grunt) {
                         nodemon.on('config:update', function() {
                             // Delay before server listens on port
                             setTimeout(function() {
-                                require('open')('http://localhost:3000/projects/quickpeek/');
+                                require('open')('http://localhost:3000/international/china-brazil/');
                             }, 1000);
                         });
 
