@@ -26,17 +26,18 @@ server.views({
 });
 
 var routes = [
-    { method: 'GET',  path: '/v3/{path*}',                                  config: require('./lib/handlers/api').v3 },
-    { method: 'GET',  path: '/v4/{path*}',                                  config: require('./lib/handlers/api').v4 },
-    { method: 'GET',  path: '/getBag/{path*}',                              config: require('./lib/handlers/api').getbag },
-    { method: 'POST', path: '/addToBag/{path*}',                            config: require('./lib/handlers/api').addbag },
-    { method: 'GET',  path: '/fashion/{path*}',                             config: require('./lib/handlers/assets').fashion },
-    { method: 'GET',  path: '/shop/{path*}',                                config: require('./lib/handlers/assets').shop },
-    { method: 'GET',  path: '/akamai/{path*}',                              config: require('./lib/handlers/akamai') },
-    // { method: 'GET',  path: '/{--path--}',                                  config: require('./lib/handlers/views').responsive },
-    // { method: 'GET',  path: '/{--path--}',                                  config: require('./lib/handlers/views').nonResponsiveCustomHF },
-    { method: 'GET',  path: '/international/china-brazil/',                 config: require('./lib/handlers/views').responsiveCustomHF },
-    { method: 'GET',  path: '/{path*}',                                     config: require('./lib/handlers/views').fallback }
+    { method: 'GET',  path: '/v3/{path*}',                                      config: require('./lib/handlers/api').v3 },
+    { method: 'GET',  path: '/v4/{path*}',                                      config: require('./lib/handlers/api').v4 },
+    { method: 'GET',  path: '/getBag/{path*}',                                  config: require('./lib/handlers/api').getbag },
+    { method: 'POST', path: '/addToBag/{path*}',                                config: require('./lib/handlers/api').addbag },
+    { method: 'GET',  path: '/fashion/{path*}',                                 config: require('./lib/handlers/assets').fashion },
+    { method: 'GET',  path: '/shop/{path*}',                                    config: require('./lib/handlers/assets').shop },
+    { method: 'GET',  path: '/akamai/{path*}',                                  config: require('./lib/handlers/akamai') },
+    // { method: 'GET',  path: '/{--path--}',                                      config: require('./lib/handlers/views').responsive },
+    // { method: 'GET',  path: '/{--path--}',                                      config: require('./lib/handlers/views').nonResponsiveCustomHF },
+    { method: 'GET',  path: '/international/china-brazil/components/{path*}',   config: require('./lib/handlers/assets').ngViews },
+    { method: 'GET',  path: '/international/china-brazil/',                     config: require('./lib/handlers/views').responsiveCustomHF },
+    { method: 'GET',  path: '/{path*}',                                         config: require('./lib/handlers/views').fallback }
 ];
 
 server.route(routes);

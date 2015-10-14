@@ -1,3 +1,5 @@
+/* jshint ignore:start */
+
 /*==============================
 	CORPORATE GIFT GUIDE
 ==============================*/
@@ -387,3 +389,5 @@ function calculateBound(d) {
 		
 	return bound;
 }
+
+/* jshint ignore:end */

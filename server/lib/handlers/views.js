@@ -21,7 +21,9 @@ var deviceDetectParams = function (requestPath, req) {
             args.isMobileiOS = true;
         }
     } else {
-        if (deviceType === 'tablet') args.isTablet = true;
+        if (deviceType === 'tablet') {
+            args.isTablet = true;
+        }
         
         view = requestPath + 'index';
     }

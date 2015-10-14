@@ -63,9 +63,9 @@ define([
     }
 
     if (typeof window.Globals.mobileOS !== "undefined") {
-        MobileHeader()
     } else {
-        DesktopHeader();
+        MobileHeader();
+        // DesktopHeader();
     }
 
     // show/hide the DOWNLOAD THE BIG BROWN BAG APP footer btn based on the mobile OS detection

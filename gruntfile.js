@@ -47,18 +47,6 @@ module.exports = function(grunt) {
             }
         },
 
-        //Performs rewrites based on rev and the useminPrepare configuration
-        usemin: {
-            html: ['<%= node.destination %>/lib/views/partials/{,*/}*.html'],
-            css: ['.tmp/styles/{,*/}*.css'],
-            options: {
-                assetsDirs: [
-                    '<%= node.destination %>/lib/views/partials/',
-                	'.tmp'
-                ]               
-            }
-        },
-
         //Produces minified files in the 'target' folder
         htmlmin: {
             dist: {
@@ -68,6 +56,18 @@ module.exports = function(grunt) {
                     src: ['*.html'],
                     dest: '<%= node.destination %>/lib/views/partials/'
                 }]
+            }
+        },
+
+        //Performs rewrites based on rev and the useminPrepare configuration
+        usemin: {
+            html: ['<%= node.destination %>/lib/views/partials/{,*/}*.html'],
+            css: ['.tmp/styles/{,*/}*.css'],
+            options: {
+                assetsDirs: [
+                    '<%= node.destination %>/lib/views/partials/',
+                    '.tmp'
+                ]               
             }
         },
 
@@ -106,6 +106,19 @@ module.exports = function(grunt) {
                     dest: '<%= node.destination %>/public'
                 }]
             },
+            viewsProjects: {
+                files: [{
+                    expand: true,
+                    cwd: '<%= node.source %>/server/lib/views/',
+                    src: [
+                        '**',
+                        '!**/partials/**',
+                        '!**/layout/**',
+                        '!**/errors/**'
+                    ],
+                    dest: '<%= node.destination %>/lib/views/'
+                }]
+            },            
             jsClient: {
                 files: [{
                     expand: true,
@@ -336,7 +349,7 @@ module.exports = function(grunt) {
                         nodemon.on('config:update', function() {
                             // Delay before server listens on port
                             setTimeout(function() {
-                                require('open')('http://localhost:3000/international/china-brazil/');
+                                require('open')('http://d4378572:3000/international/china-brazil/');
                             }, 1000);
                         });
 
@@ -396,7 +409,9 @@ module.exports = function(grunt) {
 		    },
 		    views: {
 		        files: [
-		    		'<%= node.source %>/server/lib/views/{,**/}*.html'
+                    '<%= node.source %>/server/lib/views/partials/{,**/}*.html',
+                    '<%= node.source %>/server/lib/views/layout/{,**/}*.html',
+		    		'<%= node.source %>/server/lib/views/errors/{,**/}*.html'
 		    	],
 		        tasks: [
 		        	'useminPrepare',
@@ -405,6 +420,15 @@ module.exports = function(grunt) {
                     'notify:views'
 		        ]
 		    },
+            viewsProjects: {
+                files: [
+                    '<%= node.source %>/server/lib/views/lookbooks/{,**/}*.html',
+                    '<%= node.source %>/server/lib/views/international/{,**/}*.html'                    
+                ],
+                tasks: [
+                    'copy:viewsProjects'
+                ]                
+            },
             clientReload: {
                 // Limit the client reload files to one per file type to prevent EMFILE error
                 files: [

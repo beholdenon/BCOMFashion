@@ -1,6 +1,7 @@
 'use strict';
 
-var serviceProxy = require('./../helpers/serviceProxy');
+var serviceProxy = require('./../helpers/serviceProxy'),
+    Path = require('path');
 
 module.exports = {
     fashion: {
@@ -12,6 +13,16 @@ module.exports = {
                 path: './'
             }
         }
+    },
+
+    ngViews: {
+        description: 'Angular views',
+        notes: 'Requests made by Angular to load template components',
+        tags: ['angular views'],
+        handler: function(req, res) {
+            var ngView = Path.join(__dirname, '../views', req.url.path);
+            res.file(ngView);
+        }         
     },
 
     shop: {

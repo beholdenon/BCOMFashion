@@ -1,0 +1,715 @@
+@font-face {
+    font-family: 'FontAwesome';
+    src: url('/fashion/styles/fonts/fontawesome-webfont.eot?v=4.4.0');
+    src: url('/fashion/styles/fonts/fontawesome-webfont.eot?#iefix&v=4.4.0') format('embedded-opentype'),
+    url('/fashion/styles/fonts/fontawesome-webfont.woff2?v=4.4.0') format('woff2'),
+    url('/fashion/styles/fonts/fontawesome-webfont.woff?v=4.4.0') format('woff'),
+    url('/fashion/styles/fonts/fontawesome-webfont.ttf?v=4.4.0') format('truetype'),
+    url('/fashion/styles/fonts/fontawesome-webfont.svg?v=4.4.0#fontawesomeregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+//prevent flickering on Angular bindings
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+    display: none !important;
+}
+
+html {
+	&.noscroll {
+	    overflow-y: scroll !important;
+	    overflow: hidden !important;
+	    height: 100% !important;
+	    margin-top: 0 !important;
+	}
+	body {
+		box-sizing: border-box;
+	    #bl_main_container {
+	    	.move-right > .inner-wrap {
+			    -webkit-transform: translate3d(500px, 0, 0);
+			    -webkit-transform: translate3d(80vmin, 0, 0);
+			    -moz-transform: translate3d(500px, 0, 0);
+			    -moz-transform: translate3d(80vmin, 0, 0);
+			    -ms-transform: translate(500px, 0);
+			    -ms-transform: translate(80vmin, 0);
+			    -ms-transform: translate3d(80vmin, 0, 0);
+			    -o-transform: translate3d(500px, 0, 0);
+			    -o-transform: translate3d(80vmin, 0, 0);
+			    transform: translate3d(500px, 0, 0);
+			    transform: translate3d(80vmin, 0, 0);
+			    -ms-transform: translate3d(500px, 0, 0);
+			}
+
+			.inner-wrap {
+				transition: transform 350ms cubic-bezier(0.645, 0.045, 0.355, 1);
+			}
+
+	    	aside.left-off-canvas-menu {
+	    		background-color: #fff;
+	    		border-top: solid 3px #000;
+	    		width: 500px;
+	    		width: 80vmin;
+	    		transition: transform 350ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+	    		ul.off-canvas-list {
+	    			height: 100%;
+	    			height: 100vmax;
+	    			position: relative;			
+		    		li {
+		    			&.lang {
+							position: relative;
+							height: 46px;  
+							border-bottom: solid 1px #cdccd2;  	
+							border-right: solid 1px #cdccd2;		
+			    			ul {
+			    				margin: 0;
+			    				li {
+			    					list-style-type: none;
+			    					float: left;
+			    					margin: 0 27px;
+			    					margin: 0 8.5vmin;
+			    					&:active a, &:hover a, &.active a {
+										color: #f30c99;
+			    					}
+			    					a {
+			    						color: #000;
+			    						font-size: 16px;
+			    						font-size: 4.3vmin;
+			    						text-decoration: none;
+			    						text-transform: uppercase;
+			    						border: none;
+										line-height: 46px;
+										padding: 0;
+										&:active, &:hover {
+											background-color: transparent !important;
+											color: #f30c99;
+										}									
+			    					}
+			    				}
+			    			}
+			    		}
+			    		&.nav-section{
+			    			line-height: 76px;
+			    			line-height: 20.3vmin;
+			    			height: 76px;
+			    			height: 20.3vmin;
+			    			border-bottom: solid 1px #cdccd2; 
+			    			a {
+			    				text-decoration: none;
+			    				font-size: 16px;
+			    				font-size: 4.3vmin;
+			    				border: none;
+			    				padding: 0 0 0 4rem;
+			    				padding: 0 0 0 8.5vmin;
+			    				color: #000;
+								&:active, &:hover {
+									background-color: #000;
+									color: #fff !important;
+								}	    				
+			    			}
+			    		}
+			    		&.social {
+						    position: relative;
+							top: 144px;
+							top: 40vmin;
+						    left: 0;
+			    			ul {
+			    				margin: 0;
+			    				padding: 0;
+			    				li {
+			    					list-style-type: none;
+			    					float: left;
+			    					padding: 0 19px;
+			    					padding: 0 5.1vmin;
+			    					border-right: 1px solid #cdccd2;
+			    					&:last-child{
+			    						border-right: none;
+			    					}
+			    					a {
+			    						color: #000;
+			    						font-size: 24px;
+			    						font-size: 6.4vmin;
+			    						text-decoration: none;
+			    						border: none;
+										line-height: 24px;
+										line-height: 6.4vmin;
+										padding: 0;
+										&:active, &:hover {
+											background-color: #fff;
+											color: #000 !important;
+										}
+										.fa {
+											display: inline-block;
+											font: normal normal normal 14px/1 FontAwesome;
+											font-size: inherit;
+											text-rendering: auto;
+											-webkit-font-smoothing: antialiased;
+											-moz-osx-font-smoothing: grayscale;
+										}
+										.fa-facebook:before {
+										    content: "\f09a";
+										}
+										.fa-twitter:before {
+										    content: "\f099";
+										}
+										.fa-weibo:before {
+										    content: "\f18a";
+										}
+										.fa-pinterest:before {
+										    content: "\f231";
+										}
+										.fa-weixin:before {
+										    content: "\f1d7";
+										}
+			    					}
+			    				}
+			    			}	    			
+			    		}
+		    		}
+	    		}    		
+	    	}
+
+		    @media only screen and (min-width: 450px) and (max-width: 64em) and (orientation: portrait) {
+		    	.move-right > .inner-wrap {
+				    -webkit-transform: translate3d(50rem, 0, 0);
+				    -moz-transform: translate3d(50rem, 0, 0);
+				    -ms-transform: translate(50rem, 0);
+				    -ms-transform: translate3d(50rem, 0, 0);
+				    -o-transform: translate3d(50rem, 0, 0);
+				    transform: translate3d(50rem, 0, 0);
+				}
+
+		    	aside.left-off-canvas-menu {
+		    		width: 50rem;
+		    		ul.off-canvas-list {
+		    			height: 100%;
+		    			height: 100vmax;
+			    		li {
+			    			&.lang {
+				    			ul {
+				    				li {
+				    					margin: 0 27px;
+				    					margin: 0 8.5vmin;
+				    					a {
+				    						font-size: 24px;
+				    						font-size: 2.3vmin;
+				    					}
+				    				}
+				    			}
+				    		}
+				    		&.nav-section{
+				    			line-height: 76px;
+				    			line-height: 10.3vmin;
+				    			height: 76px;
+				    			height: 10.3vmin;
+				    			a {
+				    				font-size: 24px;
+				    				font-size: 2.3vmin;
+				    				padding: 0 0 0 4rem;
+				    				padding: 0 0 0 8.5vmin;
+				    			}
+				    		}
+				    		&.social {
+								top: 307.2px;
+								top: 60vmin;
+								left: 23.04px;
+								left: 3vmin;
+				    			ul {
+				    				li {
+				    					padding: 0 19px;
+				    					padding: 0 5.1vmin;
+				    					a {
+				    						font-size: 24px;
+				    						font-size: 3vmin;
+											line-height: 24px;
+											line-height: 6.4vmin;
+				    					}
+				    				}
+				    			}	    			
+				    		}
+			    		}
+		    		}    		
+		    	}	    	
+		    } 
+
+	        .nav-wrapper.sticky.fixed{
+				width: 962px;
+				z-index: 99;
+				left: 50%;
+				margin-left: -481px;
+	        }
+	        
+	        nav {
+	        	position: relative;
+	            background-color: #fff;
+	            height: 70px;
+	            &.show-for-small-only{
+	            	height: 84px;
+	            	overflow: hidden;
+	            	border-top: 3px solid #000;
+	            	.left-small {
+	            		border: none;
+		    			// background-image: url('/fashion/images/projects/international/china-brazil/global_sprite.png');
+						// background-repeat: no-repeat;
+						// background-size: 260px;
+						// background-position: 11px -58px;
+						// margin-top: 9px;
+						a {
+						    // width: 60px;
+						    // height: 45px;
+						    width: 32px;
+						    height: 32px;						    
+						    position: relative;
+						    // margin: 50px auto;
+						    margin: 11px auto;
+						    -webkit-transform: rotate(0deg);
+						    -moz-transform: rotate(0deg);
+						    -o-transform: rotate(0deg);
+						    transform: rotate(0deg);
+						    -webkit-transition: .5s transform ease-in-out;
+						    -moz-transition: .5s transform ease-in-out;
+						    -o-transition: .5s transform ease-in-out;
+						    transition: .5s transform ease-in-out;
+						    cursor: pointer;
+						    span {
+						        display: block;
+						        position: absolute;
+						        height: 5px;
+						        width: 32px;
+						        background: #000;
+						        opacity: 1;
+						        left: 0;
+						        -webkit-transform: rotate(0deg);
+						        -moz-transform: rotate(0deg);
+						        -o-transform: rotate(0deg);
+						        transform: rotate(0deg);
+						        -webkit-transition: .35s ease-in-out;
+						        -moz-transition: .35s ease-in-out;
+						        -o-transition: .35s ease-in-out;
+						        transition: .35s ease-in-out;
+						        &:after {
+						        	display: none;
+						        }
+						        &:nth-child(1) {
+						            top: 0px;
+						        }
+
+						        &:nth-child(2),
+						        &:nth-child(3) {
+						            top: 9px;
+						        }
+
+						        &:nth-child(4) {
+						            top: 18px;
+						        }
+						    }
+							&.open span:nth-child(1) {
+							  top: 18px;
+							  width: 0%;
+							  left: 50%;
+							}
+
+							&.open span:nth-child(2) {
+							  -webkit-transform: rotate(45deg);
+							  -moz-transform: rotate(45deg);
+							  -o-transform: rotate(45deg);
+							  transform: rotate(45deg);
+							}
+
+							&.open span:nth-child(3) {
+							  -webkit-transform: rotate(-45deg);
+							  -moz-transform: rotate(-45deg);
+							  -o-transform: rotate(-45deg);
+							  transform: rotate(-45deg);
+							}
+
+							&.open span:nth-child(4) {
+							  top: 18px;
+							  width: 0%;
+							  left: 50%;
+							}
+						}
+	            	}
+	            	.middle {
+		                background-image: url('/fashion/images/projects/international/china-brazil/global_sprite.png');
+						background-repeat: no-repeat;
+					    background-size: 180px;
+					    background-position: center top;
+					    margin-top: 10px;
+					    height: 28px;
+					    a {
+						    display: block;
+							width: 180px;
+							margin: 0 auto;
+						    height: inherit;				    
+						}
+	            	}
+	            	.sub-banner{
+					    position: absolute;
+					    left: 0;
+					    top: 45px;            		
+	            		width: 100%;
+	            		height: 36px;
+	            		background-color: #000;
+	            		color: #fff;
+					    text-align: center;
+					    font-size: 14px;
+					    font-weight: bold;
+					    letter-spacing: 4px;
+					    line-height: 36px;            		
+	            	}
+	            }
+	            .title-area{
+		            .title-area-logo {
+		                background-image: url('/fashion/images/projects/international/china-brazil/global_sprite.png');
+						background-repeat: no-repeat;
+						width: 214px;
+						height: 33px;
+						background-size: 214px;
+						background-position: 0 0;
+						margin-left: 2px;
+						margin-top: 18px;
+						a {
+							width: 214px;
+							height: 36px;
+							display: block;
+						}
+		            }
+		            .cn-addon {
+					    background-image: url("/fashion/images/projects/international/china-brazil/global_sprite.png");
+					    background-repeat: no-repeat;
+					    width: 214px;
+					    height: 46px;
+					    background-size: 214px;
+					    background-position: 25px -76px;
+					    margin-left: 2px;
+					    margin-top: 16px;	            	
+		            }
+	            }
+	            .top-bar-section {
+					ul.left {
+						margin-left: 32px;
+	            		li {
+			            	background-color: #fff;
+			            	height: 20px;
+			            	padding: 0 14px;
+				            a {
+				            	background-color: #fff;
+				            	color: #000;
+				            	text-decoration: none;
+				            	font-weight: bold;
+								font-size: 12px;
+								line-height: 70px;
+								padding: 0;	            	
+								&:hover, &:active, &.active {
+									border-top: 8px solid #000;
+									line-height: 54px;
+								}
+				            }
+				        }
+				    }	
+	            	ul.right {
+	            		margin-top: 24px;
+	            		li{
+			            	background-color: #fff;
+			            	height: 22px;
+			            	width: 40px;
+			            	border: solid 1px #000;
+			            	border-right: none;
+			            	&:last-child{
+			            		border-right: solid 1px #000;
+			            		background-color: #000;
+			            	}
+							&:hover a, &.active a{
+								font-weight: bold;
+								line-height: 18px;
+							}
+				            a {
+								background-color: #fff;
+								color: #000;
+								text-decoration: none;
+								font-size: 10px;
+								line-height: 20px;
+								width: 38px;
+								text-align: center;
+								padding: 0;      
+								&#top-bar-section-right-share {
+									color: transparent;
+									text-indent: -9999px;
+					                background-image: url('/fashion/images/projects/international/china-brazil/global_sprite.png');
+									background-repeat: no-repeat;
+									background-size: 300px;
+									background-position: 10px -47px;
+									background-color: #000;															
+								}
+				            }
+				        }
+				    }			    		    
+	            }
+	        }
+	        .exit-off-canvas {
+	        	box-shadow: none;
+	        	background: rgba(0, 0, 0, 0.4);
+	        	margin-top: 48px;
+	        	transition: background 0.35s cubic-bezier(0.645, 0.045, 0.355, 1);
+	        }
+
+        	.overlay{
+        		display: none;
+			    position: fixed;
+			    width: 100%;
+			    height: 100%;
+			    bottom: 0;
+			    right: 0;
+			    top: 0;
+			    z-index: 10000004;
+			    left: 0;
+			    &.visible {
+			    	display: block;
+			    }
+			    &.lang {
+				    background: rgba(0, 0, 0, 0.8);
+				    .overlay-container {
+				    	position: relative;
+						width: 310px;
+						margin: 0 auto;	
+						top: 160px;
+						top: calc(50vh - 159px);			    	
+				    	h2 {
+				    		font-size: 26px;
+				    		font-size: 6vw;
+							color: #fff;
+							font-family: 'Libre Baskerville', serif;
+							text-align: center;	
+							margin-bottom: 40px;		    		
+				    	}
+				    	@media only screen and (min-width: 450px) {
+				    		h2 {
+				    			font-size: 26px;
+				    		}
+				    	}
+				    	ul {
+				    		margin: 0;
+				    		li {
+					    		font-size: 16px;
+					    		font-size: 4vw;
+								color: #fff;
+								text-align: center;		
+								text-transform: uppercase;
+								cursor: pointer;
+								height: 72px;
+								line-height: 72px;
+								border-top: solid 1px #4d4643;
+								list-style-type: none;
+								&:last-child {
+									border-bottom: solid 1px #4d4643;
+								}
+								&:hover, &:active, &.active {
+									color: #f30c99;
+								}
+				    		}
+					    	@media only screen and (min-width: 450px) {
+					    		li {
+					    			font-size: 16px;
+					    		}
+					    	}								
+				    	}
+				    }
+			    }
+			    &.share {
+		    		opacity: 0;
+		    		background: rgba(255, 255, 255, 0.8);
+				    .overlay-container {
+				    	position: relative;
+						margin: 0 auto;	
+						top: 160px;
+						top: calc(50vh - 159px);			    	
+				    	h2 {
+				    		font-size: 26px;
+				    		font-size: 6vw;
+							color: #000;
+							font-family: 'Libre Baskerville', serif;
+							text-align: center;	
+							margin-bottom: 40px;		    		
+				    	}
+				    	@media only screen and (min-width: 450px) {
+				    		h2 {
+				    			font-size: 24px;
+				    		}
+				    	}
+		    			ul {
+		    				padding: 0;
+		    				li {
+		    					list-style-type: none;
+		    					float: left;
+		    					padding: 0 19px;
+		    					padding: 0 5.1vmin;
+		    					border-right: 1px solid #cdccd2;
+		    					&:last-child{
+		    						border-right: none;
+		    					}
+		    					a {
+		    						color: #000;
+		    						font-size: 24px;
+		    						font-size: 6.4vmin;
+		    						text-decoration: none;
+		    						border: none;
+									line-height: 24px;
+									line-height: 6.4vmin;
+									padding: 0;
+									&:active, &:hover {
+										background-color: #fff;
+										color: #000 !important;
+									}
+									.fa {
+										display: inline-block;
+										font: normal normal normal 14px/1 FontAwesome;
+										font-size: inherit;
+										text-rendering: auto;
+										-webkit-font-smoothing: antialiased;
+										-moz-osx-font-smoothing: grayscale;
+									}
+									.fa-facebook:before {
+									    content: "\f09a";
+									}
+									.fa-twitter:before {
+									    content: "\f099";
+									}
+									.fa-weibo:before {
+									    content: "\f18a";
+									}
+									.fa-pinterest:before {
+									    content: "\f231";
+									}
+									.fa-weixin:before {
+									    content: "\f1d7";
+									}
+		    					}
+						    	@media only screen and (min-width: 450px) {
+						    		a {
+						    			font-size: 24px;
+						    		}
+						    	}		    					
+		    				}
+		    			}
+		    			@media only screen and (max-width: 740px) and (orientation: landscape){
+		    				h2 {
+		    					margin-top: 80px;
+		    				}
+		    				ul {
+		    					width: 50%;
+		    				}
+		    			}
+						@media only screen and (min-width: 700px) and (max-width: 780px) and (orientation: portrait){
+							.large-11 {
+							    width: 66%;
+							}	
+						}	 
+						@media only screen and (min-width: 1024px) and (max-width: 1200px) and (orientation: landscape){
+							.large-11 {
+							    width: 50%;
+							}	
+						}							   			
+				    }		    		
+			    }
+			    .exit-off-overlay {
+				    position: fixed;
+				    top: 10px;
+				    right: 20px;
+				    text-decoration: none;
+				    font-size: 40px;
+				    margin: 0;
+				    padding: 0;
+				    line-height: 40px;
+				    font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+				    text-transform: uppercase;
+					background: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE2LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiIFsKCTwhRU5USVRZIG5zX2V4dGVuZCAiaHR0cDovL25zLmFkb2JlLmNvbS9FeHRlbnNpYmlsaXR5LzEuMC8iPgoJPCFFTlRJVFkgbnNfYWkgImh0dHA6Ly9ucy5hZG9iZS5jb20vQWRvYmVJbGx1c3RyYXRvci8xMC4wLyI+Cgk8IUVOVElUWSBuc19ncmFwaHMgImh0dHA6Ly9ucy5hZG9iZS5jb20vR3JhcGhzLzEuMC8iPgoJPCFFTlRJVFkgbnNfdmFycyAiaHR0cDovL25zLmFkb2JlLmNvbS9WYXJpYWJsZXMvMS4wLyI+Cgk8IUVOVElUWSBuc19pbXJlcCAiaHR0cDovL25zLmFkb2JlLmNvbS9JbWFnZVJlcGxhY2VtZW50LzEuMC8iPgoJPCFFTlRJVFkgbnNfc2Z3ICJodHRwOi8vbnMuYWRvYmUuY29tL1NhdmVGb3JXZWIvMS4wLyI+Cgk8IUVOVElUWSBuc19jdXN0b20gImh0dHA6Ly9ucy5hZG9iZS5jb20vR2VuZXJpY0N1c3RvbU5hbWVzcGFjZS8xLjAvIj4KCTwhRU5USVRZIG5zX2Fkb2JlX3hwYXRoICJodHRwOi8vbnMuYWRvYmUuY29tL1hQYXRoLzEuMC8iPgpdPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zOng9IiZuc19leHRlbmQ7IiB4bWxuczppPSImbnNfYWk7IiB4bWxuczpncmFwaD0iJm5zX2dyYXBoczsiCgkgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiIHdpZHRoPSIzMHB4IiBoZWlnaHQ9IjMwcHgiCgkgdmlld0JveD0iMjUuNzUgMTcuNzUgMzAgMzAiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMjUuNzUgMTcuNzUgMzAgMzAiIHhtbDpzcGFjZT0icHJlc2VydmUiPgo8bWV0YWRhdGE+CjwvbWV0YWRhdGE+CjxwYXRoIGQ9Ik01My42NDYsNDIuMDA1bC05LjIyNS05LjI2bDkuMjQ2LTkuMTQxYzAuMzc5LTAuMzc5LDAuMzc5LTAuOTk4LDAtMS4zNzhsLTIuNjI5LTIuNjQ0CgljLTAuMTgzLTAuMTgzLTAuNDI5LTAuMjgxLTAuNjg5LTAuMjgxYy0wLjI2LDAtMC41MDYsMC4xMDUtMC42ODksMC4yODFsLTkuMjA0LDkuMTEybC05LjIxNy05LjEwNQoJYy0wLjE4My0wLjE4My0wLjQyOS0wLjI4MS0wLjY4OS0wLjI4MWMtMC4yNiwwLTAuNTA2LDAuMTA1LTAuNjg5LDAuMjgxbC0yLjYyMywyLjY0NGMtMC4zNzksMC4zOC0wLjM3OSwwLjk5OSwwLDEuMzc4bDkuMjQ2LDkuMTQKCWwtOS4yMTgsOS4yNTNjLTAuMTgzLDAuMTgzLTAuMjg4LDAuNDI5LTAuMjg4LDAuNjg5YzAsMC4yNiwwLjA5OCwwLjUwNiwwLjI4OCwwLjY4OWwyLjYyOSwyLjY0NAoJYzAuMTksMC4xODksMC40MzYsMC4yODgsMC42ODksMC4yODhjMC4yNDYsMCwwLjQ5OS0wLjA5MSwwLjY4OC0wLjI4OGw5LjE4My05LjIyNWw5LjE4OSw5LjIxOGMwLjE5LDAuMTksMC40MzYsMC4yODgsMC42ODksMC4yODgKCWMwLjI0NiwwLDAuNS0wLjA5MSwwLjY4OS0wLjI4OGwyLjYyOS0yLjY0NGMwLjE4My0wLjE4MywwLjI4OC0wLjQyOSwwLjI4OC0wLjY4OUM1My45MzUsNDIuNDM1LDUzLjgyOSw0Mi4xODgsNTMuNjQ2LDQyLjAwNXoiLz4KPC9zdmc+');
+					width: 30px;
+					height: 30px;
+				    &:hover {
+				    	color: #000;
+				    }
+			    }
+        	}
+			
+	        .main-section{
+
+	        }
+
+	        footer {
+				position: absolute;
+				left: 0;
+				width: 100%;
+				border-top: solid 1px #ababab;
+	        	section.footer-sign-up{
+	        		background-color: #fff;
+	        		text-align: center;
+	        		height: 50px;
+	        		a {
+	        			text-decoration: none;
+	        			font-size: 13px;
+	        			line-height: 50px;
+	        			padding: 10px;
+	        		}
+	        	}
+	        	section.footer-bottom{
+	        		padding: 10px 0;
+					background-color: #000;
+					color: #fff;
+					font-family: 'Libre Baskerville', serif;
+					font-style: italic;
+					text-align: center;
+					font-size: 13px;
+	        	}
+	        }
+	    }
+	    @media only screen and (max-width: 40em) {
+	    	#bl_main_container {
+				width: 100%;    		
+				min-width: 100%;    		
+	    	} 
+	    }   
+
+	    .blur {
+			-webkit-filter: blur(5px);
+			filter: blur(5px);	    	
+	    } 
+
+		.fade-in {
+			opacity:0;
+			-webkit-animation: fadeIn ease-in;
+			-moz-animation: fadeIn ease-in;
+			animation: fadeIn ease-in;
+			-webkit-animation-fill-mode: forwards;
+			-moz-animation-fill-mode: forwards;
+			animation-fill-mode: forwards;
+			-webkit-animation-duration: 1s;
+			-moz-animation-duration: 1s;
+			animation-duration: 1s;
+			-webkit-animation-delay: 0;
+			-moz-animation-delay: 0;
+			animation-delay: 0;
+			@-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+			@-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+			@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+		}
+
+		.fade-out {
+			opacity:0;
+			-webkit-animation: fadeOut ease-out;
+			-moz-animation: fadeOut ease-out;
+			animation: fadeOut ease-out;
+			-webkit-animation-fill-mode: forwards;
+			-moz-animation-fill-mode: forwards;
+			animation-fill-mode: forwards;
+			-webkit-animation-duration: 1s;
+			-moz-animation-duration: 1s;
+			animation-duration: 1s;
+			-webkit-animation-delay: 0;
+			-moz-animation-delay: 0;
+			animation-delay: 0;
+			@-webkit-keyframes fadeOut { from { opacity:1; } to { opacity:0; } }
+			@-moz-keyframes fadeOut { from { opacity:1; } to { opacity:0; } }
+			@keyframes fadeOut { from { opacity:1; } to { opacity:0; } }
+		}		
+	}
+}

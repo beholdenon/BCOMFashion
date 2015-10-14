@@ -11,6 +11,7 @@ node_modules/.bin
 .tmp
 bin
 *.log
+.env
 
 # Ignore everything in the target folder
 target

@@ -1,3 +1,5 @@
+/* jshint ignore:start */
+
 'use strict'; 
 
 /**
@@ -1284,4 +1286,4 @@ Handlebars.registerHelper('toLowerCase', function(str) {
     return str.toLowerCase();
 });
 
-
+/* jshint ignore:end */
