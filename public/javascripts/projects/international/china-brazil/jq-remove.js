@@ -25,12 +25,12 @@
                 	'height': height,
                 	'overflow': 'hidden'
                 });
+                $('.arriving-input, .departing-input').hide();
             }
         });
 
-	    $(window).on('orientationchange', function() {
+	    $(window).on('orientationchange resize', function() {
 	        if ($('.off-canvas-wrap').hasClass('move-right')) $('.left-off-canvas-toggle').click();
 	    });   	         
     });
-
 })(window, window.document, jQuery);

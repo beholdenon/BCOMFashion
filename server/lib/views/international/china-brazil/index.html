@@ -6,9 +6,11 @@
 <div class="off-canvas-wrap" data-offcanvas="" ng-app="CNBRapp" ng-controller="MainController as app">
     <div class="inner-wrap">       
 		
-		<div ng-include="'components/global-nav.html'"></div>
+		<global-nav></global-nav>
 
         <div ng-view></div>
+
+        <contact-us></contact-us>
 
     </div>
 </div>
@@ -17,33 +19,26 @@
 	<section class="footer-sign-up">
 		<a href="https://www.bloomingdales.com/signup?cm_sp=FOOTER-_-BOTTOM_NAV-_-EMAIL_SIGNUP">SAVE 10%—<u><b>SIGN UP</b></u> FOR EMAILS</a>
 	</section>
-	<section class="footer-bottom">Like no other store in the world</section>	
+	<section class="footer-bottom">Like no other store in the world</section>
 </footer>
 
 <!-- SCRIPTS -->
-<script type="text/javascript">
-	window.addEventListener('load', function() {
-        FastClick.attach(document.body);
-        // console.log('fastclick enabled');
-	}, false);
-</script>
 <script type="text/javascript" src="/fashion/javascripts/libs/fastclick.js"></script>
 <script type="text/javascript" src="/fashion/javascripts/libs/angular/angular.min.js"></script>
 <script type="text/javascript" src="/fashion/javascripts/libs/angular/angular-route.min.js"></script>
+<script type="text/javascript" src="/fashion/javascripts/libs/angular/angular-messages.min.js"></script>
+<script type="text/javascript" src="/fashion/javascripts/libs/angular/angular-animate.min.js"></script>
 <script type="text/javascript" src="/fashion/javascripts/projects/international/china-brazil/app.js"></script>
 <script type="text/javascript" src="/fashion/javascripts/projects/international/china-brazil/controllers/main.js"></script>
 <script type="text/javascript" src="/fashion/javascripts/projects/international/china-brazil/controllers/home.js"></script>
+<script type="text/javascript" src="/fashion/javascripts/projects/international/china-brazil/controllers/global-nav.js"></script>
 <script type="text/javascript" src="/fashion/javascripts/projects/international/china-brazil/controllers/our-heritage.js"></script>
-<!-- <script type="text/javascript" src="/fashion/javascripts/projects/international/china-brazil/controllers/our-heritage.js"></script> -->
-
-
-
-
-
-
+<script type="text/javascript" src="/fashion/javascripts/projects/international/china-brazil/directives/global-nav.js"></script>
 
 <script type="text/javascript" src="/fashion/javascripts/libs/jquery-1.9.1.min.js"></script>
 <script type="text/javascript" src="/fashion/javascripts/projects/international/china-brazil/jq-remove.js"></script>
 <script type="text/javascript" src="/fashion/javascripts/libs/foundation/foundation.js"></script>
+<!-- <script type="text/javascript" src="/fashion/javascripts/libs/foundation/mm-foundation-0.8.0.min.js"></script> -->
 <script type="text/javascript" src="/fashion/javascripts/libs/foundation/foundation.offcanvas.js"></script>
 <script type="text/javascript" src="/fashion/javascripts/libs/foundation/foundation.topbar.js"></script>
+<script type="text/javascript" src="/fashion/javascripts/libs/foundation/foundation.datepicker.min.js"></script>

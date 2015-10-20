@@ -1,7 +1,11 @@
 'use strict';
 
 angular.module('CNBRapp')
-	.controller('MainController', function($scope, $route, $routeParams, $location){
-	    var vm = this;
-	    vm.title = 'MAIN PAGE';
-	});
+    .controller('MainController', function($timeout) {
+        var vm = this;
+        vm.title = 'MAIN PAGE';
+
+        $timeout(function() {
+            $('.header-bkg').height($('.header').height());
+        }, 400);
+    });
