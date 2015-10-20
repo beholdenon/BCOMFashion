@@ -81,7 +81,7 @@ console.log(cu);
 					$scope.emailForm.$setPristine();
 					$scope.emailForm.$setUntouched();
 					$('.form-sent-successfully').fadeOut();
-				}, 2500);
+				}, 3500);
 				
 				return true;
             }

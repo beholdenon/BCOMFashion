@@ -1,3 +1,22 @@
+$small-breakpoint:  640px;
+$medium-lower-bound: 641px;
+$medium-breakpoint: 1024px;
+$large-lower-bound: 1025px;
+$large-breakpoint:  1440px;
+
+$screen: "only screen";
+
+$landscape: "#{$screen} and (orientation: landscape)";
+$portrait: "#{$screen} and (orientation: portrait)";
+
+$small-up: $screen;
+$small-only: "#{$screen} and (max-width: #{$small-breakpoint})";
+
+$medium-up: "#{$screen} and (min-width:#{$medium-lower-bound})";
+$medium-only: "#{$screen} and (min-width:#{$medium-lower-bound}) and (max-width:#{$medium-breakpoint})";
+
+$large-up: "#{$screen} and (min-width:#{$large-lower-bound})";
+
 @font-face {
     font-family: 'FontAwesome';
     src: url('/fashion/styles/fonts/fontawesome-webfont.eot?v=4.4.0');
@@ -24,7 +43,6 @@ html {
 	}
 
 	.width-962 {
-		width: 962px;
 		max-width: 962px;
 		margin: 0 auto;
 		& > *{
@@ -32,6 +50,9 @@ html {
 			margin: 0 auto;			
 		}
 	}
+
+	@media only screen and (min-width:$medium-lower-bound){.medium-block-grid-1>li{list-style:none;width:100%}.medium-block-grid-1>li:nth-of-type(1n){clear:none}.medium-block-grid-1>li:nth-of-type(1n+1){clear:both}.medium-block-grid-2>li{list-style:none;width:50%}.medium-block-grid-2>li:nth-of-type(1n){clear:none}.medium-block-grid-2>li:nth-of-type(2n+1){clear:both}.medium-block-grid-3>li{list-style:none;width:33.33333%}.medium-block-grid-3>li:nth-of-type(1n){clear:none}.medium-block-grid-3>li:nth-of-type(3n+1){clear:both}.medium-block-grid-4>li{list-style:none;width:25%}.medium-block-grid-4>li:nth-of-type(1n){clear:none}.medium-block-grid-4>li:nth-of-type(4n+1){clear:both}.medium-block-grid-5>li{list-style:none;width:20%}.medium-block-grid-5>li:nth-of-type(1n){clear:none}.medium-block-grid-5>li:nth-of-type(5n+1){clear:both}.medium-block-grid-6>li{list-style:none;width:16.66667%}.medium-block-grid-6>li:nth-of-type(1n){clear:none}.medium-block-grid-6>li:nth-of-type(6n+1){clear:both}.medium-block-grid-7>li{list-style:none;width:14.28571%}.medium-block-grid-7>li:nth-of-type(1n){clear:none}.medium-block-grid-7>li:nth-of-type(7n+1){clear:both}.medium-block-grid-8>li{list-style:none;width:12.5%}.medium-block-grid-8>li:nth-of-type(1n){clear:none}.medium-block-grid-8>li:nth-of-type(8n+1){clear:both}.medium-block-grid-9>li{list-style:none;width:11.11111%}.medium-block-grid-9>li:nth-of-type(1n){clear:none}.medium-block-grid-9>li:nth-of-type(9n+1){clear:both}.medium-block-grid-10>li{list-style:none;width:10%}.medium-block-grid-10>li:nth-of-type(1n){clear:none}.medium-block-grid-10>li:nth-of-type(10n+1){clear:both}.medium-block-grid-11>li{list-style:none;width:9.09091%}.medium-block-grid-11>li:nth-of-type(1n){clear:none}.medium-block-grid-11>li:nth-of-type(11n+1){clear:both}.medium-block-grid-12>li{list-style:none;width:8.33333%}.medium-block-grid-12>li:nth-of-type(1n){clear:none}.medium-block-grid-12>li:nth-of-type(12n+1){clear:both}}
+	@media only screen and (min-width:$large-lower-bound){.large-block-grid-1>li{list-style:none;width:100%}.large-block-grid-1>li:nth-of-type(1n){clear:none}.large-block-grid-1>li:nth-of-type(1n+1){clear:both}.large-block-grid-2>li{list-style:none;width:50%}.large-block-grid-2>li:nth-of-type(1n){clear:none}.large-block-grid-2>li:nth-of-type(2n+1){clear:both}.large-block-grid-3>li{list-style:none;width:33.33333%}.large-block-grid-3>li:nth-of-type(1n){clear:none}.large-block-grid-3>li:nth-of-type(3n+1){clear:both}.large-block-grid-4>li{list-style:none;width:25%}.large-block-grid-4>li:nth-of-type(1n){clear:none}.large-block-grid-4>li:nth-of-type(4n+1){clear:both}.large-block-grid-5>li{list-style:none;width:20%}.large-block-grid-5>li:nth-of-type(1n){clear:none}.large-block-grid-5>li:nth-of-type(5n+1){clear:both}.large-block-grid-6>li{list-style:none;width:16.66667%}.large-block-grid-6>li:nth-of-type(1n){clear:none}.large-block-grid-6>li:nth-of-type(6n+1){clear:both}.large-block-grid-7>li{list-style:none;width:14.28571%}.large-block-grid-7>li:nth-of-type(1n){clear:none}.large-block-grid-7>li:nth-of-type(7n+1){clear:both}.large-block-grid-8>li{list-style:none;width:12.5%}.large-block-grid-8>li:nth-of-type(1n){clear:none}.large-block-grid-8>li:nth-of-type(8n+1){clear:both}.large-block-grid-9>li{list-style:none;width:11.11111%}.large-block-grid-9>li:nth-of-type(1n){clear:none}.large-block-grid-9>li:nth-of-type(9n+1){clear:both}.large-block-grid-10>li{list-style:none;width:10%}.large-block-grid-10>li:nth-of-type(1n){clear:none}.large-block-grid-10>li:nth-of-type(10n+1){clear:both}.large-block-grid-11>li{list-style:none;width:9.09091%}.large-block-grid-11>li:nth-of-type(1n){clear:none}.large-block-grid-11>li:nth-of-type(11n+1){clear:both}.large-block-grid-12>li{list-style:none;width:8.33333%}.large-block-grid-12>li:nth-of-type(1n){clear:none}.large-block-grid-12>li:nth-of-type(12n+1){clear:both}}	
 
 	body {
 		box-sizing: border-box;
@@ -657,29 +678,103 @@ html {
         	}
 			
 	        .main-section{
-	        	.header-bkg {
-				    background-image: url("/fashion/images/projects/international/china-brazil/wel_bg.jpg");
-				    background-repeat: no-repeat;
-				    background-size: 100%;
-				    background-color: #000;
-				    width: 100%;
-				    z-index: 0;	        		
-	        	}
 	        	.header {
-	        		position: absolute;
-	        		top: 70px;
-	        	}
-
-	        	@media only screen and (max-width:932px){
-		        	.header {
-		        		top: 84px;
-		        	}
+	        		position: relative;
+				    background-color: #000;
+				    max-width: 100%;
+				    width: 100%;
+				    z-index: 0;	
+				   @media #{$large-up} {
+					    background-image: url("/fashion/images/projects/international/china-brazil/wel_bg.jpg");
+					    background-repeat: no-repeat;
+					    background-size: 2400px;
+				   }				    
+				    div {
+				    	position: relative;
+				    	img {
+							display: block;
+							margin-left: auto;
+							margin-right: auto;				    		
+				    	}
+				    	.header-copy-desktop {
+						    position: absolute;
+						    top: 20%;
+						    margin-left: -440px;
+						    left: 50%;
+				    		h1 {
+				    			color: #fff;
+				    			font-size: 43px;
+								line-height: 43px;
+								padding: 0;
+								margin: 0;				    			
+				    		}
+				    		h2 {
+    							color: #f30c99;
+				    			font-size: 19px;
+				    			padding: 20px 0;
+				    		}
+				    		p {
+				    			color: #fff;
+				    			font-size: 13px;
+				    			line-height: 20px;
+				    		}
+				    		@media #{$large-up} {
+							    position: absolute;
+							    top: 20%;
+							    margin-left: -440px;
+							    left: 50%;
+					    		h1 {
+					    			color: #fff;
+					    			font-size: 43px;
+									line-height: 43px;
+									padding: 0;
+									margin: 0;				    			
+					    		}
+					    		h2 {
+	    							color: #f30c99;
+					    			font-size: 19px;
+					    			padding: 20px 0;
+					    		}
+					    		p {
+					    			color: #fff;
+					    			font-size: 13px;
+					    			line-height: 20px;
+					    		}				    			
+				    		}
+				    		@media #{$small-up}{
+				    			.hide-for-small-only {
+				    				display: block !important;
+				    			}
+				    		}
+				    	}
+				    }
 	        	}
 
 	        	.categories {
 	        		margin-top: 60px;
 	        		li {
 	        			padding: 0;
+	        			position: relative;
+	        			div {
+							position: absolute;
+							top: 40%;
+							background: #fff;
+							font-size: 16px;
+							line-height: 16px;
+							padding: 0;
+							margin: 0;
+							width: 70%;
+							text-align: center;
+							left: 15%;
+							height: 20%;
+							vertical-align: middle;
+							font-family: 'Libre Baskerville', serif;
+							padding-top: 7.7%;
+							@media only screen and (min-width:641px) and (max-width:1024px) {
+								font-size: 1.6vw;
+								line-height: 1.6vw;								
+							}
+	        			}
 	        		}
 	        	}
 	        }
@@ -714,10 +809,19 @@ html {
 				    padding: 0.4rem 0 1.11818rem 0;
 				}				
 				
-				@media only screen and (min-width: 641px) and (max-width: 1024px)  {
-					label[for="departing-input"] {
-					    left: -13px;
-					    position: relative;
+				label[for="departingdate"] {
+					@media only screen and (min-width: 641px) and (max-width: 1024px)  {
+				    	left: -13px;
+				    	position: relative;
+					}
+					@media only screen and (max-width: 640px) {
+						font-size: 12px;
+					}
+				}
+
+				label[for="arrivingdate"] {
+					@media only screen and (max-width: 640px) {
+						font-size: 12px;
 					}
 				}
 
