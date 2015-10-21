@@ -293,14 +293,7 @@ html {
 	            	border-top: 3px solid #000;
 	            	.left-small {
 	            		border: none;
-		    			// background-image: url('/fashion/images/projects/international/china-brazil/global_sprite.png');
-						// background-repeat: no-repeat;
-						// background-size: 260px;
-						// background-position: 11px -58px;
-						// margin-top: 9px;
 						a {
-						    // width: 60px;
-						    // height: 45px;
 						    width: 32px;
 						    height: 32px;						    
 						    position: relative;
@@ -720,8 +713,10 @@ html {
 							    left: 0;
 							    text-align: left;
 							    font-size: 0;
+							    -webkit-animation: 30s slidy infinite;
 							    animation: 30s slidy infinite;
 								&:hover { 
+									-webkit-animation-play-state: paused; 
 									animation-play-state: paused; 
 								}							
 								img {
@@ -729,33 +724,43 @@ html {
 								    float: left;
 								}    
 							}
+							@-webkit-keyframes slidy {
+								0%   { opacity: 1; left: 0; }     
+								22%  { opacity: 1; left: 0; }   
+								23%  { opacity: 0; left: 0; }   
+								24%  { opacity: 0; left: -100%; }   
+								25%  { opacity: 1; left: -100%; }   
+								47%  { opacity: 1; left: -100%; }   
+								48%  { opacity: 0; left: -100%; }   
+								49%  { opacity: 0; left: -200%; }   
+								50%  { opacity: 1; left: -200%; }      
+								72%  { opacity: 1; left: -200%; }   
+								73%  { opacity: 0; left: -200%; }
+								74%  { opacity: 0; left: -300%; }   
+								75%  { opacity: 1; left: -300%; }      
+								97%  { opacity: 1; left: -300%; }   
+								98%  { opacity: 0; left: -300%; }   
+								99%  { opacity: 0; left: 0%; }   
+								100% { opacity: 1; left: 0%; }   
+							}
 							@keyframes slidy {
-								// 0% { left: 0%; }
-								// 20% { left: 0%; }
-								// 25% { left: -100%; }
-								// 45% { left: -100%; }
-								// 50% { left: -200%; }
-								// 70% { left: -200%; }
-								// 75% { left: -300%; }
-								// 95% { left: -300%; }
-								// 100% { left: -400%; }
-								0% { left: 0; opacity: 0; }     
-								2% { opacity: 1; }     
-								20% { left: 0; opacity: 1; }     
-								21% { opacity: 0; }     
-								24% { opacity: 0; }     
-								25% { left: -100%; opacity: 1; }       
-								45% { left: -100%; opacity: 1; }     
-								46% { opacity: 0; }     
-								48% { opacity: 0; }     
-								50% { left: -200%; opacity: 1; }     
-								70% { left: -200%; opacity: 1; }     
-								72% { opacity: 0; }     
-								74% { opacity: 0; }    
-								75% { left: -300%; opacity: 1; }   	
-								95% { left: -300%; opacity: 1; }   	
-								97%  { left: -300%; opacity: 0;}   	
-								100% { left: 0; opacity: 0; }								 
+								0%   { opacity: 1; left: 0; }     
+								22%  { opacity: 1; left: 0; }   
+								23%  { opacity: 0; left: 0; }   
+								24%  { opacity: 0; left: -100%; }   
+								25%  { opacity: 1; left: -100%; }   
+								47%  { opacity: 1; left: -100%; }   
+								48%  { opacity: 0; left: -100%; }   
+								49%  { opacity: 0; left: -200%; }   
+								50%  { opacity: 1; left: -200%; }      
+								72%  { opacity: 1; left: -200%; }   
+								73%  { opacity: 0; left: -200%; }
+								74%  { opacity: 0; left: -300%; }
+								75%  { opacity: 1; left: -300%; }    
+								97%  { opacity: 1; left: -300%; }
+								98%  { opacity: 0; left: -300%; }
+								99%  { opacity: 0; left: 0%; }
+								100% { opacity: 1; left: 0%; }
 							}								
 							@media #{$medium-up} {
 								display: block;
@@ -801,6 +806,7 @@ html {
 						    left: 50%;
 				    		h1 {
 				    			color: #fff;
+				    			font-family: 'Libre Baskerville', serif;
 				    			font-size: 43px;
 								line-height: 43px;
 								padding: 0;
@@ -814,12 +820,14 @@ html {
 				    		p {
 				    			color: #fff;
 				    			font-size: 13px;
-				    			line-height: 20px;
+				    			line-height: 24px;
+				    			width: 340px;
 				    		}
 				    		@media #{$medium-only} {
 								margin-left: 2vw;
 								left: 0;
 								h1 {
+									font-family: 'Libre Baskerville', serif;
 									font-size: 4.3vw;
 									line-height: 4.3vw;									
 								}
@@ -829,7 +837,8 @@ html {
 								}
 					    		p {
 					    			font-size: 1.3vw;
-					    			line-height: 2vw;
+					    			line-height: 2.2vw;
+					    			width: 33vw;
 					    		}								
 				    		}
 				    		@media #{$medium-up}{
@@ -845,6 +854,23 @@ html {
 	        			padding: 0;
 	        			position: relative;
 	        			cursor: pointer;
+				    	&.img-overlay:after {
+				    		content: "";
+				    		position: absolute;
+				    		top: 0;
+				    		left: 0;
+				    		width: 100%;
+				    		height: 100%;
+				    		display: block;
+				    		background-color: #000;
+				    		z-index: 1;
+				    		// cursor: pointer;
+				    		transition: opacity 0.5s ease;
+				    		opacity: 0;
+				    	}				    	
+				    	&.img-overlay:hover:after {
+				    		opacity: 0.6;
+				    	}	        			
 	        			div {
 							position: absolute;
 							top: 40%;
@@ -860,6 +886,7 @@ html {
 							vertical-align: middle;
 							font-family: 'Libre Baskerville', serif;
 							padding-top: 7.7%;
+							z-index: 2;
 							@media only screen and (min-width:641px) and (max-width:1024px) {
 								font-size: 1.6vw;
 								line-height: 1.6vw;								
@@ -873,6 +900,7 @@ html {
 							    vertical-align: middle;
 							    font-family: 'Libre Baskerville', serif;
 							    padding: 5%;
+							    padding-bottom: 15%;
 							    left: 0;
 							}							
 	        			}
@@ -890,6 +918,23 @@ html {
 					    li {
 						    padding: 0;
 						    position: relative;	
+					    	&.img-overlay:after {
+					    		content: "";
+					    		position: absolute;
+					    		top: 0;
+					    		left: 0;
+					    		width: 100%;
+					    		height: 100%;
+					    		display: block;
+					    		background-color: #000;
+					    		z-index: 1;
+					    		// cursor: pointer;
+					    		transition: opacity 0.5s ease;
+					    		opacity: 0;
+					    	}
+					    	&.img-overlay:hover:after {
+					    		opacity: 0.6;
+					    	}
 						    img {
 						    	width: 100%;
 						    	@media #{$small-only} {
@@ -936,6 +981,7 @@ html {
 						padding: 11.5px 0;
 						text-transform: uppercase;
 						font-family: Arial, Helvetica, Verdana, Sans-serif;
+						z-index: 2;
 						&:after {
 							content: "";
 							position: absolute;
@@ -947,6 +993,7 @@ html {
 							border-left: 15px solid transparent;
 							border-right: 15px solid transparent;
 							border-bottom: 15px solid #fff;
+							z-index: 2;
 						}
 						@media #{$small-only} {
 						    background: #000;

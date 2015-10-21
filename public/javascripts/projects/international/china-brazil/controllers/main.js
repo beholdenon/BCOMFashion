@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('CNBRapp')
-    .controller('MainController', function($scope, $location) {
+angular.module('controllers')
+    .controller('MainCtrl', function($scope, $location) {
     	$scope.goto = function(view) {
     		$location.url(view);
     	};

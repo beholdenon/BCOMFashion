@@ -18,11 +18,11 @@ angular.module('CNBRapp', [
 	    $routeProvider
 	        .when('/', {
                 templateUrl: 'components/home.html',
-                controller: 'homeCtrl'
+                controller: 'HomeCtrl'
 	        })	    
 	        .when('/our-heritage', {
                 templateUrl: 'components/our-heritage.html',
-                controller: 'ourHeritageCtrl'
+                controller: 'HeritageCtrl'
 	        })	    
 	        .when('/designer-destination', {
                 templateUrl: 'components/designer-destination.html',
