@@ -55,7 +55,6 @@ angular.module('controllers')
 		];
 
 		$scope.sendMail = function(cu) {
-console.log(cu);
 
             if ($scope.emailForm.$valid){
             	var link,

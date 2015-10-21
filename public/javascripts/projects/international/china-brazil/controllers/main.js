@@ -1,9 +1,8 @@
 'use strict';
 
 angular.module('CNBRapp')
-    .controller('MainController', function() {
-        var vm = this;
-        vm.title = 'MAIN PAGE';
-
-
+    .controller('MainController', function($scope, $location) {
+    	$scope.goto = function(view) {
+    		$location.url(view);
+    	};
     });

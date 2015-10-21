@@ -678,6 +678,9 @@ html {
         	}
 			
 	        .main-section{
+	        	a {
+	        		text-decoration: none;
+	        	}
 	        	.header {
 	        		position: relative;
 				    background-color: #000;
@@ -704,13 +707,43 @@ html {
 									display: block;
 								}
 							}	
-							&.img-desktop {
-								display: none;
-								@media #{$medium-up} {
-									display: block;
-								}
-							}	
 				    	}
+						.img-desktop {
+							display: none;
+							overflow: hidden;
+						    max-width: 962px;
+						    margin: 0 auto;							
+							figure {
+							    position: relative;
+							    width: 500%;
+							    margin: 0;
+							    left: 0;
+							    text-align: left;
+							    font-size: 0;
+							    animation: 30s slidy infinite;
+								&:hover { 
+									animation-play-state: paused; 
+								}							
+								img {
+								    width: 20%;
+								    float: left;
+								}    
+							}
+							@keyframes slidy {
+								0% { left: 0%; }
+								20% { left: 0%; }
+								25% { left: -100%; }
+								45% { left: -100%; }
+								50% { left: -200%; }
+								70% { left: -200%; }
+								75% { left: -300%; }
+								95% { left: -300%; }
+								100% { left: -400%; }
+							}								
+							@media #{$medium-up} {
+								display: block;
+							}
+						}	
 				    	.header-copy-mobile {
 				    		display: none;
 							@media #{$small-only} {
@@ -794,6 +827,7 @@ html {
 	        		li {
 	        			padding: 0;
 	        			position: relative;
+	        			cursor: pointer;
 	        			div {
 							position: absolute;
 							top: 40%;
@@ -855,9 +889,15 @@ html {
 					    font-size: 32px;
 					    margin: 0 auto;
 					    border-bottom: solid #000 2px;
-					    padding-bottom: 10px;
 					    margin-bottom: 60px;
 					    border-top: solid #000 2px;
+					    a {
+						    text-align: center;
+						    color: #000;
+						    font-family: 'Libre Baskerville', serif;
+						    font-size: 32px;
+						    padding: 15px 50px;					    	
+					    }
 						@media #{$small-only} {
 						    margin-right: 0;
 						    margin-left: 0;

@@ -10,11 +10,11 @@ angular.module('directives', [])
         return {
             templateUrl: 'components/contact-us.html',
         };
-    })
+    })    
     .directive('pickDate', function() {
         return {
             restrict: 'A',
-            // transclude: true,        	
+            // transclude: true,            
             scope: true,
             link: function(scope, el) {
                 var options1 = {

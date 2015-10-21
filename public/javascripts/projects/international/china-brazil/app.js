@@ -9,7 +9,8 @@ angular.module('CNBRapp', [
 		'services',
 		'ngRoute',
 		'ngMessages',
-		'ngAnimate'
+		'ngAnimate',
+		'angular-owl-carousel'
 	])
 	.config(['$interpolateProvider','$routeProvider', function($interpolateProvider, $routeProvider) {
         $interpolateProvider.startSymbol('//');
@@ -23,12 +24,21 @@ angular.module('CNBRapp', [
 	        .when('/our-heritage', {
                 templateUrl: 'components/our-heritage.html',
                 controller: 'ourHeritageCtrl'
+	        })	    
+	        .when('/designer-destination', {
+                templateUrl: 'components/designer-destination.html',
+                controller: 'designerDestinationCtrl'
+	        })	    
+	        .when('/visit-our-stores', {
+                templateUrl: 'components/visit-our-stores.html',
+                controller: 'visitOurStoresCtrl'
 	        })
 	        .otherwise({
 	            redirectTo: '/'
 	        });
 	}])
-	.run(function ($window, $document) {
+	.run(function () {
+	// .run(function ($window, $document) {
 		// $window.FastClick.attach($document.body);
 
 
