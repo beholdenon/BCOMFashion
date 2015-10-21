@@ -9,8 +9,7 @@ angular.module('CNBRapp', [
 		'services',
 		'ngRoute',
 		'ngMessages',
-		'ngAnimate',
-		'angular-owl-carousel'
+		'ngAnimate'
 	])
 	.config(['$interpolateProvider','$routeProvider', function($interpolateProvider, $routeProvider) {
         $interpolateProvider.startSymbol('//');

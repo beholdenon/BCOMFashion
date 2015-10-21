@@ -730,15 +730,32 @@ html {
 								}    
 							}
 							@keyframes slidy {
-								0% { left: 0%; }
-								20% { left: 0%; }
-								25% { left: -100%; }
-								45% { left: -100%; }
-								50% { left: -200%; }
-								70% { left: -200%; }
-								75% { left: -300%; }
-								95% { left: -300%; }
-								100% { left: -400%; }
+								// 0% { left: 0%; }
+								// 20% { left: 0%; }
+								// 25% { left: -100%; }
+								// 45% { left: -100%; }
+								// 50% { left: -200%; }
+								// 70% { left: -200%; }
+								// 75% { left: -300%; }
+								// 95% { left: -300%; }
+								// 100% { left: -400%; }
+								0% { left: 0; opacity: 0; }     
+								2% { opacity: 1; }     
+								20% { left: 0; opacity: 1; }     
+								21% { opacity: 0; }     
+								24% { opacity: 0; }     
+								25% { left: -100%; opacity: 1; }       
+								45% { left: -100%; opacity: 1; }     
+								46% { opacity: 0; }     
+								48% { opacity: 0; }     
+								50% { left: -200%; opacity: 1; }     
+								70% { left: -200%; opacity: 1; }     
+								72% { opacity: 0; }     
+								74% { opacity: 0; }    
+								75% { left: -300%; opacity: 1; }   	
+								95% { left: -300%; opacity: 1; }   	
+								97%  { left: -300%; opacity: 0;}   	
+								100% { left: 0; opacity: 0; }								 
 							}								
 							@media #{$medium-up} {
 								display: block;
