@@ -3,11 +3,7 @@
 (function(window, document, $) {
 
     $(document).ready(function() {
-	    $(document).foundation({
-	        offcanvas: {
-	            // close_on_click: true
-	        }
-	    });
+	    $(document).foundation();
 
         $('.left-off-canvas-toggle, .exit-off-canvas').on('click', function() {
             if ($('.off-canvas-wrap').hasClass('move-right')) {

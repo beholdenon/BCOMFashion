@@ -29,7 +29,7 @@ angular.module('CNBRapp', [
 	        });
 	}])
 	.run(function ($window, $document) {
-		$window.FastClick.attach($document.body);
+		// $window.FastClick.attach($document.body);
 
 
 	    //     // Handle resume

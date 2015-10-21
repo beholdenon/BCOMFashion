@@ -684,19 +684,67 @@ html {
 				    max-width: 100%;
 				    width: 100%;
 				    z-index: 0;	
-				   @media #{$large-up} {
+				    @media #{$large-up} {
 					    background-image: url("/fashion/images/projects/international/china-brazil/wel_bg.jpg");
 					    background-repeat: no-repeat;
 					    background-size: 2400px;
-				   }				    
+				    }	
+				    @media #{$small-only} {
+				    	background-color: #fff;
+				    }			    
 				    div {
 				    	position: relative;
 				    	img {
 							display: block;
 							margin-left: auto;
-							margin-right: auto;				    		
+							margin-right: auto;	
+							&.img-mobile {
+								display: none;
+								@media #{$small-only} {
+									display: block;
+								}
+							}	
+							&.img-desktop {
+								display: none;
+								@media #{$medium-up} {
+									display: block;
+								}
+							}	
+				    	}
+				    	.header-copy-mobile {
+				    		display: none;
+							@media #{$small-only} {
+								display: block;
+								background-color: #fff;
+					    		h1 {
+					    			color: #000;
+					    			font-family: 'Libre Baskerville', serif;
+									text-align: center;	
+									font-size: 12vw;
+									padding: 15vw 0 5vw 0;
+									line-height: 0;
+									margin: 0;				    			
+					    		}
+					    		h2 {
+									text-align: center;	
+	    							color: #000;
+									font-size: 6vw;
+									padding: 1vw 0 4vw 0;
+					    			width: 100%;
+					    		}
+					    		p {
+								    text-align: left;
+								    color: #000;
+									font-size: 5vw;
+									line-height: 7.5vw;
+								    margin-left: 5%;
+								    margin-top: 5%;
+					    		}								
+
+							}				    		
 				    	}
 				    	.header-copy-desktop {
+				    		display: none;
 						    position: absolute;
 						    top: 20%;
 						    margin-left: -440px;
@@ -718,33 +766,24 @@ html {
 				    			font-size: 13px;
 				    			line-height: 20px;
 				    		}
-				    		@media #{$large-up} {
-							    position: absolute;
-							    top: 20%;
-							    margin-left: -440px;
-							    left: 50%;
-					    		h1 {
-					    			color: #fff;
-					    			font-size: 43px;
-									line-height: 43px;
-									padding: 0;
-									margin: 0;				    			
-					    		}
-					    		h2 {
-	    							color: #f30c99;
-					    			font-size: 19px;
-					    			padding: 20px 0;
-					    		}
+				    		@media #{$medium-only} {
+								margin-left: 2vw;
+								left: 0;
+								h1 {
+									font-size: 4.3vw;
+									line-height: 4.3vw;									
+								}
+								h2 {
+									font-size: 1.8vw;
+									padding: 2vw 0;
+								}
 					    		p {
-					    			color: #fff;
-					    			font-size: 13px;
-					    			line-height: 20px;
-					    		}				    			
+					    			font-size: 1.3vw;
+					    			line-height: 2vw;
+					    		}								
 				    		}
-				    		@media #{$small-up}{
-				    			.hide-for-small-only {
-				    				display: block !important;
-				    			}
+				    		@media #{$medium-up}{
+			    				display: block;
 				    		}
 				    	}
 				    }
@@ -774,9 +813,110 @@ html {
 								font-size: 1.6vw;
 								line-height: 1.6vw;								
 							}
+							@media #{$small-only} {
+								position: relative;
+							    background: #fff;
+							    font-size: 24px;
+							    width: 100%;
+							    text-align: center;
+							    vertical-align: middle;
+							    font-family: 'Libre Baskerville', serif;
+							    padding: 5%;
+							    left: 0;
+							}							
 	        			}
 	        		}
 	        	}
+
+				.shop-online {
+					margin-top: 60px;
+					margin-bottom: 60px;
+					[class*="block-grid-"] {
+					    display: block;
+					    padding: 0;
+					    margin: 0;
+					    font-size: 0;
+					    li {
+						    padding: 0;
+						    position: relative;	
+						    img {
+						    	width: 100%;
+						    	@media #{$small-only} {
+						    		display: none;
+						    	}
+						    }				    	
+					    }
+					}					
+					h2 {
+						width: 369px;
+					    text-align: center;
+					    color: #000;
+					    font-family: 'Libre Baskerville', serif;
+					    font-size: 32px;
+					    margin: 0 auto;
+					    border-bottom: solid #000 2px;
+					    padding-bottom: 10px;
+					    margin-bottom: 60px;
+					    border-top: solid #000 2px;
+						@media #{$small-only} {
+						    margin-right: 0;
+						    margin-left: 0;
+						    width: 100%;
+							padding-left: 0;
+							padding-right: 0;
+						}					    
+					}
+					.shop-stores {
+						position: relative;
+						background: #fff;
+						font-size: 14px;
+						margin: 0;
+						width: 100%;
+						text-align: center;
+						left: 0;
+						vertical-align: middle;
+						font-weight: bold;
+						padding: 11.5px 0;
+						text-transform: uppercase;
+						font-family: Arial, Helvetica, Verdana, Sans-serif;
+						&:after {
+							content: "";
+							position: absolute;
+							bottom: 45px;
+							width: 0;
+							height: 0;
+							left: 50%;
+							margin-left: -15px;
+							border-left: 15px solid transparent;
+							border-right: 15px solid transparent;
+							border-bottom: 15px solid #fff;
+						}
+						@media #{$small-only} {
+						    background: #000;
+						    color: #fff;
+						    width: 90%;
+						    height: 60px;
+						    line-height: 60px;
+						    padding: 0;
+						    margin: 0 auto;	
+						    margin-bottom: 1px;
+							&:after {
+								border: none;
+							}						    
+						}
+						@media #{$medium-only} {
+							font-size: 1.4vw;
+							padding: 1.25vw 0;
+							&:after {
+								bottom: 4.4vw;
+								margin-left: -1.5vw;
+								border-left: 1.5vw solid transparent;
+								border-right: 1.5vw solid transparent;
+								border-bottom: 1.5vw solid #fff;
+							}						
+						}
+					}	
+				}        	
 	        }
 
 	        .contact-us {
