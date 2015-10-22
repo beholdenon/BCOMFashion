@@ -33,11 +33,11 @@ angular.module('CNBRapp', [
 	        })	    
 	        .when('/designer-destination', {
                 templateUrl: 'components/designer-destination.html',
-                controller: 'designerDestinationCtrl'
+                controller: 'DesignerCtrl'
 	        })	    
 	        .when('/visit-our-stores', {
                 templateUrl: 'components/visit-our-stores.html',
-                controller: 'visitOurStoresCtrl'
+                controller: 'StoresCtrl'
 	        })
 	        .otherwise({
 	            redirectTo: '/'

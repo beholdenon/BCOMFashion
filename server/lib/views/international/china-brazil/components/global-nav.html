@@ -7,9 +7,9 @@
                 <li><a href="#">中文</a></li>
             </ul>
         </li>
-        <li class="nav-section"><a ng-click="goto('/our-heritage', $event)" href="/our-heritage">OUR HERITAGE</a></li>
-        <li class="nav-section"><a ng-click="goto('/designer-destination', $event)" href="/designer-destination">DESIGNER DESTINATION</a></li>
-        <li class="nav-section"><a ng-click="goto('/visit-our-stores', $event)" href="/visit-our-stores">VISIT OUR STORES</a></li>
+        <li class="nav-section"><a ng-click="goto('/our-heritage')" href="/our-heritage">OUR HERITAGE</a></li>
+        <li class="nav-section"><a ng-click="goto('/designer-destination')" href="/designer-destination">DESIGNER DESTINATION</a></li>
+        <li class="nav-section"><a ng-click="goto('/visit-our-stores')" href="/visit-our-stores">VISIT OUR STORES</a></li>
         <li class="nav-section"><a href="http://www1.bloomingdales.com/">SHOP ONLINE</a></li>
         <li class="social">
             <ul>
@@ -28,7 +28,7 @@
         <a class="left-off-canvas-toggle menu-icon" href="#off-canvas-navigation"><span></span><span></span><span></span><span></span></a>
     </div>
     <div class="middle tab-bar-section">
-        <a class="title-area-logo" href="http://www.bloomingdales.com/"></a>
+        <a class="title-area-logo" href="" ng-click="goto('/')"></a>
     </div>
 
     <div class="sub-banner">INTERNATIONAL TOURISM</div>
@@ -38,23 +38,24 @@
     <nav class="top-bar desktop show-for-medium-up" data-topbar="">
         <ul class="title-area">
             <li class="title-area-logo">
-                <a href="http://www.bloomingdales.com/"></a>
+                <a href="" ng-click="goto('/')"></a>
                 <!-- <div class="cn-addon"></div> -->
             </li>
         </ul>
 
         <section class="top-bar-section">
             <ul class="left">
-                <li><a ng-click="goto('/our-heritage', $event)" href="/our-heritage">OUR HERITAGE</a></li>
-                <li><a ng-click="goto('/designer-destination', $event)" href="/designer-destination">DESIGNER DESTINATION</a></li>
-                <li><a ng-click="goto('/visit-our-stores', $event)" href="/visit-our-stores">VISIT OUR STORES</a></li>
+                <li><a ng-click="goto('/our-heritage')" href="/our-heritage">OUR HERITAGE</a></li>
+                <li><a ng-click="goto('/designer-destination')" href="/designer-destination">DESIGNER DESTINATION</a></li>
+                <li><a ng-click="goto('/visit-our-stores')" href="/visit-our-stores">VISIT OUR STORES</a></li>
                 <li><a href="http://www1.bloomingdales.com/">SHOP ONLINE</a></li>
             </ul>
             <ul class="right">
                 <li class="active"><a href="#">ENG</a></li>
                 <li><a href="#">POR</a></li>
                 <li><a href="#">中文</a></li>
-                <li><a id="top-bar-section-right-share" href="#">share</a></li>
+                <li><a href="#"><i class="fa fa-share-alt"></i></a></li>
+                <!-- <li><a id="top-bar-section-right-share" href="#">share</a></li> -->
             </ul>
         </section>
     </nav>
