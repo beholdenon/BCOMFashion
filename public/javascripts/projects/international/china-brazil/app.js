@@ -9,16 +9,23 @@ angular.module('CNBRapp', [
 		'services',
 		'ngRoute',
 		'ngMessages',
-		'ngAnimate'
+		'ngAnimate',
+		'LocalStorageModule'
 	])
-	.config(['$interpolateProvider','$routeProvider', function($interpolateProvider, $routeProvider) {
+	.config(['$interpolateProvider','$routeProvider', 'localStorageServiceProvider', function($interpolateProvider, $routeProvider, localStorageServiceProvider) {
+        //configuring the default Angular interpolation markup to solve conflict with Handlebars {{}}
         $interpolateProvider.startSymbol('//');
         $interpolateProvider.endSymbol('//');
+
+        //ref: https://github.com/grevory/angular-local-storage
+        localStorageServiceProvider
+        	.setPrefix('ChinaBrazil')
+        	.setStorageCookie(45, '/');
 
 	    $routeProvider
 	        .when('/', {
                 templateUrl: 'components/home.html',
-                controller: 'HomeCtrl'
+                controller: 'HomeCtrl',
 	        })	    
 	        .when('/our-heritage', {
                 templateUrl: 'components/our-heritage.html',
@@ -36,10 +43,33 @@ angular.module('CNBRapp', [
 	            redirectTo: '/'
 	        });
 	}])
-	.run(function () {
+	.run(function (localStorageService) {
 	// .run(function ($window, $document) {
 		// $window.FastClick.attach($document.body);
+ 
+ 		var vm = {};
 
+ 		try {
+ 			vm.lang = getItem('lang');
+ 		} catch (err) {
+ 			vm.lang = null;
+ 		}
+
+ 		if (vm.lang === null) {
+ 			showOverlay();
+ 		}
+
+		function getItem(key) {
+			return localStorageService.get(key);
+		}
+
+		function showOverlay() {
+			return console.log('show overlay');
+		}
+
+		// function submit(key, val) {
+		// 	return localStorageService.set(key, val);
+		// }
 
 	    //     // Handle resume
 	    //     $window.document.addEventListener('resume', function () {

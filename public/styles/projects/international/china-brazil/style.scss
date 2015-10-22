@@ -1027,6 +1027,144 @@ html {
 				}        	
 	        }
 
+	        .heritage {
+	        	padding-bottom: 80px;
+	        	.header {
+	        		position: relative;
+				    background-color: #000;
+				    max-width: 100%;
+				    width: 100%;
+				    z-index: 0;	
+				    @media #{$large-up} {
+					    background-image: url("/fashion/images/projects/international/china-brazil/Heritage_bg.jpg");
+					    background-repeat: no-repeat;
+					    background-size: 2400px;
+				    }	
+				    @media #{$small-only} {
+				    	background-color: #000;
+				    }	
+				    div {
+				    	img {
+						    overflow: hidden;
+						    max-width: 962px;
+						    margin: 0 auto;
+						    position: relative;
+						    display: block;				    		
+				    	}
+		        		.copy {
+							text-align: center;
+							position: absolute;
+							top: 28%;
+							width: 480px;
+							margin-left: -240px;
+							left: 50%;
+				    		h1 {
+				    			color: #fff;
+				    			font-family: 'Libre Baskerville', serif;
+				    			font-size: 30px;
+								line-height: 30px;
+								padding: 0;
+								margin: 0;				    			
+				    		}
+				    		h2 {
+    							color: #f30c99;
+								font-size: 30px;
+								padding-top: 10px;
+				    		}
+				    		@media #{$medium-only} {
+								h1 {
+									font-size: 3vw;
+									line-height: 3vw;									
+								}
+								h2 {
+									font-size: 3vw;
+									padding-top: 1vw;
+								}
+							}
+				    		@media #{$small-only} {
+								h1 {
+									font-size: 20px;
+									line-height: 20px;									
+								}
+								h2 {
+									font-size: 20px;
+									padding-top: 10px;
+								}
+							}												    		
+		        		}				    	
+				    }	        		
+	        	}
+
+	        	.content {
+	        		article {
+	        			&.black {
+	        				max-width: 100%;
+	        				background-color: #000;
+	        				h2 {
+	        					color: #fff;
+	        				}
+		        			ul {
+		        				li {
+		        					h3 {
+		        						color: #fff;
+		        					}
+		        					p {
+		        						color: #fff;
+		        					}
+		        				}
+		        			}	        				
+	        			}
+	        			h2 {
+	        				text-align: center;
+	        				font-size: 30px;
+	        				line-height: 50px;
+	        			}
+	        			ul {
+	        				li {
+	        					padding: 0;
+	        					&.single-block {
+	        						img {
+										display: block;
+										margin: 0 auto;
+	        						}
+	        						h3, p {
+										width: 651px;
+										margin: 0 auto;	
+							    		@media #{$small-only} {
+							    			width: 100%;
+										}	 										        							
+	        						}
+	        					}
+	        					h3 {
+	        						padding-top: 10px;
+								    padding-bottom: 0;
+								    margin-bottom: 0;	        						
+	        						text-transform: uppercase;
+						    		@media #{$medium-only} {
+						    			font-size: 2.1vw;
+						    			padding-top: 1vw;
+									}	
+						    		@media #{$small-only} {
+						    			padding-left: 2%;
+									}	        						
+	        					}
+	        					p {
+	        						padding-right: 20px;
+	        						padding-bottom: 20px;
+	        						&.first {
+									    padding-bottom: 0;
+									    margin-bottom: -10px;	        							
+	        						}	
+						    		@media #{$small-only} {
+						    			padding-left: 2%;
+									}
+	        					}
+	        				}
+	        			}
+	        		}
+	        	}
+	        }
+
 	        .contact-us {
 	        	margin-bottom: 50px;
 
