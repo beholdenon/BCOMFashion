@@ -53,7 +53,7 @@ angular.module('CNBRapp', [
  			globalLang = localStorageService.get('lang');
  			appGlobals.setAttr('lang', globalLang);
 
- 			if (globalLang === null) localStorageService.set('lang', 'EN');
+ 			if (globalLang === null) localStorageService.set('lang', 'ENG');
  		} catch (err) {
  			showOverlay();
  		}

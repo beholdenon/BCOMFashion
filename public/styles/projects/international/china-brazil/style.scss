@@ -1308,19 +1308,12 @@ html {
 								img {
 									display: block;
 									margin: 0 auto;
-									&.men-padding {
+									&.padding {
 									    width: 70%;
 									    margin-top: 15%;
 										@media #{$small-only} {
 						    				margin-bottom: 13%;
 						    			}									    	
-									}	
-									&.acc-padding {
-										width: 90%;
-										margin-top: 5%;	
-										@media #{$small-only} {
-						    				margin-bottom: 13%;
-						    			}	
 									}								
 								}								   					
 								.slider {
