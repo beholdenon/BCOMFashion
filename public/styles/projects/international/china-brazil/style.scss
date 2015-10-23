@@ -301,7 +301,6 @@ html {
 						    width: 32px;
 						    height: 32px;						    
 						    position: relative;
-						    // margin: 50px auto;
 						    margin: 11px auto;
 						    -webkit-transform: rotate(0deg);
 						    -moz-transform: rotate(0deg);
@@ -464,13 +463,17 @@ html {
 				            		background-color: #000;
 				            		color: #fff;
 			            		}
+								&:hover a, &.active a{
+									background-color: #fff;
+									color: #000;
+								}			            		
 			            	}
 							&:hover a, &.active a{
-								color: #f30c99;
+								color: #000;
 							}
 				            a {
 								background-color: #fff;
-								color: #000;
+								color: #999;
 								text-decoration: none;
 								font-weight: bold;
 								font-size: 10px;
@@ -489,15 +492,6 @@ html {
 								.fa-share-alt:before {
 								    content: "\f1e0";
 								}								
-								// &#top-bar-section-right-share {
-								// 	color: transparent;
-								// 	text-indent: -9999px;
-					   //              background-image: url('/fashion/images/projects/international/china-brazil/global_sprite.png');
-								// 	background-repeat: no-repeat;
-								// 	background-size: 300px;
-								// 	background-position: 10px -47px;
-								// 	background-color: #000;															
-								// }
 				            }
 				        }
 				    }			    		    
@@ -731,8 +725,8 @@ html {
 							    left: 0;
 							    text-align: left;
 							    font-size: 0;
-							    -webkit-animation: 20s slidy infinite;
-							    animation: 20s slidy infinite;
+							    -webkit-animation: 15s slidy infinite;
+							    animation: 15s slidy infinite;
 								&:hover { 
 									-webkit-animation-play-state: paused; 
 									animation-play-state: paused; 
@@ -953,6 +947,9 @@ html {
 					    	}
 					    	&.img-overlay:hover:after {
 					    		opacity: 0.6;
+					    		@media #{$small-only} {
+					    			opacity: 0;
+					    		}
 					    	}
 						    img {
 						    	width: 100%;
@@ -1053,6 +1050,7 @@ html {
 				    @media #{$large-up} {
 					    background-image: url("/fashion/images/projects/international/china-brazil/Heritage_bg.jpg");
 					    background-repeat: no-repeat;
+					    background-position: center;
 					    background-size: 2400px;
 				    }	
 				    @media #{$small-only} {
@@ -1084,9 +1082,10 @@ html {
 				    		h2 {
     							color: #f30c99;
 								font-size: 30px;
-								padding-top: 10px;
+								padding-top: 8px;
 				    		}
 				    		@media #{$medium-only} {
+				    			top: 33%;
 								h1 {
 									font-size: 3vw;
 									line-height: 3vw;									
@@ -1130,6 +1129,7 @@ html {
 		        			}	        				
 	        			}
 	        			h2 {
+	        				font-family: 'Libre Baskerville', serif;
 	        				text-align: center;
 	        				font-size: 30px;
 	        				line-height: 50px;
@@ -1160,7 +1160,7 @@ html {
 						    			padding-top: 1vw;
 									}	
 						    		@media #{$small-only} {
-						    			padding-left: 2%;
+						    			padding-left: 5%;
 									}	        						
 	        					}
 	        					p {
@@ -1171,7 +1171,7 @@ html {
 									    margin-bottom: -10px;	        							
 	        						}	
 						    		@media #{$small-only} {
-						    			padding-left: 2%;
+						    			padding-left: 5%;
 									}
 	        					}
 	        				}
@@ -1192,6 +1192,7 @@ html {
 				    @media #{$large-up} {
 					    background-image: url("/fashion/images/projects/international/china-brazil/DesignerDestination_header.jpg");
 					    background-repeat: no-repeat;
+					    background-position: center;
 					    background-size: 2400px;
 					    background-color: #606060;
 				    }	
@@ -1252,48 +1253,55 @@ html {
 	        	.content {
 	        		article {
 	        			ul {
+	        				margin: 0;
 	        				@media #{$small-only} {
 							    display: block;
 							    padding: 0;
 							    margin: 0;
 							}
 	        				li {
+								&.first-child{
+									width: 448px;
+								}
+								&.second-child{
+									width: 514px;
+								}								
 	        					padding: 0;
 								&.copy-li {
-									padding: 5% 0 5% 5%;
+									padding: 0 0 5% 5%;
 						    		@media #{$small-only} {
 						    			padding-left: 0;
 									}									
 									p {
-										font-size: 13px;
-										line-height: 24px;
-										padding-bottom: 30px;
-										padding-right: 0;	
+									    font-size: 15px;
+									    line-height: 25px;
+									    margin: 0;
+									    padding: 34px 20px 34px 0;
 							    		@media #{$small-only} {
-						    				padding-left: 2%;
-						    				padding-right: 2%;
+						    				padding-left: 5%;
+						    				padding-right: 5%;
 						    				padding-bottom: 0;
 										}																				
 									}
+									&.second {
+										p {
+											padding: 21px 20px 21px 0;
+										}
+									}
 								}	     
-								.helper {
-								    display: inline-block;
-								    height: 100%;
-								    vertical-align: middle;
-								}
 								img {
 									display: block;
 									margin: 0 auto;
 									&.men-padding {
 									    width: 70%;
-									    margin-top: 7.5%;
+									    margin-top: 72px;
 										@media #{$small-only} {
 						    				margin-bottom: 13%;
 						    			}									    	
 									}	
 									&.acc-padding {
-										width: 70%;
-										margin-top: 4.5%;	
+										width: 308px;
+										margin-top: 69px;	
 										@media #{$small-only} {
 						    				margin-bottom: 13%;
 						    			}	
@@ -1312,8 +1320,8 @@ html {
 									    left: 0;
 									    text-align: left;
 									    font-size: 0;
-									    -webkit-animation: 20s slidy infinite;
-									    animation: 20s slidy infinite;
+									    -webkit-animation: 15s slidy infinite;
+									    animation: 15s slidy infinite;
 										&:hover { 
 											-webkit-animation-play-state: paused; 
 											animation-play-state: paused; 

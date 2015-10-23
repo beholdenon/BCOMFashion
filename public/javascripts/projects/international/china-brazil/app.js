@@ -10,6 +10,7 @@ angular.module('CNBRapp', [
 		'ngRoute',
 		'ngMessages',
 		'ngAnimate',
+		'CacheService',
 		'LocalStorageModule'
 	])
 	.config(['$interpolateProvider','$routeProvider', 'localStorageServiceProvider', function($interpolateProvider, $routeProvider, localStorageServiceProvider) {
@@ -43,108 +44,52 @@ angular.module('CNBRapp', [
 	            redirectTo: '/'
 	        });
 	}])
-	.run(function (localStorageService) {
-	// .run(function ($window, $document) {
-		// $window.FastClick.attach($document.body);
- 
- 		var vm = {};
-
+	.run(function ($window, $document, localStorageService, appGlobals) {
+		//attach fastclick to solve the 300ms touch delay 
+		FastClick.attach(document.body); // jshint ignore:line
+ 		
+ 		var globalLang;
  		try {
- 			vm.lang = getItem('lang');
- 		} catch (err) {
- 			vm.lang = null;
- 		}
+ 			globalLang = localStorageService.get('lang');
+ 			appGlobals.setAttr('lang', globalLang);
 
- 		if (vm.lang === null) {
+ 			if (globalLang === null) localStorageService.set('lang', 'EN');
+ 		} catch (err) {
  			showOverlay();
  		}
-
-		function getItem(key) {
-			return localStorageService.get(key);
-		}
 
 		function showOverlay() {
 			return console.log('show overlay');
 		}
 
-		// function submit(key, val) {
-		// 	return localStorageService.set(key, val);
-		// }
 
-	    //     // Handle resume
-	    //     $window.document.addEventListener('resume', function () {
-	    //       Session.checkVersion().then(function (version) {
-	    //         popUp.show({
-	    //           template: 'standard-modal',
-	    //           title: 'Version ' + version + ' Now Available',
-	    //           body: 'This version of the application is no longer supported. Please update to the latest version to continue.',
-	    //           buttonTitle: 'Update',
-	    //           buttonAction: function () {
-	    //             if ($window.deviceIsIOS) {
-	    //               $window.open(config.market.ios, '_system');
-	    //             } else if ($window.deviceIsAndroid) {
-	    //               $window.open(config.market.android, '_system');
-	    //             }
-	    //           },
-	    //           always: true
-	    //         });
-	    //       });
-	    //       console.log('Device resume!');
 
-	    //       $rootScope.$broadcast('vm.resume');
+// -------------------------------------------------------------------------------------- //
+// ----------------------------          jQuery       ----------------------------------- //
+// -------------------------------------------------------------------------------------- //
+	    $(document).foundation();
 
-	    //   }
+        $('.left-off-canvas-toggle, .exit-off-canvas').on('click', function() {
+            if ($('.off-canvas-wrap').hasClass('move-right')) {
+                $('.off-canvas-wrap').css('height', '100%');
+                $('body').css({
+                	'height': '100%',
+                	'overflow': 'initial'
+                }); 
+                $('.left-off-canvas-toggle').removeClass('open');               
+            } else {
+            	$('.left-off-canvas-toggle').addClass('open');
+                var height = document.body.clientHeight;
+                $('.off-canvas-wrap').css('height', height);
+                $('body').css({
+                	'height': height,
+                	'overflow': 'hidden'
+                });
+                $('.arriving-input, .departing-input').hide();
+            }
+        });
 
-	    //   Session.checkVersion().then(function (version) {
-	    //     popUp.show({
-	    //       template: 'standard-modal',
-	    //       title: 'Version ' + version + ' Now Available',
-	    //       body: 'This version of the application is no longer supported. Please update to the latest version to continue.',
-	    //       buttonTitle: 'Update',
-	    //       buttonAction: function () {
-	    //         if ($window.deviceIsIOS) {
-	    //           $window.open(config.market.ios, '_system');
-	    //         } else if ($window.deviceIsAndroid) {
-	    //           $window.open(config.market.android, '_system');
-	    //         }
-	    //       },
-	    //       always: true
-	    //     });
-	    //   });
-	    // });
-
-	    // // listen change start events
-	    // $rootScope.$on('$routeChangeStart', function (event, next, current) {
-	    //   $rootScope.viewDirection = 'rtl';
-	    //   // console.log(arguments);
-	    //   if (current && next && (current.depth > next.depth)) {
-	    //     $rootScope.viewDirection = 'ltr';
-	    //   }
-	    //   // back
-	    //   $rootScope.back = function () {
-	    //     $window.history.back();
-	    //   };
-	    //   // location redirect for templates
-	    //   $rootScope.goTo = function (path) {
-	    //     $location.path(path);
-	    //   };
-	    // });
-
-	    // $rootScope.$on('$locationChangeStart', function () {
-	    //   cordovaConnection.checkConnection().then(function () {
-	    //     popUp.enable();
-	    //   }, Auth.noConnectionHandler);
-
-	    //   if ($window.deviceIsIOS) {
-	    //     $window.document.body.style.height = screen.availHeight + 'px';
-	    //     $window.document.body.style.marginTop = "24px";
-	    //   } else if ($window.deviceIsAndroid) {
-	    //     $window.document.body.style.height = window.innerHeight + 'px';
-	    //   }
-	    // });
-
-	    // $rootScope.$on('vm.logout', function () {
-	    //   User.cleanMe();
-	    //   $rootScope.globalNotificationCount = 0;
-	    // });
+	    $(window).on('orientationchange resize', function() {
+	        if ($('.off-canvas-wrap').hasClass('move-right')) $('.left-off-canvas-toggle').click();
+	    });      			
   }); 
