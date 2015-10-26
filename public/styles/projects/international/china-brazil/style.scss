@@ -35,6 +35,11 @@ $large-up: "#{$screen} and (min-width:#{$large-lower-bound})";
 }
 
 html {
+	h1, h2, h3, h4, h5, h6 {
+	    font-family: Arial,Helvetica,Verdana,Sans-serif;
+	    font-style: normal;
+	    text-rendering: optimizeLegibility;
+	}
 	&.noscroll {
 	    overflow-y: scroll !important;
 	    overflow: hidden !important;
@@ -62,6 +67,9 @@ html {
 		box-sizing: border-box;
 	    #bl_main_container {
 	    	width: 100%;
+	    	[ng-view] {
+	    		z-index: 1;
+	    	}
 	    	.move-right > .inner-wrap {
 			    -webkit-transform: translate3d(500px, 0, 0);
 			    -webkit-transform: translate3d(80vmin, 0, 0);
@@ -113,10 +121,10 @@ html {
 			    					margin: 0 27px;
 			    					margin: 0 8.1vmin;
 			    					&:active a, &:hover a, &.active a {
-										color: #f30c99;
+										color: #000;
 			    					}
 			    					a {
-			    						color: #000;
+			    						color: #999;
 			    						font-size: 16px;
 			    						font-size: 4.3vmin;
 			    						text-decoration: none;
@@ -126,7 +134,7 @@ html {
 										padding: 0;
 										&:active, &:hover {
 											background-color: transparent !important;
-											color: #f30c99;
+											color: #000;
 										}									
 			    					}
 			    				}
@@ -140,6 +148,7 @@ html {
 			    			border-bottom: solid 1px #cdccd2; 
 			    			a {
 			    				text-decoration: none;
+			    				text-transform: uppercase;
 			    				font-size: 16px;
 			    				font-size: 4.3vmin;
 			    				border: none;
@@ -416,6 +425,7 @@ html {
 						}
 		            }
 		            .cn-addon {
+		            	position: absolute;
 					    background-image: url("/fashion/images/projects/international/china-brazil/global_sprite.png");
 					    background-repeat: no-repeat;
 					    width: 214px;
@@ -423,7 +433,8 @@ html {
 					    background-size: 214px;
 					    background-position: 25px -76px;
 					    margin-left: 2px;
-					    margin-top: 16px;	            	
+					    margin-top: 16px;	   
+					    z-index: 9;         	
 		            }
 	            }
 	            .top-bar-section {
@@ -438,16 +449,27 @@ html {
 				            	background-color: #fff;
 				            	color: #000;
 				            	text-decoration: none;
+				            	text-transform: uppercase;
 				            	font-weight: bold;
 								font-size: 12px;
 								line-height: 70px;
-								padding: 0;	            	
+								padding: 0;	 
+								font-family: Arial,Helvetica,Verdana,Sans-serif;           	
 								&:hover, &:active, &.active {
 									border-top: 8px solid #000;
 									line-height: 54px;
 								}
 				            }
 				        }
+		            	&.nav-cn {
+		            		margin-left: 6vw;
+		            		li {
+		            			padding: 0 26px;
+		            			a {
+		            				font-weight: normal;
+		            			}
+		            		}
+		            	}
 				    }	
 	            	ul.right {
 	            		margin-top: 24px;
@@ -473,6 +495,7 @@ html {
 							}
 				            a {
 								background-color: #fff;
+								font-family: Arial,Helvetica,Verdana,Sans-serif;
 								color: #999;
 								text-decoration: none;
 								font-weight: bold;
@@ -533,7 +556,7 @@ html {
 							text-align: center;	
 							margin-bottom: 40px;		    		
 				    	}
-				    	@media only screen and (min-width: 450px) {
+				    	@media #{$small-only} {
 				    		h2 {
 				    			font-size: 26px;
 				    		}
@@ -558,7 +581,7 @@ html {
 									color: #f30c99;
 								}
 				    		}
-					    	@media only screen and (min-width: 450px) {
+					    	@media #{$small-only} {
 					    		li {
 					    			font-size: 16px;
 					    		}
@@ -582,7 +605,7 @@ html {
 							text-align: center;	
 							margin-bottom: 40px;		    		
 				    	}
-				    	@media only screen and (min-width: 450px) {
+				    	@media #{$small-only} {
 				    		h2 {
 				    			font-size: 24px;
 				    		}
@@ -683,6 +706,7 @@ html {
         	}
 			
 	        .main-section{
+	        	z-index: 1;
 	        	a {
 	        		text-decoration: none;
 	        	}
@@ -695,6 +719,7 @@ html {
 				    @media #{$large-up} {
 					    background-image: url("/fashion/images/projects/international/china-brazil/wel_bg.jpg");
 					    background-repeat: no-repeat;
+					    background-position: center;
 					    background-size: 2400px;
 				    }	
 				    @media #{$small-only} {
@@ -706,14 +731,8 @@ html {
 							display: block;
 							margin-left: auto;
 							margin-right: auto;	
-							&.img-mobile {
-								display: none;
-								@media #{$small-only} {
-									display: block;
-								}
-							}	
 				    	}
-						.img-desktop {
+						.img-desktop, .img-mobile {
 							display: none;
 							overflow: hidden;
 						    max-width: 962px;
@@ -778,6 +797,13 @@ html {
 								display: block;
 							}
 						}	
+						.img-mobile {
+							display: none;
+							background-color: #000;
+							@media #{$small-only} {
+								display: block;
+							}
+						}						
 				    	.header-copy-mobile {
 				    		display: none;
 							@media #{$small-only} {
@@ -798,8 +824,15 @@ html {
 									font-size: 6vw;
 									padding: 1vw 0 4vw 0;
 					    			width: 100%;
+					    			pre {
+					    				font-family: Arial,Helvetica,Verdana,Sans-serif;
+		    							color: #000;
+										font-size: 6vw;
+						    			width: 100%;					    				
+					    			}
 					    		}
-					    		p {
+					    		div pre {
+					    			font-family: Arial,Helvetica,Verdana,Sans-serif;
 								    text-align: left;
 								    color: #000;
 									font-size: 5vw;
@@ -829,6 +862,13 @@ html {
 				    			font-size: 19px;
 				    			padding: 20px 0;
 				    			letter-spacing: 1px;
+				    			pre {
+									font-family: Arial,Helvetica,Verdana,Sans-serif;
+									font-style: normal;
+									text-rendering: optimizeLegibility;
+									color: #f30c99;
+									letter-spacing: 1px;				    				
+				    			}
 				    		}
 				    		p {
 				    			color: #fff;
@@ -1080,8 +1120,8 @@ html {
 								margin: 0;				    			
 				    		}
 				    		h2 {
-    							color: #f30c99;
-								font-size: 30px;
+    							color: #fe0aab;
+								font-size: 27px;
 								padding-top: 8px;
 				    		}
 				    		@media #{$medium-only} {
@@ -1221,8 +1261,8 @@ html {
 								margin: 0;				    			
 				    		}
 				    		h2 {
-    							color: #f30c99;
-								font-size: 30px;
+    							color: #fe0aab;
+								font-size: 27px;
 								padding-top: 10px;
 				    		}
 				    		@media #{$medium-only} {
@@ -1302,6 +1342,9 @@ html {
 											@media #{$medium-only} {
 												padding: 2.2vw 2vw 2.2vw 0;
 											}
+											@media #{$small-only} {
+												padding: 5%
+											}											
 										}
 									}
 								}	     
@@ -1394,6 +1437,12 @@ html {
 
 	        .contact-us {
 	        	margin-bottom: 50px;
+	        	.columns {
+	        		@media #{$small-only} {
+						padding-left: 0;
+						padding-right: 0;	        			
+	        		}
+	        	}
 
 				@media only screen{.column,.columns{position:relative;padding-left:.45455em;padding-right:.45455em;float:left}.small-cnbr-1{position:relative;width:4.16667%}.small-cnbr-2{position:relative;width:8.33333%}.small-cnbr-3{position:relative;width:12.5%}.small-cnbr-4{position:relative;width:16.66667%}.small-cnbr-5{position:relative;width:20.83333%}.small-cnbr-6{position:relative;width:25%}.small-cnbr-7{position:relative;width:29.16667%}.small-cnbr-8{position:relative;width:33.33333%}.small-cnbr-9{position:relative;width:37.5%}.small-cnbr-10{position:relative;width:41.66667%}.small-cnbr-11{position:relative;width:45.83333%}.small-cnbr-12{position:relative;width:50%}.small-cnbr-13{position:relative;width:54.16667%}.small-cnbr-14{position:relative;width:58.33333%}.small-cnbr-15{position:relative;width:62.5%}.small-cnbr-16{position:relative;width:66.66667%}.small-cnbr-17{position:relative;width:70.83333%}.small-cnbr-18{position:relative;width:75%}.small-cnbr-19{position:relative;width:79.16667%}.small-cnbr-20{position:relative;width:83.33333%}.small-cnbr-21{position:relative;width:87.5%}.small-cnbr-22{position:relative;width:91.66667%}.small-cnbr-23{position:relative;width:95.83333%}.small-cnbr-24{position:relative;width:100%}}
 				@media only screen and (min-width:641px){.medium-cnbr-push-0{position:relative;left:0;right:auto}.medium-cnbr-pull-0{position:relative;right:0;left:auto}.medium-cnbr-push-1{position:relative;left:8.33333%;right:auto}.medium-cnbr-pull-1{position:relative;right:8.33333%;left:auto}.medium-cnbr-push-2{position:relative;left:16.66667%;right:auto}.medium-cnbr-pull-2{position:relative;right:16.66667%;left:auto}.medium-cnbr-push-3{position:relative;left:25%;right:auto}.medium-cnbr-pull-3{position:relative;right:25%;left:auto}.medium-cnbr-push-4{position:relative;left:33.33333%;right:auto}.medium-cnbr-pull-4{position:relative;right:33.33333%;left:auto}.medium-cnbr-push-5{position:relative;left:41.66667%;right:auto}.medium-cnbr-pull-5{position:relative;right:41.66667%;left:auto}.medium-cnbr-push-6{position:relative;left:50%;right:auto}.medium-cnbr-pull-6{position:relative;right:50%;left:auto}.medium-cnbr-push-7{position:relative;left:58.33333%;right:auto}.medium-cnbr-pull-7{position:relative;right:58.33333%;left:auto}.medium-cnbr-push-8{position:relative;left:66.66667%;right:auto}.medium-cnbr-pull-8{position:relative;right:66.66667%;left:auto}.medium-cnbr-push-9{position:relative;left:75%;right:auto}.medium-cnbr-pull-9{position:relative;right:75%;left:auto}.medium-cnbr-push-10{position:relative;left:83.33333%;right:auto}.medium-cnbr-pull-10{position:relative;right:83.33333%;left:auto}.medium-cnbr-push-11{position:relative;left:91.66667%;right:auto}.medium-cnbr-pull-11{position:relative;right:91.66667%;left:auto}.column,.columns{position:relative;padding-left:0.9375rem;padding-right:0.9375rem;float:left}.medium-cnbr-1{width:8.33333%}.medium-cnbr-2{width:16.66667%}.medium-cnbr-3{width:25%}.medium-cnbr-4{width:33.33333%}.medium-cnbr-5{width:41.66667%}.medium-cnbr-6{width:50%}.medium-cnbr-7{width:58.33333%}.medium-cnbr-8{width:66.66667%}.medium-cnbr-9{width:75%}.medium-cnbr-10{width:83.33333%}.medium-cnbr-11{width:91.66667%}.medium-cnbr-12{width:100%}.medium-cnbr-offset-0{margin-left:0 !important}.medium-cnbr-offset-1{margin-left:8.33333% !important}.medium-cnbr-offset-2{margin-left:16.66667% !important}.medium-cnbr-offset-3{margin-left:25% !important}.medium-cnbr-offset-4{margin-left:33.33333% !important}.medium-cnbr-offset-5{margin-left:41.66667% !important}.medium-cnbr-offset-6{margin-left:50% !important}.medium-cnbr-offset-7{margin-left:58.33333% !important}.medium-cnbr-offset-8{margin-left:66.66667% !important}.medium-cnbr-offset-9{margin-left:75% !important}.medium-cnbr-offset-10{margin-left:83.33333% !important}.medium-cnbr-offset-11{margin-left:91.66667% !important}.medium-cnbr-reset-order{float:left;left:auto;margin-left:0;margin-right:0;right:auto}.column.medium-cnbr-centered,.columns.medium-cnbr-centered{margin-left:auto;margin-right:auto;float:none}.column.medium-cnbr-uncentered,.columns.medium-cnbr-uncentered{float:left;margin-left:0;margin-right:0}.column.medium-cnbr-centered:last-child,.columns.medium-cnbr-centered:last-child{float:none}.column.medium-cnbr-uncentered:last-child,.columns.medium-cnbr-uncentered:last-child{float:left}.column.medium-cnbr-uncentered.opposite,.columns.medium-cnbr-uncentered.opposite{float:right}.row.medium-cnbr-collapse>.column,.row.medium-cnbr-collapse>.columns{padding-left:0;padding-right:0}.row.medium-cnbr-collapse .row{margin-left:0;margin-right:0}.row.medium-cnbr-uncollapse>.column,.row.medium-cnbr-uncollapse>.columns{padding-left:0.9375rem;padding-right:0.9375rem;float:left}.push-0{position:relative;left:0;right:auto}.pull-0{position:relative;right:0;left:auto}.push-1{position:relative;left:8.33333%;right:auto}.pull-1{position:relative;right:8.33333%;left:auto}.push-2{position:relative;left:16.66667%;right:auto}.pull-2{position:relative;right:16.66667%;left:auto}.push-3{position:relative;left:25%;right:auto}.pull-3{position:relative;right:25%;left:auto}.push-4{position:relative;left:33.33333%;right:auto}.pull-4{position:relative;right:33.33333%;left:auto}.push-5{position:relative;left:41.66667%;right:auto}.pull-5{position:relative;right:41.66667%;left:auto}.push-6{position:relative;left:50%;right:auto}.pull-6{position:relative;right:50%;left:auto}.push-7{position:relative;left:58.33333%;right:auto}.pull-7{position:relative;right:58.33333%;left:auto}.push-8{position:relative;left:66.66667%;right:auto}.pull-8{position:relative;right:66.66667%;left:auto}.push-9{position:relative;left:75%;right:auto}.pull-9{position:relative;right:75%;left:auto}.push-10{position:relative;left:83.33333%;right:auto}.pull-10{position:relative;right:83.33333%;left:auto}.push-11{position:relative;left:91.66667%;right:auto}.pull-11{position:relative;right:91.66667%;left:auto}}
@@ -1472,14 +1521,14 @@ html {
 				    margin-bottom: 0;	    
 				}
 
-				@media only screen and (max-width: 640px) {
+        		@media #{$small-only} {
 					.button {
 						width: 100%;
 						margin: 0;
 					}
 				}
 
-				@media only screen and (min-width: 641px) {
+				@media #{$medium-up} {
 					.button {
 						margin-left: 0.92727rem;
 					}
@@ -1505,16 +1554,14 @@ html {
 				    border-bottom: solid #000 7px;
 				    padding-bottom: 10px;
 				    margin-bottom: 48px;
-	        	}
-	    		@media only screen and (max-width: 40em) {
-	    			h2 {
+				    @media #{$small-only} {
 						border-top: 1px solid #000;
 						border-bottom: 1px solid #000;
 						margin-bottom: 20px;
 						width: 100%;
 						padding: 10px 0;
-					}
-				}
+				    }
+	        	}
 	        	.message, .form-sent-successfully {
 	        		h3 {
 	        			text-transform: uppercase;
@@ -1536,9 +1583,19 @@ html {
 					height: 100%;
 	        	}
 
+	        	.message {
+	        		@media #{$small-only} {
+						padding-left: 5%;
+						padding-right: 5%;	
+					}
+				}
+
 	        	.form {
-	        		border-left: 1px solid #000;	
-	        		@media only screen and (max-width: 40em) {
+	        		border-left: 1px solid #000;
+	        		@media #{$small-only} {
+	        			border: none;
+						padding-left: 5%;
+						padding-right: 5%;	        			
 		        		.small-cnbr-24 {
 		        			padding-right: 0;
 		        			padding-left: 0;
@@ -1562,11 +1619,6 @@ html {
 	        		.small-cnbr-15.medium-cnbr-8.large-cnbr-14.columns.left,
 	        		.small-cnbr-15.medium-cnbr-8.large-cnbr-15.columns.right {
 	        			padding-right: 0;
-	        		}
-	        	}
-	        	@media only screen and (max-width: 40em) { 
-	        		.form {
-	        			border: none;
 	        		}
 	        	}
 	        }
@@ -1598,7 +1650,7 @@ html {
 	        	}
 	        }
 	    }
-	    @media only screen and (max-width: 40em) {
+	    @media #{$small-only} {
 	    	#bl_main_container {
 				width: 100%;    		
 				min-width: 100%;    		

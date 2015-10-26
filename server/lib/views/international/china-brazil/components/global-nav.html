@@ -2,15 +2,15 @@
     <ul class="off-canvas-list">
         <li class="lang">
             <ul>
-                <li class="active"><a href="#">ENG</a></li>
-                <li><a href="#">POR</a></li>
-                <li><a href="#">中文</a></li>
+                <li class="lang-opt" ng:class="{true:'active', false:''}[lang === 'ENG']"><a href="#" data-lang="ENG" ng-click="langOnClick($event)">ENG</a></li>
+                <li class="lang-opt" ng:class="{true:'active', false:''}[lang === 'POR']"><a href="#" data-lang="POR" ng-click="langOnClick($event)">POR</a></li>
+                <li class="lang-opt" ng:class="{true:'active', false:''}[lang === 'CN']"><a href="#" data-lang="CN" ng-click="langOnClick($event)">中文</a></li>
             </ul>
         </li>
-        <li class="nav-section"><a ng-click="goto('/our-heritage')" href="/our-heritage">OUR HERITAGE</a></li>
-        <li class="nav-section"><a ng-click="goto('/designer-destination')" href="/designer-destination">DESIGNER DESTINATION</a></li>
-        <li class="nav-section"><a ng-click="goto('/visit-our-stores')" href="/visit-our-stores">VISIT OUR STORES</a></li>
-        <li class="nav-section"><a href="http://www1.bloomingdales.com/">SHOP ONLINE</a></li>
+        <li class="nav-section"><a ng-click="goto('/our-heritage')" href="/our-heritage">//copy[lang].nav[0]//</a></li>
+        <li class="nav-section"><a ng-click="goto('/designer-destination')" href="/designer-destination">//copy[lang].nav[1]//</a></li>
+        <li class="nav-section"><a ng-click="goto('/visit-our-stores')" href="/visit-our-stores">//copy[lang].nav[2]//</a></li>
+        <li class="nav-section"><a href="http://www1.bloomingdales.com/">//copy[lang].nav[3]//</a></li>
         <li class="social">
             <ul>
                 <li><a href="#"><i class="fa fa-facebook"></i></a></li>
@@ -39,21 +39,21 @@
         <ul class="title-area">
             <li class="title-area-logo">
                 <a href="" ng-click="goto('/')"></a>
-                <!-- <div class="cn-addon"></div> -->
+                <div class="cn-addon" ng-show="lang === 'CN'"></div>
             </li>
         </ul>
 
         <section class="top-bar-section">
-            <ul class="left">
-                <li><a ng-click="goto('/our-heritage')" href="/our-heritage">OUR HERITAGE</a></li>
-                <li><a ng-click="goto('/designer-destination')" href="/designer-destination">DESIGNER DESTINATION</a></li>
-                <li><a ng-click="goto('/visit-our-stores')" href="/visit-our-stores">VISIT OUR STORES</a></li>
-                <li><a href="http://www1.bloomingdales.com/">SHOP ONLINE</a></li>
+            <ul class="left" ng:class="{true:'nav-cn', false:''}[lang === 'CN']">
+                <li><a ng-click="goto('/our-heritage')" href="/our-heritage">//copy[lang].nav[0]//</a></li>
+                <li><a ng-click="goto('/designer-destination')" href="/designer-destination">//copy[lang].nav[1]//</a></li>
+                <li><a ng-click="goto('/visit-our-stores')" href="/visit-our-stores">//copy[lang].nav[2]//</a></li>
+                <li><a href="http://www1.bloomingdales.com/">//copy[lang].nav[3]//</a></li>
             </ul>
             <ul class="right">
-                <li ng:class="{true:'active', false:''}[lang === 'ENG']"><a href="#">ENG</a></li>
-                <li ng:class="{true:'active', false:''}[lang === 'POR']"><a href="#">POR</a></li>
-                <li ng:class="{true:'active', false:''}[lang === 'CN']"><a href="#">中文</a></li>
+                <li class="lang-opt" ng:class="{true:'active', false:''}[lang === 'ENG']"><a href="#" data-lang="ENG" ng-click="langOnClick($event)">ENG</a></li>
+                <li class="lang-opt" ng:class="{true:'active', false:''}[lang === 'POR']"><a href="#" data-lang="POR" ng-click="langOnClick($event)">POR</a></li>
+                <li class="lang-opt" ng:class="{true:'active', false:''}[lang === 'CN']"><a href="#" data-lang="CN" ng-click="langOnClick($event)">中文</a></li>
                 <li><a href="#"><i class="fa fa-share-alt"></i></a></li>
             </ul>
         </section>
