@@ -45,7 +45,7 @@ angular.module('CNBRapp', [
 	            redirectTo: '/'
 	        });
 	}])
-	.run(function ($window, $document, localStorageService, appGlobals) {
+	.run(function ($window, $rootScope, $document, $location, $timeout, localStorageService, appGlobals) {
 		//attach fastclick to solve the 300ms touch delay 
 		FastClick.attach(document.body); // jshint ignore:line
  		
@@ -65,6 +65,25 @@ angular.module('CNBRapp', [
  		   	globalLang = 'ENG';
  			appGlobals.setAttr('lang', globalLang);   
  		}
+
+ 	//mark active section in the nav menu when app loads
+	var path = $location.path();
+	if (path !== '/') {
+		$timeout(function() {
+			activateNavSelection(path);
+		}, 400);
+	}
+
+	//mark active section in the nav menu when app changes view
+    $rootScope.$on('$routeChangeStart', function () {
+ 		path = $location.path();
+ 		activateNavSelection(path);
+    });
+
+    function activateNavSelection (path) {
+        $('.nav-section a').removeClass('active');
+        $('.nav-section a[href="' + path + '"]').addClass('active');      	
+    }
 
 // -------------------------------------------------------------------------------------- //
 // ----------------------------          jQuery       ----------------------------------- //

@@ -8,10 +8,13 @@ angular.module('controllers')
     		if (view.indexOf('http') === 0){
     			$window.open(view);
     		} else {
-    			$location.url(view);
+                $location.url(view);
 
                 //reposition view on top of the page
                 $window.scrollTo(0, 0);
+
+                //close mobile nav menu 
+                if ($('.off-canvas-wrap').hasClass('move-right')) $('.left-off-canvas-toggle').click();
     		}
     	};
 
@@ -95,7 +98,7 @@ angular.module('controllers')
  
         $scope.langOnClick = function($event) {
             var globalLang,
-                el = $( $event.target );
+                el = $($event.target);
 
             $('.lang-opt').removeClass('active');
             el.parent('li').addClass('active');
@@ -105,10 +108,10 @@ angular.module('controllers')
             appGlobals.setAttr('lang', globalLang);
             localStorageService.set('lang', globalLang);
 
-            $scope.$broadcast('lang:change');
-        };   
+            $scope.$broadcast('lang:change', {lang: globalLang});
+        };
 
-        $scope.$on('lang:change', function() {
-            console.log('--------------lang change');        
+        $scope.$on('lang:change', function(ev, args) {
+            $scope.lang = args.lang;
         });
     });
