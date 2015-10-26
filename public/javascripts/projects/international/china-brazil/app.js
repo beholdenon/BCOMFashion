@@ -11,7 +11,8 @@ angular.module('CNBRapp', [
 		'ngMessages',
 		'ngAnimate',
 		'CacheService',
-		'LocalStorageModule'
+		'LocalStorageModule',
+		// 'overlay'
 	])
 	.config(['$interpolateProvider','$routeProvider', 'localStorageServiceProvider', function($interpolateProvider, $routeProvider, localStorageServiceProvider) {
         //configuring the default Angular interpolation markup to solve conflict with Handlebars {{}}
@@ -54,14 +55,16 @@ angular.module('CNBRapp', [
  			appGlobals.setAttr('lang', globalLang);
  		} catch (err) {
  			//silence
- 			showOverlay();
  		}
 
-		function showOverlay() {
-			return console.log('show overlay');
-		}
-
-
+ 		if (globalLang === null) {
+ 		    // overlay.show({
+ 		    //     template: 'select-lang'
+ 		    // });
+ 		    
+ 		   	globalLang = 'ENG';
+ 			appGlobals.setAttr('lang', globalLang);   
+ 		}
 
 // -------------------------------------------------------------------------------------- //
 // ----------------------------          jQuery       ----------------------------------- //

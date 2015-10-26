@@ -1,22 +1,25 @@
-<div class="overlay share row">
-	<div class="overlay-container">
-		<h2>Choose Your Language</h2>
-		<ul>
-			<li>ENGLISH</li>
-			<li>Português</li>
-			<li>中文</li>
-		</ul>
-	</div>
+lang: //lang//
+<div ng-controller="OverlayCtrl" class="overlay lang row" ng-show="lang === null">
+	<div class="overlay-container" ng-switch="popup.template" ng-switch-default>
+		<div ng-switch-when="select-lang">
+			<h2>Choose Your Language</h2>
+			<ul>
+				<li>ENGLISH</li>
+				<li>Português</li>
+				<li>中文</li>
+			</ul>			
+		</div>
 
-	<div class="overlay-container">
-		<h2>Let’s be friends. Add us on social media</h2>
-        <ul class="large-11 small-20 medium-centered small-centered columns">
-            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-            <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-            <li><a href="#"><i class="fa fa-weibo"></i></a></li>
-            <li><a href="#"><i class="fa fa-weixin"></i></a></li>
-        </ul>
-        <a class="exit-off-overlay"></a>
+		<div ng-switch-when="social-share">
+			<h2>Let’s be friends. Add us on social media</h2>
+	        <ul class="large-11 small-20 medium-centered small-centered columns">
+	            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+	            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+	            <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+	            <li><a href="#"><i class="fa fa-weibo"></i></a></li>
+	            <li><a href="#"><i class="fa fa-weixin"></i></a></li>
+	        </ul>
+	        <a class="exit-off-overlay"></a>
+		</div>
 	</div>    		
 </div>
