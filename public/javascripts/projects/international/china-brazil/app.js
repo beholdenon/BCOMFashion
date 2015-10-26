@@ -26,7 +26,7 @@ angular.module('CNBRapp', [
 	    $routeProvider
 	        .when('/', {
                 templateUrl: 'components/home.html',
-                controller: 'HomeCtrl',
+                controller: 'HomeCtrl'
 	        })	    
 	        .when('/our-heritage', {
                 templateUrl: 'components/our-heritage.html',

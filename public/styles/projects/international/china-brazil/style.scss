@@ -285,13 +285,8 @@ html {
 		    	}	    	
 		    } 
 
-	        .nav-wrapper.sticky.fixed{
-				width: 962px;
-				max-width: 962px;
-				margin: 0 auto;
-				z-index: 99;
-				left: 50%;
-				margin-left: -481px;
+	        .nav-wrapper {
+	        	background-color: #fff;
 	        }
 	        
 	        nav {
