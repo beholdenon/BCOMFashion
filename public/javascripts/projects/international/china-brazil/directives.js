@@ -23,6 +23,20 @@ angular.module('directives', [])
                 }
             }
        };
+    })     
+    //apply element text content as html
+    .directive('textToHtml', function($timeout) {
+        return {
+            restrict: 'A',
+            replace: true,
+            link: function(scope, elem) {
+                var text;
+                $timeout(function(){
+                    text = elem.text();
+                    elem.html(text);
+                }, 400);
+            }
+       };
     })  
     //calendar for contact us form  
     .directive('pickDate', function() {

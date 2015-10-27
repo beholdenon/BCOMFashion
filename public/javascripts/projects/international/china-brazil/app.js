@@ -11,8 +11,7 @@ angular.module('CNBRapp', [
 		'ngMessages',
 		'ngAnimate',
 		'CacheService',
-		'LocalStorageModule',
-		// 'overlay'
+		'LocalStorageModule'
 	])
 	.config(['$interpolateProvider','$routeProvider', 'localStorageServiceProvider', function($interpolateProvider, $routeProvider, localStorageServiceProvider) {
         //configuring the default Angular interpolation markup to solve conflict with Handlebars {{}}
@@ -57,13 +56,11 @@ angular.module('CNBRapp', [
  			//silence
  		}
 
+        //show language selector overlay for the first visit
  		if (globalLang === null) {
- 		    // overlay.show({
- 		    //     template: 'select-lang'
- 		    // });
- 		    
- 		   	globalLang = 'ENG';
- 			appGlobals.setAttr('lang', globalLang);   
+            $timeout(function() {
+                $rootScope.$emit('overlay:show', {template: 'select-lang'});
+            }, 400);            
  		}
 
  	//mark active section in the nav menu when app loads

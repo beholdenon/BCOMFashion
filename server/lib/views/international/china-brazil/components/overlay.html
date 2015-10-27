@@ -1,12 +1,14 @@
-lang: //lang//
-<div ng-controller="OverlayCtrl" class="overlay lang row" ng-show="lang === null">
-	<div class="overlay-container" ng-switch="popup.template" ng-switch-default>
+<div class="overlay row" 
+	ng-controller="OverlayCtrl" 
+	ng:class="{true:'lang', false:''}[overlay.template === 'select-lang']" 
+	ng-show="overlay.isShowed">
+	<div class="overlay-container" ng-switch="overlay.template">
 		<div ng-switch-when="select-lang">
 			<h2>Choose Your Language</h2>
 			<ul>
-				<li>ENGLISH</li>
-				<li>Português</li>
-				<li>中文</li>
+				<li ng-click="selLang($event)" data-lang="ENG" >ENGLISH</li>
+				<li ng-click="selLang($event)" data-lang="POR" >Português</li>
+				<li ng-click="selLang($event)" data-lang="CN" >中文</li>
 			</ul>			
 		</div>
 

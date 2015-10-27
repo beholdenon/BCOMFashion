@@ -1,31 +1,35 @@
 'use strict';
 
 angular.module('controllers')
-  .controller('OverlayCtrl', function ($scope, popUp) {
+    .controller('OverlayCtrl', function($rootScope, $scope, $window, $timeout, appGlobals, localStorageService) {
 
-    $scope.popup = {};
+        $scope.overlay = {};
 
-    function doAction(action) {
-      if (typeof action === 'function') {
-        action();
-      }
-      if (!$scope.popup.always) {
-        $scope.popup.isShowed = false;
-      }
-    }
+        $scope.close = function() {
+            console.log('--closed--');
+        };
 
-    $scope.close = function () {
-      doAction($scope.popup.buttonClose);
-      popUp.reject();
-    };
+        $scope.selLang = function($event) {
+            var el = $($event.target),
+                globalLang = el.attr('data-lang'),
+                navElSel = $('.lang-opt a[data-lang="'+ globalLang +'"]');
 
-    $scope.action = function (data) {
-      doAction($scope.popup.buttonAction);
-      popUp.resolve(data);
-    };
+            navElSel.parent('li').addClass('active');
 
-    popUp.init(function (popupOptions) {
-      $scope.popup = popupOptions;
+            appGlobals.setAttr('lang', globalLang);
+            localStorageService.set('lang', globalLang);
+
+            $scope.overlay.isShowed = false;
+            $scope.$emit('lang:change', {lang: globalLang});
+            $scope.$on('$destroy', selLangOverlay);
+            $('html, body').removeClass('noscroll');
+            $window.noBounce.remove();     
+        };
+
+        var selLangOverlay = $rootScope.$on('overlay:show', function(ev, args) {
+            $scope.overlay.template = args.template;
+            $scope.overlay.isShowed = true;
+            $('html, body').addClass('noscroll');
+            $window.noBounce.init();
+        });
     });
-
-  });

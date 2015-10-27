@@ -55,7 +55,6 @@ angular.module('controllers')
 		];
 
 		$scope.sendMail = function(cu) {
-
             if ($scope.emailForm.$valid){
             	var link,
             		email = 'international_visitors@bloomingdales.com',
