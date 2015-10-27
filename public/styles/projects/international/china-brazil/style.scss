@@ -581,99 +581,59 @@ html {
 				    }
 			    }
 			    &.share {
-		    		display: none;
-		    		background: rgba(255, 255, 255, 0.8);
+		    		background: rgba(255, 255, 255, 0.9);
 				    .overlay-container {
 				    	position: relative;
 						margin: 0 auto;	
-						top: 160px;
-						top: calc(50vh - 159px);			    	
-				    	h2 {
-				    		font-size: 26px;
-				    		font-size: 6vw;
-							color: #000;
-							font-family: 'Libre Baskerville', serif;
-							text-align: center;	
-							margin-bottom: 40px;		    		
-				    	}
-				    	@media #{$small-only} {
-				    		h2 {
-				    			font-size: 24px;
-				    		}
-				    	}
-		    			ul {
-		    				padding: 0;
-		    				li {
-		    					list-style-type: none;
-		    					float: left;
-		    					padding: 0 19px;
-		    					padding: 0 5.1vmin;
-		    					border-right: 1px solid #cdccd2;
-		    					&:last-child{
-		    						border-right: none;
-		    					}
-		    					a {
-		    						color: #000;
-		    						font-size: 24px;
-		    						font-size: 6.4vmin;
-		    						text-decoration: none;
-		    						border: none;
-									line-height: 24px;
-									line-height: 6.4vmin;
-									padding: 0;
-									&:active, &:hover {
-										background-color: #fff;
-										color: #000 !important;
-									}
-									.fa {
-										display: inline-block;
-										font: normal normal normal 14px/1 FontAwesome;
-										font-size: inherit;
-										text-rendering: auto;
-										-webkit-font-smoothing: antialiased;
-										-moz-osx-font-smoothing: grayscale;
-									}
-									.fa-facebook:before {
+						top: 48%;			    	
+						.icon {
+	    					text-align: center;
+	    					float: left;
+	    					border-right: 1px solid #cdccd2;
+	    					&:last-child{
+	    						border-right: none;
+	    					}
+	    					a {
+	    						color: #000;
+	    						font-size: 24px;
+								line-height: 24px;
+	    						text-decoration: none;
+	    						border: none;
+	    						display: block;
+								padding: 0;
+								&:active, &:hover {
+									background-color: transparent;
+									color: #000 !important;
+								}
+								.fa {
+									display: inline-block;
+									font: normal normal normal 14px/1 FontAwesome;
+									font-size: inherit;
+									text-rendering: auto;
+									-webkit-font-smoothing: antialiased;
+									-moz-osx-font-smoothing: grayscale;
+									&.fa-facebook:before {
 									    content: "\f09a";
 									}
-									.fa-twitter:before {
+									&.fa-twitter:before {
 									    content: "\f099";
 									}
-									.fa-weibo:before {
+									&.fa-weibo:before {
 									    content: "\f18a";
 									}
-									.fa-pinterest:before {
+									&.fa-pinterest:before {
 									    content: "\f231";
 									}
-									.fa-weixin:before {
+									&.fa-weixin:before {
 									    content: "\f1d7";
 									}
-		    					}
-						    	@media only screen and (min-width: 450px) {
-						    		a {
-						    			font-size: 24px;
-						    		}
+								}
+						    	@media #{$small-only} {
+	    							font-size: 6.4vmin;
+									line-height: 6.4vmin;		    							
 						    	}		    					
-		    				}
-		    			}
-		    			@media only screen and (max-width: 740px) and (orientation: landscape){
-		    				h2 {
-		    					margin-top: 80px;
-		    				}
-		    				ul {
-		    					width: 50%;
-		    				}
-		    			}
-						@media only screen and (min-width: 700px) and (max-width: 780px) and (orientation: portrait){
-							.large-11 {
-							    width: 66%;
-							}	
-						}	 
-						@media only screen and (min-width: 1024px) and (max-width: 1200px) and (orientation: landscape){
-							.large-11 {
-							    width: 50%;
-							}	
-						}							   			
+	    					}
+		    			}						   			
 				    }		    		
 			    }
 			    .exit-off-overlay {

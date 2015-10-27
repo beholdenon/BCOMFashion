@@ -210,6 +210,10 @@ angular.module('controllers')
             },
         };
  
+        $scope.showSocialShareOverlay = function() {
+            $scope.$emit('overlay:show', {template: 'social-share'});
+        };
+
         $scope.langOnClick = function($event) {
             var globalLang,
                 el = $($event.target);

@@ -5,8 +5,10 @@ angular.module('controllers')
 
         $scope.overlay = {};
 
-        $scope.close = function() {
-            console.log('--closed--');
+        $scope.closeOverlay = function() {
+            $scope.overlay.isShowed = false;
+            $('html, body').removeClass('noscroll');
+            $window.noBounce.remove({animate: true});  
         };
 
         $scope.selLang = function($event) {
@@ -21,15 +23,14 @@ angular.module('controllers')
 
             $scope.overlay.isShowed = false;
             $scope.$emit('lang:change', {lang: globalLang});
-            $scope.$on('$destroy', selLangOverlay);
             $('html, body').removeClass('noscroll');
-            $window.noBounce.remove();     
+            $window.noBounce.remove({animate: true});     
         };
 
-        var selLangOverlay = $rootScope.$on('overlay:show', function(ev, args) {
+        $rootScope.$on('overlay:show', function(ev, args) {
             $scope.overlay.template = args.template;
             $scope.overlay.isShowed = true;
             $('html, body').addClass('noscroll');
-            $window.noBounce.init();
+            $window.noBounce.init({animate: true});
         });
     });

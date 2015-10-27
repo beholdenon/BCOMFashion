@@ -1,6 +1,6 @@
 <div class="overlay row" 
 	ng-controller="OverlayCtrl" 
-	ng:class="{true:'lang', false:''}[overlay.template === 'select-lang']" 
+	ng:class="{true:'lang', false:'share'}[overlay.template === 'select-lang']" 
 	ng-show="overlay.isShowed">
 	<div class="overlay-container" ng-switch="overlay.template">
 		<div ng-switch-when="select-lang">
@@ -13,15 +13,16 @@
 		</div>
 
 		<div ng-switch-when="social-share">
-			<h2>Let’s be friends. Add us on social media</h2>
-	        <ul class="large-11 small-20 medium-centered small-centered columns">
-	            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-	            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-	            <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-	            <li><a href="#"><i class="fa fa-weibo"></i></a></li>
-	            <li><a href="#"><i class="fa fa-weixin"></i></a></li>
-	        </ul>
-	        <a class="exit-off-overlay"></a>
+	        <div class="large-11 small-20 medium-centered small-centered columns">
+	        	<div class="row">
+		            <div class="icon small-4 small-offset-1 small-centered columns"><a href="#"><i class="fa fa-facebook"></i></a></div>
+		            <div class="icon small-4 small-centered columns"><a href="#"><i class="fa fa-twitter"></i></a></div>
+		            <div class="icon small-4 small-centered columns"><a href="#"><i class="fa fa-pinterest"></i></a></div>
+		            <div class="icon small-4 small-centered columns"><a href="#"><i class="fa fa-weibo"></i></a></div>
+		            <div class="icon small-4 small-centered columns"><a href="#"><i class="fa fa-weixin"></i></a></div>        		
+	        	</div>
+	        </div>
+	        <a class="exit-off-overlay" ng-click="closeOverlay()"></a>
 		</div>
 	</div>    		
 </div>
