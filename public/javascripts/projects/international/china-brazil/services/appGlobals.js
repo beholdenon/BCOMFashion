@@ -1,7 +1,11 @@
-'use strict';
+(function() {
+    'use strict';
 
-angular.module('services')
-    .factory('appGlobals', function(CacheService) {
+    angular
+        .module('services')
+        .factory('appGlobals', appGlobals);
+
+    function appGlobals(CacheService) {
         return {
             getAttr: function(key) {
                 var attr = CacheService.get(key);
@@ -19,4 +23,5 @@ angular.module('services')
                 CacheService.put(key, '');
             }
         };
-    });
+    }
+})();

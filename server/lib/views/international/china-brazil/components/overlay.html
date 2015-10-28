@@ -2,7 +2,9 @@
 	ng-controller="OverlayCtrl" 
 	ng:class="{true:'lang', false:'share'}[overlay.template === 'select-lang']" 
 	ng-show="overlay.isShowed">
-	<div class="overlay-container" ng-switch="overlay.template">
+	<div class="overlay-container" 
+		ng:class="{true:'QR', false:''}[overlay.weixinOn]" 
+		ng-switch="overlay.template">
 		<div ng-switch-when="select-lang">
 			<h2>Choose Your Language</h2>
 			<ul>
@@ -14,13 +16,17 @@
 
 		<div ng-switch-when="social-share">
 	        <div class="large-11 small-20 medium-centered small-centered columns">
-	        	<div class="row">
-		            <div class="icon small-4 small-offset-1 small-centered columns"><a href="#"><i class="fa fa-facebook"></i></a></div>
-		            <div class="icon small-4 small-centered columns"><a href="#"><i class="fa fa-twitter"></i></a></div>
-		            <div class="icon small-4 small-centered columns"><a href="#"><i class="fa fa-pinterest"></i></a></div>
-		            <div class="icon small-4 small-centered columns"><a href="#"><i class="fa fa-weibo"></i></a></div>
-		            <div class="icon small-4 small-centered columns"><a href="#"><i class="fa fa-weixin"></i></a></div>        		
+	        	<div class="row" ng-hide="overlay.weixinOn">
+		            <div class="icon small-4 small-offset-1 small-centered columns"><a href="#" ng-click="share('fb')"><i class="fa fa-facebook"></i></a></div>
+		            <div class="icon small-4 small-centered columns"><a href="#" ng-click="share('twitter')"><i class="fa fa-twitter"></i></a></div>
+		            <div class="icon small-4 small-centered columns"><a href="#" ng-click="share('pinterest')"><i class="fa fa-pinterest"></i></a></div>
+		            <div class="icon small-4 small-centered columns"><a href="#" ng-click="share('weibo')"><i class="fa fa-weibo"></i></a></div>
+		            <div class="icon small-4 small-centered columns"><a href="#" ng-click="share('weixin')"><i class="fa fa-weixin"></i></a></div>	
 	        	</div>
+	        	<div class="row QR" ng-show="overlay.weixinOn">
+		            <div class="copy small-24 small-centered columns">//QRcopy//</div>	
+		            <div class="img small-20 small-centered medium-cnbr-10 large-cnbr-12 columns"><img src="/fashion/images/projects/international/china-brazil/Bloomingdales QR Code_for_gh_1280.jpg" /></div>	
+	        	</div>	        	
 	        </div>
 	        <a class="exit-off-overlay" ng-click="closeOverlay()"></a>
 		</div>

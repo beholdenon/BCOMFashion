@@ -1,6 +1,11 @@
-'use strict';
+(function() {
+    'use strict';
 
-angular.module('CacheService', ['ng'])
-    .factory('CacheService', function($cacheFactory) {
+    angular
+        .module('CacheService', ['ng'])
+        .factory('CacheService', CacheService);
+
+    function CacheService($cacheFactory) {
         return $cacheFactory('CacheService');
-    });
+    }
+})();
