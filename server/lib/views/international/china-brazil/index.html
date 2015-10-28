@@ -2,24 +2,19 @@
 
 <link href='https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400italic,700' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" type="text/css" href="/fashion/styles/projects/international/china-brazil/style.css">
-<link rel="stylesheet" type="text/css" href="/fashion/styles/vendor/jquery.bxslider.css">
 
-<div class="off-canvas-wrap" data-offcanvas="" ng-app="CNBRapp" ng-controller="MainCtrl">
-    <div class="inner-wrap">       
-		<global-nav></global-nav>
-        <div ng-view></div>
-        <contact-us></contact-us>
+<div ng-app="CNBRapp" ng-controller="MainCtrl">
+	<div class="off-canvas-wrap" data-offcanvas="">
+	    <div class="inner-wrap">       
+			<global-nav></global-nav>
+	        <div ng-view></div>
+	        <contact-us></contact-us>
 
-        <div ng-include="'./components/overlay.html'"></div>
-    </div>
+	        <div ng-include="'./components/overlay.html'"></div>
+	    </div>
+	</div>
+	<footer ng-include="'./components/footer.html'"></footer>
 </div>
-
-<footer>
-	<section class="footer-sign-up">
-		<a href="https://www.bloomingdales.com/signup?cm_sp=FOOTER-_-BOTTOM_NAV-_-EMAIL_SIGNUP">SAVE 10%—<u><b>SIGN UP</b></u> FOR EMAILS</a>
-	</section>
-	<section class="footer-bottom">Like no other store in the world</section>
-</footer>
 
 <!-- SCRIPTS -->
 <script type="text/javascript" src="/fashion/javascripts/libs/angular/angular.min.js"></script>

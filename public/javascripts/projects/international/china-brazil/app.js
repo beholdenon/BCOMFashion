@@ -95,17 +95,21 @@
                         'Designer Destination',
                         'Visit Our Stores'
                     ],
-                    'shop': [
-                        'WOMEN',
-                        'HANDBAGS',
-                        'SHOES',
-                        'Jewelry & Accessories',
-                        'Men',
-                        'home',
-                        'kids',
-                        'What\'s New',
-                        'sale'
-                    ]
+                    'shop': {
+                        'title': 'Shop Online',
+                        'subtitle': 'Lorem Ipsum',
+                        'ctas': [
+                            'WOMEN',
+                            'HANDBAGS',
+                            'SHOES',
+                            'Jewelry & Accessories',
+                            'Men',
+                            'home',
+                            'kids',
+                            'What\'s New',
+                            'sale'
+                        ]
+                    }
                 },
                 'heritage': {
                     'header': {
@@ -218,7 +222,13 @@
                     'Designer Destino',
                     'Visite Nossas Lojas',
                     'loja online'
-                ]
+                ],
+                'home': {
+                    'shop': {
+                        'title': 'Loja Online',
+                        'subtitle': 'Lorem Ipsum'
+                    }
+                }              
             },
             'CN': {
                 'nav': [
@@ -226,7 +236,13 @@
                     '知名设计',
                     '访问商店',
                     '网上购物'
-                ]
+                ],
+                'home': {
+                    'shop': {
+                        'title': '网上购物',
+                        'subtitle': '传统和历史'
+                    }
+                }  
             },
         };
         appGlobals.setAttr('copy', copy);

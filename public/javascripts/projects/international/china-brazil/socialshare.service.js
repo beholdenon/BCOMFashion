@@ -26,6 +26,7 @@
 
         function fb() {
             var mediaURL = '';
+            lang = lang || 'ENG';
 
             mediaURL += 'https://www.facebook.com/dialog/feed';
             mediaURL += '?app_id=145634995501895';
@@ -36,13 +37,12 @@
             mediaURL += '&display=popup';
             mediaURL += '&redirect_uri=' + $window.encodeURIComponent('https://www.facebook.com/');
             
-            console.log('FBmediaURL ', mediaURL);
-            
             return mediaURL;
         }
 
         function pinterest() {
             var mediaURL = '';
+            lang = lang || 'ENG';
 
             mediaURL += 'http://pinterest.com/pin/create/button/';
             mediaURL += '?url=' + $window.encodeURIComponent(pageUrl);
@@ -54,6 +54,7 @@
 
         function twitter() {
             var mediaURL = '';
+            lang = lang || 'ENG';
 
             mediaURL += 'http://twitter.com/intent/tweet?source=webclient&text=';
             mediaURL += $window.encodeURIComponent(copy[lang].socialshare.twitter.text);
@@ -63,6 +64,7 @@
 
         function weibo() {
             var mediaURL = '';
+            lang = lang || 'ENG';
 
             mediaURL += 'http://service.weibo.com/share/share.php?url=';
             mediaURL += '?url=' + $window.encodeURIComponent(copy[lang].socialshare.weibo.url);
@@ -74,6 +76,8 @@
         }
 
         function weixin() {
+            lang = lang || 'ENG';
+            
             return copy[lang].socialshare.weixin.text;
         }        
     }
