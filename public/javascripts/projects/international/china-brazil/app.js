@@ -31,20 +31,16 @@
 
         $routeProvider
             .when('/', {
-                templateUrl: 'components/home.html',
-                controller: 'HomeCtrl'
+                templateUrl: 'components/home.html'
             })
             .when('/our-heritage', {
-                templateUrl: 'components/our-heritage.html',
-                controller: 'HeritageCtrl'
+                templateUrl: 'components/our-heritage.html'
             })
             .when('/designer-destination', {
-                templateUrl: 'components/designer-destination.html',
-                controller: 'DesignerCtrl'
+                templateUrl: 'components/designer-destination.html'
             })
             .when('/visit-our-stores', {
-                templateUrl: 'components/visit-our-stores.html',
-                controller: 'StoresCtrl'
+                templateUrl: 'components/visit-our-stores.html'
             })
             .otherwise({
                 redirectTo: '/'
@@ -205,9 +201,10 @@
                         'description': 'International Tourism | bloomingdales.com'
                     },
                     'twitter': {
-                        'text': 'Love to shop @bloomingdales? Check out their international site for the latest designer clothing, accessories & beauty. http://bit.ly/aaa'
+                        'text': 'Love to shop @bloomingdales? Check out their international site for new designer clothing, accessories & beauty. http://bit.ly/aaa'
                     },
                     'weibo': {
+                        'url': 'http://weibo.com/bloomingdalesusa',
                         'title': 'Discover Bloomingdale\'s luxury fashions, storied history and world-class hospitality on their updated international site.'
                     },
                     'weixin': {

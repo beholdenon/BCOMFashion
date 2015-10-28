@@ -10,7 +10,7 @@
             pageUrl = hostURL + '/international/china-brazil/',
             mediaUrl = hostURL + '/fashion/images/projects/international/china-brazil',
             copy = appGlobals.getAttr('copy'),
-            lang = appGlobals.getAttr('lang');
+            lang = appGlobals.getAttr('lang') || 'ENG';
 
         var service = {
             fb: fb(),
@@ -37,8 +37,6 @@
             mediaURL += '&redirect_uri=' + $window.encodeURIComponent('https://www.facebook.com/');
             
             console.log('FBmediaURL ', mediaURL);
-//https://www.facebook.com/dialog/feed?app_id=145634995501895&name=100%25%20BLOOMINGDALE%27s%20%7C%20bloomingdales.com&description=Over%201000%20exclusives.%20Over%20100%20designers.%201%20store.                                                                                                                   &link=http%3A%2F%2Fwww.bloomingdales.com%2Ffashion-index%2F100-percent-2015.jsp     &picture=http%3A%2F%2Fassets.bloomingdales.com%2Fdyn_img%2Fcat_splash%2Fb100pfall15-micro-social-pinterest-facebook.jpg&display=popup&redirect_uri=https%3A%2F%2Fwww.facebook.com%2F
-//https://www.facebook.com/dialog/feed?app_id=145634995501895&name=International%20Tourism%20%7C%20bloomingdales.com&description=From%20designer%20clothing%20to%20the%20most-coveted%20beauty%20brands%2C%20explore%20all%20that%20Bloomingdale%27s%20has%20to%20offer%20on%20their%20updated%20international%20site.&link=http%3A%2F%2Fd4378572%3A3000%2Finternational%2Fchina-brazil%2F&picture=http%3A%2F%2Fd4378572%3A3000%2Ffashion%2Fimages%2Fprojects%2Finternational%2Fchina-brazil%2FInternational_FB02.jpg&display=popup&redirect_uri=https%3A%2F%2Fwww.facebook.com%2F
             
             return mediaURL;
         }
@@ -67,7 +65,7 @@
             var mediaURL = '';
 
             mediaURL += 'http://service.weibo.com/share/share.php?url=';
-            mediaURL += '?url=' + $window.encodeURIComponent(pageUrl);
+            mediaURL += '?url=' + $window.encodeURIComponent(copy[lang].socialshare.weibo.url);
             mediaURL += '/sc&appkey=';
             mediaURL += '&title=' + $window.encodeURIComponent(copy[lang].socialshare.weibo.title);
             mediaURL += '&pic=&ralateUid=&language=zh_cn';
