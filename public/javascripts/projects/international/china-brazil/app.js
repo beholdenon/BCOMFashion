@@ -79,14 +79,14 @@
                             'h1': 'Welcome',
                             'h2': 'See All the Stylish Sights\n' +
                                 'Starting with a Visit to Bloomingdale\'s',
-                            'p': 'Since 1872, Bloomingdale\'s has been at the center' +
-                                'of style, carrying the most coveted designer' +
-                                'fashions, shoes, handbags, cosmetics, fine jewelry' +
-                                'and gifts in the world. When you visit our stores,' +
-                                'you\'ll enjoy exclusive personal touches—like' +
-                                'multilingual associates and special concierge' +
-                                'services—that ensure you feel welcome, pampered' +
-                                'and at home. These are just a few of the things' +
+                            'p': 'Since 1872, Bloomingdale\'s has been at the center ' +
+                                'of style, carrying the most coveted designer ' +
+                                'fashions, shoes, handbags, cosmetics, fine jewelry ' +
+                                'and gifts in the world. When you visit our stores, ' +
+                                'you\'ll enjoy exclusive personal touches—like ' +
+                                'multilingual associates and special concierge ' +
+                                'services—that ensure you feel welcome, pampered ' +
+                                'and at home. These are just a few of the things ' +
                                 'that make Bloomingdale\'s like no other store in the world.'
                         }
                     },
@@ -205,7 +205,7 @@
                         'description': 'International Tourism | bloomingdales.com'
                     },
                     'twitter': {
-                        'text': 'Love to shop @bloomingdales? Check out their international site for new designer clothing, accessories & beauty. http://bit.ly/aaa'
+                        'text': 'Love to shop @bloomingdales? Check out their international site for new designer clothing, accessories & beauty. http://bit.ly/1M3fLiB'
                     },
                     'weibo': {
                         'url': 'http://weibo.com/bloomingdalesusa',
