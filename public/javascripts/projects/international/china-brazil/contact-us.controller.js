@@ -1,7 +1,11 @@
-'use strict';
+(function() {
+	'use strict';
 
-angular.module('controllers')
-	.controller('ContactUs', ['$scope', '$window', '$timeout', function($scope, $window, $timeout){
+	angular
+		.module('controllers')
+		.controller('ContactUsCtrl', ContactUsCtrl);
+
+	function ContactUsCtrl($scope, $window, $timeout){
 		$scope.cu = {};
 
 		$scope.phoneNumberPattern = (function() {
@@ -55,18 +59,18 @@ angular.module('controllers')
 		];
 
 		$scope.sendMail = function(cu) {
-            if ($scope.emailForm.$valid){
-            	var link,
-            		email = 'international_visitors@bloomingdales.com',
-            		subject = 'Notify Us Of Your Trip',
-            		data = angular.copy(cu),
-            		body = 'name = ' + data.name + '\n' +
-            			   'email = ' + data.email + '\n' +
-            			   'phone = ' + data.phone + '\n' +
-            			   'partySize = ' + data.partySize + '\n' +
-            			   'arrivingdate = ' + data.arrivingdate + '\n' +
-            			   'departingdate = ' + data.departingdate + '\n' +
-            			   'store = ' + data.store + '\n';
+	        if ($scope.emailForm.$valid){
+	        	var link,
+	        		email = 'international_visitors@bloomingdales.com',
+	        		subject = 'Notify Us Of Your Trip',
+	        		data = angular.copy(cu),
+	        		body = 'name = ' + data.name + '\n' +
+	        			   'email = ' + data.email + '\n' +
+	        			   'phone = ' + data.phone + '\n' +
+	        			   'partySize = ' + data.partySize + '\n' +
+	        			   'arrivingdate = ' + data.arrivingdate + '\n' +
+	        			   'departingdate = ' + data.departingdate + '\n' +
+	        			   'store = ' + data.store + '\n';
 
 			    link = 'mailto:'+ email + '?subject=' + $window.escape(subject) + '&body=' + $window.escape(body); 
 
@@ -82,8 +86,9 @@ angular.module('controllers')
 				}, 3500);
 				
 				return true;
-            }
+	        }
 
-            return false;
+	        return false;
 		};
-	}]);
+	}
+})();

@@ -182,7 +182,7 @@
                             'p': 'Designed to showcase every facet of the world\'s best designers, including David Yurman, the fine jewelry department at 59th Street—visited by over 400,000 people from over 230 countries and all 50 states—is an NYC Concierge Choice Award–winner five years running.'
                         }, {
                             'h3': 'No Limit to Being Like No Other',
-                            'p': 'Today, there\'s no stopping where Bloomingdale\'s can go. The type of innovation synonymous with the brand since its first days continues to be central to its mission of luxury. By looking back at the triumphs of the past, Bloomingdale’s beholds the future. It\'s a future like no other.'
+                            'p': 'Today, there\'s no stopping where Bloomingdale\'s can go. The type of innovation synonymous with the brand since its first days continues to be central to its mission of luxury. By looking back at the triumphs of the past, Bloomingdale\'s beholds the future. It\'s a future like no other.'
                         }]
                     }
                 },
@@ -192,10 +192,37 @@
                         'h2': 'We Handpick the Best Designers in Fashion, Beauty and Beyond'
                     },
                     'article': [
-                        'Bloomingdale’s carries an unrivaled selection of designer brands including CHANEL, Dior, Michael Kors, MCM, Tory Burch, Marc Jacobs, Armani and Ralph Lauren.',
+                        'Bloomingdale\'s carries an unrivaled selection of designer brands including CHANEL, Dior, Michael Kors, MCM, Tory Burch, Marc Jacobs, Armani and Ralph Lauren.',
                         'Searching for the latest (and most coveted) beauty products? Find all of your favorite skin care, makeup and fragrance brands including La Mer, Estée Lauder, Gucci, Chloé, Clinique, Lancôme and kate spade new york.'
                     ]
                 },
+                'stores': {
+                    'header': {
+                        'h1': 'Choose Your Destination',
+                        'h2': 'We\'ll meet you at the Visitor\'s Center'
+                    },
+                    'dropdown': {
+                        'default': 'Please Select a Store',
+                        'list': [
+                            {id: 'New York', name: 'New York', disabled: 'true'},
+                            {id: '59th Street Flagship, New York City', name: '59th Street Flagship, New York City', disabled: 'false'},
+                            {id: 'SoHo, New York City', name: 'SoHo, New York City', disabled: 'false'},
+                            {id: 'Hawaii', name: 'Hawaii', disabled: 'true'},
+                            {id: 'Ala Moana, Honolulu', name: 'Ala Moana, Honolulu', disabled: 'false'},
+                            {id: 'Illinois', name: 'Illinois', disabled: 'true'},
+                            {id: 'North Michigan Avenue, Chicago', name: 'North Michigan Avenue, Chicago', disabled: 'false'},
+                            {id: 'Medinah Home, Chicago', name: 'Medinah Home, Chicago', disabled: 'false'},
+                            {id: 'California', name: 'California', disabled: 'true'},
+                            {id: 'San Francisco Centre, San Francisco', name: 'San Francisco Centre, San Francisco', disabled: 'false'},
+                            {id: 'South Coast Plaza, Costa Mesa', name: 'South Coast Plaza, Costa Mesa', disabled: 'false'},
+                            {id: 'Southern California Stores', name: 'Southern California Stores', disabled: 'false'},
+                            {id: 'Florida', name: 'Florida', disabled: 'true'},
+                            {id: 'Aventura', name: 'Aventura', disabled: 'false'},
+                            {id: 'Orlando', name: 'Orlando', disabled: 'false'}
+                        ],
+                        'copy': 'Bloomingdale\'s has stores all over the U.S. Our Visitor\'s Centers in <b>New York</b>, <b>Hawaii</b>, <b>Chicago</b>, <b>Miami</b> and <b>San Francisco</b> offer a full range of amenities for international customers. Multilingual associates can help you plan the ultimate shopping experience. They\'ll give you a store directory in your chosen language and special events information, as well as arrange complimentary personal stylist appointments, package delivery to your hotel, restaurant reservations (including those located within our stores) and much more. Beach bound? Our many outposts in Southern California—including South Coast Plaza in Ocean County, San Diego and Los Angeles—plus Honolulu, mean you\'ll never be far from the top fashions.'
+                    }
+                },                
                 'socialshare': {
                     'fb': {
                         'name': 'International Tourism | bloomingdales.com',

@@ -1,1 +1,21 @@
-<h1 ng-cloak>VISIT OUR STORES</h1>
+<section class="stores" ng-controller="StoresCtrl">
+    <div class="header small-collapse row">
+        <div class="large-24 columns">
+            <div class="copy">
+                <h1 ng-cloak>//copy[lang].stores.header.h1//</h1>
+                <h2 ng-cloak>//copy[lang].stores.header.h2//</h2>
+            </div>
+        </div>
+    </div>
+    <article class="dropdown width-962 row">
+        <div class="small-cnbr-16 small-cnbr-centered medium-cnbr-6 medium-cnbr-centered large-cnbr-12 large-cnbr-centered columns">
+            <select name="store" ng-model="storeSelection" ng-model-options="{ debounce: 250 }">
+            	<option value="" ng-disabled="true" disabled="disabled">//copy[lang].stores.dropdown.default//</option>
+                <option ng-repeat="option in storeList" value="//option.id//" ng-disabled="//option.disabled//">//option.name//</option>
+            </select>
+        </div>
+    </article>
+    <article class="content row">
+        <p text-to-html ng-cloak>//copy[lang].stores.dropdown.copy//</p>
+    </article>
+</section>

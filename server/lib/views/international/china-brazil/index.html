@@ -1,19 +1,19 @@
 <title>Bloomingdale's Official Chinese and Portuguese Site</title>
 
-<link href='https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400italic,700' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" type="text/css" href="/fashion/styles/projects/international/china-brazil/style.css">
+<link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400italic,700" rel="stylesheet" type="text/css">
+<link href="/fashion/styles/projects/international/china-brazil/style.css" rel="stylesheet" type="text/css" >
 
 <div ng-app="CNBRapp" ng-controller="MainCtrl">
 	<div class="off-canvas-wrap" data-offcanvas="">
 	    <div class="inner-wrap">       
-			<global-nav></global-nav>
-	        <div ng-view></div>
-	        <contact-us></contact-us>
+			<global-nav ng-cloak></global-nav>
+	        	<div ng-view ng-cloak></div>
+	        <contact-us ng-cloak></contact-us>
 
-	        <div ng-include="'./components/overlay.html'"></div>
+	        <div ng-include="'./components/overlay.html'" ng-cloak></div>
 	    </div>
 	</div>
-	<footer ng-include="'./components/footer.html'"></footer>
+	<footer ng-include="'./components/footer.html'" ng-cloak></footer>
 </div>
 
 <!-- SCRIPTS -->
@@ -28,6 +28,7 @@
 <script type="text/javascript" src="/fashion/javascripts/projects/international/china-brazil/app.js"></script>
 <script type="text/javascript" src="/fashion/javascripts/projects/international/china-brazil/main.controller.js"></script>
 <script type="text/javascript" src="/fashion/javascripts/projects/international/china-brazil/overlay.controller.js"></script>
+<script type="text/javascript" src="/fashion/javascripts/projects/international/china-brazil/stores.controller.js"></script>
 <script type="text/javascript" src="/fashion/javascripts/projects/international/china-brazil/contact-us.controller.js"></script>
 <script type="text/javascript" src="/fashion/javascripts/projects/international/china-brazil/cache.service.js"></script>
 <script type="text/javascript" src="/fashion/javascripts/projects/international/china-brazil/appGlobals.service.js"></script>
