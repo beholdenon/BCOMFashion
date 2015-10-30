@@ -34,6 +34,17 @@ $large-up: "#{$screen} and (min-width:#{$large-lower-bound})";
     display: none !important;
 }
 
+div[ng-view].ng-enter,
+.overlay.ng-enter {
+    transition: all 0.5s linear;
+    opacity: 0;
+}
+
+div[ng-view].ng-enter-active,
+.overlay.ng-enter-active{
+    opacity: 1;
+}
+
 html {
 	h1, h2, h3, h4, h5, h6 {
 	    font-family: Arial,Helvetica,Verdana,Sans-serif;
@@ -1523,7 +1534,6 @@ html {
 		        		}				    	
 				    }	        		
 	        	}
-
         		article {
         			&.dropdown {
         				margin: 20px auto;
@@ -1558,6 +1568,28 @@ html {
 								width: 90%;
 							}
         				}
+        			}
+        		}
+        		&.store-page {
+        			.header {
+        				height: 65px;
+        				transition: all 0.3s linear;
+        				.columns {
+        					height: 65px;
+        					transition: all 0.3s linear;
+        					.copy {
+        						display: none;
+        					}
+        				}
+        			}
+        			.dropdown {
+						position: relative;
+						top: -70px;
+						margin-bottom: -70px;        				
+						transition: all 0.3s linear;
+        			}
+        			.content {
+        				display: none;
         			}
         		}
 	        }

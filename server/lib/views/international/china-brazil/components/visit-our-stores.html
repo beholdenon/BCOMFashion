@@ -1,4 +1,6 @@
-<section class="stores" ng-controller="StoresCtrl">
+<section class="stores" 
+		 ng:class="{true:'store-page', false:''}[storeSelection !== null]"
+		 ng-controller="StoresCtrl">
     <div class="header small-collapse row">
         <div class="large-24 columns">
             <div class="copy">
