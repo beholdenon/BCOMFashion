@@ -492,12 +492,12 @@
                                     },
                                     {
                                         title: 'DELIVERY TO YOUR HOTEL ',
-                                        description: 'We will gladly deliver your purchases of $250 USD or more to your Manhattan hotel—for free. Just drop them off at our first floor balcony Visitor\'s Center.'
+                                        description: 'We will gladly deliver your purchases of $250 USD or more to your downtown hotel—for free. Just drop them off at our third floor Visitor\'s Center. '
 
                                     },
                                     {
                                         title: 'CARDS & RIBBON TO TAKE HOME ',
-                                        description: 'We will gift wrap your purchases, or you can pick up cards, boxes, wrapping paper and ribbon to take home at our gift wrapping station on the sixth floor. '
+                                        description: 'We will gift wrap your purchases, or you can pick up cards, boxes, wrapping paper and ribbon to take home. Visit the fifth floor Customer Service desk. '
 
                                     }
                                 ]  
@@ -658,28 +658,16 @@
                                         sched: 'Lunch: Open Daily 11:30AM–2:30PM <br/> Noodle Bar: Open Daily 11:30AM–5:30PM <br/> Dinner: Sunday–Thursday 5:30PM–10:30PM <br/>Friday–Saturday 5:30PM–11:00PM <br/> Red Happy Hour: Monday–Friday 4PM–7PM',
                                         description: '',
                                         imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_08.jpg'
-                                    },
-                                    {
-                                        name: '<b>Charlie Palmer</b> <span>|</span>  Ground Floor <span>|</span> 714-352-2525',
-                                        sched: 'Lunch: Monday–Saturday 11:30AM–2:30PM <br/>Brunch: Sunday 11:30AM–2:30PM <br/> Dinner: Monday 5:30PM–8:30PM <br/>Tuesday–Thursday 5:30PM–10:30PM<br/> Friday–Saturday 5:30PM–11PM <br/> Sunday 5:30PM–8:30PM <br/>Happy Hour: Monday–Sunday 4PM–7PM; 9PM to close',
-                                        description: '',
-                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_07.jpg'
-                                    },
-                                    {
-                                        name: '<b>Next Vintage Wine Shop</b> <span>|</span> 714 352-2525',
-                                        sched: 'Open <span>|</span> 11:45AM–Midnight',
-                                        description: '',
-                                        imgURL: 'http://placehold.it/794x532?text=IMG3'
-                                    } 
+                                    }
                                 ],
                                 services: [
                                     {
                                         title: 'QUICK ALTERATIONS ',
-                                        description: 'We perform professional tailoring and alteration services on site by request. Prices are available at the time of your fitting. Available at select locations.'
+                                        description: 'We perform professional tailoring and alteration services on site by request. Prices are available at the time of your fitting. '
                                     },
                                     {
                                         title: 'CARDS & RIBBON TO TAKE HOME ',
-                                        description: 'We will gift wrap your purchases, or you can pick up cards, boxes, wrapping paper and ribbon to take home. Available at select locations.'
+                                        description: 'We will gift wrap your purchases, or you can pick up cards, boxes, wrapping paper and ribbon to take home. Find it all on the lower level.'
                                     },
                                     {
                                         title: 'PAYMENT MADE EASY ',
@@ -845,7 +833,7 @@
                             },
                             {
                                 name: 'ORLANDO',
-                                addr: '4152 Conroy Road  Orlando, FL 32839  +1 +1 (407) 264-2514',
+                                addr: '4152 Conroy Road  Orlando, FL 32839  +1 (407) 264-2514',
                                 hours: 'Monday–Saturday: 10AM–9PM | Sunday: 11AM–7PM',
                                 descr: 'Stocked with the best designers and beauty brands, Bloomingdale\'s Orlando is your ticket to world-class shopping. Stop in on your next trip to the Sunshine State for an experience tailored to you. Pick up a store directory in your chosen language, then take advantage of the many in-store amenities listed below.',
                                 dTile: 'VISITING ORLANDO?',
@@ -1220,7 +1208,7 @@
                                 services: [
                                     {
                                         title: 'NÓS FAZEMOS SUA LISTA DE PRESENTES',
-                                        description: 'Comprar presentes é muito fácil na Bloomingdale’s. Basta enviar sua lista a nossos especialistas multilíngues antes de sua visita, e você já vai encontrar seus itens esperando por você quando chegar.<br/> Ligue +1 (212) 705-2359 ou +1 (212) 705-3488 <br/> E-mail <a class="fucsia" href="mailto:international_visitors@bloomingdales.com">international_visitors@bloomingdales.com</a>'
+                                        description: 'Comprar presentes é muito fácil na Bloomingdale\'s. Basta enviar sua lista a nossos especialistas multilíngues antes de sua visita, e você já vai encontrar seus itens esperando por você quando chegar.<br/> Ligue +1 (212) 705-2359 ou +1 (212) 705-3488 <br/> E-mail <a class="fucsia" href="mailto:international_visitors@bloomingdales.com">international_visitors@bloomingdales.com</a>'
                                     },
                                     {
                                         title: 'PERSONAL STYLISTS E CONSULTORES DE BELEZA DE PLANTÃO',
@@ -1292,7 +1280,7 @@
                                 services: [
                                     {
                                         title: 'NÓS FAZEMOS SUA LISTA DE PRESENTES',
-                                        description: 'Comprar presentes é muito fácil na Bloomingdale’s. Basta enviar sua lista a nossos especialistas multilíngues antes de sua visita, e você já vai encontrar seus itens esperando por você quando chegar.<br/> Ligue +1 (212) 705-2098  ou envie e-mail para <a class="fucsia" href="mailto:international_visitors@bloomingdales.com">international_visitors@bloomingdales.com</a>'
+                                        description: 'Comprar presentes é muito fácil na Bloomingdale\'s. Basta enviar sua lista a nossos especialistas multilíngues antes de sua visita, e você já vai encontrar seus itens esperando por você quando chegar.<br/> Ligue +1 (212) 705-2098  ou envie e-mail para <a class="fucsia" href="mailto:international_visitors@bloomingdales.com">international_visitors@bloomingdales.com</a>'
                                     },
                                     {
                                         title: 'FACILIDADE DE PAGAMENTO ',
@@ -1358,7 +1346,7 @@
                                     },
                                     {
                                         title: 'CÂMBIO',
-                                        description: 'A apenas poucos passos da Bloomingdale’s, você encontra uma casa de câmbio localizada convenientemente dentro do Ala Moana Center.'
+                                        description: 'A apenas poucos passos da Bloomingdale\'s, você encontra uma casa de câmbio localizada convenientemente dentro do Ala Moana Center.'
                                     },
                                     {
                                         title: 'KRELAXE EM NOSSA SALA VIP',
@@ -1388,7 +1376,7 @@
                                 name: 'North Michigan Avenue',
                                 addr: '900 North Michigan Avenue  Chicago, IL 60611  +1 (312) 440-4460 ',
                                 hours: 'Segunda-feira - Sábado: 10:00h-20:00h <span>|</span> Domingo: 11:00h-19:00h',                                         
-                                descr: 'Planejando uma viagem à Cidade dos Ventos? Deixe que a Bloomingdale’s seja seu guia de moda. Preencha o seu guarda-roupa com a nossa ampla coleção de nomes de grife, ou estoque seus produtos de beleza favoritos. Nossos atendentes multilíngues podem ajudá-lo a personalizar sua viagem de compras de acordo com todas as suas necessidades.',
+                                descr: 'Planejando uma viagem à Cidade dos Ventos? Deixe que a Bloomingdale\'s seja seu guia de moda. Preencha o seu guarda-roupa com a nossa ampla coleção de nomes de grife, ou estoque seus produtos de beleza favoritos. Nossos atendentes multilíngues podem ajudá-lo a personalizar sua viagem de compras de acordo com todas as suas necessidades.',
                                 dTile: 'VISITANDO CHICAGO?',
                                 dInfo: 'Baixe o nosso guia de boas-vindas antes de chegar.',
                                 dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Chicago_PT.pdf',
@@ -1425,7 +1413,7 @@
                                 services: [
                                     {
                                         title: 'NÓS FAZEMOS SUA LISTA DE PRESENTES',
-                                        description: 'Comprar presentes é muito fácil na Bloomingdale’s. Basta enviar sua lista a nossos especialistas multilíngues antes de sua visita, e você já vai encontrar seus itens esperando por você quando chegar.<br/> Ligue +1 (312) 440-4596  ou envie e-mail para <a class="fucsia" href="mailto:international_visitors@bloomingdales.com">international_visitors@bloomingdales.com</a>'
+                                        description: 'Comprar presentes é muito fácil na Bloomingdale\'s. Basta enviar sua lista a nossos especialistas multilíngues antes de sua visita, e você já vai encontrar seus itens esperando por você quando chegar.<br/> Ligue +1 (312) 440-4596  ou envie e-mail para <a class="fucsia" href="mailto:international_visitors@bloomingdales.com">international_visitors@bloomingdales.com</a>'
                                     },
                                     {
                                         title: 'PERSONAL STYLISTS E CONSULTORES DE BELEZA DE PLANTÃO',
@@ -1466,7 +1454,7 @@
                                 services: [
                                     {
                                         title: 'NÓS FAZEMOS SUA LISTA DE PRESENTES',
-                                        description: 'Comprar presentes é muito fácil na Bloomingdale’s. Basta enviar sua lista a nossos especialistas multilíngues antes de sua visita, e você já vai encontrar seus itens esperando por você quando chegar.<br/> Ligue +1 (312) 440-4596  ou envie e-mail para <a class="fucsia" href="mailto:international_visitors@bloomingdales.com">international_visitors@bloomingdales.com</a>'
+                                        description: 'Comprar presentes é muito fácil na Bloomingdale\'s. Basta enviar sua lista a nossos especialistas multilíngues antes de sua visita, e você já vai encontrar seus itens esperando por você quando chegar.<br/> Ligue +1 (312) 440-4596  ou envie e-mail para <a class="fucsia" href="mailto:international_visitors@bloomingdales.com">international_visitors@bloomingdales.com</a>'
                                     },
                                     {
                                         title: 'PERSONAL STYLISTS E CONSULTORES DE BELEZA DE PLANTÃO',
@@ -1522,7 +1510,7 @@
                                 services: [
                                     {
                                         title: 'NÓS FAZEMOS SUA LISTA DE PRESENTES',
-                                        description: 'Comprar presentes é muito fácil na Bloomingdale’s. Basta enviar sua lista a nossos especialistas multilíngues antes de sua visita, e você já vai encontrar seus itens esperando por você quando chegar.<br/> Ligue +1 (415) 856-5477 ou envie e-mail para <a class="fucsia" href="mailto:international_visitors@bloomingdales.com">international_visitors@bloomingdales.com</a>'
+                                        description: 'Comprar presentes é muito fácil na Bloomingdale\'s. Basta enviar sua lista a nossos especialistas multilíngues antes de sua visita, e você já vai encontrar seus itens esperando por você quando chegar.<br/> Ligue +1 (415) 856-5477 ou envie e-mail para <a class="fucsia" href="mailto:international_visitors@bloomingdales.com">international_visitors@bloomingdales.com</a>'
                                     },
                                     {
                                         title: 'PERSONAL STYLISTS E CONSULTORES DE BELEZA DE PLANTÃO',
@@ -1597,19 +1585,7 @@
                                         sched: 'Piso Térreo Almoço: Aberto todos os dias 11:30h – 14:30h <br/>Noodle Bar: Aberto todos os dias 11:30h – 17:30h <br/>Jantar:   Domingo – Quinta-feira 17:30h – 20:30h <br/>Sexta-feira – Sábado 17:30h – 23:00h <br/>Red Happy Hour: Segunda-feira – Sexta-feira 16:00h – 19:00h',
                                         description: '',
                                         imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_08.jpg'
-                                    },
-                                    {
-                                        name: '<b>Charlie Palmer</b> <span>|</span>  Ground Floor <span>|</span> +1 (714) 352-2525',
-                                        sched: 'Piso Térreo Almoço: Segunda-feira – Sábado 11:30h–14:30h<br/>Brunch: <br/>Domingo 11:30h -  14:30h <br/>Jantar: Segunda-feira 17:30h - 20:30h <br/>Terça-feira - Quinta-feira 17:30h - 22:30h <br/>Sexta-feira - Sábado 17:30h - 23:00h <br/>Domingo 17:30h - 20:30 PM <br/>Happy Hour: Segunda-feira - Domingo 16:00h - 19:00h; 21:00h fecha',
-                                        description: '',
-                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_07.jpg'
-                                    },
-                                    {
-                                        name: '<b>Next Vintage Wine Shop</b> <span>|</span> +1 (714) 352-2525',
-                                        sched: '11:45h–00:00h',
-                                        description: '',
-                                        imgURL: 'http://placehold.it/794x532?text=IMG3'
-                                    } 
+                                    }
                                 ],
                                 services: [
                                     {
@@ -1630,7 +1606,7 @@
                                 name: 'Southern California Stores',
                                 addr: '',
                                 hours: '',
-                                descr: 'Com filias por toda Los Angeles, Orange County e San Diego, a Bloomingdale’s deixou sua marca registrada na Califórnia do Sul. Compre as marcas de roupas, acessórios, sapatos e beleza que você ama em qualquer uma de nossas lojas. Saiba mais sobre nossos serviços e comodidades internos da loja abaixo.',
+                                descr: 'Com filias por toda Los Angeles, Orange County e San Diego, a Bloomingdale\'s deixou sua marca registrada na Califórnia do Sul. Compre as marcas de roupas, acessórios, sapatos e beleza que você ama em qualquer uma de nossas lojas. Saiba mais sobre nossos serviços e comodidades internos da loja abaixo.',
                                 dTile: '',
                                 dInfo: '',
                                 dFile: '',
@@ -1753,7 +1729,7 @@
                                 services: [
                                     {
                                         title: 'NÓS FAZEMOS SUA LISTA DE PRESENTES ',
-                                        description: 'Comprar presentes é muito fácil na Bloomingdale’s. Basta enviar sua lista a nossos especialistas multilíngues antes de sua visita, e você já vai encontrar seus itens esperando por você quando chegar.<br /> Ligue +1 (305) 792-1175 or email <a class="fucsia" href="mailto:international_visitors@bloomingdales.com">international_visitors@bloomingdales.com</a>'
+                                        description: 'Comprar presentes é muito fácil na Bloomingdale\'s. Basta enviar sua lista a nossos especialistas multilíngues antes de sua visita, e você já vai encontrar seus itens esperando por você quando chegar.<br /> Ligue +1 (305) 792-1175 or email <a class="fucsia" href="mailto:international_visitors@bloomingdales.com">international_visitors@bloomingdales.com</a>'
                                     },
                                     {
                                         title: 'FACILIDADE DE PAGAMENTO ',
@@ -1809,7 +1785,7 @@
                                 services: [
                                     {
                                         title: 'NÓS FAZEMOS SUA LISTA DE PRESENTES ',
-                                        description: 'Comprar presentes é muito fácil na Bloomingdale’s. Basta enviar sua lista a nossos especialistas multilíngues antes de sua visita, e você já vai encontrar seus itens esperando por você quando chegar.<br /> Ligue +1 (305) 792-1175 ou envie e-mail para <a class="fucsia" href="mailto:international_visitors@bloomingdales.com">international_visitors@bloomingdales.com</a>'
+                                        description: 'Comprar presentes é muito fácil na Bloomingdale\'s. Basta enviar sua lista a nossos especialistas multilíngues antes de sua visita, e você já vai encontrar seus itens esperando por você quando chegar.<br /> Ligue +1 (305) 792-1175 ou envie e-mail para <a class="fucsia" href="mailto:international_visitors@bloomingdales.com">international_visitors@bloomingdales.com</a>'
                                     },
                                     {
                                         title: 'FACILIDADE DE PAGAMENTO ',
@@ -2058,11 +2034,11 @@
                     dropdown: {
                         default: '请选择一家门店',
                         list: [
-                            {id: 'null', name: 'NEW YORK',                              disabled: 'true'},
-                            {id: '0',    name: '59th Street Flagship, New York City',   disabled: 'false'},
-                            {id: '1',    name: 'SoHo, New York City',                   disabled: 'false'},
-                            {id: 'null', name: 'HAWAII',                                disabled: 'true'},
-                            {id: '2',    name: 'Ala Moana, Honolulu',                   disabled: 'false'},
+                            {id: 'null', name: '纽约',                                  disabled: 'true'},
+                            {id: '0',    name: '第 59 街旗舰店，纽约市',                   disabled: 'false'},
+                            {id: '1',    name: 'SoHo 店，纽约市',                         disabled: 'false'},
+                            {id: 'null', name: '夏威夷',                                 disabled: 'true'},
+                            {id: '2',    name: '阿拉莫阿那购物中心店，檀香山',               disabled: 'false'},
                             {id: 'null', name: '伊利诺伊州',                              disabled: 'true'},
                             {id: '3',    name: '北密歇根大道店，芝加哥',                    disabled: 'false'},
                             {id: '4',    name: '麦地那之家，芝加哥',                        disabled: 'false'},
@@ -2083,8 +2059,8 @@
                         dining: '店内美食餐厅',
                         services: '客户服务',
                         servicesSubHead: '我们的工作人员将向您展示 Bloomingdale\'s 是“世界上独一无二的百货店”的原因。 <br/>请寻找我们佩戴您本国旗帜徽章的工作人员。我们会帮助您找到您喜爱的商品，<br/>并提供一系列个性化服务。',
-                        loyalty: 'Join the International Loyalty Club',
-                        loyaltySubHead: 'Our special rewards program was created for international shoppers.* For every dollar you spend,<br/>you\'ll earn one point toward gift cards, services and exceptional experiences. Right now, you can enroll in<br/>the program at Bloomingdale \'  s Ala Moana, but points can be earned and redeemed at any full-line<br/>Bloomingdale \'  s location in the United States.**',
+                        loyalty: '加入国际会员俱乐部',
+                        loyaltySubHead: '我们为国际顾客量身定制了特别的回馈计划。*您每消费一美元，将获得一点积分，积分可在日后兑换礼品卡，还可享受其他服务，更有独一无二的旅途等您体验。 目前，您仅可在 Bloomingdale\'s 阿拉莫阿那购物中心店进行积分兑换，但您可在美国境内任何一家全线运营的 Bloomingdale\'s 商店消费以获取积分。**',
                         id: [
                             {
                                 name: '第 59 街旗舰店',
@@ -2311,31 +2287,31 @@
                                 ],
                                 loyalty: [
                                     {
-                                        title: 'EARN A GIFT CARD',
-                                        description: '500 points = $25 gift card, good for any merchandise at Bloomingdale\'s Ala Moana.'
+                                        title: '赢取礼品卡',
+                                        description: '500 积分＝价值 25 美元的礼品卡，可用于在 Bloomingdale\'s 阿拉莫阿那购物中心店消费。'
                                     },
                                     {
-                                        title: 'ENJOY STORE SERVICES',
-                                        description: 'Your points can earn you complimentary package delivery back to your hotel, lunch or a car service to your next destination. For more information, see an associate at the Welcome Center on the first floor.'
+                                        title: '享受商店的服务',
+                                        description: '您的积分还可为您赢取商品免费打包送货服务，以及为您的下一站旅途提供餐饮或汽车服务。 要了解更多信息，请在一楼顾客服务中心咨询工作人员。'
                                     },
                                     {
-                                        title: 'INDULGE IN AN EXPERIENCE YOU\'LL NEVER FORGET',
-                                        description: 'Redeem your points for authentic Hawaiian adventures! For more information, see an associate at the Welcome Center on the first floor.'
+                                        title: '享受一次难忘的旅程',
+                                        description: '您可兑换积分，享受纯正的夏威夷风情游！ 要了解更多信息，请在一楼顾客服务中心咨询工作人员。'
                                     },
                                     {
                                         title: '',
-                                        description: '<span class="fucsia">*Proof of international address required.</span><br/>**Points cannot be redeemed at Bloomingdale\'s outlet stores or on bloomingdales.com. Points can only be redeemed for services or experiences at Bloomingdale\'s Ala Moana.'
+                                        description: '<span class="fucsia">*需提供国际地址证明。</span><br/>**点数不可在 Bloomingdale\'s 的直销店或网站上获得。点数只可在Bloomingdale\'s Ala Moana 店内的消费及服务获得。'
                                     }                                      
                                 ]                                    
                             },
                             {
-                                name: 'North Michigan Avenue',
+                                name: '北密歇根大道店',
                                 addr: '900 North Michigan Avenue  Chicago, IL 60611  +1 312-440-4460 ',
-                                hours: 'Monday–Saturday: 10AM–8PM | Sunday: 11AM–7PM',
-                                descr: 'Planning a trip to the Windy City? Let Bloomingdale\'s be your fashion guide. Fill out your wardrobe with our vast collection of designer names, or stock up on your favorite beauty products. Our multilingual associates can help tailor your shopping trip to your every need.',
-                                dTile: 'VISITING CHICAGO?',
-                                dInfo: 'Download our welcome booklet before you arrive.',
-                                dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Chicago_EN.pdf',
+                                hours: '周一 － 周六： 上午 10:00 － 晚上 8:00 <span>|</span> 周日： 上午 11:00 － 晚上 7:00',
+                                descr: '计划游览风之城？让 Bloomingdale\'s 做您的时尚导游。选购我们的各种名牌商品来填满您的衣柜，或是囤积您最喜欢的美容产品。我们的多语种工作人员可以帮您专门策划安排购物之旅，以满足您的各种需求。来密歇根观光？在到达之前下载我们的欢迎手册。',
+                                dTile: '来密歇根观光？',
+                                dInfo: '在您到达之前下载我们的欢迎手册。',
+                                dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Chicago_CN.pdf',
                                 designers: [
                                     'Burberry London',
                                     'Canada Goose',
@@ -2360,52 +2336,52 @@
                                 ],
                                 restaurants: [
                                     {
-                                        name: '<b>FORTY CARROTS</b> <span>|</span> 6th floor <span>|</span> (312) 440-4861',
-                                        sched: 'Monday–Saturday 11AM–6PM',
-                                        description: 'A visit isn\'t complete without our famous frozen yogurt. You\'ll also find freshly made salads, sandwiches, soups, a fresh juice bar and selection of Tavalon premium teas. Counter, table service and takeout available.',
+                                        name: '<b>FORTY CARROTS</b> <span>|</span> 6 层 <span>|</span>  (312) 440-4861',
+                                        sched: '周一 – 周六 上午 11:00 – 晚上 6:00',
+                                        description: '只有品尝了我们著名的冷冻酸奶，才算不虚此行。',
                                         imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_02.jpg'
-                                    }
+                                    }                                        
                                 ],
                                 services: [
                                     {
-                                        title: 'WE\'LL GATHER YOUR GIFT LIST ',
-                                        description: 'Shopping for gifts is so easy at Bloomingdale\'s. Just send our multilingual specialist your wish list before you visit and you\'ll find all your items waiting when you arrive.<br /> Call 312-440-4596 or email <a class="fucsia" href="mailto:international_visitors@bloomingdales.com">international_visitors@bloomingdales.com</a>'
+                                        title: '我们会为您准备好礼品清单上的物品',
+                                        description: '在Bloomingdale\'s，购买礼品是一件非常轻松的事。<br/>只要将您的愿望清单发送给我们的多语种专家，<br/>我们即可在您到达之前将一切准备就绪。<br/>拨打 312-440-4596 或发送电子邮件至 <a class="fucsia" href="mailto:international_visitors@bloomingdales.com">international_visitors@bloomingdales.com</a>'
                                     },
                                     {
-                                        title: 'PERSONAL STYLISTS ON CALL',
-                                        description: 'Our personal stylists are available to shop the store with you, or select wardrobe and home decor options to your taste—all for free. <br/> At Your Service 312-440-4887 '
+                                        title: '个人形象设计师随传随到',
+                                        description: '我们的个人形象设计师可免费伴您选购商品，或根<br/>据您的品味为您的全副行头和家居饰品提供选购<br/>建议。随时为您服务：312-440-4887。'
 
                                     },
                                     {
-                                        title: 'PAYMENT MADE EASY ',
-                                        description: 'We accept the American Express® Global Travel Card and all forms of China UnionPay.<div class="unionpay">'
+                                        title: '便捷的付款方式',
+                                        description: '我们接受美国运通®环球旅行卡和各种中国银联卡。<div class="unionpay">'
 
                                     },
                                     {
-                                        title: 'QUICK ALTERATIONS ',
-                                        description: 'We perform professional tailoring and alteration services on site by request. Prices are available at the time of your fitting.'
+                                        title: '送货至您入住的酒店',
+                                        description: '若您购物达 250 美元或以上，我们很乐意将您所购商品免费送至您入住的酒店。您只需将所购商品交至三楼的顾客服务中心即可。 '
 
                                     },
                                     {
-                                        title: 'DELIVERY TO YOUR HOTEL ',
-                                        description: 'We will gladly deliver your purchases of $250 USD or more to your Manhattan hotel—for free. Just drop them off at our first floor balcony Visitor\'s Center.'
+                                        title: '快速改衣 ',
+                                        description: '我们可根据您的要求当场提供专业的剪裁和改衣<br/>服务。您可在试穿衣服时再付费。'
 
                                     },
                                     {
-                                        title: 'CARDS & RIBBON TO TAKE HOME ',
-                                        description: 'We will gift wrap your purchases, or you can pick up cards, boxes, wrapping paper and ribbon to take home at our gift wrapping station on the sixth floor. '
+                                        title: '精美礼品包装服务',
+                                        description: '我们将为您精心包装所购商品，您也可以挑选礼品卡、包装盒、包装纸和丝带，将它们带回家自行包装。请光临五楼的顾客服务台。'
 
                                     }
                                 ]  
                             },
                             {
-                                name: 'Medinah Home',
+                                name: '麦地那之家',
                                 addr: '600 North Wabash Avenue  Chicago, IL 60611  +1 312-324-7500',
-                                hours: 'Monday–Saturday: Store Opens 10AM <span>|</span> Sunday: Opens 12PM',
-                                descr: 'Deck out your home with a trip to Chicago\'s Medinah Home store. Here you\'ll find luxurious bedding, designer kitchen appliances, plush bathroom accessories and more. Experience our award-winning hospitality first hand with a full range of in-store services.',
-                                dTile: 'VISITING CHICAGO?',
-                                dInfo: 'Download our welcome booklet before you arrive.',
-                                dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Chicago_EN.pdf',
+                                hours: '周一–周六：上午 10:00 开始营业 <span>|</span> 周日：中午 12:00 开始营业',
+                                descr: '前往芝加哥的麦地那之家，将您的房子装饰一新。在这里，您可以选购高档床上用品、名牌厨具、豪华浴室配件等。亲自体验我们备受赞誉的热情服务和全方位的店内服务。',
+                                dTile: '来密歇根观光？',
+                                dInfo: '在到达之前下载我们的欢迎手册。',
+                                dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Chicago_CN.pdf',
                                 designers: [
                                     'Nespresso',
                                     'Rimowa',
@@ -2414,34 +2390,34 @@
                                 ],
                                 services: [
                                     {
-                                        title: 'WE\'LL GATHER YOUR GIFT LIST ',
-                                        description: 'Shopping for gifts is so easy at Bloomingdale\'s. Just send our multilingual specialist your wish list before you visit and you\'ll find all your items waiting when you arrive.<br /> Call 312-440-4596 or email <a class="fucsia" href="mailto:international_visitors@bloomingdales.com">international_visitors@bloomingdales.com</a>'
+                                        title: '我们会为您准备好礼品清单上的物品',
+                                        description: '在 Bloomingdale\'s，购买礼品是一件非常轻松的事，只要将您的愿望清单发送给我们的多语种专家，我们即可在您到达之前将一切准备就绪。<br /> 拨打 312-440-4596 或发送电子邮件至 <a class="fucsia" href="mailto:international_visitors@bloomingdales.com">international_visitors@bloomingdales.com</a>'
                                     },
                                     {
-                                        title: 'PERSONAL STYLISTS ON CALL',
-                                        description: 'Our personal stylists are available to shop the store with you, or select wardrobe and home decor options to your taste—all for free. <br/> At Your Service 312-324-7633 '
+                                        title: '个人形象设计师随传随到',
+                                        description: '我们的个人形象设计师可免费伴您选购商品，或根据您的品味为您的家居饰品提供选购建议。 <br/> 随时为您服务：312-324-7633 '
 
                                     },
                                     {
-                                        title: 'PAYMENT MADE EASY ',
-                                        description: 'We accept the American Express® Global Travel Card and all forms of China UnionPay.<div class="unionpay">'
+                                        title: '便捷的付款方式',
+                                        description: '我们接受美国运通®环球旅行卡和各种中国银联卡。<div class="unionpay">'
 
                                     },
                                     {
-                                        title: 'CARDS & RIBBON TO TAKE HOME ',
-                                        description: 'We will gift wrap your purchases, or you can pick up cards, boxes, wrapping paper and ribbon to take home at our gift wrapping station on the sixth floor. '
+                                        title: '精美礼品包装服务',
+                                        description: '我们将为您精心包装所购商品，您也可以挑选礼品卡、包装盒、包装纸和丝带，将它们带回家自行包装。 请前往二楼的礼品包装处。'
 
                                     }
                                 ] 
                             },
                             {
-                                name: 'San Francisco Centre',
+                                name: '旧金山中心店',
                                 addr: '845 Market Street  San Francisco, CA  +1 (415) 856-5402',
-                                hours: 'Monday–Saturday: 10AM–9PM | Sunday: 11AM–8PM',
-                                descr: 'Discover the best of San Francisco shopping. First stop, Bloomingdale\'s. Head to our Visitor\'s Center for a multilingual directory, or speak to our multilingual associates to tailor your experience to your needs. Learn more about our in-store amenities below.',
-                                dTile: 'VISITING SAN FRANCISCO?',
-                                dInfo: 'Download our welcome booklet before you arrive.',
-                                dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_SanFran_EN.pdf',
+                                hours: '周一 － 周六： 上午 10:00 － 晚上 9:00 <span>|</span> 周日： 上午 11:00 － 晚上 8:00',                                
+                                descr: '享受旧金山最佳的购物体验。第一站，Bloomingdale\'s。前往我们的顾客服务中心获取多语种指南，或咨询我们的多语种工作人员，他们将为您量身定制满足您需求的体验。在下方了解更多关于我们店内设施的信息。',
+                                dTile: '来旧金山观光？',
+                                dInfo: '在到达之前下载我们的欢迎手册。',
+                                dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_SanFran_CN.pdf',
                                 designers: [
                                     'Alice + Olivia',
                                     'BCBGMAXAZRIA',
@@ -2473,44 +2449,44 @@
                                 ],
                                 services: [
                                     {
-                                        title: 'WE\'LL GATHER YOUR GIFT LIST ',
-                                        description: 'Shopping for gifts is so easy at Bloomingdale\'s. Just send our multilingual specialist your wish list before you visit and you\'ll find all your items waiting when you arrive.<br /> Call 415-856-5477 or email <a class="fucsia" href="mailto:international_visitors@bloomingdales.com">international_visitors@bloomingdales.com</a>'
+                                        title: '我们会为您准备好礼品清单上的物品',
+                                        description: '在 Bloomingdale\'s，购买礼品是一件非常轻松的事。只要将您的愿望清单发送给我们的多语种专家，我们即可在您到达之前将一切准备就绪。<br/>拨打 415-856-5477 或发送电子邮件至 <a class="fucsia" href="mailto:international_visitors@bloomingdales.com">international_visitors@bloomingdales.com</a>'
                                     },
                                     {
-                                        title: 'PERSONAL STYLISTS ON CALL',
-                                        description: 'Our personal stylists are available to shop the store with you, or select wardrobe and home decor options to your taste—all for free. <br/> At Your Service 415-856-5538 '
+                                        title: '个人形象设计师随传随到',
+                                        description: '我们的个人形象设计师可免费伴您选购商品，或根<br/>据您的品味为您的全副行头和家居饰品提供选购<br/>建议。随时为您服务：415-856-5538'
 
                                     },
                                     {
-                                        title: 'PAYMENT MADE EASY ',
-                                        description: 'We accept the American Express® Global Travel Card and all forms of China UnionPay.<div class="unionpay">'
+                                        title: '便捷的付款方式',
+                                        description: '我们接受美国运通®环球旅行卡和各种中国银联卡。<div class="unionpay">'
 
                                     },
                                     {
-                                        title: 'QUICK ALTERATIONS ',
-                                        description: 'We perform professional tailoring and alteration services on site by request. Prices are available at the time of your fitting.'
+                                        title: '送货至您入住的酒店',
+                                        description: '若您购物达 250 美元，我们很乐意将您所购商品免费送至您入住的酒店。您只需将所购商品交给一楼楼厅处的顾客服务中心即可。'
 
                                     },
                                     {
-                                        title: 'DELIVERY TO YOUR HOTEL ',
-                                        description: 'We will gladly deliver your purchases of $250 USD or more to your Manhattan hotel—for free. Just drop them off at our first floor balcony Visitor\'s Center.'
+                                        title: '精美礼品包装服务 ',
+                                        description: '我们将为您精心包装所购商品，您也可以在顾客服务中心挑选礼品卡、包装盒、包装纸和丝带，将它们带回家自行包装。 '
 
                                     },
                                     {
-                                        title: 'CARDS & RIBBON TO TAKE HOME ',
-                                        description: 'We will gift wrap your purchases, or you can pick up cards, boxes, wrapping paper and ribbon to take home at our gift wrapping station on the sixth floor. '
+                                        title: '快速改衣 ',
+                                        description: '我们可根据您的要求当场提供专业的剪裁和改衣服务。<br/>您可在试穿衣服时再付费。'
 
                                     }
                                 ]                               
                             },
                             {
-                                name: 'South Coast Plaza',
+                                name: '南海岸广场店',
                                 addr: '3333 Bristol St  Costa Mesa, CA 92626  +1 (714) 824-4600',
-                                hours: 'Monday–Saturday: 10AM–9PM | Sunday: 11AM–7PM',
-                                descr: 'With the best designer selection, edited specifically for Southern California, South Coast Plaza is a must-go shopping destination. New to the Golden State? Multilingual associates will make your stay that much better. Start with a store directory in your chosen language or add to your shopping trip with our in-store amenities below.',
+                                hours: '周一 － 周六： 上午 10:00 － 晚上 9:00 <span>|</span> 周日： 上午 11:00 － 晚上 7:00',                                
+                                descr: '南海岸广场店拥有顶尖设计师品牌，特为南加利福尼亚州量身打造，是不可错过的购物天堂。第一次来金州？多语种工作人员将帮助您解决诸多难题。您可依据中文门店指南或在您购物时到下方的店内设施处寻求帮助。',
                                 dTile: 'VISITING COSTA MESA?',
-                                dInfo: 'Download our welcome booklet before you arrive.',
-                                dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_SouthCoastPlaza_EN.pdf',
+                                dInfo: '在到达之前下载我们的欢迎手册。',
+                                dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_SouthCoastPlaza_CN.pdf',
                                 designers: [
                                     'Burberry London',
                                     'Calvin Klein',
@@ -2550,127 +2526,115 @@
                                 ],
                                 restaurants: [
                                     {
-                                        name: '<b>AnQi by Crustacean - Gourmet Bistro & Noodle Bar</b> <br/>  Ground Floor <span>|</span> 714-557-5679',
-                                        sched: 'Lunch: Open Daily 11:30AM–2:30PM <br/> Noodle Bar: Open Daily 11:30AM–5:30PM <br/> Dinner: Sunday–Thursday 5:30PM–10:30PM <br/>Friday–Saturday 5:30PM–11:00PM <br/> Red Happy Hour: Monday–Friday 4PM–7PM',
+                                        name: '<b>AnQi by Crustacean - Gourmet Bistro & Noodle Bar</b> <br/>  1 层 <span>|</span> 714-557-5679',
+                                        sched: '午餐： 营业时间 上午 11:30 － 下午 2:30  Noodle Bar： 营业时间 上午 11:30 － 下午 5:30  晚餐： 周日 － 周四 下午 5:30 － 晚上 10:30  周五 － 周六下午5:30 － 晚上 11:00  红酒优惠时间： 周一 － 周五下午 4:00 － 晚上 7:00',
                                         description: '',
                                         imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_08.jpg'
-                                    },
-                                    {
-                                        name: '<b>Charlie Palmer</b> <span>|</span>  Ground Floor <span>|</span> 714-352-2525',
-                                        sched: 'Lunch: Monday–Saturday 11:30AM–2:30PM <br/>Brunch: Sunday 11:30AM–2:30PM <br/> Dinner: Monday 5:30PM–8:30PM <br/>Tuesday–Thursday 5:30PM–10:30PM<br/> Friday–Saturday 5:30PM–11PM <br/> Sunday 5:30PM–8:30PM <br/>Happy Hour: Monday–Sunday 4PM–7PM; 9PM to close',
-                                        description: '',
-                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_07.jpg'
-                                    },
-                                    {
-                                        name: '<b>Next Vintage Wine Shop</b> <span>|</span> 714 352-2525',
-                                        sched: 'Open <span>|</span> 11:45AM–Midnight',
-                                        description: '',
-                                        imgURL: 'http://placehold.it/794x532?text=IMG3'
-                                    } 
+                                    }
                                 ],
                                 services: [
                                     {
-                                        title: 'QUICK ALTERATIONS ',
-                                        description: 'We perform professional tailoring and alteration services on site by request. Prices are available at the time of your fitting. Available at select locations.'
+                                        title: '快速改衣',
+                                        description: '我们可根据您的要求当场提供专业的剪裁和改衣服务。<br/>您可在试穿衣服时再付费。'
                                     },
                                     {
-                                        title: 'CARDS & RIBBON TO TAKE HOME ',
-                                        description: 'We will gift wrap your purchases, or you can pick up cards, boxes, wrapping paper and ribbon to take home. Available at select locations.'
+                                        title: '精美礼品包装服务',
+                                        description: '我们将为您精心包装所购商品，您也可以挑选礼品卡、包装盒、包装纸和丝带，将它们带回家自行包装。<br/>上述服务全部位于底层。'
                                     },
                                     {
-                                        title: 'PAYMENT MADE EASY ',
-                                        description: 'We accept all forms of China UnionPay.<div class="unionpay">'
+                                        title: '便捷的付款方式',
+                                        description: '我们接受美国运通®环球旅行卡和各种中国银联卡。<div class="unionpay">'
                                     }
                                 ]                                    
                             },
                             {
-                                name: 'Southern California Stores',
+                                name: '南加州店',
                                 addr: '',
                                 hours: '',
-                                descr: 'With outposts across Los Angeles, Orange County and San Diego, Bloomingdale\'s has left its iconic mark on SoCal. Shop the fashion, accessories, shoes and beauty brands you love in any one of our stores. Learn more about our in-store amenities below.',
+                                descr: '继在洛杉矶、橘郡及圣地亚哥开设的店铺后，Bloomingdale\'s 又在南加州留下了自己的足迹。您可在我们任意一家店铺中购买您喜爱的时尚、饰品、鞋类以及美容品牌的商品。在下方了解更多关于我们店内设施的信息。',
                                 dTile: 'VISITING SOUTHERN CALIFORNIA?',
-                                dInfo: 'Download our welcome booklet before you arrive.',
-                                dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_SouthernCalifornia_EN.pdf',
+                                dInfo: '在到达之前下载我们的欢迎手册。',
+                                dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_SouthernCalifornia_CN.pdf',
                                 stores: [
                                     {
-                                        area: 'Orange County',
+                                        area: '橘郡',
                                         list: [
                                             {
-                                                name: 'South Coast Plaza',
+                                                name: '南海岸广场店',
                                                 addr: '3333 South Bristol Street, Costa Mesa, CA 92626  +1 714-824-4600',
-                                                hours: 'Hours:<br/>Monday–Tuesday 10AM–9PM <br/>Wednesday–Saturday 10AM–10PM<br/>Sunday 10AM–8PM'
+                                                hours: '营业时间：<br/>周一－周二上午 10:00－晚上 9:00 <br/>周三－周六上午 10:00－晚上 10:00<br/>周日上午 10:00－晚上 8:00'
                                             },
                                             {
-                                                name: 'Newport Fashion Island',
+                                                name: '纽波特时尚岛店',
                                                 addr: '701 Newport Center Drive, Newport Beach, CA 92660 +1 949-729-6600',
-                                                hours: 'Hours: <br/>Monday–Tuesday 10AM–8PM<br/>Wednesday–Saturday 10AM–10PM<br/>Sunday 11AM–8PM'
+                                                hours: '营业时间： <br/>周一－周二上午 10:00－晚上 8:00<br/>周三－周六上午 10:00－晚上 10:00<br/>周日上午 11:00－晚上 8:00'
                                             }     
                                         ]                                   
                                     },
                                     {
-                                        area: 'Los Angeles',
+                                        area: '洛杉矶',
                                         list: [
                                             {
-                                                name: 'Century City',
+                                                name: '世纪城店',
                                                 addr: '10250 Santa Monica Boulevard, Los Angeles, CA 90067 +1 310-772-2100',
-                                                hours: 'Hours: <br/>Monday–Tuesday 10AM–9PM<br/>Wednesday–Saturday 10AM–10PM<br/>Sunday 11AM–8PM'
+                                                hours: '营业时间：<br/>周一－周二上午 10:00－晚上 9:00 <br/>周三－周六上午 10:00－晚上 10:00 <br/>周日上午 11:00－晚上 8:00 <br/>'
                                             },
                                             {
-                                                name: 'Beverly Center',
+                                                name: '比佛利中心店',
                                                 addr: '8500 Beverly Boulevard, Los Angeles, CA 90048 +1 310-360-2700',
-                                                hours: 'Hours: <br/>Monday–Tuesday 10AM–9PM<br/>Wednesday–Saturday 10AM–10PM<br/>Sunday 12PM–8PM'
+                                                hours: '营业时间：<br/>周一－周二上午 10:00－晚上 9:00 <br/>周三－周六上午 10:00－晚上 10:00 <br/>周日中午 12:00－晚上 8:00'
                                             },
                                             {
-                                                name: 'Santa Monica Place',
+                                                name: '圣莫尼卡广场店',
                                                 addr: '315 Colorado Avenue, Santa Monica, CA 90401 +1 310-985-6400',
-                                                hours: 'Hours: <br/>Monday–Tuesday 10AM–9PM<br/>Wednesday–Saturday 10AM–10PM<br/>Sunday 11AM–8PM'
+                                                hours: '营业时间：<br/>周一－周二上午 10:00－晚上 9:00 <br/>周三－周六上午 10:00－晚上 10:00 <br/>周日上午 11:00－晚上 8:00'
                                             },
                                             {
-                                                name: 'Glendale Galleria',
+                                                name: '格伦代尔广场店',
                                                 addr: '103 South Brand Blvd., Glendale, CA 91210 +1 818-638-4100',
-                                                hours: 'Hours: <br/>Monday–Tuesday 10AM–9PM<br/>Wednesday–Saturday 10AM–10PM<br/>Sunday 11AM–9PM'
+                                                hours: '营业时间：<br/>周一－周二上午 10:00－晚上 9:00<br/>周三－周六上午 10:00－晚上 10:00<br/>周日上午 11:00－晚上 9:00'
                                             },
                                             {
-                                                name: 'Sherman Oaks Fashion Square',
+                                                name: '谢尔曼奥克斯时尚广场店',
                                                 addr: '14060 Riverside Drive, Sherman Oaks, CA 91423 +1 818-325-2200',
-                                                hours: 'Hours: <br/>Monday–Tuesday 10AM–9PM<br/>Wednesday–Saturday 10AM–10PM<br/>Sunday 11AM–9PM'
+                                                hours: '营业时间：<br/>周一－周二上午 10:00－晚上 9:00<br/>周三－周六上午 10:00－晚上 10:00<br/>周日上午 11:00－晚上 9:00'
                                             }     
                                         ]                                   
                                     }, 
                                     {
-                                        area: 'San Diego',
+                                        area: '圣地亚哥',
                                         list: [
                                             {
-                                                name: 'Fashion Valley',
+                                                name: '时尚谷店',
                                                 addr: '7057 Friars Road, San Diego, CA 92108 +1 619-610-6400',
-                                                hours: 'Hours: <br/>Monday–Tuesday 10AM–8PM<br/>Wednesday 10AM–8PM<br/>Thursday–Saturday 10AM–10PM<br/>Sunday 12PM–8PM'
+                                                hours: '营业时间：<br/>周一－周二上午 10:00－晚上 8:00<br/>周三上午 10:00－晚上 8:00<br/>周四－周六上午 10:00－晚上 10:00<br/>周日中午 12:00－晚上 8:00'
                                             }   
                                         ]                                   
                                     }                                                                       
                                 ],
                                 services: [
                                     {
-                                        title: 'QUICK ALTERATIONS ',
-                                        description: 'We perform professional tailoring and alteration services on site by request. Prices are available at the time of your fitting.'
+                                        title: '快速改衣',
+                                        description: '我们可根据您的要求当场提供专业的剪裁和改衣服务。您可在试穿衣服时再付费。本服务仅在指定店铺提供。'
                                     },
                                     {
-                                        title: 'CARDS & RIBBON TO TAKE HOME ',
-                                        description: 'We will gift wrap your purchases, or you can pick up cards, boxes, wrapping paper and ribbon to take home. Find it all on the lower level.'
+                                        title: '精美礼品包装服务 ',
+                                        description: '我们将为您精心包装所购商品，您也可以挑选礼品卡、包装盒、包装纸和丝带，将它们带回家自行包装。本服务仅在指定店铺提供。'
                                     },
                                     {
-                                        title: 'PAYMENT MADE EASY ',
-                                        description: 'We accept all forms of China UnionPay.<div class="unionpay">'
+                                        title: '个人形象设计师随传随到',
+                                        description: '我们的个人形象设计师可免费伴您选购商品，或根据您的品味为您的家居饰品提供选购建议。本服务仅在指定店铺提供。'
                                     }
                                 ]  
                             },
                             {
-                                name: 'AVENTURA',
+                                name: '阿文图拉购物中心店',
                                 addr: '19555 Biscayne Boulevard  Aventura, FL 33180  +1 (305) 792-1246',
-                                hours: 'Monday–Saturday: 10AM–10PM <span>|</span> Sunday: 12PM–9PM',
-                                descr: 'Planning your vacation itinerary? Start with a trip to Florida\'s Aventura store. Explore our extensive selection of designer fashions, beauty brands, luxurious accessories and more. Get shopping with a store directory in your chosen language and be sure to make the most of your experience with our in-store amenities listed below.',
-                                dTile: 'VISITING AVENTURA?',
-                                dInfo: 'Download our welcome booklet before you arrive.',
-                                dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Aventura_EN.pdf',
+                                hours: '营业时间 周一 － 周六： 上午 10:00 － 晚上 10:00  <span>|</span>  周日： 中午 12:00 － 晚上 9:00  正',
+                                descr: '正在规划您的假日旅程？从佛罗里达州阿文图拉购物中心店启程吧。在此我们提供种类繁多的设计时尚、美容品牌、奢侈饰品及其他商品供您选择。根据中文门店指南进行购物，同时我们邀您尽可能多地进入下方列示的店内设施进行体验。',
+                                dTile: '来阿文图拉购物中心店观光？',
+                                dInfo: '在到达之前下载我们的欢迎手册。',
+                                dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Aventura_CN.pdf',
                                 designers: [
                                     'Baccarat',
                                     'Bernardaud',
@@ -2716,37 +2680,37 @@
                                 ],
                                 restaurants: [
                                     {
-                                        name: '<b>59TH & LEX CAFE</b> <span>|</span> 2nd floor <span>|</span> (305) 792-1180',
-                                        sched: 'Monday–Saturday 10AM–7:30PM <span>|</span> Sunday 12–5PM',
+                                        name: '<b>59TH & LEX CAFE</b> <span>|</span>  二楼 <span>|</span> (305) 792-1180',
+                                        sched: '周一 － 周六 上午  10:00 － 晚上  7:30 <span>|</span> 周日中午 12:00－下午  5:00',
                                         description: '',
                                         imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_02.jpg'
                                     }
                                 ],
                                 services: [
                                     {
-                                        title: 'WE\'LL GATHER YOUR GIFT LIST ',
-                                        description: 'Shopping for gifts is so easy at Bloomingdale\'s. Just send our multilingual specialist your wish list before you visit and you\'ll find all your items waiting when you arrive.<br /> Call 305-792-1175 or email <a class="fucsia" href="mailto:international_visitors@bloomingdales.com">international_visitors@bloomingdales.com</a>'
+                                        title: '我们会为您准备好礼品清单上的物品',
+                                        description: '在 Bloomingdale\'s，购买礼品是一件非常轻松的事。只要将您的愿望清单发送给我们的多语种专家，我们即可在您到达之前将一切准备就绪。<br/>拨打 305-792-1175 或发送电子邮件至  <a class="fucsia" href="mailto:international_visitors@bloomingdales.com">international_visitors@bloomingdales.com</a>'
                                     },
                                     {
-                                        title: 'PAYMENT MADE EASY ',
-                                        description: 'We accept the American Express® Global Travel Card.'
+                                        title: '便捷的付款方式',
+                                        description: '我们接受美国运通®环球旅行卡。'
 
                                     },
                                     {
-                                        title: 'QUICK ALTERATIONS ',
-                                        description: 'We perform professional tailoring and alteration services on site by request. Prices are available at the time of your fitting.'
+                                        title: '快速改衣',
+                                        description: '我们可根据您的要求当场提供专业的剪裁和改衣服务。<br/>您可在试穿衣服时再付费。'
 
                                     }
                                 ]     
                             },
                             {
-                                name: 'ORLANDO',
-                                addr: '4152 Conroy Road  Orlando, FL 32839  +1 +1 (407) 264-2514',
-                                hours: 'Monday–Saturday: 10AM–9PM | Sunday: 11AM–7PM',
-                                descr: 'Stocked with the best designers and beauty brands, Bloomingdale\'s Orlando is your ticket to world-class shopping. Stop in on your next trip to the Sunshine State for an experience tailored to you. Pick up a store directory in your chosen language, then take advantage of the many in-store amenities listed below.',
-                                dTile: 'VISITING ORLANDO?',
-                                dInfo: 'Download our welcome booklet before you arrive.',
-                                dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Orlando_EN.pdf',
+                                name: '奥兰多店',
+                                addr: '4152 Conroy Road  Orlando, FL 32839  +1 (407) 264-2514',
+                                hours: '营业时间 周一 － 周六： 上午 10:00 － 晚上 9:00  <span>|</span>  周日： 中午 11:00 － 晚上 7:00  正',                                
+                                descr: 'Bloomingdale\'s 奥兰多店有着最棒的设计师和美容品牌，您可在此享受世界级的购物体验。在您下一站前往佛罗里达州的旅途中顺道进来商店看看，我们为您量身打造了尊享购物体验。根据您的语言选择一份门店指南，并享受下方列示的诸多店内设施为您带来的便利。',
+                                dTile: 'V来奥兰多观光？',
+                                dInfo: '在到达之前下载我们的欢迎手册。',
+                                dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Orlando_CN.pdf',
                                 designers: [
                                     'Burberry London',
                                     'Canali ',
@@ -2772,25 +2736,25 @@
                                 ],
                                 restaurants: [
                                     {
-                                        name: '<b>FORTY CARROTS</b> <span>|</span> Level 1 <span>|</span> +1 (407) 264-2683',
-                                        sched: 'Monday–Saturday 10AM–9PM <span>|</span> Sunday 11AM–7PM',
-                                        description: 'A visit isn\'t complete without our famous frozen yogurt',
+                                        name: '<b>FORTY CARROTS</b> <span>|</span> 一楼 <span>|</span> +1 (407) 264-2683',
+                                        sched: '周一 － 周六 上午 10:00 － 晚上 9:00 <span>|</span> 周日上午 11:00 － 晚上 7:00',
+                                        description: '只有品尝了我们著名的冷冻酸奶，才算不虚此行。',
                                         imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_02.jpg'
                                     }
                                 ],
                                 services: [
                                     {
-                                        title: 'WE\'LL GATHER YOUR GIFT LIST ',
-                                        description: 'Shopping for gifts is so easy at Bloomingdale\'s. Just send our multilingual specialist your wish list before you visit and you\'ll find all your items waiting when you arrive.<br /> Call 305-792-1175 or email <a class="fucsia" href="mailto:international_visitors@bloomingdales.com">international_visitors@bloomingdales.com</a>'
+                                        title: '我们会为您准备好礼品清单上的物品',
+                                        description: '在 Bloomingdale\'s，购买礼品是一件非常轻松的事。只要将您的愿望清单发送给我们的多语种专家，我们即可在您到达之前将一切准备就绪。<br/>拨打 305-792-1175 或发送电子邮件至 <a class="fucsia" href="mailto:international_visitors@bloomingdales.com">international_visitors@bloomingdales.com</a>'
                                     },
                                     {
-                                        title: 'PAYMENT MADE EASY ',
-                                        description: 'We accept the American Express® Global Travel Card.'
+                                        title: '便捷的付款方式',
+                                        description: '我们接受美国运通®环球旅行卡。'
 
                                     },
                                     {
-                                        title: 'QUICK ALTERATIONS ',
-                                        description: 'We perform professional tailoring and alteration services on site by request. Prices are available at the time of your fitting.'
+                                        title: '快速改衣',
+                                        description: '我们可根据您的要求当场提供专业的剪裁和改衣服务。<br/>您可在试穿衣服时再付费。'
 
                                     }
                                 ]       
@@ -2817,6 +2781,58 @@
                         text: '扫描二维码关注Bloomingdale\'s官方微信，第一时间获取品牌资讯。'
                     }
                 },
+                contactUs: {
+                    formTitle: '联系我们',
+                    left: {
+                        title: '请告知我们您的行程',
+                        p1: '请告诉我们，您想造访哪家 Bloomingdale\'s 门店以及您的计划出行日期。',
+                        p2: '只需提交这份表格，我们的多语种工作人员将会与您联系。'
+                    },
+                    right: {
+                        name: '姓名：',
+                        nameErr: '请告诉我们你的名字',
+                        email: '电子邮件:',
+                        emailErr1: '请告诉我们您的电子邮件',
+                        emailErr2: '无效的邮件地址',
+                        phone: '手机号码（可选）：',
+                        phoneErr: '无效的电话号码',
+                        party: '出行人数：',
+                        partyErr: '请告诉我们您的组大小',
+                        dates: '计划在美国游玩的日期',
+                        arriving: '抵达日期:',
+                        departing: '回程日期:',
+                        datesErr: '选择日期',
+                        storesH: '我想要造访的门店：',
+                        storesM: '请选择一家门店',
+                        storesErr: '请选择一家门店',
+                        stores: [
+                            {id: 'New York', name: '纽约', disabled: 'true'},
+                            {id: '59th Street Flagship, New York City', name: '第 59 街旗舰店，纽约市', disabled: 'false'},
+                            {id: 'SoHo, New York City', name: 'SoHo 店，纽约市', disabled: 'false'},
+                            {id: 'Hawaii', name: '夏威夷', disabled: 'true'},
+                            {id: 'Ala Moana, Honolulu', name: '阿拉莫阿那购物中心店，檀香山', disabled: 'false'},
+                            {id: 'Illinois', name: '伊利诺伊州', disabled: 'true'},
+                            {id: 'North Michigan Avenue, Chicago', name: '北密歇根大道店，芝加哥', disabled: 'false'},
+                            {id: 'Medinah Home, Chicago', name: '麦地那之家，芝加哥', disabled: 'false'},
+                            {id: 'California', name: '加利福尼亚州', disabled: 'true'},
+                            {id: 'Beverly Center, Los Angeles', name: '比佛利中心店，洛杉矶', disabled: 'false'},
+                            {id: 'Century City, Los Angeles', name: '世纪城店，洛杉矶', disabled: 'false'},
+                            {id: 'Fashion Valley, San Diego', name: '时尚谷店，圣地亚哥', disabled: 'false'},
+                            {id: 'Glendale Galleria, Glendale', name: '格伦代尔广场店，格伦代尔', disabled: 'false'},
+                            {id: 'Newport Fashion Island, Newport Beach', name: '纽波特时尚岛店，纽波特比奇', disabled: 'false'},
+                            {id: 'San Francisco Centre, San Francisco', name: '旧金山中心店，旧金山', disabled: 'false'},
+                            {id: 'Santa Monica Place, Santa Monica', name: '圣莫尼卡广场店，圣莫尼卡', disabled: 'false'},
+                            {id: 'Sherman Oaks Fashion Square, Sherman Oaks', name: '谢尔曼奥克斯时尚广场店，谢尔曼奥克斯', disabled: 'false'},
+                            {id: 'South Coast Plaza, Costa Mesa', name: '南海岸广场店，科斯塔梅萨', disabled: 'false'},
+                            {id: 'Florida', name: '佛罗里达州', disabled: 'true'},
+                            {id: 'Aventura', name: '阿文图拉购物中心店', disabled: 'false'},
+                            {id: 'Orlando', name: '奥兰多店', disabled: 'false'}
+                        ],
+                        submit: '提交',
+                        submitHead: '谢谢你提交的表单。',
+                        submitBody: '我们旅游部专门人员会儘快与你联系。'
+                    }
+                },                   
                 footer: [
                     '<b><u>订阅</u></b>电子邮件，立省 10%',
                     '世界上独一无二的百货店'
