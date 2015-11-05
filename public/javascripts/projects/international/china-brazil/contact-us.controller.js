@@ -5,8 +5,11 @@
 		.module('controllers')
 		.controller('ContactUsCtrl', ContactUsCtrl);
 
-	function ContactUsCtrl($scope, $window, $timeout){
+	function ContactUsCtrl($scope, $window, $timeout, appGlobals){
 		$scope.cu = {};
+        $scope.lang = appGlobals.getAttr('lang');
+        $scope.copy = appGlobals.getAttr('copy');console.log($scope.copy[$scope.lang].contactUs);
+        $scope.store = angular.copy($scope.copy[$scope.lang].contactUs.right.stores);
 
 		$scope.phoneNumberPattern = (function() {
 		    var regexp = /([0-9\s\-]{7,})(?:\s*(?:#|x\.?|ext\.?|extension)\s*(\d+))?$/;
@@ -32,30 +35,6 @@
 			{id: 9, name: '9'},
 			{id: 10, name: '10'},
 			{id: 11, name: '10+'}
-		];
-
-		$scope.store = [
-			{id: 'New York', name: 'New York', disabled: 'true'},
-			{id: '59th Street Flagship, New York City', name: '59th Street Flagship, New York City', disabled: 'false'},
-			{id: 'SoHo, New York City', name: 'SoHo, New York City', disabled: 'false'},
-			{id: 'Hawaii', name: 'Hawaii', disabled: 'true'},
-			{id: 'Ala Moana, Honolulu', name: 'Ala Moana, Honolulu', disabled: 'false'},
-			{id: 'Illinois', name: 'Illinois', disabled: 'true'},
-			{id: 'North Michigan Avenue, Chicago', name: 'North Michigan Avenue, Chicago', disabled: 'false'},
-			{id: 'Medinah Home, Chicago', name: 'Medinah Home, Chicago', disabled: 'false'},
-			{id: 'California', name: 'California', disabled: 'true'},
-			{id: 'Beverly Center, Los Angeles', name: 'Beverly Center, Los Angeles', disabled: 'false'},
-			{id: 'Century City, Los Angeles', name: 'Century City, Los Angeles', disabled: 'false'},
-			{id: 'Fashion Valley, San Diego', name: 'Fashion Valley, San Diego', disabled: 'false'},
-			{id: 'Glendale Galleria, Glendale', name: 'Glendale Galleria, Glendale', disabled: 'false'},
-			{id: 'Newport Fashion Island, Newport Beach', name: 'Newport Fashion Island, Newport Beach', disabled: 'false'},
-			{id: 'San Francisco Centre, San Francisco', name: 'San Francisco Centre, San Francisco', disabled: 'false'},
-			{id: 'Santa Monica Place, Santa Monica', name: 'Santa Monica Place, Santa Monica', disabled: 'false'},
-			{id: 'Sherman Oaks Fashion Square, Sherman Oaks', name: 'Sherman Oaks Fashion Square, Sherman Oaks', disabled: 'false'},
-			{id: 'South Coast Plaza, Costa Mesa', name: 'South Coast Plaza, Costa Mesa', disabled: 'false'},
-			{id: 'Florida', name: 'Florida', disabled: 'true'},
-			{id: 'Aventura', name: 'Aventura', disabled: 'false'},
-			{id: 'Orlando', name: 'Orlando', disabled: 'false'}
 		];
 
 		$scope.sendMail = function(cu) {
@@ -90,5 +69,9 @@
 
 	        return false;
 		};
+
+	    $scope.$on('lang:change', function(ev, args) {
+	        $scope.lang = args.lang;
+	    });			
 	}
 })();

@@ -920,7 +920,63 @@
                     weixin: {
                         text: 'Scan the QR code to receive push notifications from Bloomingdale\'s.'
                     }
-                }
+                },
+                contactUs: {
+                    formTitle: 'Contact Us',
+                    left: {
+                        title: 'notify us of your trip',
+                        p1: 'Please let us know which Bloomingdale\'s store you\'d like to visit and the planned dates of your trip.',
+                        p2: 'Simply submit this form, and one of our multilingual associates will be in touch.'
+                    },
+                    right: {
+                        name: 'Name:',
+                        nameErr: 'Please tell us your name',
+                        email: 'Email:',
+                        emailErr1: 'Please tell us your email',
+                        emailErr2: 'Invalid email address',
+                        phone: 'Mobile # (optional):',
+                        phoneErr: 'Invalid phone number',
+                        party: 'Number of people in my party:',
+                        partyErr: 'Please tell us your party size',
+                        dates: 'Planned date(s) of my trip to the U.S.:',
+                        arriving: 'Arriving:',
+                        departing: 'Departing:',
+                        datesErr: 'Select date',
+                        storesH: 'I would like to visit:',
+                        storesM: 'Please select a store',
+                        storesErr: 'Please select a store',
+                        stores: [
+                            {id: 'New York', name: 'New York', disabled: 'true'},
+                            {id: '59th Street Flagship, New York City', name: '59th Street Flagship, New York City', disabled: 'false'},
+                            {id: 'SoHo, New York City', name: 'SoHo, New York City', disabled: 'false'},
+                            {id: 'Hawaii', name: 'Hawaii', disabled: 'true'},
+                            {id: 'Ala Moana, Honolulu', name: 'Ala Moana, Honolulu', disabled: 'false'},
+                            {id: 'Illinois', name: 'Illinois', disabled: 'true'},
+                            {id: 'North Michigan Avenue, Chicago', name: 'North Michigan Avenue, Chicago', disabled: 'false'},
+                            {id: 'Medinah Home, Chicago', name: 'Medinah Home, Chicago', disabled: 'false'},
+                            {id: 'California', name: 'California', disabled: 'true'},
+                            {id: 'Beverly Center, Los Angeles', name: 'Beverly Center, Los Angeles', disabled: 'false'},
+                            {id: 'Century City, Los Angeles', name: 'Century City, Los Angeles', disabled: 'false'},
+                            {id: 'Fashion Valley, San Diego', name: 'Fashion Valley, San Diego', disabled: 'false'},
+                            {id: 'Glendale Galleria, Glendale', name: 'Glendale Galleria, Glendale', disabled: 'false'},
+                            {id: 'Newport Fashion Island, Newport Beach', name: 'Newport Fashion Island, Newport Beach', disabled: 'false'},
+                            {id: 'San Francisco Centre, San Francisco', name: 'San Francisco Centre, San Francisco', disabled: 'false'},
+                            {id: 'Santa Monica Place, Santa Monica', name: 'Santa Monica Place, Santa Monica', disabled: 'false'},
+                            {id: 'Sherman Oaks Fashion Square, Sherman Oaks', name: 'Sherman Oaks Fashion Square, Sherman Oaks', disabled: 'false'},
+                            {id: 'South Coast Plaza, Costa Mesa', name: 'South Coast Plaza, Costa Mesa', disabled: 'false'},
+                            {id: 'Florida', name: 'Florida', disabled: 'true'},
+                            {id: 'Aventura', name: 'Aventura', disabled: 'false'},
+                            {id: 'Orlando', name: 'Orlando', disabled: 'false'}
+                        ],
+                        submit: 'submit',
+                        submitHead: 'thank you for<br/>your submission',
+                        submitBody: 'A member of our tourism team will contact you shortly.'
+                    }
+                },                
+                footer: [
+                    'SAVE 10%—<b><u>SIGN UP</u></b> FOR EMAILS',
+                    'Like no other store in the world'
+                ]
             },
             POR: {
                 nav: [
@@ -1798,7 +1854,63 @@
                     weixin: {
                         text: ''
                     }
-                }                            
+                },
+                contactUs: {
+                    formTitle: 'Contact Us',
+                    left: {
+                        title: 'notify us of your trip',
+                        p1: 'Please let us know which Bloomingdale\'s store you\'d like to visit and the planned dates of your trip.',
+                        p2: 'Simply submit this form, and one of our multilingual associates will be in touch.'
+                    },
+                    right: {
+                        name: 'Nome:',
+                        nameErr: 'Por favor, diga-nos o seu nome',
+                        email: 'E-mail:',
+                        emailErr1: 'Por favor, diga -nos o seu e-mail',
+                        emailErr2: 'Endereço de email invalido',
+                        phone: 'Nº. de celular (opcional): ',
+                        phoneErr: 'Número de telefone inválido',
+                        party: 'Número de pessoas no meu grupo:',
+                        partyErr: 'Por favor, conte-nos sua festa tamanho',
+                        dates: 'Datas planejadas de minha viagem aos EUA:',
+                        arriving: 'Chegada:',
+                        departing: 'Partida:',
+                        datesErr: 'Selecione a data',
+                        storesH: 'Eu gostaria de visitar:',
+                        storesM: 'Escolha uma loja',
+                        storesErr: 'Escolha uma loja',
+                        stores: [
+                            {id: 'null', name: 'Nova York', disabled: 'true'},
+                            {id: '59th Street Flagship, New York City', name: 'Matriz, 59th Street, New York City', disabled: 'false'},
+                            {id: 'SoHo, New York City', name: 'SoHo, New York City', disabled: 'false'},
+                            {id: 'null', name: 'Havaí', disabled: 'true'},
+                            {id: 'Ala Moana, Honolulu', name: 'Ala Moana, Honolulu', disabled: 'false'},
+                            {id: 'null', name: 'Illinois', disabled: 'true'},
+                            {id: 'North Michigan Avenue, Chicago', name: 'North Michigan Avenue, Chicago', disabled: 'false'},
+                            {id: 'Medinah Home, Chicago', name: 'Medinah Home, Chicago', disabled: 'false'},
+                            {id: 'null', name: 'Califórnia', disabled: 'true'},
+                            {id: 'Beverly Center, Los Angeles', name: 'Beverly Center, Los Angeles', disabled: 'false'},
+                            {id: 'Century City, Los Angeles', name: 'Century City, Los Angeles', disabled: 'false'},
+                            {id: 'Fashion Valley, San Diego', name: 'Fashion Valley, San Diego', disabled: 'false'},
+                            {id: 'Glendale Galleria, Glendale', name: 'Glendale Galleria, Glendale', disabled: 'false'},
+                            {id: 'Newport Fashion Island, Newport Beach', name: 'Newport Fashion Island, Newport Beach', disabled: 'false'},
+                            {id: 'San Francisco Centre, San Francisco', name: 'San Francisco Centre, São Francisco', disabled: 'false'},
+                            {id: 'Santa Monica Place, Santa Monica', name: 'Santa Monica Place, Santa Monica', disabled: 'false'},
+                            {id: 'Sherman Oaks Fashion Square, Sherman Oaks', name: 'Sherman Oaks Fashion Square, Sherman Oaks', disabled: 'false'},
+                            {id: 'South Coast Plaza, Costa Mesa', name: 'South Coast Plaza, Costa Mesa', disabled: 'false'},
+                            {id: 'null', name: 'Flórida', disabled: 'true'},
+                            {id: 'Aventura', name: 'Aventura', disabled: 'false'},
+                            {id: 'Orlando', name: 'Orlando', disabled: 'false'}
+                        ],
+                        submit: 'enviar',
+                        submitHead: 'Obrigado pela<br/>sua submissão',
+                        submitBody: 'Um membro de nossa equipe do turismo em contato em breve.'
+                    }
+                },
+                footer: [
+                    'DESCONTO DE 10% - <b><u>CADASTRE-SE</u></b> PARA RECEBER E-MAILS',
+                    'Como nenhuma outra loja no mundo'
+                ]                                          
             },
             CN: {
                 nav: [
@@ -1940,48 +2052,48 @@
                 }, 
                 stores: {
                     header: {
-                        h1: 'Choose Your Destination',
-                        h2: 'We\'ll meet you at the Visitor\'s Center'
+                        h1: '选择您的目的地',
+                        h2: '我们将会在顾客服务中心接待您'
                     },
                     dropdown: {
-                        default: 'Please Select a Store',
+                        default: '请选择一家门店',
                         list: [
                             {id: 'null', name: 'NEW YORK',                              disabled: 'true'},
                             {id: '0',    name: '59th Street Flagship, New York City',   disabled: 'false'},
                             {id: '1',    name: 'SoHo, New York City',                   disabled: 'false'},
                             {id: 'null', name: 'HAWAII',                                disabled: 'true'},
                             {id: '2',    name: 'Ala Moana, Honolulu',                   disabled: 'false'},
-                            {id: 'null', name: 'ILLINOIS',                              disabled: 'true'},
-                            {id: '3',    name: 'North Michigan Avenue, Chicago',        disabled: 'false'},
-                            {id: '4',    name: 'Medinah Home, Chicago',                 disabled: 'false'},
-                            {id: 'null', name: 'CALIFORNIA',                            disabled: 'true'},
-                            {id: '5',    name: 'San Francisco Centre, San Francisco',   disabled: 'false'},
-                            {id: '6',    name: 'South Coast Plaza, Costa Mesa',         disabled: 'false'},
-                            {id: '7',    name: 'Southern California Stores',            disabled: 'false'},
-                            {id: 'null', name: 'FLORIDA',                               disabled: 'true'},
-                            {id: '8',    name: 'Aventura',                              disabled: 'false'},
-                            {id: '9',    name: 'Orlando',                               disabled: 'false'}
+                            {id: 'null', name: '伊利诺伊州',                              disabled: 'true'},
+                            {id: '3',    name: '北密歇根大道店，芝加哥',                    disabled: 'false'},
+                            {id: '4',    name: '麦地那之家，芝加哥',                        disabled: 'false'},
+                            {id: 'null', name: '加利福尼亚州',                            disabled: 'true'},
+                            {id: '5',    name: '旧金山中心店，旧金山',                      disabled: 'false'},
+                            {id: '6',    name: '南海岸广场店，科斯塔梅萨',                  disabled: 'false'},
+                            {id: '7',    name: 'S南加州店',                              disabled: 'false'},
+                            {id: 'null', name: '佛罗里达州',                              disabled: 'true'},
+                            {id: '8',    name: '阿文图拉购物中心店',                       disabled: 'false'},
+                            {id: '9',    name: '奥兰多店',                               disabled: 'false'}
                         ],
-                        copy: 'Bloomingdale\'s has stores all over the U.S. Our Visitor\'s Centers in <b>New York</b>, <b>Hawaii</b>, <b>Chicago</b>, <b>Miami</b> and <b>San Francisco</b> offer a full range of amenities for international customers. Multilingual associates can help you plan the ultimate shopping experience. They\'ll give you a store directory in your chosen language and special events information, as well as arrange complimentary personal stylist appointments, package delivery to your hotel, restaurant reservations (including those located within our stores) and much more. Beach bound? Our many outposts in Southern California—including South Coast Plaza in Ocean County, San Diego and Los Angeles—plus Honolulu, mean you\'ll never be far from the top fashions.'
+                        copy: 'Bloomingdale\'s 的门店遍布全美，我们在纽约、夏威夷、芝加哥、迈阿密和旧金山设有顾客服务中心，为外国游客提供各类便利设施。我们的多语种工作人员可以帮助您策划最完美的购物体验。他们将为您提供中文门店指南和特别活动的信息，并为您安排免费的个人形象设计师会面、免费将您购买的商品送到酒店，并替您预订餐厅（包括本店内的餐厅）等等。想去海边？我们在南加州（包括橘郡南海岸广场、圣地亚哥和洛杉矶）及檀香山设有多家门店，让您始终紧跟最新时尚潮流。'
                     },
                     storeData: {
-                        storeHours: 'Store Hours',
-                        directions: 'Directions',
-                        designers: 'Featured Designers',
-                        dining: 'In-Store Dining',
-                        services: 'Services',
-                        servicesSubHead: 'Our associates will show you why Bloomingdale\'s is like no other store in the world. <br/>Look for us wearing flag pins from your country. We can help you find the fashion you love<br/>and assist with a range of personalized services.',
+                        storeHours: '营业时间',
+                        directions: '路线',
+                        designers: '推荐设计师',
+                        dining: '店内美食餐厅',
+                        services: '客户服务',
+                        servicesSubHead: '我们的工作人员将向您展示 Bloomingdale\'s 是“世界上独一无二的百货店”的原因。 <br/>请寻找我们佩戴您本国旗帜徽章的工作人员。我们会帮助您找到您喜爱的商品，<br/>并提供一系列个性化服务。',
                         loyalty: 'Join the International Loyalty Club',
                         loyaltySubHead: 'Our special rewards program was created for international shoppers.* For every dollar you spend,<br/>you\'ll earn one point toward gift cards, services and exceptional experiences. Right now, you can enroll in<br/>the program at Bloomingdale \'  s Ala Moana, but points can be earned and redeemed at any full-line<br/>Bloomingdale \'  s location in the United States.**',
                         id: [
                             {
-                                name: '59th Street Flagship',
+                                name: '第 59 街旗舰店',
                                 addr: '1000 Third Avenue  New York, NY 10022  +1 212-705-2000',
-                                hours: 'Monday–Saturday: Store Opens 10AM | Sunday: Store Opens 11AM',
-                                descr: 'Discover Bloomingdale\'s iconic heritage and award-winning hospitality. Begin your day at our flagship store with a stop at our first floor balcony Visitor\'s Center. Our multilingual directory will provide a road map to your shopping trip. Looking for a more personal experience? Learn about our in-store services, from stylist appointments to alterations to restaurant reservations. We\'ll help you arrange all that and more.',
-                                dTile: 'VISITING NEW YORK?',
-                                dInfo: 'Download our welcome booklet before you arrive.',
-                                dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_NewYork_EN.pdf',
+                                hours: '周一 – 周六： 上午 10:00 开始营业 <span>|</span> 周日： 上午 11:00 开始营业',
+                                descr: '感受 Bloomingdale\'s 的悠久历史和备受赞誉的热情服务。在我们旗舰店开始您的一天，首先前往一楼楼厅处的顾客服务中心。我们的多语种指南将为您的购物之旅提供路线图。需要更加个性化的体验？了解我们的店内服务，包括预约形象设计师、改衣和预订餐厅等。我们会帮您安排一切。',
+                                dTile: '来纽约观光？',
+                                dInfo: '在到达之前下载我们的欢迎手册。',
+                                dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_NewYork_CN.pdf',
                                 designers: [
                                     'BVLGARI',
                                     'Burberry London',
@@ -2013,77 +2125,77 @@
                                 ],
                                 restaurants: [
                                     {
-                                        name: '<b>FORTY CARROTS</b> <span>|</span>   7th floor <span>|</span>   212-705-3085',
-                                        sched: 'Open Daily <span>|</span>   Dine In: 10:30AM–1 hour before store closing <br/>Takeout: 10AM–1/2 hour before store closing',
-                                        description: 'A visit isn\'t complete without our famous frozen yogurt. You\'ll also find freshly made salads, sandwiches, soups, a fresh juice bar and selection of Tavalon premium teas. Counter, table service and takeout available.',
+                                        name: '<b>FORTY CARROTS</b> <span>|</span>   7 层 <span>|</span>   212-705-3085',
+                                        sched: '营业时间 <span>|</span>   店内用餐： 上午 10:30–关店前 1 小时  <br/>外卖：上午 10:00–关店前半小时',
+                                        description: '只有品尝了我们著名的冷冻酸奶，才算不虚此行。在这里，您还能找到各式新鲜制作的沙拉、三明治、汤类、鲜榨果汁吧，以及精选上等 Tavalon 茶。提供柜台服务、餐桌服务和外卖服务。',
                                         imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_01.jpg'
                                     },
                                     {
-                                        name: '<b>FL!P</b> <span>|</span>   Mid-Level <span>|</span>   212-705-3085',
-                                        sched: 'Open Daily <span>|</span>   Dine In: 11AM–1 hour before store closing ',
-                                        description: 'Enjoy the "haute couture" of American hamburgers, as well as salads, microbrew beers, a full bar and a variety of French fries, at this laid-back spot in our Men\'s Store.',
+                                        name: '<b>FL!P</b> <span>|</span> 中层 <span>|</span>   212-705-3085',
+                                        sched: '营业时间 <span>|</span> 店内用餐： 上午 11:00–关店前 1 小时',
+                                        description: '在男士用品店的这个闲适角落，您可以享用到“臻品”美国汉堡、各式沙拉、微酿啤酒、花样酒饮以及各种法式炸薯条。',
                                         imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_02.jpg'
                                     },
                                     {
-                                        name: '<b>DAVID BURKE AT BLOOMINGDALE\'S </b> <span>|</span>   Street Level <br />   212-705-3800',
-                                        sched: 'Open Daily <span>|</span>   In the Box (to go) 10AM–9PM <span>|</span>   In the Bar (to stay) 11AM–9 PM ',
-                                        description: 'Chef David Burke, one of the leading pioneers of American cooking, brings together delicious fare and top service in a lively atmosphere.',
+                                        name: '<b>DAVID BURKE AT BLOOMINGDALE\'S </b> <span>|</span> 当街楼层 <br />   212-705-3800',
+                                        sched: '营业时间 <span>|</span> 外带：上午 10:00–晚上 9:00 <span>|</span> 店内用餐：上午 11:00–晚上 9:00 ',
+                                        description: '名厨 David Burke 是美国烹饪界最重要的先驱者之一，他将美味佳肴、一流服务和欢乐氛围融合在一起。',
                                         imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_04.jpg'
                                     },
                                     {
-                                        name: '<b>MAGNOLIA BAKERY</b> <span>|</span>   Street Level <span>|</span>   212-265-5320',
-                                        sched: 'Monday–Friday 7AM–10PM <br/> Saturday 8AM–10PM <span>|</span>   Sunday 8AM–9PM',
-                                        description: 'A classic American bakery cherished for its old-fashioned desserts and vintage décor, Magnolia serves a range of handmade baked goods, including pies, cakes, cheesecakes, banana pudding, cupcakes and muffins. Here early? Magnolia opens even before the store does.',
+                                        name: '<b>MAGNOLIA BAKERY</b> <span>|</span> 当街楼层 <span>|</span>   212-265-5320',
+                                        sched: '周一至周五上午 7:00–晚上 10:00<br/> 周六上午 8:00 <span>|</span>   Sunday 8AM–9PM',
+                                        description: 'Magnolia 是一个拥有传统甜点和古老装饰风格的经典美式面包房，这里可供应一系列手工烘培食品，包括馅饼、蛋糕、乳酪蛋糕、香蕉布丁、纸杯蛋糕和松饼。来早了？Magnolia 的营业时间甚至比门店还早。',
                                         imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_03.jpg'
                                     },
                                     {
-                                        name: '<b>LE TRAIN BLEU </b> <span>|</span>   6th floor <span>|</span>   212-705-2100',
-                                        sched: 'Monday–Wednesday, Friday–Saturday 10:30AM–5PM <span>|</span>  Thursday 10:30AM–7PM <span>|</span>  Sunday 11:30AM–4:30PM',
-                                        description: '<i>Reservations recommended</i><br/>A romantic replica of a turn-of-the-century railway dining car, Le Train Bleu offers the finest American-Continental fare, including daily brunch, lunch and a prix-fixe dinner menu.',
+                                        name: '<b>LE TRAIN BLEU </b> <span>|</span> 6 层 <span>|</span>   212-705-2100',
+                                        sched: '周一至周三，周五至周六上午 10:30–下午 5:00 <span>|</span> 周四上午 10:30–晚上 7:00 <span>|</span> 周日上午 11:30–下午 4:30 ',
+                                        description: '<i>建议提前预订</i><br/>Le Train Bleu 重现了上世纪初浪漫的铁路餐车，为您提供最精美的美洲大陆饮食，包括每日早午餐、午餐和定价晚餐。',
                                         imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_05.jpg'
                                     },
                                     {
-                                        name: '<b>B CAFÉ </b> <span>|</span>   6th floor <span>|</span>   212-705-2073',
-                                        sched: 'Open Daily <span>|</span>   10AM–store closing',
-                                        description: 'Stop by this coffee and snack bar for quick and healthy treats, or to enjoy a light lunch or dinner featuring on-the-go versions of many Le Train Bleu favorites.',
+                                        name: '<b>B CAFÉ </b> <span>|</span>   6 层 <span>|</span>   212-705-2073',
+                                        sched: '营业时间 <span>|</span> 上午 10:00–门店打烊',
+                                        description: '在这咖啡小吃店稍作休息，品尝便捷健康的美食，或享用一份以多种外带版 Le Train Bleu 美食为特色的简单午餐或晚餐。',
                                         imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_06.jpg'
                                     } 
                                 ],
                                 services: [
                                     {
-                                        title: 'WE\'LL GATHER YOUR GIFT LIST ',
-                                        description: 'Shopping for gifts is so easy at Bloomingdale\'s. Just send our multilingual specialist your wish list before you visit and you\'ll find all your items waiting when you arrive.<br /> Call 212-705-2359 or 212-705-3488 <br/> Email <a class="fucsia" href="mailto:international_visitors@bloomingdales.com">international_visitors@bloomingdales.com</a>'
+                                        title: '我们会为您准备好礼品清单上的物品',
+                                        description: '我们会为您准备好礼品清单上的物品<br/>在Bloomingdale\'s，购买礼品是一件非常轻松的事。<br/>只要将您的愿望清单发送给我们的多语种专<br/>家，我们即可在您到达之前将一切准备就绪。<br/> 拨打 212-705-2359 或 212-705-3488 <br/>发送电子邮件至 <br/><a class="fucsia" href="mailto:international_visitors@bloomingdales.com">international_visitors@bloomingdales.com</a>'
                                     },
                                     {
-                                        title: 'PERSONAL STYLISTS ON CALL',
-                                        description: 'Our personal stylists are available to shop the store with you, or select wardrobe and home décor options to your taste—all for free. <br/> At Your Service (For Her) 212-705-3135 <br/> At His Service 212-705-3030 '
+                                        title: '个人形象设计师随传随到',
+                                        description: '我们的个人形象设计师可免费伴您选购商品，或根据您的品味为您的全副行头和家居饰品提供选购建议。<br/> 女士导购专家212-705-3135  <br/> 男士导购专家212-705-3030 '
                                     },
                                     {
-                                        title: 'PAYMENT MADE EASY ',
-                                        description: 'We accept the American Express® Global Travel Card and all forms of China UnionPay.<div class="unionpay">'
+                                        title: '便捷的付款方式 ',
+                                        description: '我们接受美国运通®环球旅行卡和各种中国银联卡。<div class="unionpay">'
                                     },
                                     {
-                                        title: 'QUICK ALTERATIONS ',
-                                        description: 'We perform professional tailoring and alteration services on site by request. Prices are available at the time of your fitting.'
+                                        title: '快速改衣',
+                                        description: '我们可根据您的要求当场提供专业的剪裁和改衣服务。 您可在试穿衣服时再付费。'
                                     },
                                     {
-                                        title: 'DELIVERY TO YOUR HOTEL ',
-                                        description: 'We will gladly deliver your purchases of $250 USD or more to your Manhattan hotel—for free. Just drop them off at our first floor balcony Visitor\'s Center.'
+                                        title: '送货至您入住的酒店',
+                                        description: '若您购物满 300 美元或以上，我们很乐意将您所购商品免费送至您入住的曼哈顿酒店。 您只需将所购商品交给一楼楼厅处的顾客服务中心即可。'
                                     },
                                     {
-                                        title: 'CARDS & RIBBON TO TAKE HOME ',
-                                        description: 'We will gift wrap your purchases, or you can pick up cards, boxes, wrapping paper and ribbon to take home at our gift wrapping station on the sixth floor. '
+                                        title: '精美礼品包装服务',
+                                        description: '我们将为您精心包装所购商品，您也可以在六楼的礼品包装处挑选礼品卡、包装盒、包装纸和丝带，将它们带回家自行包装。'
                                     }
                                 ]
                             },
                             {
-                                name: 'SoHo',
+                                name: 'SoHo 店',
                                 addr: '504 Broadway  New York, NY 10012  +1 212-729-5900',
-                                hours: 'Monday–Saturday: Store Opens 10AM <span>|</span> Sunday: Opens 12PM',
-                                descr: 'Explore our downtown store in SoHo, the city\'s most fashionable neighborhood. You\'ll find all the stylish energy of our uptown flagship but with the feel of a fashion boutique. Check out our bustling beauty floor, then peruse our latest designer arrivals. As always, multilingual associates are available to help make your visit a memorable one.',
-                                dTile: 'VISITING NEW YORK?',
-                                dInfo: 'Download our welcome booklet before you arrive.',
-                                dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_NewYork_EN.pdf',
+                                hours: '周一 – 周六： 上午 10:00 开始营业 <span>|</span> 周日： 上午 12:00 开始营业',
+                                descr: '参观我们位于 SoHo 的市中心门店，这里也是本市的时尚社区。在这里您不仅感受到我们上城区旗舰店的时尚活力，同时又具備了时尚精品店的氛围。到访我们热闹繁忙的美容商品楼层，然后细细品味我们的名牌新品。我们的多语种工作人员将一如既往地帮助您体验一次难忘的购物消闲之旅。',
+                                dTile: '来纽约观光？',
+                                dInfo: '在到达之前下载我们的欢迎手册。',
+                                dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_NewYork_CN.pdf',
                                 designers: [
                                     'BVLGARI',
                                     'Burberry London',
@@ -2115,38 +2227,38 @@
                                 ],
                                 restaurants: [
                                     {
-                                        name: '<b>FORTY CARROTS</b> <span>|</span>   2nd floor  <span>|</span>   212-729-5900',
-                                        sched: 'Monday–Friday 10AM–8PM <span>|</span>   Saturday 10AM–7PM  <span>|</span> Sunday 12PM–7PM',
-                                        description: 'A visit isn\'t complete without our famous frozen yogurt. You\'ll also find freshly made salads, sandwiches, soups, a fresh juice bar and selection of Tavalon premium teas. Counter, table service and takeout available.',
+                                        name: '<b>FORTY CARROTS</b> <span>|</span>   2 层  <span>|</span>   212-729-5900',
+                                        sched: '周一至周五上午 10:00–晚上 8:00<span>|</span> 周六上午 10:00–晚上 7:00 <span>|</span> 周日中午 12:00–晚上 7:00',
+                                        description: '只有品尝了我们著名的冷冻酸奶，才算不虚此行。在这里，您还能找到各式新鲜制作的沙拉、三明治、汤类、鲜榨果汁吧，以及精选上等 Tavalon 茶。提供柜台服务、餐桌服务和外卖服务。',
                                         imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_02.jpg'
                                     }
                                 ],
                                 services: [
                                     {
-                                        title: 'WE\'LL GATHER YOUR GIFT LIST ',
-                                        description: 'Shopping for gifts is so easy at Bloomingdale\'s. Just send our multilingual specialist your wish list before you visit and you\'ll find all your items waiting when you arrive.<br /> Call 212-705-2098 or email <a class="fucsia" href="mailto:international_visitors@bloomingdales.com">international_visitors@bloomingdales.com</a>'
+                                        title: '我们会为您准备好礼品清单上的物品',
+                                        description: '我们会为您准备好礼品清单上的物品<br/>在Bloomingdale\'s，购买礼品是一件非常轻松的事。只要将您的愿望清单发送给我们的多语种专家，我们即可在您到达之前将一切准备就绪。<br/> 拨打 212-705-2098 或发送电子邮件至 <a class="fucsia" href="mailto:international_visitors@bloomingdales.com">international_visitors@bloomingdales.com</a>'
                                     },
                                     {
-                                        title: 'PAYMENT MADE EASY ',
-                                        description: 'We accept the American Express® Global Travel Card and all forms of China UnionPay.<div class="unionpay">'
+                                        title: '便捷的付款方式 ',
+                                        description: '我们接受美国运通®环球旅行卡和各种中国银联卡。<div class="unionpay">'
                                     },
                                     {
-                                        title: 'QUICK ALTERATIONS ',
-                                        description: 'We perform professional tailoring and alteration services on site by request. Prices are available at the time of your fitting.'
+                                        title: '快速改衣',
+                                        description: '我们可根据您的要求当场提供专业的剪裁和改衣服务。 您可在试穿衣服时再付费。'
                                     },
                                     {
-                                        title: 'DELIVERY TO YOUR HOTEL ',
-                                        description: 'We will gladly deliver your purchases of $250 USD or more to your Manhattan hotel—for free. Just drop them off at our first floor balcony Visitor\'s Center.'
+                                        title: '送货至您入住的酒店',
+                                        description: '若您购物满 250 美元或以上，我们很乐意将您所购商品免费送至您入住的曼哈顿酒店。 您只需将所购商品交给一楼楼厅处的顾客服务中心即可。'
                                     }
                                 ]                               
                             },
                             {
-                                name: 'Ala Moana',
+                                name: '阿拉莫阿那购物中心店',
                                 addr: '1450 Ala Moana Blvd  Honolulu, HI 96814  +1 808-644-7511',
-                                hours: 'Monday–Saturday: 10AM–8PM | Sunday: 11AM–7PM',
-                                descr: 'Say aloha to our newest outpost in tropical Honolulu. Located in the Ala Moana Center, Hawaii\'s premier shopping destination, this three-story store boasts a range of amenities tailored to the overseas shopper. Stop by our International Welcome Center and speak with one of our multilingual associates. We offer international style advisor appointments, on-site alterations, restaurant reservations and much more.',
-                                dTile: 'VISITING HAWAII?',
-                                dInfo: 'Download our welcome booklet before you arrive.',
+                                hours: '周一 – 周六： 上午 10:00－晚上 8:00 <span>|</span> 周日： 上午 11:00－晚上 7:00',                                
+                                descr: '跟我们在热带檀香山设立的最新商店打个招呼。这座三层楼高的商店位于夏威夷黄金购物地带阿拉莫阿那购物中心店，内部配备有各种便利设施，专为海外购物者量身打造。我们提供个人形象设计师会面、现场改衣、餐厅订位等等。',
+                                dTile: '正在前往夏威夷的途中？',
+                                dInfo: '在您到达之前下载我们的欢迎手册。',
                                 dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Hawaii_EN.pdf',
                                 designers: [
                                     'Burberry London',
@@ -2169,32 +2281,32 @@
                                 ],
                                 restaurants: [
                                     {
-                                        name: '<b>FORTY CARROTS</b> <span>|</span>   3rd floor  ',
-                                        sched: 'Open Daily 11:30AM–1 hour before store closing',
-                                        description: 'A visit isn\'t complete without our famous frozen yogurt. You\'ll also find freshly made salads, sandwiches, soups, a fresh juice bar and selection of Tavalon premium teas. Counter, table service and takeout available.',
+                                        name: '<b>FORTY CARROTS</b> <span>|</span>   3 层',
+                                        sched: '营业时间 上午 11:30 － 关店前 1 小时',
+                                        description: '只有品尝了我们著名的冷冻酸奶，才算不虚此行。',
                                         imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_02.jpg'
-                                    }
+                                    }                                    
                                 ],
                                 services: [
                                     {
-                                        title: 'FULL-SERVICE WELCOME CENTER AND CONCIERGE DESK',
-                                        description: 'At the Welcome Center, we \'  ll greet you with a complimentary coat and bag check, plus a multilingual store directory. Should you need it, our associates can arrange personal stylist appointments and free package delivery to your hotel. Stop by our concierge desk for alterations and pick-ups or to learn more about Hawaii\'s amenities and attractions.'
+                                        title: '全天候顾客服务中心和服务台',
+                                        description: '在顾客服务中心，我们将为您免费提供外套和物品寄存服务，另有多语种门店指南。如您有需要，我们的工作人员可为您安排个人形象设计师会面，并将您购得的商品免费打包送至您所在的酒店。您可前往我们的服务台进行现场改衣及取回您购买的商品，或了解更多有关夏威夷的便利设施和景点信息。'
                                     },
                                     {
-                                        title: 'PERSONAL STYLISTS AND BEAUTY ADVISORS ON CALL ',
-                                        description: 'Our stylists are available to shop the store with you, or select wardrobe options to your taste—all for free. Interested in a beauty consultation? Our experienced advisors will find you perfect products from the most coveted brands.'
+                                        title: '在我们的贵宾室里休息',
+                                        description: '这是 Bloomingdale\'s 连锁商店中的首个贵宾室，我们的封闭式休息室位于顾客服务中心内部。游客们可在便利设施里尊享的服务包括：低热量食物及饮品、电视、私人卫生间、充电站、可用于打印登机牌的蓝牙打印机、预装了 Bloomingdale\'s 应用的 iPad® 以及几乎涵盖所有语言版本的旅游指南。在店内消费满 500 美元的顾客凭收据可于当天进入休息室休息。'
                                     },
                                     {
-                                        title: 'QUICK ALTERATIONS ',
-                                        description: 'We perform professional tailoring and alteration services on site by request. Prices are available at the time of your fitting.'
+                                        title: '快速改衣',
+                                        description: '我们可根据您的要求当场提供专业的剪裁和改衣服务。您可在试穿衣服时再付费。'
                                     },
                                     {
-                                        title: 'CURRENCY CONVERSION ',
-                                        description: 'Steps away from Bloomingdale\'s, you\'ll find a currency exchange located conveniently within the Ala Moana Center.'
+                                        title: '货币兑换 ',
+                                        description: '您可在离 Bloomingdale\'s 几步之遥的位置找到货币兑换点，就在阿拉莫阿那购物中心店内，非常方便。'
                                     },
                                     {
-                                        title: 'KICK BACK IN OUR VIP ROOM',
-                                        description: 'The first in the Bloomingdale\'s fleet, our limited-access lounge is located within the Welcome Center. Select tourists can indulge in amenities, including: light food and beverage, a TV, private bathroom, charging stations, a Bluetooth printer for boarding passes and iPads® preloaded with the Bloomingdale \'  s app and helpful travel guides in nearly every language. One-day access to the lounge is available to tourists with receipts of $500 or more.',
+                                        title: '个人形象设计师及美容顾问随传随到',
+                                        description: '我们的个人形象设计师可免费伴您选购商品，或根据您的品味为您的全副行头提供选购建议。对美容咨询感兴趣？我们拥有经验丰富的顾问，能够从最受欢迎的诸多品牌中为您挑选最合适的商品。',
                                     }
                                 ],
                                 loyalty: [
@@ -2704,7 +2816,11 @@
                     weixin: {
                         text: '扫描二维码关注Bloomingdale\'s官方微信，第一时间获取品牌资讯。'
                     }
-                }                                          
+                },
+                footer: [
+                    '<b><u>订阅</u></b>电子邮件，立省 10%',
+                    '世界上独一无二的百货店'
+                ]                                                             
             }
         };
 

@@ -1,12 +1,12 @@
 <div class="contact-us row" ng-controller="ContactUsCtrl">
-    <h2>Contact Us</h2>
+    <h2>//copy[lang].contactUs.formTitle//</h2>
     <div class="message small-cnbr-24 medium-cnbr-6 large-cnbr-12 columns">
         <div class="row">
             <div class="small-cnbr-24 medium-cnbr-12 large-cnbr-20 large-cnbr-offset-1 columns">
-                <h3>notify us of your trip</h3>
+                <h3>//copy[lang].contactUs.left.title//</h3>
                 <div>
-                    <p>Please let us know which Bloomingdale's store you'd like to visit and the planned dates of your trip.</p>
-                    <p>Simply submit this form, and one of our multilingual associates will be in touch.</p>
+                    <p>//copy[lang].contactUs.left.p1//</p>
+                    <p>//copy[lang].contactUs.left.p2//</p>
                 </div>
             </div>
         </div>
@@ -17,12 +17,12 @@
                 <div class="small-cnbr-24 medium-cnbr-20 large-cnbr-20 large-cnbr-offset-1 columns">
                     <div class="row">
                         <div class="small-cnbr-5 medium-cnbr-3 large-cnbr-4 columns">
-                            <label for="name" class="right inline"><b>Name:</b></label>
+                            <label for="name" class="right inline"><b>//copy[lang].contactUs.right.name//</b></label>
                         </div>
                         <div class="small-cnbr-19 medium-cnbr-9 large-cnbr-19 columns left">
                             <input type="text" ng-model="cu.name" name="name" required/>
                             <div ng-show="emailForm.$submitted || emailForm.name.$touched">
-                                <small class="error" ng-show="emailForm.name.$error.required">Please tell us your name</small>
+                                <small class="error" ng-show="emailForm.name.$error.required">//copy[lang].contactUs.right.nameErr//</small>
                             </div>
                         </div>
                     </div>
@@ -32,13 +32,13 @@
                 <div class="small-cnbr-24 medium-cnbr-20 large-cnbr-20 large-cnbr-offset-1 columns">
                     <div class="row">
                         <div class="small-cnbr-5 medium-cnbr-3 large-cnbr-4 columns">
-                            <label for="email" class="right inline"><b>Email:</b></label>
+                            <label for="email" class="right inline"><b>//copy[lang].contactUs.right.email//</b></label>
                         </div>
                         <div class="small-cnbr-19 medium-cnbr-9 large-cnbr-19 columns left">
                             <input type="email" ng-model="cu.email" name="email" required/>
  							<div ng-show="emailForm.$submitted || emailForm.email.$touched">
-                                <small class="error" ng-show="emailForm.email.$error.required">Please tell us your email</small>
-                                <small class="error" ng-show="emailForm.email.$error.email">Invalid email address</small>
+                                <small class="error" ng-show="emailForm.email.$error.required">//copy[lang].contactUs.right.emailErr1//</small>
+                                <small class="error" ng-show="emailForm.email.$error.email">//copy[lang].contactUs.right.emailErr2//</small>
                             </div>                            
                         </div>
                     </div>
@@ -48,12 +48,12 @@
                 <div class="small-cnbr-24 medium-cnbr-20 large-cnbr-20 large-cnbr-offset-1 columns">
                     <div class="row">
                         <div class="small-cnbr-10 medium-cnbr-6 large-cnbr-10 columns">
-                            <label for="phone" class="right inline"><b>Mobile #</b> (optional):</label>
+                            <label for="phone" class="right inline"><b>//copy[lang].contactUs.right.phone//</b></label>
                         </div>
                         <div class="small-cnbr-14 medium-cnbr-6 large-cnbr-13 columns left">
                             <input type="text" ng-model="cu.phone" name="phone" ng-pattern="phoneNumberPattern" ng-model-options="{ updateOn: 'blur' }" />
  							<div ng-show="emailForm.$submitted || (emailForm.phone.$dirty && emailForm.phone)">
-                                <small class="error" ng-show="emailForm.phone.$error.pattern">Invalid phone number</small>
+                                <small class="error" ng-show="emailForm.phone.$error.pattern">//copy[lang].contactUs.right.phoneErr//</small>
                             </div>
                         </div>
                     </div>
@@ -63,9 +63,9 @@
                 <div class="small-cnbr-24 medium-cnbr-20 large-cnbr-20 large-cnbr-offset-1 columns">
                     <div class="row">
                         <div class="small-cnbr-16 medium-cnbr-6 large-cnbr-18 columns">
-                            <label for="partysize" class="left inline"><b>Number of people in my party:</b></label>
+                            <label for="partysize" class="left inline"><b>//copy[lang].contactUs.right.party//</b></label>
                             <div ng-show="emailForm.$submitted || emailForm.partysize.$dirty">
-                                <small class="error party" ng-show="emailForm.partysize.$invalid">Please tell us your party size</small>
+                                <small class="error party" ng-show="emailForm.partysize.$invalid">//copy[lang].contactUs.right.partyErr//</small>
                             </div>    
                         </div>
                         <div class="small-cnbr-8 medium-cnbr-6 large-cnbr-5 columns left">
@@ -80,17 +80,17 @@
                 <div class="small-cnbr-24 medium-cnbr-20 large-cnbr-20 large-cnbr-offset-1 columns">
                     <div class="row">
                         <div class="small-cnbr-24 columns">
-                            <label for="dates-input" class="right inline"><b>Planned date(s) of my trip to the U.S.:</b></label>
+                            <label for="dates-input" class="right inline"><b>//copy[lang].contactUs.right.dates//</b></label>
                         </div>
                         <div class="small-cnbr-12 medium-cnbr-6 large-cnbr-11 columns">
                             <div class="row collapse">
                                 <div class="small-cnbr-7 medium-cnbr-4 large-cnbr-9 columns">
-                                    <label for="arrivingdate" class="right inline">Arriving:</label>
+                                    <label for="arrivingdate" class="right inline">//copy[lang].contactUs.right.arriving//</label>
                                 </div>
                                 <div class="small-cnbr-15 medium-cnbr-8 large-cnbr-15 columns left">
                                     <input type="text" name="arrivingdate" ng-model="cu.arrivingDate" class="arriving-input span2" value="" pick-date />
 									<div ng-show="emailForm.$submitted">
-									    <small class="error" ng-show="cu.arrivingdate==undefined">Select date</small>
+									    <small class="error" ng-show="cu.arrivingdate==undefined">//copy[lang].contactUs.right.datesErr//</small>
 									</div>                                     
                                 </div>
                             </div>
@@ -98,12 +98,12 @@
                         <div class="small-cnbr-12 medium-cnbr-6 large-cnbr-12 columns left">
                             <div class="row collapse">
                                 <div class="small-cnbr-9 medium-cnbr-4 large-cnbr-10 columns">
-                                    <label for="departingdate" class="right inline">Departing:</label>
+                                    <label for="departingdate" class="right inline">//copy[lang].contactUs.right.departing//</label>
                                 </div>
                                 <div class="small-cnbr-15 medium-cnbr-8 large-cnbr-14 columns left">
                                     <input type="text" name="departingdate" ng-model="cu.departingDate" class="departing-input span2" value="" pick-date />
 									<div ng-show="emailForm.$submitted">
-									    <small class="error" ng-show="cu.departingdate==undefined">Select date</small>
+									    <small class="error" ng-show="cu.departingdate==undefined">//copy[lang].contactUs.right.datesErr//</small>
 									</div>                                    
                                 </div>
                             </div>
@@ -115,15 +115,15 @@
                 <div class="small-cnbr-24 medium-cnbr-20 large-cnbr-20 large-cnbr-offset-1 columns">
                     <div class="row">
                         <div class="small-cnbr-19 columns">
-                            <label for="store" class="right inline"><b>I would like to visit:</b></label>
+                            <label for="store" class="right inline"><b>//copy[lang].contactUs.right.storesH//</b></label>
                         </div>
                         <div class="small-cnbr-24 large-cnbr-23 columns left">
 							<select name="store" ng-model="cu.store" ng-model-options="{ debounce: 250 }" required>
-								<option value="">Please select a store</option>
+								<option value="">//copy[lang].contactUs.right.storesM//</option>
 							    <option ng-repeat="option in store" value="//option.id//" ng-disabled="//option.disabled//">//option.name//</option>
 							</select>
                             <div ng-show="emailForm.$submitted || emailForm.store.$dirty">
-                                <small class="error store" ng-show="emailForm.store.$invalid">Please select a store</small>
+                                <small class="error store" ng-show="emailForm.store.$invalid">//copy[lang].contactUs.right.storesErr//</small>
                             </div>
                         </div>
                     </div>
@@ -131,14 +131,14 @@
             </div>
             <div class="row">
                 <div class="small-cnbr-24 medium-cnbr-20 large-cnbr-20 large-cnbr-offset-1 columns">
-                    <button type="submit" value="Send" ng-click="sendMail(cu)" class="medium button black">Submit</button>
+                    <button type="submit" value="Send" ng-click="sendMail(cu)" class="medium button black">//copy[lang].contactUs.right.submit//</button>
                 </div>
             </div>
 			<div class="row">
 	            <div class="form-sent-successfully small-cnbr-24 medium-cnbr-12 large-cnbr-20 large-cnbr-offset-1 columns">
-	                <h3>thank you for<br/>your submission</h3>
+	                <h3 text-to-html>//copy[lang].contactUs.right.submitHead//</h3>
 	                <div>
-	                    <p>A member of our tourism team will contact you shortly.</p>
+	                    <p>//copy[lang].contactUs.right.submitBody//</p>
 	                </div>
 	            </div>
             </div> 

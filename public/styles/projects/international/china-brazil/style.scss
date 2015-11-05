@@ -1987,11 +1987,13 @@ html {
 					padding-left: 25px;
 				}
 
-				select > option:disabled {
-					font-weight: bold !important;
-					padding-left: 0;
-					color: #000;
-				}
+				select {
+					option:disabled, option[disabled="disabled"] {
+						font-weight: bold !important;
+						background-color: #d8d8d8;
+						color: #000;
+					}
+				}			
 
 	        	h2 {
 				    width: 180px;
