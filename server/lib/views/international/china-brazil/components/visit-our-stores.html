@@ -40,7 +40,7 @@
         	<h3 ng-cloak>//copy[lang].stores.storeData.id[storeSelection].name//</h3>
         	<h4 ng-cloak>//copy[lang].stores.storeData.id[storeSelection].addr//</h4>
         	<h4 class="hrs" ng-hide="storeSelection === '7'" ng-cloak>//copy[lang].stores.storeData.storeHours//</h4>
-        	<p class="hrs" ng-cloak>//copy[lang].stores.storeData.id[storeSelection].hours//</p>
+        	<p class="hrs" ng-bind="copy[lang].stores.storeData.id[storeSelection].hours" text-to-html="copy[lang].stores.storeData.id[storeSelection].hours" ng-cloak>/p>
         	<p ng-cloak>//copy[lang].stores.storeData.id[storeSelection].descr//</p>
         </div>
         <div class="right small-cnbr-16 small-cnbr-centered medium-cnbr-6 medium-cnbr-centered large-cnbr-12 large-cnbr-centered columns"
@@ -52,25 +52,25 @@
         	</a>
         </div>
     	<div class="soca-stores small-cnbr-16 small-cnbr-centered medium-cnbr-12 medium-cnbr-centered large-cnbr-24 large-cnbr-centered columns" ng-show="storeSelection === '7'" ng-cloak>
-	        <h4 text-to-html ng-cloak>//copy[lang].stores.storeData.id[storeSelection].stores[0].area//</h4>
+	        <h4 ng-bind="copy[lang].stores.storeData.id[storeSelection].stores[0].area" text-to-html="copy[lang].stores.storeData.id[storeSelection].stores[0].area" ng-cloak></h4>
 	        <div ng-repeat="store in copy[lang].stores.storeData.id[storeSelection].stores[0].list">
-	        	<h4 text-to-html ng-cloak>//store.name//</h4>
-	        	<h5 text-to-html ng-cloak>//store.addr//</h5>
-	        	<p text-to-html ng-cloak>//store.hours//</p>
+	        	<h4 ng-bind="store.name" text-to-html="store.name" ng-cloak></h4>
+	        	<h5 ng-bind="store.addr" text-to-html="store.addr" ng-cloak></h5>
+	        	<p ng-bind="store.hours" text-to-html="store.hours" ng-cloak></p>
 	        </div>   
 
-	        <h4 text-to-html ng-cloak>//copy[lang].stores.storeData.id[storeSelection].stores[1].area//</h4>
+	        <h4 ng-bind="copy[lang].stores.storeData.id[storeSelection].stores[1].area" text-to-html="copy[lang].stores.storeData.id[storeSelection].stores[1].area" ng-cloak></h4>
 	        <div ng-repeat="store in copy[lang].stores.storeData.id[storeSelection].stores[1].list">
-	        	<h4 text-to-html ng-cloak>//store.name//</h4>
-	        	<h5 text-to-html ng-cloak>//store.addr//</h5>
-	        	<p text-to-html ng-cloak>//store.hours//</p>
+	        	<h4 ng-bind="store.name" text-to-html="store.name" ng-cloak></h4>
+	        	<h5 ng-bind="store.addr" text-to-html="store.addr" ng-cloak></h5>
+	        	<p ng-bind="store.hours" text-to-html="store.hours" ng-cloak></p>
 	        </div>   
 
-	        <h4 text-to-html ng-cloak>//copy[lang].stores.storeData.id[storeSelection].stores[2].area//</h4>
+	        <h4 ng-bind="copy[lang].stores.storeData.id[storeSelection].stores[2].area" text-to-html="copy[lang].stores.storeData.id[storeSelection].stores[2].area" ng-cloak></h4>
 	        <div ng-repeat="store in copy[lang].stores.storeData.id[storeSelection].stores[2].list">
-	        	<h4 text-to-html ng-cloak>//store.name//</h4>
-	        	<h5 text-to-html ng-cloak>//store.addr//</h5>
-	        	<p text-to-html ng-cloak>//store.hours//</p>
+	        	<h4 ng-bind="store.name" text-to-html="store.name" ng-cloak></h4>
+	        	<h5 ng-bind="store.addr" text-to-html="store.addr" ng-cloak></h5>
+	        	<p ng-bind="store.hours" text-to-html="store.hours" ng-cloak></p>
 	        </div>   	        	             		
     	</div>
 
@@ -96,12 +96,12 @@
     </article>  
     <article class="store-loyalty width-962 row" ng-show="storeSelection !== null && storeSelection === '2'">
     	<h2 class="store-header" ng-cloak>//copy[lang].stores.storeData.loyalty//</h2>
-    	<h3 text-to-html ng-cloak>//copy[lang].stores.storeData.loyaltySubHead//</h3>
+    	<h3 ng-bind="copy[lang].stores.storeData.loyaltySubHead" text-to-html="copy[lang].stores.storeData.loyaltySubHead" ng-cloak></h3>
         <div class="wrapper">
 	        <div class="block left small-cnbr-16 small-cnbr-centered medium-cnbr-6 medium-cnbr-centered large-cnbr-12 large-cnbr-centered columns"
 	        	ng-repeat="loyalty in copy[lang].stores.storeData.id[storeSelection].loyalty">
-	        	<h4 text-to-html ng-cloak><pre>//loyalty.title//</pre></h4>
-	        	<p text-to-html ng-cloak>//loyalty.description//</p>
+	        	<h4 ng-bind="loyalty.title" text-to-html="loyalty.title" ng-cloak></h4>
+	        	<p ng-bind="loyalty.description" text-to-html="loyalty.description" ng-cloak></p>
 	        </div>
         </div>
     </article>       
@@ -113,20 +113,20 @@
         	ng-repeat="restaurant in copy[lang].stores.storeData.id[storeSelection].restaurants"
         	equalized-element>
         	<img ng-src="//restaurant.imgURL//" />
-        	<h4 text-to-html ng-cloak><pre>//restaurant.name//</pre></h4>
-        	<h5 text-to-html ng-cloak>//restaurant.sched//</h5>
-        	<p text-to-html ng-cloak>//restaurant.description//</p>
+        	<h4 ng-bind="restaurant.name" text-to-html="restaurant.name" ng-cloak></h4>
+        	<h5 ng-bind="restaurant.sched" text-to-html="restaurant.sched" ng-cloak></h5>
+        	<p ng-bind="restaurant.description" text-to-html="restaurant.description" ng-cloak></p>
         </div>
     </article> 
     <article class="store-services width-962 row" ng-show="storeSelection !== null">
     	<h2 class="store-header" ng-cloak>//copy[lang].stores.storeData.services//</h2>
-    	<h3 text-to-html ng-cloak>//copy[lang].stores.storeData.servicesSubHead//</h3>
+    	<h3 ng-bind="copy[lang].stores.storeData.servicesSubHead" text-to-html="copy[lang].stores.storeData.servicesSubHead" ng-cloak></h3>
     	<div class="wrapper">
 	        <div class="block left small-cnbr-16 small-cnbr-centered medium-cnbr-6 medium-cnbr-centered large-cnbr-12 large-cnbr-centered columns"
 	        	ng-repeat="service in copy[lang].stores.storeData.id[storeSelection].services"
 	        	equalized-element>
-	        	<h4 text-to-html ng-cloak><pre>//service.title//</pre></h4>
-	        	<p text-to-html ng-cloak>//service.description//</p>
+	        	<h4 ng-bind="service.title" text-to-html="service.title" ng-cloak></h4>
+	        	<p ng-bind="service.description" text-to-html="service.description" ng-cloak></p>
 	        </div>
 	    </div>
     </article>                

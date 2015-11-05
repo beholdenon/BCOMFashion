@@ -16,10 +16,10 @@
             <div class="row">
                 <div class="small-cnbr-24 medium-cnbr-20 large-cnbr-20 large-cnbr-offset-1 columns">
                     <div class="row">
-                        <div class="small-cnbr-5 medium-cnbr-3 large-cnbr-4 columns">
+                        <div class="small-cnbr-5 medium-cnbr-3 large-cnbr-5 columns">
                             <label for="name" class="right inline"><b>//copy[lang].contactUs.right.name//</b></label>
                         </div>
-                        <div class="small-cnbr-19 medium-cnbr-9 large-cnbr-19 columns left">
+                        <div class="small-cnbr-19 medium-cnbr-9 large-cnbr-18 columns left">
                             <input type="text" ng-model="cu.name" name="name" required/>
                             <div ng-show="emailForm.$submitted || emailForm.name.$touched">
                                 <small class="error" ng-show="emailForm.name.$error.required">//copy[lang].contactUs.right.nameErr//</small>
@@ -31,10 +31,10 @@
             <div class="row">
                 <div class="small-cnbr-24 medium-cnbr-20 large-cnbr-20 large-cnbr-offset-1 columns">
                     <div class="row">
-                        <div class="small-cnbr-5 medium-cnbr-3 large-cnbr-4 columns">
+                        <div class="small-cnbr-5 medium-cnbr-3 large-cnbr-5 columns">
                             <label for="email" class="right inline"><b>//copy[lang].contactUs.right.email//</b></label>
                         </div>
-                        <div class="small-cnbr-19 medium-cnbr-9 large-cnbr-19 columns left">
+                        <div class="small-cnbr-19 medium-cnbr-9 large-cnbr-18 columns left">
                             <input type="email" ng-model="cu.email" name="email" required/>
  							<div ng-show="emailForm.$submitted || emailForm.email.$touched">
                                 <small class="error" ng-show="emailForm.email.$error.required">//copy[lang].contactUs.right.emailErr1//</small>
@@ -47,10 +47,10 @@
             <div class="row">
                 <div class="small-cnbr-24 medium-cnbr-20 large-cnbr-20 large-cnbr-offset-1 columns">
                     <div class="row">
-                        <div class="small-cnbr-10 medium-cnbr-6 large-cnbr-10 columns">
+                        <div class="small-cnbr-10 medium-cnbr-6 large-cnbr-11 columns">
                             <label for="phone" class="right inline"><b>//copy[lang].contactUs.right.phone//</b></label>
                         </div>
-                        <div class="small-cnbr-14 medium-cnbr-6 large-cnbr-13 columns left">
+                        <div class="small-cnbr-14 medium-cnbr-6 large-cnbr-12 columns left">
                             <input type="text" ng-model="cu.phone" name="phone" ng-pattern="phoneNumberPattern" ng-model-options="{ updateOn: 'blur' }" />
  							<div ng-show="emailForm.$submitted || (emailForm.phone.$dirty && emailForm.phone)">
                                 <small class="error" ng-show="emailForm.phone.$error.pattern">//copy[lang].contactUs.right.phoneErr//</small>
@@ -136,7 +136,7 @@
             </div>
 			<div class="row">
 	            <div class="form-sent-successfully small-cnbr-24 medium-cnbr-12 large-cnbr-20 large-cnbr-offset-1 columns">
-	                <h3 text-to-html>//copy[lang].contactUs.right.submitHead//</h3>
+	                <h3 ng-bind="copy[lang].contactUs.right.submitHead" text-to-html="copy[lang].contactUs.right.submitHead"></h3>
 	                <div>
 	                    <p>//copy[lang].contactUs.right.submitBody//</p>
 	                </div>

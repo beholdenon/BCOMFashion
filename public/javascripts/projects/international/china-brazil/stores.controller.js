@@ -8,12 +8,13 @@
 	function StoresCtrl($scope, appGlobals){
         $scope.lang = appGlobals.getAttr('lang');
         $scope.copy = appGlobals.getAttr('copy');
-        $scope.storeList = angular.copy($scope.copy[$scope.lang].stores.dropdown.list);
+        $scope.storeList = ($scope.lang) ? angular.copy($scope.copy[$scope.lang].stores.dropdown.list) : null;
         $scope.storeSelection = null;
         // $scope.storeSelection = '7';
 	 
 	    $scope.$on('lang:change', function(ev, args) {
 	        $scope.lang = args.lang;
+	        $scope.storeList = angular.copy($scope.copy[$scope.lang].stores.dropdown.list);
 	    });	
 	}
 })();

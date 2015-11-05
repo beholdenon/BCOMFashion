@@ -1303,7 +1303,7 @@
                                 descr: 'Diga "Aloha" para nossa mais nova filial na tropical Honolulu. Localizada no Ala Moana Center, atração e principal local de compras no Havaí, esta loja de três andares oferece uma variedade de comodidades sob medida para o cliente no além-mar. Passe em nosso Centro Internacional de Visitantes e fale com um dos nossos atendentes multilíngues. Nós oferecemos consultoria com personal stylist, ajustes no próprio local, reservas em restaurantes e muito mais.  Está pensando em nos visitar de novo? Inscreva-se em nosso International Loyalty Club e ganhe pontos em cartões de presente, serviços especiais e em aventuras havaianas autênticas.',
                                 dTile: 'PASSEANDO NO HAVAÍ?',
                                 dInfo: 'Baixe nosso guia de boas-vindas antes de chegar.',
-                                dFile: '/fashion/assets/projects/international/china-brazil/booklets/ENG_HAWAII.pdf',
+                                dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Hawaii_EN.pdf',
                                 designers: [
                                     'Burberry London',
                                     'Chloé',
@@ -1379,7 +1379,7 @@
                                 descr: 'Planejando uma viagem à Cidade dos Ventos? Deixe que a Bloomingdale\'s seja seu guia de moda. Preencha o seu guarda-roupa com a nossa ampla coleção de nomes de grife, ou estoque seus produtos de beleza favoritos. Nossos atendentes multilíngues podem ajudá-lo a personalizar sua viagem de compras de acordo com todas as suas necessidades.',
                                 dTile: 'VISITANDO CHICAGO?',
                                 dInfo: 'Baixe o nosso guia de boas-vindas antes de chegar.',
-                                dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Chicago_PT.pdf',
+                                dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Chicago_EN.pdf',
                                 designers: [
                                     'Burberry London',
                                     'Canada Goose',
@@ -1444,7 +1444,7 @@
                                 descr: 'Decore sua casa com uma viagem à loja Medinah Home em Chicago. Aqui você vai encontrar roupas de cama de luxo, utensílios de cozinha feitos por designers, finos acessórios de casa e banho e muito mais. Experimente em primeira mão nossa premiada hospitalidade com uma infinidade de serviços no interior da loja.',
                                 dTile: 'VISITANDO CHICAGO?',
                                 dInfo: 'Baixe o nosso guia de boas-vindas antes de chegar.',
-                                dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Chicago_PT.pdf',
+                                dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Chicago_EN.pdf',
                                 designers: [
                                     'Nespresso',
                                     'Rimowa',
@@ -1477,7 +1477,7 @@
                                 descr: 'Descubra o melhor das compras em São Francisco. Primeira parada, Bloomingdale\'s. Dirija-se ao Centro do Visitante para um catálogo multilíngue ou fale com nossos atendentes multilíngues para personalizar a sua experiência de acordo com suas necessidades. Saiba mais sobre nossos serviços e comodidades internos da loja abaixo.',
                                 dTile: 'VAI VISITAR SÃO FRANCISCO?',
                                 dInfo: 'Baixe o nosso guia de boas-vindas antes de chegar.',
-                                dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_SanFran_PT.pdf',
+                                dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_SanFran_EN.pdf',
                                 designers: [
                                     'Alice + Olivia',
                                     'BCBGMAXAZRIA',
@@ -1539,9 +1539,9 @@
                                 addr: '3333 Bristol St  Costa Mesa, CA 92626  +1 (714) 824-4600',
                                 hours: 'Segunda-feira - Sábado: 10:00h-21:00h <span>|</span> Domingo: 11:00h-19:00h',                                   
                                 descr: 'Com a melhor seleção de estilistas, feita especialmente para a Califórnia do Sul, o South Coast Plaza é ponto de parada obrigatório quando o assunto é compras. Novo no "Estado Dourado"? Os atendentes multilíngues vão tornar sua estadia muito melhor. Comece com um catálogo da loja em seu idioma ou torne sua viagem de compras especial com os serviços internos de nossa loja.',
-                                dTile: '',
-                                dInfo: '',
-                                dFile: '',
+                                dTile: 'VAI VISITAR Costa Mesa?',
+                                dInfo: 'Baixe o nosso guia de boas-vindas antes de chegar.',
+                                dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_SouthCoastPlaza_EN.pdf',
                                 designers: [
                                     'Burberry London',
                                     'Calvin Klein',
@@ -1607,9 +1607,10 @@
                                 addr: '',
                                 hours: '',
                                 descr: 'Com filias por toda Los Angeles, Orange County e San Diego, a Bloomingdale\'s deixou sua marca registrada na Califórnia do Sul. Compre as marcas de roupas, acessórios, sapatos e beleza que você ama em qualquer uma de nossas lojas. Saiba mais sobre nossos serviços e comodidades internos da loja abaixo.',
-                                dTile: '',
-                                dInfo: '',
-                                dFile: '',
+                                dTile: 'VAI VISITAR SOUTHERN CALIFORNIA?',
+                                dInfo: 'Baixe o nosso guia de boas-vindas antes de chegar.',
+                                dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_SouthernCalifornia_EN.pdf',
+
                                 stores: [
                                     {
                                         name: '<b>Orange County</b><br/>South Coast Plaza',
@@ -1750,7 +1751,7 @@
                                 descr: 'Abastecido com os melhores estilistas e marcas de beleza, a Bloomingdale\'s de Orlando é seu passaporte para as compras de nível mundial. Faça uma parada em sua próxima viagem ao "Estado Ensolarado" para uma experiência feita sob medida para você. Pegue um catálogo da loja no seu idioma e então tire o máximo proveito dos serviços e comodidades listados abaixo.',
                                 dTile: 'VISITANDO ORLANDO?',
                                 dInfo: 'Baixe o nosso guia de boas-vindas antes de chegar.',
-                                dFile: '/fashion/assets/projects/international/china-brazil/booklets/ENG_ORLANDO.pdf',
+                                dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Orlando_PT.pdf',
                                 designers: [
                                     'Burberry London',
                                     'Canali ',
@@ -1832,11 +1833,11 @@
                     }
                 },
                 contactUs: {
-                    formTitle: 'Contact Us',
+                    formTitle: 'ENTRE EM CONTATO CONOSCO',
                     left: {
-                        title: 'notify us of your trip',
-                        p1: 'Please let us know which Bloomingdale\'s store you\'d like to visit and the planned dates of your trip.',
-                        p2: 'Simply submit this form, and one of our multilingual associates will be in touch.'
+                        title: 'Avise-nos de sua viagem',
+                        p1: 'Diga-nos qual loja da Bloomingdale\'s você gostaria de visitar e as datas planejadas de sua viagem. ',
+                        p2: 'Basta preencher este formulário, e um de nossos atendentes irá entrar em contato. '
                     },
                     right: {
                         name: 'Nome:',
@@ -2235,7 +2236,7 @@
                                 descr: '跟我们在热带檀香山设立的最新商店打个招呼。这座三层楼高的商店位于夏威夷黄金购物地带阿拉莫阿那购物中心店，内部配备有各种便利设施，专为海外购物者量身打造。我们提供个人形象设计师会面、现场改衣、餐厅订位等等。',
                                 dTile: '正在前往夏威夷的途中？',
                                 dInfo: '在您到达之前下载我们的欢迎手册。',
-                                dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Hawaii_EN.pdf',
+                                dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Hawaii_CN.pdf',
                                 designers: [
                                     'Burberry London',
                                     'Chloé',
@@ -2634,7 +2635,7 @@
                                 descr: '正在规划您的假日旅程？从佛罗里达州阿文图拉购物中心店启程吧。在此我们提供种类繁多的设计时尚、美容品牌、奢侈饰品及其他商品供您选择。根据中文门店指南进行购物，同时我们邀您尽可能多地进入下方列示的店内设施进行体验。',
                                 dTile: '来阿文图拉购物中心店观光？',
                                 dInfo: '在到达之前下载我们的欢迎手册。',
-                                dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Aventura_CN.pdf',
+                                dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Aventura_EN.pdf',
                                 designers: [
                                     'Baccarat',
                                     'Bernardaud',
@@ -2710,7 +2711,7 @@
                                 descr: 'Bloomingdale\'s 奥兰多店有着最棒的设计师和美容品牌，您可在此享受世界级的购物体验。在您下一站前往佛罗里达州的旅途中顺道进来商店看看，我们为您量身打造了尊享购物体验。根据您的语言选择一份门店指南，并享受下方列示的诸多店内设施为您带来的便利。',
                                 dTile: 'V来奥兰多观光？',
                                 dInfo: '在到达之前下载我们的欢迎手册。',
-                                dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Orlando_CN.pdf',
+                                dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Orlando_EN.pdf',
                                 designers: [
                                     'Burberry London',
                                     'Canali ',

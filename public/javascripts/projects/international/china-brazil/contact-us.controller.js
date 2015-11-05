@@ -8,8 +8,8 @@
 	function ContactUsCtrl($scope, $window, $timeout, appGlobals){
 		$scope.cu = {};
         $scope.lang = appGlobals.getAttr('lang');
-        $scope.copy = appGlobals.getAttr('copy');console.log($scope.copy[$scope.lang].contactUs);
-        $scope.store = angular.copy($scope.copy[$scope.lang].contactUs.right.stores);
+        $scope.copy = appGlobals.getAttr('copy');
+        $scope.store = ($scope.lang) ? angular.copy($scope.copy[$scope.lang].contactUs.right.stores) : null;
 
 		$scope.phoneNumberPattern = (function() {
 		    var regexp = /([0-9\s\-]{7,})(?:\s*(?:#|x\.?|ext\.?|extension)\s*(\d+))?$/;
@@ -72,6 +72,7 @@
 
 	    $scope.$on('lang:change', function(ev, args) {
 	        $scope.lang = args.lang;
+	        $scope.store = angular.copy($scope.copy[$scope.lang].contactUs.right.stores);
 	    });			
 	}
 })();

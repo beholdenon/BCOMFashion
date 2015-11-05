@@ -1,6 +1,7 @@
 'use strict';
 
-angular.module('directives', [])
+angular
+    .module('directives')
     .directive('globalNav', function() {
         return {
             templateUrl: 'components/global-nav.html'
@@ -37,20 +38,15 @@ angular.module('directives', [])
         return {
             restrict: 'A',
             replace: true,
-            link: function($scope, elem) {
-                var text;
-                $timeout(function() {
-                    text = elem.text();
-                    elem.html(text);
-                    $(elem).fadeIn('fast');
-                }, 400);
-
-
-                // $scope.$watch(attrs.textToHtml, function(newValue, oldValue) {
-                //     $(elem).html(newValue);
-                //     $(elem).fadeIn('fast');
-                //     console.log(oldValue);
-                // });                 
+            link: function($scope, elem, attrs) {
+                $scope.$watch(attrs.textToHtml, function(newValue) {
+                    $(elem).hide();
+                    
+                    $timeout(function(){
+                        elem.html(newValue);
+                        $(elem).fadeIn();
+                    }, 1);
+                });         
             }
         };
     })
