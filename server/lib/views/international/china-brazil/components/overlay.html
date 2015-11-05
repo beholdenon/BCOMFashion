@@ -17,11 +17,11 @@
 		<div ng-switch-when="social-share">
 	        <div class="small-20 medium-centered small-centered large-16 columns">
 	        	<div class="row" ng-hide="overlay.weixinOn">
-		            <div class="icon small-4 small-offset-1 small-centered columns"><a href="#" ng-click="share('fb')"><i class="fa fa-facebook"></i></a></div>
-		            <div class="icon small-4 small-centered columns"><a href="#" ng-click="share('twitter')"><i class="fa fa-twitter"></i></a></div>
-		            <div class="icon small-4 small-centered columns"><a href="#" ng-click="share('pinterest')"><i class="fa fa-pinterest"></i></a></div>
-		            <div class="icon small-4 small-centered columns"><a href="#" ng-click="share('weibo')"><i class="fa fa-weibo"></i></a></div>
-		            <div class="icon small-4 small-centered columns"><a href="#" ng-click="share('weixin')"><i class="fa fa-weixin"></i></a></div>	
+		            <div class="icon small-offset-1 small-centered columns" ng:class="{true:'small-6', false:'small-4'}[lang === 'POR']"><a href="#" ng-click="share('fb')"><i class="fa fa-facebook"></i></a></div>
+		            <div class="icon small-centered columns" ng:class="{true:'small-6', false:'small-4'}[lang === 'POR']"><a href="#" ng-click="share('twitter')"><i class="fa fa-twitter"></i></a></div>
+		            <div class="icon small-centered columns" ng:class="{true:'small-6 last', false:'small-4'}[lang === 'POR']"><a href="#" ng-click="share('pinterest')"><i class="fa fa-pinterest"></i></a></div>
+		            <div ng-hide="lang === 'POR'" class="icon small-4 small-centered columns"><a href="#" ng-click="share('weibo')"><i class="fa fa-weibo"></i></a></div>
+		            <div ng-hide="lang === 'POR'" class="icon small-4 small-centered columns"><a href="#" ng-click="share('weixin')"><i class="fa fa-weixin"></i></a></div>	
 	        	</div>
 	        	<div class="row QR" ng-show="overlay.weixinOn">
 		            <div class="copy small-24 small-centered columns" ng-cloak>//QRcopy//</div>	

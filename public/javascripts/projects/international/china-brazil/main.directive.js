@@ -37,12 +37,20 @@ angular.module('directives', [])
         return {
             restrict: 'A',
             replace: true,
-            link: function(scope, elem) {
+            link: function($scope, elem) {
                 var text;
                 $timeout(function() {
                     text = elem.text();
                     elem.html(text);
+                    $(elem).fadeIn('fast');
                 }, 400);
+
+
+                // $scope.$watch(attrs.textToHtml, function(newValue, oldValue) {
+                //     $(elem).html(newValue);
+                //     $(elem).fadeIn('fast');
+                //     console.log(oldValue);
+                // });                 
             }
         };
     })
@@ -380,6 +388,18 @@ angular.module('directives', [])
                         .css(anchor, (offset + elementsOffsetFromTop(scrollbar)) + 'px')
                         .css('margin-top', 0);
 
+                    if ($elem.hasClass('dropdown-cnbr')) {
+                        $elem
+                            .css('left', '50%')
+                            .css('width', '962px')
+                            .css('margin-left', '-481px');
+                    }
+
+                    if ($elem.hasClass('cnbr-header-store')) {
+                        $elem
+                            .css('width', '100%');
+                    }
+
                     if (anchor === 'bottom') {
                         $elem.css('margin-bottom', 0);
                     }
@@ -686,4 +706,48 @@ angular.module('directives', [])
                 };
             }]
         };
-    }]);
+    }])
+
+
+    /**
+    * @desc: directive used as an attribute to create equal height content on your page
+    * @example: <div equalized-element></div>
+    */     
+    .directive('equalizedElement', function($timeout) {
+        return {
+            restrict: 'A',
+            link: function (scope, elem) {
+                function eqFunction(elem) {
+                    var el = $(elem),
+                        index = $(elem).index(),
+                        elHeight = el.height(),
+                        elPrev = null,
+                        prevHeight = null;
+                    
+                    if (!el.hasClass('restaurant') && index%2 !== 0) {
+                        
+                        elPrev = el.parent().children(':eq('+ (index-1) +')');
+                        prevHeight = elPrev.height();
+
+                        if (prevHeight > elHeight) {
+                            el.css('height', prevHeight);
+                        }
+
+                        // console.log(prevHeight + ' - ' + elHeight);
+                    } else if (el.hasClass('restaurant') && index !==0 && index%2 === 0) {
+                        // this is a particular use case for the "In-Store Dining" section in the /visit-our-stores view
+                        elPrev = el.parent().children(':eq('+ (index-1) +')');
+                        prevHeight = elPrev.height();
+
+                        if (prevHeight > elHeight) {
+                            el.css('height', prevHeight);
+                        }
+                    }       
+                }
+
+                $timeout(function(){
+                    eqFunction(elem);
+                }, 400);
+            }
+        };
+    });

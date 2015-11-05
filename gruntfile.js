@@ -79,7 +79,8 @@ module.exports = function(grunt) {
                     src: [
                         'public/favicon.ico', 
                         'public/images/**',
-                        'public/styles/fonts/**'
+                        'public/styles/fonts/**',
+                        'public/assets/**'
                     ],
                     dest: '<%= node.destination %>/'
                 }, {
