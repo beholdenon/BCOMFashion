@@ -15,6 +15,7 @@
 	    $scope.$on('lang:change', function(ev, args) {
 	        $scope.lang = args.lang;
 	        $scope.storeList = angular.copy($scope.copy[$scope.lang].stores.dropdown.list);
-	    });	
+	        console.log('receive');
+	    });	   
 	}
 })();

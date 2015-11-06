@@ -58,7 +58,7 @@
         };
 
         $scope.$on('lang:change', function(ev, args) {
-            $scope.lang = args.lang;
+            $scope.lang = args.lang;        
         });
     }
 })();

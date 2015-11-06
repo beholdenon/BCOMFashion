@@ -40,6 +40,7 @@
             $scope.$emit('lang:change', {
                 lang: globalLang
             });
+      
             $('html, body').removeClass('noscroll');
             $window.noBounce.remove({
                 animate: true

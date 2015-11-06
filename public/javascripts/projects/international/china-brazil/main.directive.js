@@ -726,8 +726,9 @@ angular
                         prevHeight = elPrev.height();
 
                         if (prevHeight > elHeight) {
-                            el.css('height', prevHeight);
+                            el.css('height', prevHeight+1);
                         }
+                        // console.log(prevHeight + ' >> ' + elHeight);
 
                         // console.log(prevHeight + ' - ' + elHeight);
                     } else if (el.hasClass('restaurant') && index !==0 && index%2 === 0) {
@@ -736,8 +737,10 @@ angular
                         prevHeight = elPrev.height();
 
                         if (prevHeight > elHeight) {
-                            el.css('height', prevHeight);
+                            el.css('height', prevHeight+1);
                         }
+
+                        // console.log(prevHeight + ' > ' + elHeight);
                     }       
                 }
 
