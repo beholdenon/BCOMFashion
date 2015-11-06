@@ -47,10 +47,10 @@
             <div class="row">
                 <div class="small-cnbr-24 medium-cnbr-20 large-cnbr-20 large-cnbr-offset-1 columns">
                     <div class="row">
-                        <div class="small-cnbr-10 medium-cnbr-6 large-cnbr-11 columns">
+                        <div class="medium-cnbr-6 large-cnbr-11 columns" ng:class="{true:'small-cnbr-14', false:'small-cnbr-12'}[lang === 'POR']">
                             <label for="phone" class="right inline"><b>//copy[lang].contactUs.right.phone//</b></label>
                         </div>
-                        <div class="small-cnbr-14 medium-cnbr-6 large-cnbr-12 columns left">
+                        <div class="medium-cnbr-6 large-cnbr-12 columns left" ng:class="{true:'small-cnbr-10', false:'small-cnbr-12'}[lang === 'POR']">
                             <input type="text" ng-model="cu.phone" name="phone" ng-pattern="phoneNumberPattern" ng-model-options="{ updateOn: 'blur' }" />
  							<div ng-show="emailForm.$submitted || (emailForm.phone.$dirty && emailForm.phone)">
                                 <small class="error" ng-show="emailForm.phone.$error.pattern">//copy[lang].contactUs.right.phoneErr//</small>

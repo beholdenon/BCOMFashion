@@ -18,24 +18,24 @@
                     header: {
                         mobile: {
                             h1: 'Welcome',
-                            h2: 'See All the Stylish Sights Starting\n' +
+                            h2: 'See All the Stylish Sights Starting <br/>' +
                                 'with a Visit to Bloomingdale\'s',
-                            p: 'Since 1872, Bloomingdale\'s has been\n' +
-                                'at the center of style, carrying the\n' +
-                                'most coveted designer fashions, shoes,\n' +
-                                'handbags, cosmetics, fine jewelry and\n' +
-                                'gifts in the world. When you visit our\n' +
-                                'stores, you\'ll enjoy exclusive personal\n' +
-                                'touches—like multilingual associates\n' +
-                                'and special concierge services—that\n' +
-                                'ensure you feel welcome, pampered\n' +
-                                'and at home. These are just a few of\n' +
-                                'the things that make Bloomingdale\'s\n' +
+                            p: 'Since 1872, Bloomingdale\'s has been <br/>' +
+                                'at the center of style, carrying the <br/>' +
+                                'most coveted designer fashions, shoes, <br/>' +
+                                'handbags, cosmetics, fine jewelry and <br/>' +
+                                'gifts in the world. When you visit our <br/>' +
+                                'stores, you\'ll enjoy exclusive personal <br/>' +
+                                'touches—like multilingual associates <br/>' +
+                                'and special concierge services—that <br/>' +
+                                'ensure you feel welcome, pampered <br/>' +
+                                'and at home. These are just a few of <br/>' +
+                                'the things that make Bloomingdale\'s <br/>' +
                                 'like no other store in the world.'
                         },
                         desktop: {
                             h1: 'Welcome',
-                            h2: 'See All the Stylish Sights\n' +
+                            h2: 'See All the Stylish Sights  <br/>' +
                                 'Starting with a Visit to Bloomingdale\'s',
                             p: 'Since 1872, Bloomingdale\'s has been at the center ' +
                                 'of style, carrying the most coveted designer ' +
@@ -977,7 +977,7 @@
                     header: {
                         mobile: {
                             h1: 'Bem-vindo',
-                            h2: 'Confira todos os visuais estilosos\n' +
+                            h2: 'Confira todos os visuais estilosos <br/>' +
                                 'Começando com uma visita à Bloomingdale\'s',
                             p:  'Desde 1872, a Bloomingdale\'s esteve no centro da moda, trazendo as mais cobiçadas roupas de marca, sapatos, bolsas, cosméticos, joias finas e presentes de marca do mundo. ' +
                                 'Ao visitar nossas lojas, você vai desfrutar de mimos exclusivos personalizados, tais como atendentes multilíngues e serviços especiais de concierge, que certamente farão você se sentir acolhido, mimado e como se estivesse em casa.' +
@@ -985,16 +985,16 @@
                         },
                         desktop: {
                             h1: 'Bem-vindo',
-                            h2: 'Confira todos os visuais estilosos\n' +
+                            h2: 'Confira todos os visuais estilosos <br/>' +
                                 'Começando com uma visita à Bloomingdale\'s',
-                            p:  'Desde 1872, a Bloomingdale\'s esteve no centro da moda, \n' + 
-                                'trazendo as mais cobiçadas roupas de marca, sapatos, bolsas, \n' + 
-                                'cosméticos, joias finas e presentes de marca do mundo. Ao \n' + 
-                                'visitar nossas lojas, você vai desfrutar de mimos exclusivos \n' + 
-                                'personalizados, tais como atendentes multilíngues e serviços \n' + 
-                                'especiais de concierge, que certamente farão você se sentir \n' +
-                                'acolhido, mimado e como se estivesse em casa. Estes são \n' + 
-                                'apenas alguns dos detalhes que fazem da Bloomingdale\'s \n' +
+                            p:  'Desde 1872, a Bloomingdale\'s esteve no centro da moda,  <br/>' + 
+                                'trazendo as mais cobiçadas roupas de marca, sapatos, bolsas,  <br/>' + 
+                                'cosméticos, joias finas e presentes de marca do mundo. Ao  <br/>' + 
+                                'visitar nossas lojas, você vai desfrutar de mimos exclusivos  <br/>' + 
+                                'personalizados, tais como atendentes multilíngues e serviços  <br/>' + 
+                                'especiais de concierge, que certamente farão você se sentir  <br/>' +
+                                'acolhido, mimado e como se estivesse em casa. Estes são  <br/>' + 
+                                'apenas alguns dos detalhes que fazem da Bloomingdale\'s  <br/>' +
                                 'uma loja como nenhuma outra no mundo.'                                
                         }
                     },
@@ -1880,8 +1880,8 @@
                             {id: 'Orlando', name: 'Orlando', disabled: 'false'}
                         ],
                         submit: 'enviar',
-                        submitHead: 'Obrigado pela<br/>sua submissão',
-                        submitBody: 'Um membro de nossa equipe do turismo em contato em breve.'
+                        submitHead: 'Muito obrigado <br/>por mandar o formulario.',
+                        submitBody: 'Uma pessoa encarregada da area de turismo ira entrar em contato com voce em breve.'
                     }
                 },
                 footer: [
@@ -1900,7 +1900,7 @@
                     header: {
                         mobile: {
                             h1: '欢迎光临',
-                            h2: '饱览时尚精品\n' +
+                            h2: '饱览时尚精品 <br/>' +
                                 '从造访 Bloomingdale\'s 开始',
                             p:  '自 1872 年以来，Bloomingdale\'s 一直雄踞于时尚潮流的中 ' +
                                 '心，汇集了人们梦寐以求的世界名牌时装、鞋包、化妆品、精品首饰和礼品。' +
@@ -1911,14 +1911,14 @@
                         },
                         desktop: {
                             h1: '欢迎光临',
-                            h2: '饱览时尚精品\n' +
+                            h2: '饱览时尚精品 <br/>' +
                                 '从造访 Bloomingdale\'s 开始',
-                            p:  '自 1872 年以来，Bloomingdale\'s 一直雄踞于时尚潮流的中 \n' +
-                                '心，汇集了人们梦寐以求的世界名牌时装、鞋包、化妆品、精品首饰和礼品。\n' +
-                                '在光临本店时，您将会享受到专人接待，例如多语 \n' +
-                                '种工作人员和特殊的礼宾服务，让您感到宾至如归、备受欢迎、\n' +
-                                '轻松自在。而这些只不过是 Bloomingdale\'s 赢得“世界上独一\n' +
-                                '无二的百货店”这一美誉的众多原因之一。\n'
+                            p:  '自 1872 年以来，Bloomingdale\'s 一直雄踞于时尚潮流的中  <br/>' +
+                                '心，汇集了人们梦寐以求的世界名牌时装、鞋包、化妆品、精品首饰和礼品。 <br/>' +
+                                '在光临本店时，您将会享受到专人接待，例如多语  <br/>' +
+                                '种工作人员和特殊的礼宾服务，让您感到宾至如归、备受欢迎、 <br/>' +
+                                '轻松自在。而这些只不过是 Bloomingdale\'s 赢得“世界上独一 <br/>' +
+                                '无二的百货店”这一美誉的众多原因之一。'
                         }
                     },
                     cat: [

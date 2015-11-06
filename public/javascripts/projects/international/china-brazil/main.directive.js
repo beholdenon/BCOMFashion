@@ -44,7 +44,7 @@ angular
                     
                     $timeout(function(){
                         elem.html(newValue);
-                        $(elem).fadeIn();
+                        $(elem).show();
                     }, 1);
                 });         
             }

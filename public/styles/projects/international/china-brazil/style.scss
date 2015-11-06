@@ -821,14 +821,12 @@ html {
 									font-size: 6vw;
 									padding: 1vw 0 4vw 0;
 					    			width: 100%;
-					    			pre {
-					    				font-family: Arial,Helvetica,Verdana,Sans-serif;
-		    							color: #000;
-										font-size: 6vw;
-						    			width: 100%;					    				
-					    			}
+				    				font-family: Arial,Helvetica,Verdana,Sans-serif;
+	    							color: #000;
+									font-size: 6vw;
+					    			width: 100%;					    				
 					    		}
-					    		div pre {
+					    		div {
 					    			font-family: Arial,Helvetica,Verdana,Sans-serif;
 								    text-align: left;
 								    color: #000;
@@ -862,13 +860,11 @@ html {
 				    			font-size: 19px;
 				    			padding: 20px 0;
 				    			letter-spacing: 1px;
-				    			pre {
-									font-family: Arial,Helvetica,Verdana,Sans-serif;
-									font-style: normal;
-									text-rendering: optimizeLegibility;
-									color: #f30c99;
-									letter-spacing: 1px;				    				
-				    			}
+								font-family: Arial,Helvetica,Verdana,Sans-serif;
+								font-style: normal;
+								text-rendering: optimizeLegibility;
+								color: #f30c99;
+								letter-spacing: 1px;				    				
 				    		}
 				    		p {
 				    			color: #fff;
@@ -1012,13 +1008,6 @@ html {
 					    margin-bottom: 60px;
 					    border-bottom: solid #000 1px;
 					    border-top: solid #000 1px;
-					    a {
-						    text-align: center;
-						    color: #000;
-						    font-family: 'Libre Baskerville', serif;
-						    font-size: 32px;
-						    padding: 15px 50px;					    	
-					    }
 						@media #{$small-only} {
 						    margin-right: 0;
 						    margin-left: 0;
@@ -1026,12 +1015,28 @@ html {
 							padding-left: 0;
 							padding-right: 0;
 						}					    
+					    a {
+						    text-align: center;
+						    color: #000;
+						    font-family: 'Libre Baskerville', serif;
+						    font-size: 32px;
+						    padding: 15px 50px;	
+						    @media #{$small-only} {
+						    	font-size: 25px;
+							    font-size: 8vw;
+							    padding: 0;
+						    }				    	
+					    }
 					}
 					.subtitle {
 						width: 369px;
 					    margin-top: -50px;
 					    margin-bottom: 50px;	
-					    text-align: center;					
+					    text-align: center;		
+					    @media #{$small-only} {
+					    	 width: 100%;
+					    	 margin-bottom: 20px;
+					    }			
 						span {
 							vertical-align: middle;
 							color: #000;
@@ -1039,9 +1044,10 @@ html {
 							font-weight: bold;
 							font-size: 22px;
 							margin-right: 5px;							
-						}
-						img {
-
+							@media #{$small-only} {
+								font-size: 5vw;
+								margin-right: 0;								
+							}
 						}
 					}
 					.shop-stores {
@@ -2106,6 +2112,11 @@ html {
 	        			font-size: 13px;
 	        			line-height: 50px;
 	        			padding: 10px;
+	        			@media #{$small-only} {
+	        				&.por {
+	        					font-size: 2.965vw;
+	        				}
+	        			}
 	        		}
 	        	}
 	        	section.footer-bottom{
