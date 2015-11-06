@@ -55,13 +55,13 @@
 
 			    $window.location.href = link;
 
-			    $('.form-sent-successfully').fadeIn();
+			    jQuery('.form-sent-successfully').fadeIn();
 
 				$timeout(function() {
 					$scope.cu = {};
 					$scope.emailForm.$setPristine();
 					$scope.emailForm.$setUntouched();
-					$('.form-sent-successfully').fadeOut();
+					jQuery('.form-sent-successfully').fadeOut();
 				}, 3500);
 				
 				return true;

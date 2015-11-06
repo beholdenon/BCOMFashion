@@ -11,12 +11,12 @@
         $scope.QRcopy = socialshare.weixin;
 
         $scope.closeOverlay = function() {
-            var touch = $('.off-canvas-wrap').hasClass('touch');
+            var touch = jQuery('.off-canvas-wrap').hasClass('touch');
 
             if (touch || !this.$parent.overlay.weixinOn) {
                 $scope.overlay.isShowed = false;
-                $('html, body').removeClass('noscroll');
-                $('.off-canvas-wrap').removeClass('touch');
+                jQuery('html, body').removeClass('noscroll');
+                jQuery('.off-canvas-wrap').removeClass('touch');
                 $window.noBounce.remove({
                     animate: true
                 });
@@ -27,9 +27,9 @@
         };
 
         $scope.selLang = function($event) {
-            var el = $($event.target),
+            var el = jQuery($event.target),
                 globalLang = el.attr('data-lang'),
-                navElSel = $('.lang-opt a[data-lang="' + globalLang + '"]');
+                navElSel = jQuery('.lang-opt a[data-lang="' + globalLang + '"]');
 
             navElSel.parent('li').addClass('active');
 
@@ -41,15 +41,15 @@
                 lang: globalLang
             });
       
-            $('html, body').removeClass('noscroll');
+            jQuery('html, body').removeClass('noscroll');
             $window.noBounce.remove({
                 animate: true
             });
         };
 
-        $scope.share = function(service) {
+        $scope.share = function(service, lang) {
             if (service !== 'weixin'){
-                $window.open(socialshare[service], '_blank', 'width=608,height=342');
+                $window.open(socialshare[service](lang), '_blank', 'width=608,height=342');console.log(lang);
             } else {
                 $scope.overlay.weixinOn = true;
             }
@@ -60,12 +60,12 @@
             $scope.overlay.weixinOn = args.weixin;
             $scope.overlay.isShowed = true;
 
-            if ($('.off-canvas-wrap').hasClass('move-right')) {
-                $('.left-off-canvas-toggle').click();
-                $('.off-canvas-wrap').addClass('touch');
+            if (jQuery('.off-canvas-wrap').hasClass('move-right')) {
+                jQuery('.left-off-canvas-toggle').click();
+                jQuery('.off-canvas-wrap').addClass('touch');
             }
             
-            $('html, body').addClass('noscroll');
+            jQuery('html, body').addClass('noscroll');
             $window.noBounce.init({
                 animate: true
             });

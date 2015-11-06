@@ -13,11 +13,11 @@
         <li class="nav-section"><a href="http://www1.bloomingdales.com/" ng-cloak>//copy[lang].nav[3]//</a></li>
         <li class="social">
             <ul>
-                <li><a href="#" ng-click="shareOnMob('fb')"><i class="fa fa-facebook"></i></a></li>
-                <li><a href="#" ng-click="shareOnMob('twitter')"><i class="fa fa-twitter"></i></a></li>
-                <li><a href="#" ng-click="shareOnMob('pinterest')"><i class="fa fa-pinterest"></i></a></li>
-                <li><a href="#" ng-click="shareOnMob('weibo')"><i class="fa fa-weibo"></i></a></li>
-                <li><a href="#" ng-click="shareOnMob('weixin')"><i class="fa fa-weixin"></i></a></li>
+                <li ng:class="{true:'por', false:''}[lang === 'POR']"><a href="#" ng-click="shareOnMob('fb', lang)"><i class="fa fa-facebook"></i></a></li>
+                <li ng:class="{true:'por', false:''}[lang === 'POR']"><a href="#" ng-click="shareOnMob('twitter', lang)"><i class="fa fa-twitter"></i></a></li>
+                <li ng:class="{true:'por', false:''}[lang === 'POR']"><a href="#" ng-click="shareOnMob('pinterest', lang)"><i class="fa fa-pinterest"></i></a></li>
+                <li ng-hide="lang === 'POR'"><a href="#" ng-click="shareOnMob('weibo', lang)"><i class="fa fa-weibo"></i></a></li>
+                <li ng-hide="lang === 'POR'"><a href="#" ng-click="shareOnMob('weixin', lang)"><i class="fa fa-weixin"></i></a></li>
             </ul>
         </li>
     </ul>

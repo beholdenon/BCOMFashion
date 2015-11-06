@@ -17,7 +17,7 @@
             </select>
         </div>
     </article>
-    <div class="cnbr-header-store small-collapse row" style="width:100%" ng-show="storeSelection !== null" sticky offset="71" media-query="min-width:933px">
+    <div class="cnbr-header-store small-collapse row" style="width:100%" ng-show="storeSelection !== null" sticky offset="71" mediaQuery="min-width: 933px">
         <div class="large-24 columns">
             <div class="copy">
                 <h1 ng-cloak>//copy[lang].stores.header.h1//</h1>
@@ -25,7 +25,7 @@
             </div>
         </div>
     </div>    
-    <article class="dropdown-cnbr width-962 row" ng-show="storeSelection !== null" sticky offset="85" media-query="min-width:933px">
+    <article class="dropdown-cnbr width-962 row" ng-show="storeSelection !== null" sticky offset="85" mediaQuery="min-width: 933px">
         <div class="small-cnbr-16 small-cnbr-centered medium-cnbr-6 medium-cnbr-centered large-cnbr-12 large-cnbr-centered columns">
             <select name="store" ng-model="storeSelection" ng-model-options="{ debounce: 250 }">
                 <option ng-repeat="option in storeList" value="//option.id//" ng-disabled="//option.disabled//">//option.name//</option>

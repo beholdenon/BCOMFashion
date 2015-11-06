@@ -206,6 +206,12 @@ html {
 			    					&:last-child{
 			    						border-right: none;
 			    					}
+			    					&.por {
+										padding: 0 10vmin;	
+				    					&:nth-child(3){
+				    						border-right: none;
+				    					}												    						
+			    					}
 			    					a {
 			    						color: #000;
 			    						font-size: 24px;
@@ -460,7 +466,7 @@ html {
 					    background-position: 25px -76px;
 					    margin-left: 2px;
 					    margin-top: 16px;	   
-					    z-index: 9;         	
+					    z-index: 15;         	
 		            }
 	            }
 	            .top-bar-section {
@@ -876,7 +882,7 @@ html {
 				    			font-size: 15px;
 				    			line-height: 26px;
 				    			width: 380px;
-				    			&.por {
+				    			&.non-eng {
 				    				width: 440px;
 				    			}
 				    		}
@@ -1489,7 +1495,7 @@ html {
 				    max-width: 100%;
 				    width: 100%;
 				    height: 160px;
-				    z-index: 0;	
+				    z-index: 9;	
 				    @media #{$large-up} {
 					    background-image: url("/fashion/images/projects/international/china-brazil/StoresVisit_bg.jpg");
 					    background-repeat: no-repeat;
@@ -1630,6 +1636,9 @@ html {
         						text-transform: uppercase;
         						margin: 0;
         						padding-bottom: 15px;
+        						@media #{$medium-only} {
+        							font-size: 3vw;
+        						}
         					}
         					h4 {
         						font-size: 13px;
@@ -1638,6 +1647,10 @@ html {
         						font-weight: bold;
         						padding: 0;
         						margin: 0 0 30px 0;
+        						@media #{$medium-only} {
+									font-size: 1.9vw;
+									line-height: 1.9vw;     							
+        						}
         						&.hrs {
         							position: relative;
         							margin: 0 0 10px 0;
@@ -1675,12 +1688,20 @@ html {
         						line-height: 16px;
         						margin: 0;
         						padding: 0 0 14px 0;
+        						@media #{$medium-only} {
+									font-size: 1.9vw;
+									line-height: 1.9vw;     							
+        						}        						
         					}
         					h4 {
         						font-size: 16px;
         						line-height: 16px;
         						margin: 0;
-        						padding: 0;        						
+        						padding: 0;        
+        						@media #{$medium-only} {
+									font-size: 1.9vw;
+									line-height: 1.9vw;     							
+        						}        												
         					} 
         					img {
 								padding-top: 40px;

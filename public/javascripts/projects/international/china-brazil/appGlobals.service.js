@@ -986,15 +986,15 @@
                         desktop: {
                             h1: 'Bem-vindo',
                             h2: 'Confira todos os visuais estilosos <br/>' +
-                                'Começando com uma visita à Bloomingdale\'s',
-                            p:  'Desde 1872, a Bloomingdale\'s esteve no centro da moda,  <br/>' + 
-                                'trazendo as mais cobiçadas roupas de marca, sapatos, bolsas,  <br/>' + 
-                                'cosméticos, joias finas e presentes de marca do mundo. Ao  <br/>' + 
-                                'visitar nossas lojas, você vai desfrutar de mimos exclusivos  <br/>' + 
-                                'personalizados, tais como atendentes multilíngues e serviços  <br/>' + 
-                                'especiais de concierge, que certamente farão você se sentir  <br/>' +
-                                'acolhido, mimado e como se estivesse em casa. Estes são  <br/>' + 
-                                'apenas alguns dos detalhes que fazem da Bloomingdale\'s  <br/>' +
+                                'Começando com uma visita à Bloomingdale\'s ',
+                            p:  'Desde 1872, a Bloomingdale\'s esteve no centro da moda, ' + 
+                                'trazendo as mais cobiçadas roupas de marca, sapatos, bolsas, ' + 
+                                'cosméticos, joias finas e presentes de marca do mundo. Ao ' + 
+                                'visitar nossas lojas, você vai desfrutar de mimos exclusivos ' + 
+                                'personalizados, tais como atendentes multilíngues e serviços ' + 
+                                'especiais de concierge, que certamente farão você se sentir ' +
+                                'acolhido, mimado e como se estivesse em casa. Estes são ' + 
+                                'apenas alguns dos detalhes que fazem da Bloomingdale\'s ' +
                                 'uma loja como nenhuma outra no mundo.'                                
                         }
                     },
@@ -1097,7 +1097,7 @@
                 stores: {
                     header: {
                         h1: 'Escolha seu destino',
-                        h2: 'WeNós nos encontraremos no Centro do Visitante'
+                        h2: 'Nós nos encontraremos no Centro do Visitante'
                     },
                     dropdown: {
                         default: 'Escolha uma loja',
@@ -2567,7 +2567,7 @@
                                 addr: '',
                                 hours: '',
                                 descr: '继在洛杉矶、橘郡及圣地亚哥开设的店铺后，Bloomingdale\'s 又在南加州留下了自己的足迹。您可在我们任意一家店铺中购买您喜爱的时尚、饰品、鞋类以及美容品牌的商品。在下方了解更多关于我们店内设施的信息。',
-                                dTile: 'VISITING SOUTHERN CALIFORNIA?',
+                                dTile: '参观南加州?',
                                 dInfo: '在到达之前下载我们的欢迎手册。',
                                 dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_SouthernCalifornia_CN.pdf',
                                 stores: [

@@ -27,9 +27,9 @@
 			    </figure>
 			</div>
 				<div class="header-copy-desktop">
-				    <h1 ng-cloak>//copy[lang].home.header.desktop.h1//</h1>
+				    <h1 ng-bind="copy[lang].home.header.desktop.h1" text-to-html="copy[lang].home.header.desktop.h1" ng-cloak></h1>
 				    <h2 ng-bind="copy[lang].home.header.desktop.h2" text-to-html="copy[lang].home.header.desktop.h2" ng-cloak></h2>
-				    <p ng:class="{true:'por', false:''}[lang === 'POR']" ng-cloak>//copy[lang].home.header.desktop.p//</p>
+				    <p ng-bind="copy[lang].home.header.desktop.p" text-to-html="copy[lang].home.header.desktop.p" ng:class="{true:'non-eng', false:''}[lang !== 'ENG']" ng-cloak></p>
 				</div>
         </div>
     </div>

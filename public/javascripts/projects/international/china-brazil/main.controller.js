@@ -19,7 +19,7 @@
                 $window.scrollTo(0, 0);
 
                 //close mobile nav menu 
-                if ($('.off-canvas-wrap').hasClass('move-right')) $('.left-off-canvas-toggle').click();
+                if (jQuery('.off-canvas-wrap').hasClass('move-right')) jQuery('.left-off-canvas-toggle').click();
             }
         };
 
@@ -29,9 +29,9 @@
             });
         };
 
-        $scope.shareOnMob = function(service) {
+        $scope.shareOnMob = function(service, lang) {
             if (service !== 'weixin'){
-                $window.open(socialshare[service], '_blank', 'width=608,height=342');
+                $window.open(socialshare[service](lang), '_blank', 'width=608,height=342');
             } else {
                 $scope.$emit('overlay:show', {
                     template: 'social-share',
@@ -42,11 +42,11 @@
 
         $scope.langOnClick = function($event) {
             var globalLang,
-                el = $($event.target);
+                el = jQuery($event.target);
 
-            $('.lang-opt').removeClass('active');
+            jQuery('.lang-opt').removeClass('active');
             el.parent('li').addClass('active');
-
+            
             globalLang = el.attr('data-lang');
 
             appGlobals.setAttr('lang', globalLang);

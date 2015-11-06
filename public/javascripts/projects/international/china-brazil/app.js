@@ -87,39 +87,39 @@
         });
 
         function activateNavSelection(path) {
-            $('.nav-section a').removeClass('active');
-            $('.nav-section a[href="' + path + '"]').addClass('active');
+            jQuery('.nav-section a').removeClass('active');
+            jQuery('.nav-section a[href="' + path + '"]').addClass('active');
         }
 
         // -------------------------------------------------------------------------------------- //
         // ----------------------------          jQuery       ----------------------------------- //
         // -------------------------------------------------------------------------------------- //
-        $(document).foundation();
+        jQuery(document).foundation();
 
-        $('.left-off-canvas-toggle, .exit-off-canvas').on('click', function() {
-            if ($('.off-canvas-wrap').hasClass('move-right')) {
-                $('.off-canvas-wrap').css('height', '100%');
-                $('body').css({
+        jQuery('.left-off-canvas-toggle, .exit-off-canvas').on('click', function() {
+            if (jQuery('.off-canvas-wrap').hasClass('move-right')) {
+                jQuery('.off-canvas-wrap').css('height', '100%');
+                jQuery('body').css({
                     'height': '100%',
                     'overflow': 'initial'
                 });
-                $('.left-off-canvas-toggle').removeClass('open');
+                jQuery('.left-off-canvas-toggle').removeClass('open');
             } else {
-                $('.left-off-canvas-toggle').addClass('open');
+                jQuery('.left-off-canvas-toggle').addClass('open');
                 var height = document.body.clientHeight;
-                $('.off-canvas-wrap').css('height', height);
-                $('body').css({
+                jQuery('.off-canvas-wrap').css('height', height);
+                jQuery('body').css({
                     'height': height,
                     'overflow': 'hidden'
                 });
-                $('.arriving-input, .departing-input').hide();
+                jQuery('.arriving-input, .departing-input').hide();
             }
         });
 
-        $(window).on('orientationchange resize', function() {
-            if ($('.off-canvas-wrap').hasClass('move-right')) {
-                $('.left-off-canvas-toggle').click();
-                $('.off-canvas-wrap').removeClass('touch');
+        jQuery(window).on('orientationchange resize', function() {
+            if (jQuery('.off-canvas-wrap').hasClass('move-right')) {
+                jQuery('.left-off-canvas-toggle').click();
+                jQuery('.off-canvas-wrap').removeClass('touch');
             }
         });
     }    
