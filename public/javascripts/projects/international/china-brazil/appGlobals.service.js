@@ -679,7 +679,7 @@
                                 name: 'Southern California Stores',
                                 addr: '',
                                 hours: '',
-                                descr: 'With outposts across Los Angeles, Orange County and San Diego, Bloomingdale\'s has left its iconic mark on SoCal. Shop the fashion, accessories, shoes and beauty brands you love in any one of our stores. Learn more about our in-store amenities below.',
+                                descr: 'With outposts across Los Angeles, Orange County and San Diego, Bloomingdale\'s has left its iconic mark on SoCal. Shop the fashion, accessories, shoes and beauty brands you love in any one of our stores.</p><p style="margin-top: 20px;padding-bottom: 50px;"><i>Learn more about our in-store amenities below.</i>',
                                 dTile: 'VISITING SOUTHERN CALIFORNIA?',
                                 dInfo: 'Download our welcome booklet before you arrive.',
                                 dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_SouthernCalifornia_EN.pdf',
@@ -1603,55 +1603,69 @@
                                 ]                                    
                             },
                             {
-                                name: 'Southern California Stores',
+                                name: 'Lojas da Califórnia do Sul',
                                 addr: '',
                                 hours: '',
-                                descr: 'Com filias por toda Los Angeles, Orange County e San Diego, a Bloomingdale\'s deixou sua marca registrada na Califórnia do Sul. Compre as marcas de roupas, acessórios, sapatos e beleza que você ama em qualquer uma de nossas lojas. Saiba mais sobre nossos serviços e comodidades internos da loja abaixo.',
+                                descr: 'Com filias por toda Los Angeles, Orange County e San Diego, a Bloomingdale\'s deixou sua marca registrada na Califórnia do Sul. Compre as marcas de roupas, acessórios, sapatos e beleza que você ama em qualquer uma de nossas lojas. </p><p style="margin-top: 20px;padding-bottom: 50px;"><i>Saiba mais sobre nossos serviços e comodidades internos da loja abaixo.</i>',
                                 dTile: 'VAI VISITAR SOUTHERN CALIFORNIA?',
                                 dInfo: 'Baixe o nosso guia de boas-vindas antes de chegar.',
                                 dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_SouthernCalifornia_EN.pdf',
-
                                 stores: [
                                     {
-                                        name: '<b>Orange County</b><br/>South Coast Plaza',
-                                        addr: '3333 South Bristol Street, Costa Mesa, CA 92626  +1 714-824-4600',
-                                        hours: 'Horário:<br/>Segunda-feira-Terça-feira 10:00h-21:00h <br/>Quarta-feira-Sábado 10:00h-22:00h<br/>Domingo 10:00h-20:00h ',
+                                        area: 'Orange County',
+                                        list: [
+                                            {
+                                                name: 'South Coast Plaza',
+                                                addr: '3333 South Bristol Street, Costa Mesa, CA 92626  +1 714-824-4600',
+                                                hours: 'Horário:<br/>Segunda-feira-Terça-feira 10:00h-21:00h <br/>Quarta-feira-Sábado 10:00h-22:00h<br/>Domingo 10:00h-20:00h ',
+                                            },
+                                            {
+                                                name: 'Newport Fashion Island',
+                                                addr: '701 Newport Center Drive, Newport Beach, CA 92660 +1 949-729-6600',
+                                                hours: 'Horário: <br/>Segunda-feira-Terça-feira 10:00h-20:00h<br/>Quarta-feira-Sábado 10:00h-22:00h<br/>Domingo 11:00h-20:00h ',
+                                            }
+                                        ]                                   
                                     },
                                     {
-                                        name: 'Newport Fashion Island',
-                                        addr: '701 Newport Center Drive, Newport Beach, CA 92660 +1 949-729-6600',
-                                        hours: 'Horário: <br/>Segunda-feira-Terça-feira 10:00h-20:00h<br/>Quarta-feira-Sábado 10:00h-22:00h<br/>Domingo 11:00h-20:00h ',
-                                    },
+                                        area: 'Los Angeles',
+                                        list: [
+                                            {
+                                                name: 'Century City',
+                                                addr: '10250 Santa Monica Boulevard, Los Angeles, CA 90067 +1 310-772-2100',
+                                                hours: 'Horário: <br/>Segunda-feira-Terça-feira 10:00h-21:00h<br/>Quarta-feira-Sábado 10:00h-22:00h<br/>Domingo 11:00h-20:00h ',
+                                            },
+                                            {
+                                                name: 'Beverly Center',
+                                                addr: '8500 Beverly Boulevard, Los Angeles, CA 90048 +1 310-360-2700',
+                                                hours: 'Horário: <br/>Segunda-feira-Terça-feira 10:00h-21:00h<br/>Quarta-feira-Sábado 10:00h-22:00h<br/>Domingo 12:00h-20:00h ',
+                                            },
+                                            {
+                                                name: 'Santa Monica Place',
+                                                addr: '315 Colorado Avenue, Santa Monica, CA 90401 +1 310-985-6400',
+                                                hours: 'Horário: <br/>Segunda-feira-Terça-feira 10:00h-21:00h<br/>Quarta-feira-Sábado 10:00h-22:00h<br/>Domingo 11:00h-20:00h ',
+                                            },
+                                            {
+                                                name: 'Glendale Galleria',
+                                                addr: '103 South Brand Blvd., Glendale, CA 91210 +1 818-638-4100',
+                                                hours: 'Horário: <br/>Segunda-feira-Terça-feira 10:00h-21:00h<br/>Quarta-feira-Sábado 10:00h-22:00h<br/>Domingo 11AM-9PM ',
+                                            },
+                                            {
+                                                name: 'Sherman Oaks Fashion Square',
+                                                addr: '14060 Riverside Drive, Sherman Oaks, CA 91423 +1 818-325-2200',
+                                                hours: 'Horário: <br/>Segunda-feira-Terça-feira 10:00h-21:00h<br/>Quarta-feira-Sábado 10:00h-22:00h<br/>Domingo 11AM-9PM ',
+                                            }  
+                                        ]                                   
+                                    }, 
                                     {
-                                        name: '<b> Los Angeles</b><br/> Century City',
-                                        addr: '10250 Santa Monica Boulevard, Los Angeles, CA 90067 +1 310-772-2100',
-                                        hours: 'Horário: <br/>Segunda-feira-Terça-feira 10:00h-21:00h<br/>Quarta-feira-Sábado 10:00h-22:00h<br/>Domingo 11:00h-20:00h ',
-                                    },
-                                    {
-                                        name: 'Beverly Center',
-                                        addr: '8500 Beverly Boulevard, Los Angeles, CA 90048 +1 310-360-2700',
-                                        hours: 'Horário: <br/>Segunda-feira-Terça-feira 10:00h-21:00h<br/>Quarta-feira-Sábado 10:00h-22:00h<br/>Domingo 12:00h-20:00h ',
-                                    },
-                                    {
-                                        name: 'Santa Monica Place',
-                                        addr: '315 Colorado Avenue, Santa Monica, CA 90401 +1 310-985-6400',
-                                        hours: 'Horário: <br/>Segunda-feira-Terça-feira 10:00h-21:00h<br/>Quarta-feira-Sábado 10:00h-22:00h<br/>Domingo 11:00h-20:00h ',
-                                    },
-                                    {
-                                        name: 'Glendale Galleria',
-                                        addr: '103 South Brand Blvd., Glendale, CA 91210 +1 818-638-4100',
-                                        hours: 'Horário: <br/>Segunda-feira-Terça-feira 10:00h-21:00h<br/>Quarta-feira-Sábado 10:00h-22:00h<br/>Domingo 11AM-9PM ',
-                                    },
-                                    {
-                                        name: 'Sherman Oaks Fashion Square',
-                                        addr: '14060 Riverside Drive, Sherman Oaks, CA 91423 +1 818-325-2200',
-                                        hours: 'Horário: <br/>Segunda-feira-Terça-feira 10:00h-21:00h<br/>Quarta-feira-Sábado 10:00h-22:00h<br/>Domingo 11AM-9PM ',
-                                    },
-                                    {
-                                        name: '<b>San Diego</b><br/>Fashion Valley',
-                                        addr: '7057 Friars Road, San Diego, CA 92108 +1 619-610-6400',
-                                        hours: 'Horário: <br/>Segunda-feira-Terça-feira 10:00h-20:00h<br/>Quarta-feira 10:00h-20:00hbr/>Quinta-feira-Sábado 10:00h-22:00h<br/>Domingo 12:00h-20:00h',
-                                    }
+                                        area: 'San Diego',
+                                        list: [
+                                            {
+                                                name: '<b>San Diego</b><br/>Fashion Valley',
+                                                addr: '7057 Friars Road, San Diego, CA 92108 +1 619-610-6400',
+                                                hours: 'Horário: <br/>Segunda-feira-Terça-feira 10:00h-20:00h<br/>Quarta-feira 10:00h-20:00hbr/>Quinta-feira-Sábado 10:00h-22:00h<br/>Domingo 12:00h-20:00h',
+                                            }
+                                        ]                                   
+                                    }                                                                       
                                 ],
                                 services: [
                                     {
@@ -1833,7 +1847,7 @@
                     }
                 },
                 contactUs: {
-                    formTitle: 'ENTRE EM CONTATO CONOSCO',
+                    formTitle: 'Entre Em Contato Conosco',
                     left: {
                         title: 'Avise-nos de sua viagem',
                         p1: 'Diga-nos qual loja da Bloomingdale\'s você gostaria de visitar e as datas planejadas de sua viagem. ',

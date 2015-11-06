@@ -49,6 +49,11 @@ div[ng-view].ng-enter-active,
 	display: none;
 }
 
+.black {
+	background-color: #000;
+	color: #fff;
+}
+
 html {
 	h1, h2, h3, h4, h5, h6 {
 	    font-family: Arial,Helvetica,Verdana,Sans-serif;
@@ -1637,6 +1642,10 @@ html {
         							position: relative;
         							margin: 0 0 10px 0;
         							padding-top: 36px;
+        							&.soca {
+        								padding-top: 10px;
+        								margin-top: -20px;
+        							}
         							&:before {
 										content: "";
 									    position: absolute;
@@ -1653,25 +1662,13 @@ html {
         							margin-bottom: 1.81818rem;
         						}
         					}
-        					.soca-stores {
-        						h4 {
-        							margin: 20px 0 0 0;
-        							font-weight: normal;
-        						}
-        						h5 {
-        							font-size: 13px;
-        							line-height: 13px;
-        							margin: 0;
-        						}
-        						p {
-        							font-size: 13px;
-        							line-height: 13px;
-        						}
-        					}
         				}
         				.right {
         					padding-top: 34px;
         					padding-left: 55px;
+        					&.soca {
+        						padding-top: 0;
+        					}
         					h3 {
         						text-transform: uppercase;
         						font-size: 16px;
@@ -1693,8 +1690,8 @@ html {
 								background-repeat: no-repeat;
 								height: 200px;
 								width: 150px;
-								background-size: 278px;
-								background-position: -183px -337px;
+								background-size: 250px;
+								background-position: -179px -326px;
 								margin-left: 29px;
 								display: block;
 								opacity: 1;
@@ -1705,24 +1702,74 @@ html {
 								    }
 								}
         						.bkg-img {
-								    position: absolute;
-								    top: 0;
-								    left: 148px;
-								    background-image: url("/fashion/images/projects/international/china-brazil/global_sprite.png");
-								    background-repeat: no-repeat;
-								    height: 484px;
-								    width: 190px;
-								    background-size: 278px;
-								    background-position: 0 -313px;
-								    -webkit-transform: rotate(90deg);
-								    -moz-transform: rotate(90deg);
-								    -ms-transform: rotate(90deg);
-								    transform: rotate(90deg);
-								    opacity: .6;
-								    transition: opacity 0.1s linear;
-								    z-index: -1;
+									position: relative;
+									top: -94px;
+									left: 60px;
+									background-image: url("/fashion/images/projects/international/china-brazil/global_sprite.png");
+									background-repeat: no-repeat;
+									height: 440px;
+									width: 172px;
+									background-size: 265px;
+									background-position: 0 -314px;
+									-webkit-transform: rotate(90deg);
+									-moz-transform: rotate(90deg);
+									-ms-transform: rotate(90deg);
+									transform: rotate(90deg);
+									opacity: .6;
+									transition: opacity 0.1s linear;
+									z-index: -1;
         						}
         					}      					
+        				}
+        			}
+
+        			.socali-stores {
+        				margin-bottom: 80px;
+        				.row {
+        					padding: 52px 0 32px;
+        					h4 {
+								display: block;
+								font-size: 21px;
+								line-height: 21px;
+								text-transform: uppercase;
+								margin: 0;
+								padding-bottom: 15px;
+								color: #000;
+        					}
+        					div {
+        						padding: 0;
+        						h4 {
+									position: relative;
+									margin: 0 0 10px 0;
+									padding-top: 36px;
+									font-size: 13px;
+									line-height: 13px;
+									text-transform: uppercase;
+									font-weight: bold;
+									padding: 0;
+									margin: 0;
+									color: #000;
+        						}
+        						h5 {
+        							font-size: 13px;
+        							color: #000;
+        						}
+        					}
+        				}
+        				.black {
+        					.row {
+        						h4 {
+        							color: #fff;
+        						}
+        					}
+        					div {
+        						h4 {
+									color: #fff;
+        						}
+        						h5 {
+        							color: #fff;
+        						}
+        					}
         				}
         			}
 

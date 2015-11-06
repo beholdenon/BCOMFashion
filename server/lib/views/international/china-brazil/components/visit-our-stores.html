@@ -39,41 +39,50 @@
         <div class="left small-cnbr-16 small-cnbr-centered medium-cnbr-6 medium-cnbr-centered large-cnbr-12 large-cnbr-centered columns">
         	<h3 ng-cloak>//copy[lang].stores.storeData.id[storeSelection].name//</h3>
         	<h4 ng-cloak>//copy[lang].stores.storeData.id[storeSelection].addr//</h4>
-        	<h4 class="hrs" ng-hide="storeSelection === '7'" ng-cloak>//copy[lang].stores.storeData.storeHours//</h4>
+        	<h4 class="hrs" ng:class="{true:'soca', false:''}[storeSelection === '7']" ng-cloak>//(storeSelection !== '7') ? copy[lang].stores.storeData.storeHours : ''//</h4>
         	<p class="hrs" ng-bind="copy[lang].stores.storeData.id[storeSelection].hours" text-to-html="copy[lang].stores.storeData.id[storeSelection].hours" ng-cloak>/p>
-        	<p ng-cloak>//copy[lang].stores.storeData.id[storeSelection].descr//</p>
+        	<p ng-bind="copy[lang].stores.storeData.id[storeSelection].descr" text-to-html="copy[lang].stores.storeData.id[storeSelection].descr" ng-cloak></p>
         </div>
-        <div class="right small-cnbr-16 small-cnbr-centered medium-cnbr-6 medium-cnbr-centered large-cnbr-12 large-cnbr-centered columns"
-        	 ng-hide="lang === 'POR' && (storeSelection === '6' || storeSelection === '7')">
+        <div class="right small-cnbr-16 small-cnbr-centered medium-cnbr-6 medium-cnbr-centered large-cnbr-12 large-cnbr-centered columns" ng:class="{true:'soca', false:''}[storeSelection === '7']" >
         	<h3>//copy[lang].stores.storeData.id[storeSelection].dTile//</h3>
         	<h4>//copy[lang].stores.storeData.id[storeSelection].dInfo//</h4>
         	<a ng-href="//copy[lang].stores.storeData.id[storeSelection].dFile//" target="_blank">
         		<div class="bkg-img"></div>
         	</a>
         </div>
-    	<div class="soca-stores small-cnbr-16 small-cnbr-centered medium-cnbr-12 medium-cnbr-centered large-cnbr-24 large-cnbr-centered columns" ng-show="storeSelection === '7'" ng-cloak>
-	        <h4 ng-bind="copy[lang].stores.storeData.id[storeSelection].stores[0].area" text-to-html="copy[lang].stores.storeData.id[storeSelection].stores[0].area" ng-cloak></h4>
-	        <div ng-repeat="store in copy[lang].stores.storeData.id[storeSelection].stores[0].list">
-	        	<h4 ng-bind="store.name" text-to-html="store.name" ng-cloak></h4>
-	        	<h5 ng-bind="store.addr" text-to-html="store.addr" ng-cloak></h5>
-	        	<p ng-bind="store.hours" text-to-html="store.hours" ng-cloak></p>
+    </article>
+	<article class="socali-stores" ng-show="storeSelection === '7'">
+		<div class="full-width black">
+			<div class="row width-962">
+		        <h4 ng-bind="copy[lang].stores.storeData.id[storeSelection].stores[0].area" text-to-html="copy[lang].stores.storeData.id[storeSelection].stores[0].area" ng-cloak></h4>
+		        <div class="left small-cnbr-16 small-cnbr-centered medium-cnbr-6 large-cnbr-12 columns" 
+		        	ng-repeat="store in copy[lang].stores.storeData.id[storeSelection].stores[0].list">
+		        	<h4 ng-bind="store.name" text-to-html="store.name" ng-cloak></h4>
+		        	<h5 ng-bind="store.addr" text-to-html="store.addr" ng-cloak></h5>
+		        	<p ng-bind="store.hours" text-to-html="store.hours" ng-cloak></p>
+		        </div>   
 	        </div>   
-
+		</div>
+		<div class="row width-962">
 	        <h4 ng-bind="copy[lang].stores.storeData.id[storeSelection].stores[1].area" text-to-html="copy[lang].stores.storeData.id[storeSelection].stores[1].area" ng-cloak></h4>
-	        <div ng-repeat="store in copy[lang].stores.storeData.id[storeSelection].stores[1].list">
+	        <div class="left small-cnbr-16 small-cnbr-centered medium-cnbr-6 large-cnbr-12 columns" 
+	        	ng-repeat="store in copy[lang].stores.storeData.id[storeSelection].stores[1].list">
 	        	<h4 ng-bind="store.name" text-to-html="store.name" ng-cloak></h4>
 	        	<h5 ng-bind="store.addr" text-to-html="store.addr" ng-cloak></h5>
 	        	<p ng-bind="store.hours" text-to-html="store.hours" ng-cloak></p>
 	        </div>   
-
-	        <h4 ng-bind="copy[lang].stores.storeData.id[storeSelection].stores[2].area" text-to-html="copy[lang].stores.storeData.id[storeSelection].stores[2].area" ng-cloak></h4>
-	        <div ng-repeat="store in copy[lang].stores.storeData.id[storeSelection].stores[2].list">
-	        	<h4 ng-bind="store.name" text-to-html="store.name" ng-cloak></h4>
-	        	<h5 ng-bind="store.addr" text-to-html="store.addr" ng-cloak></h5>
-	        	<p ng-bind="store.hours" text-to-html="store.hours" ng-cloak></p>
-	        </div>   	        	             		
-    	</div>
-
+        </div>   
+		<div class="full-width black">
+			<div class="row width-962">
+		        <h4 ng-bind="copy[lang].stores.storeData.id[storeSelection].stores[2].area" text-to-html="copy[lang].stores.storeData.id[storeSelection].stores[2].area" ng-cloak></h4>
+		        <div class="left small-cnbr-16 small-cnbr-centered medium-cnbr-6 large-cnbr-12 columns" 
+		        	ng-repeat="store in copy[lang].stores.storeData.id[storeSelection].stores[2].list">
+		        	<h4 ng-bind="store.name" text-to-html="store.name" ng-cloak></h4>
+		        	<h5 ng-bind="store.addr" text-to-html="store.addr" ng-cloak></h5>
+		        	<p ng-bind="store.hours" text-to-html="store.hours" ng-cloak></p>
+		        </div>   
+	        </div>  
+        </div>  	
     </article>
     <article class="store-directions width-962 row" ng-show="storeSelection !== null">
     	<h2 class="store-header" ng-cloak>//copy[lang].stores.storeData.directions//</h2>
