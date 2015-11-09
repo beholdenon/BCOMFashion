@@ -711,18 +711,20 @@ angular
     * @desc: directive used as an attribute to create equal height content on your page
     * @example: <div equalized-element></div>
     */     
-    .directive('equalizedElement', function($timeout) {
+    .directive('equalizedElement', function($window, $timeout) {
         return {
             restrict: 'A',
             link: function (scope, elem) {
-                function eqFunction(elem) {
+                function eqFunction(elem) {console.log(1);
                     var el = jQuery(elem),
                         index = jQuery(elem).index(),
                         elHeight = el.height(),
                         elPrev = null,
-                        prevHeight = null;
+                        prevHeight = null,
+                        screenWidth = jQuery(window).width(),
+                        isSmallScreen = (screenWidth < 640) ? true : false;
                     
-                    if (!el.hasClass('restaurant') && index%2 !== 0) {
+                    if (!isSmallScreen && !el.hasClass('restaurant') && index%2 !== 0) {
                         
                         elPrev = el.parent().children(':eq('+ (index-1) +')');
                         prevHeight = elPrev.height();
@@ -733,7 +735,7 @@ angular
                         // console.log(prevHeight + ' >> ' + elHeight);
 
                         // console.log(prevHeight + ' - ' + elHeight);
-                    } else if (el.hasClass('restaurant') && index !==0 && index%2 === 0) {
+                    } else if (!isSmallScreen && el.hasClass('restaurant') && index !==0 && index%2 === 0) {
                         // this is a particular use case for the "In-Store Dining" section in the /visit-our-stores view
                         elPrev = el.parent().children(':eq('+ (index-1) +')');
                         prevHeight = elPrev.height();
@@ -745,6 +747,8 @@ angular
                         // console.log(prevHeight + ' > ' + elHeight);
                     }       
                 }
+
+                jQuery($window).on('orientationchange resize', eqFunction(elem));
 
                 $timeout(function(){
                     eqFunction(elem);

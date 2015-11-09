@@ -193,7 +193,7 @@
                             {
                                 name: '59th Street Flagship',
                                 addr: '1000 Third Avenue  New York, NY 10022  +1 212-705-2000',
-                                hours: 'Monday–Saturday: Store Opens 10AM | Sunday: Store Opens 11AM',
+                                hours: 'Monday–Saturday: Store Opens 10AM <span>|</span> Sunday: Store Opens 11AM',
                                 descr: 'Discover Bloomingdale\'s iconic heritage and award-winning hospitality. Begin your day at our flagship store with a stop at our first floor balcony Visitor\'s Center. Our multilingual directory will provide a road map to your shopping trip. Looking for a more personal experience? Learn about our in-store services, from stylist appointments to alterations to restaurant reservations. We\'ll help you arrange all that and more.',
                                 dTile: 'VISITING NEW YORK?',
                                 dInfo: 'Download our welcome booklet before you arrive.',
@@ -658,7 +658,13 @@
                                         sched: 'Lunch: Open Daily 11:30AM–2:30PM <br/> Noodle Bar: Open Daily 11:30AM–5:30PM <br/> Dinner: Sunday–Thursday 5:30PM–10:30PM <br/>Friday–Saturday 5:30PM–11:00PM <br/> Red Happy Hour: Monday–Friday 4PM–7PM',
                                         description: '',
                                         imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_08.jpg'
-                                    }
+                                    },
+                                    {
+                                        name: '<b>Holsteins</b> <span>|</span> Ground Floor <span>|</span> 714-352-2525',
+                                        sched: 'Monday - Thursday: 11:00AM–12:00AM <br/> Friday & Saturday: 11:00AM–2:00AM  <br/> Sunday: 11:00AM–12:00AM ',
+                                        description: '',
+                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_09.jpg'
+                                    }                                    
                                 ],
                                 services: [
                                     {
@@ -1581,11 +1587,17 @@
                                 ],
                                 restaurants: [
                                     {
-                                        name: '<b>AnQi by Crustacean - Gourmet Bistro & Noodle Bar</b> <br/>  Ground Floor <span>|</span> +1 (714) 557-5679',
+                                        name: '<b>AnQi by Crustacean - Gourmet Bistro & Noodle Bar</b> <br/>  Piso Térreo <span>|</span> +1 (714) 557-5679',
                                         sched: 'Piso Térreo Almoço: Aberto todos os dias 11:30h – 14:30h <br/>Noodle Bar: Aberto todos os dias 11:30h – 17:30h <br/>Jantar:   Domingo – Quinta-feira 17:30h – 20:30h <br/>Sexta-feira – Sábado 17:30h – 23:00h <br/>Red Happy Hour: Segunda-feira – Sexta-feira 16:00h – 19:00h',
                                         description: '',
                                         imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_08.jpg'
-                                    }
+                                    },
+                                    {
+                                        name: '<b>Holsteins</b> <span>|</span> Piso Térreo <span>|</span> 714-352-2525',
+                                        sched: 'Monday - Thursday: 11:00AM–12:00AM <br/> Friday & Saturday: 11:00AM–2:00AM  <br/> Sunday: 11:00AM–12:00AM ',
+                                        description: '',
+                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_09.jpg'
+                                    }                                       
                                 ],
                                 services: [
                                     {
@@ -2545,7 +2557,13 @@
                                         sched: '午餐： 营业时间 上午 11:30 － 下午 2:30  Noodle Bar： 营业时间 上午 11:30 － 下午 5:30  晚餐： 周日 － 周四 下午 5:30 － 晚上 10:30  周五 － 周六下午5:30 － 晚上 11:00  红酒优惠时间： 周一 － 周五下午 4:00 － 晚上 7:00',
                                         description: '',
                                         imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_08.jpg'
-                                    }
+                                    },
+                                    {
+                                        name: '<b>Holsteins</b> <span>|</span> 1 层 <span>|</span> 714-352-2525',
+                                        sched: 'Monday - Thursday: 11:00AM–12:00AM <br/> Friday & Saturday: 11:00AM–2:00AM  <br/> Sunday: 11:00AM–12:00AM ',
+                                        description: '',
+                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_09.jpg'
+                                    }                                      
                                 ],
                                 services: [
                                     {

@@ -1562,6 +1562,9 @@ html {
 				    }	        		
 	        	}
         		article {
+        			.small-cnbr-24 {
+
+        			}
         			&.dropdown-cnbr {
         				margin: 20px auto;        				
         				select {
@@ -1598,6 +1601,8 @@ html {
 							}
 							@media #{$small-only} {
 								width: 90%;
+								font-size: 13px;
+    							line-height: 1.6;
 							}
         				}
         			}
@@ -1630,6 +1635,11 @@ html {
         				.left {
         					padding-right: 55px;
         					border-right: solid 1px #cccccc;
+        					@media #{$small-only} {
+								padding-right: 5%;
+								border-right: none;
+								padding-left: 5%;
+        					}
         					h3 {
         						font-size: 21px;
         						line-height: 21px;
@@ -1679,6 +1689,10 @@ html {
         				.right {
         					padding-top: 34px;
         					padding-left: 55px;
+        					@media #{$small-only} {
+								padding-right: 5%;
+								padding-left: 5%;
+        					}        					
         					&.soca {
         						padding-top: 0;
         					}
@@ -1707,25 +1721,30 @@ html {
 								padding-top: 40px;
         					} 
         					a {
-								background-image: url("/fashion/images/projects/international/china-brazil/global_sprite.png");
-								background-repeat: no-repeat;
-								height: 200px;
-								width: 150px;
-								background-size: 250px;
-								background-position: -179px -326px;
-								margin-left: 29px;
-								display: block;
-								opacity: 1;
-								z-index: 2;
+							    background-image: url("/fashion/images/projects/international/china-brazil/global_sprite.png");
+							    background-repeat: no-repeat;
+							    height: 140px;
+							    background-size: 252px;
+							    background-position: 62px -712px;
+							    display: block;
+							    opacity: 1;
+							    z-index: 2;
+							    width: 100%;
+							    margin-left: -30px;
+							    margin-top: 60px;
 								&:hover {
 	        						.bkg-img {
 								    	opacity: 1;
 								    }
 								}
+								@media #{$medium-only} {
+									background-size: 27vw;
+									background-position: 7vw -76vw;
+								}
         						.bkg-img {
 									position: relative;
-									top: -94px;
-									left: 60px;
+								    top: -150px;
+								    left: 118px;
 									background-image: url("/fashion/images/projects/international/china-brazil/global_sprite.png");
 									background-repeat: no-repeat;
 									height: 440px;
@@ -1739,6 +1758,10 @@ html {
 									opacity: .6;
 									transition: opacity 0.1s linear;
 									z-index: -1;
+									@media #{$medium-only} {
+									    background-size: 245px;
+									    background-position: 0 -274px;
+									}									
         						}
         					}      					
         				}
@@ -1812,6 +1835,9 @@ html {
     				}
         			.store-directions {
         				margin-bottom: 80px;
+        				img {
+        					width: 100%;
+        				}
         			}
 
         			.store-designers {
@@ -1841,6 +1867,14 @@ html {
 										column-gap: 15px; 							     						
 										-webkit-column-gap: 15px;
 										-moz-column-gap: 15px;
+										@media #{$medium-only} {
+										    padding: 5vw 0 5vw 6vw;
+										    column-gap: 1.5vw;
+										    -webkit-column-gap: 1.5vw;											
+										}
+										@media #{$medium-only} {
+											padding-left: 12.5%;
+										}
 		        						li {
 										    list-style-type: none;
 										    color: #fff;
@@ -1869,11 +1903,19 @@ html {
 						    	font-weight: normal;
 						    	margin-top: 30px;
 								padding-bottom: 0;
-								margin-bottom: 0;						    	
+								margin-bottom: 0;
+								@media #{$small-only} {
+									font-size: 13px;
+									margin-top: 15px;
+								}						    	
 						    }     		
 						    h5 {
 						    	font-size: 15px;
 						    	margin-bottom: 20px;
+								@media #{$small-only} {
+									font-size: 13px;
+									margin-bottom: 10px;
+								}							    	
 						    }
 						    p {
 						    	margin-bottom: 40px;
@@ -1927,8 +1969,15 @@ html {
 
         				div.wrapper {
         					padding: 0 110px;
+        					@media #{$small-only} {
+        						padding: 0;
+        					}
 	        				div.block {
 	        					padding-left: 30px;
+	        					@media #{$small-only} {
+	        						padding-left: 5%;
+	        						padding-right: 5%;
+	        					}	        					
 	        					h4 {
 									font-size: 15px;
 									padding-bottom: 0;
@@ -2100,6 +2149,9 @@ html {
 						margin-bottom: 20px;
 						width: 100%;
 						padding: 10px 0;
+						&.por {
+							font-size: 6.1vw;
+						}
 						&:after {
 							border: none;
 						}
