@@ -49,7 +49,9 @@
 
         $scope.share = function(service, lang) {
             if (service !== 'weixin'){
-                $window.open(socialshare[service](lang), '_blank', 'width=608,height=342');console.log(lang);
+                console.log(service);
+                console.log(lang);
+                $window.open(socialshare[service](lang), '_blank', 'width=608,height=342');
             } else {
                 $scope.overlay.weixinOn = true;
             }

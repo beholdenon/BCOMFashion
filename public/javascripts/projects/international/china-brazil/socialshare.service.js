@@ -11,7 +11,7 @@
             mediaUrl = hostURL + '/fashion/images/projects/international/china-brazil',
             copy = appGlobals.getAttr('copy'),
             service = {
-                fb: fb(),
+                fb: fb,
                 pinterest: pinterest,
                 twitter: twitter,
                 weibo: weibo,
@@ -20,7 +20,7 @@
 
         return service;
 
-        ////////////
+        //////////////////////////////////////////////////////////////////////////////
 
         function fb(lang) {
             var mediaURL = '';
@@ -32,9 +32,8 @@
             mediaURL += '&description=' + $window.encodeURIComponent(copy[lang].socialshare.fb.description);
             mediaURL += '&link=' + $window.encodeURIComponent(pageUrl);
             mediaURL += '&picture=' + $window.encodeURIComponent(mediaUrl + '/International_FB02.jpg');
-            mediaURL += '&display=popup';
             mediaURL += '&redirect_uri=' + $window.encodeURIComponent('https://www.facebook.com/');
-            
+
             return mediaURL;
         }
 
