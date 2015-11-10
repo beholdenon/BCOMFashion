@@ -17,7 +17,7 @@
             </select>
         </div>
     </article>
-    <div class="cnbr-header-store small-collapse row" style="width:100%" ng-show="storeSelection !== null" sticky offset="71" media-query="min-width: 933px">
+    <div class="cnbr-header-store small-collapse row" style="width:100%" ng-show="storeSelection !== null" sticky offset="71" use-placeholder="false">
         <div class="large-24 columns">
             <div class="copy">
                 <h1 ng-cloak>//copy[lang].stores.header.h1//</h1>
@@ -25,7 +25,7 @@
             </div>
         </div>
     </div>    
-    <article class="dropdown-cnbr width-962 row" ng-show="storeSelection !== null" sticky offset="85" media-query="min-width: 933px">
+    <article class="dropdown-cnbr width-962 row" ng-show="storeSelection !== null" sticky offset="85" use-placeholder="false">
         <div class="small-cnbr-18 small-cnbr-centered medium-cnbr-6 medium-cnbr-centered large-cnbr-12 large-cnbr-centered columns">
             <select name="store" ng-model="storeSelection" ng-model-options="{ debounce: 250 }" ng-change="scrollToTop()">
                 <option ng-repeat="option in storeList" value="//option.id//" ng-disabled="//option.disabled//">//option.name//</option>
@@ -85,11 +85,11 @@
         </div>  	
     </article>
     <article class="store-directions width-962 row" ng-show="storeSelection !== null">
-    	<h2 class="store-header" ng-cloak>//copy[lang].stores.storeData.directions//</h2>
+    	<h2 class="store-header" ng:class="{true:'por', false:''}[lang === 'POR']" ng-cloak>//copy[lang].stores.storeData.directions//</h2>
 		<img ng-src="http://placehold.it/962x360/c3dc9f/ffffff?text=GOOGL MAP" />
     </article>         
     <article class="store-designers" ng-show="storeSelection !== null && storeSelection !== '7'">
-    	<h2 class="store-header" ng-cloak>//copy[lang].stores.storeData.designers//</h2>
+    	<h2 class="store-header" ng:class="{true:'por', false:''}[lang === 'POR']" ng-cloak>//copy[lang].stores.storeData.designers//</h2>
     	<div class="container">
 	    	<div class="wrapper row width-962">
 		        <div class="designers left small-cnbr-24 small-cnbr-centered medium-cnbr-6 medium-cnbr-centered large-cnbr-12 large-cnbr-centered columns">
@@ -104,7 +104,7 @@
     	</div>
     </article>  
     <article class="store-loyalty width-962 row" ng-show="storeSelection !== null && storeSelection === '2'">
-    	<h2 class="store-header" ng-cloak>//copy[lang].stores.storeData.loyalty//</h2>
+    	<h2 class="store-header" ng:class="{true:'por', false:''}[lang === 'POR']" ng-cloak>//copy[lang].stores.storeData.loyalty//</h2>
     	<h3 ng-bind="copy[lang].stores.storeData.loyaltySubHead" text-to-html="copy[lang].stores.storeData.loyaltySubHead" ng-cloak></h3>
         <div class="wrapper">
 	        <div class="block left small-cnbr-24 small-cnbr-centered medium-cnbr-6 medium-cnbr-centered large-cnbr-12 large-cnbr-centered columns"
@@ -116,8 +116,8 @@
     </article>       
     <article class="store-dining width-962 row" 
     		ng-show="storeSelection !== null && storeSelection !== '4' && storeSelection !== '5' && storeSelection !== '7'">
-    	<h2 class="store-header" ng-cloak>//copy[lang].stores.storeData.dining//</h2>
-        <div class="restaurant small-cnbr-24 small-cnbr-centered medium-cnbr-6 medium-cnbr-centered large-cnbr-12 large-cnbr-centered columns"
+    	<h2 class="store-header" ng:class="{true:'por', false:''}[lang === 'POR']" ng-cloak>//copy[lang].stores.storeData.dining//</h2>
+        <div class="restaurant odd small-cnbr-24 small-cnbr-centered medium-cnbr-6 medium-cnbr-centered large-cnbr-12 large-cnbr-centered columns"
         	ng:class="{true:'left', false:''}[copy[lang].stores.storeData.id[storeSelection].restaurants.length > 1]"
         	ng-repeat="restaurant in copy[lang].stores.storeData.id[storeSelection].restaurants"
         	equalized-element>
@@ -128,7 +128,7 @@
         </div>
     </article> 
     <article class="store-services width-962 row" ng-show="storeSelection !== null">
-    	<h2 class="store-header" ng-cloak>//copy[lang].stores.storeData.services//</h2>
+    	<h2 class="store-header" ng:class="{true:'por', false:''}[lang === 'POR']" ng-cloak>//copy[lang].stores.storeData.services//</h2>
     	<h3 ng-bind="copy[lang].stores.storeData.servicesSubHead" text-to-html="copy[lang].stores.storeData.servicesSubHead" ng-cloak></h3>
     	<div class="wrapper">
 	        <div class="block left small-cnbr-24 small-cnbr-centered medium-cnbr-6 medium-cnbr-centered large-cnbr-12 large-cnbr-centered columns"

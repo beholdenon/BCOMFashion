@@ -1596,7 +1596,7 @@
                                     },
                                     {
                                         name: '<b>Holsteins</b> <span>|</span> Piso Térreo <span>|</span> 714-352-2525',
-                                        sched: 'Monday - Thursday: 11:00AM–12:00AM <br/> Friday & Saturday: 11:00AM–2:00AM  <br/> Sunday: 11:00AM–12:00AM ',
+                                        sched: 'Segunda-feira – Quinta-feira 11:00h – 24:00h  <br/> Sexta-feira – Sábado: 11:00h - 2:00h  <br/>Domingo 11:00h – 24:00h ',
                                         description: '',
                                         imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_09.jpg'
                                     }                                       
@@ -1850,7 +1850,7 @@
                         description: 'Turismo Internacional | bloomingdales.com'
                     },
                     twitter: {
-                        text: 'Ama comprar @bloomingdales? Cheque o site Internacional para novos desenhadores de roupas, acessórios e beleza. http://bit.ly/1M3fLiB'
+                        text: 'Ama comprar na @bloomingdales? Veja o site Internacional para novos designers de roupas, acessórios e beleza. http://bit.ly/1M3fLiB'
                     },
                     weibo: {
                         url: '',
@@ -2563,7 +2563,7 @@
                                     },
                                     {
                                         name: '<b>Holsteins</b> <span>|</span> 1 层 <span>|</span> 714-352-2525',
-                                        sched: 'Monday - Thursday: 11:00AM–12:00AM <br/> Friday & Saturday: 11:00AM–2:00AM  <br/> Sunday: 11:00AM–12:00AM ',
+                                        sched: '周一 - 周四： 营业时间 上午 11：00 - 12:00 <br/> 周五 - 周六： 营业时间 上午 11：00 - 2:00  <br/> 周日： 营业时间 上午 11：00 - 12:00',
                                         description: '',
                                         imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_09.jpg'
                                     }                                      

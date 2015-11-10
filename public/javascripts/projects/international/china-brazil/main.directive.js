@@ -154,7 +154,7 @@ angular
                 var onStickyContentLayoutHeightWatchUnbind;
 
                 // initial style
-                var initialStyle = $elem.attr('style') || ''; console.log(initialStyle);
+                var initialStyle = $elem.attr('style') || '';
                 var initialCSS; 
 
                 /**
@@ -236,8 +236,6 @@ angular
                     // to turn off the sticky function when the elem height is
                     // bigger then the viewport
                     var closestLine = getClosest(scrollbarPosition, stickyLine, stickyBottomLine);
-
-
 
                     if (shouldStick && !shouldStickWithLimit($attrs.stickLimit) && !isSticking) {
                         stickElement(closestLine);
@@ -714,8 +712,8 @@ angular
     .directive('equalizedElement', function($window, $timeout) {
         return {
             restrict: 'A',
-            link: function (scope, elem) {
-                function eqFunction(elem) {console.log(1);
+            link: function ($scope, elem) {
+                function eqFunction(elem) {
                     var el = jQuery(elem),
                         index = jQuery(elem).index(),
                         elHeight = el.height(),
@@ -724,17 +722,15 @@ angular
                         screenWidth = jQuery(window).width(),
                         isSmallScreen = (screenWidth < 640) ? true : false;
                     
-                    if (!isSmallScreen && !el.hasClass('restaurant') && index%2 !== 0) {
-                        
+                    if (!isSmallScreen && !el.hasClass('odd') && index%2 !== 0) {
                         elPrev = el.parent().children(':eq('+ (index-1) +')');
                         prevHeight = elPrev.height();
 
                         if (prevHeight > elHeight) {
                             el.css('height', prevHeight+1);
                         }
-
                         // console.log(prevHeight + ' - ' + elHeight);
-                    } else if (!isSmallScreen && el.hasClass('restaurant') && index !==0 && index%2 === 0) {
+                    } else if (!isSmallScreen && el.hasClass('odd') && index !==0 && index%2 === 0) {
                         // this is a particular use case for the "In-Store Dining" section in the /visit-our-stores view
                         elPrev = el.parent().children(':eq('+ (index-1) +')');
                         prevHeight = elPrev.height();
@@ -747,7 +743,13 @@ angular
                     }       
                 }
 
-                jQuery($window).on('orientationchange resize', eqFunction(elem));
+                var windowElement = angular.element($window);
+                var onResize = function() {
+                    // console.log(1);
+                    eqFunction(elem);
+                };
+                windowElement.on('resize orientationchange', $scope.$apply.bind($scope, onResize));
+
 
                 $timeout(function(){
                     eqFunction(elem);
