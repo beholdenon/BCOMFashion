@@ -37,7 +37,7 @@
             localStorageService.set('lang', globalLang);
 
             $scope.overlay.isShowed = false;
-            $scope.$emit('lang:change', {
+            $rootScope.$emit('lang:change', {
                 lang: globalLang
             });
       

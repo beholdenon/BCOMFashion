@@ -5,7 +5,7 @@
         .module('controllers')
         .controller('MainCtrl', MainCtrl);
 
-    function MainCtrl($scope, $window, $location, localStorageService, appGlobals, socialshare) {
+    function MainCtrl($rootScope, $scope, $window, $location, localStorageService, appGlobals, socialshare) {
         $scope.lang = appGlobals.getAttr('lang');
         $scope.copy = appGlobals.getAttr('copy');
 
@@ -52,13 +52,13 @@
             appGlobals.setAttr('lang', globalLang);
             localStorageService.set('lang', globalLang);
 
-            $scope.$broadcast('lang:change', {
+            $rootScope.$broadcast('lang:change', {
                 lang: globalLang
             });
         };
 
-        $scope.$on('lang:change', function(ev, args) {
-            $scope.lang = args.lang;        
+        $rootScope.$on('lang:change', function(ev, args) {
+            $scope.lang = args.lang;
         });
     }
 })();

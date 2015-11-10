@@ -5,8 +5,11 @@
 		.module('controllers')
 		.controller('ContactUsCtrl', ContactUsCtrl);
 
-	function ContactUsCtrl($scope, $window, $timeout, appGlobals){
-		$scope.cu = {};
+	function ContactUsCtrl($rootScope, $scope, $window, $timeout, appGlobals){
+		$scope.cu = {
+			arrivingDate: null,
+			departingdate: null
+		};
         $scope.lang = appGlobals.getAttr('lang');
         $scope.copy = appGlobals.getAttr('copy');
         $scope.store = ($scope.lang) ? angular.copy($scope.copy[$scope.lang].contactUs.right.stores) : null;
@@ -18,6 +21,7 @@
 		            if( $scope.requireTel === false ) {
 		                return true;
 		            }
+		            console.log(value);
 		            return regexp.test(value);
 		        }
 		    };
@@ -70,7 +74,7 @@
 	        return false;
 		};
 
-	    $scope.$on('lang:change', function(ev, args) {
+	    $rootScope.$on('lang:change', function(ev, args) {
 	        $scope.lang = args.lang;
 	        $scope.store = angular.copy($scope.copy[$scope.lang].contactUs.right.stores);
 	    });			

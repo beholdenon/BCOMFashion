@@ -63,7 +63,7 @@
                 <div class="small-cnbr-24 medium-cnbr-20 large-cnbr-20 large-cnbr-offset-1 columns">
                     <div class="row">
                         <div class="small-cnbr-16 medium-cnbr-6 large-cnbr-18 columns">
-                            <label for="partysize" class="left inline"><b>//copy[lang].contactUs.right.party//</b></label>
+                            <label for="partysize" class="inline"><b>//copy[lang].contactUs.right.party//</b></label>
                             <div ng-show="emailForm.$submitted || emailForm.partysize.$dirty">
                                 <small class="error party" ng-show="emailForm.partysize.$invalid">//copy[lang].contactUs.right.partyErr//</small>
                             </div>    
@@ -84,13 +84,13 @@
                         </div>
                         <div class="small-cnbr-12 medium-cnbr-6 large-cnbr-11 columns">
                             <div class="row collapse">
-                                <div class="small-cnbr-7 medium-cnbr-4 large-cnbr-9 columns">
+                                <div class="small-cnbr-8 medium-cnbr-4 large-cnbr-9 columns">
                                     <label for="arrivingdate" class="right inline">//copy[lang].contactUs.right.arriving//</label>
                                 </div>
                                 <div class="small-cnbr-15 medium-cnbr-8 large-cnbr-15 columns left">
-                                    <input type="text" name="arrivingdate" ng-model="cu.arrivingDate" class="arriving-input span2" value="" pick-date />
-									<div ng-show="emailForm.$submitted">
-									    <small class="error" ng-show="cu.arrivingdate==undefined">//copy[lang].contactUs.right.datesErr//</small>
+                                    <input type="text" name="arrivingdate" ng-model="cu.arrivingdate" class="arriving-input span2" value="" pick-date />
+									<div ng-show="emailForm.$submitted || emailForm.arrivingdate.$dirty">
+									    <small class="error" ng-show="cu.arrivingdate===null || cu.arrivingdate===''">//copy[lang].contactUs.right.datesErr//</small>
 									</div>                                     
                                 </div>
                             </div>
@@ -101,9 +101,9 @@
                                     <label for="departingdate" class="right inline">//copy[lang].contactUs.right.departing//</label>
                                 </div>
                                 <div class="small-cnbr-15 medium-cnbr-8 large-cnbr-14 columns left">
-                                    <input type="text" name="departingdate" ng-model="cu.departingDate" class="departing-input span2" value="" pick-date />
-									<div ng-show="emailForm.$submitted">
-									    <small class="error" ng-show="cu.departingdate==undefined">//copy[lang].contactUs.right.datesErr//</small>
+                                    <input type="text" name="departingdate" ng-model="cu.departingdate" class="departing-input span2" value="" pick-date />
+									<div ng-show="emailForm.$submitted || emailForm.departingdate.$dirty">
+									    <small class="error" ng-show="cu.departingdate===null || cu.departingdate===''">//copy[lang].contactUs.right.datesErr//</small>
 									</div>                                    
                                 </div>
                             </div>
