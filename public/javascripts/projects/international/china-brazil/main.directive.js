@@ -154,8 +154,8 @@ angular
                 var onStickyContentLayoutHeightWatchUnbind;
 
                 // initial style
-                var initialStyle = $elem.attr('style') || '';
-                var initialCSS;
+                var initialStyle = $elem.attr('style') || ''; console.log(initialStyle);
+                var initialCSS; 
 
                 /**
                  * Initialize Sticky
@@ -732,7 +732,6 @@ angular
                         if (prevHeight > elHeight) {
                             el.css('height', prevHeight+1);
                         }
-                        // console.log(prevHeight + ' >> ' + elHeight);
 
                         // console.log(prevHeight + ' - ' + elHeight);
                     } else if (!isSmallScreen && el.hasClass('restaurant') && index !==0 && index%2 === 0) {

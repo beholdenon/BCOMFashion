@@ -835,7 +835,8 @@ html {
 				    				font-family: Arial,Helvetica,Verdana,Sans-serif;
 	    							color: #000;
 									font-size: 6vw;
-					    			width: 100%;					    				
+					    			width: 100%;	
+					    			text-transform: capitalize;				    				
 					    		}
 					    		div {
 					    			font-family: Arial,Helvetica,Verdana,Sans-serif;
@@ -875,7 +876,8 @@ html {
 								font-style: normal;
 								text-rendering: optimizeLegibility;
 								color: #f30c99;
-								letter-spacing: 1px;				    				
+								letter-spacing: 1px;	
+								text-transform: capitalize;			    				
 				    		}
 				    		p {
 				    			color: #fff;
@@ -1154,12 +1156,14 @@ html {
 				    			font-size: 29px;
 								line-height: 29px;
 								padding: 0;
-								margin: 0;				    			
+								margin: 0;		
+								text-transform: capitalize;		    			
 				    		}
 				    		h2 {
     							color: #fe0aab;
 								font-size: 24px;
 								padding-top: 10px;
+								text-transform: capitalize;
 				    		}
 				    		@media #{$medium-only} {
 				    			top: 33%;
@@ -1301,12 +1305,14 @@ html {
 				    			font-size: 29px;
 								line-height: 29px;
 								padding: 0;
-								margin: 0;				    			
+								margin: 0;	
+								text-transform: capitalize;			    			
 				    		}
 				    		h2 {
     							color: #fe0aab;
 								font-size: 24px;
 								padding-top: 10px;
+								text-transform: capitalize;
 				    		}
 				    		@media #{$medium-only} {
 								h1 {
@@ -1527,7 +1533,8 @@ html {
 				    			font-size: 29px;
 								line-height: 29px;
 								padding: 0;
-								margin: 0;				    			
+								margin: 0;	
+								text-transform: capitalize;			    			
 				    		}
 				    		h2 {
     							color: #fe0aab;
@@ -1536,6 +1543,7 @@ html {
 								padding-top: 8px;
 								margin-bottom: 0;
 								padding-bottom: 0;
+								text-transform: capitalize;
 				    		}
 				    		@media #{$medium-only} {
 								h1 {

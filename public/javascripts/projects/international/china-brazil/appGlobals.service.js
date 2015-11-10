@@ -14,6 +14,7 @@
                     'VISIT OUR STORES',
                     'SHOP ONLINE'
                 ],
+                mobileSubHeader: 'INTERNATIONAL TOURISM',
                 home: {
                     header: {
                         mobile: {
@@ -334,7 +335,7 @@
                                         name: '<b>FORTY CARROTS</b> <span>|</span>   2nd floor  <span>|</span>   212-729-5900',
                                         sched: 'Monday–Friday 10AM–8PM <span>|</span>   Saturday 10AM–7PM  <span>|</span> Sunday 12PM–7PM',
                                         description: 'A visit isn\'t complete without our famous frozen yogurt. You\'ll also find freshly made salads, sandwiches, soups, a fresh juice bar and selection of Tavalon premium teas. Counter, table service and takeout available.',
-                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_02.jpg'
+                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_01.jpg'
                                     }
                                 ],
                                 services: [
@@ -388,7 +389,7 @@
                                         name: '<b>FORTY CARROTS</b> <span>|</span>   3rd floor  ',
                                         sched: 'Open Daily 11:30AM–1 hour before store closing',
                                         description: 'A visit isn\'t complete without our famous frozen yogurt. You\'ll also find freshly made salads, sandwiches, soups, a fresh juice bar and selection of Tavalon premium teas. Counter, table service and takeout available.',
-                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_02.jpg'
+                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_01.jpg'
                                     }
                                 ],
                                 services: [
@@ -467,7 +468,7 @@
                                         name: '<b>FORTY CARROTS</b> <span>|</span> 6th floor <span>|</span> (312) 440-4861',
                                         sched: 'Monday–Saturday 11AM–6PM',
                                         description: 'A visit isn\'t complete without our famous frozen yogurt. You\'ll also find freshly made salads, sandwiches, soups, a fresh juice bar and selection of Tavalon premium teas. Counter, table service and takeout available.',
-                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_02.jpg'
+                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_01.jpg'
                                     }
                                 ],
                                 services: [
@@ -817,7 +818,7 @@
                                         name: '<b>59TH & LEX CAFE</b> <span>|</span> 2nd floor <span>|</span> (305) 792-1180',
                                         sched: 'Monday–Saturday 10AM–7:30PM <span>|</span> Sunday 12–5PM',
                                         description: '',
-                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_02.jpg'
+                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_06.jpg'
                                     }
                                 ],
                                 services: [
@@ -872,8 +873,8 @@
                                     {
                                         name: '<b>FORTY CARROTS</b> <span>|</span> Level 1 <span>|</span> +1 (407) 264-2683',
                                         sched: 'Monday–Saturday 10AM–9PM <span>|</span> Sunday 11AM–7PM',
-                                        description: 'A visit isn\'t complete without our famous frozen yogurt',
-                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_02.jpg'
+                                        description: 'A visit isn\'t complete without our famous frozen yogurt. You\'ll also find freshly made salads, sandwiches, soups, a fresh juice bar and selection of Tavalon premium teas. Counter, table service and takeout available.',
+                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_01.jpg'
                                     }
                                 ],
                                 services: [
@@ -975,10 +976,11 @@
             POR: {
                 nav: [
                     'nosso Legado',
-                    'Designer Destino',
+                    'Conheça As Marcas',
                     'Visite Nossas Lojas',
-                    'loja online'
+                    'Compre Online'
                 ],
+                mobileSubHeader: 'TURISMO INTERNACIONAL',
                 home: {
                     header: {
                         mobile: {
@@ -1005,19 +1007,19 @@
                         }
                     },
                     cat: [
-                        'Nosso patrimônio',
-                        'Conheça as marcas',
-                        'Visite nossas lojas'
+                        'Nosso Legado',
+                        'Conheça As Marcas',
+                        'Visite Nossas Lojas'
                     ],
                     shop: {
                         title: 'Compre on-line',
-                        subtitle: 'Aceitamos PayPal',
+                        subtitle: 'Aceitamos',
                         ctas: [
-                            'Mulheres',
+                            'Feminino',
                             'Bolsas',
                             'Sapatos',
                             'Joias & Acessórios',
-                            'Homens',
+                            'Masculino',
                             'Casa',
                             'Infantil',
                             'Novidades',
@@ -1086,7 +1088,7 @@
                             p: 'Tudo que já é bom fica ainda melhor quando se muda para o centro comercial da cidade. A Bloomingdale\'s chega ao SoHo. Um prédio histórico com fachada de ferro fundido na Broadway transforma-se em uma joia lapidada da moda do século XXI.'
                         }, {
                             h3: 'Entrando na era digital',
-                            p: 'Entrando na era digital Desde roupas de grife e produtos de beleza de luxo até bolsas e sapatos de salto alto, o site oferece moda de nível mundial na ponta dos dedos de clientes de todo o mundo.'
+                            p: 'Nasce a bloomingdales.com. Desde roupas de grife e produtos de beleza de luxo até bolsas e sapatos de salto alto, o site oferece moda de nível mundial na ponta dos dedos de clientes de todo o mundo.'
                         }, {
                             h3: 'Reformulação da beleza',
                             p: 'O piso principal da Broadway na 59th Street passa pela "maior reforma de Nova York", com uma série de quiosques do mais alto padrão das melhores marcas de beleza.'
@@ -1106,12 +1108,12 @@
                         h2: 'Nós nos encontraremos no Centro do Visitante'
                     },
                     dropdown: {
-                        default: 'Escolha uma loja',
+                        default: 'Escolha Uma Loja',
                         list: [
-                            {id: 'null', name: 'NEW YORK',                              disabled: 'true'},
+                            {id: 'null', name: 'NOVA YORK',                             disabled: 'true'},
                             {id: '0',    name: '59th Street Flagship, New York City',   disabled: 'false'},
                             {id: '1',    name: 'SoHo, New York City',                   disabled: 'false'},
-                            {id: 'null', name: 'HAWAII',                                disabled: 'true'},
+                            {id: 'null', name: 'HAVAÍ',                                 disabled: 'true'},
                             {id: '2',    name: 'Ala Moana, Honolulu',                   disabled: 'false'},
                             {id: 'null', name: 'ILLINOIS',                              disabled: 'true'},
                             {id: '3',    name: 'North Michigan Avenue, Chicago',        disabled: 'false'},
@@ -1280,7 +1282,7 @@
                                         name: '<b>FORTY CARROTS</b> <span>|</span>   2º. andar  <span>|</span>   +1 (212) 729-5900',
                                         sched: 'Segunda-feira - Sexta-feira 10:00h-20:00h <br/>Sábado 10:00h–19:00h<br/>Domingo 12:00h–19:00h',
                                         description: 'Sua visita só estará completa após experimentar nosso famoso iogurte frozen. Você também vai se deliciar com saladas feitas na hora, sanduíches, sopas, um bar de sucos de frutas naturais e uma seleção primorosa de chás Tavalon. Atendimento no balcão, na mesa e para viagem.',
-                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_02.jpg'
+                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_01.jpg'
                                     }
                                 ],
                                 services: [
@@ -1334,7 +1336,7 @@
                                         name: '<b>FORTY CARROTS</b> <span>|</span>   3º. andar ',
                                         sched: 'Aberto todos os dias <span>|</span>  11:30h – 1 hora antes da loja fechar',
                                         description: 'Sua visita só estará completa após experimentar nosso famoso iogurte frozen.',
-                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_02.jpg'
+                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_01.jpg'
                                     }
                                 ],
                                 services: [
@@ -1413,7 +1415,7 @@
                                         name: '<b>FORTY CARROTS</b> <span>|</span>   6º. andar <span>|</span> +1 (312) 440-4861',
                                         sched: 'Segunda-feira – Sábado 11:00h – 18:00h',
                                         description: 'Sua visita só estará completa após experimentar nosso famoso iogurte frozen.',
-                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_02.jpg'
+                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_01.jpg'
                                     }
                                 ],
                                 services: [
@@ -1750,7 +1752,7 @@
                                         name: '<b>59TH & LEX CAFE</b> <span>|</span> 2º. piso <span>|</span>  +1 (305) 792-1180',
                                         sched: 'Segunda-feira–Sábado 10:00h–19:30h <span>|</span> Domingo 12:00h–17:00h',
                                         description: '',
-                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_02.jpg'
+                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_06.jpg'
                                     }
                                 ],
                                 services: [
@@ -1805,8 +1807,8 @@
                                     {
                                         name: '<b>FORTY CARROTS</b> <span>|</span> 1º. andar <span>|</span> +1 (407) 264-2683',
                                         sched: 'MoSegunda-feira – Sábado 10:00h – 21:00h <span>|</span> Domingo 11:00h – 19:00h',
-                                        description: 'Sua visita só estará completa após experimentar nosso famoso iogurte frozen.',
-                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_02.jpg'
+                                        description: 'Sua visita só estará completa após experimentar nosso famoso iogurte frozen. Você também vai se deliciar com saladas feitas na hora, sanduíches, sopas, um bar de sucos de frutas naturais e uma seleção primorosa de chás Tavalon. Atendimento no balcão, na mesa e para viagem.',
+                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_01.jpg'
                                     }
                                 ],
                                 services: [
@@ -1841,11 +1843,11 @@
                 },                
                 socialshare: {
                     fb: {
-                        name: 'Internacional Turismo | bloomingdales.com',
-                        description: 'Desde desenhadores de roupas até as marcas de beleza mais cobiçadas, explore tudo o que a Bloomingdale\'s tem para oferecer em seu site atualizado. '
+                        name: 'Turismo Internacional | bloomingdales.com',
+                        description: 'Desde designers de roupas até as marcas de beleza mais cobiçadas, explore tudo o que a Bloomingdale\'s tem para oferecer em seu site atualizado.'
                     },
                     pinterest: {
-                        description: 'Internacional Turismo | bloomingdales.com'
+                        description: 'Turismo Internacional | bloomingdales.com'
                     },
                     twitter: {
                         text: 'Ama comprar @bloomingdales? Cheque o site Internacional para novos desenhadores de roupas, acessórios e beleza. http://bit.ly/1M3fLiB'
@@ -1922,6 +1924,7 @@
                     '亲临门店',
                     '线上购物'
                 ],
+                mobileSubHeader: 'INTERNATIONAL TOURISM',
                 home: {
                     header: {
                         mobile: {
@@ -2015,7 +2018,7 @@
                         }],
                         y1980: [{
                             h3: 'Bloomingdale\'s 精彩逼人',
-                            p: ']Warhol 称 Bloomingdale\'s 为"80 年代的新型博物馆"。 Bloomingdale\'s 每天都是最新最潮事物的展览馆。 在盛会时装流行的 80 年代，Bloomingdale\'s 将触角伸向海外。 Karl Lagerfeld、Diane von Furstenberg、Liza Minnelli 和 Oscar de la Renta 等时装界著名人士都亲自前来参加 Bloomingdale\'s 门店盛大的开业仪式。'
+                            p: 'Andy Warhol 称 Bloomingdale\'s 为"80 年代的新型博物馆"。 Bloomingdale\'s 每天都是最新最潮事物的展览馆。 在盛会时装流行的 80 年代，Bloomingdale\'s 将触角伸向海外。 Karl Lagerfeld、Diane von Furstenberg、Liza Minnelli 和 Oscar de la Renta 等时装界著名人士都亲自前来参加 Bloomingdale\'s 门店盛大的开业仪式。'
                         }, {
                             h3: '1988–龙年',
                             p: '1971 年，即尼克松总统访华的前一年，Bloomingdale\'s 就已经开始与中国大陆重新建立贸易联系。 十五年后的 1988 年，Bloomingdale\'s 延续之前成功的中国推广活动，在第 59 街旗舰店隆重推出为期 7 周的东方时尚和设计展，庆祝与中华人民共和国建立贸易关系 10 周年。 商店的中式布置使其宛如紫禁城上升起的璀璨明珠。'
@@ -2233,7 +2236,7 @@
                                         name: '<b>FORTY CARROTS</b> <span>|</span>   2 层  <span>|</span>   212-729-5900',
                                         sched: '周一至周五上午 10:00–晚上 8:00<span>|</span> 周六上午 10:00–晚上 7:00 <span>|</span> 周日中午 12:00–晚上 7:00',
                                         description: '只有品尝了我们著名的冷冻酸奶，才算不虚此行。在这里，您还能找到各式新鲜制作的沙拉、三明治、汤类、鲜榨果汁吧，以及精选上等 Tavalon 茶。提供柜台服务、餐桌服务和外卖服务。',
-                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_02.jpg'
+                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_01.jpg'
                                     }
                                 ],
                                 services: [
@@ -2287,7 +2290,7 @@
                                         name: '<b>FORTY CARROTS</b> <span>|</span>   3 层',
                                         sched: '营业时间 上午 11:30 － 关店前 1 小时',
                                         description: '只有品尝了我们著名的冷冻酸奶，才算不虚此行。',
-                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_02.jpg'
+                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_01.jpg'
                                     }                                    
                                 ],
                                 services: [
@@ -2366,7 +2369,7 @@
                                         name: '<b>FORTY CARROTS</b> <span>|</span> 6 层 <span>|</span>  (312) 440-4861',
                                         sched: '周一 – 周六 上午 11:00 – 晚上 6:00',
                                         description: '只有品尝了我们著名的冷冻酸奶，才算不虚此行。',
-                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_02.jpg'
+                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_01.jpg'
                                     }                                        
                                 ],
                                 services: [
@@ -2716,7 +2719,7 @@
                                         name: '<b>59TH & LEX CAFE</b> <span>|</span>  二楼 <span>|</span> (305) 792-1180',
                                         sched: '周一 － 周六 上午  10:00 － 晚上  7:30 <span>|</span> 周日中午 12:00－下午  5:00',
                                         description: '',
-                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_02.jpg'
+                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_06.jpg'
                                     }
                                 ],
                                 services: [
@@ -2771,8 +2774,8 @@
                                     {
                                         name: '<b>FORTY CARROTS</b> <span>|</span> 一楼 <span>|</span> +1 (407) 264-2683',
                                         sched: '周一 － 周六 上午 10:00 － 晚上 9:00 <span>|</span> 周日上午 11:00 － 晚上 7:00',
-                                        description: '只有品尝了我们著名的冷冻酸奶，才算不虚此行。',
-                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_02.jpg'
+                                        description: '只有品尝了我们著名的冷冻酸奶，才算不虚此行。在这里，您还能找到各式新鲜制作的沙拉、三明治、汤类、鲜榨果汁吧，以及精选上等 Tavalon 茶。提供柜台服务、餐桌服务和外卖服务。',
+                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_01.jpg'
                                     }
                                 ],
                                 services: [

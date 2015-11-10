@@ -5,13 +5,17 @@
 		.module('controllers')
 		.controller('StoresCtrl', StoresCtrl);
 
-	function StoresCtrl($scope, appGlobals){
+	function StoresCtrl($scope, $window, appGlobals){
         $scope.lang = appGlobals.getAttr('lang');
         $scope.copy = appGlobals.getAttr('copy');
         $scope.storeList = ($scope.lang) ? angular.copy($scope.copy[$scope.lang].stores.dropdown.list) : null;
         $scope.storeSelection = null;
 
         $scope.sticky = true;
+
+        $scope.scrollToTop = function () {
+	        $window.scrollTo(0, 0);
+        };
 	 
 	    $scope.$on('lang:change', function(ev, args) {
 	        $scope.lang = args.lang;

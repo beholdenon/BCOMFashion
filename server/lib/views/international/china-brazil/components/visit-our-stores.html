@@ -27,7 +27,7 @@
     </div>    
     <article class="dropdown-cnbr width-962 row" ng-show="storeSelection !== null" sticky offset="85" media-query="min-width: 933px">
         <div class="small-cnbr-18 small-cnbr-centered medium-cnbr-6 medium-cnbr-centered large-cnbr-12 large-cnbr-centered columns">
-            <select name="store" ng-model="storeSelection" ng-model-options="{ debounce: 250 }">
+            <select name="store" ng-model="storeSelection" ng-model-options="{ debounce: 250 }" ng-change="scrollToTop()">
                 <option ng-repeat="option in storeList" value="//option.id//" ng-disabled="//option.disabled//">//option.name//</option>
             </select>
         </div>
