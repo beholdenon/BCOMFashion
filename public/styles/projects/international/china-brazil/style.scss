@@ -1591,7 +1591,11 @@ html {
 					    background-repeat: no-repeat;
 					    background-position: center;
 					    background-size: 2400px;
-					    background-color: #535353;        				
+					    background-color: #535353;  
+					    &.mobile-por {
+							height: 400px;					    	
+							background-size: 2400px 400px;
+					    }				
         				p {
 							position: relative;
 							top: 50%;

@@ -32,7 +32,7 @@
             </select>
         </div>
     </article>    
-    <article class="content row">
+    <article class="content row" ng:class="{true:'mobile-por', false:''}[lang === 'POR']">
         <p ng-bind="copy[lang].stores.dropdown.copy" text-to-html="copy[lang].stores.dropdown.copy" ng-cloak></p>
     </article>
     <article class="store-data width-962 row" ng-show="storeSelection !== null">
