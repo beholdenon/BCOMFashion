@@ -67,7 +67,27 @@
                             'kids',
                             'What\'s New',
                             'sale'
-                        ]
+                        ],
+                        desktopLinks: {
+                            women: 'http://www1.bloomingdales.com/shop/womens-apparel?id=2910',
+                            handbags: 'http://www1.bloomingdales.com/shop/handbags?id=16958',
+                            shoes: 'http://www1.bloomingdales.com/shop/shoes?id=16961',
+                            jewelry: 'http://www1.bloomingdales.com/shop/jewelry-accessories?id=3376',
+                            men: 'http://www1.bloomingdales.com/shop/mens?id=3864',
+                            home: 'http://www1.bloomingdales.com/shop/home?id=3865',
+                            kids: 'http://www1.bloomingdales.com/shop/kids?id=3866',
+                            sale: 'http://www1.bloomingdales.com/shop/sale?id=3977'
+                        },
+                        mobileLinks: {
+                            women: 'http://www1.bloomingdales.com/shop/womens-apparel/all-women?id=1003340',
+                            handbags: 'http://www1.bloomingdales.com/shop/all-handbags-wallets-cases?id=1001396',
+                            shoes: 'http://www1.bloomingdales.com/shop/shoes/all-shoes?id=17411',
+                            jewelry: 'http://www1.bloomingdales.com/shop/all-jewelry-accessories?id=1003593',
+                            men: 'http://www1.bloomingdales.com/shop/mens/all-men?id=1003601',
+                            home: 'http://www1.bloomingdales.com/shop/home?id=1003615',
+                            kids: 'http://www1.bloomingdales.com/shop/all-kids?id=1003623',
+                            sale: 'http://www1.bloomingdales.com/shop/sale/all-sale-clearance?id=1003304'
+                        }
                     }
                 },
                 heritage: {

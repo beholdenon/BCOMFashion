@@ -7,12 +7,12 @@
 
     function MainCtrl($rootScope, $scope, $window, $location, localStorageService, appGlobals, socialshare) {
         $scope.lang = appGlobals.getAttr('lang');
-        $scope.copy = appGlobals.getAttr('copy');
+        var copy = $scope.copy = appGlobals.getAttr('copy');
 
         $scope.goto = function(view) {
             if (view.indexOf('http') === 0) {
                 $window.open(view);
-            } else {
+            } else if (view.indexOf('/') === 0){
                 $location.url(view);
 
                 //reposition view on top of the page
@@ -20,6 +20,20 @@
 
                 //close mobile nav menu 
                 if (jQuery('.off-canvas-wrap').hasClass('move-right')) jQuery('.left-off-canvas-toggle').click();
+            } else {
+                var url = null,
+                    device = null,
+                    windowWidth = jQuery($window).width(); 
+
+                if (windowWidth < 640) {
+                    device = 'desktopLinks';
+                } else {
+                    device = 'mobileLinks';  
+                } 
+
+                url = copy.ENG.home.shop[device][view];
+
+                $location.url(view);
             }
         };
 

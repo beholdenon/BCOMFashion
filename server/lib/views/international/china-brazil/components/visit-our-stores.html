@@ -17,7 +17,7 @@
             </select>
         </div>
     </article>
-    <div class="cnbr-header-store small-collapse row" style="width:100%" ng-show="storeSelection !== null" sticky offset="71" use-placeholder="false">
+    <div class="cnbr-header-store small-collapse row" style="width:100%" ng-show="storeSelection !== null" sticky offset="70" use-placeholder="false">
         <div class="large-24 columns">
             <div class="copy">
                 <h1 ng-cloak>//copy[lang].stores.header.h1//</h1>
@@ -25,7 +25,7 @@
             </div>
         </div>
     </div>    
-    <article class="dropdown-cnbr width-962 row" ng-show="storeSelection !== null" sticky offset="85" use-placeholder="false">
+    <article class="dropdown-cnbr width-962 row" ng-show="storeSelection !== null" sticky offset="84" use-placeholder="false">
         <div class="small-cnbr-20 small-cnbr-centered medium-cnbr-6 medium-cnbr-centered large-cnbr-12 large-cnbr-centered columns">
             <select name="store" ng-model="storeSelection" ng-model-options="{ debounce: 250 }" ng-change="scrollToTop()">
                 <option ng-repeat="option in storeList" value="//option.id//" ng-disabled="//option.disabled//">//option.name//</option>
@@ -87,37 +87,7 @@
     	<h2 class="store-header" ng:class="{true:'por', false:''}[lang === 'POR']" ng-cloak>//copy[lang].stores.storeData.directions//</h2>
 		<div id="map" class="map-container"></div>
 
-<script>
-// This example uses SVG path notation to add a vector-based symbol
-// as the icon for a marker. The resulting icon is a star-shaped symbol
-// with a pale yellow fill and a thick yellow border.
 
-function initMap() {
-    var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 4,
-        center: {
-            lat: -25.363882,
-            lng: 131.044922
-        }
-    });
-
-    var goldStar = {
-        path: 'M 125,5 155,90 245,90 175,145 200,230 125,180 50,230 75,145 5,90 95,90 z',
-        fillColor: 'yellow',
-        fillOpacity: 0.8,
-        scale: 1,
-        strokeColor: 'gold',
-        strokeWeight: 14
-    };
-
-    var marker = new google.maps.Marker({
-        position: map.getCenter(),
-        icon: goldStar,
-        map: map
-    });
-}
-</script>
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=gme-macyscominc&channel=fashion.bloomingdales.com&callback=initMap&signed_in=true" async defer></script>
 
     </article>         
     <article class="store-designers" ng-show="storeSelection !== null && storeSelection !== '7'">
@@ -172,3 +142,49 @@ function initMap() {
 	    </div>
     </article>                
 </section>
+
+<script>
+// This example uses SVG path notation to add a vector-based symbol
+// as the icon for a marker. The resulting icon is a star-shaped symbol
+// with a pale yellow fill and a thick yellow border.
+
+function initMap() {
+    var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 4,
+        center: {
+            lat: -25.363882,
+            lng: 131.044922
+        }
+    });
+
+    var goldStar = {
+        path: 'M 125,5 155,90 245,90 175,145 200,230 125,180 50,230 75,145 5,90 95,90 z',
+        fillColor: 'yellow',
+        fillOpacity: 0.8,
+        scale: 1,
+        strokeColor: 'gold',
+        strokeWeight: 14
+    };
+
+    var marker = new google.maps.Marker({
+        position: map.getCenter(),
+        icon: goldStar,
+        map: map
+    });
+}
+</script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=gme-macyscominc&channel=fashion.bloomingdales.com&callback=initialize&signed_in=true" async defer></script>
+<script type="text/javascript">
+
+function initialize() {
+    var latlng = new google.maps.LatLng(-34.397, 150.644);
+    var myOptions = {
+        zoom: 8,
+        center: latlng,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+    var map = new google.maps.Map(document.getElementById("map"), myOptions);
+}
+google.maps.event.addDomListener(window, "load", initialize);
+
+</script>
