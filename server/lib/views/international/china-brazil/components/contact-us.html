@@ -88,9 +88,9 @@
                                     <label for="arrivingdate" class="right inline">//copy[lang].contactUs.right.arriving//</label>
                                 </div>
                                 <div class="small-cnbr-15 medium-cnbr-8 large-cnbr-15 columns left">
-                                    <input type="text" name="arrivingdate" ng-model="cu.arrivingdate" class="arriving-input span2" value="" pick-date />
+                                    <input type="text" name="arrivingdate" ng-model="cu.arrivingdate" class="arriving-input span2" value="" pick-date required/>
 									<div ng-show="emailForm.$submitted || emailForm.arrivingdate.$dirty">
-									    <small class="error" ng-show="cu.arrivingdate===null || cu.arrivingdate===''">//copy[lang].contactUs.right.datesErr//</small>
+									    <small class="error" ng-show="emailForm.arrivingdate.$error.required || cu.arrivingdate === null || cu.arrivingdate === ''">//copy[lang].contactUs.right.datesErr//</small>
 									</div>                                     
                                 </div>
                             </div>
@@ -101,9 +101,9 @@
                                     <label for="departingdate" class="right inline">//copy[lang].contactUs.right.departing//</label>
                                 </div>
                                 <div class="small-cnbr-15 medium-cnbr-8 large-cnbr-14 columns left">
-                                    <input type="text" name="departingdate" ng-model="cu.departingdate" class="departing-input span2" value="" pick-date />
+                                    <input type="text" name="departingdate" ng-model="cu.departingdate" class="departing-input span2" value="" pick-date required/>
 									<div ng-show="emailForm.$submitted || emailForm.departingdate.$dirty">
-									    <small class="error" ng-show="cu.departingdate===null || cu.departingdate===''">//copy[lang].contactUs.right.datesErr//</small>
+									    <small class="error" ng-show="emailForm.departingdate.$error.required || cu.departingdate === null || cu.departingdate === ''">//copy[lang].contactUs.right.datesErr//</small>
 									</div>                                    
                                 </div>
                             </div>

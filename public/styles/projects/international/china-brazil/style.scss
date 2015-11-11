@@ -1878,8 +1878,9 @@ html {
     				}
         			.store-directions {
         				margin-bottom: 80px;
-        				img {
+        				.map-container {
         					width: 100%;
+        					height: 100%;
         				}
         			}
 

@@ -85,7 +85,40 @@
     </article>
     <article class="store-directions width-962 row" ng-show="storeSelection !== null">
     	<h2 class="store-header" ng:class="{true:'por', false:''}[lang === 'POR']" ng-cloak>//copy[lang].stores.storeData.directions//</h2>
-		<img ng-src="http://placehold.it/962x360/c3dc9f/ffffff?text=GOOGL MAP" />
+		<div id="map" class="map-container"></div>
+
+<script>
+// This example uses SVG path notation to add a vector-based symbol
+// as the icon for a marker. The resulting icon is a star-shaped symbol
+// with a pale yellow fill and a thick yellow border.
+
+function initMap() {
+    var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 4,
+        center: {
+            lat: -25.363882,
+            lng: 131.044922
+        }
+    });
+
+    var goldStar = {
+        path: 'M 125,5 155,90 245,90 175,145 200,230 125,180 50,230 75,145 5,90 95,90 z',
+        fillColor: 'yellow',
+        fillOpacity: 0.8,
+        scale: 1,
+        strokeColor: 'gold',
+        strokeWeight: 14
+    };
+
+    var marker = new google.maps.Marker({
+        position: map.getCenter(),
+        icon: goldStar,
+        map: map
+    });
+}
+</script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=gme-macyscominc&channel=fashion.bloomingdales.com&callback=initMap&signed_in=true" async defer></script>
+
     </article>         
     <article class="store-designers" ng-show="storeSelection !== null && storeSelection !== '7'">
     	<h2 class="store-header" ng:class="{true:'por', false:''}[lang === 'POR']" ng-cloak>//copy[lang].stores.storeData.designers//</h2>
