@@ -13,10 +13,20 @@
 
         $scope.sticky = true;
 
-        $scope.scrollToTop = function () {
+        $scope.scrollToTop = function() {
 	        $window.scrollTo(0, 0);
         };
+
+        $scope.bookletHoverOn = function($event) {
+        	var elem = jQuery($event.target).parent().children('img');
+        	elem.addClass('hover');
+        };
 	 
+        $scope.bookletHoverOff = function($event) {
+        	var elem = jQuery($event.target).parent().children('img');
+        	elem.removeClass('hover');
+        };
+
 	    $rootScope.$on('lang:change', function(ev, args) {
 	        $scope.lang = args.lang;
 	        $scope.storeList = angular.copy($scope.copy[$scope.lang].stores.dropdown.list);

@@ -1734,6 +1734,7 @@ html {
         				.right {
         					padding-top: 34px;
         					padding-left: 55px;
+        					position: relative;
         					@media #{$small-only} {
 								padding-right: 5%;
 								padding-left: 5%;
@@ -1762,52 +1763,30 @@ html {
 									line-height: 1.9vw;     							
         						}        												
         					} 
-        					img {
-								padding-top: 40px;
-        					} 
+    						img {
+								margin-top: 30px;
+								opacity: .6;
+								z-index: 1;	
+								transition: opacity .3s linear;							
+								&.hover {
+							    	opacity: 1;
+								}								
+    						}
         					a {
-							    background-image: url("/fashion/images/projects/international/china-brazil/global_sprite.png");
-							    background-repeat: no-repeat;
-							    height: 140px;
-							    background-size: 252px;
-							    background-position: 62px -712px;
-							    display: block;
-							    opacity: 1;
-							    z-index: 2;
-							    width: 100%;
-							    margin-left: -30px;
-							    margin-top: 40px;
-								&:hover {
-	        						.bkg-img {
-								    	opacity: 1;
-								    }
-								}
+								display: block;
+								position: absolute;
+								top: 130px;
+								background-image: url("/fashion/images/projects/international/china-brazil/global_sprite.png");
+								background-repeat: no-repeat;
+								height: 150px;
+								background-size: 252px;
+								background-position: 62px -712px;
+								z-index: 0;
+								width: 410px;
 								@media #{$medium-only} {
 									background-size: 27vw;
 									background-position: 7vw -76vw;
 								}
-        						.bkg-img {
-									position: relative;
-								    top: -150px;
-								    left: 118px;
-									background-image: url("/fashion/images/projects/international/china-brazil/global_sprite.png");
-									background-repeat: no-repeat;
-									height: 440px;
-									width: 172px;
-									background-size: 265px;
-									background-position: 0 -314px;
-									-webkit-transform: rotate(90deg);
-									-moz-transform: rotate(90deg);
-									-ms-transform: rotate(90deg);
-									transform: rotate(90deg);
-									opacity: .6;
-									transition: opacity 0.1s linear;
-									z-index: -1;
-									@media #{$medium-only} {
-									    background-size: 245px;
-									    background-position: 0 -274px;
-									}									
-        						}
         					}      					
         				}
         			}

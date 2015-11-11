@@ -1309,7 +1309,7 @@
                                 addr: '1450 Ala Moana Blvd  Honolulu, HI 96814  +1 (808) 644-7511',
                                 hours: 'Segunda-feira - Sábado: 10:00h-20:00h <span>|</span> Domingo: 11:00h-19:00h',                                
                                 descr: 'Diga "Aloha" para nossa mais nova filial na tropical Honolulu. Localizada no Ala Moana Center, atração e principal local de compras no Havaí, esta loja de três andares oferece uma variedade de comodidades sob medida para o cliente no além-mar. Passe em nosso Centro Internacional de Visitantes e fale com um dos nossos atendentes multilíngues. Nós oferecemos consultoria com personal stylist, ajustes no próprio local, reservas em restaurantes e muito mais.  Está pensando em nos visitar de novo? Inscreva-se em nosso International Loyalty Club e ganhe pontos em cartões de presente, serviços especiais e em aventuras havaianas autênticas.',
-                                dTile: 'PASSEANDO NO HAVAÍ?',
+                                dTile: 'VISITANDO O HAVAÍ?',
                                 dInfo: 'Baixe nosso guia de boas-vindas antes de chegar.',
                                 dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Hawaii_EN.pdf',
                                 designers: [
@@ -1335,7 +1335,7 @@
                                     {
                                         name: '<b>FORTY CARROTS</b> <span>|</span>   3º. andar ',
                                         sched: 'Aberto todos os dias <span>|</span>  11:30h – 1 hora antes da loja fechar',
-                                        description: 'Sua visita só estará completa após experimentar nosso famoso iogurte frozen.',
+                                        description: 'Sua visita só estará completa após experimentar nosso famoso iogurte frozen. Você também vai se deliciar com saladas feitas na hora, sanduíches, sopas, um bar de sucos de frutas naturais e uma seleção primorosa de chás Tavalon. Atendimento no balcão, na mesa e para viagem.',
                                         imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_01.jpg'
                                     }
                                 ],
@@ -1357,7 +1357,7 @@
                                         description: 'A apenas poucos passos da Bloomingdale\'s, você encontra uma casa de câmbio localizada convenientemente dentro do Ala Moana Center.'
                                     },
                                     {
-                                        title: 'KRELAXE EM NOSSA SALA VIP',
+                                        title: 'RELAXE EM NOSSA SALA VIP',
                                         description: 'A primeira da rede Bloomingdale\'s, nossa sala de acesso restrito fica no Centro do Visitante. Um seleto grupo de turistas pode desfrutar de comodidades, incluindo: petiscos e bebidas, uma TV, banheiro privativo, tomadas de energia elétrica, uma impressora Bluetooth para cartões de embarque e iPads® com o aplicativo da Bloomingdale\'s pré-instalado e guias de viagem muito úteis em quase todos os idiomas. O acesso por um dia ao lounge está disponível aos visitantes mediante recibo de US$ 500 ou mais em compras.',
                                     }
                                 ],
@@ -1414,7 +1414,7 @@
                                     {
                                         name: '<b>FORTY CARROTS</b> <span>|</span>   6º. andar <span>|</span> +1 (312) 440-4861',
                                         sched: 'Segunda-feira – Sábado 11:00h – 18:00h',
-                                        description: 'Sua visita só estará completa após experimentar nosso famoso iogurte frozen.',
+                                        description: 'Sua visita só estará completa após experimentar nosso famoso iogurte frozen. Você também vai se deliciar com saladas feitas na hora, sanduíches, sopas, um bar de sucos de frutas naturais e uma seleção primorosa de chás Tavalon. Atendimento no balcão, na mesa e para viagem.',
                                         imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_01.jpg'
                                     }
                                 ],
@@ -1483,7 +1483,7 @@
                                 addr: '845 Market Street  San Francisco, CA  +1 (415) 856-5402',
                                 hours: 'Segunda-feira - Sábado: 10:00h-21:00h <span>|</span> Domingo: 11:00h-20:00h',                                   
                                 descr: 'Descubra o melhor das compras em São Francisco. Primeira parada, Bloomingdale\'s. Dirija-se ao Centro do Visitante para um catálogo multilíngue ou fale com nossos atendentes multilíngues para personalizar a sua experiência de acordo com suas necessidades. Saiba mais sobre nossos serviços e comodidades internos da loja abaixo.',
-                                dTile: 'VAI VISITAR SÃO FRANCISCO?',
+                                dTile: 'VISITANDO SÃO FRANCISCO?',
                                 dInfo: 'Baixe o nosso guia de boas-vindas antes de chegar.',
                                 dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_SanFran_EN.pdf',
                                 designers: [
@@ -1547,7 +1547,7 @@
                                 addr: '3333 Bristol St  Costa Mesa, CA 92626  +1 (714) 824-4600',
                                 hours: 'Segunda-feira - Sábado: 10:00h-21:00h <span>|</span> Domingo: 11:00h-19:00h',                                   
                                 descr: 'Com a melhor seleção de estilistas, feita especialmente para a Califórnia do Sul, o South Coast Plaza é ponto de parada obrigatório quando o assunto é compras. Novo no "Estado Dourado"? Os atendentes multilíngues vão tornar sua estadia muito melhor. Comece com um catálogo da loja em seu idioma ou torne sua viagem de compras especial com os serviços internos de nossa loja.',
-                                dTile: 'VAI VISITAR Costa Mesa?',
+                                dTile: 'VISITANDO COSTA MESA?',
                                 dInfo: 'Baixe o nosso guia de boas-vindas antes de chegar.',
                                 dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_SouthCoastPlaza_EN.pdf',
                                 designers: [
@@ -1607,8 +1607,8 @@
                                         description: 'Realizamos personalização profissional e serviços de ajuste no próprio local, conforme for solicitado. Os preços são informados no momento do ajuste das medidas.'
                                     },
                                     {
-                                        title: 'PERSONAL STYLISTS E CONSULTORES DE BELEZA DE PLANTÃO',
-                                        description: 'Nossos personal stylists estão disponíveis para acompanhá-lo em suas compras na loja, ou selecionar opções para seu guarda-roupa e de decoração de acordo com seu gosto - tudo gratuito.<br/> Para elas +1 (212) 705-3135 <br/> Para eles +1 (212) 705-3030'
+                                        title: 'FACILIDADE DE PAGAMENTO ',
+                                        description: 'Nós aceitamos o cartão American Express® Global Travel Card e todas as formas de pagamento da China UnionPay.<div class="unionpay">'
                                     },
                                     {
                                         title: 'CARTÕES E EMBALAGENS PARA PRESENTE',
@@ -1621,7 +1621,7 @@
                                 addr: '',
                                 hours: '',
                                 descr: 'Com filias por toda Los Angeles, Orange County e San Diego, a Bloomingdale\'s deixou sua marca registrada na Califórnia do Sul. Compre as marcas de roupas, acessórios, sapatos e beleza que você ama em qualquer uma de nossas lojas. </p><p style="margin-top: 20px;padding-bottom: 50px;"><i>Saiba mais sobre nossos serviços e comodidades internos da loja abaixo.</i>',
-                                dTile: 'VAI VISITAR SOUTHERN CALIFORNIA?',
+                                dTile: 'VISITANDO A CALIFÓRNIA DO SUL?',
                                 dInfo: 'Baixe o nosso guia de boas-vindas antes de chegar.',
                                 dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_SouthernCalifornia_EN.pdf',
                                 stores: [
@@ -1687,12 +1687,12 @@
                                         description: 'Realizamos personalização profissional e serviços de ajuste no próprio local, conforme for solicitado. Os preços são informados no momento do ajuste das medidas. Disponível em locais selecionados.'
                                     },
                                     {
-                                        title: 'CARTÕES E EMBALAGENS PARA PRESENTE ',
-                                        description: 'Nós podemos embrulhar suas compras, ou você pode pegar cartões, caixas, papel de embrulho e fita para levar para casa. Disponível em locais selecionados.'
+                                        title: 'FACILIDADE DE PAGAMENTO ',
+                                        description: 'Nós aceitamos o cartão American Express® Global Travel Card e todas as formas de pagamento da China UnionPay.<div class="unionpay">'
                                     },
                                     {
-                                        title: 'PERSONAL STYLISTS E CONSULTORES DE BELEZA DE PLANTÃO',
-                                        description: 'Nossos personal stylists estão disponíveis para acompanhá-lo em suas compras na loja, ou selecionar opções de decoração para casa de acordo com seu gosto - tudo gratuito. Disponível em locais selecionados.'
+                                        title: 'CARTÕES E EMBALAGENS PARA PRESENTE ',
+                                        description: 'Nós podemos embrulhar suas compras, ou você pode pegar cartões, caixas, papel de embrulho e fita para levar para casa. Disponível em locais selecionados.'
                                     }
                                 ]  
                             },
@@ -1806,7 +1806,7 @@
                                 restaurants: [
                                     {
                                         name: '<b>FORTY CARROTS</b> <span>|</span> 1º. andar <span>|</span> +1 (407) 264-2683',
-                                        sched: 'MoSegunda-feira – Sábado 10:00h – 21:00h <span>|</span> Domingo 11:00h – 19:00h',
+                                        sched: 'Segunda-feira – Sábado 10:00h – 21:00h <span>|</span> Domingo 11:00h – 19:00h',
                                         description: 'Sua visita só estará completa após experimentar nosso famoso iogurte frozen. Você também vai se deliciar com saladas feitas na hora, sanduíches, sopas, um bar de sucos de frutas naturais e uma seleção primorosa de chás Tavalon. Atendimento no balcão, na mesa e para viagem.',
                                         imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_01.jpg'
                                     }
@@ -1876,7 +1876,7 @@
                         phone: 'Nº. de celular (opcional): ',
                         phoneErr: 'Número de telefone inválido',
                         party: 'Número de pessoas no meu grupo:',
-                        partyErr: 'Por favor, conte-nos sua festa tamanho',
+                        partyErr: 'Por favor, conte-nos o tamanho de seu grupo',
                         dates: 'Datas planejadas de minha viagem aos EUA:',
                         arriving: 'Chegada:',
                         departing: 'Partida:',
@@ -2658,9 +2658,9 @@
                                         description: '我们将为您精心包装所购商品，您也可以挑选礼品卡、包装盒、包装纸和丝带，将它们带回家自行包装。本服务仅在指定店铺提供。'
                                     },
                                     {
-                                        title: '个人形象设计师随传随到',
-                                        description: '我们的个人形象设计师可免费伴您选购商品，或根据您的品味为您的家居饰品提供选购建议。本服务仅在指定店铺提供。'
-                                    }
+                                        title: '便捷的付款方式',
+                                        description: '我们接受美国运通®环球旅行卡和各种中国银联卡。<div class="unionpay">'
+                                    }                                    
                                 ]  
                             },
                             {
