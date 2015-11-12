@@ -1989,10 +1989,12 @@ html {
 						    font-style: italic;
 						    text-align: center;
 						    font-size: 15px;
-						    padding-bottom: 40px;  
+						    padding-bottom: 40px; 
+					        width: 714px;
         					@media #{$small-only} {
         						padding-left: 5%;
         						padding-right: 5%;
+        						width: auto;
         					}						          					
         				}
 
@@ -2033,10 +2035,12 @@ html {
 						    font-style: italic;
 						    text-align: center;
 						    font-size: 15px;
-						    padding-bottom: 40px;  
+						    padding-bottom: 40px;
+						    width: 600px;
 						    @media #{$small-only} {
 							    padding-left: 5%;
-							    padding-right: 5%;  
+							    padding-right: 5%;
+							    width: auto;
 						    }      					
         				}
 

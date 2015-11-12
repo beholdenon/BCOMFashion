@@ -207,9 +207,9 @@
                         designers: 'Featured Designers',
                         dining: 'In-Store Dining',
                         services: 'Services',
-                        servicesSubHead: 'Our associates will show you why Bloomingdale\'s is like no other store in the world. <br/>Look for us wearing flag pins from your country. We can help you find the fashion you love<br/>and assist with a range of personalized services.',
+                        servicesSubHead: 'Our associates will show you why Bloomingdale\'s is like no other store in the world. Look for us wearing flag pins from your country. We can help you find the fashion you love and assist with a range of personalized services.',
                         loyalty: 'Join the International Loyalty Club',
-                        loyaltySubHead: 'Our special rewards program was created for international shoppers.* For every dollar you spend,<br/>you\'ll earn one point toward gift cards, services and exceptional experiences. Right now, you can enroll in<br/>the program at Bloomingdale \'  s Ala Moana, but points can be earned and redeemed at any full-line<br/>Bloomingdale \'  s location in the United States.**',
+                        loyaltySubHead: 'Our special rewards program was created for international shoppers.* For every dollar you spend, you\'ll earn one point toward gift cards, services and exceptional experiences. Right now, you can enroll in the program at Bloomingdale \'  s Ala Moana, but points can be earned and redeemed at any full-line Bloomingdale \'  s location in the United States.**',
                         id: [
                             {
                                 name: '59th Street Flagship',

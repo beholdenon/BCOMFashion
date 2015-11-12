@@ -14,7 +14,8 @@
             'ngMessages',
             'ngAnimate',
             'CacheService',
-            'LocalStorageModule' //ref: https://github.com/grevory/angular-local-storage
+            'LocalStorageModule', //ref: https://github.com/grevory/angular-local-storage
+            'ngMap' //ref: https://github.com/allenhwkim/angularjs-google-maps
         ])
         .config(config)
         .run(run);
