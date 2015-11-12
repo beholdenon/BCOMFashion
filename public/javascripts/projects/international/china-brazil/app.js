@@ -15,12 +15,14 @@
             'ngAnimate',
             'CacheService',
             'LocalStorageModule', //ref: https://github.com/grevory/angular-local-storage
-            'uiGmapgoogle-maps' //ref: http://angular-ui.github.io/angular-google-maps/#!/api/
+            'uiGmapgoogle-maps', //ref: http://angular-ui.github.io/angular-google-maps/#!/api/
+            'angulartics', //ref: https://github.com/angulartics/angulartics
+            'angulartics.coremetrics.analytics' //ref: https://github.com/cwill747/angulartics-coremetrics
         ])
         .config(config)
         .run(run);
 
-    function config($interpolateProvider, $routeProvider, localStorageServiceProvider, uiGmapGoogleMapApiProvider) {
+    function config($interpolateProvider, $routeProvider, localStorageServiceProvider, uiGmapGoogleMapApiProvider, $analyticsProvider) {
         //configuring the default Angular interpolation markup to solve conflict with Handlebars {{}}
         $interpolateProvider.startSymbol('//');
         $interpolateProvider.endSymbol('//');
@@ -55,6 +57,10 @@
             sensor: 'false',
             libraries: 'places,geometry,visualization'
         });
+
+        //Coremetrics 
+        $analyticsProvider.settings.coremetrics.userId = 'test1';
+        $analyticsProvider.settings.coremetrics.additionalAccountIDs = 'test2';
     }
 
     function run($window, $rootScope, $document, $location, $timeout, localStorageService, appGlobals) {
