@@ -26,14 +26,13 @@
                     windowWidth = jQuery($window).width(); 
 
                 if (windowWidth < 640) {
-                    device = 'desktopLinks';
-                } else {
                     device = 'mobileLinks';  
+                } else {
+                    device = 'desktopLinks';
                 } 
-
                 url = copy.ENG.home.shop[device][view];
 
-                $location.url(view);
+                $window.open(url, '_blank');
             }
         };
 

@@ -85,20 +85,15 @@
     </article>
     <article class="store-directions width-962 row" ng-show="storeSelection !== null">
     	<h2 class="store-header" ng:class="{true:'por', false:''}[lang === 'POR']" ng-cloak>//copy[lang].stores.storeData.directions//</h2>
-
-
-	
-        <div>
-            <ng-map zoom="13" center="1600 pennsylvania ave, washington DC">
-                <custom-marker ng-repeat="cm in customMarkers" position="{{cm.address}}" on-mouseover="mouseover()" on-mouseout="mouseout()" on-click="click()">
-                    <div class="{{cm.class}}">
-                        <div> Custom Marker {{cm.class}}</div>
-                    </div>
-                </custom-marker>
-            </ng-map>
+        <div class="row">
+            <ui-gmap-google-map class="large-cnbr-12 columns" center="map.center" zoom="map.zoom" options="map.options" dragging="map.dragging" control="map.control" ng-cloak>
+                <ui-gmap-marker coords="map.marker2" idkey="map.marker2.id">
+                    <ui-gmap-window isIconVisibleOnClick="true">
+                        <p ng-cloak>Marker , MAP 1 Clicked on me2!</p>
+                    </ui-gmap-window>
+                </ui-gmap-marker>
+            </ui-gmap-google-map>
         </div>
-
-
     </article>         
     <article class="store-designers" ng-show="storeSelection !== null && storeSelection !== '7'">
     	<h2 class="store-header" ng:class="{true:'por', false:''}[lang === 'POR']" ng-cloak>//copy[lang].stores.storeData.designers//</h2>

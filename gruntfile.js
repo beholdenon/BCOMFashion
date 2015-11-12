@@ -87,7 +87,7 @@ module.exports = function(grunt) {
                     expand: true,
                     cwd: '<%= node.source %>/public/javascripts/',
                     src: [
-                        '**/*.js'
+                        '**/*.{js,json}'
                     ],
                     dest: '<%= node.destination %>/public/javascripts/'
                 }, {
@@ -125,7 +125,7 @@ module.exports = function(grunt) {
                     expand: true,
                     cwd: '<%= node.source %>/public/javascripts/',
                     src: [
-                        '**/*.js'
+                        '**/*.{js,json}'
                     ],
                     dest: '<%= node.destination %>/public/javascripts/'
                 }]
@@ -212,8 +212,8 @@ module.exports = function(grunt) {
             all: [
                 'gruntfile.js',
                 '<%= node.source %>/server/{,**/}*.js',
-                '<%= node.source %>/public/javascripts/includes/{,**/}*.js',
-                '<%= node.source %>/public/javascripts/projects/{,**/}*.js'
+                '<%= node.source %>/public/javascripts/includes/{,**/}*.{js,json}',
+                '<%= node.source %>/public/javascripts/projects/{,**/}*.{js,json}'
             ]
         },
 
@@ -245,7 +245,7 @@ module.exports = function(grunt) {
             dist: {
                 files: {
                     src: [
-                        '<%= node.destination %>/public/javascripts/{,*/}*.js',
+                        '<%= node.destination %>/public/javascripts/{,*/}*.{js,json}',
                         '<%= node.destination %>/public/styles/{,*/}*.css',
                         '<%= node.destination %>/public/styles/fonts/*',
                         '<%= node.destination %>/public/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
@@ -379,8 +379,8 @@ module.exports = function(grunt) {
 		    jsClient: {
 		        files: [
                     '<%= node.source %>/public/javascripts/main.js',
-                    '<%= node.source %>/public/javascripts/includes/{,**/}*.js',
-                    '<%= node.source %>/public/javascripts/projects/{,**/}*.js'
+                    '<%= node.source %>/public/javascripts/includes/{,**/}*.{js,json}',
+                    '<%= node.source %>/public/javascripts/projects/{,**/}*.{js,json}'
                 ],
                 tasks: [
                     'jshint', 
@@ -434,7 +434,7 @@ module.exports = function(grunt) {
                 // Limit the client reload files to one per file type to prevent EMFILE error
                 files: [
                     '<%= node.destination %>/lib/views/{,**/}*.html',
-                    '<%= node.destination %>/public/javascripts/{,**/}*.js',
+                    '<%= node.destination %>/public/javascripts/{,**/}*.{js,json}',
                     '<%= node.destination %>/public/styles/{,**/}*.css'
                 ],
                 options: {

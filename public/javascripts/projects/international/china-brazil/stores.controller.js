@@ -5,7 +5,7 @@
         .module('controllers')
         .controller('StoresCtrl', StoresCtrl);
 
-    function StoresCtrl($rootScope, $scope, $window, $timeout, appGlobals) {
+    function StoresCtrl($rootScope, $scope, $window, $timeout, appGlobals, uiGmapGoogleMapApi, uiGmapIsReady) {
         $scope.lang = appGlobals.getAttr('lang');
         $scope.copy = appGlobals.getAttr('copy');
         $scope.storeList = ($scope.lang) ? angular.copy($scope.copy[$scope.lang].stores.dropdown.list) : null;
@@ -32,20 +32,47 @@
             $scope.storeList = angular.copy($scope.copy[$scope.lang].stores.dropdown.list);
         });
 
-        $scope.mouseover = function() {
-            console.log('mouseover', this);
-            this.style.backgroundColor = 'grey';
-        };
-        $scope.mouseout = function() {
-            this.style.backgroundColor = 'white';
-        };
-        $scope.click = function() {
-            console.log('click');
-        };
-        $scope.customMarkers = [{
-            address: '1600 pennsylvania ave, washington DC',            'class': 'my1'
-        }, {
-            address: '600 pennsylvania ave, washington DC',            'class': 'my2'
-        }, ];
+        angular.extend($scope, {
+            map: {
+                control: {},
+                center: {
+                    latitude: 45,
+                    longitude: -74
+                },
+                marker: {
+                    id: 0,
+                    latitude: 45,
+                    longitude: -74,
+                    options: {
+                        visible: false
+                    }
+                },
+                zoom: 7,
+                pan: true,
+                refresh: false,
+                events: {},
+                bounds: {},
+                polys: [],
+                draw: undefined,  
+                options: {
+                    draggable: true,
+                    disableDefaultUI: true,
+                    panControl: false,
+                    navigationControl: false,
+                    scrollwheel: false,
+                    scaleControl: false
+                }
+            }
+        });
+
+        uiGmapGoogleMapApi.then(function(maps) {
+            maps.visualRefresh = true;
+        });
+
+        uiGmapIsReady.promise(2).then(function(instances) {
+            instances.forEach(function(inst) {
+                inst.map.ourID = inst.instance;
+            });
+        });
     }
 })();

@@ -2895,7 +2895,14 @@
                 ]                                                             
             }
         };
-
+        // $http.get('/fashion/javascripts/projects/international/china-brazil/data.json')
+        //      .success(function(data) {
+        //         console.log($.parseJSON(data));
+        //      })
+        //      .error(function() {
+        //         // called asynchronously if an error occurs
+        //         // or server returns response with an error status.
+        //      });
         return {
             init: function() {
                 CacheService.put('copy', copyObject);

@@ -15,12 +15,12 @@
             'ngAnimate',
             'CacheService',
             'LocalStorageModule', //ref: https://github.com/grevory/angular-local-storage
-            'ngMap' //ref: https://github.com/allenhwkim/angularjs-google-maps
+            'uiGmapgoogle-maps' //ref: http://angular-ui.github.io/angular-google-maps/#!/api/
         ])
         .config(config)
         .run(run);
 
-    function config($interpolateProvider, $routeProvider, localStorageServiceProvider) {
+    function config($interpolateProvider, $routeProvider, localStorageServiceProvider, uiGmapGoogleMapApiProvider) {
         //configuring the default Angular interpolation markup to solve conflict with Handlebars {{}}
         $interpolateProvider.startSymbol('//');
         $interpolateProvider.endSymbol('//');
@@ -46,6 +46,15 @@
             .otherwise({
                 redirectTo: '/'
             });
+
+        //Google maps config 
+        uiGmapGoogleMapApiProvider.configure({
+            key: 'AIzaSyAzXauC8RAX_qxgaP_qC9rPQye5HQHy8fc',
+            channel: 'fashion.bloomingdales.com',
+            signed_in: 'true',  // jshint ignore:line
+            sensor: 'false',
+            libraries: 'places,geometry,visualization'
+        });
     }
 
     function run($window, $rootScope, $document, $location, $timeout, localStorageService, appGlobals) {
