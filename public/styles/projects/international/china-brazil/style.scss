@@ -848,7 +848,6 @@ html {
 								    margin-right: 5%;
 								    margin-top: 5%;
 					    		}								
-
 							}				    		
 				    	}
 				    	.header-copy-desktop {
@@ -878,7 +877,6 @@ html {
 								text-rendering: optimizeLegibility;
 								color: #f30c99;
 								letter-spacing: 1px;	
-								text-transform: capitalize;			    				
 				    		}
 				    		p {
 				    			color: #fff;
@@ -1159,13 +1157,11 @@ html {
 								line-height: 29px;
 								padding: 0;
 								margin: 0;		
-								text-transform: capitalize;		    			
 				    		}
 				    		h2 {
     							color: #fe0aab;
 								font-size: 24px;
 								padding-top: 10px;
-								text-transform: capitalize;
 				    		}
 				    		@media #{$medium-only} {
 				    			top: 33%;
@@ -1308,13 +1304,11 @@ html {
 								line-height: 29px;
 								padding: 0;
 								margin: 0;	
-								text-transform: capitalize;			    			
 				    		}
 				    		h2 {
     							color: #fe0aab;
 								font-size: 24px;
 								padding-top: 10px;
-								text-transform: capitalize;
 				    		}
 				    		@media #{$medium-only} {
 								h1 {
@@ -1536,7 +1530,6 @@ html {
 								line-height: 29px;
 								padding: 0;
 								margin: 0;	
-								text-transform: capitalize;			    			
 				    		}
 				    		h2 {
     							color: #fe0aab;
@@ -1545,7 +1538,6 @@ html {
 								padding-top: 8px;
 								margin-bottom: 0;
 								padding-bottom: 0;
-								text-transform: capitalize;
 				    		}
 				    		@media #{$medium-only} {
 								h1 {
@@ -2072,7 +2064,7 @@ html {
 											background-repeat: no-repeat;
 											background-size: 180px;
 											background-position: 0 -180px;
-											width: 95px;
+											width: 28px;
 											height: 22px;  							
 		        						}
 	        						}

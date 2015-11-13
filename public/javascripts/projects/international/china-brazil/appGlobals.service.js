@@ -213,7 +213,7 @@
                         id: [
                             {
                                 name: '59th Street Flagship',
-                                addr: '1000 Third Avenue  New York, NY 10022  +1 212-705-2000',
+                                addr: '1000 Third Avenue  New York, NY 10022<br/>+1 212-705-2000',
                                 hours: 'Monday–Saturday: Store Opens 10AM <span>|</span> Sunday: Store Opens 11AM',
                                 descr: 'Discover Bloomingdale\'s iconic heritage and award-winning hospitality. Begin your day at our flagship store with a stop at our first floor balcony Visitor\'s Center. Our multilingual directory will provide a road map to your shopping trip. Looking for a more personal experience? Learn about our in-store services, from stylist appointments to alterations to restaurant reservations. We\'ll help you arrange all that and more.',
                                 dTile: 'VISITING NEW YORK?',
@@ -315,7 +315,7 @@
                             },
                             {
                                 name: 'SoHo',
-                                addr: '504 Broadway  New York, NY 10012  +1 212-729-5900',
+                                addr: '504 Broadway  New York, NY 10012<br/>+1 212-729-5900',
                                 hours: 'Monday–Saturday: Store Opens 10AM <span>|</span> Sunday: Opens 12PM',
                                 descr: 'Explore our downtown store in SoHo, the city\'s most fashionable neighborhood. You\'ll find all the stylish energy of our uptown flagship but with the feel of a fashion boutique. Check out our bustling beauty floor, then peruse our latest designer arrivals. As always, multilingual associates are available to help make your visit a memorable one.',
                                 dTile: 'VISITING NEW YORK?',
@@ -373,15 +373,15 @@
                                     },
                                     {
                                         title: 'DELIVERY TO YOUR HOTEL ',
-                                        description: 'We will gladly deliver your purchases of $250 USD or more to your Manhattan hotel—for free. Just drop them off at our first floor balcony Visitor\'s Center.'
+                                        description: 'We will gladly deliver your purchases of $250 USD or more to your Manhattan hotel—for free. Just drop them off with any sales associate.'
                                     }
                                 ]                               
                             },
                             {
                                 name: 'Ala Moana',
-                                addr: '1450 Ala Moana Blvd  Honolulu, HI 96814  +1 808-644-7511',
+                                addr: '1450 Ala Moana Blvd  Honolulu, HI 96814<br/>+1 808-644-7511',
                                 hours: 'Monday–Saturday: 10AM–8PM | Sunday: 11AM–7PM',
-                                descr: 'Say aloha to our newest outpost in tropical Honolulu. Located in the Ala Moana Center, Hawaii\'s premier shopping destination, this three-story store boasts a range of amenities tailored to the overseas shopper. Stop by our International Welcome Center and speak with one of our multilingual associates. We offer international style advisor appointments, on-site alterations, restaurant reservations and much more.',
+                                descr: 'Say aloha to our newest outpost in tropical Honolulu. Located in the Ala Moana Center, Hawaii\'s premier shopping destination, this three-story store boasts a range of amenities tailored to the overseas shopper. Stop by our International Welcome Center and speak with one of our multilingual associates. We offer international style advisor appointments, on-site alterations, restaurant reservations and much more. <br/> Planning a return visit? Sign up for our International Loyalty Club and earn points toward gift cards, special services and authentic Hawaiian adventures.',
                                 dTile: 'VISITING HAWAII?',
                                 dInfo: 'Download our welcome booklet before you arrive.',
                                 dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Hawaii_EN.pdf',
@@ -408,14 +408,14 @@
                                     {
                                         name: '<b>FORTY CARROTS</b> <span>|</span>   3rd floor  ',
                                         sched: 'Open Daily 11:30AM–1 hour before store closing',
-                                        description: 'A visit isn\'t complete without our famous frozen yogurt. You\'ll also find freshly made salads, sandwiches, soups, a fresh juice bar and selection of Tavalon premium teas. Counter, table service and takeout available.',
+                                        description: 'A visit isn\'t complete without our famous frozen yogurt.',
                                         imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_01.jpg'
                                     }
                                 ],
                                 services: [
                                     {
                                         title: 'FULL-SERVICE WELCOME CENTER AND CONCIERGE DESK',
-                                        description: 'At the Welcome Center, we \'  ll greet you with a complimentary coat and bag check, plus a multilingual store directory. Should you need it, our associates can arrange personal stylist appointments and free package delivery to your hotel. Stop by our concierge desk for alterations and pick-ups or to learn more about Hawaii\'s amenities and attractions.'
+                                        description: 'At the Welcome Center, we\'ll greet you with a complimentary coat and bag check, plus a multilingual store directory. Should you need it, our associates can arrange personal stylist appointments and free package delivery to your hotel. Stop by our concierge desk for alterations and pick-ups or to learn more about Hawaii\'s amenities and attractions.'
                                     },
                                     {
                                         title: 'PERSONAL STYLISTS AND BEAUTY ADVISORS ON CALL ',
@@ -449,13 +449,13 @@
                                     },
                                     {
                                         title: '',
-                                        description: '<span class="fucsia">*Proof of international address required.</span><br/>**Points cannot be redeemed at Bloomingdale\'s outlet stores or on bloomingdales.com. Points can only be redeemed for services or experiences at Bloomingdale\'s Ala Moana.'
+                                        description: '*Proof of international address required.<br/>**Points cannot be redeemed at Bloomingdale\'s outlet stores or on bloomingdales.com. Points can only be redeemed for services or experiences at Bloomingdale\'s Ala Moana.'
                                     }                                      
                                 ]                                    
                             },
                             {
                                 name: 'North Michigan Avenue',
-                                addr: '900 North Michigan Avenue  Chicago, IL 60611  +1 312-440-4460 ',
+                                addr: '900 North Michigan Avenue  Chicago, IL 60611<br/>+1 312-440-4460 ',
                                 hours: 'Monday–Saturday: 10AM–8PM | Sunday: 11AM–7PM',
                                 descr: 'Planning a trip to the Windy City? Let Bloomingdale\'s be your fashion guide. Fill out your wardrobe with our vast collection of designer names, or stock up on your favorite beauty products. Our multilingual associates can help tailor your shopping trip to your every need.',
                                 dTile: 'VISITING CHICAGO?',
@@ -485,9 +485,9 @@
                                 ],
                                 restaurants: [
                                     {
-                                        name: '<b>FORTY CARROTS</b> <span>|</span> 6th floor <span>|</span> (312) 440-4861',
+                                        name: '<b>FORTY CARROTS</b> <span>|</span> 6th floor <span>|</span> 312-440-4861',
                                         sched: 'Monday–Saturday 11AM–6PM',
-                                        description: 'A visit isn\'t complete without our famous frozen yogurt. You\'ll also find freshly made salads, sandwiches, soups, a fresh juice bar and selection of Tavalon premium teas. Counter, table service and takeout available.',
+                                        description: 'A visit isn\'t complete without our famous frozen yogurt.',
                                         imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_01.jpg'
                                     }
                                 ],
@@ -525,7 +525,7 @@
                             },
                             {
                                 name: 'Medinah Home',
-                                addr: '600 North Wabash Avenue  Chicago, IL 60611  +1 312-324-7500',
+                                addr: '600 North Wabash Avenue  Chicago, IL 60611<br/>+1 312-324-7500',
                                 hours: 'Monday–Saturday: Store Opens 10AM <span>|</span> Sunday: Opens 12PM',
                                 descr: 'Deck out your home with a trip to Chicago\'s Medinah Home store. Here you\'ll find luxurious bedding, designer kitchen appliances, plush bathroom accessories and more. Experience our award-winning hospitality first hand with a full range of in-store services.',
                                 dTile: 'VISITING CHICAGO?',
@@ -544,7 +544,7 @@
                                     },
                                     {
                                         title: 'PERSONAL STYLISTS ON CALL',
-                                        description: 'Our personal stylists are available to shop the store with you, or select wardrobe and home decor options to your taste—all for free. <br/> At Your Service 312-324-7633 '
+                                        description: 'Our personal stylists are available to shop the store with you, or select home décor options to your taste—all for free.<br/> At Your Service 312-324-7633 '
 
                                     },
                                     {
@@ -554,14 +554,14 @@
                                     },
                                     {
                                         title: 'CARDS & RIBBON TO TAKE HOME ',
-                                        description: 'We will gift wrap your purchases, or you can pick up cards, boxes, wrapping paper and ribbon to take home at our gift wrapping station on the sixth floor. '
+                                        description: 'We will gift wrap your purchases, or you can pick up cards, boxes, wrapping paper and ribbon to take home. Visit our second floor Gift Wrap station.'
 
                                     }
                                 ] 
                             },
                             {
                                 name: 'San Francisco Centre',
-                                addr: '845 Market Street  San Francisco, CA  +1 (415) 856-5402',
+                                addr: '845 Market Street  San Francisco, CA<br/>+1 415-856-5402',
                                 hours: 'Monday–Saturday: 10AM–9PM | Sunday: 11AM–8PM',
                                 descr: 'Discover the best of San Francisco shopping. First stop, Bloomingdale\'s. Head to our Visitor\'s Center for a multilingual directory, or speak to our multilingual associates to tailor your experience to your needs. Learn more about our in-store amenities below.',
                                 dTile: 'VISITING SAN FRANCISCO?',
@@ -618,19 +618,19 @@
                                     },
                                     {
                                         title: 'DELIVERY TO YOUR HOTEL ',
-                                        description: 'We will gladly deliver your purchases of $250 USD or more to your Manhattan hotel—for free. Just drop them off at our first floor balcony Visitor\'s Center.'
+                                        description: 'We will gladly deliver your purchases of $250 USD or more to your downtown hotel—for free. Just drop them off at our first floor balcony Visitor\'s Center.'
 
                                     },
                                     {
                                         title: 'CARDS & RIBBON TO TAKE HOME ',
-                                        description: 'We will gift wrap your purchases, or you can pick up cards, boxes, wrapping paper and ribbon to take home at our gift wrapping station on the sixth floor. '
+                                        description: 'We will gift wrap your purchases, or you can pick up cards, boxes, wrapping paper and ribbon to take home at the Visitor\'s Center.'
 
                                     }
                                 ]                               
                             },
                             {
                                 name: 'South Coast Plaza',
-                                addr: '3333 Bristol St  Costa Mesa, CA 92626  +1 (714) 824-4600',
+                                addr: '3333 Bristol St  Costa Mesa, CA 92626<br/>+1 714-824-4600',
                                 hours: 'Monday–Saturday: 10AM–9PM | Sunday: 11AM–7PM',
                                 descr: 'With the best designer selection, edited specifically for Southern California, South Coast Plaza is a must-go shopping destination. New to the Golden State? Multilingual associates will make your stay that much better. Start with a store directory in your chosen language or add to your shopping trip with our in-store amenities below.',
                                 dTile: 'VISITING COSTA MESA?',
@@ -675,14 +675,14 @@
                                 ],
                                 restaurants: [
                                     {
-                                        name: '<b>AnQi by Crustacean - Gourmet Bistro & Noodle Bar</b> <br/>  Ground Floor <span>|</span> 714-557-5679',
+                                        name: '<b>AnQi by Crustacean Gourmet Bistro & Noodle Bar</b> <br/>  Ground Floor <span>|</span> 714-557-5679',
                                         sched: 'Lunch: Open Daily 11:30AM–2:30PM <br/> Noodle Bar: Open Daily 11:30AM–5:30PM <br/> Dinner: Sunday–Thursday 5:30PM–10:30PM <br/>Friday–Saturday 5:30PM–11:00PM <br/> Red Happy Hour: Monday–Friday 4PM–7PM',
                                         description: '',
                                         imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_08.jpg'
                                     },
                                     {
                                         name: '<b>Holsteins</b> <span>|</span> Ground Floor <span>|</span> 714-352-2525',
-                                        sched: 'Monday - Thursday: 11:00AM–12:00AM <br/> Friday & Saturday: 11:00AM–2:00AM  <br/> Sunday: 11:00AM–12:00AM ',
+                                        sched: 'Monday - Thursday: 11AM–12AM <br/> Friday & Saturday: 11AM–2AM  <br/> Sunday: 11AM–12AM ',
                                         description: '',
                                         imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_09.jpg'
                                     }                                    
@@ -706,7 +706,7 @@
                                 name: 'Southern California Stores',
                                 addr: '',
                                 hours: '',
-                                descr: 'With outposts across Los Angeles, Orange County and San Diego, Bloomingdale\'s has left its iconic mark on SoCal. Shop the fashion, accessories, shoes and beauty brands you love in any one of our stores.</p><p style="margin-top: 20px;padding-bottom: 50px;"><i>Learn more about our in-store amenities below.</i>',
+                                descr: 'With outposts across Los Angeles, Orange County and San Diego, Bloomingdale\'s has left its iconic mark on SoCal. Shop the fashion, accessories, shoes and beauty brands you love in any one of our stores.Learn more about our in-store amenities below.',
                                 dTile: 'VISITING SOUTHERN CALIFORNIA?',
                                 dInfo: 'Download our welcome booklet before you arrive.',
                                 dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_SouthernCalifornia_EN.pdf',
@@ -716,12 +716,12 @@
                                         list: [
                                             {
                                                 name: 'South Coast Plaza',
-                                                addr: '3333 South Bristol Street, Costa Mesa, CA 92626  +1 714-824-4600',
+                                                addr: '3333 South Bristol Street, Costa Mesa, CA 92626<br/>+1 714-824-4600',
                                                 hours: 'Hours:<br/>Monday–Tuesday 10AM–9PM <br/>Wednesday–Saturday 10AM–10PM<br/>Sunday 10AM–8PM'
                                             },
                                             {
                                                 name: 'Newport Fashion Island',
-                                                addr: '701 Newport Center Drive, Newport Beach, CA 92660 +1 949-729-6600',
+                                                addr: '701 Newport Center Drive, Newport Beach, CA 92660<br/>+1 949-729-6600',
                                                 hours: 'Hours: <br/>Monday–Tuesday 10AM–8PM<br/>Wednesday–Saturday 10AM–10PM<br/>Sunday 11AM–8PM'
                                             }     
                                         ]                                   
@@ -731,27 +731,27 @@
                                         list: [
                                             {
                                                 name: 'Century City',
-                                                addr: '10250 Santa Monica Boulevard, Los Angeles, CA 90067 +1 310-772-2100',
+                                                addr: '10250 Santa Monica Boulevard, Los Angeles, CA 90067<br/>+1 310-772-2100',
                                                 hours: 'Hours: <br/>Monday–Tuesday 10AM–9PM<br/>Wednesday–Saturday 10AM–10PM<br/>Sunday 11AM–8PM'
                                             },
                                             {
                                                 name: 'Beverly Center',
-                                                addr: '8500 Beverly Boulevard, Los Angeles, CA 90048 +1 310-360-2700',
+                                                addr: '8500 Beverly Boulevard, Los Angeles, CA 90048<br/>+1 310-360-2700',
                                                 hours: 'Hours: <br/>Monday–Tuesday 10AM–9PM<br/>Wednesday–Saturday 10AM–10PM<br/>Sunday 12PM–8PM'
                                             },
                                             {
                                                 name: 'Santa Monica Place',
-                                                addr: '315 Colorado Avenue, Santa Monica, CA 90401 +1 310-985-6400',
+                                                addr: '315 Colorado Avenue, Santa Monica, CA 90401<br/>+1 310-985-6400',
                                                 hours: 'Hours: <br/>Monday–Tuesday 10AM–9PM<br/>Wednesday–Saturday 10AM–10PM<br/>Sunday 11AM–8PM'
                                             },
                                             {
                                                 name: 'Glendale Galleria',
-                                                addr: '103 South Brand Blvd., Glendale, CA 91210 +1 818-638-4100',
+                                                addr: '103 South Brand Blvd., Glendale, CA 91210<br/>+1 818-638-4100',
                                                 hours: 'Hours: <br/>Monday–Tuesday 10AM–9PM<br/>Wednesday–Saturday 10AM–10PM<br/>Sunday 11AM–9PM'
                                             },
                                             {
                                                 name: 'Sherman Oaks Fashion Square',
-                                                addr: '14060 Riverside Drive, Sherman Oaks, CA 91423 +1 818-325-2200',
+                                                addr: '14060 Riverside Drive, Sherman Oaks, CA 91423<br/>+1 818-325-2200',
                                                 hours: 'Hours: <br/>Monday–Tuesday 10AM–9PM<br/>Wednesday–Saturday 10AM–10PM<br/>Sunday 11AM–9PM'
                                             }     
                                         ]                                   
@@ -761,7 +761,7 @@
                                         list: [
                                             {
                                                 name: 'Fashion Valley',
-                                                addr: '7057 Friars Road, San Diego, CA 92108 +1 619-610-6400',
+                                                addr: '7057 Friars Road, San Diego, CA 92108<br/>+1 619-610-6400',
                                                 hours: 'Hours: <br/>Monday–Tuesday 10AM–8PM<br/>Wednesday 10AM–8PM<br/>Thursday–Saturday 10AM–10PM<br/>Sunday 12PM–8PM'
                                             }   
                                         ]                                   
@@ -770,21 +770,21 @@
                                 services: [
                                     {
                                         title: 'QUICK ALTERATIONS ',
-                                        description: 'We perform professional tailoring and alteration services on site by request. Prices are available at the time of your fitting.'
+                                        description: 'We perform professional tailoring and alteration services on site by request. Prices are available at the time of your fitting. Available at select locations.'
                                     },
                                     {
                                         title: 'CARDS & RIBBON TO TAKE HOME ',
-                                        description: 'We will gift wrap your purchases, or you can pick up cards, boxes, wrapping paper and ribbon to take home. Find it all on the lower level.'
+                                        description: 'We will gift wrap your purchases, or you can pick up cards, boxes, wrapping paper and ribbon to take home. Available at select locations.'
                                     },
                                     {
-                                        title: 'PAYMENT MADE EASY ',
-                                        description: 'We accept all forms of China UnionPay.<div class="unionpay">'
+                                        title: 'PERSONAL STYLISTS ON CALL',
+                                        description: 'Our personal stylists are available to shop the store with you, or select home décor options to your taste—all for free. Available at select locations.'
                                     }
                                 ]  
                             },
                             {
                                 name: 'AVENTURA',
-                                addr: '19555 Biscayne Boulevard  Aventura, FL 33180  +1 (305) 792-1246',
+                                addr: '19555 Biscayne Boulevard  Aventura, FL 33180<br/>+1 305-792-1246',
                                 hours: 'Monday–Saturday: 10AM–10PM <span>|</span> Sunday: 12PM–9PM',
                                 descr: 'Planning your vacation itinerary? Start with a trip to Florida\'s Aventura store. Explore our extensive selection of designer fashions, beauty brands, luxurious accessories and more. Get shopping with a store directory in your chosen language and be sure to make the most of your experience with our in-store amenities listed below.',
                                 dTile: 'VISITING AVENTURA?',
@@ -835,8 +835,8 @@
                                 ],
                                 restaurants: [
                                     {
-                                        name: '<b>59TH & LEX CAFE</b> <span>|</span> 2nd floor <span>|</span> (305) 792-1180',
-                                        sched: 'Monday–Saturday 10AM–7:30PM <span>|</span> Sunday 12–5PM',
+                                        name: '<b>59TH & LEX CAFE</b> <span>|</span> 2nd floor <span>|</span> 305-792-1180',
+                                        sched: 'Monday–Saturday 10AM–7:30PM <span>|</span> Sunday 12PM–5PM',
                                         description: '',
                                         imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_06.jpg'
                                     }
@@ -860,7 +860,7 @@
                             },
                             {
                                 name: 'ORLANDO',
-                                addr: '4152 Conroy Road  Orlando, FL 32839  +1 (407) 264-2514',
+                                addr: '4152 Conroy Road  Orlando, FL 32839<br/>+1 407-264-2514',
                                 hours: 'Monday–Saturday: 10AM–9PM | Sunday: 11AM–7PM',
                                 descr: 'Stocked with the best designers and beauty brands, Bloomingdale\'s Orlando is your ticket to world-class shopping. Stop in on your next trip to the Sunshine State for an experience tailored to you. Pick up a store directory in your chosen language, then take advantage of the many in-store amenities listed below.',
                                 dTile: 'VISITING ORLANDO?',
@@ -891,9 +891,9 @@
                                 ],
                                 restaurants: [
                                     {
-                                        name: '<b>FORTY CARROTS</b> <span>|</span> Level 1 <span>|</span> +1 (407) 264-2683',
+                                        name: '<b>FORTY CARROTS</b> <span>|</span> Level 1 <span>|</span> 407-264-2683',
                                         sched: 'Monday–Saturday 10AM–9PM <span>|</span> Sunday 11AM–7PM',
-                                        description: 'A visit isn\'t complete without our famous frozen yogurt. You\'ll also find freshly made salads, sandwiches, soups, a fresh juice bar and selection of Tavalon premium teas. Counter, table service and takeout available.',
+                                        description: 'A visit isn\'t complete without our famous frozen yogurt.',
                                         imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_01.jpg'
                                     }
                                 ],
@@ -958,7 +958,7 @@
                         departing: 'Departing:',
                         datesErr: 'Select date',
                         storesH: 'I would like to visit:',
-                        storesM: 'Please select a store',
+                        storesM: 'Please Select a Store',
                         storesErr: 'Please select a store',
                         stores: [
                             {id: 'New York', name: 'New York', disabled: 'true'},
@@ -1005,16 +1005,16 @@
                     header: {
                         mobile: {
                             h1: 'Bem-vindo',
-                            h2: 'Confira todos os visuais estilosos <br/>' +
-                                'Começando com uma visita à Bloomingdale\'s',
+                            h2: 'Confira Todos Os Visuais Estilosos <br/>' +
+                                'Começando Com Uma Visita À Bloomingdale\'s',
                             p:  'Desde 1872, a Bloomingdale\'s esteve no centro da moda, trazendo as mais cobiçadas roupas de marca, sapatos, bolsas, cosméticos, joias finas e presentes de marca do mundo. ' +
                                 'Ao visitar nossas lojas, você vai desfrutar de mimos exclusivos personalizados, tais como atendentes multilíngues e serviços especiais de concierge, que certamente farão você se sentir acolhido, mimado e como se estivesse em casa.' +
                                 'Estes são apenas alguns dos detalhes que fazem da Bloomingdale\'s uma loja como nenhuma outra no mundo.'
                         },
                         desktop: {
                             h1: 'Bem-vindo',
-                            h2: 'Confira todos os visuais estilosos <br/>' +
-                                'Começando com uma visita à Bloomingdale\'s ',
+                            h2: 'Confira Todos Os Visuais Estilosos <br/>' +
+                                'Começando Com Uma Visita À Bloomingdale\'s ',
                             p:  'Desde 1872, a Bloomingdale\'s esteve no centro da moda, ' + 
                                 'trazendo as mais cobiçadas roupas de marca, sapatos, bolsas, ' + 
                                 'cosméticos, joias finas e presentes de marca do mundo. Ao ' + 
@@ -1049,8 +1049,8 @@
                 },
                 heritage: {
                     header: {
-                        h1: 'A história da Bloomingdale\'s',
-                        h2: 'Um breve histórico'
+                        h1: 'A História da Bloomingdale\'s',
+                        h2: 'Um Breve Histórico'
                     },
                     article: {
                         y1880: [{
@@ -1124,8 +1124,8 @@
                 },
                 stores: {
                     header: {
-                        h1: 'Escolha seu destino',
-                        h2: 'Nós nos encontraremos no Centro do Visitante'
+                        h1: 'Escolha Seu Destino',
+                        h2: 'Nós Nos Encontraremos No Centro Do Visitante'
                     },
                     dropdown: {
                         default: 'Escolha Uma Loja',
@@ -1160,7 +1160,7 @@
                         id: [
                             {
                                 name: 'Loja matriz na 59th Street',
-                                addr: '1000 Third Avenue  New York, NY 10022  +1 212-705-2000',
+                                addr: '1000 Third Avenue  New York, NY 10022<br/>+1 212-705-2000',
                                 hours: 'Segunda-feira - Sábado: Abertura da loja 10:00h <span>|</span>  Domingo: Abertura da loja 11:00h',
                                 descr: 'Venha conhecer o icônico patrimônio e a premiada hospitalidade da Bloomingdale\'s. Comece seu dia em nossa loja matriz sendo recebido no balcão do nosso Centro do Visitante, no primeiro andar. Nosso catálogo multilíngue vai oferecer um mapa para sua viagem de compras. Quer uma experiência mais personalizada? Conheça os serviços internos de nossas lojas, desde consultoria em estilo até alterações em reservas de restaurante. Nós o ajudaremos a providenciar tudo isso e muito mais.',
                                 dTile: 'VISITANDO NOVA YORK?',
@@ -1236,11 +1236,11 @@
                                 services: [
                                     {
                                         title: 'NÓS FAZEMOS SUA LISTA DE PRESENTES',
-                                        description: 'Comprar presentes é muito fácil na Bloomingdale\'s. Basta enviar sua lista a nossos especialistas multilíngues antes de sua visita, e você já vai encontrar seus itens esperando por você quando chegar.<br/> Ligue +1 (212) 705-2359 ou +1 (212) 705-3488 <br/> E-mail <a class="fucsia" href="mailto:international_visitors@bloomingdales.com">international_visitors@bloomingdales.com</a>'
+                                        description: 'Comprar presentes é muito fácil na Bloomingdale\'s. Basta enviar sua lista a nossos especialistas multilíngues antes de sua visita, e você já vai encontrar seus itens esperando por você quando chegar.<br/> Ligue +1 212-705-2359 ou +1 212-705-3488 <br/> E-mail <a class="fucsia" href="mailto:international_visitors@bloomingdales.com">international_visitors@bloomingdales.com</a>'
                                     },
                                     {
                                         title: 'PERSONAL STYLISTS E CONSULTORES DE BELEZA DE PLANTÃO',
-                                        description: 'Nossos personal stylists estão disponíveis para acompanhá-lo em suas compras na loja, ou selecionar opções para seu guarda-roupa e de decoração de acordo com seu gosto - tudo gratuito.<br/> Para elas +1 (212) 705-3135 <br/> Para eles +1 (212) 705-3030'
+                                        description: 'Nossos personal stylists estão disponíveis para acompanhá-lo em suas compras na loja, ou selecionar opções para seu guarda-roupa e de decoração de acordo com seu gosto - tudo gratuito.<br/> Para elas +1 212-705-3135 <br/> Para eles +1 212-705-3030'
                                     },
                                     {
                                         title: 'FACILIDADE DE PAGAMENTO ',
@@ -1262,7 +1262,7 @@
                             },
                             {
                                 name: 'SoHo',
-                                addr: '504 Broadway  New York, NY 10012  +1 212-729-5900',
+                                addr: '504 Broadway  New York, NY 10012<br/>+1 212-729-5900',
                                 hours: 'Segunda-feira - Sábado: Abre às 10:00h <span>|</span> Domingo: Abre às 12:00h',
                                 descr: 'Conheça nossa loja do centro, no SoHo, o bairro mais elegante da cidade. Você encontrará toda a elegante energia de nossa matriz da Upper Manhattan, mas com a sensação de uma boutique de moda. Confira nosso movimentado andar de beleza e depois conheça nossas últimas novidades de grifes. Como sempre, os atendentes multilíngues estão disponíveis para ajudar a tornar sua visita inesquecível.',
                                 dTile: 'VISITANDO NOVA YORK?',
@@ -1299,7 +1299,7 @@
                                 ],
                                 restaurants: [
                                     {
-                                        name: '<b>FORTY CARROTS</b> <span>|</span>   2º. andar  <span>|</span>   +1 (212) 729-5900',
+                                        name: '<b>FORTY CARROTS</b> <span>|</span>   2º. andar  <span>|</span>   +1 212-729-5900',
                                         sched: 'Segunda-feira - Sexta-feira 10:00h-20:00h <br/>Sábado 10:00h–19:00h<br/>Domingo 12:00h–19:00h',
                                         description: 'Sua visita só estará completa após experimentar nosso famoso iogurte frozen. Você também vai se deliciar com saladas feitas na hora, sanduíches, sopas, um bar de sucos de frutas naturais e uma seleção primorosa de chás Tavalon. Atendimento no balcão, na mesa e para viagem.',
                                         imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_01.jpg'
@@ -1308,7 +1308,7 @@
                                 services: [
                                     {
                                         title: 'NÓS FAZEMOS SUA LISTA DE PRESENTES',
-                                        description: 'Comprar presentes é muito fácil na Bloomingdale\'s. Basta enviar sua lista a nossos especialistas multilíngues antes de sua visita, e você já vai encontrar seus itens esperando por você quando chegar.<br/> Ligue +1 (212) 705-2098  ou envie e-mail para <a class="fucsia" href="mailto:international_visitors@bloomingdales.com">international_visitors@bloomingdales.com</a>'
+                                        description: 'Comprar presentes é muito fácil na Bloomingdale\'s. Basta enviar sua lista a nossos especialistas multilíngues antes de sua visita, e você já vai encontrar seus itens esperando por você quando chegar.<br/> Ligue +1 212-705-2098  ou envie e-mail para <a class="fucsia" href="mailto:international_visitors@bloomingdales.com">international_visitors@bloomingdales.com</a>'
                                     },
                                     {
                                         title: 'FACILIDADE DE PAGAMENTO ',
@@ -1326,7 +1326,7 @@
                             },
                             {
                                 name: 'Ala Moana',
-                                addr: '1450 Ala Moana Blvd  Honolulu, HI 96814  +1 (808) 644-7511',
+                                addr: '1450 Ala Moana Blvd  Honolulu, HI 96814<br/>+1 808-644-7511',
                                 hours: 'Segunda-feira - Sábado: 10:00h-20:00h <span>|</span> Domingo: 11:00h-19:00h',                                
                                 descr: 'Diga "Aloha" para nossa mais nova filial na tropical Honolulu. Localizada no Ala Moana Center, atração e principal local de compras no Havaí, esta loja de três andares oferece uma variedade de comodidades sob medida para o cliente no além-mar. Passe em nosso Centro Internacional de Visitantes e fale com um dos nossos atendentes multilíngues. Nós oferecemos consultoria com personal stylist, ajustes no próprio local, reservas em restaurantes e muito mais.  Está pensando em nos visitar de novo? Inscreva-se em nosso International Loyalty Club e ganhe pontos em cartões de presente, serviços especiais e em aventuras havaianas autênticas.',
                                 dTile: 'VISITANDO O HAVAÍ?',
@@ -1355,7 +1355,7 @@
                                     {
                                         name: '<b>FORTY CARROTS</b> <span>|</span>   3º. andar ',
                                         sched: 'Aberto todos os dias <span>|</span>  11:30h – 1 hora antes da loja fechar',
-                                        description: 'Sua visita só estará completa após experimentar nosso famoso iogurte frozen. Você também vai se deliciar com saladas feitas na hora, sanduíches, sopas, um bar de sucos de frutas naturais e uma seleção primorosa de chás Tavalon. Atendimento no balcão, na mesa e para viagem.',
+                                        description: 'Sua visita só estará completa após experimentar nosso famoso iogurte frozen.',
                                         imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_01.jpg'
                                     }
                                 ],
@@ -1402,7 +1402,7 @@
                             },
                             {
                                 name: 'North Michigan Avenue',
-                                addr: '900 North Michigan Avenue  Chicago, IL 60611  +1 (312) 440-4460 ',
+                                addr: '900 North Michigan Avenue  Chicago, IL 60611<br/>+1 312-440-4460 ',
                                 hours: 'Segunda-feira - Sábado: 10:00h-20:00h <span>|</span> Domingo: 11:00h-19:00h',                                         
                                 descr: 'Planejando uma viagem à Cidade dos Ventos? Deixe que a Bloomingdale\'s seja seu guia de moda. Preencha o seu guarda-roupa com a nossa ampla coleção de nomes de grife, ou estoque seus produtos de beleza favoritos. Nossos atendentes multilíngues podem ajudá-lo a personalizar sua viagem de compras de acordo com todas as suas necessidades.',
                                 dTile: 'VISITANDO CHICAGO?',
@@ -1432,20 +1432,20 @@
                                 ],
                                 restaurants: [
                                     {
-                                        name: '<b>FORTY CARROTS</b> <span>|</span>   6º. andar <span>|</span> +1 (312) 440-4861',
+                                        name: '<b>FORTY CARROTS</b> <span>|</span>   6º. andar <span>|</span> +1 312-440-4861',
                                         sched: 'Segunda-feira – Sábado 11:00h – 18:00h',
-                                        description: 'Sua visita só estará completa após experimentar nosso famoso iogurte frozen. Você também vai se deliciar com saladas feitas na hora, sanduíches, sopas, um bar de sucos de frutas naturais e uma seleção primorosa de chás Tavalon. Atendimento no balcão, na mesa e para viagem.',
+                                        description: 'Sua visita só estará completa após experimentar nosso famoso iogurte frozen.',
                                         imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_01.jpg'
                                     }
                                 ],
                                 services: [
                                     {
                                         title: 'NÓS FAZEMOS SUA LISTA DE PRESENTES',
-                                        description: 'Comprar presentes é muito fácil na Bloomingdale\'s. Basta enviar sua lista a nossos especialistas multilíngues antes de sua visita, e você já vai encontrar seus itens esperando por você quando chegar.<br/> Ligue +1 (312) 440-4596  ou envie e-mail para <a class="fucsia" href="mailto:international_visitors@bloomingdales.com">international_visitors@bloomingdales.com</a>'
+                                        description: 'Comprar presentes é muito fácil na Bloomingdale\'s. Basta enviar sua lista a nossos especialistas multilíngues antes de sua visita, e você já vai encontrar seus itens esperando por você quando chegar.<br/> Ligue +1 312-440-4596  ou envie e-mail para <a class="fucsia" href="mailto:international_visitors@bloomingdales.com">international_visitors@bloomingdales.com</a>'
                                     },
                                     {
                                         title: 'PERSONAL STYLISTS E CONSULTORES DE BELEZA DE PLANTÃO',
-                                        description: 'Nossos personal stylists estão disponíveis para acompanhá-lo em suas compras na loja, ou selecionar opções para seu guarda-roupa e de decoração de acordo com seu gosto - tudo gratuito.<br/> À sua disposição no +1 (312) 440-4887'
+                                        description: 'Nossos personal stylists estão disponíveis para acompanhá-lo em suas compras na loja, ou selecionar opções para seu guarda-roupa e de decoração de acordo com seu gosto - tudo gratuito.<br/> À sua disposição no +1 312-440-4887'
                                     },
                                     {
                                         title: 'FACILIDADE DE PAGAMENTO ',
@@ -1467,7 +1467,7 @@
                             },
                             {
                                 name: 'Medinah Home',
-                                addr: '600 North Wabash Avenue  Chicago, IL 60611  +1 (312) 324-7500',
+                                addr: '600 North Wabash Avenue  Chicago, IL 60611<br/>+1 312-324-7500',
                                 hours: 'Segunda-feira - Sábado: Abertura da loja 10:00h  <span>|</span>  Domingo: Abre às 12:00h',                                         
                                 descr: 'Decore sua casa com uma viagem à loja Medinah Home em Chicago. Aqui você vai encontrar roupas de cama de luxo, utensílios de cozinha feitos por designers, finos acessórios de casa e banho e muito mais. Experimente em primeira mão nossa premiada hospitalidade com uma infinidade de serviços no interior da loja.',
                                 dTile: 'VISITANDO CHICAGO?',
@@ -1482,11 +1482,11 @@
                                 services: [
                                     {
                                         title: 'NÓS FAZEMOS SUA LISTA DE PRESENTES',
-                                        description: 'Comprar presentes é muito fácil na Bloomingdale\'s. Basta enviar sua lista a nossos especialistas multilíngues antes de sua visita, e você já vai encontrar seus itens esperando por você quando chegar.<br/> Ligue +1 (312) 440-4596  ou envie e-mail para <a class="fucsia" href="mailto:international_visitors@bloomingdales.com">international_visitors@bloomingdales.com</a>'
+                                        description: 'Comprar presentes é muito fácil na Bloomingdale\'s. Basta enviar sua lista a nossos especialistas multilíngues antes de sua visita, e você já vai encontrar seus itens esperando por você quando chegar.<br/> Ligue +1 312-440-4596  ou envie e-mail para <a class="fucsia" href="mailto:international_visitors@bloomingdales.com">international_visitors@bloomingdales.com</a>'
                                     },
                                     {
                                         title: 'PERSONAL STYLISTS E CONSULTORES DE BELEZA DE PLANTÃO',
-                                        description: 'Nossos personal stylists estão disponíveis para acompanhá-lo em suas compras na loja, ou selecionar opções para seu guarda-roupa e de decoração de acordo com seu gosto - tudo gratuito.<br/> À sua disposição no +1 (312) 324-7633'
+                                        description: 'Nossos personal stylists estão disponíveis para acompanhá-lo em suas compras na loja, ou selecionar opções para seu guarda-roupa e de decoração de acordo com seu gosto - tudo gratuito.<br/> À sua disposição no +1 312-324-7633'
                                     },
                                     {
                                         title: 'FACILIDADE DE PAGAMENTO ',
@@ -1500,7 +1500,7 @@
                             },
                             {
                                 name: 'San Francisco Centre',
-                                addr: '845 Market Street  San Francisco, CA  +1 (415) 856-5402',
+                                addr: '845 Market Street  San Francisco, CA<br/>+1 415-856-5402',
                                 hours: 'Segunda-feira - Sábado: 10:00h-21:00h <span>|</span> Domingo: 11:00h-20:00h',                                   
                                 descr: 'Descubra o melhor das compras em São Francisco. Primeira parada, Bloomingdale\'s. Dirija-se ao Centro do Visitante para um catálogo multilíngue ou fale com nossos atendentes multilíngues para personalizar a sua experiência de acordo com suas necessidades. Saiba mais sobre nossos serviços e comodidades internos da loja abaixo.',
                                 dTile: 'VISITANDO SÃO FRANCISCO?',
@@ -1538,11 +1538,11 @@
                                 services: [
                                     {
                                         title: 'NÓS FAZEMOS SUA LISTA DE PRESENTES',
-                                        description: 'Comprar presentes é muito fácil na Bloomingdale\'s. Basta enviar sua lista a nossos especialistas multilíngues antes de sua visita, e você já vai encontrar seus itens esperando por você quando chegar.<br/> Ligue +1 (415) 856-5477 ou envie e-mail para <a class="fucsia" href="mailto:international_visitors@bloomingdales.com">international_visitors@bloomingdales.com</a>'
+                                        description: 'Comprar presentes é muito fácil na Bloomingdale\'s. Basta enviar sua lista a nossos especialistas multilíngues antes de sua visita, e você já vai encontrar seus itens esperando por você quando chegar.<br/> Ligue +1 415-856-5477 ou envie e-mail para <a class="fucsia" href="mailto:international_visitors@bloomingdales.com">international_visitors@bloomingdales.com</a>'
                                     },
                                     {
                                         title: 'PERSONAL STYLISTS E CONSULTORES DE BELEZA DE PLANTÃO',
-                                        description: 'Nossos personal stylists estão disponíveis para acompanhá-lo em suas compras na loja, ou selecionar opções para seu guarda-roupa e de decoração de acordo com seu gosto - tudo gratuito.<br/> À sua disposição no +1 (415) 856-5538 '
+                                        description: 'Nossos personal stylists estão disponíveis para acompanhá-lo em suas compras na loja, ou selecionar opções para seu guarda-roupa e de decoração de acordo com seu gosto - tudo gratuito.<br/> À sua disposição no +1 415-856-5538 '
                                     },
                                     {
                                         title: 'FACILIDADE DE PAGAMENTO ',
@@ -1564,7 +1564,7 @@
                             },
                             {
                                 name: 'South Coast Plaza',
-                                addr: '3333 Bristol St  Costa Mesa, CA 92626  +1 (714) 824-4600',
+                                addr: '3333 Bristol St  Costa Mesa, CA 92626<br/>+1 714-824-4600',
                                 hours: 'Segunda-feira - Sábado: 10:00h-21:00h <span>|</span> Domingo: 11:00h-19:00h',                                   
                                 descr: 'Com a melhor seleção de estilistas, feita especialmente para a Califórnia do Sul, o South Coast Plaza é ponto de parada obrigatório quando o assunto é compras. Novo no "Estado Dourado"? Os atendentes multilíngues vão tornar sua estadia muito melhor. Comece com um catálogo da loja em seu idioma ou torne sua viagem de compras especial com os serviços internos de nossa loja.',
                                 dTile: 'VISITANDO COSTA MESA?',
@@ -1609,7 +1609,7 @@
                                 ],
                                 restaurants: [
                                     {
-                                        name: '<b>AnQi by Crustacean - Gourmet Bistro & Noodle Bar</b> <br/>  Piso Térreo <span>|</span> +1 (714) 557-5679',
+                                        name: '<b>AnQi by Crustacean Gourmet Bistro & Noodle Bar</b> <br/>  Piso Térreo <span>|</span> +1 714-557-5679',
                                         sched: 'Piso Térreo Almoço: Aberto todos os dias 11:30h – 14:30h <br/>Noodle Bar: Aberto todos os dias 11:30h – 17:30h <br/>Jantar:   Domingo – Quinta-feira 17:30h – 20:30h <br/>Sexta-feira – Sábado 17:30h – 23:00h <br/>Red Happy Hour: Segunda-feira – Sexta-feira 16:00h – 19:00h',
                                         description: '',
                                         imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_08.jpg'
@@ -1640,7 +1640,7 @@
                                 name: 'Lojas da Califórnia do Sul',
                                 addr: '',
                                 hours: '',
-                                descr: 'Com filias por toda Los Angeles, Orange County e San Diego, a Bloomingdale\'s deixou sua marca registrada na Califórnia do Sul. Compre as marcas de roupas, acessórios, sapatos e beleza que você ama em qualquer uma de nossas lojas. </p><p style="margin-top: 20px;padding-bottom: 50px;"><i>Saiba mais sobre nossos serviços e comodidades internos da loja abaixo.</i>',
+                                descr: 'Com filias por toda Los Angeles, Orange County e San Diego, a Bloomingdale\'s deixou sua marca registrada na Califórnia do Sul. Compre as marcas de roupas, acessórios, sapatos e beleza que você ama em qualquer uma de nossas lojas. Saiba mais sobre nossos serviços e comodidades internos da loja abaixo.',
                                 dTile: 'VISITANDO A CALIFÓRNIA DO SUL?',
                                 dInfo: 'Baixe o nosso guia de boas-vindas antes de chegar.',
                                 dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_SouthernCalifornia_EN.pdf',
@@ -1650,12 +1650,12 @@
                                         list: [
                                             {
                                                 name: 'South Coast Plaza',
-                                                addr: '3333 South Bristol Street, Costa Mesa, CA 92626  +1 714-824-4600',
+                                                addr: '3333 South Bristol Street, Costa Mesa, CA 92626<br/>+1 714-824-4600',
                                                 hours: 'Horário:<br/>Segunda-feira-Terça-feira 10:00h-21:00h <br/>Quarta-feira-Sábado 10:00h-22:00h<br/>Domingo 10:00h-20:00h ',
                                             },
                                             {
                                                 name: 'Newport Fashion Island',
-                                                addr: '701 Newport Center Drive, Newport Beach, CA 92660 +1 949-729-6600',
+                                                addr: '701 Newport Center Drive, Newport Beach, CA 92660 <br/>+1 949-729-6600',
                                                 hours: 'Horário: <br/>Segunda-feira-Terça-feira 10:00h-20:00h<br/>Quarta-feira-Sábado 10:00h-22:00h<br/>Domingo 11:00h-20:00h ',
                                             }
                                         ]                                   
@@ -1665,27 +1665,27 @@
                                         list: [
                                             {
                                                 name: 'Century City',
-                                                addr: '10250 Santa Monica Boulevard, Los Angeles, CA 90067 +1 310-772-2100',
+                                                addr: '10250 Santa Monica Boulevard, Los Angeles, CA 90067 <br/>+1 310-772-2100',
                                                 hours: 'Horário: <br/>Segunda-feira-Terça-feira 10:00h-21:00h<br/>Quarta-feira-Sábado 10:00h-22:00h<br/>Domingo 11:00h-20:00h ',
                                             },
                                             {
                                                 name: 'Beverly Center',
-                                                addr: '8500 Beverly Boulevard, Los Angeles, CA 90048 +1 310-360-2700',
+                                                addr: '8500 Beverly Boulevard, Los Angeles, CA 90048 <br/>+1 310-360-2700',
                                                 hours: 'Horário: <br/>Segunda-feira-Terça-feira 10:00h-21:00h<br/>Quarta-feira-Sábado 10:00h-22:00h<br/>Domingo 12:00h-20:00h ',
                                             },
                                             {
                                                 name: 'Santa Monica Place',
-                                                addr: '315 Colorado Avenue, Santa Monica, CA 90401 +1 310-985-6400',
+                                                addr: '315 Colorado Avenue, Santa Monica, CA 90401 <br/>+1 310-985-6400',
                                                 hours: 'Horário: <br/>Segunda-feira-Terça-feira 10:00h-21:00h<br/>Quarta-feira-Sábado 10:00h-22:00h<br/>Domingo 11:00h-20:00h ',
                                             },
                                             {
                                                 name: 'Glendale Galleria',
-                                                addr: '103 South Brand Blvd., Glendale, CA 91210 +1 818-638-4100',
+                                                addr: '103 South Brand Blvd., Glendale, CA 91210 <br/>+1 818-638-4100',
                                                 hours: 'Horário: <br/>Segunda-feira-Terça-feira 10:00h-21:00h<br/>Quarta-feira-Sábado 10:00h-22:00h<br/>Domingo 11AM-9PM ',
                                             },
                                             {
                                                 name: 'Sherman Oaks Fashion Square',
-                                                addr: '14060 Riverside Drive, Sherman Oaks, CA 91423 +1 818-325-2200',
+                                                addr: '14060 Riverside Drive, Sherman Oaks, CA 91423 <br/>+1 818-325-2200',
                                                 hours: 'Horário: <br/>Segunda-feira-Terça-feira 10:00h-21:00h<br/>Quarta-feira-Sábado 10:00h-22:00h<br/>Domingo 11AM-9PM ',
                                             }  
                                         ]                                   
@@ -1695,7 +1695,7 @@
                                         list: [
                                             {
                                                 name: '<b>San Diego</b><br/>Fashion Valley',
-                                                addr: '7057 Friars Road, San Diego, CA 92108 +1 619-610-6400',
+                                                addr: '7057 Friars Road, San Diego, CA 92108 <br/>+1 619-610-6400',
                                                 hours: 'Horário: <br/>Segunda-feira-Terça-feira 10:00h-20:00h<br/>Quarta-feira 10:00h-20:00hbr/>Quinta-feira-Sábado 10:00h-22:00h<br/>Domingo 12:00h-20:00h',
                                             }
                                         ]                                   
@@ -1707,18 +1707,18 @@
                                         description: 'Realizamos personalização profissional e serviços de ajuste no próprio local, conforme for solicitado. Os preços são informados no momento do ajuste das medidas. Disponível em locais selecionados.'
                                     },
                                     {
-                                        title: 'FACILIDADE DE PAGAMENTO ',
-                                        description: 'Nós aceitamos o cartão American Express® Global Travel Card e todas as formas de pagamento da China UnionPay.<div class="unionpay">'
-                                    },
-                                    {
                                         title: 'CARTÕES E EMBALAGENS PARA PRESENTE ',
                                         description: 'Nós podemos embrulhar suas compras, ou você pode pegar cartões, caixas, papel de embrulho e fita para levar para casa. Disponível em locais selecionados.'
+                                    },
+                                    {
+                                        title: 'PERSONAL STYLISTS E CONSULTORES DE BELEZA DE PLANTÃO ',
+                                        description: 'Nossos personal stylists estão disponíveis para acompanhá-lo em suas compras na loja, ou selecionar opções de decoração para casa de acordo com seu gosto - tudo gratuito. Disponível em locais selecionados.'
                                     }
                                 ]  
                             },
                             {
                                 name: 'AVENTURA',
-                                addr: '19555 Biscayne Boulevard  Aventura, FL 33180  +1 (305) 792-1246',
+                                addr: '19555 Biscayne Boulevard  Aventura, FL 33180<br/>+1 305-792-1246',
                                 hours: 'Segunda-feira - Sábado: 10:00h-22:00h <span>|</span> Domingo: 12:00h-21:00h',                                  
                                 descr: 'Planejando o roteiro das suas férias? Comece com uma parada na loja de Aventura, na Flórida. Explore a nossa ampla seleção de estilistas, marcas de beleza, acessórios de luxo e muito mais. Comece a comprar com um catálogo da loja no seu idioma escolhido e não se esqueça de aproveitar ao máximo sua experiência com nossos serviços nas lojas listadas abaixo.',
                                 dTile: 'VISITANDO AVENTURA?',
@@ -1769,7 +1769,7 @@
                                 ],
                                 restaurants: [
                                     {
-                                        name: '<b>59TH & LEX CAFE</b> <span>|</span> 2º. piso <span>|</span>  +1 (305) 792-1180',
+                                        name: '<b>59TH & LEX CAFE</b> <span>|</span> 2º. piso <span>|</span>  +1 305-792-1180',
                                         sched: 'Segunda-feira–Sábado 10:00h–19:30h <span>|</span> Domingo 12:00h–17:00h',
                                         description: '',
                                         imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_06.jpg'
@@ -1778,7 +1778,7 @@
                                 services: [
                                     {
                                         title: 'NÓS FAZEMOS SUA LISTA DE PRESENTES ',
-                                        description: 'Comprar presentes é muito fácil na Bloomingdale\'s. Basta enviar sua lista a nossos especialistas multilíngues antes de sua visita, e você já vai encontrar seus itens esperando por você quando chegar.<br /> Ligue +1 (305) 792-1175 or email <a class="fucsia" href="mailto:international_visitors@bloomingdales.com">international_visitors@bloomingdales.com</a>'
+                                        description: 'Comprar presentes é muito fácil na Bloomingdale\'s. Basta enviar sua lista a nossos especialistas multilíngues antes de sua visita, e você já vai encontrar seus itens esperando por você quando chegar.<br /> Ligue +1 305-792-1175 or email <a class="fucsia" href="mailto:international_visitors@bloomingdales.com">international_visitors@bloomingdales.com</a>'
                                     },
                                     {
                                         title: 'FACILIDADE DE PAGAMENTO ',
@@ -1794,7 +1794,7 @@
                             },
                             {
                                 name: 'ORLANDO',
-                                addr: '4152 Conroy Road  Orlando, FL 32839  +1 (407) 264-2514',
+                                addr: '4152 Conroy Road  Orlando, FL 32839<br/>+1 407-264-2514',
                                 hours: 'Segunda-feira - Sábado: 10:00h-21:00h <span>|</span> Domingo: 11:00h-19:00h',                                
                                 descr: 'Abastecido com os melhores estilistas e marcas de beleza, a Bloomingdale\'s de Orlando é seu passaporte para as compras de nível mundial. Faça uma parada em sua próxima viagem ao "Estado Ensolarado" para uma experiência feita sob medida para você. Pegue um catálogo da loja no seu idioma e então tire o máximo proveito dos serviços e comodidades listados abaixo.',
                                 dTile: 'VISITANDO ORLANDO?',
@@ -1825,16 +1825,16 @@
                                 ],
                                 restaurants: [
                                     {
-                                        name: '<b>FORTY CARROTS</b> <span>|</span> 1º. andar <span>|</span> +1 (407) 264-2683',
+                                        name: '<b>FORTY CARROTS</b> <span>|</span> 1º. andar <span>|</span> +1 407-264-2683',
                                         sched: 'Segunda-feira – Sábado 10:00h – 21:00h <span>|</span> Domingo 11:00h – 19:00h',
-                                        description: 'Sua visita só estará completa após experimentar nosso famoso iogurte frozen. Você também vai se deliciar com saladas feitas na hora, sanduíches, sopas, um bar de sucos de frutas naturais e uma seleção primorosa de chás Tavalon. Atendimento no balcão, na mesa e para viagem.',
+                                        description: 'Sua visita só estará completa após experimentar nosso famoso iogurte frozen.',
                                         imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_01.jpg'
                                     }
                                 ],
                                 services: [
                                     {
                                         title: 'NÓS FAZEMOS SUA LISTA DE PRESENTES ',
-                                        description: 'Comprar presentes é muito fácil na Bloomingdale\'s. Basta enviar sua lista a nossos especialistas multilíngues antes de sua visita, e você já vai encontrar seus itens esperando por você quando chegar.<br /> Ligue +1 (305) 792-1175 ou envie e-mail para <a class="fucsia" href="mailto:international_visitors@bloomingdales.com">international_visitors@bloomingdales.com</a>'
+                                        description: 'Comprar presentes é muito fácil na Bloomingdale\'s. Basta enviar sua lista a nossos especialistas multilíngues antes de sua visita, e você já vai encontrar seus itens esperando por você quando chegar.<br /> Ligue +1 305-792-1175 ou envie e-mail para <a class="fucsia" href="mailto:international_visitors@bloomingdales.com">international_visitors@bloomingdales.com</a>'
                                     },
                                     {
                                         title: 'FACILIDADE DE PAGAMENTO ',
@@ -1853,8 +1853,8 @@
                 },                                 
                 designer: {
                     header: {
-                        h1: 'São muitos nomes em apenas uma loja',
-                        h2: 'Escolhemos a dedo os melhores designers de moda, beleza e cia.'
+                        h1: 'São Muitos Nomes Em Apenas Uma Loja',
+                        h2: 'Escolhemos A Dedo Os Melhores Designers De Moda, Beleza E Cia.'
                     },
                     article: [
                         'A Bloomingdale\'s traz uma seleção incomparável de marcas de grife incluindo CHANEL, Dior, Michael Kors, MCM, Tory Burch, Marc Jacobs, Armani e Ralph Lauren.',
@@ -2114,7 +2114,7 @@
                         id: [
                             {
                                 name: '第 59 街旗舰店',
-                                addr: '1000 Third Avenue  New York, NY 10022  +1 212-705-2000',
+                                addr: '1000 Third Avenue  New York, NY 10022 <br/>+1 212-705-2000',
                                 hours: '周一 – 周六： 上午 10:00 开始营业 <span>|</span> 周日： 上午 11:00 开始营业',
                                 descr: '感受 Bloomingdale\'s 的悠久历史和备受赞誉的热情服务。在我们旗舰店开始您的一天，首先前往一楼楼厅处的顾客服务中心。我们的多语种指南将为您的购物之旅提供路线图。需要更加个性化的体验？了解我们的店内服务，包括预约形象设计师、改衣和预订餐厅等。我们会帮您安排一切。',
                                 dTile: '来纽约观光？',
@@ -2216,7 +2216,7 @@
                             },
                             {
                                 name: 'SoHo 店',
-                                addr: '504 Broadway  New York, NY 10012  +1 212-729-5900',
+                                addr: '504 Broadway  New York, NY 10012<br/>+1 212-729-5900',
                                 hours: '周一 – 周六： 上午 10:00 开始营业 <span>|</span> 周日： 上午 12:00 开始营业',
                                 descr: '参观我们位于 SoHo 的市中心门店，这里也是本市的时尚社区。在这里您不仅感受到我们上城区旗舰店的时尚活力，同时又具備了时尚精品店的氛围。到访我们热闹繁忙的美容商品楼层，然后细细品味我们的名牌新品。我们的多语种工作人员将一如既往地帮助您体验一次难忘的购物消闲之旅。',
                                 dTile: '来纽约观光？',
@@ -2280,7 +2280,7 @@
                             },
                             {
                                 name: '阿拉莫阿那购物中心店',
-                                addr: '1450 Ala Moana Blvd  Honolulu, HI 96814  +1 808-644-7511',
+                                addr: '1450 Ala Moana Blvd  Honolulu, HI 96814<br/>+1 808-644-7511',
                                 hours: '周一 – 周六： 上午 10:00－晚上 8:00 <span>|</span> 周日： 上午 11:00－晚上 7:00',                                
                                 descr: '跟我们在热带檀香山设立的最新商店打个招呼。这座三层楼高的商店位于夏威夷黄金购物地带阿拉莫阿那购物中心店，内部配备有各种便利设施，专为海外购物者量身打造。我们提供个人形象设计师会面、现场改衣、餐厅订位等等。',
                                 dTile: '正在前往夏威夷的途中？',
@@ -2356,7 +2356,7 @@
                             },
                             {
                                 name: '北密歇根大道店',
-                                addr: '900 North Michigan Avenue  Chicago, IL 60611  +1 312-440-4460 ',
+                                addr: '900 North Michigan Avenue  Chicago, IL 60611<br/>+1 312-440-4460 ',
                                 hours: '周一 － 周六： 上午 10:00 － 晚上 8:00 <span>|</span> 周日： 上午 11:00 － 晚上 7:00',
                                 descr: '计划游览风之城？让 Bloomingdale\'s 做您的时尚导游。选购我们的各种名牌商品来填满您的衣柜，或是囤积您最喜欢的美容产品。我们的多语种工作人员可以帮您专门策划安排购物之旅，以满足您的各种需求。来密歇根观光？在到达之前下载我们的欢迎手册。',
                                 dTile: '来密歇根观光？',
@@ -2386,7 +2386,7 @@
                                 ],
                                 restaurants: [
                                     {
-                                        name: '<b>FORTY CARROTS</b> <span>|</span> 6 层 <span>|</span>  (312) 440-4861',
+                                        name: '<b>FORTY CARROTS</b> <span>|</span> 6 层 <span>|</span>  312-440-4861',
                                         sched: '周一 – 周六 上午 11:00 – 晚上 6:00',
                                         description: '只有品尝了我们著名的冷冻酸奶，才算不虚此行。',
                                         imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_01.jpg'
@@ -2426,7 +2426,7 @@
                             },
                             {
                                 name: '麦地那之家',
-                                addr: '600 North Wabash Avenue  Chicago, IL 60611  +1 312-324-7500',
+                                addr: '600 North Wabash Avenue  Chicago, IL 60611<br/>+1 312-324-7500',
                                 hours: '周一–周六：上午 10:00 开始营业 <span>|</span> 周日：中午 12:00 开始营业',
                                 descr: '前往芝加哥的麦地那之家，将您的房子装饰一新。在这里，您可以选购高档床上用品、名牌厨具、豪华浴室配件等。亲自体验我们备受赞誉的热情服务和全方位的店内服务。',
                                 dTile: '来密歇根观光？',
@@ -2462,7 +2462,7 @@
                             },
                             {
                                 name: '旧金山中心店',
-                                addr: '845 Market Street  San Francisco, CA  +1 (415) 856-5402',
+                                addr: '845 Market Street  San Francisco, CA<br/>+1 415-856-5402',
                                 hours: '周一 － 周六： 上午 10:00 － 晚上 9:00 <span>|</span> 周日： 上午 11:00 － 晚上 8:00',                                
                                 descr: '享受旧金山最佳的购物体验。第一站，Bloomingdale\'s。前往我们的顾客服务中心获取多语种指南，或咨询我们的多语种工作人员，他们将为您量身定制满足您需求的体验。在下方了解更多关于我们店内设施的信息。',
                                 dTile: '来旧金山观光？',
@@ -2531,7 +2531,7 @@
                             },
                             {
                                 name: '南海岸广场店',
-                                addr: '3333 Bristol St  Costa Mesa, CA 92626  +1 (714) 824-4600',
+                                addr: '3333 Bristol St  Costa Mesa, CA 92626<br/>+1 714-824-4600',
                                 hours: '周一 － 周六： 上午 10:00 － 晚上 9:00 <span>|</span> 周日： 上午 11:00 － 晚上 7:00',                                
                                 descr: '南海岸广场店拥有顶尖设计师品牌，特为南加利福尼亚州量身打造，是不可错过的购物天堂。第一次来金州？多语种工作人员将帮助您解决诸多难题。您可依据中文门店指南或在您购物时到下方的店内设施处寻求帮助。',
                                 dTile: 'VISITING COSTA MESA?',
@@ -2576,7 +2576,7 @@
                                 ],
                                 restaurants: [
                                     {
-                                        name: '<b>AnQi by Crustacean - Gourmet Bistro & Noodle Bar</b> <br/>  1 层 <span>|</span> 714-557-5679',
+                                        name: '<b>AnQi by Crustacean Gourmet Bistro & Noodle Bar</b> <br/>  1 层 <span>|</span> 714-557-5679',
                                         sched: '午餐： 营业时间 上午 11:30 － 下午 2:30  Noodle Bar： 营业时间 上午 11:30 － 下午 5:30  晚餐： 周日 － 周四 下午 5:30 － 晚上 10:30  周五 － 周六下午5:30 － 晚上 11:00  红酒优惠时间： 周一 － 周五下午 4:00 － 晚上 7:00',
                                         description: '',
                                         imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_08.jpg'
@@ -2617,12 +2617,12 @@
                                         list: [
                                             {
                                                 name: '南海岸广场店',
-                                                addr: '3333 South Bristol Street, Costa Mesa, CA 92626  +1 714-824-4600',
+                                                addr: '3333 South Bristol Street, Costa Mesa, CA 92626 <br/> +1 714-824-4600',
                                                 hours: '营业时间：<br/>周一－周二上午 10:00－晚上 9:00 <br/>周三－周六上午 10:00－晚上 10:00<br/>周日上午 10:00－晚上 8:00'
                                             },
                                             {
                                                 name: '纽波特时尚岛店',
-                                                addr: '701 Newport Center Drive, Newport Beach, CA 92660 +1 949-729-6600',
+                                                addr: '701 Newport Center Drive, Newport Beach, CA 92660<br/> +1 949-729-6600',
                                                 hours: '营业时间： <br/>周一－周二上午 10:00－晚上 8:00<br/>周三－周六上午 10:00－晚上 10:00<br/>周日上午 11:00－晚上 8:00'
                                             }     
                                         ]                                   
@@ -2632,27 +2632,27 @@
                                         list: [
                                             {
                                                 name: '世纪城店',
-                                                addr: '10250 Santa Monica Boulevard, Los Angeles, CA 90067 +1 310-772-2100',
+                                                addr: '10250 Santa Monica Boulevard, Los Angeles, CA 90067 <br/>+1 310-772-2100',
                                                 hours: '营业时间：<br/>周一－周二上午 10:00－晚上 9:00 <br/>周三－周六上午 10:00－晚上 10:00 <br/>周日上午 11:00－晚上 8:00 <br/>'
                                             },
                                             {
                                                 name: '比佛利中心店',
-                                                addr: '8500 Beverly Boulevard, Los Angeles, CA 90048 +1 310-360-2700',
+                                                addr: '8500 Beverly Boulevard, Los Angeles, CA 90048 <br/>+1 310-360-2700',
                                                 hours: '营业时间：<br/>周一－周二上午 10:00－晚上 9:00 <br/>周三－周六上午 10:00－晚上 10:00 <br/>周日中午 12:00－晚上 8:00'
                                             },
                                             {
                                                 name: '圣莫尼卡广场店',
-                                                addr: '315 Colorado Avenue, Santa Monica, CA 90401 +1 310-985-6400',
+                                                addr: '315 Colorado Avenue, Santa Monica, CA 90401 <br/>+1 310-985-6400',
                                                 hours: '营业时间：<br/>周一－周二上午 10:00－晚上 9:00 <br/>周三－周六上午 10:00－晚上 10:00 <br/>周日上午 11:00－晚上 8:00'
                                             },
                                             {
                                                 name: '格伦代尔广场店',
-                                                addr: '103 South Brand Blvd., Glendale, CA 91210 +1 818-638-4100',
+                                                addr: '103 South Brand Blvd., Glendale, CA 91210 <br/>+1 818-638-4100',
                                                 hours: '营业时间：<br/>周一－周二上午 10:00－晚上 9:00<br/>周三－周六上午 10:00－晚上 10:00<br/>周日上午 11:00－晚上 9:00'
                                             },
                                             {
                                                 name: '谢尔曼奥克斯时尚广场店',
-                                                addr: '14060 Riverside Drive, Sherman Oaks, CA 91423 +1 818-325-2200',
+                                                addr: '14060 Riverside Drive, Sherman Oaks, CA 91423 <br/>+1 818-325-2200',
                                                 hours: '营业时间：<br/>周一－周二上午 10:00－晚上 9:00<br/>周三－周六上午 10:00－晚上 10:00<br/>周日上午 11:00－晚上 9:00'
                                             }     
                                         ]                                   
@@ -2662,7 +2662,7 @@
                                         list: [
                                             {
                                                 name: '时尚谷店',
-                                                addr: '7057 Friars Road, San Diego, CA 92108 +1 619-610-6400',
+                                                addr: '7057 Friars Road, San Diego, CA 92108<br/> +1 619-610-6400',
                                                 hours: '营业时间：<br/>周一－周二上午 10:00－晚上 8:00<br/>周三上午 10:00－晚上 8:00<br/>周四－周六上午 10:00－晚上 10:00<br/>周日中午 12:00－晚上 8:00'
                                             }   
                                         ]                                   
@@ -2674,18 +2674,18 @@
                                         description: '我们可根据您的要求当场提供专业的剪裁和改衣服务。您可在试穿衣服时再付费。本服务仅在指定店铺提供。'
                                     },
                                     {
-                                        title: '精美礼品包装服务 ',
+                                        title: '精美礼品包装服务',
                                         description: '我们将为您精心包装所购商品，您也可以挑选礼品卡、包装盒、包装纸和丝带，将它们带回家自行包装。本服务仅在指定店铺提供。'
                                     },
                                     {
-                                        title: '便捷的付款方式',
-                                        description: '我们接受美国运通®环球旅行卡和各种中国银联卡。<div class="unionpay">'
+                                        title: '个人形象设计师随传随到',
+                                        description: '我们的个人形象设计师可免费伴您选购商品，或根据您的品味为您的家居饰品提供选购建议。本服务仅在指定店铺提供。'
                                     }                                    
                                 ]  
                             },
                             {
                                 name: '阿文图拉购物中心店',
-                                addr: '19555 Biscayne Boulevard  Aventura, FL 33180  +1 (305) 792-1246',
+                                addr: '19555 Biscayne Boulevard  Aventura, FL 33180 <br/>+1 305-792-1246',
                                 hours: '营业时间 周一 － 周六： 上午 10:00 － 晚上 10:00  <span>|</span>  周日： 中午 12:00 － 晚上 9:00  正',
                                 descr: '正在规划您的假日旅程？从佛罗里达州阿文图拉购物中心店启程吧。在此我们提供种类繁多的设计时尚、美容品牌、奢侈饰品及其他商品供您选择。根据中文门店指南进行购物，同时我们邀您尽可能多地进入下方列示的店内设施进行体验。',
                                 dTile: '来阿文图拉购物中心店观光？',
@@ -2736,7 +2736,7 @@
                                 ],
                                 restaurants: [
                                     {
-                                        name: '<b>59TH & LEX CAFE</b> <span>|</span>  二楼 <span>|</span> (305) 792-1180',
+                                        name: '<b>59TH & LEX CAFE</b> <span>|</span>  二楼 <span>|</span> 305-792-1180',
                                         sched: '周一 － 周六 上午  10:00 － 晚上  7:30 <span>|</span> 周日中午 12:00－下午  5:00',
                                         description: '',
                                         imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_06.jpg'
@@ -2761,7 +2761,7 @@
                             },
                             {
                                 name: '奥兰多店',
-                                addr: '4152 Conroy Road  Orlando, FL 32839  +1 (407) 264-2514',
+                                addr: '4152 Conroy Road  Orlando, FL 32839<br/>+1 407-264-2514',
                                 hours: '营业时间 周一 － 周六： 上午 10:00 － 晚上 9:00  <span>|</span>  周日： 中午 11:00 － 晚上 7:00  正',                                
                                 descr: 'Bloomingdale\'s 奥兰多店有着最棒的设计师和美容品牌，您可在此享受世界级的购物体验。在您下一站前往佛罗里达州的旅途中顺道进来商店看看，我们为您量身打造了尊享购物体验。根据您的语言选择一份门店指南，并享受下方列示的诸多店内设施为您带来的便利。',
                                 dTile: 'V来奥兰多观光？',
@@ -2792,7 +2792,7 @@
                                 ],
                                 restaurants: [
                                     {
-                                        name: '<b>FORTY CARROTS</b> <span>|</span> 一楼 <span>|</span> +1 (407) 264-2683',
+                                        name: '<b>FORTY CARROTS</b> <span>|</span> 一楼 <span>|</span> +1 407-264-2683',
                                         sched: '周一 － 周六 上午 10:00 － 晚上 9:00 <span>|</span> 周日上午 11:00 － 晚上 7:00',
                                         description: '只有品尝了我们著名的冷冻酸奶，才算不虚此行。在这里，您还能找到各式新鲜制作的沙拉、三明治、汤类、鲜榨果汁吧，以及精选上等 Tavalon 茶。提供柜台服务、餐桌服务和外卖服务。',
                                         imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_01.jpg'

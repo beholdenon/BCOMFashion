@@ -38,7 +38,7 @@
     <article class="store-data width-962 row" ng-show="storeSelection !== null">
         <div class="left small-cnbr-24 small-cnbr-centered medium-cnbr-6 medium-cnbr-centered large-cnbr-12 large-cnbr-centered columns">
         	<h3 ng-cloak>//copy[lang].stores.storeData.id[storeSelection].name//</h3>
-        	<h4 ng-cloak>//copy[lang].stores.storeData.id[storeSelection].addr//</h4>
+        	<h4 ng-bind="copy[lang].stores.storeData.id[storeSelection].addr" text-to-html="copy[lang].stores.storeData.id[storeSelection].addr" ng-cloak></h4>
         	<h4 class="hrs" ng:class="{true:'soca', false:''}[storeSelection === '7']" ng-cloak>//(storeSelection !== '7') ? copy[lang].stores.storeData.storeHours : ''//</h4>
         	<p class="hrs" ng-bind="copy[lang].stores.storeData.id[storeSelection].hours" text-to-html="copy[lang].stores.storeData.id[storeSelection].hours" ng-cloak>/p>
         	<p ng-bind="copy[lang].stores.storeData.id[storeSelection].descr" text-to-html="copy[lang].stores.storeData.id[storeSelection].descr" ng-cloak></p>
