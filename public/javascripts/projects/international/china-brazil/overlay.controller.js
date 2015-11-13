@@ -5,7 +5,7 @@
         .module('controllers')
         .controller('OverlayCtrl', OverlayCtrl);
 
-    function OverlayCtrl($rootScope, $scope, $window, $timeout, appGlobals, localStorageService, socialshare) {
+    function OverlayCtrl($rootScope, $scope, $window, $timeout, appGlobals, localStorageService, socialshare, Coremetrics) {
         $scope.overlay = {};
         $scope.overlay.weixinOn = false;
         $scope.QRcopy = socialshare.weixin;
@@ -24,6 +24,13 @@
             } else {
                 $scope.overlay.weixinOn = false;
             }
+
+            //Coremetrics tag
+            var pageID = appGlobals.getAttr('cm_pageID'),
+                windowWidth = $window.innerWidth,
+                prefix = (windowWidth < 641) ? 'MBL:' : '',             
+                tag = prefix + 'overlay_close';                   
+            Coremetrics.tag('Element', pageID, tag);                
         };
 
         $scope.selLang = function($event) {
@@ -36,6 +43,20 @@
             appGlobals.setAttr('lang', globalLang);
             localStorageService.set('lang', globalLang);
 
+            //set CM pageID global attr
+            var pageID = null;
+            switch(globalLang) {
+                case 'POR':
+                    pageID = 'fall15_brazilmicrosite';
+                    break;
+                case 'CN':
+                    pageID = 'fall15_chinamicrosite';
+                    break;
+                default:
+                    pageID = 'fall15_englishmicrosite';
+            }
+            appGlobals.setAttr('cm_pageID', pageID);   
+
             $scope.overlay.isShowed = false;
             $rootScope.$emit('lang:change', {
                 lang: globalLang
@@ -45,16 +66,27 @@
             $window.noBounce.remove({
                 animate: true
             });
+
+            //Coremetrics tag          
+            var windowWidth = $window.innerWidth,
+                prefix = (windowWidth < 641) ? 'MBL:' : '',
+                tag = prefix + 'select-language-overlay';                              
+            Coremetrics.tag('Element', pageID, tag);              
         };
 
         $scope.share = function(service, lang) {
             if (service !== 'weixin'){
-                console.log(service);
-                console.log(lang);
                 $window.open(socialshare[service](lang), '_blank', 'width=608,height=342');
             } else {
                 $scope.overlay.weixinOn = true;
             }
+
+            //Coremetrics tag          
+            var pageID = appGlobals.getAttr('cm_pageID'),
+                windowWidth = $window.innerWidth,
+                prefix = (windowWidth < 641) ? 'MBL:' : '',            
+                tag = prefix + 'socialshare-';                   
+            Coremetrics.tag('Element', pageID, tag + service);               
         };
 
         $rootScope.$on('overlay:show', function(ev, args) {

@@ -11,7 +11,7 @@
     </div>
     <article class="dropdown-cnbr width-962 row" ng-hide="storeSelection !== null">
         <div class="small-cnbr-20 small-cnbr-centered medium-cnbr-6 medium-cnbr-centered large-cnbr-12 large-cnbr-centered columns">
-            <select name="store" ng-model="storeSelection" ng-model-options="{ debounce: 250 }">
+            <select name="store" ng-model="storeSelection" ng-model-options="{ debounce: 250 }" ng-change="onChange()">
             	<option value="" ng-disabled="true" disabled="disabled">//copy[lang].stores.dropdown.default//</option>
                 <option ng-repeat="option in storeList" value="//option.id//" ng-disabled="//option.disabled//">//option.name//</option>
             </select>
@@ -27,7 +27,7 @@
     </div>    
     <article class="dropdown-cnbr width-962 row" ng-show="storeSelection !== null" sticky offset="84" use-placeholder="false">
         <div class="small-cnbr-20 small-cnbr-centered medium-cnbr-6 medium-cnbr-centered large-cnbr-12 large-cnbr-centered columns">
-            <select name="store" ng-model="storeSelection" ng-model-options="{ debounce: 250 }" ng-change="scrollToTop()">
+            <select name="store" ng-model="storeSelection" ng-model-options="{ debounce: 250 }" ng-change="onChange()">
                 <option ng-repeat="option in storeList" value="//option.id//" ng-disabled="//option.disabled//">//option.name//</option>
             </select>
         </div>

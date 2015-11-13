@@ -5,7 +5,7 @@
         .module('services')
         .factory('socialshare', socialshare);
 
-    function socialshare($rootScope, $window, $location, $log, appGlobals) {
+    function socialshare($rootScope, $window, $location, appGlobals) {
         var hostURL = 'http://' + $location.host() + ':' + $location.port(),
             pageUrl = hostURL + '/international/china-brazil/',
             mediaUrl = hostURL + '/fashion/images/projects/international/china-brazil',
@@ -20,7 +20,7 @@
 
         return service;
 
-        //////////////////////////////////////////////////////////////////////////////
+        ////////////////////////////////
 
         function fb(lang) {
             var mediaURL = '';
@@ -32,7 +32,7 @@
             mediaURL += '&description=' + $window.encodeURIComponent(copy[lang].socialshare.fb.description);
             mediaURL += '&link=' + $window.encodeURIComponent(pageUrl);
             mediaURL += '&picture=' + $window.encodeURIComponent(mediaUrl + '/International_FB02.jpg');
-            mediaURL += '&redirect_uri=' + $window.encodeURIComponent('https://www.facebook.com/');
+            mediaURL += '&redirect_uri=' + $window.encodeURIComponent('https://www.facebook.com/'); 
 
             return mediaURL;
         }
@@ -74,7 +74,7 @@
 
         function weixin(lang) {  
             lang = lang || 'ENG';
-                      
+
             return copy[lang].socialshare.weixin.text;
         }           
     }

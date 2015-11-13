@@ -2895,6 +2895,7 @@
                 ]                                                             
             }
         };
+
         // $http.get('/fashion/javascripts/projects/international/china-brazil/data.json')
         //      .success(function(data) {
         //         console.log($.parseJSON(data));
@@ -2903,25 +2904,38 @@
         //         // called asynchronously if an error occurs
         //         // or server returns response with an error status.
         //      });
-        return {
-            init: function() {
-                CacheService.put('copy', copyObject);
-            },
-            getAttr: function(key) {
-                var attr = CacheService.get(key);
 
-                if (attr) {
-                    return attr;
-                }
+        var services = {
+                init: init,
+                getAttr: getAttr,
+                setAttr: setAttr,
+                clearAttr: clearAttr
+            };
 
-                return null;
-            },
-            setAttr: function(key, value) {
-                CacheService.put(key, value);
-            },
-            clearAttr: function(key) {
-                CacheService.put(key, '');
+        return services;
+
+        ////////////////////////////////
+        
+        function init() {
+            CacheService.put('copy', copyObject);
+        }
+
+        function getAttr(key) {
+            var attr = CacheService.get(key);
+
+            if (attr) {
+                return attr;
             }
-        };
+
+            return null;
+        }
+        
+        function setAttr(key, value) {
+            CacheService.put(key, value);
+        }
+
+        function clearAttr(key) {
+            CacheService.put(key, '');
+        }
     }
 })();

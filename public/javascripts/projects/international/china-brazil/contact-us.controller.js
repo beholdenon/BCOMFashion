@@ -5,7 +5,7 @@
 		.module('controllers')
 		.controller('ContactUsCtrl', ContactUsCtrl);
 
-	function ContactUsCtrl($rootScope, $scope, $window, $timeout, appGlobals){
+	function ContactUsCtrl($rootScope, $scope, $window, $timeout, appGlobals, Coremetrics){
 		$scope.cu = {
 			arrivingDate: null,
 			departingdate: null
@@ -67,6 +67,13 @@
 					$scope.emailForm.$setUntouched();
 					jQuery('.form-sent-successfully').fadeOut();
 				}, 3500);
+
+                //Coremetrics tag
+                var windowWidth = $window.innerWidth,
+                	prefix = (windowWidth < 641) ? 'MBL:' : '',
+                	pageID = appGlobals.getAttr('cm_pageID'),
+                	tag = prefix + 'contactUs_submit';                   
+                Coremetrics.tag('Element', pageID, tag);  				
 				
 				return true;
 	        }

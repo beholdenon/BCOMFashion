@@ -15,14 +15,12 @@
             'ngAnimate',
             'CacheService',
             'LocalStorageModule', //ref: https://github.com/grevory/angular-local-storage
-            'uiGmapgoogle-maps', //ref: http://angular-ui.github.io/angular-google-maps/#!/api/
-            'angulartics', //ref: https://github.com/angulartics/angulartics
-            'angulartics.coremetrics.analytics' //ref: https://github.com/cwill747/angulartics-coremetrics
+            'uiGmapgoogle-maps' //ref: http://angular-ui.github.io/angular-google-maps/#!/api/
         ])
         .config(config)
         .run(run);
 
-    function config($interpolateProvider, $routeProvider, localStorageServiceProvider, uiGmapGoogleMapApiProvider, $analyticsProvider) {
+    function config($interpolateProvider, $routeProvider, localStorageServiceProvider, uiGmapGoogleMapApiProvider) {
         //configuring the default Angular interpolation markup to solve conflict with Handlebars {{}}
         $interpolateProvider.startSymbol('//');
         $interpolateProvider.endSymbol('//');
@@ -57,21 +55,17 @@
             sensor: 'false',
             libraries: 'places,geometry,visualization'
         });
-
-        //Coremetrics 
-        $analyticsProvider.settings.coremetrics.userId = 'test1';
-        $analyticsProvider.settings.coremetrics.additionalAccountIDs = 'test2';
     }
 
-    function run($window, $rootScope, $document, $location, $timeout, localStorageService, appGlobals) {
+    function run($window, $rootScope, $document, $location, $timeout, localStorageService, appGlobals, Coremetrics) {
         appGlobals.init();
-        var copy;
-        copy = appGlobals.getAttr('copy');
+
+        Coremetrics.init();
 
         //attach fastclick to solve the 300ms touch delay 
         FastClick.attach(document.body); // jshint ignore:line
 
-        var globalLang;
+        var globalLang = null;
         try {
             globalLang = localStorageService.get('lang');
             appGlobals.setAttr('lang', globalLang);
@@ -86,6 +80,21 @@
                     template: 'select-lang'
                 });
             }, 400);
+        } else {
+            var pageID = null;
+
+            switch(globalLang) {
+                case 'POR':
+                    pageID = 'fall15_brazilmicrosite';
+                    break;
+                case 'CN':
+                    pageID = 'fall15_chinamicrosite';
+                    break;
+                default:
+                    pageID = 'fall15_englishmicrosite';
+            }
+
+            appGlobals.setAttr('cm_pageID', pageID);              
         }
 
         //mark active section in the nav menu when app loads
@@ -100,6 +109,7 @@
         $rootScope.$on('$routeChangeStart', function() {
             path = $location.path();
             activateNavSelection(path);
+            coremetricsPageViewTag(path);
         });
 
         function activateNavSelection(path) {
@@ -107,32 +117,70 @@
             jQuery('.nav-section a[href="' + path + '"]').addClass('active');
         }
 
+        function coremetricsPageViewTag(path) {
+            var windowWidth = $window.innerWidth,
+                pageID = appGlobals.getAttr('cm_pageID'),
+                catID = null,
+                prefix = (windowWidth < 641) ? 'MBL:' : ''; 
+            switch(path) {
+                case '/':
+                    catID = pageID + '--hp';
+                    break;
+                case '/our-heritage':
+                    catID = pageID + '--heritage';
+                    break;
+                case '/designer-destination':
+                    catID = pageID + '--designer_destination';
+                    break;
+                case '/visit-our-stores':
+                    catID = pageID + '--visit';
+                    break;
+            }                      
+            pageID = prefix + pageID;
+            Coremetrics.tag('Pageview', pageID, catID);
+        }
+
         // -------------------------------------------------------------------------------------- //
         // ----------------------------          jQuery       ----------------------------------- //
         // -------------------------------------------------------------------------------------- //
-        jQuery(document).foundation();
+        jQuery($document).foundation();
 
-        jQuery('.left-off-canvas-toggle, .exit-off-canvas').on('click', function() {
-            if (jQuery('.off-canvas-wrap').hasClass('move-right')) {
-                jQuery('.off-canvas-wrap').css('height', '100%');
-                jQuery('body').css({
-                    'height': '100%',
-                    'overflow': 'initial'
-                });
-                jQuery('.left-off-canvas-toggle').removeClass('open');
-            } else {
-                jQuery('.left-off-canvas-toggle').addClass('open');
-                var height = document.body.clientHeight;
-                jQuery('.off-canvas-wrap').css('height', height);
-                jQuery('body').css({
-                    'height': height,
-                    'overflow': 'hidden'
-                });
-                jQuery('.arriving-input, .departing-input').hide();
-            }
+        jQuery($window).load(function() {  
+            jQuery('.left-off-canvas-toggle, .exit-off-canvas').on('click', function() {
+                var pageID = appGlobals.getAttr('cm_pageID'),
+                    windowWidth = $window.innerWidth,
+                    prefix = (windowWidth < 641) ? 'MBL:' : '',
+                    tag = null;            
+
+                if (jQuery('.off-canvas-wrap').hasClass('move-right')) {
+                    jQuery('.off-canvas-wrap').css('height', '100%');
+                    jQuery('body').css({
+                        'height': '100%',
+                        'overflow': 'initial'
+                    });
+                    jQuery('.left-off-canvas-toggle').removeClass('open');
+    
+                    //Coremetrics tag          
+                    tag = prefix + 'settings-menu_close';
+                    Coremetrics.tag('Element', pageID, tag);                
+                } else {
+                    jQuery('.left-off-canvas-toggle').addClass('open');
+                    var height = document.body.clientHeight;
+                    jQuery('.off-canvas-wrap').css('height', height);
+                    jQuery('body').css({
+                        'height': height,
+                        'overflow': 'hidden'
+                    });
+                    jQuery('.arriving-input, .departing-input').hide();
+
+                    //Coremetrics tag          
+                    tag = prefix + 'settings-menu_open';
+                    Coremetrics.tag('Element', pageID, tag);                
+                }
+            });
         });
 
-        jQuery(window).on('orientationchange resize', function() {
+        jQuery($window).on('orientationchange resize', function() {
             if (jQuery('.off-canvas-wrap').hasClass('move-right')) {
                 jQuery('.left-off-canvas-toggle').click();
                 jQuery('.off-canvas-wrap').removeClass('touch');

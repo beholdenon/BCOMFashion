@@ -7,9 +7,9 @@
                 <li class="lang-opt" ng:class="{true:'active', false:''}[lang === 'CN']"><a href="#" data-lang="CN" ng-click="langOnClick($event)">中文</a></li>
             </ul>
         </li>
-        <li class="nav-section"><a ng-click="goto('/our-heritage')" href="/our-heritage" ng-cloak>//copy[lang].nav[0]//</a></li>
-        <li class="nav-section"><a ng-click="goto('/designer-destination')" href="/designer-destination" ng-cloak>//copy[lang].nav[1]//</a></li>
-        <li class="nav-section"><a ng-click="goto('/visit-our-stores')" href="/visit-our-stores" ng-cloak>//copy[lang].nav[2]//</a></li>
+        <li class="nav-section"><a ng-click="goto($event, '/our-heritage')" href="/our-heritage" ng-cloak>//copy[lang].nav[0]//</a></li>
+        <li class="nav-section"><a ng-click="goto($event, '/designer-destination')" href="/designer-destination" ng-cloak>//copy[lang].nav[1]//</a></li>
+        <li class="nav-section"><a ng-click="goto($event, '/visit-our-stores')" href="/visit-our-stores" ng-cloak>//copy[lang].nav[2]//</a></li>
         <li class="nav-section"><a href="http://www1.bloomingdales.com/" ng-cloak>//copy[lang].nav[3]//</a></li>
         <li class="social">
             <ul>
@@ -25,10 +25,10 @@
 
 <nav class="tab-bar top-bar medium-down show-for-small-only">
     <div class="left-small">
-        <a class="left-off-canvas-toggle menu-icon" href="#"><span></span><span></span><span></span><span></span></a>
+        <a class="left-off-canvas-toggle menu-icon" href="#off-canvas-navigation"><span></span><span></span><span></span><span></span></a>
     </div>
     <div class="middle tab-bar-section">
-        <a class="title-area-logo" href="" ng-click="goto('/')"></a>
+        <a class="title-area-logo" href="" ng-click="goto($event, '/')"></a>
     </div>
 
     <div class="sub-banner">//copy[lang].mobileSubHeader//</div>
@@ -38,16 +38,16 @@
     <nav class="top-bar desktop show-for-medium-up" data-topbar="">
         <ul class="title-area">
             <li class="title-area-logo">
-                <a href="" ng-click="goto('/')"></a>
+                <a href="" ng-click="goto($event, '/')"></a>
                 <div class="cn-addon" ng-show="lang === 'CN'"></div>
             </li>
         </ul>
 
         <section class="top-bar-section">
             <ul class="left" ng:class="{true:'nav-cn', false:''}[lang === 'CN']">
-                <li class="nav-section"><a ng-click="goto('/our-heritage')" href="/our-heritage" ng-cloak>//copy[lang].nav[0]//</a></li>
-                <li class="nav-section"><a ng-click="goto('/designer-destination')" href="/designer-destination" ng-cloak>//copy[lang].nav[1]//</a></li>
-                <li class="nav-section"><a ng-click="goto('/visit-our-stores')" href="/visit-our-stores" ng-cloak>//copy[lang].nav[2]//</a></li>
+                <li class="nav-section"><a ng-click="goto($event, '/our-heritage')" href="/our-heritage" ng-cloak>//copy[lang].nav[0]//</a></li>
+                <li class="nav-section"><a ng-click="goto($event, '/designer-destination')" href="/designer-destination" ng-cloak>//copy[lang].nav[1]//</a></li>
+                <li class="nav-section"><a ng-click="goto($event, '/visit-our-stores')" href="/visit-our-stores" ng-cloak>//copy[lang].nav[2]//</a></li>
                 <li class="nav-section"><a href="http://www1.bloomingdales.com/" ng-cloak>//copy[lang].nav[3]//</a></li>
             </ul>
             <ul class="right">
