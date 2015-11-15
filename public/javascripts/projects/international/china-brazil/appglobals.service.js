@@ -3,9 +3,9 @@
 
     angular
         .module('services')
-        .factory('appGlobals', appGlobals);
+        .factory('AppGlobals', AppGlobals);
 
-    function appGlobals(CacheService) {
+    function AppGlobals(CacheService) {
         var copyObject = {
             ENG: {
                 nav: [

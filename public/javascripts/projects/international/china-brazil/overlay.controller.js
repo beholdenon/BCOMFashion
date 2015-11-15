@@ -5,10 +5,10 @@
         .module('controllers')
         .controller('OverlayCtrl', OverlayCtrl);
 
-    function OverlayCtrl($rootScope, $scope, $window, $timeout, appGlobals, localStorageService, socialshare, Coremetrics) {
+    function OverlayCtrl($rootScope, $scope, $window, $timeout, AppGlobals, localStorageService, SocialShare, Coremetrics) {
         $scope.overlay = {};
         $scope.overlay.weixinOn = false;
-        $scope.QRcopy = socialshare.weixin;
+        $scope.QRcopy = SocialShare.weixin;
 
         $scope.closeOverlay = function() {
             var touch = jQuery('.off-canvas-wrap').hasClass('touch');
@@ -26,7 +26,7 @@
             }
 
             //Coremetrics tag
-            var pageID = appGlobals.getAttr('cm_pageID'),
+            var pageID = AppGlobals.getAttr('cm_pageID'),
                 windowWidth = $window.innerWidth,
                 prefix = (windowWidth < 641) ? 'MBL:' : '',             
                 tag = prefix + 'overlay_close';                   
@@ -40,7 +40,7 @@
 
             navElSel.parent('li').addClass('active');
 
-            appGlobals.setAttr('lang', globalLang);
+            AppGlobals.setAttr('lang', globalLang);
             localStorageService.set('lang', globalLang);
 
             //set CM pageID global attr
@@ -55,7 +55,7 @@
                 default:
                     pageID = 'fall15_englishmicrosite';
             }
-            appGlobals.setAttr('cm_pageID', pageID);   
+            AppGlobals.setAttr('cm_pageID', pageID);   
 
             $scope.overlay.isShowed = false;
             $rootScope.$emit('lang:change', {
@@ -76,13 +76,13 @@
 
         $scope.share = function(service, lang) {
             if (service !== 'weixin'){
-                $window.open(socialshare[service](lang), '_blank', 'width=608,height=342');
+                $window.open(SocialShare[service](lang), '_blank', 'width=608,height=342');
             } else {
                 $scope.overlay.weixinOn = true;
             }
 
             //Coremetrics tag          
-            var pageID = appGlobals.getAttr('cm_pageID'),
+            var pageID = AppGlobals.getAttr('cm_pageID'),
                 windowWidth = $window.innerWidth,
                 prefix = (windowWidth < 641) ? 'MBL:' : '',            
                 tag = prefix + 'socialshare-';                   

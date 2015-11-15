@@ -57,8 +57,8 @@
         });
     }
 
-    function run($window, $rootScope, $document, $location, $timeout, localStorageService, appGlobals, Coremetrics) {
-        appGlobals.init();
+    function run($window, $rootScope, $document, $location, $timeout, localStorageService, AppGlobals, Coremetrics) {
+        AppGlobals.init();
 
         Coremetrics.init();
 
@@ -68,10 +68,8 @@
         var globalLang = null;
         try {
             globalLang = localStorageService.get('lang');
-            appGlobals.setAttr('lang', globalLang);
-        } catch (err) {
-            //silence
-        }
+            AppGlobals.setAttr('lang', globalLang);
+        } catch (err) {}
 
         //show language selector overlay for the first visit
         if (globalLang === null) {
@@ -79,10 +77,9 @@
                 $rootScope.$emit('overlay:show', {
                     template: 'select-lang'
                 });
-            }, 400);
+            }, 600);
         } else {
             var pageID = null;
-
             switch(globalLang) {
                 case 'POR':
                     pageID = 'fall15_brazilmicrosite';
@@ -94,7 +91,7 @@
                     pageID = 'fall15_englishmicrosite';
             }
 
-            appGlobals.setAttr('cm_pageID', pageID);              
+            AppGlobals.setAttr('cm_pageID', pageID);              
         }
 
         //mark active section in the nav menu when app loads
@@ -119,7 +116,7 @@
 
         function coremetricsPageViewTag(path) {
             var windowWidth = $window.innerWidth,
-                pageID = appGlobals.getAttr('cm_pageID'),
+                pageID = AppGlobals.getAttr('cm_pageID'),
                 catID = null,
                 prefix = (windowWidth < 641) ? 'MBL:' : ''; 
             switch(path) {
@@ -147,7 +144,7 @@
 
         jQuery($window).load(function() {  
             jQuery('.left-off-canvas-toggle, .exit-off-canvas').on('click', function() {
-                var pageID = appGlobals.getAttr('cm_pageID'),
+                var pageID = AppGlobals.getAttr('cm_pageID'),
                     windowWidth = $window.innerWidth,
                     prefix = (windowWidth < 641) ? 'MBL:' : '',
                     tag = null;            

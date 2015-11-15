@@ -5,9 +5,9 @@
         .module('controllers')
         .controller('StoresCtrl', StoresCtrl);
 
-    function StoresCtrl($rootScope, $scope, $window, $timeout, appGlobals, Coremetrics, uiGmapGoogleMapApi, uiGmapIsReady) {
-        $scope.lang = appGlobals.getAttr('lang');
-        $scope.copy = appGlobals.getAttr('copy');
+    function StoresCtrl($rootScope, $scope, $window, $timeout, AppGlobals, Coremetrics, uiGmapGoogleMapApi, uiGmapIsReady) {
+        $scope.lang = AppGlobals.getAttr('lang');
+        $scope.copy = AppGlobals.getAttr('copy');
         $scope.storeList = ($scope.lang) ? angular.copy($scope.copy[$scope.lang].stores.dropdown.list) : null;
         $scope.storeSelection = null;
 
@@ -17,7 +17,7 @@
             $window.scrollTo(0, 0);
 
             //Coremetrics tag
-            var pageID = appGlobals.getAttr('cm_pageID'),
+            var pageID = AppGlobals.getAttr('cm_pageID'),
                 storeID = $scope.storeSelection,
                 stores = $scope.storeList,
                 store = null,

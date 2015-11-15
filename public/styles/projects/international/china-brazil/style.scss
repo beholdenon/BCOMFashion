@@ -754,10 +754,12 @@ html {
 							    font-size: 0;
 							    -webkit-animation: 15s slidy infinite;
 							    animation: 15s slidy infinite;
-								&:hover { 
-									-webkit-animation-play-state: paused; 
-									animation-play-state: paused; 
-								}							
+							    @media #{$large-up} {
+									&:hover { 
+										-webkit-animation-play-state: paused; 
+										animation-play-state: paused; 
+									}							
+							    }
 								img {
 								    width: 20%;
 								    float: left;
@@ -836,7 +838,6 @@ html {
 	    							color: #000;
 									font-size: 6vw;
 					    			width: 100%;	
-					    			text-transform: capitalize;				    				
 					    		}
 					    		div {
 					    			font-family: Arial,Helvetica,Verdana,Sans-serif;
@@ -1426,12 +1427,12 @@ html {
 										    -webkit-animation: 17s slidy infinite;
 										    animation: 17s slidy infinite;									    	
 									    }									    
-										&:hover { 
-											@media #{$large-up} {
+									    @media #{$large-up} {
+											&:hover { 
 												-webkit-animation-play-state: paused; 
 												animation-play-state: paused; 
-											}
-										}							
+											}							
+									    }							
 										img {
 										    width: 20%;
 										    float: left;

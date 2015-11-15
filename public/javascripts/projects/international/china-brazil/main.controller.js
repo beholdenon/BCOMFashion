@@ -5,12 +5,12 @@
         .module('controllers')
         .controller('MainCtrl', MainCtrl);
 
-    function MainCtrl($rootScope, $scope, $window, $location, localStorageService, appGlobals, socialshare, Coremetrics) {
-        $scope.lang = appGlobals.getAttr('lang');
-        var copy = $scope.copy = appGlobals.getAttr('copy');
+    function MainCtrl($rootScope, $scope, $window, $location, localStorageService, AppGlobals, SocialShare, Coremetrics) {
+        $scope.lang = AppGlobals.getAttr('lang');
+        var copy = $scope.copy = AppGlobals.getAttr('copy');
 
         $scope.goto = function($event, view) {
-            var pageID = appGlobals.getAttr('cm_pageID'),
+            var pageID = AppGlobals.getAttr('cm_pageID'),
                 windowWidth = $window.innerWidth,
                 prefix = (windowWidth < 641) ? 'MBL:' : '';
 
@@ -76,7 +76,7 @@
             });
 
             //Coremetrics tag          
-            var pageID = appGlobals.getAttr('cm_pageID'),
+            var pageID = AppGlobals.getAttr('cm_pageID'),
                 windowWidth = $window.innerWidth,
                 prefix = (windowWidth < 641) ? 'MBL:' : '',            
                 tag = prefix + 'socialshare_show-overlay';
@@ -85,7 +85,7 @@
 
         $scope.shareOnMob = function(service, lang) {
             if (service !== 'weixin') {
-                $window.open(socialshare[service](lang), '_blank', 'width=608,height=342');
+                $window.open(SocialShare[service](lang), '_blank', 'width=608,height=342');
             } else {
                 $scope.$emit('overlay:show', {
                     template: 'social-share',
@@ -94,7 +94,7 @@
             }
 
             //Coremetrics tag          
-            var pageID = 'MBL:' + appGlobals.getAttr('cm_pageID'),
+            var pageID = 'MBL:' + AppGlobals.getAttr('cm_pageID'),
                 windowWidth = $window.innerWidth,
                 prefix = (windowWidth < 641) ? 'MBL:' : '',              
                 tag = prefix + 'socialshare-' + service;
@@ -110,7 +110,7 @@
 
             globalLang = el.attr('data-lang');
 
-            appGlobals.setAttr('lang', globalLang);
+            AppGlobals.setAttr('lang', globalLang);
             localStorageService.set('lang', globalLang);
 
             $rootScope.$broadcast('lang:change', {
@@ -118,7 +118,7 @@
             });
 
             //Coremetrics tag
-            var pageID = appGlobals.getAttr('cm_pageID'),
+            var pageID = AppGlobals.getAttr('cm_pageID'),
                 windowWidth = $window.innerWidth,
                 prefix = (windowWidth < 641) ? 'MBL:' : '',             
                 tag = prefix + 'language-btn_' + globalLang;

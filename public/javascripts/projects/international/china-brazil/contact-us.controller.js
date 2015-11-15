@@ -5,13 +5,13 @@
 		.module('controllers')
 		.controller('ContactUsCtrl', ContactUsCtrl);
 
-	function ContactUsCtrl($rootScope, $scope, $window, $timeout, appGlobals, Coremetrics){
+	function ContactUsCtrl($rootScope, $scope, $window, $timeout, AppGlobals, Coremetrics){
 		$scope.cu = {
 			arrivingDate: null,
 			departingdate: null
 		};
-        $scope.lang = appGlobals.getAttr('lang');
-        $scope.copy = appGlobals.getAttr('copy');
+        $scope.lang = AppGlobals.getAttr('lang');
+        $scope.copy = AppGlobals.getAttr('copy');
         $scope.store = ($scope.lang) ? angular.copy($scope.copy[$scope.lang].contactUs.right.stores) : null;
 
 		$scope.phoneNumberPattern = (function() {
@@ -71,7 +71,7 @@
                 //Coremetrics tag
                 var windowWidth = $window.innerWidth,
                 	prefix = (windowWidth < 641) ? 'MBL:' : '',
-                	pageID = appGlobals.getAttr('cm_pageID'),
+                	pageID = AppGlobals.getAttr('cm_pageID'),
                 	tag = prefix + 'contactUs_submit';                   
                 Coremetrics.tag('Element', pageID, tag);  				
 				

@@ -3,13 +3,13 @@
 
     angular
         .module('services')
-        .factory('socialshare', socialshare);
+        .factory('SocialShare', SocialShare);
 
-    function socialshare($rootScope, $window, $location, appGlobals) {
+    function SocialShare($rootScope, $window, $location, AppGlobals) {
         var hostURL = 'http://' + $location.host() + ':' + $location.port(),
             pageUrl = hostURL + '/international/china-brazil/',
             mediaUrl = hostURL + '/fashion/images/projects/international/china-brazil',
-            copy = appGlobals.getAttr('copy'),
+            copy = AppGlobals.getAttr('copy'),
             service = {
                 fb: fb,
                 pinterest: pinterest,
