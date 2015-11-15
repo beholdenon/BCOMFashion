@@ -6,7 +6,7 @@
         .factory('AppGlobals', AppGlobals);
 
     function AppGlobals(CacheService) {
-        var copyObject = {
+        var translationDATA = {
             ENG: {
                 nav: [
                     'OUR HERITAGE',
@@ -2895,16 +2895,7 @@
                 ]                                                             
             }
         };
-
-        // $http.get('/fashion/javascripts/projects/international/china-brazil/data.json')
-        //      .success(function(data) {
-        //         console.log($.parseJSON(data));
-        //      })
-        //      .error(function() {
-        //         // called asynchronously if an error occurs
-        //         // or server returns response with an error status.
-        //      });
-
+        
         var services = {
                 init: init,
                 getAttr: getAttr,
@@ -2917,7 +2908,7 @@
         ////////////////////////////////
         
         function init() {
-            CacheService.put('copy', copyObject);
+            CacheService.put('copy', translationDATA);
         }
 
         function getAttr(key) {

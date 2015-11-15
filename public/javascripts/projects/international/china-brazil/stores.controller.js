@@ -10,7 +10,6 @@
         $scope.copy = AppGlobals.getAttr('copy');
         $scope.storeList = ($scope.lang) ? angular.copy($scope.copy[$scope.lang].stores.dropdown.list) : null;
         $scope.storeSelection = null;
-
         $scope.sticky = true;
 
         $scope.onChange = function() {
