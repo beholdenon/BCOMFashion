@@ -113,13 +113,26 @@
             AppGlobals.setAttr('lang', globalLang);
             localStorageService.set('lang', globalLang);
 
+            //set CM pageID global attr
+            var pageID = null;
+            switch(globalLang) {
+                case 'POR':
+                    pageID = 'fall15_brazilmicrosite';
+                    break;
+                case 'CN':
+                    pageID = 'fall15_chinamicrosite';
+                    break;
+                default:
+                    pageID = 'fall15_englishmicrosite';
+            }
+            AppGlobals.setAttr('cm_pageID', pageID);
+
             $rootScope.$broadcast('lang:change', {
                 lang: globalLang
             });
 
             //Coremetrics tag
-            var pageID = AppGlobals.getAttr('cm_pageID'),
-                windowWidth = $window.innerWidth,
+            var windowWidth = $window.innerWidth,
                 prefix = (windowWidth < 641) ? 'MBL:' : '',             
                 tag = prefix + 'language-btn_' + globalLang;
             Coremetrics.tag('Element', pageID, tag);

@@ -57,7 +57,7 @@
         });
     }
 
-    function run($window, $rootScope, $document, $location, $timeout, localStorageService, AppGlobals, Coremetrics) {
+    function run($window, $rootScope, $document, $location, $timeout, $interval, localStorageService, AppGlobals, Coremetrics) {
         AppGlobals.init();
 
         Coremetrics.init();
@@ -91,7 +91,7 @@
                     pageID = 'fall15_englishmicrosite';
             }
 
-            AppGlobals.setAttr('cm_pageID', pageID);              
+            AppGlobals.setAttr('cm_pageID', pageID);
         }
 
         //mark active section in the nav menu when app loads
@@ -116,25 +116,46 @@
 
         function coremetricsPageViewTag(path) {
             var windowWidth = $window.innerWidth,
-                pageID = AppGlobals.getAttr('cm_pageID'),
+                pageID = null,
                 catID = null,
                 prefix = (windowWidth < 641) ? 'MBL:' : ''; 
-            switch(path) {
-                case '/':
-                    catID = pageID + '--hp';
-                    break;
-                case '/our-heritage':
-                    catID = pageID + '--heritage';
-                    break;
-                case '/designer-destination':
-                    catID = pageID + '--designer_destination';
-                    break;
-                case '/visit-our-stores':
-                    catID = pageID + '--visit';
-                    break;
-            }                      
-            pageID = prefix + pageID;
-            Coremetrics.tag('Pageview', pageID, catID);
+
+            var stop;
+            if (angular.isDefined(stop)) return;
+
+            stop = $interval(function() {
+                pageID = AppGlobals.getAttr('cm_pageID');
+                
+                if (pageID === null) {
+                    // console.log('trying...');
+                } else {
+                    if (angular.isDefined(stop)) {
+                        __bindPageviewCM();
+                        $interval.cancel(stop);
+                        stop = undefined;
+                    }
+                }
+            }, 1000);
+
+            function __bindPageviewCM() {
+                switch(path) {
+                    case '/':
+                        catID = pageID + '--hp';
+                        break;
+                    case '/our-heritage':
+                        catID = pageID + '--heritage';
+                        break;
+                    case '/designer-destination':
+                        catID = pageID + '--designer_destination';
+                        break;
+                    case '/visit-our-stores':
+                        catID = pageID + '--visit';
+                        break;
+                }                      
+                pageID = prefix + pageID;
+
+                Coremetrics.tag('Pageview', pageID, catID);
+            }
         }
 
         // -------------------------------------------------------------------------------------- //

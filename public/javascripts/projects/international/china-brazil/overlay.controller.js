@@ -55,7 +55,7 @@
                 default:
                     pageID = 'fall15_englishmicrosite';
             }
-            AppGlobals.setAttr('cm_pageID', pageID);   
+            AppGlobals.setAttr('cm_pageID', pageID);
 
             $scope.overlay.isShowed = false;
             $rootScope.$emit('lang:change', {

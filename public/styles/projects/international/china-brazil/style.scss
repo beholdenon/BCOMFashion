@@ -1874,8 +1874,8 @@ html {
         				margin-bottom: 80px;
         				.row {
         					margin: 0;
-        					[ui-gmap-google-map]{
-        						padding: 0;
+        					.angular-google-map{
+        						padding: 0 !important;
 		        				.angular-google-map-container {
 		        					height: 400px;
 		        					width: 962px;
