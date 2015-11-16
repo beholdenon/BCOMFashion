@@ -1915,7 +1915,10 @@ html {
 								    margin: 0;
 								    padding: 0;        					
 		        					ul {
-		    							padding: 66px 0 49px 75px;   
+		    							padding: 66px 0 49px 75px;
+		    							&.medinah {
+		    								padding: 93px 0 49px 75px;
+		    							}  
 		    							margin: 0;
 										columns: 2;
 										-webkit-columns: 2;

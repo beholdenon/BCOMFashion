@@ -219,6 +219,7 @@
                                 dTile: 'VISITING NEW YORK?',
                                 dInfo: 'Download our welcome booklet before you arrive.',
                                 dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_NewYork_EN.pdf',
+                                designersImg: '/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-59ST_02.jpg',
                                 designers: [
                                     'BVLGARI',
                                     'Burberry London',
@@ -321,6 +322,7 @@
                                 dTile: 'VISITING NEW YORK?',
                                 dInfo: 'Download our welcome booklet before you arrive.',
                                 dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_NewYork_EN.pdf',
+                                designersImg: '/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-SOHO.jpg',                                
                                 designers: [
                                     'BVLGARI',
                                     'Burberry London',
@@ -385,6 +387,7 @@
                                 dTile: 'VISITING HAWAII?',
                                 dInfo: 'Download our welcome booklet before you arrive.',
                                 dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Hawaii_EN.pdf',
+                                designersImg: '/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-ALA-MOANA.jpg',                                  
                                 designers: [
                                     'Burberry London',
                                     'Chloé',
@@ -461,6 +464,7 @@
                                 dTile: 'VISITING CHICAGO?',
                                 dInfo: 'Download our welcome booklet before you arrive.',
                                 dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Chicago_EN.pdf',
+                                designersImg: '/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-NORTH-MICHIGAN-AVENUE.jpg',                                                                  
                                 designers: [
                                     'Burberry London',
                                     'Canada Goose',
@@ -531,6 +535,7 @@
                                 dTile: 'VISITING CHICAGO?',
                                 dInfo: 'Download our welcome booklet before you arrive.',
                                 dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Chicago_EN.pdf',
+                                designersImg: '/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-MEDINAH-HOME.jpg',                                                                                                  
                                 designers: [
                                     'Nespresso',
                                     'Rimowa',
@@ -567,6 +572,7 @@
                                 dTile: 'VISITING SAN FRANCISCO?',
                                 dInfo: 'Download our welcome booklet before you arrive.',
                                 dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_SanFran_EN.pdf',
+                                designersImg: '/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-SAN-FRANCISCO-CENTRE.jpg',
                                 designers: [
                                     'Alice + Olivia',
                                     'BCBGMAXAZRIA',
@@ -636,6 +642,7 @@
                                 dTile: 'VISITING COSTA MESA?',
                                 dInfo: 'Download our welcome booklet before you arrive.',
                                 dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_SouthCoastPlaza_EN.pdf',
+                                designersImg: '/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-SOUTH-COAST-PLAZA.jpg',
                                 designers: [
                                     'Burberry London',
                                     'Calvin Klein',
@@ -790,6 +797,7 @@
                                 dTile: 'VISITING AVENTURA?',
                                 dInfo: 'Download our welcome booklet before you arrive.',
                                 dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Aventura_EN.pdf',
+                                designersImg: '/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-AVENTURA.jpg',
                                 designers: [
                                     'Baccarat',
                                     'Bernardaud',
@@ -866,6 +874,7 @@
                                 dTile: 'VISITING ORLANDO?',
                                 dInfo: 'Download our welcome booklet before you arrive.',
                                 dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Orlando_EN.pdf',
+                                designersImg: '/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-ORLANDO.jpg',
                                 designers: [
                                     'Burberry London',
                                     'Canali ',

@@ -100,10 +100,10 @@
     	<div class="container">
 	    	<div class="wrapper row width-962">
 		        <div class="designers left small-cnbr-24 small-cnbr-centered medium-cnbr-6 medium-cnbr-centered large-cnbr-12 large-cnbr-centered columns">
-		        	<img src="/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners.jpg" />
+		        	<img ng-src="//copy.ENG.stores.storeData.id[storeSelection].designersImg//" /> 
 		        </div>
 		        <div class="designers right small-cnbr-24 small-cnbr-centered medium-cnbr-6 medium-cnbr-centered large-cnbr-12 large-cnbr-centered columns">
-		        	<ul>
+		        	<ul ng:class="{true:'medinah', false:''}[storeSelection === '4']" >
 		        		<li ng-repeat="designer in copy[lang].stores.storeData.id[storeSelection].designers" ng-cloak>//designer//</li>
 		        	</ul>
 		        </div>
