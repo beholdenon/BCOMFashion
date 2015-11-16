@@ -2350,7 +2350,7 @@
                                     },
                                     {
                                         title: '',
-                                        description: '<span class="fucsia">*需提供国际地址证明。</span><br/>**点数不可在 Bloomingdale\'s 的直销店或网站上获得。点数只可在Bloomingdale\'s Ala Moana 店内的消费及服务获得。'
+                                        description: '*需提供国际地址证明。<br/>**点数不可在 Bloomingdale\'s 的直销店或网站上获得。点数只可在Bloomingdale\'s Ala Moana 店内的消费及服务获得。'
                                     }                                      
                                 ]                                    
                             },
