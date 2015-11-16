@@ -51,7 +51,7 @@
     </div>
 
     <div class="shop-online width-962">
-        <h2><a href="http://www1.bloomingdales.com/" ng-cloak>//copy[lang].home.shop.title//</a></h2>
+        <h2><a href="#" ng-click="$event.preventDefault(); goto($event, 'http://www1.bloomingdales.com/')" ng-cloak>//copy[lang].home.shop.title//</a></h2>
 	   	<div class="subtitle" ng-show="lang !== 'ENG'">
             <span ng-cloak>//copy[lang].home.shop.subtitle//</span>
             <img ng-src="//lang === 'POR' && '/fashion/images/projects/international/china-brazil/paypal.png' || '/fashion/images/projects/international/china-brazil/alipay.png'//" /> 

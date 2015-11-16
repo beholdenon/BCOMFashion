@@ -381,7 +381,7 @@
                                 name: 'Ala Moana',
                                 addr: '1450 Ala Moana Blvd  Honolulu, HI 96814<br/>+1 808-644-7511',
                                 hours: 'Monday–Saturday: 10AM–8PM | Sunday: 11AM–7PM',
-                                descr: 'Say aloha to our newest outpost in tropical Honolulu. Located in the Ala Moana Center, Hawaii\'s premier shopping destination, this three-story store boasts a range of amenities tailored to the overseas shopper. Stop by our International Welcome Center and speak with one of our multilingual associates. We offer international style advisor appointments, on-site alterations, restaurant reservations and much more. <br/> Planning a return visit? Sign up for our International Loyalty Club and earn points toward gift cards, special services and authentic Hawaiian adventures.',
+                                descr: 'Say aloha to our newest outpost in tropical Honolulu. Located in the Ala Moana Center, Hawaii\'s premier shopping destination, this three-story store boasts a range of amenities tailored to the overseas shopper. Stop by our International Welcome Center and speak with one of our multilingual associates. We offer international style advisor appointments, on-site alterations, restaurant reservations and much more.</p><p style="margin-top: 10px;">Planning a return visit? Sign up for our International Loyalty Club and earn points toward gift cards, special services and authentic Hawaiian adventures.',
                                 dTile: 'VISITING HAWAII?',
                                 dInfo: 'Download our welcome booklet before you arrive.',
                                 dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Hawaii_EN.pdf',
@@ -431,7 +431,7 @@
                                     },
                                     {
                                         title: 'KICK BACK IN OUR VIP ROOM',
-                                        description: 'The first in the Bloomingdale\'s fleet, our limited-access lounge is located within the Welcome Center. Select tourists can indulge in amenities, including: light food and beverage, a TV, private bathroom, charging stations, a Bluetooth printer for boarding passes and iPads® preloaded with the Bloomingdale \'  s app and helpful travel guides in nearly every language. One-day access to the lounge is available to tourists with receipts of $500 or more.',
+                                        description: 'The first in the Bloomingdale\'s fleet, our limited-access lounge is located within the Welcome Center. Select tourists can indulge in amenities, including: light food and beverage, a TV, private bathroom, charging stations, a Bluetooth printer for boarding passes and iPads® preloaded with the Bloomingdale\'s app and helpful travel guides in nearly every language. One-day access to the lounge is available to tourists with receipts of $500 or more.',
                                     }
                                 ],
                                 loyalty: [
@@ -706,7 +706,7 @@
                                 name: 'Southern California Stores',
                                 addr: '',
                                 hours: '',
-                                descr: 'With outposts across Los Angeles, Orange County and San Diego, Bloomingdale\'s has left its iconic mark on SoCal. Shop the fashion, accessories, shoes and beauty brands you love in any one of our stores.Learn more about our in-store amenities below.',
+                                descr: 'With outposts across Los Angeles, Orange County and San Diego, Bloomingdale\'s has left its iconic mark on SoCal. Shop the fashion, accessories, shoes and beauty brands you love in any one of our stores. Learn more about our in-store amenities below.',
                                 dTile: 'VISITING SOUTHERN CALIFORNIA?',
                                 dInfo: 'Download our welcome booklet before you arrive.',
                                 dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_SouthernCalifornia_EN.pdf',
@@ -1328,7 +1328,7 @@
                                 name: 'Ala Moana',
                                 addr: '1450 Ala Moana Blvd  Honolulu, HI 96814<br/>+1 808-644-7511',
                                 hours: 'Segunda-feira - Sábado: 10:00h-20:00h <span>|</span> Domingo: 11:00h-19:00h',                                
-                                descr: 'Diga "Aloha" para nossa mais nova filial na tropical Honolulu. Localizada no Ala Moana Center, atração e principal local de compras no Havaí, esta loja de três andares oferece uma variedade de comodidades sob medida para o cliente no além-mar. Passe em nosso Centro Internacional de Visitantes e fale com um dos nossos atendentes multilíngues. Nós oferecemos consultoria com personal stylist, ajustes no próprio local, reservas em restaurantes e muito mais.  Está pensando em nos visitar de novo? Inscreva-se em nosso International Loyalty Club e ganhe pontos em cartões de presente, serviços especiais e em aventuras havaianas autênticas.',
+                                descr: 'Diga "Aloha" para nossa mais nova filial na tropical Honolulu. Localizada no Ala Moana Center, atração e principal local de compras no Havaí, esta loja de três andares oferece uma variedade de comodidades sob medida para o cliente no além-mar. Passe em nosso Centro Internacional de Visitantes e fale com um dos nossos atendentes multilíngues. Nós oferecemos consultoria com personal stylist, ajustes no próprio local, reservas em restaurantes e muito mais.</p><p style="margin-top: 10px;">Está pensando em nos visitar de novo? Inscreva-se em nosso International Loyalty Club e ganhe pontos em cartões de presente, serviços especiais e em aventuras havaianas autênticas.',
                                 dTile: 'VISITANDO O HAVAÍ?',
                                 dInfo: 'Baixe nosso guia de boas-vindas antes de chegar.',
                                 dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Hawaii_EN.pdf',
@@ -1396,7 +1396,7 @@
                                     },
                                     {
                                         title: '',
-                                        description: '<span class="fucsia">*Necessário comprovante do endereço internacional.</span><br/>**Pontos não podem ser resgatados nas lojas de Outlet da Bloomingdale\'s ou pelo site bloomingdales.com. Pontos podem somente ser resgatados por serviços ou experiências em Bloomingdale\'s Ala Moana.'
+                                        description: '*Necessário comprovante do endereço internacional.<br/>**Pontos não podem ser resgatados nas lojas de Outlet da Bloomingdale\'s ou pelo site bloomingdales.com. Pontos podem somente ser resgatados por serviços ou experiências em Bloomingdale\'s Ala Moana.'
                                     }                                      
                                 ]                                    
                             },
@@ -1486,7 +1486,7 @@
                                     },
                                     {
                                         title: 'PERSONAL STYLISTS E CONSULTORES DE BELEZA DE PLANTÃO',
-                                        description: 'Nossos personal stylists estão disponíveis para acompanhá-lo em suas compras na loja, ou selecionar opções para seu guarda-roupa e de decoração de acordo com seu gosto - tudo gratuito.<br/> À sua disposição no +1 312-324-7633'
+                                        description: 'Nossos personal stylists estão disponíveis para acompanhá-lo em suas compras na loja, ou selecionar opções de decoração de acordo com seu gosto - tudo gratuito.<br/> À sua disposição no +1 312-324-7633'
                                     },
                                     {
                                         title: 'FACILIDADE DE PAGAMENTO ',
@@ -1494,7 +1494,7 @@
                                     },
                                     {
                                         title: 'CARTÕES E EMBALAGENS PARA PRESENTE',
-                                        description: 'Nós podemos embrulhar suas compras, ou você pode pegar cartões, caixas, papel de embrulho e fita para levar para casa em nossa estação de embrulho para presente no sexto andar.'
+                                        description: 'Nós podemos embrulhar suas compras, ou você pode pegar cartões, caixas, papel de embrulho e fita para levar para casa. Visite nossa estação de Embrulho de Presentes no segundo andar.'
                                     }
                                 ] 
                             },
@@ -1558,7 +1558,7 @@
                                     },
                                     {
                                         title: 'CARTÕES E EMBALAGENS PARA PRESENTE',
-                                        description: 'Nós podemos embrulhar suas compras, ou você pode pegar cartões, caixas, papel de embrulho e fita para levar para casa em nossa estação de embrulho para presente no sexto andar.'
+                                        description: 'Nós podemos embrulhar suas compras, ou você pode pegar cartões, caixas, papel de embrulho e fita para levar para casa no Centro do Visitante.'
                                     }
                                 ]                               
                             },

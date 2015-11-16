@@ -15,12 +15,12 @@
             'ngAnimate',
             'CacheService',
             'LocalStorageModule', //ref: https://github.com/grevory/angular-local-storage
-            'uiGmapgoogle-maps' //ref: http://angular-ui.github.io/angular-google-maps/#!/api/
+            //'uiGmapgoogle-maps' //ref: http://angular-ui.github.io/angular-google-maps/#!/api/
         ])
         .config(config)
         .run(run);
 
-    function config($interpolateProvider, $routeProvider, localStorageServiceProvider, uiGmapGoogleMapApiProvider) {
+    function config($interpolateProvider, $routeProvider, localStorageServiceProvider) { //uiGmapGoogleMapApiProvider
         //configuring the default Angular interpolation markup to solve conflict with Handlebars {{}}
         $interpolateProvider.startSymbol('//');
         $interpolateProvider.endSymbol('//');
@@ -48,13 +48,13 @@
             });
 
         //Google maps config 
-        uiGmapGoogleMapApiProvider.configure({
-            key: 'AIzaSyAzXauC8RAX_qxgaP_qC9rPQye5HQHy8fc',
-            channel: 'fashion.bloomingdales.com',
-            signed_in: 'true',  // jshint ignore:line
-            sensor: 'false',
-            libraries: 'places,geometry,visualization'
-        });
+        // uiGmapGoogleMapApiProvider.configure({
+        //     key: 'AIzaSyAzXauC8RAX_qxgaP_qC9rPQye5HQHy8fc',
+        //     channel: 'fashion.bloomingdales.com',
+        //     signed_in: 'true',  // jshint ignore:line
+        //     sensor: 'false',
+        //     libraries: 'places,geometry,visualization'
+        // });
     }
 
     function run($window, $rootScope, $document, $location, $timeout, $interval, localStorageService, AppGlobals, Coremetrics) {

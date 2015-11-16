@@ -19,14 +19,21 @@
 
                 //Coremetrics tag
                 switch (view) {
-                    case 'http://www1.bloomingdales.com/':
+                    case 'http://www1.bloomingdales.com/#':
+                        // $event.preventDefault();
                         view = 'top-nav_shop';
+                        Coremetrics.tag('Element', pageID, prefix + view);
                         break;
+                    case 'http://www1.bloomingdales.com/':
+                        // $event.preventDefault();
+                        view = 'hp_shop-online';
+                        Coremetrics.tag('Element', pageID, prefix + view);
+                        break;                        
                     case 'http://www1.bloomingdales.com/shop/fashion-lookbooks-videos-style-guide?id=13668':
                         view = 'hp-shop-whats-new';
+                        Coremetrics.tag('Element', pageID, prefix + view);
                         break;
                 }
-                Coremetrics.tag('Element', pageID, prefix + view);
             } else if (view.indexOf('/') === 0) {
                 $location.url(view);
 
@@ -80,6 +87,7 @@
                 windowWidth = $window.innerWidth,
                 prefix = (windowWidth < 641) ? 'MBL:' : '',            
                 tag = prefix + 'socialshare_show-overlay';
+
             Coremetrics.tag('Element', pageID, tag);
         };
 

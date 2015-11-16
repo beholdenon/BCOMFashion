@@ -42,6 +42,11 @@
 		];
 
 		$scope.sendMail = function(cu) {
+            var windowWidth = $window.innerWidth,
+            	prefix = (windowWidth < 641) ? 'MBL:' : '',
+            	pageID = AppGlobals.getAttr('cm_pageID'),
+            	tag = null;  
+
 	        if ($scope.emailForm.$valid){
 	        	var link,
 	        		email = 'international_visitors@bloomingdales.com',
@@ -69,16 +74,16 @@
 				}, 3500);
 
                 //Coremetrics tag
-                var windowWidth = $window.innerWidth,
-                	prefix = (windowWidth < 641) ? 'MBL:' : '',
-                	pageID = AppGlobals.getAttr('cm_pageID'),
-                	tag = prefix + 'contactUs_submit';                   
+                tag = prefix + 'contactUs_submit'; 
                 Coremetrics.tag('Element', pageID, tag);  				
 				
 				return true;
+	        } else {
+                //Coremetrics tag
+                tag = prefix + 'contactUs_invalid-form-submitted'; 
+                Coremetrics.tag('Element', pageID, tag);  
+	        	return false;
 	        }
-
-	        return false;
 		};
 
 	    $rootScope.$on('lang:change', function(ev, args) {
