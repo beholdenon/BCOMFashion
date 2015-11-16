@@ -71,28 +71,29 @@
             AppGlobals.setAttr('lang', globalLang);
         } catch (err) {}
 
-        //show language selector overlay for the first visit
-        if (globalLang === null) {
-            $timeout(function() {
+        $timeout(function() {
+            if (globalLang === null) {
+                //show language selector overlay for the first visit
                 $rootScope.$emit('overlay:show', {
                     template: 'select-lang'
                 });
-            }, 600);
-        } else {
-            var pageID = null;
-            switch(globalLang) {
-                case 'POR':
-                    pageID = 'fall15_brazilmicrosite';
-                    break;
-                case 'CN':
-                    pageID = 'fall15_chinamicrosite';
-                    break;
-                default:
-                    pageID = 'fall15_englishmicrosite';
-            }
+            } else {
+                var pageID = null;
 
-            AppGlobals.setAttr('cm_pageID', pageID);
-        }
+                switch(globalLang) {
+                    case 'POR':
+                        pageID = 'fall15_brazilmicrosite';
+                        break;
+                    case 'CN':
+                        pageID = 'fall15_chinamicrosite';
+                        break;
+                    default:
+                        pageID = 'fall15_englishmicrosite';
+                }
+
+                AppGlobals.setAttr('cm_pageID', pageID);
+            }            
+        }, 500);
 
         //mark active section in the nav menu when app loads
         var path = $location.path();

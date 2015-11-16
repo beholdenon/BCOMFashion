@@ -575,7 +575,10 @@ html {
 						width: 310px;
 						margin: 0 auto;	
 						top: 160px;
-						top: calc(50vh - 159px);			    	
+						top: calc(50vh - 159px);	
+				    	@media #{$small-only} {
+			    			top: 20vh;
+				    	}								    	
 				    	h2 {
 				    		font-size: 20px;
 							color: #fff;
@@ -1617,7 +1620,7 @@ html {
 		        	}
         			.cnbr-header-store {
         				height: 65px;
-        				transition: top 0.3s linear;
+        				// transition: top 0.3s linear;
 						backface-visibility: hidden;
 						perspective: 1000;
 						-webkit-backface-visibility: hidden;
@@ -1630,7 +1633,7 @@ html {
 						}      				
         				.columns {
         					height: 65px;
-        					transition: top 0.3s linear;
+        					// transition: top 0.3s linear;
 							backface-visibility: hidden;
 							perspective: 1000;
 							-webkit-backface-visibility: hidden;

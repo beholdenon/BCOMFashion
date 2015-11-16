@@ -91,7 +91,7 @@
 
         $rootScope.$on('overlay:show', function(ev, args) {
             $scope.overlay.template = args.template;
-            $scope.overlay.weixinOn = args.weixin;
+            $scope.overlay.weixinOn = args.weixin || null;
             $scope.overlay.isShowed = true;
 
             if (jQuery('.off-canvas-wrap').hasClass('move-right')) {
