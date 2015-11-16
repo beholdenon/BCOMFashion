@@ -717,6 +717,7 @@
                                 dTile: 'VISITING SOUTHERN CALIFORNIA?',
                                 dInfo: 'Download our welcome booklet before you arrive.',
                                 dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_SouthernCalifornia_EN.pdf',
+                                designersImg: '',                                
                                 stores: [
                                     {
                                         area: 'Orange County',
