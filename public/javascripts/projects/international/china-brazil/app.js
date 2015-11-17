@@ -71,29 +71,44 @@
             AppGlobals.setAttr('lang', globalLang);
         } catch (err) {}
 
-        $timeout(function() {
-            if (globalLang === null) {
-                //show language selector overlay for the first visit
-                $rootScope.$emit('overlay:show', {
-                    template: 'select-lang'
-                });
-            } else {
-                var pageID = null;
+        if (globalLang !== null) {
+            var pageID = null;
 
-                switch(globalLang) {
-                    case 'POR':
-                        pageID = 'fall15_brazilmicrosite';
-                        break;
-                    case 'CN':
-                        pageID = 'fall15_chinamicrosite';
-                        break;
-                    default:
-                        pageID = 'fall15_englishmicrosite';
+            switch(globalLang) {
+                case 'POR':
+                    pageID = 'fall15_brazilmicrosite';
+                    break;
+                case 'CN':
+                    pageID = 'fall15_chinamicrosite';
+                    break;
+                default:
+                    pageID = 'fall15_englishmicrosite';
+            }
+
+            AppGlobals.setAttr('cm_pageID', pageID);
+        } else {
+            //show language selector overlay for the first visit
+            var stop;
+
+            if (angular.isDefined(stop)) return;
+
+            stop = $interval(function() {
+                globalLang = localStorageService.get('lang');
+                
+                if (globalLang === null || globalLang === undefined) {
+                    $rootScope.$emit('overlay:show', {
+                        template: 'select-lang'
+                    });     
+                                       
+                    // console.log('trying...');
+                } else {
+                    if (angular.isDefined(stop)) {
+                        $interval.cancel(stop);
+                        stop = undefined;
+                    }
                 }
-
-                AppGlobals.setAttr('cm_pageID', pageID);
-            }            
-        }, 500);
+            }, 1000);
+        }           
 
         //mark active section in the nav menu when app loads
         var path = $location.path();
