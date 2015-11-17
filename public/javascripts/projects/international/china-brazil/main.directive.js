@@ -721,10 +721,14 @@ angular
                         prevHeight = null,
                         screenWidth = jQuery(window).width(),
                         isSmallScreen = (screenWidth < 640) ? true : false;
+
 console.log('--------------------------');
 console.log('isSmallScreen: ',!isSmallScreen);
 console.log('odd:', el.hasClass('odd'));
 console.log('index: ', index);
+// element.getAttribute('class')
+
+
                     if (!isSmallScreen && !el.hasClass('odd') && index%2 !== 0) {
                         elPrev = el.parent().children(':eq('+ (index-1) +')');
                         prevHeight = elPrev.height();
@@ -750,7 +754,7 @@ console.log('index: ', index);
                     onResize = function() {
                         eqFunction(elem);
                     };
-                    
+
                 windowElement.on('resize orientationchange', $scope.$apply.bind($scope, onResize));
 
                 $timeout(function(){
