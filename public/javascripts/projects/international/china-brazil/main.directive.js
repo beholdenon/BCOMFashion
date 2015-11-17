@@ -715,30 +715,14 @@ angular
             link: function ($scope, elem) {
                 function eqFunction(elem) {
                     var el = jQuery(elem),
-                        index = jQuery(elem).index(),
+                        index = el.index(),
                         elHeight = el.height(),
                         elPrev = null,
                         prevHeight = null,
                         screenWidth = jQuery(window).width(),
                         isSmallScreen = (screenWidth < 640) ? true : false;
 
-console.log('--------------------------');
-console.log('isSmallScreen: ',!isSmallScreen);
-console.log('odd:', el.hasClass('odd'));
-console.log('index: ', index);
-// element.getAttribute('class')
-
-
-                    if (!isSmallScreen && !el.hasClass('odd') && index%2 !== 0) {
-                        elPrev = el.parent().children(':eq('+ (index-1) +')');
-                        prevHeight = elPrev.height();
-
-                        if (prevHeight > elHeight) {
-                            el.css('height', prevHeight+1);
-                        }
-                        console.log(prevHeight + ' - ' + elHeight);
-                    } else if (!isSmallScreen && el.hasClass('odd') && index !==0 && index%2 === 0) {
-                        // this is a particular use case for the "In-Store Dining" section in the /visit-our-stores view
+                    if (!isSmallScreen && index%2 !== 0) {
                         elPrev = el.parent().children(':eq('+ (index-1) +')');
                         prevHeight = elPrev.height();
 
@@ -746,7 +730,7 @@ console.log('index: ', index);
                             el.css('height', prevHeight+1);
                         }
 
-                        console.log(prevHeight + ' > ' + elHeight);
+                        // console.log(prevHeight + ' - ' + elHeight);
                     }       
                 }
 

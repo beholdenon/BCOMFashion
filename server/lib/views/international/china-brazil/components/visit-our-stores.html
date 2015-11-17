@@ -124,10 +124,9 @@
     <article class="store-dining width-962 row" 
     		ng-show="storeSelection !== null && storeSelection !== '4' && storeSelection !== '5' && storeSelection !== '7'">
     	<h2 class="store-header" ng:class="{true:'por', false:''}[lang === 'POR']" ng-cloak>//copy[lang].stores.storeData.dining//</h2>
-        <div class="restaurant odd small-cnbr-24 small-cnbr-centered medium-cnbr-6 medium-cnbr-centered large-cnbr-12 large-cnbr-centered columns"
+        <div class="restaurant small-cnbr-24 small-cnbr-centered medium-cnbr-6 medium-cnbr-centered large-cnbr-12 large-cnbr-centered columns"
         	ng:class="{true:'left', false:''}[copy[lang].stores.storeData.id[storeSelection].restaurants.length > 1]"
-        	ng-repeat="restaurant in copy[lang].stores.storeData.id[storeSelection].restaurants"
-        	equalized-element>
+        	ng-repeat="restaurant in copy[lang].stores.storeData.id[storeSelection].restaurants">
         	<img ng-src="//restaurant.imgURL//" />
         	<h4 ng-bind="restaurant.name" text-to-html="restaurant.name" ng-cloak></h4>
         	<h5 ng-bind="restaurant.sched" text-to-html="restaurant.sched" ng-cloak></h5>
