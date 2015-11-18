@@ -45,9 +45,9 @@
             })
             .otherwise({
                 redirectTo: '/'
-            }); 
+            });   
 
-        //Google maps config 
+        //Google maps conf
         // uiGmapGoogleMapApiProvider.configure({
         //     key: 'AIzaSyAzXauC8RAX_qxgaP_qC9rPQye5HQHy8fc',
         //     channel: 'fashion.bloomingdales.com',
