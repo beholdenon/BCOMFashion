@@ -45,7 +45,7 @@
             })
             .otherwise({
                 redirectTo: '/'
-            });
+            }); 
 
         //Google maps config 
         // uiGmapGoogleMapApiProvider.configure({
