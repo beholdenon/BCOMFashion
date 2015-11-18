@@ -146,6 +146,19 @@
             Coremetrics.tag('Element', pageID, tag);
         };
 
+        $scope.footerCM = function() {
+            var href = 'http://ebm.cheetahmail.com/r/regf2?aid=2083023216&a=0&n=2';
+            $window.open(href, '_blank');
+
+            //Coremetrics tag          
+            var pageID = AppGlobals.getAttr('cm_pageID'),
+                windowWidth = $window.innerWidth,
+                prefix = (windowWidth < 641) ? 'MBL:' : '',            
+                tag = prefix + 'footer_email-signup';
+
+            Coremetrics.tag('Element', pageID, tag);
+        };
+
         $rootScope.$on('lang:change', function(ev, args) {
             $scope.lang = args.lang;
         });
