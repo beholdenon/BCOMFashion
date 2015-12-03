@@ -1,18 +1,23 @@
-<title>Bloomingdale's Browse Grid</title>
-
-<link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400italic,700" rel="stylesheet" type="text/css">
-<link href="/fashion/styles/modules/browse/style.css" rel="stylesheet" type="text/css" >
+<title>Heroku Browse</title>
 
 <div class="blm-browse">
+	
+	<p style="width: 100%; padding: 121px; text-align: center; background-color: #bbb; color: #fff; font-size: 24px; font-weight: bold; font-family: Arial;">
+		962 x 280
+	</p>
+
+	{{> component/browseGrid }}
 
 </div>
 
-<script type="text/javascript" src="/fashion/javascripts/libs/jquery-1.9.1.min.js"></script>
-<script type="text/javascript" src="/fashion/javascripts/libs/hammer.min.js"></script>
-<script type="text/javascript" src="/fashion/javascripts/includes/wssg.js"></script>
-<script type="text/javascript" src="/fashion/javascripts/modules/browse/init.js"></script>
 
 <!-- Request browse grid via Category ID -->
 <script type="text/javascript">
-	catBrowse.request(1000232);
+	// Alter first class to allow for specialized styling on specific projects.
+	// Alter second to change # of columns. Other pre-made options are "two-col" and "three-col".
+	var browseGridClass = "standard three-col", 
+		catID = 1003569;
+
+	catBrowse.request(catID, browseGridClass);
+
 </script>
