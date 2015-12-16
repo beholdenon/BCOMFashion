@@ -3,12 +3,14 @@
 var deviceDetectParams = function (requestPath, req) {
     var device = require('./../helpers/deviceDetection'),
         deviceType = device.detectDevice(req),
+        serverDate = new Date(),
         view,
         args = {
             isMobile: false,
             isMobileAndroid: false,
             isMobileiOS: false,
-            isTablet: false
+            isTablet: false,
+            serverYear: serverDate.getFullYear()
         };
 
     if (deviceType.indexOf('mobile') > -1) {
