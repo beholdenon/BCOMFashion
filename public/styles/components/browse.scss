@@ -1,34 +1,65 @@
-#browseShell {
+html, body {
+   height: 100%;
+}
+
+ // TEMP!
+p.exampleText {
+   padding: 0 .5em;
+   font-size: 16px;
+   text-align: center;
+   margin-top: 6rem;
+}
+
+.browseShell {
+
+  
 
    &.standard {
+      display: inline-block;
       width: 100%;
       min-height: 100px;
-      font-size: 11px;
+      font-size: 12px;
       font-family: "Avenir LT W01 55 Roman", Arial;
+   }
+
+   &.dark {
+      background: url("http://wonderworlds.org/snowflakes/snowflakes-paper-background-silver.jpg");
+
+      .breaker {
+         border: solid #999999;
+         border-width: 1px 0 0;
+         height: 0;
+         margin: 0 0 1rem 0;
+      }
+
    }
 
    &.two-col .products li {
       width: 48%;
 
-      .imgBox {
-         min-height: 426px;
-      }
+      // .imgBox {
+      //    min-height: 575px;
+      // }
    }
 
    &.three-col .products li {
       width: 31%;
 
-      .imgBox {
-         min-height: 280px;
-      }
+      // .imgBox {
+      //    min-height: 370px;
+      // }
    }
 
    &.four-col .products li {
       width: 23%;
 
-      .imgBox {
-         min-height: 238px;
-      }
+      // .imgBox {
+      //    min-height: 275px;
+      // }
+   }
+
+   .title {
+      padding-left: 1rem;
    }
 
    .products {
@@ -39,6 +70,7 @@
          margin: 0 1%;
          padding: 1rem 0 0 0;
          vertical-align: top;
+         font-size: 12px;
 
          .imgBox {
             position: relative;
@@ -46,27 +78,31 @@
 
          .primary {
             display: block;
-            position: absolute;
+            // position: absolute;
             bottom: 0;
-            left: 12.5%;
+            left:0;
+            right:0;
+            margin-left:auto;
+            margin-right:auto;
          }
 
          .breaker {
             border: solid #cccccc;
             border-width: 1px 0 0;
             height: 0;
-            margin: 1rem 0;
+            margin: 0 0 1rem 0;
          }
 
          .brand {
             font-weight: bold;
+            font-size: 14px;
          }
 
          .swatch {
             height: 27px; 
             width: 27px;
             cursor: pointer;
-
+            border: 1px solid #fff;
          }
 
          .white .swatch {
@@ -94,7 +130,54 @@
             color: #ed0000;
          }
 
+         a {
+            text-decoration: none;
+
+            &:link, a:active, a:visited {
+               font-size: 12px;
+            }
+         }
+
       }
 
+      .quickPeekIcon {
+         position: absolute;
+         bottom: 0;
+         z-index: 10;
+         // margin-left: 1rem;
+         // margin-bottom: 0.5rem;
+         background-color: rgba(255,255,255,0.55);
+         width: 35px;
+         height: 35px;
+         text-align: center;
+
+         svg {
+            text-align: center;
+            cursor: pointer;
+            margin-top: 3px;
+         }
+      }
+
+   }
+}
+
+
+@media only screen 
+    and (max-device-width : 750px)
+    and (orientation : portrait) 
+{
+   .mobile .products li {
+      width: 90vw;
+
+   }   
+}
+
+@media only screen 
+    and (max-device-width : 750px)
+    and (orientation : landscape) 
+{
+   .mobile .products li {
+      width: 46vw;
+      
    }
 }

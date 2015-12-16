@@ -107,7 +107,7 @@ $(document).ready( function () {
 	});
 
 	// PDP OVERLAY BUILD
-	$('.atb_overlay').on('click', function(){
+	$(document).on('click', '.atb_overlay', function(){
 		var target = $(this),
 			prodID = target.attr("data-id");
 
