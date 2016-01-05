@@ -101,7 +101,6 @@ $(document).ready( function () {
 	});
 
 	// close add to bag window
-
 	$('.atb .close').on('click', function(){
 		$('.atb, #atbOverlay').hide();
 	});
@@ -113,15 +112,19 @@ $(document).ready( function () {
 
 		currentThumbnailGroup = 1; //resets thumbnail arrows back to default
 
+		if ( target.parents(".atb").hasClass("masterGrid") ) {
+			$(".masterGrid").fadeOut();
+		}
+
 		$('#atbLoading').show();
-		
+
         SERVICES.product.get(function(output) {
             // console.log(output);
             $('#atbLoading').hide();
             prodData = output;
 
             if (output.product[0].productDetails.childProducts != undefined) {
-				atb.master(output, prodID);
+				( target.hasClass('master-grid') ) ? atb.gridMaster(output, prodID) : atb.defaultMaster(output, prodID);
 			} else {
 				// console.log(output);
 				atb.member(output, prodID);
@@ -224,7 +227,7 @@ $(document).ready( function () {
 	});
 
 	$('#atbOverlay').on('click', function(){
-		$('.atb.single, .atb.master, #atbOverlay').hide();
+		$('.atb, #atbOverlay').hide();
 	});
 
 	$('.atb .thumbnails').on('click','.thumb', function(){
@@ -376,7 +379,7 @@ var atb = {
 	},
 
 	// MASTER PRODUCTS
-	master: function (res, item) {
+	defaultMaster: function (res, item) {
 		console.log("MASTER MODE");
 		console.log(res);
 
@@ -438,6 +441,58 @@ var atb = {
 		// }
 
 		
+	},
+
+	gridMaster: function (res, item) {
+		console.log("GRID MODE");
+		console.log(res);
+
+		var product = res.product[0];
+
+		$('.atb.masterGrid #grid-members').html("");
+		$('.atb.masterGrid #master-grid-primary').attr('src','http://images.bloomingdales.com/is/image/BLM/products/9/optimized/'+product.productDetails.primaryImage.imagename+'?wid=300&qlt=80,0&layer=comp&op_sharpen=0&resMode=sharp2&op_usm=0.7,1.0,0.5,0&fmt=jpeg');
+
+		for ( p=0; p < product.productDetails.childProducts.length ; p++ ) {
+			var childMarkup = '',
+				current = product.productDetails.childProducts[p];
+
+			// var price = function () {
+			// 	if (current.productDetails.price.hasOwnProperty("onsale") && current.productDetails.price.hasOwnProperty("sale") ) {
+
+			// 	}
+			// }
+
+			childMarkup += '<li class="grid-member">';
+			childMarkup += '<a class="memberLink atb_overlay" data-id="'+current.id+'">';
+			childMarkup += '<img class="memberImage" src="http://images.bloomingdales.com/is/image/BLM/products/9/optimized/'+current.productDetails.primaryImage.imagename+'?wid=125&qlt=80,0&layer=comp&op_sharpen=0&resMode=sharp2&op_usm=0.7,1.0,0.5,0&fmt=jpeg"/>';
+			childMarkup += '</a>';
+			childMarkup += '<p class="memberBrand">'+current.productDetails.brand.brandname+'</p>';
+			childMarkup += '<p class="memberName">'+current.productDetails.summary.name+'</p>';
+			// childMarkup += '<p class="memberPrice">'+price+'</p>';
+			childMarkup += '</li>';
+
+			$('.atb.masterGrid #grid-members').append(childMarkup);
+
+		 // <li class="grid-member">
+		 //      <a class="memberLink" href="">  
+		 //        <img class="memberImage" src=""/>
+		 //      </a>
+		 //      <p class="memberBrand"></p>
+		 //      <p class="memberName"></p>
+		 //      <p class="memberPrice"></p>
+		 //    </li>
+		}
+
+		if ( product.productDetails.childProducts.length % 3 != 0 ) {
+			var remainder = product.productDetails.childProducts.length % 3;
+
+			for ( j=0; j <= remainder; j++ ) {
+				$('.atb.masterGrid #grid-members').append('<li class="grid-member"></li>');
+			}
+
+		}
+
+		$('.atb.masterGrid, #atbOverlay').show();
 	},
 
 	moreThumbnails: function (direction, targ, currentThumbnailGroup) {

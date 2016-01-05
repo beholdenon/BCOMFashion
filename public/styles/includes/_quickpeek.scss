@@ -20,7 +20,7 @@ $window-width: 830px;
 	margin: 0;
 	padding: 0;
 	background-color: rgba(0,0,0,0.45);
-	z-index: 119;
+	z-index: 117;
 }
 
 /* ================================= */
@@ -73,7 +73,7 @@ table.add {
 		border-right: 1px solid $grey-border;
 		
 		.main.product {
-			min-width: 367px;
+			min-width: 364px;
 			// min-height: 400px;
 		}
 
@@ -97,8 +97,9 @@ table.add {
 		text-transform: uppercase;
 		top: 0;
 		padding: 2px 10px;
-		font-size: 30px;
-		font-family: "Raleway", Arial, sans-serif;
+		font-size: 20px;
+		// font-family: "Raleway", Arial, sans-serif;
+		font-family: "Avenir LT W01 55 Roman", Arial, sans-serif;
 		font-weight: 200;
 		cursor: pointer;
 		z-index: 2;
@@ -477,7 +478,7 @@ table.add {
 /* 			 SINGLE ATB				 */
 /* ================================= */
 
-#singleATB, #masterATB {
+#singleATB, #masterATB, #masterGrid {
 	left: 0;
 	right: 0;
 	margin: 0 auto;
@@ -510,6 +511,58 @@ table.add {
 
 		.content {
 			padding: 0 1em;
+		}
+
+	}
+
+}
+
+
+/* ================================= */
+/* 			 MASTER GRID			 */
+/* ================================= */
+
+#masterGrid {
+
+	display: inline-block;
+
+	#master-grid-primary {
+		padding: 0 1em 1em;
+		margin: 2.5em 0 1em;
+	}
+
+	#grid-members {
+		padding: 0 0 1em 0;
+		display: inline-flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		list-style-type: none;
+		vertical-align: top;
+		max-width: 60%;
+		overflow-y: auto;
+		max-height: 520px;
+		margin: 2.5em 0 1em;
+
+		.grid-member {
+			display: inline-block;
+			width: 28%;
+			margin-bottom: 1em;
+			text-align: left;
+			vertical-align: top;
+
+			.memberImage {
+				border-bottom: 1px solid #ccc;
+			}
+
+			.memberBrand {
+				margin-top: 0.25em;
+				font-weight: bold;
+			}
+
+			p {
+				margin: 0.1em 0;
+				line-height: 1.5em;
+			}
 		}
 
 	}
