@@ -6,10 +6,15 @@
 		962 x 280
 	</p>
 
+	<p class="exampleText">Test grid for Master Quickpeek</p>
+	<div id="masterTest" class="browseShell"></div>
+
 	<p class="exampleText">Standard three-column browse grid with all options turned on.</p>
 	<div id="jackets" class="browseShell"></div>
+
 	<p class="exampleText">Four-column layout with background-pattern. Brand, reviews and alternate images have been turned off.</p>
 	<div id="pants" class="browseShell"></div>
+
 	<p class="exampleText">Two-column layout without category name, product links, prices, swatches or quickpeek. Basically a preview grid.</p>
 	<div id="shirts" class="browseShell"></div>
 
@@ -21,44 +26,22 @@
 <!-- Request browse grid via Category ID -->
 <script type="text/javascript">
 
-	// properties = {
-	// 		gridClasses: "standard two-col",
-	// 		// Alter first class to allow for specialized styling on specific projects.
-	// 		// Alter second to change # of columns. Other pre-made options are "two-col" and "four-col".
-	// 		numberOfResults: 12,
-	// 		// set number of results to get, default is 92
-	// 		catID: 1000074,
-	// 		// id of the category being called
-	// 		domTarget: "#jackets",
-	// 		// target class in the project dom
-	// 		price: false,
-	// 		// show prices, default is true
-	// 		swatches: false,
-	// 		// show swatches, default is true
-	// 		brand: true,
-	// 		// show brand, default is true
-	// 		reviews: false
-	// }
-	// catBrowse.request(properties);
-
+	properties = {
+		gridClasses: "standard four-col",
+		catID: 6841,
+		numberOfResults: 4,
+		domTarget: "#masterTest",
+		masterQP: "master-grid"
+	}
+	catBrowse.request(properties);
 
 	properties = {
 			gridClasses: "standard three-col",
 			catID: 10189,
-			numberOfResults: 24,
+			numberOfResults: 12,
 			domTarget: "#jackets",
 	}
 	catBrowse.request(properties);
-
-
-	// properties = {
-	// 		gridClasses: "standard four-col",
-	// 		catID: 17647,
-	// 		numberOfResults: 24,
-	// 		domTarget: "#shirts",
-	// 		categoryName: false,
-	// }
-	// catBrowse.request(properties);
 	
 	properties = {
 			gridClasses: "dark four-col",
@@ -74,7 +57,7 @@
 	properties = {
 			gridClasses: "standard two-col",
 			catID: 21683,
-			numberOfResults: 100,
+			numberOfResults: 12,
 			domTarget: "#shirts",
 			categoryName: false,
 			linking: false,
