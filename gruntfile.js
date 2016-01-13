@@ -350,7 +350,7 @@ module.exports = function(grunt) {
                         nodemon.on('config:update', function() {
                             // Delay before server listens on port
                             setTimeout(function() {
-                                require('open')('http://d4378572:3000/international/china-brazil/');
+                                require('open')('http://localhost:3000/international/china-brazil/');
                             }, 1000);
                         });
 
