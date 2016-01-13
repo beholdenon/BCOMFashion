@@ -19,7 +19,7 @@
 
 ###Project Setup
 ----------------
-1. Clone the *BCOMFashion* repo: git clone http://wdsgerrict:8080/p/BCOMFashion.git
+1. Clone the *BCOMFashion* repo: git clone http://wdsgerrit:8080/p/BCOMFashion.git
 
 2. Install node dependencies by running ```npm install``` in the BCOMFashion directory
 
