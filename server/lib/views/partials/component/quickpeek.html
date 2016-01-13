@@ -1,90 +1,129 @@
-<link href="/fashion/styles/main.css" rel="stylesheet" type="text/css" >
-
 <script src="/fashion/javascripts/libs/jquery-1.9.1.min.js"></script> 
 <script src="/fashion/javascripts/includes/atb.js"></script>
 
 <div id="singleATB" style="display: none;" class="pF atb single">
-  <table class="add">
     <div class="close">x</div>
-    <tbody class="shell">
-      <tr class="prime">
-        <td rowspan="6" class="thumbnails">thumbnails</td>
-        <td rowspan="6" class="image"> <img src="" class="main product"/>
+      <div class="LS">
+        <!-- <div class="thumbnails">thumbnails</div> -->
+        <div class="image"> <img src="" class="main product"/>
           <div class="prodSwatch"></div>
-        </td>
-        <td class="RS">
-          <h3 class="name"></h3><span class="price"> <span class="currency"> </span><span class="value">	</span></span>
-        </td>
-      </tr>
-      <tr>
-        <td class="RS color">
-          <div class="text"><span class="title">color: </span><span class="value"> </span></div>
+        </div>
+      </div>
+      <div class="RS">
+        <p class="brand"></p>
+        <p class="name"></p>
+        <span class="price">
+          <span class="title">price: </span>
+          <span class="currency"></span>
+          <span class="value"></span>
+        </span>
+        <div class="color">
+          <div class="text"><span class="title">color:&nbsp;</span><span class="value"> </span></div>
           <ul class="swatch noselect"></ul>
-          <div class="modal outofstock" style="display:none;">Not available in selected size.</div>
-        </td>
-      </tr>
-      <tr>
-        <td class="RS size"><span class="title">size:</span>
+        </div>
+        <div class="size"><span class="title">size:</span>
           <ul class="options noselect"></ul>
-          <div class="modal outofstock" style="display:none;">Not available in selected color.</div>
-        </td>
-      </tr>
-      <tr>
-        <td class="RS quantity"><span class="title">quantity:</span>
-          <select dir="rtl"></select>
-        </td>
-      </tr>
-      <tr>
-        <td class="RS availability"></td>
-      </tr>
-      <tr>
-        <td class="RS addBtn">
-          <p data-id="" data-upc="" data-color="" data-size="" class="atbLink button">add to brown bag</p>
-        </td>
-      </tr>
-      <tr class="footer">
-        <td colspan="2" class="social"><span class="title">share:</span><a id="facebook_icon" class="icon">facebook</a><a id="twitter_icon" class="icon">twitter</a><a id="pinterest_icon" class="icon">pinterest</a></td>
-        <td class="details"><a class="details_link">go to full details</a></td>
-      </tr>
-    </tbody>
-  </table>
+        </div>
+        <div class="modal outofstock" style="display:none;">This color and size combination is unavailable</div>
+        <div class="modal instock" style="display:none;">
+          <span class="title">ship: </span>
+          <span class="status">In Stock</span>
+          <p class="copy">Usually leaves our facility within <strong class="days"></strong> business days.</p>
+        </div>
+        <div class="quantity">
+          <span>Qty:</span>
+          <select dir=""></select>
+        </div>
+
+      </div>
+      <div class="footer">
+        <div class="wishlist"><a href="">add to wish list</a></div>
+        <div class="bag"><button class="atbLink button">add to brown bag</button></div>
+      </div>
+    </div>
 </div>
 
 <div id="masterATB" style="display: none;" class="pF atb master">
   <table class="add">
     <div class="close">x</div>
     <tbody class="shell">
-      <tr class="prime">
-        <td rowspan="6" class="thumbnails">thumbnails</td>
-        <td rowspan="6" class="image"> <img src="" class="main product"/>
+      <div class="prime">
+        <div class="thumbnails">thumbnails</div>
+        <div class="image"> <img src="" class="main product"/>
           <div class="prodSwatch"></div>
-        </td>
-        <td class="RS">
+        </div>
+        <div class="RS">
           <h3 class="name"></h3><span class="price"> <span class="currency"> </span><span class="value">  </span></span>
-        </td>
-      </tr>
-      <tr class="info">
-        <td class="RS">
+        </div>
+      </div>
+      <div class="info">
+        <div class="RS">
           <p class="content"></p>
-        </td>
-      </tr>
-      <tr></tr>
-      <tr></tr>
-      <tr></tr>
-      <tr></tr>
-      <tr class="footer">
-        <td colspan="2" class="social"><span class="title">share:</span><a id="facebook_icon" class="icon">facebook</a><a id="twitter_icon" class="icon">twitter</a><a id="pinterest_icon" class="icon">pinterest</a></td>
-        <td class="details"><a class="details_link">go to full details</a></td>
-      </tr>
+        </div>
+      </div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div class="footer">
+        <div class="social"><span class="title">share:</span><a id="facebook_icon" class="icon">facebook</a><a id="twitter_icon" class="icon">twitter</a><a id="pinterest_icon" class="icon">pinterest</a></div>
+        <div class="details"><a class="details_link">go to full details</a></div>
+      </div>
     </tbody>
   </table>
 </div>
 
 <div id="masterGrid" style="display: none;" class="pF atb masterGrid">
-  <img src="" id="master-grid-primary"/>
-  <ul id="grid-members">
-  </ul>
-  <div class="close">x</div>
+  <div class="grid">
+    <img src="" id="master-grid-primary"/>
+    <ul id="grid-members">
+    </ul>
+    <div class="close">x</div>
+  </div>
+  <div class="member">
+      <div class="back"><span>&#10096;</span> return to grid</div>
+      
+      <div class="close">x</div>
+      <div class="LS">
+        <!-- <div class="thumbnails">thumbnails</div> -->
+        <div class="image"> <img src="" class="main product"/>
+          <div class="prodSwatch"></div>
+        </div>
+      </div>
+      <div class="RS">
+        <p class="brand"></p>
+        <p class="name"></p>
+        <span class="price">
+          <span class="title">price: </span>
+          <span class="currency"></span>
+          <span class="value"></span>
+        </span>
+        <div class="color">
+          <div class="text"><span class="title">color:&nbsp;</span><span class="value"> </span></div>
+          <ul class="swatch noselect"></ul>
+        </div>
+        <div class="size"><span class="title">size:</span>
+          <ul class="options noselect"></ul>
+        </div>
+        <div class="modal outofstock" style="display:none;">This color and size combination is unavailable</div>
+        <div class="modal instock" style="display:none;">
+          <span class="title">ship: </span>
+          <span class="status">In Stock</span>
+          <p class="copy">Usually leaves our facility within <strong class="days"></strong> business days.</p>
+        </div>
+        <div class="quantity">
+          <span>Qty:</span>
+          <select dir=""></select>
+        </div>
+
+      </div>
+      <div class="footer">
+        <div class="wishlist"><a href="">add to wish list</a></div>
+        <div class="bag"><button class="atbLink button">add to brown bag</button></div>
+      </div>
+    </div>
+
+  </div>
 </div>
 
 <div id="atbLoading" class="pF">
@@ -92,34 +131,3 @@
 </div>
 
 <div id="atbOverlay" style="display: none;"></div>
-
-<!-- <div class="standard">
-  <h1>Add to Bag Proof of Concept</h1>
-  <div style="width: 33%;" class="iblk">
-    <h2>Member Product</h2>
-    <p data-id="1427163" style="width: 200px; min-height: 64px;" class="wssgProduct atb_overlay button">
-      <span>BOSS DRESS PANTS</span><br/><span>[thumbail item]</span>
-    </p>
-    <p data-id="100601" style="width: 200px; min-height: 64px;" class="wssgProduct atb_overlay button">
-      <span>MAKEUP</span><br/><span style="">[swatch test]</span>
-    </p>
-    <p data-id="596991" style="width: 200px; min-height: 64px;" class="wssgProduct atb_overlay button">
-      <span>PENNY LOAFER</span><br/><span style="">[size test]</span>
-    </p>
-  </div>
-  <div style="width: 33%;" class="iblk">
-    <h2>Master Product</h2>
-    <p data-id="1429824" style="width: 200px; min-height: 64px;" class="wssgProduct atb_overlay button">
-      <span>Duvet Covers</span><br/><span style="">[no thumbnails]</span>
-    </p>
-    <p data-id="127087" style="width: 200px; min-height: 64px;" class="wssgProduct atb_overlay button">
-      <span>Luggage</span><br/><span style="">[limited thumbnails]</span>
-    </p>
-    <p data-id="1442906" style="width: 200px; min-height: 64px;" class="wssgProduct atb_overlay button">
-      <span>J Brand Outfit</span><br/><span style="">[extensive thumbnails]</span>
-    </p>
-  </div>
-  <div style="width: 33%;" class="iblk">
-    <h2>Mutliple Product</h2>
-  </div>
-</div> -->

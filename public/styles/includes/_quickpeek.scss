@@ -39,7 +39,7 @@ table.add {
 			padding: 0;
 
 			&.RS {
-				border-bottom: 1px solid $grey-border;
+				display: inline-block;
 
 				&.addBtn {
 					border: none;
@@ -61,8 +61,10 @@ table.add {
 		width: $window-width;
 	}
 
-	.RS {
-		
+	.LS, .RS {
+		display: inline-block;
+		vertical-align: top;
+		width: 49%;
 	}
 
 	.image {
@@ -70,10 +72,11 @@ table.add {
 		text-align: right;
 		vertical-align: top;
 		padding: 0;
-		border-right: 1px solid $grey-border;
+		display: inline-block;
 		
 		.main.product {
 			min-width: 364px;
+			margin: 20px;
 			// min-height: 400px;
 		}
 
@@ -98,28 +101,56 @@ table.add {
 		top: 0;
 		padding: 2px 10px;
 		font-size: 20px;
-		// font-family: "Raleway", Arial, sans-serif;
 		font-family: "Avenir LT W01 55 Roman", Arial, sans-serif;
 		font-weight: 200;
 		cursor: pointer;
 		z-index: 2;
 	}
 
-	h3 {
+	.back {
+		position: absolute;
+		left: 10px;
 		text-transform: uppercase;
+		top: 6px;
+		padding: 0;
 		font-size: 16px;
-		font-family: "Arial","Monserrat";
-		font-weight: 900;
+		font-family: "Avenir LT W01 55 Roman", Arial, sans-serif;
+		font-weight: 200;
+		cursor: pointer;
+		z-index: 2;
+		line-height: 25px;
+
+		span {
+			font-size: 30px;
+		    position: relative;
+		    top: 5px;
+		}
+	}
+
+	.brand, .name {
+		font-family: "Avenir LT W01 55 Roman", Arial, Monserrat;
+		font-weight: 400;
 		font-style: normal;
-		max-width: 85%;
-		padding-left: 10px;
-		margin-top: 4%;
+		max-width: 95%;
+		margin: 0;
+		
+	}
+
+	.brand {
+		font-size: 19px;
+		margin-top:10px;
+		padding: 0 0 0 10px;
+	}
+
+	.name {
+		font-size: 15px;
+		padding: 0 0 10px 10px;
 	}
 
 	.price {
-		font-family: "Lato", Arial, Helvetica, sans-serif;
-		font-size: 14px;
-		font-weight: 300;
+		font-family: "Avenir LT W01 85 Heavy", Arial;
+		font-size: 12px;
+		font-weight: 400;
 		font-style: normal;
 		display: block;
 		padding-left: 10px;
@@ -130,19 +161,28 @@ table.add {
 		&.title,
 		&.value {
 			display: inline-block;
-			font-family: "Lato", Arial, Helvetica, sans-serif;
+			
 			text-transform: uppercase;
 			font-style: normal;
-			font-size: 14px;
+			font-size: 12px;
 		}
 
-		&.title {font-weight:800;}
+		&.title {
+			font-family: "Avenir LT W01 85 Heavy", Arial;
+		}
+
+		&.value {
+			font-family: "Avenir LT W01 55 Roman", Arial;
+		}
+
 	}
 
 	.prime {
+		display: inline-block;
+
 		.RS {
 			min-height: 100px;
-			border-bottom: 1px solid $grey-border;
+			display: inline-block;
 		}
 
 		.thumbnails {
@@ -150,6 +190,7 @@ table.add {
 			padding: 0 1px 35px;
 			min-width: 89px;
 			position: relative;
+			display: inline-block;
 
 			.thumb {
 				display: block;
@@ -197,10 +238,7 @@ table.add {
 .atb .color {
 	padding: 0.5em 0 0.5em 10px;
 	vertical-align: bottom;
-
-	.title {
-		margin-right: 6px;
-	}
+	position: relative;
 
 	ul.swatch {
 		display: block;
@@ -263,13 +301,12 @@ table.add {
 	}
 }
 
-.outofstock {
-  position: absolute;
-  top: 9px;
-  left: 20%;
-  color: $error-red;
+.outofstock,
+.instock {
+  display: block;
+  padding: 0 0 20px 10px;
   font-size: 12px;
-  font-family: "Muli", Arial, Helvetica, Verdana, sans-serif;
+  font-family: "Avenir LT W01 55 Roman", Arial, Helvetica, Verdana, sans-serif;
 
   .color & {
   	left: 21%;
@@ -277,26 +314,26 @@ table.add {
 
 }
 
+.outofstock {
+  color: $error-red;
+}
+
 .atb .size {
 	padding: 0.5em 0 0.5em 10px;
-	margin: 0;
-	height: 40px;
+	margin: 0 0 1em 0;
+	position: relative;
 
 	.options {
 		list-style-type: none;
-		font-family: Arial, Helvetica, Verdana, sans-serif;
-		font-size: 11px;
+		font-family: "Avenir LT W01 85 Heavy", Arial, Helvetica, Verdana, sans-serif;
+		font-size: 12px;
 		padding: 0;
 		margin: 0;
-		// overflow: hidden;
-    	// width: 100%;
-    	// height: 34px;
 
 		&.expandable {
 
 			.rArrow {
 				content: "";
-				// display: inline-block;
 				display: 	none;
 				margin-left: 10px;
 				position: relative;
@@ -314,31 +351,42 @@ table.add {
 		li {
 			display: inline-block;
 			min-width: 24px;
-			height: 28px;
-			line-height: 22px;
-			padding: 3px 5px;
+			height: auto;
+			padding: 2px 0px;
 			text-align: center;
-			margin: 3px 2px 5px 0;
+			margin: 0 10px 5px 0;
 			cursor: pointer;
-			// border-radius: 100%;
 
-			&:hover{
-				// background: rgba(217,14,172,0.4);
-				opacity: 30%;
-				border-bottom: 3px solid $grey-border;
+			span {
+				box-sizing: border-box;
+			    border: 0.09091rem solid #c6c6c6;
+			    font-family: 'Avenir LT W01 55 Roman';
+			    padding: 0 10px;
+			    line-height: 30px;
+			    display: inline-block;
 			}
 
 			&.active {
-				// background: rgba(217,14,172,1);
-				// color: #fff;
-				border-bottom: 3px solid #000;
-
-				&.unavailable {
-					background-color: transparent;
-					border: none;
-				}
+				border-bottom: 2px solid #000;
+				margin: 0 10px 3px 0;
 			}
 			
+			&.unavailable.active,
+			&.unavailable.active:hover,
+			&.unavailable:hover {
+				border: none;
+			}
+
+			&.unavailable {
+				
+				background: url("../images/size-soldout.png") no-repeat center;
+
+				span {
+					background-color: rgba(0,0,0,0.1);
+					border: 1px solid #C6C6C6;
+					color: #999;
+				}
+			}
 
 		}
 	}
@@ -361,10 +409,23 @@ table.add {
 }
 
 .atb .quantity {
-	padding: 0.5em 0 0.5em 10px;
-	vertical-align: bottom;
-	margin: 0;
-	height: 40px;
+	display: inline-block;
+	padding: 0 18px;
+	border: 1px solid #000;
+	box-sizing: border-box;
+    font-family: "Avenir LT W01 55 Roman", Arial;
+    font-size: 13px;
+    height: 45px;
+    background-color: #FFF;
+    color: #000;
+    outline: 0;
+    margin-left: 10px;
+
+	span {
+
+	}
+
+
 }
 
 
@@ -375,10 +436,10 @@ table.add {
 	font-size: 14px;
 	background-color: #fff;
 	outline: none;
-	width: 60px;
+	width: 40px;
 	height: 30px;
-	padding-right: 20px;
-	padding-left: 10px;
+	padding-right: 4px;
+	padding-left: 2px;
 	margin: 5px 0;
 	-webkit-border-radius: 0;
 	-webkit-appearance: none;
@@ -395,18 +456,10 @@ table.add {
 	}
 }
 
-.atbLink {
+.footer {
+
 	
-	font-weight: 400;
-	font-style: normal;
-	font-size: 14px;
-	letter-spacing: .15em;
-	width: 90%;
-	line-height: 60px;
-	cursor: pointer;
-	text-transform: uppercase;
-	margin: 10px 5%;
-	display: block;
+
 }
 
 .errors {
@@ -426,50 +479,38 @@ table.add {
 .footer {
 	border-top: 1px solid $grey-border;
 
-	.social,
-	.details {
-		line-height: 65px;
-		text-transform: uppercase;
-		letter-spacing: .05em;
-
-	}
-
-	.social {
-		font-size: 15px;
-		padding-left: 5%;
-		border-right: 1px solid $grey-border;
-
-		.title {
-			margin-right: 20px;
-			font-size: 20px;
-		}
-
-		.icon {
-			display: inline-block;
-			width: 40px;
-			height: 40px;
-			line-height: 50px;
-			background-repeat: no-repeat;
-			font-size: 0;
-			margin-right: 20px;
-			background-image: url('../images/atb/share.png');
-		}
-
-		#facebook_icon {background-position: -1px 0px;}
-		#twitter_icon {background-position: -59px 0px;}
-		#pinterest_icon {background-position: -118px 0px;}
-	}
-
-	.details {
+	.wishlist {
+		opacity: 0;
+		width: 49%;
+		display: inline-block;
+		text-align: center;
+		vertical-align: top;
+		padding: 33px 0;
+		font-family: "Avenir LT W01 55 Roman", Arial;
 
 		a {
-			display: block;
-			margin: 0 auto;
-			font-size: 18px;
-			color: #000;
-			text-align: center;
-			text-decoration: none;
-			outline: 0;
+			text-transform: uppercase;
+	    	font-size: 12px;
+		}
+
+	}
+
+	.bag {
+
+		display: inline-block;
+		width: 49%;
+
+		.atbLink {
+
+			font-weight: 400;
+			font-style: normal;
+			font-size: 14px;
+			letter-spacing: .15em;
+			float: right;
+			cursor: pointer;
+			text-transform: uppercase;
+			margin: 16px 16px 16px 0;
+			width: 100%;
 		}
 	}
 }
@@ -489,10 +530,9 @@ table.add {
 	position: fixed;
 
 	.RS {
-		width: auto;
-		// width: 374px;
 		vertical-align: middle;
 		position: relative;
+		display: inline-block;
 	}
 }
 
@@ -506,7 +546,8 @@ table.add {
 		height: 60%;
 
 		.RS {
-			vertical-align: top;			
+			vertical-align: top;
+			display: inline-block;		
 		}
 
 		.content {
@@ -525,6 +566,8 @@ table.add {
 #masterGrid {
 
 	display: inline-block;
+	min-width: 880px;
+	min-height: 500px;
 
 	#master-grid-primary {
 		padding: 0 1em 1em;
@@ -567,6 +610,9 @@ table.add {
 
 	}
 
+	.thumbnails {
+		padding: 50px 1px 35px;
+	}
 }
 
 /* ================================= */
@@ -580,7 +626,7 @@ table.add {
 	opacity: 0.9;
 	top: 40vh;
 	display: none;
-	z-index: 118;
+	z-index: 121;
 	position: fixed;
 }
 
