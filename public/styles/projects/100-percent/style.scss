@@ -1,0 +1,106 @@
+// ======================================
+// 100 Percent Spring 2016 Styles
+// Author: Mike Curtis
+// Date: 01/13/2016
+// Project: /100-percent-2016/
+// ======================================
+@import "compass";
+
+html, body {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-color: #daceb6; // Old browsers
+	@include filter-gradient(#daceb6, #e0e0e0, vertical); // IE6-9
+	@include background-image(linear-gradient(top, #daceb6 0%,#daceb6 70%,#e0e0e0 100%));
+	overflow: hidden;
+}
+
+#bl_main_container {
+	width: 100%;
+}
+
+#emoji-layers {
+	position: relative;
+
+	.layer {
+		position: absolute;
+		z-index: 101;
+		display: none;
+		width: 100vw;
+	}	
+}
+
+.main {
+	position: relative;
+	margin: 0 auto;
+	display: block;
+	text-align: center;
+	min-height: 600px;
+
+	#playAgain {
+		position: absolute;
+		top: 5px;
+		left: 10px;
+		font-size: 14px;
+		font-weight: 700;
+		font-family: "Avenir LT W01 55 Roman", Arial;
+		text-transform: uppercase;
+		cursor: pointer;
+		z-index: 100;
+
+		span {
+			font-size: 18px;
+		}
+	}
+
+	.content {
+		margin: 0 auto;
+		position: relative;
+
+		.copy {
+			position: absolute;
+		}
+
+	}
+
+	#bLogo {
+		width: 35vw;
+	}
+
+	#models {
+		height: 90vh;
+	}
+
+}
+
+footer.bottom-links {
+	width: 100%;
+	min-width: 1000px;
+	max-width: 1300px;
+	display: block;
+
+	.copy,
+	.links {
+		display: inline-flex;
+		justify-content: space-around;
+		text-transform: uppercase;
+		font-family: "Avenir LT W01 55 Roman", Arial;
+		font-size: 14px;
+	}
+
+	.copy {
+		width: 35%;
+	}
+
+	.links {
+		width: 64%;
+		
+		a {
+			font-size: 12px;
+			font-weight: 700;
+		}
+	}
+}
