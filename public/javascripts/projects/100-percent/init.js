@@ -11,7 +11,6 @@ $(document).ready(function($) {
 				setTimeout( function () {
 
 					$('#emoji_'+start).show().siblings().hide();
-					console.log(start);
 					
 					if ( start <= emojiCount ) {
 						animation.play();
@@ -19,7 +18,7 @@ $(document).ready(function($) {
 						$('#emoji-layers .layer').hide();
 					}
 					start++;
-				}, 1000);
+				}, 400);
 
 
 		},
@@ -33,6 +32,13 @@ $(document).ready(function($) {
 		animation.play();
 	});
 
-	animation.play();
+	// window load checks to make sure all of the emoji background are loaded before starting the animation.
+	$(window).load( function() {
+		$('.content').animate({'opacity': 1}, 1000, function(){
+			animation.play();
+		});
+		
+		
+	}); 
 
 });
