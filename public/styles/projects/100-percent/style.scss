@@ -73,6 +73,7 @@ html, body {
 				text-align: left;
 				left: -28.5%;
 				top: 30%; 
+				text-shadow: 1px 1px 2px #D4C9B3;
 
 				p {
 					font-size: 14px;
@@ -156,6 +157,7 @@ html, body {
 		.copy,
 		.links {
 			display: inline-flex;
+			display: -webkit-inline-flex;
 			
 			text-transform: uppercase;
 			font-family: "Avenir LT W01 55 Roman", Arial;
@@ -171,6 +173,7 @@ html, body {
 		.links {
 			width: 64%;
 			justify-content: space-around;
+			-webkit-justify-content: space-around;
 
 			a {
 				font-size: 12px;
