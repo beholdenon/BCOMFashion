@@ -4,7 +4,7 @@ window.TEMPLATE.vertical = (function(window, document, $) {
     'use strict';
 
     var APP = {
-        cm: 'spring15_famultivendor', //coremetrics project prefix
+        cm: 'spring16_promlookbook', //coremetrics project prefix
         views: {
             sectionInViewport: null
         },
@@ -21,12 +21,12 @@ window.TEMPLATE.vertical = (function(window, document, $) {
             sectionPos: []
         },
         social: {
-            facebookTitle: 'ACCESSORIES-PACKED GETAWAY | bloomingdales.com',
-            facebookDescription: 'We toted the season\'s top accessories to the stylish @ViceroySM for our latest lookbook...',
-            facebookImageFileName: 'share_FB.jpg',
-            twitterTitle: 'We toted the season\'s top accessories to the stylish @ViceroySM for our latest lookbook @bloomingdales.com http://bit.ly/1C51Mnv',
-            pinterestTitle: 'ACCESSORIES-PACKED GETAWAY | bloomingdales.com',
-            pinterestImageFileName: 'share_Pinterest.jpg',
+            facebookTitle: 'PARTY GOALS: PROM 2016 | Bloomingdales.com',
+            facebookDescription: 'From the dance to the after-party—your best night ever begins and ends with amazing dresses you won’t find anywhere else.',
+            facebookImageFileName: 'S16_PROM_FBIcon.jpg',
+            twitterTitle: '#DressGoals: Your best night ever begins and ends with amazing prom styles you won’t find anywhere else. http://bit.ly/1JfJR3t',
+            pinterestTitle: 'PARTY GOALS: PROM 2016 | Bloomingdales.com',
+            pinterestImageFileName: 'S16_PROM_Pinterest.jpg',
             facebookURL: null,
             twitterURL: null,
             pinterestURL: null    
@@ -363,7 +363,7 @@ window.TEMPLATE.vertical = (function(window, document, $) {
             if (self.isThisHotMedia(this)) {
                 var hash = $(this).attr('data-url');
 
-                window.open(hash, '_blank');
+                window.open(hash, '_self');
 
                 hash = hash.replace('http://www1.bloomingdales.com/shop/', '');
                 hash = hash.split('?')[0];
