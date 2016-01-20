@@ -107,6 +107,11 @@ window.TEMPLATE.vertical = (function(window, document, $) {
 
         $('.mobile_main_container').append(topnavContainer);
     };
+    APP.isThisHotMedia = function (elementID) {
+        var attr = $(elementID).attr('data-url');
+        
+        return (typeof attr !== typeof undefined && attr !== false && attr !== '#') ? true : false;
+    };
 
     //(req) dynamic sticky footer insert to solve 'position: fixed' issue on mobile devices
     APP.stickyFooter = function () {
