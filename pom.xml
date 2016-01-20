@@ -55,7 +55,8 @@
         </properties>
       </profile>
     </profiles>
-     
+
+    
     <build>
       <directory>target</directory>
       <finalName>${artifactId}</finalName>
