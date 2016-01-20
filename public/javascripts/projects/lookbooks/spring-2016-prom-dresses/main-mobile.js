@@ -4,7 +4,7 @@ window.TEMPLATE.vertical = (function(window, document, $) {
     'use strict';
 
     var APP = {
-        cm: 'MBL:prjprefix', //---> coremetrics project prefix
+        cm: 'MBL:spring16_promlookbook', //---> coremetrics project prefix
         views: {
             sectionInViewport: null
         },
