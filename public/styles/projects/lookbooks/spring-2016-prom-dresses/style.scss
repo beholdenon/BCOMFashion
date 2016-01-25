@@ -389,9 +389,9 @@ ul {
 	.desktop_main_container > .desktop_footer{
 		position: relative;
 		display: block;
-		height: 142px;
+		height: 141px;
 		// min-width: 962px !important;
-		margin-bottom: 20px;
+		// margin-bottom: 20px;
 	}
 	.desktop_main_container > .desktop_footer > * {
 		display: inline;
@@ -479,7 +479,7 @@ ul {
 		display: none;
 		position: absolute;
 		right: -72px; /* right = -(graphic_width) */
-		bottom: 93px;
+		bottom: 0;
 		width: 72px;
 		height: 72px;
 		padding: 0;
