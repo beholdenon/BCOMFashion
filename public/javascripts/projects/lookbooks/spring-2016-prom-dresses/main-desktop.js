@@ -361,14 +361,15 @@ window.TEMPLATE.vertical = (function(window, document, $) {
         //hot images & videos
         $('.desktop_main_container img, .desktop_main_container video').on('click', function() {
             if (self.isThisHotMedia(this)) {
-                var hash = $(this).attr('data-url');
+                var hash = $(this).attr('data-url'),
+                    imgIndex = $(this).data('cm');
 
                 window.open(hash, '_self');
 
                 hash = hash.replace('http://www1.bloomingdales.com/shop/', '');
                 hash = hash.split('?')[0];
                 hash = hash.substring(hash.indexOf('/') + 1);
-                self.coremetrics('Element', self.cm, 'shop_now_' + hash + '-image');
+                self.coremetrics('Element', self.cm, 'shop_now_' + hash + '-image_' + imgIndex );
             }
         });
 
