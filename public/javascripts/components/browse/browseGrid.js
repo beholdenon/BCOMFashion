@@ -35,8 +35,8 @@ var catBrowse = {
 
 			// add quick peek icon
 			if ( properties.quickpeek === true ) {
-				$(domTarget+".browseShell #" + base[pn].id + " .imgBox").append(quickpeekIcon);
-				$(domTarget+".browseShell #" + base[pn].id + " .quickPeekIcon").attr("data-id", base[pn].id);
+				$(domTarget+".browseShell #" + base[pn].id + " .imgBox").append(quickpeekIcon)
+				$(domTarget+".browseShell #" + base[pn].id + " .quickPeekIcon").attr("data-id", base[pn].id).addClass(properties.masterQP);
 			}
 
 			// add linking on images and product name
@@ -132,11 +132,12 @@ var catBrowse = {
 			domTarget: '', // DOM target for grid placement
 			gridClasses: "standard three-col", // classes for special styles. Standard grid is three, but two and four are pre-made
 			linking: true,	// have image and product name link to product
+			masterQP: "master-standard",
 			numberOfResults: 96, // number of results to display in the grid
 			price: true, // display price under product name
 			quickpeek: true, // display quick peek icon in bottom left of product image
 			reviews: true, // display review hearts
-			sortby: 'bestseller', // allow for special sorting if desired: price, customerrating, name, bestseller, newarrival
+			sortby: '', // allow for special sorting if desired: price, customerrating, name, bestseller, newarrival
 			swatches: true, // display swatches and allow swatch functionality
 		}
 
