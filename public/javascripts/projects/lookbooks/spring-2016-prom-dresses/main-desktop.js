@@ -364,7 +364,6 @@ window.TEMPLATE.vertical = (function(window, document, $) {
                 var hash = $(this).attr('data-url'),
                     imgIndex = $(this).data('cm');
 
-
                 window.open(hash, '_self');
 
                 hash = hash.replace('http://www1.bloomingdales.com/shop/', '');
