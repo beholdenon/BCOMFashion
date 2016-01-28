@@ -65,7 +65,7 @@ define([
 
             window.Globals.Coremetrics.attr42 = attr;
 
-            return pageViewTag(pageID, catID, '42', attr);
+            // return pageViewTag(pageID, catID, '42', attr);
         }
     }
 
