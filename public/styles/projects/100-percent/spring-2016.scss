@@ -34,8 +34,14 @@ body {
     position: relative;
 }
 
-#about {
+#about, #bloomoticons {
     display: none;
+}
+
+#bloomoticons {
+    height: 99vh;
+    width: 100vw;
+    background-color: #DADAD8;
 }
 
 #lookbooks {
@@ -45,18 +51,26 @@ body {
 
 #topNav {
     position: absolute;
-    top: 3%;
+    top: 0;
     left: 0;
     text-transform: uppercase;
     list-style-type: none;
-    font-size: 2vmin;
+    font-size: 1.15vw;
     font-family: "Avenir LT W01 55 Roman", Arial;
+    background-color: #E8E8E8;
+    border-bottom: 9px solid #9a9a9a;
     font-weight: 700;
     display: flex;
-    width: 100%;
+    width: 100vw;
     margin: 0;
-    padding: 0 3%;
+    padding: 1.7vw 3% 0;
     justify-content: space-between;
+    z-index: 20;
+
+    &.main {
+        background-color: transparent;
+        border-bottom: 0;
+    }
     
 
     & > li {
@@ -81,7 +95,11 @@ body {
     }
 
     #mojiLink {
-        left: 2vmin;
+        left: 1vw;
+
+        &.active {
+            color: #ff0200;
+        }
     }
 
     #campaignLink.active {
@@ -120,6 +138,33 @@ body {
 
 }
 
+#lookbookDefaultLink.active {
+    color: #55bfb6;
+}
+
+#appLinks {
+    position: absolute;
+    top: 15vw;
+    right: 12.5vw;
+    width: 28.5vw;
+
+    .copy {
+        font-size: 1.3vw;
+        line-height: 2vw;
+        font-family: "Avenir LT W01 55 Roman", Arial;
+        padding: 0 2vw 1vh 0.5vw;
+    }
+
+    a {
+        display: inline-block;
+        margin: 0 0.5vw;
+    }
+
+    img {
+        width: 12vw;
+    }
+
+}
 
 .window {
     height: 22.5vw;
@@ -153,11 +198,13 @@ body {
     }
 }
 
-.slideBox {
+#slideBox {
     overflow: hidden;
     width: 100vw;
     height: 100vh;
 }
+
+.holdingPen {display: none;}
 
 // Overlay Styles
 
@@ -168,7 +215,7 @@ body {
     height: 6vmin;
     border-top: 4px solid #000;
     border-left: 4px solid #000;
-    top: 25vw;
+    top: 31vw;
     cursor: pointer;
     z-index: 20;
 
@@ -184,7 +231,21 @@ body {
 }
 
 #taxiOverlay {
-    display: none;
+    // display: none;
+
+    .close {
+        text-transform: uppercase;
+        font-size: 20px;
+        font-family: "Avenir LT W01 55 Roman", Arial;
+        position: absolute;
+        top: 0.5vw;
+        right: 0.5vw;
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        z-index: 57;
+    }
 }
 
 #overlayBg {
@@ -192,7 +253,68 @@ body {
     left: 0;
     top: 0;
     width: 100vw;
-    height: 100vh;
+    height: 100%;
     background-color: rgba(0,0,0,0.75);
     cursor: pointer;
+    z-index: 50;  
+}
+
+#scavengerHunt {
+    display: block;
+    position: absolute;
+    left: 0;
+    right: -5vw;
+    margin-left: auto;
+    margin-right: auto;
+    width: 45vw;
+    height: 33.5vw;
+    background-color: #fff;
+    z-index: 55;
+    top: 22vh;
+    border: 5px solid #000;
+
+    .copy {
+        position: relative;
+        top: 25%;
+        padding: 0 15%;
+        font-size: 0.95vw;
+
+        strong {
+            display: block;
+            font-size: 1.1em;
+            margin-bottom: 0.5vw;
+        }
+    }
+}
+
+#huntEmojis {
+    display: block;
+    position: absolute;
+    left: -110px;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 56;
+    top: -6vh;
+    height: 41vw;
+}
+
+#blooperVideo {
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60vw;
+    height: 60vh;
+    background-color: #fff;
+    z-index: 55;
+    top: 20vh;
+    border: 5px solid #000;
+
+    video {
+        width: 60%;
+        height: auto;
+    }
 }
