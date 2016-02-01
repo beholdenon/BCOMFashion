@@ -10,19 +10,19 @@ $(document).ready( function($) {
 
 	setInterval( function(){ driveTaxi(); }, 14000);
 
-	$('#taxi').on('click', function () {
+	$('#taxi').on('click tap', function () {
 		$('#taxiOverlay').show();
 	});
 
 	// ===== Page Interactions =====
 
 	// closed the taxi overlay
-	$('#overlayBg, .close').on('click', function () {
+	$('#overlayBg, .close').on('click tap', function () {
 		$('#taxiOverlay').hide();
 	});
 
 	// clicked the main logo
-	$('.link .logo').on('click', function () {
+	$('.link .logo').on('click tap', function () {
 		$('#about, #lookbooks, #bloomoticons').hide();
 		$('#storeBg, .window').show();
 		$('#topNav').addClass('main');
@@ -32,7 +32,7 @@ $(document).ready( function($) {
 	});
 
 	// clicked About the Campaign
-	$('#campaignLink').on('click', function () {
+	$('#campaignLink').on('click tap', function () {
 		$('#storeBg, #lookbooks, .window, #bloomoticons').hide();
 		$('#about').show();
 		$('#topNav').removeClass('main');
@@ -43,7 +43,7 @@ $(document).ready( function($) {
 	});
 
 	// clicked Bloomoji nav link
-	$('#mojiLink').on('click', function () {
+	$('#mojiLink').on('click tap', function () {
 		$('#storeBg, #lookbooks, .window, #about').hide();
 		$('#bloomoticons').show();
 		$('#topNav').removeClass('main');
@@ -54,7 +54,7 @@ $(document).ready( function($) {
 	});
 
 	// clicked Lookbook in the top nav
-	$('#lookbookDefaultLink').on('click', function () {
+	$('#lookbookDefaultLink').on('click tap', function () {
 		lookbookSetup();
 
 		$('.holdingPen .slide').clone().appendTo( '#slideBox' );
@@ -62,28 +62,28 @@ $(document).ready( function($) {
 	});
 
 	// clicked on womens in the lookbook dropdown
-	$('#lookbookDropdown .women').on('click', function() {
+	$('#lookbookDropdown .women').on('click tap', function() {
 		lookbookSetup();
 		$('.holdingPen.women .slide').clone().appendTo( '#slideBox' );
 		$('#slideBox .slide:first-child').addClass('active');
 	});
 
 	// clicked on mens in the lookbook dropdown
-	$('#lookbookDropdown .men').on('click', function() {
+	$('#lookbookDropdown .men').on('click tap', function() {
 		lookbookSetup();
 		$('.holdingPen.men .slide').clone().appendTo( '#slideBox' );
 		$('#slideBox .slide:first-child').addClass('active');
 	});
 
 	// clicked on home in the lookbook dropdown
-	$('#lookbookDropdown .home').on('click', function() {
+	$('#lookbookDropdown .home').on('click tap', function() {
 		lookbookSetup();
 		$('.holdingPen.home .slide').clone().appendTo( '#slideBox' );
 		$('#slideBox .slide:first-child').addClass('active');
 	});
 
 	// clicked on a store window
-	$('.window').on('click', function () {
+	$('.window').on('click tap', function () {
 		lookbookSetup();
 
 		$('.holdingPen .slide').clone().appendTo( '#slideBox' );
@@ -101,7 +101,7 @@ $(document).ready( function($) {
 	}
 
 	// clicked on a slide show arrow
-	$('.arrow').on('click', function() {
+	$('.arrow').on('click tap', function() {
 		var position =  $('#slideBox .active').index(),
 			next;
 
