@@ -17,9 +17,9 @@
 6. Install **Compass** by running: ```gem install compass```
 
 
-###Project Setup
-----------------
-1. Clone the *BCOMFashion* repo: git clone http://wdsgerrict:8080/p/BCOMFashion.git
+###Getting Started
+------------------
+1. Clone the *BCOMFashion* repo: git clone git@code.devops.fds.com:CAP/BCOMFashion.git
 
 2. Install node dependencies by running ```npm install``` in the BCOMFashion directory
 
@@ -29,3 +29,21 @@
 > When pushing code to a remote branch make sure you change back these variables to **production**
 
 4. Run the node server: ```grunt``` and it will open the app in your default browser.
+
+
+###Routing for Lookbooks
+------------------------
+Place your project files as follows:
+
+		* views: ```.\server\lib\views\lookbooks\<your-project-folder>``` - make sure you name the files *index.html*, respectively *index-mobile.html*
+		* JS: ```.\public\javascripts\projects\lookbooks\<your-project-folder>```
+		* SCSS/CSS: ```.\public\styles\projects\lookbooks\<your-project-folder>```
+		* images/videos: ```.\public\images\projects\lookbooks\<your-project-folder>```
+		* PDFs, misc files: ```.\public\assets\projects\lookbooks\<your-project-folder>```
+
+If your project has a custom layout (eg. custom header & footer, fully responsive layout, etc.), you need to insert the route to the **./server/index.js** file before the ```fallback``` handler, and either assign one of the 3 predefined handlers:
+
+		* **responsive**
+		* **responsiveCustomHF**
+		* **nonResponsiveCustomHF**
+ or build your own custom handler. 
