@@ -1,0 +1,177 @@
+// ======================================
+// 100 Percent Spring 2016 Styles
+// Author: Mike Curtis
+// Date: 01/26/2016
+// Project: /100-percent-2016/
+// ======================================
+
+@import "compass";
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Avenir LT W01 55 Roman", Arial;
+}
+
+
+// @media screen only (orientation: landscape) {
+
+// }
+
+// @media screen only (orientation: portrait) {
+
+// }
+
+#dropdownNav {
+    text-align: center;
+
+    ul, 
+    li {
+        margin: 0;
+        list-style-type: none;
+    }
+
+    .top {
+
+        &:before {
+            content: '';
+            display: block;
+            width: 0; 
+            height: 0; 
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            
+            border-top: 12px solid #fff;
+
+            list-style-type: none;
+            position: absolute;
+            left: 14%;
+            top: 15px;
+        }
+
+        &.active {
+            color: #ff5d1d;
+
+            &:before {
+                border-left: 8px solid transparent;
+                border-right: 8px solid transparent;
+            
+                border-bottom: 12px solid #ff5d1d;
+                border-top: 0;
+            }
+        }
+
+    }
+
+    li,
+    .sudoLi {
+        padding: 10px 0;
+        background-color: #000;
+        color: #fff;
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 4.5vw;
+        font-family: "Avenir LT W01 55 Roman", Arial;
+        border-bottom: 1px solid #fff;
+
+        &:last-child {
+            border-bottom: 0;
+        }
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+.content {
+    text-align: center;
+
+    ul {
+        list-style-type: none;
+        margin:0;
+        padding:0;
+    }
+
+    .box {
+        background-color: #ddd;
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 6vw;
+        line-height: 10vw;
+        padding: 20vw 20%;
+    }
+
+    .shop {
+        min-height: 130vw;
+        min-width: 100vw;
+        background-color: #ddd;
+        border-top: 5px solid #fff;
+    }
+
+    .whitespace {
+        min-height: 10vw;
+    }
+
+    button {
+        position: relative;
+        border: 2px solid #000;
+        background-color: transparent;
+        color: #000;
+        text-transform: uppercase;
+        top: -7vw;
+        padding: 8vw 0;
+        width: 80vw;
+        margin-bottom: 0;
+    }
+
+    .copy {
+        text-align: left;
+        padding: 5vw 10vw;
+        font-size: 5vw;
+    }
+}
+
+#landing {
+    position: relative;
+
+    .window {
+        position: absolute;
+        top: 70.5vw;
+        width: 72vw;
+        left: 14.5vw;
+    }
+
+}
+
+#app {
+
+    img {
+        width: 70vw;
+        margin: 6vw 0 12vw;
+    }
+}
+
+.footerNav {
+    list-style-type: none;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+
+    li {
+        margin: 0;
+        padding: 10px 0;
+        background-color: #000;
+        color: #fff;
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 4.5vw;
+        font-family: "Avenir LT W01 55 Roman", Arial;
+        border-bottom: 1px solid #fff;
+
+        &:last-child {
+            border-bottom: 0;
+        }
+    }
+
+}

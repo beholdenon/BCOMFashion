@@ -6,13 +6,13 @@ $(document).ready( function($) {
 
 	$('header, footer').remove();
 	
-	driveTaxi();
+	// driveTaxi();
 
-	setInterval( function(){ driveTaxi(); }, 14000);
+	// setInterval( function(){ driveTaxi(); }, 14000);
 
-	$('#taxi').on('click tap', function () {
-		$('#taxiOverlay').show();
-	});
+	// $('#taxi').on('click tap', function () {
+	// 	$('#taxiOverlay').show();
+	// });
 
 	// ===== Page Interactions =====
 
@@ -25,9 +25,10 @@ $(document).ready( function($) {
 	$('.link .logo').on('click tap', function () {
 		$('#about, #lookbooks, #bloomoticons').hide();
 		$('#storeBg, .window').show();
-		$('#topNav').addClass('main');
+		$('#topNav').addClass('main').removeClass('white');
 		$('.link').removeClass('active');
 		$('body').removeAttr('style');
+		$('#lookbookDropdown li').removeClass('active');
 		$('#taxi').show();
 	});
 
@@ -35,9 +36,10 @@ $(document).ready( function($) {
 	$('#campaignLink').on('click tap', function () {
 		$('#storeBg, #lookbooks, .window, #bloomoticons').hide();
 		$('#about').show();
-		$('#topNav').removeClass('main');
+		$('#topNav').removeClass('main').addClass('white');
 		$('.link').removeClass('active');
 		$('#campaignLink').addClass('active');
+		$('#lookbookDropdown li').removeClass('active');
 		$('body').css('background-color', '#E6EAEC');
 		$('#taxi').hide();
 	});
@@ -46,17 +48,18 @@ $(document).ready( function($) {
 	$('#mojiLink').on('click tap', function () {
 		$('#storeBg, #lookbooks, .window, #about').hide();
 		$('#bloomoticons').show();
-		$('#topNav').removeClass('main');
+		$('#topNav').removeClass('main').addClass('white');
 		$('.link').removeClass('active');
 		$('#mojiLink').addClass('active');
-		$('body').css('background-color', '#DADAD8');
+		$('#lookbookDropdown li').removeClass('active');
+		$('body').css('background-color', '#e9e9e9');
 		$('#taxi').hide();
 	});
 
 	// clicked Lookbook in the top nav
 	$('#lookbookDefaultLink').on('click tap', function () {
 		lookbookSetup();
-
+		$('#lookbookDropdown li').addClass('active');
 		$('.holdingPen .slide').clone().appendTo( '#slideBox' );
 		$('#slideBox .slide:first-child').addClass('active');
 	});
@@ -64,6 +67,7 @@ $(document).ready( function($) {
 	// clicked on womens in the lookbook dropdown
 	$('#lookbookDropdown .women').on('click tap', function() {
 		lookbookSetup();
+		$(this).addClass('active').siblings().removeClass('active');
 		$('.holdingPen.women .slide').clone().appendTo( '#slideBox' );
 		$('#slideBox .slide:first-child').addClass('active');
 	});
@@ -71,6 +75,7 @@ $(document).ready( function($) {
 	// clicked on mens in the lookbook dropdown
 	$('#lookbookDropdown .men').on('click tap', function() {
 		lookbookSetup();
+		$(this).addClass('active').siblings().removeClass('active');
 		$('.holdingPen.men .slide').clone().appendTo( '#slideBox' );
 		$('#slideBox .slide:first-child').addClass('active');
 	});
@@ -78,6 +83,7 @@ $(document).ready( function($) {
 	// clicked on home in the lookbook dropdown
 	$('#lookbookDropdown .home').on('click tap', function() {
 		lookbookSetup();
+		$(this).addClass('active').siblings().removeClass('active');
 		$('.holdingPen.home .slide').clone().appendTo( '#slideBox' );
 		$('#slideBox .slide:first-child').addClass('active');
 	});
@@ -85,7 +91,7 @@ $(document).ready( function($) {
 	// clicked on a store window
 	$('.window').on('click tap', function () {
 		lookbookSetup();
-
+		$('#lookbookDropdown li').addClass('active');
 		$('.holdingPen .slide').clone().appendTo( '#slideBox' );
 		$('#slideBox .slide').eq( $(this).attr('data-window') ).addClass('active');
 	});
@@ -95,7 +101,7 @@ $(document).ready( function($) {
 		$('#lookbooks').show();
 		$('.link').removeClass('active');
 		$('#lookbookDefaultLink').addClass('active');
-		$('#topNav').removeClass('main');
+		$('#topNav').removeClass('main white');
 		$('#slideBox').html('');
 		$('#taxi').hide();
 	}
@@ -157,10 +163,10 @@ $(document).ready( function($) {
 
 });
 
-function driveTaxi() {
-	$('#taxi').animate({
-		left: '200%'
-	}, 10000, function() {
-		$('#taxi').css('left', '-100%');
-	});
-}
+// function driveTaxi() {
+// 	$('#taxi').animate({
+// 		left: '200%'
+// 	}, 10000, function() {
+// 		$('#taxi').css('left', '-100%');
+// 	});
+// }

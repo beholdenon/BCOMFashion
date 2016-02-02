@@ -13,6 +13,8 @@ header, footer {
 
 body {
 	background-color: #878C90;
+    overflow-x: hidden;
+    overflow-y: auto;
 
     &.white {
         background-color: #fff;
@@ -41,12 +43,18 @@ body {
 #bloomoticons {
     height: 99vh;
     width: 100vw;
-    background-color: #DADAD8;
+    background-color: #e9e9e9;
 }
 
 #lookbooks {
     display: none;
     overflow: hidden;
+}
+
+#toBloomies {
+    position: absolute;
+    top: 6vw;
+    left: 0;
 }
 
 #topNav {
@@ -58,12 +66,12 @@ body {
     font-size: 1.15vw;
     font-family: "Avenir LT W01 55 Roman", Arial;
     background-color: #E8E8E8;
-    border-bottom: 9px solid #9a9a9a;
+    border-bottom: 8px solid #757575;
     font-weight: 700;
     display: flex;
     width: 100vw;
     margin: 0;
-    padding: 1.7vw 3% 0;
+    padding: 0.75vw 3% 0;
     justify-content: space-between;
     z-index: 20;
 
@@ -71,16 +79,20 @@ body {
         background-color: transparent;
         border-bottom: 0;
     }
+
+    &.white {
+        background-color: #fff;
+    }
     
 
     & > li {
         display: inline-flex;
-        padding: 1% 0;
+        padding: 1.5vw 0 1.25vw;
         cursor: pointer;
         position: relative;
 
         .logo {
-            height: 2.75vw;
+            height: 4vw;
             width: auto;
             padding: 0 10%;
             position: relative;
@@ -98,7 +110,7 @@ body {
         left: 1vw;
 
         &.active {
-            color: #ff0200;
+            color: #55bfb6;
         }
     }
 
@@ -129,6 +141,10 @@ body {
             padding: 6% 12%;
             cursor: pointer;
 
+            &.active {
+                color: #55bfb6;
+            }
+
             &:last-child {
                 border-bottom: 0;
             }
@@ -142,9 +158,20 @@ body {
     color: #55bfb6;
 }
 
+#emojiHeader {
+    width: 100%;
+}
+
+#emojiVideo {
+    width: 45vw;
+    position: relative;
+    top: 12vw;
+    left: 10vw;
+}
+
 #appLinks {
     position: absolute;
-    top: 15vw;
+    top: 12vw;
     right: 12.5vw;
     width: 28.5vw;
 
@@ -153,6 +180,10 @@ body {
         line-height: 2vw;
         font-family: "Avenir LT W01 55 Roman", Arial;
         padding: 0 2vw 1vh 0.5vw;
+
+        .pink {
+            color: #ff2d6d;
+        }
     }
 
     a {
@@ -160,7 +191,9 @@ body {
         margin: 0 0.5vw;
     }
 
-    img {
+    #appStore,
+    #googlePlay {
+        display: none;
         width: 12vw;
     }
 
