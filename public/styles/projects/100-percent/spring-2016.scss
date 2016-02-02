@@ -7,6 +7,10 @@
 
 @import "compass";
 
+html {
+    overflow-y: auto;
+}
+
 header, footer {
 	display: none;
 }
@@ -27,7 +31,6 @@ body {
     width: auto;
     min-height: none;
     text-align: center;
-    overflow: hidden;
 }
 
 #landingStore {
@@ -48,7 +51,8 @@ body {
 
 #lookbooks {
     display: none;
-    overflow: hidden;
+    // overflow-y: auto;
+
 }
 
 #toBloomies {
@@ -159,7 +163,7 @@ body {
 }
 
 #emojiHeader {
-    width: 100%;
+    width: 90%;
 }
 
 #emojiVideo {

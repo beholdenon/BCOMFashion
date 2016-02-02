@@ -6,13 +6,13 @@ $(document).ready( function($) {
 
 	$('header, footer').remove();
 	
-	// driveTaxi();
+	driveTaxi();
 
-	// setInterval( function(){ driveTaxi(); }, 14000);
+	setInterval( function(){ driveTaxi(); }, 14000);
 
-	// $('#taxi').on('click tap', function () {
-	// 	$('#taxiOverlay').show();
-	// });
+	$('#taxi').on('click tap', function () {
+		$('#taxiOverlay').show();
+	});
 
 	// ===== Page Interactions =====
 
@@ -102,6 +102,7 @@ $(document).ready( function($) {
 		$('.link').removeClass('active');
 		$('#lookbookDefaultLink').addClass('active');
 		$('#topNav').removeClass('main white');
+		$('body').css('background-color', '#E1E1E1');
 		$('#slideBox').html('');
 		$('#taxi').hide();
 	}
@@ -163,10 +164,10 @@ $(document).ready( function($) {
 
 });
 
-// function driveTaxi() {
-// 	$('#taxi').animate({
-// 		left: '200%'
-// 	}, 10000, function() {
-// 		$('#taxi').css('left', '-100%');
-// 	});
-// }
+function driveTaxi() {
+	$('#taxi').animate({
+		left: '200%'
+	}, 10000, function() {
+		$('#taxi').css('left', '-100%');
+	});
+}
