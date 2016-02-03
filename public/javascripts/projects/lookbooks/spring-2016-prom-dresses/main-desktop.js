@@ -568,14 +568,14 @@ window.TEMPLATE.vertical = (function(window, document, $) {
 
             APP.dynamicBrightcoveVideoInsertTAB(); //---> add this when your app includes BRIGHTCOVE video
 
-            APP.slider(); //---> add this when your app includes image sliders
+            // APP.slider(); //---> add this when your app includes image sliders
         } else {
             //DESKTOP
             APP.initDesktop();
 
             APP.playBrightcoveVideo(); //---> add this when your app includes BRIGHTCOVE video
 
-            APP.slider(); //---> add this when your app includes image sliders
+            // APP.slider(); //---> add this when your app includes image sliders
 
             //add hover state to the NAV menu items
             $('.desktop_main_container a, .desktop_socialshare_container li').on('mouseenter', function(){
