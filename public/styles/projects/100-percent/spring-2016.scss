@@ -43,6 +43,100 @@ body {
     display: none;
 }
 
+#about {
+    overflow: hidden;
+    min-height: 100vh;
+    width: 100vw;
+    background: #cdc1a9 url('/fashion/images/projects/100-percent/about.png') no-repeat;
+    background-size: auto 100%;
+    position: relative;
+
+    #aboutText {
+        position: absolute;
+        top: 8vw;
+        left: 43vw;
+        width: 50%;
+
+        .text {
+            font-size: 1.4em;
+            font-family: "Avenir LT W01 55 Roman", Arial;
+            display: inline;
+            line-height: 3.5vw;
+            vertical-align: top;
+        }
+
+        .image {
+            background: url('/fashion/images/projects/100-percent/emoji-sprite.png') no-repeat;
+            background-size: 1300%;
+            min-width: 7%;
+            min-height: 0;
+            padding-bottom: 6.5%;
+            display: inline-block;
+            // image-rendering: -moz-crisp-edges;          /* Firefox */
+            // image-rendering:   -o-crisp-edges;           /* Opera */
+            // image-rendering: -webkit-optimize-contrast;  /* Webkit (non-standard naming) */
+            // image-rendering: crisp-edges;
+
+            &.hundred {
+                background-position: -3% 2%;
+                min-width: 50%;
+                background-size: 210%;
+            }
+
+            &.heart {background-position: 50.5% 4%;}
+
+            &.fashion {
+                background-position: 60.5% 0%;
+                background-size: 1100%;
+            }
+
+            &.love {
+                background-position: 71% 0%;
+                background-size: 1200%;
+            }
+
+            &.happy {
+                background-position: 80% 10%;
+                background-size: 1200%;
+            }
+
+            &.explosion {
+                background-position: 90% 0%;
+                background-size: 1100%;
+            }
+
+            &.shoes {
+                background-position: 0 90%;
+                background-size: 1100%;
+            }
+
+            &.stop {background-position: 11.5% 80%;}
+
+            &.door {
+                background-position: 21% 80%;
+                background-size: 1100%;
+            }
+
+            &.dress {
+                background-position: 31% 90%;
+                background-size: 1100%;
+            }
+
+            &.bag {background-position: 44.25% 80%;}
+
+            &.globe {background-position: 54.5% 85.5%;}
+
+            &.sharpen {
+                image-rendering: -moz-crisp-edges;          /* Firefox */
+                image-rendering:   -o-crisp-edges;           /* Opera */
+                image-rendering: -webkit-optimize-contrast;  /* Webkit (non-standard naming) */
+                image-rendering: crisp-edges;
+            }
+
+        }
+    }
+}
+
 #bloomoticons {
     height: 99vh;
     width: 100vw;
@@ -122,9 +216,13 @@ body {
         color: #55bfb6;
     }
 
-    .lookbook:hover #lookbookDropdown,
-    .shopAll:hover #shopDropdown {
+    // .shopAll:hover #shopDropdown,
+    .lookbook:hover #lookbookDropdown {
         display: block;
+    }
+
+    .shopAll.disabled {
+        color: #888;
     }
     
     #lookbookDropdown,
@@ -197,7 +295,7 @@ body {
 
     #appStore,
     #googlePlay {
-        display: none;
+        display: none; 
         width: 12vw;
     }
 

@@ -6,13 +6,13 @@ $(document).ready( function($) {
 
 	$('header, footer').remove();
 	
-	driveTaxi();
+	// driveTaxi();
 
-	setInterval( function(){ driveTaxi(); }, 14000);
+	// setInterval( function(){ driveTaxi(); }, 14000);
 
-	$('#taxi').on('click tap', function () {
-		$('#taxiOverlay').show();
-	});
+	// $('#taxi').on('click tap', function () {
+	// 	$('#taxiOverlay').show();
+	// });
 
 	// ===== Page Interactions =====
 
@@ -40,7 +40,7 @@ $(document).ready( function($) {
 		$('.link').removeClass('active');
 		$('#campaignLink').addClass('active');
 		$('#lookbookDropdown li').removeClass('active');
-		$('body').css('background-color', '#E6EAEC');
+		$('body').css('background-color', '#cdc1a9');
 		$('#taxi').hide();
 	});
 
@@ -101,7 +101,7 @@ $(document).ready( function($) {
 		$('#lookbooks').show();
 		$('.link').removeClass('active');
 		$('#lookbookDefaultLink').addClass('active');
-		$('#topNav').removeClass('main white');
+		$('#topNav').removeClass('main');
 		$('body').css('background-color', '#E1E1E1');
 		$('#slideBox').html('');
 		$('#taxi').hide();
@@ -154,7 +154,7 @@ $(document).ready( function($) {
 				next = position-1;
 				slide.left(position, next);
 			} else {
-				next = position+1;
+				next = position+1; 
 				slide.right(position, next);
 			}
 		}
@@ -164,10 +164,10 @@ $(document).ready( function($) {
 
 });
 
-function driveTaxi() {
-	$('#taxi').animate({
-		left: '200%'
-	}, 10000, function() {
-		$('#taxi').css('left', '-100%');
-	});
-}
+// function driveTaxi() {
+// 	$('#taxi').animate({
+// 		left: '200%'
+// 	}, 10000, function() {
+// 		$('#taxi').css('left', '-100%');
+// 	});
+// }
