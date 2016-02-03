@@ -64,7 +64,7 @@ window.TEMPLATE.vertical = (function(window, document, $) {
 
         self.removeLoader();
 
-        if ($('.mobile_image_slider').length > 0) APP.imageSlider(); //init slider if there is one 
+        //if ($('.mobile_image_slider').length > 0) APP.imageSlider(); //init slider if there is one 
 
         window.setTimeout(function() {            
             self.bindListeners();
