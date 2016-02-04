@@ -3,17 +3,37 @@
 $(document).ready( function($) {
 
 	// ===== Init Actions =====
-
 	$('header, footer').remove();
+
+	(function () {
+		var hash = location.hash;
+
+		console.log(hash);
+
+		if ( hash != undefined && hash != '' ) {
+
+			$('#lookbookPage-' + hash.substring(1)).siblings().removeClass('active');
+			$('#lookbookPage-' + hash.substring(1)).fadeIn(400, function() {
+				$('#lookbookPage-' + hash.substring(1)).addClass('active');
+			});
+
+			console.log('#lookbookPage-' + hash.trim('#'))
+		} else {
+			if ( $('#lookbooks') ) {
+				$('#lookbooks .slide:first-child').fadeIn(800, function() {
+					$('#lookbooks .slide:first-child').addClass('active');
+				});
+			}
+		}
+
+
+
+	})();
+
+	$('#taxi').on('click tap', function () {
+		$('#taxiOverlay').show();
+	});
 	
-	// driveTaxi();
-
-	// setInterval( function(){ driveTaxi(); }, 14000);
-
-	// $('#taxi').on('click tap', function () {
-	// 	$('#taxiOverlay').show();
-	// });
-
 	// ===== Page Interactions =====
 
 	// closed the taxi overlay
@@ -21,132 +41,46 @@ $(document).ready( function($) {
 		$('#taxiOverlay').hide();
 	});
 
-	// clicked the main logo
-	$('.link .logo').on('click tap', function () {
-		$('#about, #lookbooks, #bloomoticons').hide();
-		$('#storeBg, .window').show();
-		$('#topNav').addClass('main').removeClass('white');
-		$('.link').removeClass('active');
-		$('body').removeAttr('style');
-		$('#lookbookDropdown li').removeClass('active');
-		$('#taxi').show();
-	});
+	var slide = {
 
-	// clicked About the Campaign
-	$('#campaignLink').on('click tap', function () {
-		$('#storeBg, #lookbooks, .window, #bloomoticons').hide();
-		$('#about').show();
-		$('#topNav').removeClass('main').addClass('white');
-		$('.link').removeClass('active');
-		$('#campaignLink').addClass('active');
-		$('#lookbookDropdown li').removeClass('active');
-		$('body').css('background-color', '#cdc1a9');
-		$('#taxi').hide();
-	});
+		left: function (p, n) {
 
-	// clicked Bloomoji nav link
-	$('#mojiLink').on('click tap', function () {
-		$('#storeBg, #lookbooks, .window, #about').hide();
-		$('#bloomoticons').show();
-		$('#topNav').removeClass('main').addClass('white');
-		$('.link').removeClass('active');
-		$('#mojiLink').addClass('active');
-		$('#lookbookDropdown li').removeClass('active');
-		$('body').css('background-color', '#e9e9e9');
-		$('#taxi').hide();
-	});
+			if (n < 0) n = $('#slideBox .slide').length - 1;
 
-	// clicked Lookbook in the top nav
-	$('#lookbookDefaultLink').on('click tap', function () {
-		lookbookSetup();
-		$('#lookbookDropdown li').addClass('active');
-		$('.holdingPen .slide').clone().appendTo( '#slideBox' );
-		$('#slideBox .slide:first-child').addClass('active');
-	});
+			$('#slideBox .slide').eq(n).css('left','-100vw').show();
+			var target = $('#slideBox .slide').filter( function (i){
+				return $.inArray(i, [p,n]) > -1;
+			}) ;
 
-	// clicked on womens in the lookbook dropdown
-	$('#lookbookDropdown .women').on('click tap', function() {
-		lookbookSetup();
-		$(this).addClass('active').siblings().removeClass('active');
-		$('.holdingPen.women .slide').clone().appendTo( '#slideBox' );
-		$('#slideBox .slide:first-child').addClass('active');
-	});
+			target.animate({'left': '+=100vw'},600, function () {
+				$('#slideBox .active').removeClass('active');
+				$('#slideBox .slide').eq(n).addClass('active');
+				$('.arrow').removeClass('active');
+			});
+		},
 
-	// clicked on mens in the lookbook dropdown
-	$('#lookbookDropdown .men').on('click tap', function() {
-		lookbookSetup();
-		$(this).addClass('active').siblings().removeClass('active');
-		$('.holdingPen.men .slide').clone().appendTo( '#slideBox' );
-		$('#slideBox .slide:first-child').addClass('active');
-	});
+		right: function (p, n) {
 
-	// clicked on home in the lookbook dropdown
-	$('#lookbookDropdown .home').on('click tap', function() {
-		lookbookSetup();
-		$(this).addClass('active').siblings().removeClass('active');
-		$('.holdingPen.home .slide').clone().appendTo( '#slideBox' );
-		$('#slideBox .slide:first-child').addClass('active');
-	});
+			if (n >= $('#slideBox .slide').length) n=0;
 
-	// clicked on a store window
-	$('.window').on('click tap', function () {
-		lookbookSetup();
-		$('#lookbookDropdown li').addClass('active');
-		$('.holdingPen .slide').clone().appendTo( '#slideBox' );
-		$('#slideBox .slide').eq( $(this).attr('data-window') ).addClass('active');
-	});
+			$('#slideBox .slide').eq(n).css('left','100vw').show();
+			var target = $('#slideBox .slide').filter( function (i){
+				return $.inArray(i, [p,n]) > -1;
+			}) ;
 
-	function lookbookSetup() {
-		$('#storeBg, #about, .window, #bloomoticons').hide();
-		$('#lookbooks').show();
-		$('.link').removeClass('active');
-		$('#lookbookDefaultLink').addClass('active');
-		$('#topNav').removeClass('main');
-		$('body').css('background-color', '#E1E1E1');
-		$('#slideBox').html('');
-		$('#taxi').hide();
-	}
+			target.animate({'left': '-=100vw'},600, function () {
+				$('#slideBox .active').removeClass('active');
+				$('#slideBox .slide').eq(n).addClass('active');
+				$('.arrow').removeClass('active');
+			});
+		}
+
+	};
 
 	// clicked on a slide show arrow
 	$('.arrow').on('click tap', function() {
 		var position =  $('#slideBox .active').index(),
 			next;
-
-		var slide = {
-
-			left: function (p, n) {
-
-				if (n < 0) n = $('#slideBox .slide').length - 1;
-
-				$('#slideBox .slide').eq(n).css('left','-100vw').show();
-				var target = $('#slideBox .slide').filter( function (i){
-					return $.inArray(i, [p,n]) > -1;
-				}) ;
-
-				target.animate({'left': '+=100vw'},600, function () {
-					$('#slideBox .active').removeClass('active');
-					$('#slideBox .slide').eq(n).addClass('active');
-					$('.arrow').removeClass('active');
-				});
-			},
-
-			right: function (p, n) {
-
-				if (n >= $('#slideBox .slide').length) n=0;
-
-				$('#slideBox .slide').eq(n).css('left','100vw').show();
-				var target = $('#slideBox .slide').filter( function (i){
-					return $.inArray(i, [p,n]) > -1;
-				}) ;
-
-				target.animate({'left': '-=100vw'},600, function () {
-					$('#slideBox .active').removeClass('active');
-					$('#slideBox .slide').eq(n).addClass('active');
-					$('.arrow').removeClass('active');
-				});
-			}
-
-		};
 
 		if ( !$(this).hasClass('active')) {
 			$('.arrow').addClass('active');
@@ -159,15 +93,31 @@ $(document).ready( function($) {
 			}
 		}
 
+	});	
+
+	$('#slideBox .slide').hammer().on('swipeleft', '.slide', function () {
+		console.log('LEFT');
+		var position =  $('#slideBox .active').index(),
+			next;
+
+		if ( !$('.arrow').hasClass('active')) {
+			$('.arrow').addClass('active');
+			next = position+1; 
+			slide.right(position, next);
+		}
+	});
+
+	$('#slideBox .slide').hammer().on('swiperight', '.slide', function () {
+		console.log('RIGHT ');
+		var position =  $('#slideBox .active').index(),
+			next;
+
+		if ( !$('.arrow').hasClass('active')) {
+			$('.arrow').addClass('active');
+			next = position-1;
+			slide.left(position, next);
+		}
 	});
 
 
 });
-
-// function driveTaxi() {
-// 	$('#taxi').animate({
-// 		left: '200%'
-// 	}, 10000, function() {
-// 		$('#taxi').css('left', '-100%');
-// 	});
-// }
