@@ -13,6 +13,13 @@ body {
     font-family: "Avenir LT W01 55 Roman", Arial;
 }
 
+.sharpen {
+    image-rendering: -moz-crisp-edges;          /* Firefox */
+    image-rendering:   -o-crisp-edges;           /* Opera */
+    image-rendering: -webkit-optimize-contrast;  /* Webkit (non-standard naming) */
+    image-rendering: crisp-edges;
+}
+
 
 // @media screen only (orientation: landscape) {
 
@@ -31,6 +38,14 @@ body {
         list-style-type: none;
     }
 
+    a {
+        text-decoration: none;
+    }
+
+    #bLogo {
+        width: 65vw;
+    }
+
     .top {
 
         &:before {
@@ -41,12 +56,12 @@ body {
             border-left: 8px solid transparent;
             border-right: 8px solid transparent;
             
-            border-top: 12px solid #fff;
+            border-top: 12px solid #000;
 
             list-style-type: none;
             position: absolute;
-            left: 14%;
-            top: 15px;
+            left: 8%;
+            top: 20px;
         }
 
         &.active {
@@ -56,7 +71,7 @@ body {
                 border-left: 8px solid transparent;
                 border-right: 8px solid transparent;
             
-                border-bottom: 12px solid #ff5d1d;
+                border-bottom: 12px solid #000;
                 border-top: 0;
             }
         }
@@ -65,18 +80,19 @@ body {
 
     li,
     .sudoLi {
-        padding: 10px 0;
-        background-color: #000;
-        color: #fff;
+        padding: 2.5vw 0;
+        background-color: #e8e8e8;
+        color: #000;
         text-transform: uppercase;
         font-weight: 700;
         font-size: 4.5vw;
-        font-family: "Avenir LT W01 55 Roman", Arial;
+        font-family: "Avenir LT W01 85 Heavy", Arial;
         border-bottom: 1px solid #fff;
 
-        &:last-child {
-            border-bottom: 0;
-        }
+    }
+
+    .subNav {
+        padding-bottom: 0;
     }
 }
 
@@ -103,10 +119,9 @@ body {
     }
 
     .shop {
-        min-height: 130vw;
+        height: auto;
         min-width: 100vw;
-        background-color: #ddd;
-        border-top: 5px solid #fff;
+        margin-bottom: 6vw;
     }
 
     .whitespace {
@@ -119,17 +134,36 @@ body {
         background-color: transparent;
         color: #000;
         text-transform: uppercase;
-        top: -7vw;
-        padding: 8vw 0;
-        width: 80vw;
+        top: -10vw;
+        padding: 6vw 0 6vw;
+        width: 70vw;
         margin-bottom: 0;
+
+        &.left {
+            left: 5vw;
+        }
+
+        &.right {
+            right: 5vw;
+        }
     }
 
     .copy {
         text-align: left;
         padding: 5vw 10vw;
         font-size: 5vw;
+
+        .pink {
+            color: #ff2d6d;
+        }
     }
+}
+
+#appStore,
+#googlePlay {
+    display: none;
+    width: 70vw;
+    margin: 20px auto 30px;
 }
 
 #landing {
@@ -152,6 +186,104 @@ body {
     }
 }
 
+
+#about {
+
+    video {
+        width: 100vw;
+        margin-bottom: 5vw;
+    }
+
+    #aboutText {
+        padding: 0 8vw;
+        margin-bottom: 10vw;
+        text-align: left;
+
+        .text {
+            font-size: 6vw;
+            font-family: "Avenir LT W01 55 Roman", Arial;
+            display: inline;
+            line-height: 10vw;
+            vertical-align: top;
+            font-weight: 700;
+        }
+
+        .image {
+            background: url("/fashion/images/projects/100-percent/emoji-sprite.png") no-repeat;
+            top: 0vw;
+            position: relative;
+            min-width: 13%;
+            min-height: 0;
+            padding-bottom: 12%;
+            display: inline-block;
+            background-size: 1500%;
+
+            &.hundred {
+                background-position: 0% -41%;
+                min-width: 66%;
+                background-size: 221%;
+                padding-bottom: 15%;
+                position: relative;
+                top: 3.5vw;
+            }
+
+            &.heart {background-position: 50.5% 4%;}
+
+            &.fashion {
+                background-position: 60.5% 0%;
+                background-size: 1100%;
+            }
+
+            &.love {
+                background-position: 71% 0%;
+                background-size: 1200%;
+            }
+
+            &.happy {
+                background-position: 80% 10%;
+                background-size: 1200%;
+            }
+
+            &.explosion {
+                background-position: 90% 0%;
+                background-size: 1100%;
+            }
+
+            &.shoes {
+                background-position: 0 90%;
+                background-size: 1100%;
+            }
+
+            &.stop {background-position: 11.5% 80%;}
+
+            &.door {
+                background-position: 20% 79%;
+                background-size: 1200%;
+            }
+
+            &.dress {
+                background-position: 31% 90%;
+                background-size: 1100%;
+            }
+
+            &.bag {
+                background-position: 44.25% 80%;
+                background-size: 1300%;
+            }
+
+            &.globe {background-position: 54% 78%;}
+
+            &.sharpen {
+                image-rendering: -moz-crisp-edges;          /* Firefox */
+                image-rendering:   -o-crisp-edges;           /* Opera */
+                image-rendering: -webkit-optimize-contrast;  /* Webkit (non-standard naming) */
+                image-rendering: crisp-edges;
+            }
+
+        }
+    }
+}
+
 .footerNav {
     list-style-type: none;
     text-align: center;
@@ -160,7 +292,7 @@ body {
 
     li {
         margin: 0;
-        padding: 10px 0;
+        padding: 5vw 0;
         background-color: #000;
         color: #fff;
         text-transform: uppercase;
@@ -175,3 +307,4 @@ body {
     }
 
 }
+
