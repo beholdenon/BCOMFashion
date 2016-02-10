@@ -195,7 +195,7 @@ body {
     }
 
     #aboutText {
-        padding: 0 8vw;
+        padding: 0 7.5vw;
         margin-bottom: 10vw;
         text-align: left;
 
@@ -219,12 +219,10 @@ body {
             background-size: 1500%;
 
             &.hundred {
-                background-position: 0% -41%;
-                min-width: 66%;
-                background-size: 221%;
-                padding-bottom: 15%;
+                background-position: 0% -14%;
+                min-width: 54vw;
+                background-size: 220%;
                 position: relative;
-                top: 3.5vw;
             }
 
             &.heart {background-position: 50.5% 4%;}
