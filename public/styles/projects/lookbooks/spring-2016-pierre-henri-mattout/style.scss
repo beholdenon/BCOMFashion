@@ -1,0 +1,322 @@
+#bl_main_container {
+	position: relative;
+	min-width: 962px;
+	max-width: 2400px;
+	width: auto;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: left;
+	padding: 0;
+}
+
+// #bl_main_container *, #bl_main_container *:before, #bl_main_container *:after {
+//     -moz-box-sizing: border-box;
+//     -webkit-box-sizing: border-box;
+//     box-sizing: border-box;
+//     -webkit-font-smoothing: antialiased;
+//     -moz-font-smoothing: antialiased;
+// }
+
+/*utility classes*/
+
+// .padding_5{
+// 	padding: 5px;
+// }
+// .padding_10{
+// 	padding: 10px;
+// }
+// .padding_20{
+// 	padding: 20px;
+// }
+// .padding_50{
+// 	padding: 50px;
+// }
+// .padding_top_5{
+// 	padding-top: 5px;
+// }
+// .padding_top_10{
+// 	padding-top: 10px;
+// }
+// .padding_top_20{
+// 	padding-top: 20px;
+// }
+// .padding_bottom_5{
+// 	padding-bottom: 5px;
+// }
+// .padding_bottom_10{
+// 	padding-bottom: 10px;
+// }
+// .padding_bottom_20{
+// 	padding-bottom: 20px;
+// }
+// .padding_bottom_45{
+// 	padding-bottom: 45px;
+// }
+// .margin_5{
+// 	margin: 5px;
+// }
+// .margin_10{
+// 	margin: 10px;
+// }
+// .margin_20{
+// 	margin: 20px;
+// }
+// .margin_top_5{
+// 	margin-top: 5px;
+// }
+// .margin_top_10{
+// 	margin-top: 10px;
+// }
+// .margin_top_20{
+// 	margin-top: 20px;
+// }
+// .margin_bottom_5{
+// 	margin-bottom: 5px;
+// }
+// .margin_bottom_10{
+// 	margin-bottom: 10px;
+// }
+// .margin_bottom_20{
+// 	margin-bottom: 20px;
+// }
+// .margin_bottom_30{
+// 	margin-bottom: 30px;
+// }
+// .margin_bottom_45{
+// 	margin-bottom: 45px;
+// }
+
+/* loader */
+	.desktop_loader{
+	    position: relative;
+	    display: block;
+	    height: 100%;
+	    height: 100vh;
+	    width: 100%;
+	    left: 0;
+	    top: 0;
+	    z-index: 99;
+	    background: #fff;
+	}    
+	.desktop_loader > img{
+	    position: absolute;
+	    left: 50%;
+	    margin-left: -15px;
+	    top: 50% !important;
+	    margin-top: -30px !important;
+	}
+
+.desktop_main_container{
+	display: none;
+	position: relative;
+	text-align: center;
+	text-transform: uppercase;
+	color:#000;
+    letter-spacing: 1px;
+	width: 100%;
+	/*overflow: hidden;*/
+}
+
+/* navigation */
+	.desktop_nav_placeholder{
+	    position:relative;
+	    width: 100%;
+	    height: 86px;
+	}
+
+	.desktop_main_container nav{
+		background-color: #0A33C3;
+		height: 86px;
+		width: 100%;
+		z-index: 98;
+	}
+	.desktop_main_container nav .desktop_nav_inner_content {
+		position: relative;
+		width: 962px;
+		margin: 0 auto;
+		text-align: left;
+		line-height: 86px;
+
+		img {
+			    width: 860px;
+			    margin-top: -3px;
+		}		
+		a.socialshare_icon {
+			color: #fff;
+			display: inline;
+			// cursor: pointer;
+			font-size: 15px;
+			margin: 0 6px;
+		}
+
+		#nav_link-phm {
+			left: 0;
+			top: 0;
+			width: 60px;
+			height: 86px;
+		}
+		#nav_link-clothing {
+			left: 88px;
+			top: 25px;
+			width: 125px;
+			height: 40px;
+		}
+		#nav_link-bags {
+		    left: 235px;
+		    top: 25px;
+		    width: 70px;
+		    height: 40px;
+		}
+		#nav_link-shoes {
+			left: 325px;
+			top: 25px;
+			width: 85px;
+			height: 40px;
+		}
+		#nav_link-interview {
+			left: 430px;
+			top: 25px;
+			width: 140px;
+			height: 40px;
+		}
+		#nav_link-sign_up {
+			left: 590px;
+			top: 25px;
+			width: 108px;
+			height: 40px;
+		}
+		#nav_link-shop_all {
+			left: 720px;
+			top: 25px;
+			width: 120px;
+			height: 40px;
+		}
+
+	}	
+	.desktop_bottom_nav_placeholder{
+	    position:relative;
+	    width: 100%;
+	    height: 53px;
+	}
+	.desktop_main_container div.desktop_bottom_nav {
+		background-color: #fff;
+		height: 53px;
+		width: 100%;
+		z-index: 98;
+
+		.desktop_bottom_nav_inner_content {
+			width: 962px;
+			margin: 0 auto;
+			text-align: left;
+			line-height: 53px;
+			position: relative;
+
+			img {
+				    width: 100%;
+			}		
+		}	
+	}
+	
+	.phm_link {
+		position: absolute;
+		content: " ";
+	}
+	.phm_clear_both {
+		clear: both;
+	}
+
+/*section*/
+	.desktop_main_container section{
+		font-size: 0;
+		overflow: hidden;
+	}
+
+	.phm_intro {
+		position: relative;
+		background: url('/fashion/images/projects/lookbooks/spring-2016-pierre-henri-mattout/desktop_intro_off.jpg') no-repeat;
+		-webkit-background-size: contain;
+	  	-moz-background-size: contain;
+	  	-o-background-size: contain;
+	  	background-size: contain;
+	  	padding-top: 62.166666666667%;
+	  	height: 0;
+	  	width: 100%;
+	}
+	.phm_intro:hover {
+		background-image: url('/fashion/images/projects/lookbooks/spring-2016-pierre-henri-mattout/desktop_intro_on.jpg');
+	}
+
+	#intro_entire_section_link {
+		width: 100%;
+		height: 100%;
+		left: 0%; 
+		top: 0%;	
+	}
+	#intro_shop_all_link {
+		width: 18.208333333333%;
+		height: 5.697050938338%;
+		left: 63.75%; 
+		top: 58.512064343%;	
+	}
+	.phm_home_columns {
+		width: 100%;
+		position: relative;
+	}
+	.phm_home_column {
+		display: block;
+		position: relative;
+	  	width: 33.333333%;
+	  	float: left;
+	 	margin-bottom: -0.5%;
+
+	 	.box_link {
+	 		width: 100%;
+	 		height: 100%;
+	 		top: 0;
+	 		left: 0;
+	 	}
+	}
+	.phm_column_on {
+		display: none;
+	}
+	// #phm_clothing_on {
+	// 	display: none;
+	// }
+	// #phm_clothing:hover #phm_clothing_off {
+	// 	display: none;
+	// }
+	// #phm_clothing:hover #phm_clothing_on {
+	// 	display: block
+	// }
+
+	.phm_home_column:hover .phm_column_off {
+		display: none;
+	}
+	.phm_home_column:hover .phm_column_on {
+		display: block;
+	}
+	
+
+	.phm_interview_events {
+		position: relative;
+	}
+
+	#home_interveview_entire_section_link {
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 73.7%;
+	}
+	#home_interveview_button_link {
+		left: 39.5%;
+	    top: 52%;
+	    width: 26.4%;
+	    height: 4.5%;
+	}
+	#nav_bottom_sign_up {
+	    left: 541px;
+	    top: 16px;
+	    width: 204px;
+	    height: 22px;
+	}
+
