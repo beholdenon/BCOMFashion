@@ -320,3 +320,14 @@
 	    height: 22px;
 	}
 
+#phm_interview_main_content {
+	article {
+		position: relative;
+		a.phm_link {
+			width: 100%;
+			height: 100%;
+			left: 0;
+			top: 0;
+		}
+	}
+}
