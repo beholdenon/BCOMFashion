@@ -146,6 +146,10 @@ body {
         &.right {
             right: 5vw;
         }
+
+        span {
+            line-height: 1.5em;
+        }
     }
 
     .copy {
@@ -280,6 +284,27 @@ body {
 
         }
     }
+}
+
+button.getApp {
+    padding: 3vw 0 6vw;
+
+    .inconsistent {
+        text-transform: none;
+        text-align: left;
+    }    
+}
+
+
+#appIcon {
+    background-image: url(/fashion/images/projects/100-percent/emoji-header.png);
+    display: inline-block;
+    width: 6vw;
+    height: 6vw;
+    background-size: 300%;
+    background-repeat: no-repeat;
+    position: relative;
+    top: 6px;
 }
 
 .footerNav {

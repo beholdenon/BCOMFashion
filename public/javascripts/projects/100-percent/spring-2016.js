@@ -32,6 +32,9 @@ $(document).ready( function($) {
 
 	$('#taxi').on('click tap', function () {
 		$('#taxiOverlay').show();
+		if ( $('#emoji-video:visible') ) {
+			$('#emoji-video').get(0).play();
+		}
 	});
 	
 	// ===== Page Interactions =====
@@ -39,6 +42,7 @@ $(document).ready( function($) {
 	// closed the taxi overlay
 	$('#overlayBg, .close').on('click tap', function () {
 		$('#taxiOverlay').hide();
+		$('#emoji-video').get(0).pause();
 	});
 
 	var slide = {
@@ -119,5 +123,30 @@ $(document).ready( function($) {
 		}
 	});
 
+	// Coremetrics 
+
+	var element = {
+		'elementID': '',
+		'elementCategory': 'spring16_100percent',
+	}
+
+	$('#topNav li, #topNav a').on("click tap", function () {
+		element.elementID = 'topNav-' + $(this).attr('id');
+		elementTag(element);
+	});
+
+	$('#landingStore > a, #taxi').on("click tap", function () {
+		element.elementID = 'homepage-' + $(this).attr('id');
+		elementTag(element);
+	});
+
+	$('#lookbooks .arrow').on("click tap", function () {
+		element.elementID = $('#lookbooks .slide.active').attr('id') + '-' + $(this).attr('id');
+		elementTag(element);
+	});
+
+	function elementTag(element) {
+        return window.cmCreatePageElementTag(element.elementID, element.elementCategory, element.attributes || null);
+    }
 
 });

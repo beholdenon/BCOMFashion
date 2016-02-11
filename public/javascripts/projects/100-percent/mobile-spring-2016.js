@@ -2,21 +2,38 @@
 
 $(document).ready( function($) {
 
+	var element = {
+		'elementID': '',
+		'elementCategory': 'spring16_100percent',
+	}
+
 	$('.top').on('click tap', function () {
 		$(this).toggleClass('active');
 		$(this).siblings().slideToggle(400);
 	});
 
-	$('.landing').on('click tap', function () { screenSwitch('#landing'); });
-	$('.getApp').on('click tap', function () { screenSwitch('#app'); });
-	$('.seeAbout').on('click tap', function () { screenSwitch('#about'); });
+	//  COREMETRICS TAGS
+
+	$('.subNav a').on("click tap", function () {
+		element.elementID = 'mlb:' + $(this).attr('id');
+		elementTag(element);
+	});
+
+	$('#landing button, #landing a').on('click tap', function() {
+		element.elementID = 'mlb:' + $(this).attr('id');
+		elementTag(element);
+	});
+
+	$('video').on('play', function () {
+		element.elementID = 'mlb:' + $(this).attr('id');
+		elementTag(element);
+	});
+
+
+	function elementTag(element) {
+        return window.cmCreatePageElementTag(element.elementID, element.elementCategory, element.attributes || null);
+    }
 
 });
 
 
-function screenSwitch ( target ) {
-
-	$(target).removeClass('hidden').siblings('.content').addClass('hidden');
-	$('#dropdownNav .subNav').slideUp(400);
-	$('#dropdownNav .top').toggleClass('active');
-}
