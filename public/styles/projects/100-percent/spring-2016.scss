@@ -6,6 +6,7 @@
 // ======================================
 
 @import "compass";
+@import url("https://fonts.googleapis.com/css?family=Libre+Baskerville");
 
 html {
     overflow-y: auto;
@@ -64,9 +65,10 @@ body {
         right: 5vw;
         width: 50vw;
 
+
         .text {
-            font-size: 1.4em;
-            font-family: "Avenir LT W01 55 Roman", Arial;
+            font-size: 1.2em;
+            font-family: 'Libre Baskerville', serif;
             display: inline;
             line-height: 3.5vw;
             vertical-align: top;
@@ -149,9 +151,9 @@ body {
 
 #toBloomies {
     position: absolute;
-    top: 6vw;
+    top: 100%;
     left: 0;
-    z-index: 18;
+    z-index: 21;
 }
 
 #topNav {
@@ -168,7 +170,7 @@ body {
     display: flex;
     width: 100vw;
     margin: 0;
-    padding: 0.85vw 3% 0;
+    padding: 1.15vw 3% 0;
     justify-content: space-between;
     z-index: 20;
 
@@ -184,14 +186,16 @@ body {
 
     & > li {
         display: inline-flex;
-        padding: 1.5vw 0 1.25vw;
+        padding: 1.35vw 0 1.25vw;
         cursor: pointer;
-        position: relative;
+        // position: relative;
 
-        a {
+        a, 
+        span {
             cursor: pointer;
             font-family: 'Avenir LT W01 55 Roman', Arial;
-            font-size: 1.15vw;
+            font-size: 0.85vw;
+            letter-spacing: 0.1vw;
             font-weight: 700;
             text-transform: uppercase;
             text-decoration: none;
@@ -203,11 +207,10 @@ body {
         }
 
         .logo {
-            height: 4vw;
-            width: auto;
+            width: 22vw;
             padding: 0 10%;
             position: relative;
-            left: 7%;
+            left: 4%;
         }
 
         &.noPadding {
@@ -239,25 +242,27 @@ body {
         color: #888;
     }
     
+    #shopDropdown {right: 2vw;}
+    #lookbookDropdown {left: 0vw;}
+
     #lookbookDropdown,
     #shopDropdown {
         display: none;
         position: absolute;
         top: 100%;
-        left: -45%;
         list-style-type: none;
         color: #fff;
         background-color: #000;
-        width: 150%;
-        font-size: 1vw;
-        z-index: 20;
+        width: 10vw;
+        font-family: 'Avenir LT W01 55 Roman', Arial;
+        font-size: 0.9vw;
+        letter-spacing: 0.1vw;
+        z-index: 24;
 
         a {
             border-bottom: 1px solid #fff;
             padding: 6% 12%;
             cursor: pointer;
-            font-size: 1vw;
-            line-height: 1.6em;
             display: block;
 
             &.active {
@@ -265,7 +270,14 @@ body {
             }
         }
 
-        li:last-child a {
+        a, li {
+            font-family: 'Avenir LT W01 55 Roman', Arial;
+            font-size: 0.9vw;
+            letter-spacing: 0.1vw;
+            line-height: 1.6em;
+        }
+
+        a:last-child {
             border-bottom: 0;
         }
         
@@ -275,8 +287,6 @@ body {
         border-bottom: 1px solid #fff;
         padding: 6% 12%;
         cursor: pointer;
-        font-size: 1vw;
-        line-height: 1.4em;
         display: block;
 
         &:last-child a,
@@ -313,9 +323,9 @@ body {
     width: 28.5vw;
 
     .copy {
-        font-size: 1.3vw;
-        line-height: 2vw;
-        font-family: "Avenir LT W01 55 Roman", Arial;
+        font-size: 1vw;
+        line-height: 1.75vw;
+        font-family: 'Libre Baskerville', serif;
         padding: 0 2vw 1vh 0.5vw;
 
         .pink {
@@ -336,9 +346,16 @@ body {
 
 }
 
+.sharpen {
+    image-rendering: -moz-crisp-edges;          /* Firefox */
+    image-rendering:   -o-crisp-edges;           /* Opera */
+    image-rendering: -webkit-optimize-contrast;  /* Webkit (non-standard naming) */
+    image-rendering: crisp-edges;
+}
+
 .window {
     height: 22.5vw;
-    bottom: 10.25vw;
+    top: 42.5%;
     position: absolute;
     cursor: pointer;
 }
@@ -361,8 +378,21 @@ body {
 
 #window-4 {right:0; z-index: 6;}
 
-#video-1 {left:-7.5vw; z-index: 1;}
-#video-2 {right:16.75%; z-index: 1;}
+
+video.window {
+    height: 25vw;
+}
+
+#video-1 {
+    z-index: 1;
+    top:41%;
+}
+
+#video-2 {
+    z-index: 1;
+    right: 26.6vw;
+    top: 42%;
+}
 
 @-moz-keyframes drive {
     0%, 30%   {left:-45%;}

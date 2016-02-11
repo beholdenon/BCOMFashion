@@ -1,23 +1,23 @@
 <link rel="stylesheet" type="text/css" href="/fashion/styles/projects/100-percent/spring-2016.css"/>
-<title>100% Bloomingdales</title>
+<title>100% Bloomingdale's | Spring 2016</title>
 
 <section id="landingStore">
 	<img src="/fashion/images/projects/100-percent/store_video.png" id="storeBg" class="background" />
 
 	<ul id="topNav" class="main">
 		
-		<li class="lookbook">
+		<li id='lookbook' class="lookbook">
 			<span id="lookbookDefaultLink" class="link">lookbook</span>
 			<ul id='lookbookDropdown'>
-				<li class='all'><a href="/100-percent-2016/lookbook/">all</a></li>
-				<li class="women"><a href="/100-percent-2016/lookbook/women/">women</a></li>
-				<li class="men"><a href="/100-percent-2016/lookbook/men/">men</a></li>
-				<li class="home"><a href="/100-percent-2016/lookbook/home/">home</a></li>
+				<a id='lookbook-women' class="women" href="/100-percent-2016/lookbook/women/">women</a>
+				<a id='lookbook-men' class="men" href="/100-percent-2016/lookbook/men/">men</a>
+				<a id='lookbook-home' class="home" href="/100-percent-2016/lookbook/home/">home</a>
+				<a id='lookbook-all' class='all' href="/100-percent-2016/lookbook/">all</a>
 			</ul>
 		</li>
-		<li id="campaignLink" class="link"><a href="/100-percent-2016/about/">about the campaign</a></li>
-		<li class="link noPadding"><a href="/100-percent-2016/"><img class="logo" src='/fashion/images/projects/100-percent/bloomies-logo.png'/></a></li>
-		<li id="mojiLink" class="link"><a href="/100-percent-2016/bloomoticons/">get the bloomoticons</a></li>
+		<li class="link"><a id="campaignLink" href="/100-percent-2016/about/">about the campaign</a></li>
+		<li class="link noPadding"><a id="main-logo" href="/100-percent-2016/"><img class="sharpen logo" src='/fashion/images/projects/100-percent/bloomies-logo.png'/></a></li>
+		<li class="link"><a id="mojiLink" href="/100-percent-2016/bloomoticons/">get the bloomoticons</a></li>
 		<li id="shopLink" class="shopAll">
 			<span class="link">shop all 100%</span>
 			<ul id='shopDropdown'>
@@ -33,9 +33,10 @@
 				<a href="http://www1.bloomingdales.com/shop/100-bloomingdales/100-exclusive-home?id=1004422"><li>home</li></a> -->
 			</ul>
 		</li>
+		<a id="toBloomies" href="http://www.bloomingdales.com"><img src="/fashion/images/projects/100-percent/back.png"/></a>
 	</ul>
 
-	<a id="toBloomies" href="http://www.bloomingdales.com"><img src="/fashion/images/projects/100-percent/back.png"/></a>
+	
 
 	<video autoplay muted loop id="video-1" class="window" data-window="8">
 		 <source type="video/mp4" src="/fashion/images/projects/100-percent/window_1.mp4">
@@ -47,10 +48,10 @@
 		 Your browser does not support the video tag.
 	</video>
 	
-	<a href="/100-percent-2016/lookbook/#2"><div id="window-1" class="window" data-window="8"/></div></a>
-	<a href="/100-percent-2016/lookbook/#0"><img id="window-2" class="window" data-window="0" src="/fashion/images/projects/100-percent/window_2.jpg"/></a>
-	<a href="/100-percent-2016/lookbook/#10"><div id="window-3" class="window" data-window="10"/></div></a>
-	<a href="/100-percent-2016/lookbook/#4"><img id="window-4" class="window" data-window="4" src="/fashion/images/projects/100-percent/window_4.jpg"/></a>
+	<a id="landing-window-1" href="/100-percent-2016/lookbook/#2"><div id="window-1" class="window" data-window="8"/></div></a>
+	<a id="landing-window-2" href="/100-percent-2016/lookbook/#0"><img id="window-2" class="window" data-window="0" src="/fashion/images/projects/100-percent/window_2.jpg"/></a>
+	<a id="landing-window-3" href="/100-percent-2016/lookbook/#10"><div id="window-3" class="window" data-window="10"/></div></a>
+	<a id="landing-window-4" href="/100-percent-2016/lookbook/#4"><img id="window-4" class="window" data-window="4" src="/fashion/images/projects/100-percent/window_4.jpg"/></a>
 
 	<img id="taxi" src="/fashion/images/projects/100-percent/taxi.png" />
 
@@ -68,8 +69,8 @@
 	</div>
 	<div id="blooperVideo">
 		<div class="close">x</div>
-		<video controls autoplay>
-			<source type="video/mp4" src="/fashion/images/projects/100-percent/emoji-peel.mp4">
+		<video id='emoji-video' controls>
+			<source type="video/mp4" src="/fashion/images/projects/100-percent/emoji-peel.mov">
 		 	Your browser does not support the video tag.
 		</video>
 	</div>
