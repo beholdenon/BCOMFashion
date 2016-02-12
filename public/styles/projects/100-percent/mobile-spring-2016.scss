@@ -103,6 +103,11 @@ body {
 .content {
     text-align: center;
 
+    &.mens {
+        margin-bottom: 15vw;    
+    }
+    
+
     ul {
         list-style-type: none;
         margin:0;
