@@ -2,27 +2,33 @@
 
 $(document).ready( function($) {
 
+	var element = {
+		'elementID': '',
+		'elementCategory': 'spring16_100percent',
+	}
+
 	// ===== Init Actions =====
 	$('header, footer').remove();
 
 	(function () {
 		var hash = location.hash;
 
-		console.log(hash);
-
 		if ( hash != undefined && hash != '' ) {
 
 			$('#lookbookPage-' + hash.substring(1)).siblings().removeClass('active');
 			$('#lookbookPage-' + hash.substring(1)).fadeIn(400, function() {
 				$('#lookbookPage-' + hash.substring(1)).addClass('active');
+				pageViewTag($('#slideBox .active').attr('id'), element.elementCategory);
 			});
-
-			console.log('#lookbookPage-' + hash.trim('#'))
+			
+			
 		} else {
 			if ( $('#lookbooks') ) {
 				$('#lookbooks .slide:first-child').fadeIn(800, function() {
 					$('#lookbooks .slide:first-child').addClass('active');
+					pageViewTag($('#slideBox .active').attr('id'), element.elementCategory);
 				});
+				
 			}
 		}
 
@@ -38,6 +44,11 @@ $(document).ready( function($) {
 	});
 	
 	// ===== Page Interactions =====
+
+	$('#lookbook, #shopLink').on('click tap', function () {
+		$(this).find('ul').toggle();
+	});
+
 
 	// closed the taxi overlay
 	$('#overlayBg, .close').on('click tap', function () {
@@ -61,6 +72,7 @@ $(document).ready( function($) {
 				$('#slideBox .slide').eq(n).addClass('active');
 				$('.arrow').removeClass('active');
 			});
+			setTimeout(function(){ pageViewTag($('#slideBox .active').attr('id'), element.elementCategory) }, 650);
 		},
 
 		right: function (p, n) {
@@ -77,6 +89,8 @@ $(document).ready( function($) {
 				$('#slideBox .slide').eq(n).addClass('active');
 				$('.arrow').removeClass('active');
 			});
+
+			setTimeout(function(){ pageViewTag($('#slideBox .active').attr('id'), element.elementCategory) }, 650);
 		}
 
 	};
@@ -125,12 +139,8 @@ $(document).ready( function($) {
 
 	// Coremetrics 
 
-	var element = {
-		'elementID': '',
-		'elementCategory': 'spring16_100percent',
-	}
 
-	$('#topNav li, #topNav a').on("click tap", function () {
+	$('#topNav a').on("click tap", function () {
 		element.elementID = 'topNav-' + $(this).attr('id');
 		elementTag(element);
 	});
@@ -145,8 +155,25 @@ $(document).ready( function($) {
 		elementTag(element);
 	});
 
+	$('video').on('play', function () {
+		element.elementID = $(this).attr('id');
+		elementTag(element);
+	});
+
 	function elementTag(element) {
         return window.cmCreatePageElementTag(element.elementID, element.elementCategory, element.attributes || null);
+    }
+
+    function pageViewTag (pageID, catID, attrID, attrData){
+        window.BLOOMIES.coremetrics.pageViewExploreAttributes = new window.BLOOMIES.coremetrics.exploreAttributes();
+
+        var attr = parseInt(attrID);
+        var dataAttr = {};
+        dataAttr[attr] = attrData;
+
+        window.BLOOMIES.coremetrics.pageViewExploreAttributes.append(dataAttr);
+
+        window.BLOOMIES.coremetrics.cmCreatePageviewTag(pageID, catID, '', '');        
     }
 
 });
