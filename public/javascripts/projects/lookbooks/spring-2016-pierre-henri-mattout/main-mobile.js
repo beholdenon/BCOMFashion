@@ -64,7 +64,7 @@ window.TEMPLATE.vertical = (function(window, document, $) {
 
         self.removeLoader();
 
-        //if ($('.mobile_image_slider').length > 0) APP.imageSlider(); //init slider if there is one 
+        if ($('.mobile_image_slider').length > 0) APP.imageSlider(); //init slider if there is one 
 
         window.setTimeout(function() {            
             self.bindListeners();
@@ -333,13 +333,12 @@ window.TEMPLATE.vertical = (function(window, document, $) {
         //img touch event
         $('.mobile_main_container img').on('click', function() {
             if (self.isThisHotMedia(this)) {
-                var hash = $(this).attr('data-url'),
-                    imgIndex = $(this).data('cm');
-                window.open(hash, '_self');
+                var hash = $(this).attr('data-url');
+                window.open(hash, '_blank');
                 hash = hash.replace('http://m.bloomingdales.com/shop/', '');
                 hash = hash.split('?')[0];
                 hash = hash.substring(hash.indexOf('/') + 1);
-                self.coremetrics('Element', self.cm, 'shop_now_' + hash + '-image_' + imgIndex );
+                self.coremetrics('Element', self.cm, 'shop_now_' + hash + '-image');
             }
         });
 
