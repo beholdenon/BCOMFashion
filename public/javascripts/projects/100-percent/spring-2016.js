@@ -38,6 +38,8 @@ $(document).ready( function($) {
 
 	$('#taxi').on('click tap', function () {
 		$('#taxiOverlay').show();
+		element.elementID = $(this).attr('id');
+		elementTag(element);
 		if ( $('#emoji-video:visible') ) {
 			$('#emoji-video').get(0).play();
 		}
