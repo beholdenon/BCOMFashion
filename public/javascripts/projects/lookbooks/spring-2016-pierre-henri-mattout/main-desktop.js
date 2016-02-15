@@ -77,9 +77,9 @@ window.PHM_2016 = (function(window, document, $) {
 
         self.vars.loadingComplete = true;
         
-        if( window.location.pathname.includes('interview') ){
+        if( window.location.pathname.indexOf('interview') > 0){
             cmSufix = '--interview';
-        } else if( window.location.pathname.includes('no-results') ){
+        } else if( window.location.pathname.indexOf('no-results') > 0 ){
             cmSufix = '--no-results';
         }
 
@@ -126,7 +126,7 @@ window.PHM_2016 = (function(window, document, $) {
 
     APP.stickyBottomNav = function () {
 
-        if( !( window.location.pathname.includes('no-results') ) ){
+        if( ( window.location.pathname.indexOf('no-results') < 0 ) ){
             var self = this;
 
             if (self.vars.loadingComplete && ( $(window).scrollTop() + $(window).height() - 53 )> ($('.desktop_bottom_nav_placeholder').offset().top)) {
@@ -253,17 +253,14 @@ window.PHM_2016 = (function(window, document, $) {
 
         // social share
         $('.desktop_socialshare_facebook').on('click', function( event ) {
-            event.preventDefault();
             window.open(self.social.facebookURL, '_blank', 'width=608,height=342');
             self.coremetrics('Element', self.cm, 'social-fb');
         });
         $('.desktop_socialshare_twitter').on('click', function( event ) {
-            event.preventDefault();
             window.open(self.social.twitterURL, '_blank', 'width=740,height=340');
             self.coremetrics('Element', self.cm, 'social-twitter');
         });
         $('.desktop_socialshare_pinterest').on('click', function( event ) {
-            event.preventDefault();
             window.open(self.social.pinterestURL, '_blank', 'width=770,height=380');
             self.coremetrics('Element', self.cm, 'social-pinterest');
         });  
