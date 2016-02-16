@@ -285,7 +285,7 @@ window.TEMPLATE.vertical = (function(window, document, $) {
             $(slideElement).addClass('active');
         }
 
-        function onSliderLoad (currentIndex) {
+        function onSliderLoad () { //arg: currentIndex
             // $('.bx-viewport > ul > li').eq(currentIndex + 1).addClass('active'); //moved on the DOM element 
             $('.bx-clone').attr('id', '');
             APP.hotMedia();
