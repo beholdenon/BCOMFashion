@@ -90,7 +90,7 @@ window.TEMPLATE.vertical = (function(window, document, $) {
 
     //(req) add 'active' class on header section when is visible
     APP.desktopHeaderVisible = function () {
-        $('.desktop_header').is(':in-viewport') ? $('.desktop_header').addClass('active') : $('.desktop_header').removeClass('active');
+        $('.desktop_header').is(':in-viewport') ? $('.desktop_header').addClass('active') : $('.desktop_header').removeClass('active');  // jshint ignore:line
     };
 
     //(req) enable sticky NAV
@@ -280,7 +280,7 @@ window.TEMPLATE.vertical = (function(window, document, $) {
             onSliderLoad: onSliderLoad
         });        
 
-        function onSlideAfter (slideElement, oldIndex, newIndex) {
+        function onSlideAfter (slideElement) {
             $(slideElement).siblings().removeClass('active');
             $(slideElement).addClass('active');
         }
