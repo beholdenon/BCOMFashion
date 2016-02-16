@@ -160,7 +160,7 @@ window.TEMPLATE.vertical = (function(window, document, $) {
 
     //(req) add 'active' class on mobile header section when is visible
     APP.headerVisible = function () {
-        $('.mobile_header').is(':in-viewport') ? $('.mobile_header').addClass('active') : $('.mobile_header').removeClass('active');
+        $('.mobile_header').is(':in-viewport') ? $('.mobile_header').addClass('active') : $('.mobile_header').removeClass('active');  // jshint ignore:line
     };
 
     //(req) when landing on a deeplinked page, use the hash to scroll to the section
@@ -216,6 +216,14 @@ window.TEMPLATE.vertical = (function(window, document, $) {
                     
         //CM - Pageview
         self.coremetrics('Pageview', self.cm, self.cm + '-' + section);         
+    };
+
+
+    //(req) images and videos that have 'data-url' attribute are marked as 'hot'
+    APP.isThisHotMedia = function (elementID) {
+        var attr = $(elementID).attr('data-url');
+        
+        return (typeof attr !== typeof undefined && attr !== false && attr !== '#') ? true : false;
     };
 
     //(req) global mobile listeners for interaction & setting CM tags

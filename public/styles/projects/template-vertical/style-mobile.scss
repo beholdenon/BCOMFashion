@@ -33,14 +33,14 @@ body {
 }
 
 /* Main Header */
-	.mobile_main_container > header.mobile_header{
+	.mobile_main_container > .mobile_header{
 		width: 100%;
 	}
 
-	.mobile_main_container > header.mobile_header > img{
+	.mobile_main_container > .mobile_header > img{
 		width: 100%;
 	}
-	.mobile_main_container > header.mobile_header > p{
+	.mobile_main_container > .mobile_header > p{
 		font-size: 15px;
 		font-weight: 300;
 		color: #000;
