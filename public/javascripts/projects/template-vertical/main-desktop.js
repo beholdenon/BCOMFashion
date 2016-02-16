@@ -135,8 +135,10 @@ window.TEMPLATE.vertical = (function(window, document, $) {
         if (typeof hash !== 'undefined'){
             var offset = self.vars.navHeight;
 
+            $('section').removeClass('active');
             try {
                 $('html, body').animate({ scrollTop: $('#desktop_' + hash).offset().top -  offset}, 'slow');
+                $('section#desktop_' + hash).addClass('active');
             } catch (err) {
                 $('html, body').scrollTop(0);                
             }
