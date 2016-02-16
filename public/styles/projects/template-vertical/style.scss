@@ -140,12 +140,12 @@ ul {
 	}
 
 /* header */
-	.desktop_main_container > header{
+	.desktop_main_container > .desktop_header{
 		height: auto;
 		font-size: 0;
 		min-width: 962px !important;
 	}
-	.desktop_main_container > header > img{
+	.desktop_main_container > .desktop_header > img{
 		width: 100%;
 	}
 	.desktop_main_container > ul{

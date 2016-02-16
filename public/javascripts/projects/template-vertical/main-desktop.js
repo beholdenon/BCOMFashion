@@ -90,7 +90,7 @@ window.TEMPLATE.vertical = (function(window, document, $) {
 
     //(req) add 'active' class on header section when is visible
     APP.desktopHeaderVisible = function () {
-        $('.desktop_header').is(':in-viewport') ? $('.desktop_header').addClass('active') : $('.desktop_header').removeClass('active');
+        $('.desktop_header').is(':in-viewport') ? $('.desktop_header').addClass('active') : $('.desktop_header').removeClass('active');  // jshint ignore:line
     };
 
     //(req) enable sticky NAV
@@ -135,8 +135,10 @@ window.TEMPLATE.vertical = (function(window, document, $) {
         if (typeof hash !== 'undefined'){
             var offset = self.vars.navHeight;
 
+            $('section').removeClass('active');
             try {
                 $('html, body').animate({ scrollTop: $('#desktop_' + hash).offset().top -  offset}, 'slow');
+                $('section#desktop_' + hash).addClass('active');
             } catch (err) {
                 $('html, body').scrollTop(0);                
             }
@@ -278,12 +280,12 @@ window.TEMPLATE.vertical = (function(window, document, $) {
             onSliderLoad: onSliderLoad
         });        
 
-        function onSlideAfter (slideElement, oldIndex, newIndex) {
+        function onSlideAfter (slideElement) {
             $(slideElement).siblings().removeClass('active');
             $(slideElement).addClass('active');
         }
 
-        function onSliderLoad (currentIndex) {
+        function onSliderLoad () { //arg: currentIndex
             // $('.bx-viewport > ul > li').eq(currentIndex + 1).addClass('active'); //moved on the DOM element 
             $('.bx-clone').attr('id', '');
             APP.hotMedia();
