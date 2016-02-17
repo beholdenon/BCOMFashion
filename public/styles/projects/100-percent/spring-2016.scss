@@ -403,6 +403,8 @@ video.window {
     top: 42%;
 }
 
+// TAXI
+
 @-moz-keyframes drive {
     0%, 30%   {left:-45%;}
     100% {left:130%;}
@@ -424,51 +426,6 @@ video.window {
     -moz-animation: drive 20s  linear infinite;
     -webkit-animation: drive 20s  linear infinite;
 
-}
-
-
-
-// Slide Show Styles
-
-.slide {
-    display:none;
-    position: absolute;
-
-    &.active {
-        display: block;
-    }
-}
-
-#slideBox {
-    overflow: hidden;
-    width: 100vw;
-    height: 100vh;
-}
-
-.holdingPen {display: none;}
-
-// Overlay Styles
-
-.arrow {
-    position: absolute;
-    font-size: 0;
-    width: 6vmin;
-    height: 6vmin;
-    border-top: 4px solid #000;
-    border-left: 4px solid #000;
-    top: 31vw;
-    cursor: pointer;
-    z-index: 20;
-
-    &.left { 
-        transform: rotate(-45deg);
-        left: 4vw;
-    }
-
-    &.right { 
-        transform: rotate(135deg);
-        right: 4vw;
-    }
 }
 
 #taxiOverlay {
@@ -516,7 +473,7 @@ video.window {
 
     .copy {
         position: relative;
-        top: 25%;
+        top: 20%;
         padding: 0 15%;
         font-size: 0.95vw;
 
@@ -527,9 +484,6 @@ video.window {
         }
     }
 
-    .hunt {
-        display: none;
-    }
 }
 
 #huntEmojis {
@@ -561,4 +515,104 @@ video.window {
         height: auto;
         position: relative;
     }
+}
+
+
+// LOOKBOOK SLIDES
+
+.slide {
+    display:none;
+    position: absolute;
+
+    &.active {
+        display: block;
+    }
+}
+
+#slideBox {
+    overflow: hidden;
+    width: 100vw;
+    height: 99.8vh;
+}
+
+.holdingPen {display: none;}
+
+// Overlay Styles
+
+.arrow {
+    position: absolute;
+    font-size: 0;
+    width: 6vmin;
+    height: 6vmin;
+    border-top: 4px solid #000;
+    border-left: 4px solid #000;
+    top: 31vw;
+    cursor: pointer;
+    z-index: 20;
+
+    &.left { 
+        transform: rotate(-45deg);
+        left: 4vw;
+    }
+
+    &.right { 
+        transform: rotate(135deg);
+        right: 4vw;
+    }
+}
+
+
+#lookbooks {
+    position: relative;
+
+    .textBlock {
+        position: absolute;
+        top: 16vw;
+        width: 30vw;
+
+        &.left {
+            left: 8vw;
+        }
+
+        &.right {
+            right: 8vw;
+        }
+    }
+
+    .slideTitle {
+        font-family: 'Libre Baskerville', serif;
+        font-size: 2.5vw;
+        font-weight: 400;
+    }
+
+    .copy {
+        font-size: 1.05vw;
+        font-family: "Avenir LT W01 55 Roman", Arial;
+    }
+
+    .exclusive {
+        text-transform: uppercase;
+        display: block;
+        margin-top: 2vw;
+        margin-bottom: 0;
+        font-size: 1.15vw;
+        font-family: "Avenir LT W01 55 Roman", Arial;
+    }
+
+    .shopNow {
+        direction: block;
+        font-size: 1.15vw;
+        font-family: "Avenir LT W01 55 Roman", Arial;
+        text-transform: uppercase;
+        text-decoration: underline;
+    }
+
+    .slide {
+        height: 100%;
+        width: 100vw;
+        background-size: cover;
+        background-color: #c8c9cc;
+        background-repeat: no-repeat;
+    }
+
 }
