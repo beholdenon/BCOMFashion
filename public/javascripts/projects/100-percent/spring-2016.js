@@ -32,16 +32,20 @@ $(document).ready( function($) {
 			}
 		}
 
-
-
 	})();
 
 	$('#taxi').on('click tap', function () {
-		$('#taxiOverlay').show();
 		element.elementID = $(this).attr('id');
 		elementTag(element);
-		if ( $('#emoji-video:visible') ) {
-			$('#emoji-video').get(0).play();
+
+		var testDate = new Date();
+		$('#taxiOverlay').show();
+
+		if ( testDate.getDate() === 10 && testDate.getMonth() === 2 && testDate.getFullYear() === 2016 ) {
+			$('#blooperVideo').hide();
+			$('#scavengerHunt').show();
+		} else if ( $('#taxi-video-play:visible') ) {
+			$('#taxi-video-play').get(0).play();
 		}
 	});
 	
