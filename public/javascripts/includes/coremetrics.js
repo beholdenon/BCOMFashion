@@ -46,6 +46,8 @@ define([
     }
 
     function initCoreMetrics(categoryID) {
+        window.BLOOMIES.coremetrics.pageViewExploreAttributes = new window.BLOOMIES.coremetrics.exploreAttributes();
+        
         var pageID = 'fashion_' + pageName(),
             catID = categoryID || 'xx-xx-xx-xx',
             attr = '';
@@ -65,7 +67,7 @@ define([
 
             window.Globals.Coremetrics.attr42 = attr;
 
-            return pageViewTag(pageID, catID, '42', attr);
+            // return pageViewTag(pageID, catID, '42', attr); ---default pageview tag firing on every view
         }
     }
 
