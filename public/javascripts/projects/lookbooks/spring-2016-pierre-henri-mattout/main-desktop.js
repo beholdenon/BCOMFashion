@@ -46,7 +46,8 @@ window.PHM_2016 = (function(window, document, $) {
 /***********************************************/     
     //(req) desktop & tablet initialiazation wrapper
     APP.initDesktop = function () {
-        var self = this;
+        var self = this,
+            cmSufix = '--hp';
 
         //remove MOBILE nodes
         $('.mobile_main_container').remove();
@@ -76,7 +77,13 @@ window.PHM_2016 = (function(window, document, $) {
 
         self.vars.loadingComplete = true;
         
-        self.coremetrics('Pageview', self.cm, self.cm + '--hp');
+        if( window.location.pathname.indexOf('interview') > 0){
+            cmSufix = '--interview';
+        } else if( window.location.pathname.indexOf('no-results') > 0 ){
+            cmSufix = '--no-results';
+        }
+
+        self.coremetrics('Pageview', self.cm, self.cm + cmSufix );
     };
 
     //(req) remove loader after DOM loads
@@ -118,24 +125,26 @@ window.PHM_2016 = (function(window, document, $) {
     };
 
     APP.stickyBottomNav = function () {
-        var self = this;
 
-        if (self.vars.loadingComplete && ( $(window).scrollTop() + $(window).height() - 53 )> ($('.desktop_bottom_nav_placeholder').offset().top)) {
-            var topPos = $('.desktop_bottom_nav_placeholder').position().top;
+        if( ( window.location.pathname.indexOf('no-results') < 0 ) ){
+            var self = this;
 
-            $('.desktop_bottom_nav').css({
-                'bottom': 0,
-                'position': 'absolute'
-            });
+            if (self.vars.loadingComplete && ( $(window).scrollTop() + window.innerHeight ) > ( $('footer').offset().top ) ) {
 
-            //landing on an ancored URL
-            //if (self.views.sectionInViewport !== null) self.removeActiveNavBtn();
-        } else {
-            $('.desktop_bottom_nav').css({
-                'bottom': 0,
-                'position': 'fixed'
-            });
+                $('.desktop_bottom_nav').css({
+                    'bottom': 0,
+                    'position': 'absolute'
+                });
 
+                //landing on an ancored URL
+                //if (self.views.sectionInViewport !== null) self.removeActiveNavBtn();
+            } else {
+                $('.desktop_bottom_nav').css({
+                    'bottom': 0,
+                    'position': 'fixed'
+                });
+
+            }
         }
     };
 
@@ -212,104 +221,22 @@ window.PHM_2016 = (function(window, document, $) {
         }, 5000);
     };
 
-    //(opt) interact with the Brightcove video
-    APP.playBrightcoveVideo = function () {
-        var self = this;
-
-        //PLAY btn listener
-        $('.desktop_brightcove_video_play').on('click', function(event) {
-            event.preventDefault();
-            event.stopPropagation();
-
-            $(this).remove();
-            $('.desktop_brightcove_video').css('background-image', '');
-            $('.BrightcoveExperience').css('display', 'block');
-
-            //CM - Element
-            self.coremetrics('Element', self.cm, self.cm + '-brightcove-video_play');
-        });
-    };
 
     //(req) global listeners for interaction & setting CM tags
     APP.bindListeners = function() {
         var self = this;
 
-        //dropdown NAVIGATION: open & close nav
-        $('.desktop_nav > .dropdown > a').on('click', function(event) {
-            var dropDownNav = $('.desktop_nav > .dropdown > ul');
-
-            event.preventDefault();
-
-            if (dropDownNav.is(':visible')) {
-                $('.desktop_nav > .dropdown').addClass('open');
-                dropDownNav.slideUp('slow');
-
-                self.coremetrics('Element', self.cm, 'nav_dropdown_close');
-            } else {
-                $('.desktop_nav > .dropdown').removeClass('open');
-                dropDownNav.slideDown('slow');
-                
-                self.coremetrics('Element', self.cm, '--nav_dropdown_open');
-            }
-        });
-
-        //dropdown NAVIGATION: close on mouse leaving container
-        $('.desktop_nav > .dropdown').on('mouseleave', function() {
-            var _self = this,
-                ULmarkup = $(_self).children('ul.desktop_nav_ul');
-
-            if (ULmarkup.is(':visible')) {  
-                ULmarkup.slideUp('slow');
-                
-                self.coremetrics('Element', self.cm, 'nav_dropdown_close');                    
-            }  
-
-        });
-
-        //NAVIGATION menu item click: go to section
-        $('.desktop_nav > ul > li > a').on('click', function(event) {
-            var hash = $(this).attr('href');
-
-            hash = hash.substring(1, hash.length);
-            self.updateWindowLocation(event, hash);
-        });
-
-        //dropdown NAVIGATION menu item click: go to section
-        $('.desktop_nav > .dropdown > ul > li > a').on('click', function(event) {
-            var hash = $(this).attr('href');
-
-            $('.desktop_nav > .dropdown').removeClass('open');
-            $('.desktop_nav > .dropdown > ul').slideUp('slow');
-            $('.desktop_nav > .dropdown a').removeClass('active');
-
-            hash = hash.substring(1, hash.length);
-            self.updateWindowLocation(event, hash);
+        $('a.phm_link').on('click', function () {
+            var cmAttr = $(this).attr('id');
+            self.coremetrics( 'Element', self.cm, cmAttr );
         });
 
         //back to top listener
-        $('.desktop_back_to_top').on('click', function() {
+        $('.desktop_back_to_top').on('click', function ( event ) {
+            event.preventDefault();
             $('html, body').animate({
                 scrollTop: 0
-            }, 'slow', function(){
-                //scrolling complete; appmed class "origin" to the button node
-                $('.desktop_back_to_top').addClass('origin');
-            });
-
-            self.coremetrics('Element', self.cm, 'back_to_top');
-        });
-
-        //hot images & videos
-        $('.desktop_main_container img, .desktop_main_container video').on('click', function() {
-            if (self.isThisHotMedia(this)) {
-                var hash = $(this).attr('data-url');
-
-                window.open(hash, '_self');
-
-                hash = hash.replace('http://www1.bloomingdales.com/shop/', '');
-                hash = hash.split('?')[0];
-                hash = hash.substring(hash.indexOf('/') + 1);
-                self.coremetrics('Element', self.cm, 'shop_now_' + hash + '-image');
-            }
+            }, 'slow' );
         });
 
         //CM: shop buttons 
@@ -323,37 +250,16 @@ window.PHM_2016 = (function(window, document, $) {
             self.coremetrics('Element', self.cm, 'shop_all_top');
         });
 
-        //CM: NAV left side anchors when dropdown menu
-        $('a.desktop_nav_links').on('click', function() {
-            var hash = $(this).attr('id');
-
-            hash = hash.substr(hash.lastIndexOf('_'));
-
-            self.coremetrics('Element', self.cm, 'nav-shopbutton_' + hash);
-        });
-
-        //CM: ancor tags inside sections
-        $('.desktop_main_container section a').on('click', function() {
-            var hash = $(this).attr('href');
-            hash = hash.replace('http://www1.bloomingdales.com/shop/', '');
-            hash = hash.split('?')[0];
-            hash = hash.substring(hash.indexOf('/') + 1);
-            self.coremetrics('Element', self.cm, 'shop_now_' + hash);
-        });
-
         // social share
         $('.desktop_socialshare_facebook').on('click', function( event ) {
-            event.preventDefault();
             window.open(self.social.facebookURL, '_blank', 'width=608,height=342');
             self.coremetrics('Element', self.cm, 'social-fb');
         });
         $('.desktop_socialshare_twitter').on('click', function( event ) {
-            event.preventDefault();
             window.open(self.social.twitterURL, '_blank', 'width=740,height=340');
             self.coremetrics('Element', self.cm, 'social-twitter');
-        });
+        });     
         $('.desktop_socialshare_pinterest').on('click', function( event ) {
-            event.preventDefault();
             window.open(self.social.pinterestURL, '_blank', 'width=770,height=380');
             self.coremetrics('Element', self.cm, 'social-pinterest');
         });  
@@ -392,7 +298,7 @@ window.PHM_2016 = (function(window, document, $) {
     APP.socialshare = function() {
         var self = this,
             baseURL = 'http://' + window.location.host + window.location.pathname,
-            baseURLAssets = 'http://' + window.location.host + '/fashion/images/projects' + window.location.pathname;
+            baseURLAssets = 'http://' + window.location.host + '/fashion/images/projects/lookbooks/spring-2016-pierre-henri-mattout/';
 
         self.social.facebookURL = 'https://www.facebook.com/dialog/feed';
         self.social.facebookURL += '?app_id=145634995501895';
@@ -501,30 +407,23 @@ window.PHM_2016 = (function(window, document, $) {
 /*                   BOOTSTRAP                 */
 /***********************************************/      
     $(window).load(function() {
+
+        APP.socialshare();
+
         if (window.Detect({ useUA: true }) === 'desktop' && /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
             //TABLET
             APP.zoomFixTAB();
 
             APP.initDesktop();
 
-            APP.autoPlayHTML5VideoTAB(); //---> add this when your app includes HTML5 video
 
-            APP.dynamicBrightcoveVideoInsertTAB(); //---> add this when your app includes BRIGHTCOVE video
-
-            APP.slider(); //---> add this when your app includes image sliders
         } else {
             //DESKTOP
-            APP.initDesktop();
 
-            //add hover state to the NAV menu items
-            // $('.desktop_main_container a, .desktop_socialshare_container li').on('mouseenter', function(){
-            //     $(this).addClass('hover');
-            // }).on('mouseleave', function(){
-            //     $(this).removeClass('hover');
-            // });  
+            APP.initDesktop();
+            
         }
 
-        APP.socialshare();
     });    
 
     return APP;
