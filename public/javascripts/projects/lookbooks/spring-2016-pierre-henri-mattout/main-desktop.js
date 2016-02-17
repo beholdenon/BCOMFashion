@@ -129,8 +129,7 @@ window.PHM_2016 = (function(window, document, $) {
         if( ( window.location.pathname.indexOf('no-results') < 0 ) ){
             var self = this;
 
-            if (self.vars.loadingComplete && ( $(window).scrollTop() + $(window).height() - 53 )> ($('.desktop_bottom_nav_placeholder').offset().top)) {
-                var topPos = $('.desktop_bottom_nav_placeholder').position().top;
+            if (self.vars.loadingComplete && ( $(window).scrollTop() + window.innerHeight ) > ( $('footer').offset().top ) ) {
 
                 $('.desktop_bottom_nav').css({
                     'bottom': 0,
@@ -299,7 +298,7 @@ window.PHM_2016 = (function(window, document, $) {
     APP.socialshare = function() {
         var self = this,
             baseURL = 'http://' + window.location.host + window.location.pathname,
-            baseURLAssets = 'http://' + window.location.host + '/fashion/images/projects' + window.location.pathname;
+            baseURLAssets = 'http://' + window.location.host + '/fashion/images/projects/lookbooks/spring-2016-pierre-henri-mattout/';
 
         self.social.facebookURL = 'https://www.facebook.com/dialog/feed';
         self.social.facebookURL += '?app_id=145634995501895';

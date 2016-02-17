@@ -149,7 +149,12 @@
 			}		
 		}
 		
-		a.socialshare_icon {
+		.desktop_socialshare_container {
+			line-height: 86px;
+    		display: inline;
+		}
+
+		li.socialshare_icon {
 			color: #fff;
 			display: inline;
 			cursor: pointer;
@@ -349,7 +354,7 @@
 			margin-right: 0px;
 		}
 
-		a.socialshare_icon {
+		li.socialshare_icon {
 			// cursor: pointer;
 			font-size: 1.5vw;
 			margin: 0 0.5%;
