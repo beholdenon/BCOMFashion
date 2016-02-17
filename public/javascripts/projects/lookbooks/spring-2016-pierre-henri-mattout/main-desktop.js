@@ -258,7 +258,7 @@ window.PHM_2016 = (function(window, document, $) {
         $('.desktop_socialshare_twitter').on('click', function( event ) {
             window.open(self.social.twitterURL, '_blank', 'width=740,height=340');
             self.coremetrics('Element', self.cm, 'social-twitter');
-        });
+        });     
         $('.desktop_socialshare_pinterest').on('click', function( event ) {
             window.open(self.social.pinterestURL, '_blank', 'width=770,height=380');
             self.coremetrics('Element', self.cm, 'social-pinterest');
@@ -407,30 +407,23 @@ window.PHM_2016 = (function(window, document, $) {
 /*                   BOOTSTRAP                 */
 /***********************************************/      
     $(window).load(function() {
+
+        APP.socialshare();
+
         if (window.Detect({ useUA: true }) === 'desktop' && /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
             //TABLET
             APP.zoomFixTAB();
 
             APP.initDesktop();
 
-            APP.autoPlayHTML5VideoTAB(); //---> add this when your app includes HTML5 video
 
-            APP.dynamicBrightcoveVideoInsertTAB(); //---> add this when your app includes BRIGHTCOVE video
-
-            APP.slider(); //---> add this when your app includes image sliders
         } else {
             //DESKTOP
-            APP.initDesktop();
 
-            //add hover state to the NAV menu items
-            // $('.desktop_main_container a, .desktop_socialshare_container li').on('mouseenter', function(){
-            //     $(this).addClass('hover');
-            // }).on('mouseleave', function(){
-            //     $(this).removeClass('hover');
-            // });  
+            APP.initDesktop();
+            
         }
 
-        APP.socialshare();
     });    
 
     return APP;
