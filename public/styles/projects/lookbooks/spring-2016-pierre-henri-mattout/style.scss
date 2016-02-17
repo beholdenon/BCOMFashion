@@ -151,8 +151,8 @@
 		
 		.desktop_socialshare_container {
 			line-height: 86px;
-    		display: inline;
-    		margin-left: 5px;
+			display: inline;
+			margin-left: 4px;
 		}
 
 		li.socialshare_icon {
@@ -161,6 +161,10 @@
 			cursor: pointer;
 			font-size: 15px;
 			margin: 0 6px;
+		}
+
+		#socialshare_pinterest {
+			margin-right: 0;
 		}
 
 		#nav_link-phm {
