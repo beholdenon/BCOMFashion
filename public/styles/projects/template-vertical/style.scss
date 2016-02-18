@@ -1,3 +1,9 @@
+@media only screen and (max-device-width : 981px) {
+	body {
+		min-width: 962px;
+	}
+}
+
 #bl_main_container {
 	position: relative;
 	width: 962px;
