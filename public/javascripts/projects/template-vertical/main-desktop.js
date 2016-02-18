@@ -52,7 +52,7 @@ window.TEMPLATE.vertical = (function(window, document, $) {
         $('.mobile_main_container').remove();
         
         //define constants 
-        self.vars.navHeight = $('.desktop_nav').height();
+        self.vars.navHeight = $('.desktop_nav').height() - 2;
 
         $('img.lazy').show().lazyload({
             threshold: 200,
@@ -164,7 +164,7 @@ window.TEMPLATE.vertical = (function(window, document, $) {
             windowOffset = $(window).scrollTop();
 
         if (self.vars.heroOffset === null) {
-            var offset = self.vars.isDesktop ? 65 : 40;
+            var offset = self.vars.isDesktop ? 65 : 8;
 
             self.vars.heroOffset = self.vars.heroHeight + self.vars.navHeight + offset;
         }
@@ -559,8 +559,10 @@ window.TEMPLATE.vertical = (function(window, document, $) {
 /*                   BOOTSTRAP                 */
 /***********************************************/      
     $(window).load(function() {
-        if (window.Detect({ useUA: true }) === 'desktop' && /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
             //TABLET
+            APP.vars.isDesktop = false;
+
             APP.zoomFixTAB();
 
             APP.initDesktop();
@@ -572,6 +574,7 @@ window.TEMPLATE.vertical = (function(window, document, $) {
             APP.slider(); //---> add this when your app includes image sliders
         } else {
             //DESKTOP
+            
             APP.initDesktop();
 
             APP.playBrightcoveVideo(); //---> add this when your app includes BRIGHTCOVE video
