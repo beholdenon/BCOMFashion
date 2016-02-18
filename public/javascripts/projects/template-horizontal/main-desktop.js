@@ -25,7 +25,7 @@ window.TEMPLATE.horizontal = (function(window, $) {
 /***********************************************/   
     //(req) desktop & tablet initialiazation wrapper
     APP.initDesktop = function() {
-        var self = this;
+        var self = this; 
 
         self.deepLinks();
         self.bindListeners();
@@ -56,7 +56,7 @@ window.TEMPLATE.horizontal = (function(window, $) {
         var self = this,
             index = $.address.value();
 
-        if (index != '/') {
+        if (index !== '/') {
             index = index.substring(1, index.length - 1);
             self.slider.goToSlide(index-1);
             self.markActiveNavBtn(index);
@@ -74,8 +74,6 @@ window.TEMPLATE.horizontal = (function(window, $) {
 
     //(req) images and videos that have 'data-url' attribute populated with a valid url, get a pointer cursor
     APP.hotMedia = function() {
-        var self = this;
-
         // for each image check if it has attached a data-url attr to switch to pointer cursor
         $('.desktop_header > div > div.bx-viewport > ul > li img, .desktop_header > div > div.bx-viewport > ul > li video').each(function() {
             var _self = this,
@@ -154,7 +152,6 @@ window.TEMPLATE.horizontal = (function(window, $) {
         $('.desktop_main_container a.desktop_slidecontrollers_ctrl').on('click', function(event) {
             var target = $(this),
                 index = parseInt(target.data('slide'), 10),
-                targetID = target.attr('id'),
                 goToSlideIndex,
                 updateLocationIndex;
             
@@ -163,7 +160,7 @@ window.TEMPLATE.horizontal = (function(window, $) {
 
             self.coremetrics('Element', self.cm, 'nav-control-' + (index + 1));
 
-            if ($('.dropdown').length == 0) {
+            if ($('.dropdown').length === 0) {
                 goToSlideIndex = index;
                 updateLocationIndex = index + 1;                
             } else {
@@ -178,7 +175,7 @@ window.TEMPLATE.horizontal = (function(window, $) {
         });
 
         //slider arrows ctrl
-        $('.desktop_header > div > div.bx-controls.bx-has-controls-direction > div > a').on('click', function(event) {
+        $('.desktop_header > div > div.bx-controls.bx-has-controls-direction > div > a').on('click', function() {
             var index = self.slider.getCurrentSlide();
 
             self.updateLocation(index + 1);
@@ -268,24 +265,16 @@ window.TEMPLATE.horizontal = (function(window, $) {
     //(req) custom logger for 'dev' environment
     APP.logErr = function(log) {
         //log errors only on DEV mode
-        if (window.location.href.indexOf('fashion.bloomingdales.com') < 0) window.console && console.info(log);
+        if (window.location.href.indexOf('fashion.bloomingdales.com') < 0) window.console && console.info(log);  // jshint ignore:line
     };
 
     //(req) desktop & tablet auto-play HTML5 video
     APP.playHTML5Video = function(index) {
         var prevVideo = $('.desktop_header > div > div.bx-viewport > ul > li').eq(index-1).children('video').get(0),
-            currentVideo = $('.desktop_header > div > div.bx-viewport > ul > li').eq(index).children('video').get(0),
-            iscurrentBrightcove = $('.desktop_header > div > div.bx-viewport > ul > li').eq(index).hasClass('ht_desktop_brightcove_video'),
-            isPrevBrightcove = $('.desktop_header > div > div.bx-viewport > ul > li').eq(index).children('object.BrightcoveExperience');
+            currentVideo = $('.desktop_header > div > div.bx-viewport > ul > li').eq(index).children('video').get(0);
 
         if (typeof prevVideo !== 'undefined') prevVideo.pause();
-        if (typeof BrightcoveVideoPlayer !== 'undefined') {
-            if (iscurrentBrightcove) {
-                BrightcoveVideoPlayer.play();
-            } else {
-                BrightcoveVideoPlayer.pause();
-            }
-        } 
+
         if (typeof currentVideo !== 'undefined') currentVideo.play();
 
         $('.desktop_header > div > div.bx-viewport > ul > li').eq(index).addClass('active');
@@ -383,7 +372,7 @@ window.TEMPLATE.horizontal = (function(window, $) {
                 }
             });
         }
-    }
+    };
 
     //(opt) hide shop all button on certain slides
     APP.hideShopAllBtn = function (index) {
@@ -392,7 +381,7 @@ window.TEMPLATE.horizontal = (function(window, $) {
         } else {
             $('.desktop_shop_all_container').removeClass('hidden');
         }
-    }
+    };
 
 /***********************************************/
 /*                   BOOTSTRAP                 */
