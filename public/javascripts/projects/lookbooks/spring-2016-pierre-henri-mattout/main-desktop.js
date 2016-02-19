@@ -251,15 +251,15 @@ window.PHM_2016 = (function(window, document, $) {
         });
 
         // social share
-        $('.desktop_socialshare_facebook').on('click', function( event ) {
+        $('.desktop_socialshare_facebook').on('click', function() {
             window.open(self.social.facebookURL, '_blank', 'width=608,height=342');
             self.coremetrics('Element', self.cm, 'social-fb');
         });
-        $('.desktop_socialshare_twitter').on('click', function( event ) {
+        $('.desktop_socialshare_twitter').on('click', function() {
             window.open(self.social.twitterURL, '_blank', 'width=740,height=340');
             self.coremetrics('Element', self.cm, 'social-twitter');
         });     
-        $('.desktop_socialshare_pinterest').on('click', function( event ) {
+        $('.desktop_socialshare_pinterest').on('click', function() {
             window.open(self.social.pinterestURL, '_blank', 'width=770,height=380');
             self.coremetrics('Element', self.cm, 'social-pinterest');
         });  

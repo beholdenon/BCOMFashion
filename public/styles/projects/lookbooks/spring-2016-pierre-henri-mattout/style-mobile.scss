@@ -105,109 +105,102 @@ body {
 	    width: 100%;
 	}
 
-	nav.mobile_topnav{
-	    height: 45px;
-	    width: 100%;
-	    position: absolute;
-	    top: 0;
-	    left: 0;
-	    z-index: 1;
-
-	    img {
-	    	width: 100%;
-	    	height: 100%;
-	    }
-
-	    div {
-	    	display: none;
-		    height: 302px;
-		    max-height: 100vh;
-		    width: 100%;
-		    position: absolute;
-		    margin: 0 auto;
-		    top: 0;
-		    left: 0;
-
-		    #mobile_nav_dropdown_arrow {
-				top: 0;
-				left: 1%;
-				width: 13%;
-				height: 13%;
-			}
-
-			#mobile_nav_dropdown_phm {
-				left: 15%;
-				top: 0;
-				width: 70%;
-				height: 14.75%;
-			}
-			#mobile_nav_dropdown_clothing {
-				left: 15%;
-				top: 15.5%;
-				width: 70%;
-				height: 13.5%;
-			}
-			#mobile_nav_dropdown_bags {
-				left: 15%;
-				top: 29.5%;
-				width: 70%;
-				height: 13.5%;
-			}
-			#mobile_nav_dropdown_shoes {
-				left: 15%;
-				top: 43.75%;
-				width: 70%;
-				height: 13.5%;
-			}
-			#mobile_nav_dropdown_interview {
-				left: 15%;
-				top: 57.8%;
-				width: 70%;
-				height: 13.5%;
-			}
-			#mobile_nav_dropdown_signup {
-				left: 15%;
-				top: 71.9%;
-				width: 70%;
-				height: 13.5%;
-			}
-			#mobile_nav_dropdown_shop_all {
-				left: 15%;
-				top: 86%;
-				width: 70%;
-				height: 13.5%;
-			}
-		}
-
-		#mobile_nav_arrow {
-			top: 0;
-			left: 1%;
-			width: 13%;
-			height: 100%;
-		}
-
-		.mobile_socialshare_facebook {
-			position: absolute;
-			top: 0;
-			left: 73.5%;
-			width: 8%;
-			height: 100%;
-		}
-		.mobile_socialshare_twitter {
-			position: absolute;
-			top: 0;
-			left: 82%;
-			width: 8%;
-			height: 100%;
-		}
-		.mobile_socialshare_pinterest {
-			position: absolute;
-			top: 0;
-			left: 90.75%;
-			width: 8%;
-			height: 100%;
-		}
+	#phm_mobile_nav {
+		position: absolute;
+		top: 0;
+		width: 100%; 
+		display:block; 
+		background-color:#0A33C3; 
+		color:#fff; 
+		height: 45px; 
+		z-index: 1; 
+		max-width: 962px;
 	}
+
+	#phm_mobile_nav a {
+		color: #fff;
+	    display: block;
+	    margin-left: 5.625%;
+	    line-height: 45px;
+	    font-size: 4.6vw;
+	    text-decoration: none;
+	    font-weight: 900;
+	    float: left;
+	    font-family: 'Lato', sans-serif;
+		letter-spacing: 0.05em;
+		word-spacing: 0.05em;
+	}
+
+	a#phm2016_mobile_nav_title-link {
+		margin-left: 7.85%;
+	}
+
+	#phm2016_mobile_nav-arrow_down {
+		margin-top: -5px;
+	}
+
+	a#phm2016_mobile_nav-arrow_up {
+	    text-align: center;
+	    height: 39px;
+	    padding-top: 4px;
+	}
+
+	ul#phm2016_mobile_dropdown {
+		background-color: #0A33C3;
+		width: 100%;
+		position: absolute;
+		text-align: left;
+		top: 0;
+		margin: 0;
+		padding: 0;
+		display: none;
+		overflow-y: scroll;
+	    max-height: 100vh;
+	}
+
+	ul#phm2016_mobile_dropdown li {
+		display: block;
+		border-bottom: 1px solid #fff;
+		line-height: 45px;
+		padding-left: 17.3%;
+	}
+
+	ul#phm2016_mobile_dropdown li a{
+		color: #fff;
+		font-weight: 900;
+		text-transform: uppercase;
+		font-size: 4.6vw;
+		line-height: 45px;
+		text-decoration: none;
+		font-family: 'Lato', sans-serif;
+		letter-spacing: 0.05em;
+		word-spacing: 0.05em;
+		display: block;
+		float: none;
+		margin: 0;
+	}
+
+	.phm2016_mobile_social_icons {
+		display: inline;
+	    line-height: 45px;
+	    position: relative;
+	    float: right;
+	    margin: 0 2.125% 0 0;
+	    padding-left: 0;
+	    font-size: 3.7vw;
+	}
+
+	.phm2016_mobile_social_icons li {
+		color: #fff;
+	    cursor: pointer;
+	    display: inline-table;
+	    width: 6.6875vw;
+	}
+
+	#phm2016_mobile_socialshare_facebook {
+		margin-left: 0;
+	}
+
 
 	.mobile_main_container > section {
 

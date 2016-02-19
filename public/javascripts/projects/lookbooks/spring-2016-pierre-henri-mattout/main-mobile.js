@@ -91,22 +91,22 @@ window.TEMPLATE.vertical = (function(window, document, $) {
         mobileNavBar.css({ 'top' : mobileNavPlaceHolderPosition });
 
 
-        $( 'a#mobile_nav_arrow' ).on( 'click', function ( event ) {                
+        $( 'a#phm2016_mobile_nav-arrow_down' ).on( 'click', function ( event ) {                
             event.preventDefault();
             var dropDown = $('#phm2016_mobile_dropdown');
 
             if ( dropDown.is(':visible') === false ) {
-                dropDown.slideDown('slow');
+                dropDown.slideDown();
                 //BLOOMIES.coremetrics.cmCreatePageElementTag( 'topnav_open_dropdown', namespace.coremetrics.replace("MBL:", "") );
             }               
         });
 
-        $( 'a#mobile_nav_dropdown_arrow' ).on( 'click', function ( event ) {                
+        $( 'a#phm2016_mobile_nav-arrow_up' ).on( 'click', function ( event ) {                
             event.preventDefault();
             var dropDown = $('#phm2016_mobile_dropdown');
 
             if ( dropDown.is(':visible') === true ) {
-                dropDown.slideUp('slow');
+                dropDown.slideUp();
                // BLOOMIES.coremetrics.cmCreatePageElementTag( 'topnav_close_dropdown', namespace.coremetrics.replace("MBL:", "") );
             }                
         });
@@ -195,7 +195,7 @@ window.TEMPLATE.vertical = (function(window, document, $) {
     APP.bindListeners = function() {
         var self = this;
 
-        $('a.phm_mobile_link').on('click', function () {
+        $('a.phm_mobile_link, a.phm_mobile_nav_link').on('click', function () {
             var cmAttr = $(this).attr('id');
             self.coremetrics( 'Element', self.cm, cmAttr );
         });
