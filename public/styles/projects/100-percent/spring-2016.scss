@@ -613,6 +613,10 @@ video.window {
         background-size: cover;
         background-color: #c8c9cc;
         background-repeat: no-repeat;
+
+        img {
+            width: 100vw
+        }
     }
 
 }
