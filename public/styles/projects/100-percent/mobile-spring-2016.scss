@@ -320,14 +320,19 @@ button.getApp {
 
     li {
         margin: 0;
-        padding: 5vw 0;
+        padding: 4vw 0;
         background-color: #000;
         color: #fff;
         text-transform: uppercase;
         font-weight: 700;
-        font-size: 4.5vw;
+        font-size: 3.5vw;
         font-family: "Avenir LT W01 55 Roman", Arial;
+       
+    }
+
+    a {
         border-bottom: 1px solid #fff;
+        display: block;
 
         &:last-child {
             border-bottom: 0;
