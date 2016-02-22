@@ -341,3 +341,23 @@ button.getApp {
 
 }
 
+
+#social {
+    display: block;
+    text-align: center;
+    margin-top: 3vw;
+
+
+    .icon {
+        display: inline-block;
+        width: 20vw;
+        height: 20vw;
+        background-image: url('/fashion/images/projects/100-percent/social-images.png');
+        border: 1px solid #000;
+
+        &:first-child { border-right: 0;}
+        &:last-child { border-left: 0;}
+
+    }
+
+}
