@@ -192,4 +192,5 @@ $(document).ready( function($) {
         window.BLOOMIES.coremetrics.cmCreatePageviewTag(pageID, catID, '', '');        
     }
 
+    
 });
