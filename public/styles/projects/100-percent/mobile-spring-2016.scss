@@ -170,7 +170,6 @@ body {
 
 #appStore,
 #googlePlay {
-    display: none;
     width: 70vw;
     margin: 20px auto 30px;
 }
@@ -345,19 +344,26 @@ button.getApp {
 #social {
     display: block;
     text-align: center;
-    margin-top: 3vw;
+    margin-top: 5vw;
 
+    a {
+        display: inline-block;
+        border: 1px solid #000;
+        &:first-child { border-right: 0;}
+        &:last-child { border-left: 0;}
+    }
 
     .icon {
         display: inline-block;
         width: 20vw;
         height: 20vw;
-        background-image: url('/fashion/images/projects/100-percent/social-images.png');
-        border: 1px solid #000;
-
-        &:first-child { border-right: 0;}
-        &:last-child { border-left: 0;}
-
+        background-image: url('/fashion/images/projects/100-percent/social-icons.png');
+        background-size: 370%;
+        background-repeat: no-repeat;
     }
+
+    .facebook { background-position: -6% 0;}
+    .twitter {background-position: 101% 0;}
+    .pinterest {background-position: 48% 0;}
 
 }
