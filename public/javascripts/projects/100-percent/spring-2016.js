@@ -7,6 +7,12 @@ $(document).ready( function($) {
 		'elementCategory': 'spring16_100percent',
 	}
 
+	var find = '/';
+	var re = new RegExp(find, 'g'),
+		winPath = window.location.pathname.replace(re,'_');
+
+	pageViewTag( 'fashion' + winPath.substring( 0, winPath.lastIndexOf('_') ), element.elementCategory);
+
 	// ===== Init Actions =====
 	$('header, footer').remove();
 
@@ -41,10 +47,14 @@ $(document).ready( function($) {
 		var testDate = new Date();
 		$('#taxiOverlay').show();
 
-		if ( testDate.getDate() === 10 && testDate.getMonth() === 2 && testDate.getFullYear() === 2016 ) {
-			$('#blooperVideo').hide();
-			$('#scavengerHunt').show();
-		} else if ( $('#taxi-video-play:visible') ) {
+		// if ( testDate.getDate() === 10 && testDate.getMonth() === 2 && testDate.getFullYear() === 2016 ) {
+		// 	$('#blooperVideo').hide();
+		// 	$('#scavengerHunt').show();
+		// } else if ( $('#taxi-video-play:visible') ) {
+		// 	$('#taxi-video-play').get(0).play();
+		// }
+
+		if ( $('#taxi-video-play:visible') ) {
 			$('#taxi-video-play').get(0).play();
 		}
 	});
