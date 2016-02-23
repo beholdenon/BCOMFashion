@@ -37,7 +37,6 @@ var routes = [
     // { method: 'GET',  path: '/{--path--}',                                      config: require('./lib/handlers/views').nonResponsiveCustomHF },
     { method: 'GET',  path: '/international/china-brazil/components/{path*}',   config: require('./lib/handlers/assets').ngViews },
     { method: 'GET',  path: '/international/china-brazil/',                     config: require('./lib/handlers/views').responsiveCustomHF },
-    { method: 'GET',  path: '/100-percent-2016/',                               config: require('./lib/handlers/views').responsiveCustomHF },
     { method: 'GET',  path: '/100-percent-2016/coming-soon/',                   config: require('./lib/handlers/views').responsiveCustomHF },
     { method: 'GET',  path: '/{path*}',                                         config: require('./lib/handlers/views').fallback }
 ];
