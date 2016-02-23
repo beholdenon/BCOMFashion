@@ -20,152 +20,13 @@ body {
     position: relative;
     text-align: center;
 }
-.lazy {
-    display: none;
-}
+
 .mobile_main_container img{
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
 }
-.mobile_main_container > ul{
-	list-style-type: none;
-}
-
-/* Main Header */
-	.mobile_main_container > div.mobile_header{
-		width: 100%;
-	}
-
-	.mobile_main_container > div.mobile_header > img{
-		width: 100%;
-	}
-	.mobile_main_container > div.mobile_header > p{
-		font-size: 15px;
-		font-weight: 300;
-		color: #000;
-		padding-left: 40px;
-		padding-right: 40px;
-		line-height: 1.5;
-	}
-
-/* Buttons */
-	.mobile_button{
-		text-transform: uppercase;
-	    font-weight: bold !important;
-	    font-size: 15px !important;
-		padding: 35px 40px;
-		margin: 35px;
-		border: 1px solid #000;
-		color: #000 !important;
-		text-decoration: none !important;
-		letter-spacing: 4px;
-		z-index: 3;
-		display: inline-block;
-		transition: all 0.5s ease;
-		position: relative;
-	}
-	a:active, a:visited {
-	  color: #000 !important;
-	}
-	.mobile_shop_all{
-		padding: 35px 62px;
-	}
-
-/* Section */
-	.mobile_main_container > section {
-		display: none;
-		opacity: 0;
-		position: relative;
-		margin-bottom: 50px;
-	}
-	.mobile_main_container > section.visible {
-		display: block;
-		opacity: 1;
-	}
-
-	.mobile_main_container > section > h2{
-		padding: 25px 0;
-		font-size: 32px;
-		color: #000;
-		font-weight: bold;
-	}
-
-/* HTML5 Video */
-	.mobile_HTML5_video,
-	.mobile_HTML5_video video{
-	    width: 100%;
-	}
-
-/* social share */
-	.mobile_footer {
-		display: none;
-		opacity: 0;
-	}
-
-	.mobile_footer.visible {
-		display: block;
-		opacity: 1;
-	}
-
-	ul.mobile_socialshare_container{
-		direction: rtl;
-		margin-bottom: 90px;
-	}
-	ul.mobile_socialshare_container li{
-		display: inline-block;
-		position:relative;
-		width: 64px;
-		height: 64px;
-		text-align:center;
-		border: 1px solid #000;
-		margin: 0 10px;
-		cursor:pointer;
-	}
-	ul.mobile_socialshare_container li i {
-		font-size: 36px;
-		line-height: 64px;
-	}
-	.mobile_socialshare_twitter{
-		border-right: 1px solid #000;
-	}
-	.mobile_socialshare_pinterest{
-		border-left: 2px solid #000;
-		border-right: 2px solid #000;
-	}
-
-/* back to top */
-	.mobile_back_to_top_container{
-		display: block;
-		width: 100%;
-		position: fixed;
-		height: 76px;
-		border: none;
-		bottom: 0;
-		z-index: 10000;
-	    visibility: hidden;
-	    opacity: 0;		
-	}
-	.mobile_back_to_top_container.visible{
-	    visibility: visible;
-	    opacity: 1;		
-	}
-	.mobile_back_to_top{
-	    font-weight: bold;
-	    font-size: 14px;
-		padding: 12px 0;
-		color: #000;
-		text-transform: uppercase;
-		width: 100%;
-		text-align: center;
-		display: inline-block;
-		background-color: rgba(255, 255, 255, .5);
-		text-decoration: none;
-		font-family: 'Lato', sans-serif;
-		margin-left: 0;
-		margin-bottom: 0;
-		border: none;
-	}
+	
 
 /* utility classes */
 	.padding_5{
@@ -235,201 +96,184 @@ body {
 		margin-bottom: 45px !important;
 	}
 
-/* Bxslider */
-    .bx-wrapper img {
-        width: 100%;
-    }
-    .bxslider{
-        margin-top: 0;
-    }
-    .bx-wrapper .bx-viewport {
-        -moz-box-shadow: none;
-        -webkit-box-shadow: none;
-        box-shadow: none;
-        border: none;
-        left: 0;
-    }
-	.bx-wrapper .bx-prev {
-		height: auto !important;	
-	}
-	.bx-wrapper .bx-next {
-		height: auto !important;
-	}    
-    .bx-wrapper .bx-next:hover {
-        background-position: -24px 0;
-    }
-
-    .bx-controls.bx-has-controls-direction > div > a {
-        margin-top: -32px;
-        width: 24px !important;
-        height: 64px !important;
-        z-index: 9999;
-    }
-    .bx-controls.bx-has-controls-direction > div > a.bx-next {
-		right: 0 !important;
-		background: url(/fashion/images/projects/template-vertical/mobile_slider_standard_arrows.png) no-repeat -24px 0px !important; 
-	}
-	.bx-controls.bx-has-controls-direction > div > a.bx-prev {
-		left: 0 !important;
-		background: url(/fashion/images/projects/template-vertical/mobile_slider_standard_arrows.png) no-repeat 0px 0px !important; 
-	}    
-	.mobile_image_slider_counter {
-		float: right;
-		right: 10px;
-		position: absolute;
-		top: 95%;		
-	}
-
 	/* TOPNAV */
 	.mobile_topnav_placeholder{
-	    position: absolute;
+	    position: block;
 	    top: 0;
-	    height: 60px;
+	    height: 45px;
 	    left: 0;
 	    width: 100%;
 	}
 
-	.mobile_topnav{
-	    height: 60px;
-	    line-height: 60px;
-	    width: 100%;
-	    position: absolute;
-	    top: 87px;
-	    left: 0;
-	    background-color: #000;
-	    border-bottom: 1px solid #fff;
+	#phm_mobile_nav {
+		position: absolute;
+		top: 0;
+		width: 100%; 
+		display:block; 
+		background-color:#0A33C3; 
+		color:#fff; 
+		height: 45px; 
+		z-index: 1; 
+		max-width: 962px;
 	}
 
-	.mobile_topnav.active{
-	    margin-top: 0;
-	}
-
-	.mobile_topnav aside {
-	    position: absolute;
-	    top: 5px;
-	    left: 20px;
-	    width: 50px;
-	    height: 50px;
-	}
-
-	.mobile_topnav aside span{
-	    position: absolute;
-	    top: 20px;
-	    left: 15px;
-	    border-left: 10px solid transparent;
-	    border-right: 10px solid transparent;
-	    border-top: 10px solid #fff;   
-	    transition: all 0.5s ease;
-	    z-index: 2; 
-	}
-
-	.mobile_topnav.active aside span{
-	    transform: rotate(180deg);
-	    -webkit-transform: rotate(180deg);
-	    -moz-transform: rotate(180deg);
-	}
-
-	.mobile_topnav.active div{
-	    color: #fff;
-	    font-weight: normal;    
-	}
-
-	.mobile_topnav.active div.active{
-	    color: #ff1d8d;
-	    font-weight: bold;    
-	}
-
-	.mobile_topnav div{
-	    height: 59px;
-	    line-height: 59px;
-	    width: 210px;
-	    position: absolute;
-	    margin: 0 auto;
-	    top: 0;
-	    left: 50%;
-	    margin-left: -100px;
-	    background-color: #000;
-	    z-index: 999;
-	    color: #ff1d8d;
-	    text-align: center;
-	    font-weight: bold;
-	    font-size: 14px;
-	    letter-spacing: 1.4px;   
-	    font-family: 'Lato', sans-serif;
-	    text-transform: uppercase;
-	    text-decoration: none;
-	    z-index: 1; 
-	}
-
-	.mobile_topnav_container.active{
-	    visibility: visible !important;
-	    opacity: 1!important;
-	    height: 65vh;
-	}
-
-	.mobile_topnav_container{
-	    visibility: hidden;
-	    opacity: 0;
+	#phm_mobile_nav a {
+		color: #fff;
 	    display: block;
-	    /*transition: all 0.1s ease;*/
-	    overflow-y: auto;
-	    overflow-x: hidden;
-	    width: 100%;
-	    padding: 0;
-	    border: 0;
-	    outline: 0;          
-	    height: 0;
-	    background-color: #000;
-	    position: relative;
-	}
-
-	.mobile_topnav_container ul{
-	    padding: 0;
-	    margin: 0;    
-	}
-
-	.mobile_topnav_container ul li{
-	    position: relative;
-	    color: #fff;
-	    font-size: 18px;
-	    list-style-type: none;
-	    text-align: center;
-	    border-bottom: solid 1px #fff;
-	    display: block;
-	    width: 100%;
-	    height: 60px;  
-	    margin-top: -10px;
-	    transition: .7s all ease;      
-	}
-
-	.mobile_topnav_container.active ul li{
-	    margin-top: 0;
-	}
-
-	.mobile_topnav_container ul li a{
-	    height: 100%;
-	    width: 100%;
-	    position: absolute;
-	    left: 0;
-	    top: 0;
-	    line-height: 60px;
-	    font-size: 14px;
-	    font-family: 'Lato', sans-serif;
-	    color: #fff !important;
-	    text-transform: uppercase;
+	    margin-left: 5.625%;
+	    line-height: 45px;
+	    font-size: 4.6vw;
 	    text-decoration: none;
-	    letter-spacing: 1.4px;   
+	    font-weight: 900;
+	    float: left;
+	    font-family: 'Lato', sans-serif;
+		letter-spacing: 0.05em;
+		word-spacing: 0.05em;
 	}
 
-	.mobile_topnav_container ul li.active a{
-	    color: #ff1d8d !important;
-	    font-weight: bold;    
+	a#phm2016_mobile_nav_title-link {
+		margin-left: 7.85%;
 	}
 
-	// CUSTOM CSS
+	#phm2016_mobile_nav-arrow_down {
+		margin-top: -5px;
+	}
 
-	.mobile_template_caption {
-		font-size: 0.7em;
-	    padding-left: 20px;
-	    padding-right: 20px;
+	a#phm2016_mobile_nav-arrow_up {
+	    text-align: center;
+	    height: 39px;
+	    padding-top: 4px;
+	}
+
+	ul#phm2016_mobile_dropdown {
+		background-color: #0A33C3;
+		width: 100%;
+		position: absolute;
+		text-align: left;
+		top: 0;
+		margin: 0;
+		padding: 0;
+		display: none;
+		overflow-y: scroll;
+	    max-height: 100vh;
+	}
+
+	ul#phm2016_mobile_dropdown li {
+		display: block;
+		border-bottom: 1px solid #fff;
+		line-height: 45px;
+		padding-left: 17.3%;
+	}
+
+	ul#phm2016_mobile_dropdown li a{
+		color: #fff;
+		font-weight: 900;
+		text-transform: uppercase;
+		font-size: 4.6vw;
+		line-height: 45px;
+		text-decoration: none;
+		font-family: 'Lato', sans-serif;
+		letter-spacing: 0.05em;
+		word-spacing: 0.05em;
+		display: block;
+		float: none;
+		margin: 0;
+	}
+
+	.phm2016_mobile_social_icons {
+		display: inline;
+	    line-height: 45px;
+	    position: relative;
+	    float: right;
+	    margin: 0 2.125% 0 0;
+	    padding-left: 0;
+	    font-size: 3.7vw;
+	}
+
+	.phm2016_mobile_social_icons li {
+		color: #fff;
+	    cursor: pointer;
+	    display: inline-table;
+	    width: 6.6875vw;
+	}
+
+	#phm2016_mobile_socialshare_facebook {
+		margin-left: 0;
+	}
+
+
+	.mobile_main_container > section {
+
+		article {
+			position: relative;
+		}
+	}
+
+	.phm_mobile_link {
+		position: absolute;
+	}
+	.phm2016_mobile_back_to_top {
+		position: relative;
+	}
+	#phm2016_mobile_back_to_top_button {
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+
+	#phm2016_mobile_home_shopall_image {
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 65%;
+	}
+	#phm2016_mobile_home_shopall_button {
+		top: 1.75%;
+		left: 16.2%;
+		width: 66.5%;
+		height: 7%;
+	}
+	#phm2016_mobile_home_shopall_text {
+		top: 66%;
+		left: 0;
+		width: 100%;
+		height: 34%;
+	}
+	#phm2016_mobile_home_clothing-link {
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 33.33%;
+	}
+	#phm2016_mobile_home_bags-link {
+		top: 33.333%;
+		left: 0;
+		width: 100%;
+		height: 33.33%;
+	}
+	#phm2016_mobile_home_shoes-link {
+		top: 66.666%;
+		left: 0;
+		width: 100%;
+		height: 33.33%;
+	}
+	#phm2016_mobile_home_interview-link {
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 59.4%;
+	}
+
+	#phm2016_mobile_interview_shoes-link {
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 49.5%;
+	}
+	#phm2016_mobile_interview_clothing-link {
+		top: 71.35%;
+		left: 0;
+		width: 100%;
+		height: 28.65%;
 	}

@@ -4,7 +4,7 @@ window.TEMPLATE.vertical = (function(window, document, $) {
     'use strict';
 
     var APP = {
-        cm: 'MBL:spring16_promlookbook', //---> coremetrics project prefix
+        cm: 'MBL:spring16_mensphm', //---> coremetrics project prefix
         views: {
             sectionInViewport: null
         },
@@ -18,24 +18,16 @@ window.TEMPLATE.vertical = (function(window, document, $) {
             sectionPos: []
         },
         social: {
-            facebookTitle: 'PARTY GOALS: PROM 2016 | Bloomingdales.com',
-            facebookDescription: 'From the dance to the after-party—your best night ever begins and ends with amazing dresses you won’t find anywhere else.',
-            facebookImageFileName: 'S16_PROM_FBIcon.jpg',
-            twitterTitle: '#DressGoals: Your best night ever begins and ends with amazing prom styles you won’t find anywhere else. http://bit.ly/1JfJR3t',
-            pinterestTitle: 'PARTY GOALS: PROM 2016 | Bloomingdales.com',
-            pinterestImageFileName: 'S16_PROM_Pinterest.jpg',
+            facebookTitle: 'Introducing PHM SAINT PERES | Bloomingdales.com',
+            facebookDescription: 'Parisian sophistication with a prodigious dash of New York street smarts, PHM Saint Pères combines cult labels with prestigious brands in an exclusive concept shop for men.',
+            facebookImageFileName: 'MENS_PHM_POPUP_FACEBOOK.jpg',
+            twitterTitle: 'Introducing PHM Saint Pères: an exclusive concept shop men’s of cult labels and prestigious brands @bloomingdales http://bit.ly/1SKhVrh',
+            pinterestTitle: 'PHM SAINT PERES | Bloomingdales.com',
+            pinterestImageFileName: 'MENS_PHM_POPUP_PINTEREST.jpg',
             facebookURL: null,
             twitterURL: null,
             pinterestURL: null    
         },
-        mobile: {
-            topnav: [
-                'section 1',
-                'section 2',
-                'section 3'
-            ],
-            navActiveSection: null
-        }
     };
 
 /***********************************************/
@@ -43,15 +35,11 @@ window.TEMPLATE.vertical = (function(window, document, $) {
 /***********************************************/      
     //(req) mobile initialiazation wrapper   
     APP.init = function () {
-        var self = this;
+        var self = this,
+        cmSufix = '--hp';
 
         $('#bl_main_container').addClass('mobile_main_container-bl_main_container_reset');
 
-        //append mobile sticky footer
-        var footerStickyHTML = '<div class="mobile_back_to_top_container" style="position: relative; bottom: 0px;"><a class="mobile_back_to_top mobile_button" href="#">back to top</a></div>';
-        $('body').append(footerStickyHTML);
-
-        self.stickyFooter();
         self.deepLinks();
 
         $('img.lazy').show().lazyload({
@@ -66,14 +54,21 @@ window.TEMPLATE.vertical = (function(window, document, $) {
 
         if ($('.mobile_image_slider').length > 0) APP.imageSlider(); //init slider if there is one 
 
-        window.setTimeout(function() {            
+        window.setTimeout(function() {
+            self.mobileStickyNavBar();
+            self.updateMobileStickyNavPosition();
             self.bindListeners();
         }, 1000);
 
         APP.socialshare();
 
+        if( window.location.pathname.indexOf('interview') > 0){
+            cmSufix = '--interview';
+        } else if( window.location.pathname.indexOf('no-results') > 0 ){
+            cmSufix = '--no-results';
+        }
 
-        self.coremetrics('Pageview', self.cm, self.cm + '--hp');
+        self.coremetrics('Pageview', self.cm, self.cm + cmSufix );
     };
 
     //(req) remove loader after DOM loads
@@ -84,88 +79,61 @@ window.TEMPLATE.vertical = (function(window, document, $) {
             $('.mobile_loader').remove();
         }, 1000);        
     };
-
-    //(opt) dynamic mobile NAVIGATION markup insert
-    APP.insertNavigation = function () {
-        var topnavPlaceholder = '<div class="mobile_topnav_placeholder"></div>',
-            topnav = '<div class="mobile_topnav"><aside><span></span></aside><div class="mobile_topnav_head"></div></div>';
-       
-        $('.mobile_main_container').css('margin-top', 60);
-        $('.mobile_main_container').before(topnavPlaceholder);
-        $('body').append(topnav);
-        $('.mobile_topnav > div').text(APP.mobile.topnav[0]);
-
-        var topnavContainer = '<div class="mobile_topnav_container"><ul>',
-            i, j, 
-            n = APP.mobile.topnav.length;
-
-        for (i = 1; i < n; i++) {
-            j = i + 1;
-            topnavContainer += '<li><a id="mobile_topnav_container_section' + j + '" href="#">' + APP.mobile.topnav[i] + '</a></li>';
-        }
-        topnavContainer += '</ul></div>';
-
-        $('.mobile_main_container').append(topnavContainer);
-    };
-    APP.isThisHotMedia = function (elementID) {
-        var attr = $(elementID).attr('data-url');
-        
-        return (typeof attr !== typeof undefined && attr !== false && attr !== '#') ? true : false;
-    };
-
-    //(req) dynamic sticky footer insert to solve 'position: fixed' issue on mobile devices
-    APP.stickyFooter = function () {
-        var elem = $('.mobile_back_to_top_container');
-
-        if ($('#footer-links').is(':in-viewport')) {
-            var pos = $('body > footer').height();
-
-            elem.css({
-                'position': 'relative',
-                'bottom': pos + 70
-            });
-        } else {
-            elem.css({
-                'position': 'fixed',
-                'bottom': 0
-            });
-        }
-    };
-
+    
     //(req) coremetrics ctrl for mobile nav
-    APP.cmNav = function () {
-        var self = this,
-            sectionsInViewport = [];
 
-        $('.mobile_main_container section:in-viewport').each(function() {
-            var hash = $(this).attr('id');
-            hash = hash.replace('mobile_', '');
-            sectionsInViewport.push(hash);
+    APP.mobileStickyNavBar = function () {
+        var mobileNavBar = $('#phm_mobile_nav'),
+            mobileNavPlaceHolderPosition = $('.mobile_topnav_placeholder').offset().top;
+
+        mobileNavBar.remove();
+        $('body').append( mobileNavBar );
+        mobileNavBar.css({ 'top' : mobileNavPlaceHolderPosition });
+
+
+        $( 'a#phm2016_mobile_nav-arrow_down' ).on( 'click', function ( event ) {                
+            event.preventDefault();
+            var dropDown = $('#phm2016_mobile_dropdown');
+
+            if ( dropDown.is(':visible') === false ) {
+                dropDown.slideDown();
+                //BLOOMIES.coremetrics.cmCreatePageElementTag( 'topnav_open_dropdown', namespace.coremetrics.replace("MBL:", "") );
+            }               
         });
 
-        if (sectionsInViewport.length === 1) {
-            $('.mobile_main_container section').removeClass('active');
-            $('#mobile_' + sectionsInViewport[0]).addClass('active');
+        $( 'a#phm2016_mobile_nav-arrow_up' ).on( 'click', function ( event ) {                
+            event.preventDefault();
+            var dropDown = $('#phm2016_mobile_dropdown');
 
-            if (self.views.sectionInViewport !== sectionsInViewport[0]) {
-                self.views.sectionInViewport = sectionsInViewport[0];
-                self.coremetrics('Pageview', self.cm, self.cm + '-section-' + self.views.sectionInViewport);
-            }
-        } else if (sectionsInViewport.length === 2) {
-            $('.mobile_main_container section').removeClass('active');
+            if ( dropDown.is(':visible') === true ) {
+                dropDown.slideUp();
+               // BLOOMIES.coremetrics.cmCreatePageElementTag( 'topnav_close_dropdown', namespace.coremetrics.replace("MBL:", "") );
+            }                
+        });
 
-            $('.mobile_main_container section').each(function() {
-                var el = $(this).attr('id');
-                if (el.indexOf(self.views.sectionInViewport) > -1) {
-                    $('#mobile_' + el).addClass('active');
-                }
+    };
+
+    APP.updateMobileStickyNavPosition = function () {
+        var mobileNavBar = $('#phm_mobile_nav'),
+            mobileNavPlaceHolderPosition = $('.mobile_topnav_placeholder').offset().top;
+
+        if($(window).scrollTop() < mobileNavPlaceHolderPosition ){
+            mobileNavBar.css({
+                'position':'absolute',
+                'top': mobileNavPlaceHolderPosition
+            });
+
+        }else{
+            mobileNavBar.css({
+                'position':'fixed',
+                'top': '-2px'
             });
         }
     };
 
     //(req) add 'active' class on mobile header section when is visible
     APP.headerVisible = function () {
-        $('.mobile_header').is(':in-viewport') ? $('.mobile_header').addClass('active') : $('.mobile_header').removeClass('active');
+        $('.mobile_header').is(':in-viewport') ? $('.mobile_header').addClass('active') : $('.mobile_header').removeClass('active'); // jshint ignore:line
     };
 
     //(req) when landing on a deeplinked page, use the hash to scroll to the section
@@ -227,141 +195,16 @@ window.TEMPLATE.vertical = (function(window, document, $) {
     APP.bindListeners = function() {
         var self = this;
 
-        // TOPNAV: show/hide to open/close dropdown menu
-        $('.mobile_topnav > div').on('click', function(event){
-            event.stopPropagation();
-
-            var $topnav = $(this).parent();
-
-            if ($topnav.hasClass('active')){
-                //this closes the nav menu
-                $topnav.removeClass('active');
-                $('.mobile_main_container > section.visible').removeClass('visible');
-                $('.mobile_topnav_container ul li.active, .mobile_topnav_container').removeClass('active');        
-                $('.mobile_main_container > section').eq(0).addClass('visible');
-                $('.mobile_footer').addClass('visible');
-                _scrolledDown();
-
-                self.mobile.navActiveSection = self.mobile.topnav[0];
-
-                $.address.value('/');
-            } else {
-                //this opens up the nav menu
-                self.mobile.navActiveSection = $('.mobile_topnav > div').text();
-                
-                $('.mobile_topnav > div').text(self.mobile.topnav[0]);
-                
-                $topnav.addClass('active');
-                $('.mobile_topnav_container').addClass('active');
-                $('.mobile_main_container > section.visible, .mobile_back_to_top_container, .mobile_footer').removeClass('visible');
-                $('.mobile_topnav_container ul li.active, .mobile_topnav div').removeClass('active');                             
-
-                var sectionIndex = $.inArray(self.mobile.navActiveSection, self.mobile.topnav); 
-                if (sectionIndex === 0) {
-                    $('.mobile_topnav div').addClass('active');
-                } else {
-                    $('.mobile_topnav_container ul li').eq(sectionIndex-1).addClass('active');
-                }  
-
-                //CM - Element
-                self.coremetrics('Element', self.cm, 'topnav-open');              
-            }
+        $('a.phm_mobile_link, a.phm_mobile_nav_link').on('click', function () {
+            var cmAttr = $(this).attr('id');
+            self.coremetrics( 'Element', self.cm, cmAttr );
         });
 
-        // TOPNAV: tap on arrow to open/close dropdown menu
-        $('.mobile_topnav > aside').on('click', function(event){
-            event.stopPropagation();
-
-            var _self = this,
-                $topnav = $(_self).parent();
-
-            if ($topnav.hasClass('active')){
-                //this closes the nav menu
-                $topnav.removeClass('active');
-                $('.mobile_topnav_container, .mobile_topnav_container ul li.active, .mobile_topnav div').removeClass('active');
-                $('.mobile_footer').addClass('visible');
-                _scrolledDown();
-
-                $('.mobile_topnav > div').text(self.mobile.navActiveSection);
-                
-                self.goToSection(self.mobile.navActiveSection);
-
-                //CM - Element
-                self.coremetrics('Element', self.cm, 'topnav-close');
-            } else {
-                //this opens up the nav menu
-                self.mobile.navActiveSection = $('.mobile_topnav > div').text();
-
-                $('.mobile_topnav > div').text(self.mobile.topnav[0]);
-
-                $topnav.addClass('active');
-                $('.mobile_topnav_container').addClass('active');
-                $('.mobile_main_container > section.visible, .mobile_back_to_top_container, .mobile_footer').removeClass('visible');
-                $('.mobile_topnav_container ul li.active, .mobile_topnav div').removeClass('active');
-
-                var sectionIndex = $.inArray(self.mobile.navActiveSection, self.mobile.topnav);
-                if (sectionIndex === 0) {
-                    $('.mobile_topnav div').addClass('active');
-                } else {
-                    $('.mobile_topnav_container ul li').eq(sectionIndex-1).addClass('active');
-                }                        
-
-                //CM - Element
-                self.coremetrics('Element', self.cm, 'topnav-open');              
-            }
-        });
-
-        //TOPNAV: section select touch event
-        $('.mobile_topnav_container ul li').on('click', function(event){
+        $('#phm2016_mobile_back_to_top_button').on('click', function ( event ) {
             event.preventDefault();
-            event.stopPropagation();
-
-            var section = $(this).children().text();
-
-            $('.mobile_topnav_container, .mobile_topnav').removeClass('active');
-            $('.mobile_footer').addClass('visible');
-            _scrolledDown();
-
-            self.mobile.navActiveSection = section;
-
-            self.goToSection(section);
-
-            //CM - Element
-            self.coremetrics('Element', self.cm, self.cm + '--topnav_' + section);            
-        });
-
-        //img touch event
-        $('.mobile_main_container img').on('click', function() {
-            if (self.isThisHotMedia(this)) {
-                var hash = $(this).attr('data-url');
-                window.open(hash, '_blank');
-                hash = hash.replace('http://m.bloomingdales.com/shop/', '');
-                hash = hash.split('?')[0];
-                hash = hash.substring(hash.indexOf('/') + 1);
-                self.coremetrics('Element', self.cm, 'shop_now_' + hash + '-image');
-            }
-        });
-
-        //button touch events
-        $('.mobile_button').on('click', function() {
-            self.coremetrics('Element', self.cm, 'shop_all_featured'); //could use regex to better identify each cta
-        });
-        $('.mobile_shop_all').on('click', function() {
-            self.coremetrics('Element', self.cm, 'shop_all_bottom');
-        });
-        $('.mobile_info_header > a').on('click', function() {
-            self.coremetrics('Element', self.cm, 'shop_all_top');
-        });
-        $('.mobile_back_to_top').on('click', function() {
             $('html, body').animate({
                 scrollTop: 0
-            }, 'slow', function(){
-                //scrolling complete; appmed class "origin" to the button node
-                $('.mobile_back_to_top').addClass('origin');
-                $('.mobile_back_to_top_container').removeClass('visible');
-            });
-
-            self.coremetrics('Element', self.cm, 'back_to_top');
+            }, 'slow' );
         });
 
         // social share
@@ -379,9 +222,8 @@ window.TEMPLATE.vertical = (function(window, document, $) {
         });  
 
         $(window).scroll(function() {
-            APP.stickyFooter();
-            APP.cmNav();
             APP.headerVisible();
+            self.updateMobileStickyNavPosition();
             _scrolledDown();
         });  
 
@@ -396,61 +238,6 @@ window.TEMPLATE.vertical = (function(window, document, $) {
                 $('.mobile_back_to_top_container').removeClass('visible');                    
             }
         }            
-    };
-
-    //(opt: only for HTML5 video components) HTML5 video ctrl for mobile
-    APP.autoPlayHTML5Video = function () {
-        var video = $('.mobile_main_container section article video').get(0);
-        
-        //force video re-play automatically after 1s
-        setTimeout(function(){
-            $('body').one('touchstart load',function(){
-                video.play();
-            }).trigger('load');
-        },1000);        
-    };     
-
-    //(opt: only for image sliders) image sliders ctrl for mobile
-    APP.imageSlider = function () {
-        window.setTimeout(function() {
-            APP.slider = $('.bxslider').bxSlider({
-                pager: false,
-                preloadImages: 'all',
-                oneToOneTouch: false,
-                useCSS: true,
-                easing: 'ease-in-out',
-                swipeThreshold: 80,
-                onSliderLoad: onSliderLoad,
-                onSlideAfter: onSliderSwipe,
-                onSlideNext: onSliderSwipeRight,
-                onSlidePrev: onSliderSwipeLeft
-            });                
-
-            var slidesCount = APP.slider.getSlideCount();
-
-            function onSliderLoad () {
-                $('.bxslider li').css('width', window.innerWidth);
-            }
-
-            function onSliderSwipeRight() {
-                APP.coremetrics('Element', APP.cm, 'slider-right-arrow');
-            }
-
-            function onSliderSwipeLeft() {
-                APP.coremetrics('Element', APP.cm, 'slider-left-arrow');
-            }
-
-            function onSliderSwipe(slideElement, oldIndex, newIndex) {
-                var index = newIndex + 1;
-
-                $('.mobile_image_slider_counter').text(index + '/' + slidesCount);
-
-                $(slideElement).siblings().removeClass('active');
-                $(slideElement).addClass('active');                
-                
-                // APP.coremetrics('Pageview', APP.cm, 'slider-slide' + index);
-            }      
-        }, 1000);        
     };
 
     //(req) CM business logic
@@ -479,7 +266,7 @@ window.TEMPLATE.vertical = (function(window, document, $) {
     APP.socialshare = function() {
         var self = this,
             baseURL = 'http://' + window.location.host + window.location.pathname,
-            baseURLAssets = 'http://' + window.location.host + '/fashion/images/projects' + window.location.pathname;
+            baseURLAssets = 'http://' + window.location.host + '/fashion/images/projects/lookbooks/spring-2016-pierre-henri-mattout/';
 
         self.social.facebookURL = 'https://www.facebook.com/dialog/feed';
         self.social.facebookURL += '?app_id=145634995501895';

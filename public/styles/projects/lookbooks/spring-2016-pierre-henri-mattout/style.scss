@@ -1,6 +1,5 @@
 #bl_main_container {
 	position: relative;
-	min-width: 962px;
 	max-width: 2400px;
 	width: auto;
 	margin-left: auto;
@@ -114,6 +113,7 @@
 	color:#000;
     letter-spacing: 1px;
 	width: 100%;
+	min-width: 629px;
 	/*overflow: hidden;*/
 }
 
@@ -132,67 +132,86 @@
 	}
 	.desktop_main_container nav .desktop_nav_inner_content {
 		position: relative;
-		width: 962px;
+		max-width: 962px;
 		margin: 0 auto;
 		text-align: left;
 		line-height: 86px;
+		
+		.nav_img_links_wrapper {
 
-		img {
-			    width: 860px;
-			    margin-top: -3px;
-		}		
-		a.socialshare_icon {
+		    width: 90%;
+		    margin-right: 12px;
+			float: left;	
+
+			img {
+					margin-top: -3px;
+				    width: 100%;
+			}		
+		}
+		
+		.desktop_socialshare_container {
+			line-height: 86px;
+			display: inline;
+			margin-left: 4px;
+		}
+
+		li.socialshare_icon {
 			color: #fff;
 			display: inline;
-			// cursor: pointer;
+			cursor: pointer;
 			font-size: 15px;
 			margin: 0 6px;
 		}
 
-		#nav_link-phm {
-			left: 0;
-			top: 0;
-			width: 60px;
-			height: 86px;
-		}
-		#nav_link-clothing {
-			left: 88px;
-			top: 25px;
-			width: 125px;
-			height: 40px;
-		}
-		#nav_link-bags {
-		    left: 235px;
-		    top: 25px;
-		    width: 70px;
-		    height: 40px;
-		}
-		#nav_link-shoes {
-			left: 325px;
-			top: 25px;
-			width: 85px;
-			height: 40px;
-		}
-		#nav_link-interview {
-			left: 430px;
-			top: 25px;
-			width: 140px;
-			height: 40px;
-		}
-		#nav_link-sign_up {
-			left: 590px;
-			top: 25px;
-			width: 108px;
-			height: 40px;
-		}
-		#nav_link-shop_all {
-			left: 720px;
-			top: 25px;
-			width: 120px;
-			height: 40px;
+		#socialshare_pinterest {
+			margin-right: 0;
 		}
 
+		#nav_link-phm {
+			left: 0;
+		    top: 0;
+		    width: 6%;
+		    height: 99%;
+
+		}
+		#nav_link-clothing {
+			left: 9.5%;
+		    top: 28.5%;
+		    width: 13%;
+		    height: 45%;
+		}
+		#nav_link-bags {
+		    left: 24.6%;
+		    top: 28.5%;
+		    width: 7.5%;
+		    height: 45%;
+		}
+		#nav_link-shoes {
+			left: 33.9%;
+			top: 28.5%;
+			width: 9%;
+			height: 45%;
+		}
+		#nav_link-interview {
+			left: 45%;
+			top: 28.5%;
+			width: 14.4%;
+			height: 45%;
+		}
+		#nav_link-sign_up {
+			left: 62%;
+			top: 28.5%;
+			width: 11%;
+			height: 45%;
+		}
+		#nav_link-shop_all {
+			left: 75.3%;
+			top: 28.5%;
+			width: 12.8%;
+			height: 45%;
+		}
 	}	
+
 	.desktop_bottom_nav_placeholder{
 	    position:relative;
 	    width: 100%;
@@ -205,12 +224,12 @@
 		z-index: 98;
 
 		.desktop_bottom_nav_inner_content {
-			width: 962px;
+			max-width: 962px;
 			margin: 0 auto;
 			text-align: left;
 			line-height: 53px;
 			position: relative;
-
+			
 			img {
 				    width: 100%;
 			}		
@@ -252,7 +271,7 @@
 		left: 0%; 
 		top: 0%;	
 	}
-	#intro_shop_all_link {
+	#intro_shop_all_button_link {
 		width: 18.208333333333%;
 		height: 5.697050938338%;
 		left: 63.75%; 
@@ -314,9 +333,48 @@
 	    height: 4.5%;
 	}
 	#nav_bottom_sign_up {
-	    left: 541px;
-	    top: 16px;
-	    width: 204px;
-	    height: 22px;
+		left: 56.33%;
+		top: 30%;
+		width: 21.2%;
+		height: 41%;
 	}
 
+#phm_interview_main_content {
+	article {
+		position: relative;
+		a.phm_link {
+			width: 100%;
+			height: 100%;
+			left: 0;
+			top: 0;
+		}
+	}
+}
+
+//@media only screen and (min-width: 641px) and (max-width: 980px) { 
+@media only screen and (max-width: 980px) { 
+	.desktop_main_container nav .desktop_nav_inner_content {
+
+		.nav_img_links_wrapper {
+			margin-right: 0px;
+		}
+
+		li.socialshare_icon {
+			// cursor: pointer;
+			font-size: 1.5vw;
+			margin: 0 0.5%;
+		}
+	}
+}
+
+// @media only screen and (max-width: 640px) { 
+// 	.desktop_main_container nav .desktop_nav_inner_content {
+// 		.nav_img_links_wrapper {
+// 			margin-right: 0px;
+// 		}
+// 		a.socialshare_icon {
+// 			font-size: 10px;
+// 			margin: 0 0.5%;
+// 		}
+// 	}
+// }
