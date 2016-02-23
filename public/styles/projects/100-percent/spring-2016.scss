@@ -552,11 +552,15 @@ video.window {
 
     &.left { 
         transform: rotate(-45deg);
+        -moz-transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
         left: 4vw;
     }
 
     &.right { 
         transform: rotate(135deg);
+        -moz-transform: rotate(135deg);
+        -webkit-transform: rotate(135deg);
         right: 4vw;
     }
 }
