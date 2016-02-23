@@ -5,7 +5,7 @@ $(document).ready( function($) {
 	var element = {
 		'elementID': '',
 		'elementCategory': 'spring16_100percent',
-	}
+	};
 
 	var find = '/';
 	var re = new RegExp(find, 'g'),
@@ -19,7 +19,7 @@ $(document).ready( function($) {
 	(function () {
 		var hash = location.hash;
 
-		if ( hash != undefined && hash != '' ) {
+		if ( hash !== undefined && hash !== '' ) {
 
 			$('#lookbookPage-' + hash.substring(1)).siblings().removeClass('active');
 			$('#lookbookPage-' + hash.substring(1)).fadeIn(400, function() {
@@ -44,7 +44,7 @@ $(document).ready( function($) {
 		element.elementID = $(this).attr('id');
 		elementTag(element);
 
-		var testDate = new Date();
+		// var testDate = new Date();
 		$('#taxiOverlay').show();
 
 		// if ( testDate.getDate() === 10 && testDate.getMonth() === 2 && testDate.getFullYear() === 2016 ) {
@@ -88,7 +88,7 @@ $(document).ready( function($) {
 				$('#slideBox .slide').eq(n).addClass('active');
 				$('.arrow').removeClass('active');
 			});
-			setTimeout(function(){ pageViewTag($('#slideBox .active').attr('id'), element.elementCategory) }, 650);
+			setTimeout(function(){ pageViewTag($('#slideBox .active').attr('id'), element.elementCategory); }, 650);
 		},
 
 		right: function (p, n) {
@@ -106,7 +106,7 @@ $(document).ready( function($) {
 				$('.arrow').removeClass('active');
 			});
 
-			setTimeout(function(){ pageViewTag($('#slideBox .active').attr('id'), element.elementCategory) }, 650);
+			setTimeout(function(){ pageViewTag($('#slideBox .active').attr('id'), element.elementCategory); }, 650);
 		}
 
 	};
@@ -156,17 +156,17 @@ $(document).ready( function($) {
 	// Coremetrics 
 
 
-	$('#topNav a').on("click tap", function () {
+	$('#topNav a').on('click tap', function () {
 		element.elementID = 'topNav-' + $(this).attr('id');
 		elementTag(element);
 	});
 
-	$('#landingStore > a, #taxi').on("click tap", function () {
+	$('#landingStore > a, #taxi').on('click tap', function () {
 		element.elementID = 'homepage-' + $(this).attr('id');
 		elementTag(element);
 	});
 
-	$('#lookbooks .arrow').on("click tap", function () {
+	$('#lookbooks .arrow').on('click tap', function () {
 		element.elementID = $('#lookbooks .slide.active').attr('id') + '-' + $(this).attr('id');
 		elementTag(element);
 	});

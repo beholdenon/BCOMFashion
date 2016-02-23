@@ -90,7 +90,7 @@ window.TEMPLATE.vertical = (function(window, document, $) {
 
     //(req) add 'active' class on header section when is visible
     APP.desktopHeaderVisible = function () {
-        $('.desktop_header').is(':in-viewport') ? $('.desktop_header').addClass('active') : $('.desktop_header').removeClass('active');
+        $('.desktop_header').is(':in-viewport') ? $('.desktop_header').addClass('active') : $('.desktop_header').removeClass('active'); // jshint ignore:line
     };
 
     //(req) enable sticky NAV
@@ -264,30 +264,6 @@ window.TEMPLATE.vertical = (function(window, document, $) {
             //CM - Element
             self.coremetrics('Element', self.cm, self.cm + '-brightcove-video_play');
         });
-    };
-
-    //(opt) interact with image sliders
-    APP.slider = function () {
-        $('.bxslider').bxSlider({
-            pager: false,
-            preloadImages: 'all',
-            oneToOneTouch: false,
-            useCSS: true,
-            swipeThreshold: 80,
-            onSlideAfter: onSlideAfter,
-            onSliderLoad: onSliderLoad
-        });        
-
-        function onSlideAfter (slideElement, oldIndex, newIndex) {
-            $(slideElement).siblings().removeClass('active');
-            $(slideElement).addClass('active');
-        }
-
-        function onSliderLoad (currentIndex) {
-            // $('.bx-viewport > ul > li').eq(currentIndex + 1).addClass('active'); //moved on the DOM element 
-            $('.bx-clone').attr('id', '');
-            APP.hotMedia();
-        }        
     };
 
     //(req) global listeners for interaction & setting CM tags

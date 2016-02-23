@@ -111,7 +111,7 @@ window.TEMPLATE.vertical = (function(window, document, $) {
             }                
         });
 
-    }
+    };
 
     APP.updateMobileStickyNavPosition = function () {
         var mobileNavBar = $('#phm_mobile_nav'),
@@ -129,11 +129,11 @@ window.TEMPLATE.vertical = (function(window, document, $) {
                 'top': '-2px'
             });
         }
-    }
+    };
 
     //(req) add 'active' class on mobile header section when is visible
     APP.headerVisible = function () {
-        $('.mobile_header').is(':in-viewport') ? $('.mobile_header').addClass('active') : $('.mobile_header').removeClass('active');
+        $('.mobile_header').is(':in-viewport') ? $('.mobile_header').addClass('active') : $('.mobile_header').removeClass('active'); // jshint ignore:line
     };
 
     //(req) when landing on a deeplinked page, use the hash to scroll to the section

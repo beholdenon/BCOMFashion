@@ -98,7 +98,7 @@ window.PHM_2016 = (function(window, document, $) {
 
     //(req) add 'active' class on header section when is visible
     APP.desktopHeaderVisible = function () {
-        $('.desktop_header').is(':in-viewport') ? $('.desktop_header').addClass('active') : $('.desktop_header').removeClass('active');
+        $('.desktop_header').is(':in-viewport') ? $('.desktop_header').addClass('active') : $('.desktop_header').removeClass('active'); // jshint ignore:line
     };
 
     //(req) enable sticky NAV
@@ -129,7 +129,7 @@ window.PHM_2016 = (function(window, document, $) {
         if( ( window.location.pathname.indexOf('no-results') < 0 ) ){
             var self = this;
 
-            if (self.vars.loadingComplete && ( $(window).scrollTop() + window.innerHeight ) > ( $('footer').offset().top ) ) {
+            if (self.vars.loadingComplete && ( $(window).scrollTop() + window.innerHeight ) > ( $('footer').offset().top ) ) { 
 
                 $('.desktop_bottom_nav').css({
                     'bottom': 0,

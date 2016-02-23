@@ -5,7 +5,7 @@ $(document).ready( function($) {
 	var element = {
 		'elementID': '',
 		'elementCategory': 'spring16_100percent',
-	}
+	};
 
 	var social = {
 		facebookTitle: '100% BLOOMINGDALE\'S',
@@ -17,7 +17,7 @@ $(document).ready( function($) {
 		facebookURL: null,
 		twitterURL: null,
 		pinterestURL: null    
-    }
+    };
 
     socialSetup();
 
@@ -34,7 +34,7 @@ $(document).ready( function($) {
 
 	//  COREMETRICS TAGS
 
-	$('.subNav a').on("click tap", function () {
+	$('.subNav a').on('click tap', function () {
 		element.elementID = 'mlb:' + $(this).attr('id');
 		elementTag(element);
 	});
