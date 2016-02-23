@@ -39,7 +39,7 @@ $(document).ready( function($) {
 		elementTag(element);
 	});
 
-	$('#landing button, #landing a').on('click tap', function() {
+	$('#landing button, #landing a, #social a').on('click tap', function() {
 		element.elementID = 'mlb:' + $(this).attr('id');
 		elementTag(element);
 	});
