@@ -27,25 +27,7 @@ $(document).ready( function($) {
 
 	pageViewTag( 'mbl:fashion' + winPath.substring( 0, winPath.lastIndexOf('_') ), element.elementCategory);
 
-	var social = {
-		facebookTitle: '100% BLOOMINGDALE\'S',
-		facebookDescription: '100% Bloomingdale\'s is back with a whole new series of designer capsule collections: 1000 exclusives. 100 designers. 1 store.',
-		facebookImageFileName: 'S16_100Percent_FB.jpg',
-		twitterTitle: '100% Bloomingdale’s is back with a new series of designer collections: 1000 exclusives. 100 designers. 1 store. http://fashion.bloomingdales.com/100-percent-2016/',
-		pinterestTitle: '100% Bloomingdale\'s is back with a whole new series of designer capsule collections: 1000 exclusives. 100 designers. 1 store.',
-		pinterestImageFileName: 'S16_100Percent_Pinterest.jpg',
-		facebookURL: null,
-		twitterURL: null,
-		pinterestURL: null    
-    }
-
     socialSetup();
-
-	var find = '/';
-	var re = new RegExp(find, 'g'),
-		winPath = window.location.pathname.replace(re,'_');
-
-	pageViewTag( 'mbl:fashion' + winPath.substring( 0, winPath.lastIndexOf('_') ), element.elementCategory);
 
 	$('.top').on('click tap', function () {
 		$(this).toggleClass('active');
