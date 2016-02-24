@@ -4,6 +4,8 @@
 	}
 }
 
+@import url("https://fonts.googleapis.com/css?family=Libre+Baskerville");
+
 #bl_main_container {
 	position: relative;
 	width: 962px;
@@ -675,5 +677,17 @@ ul {
 			text-align: left;
 		}
 
+	}
+
+	.sub_heading {
+		margin: 2rem auto;
+	    padding: 1.5rem 0;
+	    width: 38%;
+	    border-bottom: 1px solid #000;
+	    text-align: center;
+	    display: block;
+	    font-family: 'Libre Baskerville', Helvetica;
+	    text-transform: none;
+	    font-size: 3rem;
 	}
 }
