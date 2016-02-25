@@ -514,7 +514,7 @@ window.TEMPLATE.vertical = (function(window, document, $) {
     $(window).load(function() {
         APP.init();
 
-        // APP.insertNavigation(); //---> add this when your app includes NAV MENU
+        APP.insertNavigation(); //---> add this when your app includes NAV MENU
     });    
 
     return APP;
