@@ -18,11 +18,11 @@ window.TEMPLATE.vertical = (function(window, document, $) {
             sectionPos: []
         },
         social: {
-            facebookTitle: 'ACCESSORIES-PACKED GETAWAY | bloomingdales.com',
-            facebookDescription: 'We toted the season\'s top accessories to the stylish @ViceroySM for our latest lookbook...',
+            facebookTitle: 'The Linen Closet | bloomingdales.com',
+            facebookDescription: 'Discover the perfect sheets and towels from our favorite designer collections.',
             facebookImageFileName: 'share_FB.jpg',
-            twitterTitle: 'We toted the season\'s top accessories to the stylish @ViceroySM for our latest lookbook @bloomingdales.com http://bit.ly/1C51Mnv',
-            pinterestTitle: 'ACCESSORIES-PACKED GETAWAY | bloomingdales.com',
+            twitterTitle: 'Cozy sheets and textured towels make brilliant bedfellows. Discover styles from our favorite designer collections.',
+            pinterestTitle: 'The Linen Closet | bloomingdales.com',
             pinterestImageFileName: 'share_Pinterest.jpg',
             facebookURL: null,
             twitterURL: null,

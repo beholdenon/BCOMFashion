@@ -21,11 +21,11 @@ window.TEMPLATE.vertical = (function(window, document, $) {
             sectionPos: []
         },
         social: {
-            facebookTitle: 'ACCESSORIES-PACKED GETAWAY | bloomingdales.com',
-            facebookDescription: 'We toted the season\'s top accessories to the stylish @ViceroySM for our latest lookbook...',
+            facebookTitle: 'The Linen Closet | bloomingdales.com',
+            facebookDescription: 'Discover the perfect sheets and towels from our favorite designer collections.',
             facebookImageFileName: 'share_FB.jpg',
-            twitterTitle: 'We toted the season\'s top accessories to the stylish @ViceroySM for our latest lookbook @bloomingdales.com http://bit.ly/1C51Mnv',
-            pinterestTitle: 'ACCESSORIES-PACKED GETAWAY | bloomingdales.com',
+            twitterTitle: 'Cozy sheets and textured towels make brilliant bedfellows. Discover styles from our favorite designer collections.',
+            pinterestTitle: 'The Linen Closet | bloomingdales.com',
             pinterestImageFileName: 'share_Pinterest.jpg',
             facebookURL: null,
             twitterURL: null,
@@ -269,28 +269,28 @@ window.TEMPLATE.vertical = (function(window, document, $) {
     };
 
     //(opt) interact with image sliders
-    APP.slider = function () {
-        $('.bxslider').bxSlider({
-            pager: false,
-            preloadImages: 'all',
-            oneToOneTouch: false,
-            useCSS: true,
-            swipeThreshold: 80,
-            onSlideAfter: onSlideAfter,
-            onSliderLoad: onSliderLoad
-        });        
+    // APP.slider = function () {
+    //     $('.bxslider').bxSlider({
+    //         pager: false,
+    //         preloadImages: 'all',
+    //         oneToOneTouch: false,
+    //         useCSS: true,
+    //         swipeThreshold: 80,
+    //         onSlideAfter: onSlideAfter,
+    //         onSliderLoad: onSliderLoad
+    //     });        
 
-        function onSlideAfter (slideElement) {
-            $(slideElement).siblings().removeClass('active');
-            $(slideElement).addClass('active');
-        }
+    //     function onSlideAfter (slideElement) {
+    //         $(slideElement).siblings().removeClass('active');
+    //         $(slideElement).addClass('active');
+    //     }
 
-        function onSliderLoad () { //arg: currentIndex
-            // $('.bx-viewport > ul > li').eq(currentIndex + 1).addClass('active'); //moved on the DOM element 
-            $('.bx-clone').attr('id', '');
-            APP.hotMedia();
-        }        
-    };
+    //     function onSliderLoad () { //arg: currentIndex
+    //         // $('.bx-viewport > ul > li').eq(currentIndex + 1).addClass('active'); //moved on the DOM element 
+    //         $('.bx-clone').attr('id', '');
+    //         APP.hotMedia();
+    //     }        
+    // };
 
     //(req) global listeners for interaction & setting CM tags
     APP.bindListeners = function() {
@@ -461,7 +461,7 @@ window.TEMPLATE.vertical = (function(window, document, $) {
         self.social.facebookURL += '&display=popup&redirect_uri=' + encodeURIComponent('https://www.facebook.com/');
 
         self.social.twitterURL = 'http://twitter.com/intent/tweet?source=webclient&text=';
-        self.social.twitterURL += encodeURIComponent(self.social.twitterTitle);
+        self.social.twitterURL += encodeURIComponent(self.social.twitterTitle) + ' ' + encodeURIComponent(baseURL);
 
         self.social.pinterestURL = 'http://pinterest.com/pin/create/button/?';
         self.social.pinterestURL += 'url=' + encodeURIComponent(baseURL);
@@ -579,7 +579,7 @@ window.TEMPLATE.vertical = (function(window, document, $) {
 
             APP.playBrightcoveVideo(); //---> add this when your app includes BRIGHTCOVE video
 
-            APP.slider(); //---> add this when your app includes image sliders
+            // APP.slider(); //---> add this when your app includes image sliders
 
             //add hover state to the NAV menu items
             $('.desktop_main_container a, .desktop_socialshare_container li').on('mouseenter', function(){
