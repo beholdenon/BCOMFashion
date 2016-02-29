@@ -4,7 +4,7 @@ window.TEMPLATE.vertical = (function(window, document, $) {
     'use strict';
 
     var APP = {
-        cm: 'MBL:prjprefix', //---> coremetrics project prefix
+        cm: 'MBL:spring16_bedding', //---> coremetrics project prefix
         views: {
             sectionInViewport: null
         },
@@ -30,9 +30,11 @@ window.TEMPLATE.vertical = (function(window, document, $) {
         },
         mobile: {
             topnav: [
-                'section 1',
-                'section 2',
-                'section 3'
+                'THE LINEN CLOSET',
+                'SHEETS',
+                'TOWELS',
+                'FEATURED BRANDS',
+                'More to Sleep On'
             ],
             navActiveSection: null
         }
@@ -493,7 +495,7 @@ window.TEMPLATE.vertical = (function(window, document, $) {
         self.social.facebookURL += '&display=popup&redirect_uri=' + encodeURIComponent('https://www.facebook.com/');
 
         self.social.twitterURL = 'http://twitter.com/intent/tweet?source=webclient&text=';
-        self.social.twitterURL += encodeURIComponent(self.social.twitterTitle);
+        self.social.twitterURL += encodeURIComponent(self.social.twitterTitle) + ' ' + encodeURIComponent(baseURL);
 
         self.social.pinterestURL = 'http://pinterest.com/pin/create/button/?';
         self.social.pinterestURL += 'url=' + encodeURIComponent(baseURL);
