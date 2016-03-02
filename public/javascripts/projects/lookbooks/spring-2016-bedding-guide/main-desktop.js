@@ -4,7 +4,7 @@ window.TEMPLATE.vertical = (function(window, document, $) {
     'use strict';
 
     var APP = {
-        cm: 'spring15_famultivendor', //coremetrics project prefix
+        cm: 'spring16_bedding', //coremetrics project prefix
         views: {
             sectionInViewport: null
         },
