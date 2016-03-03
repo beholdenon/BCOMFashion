@@ -567,11 +567,11 @@ window.TEMPLATE.vertical = (function(window, document, $) {
 
             APP.initDesktop();
 
-            APP.autoPlayHTML5VideoTAB(); //---> add this when your app includes HTML5 video
+            // APP.autoPlayHTML5VideoTAB(); //---> add this when your app includes HTML5 video
 
-            APP.dynamicBrightcoveVideoInsertTAB(); //---> add this when your app includes BRIGHTCOVE video
+            // APP.dynamicBrightcoveVideoInsertTAB(); //---> add this when your app includes BRIGHTCOVE video
 
-            APP.slider(); //---> add this when your app includes image sliders
+            // APP.slider(); //---> add this when your app includes image sliders
         } else {
             //DESKTOP
             
