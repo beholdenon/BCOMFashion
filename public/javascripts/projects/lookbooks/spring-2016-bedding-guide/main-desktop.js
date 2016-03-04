@@ -189,7 +189,7 @@ window.TEMPLATE.vertical = (function(window, document, $) {
             
             if (buffer < 0 && buffer > posVal) pos = i;           
         }
-        if (pos < n+1) activeSection = 'section' + (pos+1);
+        if (pos < n+1) activeSection = self.vars.sectionID[pos];
 
         if (activeSection === null) {
             // reset address
