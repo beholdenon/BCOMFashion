@@ -350,9 +350,9 @@ window.TEMPLATE.vertical = (function(window, document, $) {
         $('.mobile_button').on('click', function() {
             self.coremetrics('Element', self.cm, 'shop_all_featured'); //could use regex to better identify each cta
         });
-        $('.mobile_shop_all').on('click', function() {
-            self.coremetrics('Element', self.cm, 'shop_all_bottom');
-        });
+        // $('.mobile_shop_all').on('click', function() {
+        //     self.coremetrics('Element', self.cm, 'shop_all_bottom');
+        // });
         $('.mobile_info_header > a').on('click', function() {
             self.coremetrics('Element', self.cm, 'shop_all_top');
         });
@@ -415,7 +415,7 @@ window.TEMPLATE.vertical = (function(window, document, $) {
             self.logErr('CoreM ::: tagType: Pageview; categoryID: ' + categoryID + '; pageID: ' + pageID);
         } else if (tagType === 'Element') {
             try {
-                window.BLOOMIES.coremetrics.cmCreatePageElementTag(pageID, categoryID);
+                window.BLOOMIES.coremetrics.cmCreatePageElementTag('MBL:' + pageID, categoryID);
             } catch (e) {
                 self.logErr('CoreM_err: ' + e);
             }
