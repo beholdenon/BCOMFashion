@@ -21,11 +21,11 @@ window.TEMPLATE.vertical = (function(window, document, $) {
             sectionPos: []
         },
         social: {
-            facebookTitle: 'The Linen Closet | bloomingdales.com',
-            facebookDescription: 'Discover the perfect sheets and towels from our favorite designer collections.',
+            facebookTitle: 'FESTIVAL BOUND | bloomingdales.com',
+            facebookDescription: 'Desert skies, open roads and not a worry in the world. Guys, it’s officially festival season. Let’s get amped for summer.',
             facebookImageFileName: 'share_FB.jpg',
-            twitterTitle: 'Cozy sheets and textured towels make brilliant bedfellows. Discover styles from our favorite designer collections.',
-            pinterestTitle: 'The Linen Closet | bloomingdales.com',
+            twitterTitle: 'Guys: When it comes to summer festivals, sometimes the journey is the destination.',
+            pinterestTitle: 'FESTIVAL BOUND | bloomingdales.com',
             pinterestImageFileName: 'share_Pinterest.jpg',
             facebookURL: null,
             twitterURL: null,

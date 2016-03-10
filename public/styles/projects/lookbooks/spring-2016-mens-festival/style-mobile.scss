@@ -72,7 +72,7 @@ body {
 		padding: 35px 40px;
 		margin: 35px;
 		border: 1px solid #000;
-		color: #000 !important;
+		// color: #000 !important;
 		text-decoration: none !important;
 		letter-spacing: 4px;
 		z-index: 3;
@@ -81,7 +81,7 @@ body {
 		position: relative;
 	}
 	a:active, a:visited {
-	  color: #000 !important;
+	  // color: #000 !important;
 	}
 	.mobile_shop_all{
 		padding: 35px 62px;
@@ -139,11 +139,14 @@ body {
 	.mobile_footer.visible {
 		display: block;
 		opacity: 1;
+		background-color: #F6289E;
 	}
 
 	ul.mobile_socialshare_container{
 		direction: rtl;
 		margin-bottom: 90px;
+		padding-bottom: 20px;
+		color: #fff;
 	}
 	ul.mobile_socialshare_container li{
 		display: inline-block;
@@ -151,7 +154,7 @@ body {
 		width: 64px;
 		height: 64px;
 		text-align:center;
-		border: 1px solid #000;
+		// border: 1px solid #000;
 		margin: 0 10px;
 		cursor:pointer;
 	}
@@ -160,11 +163,11 @@ body {
 		line-height: 64px;
 	}
 	.mobile_socialshare_twitter{
-		border-right: 1px solid #000;
+		// border-right: 1px solid #000;
 	}
 	.mobile_socialshare_pinterest{
-		border-left: 2px solid #000;
-		border-right: 2px solid #000;
+		// border-left: 2px solid #000;
+		// border-right: 2px solid #000;
 	}
 
 /* back to top */
@@ -458,3 +461,57 @@ body {
 	    color: #ff1d8d !important;
 	    font-weight: bold;    
 	}
+
+// CUSTOM STYLES 
+
+.mens_festival {
+	.pastel_block {
+		display:block; 
+		height: 120px; 
+		background-color:#f6289e; 
+		margin-bottom: 40px;
+	}
+
+	.pastel_button {
+		line-height: 0px; 
+		padding: 30px; 
+		margin: 25px 0px; 
+		
+		&.white {
+			color: #fff;
+			border: 2px solid #fff; 
+		}
+		&.pink {
+			color: #F6289E;
+			border: 2px solid #F6289E; 
+		}
+		&.yellow {
+			color: #EDE61F;
+			border: 2px solid #EDE61F;
+		}
+		&.blue {
+			color: #45C3C6;
+			border: 2px solid #45C3C6; 
+		}
+	}
+
+	.city_laydown {
+		background-image: url(/fashion/images/projects/lookbooks/spring-2016-mens-festival/mobile/in-the-city.jpg);
+		background-size: 100%;
+		height: 200px;
+		display: block;
+		margin: 0;
+
+		&.heading {height: 190px;}
+	}
+
+	.west_laydown {
+		background-image: url(/fashion/images/projects/lookbooks/spring-2016-mens-festival/mobile/way-out-west.jpg);
+		background-size: 100%;
+		height: 200px;
+		display: block;
+		margin: 0;
+
+		&.heading {height: 180px;}
+	}
+}
