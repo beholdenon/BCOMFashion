@@ -471,7 +471,7 @@ window.TEMPLATE.vertical = (function(window, document, $) {
             self.logErr('CoreM ::: tagType: Pageview; categoryID: ' + categoryID + '; pageID: ' + pageID);
         } else if (tagType === 'Element') {
             try {
-                window.BLOOMIES.coremetrics.cmCreatePageElementTag(pageID, categoryID);
+                window.BLOOMIES.coremetrics.cmCreatePageElementTag('mbl:' + pageID, categoryID);
             } catch (e) {
                 self.logErr('CoreM_err: ' + e);
             }
