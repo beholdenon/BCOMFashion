@@ -204,8 +204,7 @@ ul {
 		padding-right: 20px;		
 	}
 	a.desktop_nav_header_shopall{
-		float: right;
-		padding-right: 20px;
+		padding: 0 25px;
 	}
 	.desktop_nav_links_container {
 		float: left;
@@ -806,6 +805,14 @@ ul {
 	    font-family: 'Libre Baskerville', Helvetica;
 	    text-transform: none;
 	    font-size: 3rem;
+	}
+
+	.animated_gif {
+		height: 525px;
+		width: auto;
+		display: inline-block;
+		position: absolute;
+		top: 55px;
 	}
 }
 
