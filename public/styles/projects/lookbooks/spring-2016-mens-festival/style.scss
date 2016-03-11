@@ -175,12 +175,9 @@ ul {
 		z-index: 98;
 	}
 	.desktop_main_container nav ul{
-		left: 0;
-		right: 0;
 		top: 0;
 		display: block;
 		position: absolute;
-		margin: 0 auto;
 		padding: 0 10px;
 	}
 	.desktop_main_container nav ul li{
@@ -204,7 +201,10 @@ ul {
 		padding-right: 20px;		
 	}
 	a.desktop_nav_header_shopall{
-		padding: 0 25px;
+		// padding: 0 25px;
+		float: right;
+		padding-right: 20px;
+
 	}
 	.desktop_nav_links_container {
 		float: left;
