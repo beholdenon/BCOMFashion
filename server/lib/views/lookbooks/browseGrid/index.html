@@ -9,14 +9,17 @@
 	<p class="exampleText">Test grid for Master Quickpeek</p>
 	<div id="masterTest" class="browseShell"></div>
 
+	<p class="exampleText">Expanded five-column browse grid.</p>
+	<div id="bedding" class="browseShell"></div>
+
 	<p class="exampleText">Standard three-column browse grid with all options turned on.</p>
-	<div id="jackets" class="browseShell"></div>
+	<div id="towels" class="browseShell"></div>
 
 	<p class="exampleText">Four-column layout with background-pattern. Brand, reviews and alternate images have been turned off.</p>
-	<div id="pants" class="browseShell"></div>
+	<div id="barware" class="browseShell"></div>
 
 	<p class="exampleText">Two-column layout without category name, product links, prices, swatches or quickpeek. Basically a preview grid.</p>
-	<div id="shirts" class="browseShell"></div>
+	<div id="dresses" class="browseShell"></div>
 
 	{{> component/browseGrid }}
 
@@ -36,10 +39,19 @@
 	catBrowse.request(properties);
 
 	properties = {
+			gridClasses: "standard five-col",
+			catID: 1004678,
+			numberOfResults: 40,
+			domTarget: "#bedding",
+			masterQP: "master-grid"
+	}
+	catBrowse.request(properties);
+
+	properties = {
 			gridClasses: "standard three-col",
-			catID: 10189,
-			numberOfResults: 12,
-			domTarget: "#jackets",
+			catID: 1005694,
+			numberOfResults: 24,
+			domTarget: "#towels",
 	}
 	catBrowse.request(properties);
 	
@@ -47,7 +59,7 @@
 			gridClasses: "dark four-col",
 			catID: 1000232,
 			numberOfResults: 12,
-			domTarget: "#pants",
+			domTarget: "#barware",
 			brand: false,
 			altImages: false,
 			reviews: false
@@ -58,7 +70,7 @@
 			gridClasses: "standard two-col",
 			catID: 21683,
 			numberOfResults: 12,
-			domTarget: "#shirts",
+			domTarget: "#dresses",
 			categoryName: false,
 			linking: false,
 			price: false,
