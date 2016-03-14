@@ -60,19 +60,22 @@ body {
 		text-transform: uppercase;
 	    font-weight: bold !important;
 	    font-size: 15px !important;
-		padding: 35px 40px;
+		padding: 30px 30px;
+    	letter-spacing: 1px;
 		margin: 35px;
-		border: 1px solid #000;
-		color: #000 !important;
+		border: 1px solid #FF004E;
+		color: #fff !important;
 		text-decoration: none !important;
-		letter-spacing: 4px;
 		z-index: 3;
 		display: inline-block;
 		transition: all 0.5s ease;
 		position: relative;
+		background-color: #FF004E;
+		width: 80%;
+		max-width: 340px;
 	}
 	a:active, a:visited {
-	  color: #000 !important;
+	  color: #fff !important;
 	}
 	.mobile_shop_all{
 		padding: 35px 62px;
@@ -84,6 +87,10 @@ body {
 		opacity: 0;
 		position: relative;
 		margin-bottom: 50px;
+
+		article {
+			position: relative;
+		}
 	}
 	.mobile_main_container > section.visible {
 		display: block;
@@ -171,6 +178,7 @@ body {
 		margin-left: 0;
 		margin-bottom: 0;
 		border: none;
+		max-width: 100%;
 	}
 
 /* utility classes */
@@ -216,6 +224,9 @@ body {
 	.margin_20{
 		margin: 20px !important;
 	}
+	.margin_top_0{
+		margin-top: 0px !important;
+	}
 	.margin_top_5{
 		margin-top: 5px !important;
 	}
@@ -224,6 +235,9 @@ body {
 	}
 	.margin_top_20{
 		margin-top: 20px !important;
+	}
+	.margin_top_40{
+		margin-top: 40px !important;
 	}
 	.margin_bottom_5{
 		margin-bottom: 5px !important;
@@ -273,11 +287,11 @@ body {
     }
     .bx-controls.bx-has-controls-direction > div > a.bx-next {
 		right: 0 !important;
-		background: url(/fashion/images/projects/template-vertical/mobile_slider_standard_arrows.png) no-repeat -24px 0px !important; 
+		background: url(/fashion/images/projects/lookbooks/spring-2016-womens-festival/mobile_slider_standard_arrows.png) no-repeat -24px 0px !important; 
 	}
 	.bx-controls.bx-has-controls-direction > div > a.bx-prev {
 		left: 0 !important;
-		background: url(/fashion/images/projects/template-vertical/mobile_slider_standard_arrows.png) no-repeat 0px 0px !important; 
+		background: url(/fashion/images/projects/lookbooks/spring-2016-womens-festival/mobile_slider_standard_arrows.png) no-repeat 0px 0px !important; 
 	}    
 	.mobile_image_slider_counter {
 		float: right;
@@ -302,7 +316,7 @@ body {
 	    position: absolute;
 	    top: 87px;
 	    left: 0;
-	    background-color: #000;
+	    background-color: #FF004E;
 	    border-bottom: 1px solid #fff;
 	}
 
@@ -341,10 +355,9 @@ body {
 	}
 
 	.mobile_topnav.active div.active{
-	    color: #ff1d8d;
+	    color: #fff;
 	    font-weight: bold;    
 	}
-
 	.mobile_topnav div{
 	    height: 59px;
 	    line-height: 59px;
@@ -354,13 +367,13 @@ body {
 	    top: 0;
 	    left: 50%;
 	    margin-left: -100px;
-	    background-color: #000;
+	    background-color: #FF004E;
 	    z-index: 999;
-	    color: #ff1d8d;
+	    color: #fff;
 	    text-align: center;
 	    font-weight: bold;
 	    font-size: 14px;
-	    letter-spacing: 1.4px;   
+	    letter-spacing: 0;   
 	    font-family: 'Lato', sans-serif;
 	    text-transform: uppercase;
 	    text-decoration: none;
@@ -385,7 +398,7 @@ body {
 	    border: 0;
 	    outline: 0;          
 	    height: 0;
-	    background-color: #000;
+	    background-color: #FF004E;
 	    position: relative;
 	}
 
@@ -428,6 +441,27 @@ body {
 	}
 
 	.mobile_topnav_container ul li.active a{
-	    color: #ff1d8d !important;
+	    color: #fff !important;
 	    font-weight: bold;    
+	}
+
+	// Custom CSS
+
+	.mobile_womens_festival_custom_button {
+		position: absolute;
+		margin: 0 10.5%;
+		left: 0;
+		text-align: center;
+		width: 80%;
+		padding: 30px 10px;
+    	letter-spacing: 1px;
+	}
+
+	.mobile_womens_festival_custom_annah_subtitle {
+		margin: 10px 15%;
+		font-style: italic;
+		font-size: 14px;
+	}
+	.mobile_womens_festival_custom_annah_interview {
+		margin: 10px 7.5%;
 	}

@@ -4,7 +4,7 @@ window.TEMPLATE.vertical = (function(window, document, $) {
     'use strict';
 
     var APP = {
-        cm: 'MBL:prjprefix', //---> coremetrics project prefix
+        cm: 'MBL:Spring16_womensfestival', //---> coremetrics project prefix
         views: {
             sectionInViewport: null
         },
@@ -18,21 +18,22 @@ window.TEMPLATE.vertical = (function(window, document, $) {
             sectionPos: []
         },
         social: {
-            facebookTitle: 'ACCESSORIES-PACKED GETAWAY | bloomingdales.com',
-            facebookDescription: 'We toted the season\'s top accessories to the stylish @ViceroySM for our latest lookbook...',
-            facebookImageFileName: 'share_FB.jpg',
-            twitterTitle: 'We toted the season\'s top accessories to the stylish @ViceroySM for our latest lookbook @bloomingdales.com http://bit.ly/1C51Mnv',
-            pinterestTitle: 'ACCESSORIES-PACKED GETAWAY | bloomingdales.com',
-            pinterestImageFileName: 'share_Pinterest.jpg',
+            facebookTitle: 'FESTIVAL BOUND 2016 | Bloomingdale\'s',
+            facebookDescription: 'Crush the weekend with no-filter-necessary pics that immortalize you, your crew and that #ootd for all to see',
+            facebookImageFileName: 'S16_RTW_FESTIVAL_FACEBOOK.jpg',
+            twitterTitle: 'Grab the squad & set off for the festival circuit in key pieces that are as epic as the lineup itself @bloomingdales http://bit.ly/1MhLMk1',
+            pinterestTitle: 'Festival Bound 2016 | Bloomingdale\'s',
+            pinterestImageFileName: 'S16_RTW_FESTIVAL_PINTEREST.jpg',
             facebookURL: null,
             twitterURL: null,
             pinterestURL: null    
         },
         mobile: {
             topnav: [
-                'section 1',
-                'section 2',
-                'section 3'
+                'Festival Bound 2016',
+                'Festival Bound',
+                'Survival Kit',
+                'Annah Bronfman\'s Set List'
             ],
             navActiveSection: null
         }
@@ -331,6 +332,20 @@ window.TEMPLATE.vertical = (function(window, document, $) {
 
             //CM - Element
             self.coremetrics('Element', self.cm, self.cm + '--topnav_' + section);            
+        });
+
+        $('.mobile_womens_festival_custom_button').on('click', function(event){
+            event.preventDefault();
+            event.stopPropagation();
+
+            var section = $(this).data('section');
+
+            self.mobile.navActiveSection = section;
+
+            self.goToSection(section);
+
+            //CM - Element
+            self.coremetrics('Element', self.cm, self.cm + '--landing_btn_' + section);            
         });
 
         //img touch event
