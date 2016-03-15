@@ -25,6 +25,10 @@ body {
     -webkit-overflow-scrolling: touch;
     position: relative;
     text-align: center;
+
+    p {
+		font-size: 1.2rem;
+    }
 }
 .lazy {
     display: none;
@@ -131,9 +135,10 @@ body {
 		width: 64px;
 		height: 64px;
 		text-align:center;
-		border: 1px solid #000;
+		border: 1px solid #FF004E;
 		margin: 0 10px;
 		cursor:pointer;
+		color: #FF004E;
 	}
 	ul.mobile_socialshare_container li i {
 		font-size: 36px;
@@ -163,11 +168,11 @@ body {
 	    visibility: visible;
 	    opacity: 1;		
 	}
-	.mobile_back_to_top{
+	a.mobile_back_to_top{
 	    font-weight: bold;
 	    font-size: 14px;
 		padding: 12px 0;
-		color: #000;
+		color: #000 !important;
 		text-transform: uppercase;
 		width: 100%;
 		text-align: center;
@@ -372,7 +377,7 @@ body {
 	    color: #fff;
 	    text-align: center;
 	    font-weight: bold;
-	    font-size: 14px;
+	    font-size: 13px;
 	    letter-spacing: 0;   
 	    font-family: 'Lato', sans-serif;
 	    text-transform: uppercase;
@@ -432,12 +437,12 @@ body {
 	    left: 0;
 	    top: 0;
 	    line-height: 60px;
-	    font-size: 14px;
+	    font-size: 13px;
 	    font-family: 'Lato', sans-serif;
 	    color: #fff !important;
 	    text-transform: uppercase;
 	    text-decoration: none;
-	    letter-spacing: 1.4px;   
+	    letter-spacing: 0;   
 	}
 
 	.mobile_topnav_container ul li.active a{
@@ -460,7 +465,7 @@ body {
 	.mobile_womens_festival_custom_annah_subtitle {
 		margin: 10px 15%;
 		font-style: italic;
-		font-size: 14px;
+		font-size: 16px;
 	}
 	.mobile_womens_festival_custom_annah_interview {
 		margin: 10px 7.5%;
