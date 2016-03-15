@@ -33,7 +33,7 @@ window.TEMPLATE.vertical = (function(window, document, $) {
                 'Festival Bound 2016',
                 'Festival Bound',
                 'Survival Kit',
-                'Annah Bronfman\'s Set List'
+                'Hannah Bronfman\'s Set List'
             ],
             navActiveSection: null
         }
