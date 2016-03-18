@@ -370,7 +370,8 @@ window.TEMPLATE.vertical = (function(window, document, $) {
                 hash = hash.replace('http://www1.bloomingdales.com/shop/', '');
                 hash = hash.split('?')[0];
                 hash = hash.substring(hash.indexOf('/') + 1);
-                self.coremetrics('Element', self.cm, 'shop_now_' + hash + '-image');
+                hash = hash.length > 49 ? hash.substring( 0, 49 )  : hash ;
+                self.coremetrics('Element', self.cm, hash + '-image');
             }
         });
 
