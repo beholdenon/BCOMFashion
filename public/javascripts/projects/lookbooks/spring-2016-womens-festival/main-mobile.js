@@ -356,17 +356,21 @@ window.TEMPLATE.vertical = (function(window, document, $) {
                 hash = hash.replace('http://m.bloomingdales.com/shop/', '');
                 hash = hash.split('?')[0];
                 hash = hash.substring(hash.indexOf('/') + 1);
-                hash = hash.length > 45 ? hash.substring( 0, 45 )  : hash ;
+                hash = hash.length > 39 ? hash.substring( 0, 39 )  : hash ;
                 self.coremetrics('Element', self.cm, hash + '-image');
             }
         });
 
         //button touch events
-        $('.mobile_button').on('click', function() {
-            self.coremetrics('Element', self.cm, 'shop_all_featured'); //could use regex to better identify each cta
+        $('.mobile_button_ext_link').on('click', function() {
+            var cmElement = $(this).text().replace(/ +/g, '_');
+            self.coremetrics('Element', self.cm, cmElement + '-btn'); //could use regex to better identify each cta
+        });
+        $('.mobile_button_spotify').on('click', function() {
+            self.coremetrics('Element', self.cm, 'Hannahs_spotify_playlist-btn'); //could use regex to better identify each cta
         });
         $('.mobile_shop_all').on('click', function() {
-            self.coremetrics('Element', self.cm, 'shop_all_bottom');
+            self.coremetrics('Element', self.cm, 'shop_all');
         });
         $('.mobile_info_header > a').on('click', function() {
             self.coremetrics('Element', self.cm, 'shop_all_top');
