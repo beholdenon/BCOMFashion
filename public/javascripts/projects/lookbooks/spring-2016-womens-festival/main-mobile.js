@@ -331,7 +331,7 @@ window.TEMPLATE.vertical = (function(window, document, $) {
             self.goToSection(section);
 
             //CM - Element
-            self.coremetrics('Element', self.cm, self.cm + '--topnav_' + section);            
+            self.coremetrics('Element', self.cm, 'Spring16_womensfestival--topnav_' + section);            
         });
 
         $('.mobile_womens_festival_custom_button').on('click', function(event){
@@ -345,7 +345,7 @@ window.TEMPLATE.vertical = (function(window, document, $) {
             self.goToSection(section);
 
             //CM - Element
-            self.coremetrics('Element', self.cm, self.cm + '--landing_btn_' + section);            
+            self.coremetrics('Element', self.cm, 'Spring16_womensfestival--landing_btn_' + section);            
         });
 
         //img touch event
@@ -356,7 +356,8 @@ window.TEMPLATE.vertical = (function(window, document, $) {
                 hash = hash.replace('http://m.bloomingdales.com/shop/', '');
                 hash = hash.split('?')[0];
                 hash = hash.substring(hash.indexOf('/') + 1);
-                self.coremetrics('Element', self.cm, 'shop_now_' + hash + '-image');
+                hash = hash.length > 45 ? hash.substring( 0, 45 )  : hash ;
+                self.coremetrics('Element', self.cm, hash + '-image');
             }
         });
 
@@ -484,7 +485,7 @@ window.TEMPLATE.vertical = (function(window, document, $) {
             self.logErr('CoreM ::: tagType: Pageview; categoryID: ' + categoryID + '; pageID: ' + pageID);
         } else if (tagType === 'Element') {
             try {
-                window.BLOOMIES.coremetrics.cmCreatePageElementTag(pageID, categoryID);
+                window.BLOOMIES.coremetrics.cmCreatePageElementTag('MBL:' + pageID, categoryID);
             } catch (e) {
                 self.logErr('CoreM_err: ' + e);
             }
