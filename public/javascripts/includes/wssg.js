@@ -131,7 +131,7 @@ var SERVICES = {
             // Index is a call for basic information about a category by its ID.
             // catID can be a single ID or multiple, comma-separated IDs
             var path = '/v3/catalog/category/index?category=' + catID + '&depth=1';
-            getRequest(path, "", function(result) {
+            getRequest(path, function(result) {
                 callback(result);
             });
         },
@@ -150,18 +150,19 @@ var SERVICES = {
             });
         },
 
-        browseProduct: function(callback, catID, resultsPerPage, sortby) {
+        browseProduct: function(callback, catID, resultsPerPage, sortby, currentPage) {
             // browseProduct is a call for product information based on a category call.
             // catID must be a single category ID.
 
             if (resultsPerPage == undefined) resultsPerPage = 96;
+            if (currentPage == undefined) currentPage = 1;
             if (sortby == undefined) {
                 sortby = '';
             } else {
                 sortby = "&sortby=" + sortby;
             }
 
-            var path = '/v3/catalog/category/' + catID + '/browseproducts?resultsperpage=' + resultsPerPage + sortby;
+            var path = '/v3/catalog/category/' + catID + '/browseproducts?resultsperpage=' + resultsPerPage + '&currentpage=' + currentPage + sortby;
             getRequest(path, function(result) {
                 callback(result);
             });
