@@ -1,0 +1,370 @@
+// ======================================
+// Outlet Touch Screen project for In-Store screens
+// Author: Mike Curtis
+// Date: 03/24/2016
+// Project: /outlet-touch-screen/
+// ======================================
+
+@import "compass";
+@import url("https://fonts.googleapis.com/css?family=Lato");
+@import url("https://fonts.googleapis.com/css?family=Libre+Baskerville");
+
+@media only screen and (max-width: 640px) {
+	body #bl_main_container {
+		max-width: auto;
+		width: auto;
+	}	
+}
+
+#bl_main_container {
+	width: auto;
+	overflow: hidden;
+}
+
+ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+img#loading-gif {
+    position: absolute;
+    left: 45vw;
+    top: 45vh;
+    z-index: 100;
+}
+
+#otc-screen-saver {
+	background-color: rgba(255,215,45,1);
+	display: block;
+	width: 100vw;
+	height: 100vh;
+	position: absolute;
+	z-index: 100;
+	left: 0;
+	top: 0;
+
+	.logo,
+	.interact {
+		width: 60%;
+	    margin: 0 auto;
+	    left: 0;
+	    right: 0;
+	    display: block;
+	    position: relative;
+	    top: 25%;
+	}
+
+}
+
+#otc-top-nav {
+	background-color: #000;
+	color: #fff;
+
+	li {
+		font-size: 0.65rem;
+		text-align: center;
+		cursor: pointer;
+		display: inline-block;
+		margin: 1.5vh 2vw;
+		text-transform: uppercase;
+	}
+}
+
+#otc-landing {
+	position: relative;
+
+	.ad {
+		display: block;
+		width: 70vw;
+		position: relative;
+		margin: 5vw auto 0;
+		background-color: rgba(255,215,45,1);
+	}
+
+	.divider {
+		position: relative;
+	}
+
+	.cat-heading {
+		text-transform: uppercase;
+		background-color: #fff;
+		color: #222;
+		text-align: center;
+		display: block;
+		position: absolute;
+		margin: 0 auto;
+		left: 0;
+		right: 0;
+		top: -1.5vw;
+		line-height: 1.3em;
+		width: 10em;
+	}
+
+	.categories {
+		text-align: center;
+
+		li {
+			width: 25vw;
+			font-size: 2.5vw;
+			padding-top: 25vw;
+			margin: 0 2.5vw 1em;
+			background-image: url('/fashion/images/projects/outlet-touch-screen/cat-sprite.png');
+			background-repeat: no-repeat;
+			background-size: 250%;
+			display: inline-block;
+			text-transform: uppercase;
+    		cursor: pointer;
+
+		}
+
+		.women {background-position: -13% -10%;}
+		.shoes {background-position: 50% -10%;}
+		.handbags {background-position: 115% -10%;}
+		.men {background-position: -8% 130%;}
+		.accessories {background-position: 53% 130%;}
+		.kids {background-position: 115% 130%;}
+	}
+
+	.footer {
+	    margin: 5em auto;
+	    width: 80vw;
+	    display: block;
+	}
+
+}
+
+#otc-browse {
+	position: absolute;
+	top: 6em;
+	left: 100%;
+	overflow-x: hidden;
+
+	#shop-contents {
+		position: relative;
+		width: 1000000vw;
+	}
+
+	.nav {
+
+		.level {
+			display: block;
+			margin-top: 0.5em;
+			margin-bottom: 0.5em;
+			font-family: 'Lato', 'Libre Baskerville', sans-serif;
+			text-transform: uppercase;
+
+			li {
+				display: inline-block;
+			}
+		}
+
+
+		.top {
+			padding-left: 0.5em;
+			
+			li {
+				margin-right: 2em;
+				padding: 0.2rem 0;
+				cursor: pointer;
+				
+				font-weight: 700;
+				font-size: 2.5vw;
+
+				&:last-child {
+					margin-right: 0;
+				}
+
+				&.active {
+					border-top: 2px solid #000;
+				}
+
+			}
+		}
+
+		.category {
+			padding-left: 0.5em;
+
+			font-size: 0.75rem;
+
+			.label {
+				margin-right: 1em;
+				font-size: 1.8vw;
+			}
+
+			ul {
+
+				display: inline-block;
+				
+				li {
+					font-size: 1.4vw;
+					cursor: pointer;
+
+					&:after {
+						content: "|";
+						margin: 0 1em;
+						cursor: default;
+					}
+
+					&:last-child {
+
+						&:after {
+							content: "";
+						}
+
+					}
+
+					&.active {
+						text-decoration: underline;
+					}
+
+				}
+			}
+		}
+
+		.facets {
+			padding-left: 0.5rem;
+
+			label {
+				font-weight: 700;
+				display: block;
+				font-size: 2.5vw;
+			}
+
+			.filters {
+				width: 94vw;
+			    background-color: #e9e9e9;
+			    height: 3em;
+			}
+		}
+
+		#browse-info {
+			padding-left: 0.5em;
+			padding-right: 1em;
+			width: 98vw;
+			
+			div {
+				display: inline-block;
+			}
+
+			.sort span {
+				font-size: 0.9rem;
+			}
+
+			#sortBox {
+				display: inline-block;
+				font-size: 1rem;
+			    width: 9em;
+			    cursor: pointer;
+			    padding: 0.7rem 0;
+			    background-color: transparent;
+			    border: 0;
+			    outline: 0;
+			}
+
+			.count {
+				margin-left: 2em;
+			}
+
+			.nav,
+			.pages {
+				float:right;
+				line-height: 4.5em;
+			}
+
+			.nav {
+
+				.left,
+				.right {
+					background-color: #000;
+					color: #fff;
+					font-size: 5vw;
+					width: 9vw;
+					line-height: 9vw;
+					display: flex;
+	    			align-items: center;
+	    			justify-content: center;
+					margin-top: 0.5em;
+					cursor: pointer;
+
+					&.inactive {
+						background-color: #ddd;
+					}
+				}
+
+				.left {
+					margin-left: 0.5em;
+					margin-right: 0.2em;
+				}
+
+				.right{
+
+				}
+
+			}
+		}
+	}
+
+	.browseShell {
+		position: relative;
+		float: left;
+		width: 96vw;
+    	margin-right: 4vw;
+
+		.products {
+
+			li {
+				font-size: 2.5vw;
+
+				.brand {
+					font-size: 2.5vw;
+				}
+
+				.quickPeekIcon {
+					width: 100%;
+					height: 100%;
+					background-color: transparent;
+					cursor: pointer;
+
+					svg {
+						opacity: 0;
+					}
+				}
+			}	
+		}
+
+		.browse-footer {
+			display: block;
+			width: 90vw;
+			margin: 8vw auto 2vw;
+			left: 0;
+			right: 0;
+			position: relative;
+		}
+		
+	}
+	
+}
+
+
+
+// Quickpeek styles
+
+#atbOverlay {
+	background-color: rgba(256,256,256,0.7);
+}
+
+#singleATB {
+	box-shadow: 4px 4px 10px #ddd, -4px -4px 10px #ddd;
+	top: 20vh;
+
+	padding-bottom: 2vw;
+
+	.footer {
+		display: none;
+	}
+
+	.quantity {
+		display: none;
+	}
+}

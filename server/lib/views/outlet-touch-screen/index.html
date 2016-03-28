@@ -1,0 +1,95 @@
+<title>Bloomingdale's Outlet Touch Screen</title>
+
+<link href="/fashion/styles/projects/outlet-touch-screen/style.css" rel="stylesheet" type="text/css" >
+<link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" />
+
+<section id="otc-screen-saver" class="">
+	<img class="logo" src="/fashion/images/projects/outlet-touch-screen/logo.jpg" alt=""/>
+	<img class="interact" src="/fashion/images/projects/outlet-touch-screen/tap.png" alt=""/>
+</section>
+
+<nav id='otc-top-nav'>
+	<ul>
+		<li id='home'>
+			<i class="fa fa-home fa-2x"></i><br/>Home
+		</li>
+	</ul>
+</nav>
+
+<section id="otc-landing">
+	<img class='ad' src='/fashion/images/projects/outlet-touch-screen/ad.png' alt="">
+	<div class='divider'>
+		<hr/>
+		<h4 class='cat-heading'>shop by category</h4>
+	</div>
+	<ul class="categories">
+		<li class='women' data-cat='1005299'>women</li>
+		<li class='shoes' data-cat='1005300'>shoes</li>
+		<li class='handbags' data-cat='1005301'>handbags</li>
+		<li class='men' data-cat='1005304'>men</li>
+		<li class='accessories' data-cat='1005306'>men accessories</li>
+		<li class='kids' data-cat='1005540'>kids</li>
+	</ul>
+	<img class='footer' src='/fashion/images/projects/outlet-touch-screen/footer.jpg'/>
+</section>
+
+<section id="otc-browse" class="blm-browse"> 
+	<div class="nav">
+		<ul class='level top'>
+			<li class='women' data-cat='1005299'>women</li>
+			<li class='men' data-cat='1005304'>men</li>
+			<li class='kids' data-cat='1005540'>kids</li>
+		</ul>
+		<div class='level category'>
+			<span class='label'>filter category by:</span>
+			<ul class='subCat'>
+				<li>women's clothing</li>
+				<li>shoes</li>
+				<li>handbags</li>
+				<li>jewelry & accessories</li>
+				<li>all women</li>
+			</ul>
+		</div>
+		<div class='facets'>
+			<label>Narrow by</label>
+			<ul class="filters">
+				
+			</ul>
+		</div>
+		<div id='browse-info'>
+			<div class='sort'>
+				<span>Sort by:&nbsp;</span>
+				<select id='sortBox'>
+					<option>Our Top Picks</option>
+					<option>Best Sellers</option>
+				</select>
+			</div>
+			<div class='count'>
+				<span class='int'></span>
+				<span class='str'>&nbsp;items</span>
+			</div>
+			<div class='nav'>
+				<div class='left inactive'>&lsaquo;</div>
+				<div class='right'>&rsaquo;</div>
+			</div>
+			<div class='pages'>
+				<span class='str'>Page</span>
+				<span class='num-one'></span>/<span class='num-two'></span>
+			</div>
+			
+		</div>
+	</div>
+
+	<div id="shop-contents"></div>
+	<img id="browse-footer" src="">
+	{{> component/browseGrid }}
+</section>
+
+<footer id="" class="bottom-links">
+
+</footer>
+
+<script type="text/javascript" src="/fashion/javascripts/libs/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="/fashion/javascripts/projects/outlet-touch-screen/init.js"></script>
+
+
