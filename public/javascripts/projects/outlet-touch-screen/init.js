@@ -14,6 +14,7 @@ var currentPage = 1,
 		swatches: false,
 		numberOfResults: 16,
 		currentPage: 1,
+		sortby: 'newarrivals',
 		gridClasses: 'standard four-col',
 		domTarget: '#otc-browse .page-1',
 		masterQP: 'master-grid'
@@ -21,10 +22,10 @@ var currentPage = 1,
 
 $(document).ready(function () {
 
-	app.screenSaver.setup();
-	$(window).on('keyup keypress blur change mousemove tap swipe',function(){
-		app.screenSaver.reset();
-	});
+	// app.screenSaver.setup();
+	// $(window).on('keyup keypress blur change mousemove tap swipe',function(){
+	// 	app.screenSaver.reset();
+	// });
 
 	$('#otc-screen-saver').on('click tap', function () {
 		$(this).hide();
@@ -41,25 +42,61 @@ $(document).ready(function () {
 		});
 	});
 
-	// activates when you select a new category to look at
+	// activates when you select a new category to look at from the landing page
 	$('#otc-landing .categories li').unbind().on('click tap', function () {
-		setupCategory( $(this) );
+		setupCategory( $(this), function () {
+			$('#cube-loader').fadeIn();
+			$('#otc-browse, #otc-landing').addClass('blur');
 
-		$('#otc-landing, #otc-browse').animate({
-			left: '-=100%'
-		},600);
+			setTimeout(function(){
+				$('#cube-loader').fadeOut(400);
+				$('#otc-browse, #otc-landing').removeClass('blur');
+				$('#otc-landing, #otc-browse').animate({
+					left: '-=100%'
+				},600);
+			}, 1500);
+			
+		});		
 	});
 
+	// activates when you select a new category from the top navigation
 	$('#otc-browse .nav .level').unbind().on('click tap', 'li', function () {
  		var target = $(this);
+ 		$('#cube-loader').fadeIn();
+ 		$('#otc-browse').addClass('blur');
+
 		$('#shop-contents').fadeOut('fast', function() {
 			setupCategory( target, function () {
+
 				setTimeout(function() {
-					$('#shop-contents').slideDown('slow');	
+					$('#shop-contents').fadeIn('slow', function() {
+						$('#cube-loader').fadeOut(400);
+						$('#otc-browse').removeClass('blur');
+					});	
 				}, 300);
 			});
 		});
 		
+	});
+
+	// activates when you change the sorting
+	$('#sortBox').change(function () {
+		properties.sortby = $(this).find(':selected').attr('data-sort');
+		
+		$('#shop-contents').html('<div class="browseShell page-1"></div>');
+		$('#browse-info .nav .right').removeClass('inactive');
+		$('#browse-info .nav .left').addClass('inactive');
+
+		currentPage = 1;
+		properties.currentPage = currentPage;
+		properties.domTarget = '#otc-browse .page-' + currentPage;
+
+		$('#shop-contents').fadeOut('fast', function() {
+			app.category.init(properties);
+			setTimeout(function() {
+				$('#shop-contents').slideDown('slow');	
+			}, 300);
+		});
 	});
 
 	function setupCategory(target, callback) {
@@ -67,6 +104,8 @@ $(document).ready(function () {
 			browseImg = target.attr('class');
 
 		$('#shop-contents').html('<div class="browseShell page-1"></div>');
+		$('#sortBox').val('newarrivals');
+		properties.sortby = 'newarrivals';
 		// $('#browse-footer').attr('src', '/fashion/images/projects/outlet-touch-screen/' + browseImg + '.jpg' );
 		$('#browse-info .nav .right').removeClass('inactive');
 		$('#browse-info .nav .left').addClass('inactive');

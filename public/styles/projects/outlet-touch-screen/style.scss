@@ -5,20 +5,32 @@
 // Project: /outlet-touch-screen/
 // ======================================
 
+// VARIABLES
+
+$yellow: #FFD72D;
+$grey: #444;
+$viewable-font-size: 2.5vw;
+
 @import "compass";
 @import url("https://fonts.googleapis.com/css?family=Lato");
 @import url("https://fonts.googleapis.com/css?family=Libre+Baskerville");
 
-@media only screen and (max-width: 640px) {
-	body #bl_main_container {
-		max-width: auto;
-		width: auto;
-	}	
+html {
+	-ms-overflow-style: -ms-autohiding-scrollbar;
+	-ms-content-zooming: none;
+	touch-action: none;
+	@-ms-viewport { width: device-width;}
+}
+
+body {
+	// overflow: hidden;
+	-ms-overflow-style: -ms-autohiding-scrollbar;
 }
 
 #bl_main_container {
 	width: auto;
 	overflow: hidden;
+	width: auto;
 }
 
 ul {
@@ -37,12 +49,15 @@ img#loading-gif {
 #otc-screen-saver {
 	background-color: rgba(255,215,45,1);
 	display: block;
+	display: none;
 	width: 100vw;
 	height: 100vh;
 	position: absolute;
 	z-index: 100;
 	left: 0;
 	top: 0;
+	-webkit-animation: screensaver-pulse 3.5s infinite ease-in-out;
+          animation: screensaver-pulse 3.5s infinite ease-in-out; 
 
 	.logo,
 	.interact {
@@ -57,12 +72,28 @@ img#loading-gif {
 
 }
 
+.blur {
+	-webkit-filter: blur(3px);
+	-moz-filter: blur(3px);
+	-o-filter: blur(3px);
+	-ms-filter: blur(3px);
+	filter: blur(3px);
+}
+
+@keyframes screensaver-pulse {
+	0% {background-color: rgba(255, 215, 45, 1)};
+	25% {background-color: rgba(255, 193, 22, 1)};
+	50% {background-color: rgba(255, 215, 45, 1)};
+	75% {background-color: rgba(229, 213, 149, 1)};
+	100% {background-color: rgba(255, 215, 45, 1)};
+}
+
 #otc-top-nav {
 	background-color: #000;
 	color: #fff;
 
 	li {
-		font-size: 0.65rem;
+		font-size: $viewable-font-size;
 		text-align: center;
 		cursor: pointer;
 		display: inline-block;
@@ -73,10 +104,11 @@ img#loading-gif {
 
 #otc-landing {
 	position: relative;
+	width: 100vw;
 
 	.ad {
 		display: block;
-		width: 70vw;
+		width: 85vw;
 		position: relative;
 		margin: 5vw auto 0;
 		background-color: rgba(255,215,45,1);
@@ -84,6 +116,10 @@ img#loading-gif {
 
 	.divider {
 		position: relative;
+	}
+
+	hr {
+		margin: 4vh 0;
 	}
 
 	.cat-heading {
@@ -97,7 +133,8 @@ img#loading-gif {
 		left: 0;
 		right: 0;
 		top: -1.5vw;
-		line-height: 1.3em;
+		line-height: 2.25vh;
+		font-size: $viewable-font-size;
 		width: 10em;
 	}
 
@@ -106,7 +143,7 @@ img#loading-gif {
 
 		li {
 			width: 25vw;
-			font-size: 2.5vw;
+			font-size: $viewable-font-size;
 			padding-top: 25vw;
 			margin: 0 2.5vw 1em;
 			background-image: url('/fashion/images/projects/outlet-touch-screen/cat-sprite.png');
@@ -130,15 +167,17 @@ img#loading-gif {
 	    margin: 5em auto;
 	    width: 80vw;
 	    display: block;
+	    border: 0;
 	}
 
 }
 
 #otc-browse {
 	position: absolute;
-	top: 6em;
+	top: 9vh;
 	left: 100%;
 	overflow-x: hidden;
+	// padding: 0 2vw;
 
 	#shop-contents {
 		position: relative;
@@ -169,7 +208,7 @@ img#loading-gif {
 				cursor: pointer;
 				
 				font-weight: 700;
-				font-size: 2.5vw;
+				font-size: $viewable-font-size;
 
 				&:last-child {
 					margin-right: 0;
@@ -184,12 +223,13 @@ img#loading-gif {
 
 		.category {
 			padding-left: 0.5em;
-
+			margin: 0.5vw 0;
 			font-size: 0.75rem;
+			display: block;
 
 			.label {
 				margin-right: 1em;
-				font-size: 1.8vw;
+				font-size: 2vw;
 			}
 
 			ul {
@@ -197,13 +237,14 @@ img#loading-gif {
 				display: inline-block;
 				
 				li {
-					font-size: 1.4vw;
+					font-size: 1.25vw;
 					cursor: pointer;
 
 					&:after {
 						content: "|";
 						margin: 0 1em;
 						cursor: default;
+						border-bottom: 0;
 					}
 
 					&:last-child {
@@ -242,18 +283,20 @@ img#loading-gif {
 			padding-left: 0.5em;
 			padding-right: 1em;
 			width: 98vw;
+			font-size: 2vw;
 			
 			div {
 				display: inline-block;
+				line-height: 8vh;
 			}
 
 			.sort span {
-				font-size: 0.9rem;
+				font-size: $viewable-font-size;
 			}
 
 			#sortBox {
 				display: inline-block;
-				font-size: 1rem;
+				font-size: $viewable-font-size;
 			    width: 9em;
 			    cursor: pointer;
 			    padding: 0.7rem 0;
@@ -263,13 +306,12 @@ img#loading-gif {
 			}
 
 			.count {
-				margin-left: 2em;
+				margin-left: 7vw;
 			}
 
 			.nav,
 			.pages {
 				float:right;
-				line-height: 4.5em;
 			}
 
 			.nav {
@@ -308,16 +350,17 @@ img#loading-gif {
 	.browseShell {
 		position: relative;
 		float: left;
-		width: 96vw;
-    	margin-right: 4vw;
+		width: 100vw;
+		padding: 0 2vw;
+    	// margin-right: 4vw;
 
 		.products {
 
 			li {
-				font-size: 2.5vw;
+				font-size: 1.5vw;
 
 				.brand {
-					font-size: 2.5vw;
+					font-size: 1.25em;
 				}
 
 				.quickPeekIcon {
@@ -329,6 +372,12 @@ img#loading-gif {
 					svg {
 						opacity: 0;
 					}
+				}
+
+				.price { 
+					font-size: 2vw;
+					line-height: 4vh;
+					font-weight: 700;
 				}
 			}	
 		}
@@ -357,8 +406,7 @@ img#loading-gif {
 #singleATB {
 	box-shadow: 4px 4px 10px #ddd, -4px -4px 10px #ddd;
 	top: 20vh;
-
-	padding-bottom: 2vw;
+	padding: 2vw;
 
 	.footer {
 		display: none;
@@ -367,4 +415,112 @@ img#loading-gif {
 	.quantity {
 		display: none;
 	}
+
+	.size {
+		.options {
+			li {
+				font-size: 3.5vw;
+				min-width: auto;
+    			margin: 0.5vh 0.75vw 0;
+
+
+				&:after {
+					content: ",";
+				}
+
+				&:last-of-type {
+
+					&:after {
+						content: "";
+					}
+				}
+
+				span {
+					border: 0;
+					padding: 0;
+					min-height: 0;
+					line-height: 1em;
+				}
+
+			}
+		}
+	}
+}
+
+
+// LOADING CUBES
+
+#cube-loader {
+	display: none;
+	width: 100vw;
+	height: 100vh;
+	z-index: 50;
+	position: absolute;
+	background-color: rgba(256,256,256,0.6);
+}
+
+.sk-cube-grid {
+  width: 20vw;
+  height: 20vw;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  top: 40vh;
+  position: absolute;
+}
+
+.sk-cube-grid .sk-cube {
+  width: 33%;
+  height: 33%;
+  background-color: $yellow;
+  float: left;
+  -webkit-animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
+          animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out; 
+}
+.sk-cube-grid .sk-cube1 {
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s; }
+.sk-cube-grid .sk-cube2 {
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s; }
+.sk-cube-grid .sk-cube3 {
+  -webkit-animation-delay: 0.4s;
+          animation-delay: 0.4s; }
+.sk-cube-grid .sk-cube4 {
+  -webkit-animation-delay: 0.1s;
+          animation-delay: 0.1s; }
+.sk-cube-grid .sk-cube5 {
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s; }
+.sk-cube-grid .sk-cube6 {
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s; }
+.sk-cube-grid .sk-cube7 {
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s; }
+.sk-cube-grid .sk-cube8 {
+  -webkit-animation-delay: 0.1s;
+          animation-delay: 0.1s; }
+.sk-cube-grid .sk-cube9 {
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s; }
+
+@-webkit-keyframes sk-cubeGridScaleDelay {
+  0%, 70%, 100% {
+    -webkit-transform: scale3D(1, 1, 1);
+            transform: scale3D(1, 1, 1);
+  } 35% {
+    -webkit-transform: scale3D(0, 0, 1);
+            transform: scale3D(0, 0, 1); 
+  }
+}
+
+@keyframes sk-cubeGridScaleDelay {
+  0%, 70%, 100% {
+    -webkit-transform: scale3D(1, 1, 1);
+            transform: scale3D(1, 1, 1);
+  } 35% {
+    -webkit-transform: scale3D(0, 0, 1);
+            transform: scale3D(0, 0, 1);
+  } 
 }
