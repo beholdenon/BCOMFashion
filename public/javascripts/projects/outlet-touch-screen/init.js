@@ -159,7 +159,7 @@ $(document).ready(function () {
 					$('#otc-browse .browseShell').animate({left: '-=100vw'}, 300, function () {
 						browseAnimation = false;
 					});
-					catBrowse.request(properties, function (result) {
+					catBrowse.request(properties, function () {
 						$('#otc-browse .page-' + (currentPage+1)).append('<img class="browse-footer" src="/fashion/images/projects/outlet-touch-screen/' + browseImg + '.jpg"/>');
 					});
 				} else {
@@ -176,6 +176,43 @@ $(document).ready(function () {
 
 			}
 		}
+	});
+
+	// interaction with a main facet on browse.
+	$('#otc-browse .facets').on('click tap', 'td.group', function () {
+		var targetBox = $(this).text().replace(/\s+/g, '-').toLowerCase(),
+			currentTab = $(this);
+
+		$('#otc-browse, #otc-landing').addClass('blur');
+		$('#filterGroups .'+targetBox).show().siblings().hide();
+		$('#filterOverlay, #filterGroups').fadeIn();
+
+	});
+
+	// close filter overlay
+	$('#filterOverlay, #filterGroups .close').on('click tap', function() {
+		closeFaceting();
+	});
+
+	function closeFaceting () {
+		$('#otc-browse, #otc-landing').removeClass('blur');
+		$('#filterOverlay, #filterGroups').hide();
+	}
+
+	// additional quickpeek markup on initial click
+	$('body').on('click tap', '.quickPeekIcon', function () {
+		console.log('quickpeek');
+		$('#otc-browse .nav, #shop-contents').addClass('blur');
+
+		var seeYourAssociate = '<div id="see-your-associate">See an Associate for more details</div><div id="productSwitch"><div class="arrow">&lsaquo;</div> <div class="product-count"><span>Product </span><span>1</span><span> of </span><span>123</span></div> <div  class="arrow">&rsaquo;</div>';
+
+		if ( $('#see-your-associate').length < 1 ) {
+			$(seeYourAssociate).insertBefore('#singleATB .footer');
+		}
+	});
+
+	$('body').on('click tap', '#atbOverlay, #singleATB .close', function () {
+		$('#otc-browse .nav, #shop-contents').removeClass('blur');
 	});
 
 });
@@ -213,7 +250,9 @@ var app = {
 				$('#browse-info .pages .num-one').text(currentPage);
 				$('#browse-info .pages .num-two').text(totalPages);
 				$('#otc-browse .nav .level .' + (result.category[0].parentcategory.summary.name).toLowerCase() ) .addClass('active').siblings().removeClass('active');
-
+				
+				console.log(result);
+				app.category.faceting(result);
 				app.category.filters(result);
 
 				if ( totalPages > 1 ) {
@@ -229,6 +268,26 @@ var app = {
 				}
 
 			});
+		},
+
+		faceting: function (result) {
+			var baseNode = $('#otc-browse .nav .facets .filters'),
+				filterData = result.category[0].facet;
+
+			baseNode.html('');
+			$('#filterGroups .content').html('');
+
+			for (var i=0; i < filterData.length; i++) {
+				baseNode.append('<td class="group">'+ filterData[i].displayname +'</td>');
+
+				var facetMarkup = '';
+
+				for (var j=0; j<filterData[i].value.length; j++) {
+					facetMarkup += '<div class="facetValue">'+filterData[i].value[j].name+'</div>';
+				}
+
+				$('#filterGroups .content').append( '<div class="filterBox '+filterData[i].displayname.replace(/\s+/g, '-').toLowerCase()+'">'+ facetMarkup + '</div>' );
+			}
 		},
 
 	},
