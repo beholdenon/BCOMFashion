@@ -14,6 +14,7 @@ var currentPage = 1,
 		swatches: false,
 		numberOfResults: 16,
 		currentPage: 1,
+		sortby: 'newarrivals',
 		gridClasses: 'standard four-col',
 		domTarget: '#otc-browse .page-1',
 		masterQP: 'master-grid'
@@ -21,10 +22,10 @@ var currentPage = 1,
 
 $(document).ready(function () {
 
-	app.screenSaver.setup();
-	$(window).on('keyup keypress blur change mousemove tap swipe',function(){
-		app.screenSaver.reset();
-	});
+	// app.screenSaver.setup();
+	// $(window).on('keyup keypress blur change mousemove tap swipe',function(){
+	// 	app.screenSaver.reset();
+	// });
 
 	$('#otc-screen-saver').on('click tap', function () {
 		$(this).hide();
@@ -41,25 +42,61 @@ $(document).ready(function () {
 		});
 	});
 
-	// activates when you select a new category to look at
+	// activates when you select a new category to look at from the landing page
 	$('#otc-landing .categories li').unbind().on('click tap', function () {
-		setupCategory( $(this) );
+		setupCategory( $(this), function () {
+			$('#cube-loader').fadeIn();
+			$('#otc-browse, #otc-landing').addClass('blur');
 
-		$('#otc-landing, #otc-browse').animate({
-			left: '-=100%'
-		},600);
+			setTimeout(function(){
+				$('#cube-loader').fadeOut(400);
+				$('#otc-browse, #otc-landing').removeClass('blur');
+				$('#otc-landing, #otc-browse').animate({
+					left: '-=100%'
+				},600);
+			}, 1500);
+			
+		});		
 	});
 
+	// activates when you select a new category from the top navigation
 	$('#otc-browse .nav .level').unbind().on('click tap', 'li', function () {
  		var target = $(this);
+ 		$('#cube-loader').fadeIn();
+ 		$('#otc-browse').addClass('blur');
+
 		$('#shop-contents').fadeOut('fast', function() {
 			setupCategory( target, function () {
+
 				setTimeout(function() {
-					$('#shop-contents').slideDown('slow');	
+					$('#shop-contents').fadeIn('slow', function() {
+						$('#cube-loader').fadeOut(400);
+						$('#otc-browse').removeClass('blur');
+					});	
 				}, 300);
 			});
 		});
 		
+	});
+
+	// activates when you change the sorting
+	$('#sortBox').change(function () {
+		properties.sortby = $(this).find(':selected').attr('data-sort');
+		
+		$('#shop-contents').html('<div class="browseShell page-1"></div>');
+		$('#browse-info .nav .right').removeClass('inactive');
+		$('#browse-info .nav .left').addClass('inactive');
+
+		currentPage = 1;
+		properties.currentPage = currentPage;
+		properties.domTarget = '#otc-browse .page-' + currentPage;
+
+		$('#shop-contents').fadeOut('fast', function() {
+			app.category.init(properties);
+			setTimeout(function() {
+				$('#shop-contents').slideDown('slow');	
+			}, 300);
+		});
 	});
 
 	function setupCategory(target, callback) {
@@ -67,6 +104,8 @@ $(document).ready(function () {
 			browseImg = target.attr('class');
 
 		$('#shop-contents').html('<div class="browseShell page-1"></div>');
+		$('#sortBox').val('newarrivals');
+		properties.sortby = 'newarrivals';
 		// $('#browse-footer').attr('src', '/fashion/images/projects/outlet-touch-screen/' + browseImg + '.jpg' );
 		$('#browse-info .nav .right').removeClass('inactive');
 		$('#browse-info .nav .left').addClass('inactive');
@@ -120,7 +159,7 @@ $(document).ready(function () {
 					$('#otc-browse .browseShell').animate({left: '-=100vw'}, 300, function () {
 						browseAnimation = false;
 					});
-					catBrowse.request(properties, function (result) {
+					catBrowse.request(properties, function () {
 						$('#otc-browse .page-' + (currentPage+1)).append('<img class="browse-footer" src="/fashion/images/projects/outlet-touch-screen/' + browseImg + '.jpg"/>');
 					});
 				} else {
@@ -137,6 +176,43 @@ $(document).ready(function () {
 
 			}
 		}
+	});
+
+	// interaction with a main facet on browse.
+	$('#otc-browse .facets').on('click tap', 'td.group', function () {
+		var targetBox = $(this).text().replace(/\s+/g, '-').toLowerCase(),
+			currentTab = $(this);
+
+		$('#otc-browse, #otc-landing').addClass('blur');
+		$('#filterGroups .'+targetBox).show().siblings().hide();
+		$('#filterOverlay, #filterGroups').fadeIn();
+
+	});
+
+	// close filter overlay
+	$('#filterOverlay, #filterGroups .close').on('click tap', function() {
+		closeFaceting();
+	});
+
+	function closeFaceting () {
+		$('#otc-browse, #otc-landing').removeClass('blur');
+		$('#filterOverlay, #filterGroups').hide();
+	}
+
+	// additional quickpeek markup on initial click
+	$('body').on('click tap', '.quickPeekIcon', function () {
+		console.log('quickpeek');
+		$('#otc-browse .nav, #shop-contents').addClass('blur');
+
+		var seeYourAssociate = '<div id="see-your-associate">See an Associate for more details</div><div id="productSwitch"><div class="arrow">&lsaquo;</div> <div class="product-count"><span>Product </span><span>1</span><span> of </span><span>123</span></div> <div  class="arrow">&rsaquo;</div>';
+
+		if ( $('#see-your-associate').length < 1 ) {
+			$(seeYourAssociate).insertBefore('#singleATB .footer');
+		}
+	});
+
+	$('body').on('click tap', '#atbOverlay, #singleATB .close', function () {
+		$('#otc-browse .nav, #shop-contents').removeClass('blur');
 	});
 
 });
@@ -174,7 +250,9 @@ var app = {
 				$('#browse-info .pages .num-one').text(currentPage);
 				$('#browse-info .pages .num-two').text(totalPages);
 				$('#otc-browse .nav .level .' + (result.category[0].parentcategory.summary.name).toLowerCase() ) .addClass('active').siblings().removeClass('active');
-
+				
+				console.log(result);
+				app.category.faceting(result);
 				app.category.filters(result);
 
 				if ( totalPages > 1 ) {
@@ -190,6 +268,26 @@ var app = {
 				}
 
 			});
+		},
+
+		faceting: function (result) {
+			var baseNode = $('#otc-browse .nav .facets .filters'),
+				filterData = result.category[0].facet;
+
+			baseNode.html('');
+			$('#filterGroups .content').html('');
+
+			for (var i=0; i < filterData.length; i++) {
+				baseNode.append('<td class="group">'+ filterData[i].displayname +'</td>');
+
+				var facetMarkup = '';
+
+				for (var j=0; j<filterData[i].value.length; j++) {
+					facetMarkup += '<div class="facetValue">'+filterData[i].value[j].name+'</div>';
+				}
+
+				$('#filterGroups .content').append( '<div class="filterBox '+filterData[i].displayname.replace(/\s+/g, '-').toLowerCase()+'">'+ facetMarkup + '</div>' );
+			}
 		},
 
 	},
