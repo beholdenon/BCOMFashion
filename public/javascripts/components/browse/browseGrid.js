@@ -139,6 +139,7 @@ var catBrowse = {
 			quickpeek: true, // display quick peek icon in bottom left of product image
 			reviews: true, // display review hearts
 			sortby: '', // allow for special sorting if desired: price, customerrating, name, bestseller, newarrival
+			sortorder: 'asc',
 			swatches: true, // display swatches and allow swatch functionality
 		}
 

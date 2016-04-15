@@ -4,8 +4,12 @@
 <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" />
 
 <section id="otc-screen-saver" class="">
-	<img class="logo" src="/fashion/images/projects/outlet-touch-screen/logo.jpg" alt=""/>
-	<img class="interact" src="/fashion/images/projects/outlet-touch-screen/tap.png" alt=""/>
+	<div class='logo'></div>
+	<div class="interact"></div>
+	<img class='rotating-bg' src='/fashion/images/projects/outlet-touch-screen/ss_1.jpg'/>
+	<img class='rotating-bg' style='opacity:0' src='/fashion/images/projects/outlet-touch-screen/ss_2.jpg'/>
+	<img class='rotating-bg' style='opacity:0' src='/fashion/images/projects/outlet-touch-screen/ss_3.jpg'/>
+	<img class='rotating-bg' style='opacity:0' src='/fashion/images/projects/outlet-touch-screen/ss_4.jpg'/>
 </section>
 
 <!-- Loading Cubes -->
@@ -80,13 +84,14 @@
 		<div id='browse-info'>
 			<div class='sort'>
 				<span>Sort by:&nbsp;</span>
-				<select id='sortBox'>
-					<option data-sort='newarrival' selected>New Arrivals</option>
-					<option data-sort='bestseller'>Best Sellers</option>
-					<option data-sort='customerrating'>Customer Rating</option>
-					<option data-sort='name'>Name</option>
-					<option data-sort='price'>Price</option>
-				</select>
+				<div id='activeSort'>New Arrivals</div>
+				<div id='sortBox'>
+					<div data-sort='newarrival' class='option'>New Arrivals</div>
+					<div data-sort='bestseller' class='option'>Best Sellers</div>
+					<div data-sort='customerrating' class='option'>Top Rated</div>
+					<!-- <div data-sort='name' class='option'>Name</div> -->
+					<div data-sort='price' class='option'>Price</div>
+				</div>
 			</div>
 			<div class='count'>
 				<span class='int'></span>
@@ -105,7 +110,7 @@
 	</div>
 
 	<div id="shop-contents"></div>
-	<img id="browse-footer" src="">
+	<!-- <img id="browse-footer" src=""> -->
 	{{> component/browseGrid }}
 </section>
 
