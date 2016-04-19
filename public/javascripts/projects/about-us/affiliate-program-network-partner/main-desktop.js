@@ -27,7 +27,7 @@ APP.coremetrics = function (tagType, categoryID, pageID) {
         self.logErr('CoreM ::: tagType: Pageview; categoryID: ' + categoryID + '; pageID: ' + pageID);
     } else if (tagType === 'Element') {
         try {
-            window.BLOOMIES.coremetrics.cmCreatePageElementTag('MBL:' + pageID, categoryID);
+            window.BLOOMIES.coremetrics.cmCreatePageElementTag(pageID, categoryID);
         } catch (e) {
             self.logErr('CoreM_err: ' + e);
         }
