@@ -47,6 +47,18 @@ img#loading-gif {
     z-index: 100;
 }
 
+#qrcode {
+	margin-left: 1vw;
+	position: relative;
+}
+
+#qrCover {
+	position: absolute;
+	top: 2vh;
+	left: 3.25vw;
+	width: 8vw;
+}
+
 #otc-screen-saver {
 	background-color: #000;
 	display: block;

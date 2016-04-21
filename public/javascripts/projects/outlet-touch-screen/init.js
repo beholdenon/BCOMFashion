@@ -242,7 +242,7 @@ $(document).ready(function () {
 
 	// A facet has been chosen, fitler that jazz
 	$('#filterGroups').on('click tap', '.facetValue', function () {
-		var fProds = [],
+		 var fProds = [],
 			facetChoice = $(this).text().toLowerCase(),
 			subtype = $(this).parent().attr('data-type');
 
@@ -256,11 +256,9 @@ $(document).ready(function () {
 		$('#cube-loader').fadeIn(400);
 
 		var filters = {
-			build: function (fProds, subtype) {
+			build: function (fProds){ //, subtype) {
 				var filteredProducts = [ [] ],
 					// numberOfCalls = 1,
-					arrayCount = 0,
-					pageCount = 0,
 					arrayGroup = [];
 
 				if (fProds.length > 96) {
@@ -271,45 +269,48 @@ $(document).ready(function () {
 
 
 				SERVICES.product.get(function(results) {
-					var attributes,
-						status;
-
 					$('#otc-browse, #otc-landing').removeClass('blur');
 					$('#shop-contents').fadeIn(function () {
 						$('#cube-loader').fadeOut(400);
 					});
-					
-					filters.check(results);
-
+					console.log('length pre 1:  '+filteredProducts[filteredProducts.length-1].length);
+					filters.check(results, filteredProducts);
+					console.log('length post 1:  '+filteredProducts[filteredProducts.length-1].length);
+					console.log(filteredProducts);
 					$('#shop-contents').html('');
 					$('#cube-loader').fadeOut(400);
 					$('#otc-browse').removeClass('blur');
 					$('#browse-info .sort').css('opacity', 0);
 
 					if ( arrayGroup.length <= 1 ) {
-						filters.category(filteredProducts);
+						filters.browse(filteredProducts);
+					}
+
+					var n=1;
+					if ( arrayGroup.length > 1 ) {	
+						extraFilteredPages(n);
 					}
 
 				}, fProds.toString() );
-				
-				var n=1;
-				if ( arrayGroup.length > 1 ) {	
-					extraFilteredPages(n);
-				}
 
 				function extraFilteredPages (n) {
 					SERVICES.product.get( function(results) {
+						filters.check(results, filteredProducts);
+						console.log('length repeat '+n+':  '+filteredProducts[filteredProducts.length-1].length);
+						console.log(filteredProducts);
 						n++;
 						if (n<arrayGroup.length) {
 							extraFilteredPages(n);
+							console.log('repeat');
 						} else {
-							filters.category(filteredProducts);
+							console.log('print');
+							filters.browse(filteredProducts);
 						}
 					}, arrayGroup[n].toString() );
 				}
 			},
 
-			category: function (filteredProducts) {
+			browse: function (filteredProducts) {
 				// console.log(filteredProducts);
 				var total = 0;
  
@@ -335,7 +336,11 @@ $(document).ready(function () {
 				}
 			},
 
-			check: function(results) {
+			check: function(results, filteredProducts) {
+				var pageCount = filteredProducts[filteredProducts.length-1].length,
+					attributes,
+					status = false;
+
 				// cycle through products 
 				for (var i=0; i< results.product.length; i++) {
 					attributes = results.product[i].productDetails.attributes;
@@ -367,13 +372,12 @@ $(document).ready(function () {
 					}
 
 					if (status === true && pageCount < 12) {
-						filteredProducts[arrayCount].push(results.product[i]);
+						filteredProducts[filteredProducts.length-1].push(results.product[i]);
 						pageCount++;
 					} else if (status === true && pageCount >= 12) {
-						arrayCount++;
 						pageCount = 1;
-						filteredProducts[arrayCount] = [];
-						filteredProducts[arrayCount].push(results.product[i]);
+						filteredProducts[ filteredProducts.length ] = [];
+						filteredProducts[ filteredProducts.length-1 ].push(results.product[i]);
 					}
 
 				}
@@ -427,6 +431,14 @@ $(document).ready(function () {
 
 		$('#singleATB').attr('data-id',$(this).attr('data-id'));
 		$('#singleATB .modal.instock .status').text('Available Online');
+		
+		if ( $('#qrcode').length <= 0 ) {
+			$('<div id="qrcode"><img src="/fashion/images/b-logo.png" id="qrCover"></div>').insertAfter('#singleATB .price');
+		} else {
+			$('#qrcode').html('<img src="/fashion/images/b-logo.png" id="qrCover">');
+		}
+		$('#qrcode').qrcode({width: 160, height: 160, text: 'http://www.bloomingdales.com/shop/product/?ID='+$('#singleATB').attr('data-id')+'&loadEvent=add-to-wishlist'});
+
 		$(seeYourAssociate).insertBefore('#singleATB .footer');
 
 		if ( parseInt($('#browse-info .pages .num-one').text()) === 1 && $('#singleATB').attr('data-id') === $('.browseShell.page-' +$('#browse-info .pages .num-one').text() + ' li').eq(0).attr('id') ) {
