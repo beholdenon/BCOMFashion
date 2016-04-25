@@ -39,7 +39,6 @@ APP.coremetrics = function (tagType, categoryID, pageID) {
 
 $('.dvf-phone-link').on('click', function () {
     var cmTag = $(this).data('store');
-    console.log(cmTag);
     APP.coremetrics('Element', APP.cm, cmTag);
 });
 
