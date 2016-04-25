@@ -1,7 +1,7 @@
 'use strict';
 
 var APP = {
-      cm: 'stylish_summer',
+      cm: 'spring16_stylish-summer',
       social: {
             facebookTitle: 'SUMMER (STYLE) BUCKET LIST | bloomingdales.com',
             facebookDescription: 'Make the most of every sun-drenched minute with our cheeky checklist for an outrageously stylish summer.',
@@ -44,7 +44,7 @@ $(document).ready( function() {
             APP.coremetrics('Element', APP.cm, 'back_to_top');
         });
 
-        //(req) CM business logic
+    //(req) CM business logic
     APP.coremetrics = function (tagType, categoryID, pageID) {
         var APP = this;
 
@@ -126,7 +126,7 @@ $(document).ready( function() {
 
     };
 
-    $(document).on('click', '.links > a, .section-head, img, p', function (evt) { 
+    $(document).on('click', '.links > a, .section-head, img, p', function () { 
          if ( $(this).attr('id') !== undefined ) { APP.coremetrics('Element', APP.cm, APP.cm + '_' + $(this).attr('id')); }
     });
 

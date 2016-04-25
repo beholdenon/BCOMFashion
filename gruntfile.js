@@ -350,7 +350,7 @@ module.exports = function(grunt) {
                         nodemon.on('config:update', function() {
                             // Delay before server listens on port
                             setTimeout(function() {
-                                require('open')('http://localhost:3000/lookbooks/spring-2016-mens-festival/');
+                                require('open')('http://localhost:3000/lookbooks/outfit-ideas-stylish-summer/');
                             }, 1000);
                         });
 
