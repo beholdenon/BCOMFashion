@@ -22,15 +22,15 @@ $(document).ready( function() {
       // social share
         $('.desktop_socialshare_facebook').on('click', function() {
             window.open(APP.social.facebookURL, '_blank', 'width=608,height=342');
-            // APP.coremetrics('Element', APP.cm, 'social-fb');
+            APP.coremetrics('Element', APP.cm, 'social-fb');
         });
         $('.desktop_socialshare_twitter').on('click', function() {
             window.open(APP.social.twitterURL, '_blank', 'width=740,height=340');
-            // APP.coremetrics('Element', APP.cm, 'social-twitter');
+            APP.coremetrics('Element', APP.cm, 'social-twitter');
         });
         $('.desktop_socialshare_pinterest').on('click', function() {
             window.open(APP.social.pinterestURL, '_blank', 'width=770,height=380');
-            // APP.coremetrics('Element', APP.cm, 'social-pinterest');
+            APP.coremetrics('Element', APP.cm, 'social-pinterest');
         }); 
 
         $('.desktop_back_to_top').on('click', function() {
@@ -41,7 +41,7 @@ $(document).ready( function() {
                 $('.desktop_back_to_top').addClass('origin');
             });
 
-            APP.coremetrics('Element', APP.cm, 'back_to_top');
+            APP.coremetrics('Element', APP.cm, APP.cm + '_back-to-top');
         });
 
     //(req) CM business logic
@@ -126,11 +126,11 @@ $(document).ready( function() {
 
     };
 
-    $(document).on('click', '.links > a, .section-head, img, p', function () { 
+    $(document).on('click', '.links > a, .section-head, img, p, .desktop_shop_all_collection', function () { 
          if ( $(this).attr('id') !== undefined ) { APP.coremetrics('Element', APP.cm, APP.cm + '_' + $(this).attr('id')); }
     });
 
-    APP.coremetrics('Pageview', APP.cm, APP.cm + '--hp');
+    
 
     $(window).scroll(function(){
         APP.floatingGraphic();
@@ -141,4 +141,5 @@ $(document).ready( function() {
 $(window).load(function() {
       APP.socialshare();
       APP.floatingGraphic();
+      APP.coremetrics('Pageview', APP.cm, APP.cm + '--hp');
 });

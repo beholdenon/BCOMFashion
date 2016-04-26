@@ -115,14 +115,14 @@ ul {
     	text-decoration: none;
 
     	.info {
-    		font-size: 1em;
+    		font-size: 0.75vw;
     	}
     }
 
     .info {
     	position: absolute;
     	margin: 1vh 0.5vw;
-    	font-size: 0.75em;
+    	font-size: 0.75vw;
 
     	.line {
     		line-height: 1.5;
@@ -137,7 +137,7 @@ ul {
 
     .section-copy {
     	font-family: "Avenir LT W01 55 Roman", 'Lato', sans-serif;
-    	width: 28%;
+    	width: 21vw;
     	
     	vertical-align: top;
     	line-height: 1.6;
@@ -201,7 +201,12 @@ ul {
 #section-1,
 #section-3,
 #section-5 {
-    .second { width: 28%; }
+    .second { 
+    	width: 15vw;
+    	margin-top: 2vw;
+    	vertical-align: top;
+    }
+
     .third { width: 40%; }
 
     .section-copy {
@@ -216,7 +221,12 @@ ul {
 #section-4,
 #section-6 {
     .second { width: 42%; }
-    .third { width: 24%; }
+
+    .third { 
+    	width: 15vw;
+    	margin-top: 2vw;
+    	vertical-align: top;
+    }
 
     .section-copy {
     	margin-right: 2%;
