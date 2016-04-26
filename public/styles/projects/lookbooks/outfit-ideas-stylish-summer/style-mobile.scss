@@ -474,6 +474,8 @@ body {
 
 // ======---- CUSTOM STYLES -----===== //
 
+
+
 #mobile-header h1 {
 	text-shadow: 1px 1px 1px rgba(245,245,245,1);
 }
@@ -491,6 +493,7 @@ body {
 		margin: 0 auto;
 		left: 0;
 		right: 0;
+		font-size: 4vw;
 	}
 }
 
@@ -510,7 +513,7 @@ body {
 	}
 
 	.heading {
-		top: 27%;
+		top: 22%;
 		width: 80vw;
 		margin: 0 auto;
 		left: 0;
@@ -518,12 +521,17 @@ body {
 	}
 
 	h4 {
-		font-weight: 700;
+		font-weight: 900;
+		font-size: 6vw;
 
 		&.alt {
 			color: #fff;
 			font-size: 0.3em;
 		}
+	}
+
+	p {
+		font-size: 4.5vw;
 	}
 }
 
