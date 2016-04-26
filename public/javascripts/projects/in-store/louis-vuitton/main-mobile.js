@@ -6,13 +6,13 @@
 'use strict';
 
 var APP = {
-	cm: 'mbl:onsite_search', //---> coremetrics project prefix
+	cm: 'MBL:onsite_search', //---> coremetrics project prefix
 };
 
 APP.init = function () {
 	var self = this;
 
-	self.coremetrics('Pageview', self.cm, 'no_results-store_only_{louis_vuitton}');
+	self.coremetrics('Pageview', self.cm, 'MBL:no_results-store_only_{louis_vuitton}');
 };
 
 //(req) CM business logic
@@ -39,7 +39,7 @@ APP.coremetrics = function (tagType, categoryID, pageID) {
 
 $('.lv-phone-link').on('click', function () {
     var cmTag = $(this).data('store');
-    APP.coremetrics('Element', APP.cm, cmTag);
+    APP.coremetrics('Element', APP.cm, 'MBL:'+cmTag);
 });
 
 //(req) custom logger for 'dev' environment
