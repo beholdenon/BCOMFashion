@@ -6,7 +6,7 @@ var APP = {
         facebookTitle: 'SUMMER (STYLE) BUCKET LIST | bloomingdales.com',
         facebookDescription: 'Make the most of every sun-drenched minute with our cheeky checklist for an outrageously stylish summer.',
         facebookImageFileName: 'share_FB.jpg',
-        twitterTitle: 'The outrageous bucket list @bloomingdales makes the most of every sun-drenched minute for your most stylish summer yet',
+        twitterTitle: 'Make the most of every sun-drenched minute with @bloomingdales cheeky checklist for an outrageously stylish summer',
         pinterestTitle: 'SUMMER (STYLE) BUCKET LIST | bloomingdales.com',
         pinterestImageFileName: 'share_Pinterest.jpg',
         facebookURL: null,
@@ -97,7 +97,12 @@ $(document).ready( function() {
     }); 
 
     $('body').on('click', '.mobile_back_to_top', function() {
-        $('body').animate({scrollTop: 0}, 400);
+        if (navigator.userAgent.match(/(iPod|iPhone|iPad|Android)/)) {  
+            window.scrollTo(200,100);
+        } else {
+            $('body').animate({scrollTop: 0}, 400);
+        }
+
 
         APP.coremetrics('Element', APP.cm, APP.cm + '_' + 'back-to-top');
     });
