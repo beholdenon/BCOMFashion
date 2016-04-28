@@ -96,8 +96,8 @@ $(document).ready( function() {
         APP.coremetrics('Element', APP.cm, APP.cm + '_' + 'social-pinterest');
     }); 
 
-    $('mobile_back_to_top').on('click', function() {
-        $('html, body').animate({scrollTop: 0}, 400);
+    $('body').on('click', '.mobile_back_to_top', function() {
+        $('body').animate({scrollTop: 0}, 400);
 
         APP.coremetrics('Element', APP.cm, APP.cm + '_' + 'back-to-top');
     });
