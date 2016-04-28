@@ -96,13 +96,12 @@ $(document).ready( function() {
         APP.coremetrics('Element', APP.cm, APP.cm + '_' + 'social-pinterest');
     }); 
 
-    $('body').on('click', '.mobile_back_to_top', function() {
+    $('.mobile_back_to_top').on('click tap', function() {
         if (navigator.userAgent.match(/(iPod|iPhone|iPad|Android)/)) {  
             window.scrollTo(200,100);
         } else {
             $('body').animate({scrollTop: 0}, 400);
         }
-
 
         APP.coremetrics('Element', APP.cm, APP.cm + '_' + 'back-to-top');
     });
