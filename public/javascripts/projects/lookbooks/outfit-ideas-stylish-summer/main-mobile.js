@@ -83,20 +83,20 @@ APP.scrollMetrics = function () {
 
 $(document).ready( function() {
     // social share
-    $('.desktop_socialshare_facebook').on('click', function() {
+    $('.mobile_socialshare_facebook').on('click', function() {
         window.open(APP.social.facebookURL, '_blank', 'width=608,height=342');
-        // APP.coremetrics('Element', APP.cm, 'social-fb');
+        APP.coremetrics('Element', APP.cm, APP.cm + '_' + 'social-fb');
     });
-    $('.desktop_socialshare_twitter').on('click', function() {
+    $('.mobile_socialshare_twitter').on('click', function() {
         window.open(APP.social.twitterURL, '_blank', 'width=740,height=340');
-        // APP.coremetrics('Element', APP.cm, 'social-twitter');
+        APP.coremetrics('Element', APP.cm, APP.cm + '_' + 'social-twitter');
     });
-    $('.desktop_socialshare_pinterest').on('click', function() {
+    $('.mobile_socialshare_pinterest').on('click', function() {
         window.open(APP.social.pinterestURL, '_blank', 'width=770,height=380');
-        // APP.coremetrics('Element', APP.cm, 'social-pinterest');
+        APP.coremetrics('Element', APP.cm, APP.cm + '_' + 'social-pinterest');
     }); 
 
-    $('body').on('click', '.mobile_back_to_top', function() {
+    $('mobile_back_to_top').on('click', function() {
         $('html, body').animate({scrollTop: 0}, 400);
 
         APP.coremetrics('Element', APP.cm, APP.cm + '_' + 'back-to-top');
