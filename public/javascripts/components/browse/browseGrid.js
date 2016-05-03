@@ -122,7 +122,7 @@ var catBrowse = {
 	},
 
 	// Request for grid creation.
-	request: function ( properties ) {
+	request: function ( properties, callback ) {
 
 		var defaults = {
 			altImages: true, // alterate images on mouse over of hero
@@ -134,10 +134,12 @@ var catBrowse = {
 			linking: true,	// have image and product name link to product
 			masterQP: "master-standard",
 			numberOfResults: 96, // number of results to display in the grid
+			currentPage: 1, // which page of the results you would like to see
 			price: true, // display price under product name
 			quickpeek: true, // display quick peek icon in bottom left of product image
 			reviews: true, // display review hearts
 			sortby: '', // allow for special sorting if desired: price, customerrating, name, bestseller, newarrival
+			sortorder: 'asc',
 			swatches: true, // display swatches and allow swatch functionality
 		}
 
@@ -146,9 +148,12 @@ var catBrowse = {
 		}
 
 		SERVICES.category.browseProduct( function(result){
-			console.log(result);
+			// console.log(result);
 			catBrowse.build( result, properties);
-		}, properties.catID, properties.numberOfResults, properties.sortby);
+
+			callback(result);
+
+		}, properties.catID, properties.numberOfResults, properties.sortby, properties.currentPage);
 
 		
 	},

@@ -180,14 +180,7 @@ $(document).ready( function($) {
         return window.cmCreatePageElementTag(element.elementID, element.elementCategory, element.attributes || null);
     }
 
-    function pageViewTag (pageID, catID, attrID, attrData){
-        window.BLOOMIES.coremetrics.pageViewExploreAttributes = new window.BLOOMIES.coremetrics.exploreAttributes();
-
-        var attr = parseInt(attrID);
-        var dataAttr = {};
-        dataAttr[attr] = attrData;
-
-        window.BLOOMIES.coremetrics.pageViewExploreAttributes.append(dataAttr);
+    function pageViewTag (pageID, catID){
 
         window.BLOOMIES.coremetrics.cmCreatePageviewTag(pageID, catID, '', '');        
     }

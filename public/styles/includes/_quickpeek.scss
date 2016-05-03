@@ -75,7 +75,7 @@ table.add {
 		display: inline-block;
 		
 		.main.product {
-			min-width: 364px;
+			// min-width: 364px;
 			margin: 20px;
 			// min-height: 400px;
 		}
@@ -715,27 +715,71 @@ table.add {
 }
 
 @media screen and (max-width: 540px){
+
 	#singleATB {
-		position: absolute;
-		top: 0;
-		width: 98vw;
-	}
-
-	#singleATB .image.left {
 		width: 100vw;
-		display: block;
-		margin: 0 auto;
-		left: 0;
-		right: 0;
 	}
 
-	#singleATB .image.left img {
-		width: 40vw;
+	.atb {
+		
+		.image {
+			.main.product {
+				min-width: 40vw;
+				margin-left: 0;
+			}
+		}
+
+		.close {
+			top: 2vw;
+			right: 4vw;
+			font-size: 4vw;
+		}
+
+		.brand {
+			font-size: 3.5vw;
+			padding-top: 6vw;
+		}
+
+		.name {
+    		font-size: 3.25vw;
+    	}
+
+    	.price {
+
+    		.title { font-size: 3.25vw; }
+    		.value { font-size: 3.25vw; }
+
+    	}
+
+    	.swatch {
+    		li {
+    			width: 8vw;
+    		}
+    	}
 	}
 
-	#singleATB .info.RS {
-		width: 90vw;
-		margin-top: 1em;
-	}
+
+	// #singleATB {
+	// 	position: absolute;
+	// 	top: 0;
+	// 	width: 98vw;
+	// }
+
+	// #singleATB .image.left {
+	// 	width: 100vw;
+	// 	display: block;
+	// 	margin: 0 auto;
+	// 	left: 0;
+	// 	right: 0;
+	// }
+
+	// #singleATB .image.left img {
+	// 	width: 40vw;
+	// }
+
+	// #singleATB .info.RS {
+	// 	width: 90vw;
+	// 	margin-top: 1em;
+	// }
 
 }
