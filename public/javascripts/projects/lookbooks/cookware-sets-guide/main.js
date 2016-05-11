@@ -117,7 +117,7 @@ $(document).ready(function() {
 		window.history.replaceState('', document.title, window.location.origin + window.location.pathname + '?section=customize-your-cookware'+window.location.hash);
 	}
 	
-	$('#topNav li.sect').on('click', function() {
+	$('#topNav li.sect, .section-links .link').on('click', function() {
 		var page = $(this).attr('data-param'),
 			parameters = 'section=' + page;
 

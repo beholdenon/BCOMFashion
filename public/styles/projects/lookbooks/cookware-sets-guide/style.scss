@@ -26,17 +26,19 @@ ul {
 
 	padding: 1em 0;
 	font-size: 14px;
+  background-color: #000;
+  color: #fff;
+  text-transform: uppercase;
 
+  a li,
 	li {
 		padding: 0 1.25em;
 		display: inline-block;
     cursor: pointer;
     font-weight: 700;
+    color: #fff;
+    font-size: 14px;
 	}
-
-	background-color: #000;
-	color: #fff;
-	text-transform: uppercase;
 
   .active {
     color: #aaa;
@@ -139,6 +141,7 @@ ul {
         
         span {
           text-decoration: underline;
+          cursor: pointer;
         }
 
       }
@@ -219,7 +222,7 @@ ul {
 
 //  SHOP SECTION STYLES
 
-section .shop-section:last-of-type {
+section a {
     margin-bottom: 0;
 }
 
