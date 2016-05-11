@@ -1,12 +1,13 @@
 #! /bin/sh
 HOST=`uname`
-NOW=`date`
-if [ "$HOST" = "Linux" ] ; then
-   mkdir node_modules
-   cp -r tools/modules/* node_modules/
-   npm install --registry=${NPM_REGISTRY}
-else
-   npm install
+INSTALL="npm install"
+
+if [ "${NPM_REGISTRY}" != "" ]; then
+    INSTALL="$INSTALL --registry=${NPM_REGISTRY}"
 fi
-echo $NOW
-date
+
+if [ "${NPM_CACHE}" != "" ]; then
+    INSTALL="$INSTALL --cache=${NPM_CACHE}/.npm"
+fi
+
+$INSTALL
