@@ -516,7 +516,10 @@ ul {
 
 	a {
 		text-decoration: none;
-		position: relative;
+
+		&:hover .shop {
+			text-decoration: none;
+		}
 	}
 
 	a p.copy,
@@ -563,7 +566,6 @@ ul {
 			padding-top: 10px;
 			display: block;
 			font-size: 12px;
-			text-decoration: underline;
 	    }
 	}
 }
@@ -610,7 +612,6 @@ ul {
 	.bottom-right {
 		right: 25px;
 	    top: 550px;
-	    left: 770px;
 	}
 }
 
@@ -633,7 +634,58 @@ ul {
 
 #desktop_look-6 {
 	.copy {
-	    top: 580px;
+	    top: 540px;
 	    left: 20px;
+	}
+}
+
+
+#desktop_explore-the-world-of-burberry {
+
+	.rel {
+		position: relative;
+		display: inline-block;
+		width: 240px;
+		height: 170px;
+		float: left;
+		
+		&:hover {
+
+			&:before {
+				content: "";
+				z-index: 8;
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				background-color: #000;
+				opacity: 0.3;
+				left: 0;
+				top: 0;
+			}
+
+		}
+	}
+
+	.spot-1 { background-image: url('/fashion/images/projects/lookbooks/burberry-pre-fall-trend-report-2016/explore-1.jpg'); }
+	.spot-2 { background-image: url('/fashion/images/projects/lookbooks/burberry-pre-fall-trend-report-2016/explore-2.jpg'); }
+	.spot-3 { background-image: url('/fashion/images/projects/lookbooks/burberry-pre-fall-trend-report-2016/explore-3.jpg'); }
+	.spot-4 { background-image: url('/fashion/images/projects/lookbooks/burberry-pre-fall-trend-report-2016/explore-4.jpg'); }
+	.spot-5 { background-image: url('/fashion/images/projects/lookbooks/burberry-pre-fall-trend-report-2016/explore-5.jpg'); }
+	.spot-6 { background-image: url('/fashion/images/projects/lookbooks/burberry-pre-fall-trend-report-2016/explore-6.jpg'); }
+	.spot-7 { background-image: url('/fashion/images/projects/lookbooks/burberry-pre-fall-trend-report-2016/explore-7.jpg'); }
+	.spot-8 { background-image: url('/fashion/images/projects/lookbooks/burberry-pre-fall-trend-report-2016/explore-8.jpg'); }
+
+	.floatingButton {
+		display: inline-block;
+		position: absolute;
+		left: 0;
+		right: 0;
+		margin: 0 auto;
+		top: 75px;
+		background-color: #fff;
+		line-height: 3em;
+		width: 70%;
+		font-weight: 800;
+		z-index: 10;
 	}
 }
