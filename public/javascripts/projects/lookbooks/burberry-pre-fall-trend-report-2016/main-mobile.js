@@ -15,7 +15,8 @@ window.TEMPLATE.vertical = (function(window, document, $) {
             heroOffset: null,
             navHeight: null,
             sectionID: [],
-            sectionPos: []
+            sectionPos: [],
+            sectionsInViewport: [],
         },
         social: {
             facebookTitle: 'Burberry 2016: The Pre-Fall Report | Bloomingdale\'s',
@@ -119,33 +120,17 @@ window.TEMPLATE.vertical = (function(window, document, $) {
 
     //(req) coremetrics ctrl for mobile nav
     APP.cmNav = function () {
-        var self = this,
-            sectionsInViewport = [];
+        var self = this;
 
-        $('.mobile_main_container section:in-viewport').each(function() {
-            var hash = $(this).attr('id');
-            hash = hash.replace('mobile_', '');
-            sectionsInViewport.push(hash);
-        });
+        // MODIFIED FOR SCROLLING MOBILE
+        var hash = $('.mobile_main_container section:in-viewport').attr('id');
+        hash = hash.replace('mobile_', '');
 
-        if (sectionsInViewport.length === 1) {
-            $('.mobile_main_container section').removeClass('active');
-            $('#mobile_' + sectionsInViewport[0]).addClass('active');
-
-            if (self.views.sectionInViewport !== sectionsInViewport[0]) {
-                self.views.sectionInViewport = sectionsInViewport[0];
-                self.coremetrics('Pageview', self.cm, self.cm + '-section-' + self.views.sectionInViewport);
-            }
-        } else if (sectionsInViewport.length === 2) {
-            $('.mobile_main_container section').removeClass('active');
-
-            $('.mobile_main_container section').each(function() {
-                var el = $(this).attr('id');
-                if (el.indexOf(self.views.sectionInViewport) > -1) {
-                    $('#mobile_' + el).addClass('active');
-                }
-            });
+        if ( APP.vars.sectionsInViewport.indexOf(hash) < 0 ) {
+            self.coremetrics('Pageview', self.cm, self.cm + '-section-' + hash);
+            APP.vars.sectionsInViewport.push(hash);    
         }
+
     };
 
     //(req) add 'active' class on mobile header section when is visible
@@ -355,6 +340,14 @@ window.TEMPLATE.vertical = (function(window, document, $) {
             });
 
             self.coremetrics('Element', self.cm, 'back_to_top');
+        });
+
+        $("a.map").on('click', function () {
+            var hash = $(this).attr('href');
+            hash = hash.replace('http://m.bloomingdales.com/shop/', '');
+            hash = hash.split('?')[0];
+            hash = hash.substring(hash.indexOf('/') + 1);
+            self.coremetrics('Element', self.cm, 'shop_now_' + hash + '-link');
         });
 
         // social share
