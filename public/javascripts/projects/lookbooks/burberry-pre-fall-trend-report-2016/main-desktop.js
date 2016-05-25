@@ -335,9 +335,10 @@ window.TEMPLATE.vertical = (function(window, document, $) {
         //CM: ancor tags inside sections
         $('.desktop_main_container section a').on('click', function() {
             var hash = $(this).attr('href');
-            hash = hash.replace('http://www1.bloomingdales.com/shop/', '');
+            hash = hash.replace('http://www.bloomingdales.com/shop/', '');
             hash = hash.split('?')[0];
             hash = hash.substring(hash.indexOf('/') + 1);
+            hash = hash.split('/')[0];
             self.coremetrics('Element', self.cm, 'shop_now_' + hash);
         });
 
