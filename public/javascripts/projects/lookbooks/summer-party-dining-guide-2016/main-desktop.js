@@ -4,7 +4,7 @@ window.TEMPLATE.vertical = (function(window, document, $) {
     'use strict';
 
     var APP = {
-        cm: 'spring15_famultivendor', //coremetrics project prefix
+        cm: 'spring16_summerparties', //coremetrics project prefix
         views: {
             sectionInViewport: null
         },
@@ -21,11 +21,11 @@ window.TEMPLATE.vertical = (function(window, document, $) {
             sectionPos: []
         },
         social: {
-            facebookTitle: 'ACCESSORIES-PACKED GETAWAY | bloomingdales.com',
-            facebookDescription: 'We toted the season\'s top accessories to the stylish @ViceroySM for our latest lookbook...',
+            facebookTitle: 'Three Epic Summer Parties | bloomingdales.com',
+            facebookDescription: 'From breezy beach gatherings and pool parties to fun and floral garden soirees, our summer entertaining gets a bright boost with three stylish hosts.',
             facebookImageFileName: 'share_FB.jpg',
-            twitterTitle: 'We toted the season\'s top accessories to the stylish @ViceroySM for our latest lookbook @bloomingdales.com http://bit.ly/1C51Mnv',
-            pinterestTitle: 'ACCESSORIES-PACKED GETAWAY | bloomingdales.com',
+            twitterTitle: 'Find endless reasons to celebrate with entertaining inspiration from three stylish hosts. http://bit.ly/',
+            pinterestTitle: 'Three Epic Summer Parties | bloomingdales.com',
             pinterestImageFileName: 'share_Pinterest.jpg',
             facebookURL: null,
             twitterURL: null,
