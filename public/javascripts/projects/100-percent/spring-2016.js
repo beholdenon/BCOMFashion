@@ -6,6 +6,8 @@ $(document).ready( function($) {
 		'elementID': '',
 		'elementCategory': 'spring16_100percent',
 	};
+	
+	window.BLOOMIES.coremetrics.pageViewExploreAttributes = new window.BLOOMIES.coremetrics.exploreAttributes();
 
 	var find = '/';
 	var re = new RegExp(find, 'g'),
