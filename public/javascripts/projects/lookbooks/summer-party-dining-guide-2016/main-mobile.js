@@ -36,7 +36,7 @@ window.TEMPLATE.vertical = (function(window, document, $) {
                 'hosts-gifts',
                 'guest-house'
             ],
-            navActiveSection: null
+            navActiveSection: 'malibu-bbq'
         }
     };
 
@@ -95,7 +95,9 @@ window.TEMPLATE.vertical = (function(window, document, $) {
         $('.mobile_main_container').css('margin-top', 60);
         $('.mobile_main_container').before(topnavPlaceholder);
         $('body').append(topnav);
-        $('.mobile_topnav > div').text(APP.mobile.topnav[0]);
+//        $('.mobile_topnav > div').text(APP.mobile.topnav[0]);
+        $('.mobile_topnav > div').text(APP.mobile.navActiveSection);
+
 
         var topnavContainer = '<div class="mobile_topnav_container"><ul>',
             i, j, 
@@ -172,15 +174,16 @@ window.TEMPLATE.vertical = (function(window, document, $) {
 
         if (hash !== '/') {
             hash = hash.substring(1, hash.length - 1);
-            self.scrollToSection(hash);
+            //self.scrollToSection(hash);
+            self.goToSection(hash);
+
         }
     };
 
     //(req) scroll page to a particular section/element in the page
-    APP.scrollToSection = function (hash) {
+    APP.scrollToSection = function (hash) {console.log(1);
         if (typeof hash !== 'undefined'){
             var offset = 50;  
-
             try {
                 $('html, body').animate({ scrollTop: $('#mobile_' + hash).offset().top -  offset}, 'slow');
             } catch (err) {
@@ -190,15 +193,17 @@ window.TEMPLATE.vertical = (function(window, document, $) {
     };
 
     //(opt) go to section ctrl for single page app with TOPNAV
-    APP.goToSection = function(section){
+    APP.goToSection = function(section){console.log(2);
         var self = this;
 
         $('.mobile_main_container section.visible').removeClass('visible');
         $('#footer-links').removeClass('active');
 
-        $('.mobile_topnav > div').text(self.mobile.navActiveSection);
 
-        $.address.value(section);
+        self.mobile.navActiveSection=section;
+        $('.mobile_topnav > div').text(self.mobile.navActiveSection+"");
+
+        $.address.value(section+'/');
         
         var sectionIndex = $.inArray(section, self.mobile.topnav);
         $('.mobile_main_container section').eq(sectionIndex).addClass('visible');
@@ -254,7 +259,7 @@ window.TEMPLATE.vertical = (function(window, document, $) {
                 //this opens up the nav menu
                 self.mobile.navActiveSection = $('.mobile_topnav > div').text();
                 
-                $('.mobile_topnav > div').text(self.mobile.topnav[0]);
+                //$('.mobile_topnav > div').text(self.mobile.topnav[0]);
                 
                 $topnav.addClass('active');
                 $('.mobile_topnav_container').addClass('active');
@@ -288,7 +293,7 @@ window.TEMPLATE.vertical = (function(window, document, $) {
                 _scrolledDown();
 
                 $('.mobile_topnav > div').text(self.mobile.navActiveSection);
-                
+
                 self.goToSection(self.mobile.navActiveSection);
 
                 //CM - Element
@@ -297,7 +302,7 @@ window.TEMPLATE.vertical = (function(window, document, $) {
                 //this opens up the nav menu
                 self.mobile.navActiveSection = $('.mobile_topnav > div').text();
 
-                $('.mobile_topnav > div').text(self.mobile.topnav[0]);
+                //$('.mobile_topnav > div').text(self.mobile.topnav[0]);
 
                 $topnav.addClass('active');
                 $('.mobile_topnav_container').addClass('active');

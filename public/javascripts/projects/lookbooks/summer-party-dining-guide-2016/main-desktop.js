@@ -479,14 +479,14 @@ window.TEMPLATE.vertical = (function(window, document, $) {
         if (window.location.href.indexOf('fashion.bloomingdales.com') < 0) {
             window.console.info(log);
         }
-    };
+    };      
 
 /***********************************************/
 /*                  TABLET CTRLS               */
 /***********************************************/  
     //(req) full screen fix
     APP.zoomFixTAB = function () {
-        $('html, body').css({
+        $('html, body, .desktop_main_container').css({
             'width': '100vw',
             'zoom': '1'
         });        
@@ -570,20 +570,10 @@ window.TEMPLATE.vertical = (function(window, document, $) {
             APP.zoomFixTAB();
 
             APP.initDesktop();
-
-            APP.autoPlayHTML5VideoTAB(); //---> add this when your app includes HTML5 video
-
-            APP.dynamicBrightcoveVideoInsertTAB(); //---> add this when your app includes BRIGHTCOVE video
-
-            APP.slider(); //---> add this when your app includes image sliders
         } else {
             //DESKTOP
             
             APP.initDesktop();
-
-            APP.playBrightcoveVideo(); //---> add this when your app includes BRIGHTCOVE video
-
-            APP.slider(); //---> add this when your app includes image sliders
 
             //add hover state to the NAV menu items
             $('.desktop_main_container a, .desktop_socialshare_container li').on('mouseenter', function(){
@@ -594,6 +584,12 @@ window.TEMPLATE.vertical = (function(window, document, $) {
         }
 
         APP.socialshare();
+
+        $(window).on('orientationchange', function(){
+            setTimeout(function() {
+                APP.zoomFixTAB();
+            }, 1);
+        });
     });    
 
     return APP;
