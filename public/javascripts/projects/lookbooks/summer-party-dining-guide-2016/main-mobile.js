@@ -30,11 +30,11 @@ window.TEMPLATE.vertical = (function(window, document, $) {
         },
         mobile: {
             topnav: [
-                'MALIBU BBQ',
-                'BONDI POOL PARTY',
-                'ARTIST GARDEN PARTY',
-                'HOSTS GIFTS',
-                'GUEST HOUSE'
+                'malibu-bbq',
+                'bondi-pool-party',
+                'artist-garden-party',
+                'hosts-gifts',
+                'guest-house'
             ],
             navActiveSection: null
         }

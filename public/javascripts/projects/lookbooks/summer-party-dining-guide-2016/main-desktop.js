@@ -33,9 +33,12 @@ window.TEMPLATE.vertical = (function(window, document, $) {
         },
         mobile: {
             topnav: [
-                'section 1',
-                'section 2',
-                'section 3'
+                '',
+                'malibu-bbq',
+                'bondi-pool-party',
+                'artist-garden-party',
+                'hosts-gifts',
+                'guest-house'
             ],
             navActiveSection: null
         }
@@ -189,7 +192,8 @@ window.TEMPLATE.vertical = (function(window, document, $) {
             
             if (buffer < 0 && buffer > posVal) pos = i;           
         }
-        if (pos < n+1) activeSection = 'section' + (pos+1);
+//        if (pos < n+1) activeSection = 'section' + (pos+1);  APP.mobile.topnav[pos+1]
+        if (pos < n+1) activeSection = APP.mobile.topnav[pos+1] ;
 
         if (activeSection === null) {
             // reset address
