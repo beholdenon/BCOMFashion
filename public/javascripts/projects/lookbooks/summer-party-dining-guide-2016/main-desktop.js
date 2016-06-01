@@ -486,7 +486,7 @@ window.TEMPLATE.vertical = (function(window, document, $) {
 /***********************************************/  
     //(req) full screen fix
     APP.zoomFixTAB = function () {
-        $('html, body, .desktop_main_container').css({
+        $('html, body').css({
             'width': '100vw',
             'zoom': '1'
         });        
@@ -585,11 +585,7 @@ window.TEMPLATE.vertical = (function(window, document, $) {
 
         APP.socialshare();
 
-        $(window).on('orientationchange', function(){
-            setTimeout(function() {
-                APP.zoomFixTAB();
-            }, 1);
-        });
+
     });    
 
     return APP;

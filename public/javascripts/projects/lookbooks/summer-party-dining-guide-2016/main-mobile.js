@@ -302,7 +302,7 @@ window.TEMPLATE.vertical = (function(window, document, $) {
                 //this opens up the nav menu
                 self.mobile.navActiveSection = $('.mobile_topnav > div').text();
 
-                //$('.mobile_topnav > div').text(self.mobile.topnav[0]);
+                $('.mobile_topnav > div').text(self.mobile.topnav[0]);
 
                 $topnav.addClass('active');
                 $('.mobile_topnav_container').addClass('active');
