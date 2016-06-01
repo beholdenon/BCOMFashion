@@ -181,7 +181,7 @@ window.TEMPLATE.vertical = (function(window, document, $) {
     };
 
     //(req) scroll page to a particular section/element in the page
-    APP.scrollToSection = function (hash) {console.log(1);
+    APP.scrollToSection = function (hash) {
         if (typeof hash !== 'undefined'){
             var offset = 50;  
             try {
@@ -193,7 +193,7 @@ window.TEMPLATE.vertical = (function(window, document, $) {
     };
 
     //(opt) go to section ctrl for single page app with TOPNAV
-    APP.goToSection = function(section){console.log(2);
+    APP.goToSection = function(section){
         var self = this;
 
         $('.mobile_main_container section.visible').removeClass('visible');
@@ -209,17 +209,7 @@ window.TEMPLATE.vertical = (function(window, document, $) {
         $('.mobile_main_container section').eq(sectionIndex).addClass('visible');
 
         //trigger lazy load manually on active section
-        $('img.lazy').show().lazyload();
-
-        //redraw slider
-        if ($('.mobile_main_container section.visible .bxslider').length > 0) {
-            self.slider.redrawSlider();
-        }
-
-        //autoplay HTML5 video
-        // if ($('.mobile_main_container section.visible video').length > 0) {
-        //     self.autoPlayHTML5Video();
-        // }        
+        $('img.lazy').show().lazyload();   
                     
         //CM - Pageview
         self.coremetrics('Pageview', self.cm, self.cm + '-' + section);         
@@ -270,7 +260,7 @@ window.TEMPLATE.vertical = (function(window, document, $) {
                 if (sectionIndex === 0) {
                     $('.mobile_topnav div').addClass('active');
                 } else {
-                    $('.mobile_topnav_container ul li').eq(sectionIndex-1).addClass('active');
+                    if(sectionIndex != -1) $('.mobile_topnav_container ul li').eq(sectionIndex-1).addClass('active');
                 }  
 
                 //CM - Element
@@ -294,7 +284,8 @@ window.TEMPLATE.vertical = (function(window, document, $) {
 
                 $('.mobile_topnav > div').text(self.mobile.navActiveSection);
 
-                self.goToSection(self.mobile.navActiveSection);
+                if(self.mobile.navActiveSection != 'SUMMER PARTY 2016') self.goToSection(self.mobile.navActiveSection);
+                else self.goToSection(self.mobile.topnav[0]);
 
                 //CM - Element
                 self.coremetrics('Element', self.cm, 'topnav-close');
@@ -313,7 +304,7 @@ window.TEMPLATE.vertical = (function(window, document, $) {
                 if (sectionIndex === 0) {
                     $('.mobile_topnav div').addClass('active');
                 } else {
-                    $('.mobile_topnav_container ul li').eq(sectionIndex-1).addClass('active');
+                    if(sectionIndex != -1) $('.mobile_topnav_container ul li').eq(sectionIndex-1).addClass('active');
                 }                        
 
                 //CM - Element
