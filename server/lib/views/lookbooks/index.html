@@ -1,0 +1,46 @@
+<title>Syndeca Placeholder</title>
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+
+<style type="text/css">
+	a.syndeca {
+		color: #000;
+		font-size: 14px;
+		display: block;
+	}
+</style>
+
+<h1>Navigation Without Page Refresh <span></span></h1>
+<h2>Current Page: <span>/</span></h2>
+<ul id="menu-nav">
+    <li><a href="/lookbook-url-1/" title="Lookbook Title 1">Lookbook 1</a></li>
+    <li><a href="/lookbook-url-2/" title="Lookbook Title 2">Lookbook 2</a></li>
+    <li><a href="/lookbook-url-3/" title="Lookbook Title 3">Lookbook 3</a></li>
+</ul>
+
+<script type="application/javascript" src="/fashion/javascripts/libs/jquery-1.11.2.min.js"></script>
+<script type="text/javascript">
+	var setCurrentPage = function(url) {
+	    $('h2 span').html(url || "/");
+	    $("#menu-nav a[href='" + url + "']").fadeTo(500, 0.3);
+	};
+
+	$('#menu-nav a').click(function(e){
+	    e.preventDefault();
+	    var targetUrl = $(this).attr('href'),
+	        targetTitle = $(this).attr('title');
+	    
+	    $("#menu-nav a[href='" + window.location.pathname + "']").fadeTo(500, 1.0);
+	    
+	    window.location.hash = targetUrl;
+	    // window.history.pushState({url: "" + targetUrl + ""}, targetTitle, targetUrl);
+	    setCurrentPage(targetUrl);
+	});
+
+	window.onpopstate = function(e) {
+	    $("#menu-nav a").fadeTo('fast', 1.0);
+	    setCurrentPage(e.state ? e.state.url : null);
+	};
+</script>
+
+<script type="application/javascript" src="/fashion/javascripts/libs/jquery-1.11.2.min.js"></script>
