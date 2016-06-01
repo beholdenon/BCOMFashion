@@ -21,7 +21,7 @@ window.TEMPLATE.vertical = (function(window, document, $) {
             facebookTitle: 'Three Epic Summer Parties | bloomingdales.com',
             facebookDescription: 'From breezy beach gatherings and pool parties to fun and floral garden soirees, our summer entertaining gets a bright boost with three stylish hosts.',
             facebookImageFileName: 'share_FB.jpg',
-            twitterTitle: 'Find endless reasons to celebrate with entertaining inspiration from three stylish hosts. http://bit.ly/',
+            twitterTitle: 'Find endless reasons to celebrate with entertaining inspiration from three stylish hosts. http://fashion.bloomingdales.com/lookbooks/summer-party-dining-guide-2016/',
             pinterestTitle: 'Three Epic Summer Parties | bloomingdales.com',
             pinterestImageFileName: 'share_Pinterest.jpg',
             facebookURL: null,
@@ -36,7 +36,7 @@ window.TEMPLATE.vertical = (function(window, document, $) {
                 'hosts-gifts',
                 'guest-house'
             ],
-            navActiveSection: 'malibu-bbq'
+            navActiveSection: 'SUMMER PARTY 2016'
         }
     };
 
@@ -259,7 +259,7 @@ window.TEMPLATE.vertical = (function(window, document, $) {
                 //this opens up the nav menu
                 self.mobile.navActiveSection = $('.mobile_topnav > div').text();
                 
-                //$('.mobile_topnav > div').text(self.mobile.topnav[0]);
+                $('.mobile_topnav > div').text(self.mobile.topnav[0]);
                 
                 $topnav.addClass('active');
                 $('.mobile_topnav_container').addClass('active');
@@ -476,12 +476,12 @@ window.TEMPLATE.vertical = (function(window, document, $) {
             self.logErr('CoreM ::: tagType: Pageview; categoryID: ' + categoryID + '; pageID: ' + pageID);
         } else if (tagType === 'Element') {
             try {
-                window.BLOOMIES.coremetrics.cmCreatePageElementTag(pageID, categoryID);
+                window.BLOOMIES.coremetrics.cmCreatePageElementTag( pageID.substring(0, 49), categoryID);
             } catch (e) {
                 self.logErr('CoreM_err: ' + e);
             }
 
-            self.logErr('CoreM ::: tagType: Element; categoryID: ' + categoryID + '; pageID: ' + pageID);
+            self.logErr('CoreM ::: tagType: Element; categoryID: ' + categoryID + '; pageID: ' + pageID.substring(0, 49) );
         }
     };    
 
