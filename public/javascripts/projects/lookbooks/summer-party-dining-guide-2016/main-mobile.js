@@ -36,7 +36,7 @@ window.TEMPLATE.vertical = (function(window, document, $) {
                 'hosts-gifts',
                 'guest-house'
             ],
-            navActiveSection: 'SUMMER PARTY'
+            navActiveSection: 'SUMMER PARTIES'
         }
     };
 
@@ -284,7 +284,7 @@ window.TEMPLATE.vertical = (function(window, document, $) {
 
                 $('.mobile_topnav > div').text(self.mobile.navActiveSection);
 
-                if(self.mobile.navActiveSection != 'SUMMER PARTY') self.goToSection(self.mobile.navActiveSection);
+                if(self.mobile.navActiveSection != 'SUMMER PARTIES') self.goToSection(self.mobile.navActiveSection);
                 else self.goToSection(self.mobile.topnav[0]);
 
                 //CM - Element
