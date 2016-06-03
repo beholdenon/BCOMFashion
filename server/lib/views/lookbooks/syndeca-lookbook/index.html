@@ -3,6 +3,54 @@
 
 <div id="syndeca" style="height:800px;"></div>
 <script src="//5.syndeca.com/bloomingdales/scripts/syndeca-embed.js" type="text/javascript"
-        data-id        = "syndeca"
-        data-guide-key = "419BBAE7-28FD-5E12-F297-A6135CDB21BD"
+        data-id				          = "syndeca"
+        data-guide-key 				  = "419BBAE7-28FD-5E12-F297-A6135CDB21BD"
+        data-post-message-domain      = "bloomingdales.com"
+        data-brand-quick-view-enabled = "true"
 ></script>
+
+<script>
+    (function() {
+        // the syndecaOrigin must match the same domain as the Syndeca syndeca-embed source
+        var syndecaOrigin = window.location.protocol + '//';
+
+        // find syndeca domain based on viewer embed script
+        var scripts = document.getElementsByTagName('script');
+        for (var i = 0; i < scripts.length; i++) {
+            var scriptSrc  = scripts[i].getAttribute('src');
+            if (scriptSrc && scriptSrc.indexOf('scripts/syndeca-embed.js') >= 0) {
+                syndecaOrigin += scriptSrc.split("/")[2]
+                break;
+            }
+        }
+
+        function receiveSyndecaMessage(event) {
+            // ensure only syndeca domain as valid sender
+            if (event.origin !== syndecaOrigin) {
+                console.log("[SYN] recevied message from invalid domain: ", event.origin, syndecaOrigin);
+                return;
+            }
+            var message = JSON.parse(event.data);
+            console.log('message recevied:', message);
+            var product = message.product;
+
+            // only respond to syndeca events
+            switch (message.action) {
+                case "quickView":
+                    console.log("[SYN] quickView", product.id);
+                    alert("You launched quickview for " + product.id + " with data: " + message.data);
+                    // client to add call to brand's quick view here
+                    break;
+                case "addToBag":
+                    console.log("[SYN] addToBag", product.id, product.sku, product.quantity);
+                    // client to add call to brand's add to bag here
+                    break;
+                case "addToFavorites":
+                    console.log("[SYN] addToFavorites", product.id, product.sku);
+                    // client to add call to brand's add to favorites here
+                    break;
+            }
+        }
+        window.addEventListener("message", receiveSyndecaMessage, false);
+    })();
+</script>
