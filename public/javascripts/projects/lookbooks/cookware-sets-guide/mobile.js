@@ -2,7 +2,7 @@
 
 var APP = {
 
-    cm: 'spring16_cookware',
+    cm: 'mbl:spring16_cookware',
 
     social: {
             facebookTitle: 'The Cookware Guide | bloomingdales.com',
@@ -15,6 +15,7 @@ var APP = {
             twitterURL: null,
             pinterestURL: null    
     },
+    tags: [],
 
     director: function( ) {
 
@@ -90,9 +91,9 @@ var APP = {
         var scrolled = $(window).scrollTop() + $(window).height();
 
         $('section').each(function() {
-            if ( $(this).attr('data-cm') !== undefined && scrolled > $(this).offset().top && APP.tags.indexOf( $(this).attr('data-cm') ) < 0 ) {
-                APP.tags.push( $(this).attr('data-cm') );
-                APP.coremetrics('Pageview', APP.cm, APP.cm + '_' + $(this).attr('data-cm'));
+            if ( $(this).is(':visible') && $(this).attr('id') !== undefined && scrolled > $(this).offset().top && APP.tags.indexOf( $(this).attr('id') ) < 0 ) {
+                APP.tags.push( $(this).attr('id') );
+                APP.coremetrics('Pageview', APP.cm, APP.cm + '_' + $(this).attr('id'));
             }
         });
 
@@ -134,7 +135,6 @@ $(document).ready(function() {
 					$( $('#top-nav .nav-option')[i] ).hide();	
 				} 
 			}
-
 			target.addClass('open');
 		} else {
 			target.siblings().hide();
@@ -153,6 +153,8 @@ $(document).ready(function() {
 		$('article').hide();
 		$('article#'+target).show();
 
+        if (target !== undefined) APP.coremetrics('Pageview', APP.cm, APP.cm + '_'+target);
+
         window.history.replaceState('', document.title, window.location.origin + window.location.pathname + '?section=' + target);
 	});
 
@@ -166,4 +168,28 @@ $(document).ready(function() {
         APP.coremetrics('Element', APP.cm, APP.cm + '_' + 'back-to-top');
     });
 
+    $('button.shop').on('click', function() {
+        APP.coremetrics('Element', APP.cm, APP.cm + '_shop_' + $(this).parents('section').attr('id') );
+    });
+
+    $('.loyalist-shop, .loyalist-bottom').on('click', function() {
+        APP.coremetrics('Element', APP.cm, APP.cm + '_' + $(this).attr('class') );
+    });
+
+    $(window).scroll(function(){
+        APP.scrollMetrics();
+    });
+
+});
+
+$(window).load(function() {
+    var section = function () {
+        if ( window.location.href.indexOf( '?' ) >= 0 || window.location.href.indexOf( '#' ) >= 0) {
+            return window.location.search.substring( window.location.search.indexOf('?section=') + 9 );
+        } else {
+            return 'customize-your-cookware';
+        }
+    };
+
+    APP.coremetrics('Pageview', APP.cm, APP.cm + '_'+section());
 });

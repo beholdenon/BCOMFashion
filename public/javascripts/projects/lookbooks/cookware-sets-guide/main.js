@@ -87,10 +87,10 @@ var APP = {
 
         var scrolled = $(window).scrollTop() + $(window).height();
 
-        $('section').each(function() {
-            if ( $(this).attr('data-cm') !== undefined && scrolled > $(this).offset().top && APP.tags.indexOf( $(this).attr('data-cm') ) < 0 ) {
-                APP.tags.push( $(this).attr('data-cm') );
-                APP.coremetrics('Pageview', APP.cm, APP.cm + '_' + $(this).attr('data-cm'));
+        $('.shop-section').each(function() {
+            if ( $(this).is(':visible') && $(this).attr('id') !== undefined && scrolled > $(this).offset().top && APP.tags.indexOf( $(this).attr('id') ) < 0 ) {
+                APP.tags.push( $(this).attr('id') );
+                APP.coremetrics('Pageview', APP.cm, APP.cm + '_' + $(this).attr('id'));
             }
         });
     },
