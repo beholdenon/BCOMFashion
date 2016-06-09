@@ -260,7 +260,7 @@ window.TEMPLATE.vertical = (function(window, document, $) {
                 if (sectionIndex === 0) {
                     $('.mobile_topnav div').addClass('active');
                 } else {
-                    if(sectionIndex != -1) $('.mobile_topnav_container ul li').eq(sectionIndex-1).addClass('active');
+                    if(sectionIndex !== -1) $('.mobile_topnav_container ul li').eq(sectionIndex-1).addClass('active');
                 }  
 
                 //CM - Element
@@ -284,7 +284,7 @@ window.TEMPLATE.vertical = (function(window, document, $) {
 
                 $('.mobile_topnav > div').text(self.mobile.navActiveSection);
 
-                if(self.mobile.navActiveSection != 'SUMMER PARTIES') self.goToSection(self.mobile.navActiveSection);
+                if(self.mobile.navActiveSection !== 'SUMMER PARTIES') self.goToSection(self.mobile.navActiveSection);
                 else self.goToSection(self.mobile.topnav[0]);
 
                 //CM - Element
@@ -304,7 +304,7 @@ window.TEMPLATE.vertical = (function(window, document, $) {
                 if (sectionIndex === 0) {
                     $('.mobile_topnav div').addClass('active');
                 } else {
-                    if(sectionIndex != -1) $('.mobile_topnav_container ul li').eq(sectionIndex-1).addClass('active');
+                    if(sectionIndex !== -1) $('.mobile_topnav_container ul li').eq(sectionIndex-1).addClass('active');
                 }                        
 
                 //CM - Element
