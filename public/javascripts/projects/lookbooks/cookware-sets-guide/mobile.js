@@ -153,10 +153,17 @@ $(document).ready(function() {
 		$('article').hide();
 		$('article#'+target).show();
 
-        if (target !== undefined) APP.coremetrics('Pageview', APP.cm, APP.cm + '_'+target);
+        if (target !== undefined) {
+            APP.coremetrics('Pageview', APP.cm, APP.cm + '_'+target);
+            APP.coremetrics('Element', APP.cm, 'mbl:topNav_' + target);   
+        }
 
         window.history.replaceState('', document.title, window.location.origin + window.location.pathname + '?section=' + target);
 	});
+
+    $('#top-nav a').on('click', function(){
+        APP.coremetrics('Element', APP.cm, 'mbl:topNav_shop-all-cookware');  
+    });
 
     $('.mobile_back_to_top').on('click tap', function() {
         if (navigator.userAgent.match(/(iPod|iPhone|iPad|Android)/)) {  
@@ -168,12 +175,20 @@ $(document).ready(function() {
         APP.coremetrics('Element', APP.cm, APP.cm + '_' + 'back-to-top');
     });
 
-    $('button.shop').on('click', function() {
-        APP.coremetrics('Element', APP.cm, APP.cm + '_shop_' + $(this).parents('section').attr('id') );
+    $('.cookware-section').on('click', function() {
+        APP.coremetrics('Element', APP.cm, APP.cm + '_shopnow_' + $(this).attr('id') );
+    });
+
+    $('.hero > a').on('click', function() {
+        APP.coremetrics('Element', APP.cm, 'mbl:hero_' + $(this).text().replace(/ /g,"-") );
     });
 
     $('.loyalist-shop, .loyalist-bottom').on('click', function() {
         APP.coremetrics('Element', APP.cm, APP.cm + '_' + $(this).attr('class') );
+    });
+
+    $('#tools-footer > a, #materials-footer > a').on('click', function() {
+        APP.coremetrics('Element', APP.cm, 'mbl:footer-links_' + $(this).text().replace(/ /g,"-") );
     });
 
     $(window).scroll(function(){

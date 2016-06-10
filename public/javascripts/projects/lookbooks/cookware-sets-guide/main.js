@@ -168,7 +168,7 @@ $(document).ready(function() {
 	});
 
 	$('section .hero a, #bottom-links a').on('click', function() {
-		var elementText = $(this).text().toLowerCase().replace(/\s+/g,'-');
+		var elementText = $(this).text().toLowerCase().replace(/\s+/g,'-').replace('é','e');
 
 		if ( $(this).parents('#bottom-links').length > 0  ) elementText = 'footer-links_' + elementText;
 		if ( $(this).parents('section .hero').length > 0 ) elementText = 'hero_' + elementText;
@@ -180,6 +180,10 @@ $(document).ready(function() {
 		var elementText = 'topNav_' + $(this).text().toLowerCase().replace(/\s+/g,'-');
 		APP.coremetrics('Element', APP.cm, elementText);
 	});
+
+    $('.shop-section').on('click', function() { APP.coremetrics('Element', APP.cm, APP.cm + '_shop_' + $(this).attr('id') ); });
+    $('#shop-all-collection').on('click', function() { APP.coremetrics('Element', APP.cm, 'footer_shop-all-cookware' ); });
+
 
 	$('.loyalist-gift-card').on('click', function() { APP.coremetrics('Element', APP.cm, 'loyalist-gift-card'); });
 	$('.loyalist-sign-up').on('click', function() { APP.coremetrics('Element', APP.cm, 'loyalist-sign-up'); });
