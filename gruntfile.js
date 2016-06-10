@@ -4,7 +4,7 @@ var path = require('path');
 
 module.exports = function(grunt) {
 
-    // Load grunt tasks automatically
+    //Load grunt tasks automatically
     require('load-grunt-tasks')(grunt);
 
     //Display the elapsed execution time of grunt tasks
@@ -13,6 +13,9 @@ module.exports = function(grunt) {
     //Sets the default config specified in the .env for runnning grunt tasks without having to set options
     require('./build/setDefaultEnv')(grunt, '.env');
     var NODE_ENV = grunt.option('env') || process.env.NODE_ENV;
+
+    //Set current project folder path ( can be empty as '' )    
+    var PROJECT_FOLDER = '/lookbooks/poc-100percent/';
 
     grunt.initConfig({
         //Project paths
@@ -28,6 +31,9 @@ module.exports = function(grunt) {
                 '<%= node.destination %>/**/*',
                 '.tmp/**/*'
             ],
+            projectFolderImages: [
+                '<%= node.destination %>/public/images/projects'+PROJECT_FOLDER
+            ],            
             options: {
                 force: true,
                 deleteEmptyFolders: false,
@@ -119,7 +125,17 @@ module.exports = function(grunt) {
                     ],
                     dest: '<%= node.destination %>/lib/views/'
                 }]
-            },            
+            },
+            projectFolderImageClient: {
+                files: [{
+                    expand: true,
+                    cwd: '<%= node.source %>/public/images/projects'+PROJECT_FOLDER,
+                    src: [
+                        '**/*.{gif,jpg,png}'
+                    ],
+                    dest: '<%= node.destination %>/public/images/projects'+PROJECT_FOLDER
+                }]
+            },
             jsClient: {
                 files: [{
                     expand: true,
@@ -340,6 +356,7 @@ module.exports = function(grunt) {
                     nodeArgs: ['--debug'],
                     versobe: true,
                     watch: ['<%= node.destination %>'],
+                    ext: 'js,html',
                     ignore: ['<%= node.destination %>/public/{,**/}*'],
                     callback: function(nodemon) {
                         nodemon.on('log', function(event) {
@@ -350,7 +367,7 @@ module.exports = function(grunt) {
                         nodemon.on('config:update', function() {
                             // Delay before server listens on port
                             setTimeout(function() {
-                                require('open')('http://localhost:3000/lookbooks/outfit-ideas-stylish-summer/');
+                                require('open')('http://localhost:3000' + ((PROJECT_FOLDER!=='') ? PROJECT_FOLDER : '/lookbooks/spring-2016-prom-dresses/')     );
                             }, 1000);
                         });
 
@@ -376,6 +393,18 @@ module.exports = function(grunt) {
 
         //Run predefined tasks whenever watched file patterns are added, changed or deleted.
 		watch: {
+            projectFolderImageClient: {
+                files: [
+                    '<%= node.source %>/public/images/projects'+ PROJECT_FOLDER +'{,**/}*.{gif,jpg,png}'
+                ],
+                tasks: [
+                    'clean:projectFolderImages',
+                    'copy:projectFolderImageClient'
+                ],
+                options: {
+                    reload: true
+                }                
+            },            
 		    jsClient: {
 		        files: [
                     '<%= node.source %>/public/javascripts/main.js',
@@ -435,6 +464,7 @@ module.exports = function(grunt) {
                 files: [
                     '<%= node.destination %>/lib/views/{,**/}*.html',
                     '<%= node.destination %>/public/javascripts/{,**/}*.{js,json}',
+                    '<%= node.destination %>/public/images/{,**/}*.{gif,png,jpg}',
                     '<%= node.destination %>/public/styles/{,**/}*.css'
                 ],
                 options: {
@@ -468,7 +498,7 @@ module.exports = function(grunt) {
             dev: [
                 'nodemon',
                 'watch',
-                'node-inspector',
+                //'node-inspector',
                 'notify:build'
             ],
             options: {
