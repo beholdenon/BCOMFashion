@@ -201,7 +201,7 @@ window.TEMPLATE.vertical = (function(window, document, $) {
 
 
         self.mobile.navActiveSection=section;
-        $('.mobile_topnav > div').text(self.mobile.navActiveSection+"");
+        $('.mobile_topnav > div').text(self.mobile.navActiveSection+'');
 
         $.address.value(section+'/');
         
