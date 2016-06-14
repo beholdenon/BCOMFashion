@@ -114,7 +114,7 @@ var APP = {
             $('.desktop_back_to_top').addClass('float').removeClass('abs').removeAttr('style');
         } else if ( backBottom >= footerBottom ) {
             $('.desktop_back_to_top').addClass('abs').addClass('remove').css('top', $('.desktop_footer').offset().top - ( $('.desktop_back_to_top').height() - $('.desktop_footer').height() ) );
-        } else if ( $('.desktop_back_to_top').offset().top + $('.desktop_back_to_top').height() > $('.loyalist-gift-card:visible').offset().top + $('.loyalist-gift-card:visible').height() ) {
+        } else if ( $('.desktop_back_to_top').offset().top + $('.desktop_back_to_top').height() > $('.hero:visible').offset().top + $('.hero:visible').height() ) {
             $('.desktop_back_to_top').show();
         } else {
             $('.desktop_back_to_top').hide();
