@@ -175,20 +175,18 @@ $(document).ready(function() {
         APP.coremetrics('Element', APP.cm, APP.cm + '_' + 'back-to-top');
     });
 
-    $('.cookware-section').on('click', function() {
-        APP.coremetrics('Element', APP.cm, APP.cm + '_shopnow_' + $(this).attr('id') );
-    });
-
     $('.hero > a').on('click', function() {
-        APP.coremetrics('Element', APP.cm, 'mbl:hero_' + $(this).text().replace(/ /g,"-") );
+        APP.coremetrics('Element', APP.cm, 'mbl:hero_' + $(this).text().replace(/ /g,"-").replace('é','e') );
     });
 
     $('.loyalist-shop, .loyalist-bottom').on('click', function() {
         APP.coremetrics('Element', APP.cm, APP.cm + '_' + $(this).attr('class') );
     });
 
+    $('article > a').on('click', function() { APP.coremetrics('Element', APP.cm, APP.cm + '_shop_' + $(this).find('section').attr('id') ); });
+
     $('#tools-footer > a, #materials-footer > a').on('click', function() {
-        APP.coremetrics('Element', APP.cm, 'mbl:footer-links_' + $(this).text().replace(/ /g,"-") );
+        APP.coremetrics('Element', APP.cm, 'mbl:footer-links_' + $(this).text().replace(/ /g,"-").replace('é','e') );
     });
 
     $(window).scroll(function(){
