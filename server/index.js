@@ -2,7 +2,8 @@
 var Hapi = require('hapi'),
     Handlebars = require('handlebars'),
     Path = require('path'),
-    server = new Hapi.Server();
+    server = new Hapi.Server(),
+    cluster = require('cluster');
 
 require('./lib/helpers/handlebarsHelpers');    
 
@@ -101,9 +102,42 @@ server.on('log', function(event) {
                 '--------------------------------------------------\n');    
 });
 
-// Start the server
-server.start(function() {
-    console.log('\n--------------------------------------------------\n' +
-                '|   SERVER STARTED AT:: ', server.info.uri,'   |\n' +
-                '--------------------------------------------------\n');
-});
+if (process.env.NODE_ENV === 'production') { // Heroku sets this in their environment
+    var DYNO = process.env.DYNO_CLUSTERS;
+    var numCPUs = require('os').cpus().length;
+
+    if (!DYNO || DYNO > numCPUs) {
+        console.log('DYNO_CLUSTERS undefined or set too high, using system count:', numCPUs);
+    } else {
+        numCPUs = DYNO;
+    }
+
+    if (cluster.isMaster) {
+        for (var i = 0; i < numCPUs; i++) {
+            cluster.fork();
+        }
+
+        cluster.on('exit', function(worker, code, signal) {
+            console.log( 'worker died. pid: ' + worker.process.pid, code?'code: ' + code:'', signal?'signal: ' + signal:'');
+            cluster.fork();
+        });
+
+    } else if (cluster.isWorker) {
+        server.start(function() {
+            console.log('\n--------------------------------------------------\n' +
+                        '|   SERVER STARTED AT:: ', server.info.uri,'   |\n' +
+                        '--------------------------------------------------\n');
+        });
+    }
+
+    cluster.on('online', function(worker) {
+        console.log('worker ' + worker.process.pid + ' is online');
+    });
+} else {
+    server.start(function() {
+        console.log('\n--------------------------------------------------\n' +
+                    '|   SERVER STARTED AT:: ', server.info.uri,'   |\n' +
+                    '--------------------------------------------------\n');
+    });
+}
+
