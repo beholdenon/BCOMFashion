@@ -58,25 +58,27 @@
 			div {
 				margin-bottom: 40px;
 				font-size: 14px;
-				line-height: 1.6;				
+				line-height: 1.6;	
+				overflow: hidden;			
 				.ico{
 				    position: relative;
 				    background: url("../../../../images/projects/about-us/buy-online-pickup-in-store/sprite.png") no-repeat;
 				    height: 43px;
 				    width: 100%;
-				    margin: 10px 0;
+				    left: 50%;
+				    margin: 10px 0 0 -15px;
 				    color: #fff;
 				    font-size: 17px;
 				    font-weight: bold;
 				    padding-top: 5px;
 				    &.one{
-				    	background-position: 141px -114px;
+				    	background-position: 0 -114px;
 				    }	
 				    &.two{
-				    	background-position: 141px -161px;
+				    	background-position: 0 -161px;
 				    }	
 				    &.three{
-				    	background-position: 141px -207px;
+				    	background-position: 0 -207px;
 				    }		
 				}
 				.copy {
@@ -96,7 +98,8 @@
 			    font-weight: 900;
 			    letter-spacing: 2px;
 			    text-decoration: none;
-			    border-bottom: 2px solid #ea148c;
+			    border-bottom: 1px solid #000;
+			    line-height: 3;
 				&:last-child{
 					margin-right: 0;
 				}

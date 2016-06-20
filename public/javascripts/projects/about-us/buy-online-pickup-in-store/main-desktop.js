@@ -1,6 +1,7 @@
 'use strict';
 
 (function(window, $) {
+  'use strict';
 
     var BOPS = {
         cmCat: 'Ways_to_Shop',
