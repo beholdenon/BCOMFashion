@@ -1,0 +1,125 @@
+.mvBloomMenuHeader {
+    margin-top: 0 !important;
+}
+
+body {
+    position: relative;
+    @media only screen and (max-device-width: 981px) {
+        min-width: 100%;
+    }
+}
+
+#bl_main_container {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    padding: 0;
+}
+
+#bl_main_container *,
+#bl_main_container *:before,
+#bl_main_container *:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    font-family: 'Lato', sans-serif;
+}
+
+.bops_mobile_main_container {
+    width: 100%;
+    overflow-x: hidden;
+    font-family: 'Lato', sans-serif !important;
+    -webkit-overflow-scrolling: touch;
+    position: relative;
+    text-align: center;
+    article {
+        &.top {
+            div {
+                position: relative;
+                background: url('../../../../images/projects/about-us/buy-online-pickup-in-store/sprite.png') no-repeat top center;
+                height: 107px;
+                width: 100%;
+                margin: 30px 0 20px 0;
+            }
+            h1 {
+                width: 100%;
+                padding-top: 20px;
+                text-transform: uppercase;
+                font-weight: 700;
+                font-size: 33px;
+                line-height: 1.1;
+                padding: 0 0 15px;
+                letter-spacing: 2px;
+            }
+            h2 {
+                text-transform: uppercase;
+                font-size: 13px;
+                margin: 30px 0;
+                &>b {
+                    text-transform: uppercase;
+                    font-size: 13px;
+                }
+            }
+        }
+        &.middle {
+            div {
+                margin-bottom: 40px;
+                font-size: 14px;
+                line-height: 1.6;
+                .ico {
+                    position: relative;
+                    background: url("../../../../images/projects/about-us/buy-online-pickup-in-store/sprite.png") no-repeat;
+                    height: 43px;
+                    width: 100%;
+                    margin: 10px 0;
+                    color: #fff;
+                    font-size: 17px;
+                    font-weight: bold;
+                    padding-top: 5px;
+                    left: 29px;
+                    &.one {
+                        background-position: 50% -114px;
+                    }
+                    &.two {
+                        background-position: 50% -161px;
+                    }
+                    &.three {
+                        background-position: 50% -207px;
+                    }
+                }
+                .copy {
+                    &>b {
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+        &.bottom {
+            a {
+                text-transform: uppercase;
+                font-size: 13px;
+                font-weight: 900;
+                letter-spacing: 2px;
+                text-decoration: none;
+                width: 100%;
+                display: block;
+                border-top: 1px solid #000;
+                height: 45px;
+                line-height: 45px;
+                &:last-child {
+                    border-bottom: 1px solid #000;
+                }
+            }
+        }
+    }
+}
+
+.mobile_main_container-bl_main_container_reset {
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding: 0 !important;
+}
