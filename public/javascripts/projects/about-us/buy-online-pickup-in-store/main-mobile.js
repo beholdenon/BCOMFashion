@@ -41,12 +41,6 @@
         }
     };
 
-    $('#bl_main_container > div > section > article.bottom > a').on('click', function () {
-        var cmTag = BOPS.cmTag + $(this).attr('rel');
-        BOPS.coremetrics('Element', BOPS.cmCat, cmTag);
-    });
-
-
     $(window).load(function() {
         BOPS.init();
     });
