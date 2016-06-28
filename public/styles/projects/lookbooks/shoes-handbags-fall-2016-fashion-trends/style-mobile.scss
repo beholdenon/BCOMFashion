@@ -46,7 +46,13 @@
     color:white;
 }
 
-.shopnow_underline_black{
+
+
+
+a.shopnow_underline_black,
+a.shopnow_underline_black:hover,
+a.shopnow_underline_black:visited,
+a.shopnow_underline_black:active{
     margin: 0 auto;
     width: 60vw;
     font-size: 5vw;
@@ -59,8 +65,10 @@
     text-transform: uppercase;
     text-decoration: underline;
 }
-
-.shopnow_underline_white{
+a.shopnow_underline_white,
+a.shopnow_underline_white:hover,
+a.shopnow_underline_white:visited,
+a.shopnow_underline_white:active{
     margin: 0 auto;
     width: 60vw;
     font-size: 5vw;
@@ -68,11 +76,12 @@
     letter-spacing: .5vw;
     padding: 4vw 0vw 4vw 0vw;
     // background-color: black;
-    color: white;
+    color: white !important;
     text-align: center;
     text-transform: uppercase;
     text-decoration: underline;
 }
+
 
 .shopnow_white{
     margin: 0 auto;
@@ -112,18 +121,40 @@
     line-height: 7vw;
 }
 
-.shopnow_black{
+
+
+a.shopnow_black,
+a.shopnow_black:hover,
+a.shopnow_black:visited,
+a.shopnow_black:active{
     margin: 0 auto;
     width: 60vw;
     font-size: 5vw;
     font-weight: 900;
     letter-spacing: .5vw;
-    padding: 4vw 0vw 4vw 0vw;
+    padding: 4vw 4vw 4vw 4vw;
     background-color: black;
-    color: white;
+    color: white !important;
     text-align: center;
     text-transform: uppercase;
+    text-decoration: none !important;
 }
+
+#shopshoetrends{
+    width: 80%;
+    position: absolute;
+    left: 10%;
+}
+#shophandbagtrends{
+    width: 80%;
+    position: absolute;
+    left: 10%;	
+}
+
+
+
+
+
 
 
 

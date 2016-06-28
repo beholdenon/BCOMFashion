@@ -90,8 +90,8 @@
 }
 #desktop_section5_article1_div3{
 	position: absolute;
-    top: 1875px;
-    left: 11px;
+    top: 4266px;
+    left: 44px;
 }
 
 
@@ -137,7 +137,7 @@
 
 
 
-.shshopnow_black{
+a.shshopnow_black{
     font-size: 21px;
     font-weight: 900;
     letter-spacing: 0.4px;
@@ -149,12 +149,27 @@
 
     text-align: center;
     cursor: pointer;
-
+    text-decoration: none;
 }
-.shshopnow_black:hover{
+
+a.shshopnow_black:hover,
+a.shshopnow_black:active{
+    font-size: 21px;
+    font-weight: 900;
+    letter-spacing: 0.4px;
+
+    padding: 13px 39px 18px 40px;
+	
 	background-color:white;
 	color:black;
+
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
 }
+
+
+
 .shtextblock_black{
     font-size: 19px;
     line-height: 36px;
@@ -167,7 +182,8 @@
 }
 
 
-.shshopnow_white{
+
+a.shshopnow_white{
     font-size: 21px;
     font-weight: 900;
     letter-spacing: 0.4px;
@@ -179,12 +195,29 @@
 
     text-align: center;
     cursor: pointer;
-
+    text-decoration: none;
 }
-.shshopnow_white:hover{
+
+a.shshopnow_white:hover,
+a.shshopnow_white:active{
+    font-size: 21px;
+    font-weight: 900;
+    letter-spacing: 0.4px;
+
+    padding: 13px 39px 18px 40px;
+	
 	background-color:black;
 	color:white;
+
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
 }
+
+
+
+
+
 .shtextblock_white{
     font-size: 19px;
     line-height: 36px;
