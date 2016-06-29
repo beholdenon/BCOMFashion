@@ -24,7 +24,7 @@ window.TEMPLATE.vertical = (function(window, document, $) {
             facebookTitle: 'A LEAGUE OF THEIR OWN: Fall 2016 Shoe & Handbag Trends | bloomingdales.com',
             facebookDescription: 'The season\'s most anticipated styles up your accessories game with new shapes and luxe textures.',
             facebookImageFileName: 'share_FB.jpg',
-            twitterTitle: 'Fall\'s top-trending shoes and handbags are in a league of their own. Explore the lookbook @bloomingdales.com ',
+            twitterTitle: 'Fall\'s top-trending shoes and handbags are in a league of their own. Explore the lookbook @bloomingdales.com http://www.bloomingdales.com/shoehandbagtrends',
             pinterestTitle: 'A LEAGUE OF THEIR OWN: Fall 2016 Shoe & Handbag Trends | bloomingdales.com',
             pinterestImageFileName: 'share_Pinterest.jpg',
             facebookURL: null,
