@@ -21,7 +21,7 @@ window.TEMPLATE.vertical = (function(window, document, $) {
             facebookTitle: 'A LEAGUE OF THEIR OWN: Fall 2016 Shoe & Handbag Trends | bloomingdales.com',
             facebookDescription: 'The season\'s most anticipated styles up your accessories game with new shapes and luxe textures.',
             facebookImageFileName: 'share_FB.jpg',
-            twitterTitle: 'Fall\'s top-trending shoes and handbags are in a league of their own. Explore the lookbook @bloomingdales.com http://www.bloomingdales.com/shoehandbagtrends',
+            twitterTitle: 'Fall\'s top-trending shoes and handbags are in a league of their own. Explore the lookbook @bloomingdales.com http://bit.ly/29hY1QA',
             pinterestTitle: 'A LEAGUE OF THEIR OWN: Fall 2016 Shoe & Handbag Trends | bloomingdales.com',
             pinterestImageFileName: 'share_Pinterest.jpg',
             facebookURL: null,
@@ -335,7 +335,7 @@ window.TEMPLATE.vertical = (function(window, document, $) {
         $('.mobile_main_container img').on('click', function() {
             if (self.isThisHotMedia(this)) {
                 var hash = $(this).attr('data-url');
-                window.open(hash, '_blank');
+                window.open(hash, '_self');
                 hash = hash.replace('http://m.bloomingdales.com/shop/', '');
                 hash = hash.split('?')[0];
                 hash = hash.substring(hash.indexOf('/') + 1);
