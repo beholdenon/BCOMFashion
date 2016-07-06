@@ -38,7 +38,7 @@ window.TEMPLATE.vertical = (function(window, document, $) {
                 'modern-mary-jane',
                 'second-skin-boot',
                 'statement-bootie',
-                'embllished-handbag',
+                'embellished-handbag',
                 'camera-bag',
                 'duffel'
             ],
