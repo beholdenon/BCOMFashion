@@ -30,13 +30,15 @@ window.TEMPLATE.vertical = (function(window, document, $) {
         },
         mobile: {
             topnav: [
-                'malibu-bbq',
-                'bondi-pool-party',
-                'artist-garden-party',
-                'hosts-gifts',
-                'guest-house'
+                'velvet',
+                'the-modern-mary-jane',
+                'the-second-skin-boot',
+                'the-statement-bootie',
+                'the-embellished-handbag',
+                'the-camera-bag',
+                'the-duffel'
             ],
-            navActiveSection: 'SUMMER PARTIES'
+            navActiveSection: null
         }
     };
 
@@ -377,7 +379,18 @@ window.TEMPLATE.vertical = (function(window, document, $) {
         $('.mobile_socialshare_pinterest').on('click', function() {
             window.open(self.social.pinterestURL, '_blank', 'width=770,height=380');
             self.coremetrics('Element', self.cm, 'social-pinterest');
-        });  
+        });
+
+
+        $('#shopshoetrends').on('click', function() {
+            self.coremetrics('Element', self.cm, 'shopbutton__shoe_trends');
+        });
+        $('#shophandbagtrends').on('click', function() {
+            self.coremetrics('Element', self.cm, 'shopbutton__handbag_trends');
+        });
+
+
+
 
         $(window).scroll(function() {
             APP.stickyFooter();

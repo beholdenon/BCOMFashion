@@ -35,12 +35,12 @@ window.TEMPLATE.vertical = (function(window, document, $) {
             topnav: [
                 '',
                 'velvet',
-                'modern-mary-jane',
-                'second-skin-boot',
-                'statement-bootie',
-                'embellished-handbag',
-                'camera-bag',
-                'duffel'
+                'the-modern-mary-jane',
+                'the-second-skin-boot',
+                'the-statement-bootie',
+                'the-embellished-handbag',
+                'the-camera-bag',
+                'the-duffel'
             ],
             navActiveSection: null
         }
@@ -318,7 +318,7 @@ window.TEMPLATE.vertical = (function(window, document, $) {
                 $('.desktop_nav > .dropdown').removeClass('open');
                 dropDownNav.slideDown('slow');
                 
-                self.coremetrics('Element', self.cm, '--nav_dropdown_open');
+                self.coremetrics('Element', self.cm, 'nav_dropdown_open');
             }
         });
 
