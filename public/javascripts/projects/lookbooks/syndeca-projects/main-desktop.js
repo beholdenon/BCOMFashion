@@ -10,4 +10,15 @@ window.SYNDECA.vertical = (function(window, document, $) {
         }, 'slow' );
     });
 
+    $(window).load(function() {
+    	var syndecaWrapper = $('#syndeca'),
+    		syndecaHeight = syndecaWrapper.height();
+
+    	if(syndecaHeight >= 1000); {
+    		var backToTopBtn = $('.desktop_back_to_top');
+    		backToTopBtn.show();
+    	}
+
+    });
+
 }(window, document, jQuery));
