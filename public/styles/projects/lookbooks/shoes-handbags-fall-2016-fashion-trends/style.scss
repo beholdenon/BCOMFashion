@@ -1,3 +1,6 @@
+
+
+
 #headertext1{
     position: absolute;
     left: 586px;
@@ -140,20 +143,20 @@
 
 
 
-#desktop_section7_article1_div1{
+#desktop_section7_article1_div1 {
     position: absolute;
-    top: 5298px;
-    left: 542px;
+    top: 5229px;
+    left: 560px;
     text-align: center;
 }
-#desktop_section7_article1_div2{
+#desktop_section7_article1_div2 {
     position: absolute;
-    top: 5461px;
-    left: 601px;
+    top: 5401px;
+    left: 621px;
 }
 #desktop_section7_article1_div3{
     position: absolute;
-    top: 5137px;
+    top: 5049px;
     left: 395px;
 }
 
@@ -317,17 +320,18 @@ a.shshopnow_white:active{
 }
 
 
-
-
+/*
 @media only screen and (max-device-width : 981px) {
 	body {
 		min-width: 962px;
 	}
 }
+*/
 
 #bl_main_container {
 	position: relative;
 	width: 962px;
+//	width: 100%;
 	margin-left: auto;
 	margin-right: auto;
 	text-align: left;
@@ -489,6 +493,7 @@ ul {
 		background-color: #000;
 		height: 42px;
 		width: 962px;
+//		width: 100%;
 		overflow: visible;
 		/*overflow: hidden;*/
 		z-index: 98;
@@ -980,3 +985,312 @@ ul {
 		font-size: .85em;
 		padding: 10px;
 	}
+
+
+
+@media all and (max-width: 768px) {
+/* CSS rules here for screens lower than 750px */
+
+	#bl_main_container {
+		position: relative;
+	//	width: 962px;
+		width: 100%;
+		margin-left: auto;
+		margin-right: auto;
+		text-align: left;
+		padding: 0;
+	}
+
+	.desktop_main_container > .desktop_header{
+		height: auto;
+		font-size: 0;
+		min-width: 0 !important;
+	}
+
+	.desktop_main_container nav{
+		background-color: #000;
+		height: 42px;
+//		width: 962px;
+		width: 100%;
+		overflow: visible;
+		/*overflow: hidden;*/
+		z-index: 98;
+	}
+
+	.desktop_main_container > .desktop_footer {
+	    position: relative;
+	    display: block;
+	    height: 48px;
+	    min-width: 0 !important;
+	    margin-bottom: 20px;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+	#headertext1 {
+	    position: absolute;
+	    left: 60.6%;
+	    top: 1.5%;
+	    font-size: 1.97vw;
+	    font-weight: 400;
+	    text-transform: none;
+	    font-family: 'Libre Baskerville', sans-serif;
+	    color: white;
+	}
+
+	#headertext2 {
+	    position: absolute;
+	    left: 49%;
+	    top: 6.3%;
+	    text-align: center;
+	    text-transform: none;
+	    font-size: 2vw;
+	    font-family: 'Lato', sans-serif;
+	    color: white;
+	    line-height: 4vw;
+	}
+
+
+
+
+	#desktop_section1_article1_div1 {
+	    position: absolute;
+	    top: 16%;
+	    left: 8%;
+	}
+
+	#desktop_section1_article1_div2 {
+	    position: absolute;
+	    top: 19.2%;
+	    left: 15%;
+	}
+	#desktop_section1_article1_div3 {
+	    position: absolute;
+	    top: 23%;
+	    left: 68%;
+	}
+
+
+	#desktop_section2_article1_div1 {
+	    position: absolute;
+	    top: 29.45%;
+	    left: 68.2%;
+	    text-align: left;
+	}
+	#desktop_section2_article1_div2 {
+	    position: absolute;
+	    top: 32.5%;
+	    left: 68.2%;
+	}
+	#desktop_section2_article1_div3 {
+	    position: absolute;
+	    top: 33.25%;
+	    left: 1.5%;
+	}
+
+
+	#desktop_section3_article1_div1 {
+	    position: absolute;
+	    top: 40.95%;
+	    left: 8vw;
+	    text-align: center;
+	}
+	#desktop_section3_article1_div2 {
+	    position: absolute;
+	    top: 44.1%;
+	    left: 15.3%;
+	}
+	#desktop_section3_article1_div3 {
+	    position: absolute;
+	    top: 46.5%;
+	    left: 86.9%;
+	}
+
+
+
+#desktop_section4_article1_div1 {
+    position: absolute;
+    top: 60.45%;
+    left: 24.5%;
+    text-align: center;
+}
+#desktop_section4_article1_div2 {
+    position: absolute;
+    top: 62.2%;
+    left: 39.5%;
+}
+#desktop_section4_article1_div3 {
+    position: absolute;
+    top: 57.6%;
+    left: 81.58%;
+}
+
+
+
+#desktop_section5_article1_div1 {
+    position: absolute;
+    top: 69.8%;
+    left: 54.2%;
+    text-align: center;
+}
+#desktop_section5_article1_div2 {
+    position: absolute;
+    top: 72.55%;
+    left: 62.5%;
+}
+#desktop_section5_article1_div3 {
+    position: absolute;
+    top: 75.5%;
+    left: 5%;
+}
+
+
+
+#desktop_section6_article1_div1 {
+    position: absolute;
+    top: 83.8%;
+    left: 13%;
+    text-align: right;
+}
+#desktop_section6_article1_div2 {
+    position: absolute;
+    top: 86.28%;
+    left: 21.55%;
+}
+#desktop_section6_article1_div3 {
+    position: absolute;
+    top: 86.75%;
+    left: 79%;
+}
+
+
+
+#desktop_section7_article1_div1 {
+    position: absolute;
+    top: 92.5%;
+    left: 57%;
+    text-align: center;
+}
+#desktop_section7_article1_div2 {
+    position: absolute;
+    top: 95.5%;
+    left: 64.5%;
+}
+#desktop_section7_article1_div3 {
+    position: absolute;
+    top: 89.25%;
+    left: 40%;
+}
+
+
+
+
+	a.shshopnow_black {
+	    font-size: 1.89vw;
+	    font-weight: 900;
+	    letter-spacing: 0.09vw;
+	    padding: 1.6vw 4.9vw 1.6vw 4.9vw;
+	    background-color: black;
+	    color: white;
+	    text-align: center;
+	    cursor: pointer;
+	    text-decoration: none;
+	}
+
+	a.shshopnow_black:hover,
+	a.shshopnow_black:active{
+
+	    font-size: 1.89vw;
+	    font-weight: 900;
+	    letter-spacing: 0.09vw;
+	    padding: 1.6vw 4.9vw 1.6vw 4.9vw;
+	    text-align: center;
+	    cursor: pointer;
+	    text-decoration: none;
+
+		background-color:white;
+		color:black;
+	}
+
+
+
+	.shtextblock_black {
+	    font-size: 2.2vw;
+	    line-height: 3.8vw;
+	    text-transform: none;
+	    font-weight: 400;
+	    letter-spacing: 0.06vw;
+	}
+	.shvendertag_black {
+	    font-size: 1.15vw;
+	    letter-spacing: .08vw;
+	}
+
+
+
+
+
+	a.shshopnow_white{
+	    font-size: 1.89vw;
+	    font-weight: 900;
+	    letter-spacing: 0.09vw;
+	    padding: 1.6vw 4.9vw 1.6vw 4.9vw;
+	    text-align: center;
+	    cursor: pointer;
+	    text-decoration: none;
+
+	    background-color: white;
+	    color: black;
+	}
+
+	a.shshopnow_white:hover,
+	a.shshopnow_white:active{
+	    font-size: 1.89vw;
+	    font-weight: 900;
+	    letter-spacing: 0.09vw;
+	    padding: 1.6vw 4.9vw 1.6vw 4.9vw;
+	    text-align: center;
+	    cursor: pointer;
+	    text-decoration: none;
+
+		background-color:black;
+		color:white;
+	}
+
+
+
+
+
+	.shtextblock_white{
+	    font-size: 2.2vw;
+	    line-height: 3.8vw;
+	    text-transform: none;
+	    font-weight: 400;
+	    letter-spacing: 0.06vw;
+	    color: white;
+	}
+	.shvendertag_white{
+	    font-size: 1.15vw;
+	    letter-spacing: .08vw;
+	    color: white;
+	}
+
+
+
+
+
+
+
+
+
+
+}
