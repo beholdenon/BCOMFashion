@@ -14,7 +14,7 @@ window.SYNDECA.vertical = (function(window, document, $) {
     	var syndecaWrapper = $('#syndeca'),
     		syndecaHeight = syndecaWrapper.height();
 
-    	if(syndecaHeight >= 1000); {
+    	if(syndecaHeight >= 1000) {
     		var backToTopBtn = $('.desktop_back_to_top');
     		backToTopBtn.show();
     	}
