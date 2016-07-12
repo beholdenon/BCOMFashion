@@ -131,7 +131,7 @@ window.TEMPLATE.vertical = (function(window, document, $) {
         $.address.value(hash + '/');
         self.scrollToSection(hash);
 
-        self.coremetrics('Element', self.cm, 'top_nav_' + hash);
+        self.coremetrics('Element', self.cm, 'nav_dropdown_' + hash);
     };
 
     //(req) scroll page to a particular section/element in the page

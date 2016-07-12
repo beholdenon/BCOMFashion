@@ -150,7 +150,8 @@ window.TEMPLATE.vertical = (function(window, document, $) {
 
             if (self.views.sectionInViewport !== sectionsInViewport[0]) {
                 self.views.sectionInViewport = sectionsInViewport[0];
-                self.coremetrics('Pageview', self.cm, self.cm + '-section-' + self.views.sectionInViewport);
+                self.coremetrics('Pageview', self.cm, self.cm + '-' + self.views.sectionInViewport);
+//                self.coremetrics('Pageview', self.cm, self.cm + '-section-' + self.views.sectionInViewport);
             }
         } else if (sectionsInViewport.length === 2) {
             $('.mobile_main_container section').removeClass('active');
@@ -345,6 +346,19 @@ window.TEMPLATE.vertical = (function(window, document, $) {
             }
         });
 
+        //shopnow touch event
+        $('.mobile_main_container a').on('click', function() {
+            var hash = $(this).attr('href');
+            hash = hash.replace('http://m.bloomingdales.com/shop/', '');
+            hash = hash.split('?')[0];
+            hash = hash.substring(hash.indexOf('/') + 1);
+            self.coremetrics('Element', self.cm, 'shop_now_' + hash);
+        });
+
+
+
+
+
         //button touch events
         $('.mobile_button').on('click', function() {
             self.coremetrics('Element', self.cm, 'shop_all_featured'); //could use regex to better identify each cta
@@ -383,10 +397,10 @@ window.TEMPLATE.vertical = (function(window, document, $) {
 
 
         $('#shopshoetrends').on('click', function() {
-            self.coremetrics('Element', self.cm, 'shopbutton__shoe_trends');
+            self.coremetrics('Element', self.cm, 'MBL:nav-shopbutton__shoe_trends');
         });
         $('#shophandbagtrends').on('click', function() {
-            self.coremetrics('Element', self.cm, 'shopbutton__handbag_trends');
+            self.coremetrics('Element', self.cm, 'MBL:nav-shopbutton__handbag_trends');
         });
 
 
