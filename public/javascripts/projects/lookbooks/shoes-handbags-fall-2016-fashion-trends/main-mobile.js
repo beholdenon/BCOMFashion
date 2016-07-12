@@ -342,7 +342,7 @@ window.TEMPLATE.vertical = (function(window, document, $) {
                 hash = hash.replace('http://m.bloomingdales.com/shop/', '');
                 hash = hash.split('?')[0];
                 hash = hash.substring(hash.indexOf('/') + 1);
-                self.coremetrics('Element', self.cm, 'shop_now_' + hash + '-image');
+                self.coremetrics('Element', self.cm, 'MBL:shop_now_' + hash + '-image');
             }
         });
 
@@ -352,7 +352,7 @@ window.TEMPLATE.vertical = (function(window, document, $) {
             hash = hash.replace('http://m.bloomingdales.com/shop/', '');
             hash = hash.split('?')[0];
             hash = hash.substring(hash.indexOf('/') + 1);
-            self.coremetrics('Element', self.cm, 'shop_now_' + hash);
+            self.coremetrics('Element', self.cm, 'MBL:shop_now_' + hash);
         });
 
 
