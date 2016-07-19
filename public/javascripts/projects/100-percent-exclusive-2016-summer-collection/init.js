@@ -28,26 +28,14 @@ $(document).ready(function($) {
         }
     }     
 
-	$('#emailSignup').on('click', function () {
-
-		coreTag('Element', categoryID, ismobile+"email_Signup");
-
-	});
-
-
-	$('.links a').on('click', function () {
-
-        var hash = $(this).attr('href');
-        hash = hash.replace('http://www1.bloomingdales.com/shop/', '');
-        //hash = hash.split('?')[0];
-        //hash = hash.substring(hash.indexOf('/') + 1);
-        coreTag('Element', categoryID, 'shop_click_' + hash + '');
-
-	});
+    $('[coremetricTag]').click(function() {
+        coreTag('Element', categoryID, ismobile + $( this ).attr( "coremetricTag" ));
+    });
 
 
 	function mobileAndTabletcheck () {
-		return 'ontouchstart' in window;
+        return ($("footer").css("text-align") === "center" );
+//		return 'ontouchstart' in window;
 	}
 
 
