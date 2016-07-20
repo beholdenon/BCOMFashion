@@ -13,7 +13,7 @@ html, body {
 
 #comingsoon_main{
 	width:100%;
-	background-color:orange;
+	background-color:white;
 }
 #background_image{
 	width:100%;
@@ -80,7 +80,7 @@ html, body {
 			display: -webkit-inline-flex;
 			
 			text-transform: uppercase;
-			font-family: "Avenir LT W01 55 Roman", Arial;
+			font-family: 'Lato', sans-serif;
 			font-size: 1.16vw;
 		}
 
@@ -130,7 +130,7 @@ html, body {
 		max-width: 100vw;
 		margin-top: 20px;
 		text-align: center;
-		font-family: "Avenir LT W01 85 Heavy", Arial;
+		font-family: 'Lato', sans-serif;
 
 		.copy {
 			font-size: 15px;

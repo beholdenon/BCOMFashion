@@ -29,13 +29,15 @@ $(document).ready(function($) {
     }     
 
     $('[coremetricTag]').click(function() {
-        coreTag('Element', categoryID, ismobile + $( this ).attr( "coremetricTag" ));
+        coreTag('Element', categoryID, $( this ).attr( "coremetricTag" ));
     });
 
 
 	function mobileAndTabletcheck () {
-        return ($("footer").css("text-align") === "center" );
-//		return 'ontouchstart' in window;
+        //return ($("footer").css("text-align") === "center" );
+		//return 'ontouchstart' in window;
+        return ( /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) );
+
 	}
 
 
