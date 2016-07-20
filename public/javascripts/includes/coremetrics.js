@@ -8,8 +8,12 @@ define([
     function setEnvironment() {
         if (window.Globals.env === 'dev') {
             return cmSetTest(); // jshint ignore:line
-        } else if (window.Globals.env === 'prod' || window.Globals.env === 'production') {
-            return cmSetProduction(); // jshint ignore:line
+        } else if (window.Globals.env === 'production') {
+            if (window.location.host === 'fashion.bloomingdales.com'){
+                return cmSetProduction(); // jshint ignore:line
+            } else {
+                return cmSetTest(); // jshint ignore:line
+            }
         } else {
             throw 'ERROR: unidentified env variable';
         }
