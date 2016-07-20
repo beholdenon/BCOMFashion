@@ -15,7 +15,7 @@ module.exports = function(grunt) {
     var NODE_ENV = grunt.option('env') || process.env.NODE_ENV;
 
     //Set current project folder path ( can be empty as '' )    
-    var PROJECT_FOLDER = '/lookbooks/poc-100percent/';
+    var PROJECT_FOLDER = '/about-us/buy-online-pickup-in-store/';
 
     grunt.initConfig({
         //Project paths
@@ -275,9 +275,9 @@ module.exports = function(grunt) {
             inline: {               
                 files: [{
                   expand: true,
-                  cwd: '<%= node.destination %>/lib/views/layout/',
+                  cwd: '<%= node.destination %>/lib/views/partials/',
                   src: '*.html',
-                  dest: '<%= node.destination %>/lib/views/layout/'
+                  dest: '<%= node.destination %>/lib/views/partials/'
                 }],                
                 options: {
                     replacements: [{
@@ -367,7 +367,7 @@ module.exports = function(grunt) {
                         nodemon.on('config:update', function() {
                             // Delay before server listens on port
                             setTimeout(function() {
-                                require('open')('http://localhost:3000' + ((PROJECT_FOLDER!=='') ? PROJECT_FOLDER : '/lookbooks/spring-2016-prom-dresses/')     );
+                                require('open')('http://localhost:3000' + ((PROJECT_FOLDER!=='') ? PROJECT_FOLDER : '/about-us/buy-online-pickup-in-store/')     );
                             }, 1000);
                         });
 
