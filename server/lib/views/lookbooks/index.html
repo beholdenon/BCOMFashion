@@ -9,7 +9,6 @@
             data-id				          = "syndeca"
             data-guide-key 				  = "419BBAE7-28FD-5E12-F297-A6135CDB21BD"
             data-post-message-domain = "fashion-test.bloomingdales.com"
-            data-catalog-key         = "bloom-vince-dem"
             data-brand-quick-view-enabled = "true"
     ></script>
 
@@ -21,76 +20,76 @@
 <script type="application/javascript" src="/fashion/javascripts/projects/lookbooks/syndeca-projects/main-desktop.js"></script>
 
 <script>
-      (function() {
-        // the syndecaOrigin must match the same domain as the Syndeca amd-embed source
-        var syndecaOrigin = window.location.protocol + '//';
+  (function() {
+    // the syndecaOrigin must match the same domain as the Syndeca amd-embed source
+    var syndecaOrigin = window.location.protocol + '//';
 
-        // find syndeca domain based on viewer embed script
-        var scripts = document.getElementsByTagName('script');
-        for (var i = 0; i < scripts.length; i++) {
-          var scriptSrc  = scripts[i].getAttribute('src');
-          if (scriptSrc && scriptSrc.indexOf('scripts/syndeca-embed.js') >= 0) {
-            syndecaOrigin += scriptSrc.split("/")[2];
-            break;
+    // find syndeca domain based on viewer embed script
+    var scripts = document.getElementsByTagName('script');
+    for (var i = 0; i < scripts.length; i++) {
+      var scriptSrc  = scripts[i].getAttribute('src');
+      if (scriptSrc && scriptSrc.indexOf('scripts/syndeca-embed.js') >= 0) {
+        syndecaOrigin += scriptSrc.split("/")[2];
+        break;
+      }
+    }
+
+    // store original size of syndeca for iframe resize actions later
+    var syndecaOriginalHeight = document.getElementById('syndeca').clientHeight;
+
+    // receive syndeca post messages
+    function receiveSyndecaMessage(event) {
+
+      // ensure only syndeca domain as valid sender
+      if (event.origin !== syndecaOrigin) {
+        console.log("[SYN] recevied message from invalid domain: ", event.origin, syndecaOrigin);
+        return;
+      }
+      var message = JSON.parse(event.data);
+      console.log('message recevied:', message);
+      var product = message.product;
+
+      // only respond to syndeca events
+      switch (message.action) {
+        case "init":
+          break;
+        case "quickView":
+          console.log("[SYN] quickView", product.id);
+          alert("You launched quickview for " + product.id + " with data: " + message.data);
+          // client to add call to brand's quick view here
+          break;
+        case "addToBag":
+          console.log("[SYN] addToBag", product.id, product.sku, product.quantity);
+          // client to add call to brand's add to bag here
+          break;
+        case "addToFavorites":
+          console.log("[SYN] addToFavorites", product.id, product.sku);
+          // client to add call to brand's add to favorites here
+          break;
+        case "resize": 
+          // resize the iframe when viewer content changes
+          // defaults to the original height set by this template
+          var newHeight = syndecaOriginalHeight;
+          if (message.height > 0) {
+             newHeight = message.height;
           }
-        }
+          document.getElementById('syndeca').style.height = newHeight + 'px';
+          break;
+      }
+    }
 
-        // store original size of syndeca for iframe resize actions later
-        var syndecaOriginalHeight = document.getElementById('syndeca').clientHeight;
+    // reposition nav when parent window is scrolled
+    function scrollHandler(event) {
+      var msg = {};
+      msg.action = "scroll";
+      msg.windowScrollY = window.scrollY;
+      msg.syndecaOffsetTop = document.getElementById('syndeca').offsetTop;
+      document.getElementById('syndeca-viewer-frame').contentWindow.postMessage(JSON.stringify(msg), syndecaOrigin);
+    }
 
-        // receive syndeca post messages
-        function receiveSyndecaMessage(event) {
+    // setup event listeners for post message
+    window.addEventListener("message", receiveSyndecaMessage, false);
+    window.addEventListener("scroll", scrollHandler);
 
-          // ensure only syndeca domain as valid sender
-          if (event.origin !== syndecaOrigin) {
-            console.log("[SYN] recevied message from invalid domain: ", event.origin, syndecaOrigin);
-            return;
-          }
-          var message = JSON.parse(event.data);
-          console.log('message recevied:', message);
-          var product = message.product;
-
-          // only respond to syndeca events
-          switch (message.action) {
-            case "init":
-              break;
-            case "quickView":
-              console.log("[SYN] quickView", product.id);
-              alert("You launched quickview for " + product.id + " with data: " + message.data);
-              // client to add call to brand's quick view here
-              break;
-            case "addToBag":
-              console.log("[SYN] addToBag", product.id, product.sku, product.quantity);
-              // client to add call to brand's add to bag here
-              break;
-            case "addToFavorites":
-              console.log("[SYN] addToFavorites", product.id, product.sku);
-              // client to add call to brand's add to favorites here
-              break;
-            case "resize": 
-              // resize the iframe when viewer content changes
-              // defaults to the original height set by this template
-              var newHeight = syndecaOriginalHeight;
-              if (message.height > 0) {
-                 newHeight = message.height;
-              }
-              document.getElementById('syndeca').style.height = newHeight + 'px';
-              break;
-          }
-        }
-
-        // reposition nav when parent window is scrolled
-        function scrollHandler(event) {
-          var msg = {};
-          msg.action = "scroll";
-          msg.windowScrollY = window.scrollY;
-          msg.syndecaOffsetTop = document.getElementById('syndeca').offsetTop;
-          document.getElementById('syndeca-viewer-frame').contentWindow.postMessage(JSON.stringify(msg), syndecaOrigin);
-        }
-
-        // setup event listeners for post message
-        window.addEventListener("message", receiveSyndecaMessage, false);
-        window.addEventListener("scroll", scrollHandler);
-
-      })();
+  })();
 </script>
