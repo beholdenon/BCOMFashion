@@ -53,14 +53,23 @@ html, body {
 }
 
 
-
-
+#shop_bloomingdales{
+	cursor:pointer;
+}
 
 
 
 @media only screen and (min-device-width: 768px) and (orientation: landscape),
 (min-device-width: 1024px) {
 
+	#special{
+		text-decoration:underline;
+		font-weight: bold;
+		font-size: 1.16vw;
+	}
+	#special2{
+		display:none;
+	}	
 
 	#bl_main_container {
 		width: 100%;
@@ -115,7 +124,11 @@ html, body {
 @media only screen and (max-device-width: 767px),
 (orientation: portrait) and (max-device-width: 1024px) {
 	
-
+	#special{
+		text-decoration:none;
+		font-weight: inherit;
+		font-size: inherit;
+	}
 
 	body {
 		#bl_main_container {
@@ -139,7 +152,7 @@ html, body {
 			margin-bottom: 20px;
 
 			span {
-				display: block;
+				//display: block;
 			}
 		}
 
