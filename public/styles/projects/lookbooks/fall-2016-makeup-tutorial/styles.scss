@@ -53,6 +53,18 @@ $mauve: #c91042;
 	padding: 0;
 	margin: 0;
 
+	.point {
+		cursor: pointer;
+	}
+
+	.arrow.point {
+		position: absolute;
+	    left: 46%;
+	    bottom: 0;
+	    width: 8vw;
+	    height: 4vw;
+	}
+
 	.heroImage {
 		width: 100%;
 	}
@@ -227,6 +239,8 @@ $mauve: #c91042;
 			text-decoration: underline;
 		}
 
+		a {text-decoration: none;}
+
 		.brand,
 		.name {
 			max-width: 95%;
@@ -345,29 +359,40 @@ $mauve: #c91042;
 
 	.absolute {
 		position: absolute;
-		width: 35%;
-		left: 10%;
+		width: 40%;
+		left: 5%;
 		top: 15%;
 		text-align: center;
 
 			a {
-				font-size: 0.9em;
+				font-size: inherit;
 				font-weight: 800;
+				text-decoration: inherit;
 			}
 
-			.caps {
-				letter-spacing: 0.1;
+			h2.caps {
+				letter-spacing: 0.2em;
 			}
+
+			div.caps a {
+				text-decoration: underline;
+
+				&:last-child {
+					margin-left: 2em;
+				}
+			}
+
 	}
 
 	h2, h3, p, a { 
 		padding: 0;
 		margin: 0;
+		text-decoration: none;
 	}
 
 	h2 {
 		font-weight: 700;
-		font-size: 2.5em;
+		font-size: 2.4em;
 		font-family: inherit;
 		letter-spacing: 0.15em;
 	}
@@ -435,8 +460,13 @@ $mauve: #c91042;
 			width: auto;
 		}
 
-		li {
+		a {
 			width: 28%;
+			font-size: inherit;
+			text-decoration: none;
+		}
+
+		li {
 			display: inline-block;
 			padding: 0.25em 0 1em;
 			vertical-align: top;
@@ -587,6 +617,7 @@ $mauve: #c91042;
 		font-size: 1em;
 		line-height: 5em;
 		text-decoration: underline;
+		cursor: pointer;
 	}
 
 }
