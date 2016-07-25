@@ -7,6 +7,7 @@ var APP = {
 		category: "fall16_makeupdate",
 	},
 	currentPage: 0,
+	currentHero: 1,
 	markup: [],
 
 	stickyNav: function () {
@@ -56,13 +57,34 @@ var APP = {
 			$('#dynamicPROs .pagn .tot').text( Math.ceil( products.length/5 ) );
 
 		}, data.join(","));
-	}
+	},
+
+	heroRotation: function() {
+		setTimeout(function(){
+			var fade = APP.currentHero;
+			if ( APP.currentHero >= 3 ) {
+				APP.currentHero = 1;
+			} else {
+				APP.currentHero++;	
+			} 
+
+			$('#hero-'+fade).css('z-index',4);
+			$('#hero-'+APP.currentHero).css('z-index',5).animate({
+				'opacity': 1},
+				1200, function() {
+				$('#hero-'+fade).css({"opacity":0});
+			});
+
+			APP.heroRotation();
+		}, 5200);
+	},
 
 };
 
 $(document).ready(function() {
 	APP.navStart = $('#navigation').offset().top - 1;
 	APP.stickyNav();
+	APP.heroRotation();
 
 	$.getJSON('/fashion/javascripts/projects/lookbooks/fall-2016-makeup-tutorial/shop.json', function(json) {
 		APP.products = json.products;

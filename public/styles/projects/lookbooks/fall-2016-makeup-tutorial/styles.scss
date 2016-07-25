@@ -23,6 +23,16 @@ $mauve: #c91042;
 	text-transform: uppercase;
 }
 
+
+section a:link,
+section a:visited,
+section a:active {
+	font-size: inherit;
+	color: inherit;
+	text-decoration: inherit;
+	font-family: inherit;
+}
+
 #navigation {
 	background-color: #7b0625;
 	color: #ffffff;
@@ -63,10 +73,19 @@ $mauve: #c91042;
 	    bottom: 0;
 	    width: 8vw;
 	    height: 4vw;
+	    z-index: 10;
 	}
 
 	.heroImage {
 		width: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 5;
+	}
+
+	.heroPlaceholder {
+		display: block;
 	}
 
 	.copy {
@@ -77,6 +96,7 @@ $mauve: #c91042;
 		font-size: 5vw;
 		color: #ffffff;
 		text-align: center;
+		z-index: 10;
 
 		h1 {
 			font-size: 1.25em;
