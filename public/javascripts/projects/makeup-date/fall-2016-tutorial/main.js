@@ -27,6 +27,23 @@ var APP = {
 		$(target).attr('src', source);
 	},
 
+	updateNav: function () {
+		$.each( $('section'), function() {
+			var box = $(this)[0].getBoundingClientRect();
+			if ( box.top <= ( 0 + $(window).height() / 3) && box.bottom >= ( 0 + $(window).height() / 3) ) {
+				var activeElem = $(this);
+				$.each( $('#navigation .point'), function () {
+					if ( activeElem.attr("id") === $(this).attr("data-scroll") || activeElem.attr("data-pseudo") === $(this).attr("data-scroll") ) {
+						$(this).css("text-decoration", "underline");
+					} else {
+						$(this).css("text-decoration","none");
+					}
+				});
+			}
+		});
+
+	},
+
 	updateShop: function( data ) {
 		var products,
 			html = "<ul class='shopContainer'>",
@@ -82,11 +99,17 @@ var APP = {
 };
 
 $(document).ready(function() {
-	APP.navStart = $('#navigation').offset().top - 1;
+	APP.navStart = $("header").height() + $("#makeup_hero").height() + 1;
 	APP.stickyNav();
 	APP.heroRotation();
 
-	$.getJSON('/fashion/javascripts/projects/lookbooks/fall-2016-makeup-tutorial/shop.json', function(json) {
+	$(window).resize( function(){
+		APP.navStart = $("header").height() + $("#makeup_hero").height() + 1;
+		console.log(APP.navStart);
+		APP.stickyNav();
+	});
+
+	$.getJSON('/fashion/javascripts/projects/makeup-date/fall-2016-tutorial/shop.json', function(json) {
 		APP.products = json.products;
 		console.log('data call complete');
 	}).done( function () {
@@ -96,6 +119,7 @@ $(document).ready(function() {
 
 	$(document).scroll( function() {
 		APP.stickyNav();
+		APP.updateNav();
 	});
 
 	$(".point").on("click", function () {

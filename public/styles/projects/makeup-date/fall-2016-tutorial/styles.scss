@@ -58,14 +58,14 @@ section a:active {
 	}
 }
 
+.point {
+	cursor: pointer;
+}
+
 #makeup_hero {
 	position: relative;
 	padding: 0;
 	margin: 0;
-
-	.point {
-		cursor: pointer;
-	}
 
 	.arrow.point {
 		position: absolute;
@@ -86,6 +86,7 @@ section a:active {
 
 	.heroPlaceholder {
 		display: block;
+		width: 100%;
 	}
 
 	.copy {
@@ -234,7 +235,7 @@ section a:active {
 #prodShell {
 	min-height: 100px;
 	list-style-type: none;
-	width: 75%;
+	width: 70%;
 	overflow: hidden;
 	margin: 2em auto 0;
 	text-align: center;
@@ -245,7 +246,7 @@ section a:active {
 
 	li {
 		text-align: center;
-		width: 14.5vw;
+		width: 13.5vw;
 		display: inline-block;
 		vertical-align: top;
 
@@ -290,8 +291,8 @@ section a:active {
 	                              not supported by any browser */
 }
 
-#prosLeft	{ left: 5%;  }
-#prosRight	{ left: 90%; }
+#prosLeft	{ left: 10%;  }
+#prosRight	{ left: 86%; }
 
 #Red-Lip-Tips {
 	border-top: 3px solid $mauve;
@@ -377,12 +378,22 @@ section a:active {
 		width: 100%;
 	}
 
+	.arrow.point {
+		position: absolute;
+	    left: 46%;
+	    bottom: 0;
+	    width: 8vw;
+	    height: 4vw;
+	    z-index: 10;
+	}
+
 	.absolute {
 		position: absolute;
 		width: 40%;
 		left: 5%;
 		top: 15%;
 		text-align: center;
+		cursor: default;
 
 			a {
 				font-size: inherit;
