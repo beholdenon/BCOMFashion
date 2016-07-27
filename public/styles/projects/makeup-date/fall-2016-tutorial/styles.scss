@@ -7,8 +7,8 @@ $mauve: #c91042;
 	position: relative;
 }
 
-.monserrat {
-	font-family: "Monserrat", Arial;
+.montserrat {
+	font-family: "Montserrat", Arial;
 }
 
 .playfair {
@@ -213,7 +213,6 @@ section a:active {
 	font-size: 14px;
 	padding: 1.5em 0;
 	position: relative;
-	min-height: 450px;
 
 	h3,
 	p {
@@ -246,12 +245,12 @@ section a:active {
 
 	li {
 		text-align: center;
-		width: 13.5vw;
+		width: 13.25vw;
 		display: inline-block;
 		vertical-align: top;
 
 		img {
-			height: 200px;
+			max-height: 200px;
 			margin-bottom: 5px;
 		}
 
@@ -275,8 +274,8 @@ section a:active {
     vertical-align: top;
     display: inline-block;
     z-index: 49;
-    top: 15%;
-    font-size: 15vw;
+    top: 8%;
+    font-size: 160px;
     font-weight: 300;
     font-family: "Open Sans", Arial;
     line-height: 1.5em;
@@ -349,6 +348,7 @@ section a:active {
 		a {
 			color: #ffffff;
 			margin-right: 3.5em;
+			text-decoration: underline;
 		}
 	}
 
@@ -368,6 +368,20 @@ section a:active {
 		width: 40%;
 		left: 48%;
 	}
+}
+
+@media screen and ( max-width: 860px ) {
+	#Red-Lip-Tips {
+
+		.absolute {
+			top: 10%;
+		}
+
+		& > div {
+			min-height: 50vw;
+		}
+	}
+
 }
 
 #Gift-with-Purchase {
@@ -467,6 +481,7 @@ section a:active {
 #samples {
 	text-align: center;
 	font-size: 1.25vw;
+	padding-bottom: 3vw;
 
 	h3 {
 		letter-spacing: 0.15em;
@@ -530,6 +545,10 @@ section a:active {
 	background-color: #222222;
 	font-size: 1.25vw;
 	position: relative;
+
+	img {
+		width: 100vw;
+	}
 
 	.absolute {
 		position: absolute;
@@ -621,6 +640,7 @@ section a:active {
 			font-weight: 800;
 			font-size: 0.5em;
 			display: inline-block;
+			text-decoration: underline;
 		}
 	}
 }
@@ -642,6 +662,7 @@ section a:active {
 	}
 
 	.backToTop {
+		position: relative;
 		background-color: #7a0026;
 		color: #ffffff;
 		text-transform: uppercase;
@@ -649,6 +670,29 @@ section a:active {
 		line-height: 5em;
 		text-decoration: underline;
 		cursor: pointer;
+		overflow: hidden;
+
+		.upArrow {
+			transform: rotate(45deg);
+			background-color: #fff;
+			width: 2vw;
+			height: 2vw;
+			position: absolute;
+			top: 42%;
+			left: 56%;
+			z-index: 10;
+		}
+
+		.upCover {
+			transform: rotate(45deg);
+			background-color: #7a0026;
+			width: 2vw;
+			height: 2vw;
+			position: absolute;
+			top: 44%;
+			left: 56%;
+			z-index: 10;
+		}
 	}
 
 }
