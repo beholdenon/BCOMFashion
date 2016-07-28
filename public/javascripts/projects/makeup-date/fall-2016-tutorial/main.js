@@ -54,7 +54,6 @@ var APP = {
 
 		// get product data from WSSG
 		SERVICES.product.upcGet(function(res){
-			console.log(res.product);
 			products = res.product;
 
 			// build HTML in SHOP THE LOOK section
