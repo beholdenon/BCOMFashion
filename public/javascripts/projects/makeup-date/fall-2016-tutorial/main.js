@@ -4,11 +4,12 @@
 var APP = {
 	
 	cm: {
-		category: "fall16_makeupdate",
+		category: "fall16_makeupdate"
 	},
 	currentPage: 0,
 	currentHero: 1,
 	markup: [],
+	pageview: "",
 
 	stickyNav: function () {
 		if ( $(document).scrollTop() > APP.navStart ) {
@@ -39,6 +40,13 @@ var APP = {
 						$(this).css("text-decoration","none");
 					}
 				});
+
+				// Coremetrics firing on scroll
+				if ( activeElem.attr("data-pageView") !== undefined && APP.pageview !== activeElem.attr("data-pageView") ) {
+					APP.pageview = activeElem.attr("data-pageView");
+					APP.coremetrics('Pageview', APP.cm.category, APP.pageview );
+				}
+
 			}
 		});
 
@@ -95,7 +103,37 @@ var APP = {
 		}, 5200);
 	},
 
+	coremetrics: function (tagType, categoryID, pageID, attributes) {
+        if (tagType === 'Pageview') {
+            try {
+                window.BLOOMIES.coremetrics.cmCreatePageviewTag(pageID, categoryID);
+            } catch (e) {
+                APP.logErr('CoreM_err: ' + e);
+            }
+            APP.logErr('CoreM ::: tagType: Pageview; categoryID: ' + categoryID + '; pageID: ' + pageID);
+        } else if (tagType === 'Element') {
+            try {
+                window.BLOOMIES.coremetrics.cmCreatePageElementTag(pageID, categoryID, attributes || null );
+            } catch (e) {
+                APP.logErr('CoreM_err: ' + e);
+            }
+
+            APP.logErr('CoreM ::: tagType: Element; categoryID: ' + categoryID + '; pageID: ' + pageID);
+        }
+    },
+
+    logErr: function (log) {
+        //log errors only on DEV mode
+        if (window.location.href.indexOf('fashion.bloomingdales.com') < 0) {
+            window.console.info(log);
+        }
+    },
+
 };
+
+$(window).load(function() {
+	APP.coremetrics('Pageview', APP.cm.category, APP.cm.category.concat("--hp") );
+});
 
 $(document).ready(function() {
 	APP.navStart = $("header").height() + $("#makeup_hero").height() + 1;
@@ -104,7 +142,6 @@ $(document).ready(function() {
 
 	$(window).resize( function(){
 		APP.navStart = $("header").height() + $("#makeup_hero").height() + 1;
-		console.log(APP.navStart);
 		APP.stickyNav();
 	});
 
@@ -129,6 +166,7 @@ $(document).ready(function() {
 	$("#videoBox .vidBox").on("click", function () {
 		$(this).addClass('active').siblings().removeClass('active');
 		APP.srcSwitcher( "#makeupVideo", $(this).attr("data-source") );
+		$('#makeupVideo').attr("data-name", $(this).attr("data-element"));
 
 		$('#prodShell').html("<img class='loader' src='/fashion/images/ajax-loader.gif'/>");
 		APP.updateShop( APP.products[ $(this).attr("data-upc") ].upc );
@@ -162,9 +200,55 @@ $(document).ready(function() {
 		$('#dynamicPROs .pagn .cur').text(APP.currentPage+1);
 	});
 
+	// COREMETRICS ELEMENT TAGS
+
+	$("[data-element]").on("click", function () {
+		APP.coremetrics('Element', APP.cm.category, $(this).attr("data-element") );
+	});
+
+	$("#samples .sample").on("click", function () {
+		APP.coremetrics('Element', APP.cm.category, "exclusive-gift_".concat( $(this).find(".name").text().replace(/\s+/g, '-') ).slice(0, 50) );
+	});
+
+	$("#dynamicPROs").on("click", "li", function() {
+		console.log($(this).attr("class"));
+		APP.coremetrics('Element', APP.cm.category, ("videos_products-" + $(this).parents("#dynamicPROs").find(".pagn .cur").text() + $(this).find(".name").text().replace(/\s+/g, '-') ).slice(0, 50) );
+	});
+
+	var video = {start:0, stop:0};
+
+	$("#makeupVideo").on('ended',function() {
+		var vid = "-_--_--_--_--_--_--_--_--_--_--_--_--_--_--_-3";
+        APP.coremetrics('Element', APP.cm.category, "videos" + $(this).attr("data-name"), vid);
+    });
+
+    $("#makeupVideo").on("play", function () {
+    	var vid = "-_--_--_--_--_--_--_--_--_--_--_--_--_--_--_-1";
+    	APP.coremetrics('Element', APP.cm.category, "videos" + $(this).attr("data-name"), vid);
+		video.start = $("#makeupVideo").get(0).currentTime;
+    });
+
+    $("#makeupVideo").on("pause", function () {
+    	if ( $("#makeupVideo").get(0).ended !== true ) {
+    		var vid = "-_--_--_--_--_--_--_--_--_--_--_--_--_--_--_-2";
+    		video.stop = $("#makeupVideo").get(0).currentTime;
+    		APP.coremetrics('Element', APP.cm.category, "videos" + $(this).attr("data-name"), vid);
+    	}
+    });
+
+    
+
+	// $("#makeupVideo").on("click", function() {
+
+	// 	if ( $(this).get(0).paused ) {
+	// 		console.log("PAUSED");
+	// 	} else {
+	// 		console.log("PLAYING");
+	// 	}
+
+	// });
+	// videos_products-<page number>-<product-name>
+
 });
 
-$(window).load(function () {
-	
-});
 

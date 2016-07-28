@@ -5,7 +5,7 @@
 <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
 <link href='//fonts.googleapis.com/css?family=Playfair+Display:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
 
-<section id="makeup_hero">
+<section id="makeup_hero" data-pageView="hero">
     <img class="heroPlaceholder" src="/fashion/images/projects/makeup-date/fall-2016-tutorial/hero-1.jpg"/>
     <img id="hero-1" class="heroImage" src="/fashion/images/projects/makeup-date/fall-2016-tutorial/hero-1.jpg" alt=""/>
     <img id="hero-2" class="heroImage" style="opacity:0;" src="/fashion/images/projects/makeup-date/fall-2016-tutorial/hero-2.jpg" alt=""/>
@@ -13,37 +13,37 @@
     <div class="copy">
         <h1 class="title montserrat"><strong>THE MAKEUP DATE</strong></h1>
         <p class="subHeader playfair italic"><strong>2 Days Only:</strong> Exclusive 16-Piece Gift + Triple Points for Loyallists!</p>
-        <p class="smallHeader montserrat">Ends 9/2. <a href="javascript:pop('http://bloomingdales.com/popup.ognc?popupID=563664','myDynaPop','width=575,height=350')" class="exclusionsLink">INFO/EXCLUSIONS</a></p>
+        <p class="smallHeader montserrat">Ends 9/2. <a href="javascript:pop('http://bloomingdales.com/popup.ognc?popupID=563664','myDynaPop','width=575,height=350')" data-element="hero_info-popup" class="exclusionsLink">INFO/EXCLUSIONS</a></p>
     </div>
-    <div class="arrow point" data-scroll="Red-Lip-Report"></div>
+    <div class="arrow point" data-element="hero_arrow" data-scroll="Red-Lip-Report"></div>
 </section>
 
 <ul id="navigation">
-    <li class="point caps" data-scroll="Red-Lip-Report">videos</li>
-    <li class="point caps" data-scroll="Red-Lip-Tips">tips + tricks</li>
-    <li class="point caps" data-scroll="Gift-with-Purchase">exclusive gift</li>
-    <li class="point caps" data-scroll="celebrate-in-store">events</li>
-    <li class="point caps" data-scroll="sweepstakes">sweepstakes</li>
+    <li class="point caps" data-element="nav_videos" data-scroll="Red-Lip-Report">videos</li>
+    <li class="point caps" data-element="nav_tips-tricks" data-scroll="Red-Lip-Tips">tips + tricks</li>
+    <li class="point caps" data-element="nav_exclusive-gift" data-scroll="Gift-with-Purchase">exclusive gift</li>
+    <li class="point caps" data-element="nav_events" data-scroll="celebrate-in-store">events</li>
+    <li class="point caps" data-element="nav_sweepstakes" data-scroll="sweepstakes">sweepstakes</li>
 </ul>
 
-<section id="Red-Lip-Report">
+<section id="Red-Lip-Report" data-pageView="videos">
     <div class="copy">
         <h3 class="playfair italic">Red Lip Report</h3>
         <p class="montserrat">This season, we saw red all over the runways&mdash;from bright crimson to black cherry, it was the color on everyone's lips. Now learn how to rock the trend on your own with three tutorials that dial up in intensity, whether you're new to the hue or a seasoned pro.</p>
     </div>
     <h2 class="videoHeader montserrat">how-to videos</h2>
-    <div id="videoBox">
-        <video id="makeupVideo" src="/fashion/images/projects/placeholder.mp4" controls></video>
+    <div id="videoBox" >
+        <video id="makeupVideo" data-name="videos_light-red" src="/fashion/images/projects/placeholder.mp4" controls></video>
         <div class="playlist">
-            <div class="vidBox active" data-upc="apple" data-source="/fashion/images/projects/placeholder.mp4">
+            <div class="vidBox active" data-upc="apple" data-element="videos_light-red" data-source="/fashion/images/projects/placeholder.mp4">
                 <img id="vidOne" src="/fashion/images/projects/makeup-date/fall-2016-tutorial/video1.jpg"/>
                 <p>light red:<br/>glossy candy apple</p>
             </div>
-            <div class="vidBox" data-upc="crimson" data-source="/fashion/images/projects/placeholder2.mp4">
+            <div class="vidBox" data-upc="crimson" data-element="videos_medium-red" data-source="/fashion/images/projects/placeholder2.mp4">
                 <img id="vidTwo" src="/fashion/images/projects/makeup-date/fall-2016-tutorial/video2.jpg"/>
                 <p>medium red:<br/>crimson créme</p>
             </div>
-            <div class="vidBox" data-upc="cherry" data-source="/fashion/images/projects/placeholder3.mp4">
+            <div class="vidBox" data-upc="cherry" data-element="videos_dark-red" data-source="/fashion/images/projects/placeholder3.mp4">
                 <img id="vidThree" src="/fashion/images/projects/makeup-date/fall-2016-tutorial/video3.jpg"/>
                 <p>dark red:<br/>bold black cherry</p>
             </div>
@@ -65,7 +65,7 @@
     </div>
 </section>
 
-<section id="Red-Lip-Tips" class="montserrat">
+<section id="Red-Lip-Tips" data-pageView="tips-tricks" class="montserrat">
     <h2 class="playfair italic">Our Best</h2>
     <h2 class="montserrat spaced">Red Lip Tips</h2>
 
@@ -74,7 +74,7 @@
         <div class="absolute">
             <h4 class="playfair italic">First Step: PREP</h4>
             <p>The key to pulling off a red lip is pairing it with even, flawless skin. Use foundation or concealer to cover up imperfections so that your lip color doesn't accentuate any redness in your complexion. Also, make sure to gently exfoliate your lips with a warm washcloth or soft toothbrush to create a smooth canvas. Then use a hydrating lip balm and wait a few minutes for it to soak in before applying your lipstick.</p>
-            <a href="http://www1.bloomingdales.com/shop/beauty/face/Face,Productsperpage/Concealers%7CFoundations,180?id=14721">SHOP FOUNDATIONS &amp; CONCEALERS</a>
+            <a href="http://www1.bloomingdales.com/shop/beauty/face/Face,Productsperpage/Concealers%7CFoundations,180?id=14721" data-element="tips-tricks_foundations-concealers">SHOP FOUNDATIONS &amp; CONCEALERS</a>
         </div>
     </div>
     <div id="shade" class="relative">
@@ -82,7 +82,7 @@
         <div class="absolute">
             <h4 class="playfair italic">Choose the right shade</h4>
             <p>Finding the right red is all about choosing the best shade for your skin tone. For fair complexions, look for colors with cool blue undertones, like raspberry and cherry. Those with medium and olive skin will look best in brown-based shades, such as brick red. For darker skin tones, try bright orange- and violet-based reds for a bold pop of color.</p>
-            <a href="http://www1.bloomingdales.com/shop/beauty/lips/Color_normal,Lips_type,Productsperpage/Red,Lipsticks,180?id=14806">SHOP RED LIPSTICKS</a>
+            <a href="http://www1.bloomingdales.com/shop/beauty/lips/Color_normal,Lips_type,Productsperpage/Red,Lipsticks,180?id=14806" data-element="tips-tricks_red-lipsticks">SHOP RED LIPSTICKS</a>
         </div>
     </div>
     <div id="make-it-last" class="relative">
@@ -90,31 +90,31 @@
         <div class="absolute">
             <h4 class="playfair italic">Make it Last</h4>
             <p>For color with staying power, start by completely filling in your lips with a long-wear liner. This makes your lips look fuller and will prevent the color from bleeding. Next, apply your first coat of lipstick, setting the color by placing a tissue over your lips and dusting a fine layer of translucent powder on top of the tissue. Complete the look by adding a second coat of lipstick, followed by gloss for a shiny finish.</p>
-            <a href="http://www1.bloomingdales.com/shop/beauty/lips/Lips_type,Productsperpage/Lip%20Liners,180?id=14806">LIP PENCILS</a>
-            <a href="http://www1.bloomingdales.com/shop/beauty/face/Face,Productsperpage/Setting%20Powders%20%26%20Sprays,180?id=14721">SETTING POWDERS</a>
+            <a data-element="tips-tricks_lip-pencils" href="http://www1.bloomingdales.com/shop/beauty/lips/Lips_type,Productsperpage/Lip%20Liners,180?id=14806">LIP PENCILS</a>
+            <a data-element="tips-tricks_setting-powders" href="http://www1.bloomingdales.com/shop/beauty/face/Face,Productsperpage/Setting%20Powders%20%26%20Sprays,180?id=14721">SETTING POWDERS</a>
         </div>
     </div>
 </section>
 
-<section id="Gift-with-Purchase" class="montserrat">
-    <a href="http://www1.bloomingdales.com/shop/product?ID=1780655">
+<section id="Gift-with-Purchase" data-pageView="exclusive-gift" class="montserrat">
+    <a href="http://www1.bloomingdales.com/shop/product?ID=1780655" data-element="exclusive-gift_image">
         <img src="/fashion/images/projects/makeup-date/fall-2016-tutorial/gwp.jpg"/>
     </a>
     <div class="absolute">
-        <a href="http://www1.bloomingdales.com/shop/product?ID=1780655">
+        <a href="http://www1.bloomingdales.com/shop/product?ID=1780655" data-element="exclusive-gift_text">
             <p class="caps">ONLINE ONLY</p>
             <p class="caps">Ends 9/2 or while supplies last</p>
             <h2 class="caps">your exclusive<br/>16-piece gift</h2>
             <h3 class="playfair italic">with any $125 beauty purchase.</h3>
         </a>
         <div class="caps">
-            <a href="http://www1.bloomingdales.com/shop/product?ID=1780655">see info</a>
-            <a href="http://www1.bloomingdales.com/shop/beauty/gifts-with-purchase?id=1006690">shop all gifts with purchase</a>
+            <a href="http://www1.bloomingdales.com/shop/product?ID=1780655" data-element="exclusive-gift_see-info">see info</a>
+            <a href="http://www1.bloomingdales.com/shop/beauty/gifts-with-purchase?id=1006690" data-element="exclusive-shop-all">shop all gifts with purchase</a>
         </div>
         <p class="loyallist caps "><strong>+</strong><br/>LOYALLISTS GET TRIPLE POINTS<br/>ON ALL BEAUTY PURCHASES!</p>
-        <p class="loyallist caps fine">Ends 9/2. <a href="javascript:pop('http://bloomingdales.com/popup.ognc?popupID=563664','myDynaPop','width=575,height=350')" class="exclusionsLink">info/exclusions</a></p>
+        <p class="loyallist caps fine">Ends 9/2. <a data-element="exclusive-gift_info-exclusions" href="javascript:pop('http://bloomingdales.com/popup.ognc?popupID=563664','myDynaPop','width=575,height=350')" class="exclusionsLink">info/exclusions</a></p>
     </div>
-    <div class="arrow point" data-scroll="samples"></div>
+    <div class="arrow point" data-scroll="samples" data-element="exclusive-gift_arrow"></div>
 </section>
 
 <section id="samples" data-pseudo="Gift-with-Purchase">
@@ -223,7 +223,7 @@
     </ul>
 </section>
 
-<section id="celebrate-in-store" class="montserrat">
+<section id="celebrate-in-store" data-pageView="events" class="montserrat">
     <img src="/fashion/images/projects/makeup-date/fall-2016-tutorial/events.jpg" alt="Beauty Trends Come to Life at Bloomingdale's Store"/>
     <div class="absolute">
         <h2>CELEBRATE IN STORE</h2>
@@ -251,25 +251,25 @@
     </div>
 </section>
 
-<section id="sweepstakes">
+<section id="sweepstakes" data-pageView="sweepstakes">
     <img src="/fashion/images/projects/makeup-date/fall-2016-tutorial/sweeps.jpg"/>
     <div class="montserrat absolute">
         <h2 class="win montserrat">WIN A $500<br/>BEAUTY GIFT BAG!</h2>
         <p class="copy playfair italic">Enter for a chance to win a spectacular gift bag filled with the season's top products (a $500 value). Ends 9/2. </p>
         <div class="legal">
-            <a href="javascript:pop('http://bloomingdales.com/popup.ognc?popupID=590756','myDynaPop','width=575,height=350')">see info</a>
-            <a href="http://ebm.cheetahmail.com/r/regf2?a=0&aid=2076410053&n=938">enter now</a>
+            <a href="javascript:pop('http://bloomingdales.com/popup.ognc?popupID=590756','myDynaPop','width=575,height=350')" data-element="sweepstakes_see-info">see info</a>
+            <a href="http://ebm.cheetahmail.com/r/regf2?a=0&aid=2076410053&n=938" data-element="sweepstakes_enter-now">enter now</a>
         </div>
     </div>
 </section>
 
 <div id="book-footer" class="montserrat">
     <span>shop:</span>
-    <a href="http://www1.bloomingdales.com/shop/beauty/lips?id=14806">lips</a>
-    <a href="http://www1.bloomingdales.com/shop/beauty/eyes?id=14797">eyes</a>
-    <a href="http://www1.bloomingdales.com/shop/beauty/face?id=14721">face</a>
-    <a href="http://www1.bloomingdales.com/shop/beauty?id=2921">all beauty</a>
-    <div class="backToTop point" data-scroll="makeup_hero">back to top <div class="upArrow"></div><div class="upCover"></div></div>
+    <a data-element="bottom-nav_lips" href="http://www1.bloomingdales.com/shop/beauty/lips?id=14806">lips</a>
+    <a data-element="bottom-nav_eyes" href="http://www1.bloomingdales.com/shop/beauty/eyes?id=14797">eyes</a>
+    <a data-element="bottom-nav_face" href="http://www1.bloomingdales.com/shop/beauty/face?id=14721">face</a>
+    <a data-element="bottom-nav_all-beauty" href="http://www1.bloomingdales.com/shop/beauty?id=2921">all beauty</a>
+    <div data-element="back-to-top" class="backToTop point" data-scroll="makeup_hero">back to top <div class="upArrow"></div><div class="upCover"></div></div>
 </div>
 
 <link href="/fashion/styles/projects/makeup-date/fall-2016-tutorial/styles.css" rel="stylesheet" type="text/css" />

@@ -4,7 +4,7 @@
 var APP = {
 	
 	cm: {
-		category: "fall16_makeupdate",
+		category: "MBL:fall16_makeupdate",
 	},
 	currentPage: 0,
 	currentHero: 1,
