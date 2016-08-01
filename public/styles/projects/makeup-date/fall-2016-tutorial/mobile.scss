@@ -492,9 +492,11 @@ section a:active {
 
 			.brand,
 			.name {
+				font-family: "Montserrat", Arial;
 				margin: 0;
 				text-transform: uppercase;
 				font-size: inherit;
+				font-family: inherit;
 				line-height: 1.75em;
 			}
 		}

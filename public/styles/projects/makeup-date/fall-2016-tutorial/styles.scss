@@ -49,6 +49,7 @@ section a:active {
 		width: 90%;
 		padding: 0 5%;
 		margin: 1.2em 0;
+		font-weight:700;
 		
 		.active,
 		&:hover {
@@ -142,7 +143,7 @@ section a:active {
 		color: #ffffff;
 		text-transform: uppercase;
 		font-weight: bold;
-		font-size: 3em;
+		font-size: 2.75em;
 		margin: 0.8em 0 0.25em;
 		padding: 0.25em;
 		letter-spacing: 0.4em;
@@ -396,6 +397,7 @@ section a:active {
 			text-decoration: underline;
 			display: inline-block;
 			padding: 1em 0;
+			font-weight: 700;
 
 			&:nth-child(2n-1) {
 				margin-right: 3.5em;
@@ -581,7 +583,7 @@ section a:active {
 				line-height: 1.25em;
 				text-transform: uppercase;
 				font-size: inherit;
-				line-height: 1.5em;
+				font-family: "Montserrat", Arial;
 			}
 
 			.description {
@@ -619,6 +621,7 @@ section a:active {
 		font-family: inherit;
 		padding: 1.3em 0 0;
 		margin: 0;
+		font-weight: 700;
 	}
 
 	.details {
@@ -641,6 +644,7 @@ section a:active {
 
 		h4 {
 			color: $mauve;
+			display: inline-block;
 			font-size: 1.45em;
 			border-bottom: 1px solid #fff;
 			margin-top: 1em;
@@ -661,7 +665,7 @@ section a:active {
 
 #sweepstakes {
 	position: relative;
-	font-size: 2.25vw;
+	font-size: 1.25vw;
 
 	img {
 		width: 100%;
@@ -675,8 +679,8 @@ section a:active {
 		width: 55%;
 
 		h2 {
-			font-size: 1.6em;
-			font-weight: 800;
+			font-size: 2.5em;
+			font-weight: 700;
 			letter-spacing: 0.35em;
 			padding: 0;
 			margin: 0;
@@ -684,7 +688,7 @@ section a:active {
 		}
 
 		.copy {
-			font-size: 0.85em;
+			font-size: 1.6em;
 			padding: 0;
 			margin: 0;
 		}
@@ -693,7 +697,7 @@ section a:active {
 			text-transform: uppercase;
 			margin: 2em 2em 0;
 			font-weight: 800;
-			font-size: 0.5em;
+			font-size: 1em;
 			display: inline-block;
 			text-decoration: underline;
 		}
