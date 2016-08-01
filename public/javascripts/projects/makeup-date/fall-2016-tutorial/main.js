@@ -100,7 +100,7 @@ var APP = {
 			});
 
 			APP.heroRotation();
-		}, 5200);
+		}, 2200);
 	},
 
 	coremetrics: function (tagType, categoryID, pageID, attributes) {

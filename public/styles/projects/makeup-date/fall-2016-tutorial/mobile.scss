@@ -81,6 +81,8 @@ section a:active {
 	ul {
 		padding: 0;
 		margin: 0;
+		max-height: 80vh;
+    	overflow: scroll;
 
 		li {
 
@@ -300,12 +302,14 @@ section a:active {
 			text-decoration: underline;
 			line-height: 1.6em;
 			display: block;
-			margin-bottom: 1em;
+			margin-bottom: 0.25em;
+			padding: 0.5em;
+			font-weight: 700;
 		}
 	}
 
 	#prep {
-		height: 50vh;
+		min-height: 50vh;
 
 		.absolute {
 			top: 6vw;
@@ -315,7 +319,7 @@ section a:active {
 	}
 
 	#shade {
-		height: 50vh;
+		min-height: 50vh;
 
 		.absolute {
 			top: 3vw;
@@ -324,7 +328,7 @@ section a:active {
 	}
 
 	#make-it-last {
-		height: 50vh;
+		min-height: 50vh;
 
 		.absolute {
 			top: 0; 
@@ -445,8 +449,8 @@ section a:active {
 
 	h3 {
 		letter-spacing: 0.15em;
-		font-size: 2.5em;
-		padding: 1em 0;
+		font-size: 3em;
+		padding: 1em 4em;
 		text-align: center;
 	}
 
@@ -559,7 +563,7 @@ section a:active {
 		width: 58%;
 
 		h2 {
-			font-size: 1.6em;
+			font-size: 1.4em;
 			font-weight: 800;
 			letter-spacing: 0.35em;
 			padding: 0;
@@ -600,6 +604,7 @@ section a:active {
 		font-size: 3vw;
 		border-top: 1px solid #ffffff;
 		font-weight: 700;
+		text-decoration: underline;
 
 		a {
 			color: inherit;
@@ -622,3 +627,19 @@ section a:active {
 
 
 }
+
+@media screen and (max-width: 350px) {
+	#Red-Lip-Tips #shade,
+	#Red-Lip-Tips #prep,
+	#Red-Lip-Tips #make-it-last {
+		height: 60vh;
+	}
+}
+
+// @media screen and (orientation: landscape) {
+// 	#Red-Lip-Tips #shade,
+// 	#Red-Lip-Tips #prep,
+// 	#Red-Lip-Tips #make-it-last {
+// 		height: 60vh;
+// 	}
+// }
