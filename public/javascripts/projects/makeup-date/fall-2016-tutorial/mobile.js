@@ -4,11 +4,12 @@
 var APP = {
 	
 	cm: {
-		category: "MBL:fall16_makeupdate",
+		category: "mbl:fall16_makeupdate",
 	},
 	currentPage: 0,
 	currentHero: 1,
 	markup: [],
+	pageview: "",
 	vSection: [
 		"#Light-Red .prodShell",
 		"#Medium-Red .prodShell",
@@ -47,6 +48,12 @@ var APP = {
 						tar.addClass('active').siblings().removeClass('active');
 					}
 				});
+
+				// Coremetrics firing on scroll
+				if ( activeElem.attr("data-pageView") !== undefined && APP.pageview !== activeElem.attr("data-pageView") ) {
+					APP.pageview = activeElem.attr("data-pageView");
+					APP.coremetrics('Pageview', APP.cm.category, APP.pageview );
+				}
 			}
 		});
 
@@ -102,7 +109,38 @@ var APP = {
 		}, 3200);
 	},
 
+	coremetrics: function (tagType, categoryID, pageID, attributes) {
+        if (tagType === 'Pageview') {
+            try {
+                window.BLOOMIES.coremetrics.cmCreatePageviewTag(pageID, categoryID);
+            } catch (e) {
+                APP.logErr('CoreM_err: ' + e);
+            }
+            APP.logErr('CoreM ::: tagType: Pageview; categoryID: ' + categoryID + '; pageID: ' + pageID);
+        } else if (tagType === 'Element') {
+            try {
+                window.BLOOMIES.coremetrics.cmCreatePageElementTag(pageID, categoryID, attributes || null );
+            } catch (e) {
+                APP.logErr('CoreM_err: ' + e);
+            }
+
+            APP.logErr('CoreM ::: tagType: Element; categoryID: ' + categoryID + '; pageID: ' + pageID);
+        }
+    },
+
+    logErr: function (log) {
+        //log errors only on DEV mode
+        if (window.location.href.indexOf('fashion.bloomingdales.com') < 0) {
+            window.console.info(log);
+        }
+    },
+
 };
+
+$(window).load(function() {
+	APP.coremetrics('Pageview', APP.cm.category, APP.cm.category.concat("--hp") );
+});
+
 
 $(document).ready(function() {
 	APP.navStart = $("#makeup_hero").height();
@@ -153,42 +191,37 @@ $(document).ready(function() {
 		APP.scrollTo( $(this).attr("data-scroll") );
 	});
 
-	// VIDEO SWITCH
-	$("#videoBox .vidBox").on("click", function () {
-		$(this).addClass('active').siblings().removeClass('active');
-		APP.srcSwitcher( "#makeupVideo", $(this).attr("data-source") );
+	// coremetrics events
+	var video = {start:0, stop:0};
 
-		$('#prodShell').html("<img class='loader' src='/fashion/images/ajax-loader.gif'/>");
-		APP.updateShop( APP.products[ $(this).attr("data-upc") ].upc );
+	$("[data-element]").on("click", function (e) {
+		APP.coremetrics('Element', APP.cm.category, $(this).attr("data-element") );
+		e.preventDefault();
 	});
 
-	$("#prosLeft").on("click", function () {
-		APP.currentPage --;
-		if (APP.currentPage < 0) APP.currentPage = APP.markup.length-1;
-
-		var html = "<ul class='shopContainer'>";
-		$.each(APP.markup[APP.currentPage], function(i, value) {
-			html += value;
-		});
-
-		html+="</ul>";
-		$('#prodShell').html(html);
-		$('#dynamicPROs .pagn .cur').text(APP.currentPage+1);		
+	$("#samples .sample").on("click", function () {
+		APP.coremetrics('Element', APP.cm.category, "mbl:exclusive-gift_".concat( $(this).find(".name").text().replace(/\s+/g, '-') ).slice(0, 50) );
 	});
 
-	$("#prosRight").on("click", function () {
-		APP.currentPage ++;
-		if (APP.currentPage >= APP.markup.length) APP.currentPage = 0;
+	$("video").on('ended',function() {
+		var vid = "-_--_--_--_--_--_--_--_--_--_--_--_--_--_--_-3";
+        APP.coremetrics('Element', APP.cm.category, $(this).attr("data-element"), vid);
+    });
 
-		var html = "<ul class='shopContainer'>";
-		$.each(APP.markup[APP.currentPage], function(i, value) {
-			html += value;
-		});
+    $("video").on("play", function () {
+    	var vid = "-_--_--_--_--_--_--_--_--_--_--_--_--_--_--_-1";
+    	APP.coremetrics('Element', APP.cm.category, $(this).attr("data-element"), vid);
+		video.start = $("#makeupVideo").get(0).currentTime;
+    });
 
-		html+="</ul>";
-		$('#prodShell').html(html);
-		$('#dynamicPROs .pagn .cur').text(APP.currentPage+1);
-	});
+    $("video").on("pause", function () {
+    	if ( $(this).get(0).ended !== true ) {
+    		var vid = "-_--_--_--_--_--_--_--_--_--_--_--_--_--_--_-2";
+    		video.stop = $("#makeupVideo").get(0).currentTime;
+    		APP.coremetrics('Element', APP.cm.category, $(this).attr("data-element"), vid);
+    	}
+    });
+
 
 });
 
