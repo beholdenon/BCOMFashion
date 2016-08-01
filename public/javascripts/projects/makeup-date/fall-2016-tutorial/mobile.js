@@ -194,9 +194,8 @@ $(document).ready(function() {
 	// coremetrics events
 	var video = {start:0, stop:0};
 
-	$("[data-element]").on("click", function (e) {
+	$("[data-element]").on("click", function () {
 		APP.coremetrics('Element', APP.cm.category, $(this).attr("data-element") );
-		e.preventDefault();
 	});
 
 	$("#samples .sample").on("click", function () {
