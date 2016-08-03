@@ -1,0 +1,419 @@
+// ======================================
+// 100 Percent Spring 2016 Styles
+// Author: Mike Curtis
+// Date: 01/26/2016
+// Project: /100-percent-2016/
+// ======================================
+
+@import "compass";
+
+
+
+    #canvasText{
+        position:absolute;
+        top:0vw;
+        left:0px;        
+    }
+
+
+    canvas {
+        position:absolute;
+        top:25vw;
+        left:0px;
+        border:2px solid yellow;
+        z-index: 10;
+        width:100%;
+    }
+
+    .download {
+        position:absolute;
+        top:127vw;
+        left:0px;
+
+        cursor:pointer;
+        color:#666;
+    }
+    .download:hover {
+        color:#999;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Avenir LT W01 55 Roman", Arial;
+}
+
+.sharpen {
+    image-rendering: -moz-crisp-edges;          /* Firefox */
+    image-rendering:   -o-crisp-edges;           /* Opera */
+    image-rendering: -webkit-optimize-contrast;  /* Webkit (non-standard naming) */
+    image-rendering: crisp-edges;
+}
+
+
+// @media screen only (orientation: landscape) {
+
+// }
+
+// @media screen only (orientation: portrait) {
+
+// }
+
+#dropdownNav {
+    text-align: center;
+
+    ul, 
+    li {
+        margin: 0;
+        list-style-type: none;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    #bLogo {
+        width: 65vw;
+    }
+
+    .top {
+
+        &:before {
+            content: '';
+            display: block;
+            width: 0; 
+            height: 0; 
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            
+            border-top: 12px solid #000;
+
+            list-style-type: none;
+            position: absolute;
+            left: 8%;
+            top: 20px;
+        }
+
+        &.active {
+            color: #ff5d1d;
+
+            &:before {
+                border-left: 8px solid transparent;
+                border-right: 8px solid transparent;
+            
+                border-bottom: 12px solid #000;
+                border-top: 0;
+            }
+        }
+
+    }
+
+    li,
+    .sudoLi {
+        padding: 2.5vw 0;
+        background-color: #e8e8e8;
+        color: #000;
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 4.5vw;
+        font-family: "Avenir LT W01 85 Heavy", Arial;
+        border-bottom: 1px solid #fff;
+
+    }
+
+    .subNav {
+        padding-bottom: 0;
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+.content {
+    text-align: center;
+
+    &.mens {
+        margin-bottom: 15vw;    
+    }
+    
+
+    ul {
+        list-style-type: none;
+        margin:0;
+        padding:0;
+    }
+
+    .box {
+        background-color: #ddd;
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 6vw;
+        line-height: 10vw;
+        padding: 20vw 20%;
+    }
+
+    .shop {
+        height: auto;
+        min-width: 100vw;
+        margin-bottom: 6vw;
+    }
+
+    .whitespace {
+        min-height: 10vw;
+    }
+
+    button {
+        position: relative;
+        border: 2px solid #000;
+        background-color: transparent;
+        color: #000;
+        text-transform: uppercase;
+        top: -10vw;
+        padding: 6vw 0 6vw;
+        width: 70vw;
+        margin-bottom: 0;
+
+        &.left {
+            left: 5vw;
+        }
+
+        &.right {
+            right: 5vw;
+        }
+
+        span {
+            line-height: 1.5em;
+        }
+    }
+
+    .copy {
+        text-align: left;
+        padding: 5vw 10vw;
+        font-size: 5vw;
+
+        .pink {
+            color: #ff2d6d;
+        }
+    }
+}
+
+#appStore,
+#googlePlay {
+    width: 70vw;
+    margin: 20px auto 30px;
+}
+
+#landing {
+    position: relative;
+
+    .window {
+        position: absolute;
+        top: 70.5vw;
+        width: 72vw;
+        left: 14.5vw;
+    }
+
+}
+
+#app {
+
+    img {
+        width: 70vw;
+        margin: 6vw 0 12vw;
+    }
+}
+
+
+#about {
+    margin-top: 91vw;
+    video {
+        width: 100vw;
+        margin-bottom: 5vw;
+    }
+
+    #aboutText {
+        padding: 0 7.5vw;
+        margin-bottom: 10vw;
+        text-align: left;
+
+        .text {
+            font-size: 6vw;
+            font-family: "Avenir LT W01 55 Roman", Arial;
+            display: inline;
+            line-height: 10vw;
+            vertical-align: top;
+            font-weight: 700;
+        }
+
+        .image {
+            background: url("/fashion/images/projects/100-percent/emoji-sprite.png") no-repeat;
+            top: 0vw;
+            position: relative;
+            min-width: 13%;
+            min-height: 0;
+            padding-bottom: 12%;
+            display: inline-block;
+            background-size: 1500%;
+
+            &.hundred {
+                background-position: 0% -14%;
+                min-width: 54vw;
+                background-size: 220%;
+                position: relative;
+            }
+
+            &.heart {background-position: 50.5% 4%;}
+
+            &.fashion {
+                background-position: 60.5% 0%;
+                background-size: 1100%;
+            }
+
+            &.love {
+                background-position: 71% 0%;
+                background-size: 1200%;
+            }
+
+            &.happy {
+                background-position: 80% 10%;
+                background-size: 1200%;
+            }
+
+            &.explosion {
+                background-position: 90% 0%;
+                background-size: 1100%;
+            }
+
+            &.shoes {
+                background-position: 0 90%;
+                background-size: 1100%;
+            }
+
+            &.stop {background-position: 11.5% 80%;}
+
+            &.door {
+                background-position: 20% 79%;
+                background-size: 1200%;
+            }
+
+            &.dress {
+                background-position: 31% 90%;
+                background-size: 1100%;
+            }
+
+            &.bag {
+                background-position: 44.25% 80%;
+                background-size: 1300%;
+            }
+
+            &.globe {background-position: 54% 78%;}
+
+            &.sharpen {
+                image-rendering: -moz-crisp-edges;          /* Firefox */
+                image-rendering:   -o-crisp-edges;           /* Opera */
+                image-rendering: -webkit-optimize-contrast;  /* Webkit (non-standard naming) */
+                image-rendering: crisp-edges;
+            }
+
+        }
+    }
+}
+
+button.getApp {
+    padding: 3vw 0 6vw;
+
+    .inconsistent {
+        text-transform: none;
+        text-align: left;
+    }    
+}
+
+
+#appIcon {
+    background-image: url(/fashion/images/projects/100-percent/emoji-header.png);
+    display: inline-block;
+    width: 6vw;
+    height: 6vw;
+    background-size: 300%;
+    background-repeat: no-repeat;
+    position: relative;
+    top: 6px;
+}
+
+.footerNav {
+    list-style-type: none;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+
+    li {
+        margin: 0;
+        padding: 4vw 0;
+        background-color: #000;
+        color: #fff;
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 3.5vw;
+        font-family: "Avenir LT W01 55 Roman", Arial;
+       
+    }
+
+    a {
+        border-bottom: 1px solid #fff;
+        display: block;
+
+        &:last-child {
+            border-bottom: 0;
+        }
+    }
+
+}
+
+
+#social {
+    display: block;
+    text-align: center;
+    margin-top: 5vw;
+
+    a {
+        display: inline-block;
+        border: 1px solid #000;
+        &:first-child { border-right: 0;}
+        &:last-child { border-left: 0;}
+    }
+
+    .icon {
+        display: inline-block;
+        width: 20vw;
+        height: 20vw;
+        background-image: url('/fashion/images/projects/100-percent/social-icons.png');
+        background-size: 370%;
+        background-repeat: no-repeat;
+    }
+
+    .facebook { background-position: -6% 0;}
+    .twitter {background-position: 101% 0;}
+    .pinterest {background-position: 48% 0;}
+
+}
