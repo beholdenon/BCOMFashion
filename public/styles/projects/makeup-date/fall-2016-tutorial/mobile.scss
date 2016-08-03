@@ -23,6 +23,10 @@ $mauve: #c91042;
 	text-transform: uppercase;
 }
 
+h1, h2, h3, h4, h5, h6 {
+	font-family: "Montserrat", Arial;
+}
+
 section a:link,
 section a:visited,
 section a:active {
@@ -76,6 +80,7 @@ section a:active {
 	ul li {
 		line-height: 12vw;
 		border-bottom: 1px solid #444;
+		font-weight: 700;
 	}
 
 	ul {
@@ -352,7 +357,7 @@ section a:active {
 		position: absolute;
 		width: 90%;
 		left: 5%;
-		top: 2vw;
+		top: 4vw;
 		text-align: center;
 		cursor: default;
 
@@ -397,6 +402,7 @@ section a:active {
 		font-size: inherit;
 		font-size: 1.65em;
 		margin-bottom: 1em;
+		font-weight: 400;
 	}
 
 	p,
