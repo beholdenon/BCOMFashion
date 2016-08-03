@@ -212,8 +212,9 @@ section a:active {
 
 #dynamicPROs {
 	font-size: 14px;
-	padding: 1.5em 0;
 	position: relative;
+	overflow: hidden;
+	transition: 1s;
 
 	h3,
 	p {
@@ -222,6 +223,12 @@ section a:active {
 		padding: 0;
 		text-transform: uppercase;
 	}
+
+	h3 {
+		margin-top: 1.5em;
+	}
+
+
 
 	.loader {
 		position: relative;
@@ -237,7 +244,7 @@ section a:active {
 	list-style-type: none;
 	width: 70%;
 	overflow: hidden;
-	margin: 2em auto 0;
+	margin: 2em auto 1.5em;
 	text-align: center;
 	
 	.shopContainer {
