@@ -189,6 +189,17 @@ $(document).ready(function() {
 		APP.coremetrics('Element', APP.cm.category, $(this).attr("data-element") );
 	});
 
+	$(".videoShop").on("click", ".shopContainer li", function (e) {
+		var product = removeDiacritics( $(this).find(".name").text() ).trim().replace(/\&|\+/g, '').replace(/\s+/g, '-'),
+			parent = $(this).parents("section");
+
+		console.log("test");
+
+		APP.coremetrics('Element', APP.cm.category, (parent.attr("data-pageView") + "_products-" + product ).slice(0, 50) );
+		e.preventDefault();
+
+	});
+
 	$("#samples .sample").on("click", function () {
 		var prodName = $(this).find(".name").text().replace(/\&|\+/g, '').replace(/\s+/g, '-');
 		APP.coremetrics('Element', APP.cm.category, "mbl:exclusive-gift_".concat( removeDiacritics( prodName ) ).slice(0, 50) );
