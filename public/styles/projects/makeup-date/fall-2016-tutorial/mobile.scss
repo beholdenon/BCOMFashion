@@ -308,13 +308,20 @@ section a:active {
 			line-height: 1.6em;
 			display: block;
 			margin-bottom: 0.25em;
-			padding: 0.5em;
+			padding: 0.5em 0;
 			font-weight: 700;
 		}
 	}
 
+
+	#prep,
+	#shade,
+	#make-it-last {
+		display: block;
+	}	
+
 	#prep {
-		min-height: 50vh;
+		min-height: 110vw;
 
 		.absolute {
 			top: 6vw;
@@ -324,7 +331,7 @@ section a:active {
 	}
 
 	#shade {
-		min-height: 50vh;
+		min-height: 110vw;
 
 		.absolute {
 			top: 3vw;
@@ -333,7 +340,7 @@ section a:active {
 	}
 
 	#make-it-last {
-		min-height: 50vh;
+		min-height: 110vw;
 
 		.absolute {
 			top: 0; 
@@ -508,7 +515,7 @@ section a:active {
 
 		.loyallist {
 			position: absolute;
-			top: 14vw;
+			top: 5vw;
 			background-color: #453894;
 			height: 35vw;
 			width: 35vw;
