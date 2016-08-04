@@ -88,6 +88,8 @@
     // Custom Gloals
         "globals"       : {         // additional predefined global variables
             "angular"  : true,
+            "createjs"  : true,
+            "lazySizesConfig"  : true,
             "define"   : false
         }        
 }

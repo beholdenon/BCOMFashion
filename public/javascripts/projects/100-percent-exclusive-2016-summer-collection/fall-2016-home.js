@@ -5,6 +5,7 @@ $( window ).load(function() {
 
 	'use strict';
 
+	$.fn.coreTag('Pageview', 'fall16_100percent--lookbook-home');
 
 	$('.svg_bg_animate').each(function() {
 		$(this).data('initPositionTop', parseFloat($(this).css('top'), 10)  );
@@ -17,9 +18,6 @@ $( window ).load(function() {
 				'top':(  ( $(window).scrollTop() - $(this).parent().offset().top ) / (2+index%5) + $(this).data('initPositionTop')+100  )+'px'
 			});
 		});
-
-
-
 
 		if ($('#row_machael').isVisible()) {
 
@@ -45,19 +43,8 @@ $( window ).load(function() {
 				'top':(850)+'px',
 			});
 		}
-
-
-
+		
 	});
-
-
-
-    // function trace (log) {
-    //     if (window.location.href.indexOf('fashion.bloomingdales.com') < 0) {
-    //         window.console.info(log);
-    //     }
-    // }
-
-    
+   
 });
 

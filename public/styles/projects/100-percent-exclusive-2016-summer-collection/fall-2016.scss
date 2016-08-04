@@ -537,6 +537,7 @@
     left: 660px;
     width: 310px;
     transform: rotate(0deg);
+    z-index: 1;
 }
 
 
@@ -1462,6 +1463,10 @@
     border: .15rem black solid;
     line-height: 1.5rem;
     margin-bottom: 1rem;
+}
+
+.backToTop{
+    cursor: pointer;
 }
 
 

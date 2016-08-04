@@ -5,10 +5,20 @@ $( window ).load(function() {
 
 	'use strict';
 
+	$.fn.coreTag('Pageview', 'fall16_100percent--lookbook-women');
 
 	$('.svg_bg_animate').each(function() {
 		$(this).data('initPositionTop', parseFloat($(this).css('top'), 10)  );
 	});
+
+	$('.backToTop').on('click', function(event){
+		event.preventDefault();
+		$('body,html').animate({
+			scrollTop: 0 ,
+		 	}, 700
+		);
+	});
+
 
 	$(window).scroll(function(){
 
@@ -134,21 +144,8 @@ $( window ).load(function() {
 			});
 		}
 
-
-
-
-
-
 	});
 
-
-
-    // function trace (log) {
-    //     if (window.location.href.indexOf('fashion.bloomingdales.com') < 0) {
-    //         window.console.info(log);
-    //     }
-    // }
-
-    
+   
 });
 
