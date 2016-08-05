@@ -10,12 +10,12 @@ $(document).ready( function($) {
     lazySizesConfig.expand = 1000;
 
 	var social = {
-		facebookTitle: '100% BLOOMINGDALE\'S',
-		facebookDescription: '100% Bloomingdale\'s is back with a whole new series of designer capsule collections: 1000 exclusives. 100 designers. 1 store.',
-		facebookImageFileName: 'S16_100Percent_FB.jpg',
-		twitterTitle: '100% Bloomingdale’s is back with a new series of designer capsule collections: 1000 exclusives. 100 designers. 1 store. http://fashion.bloomingdales.com/100-percent-2016/',
-		pinterestTitle: '100% Bloomingdale\'s is back with a whole new series of designer capsule collections: 1000 exclusives. 100 designers. 1 store.',
-		pinterestImageFileName: 'S16_100Percent_Pinterest.jpg',
+		facebookTitle: '100% Bloomingdale\'s | bloomingdales.com',
+		facebookDescription: 'The fall collections are here! Don\'t miss any of these utterly unique, extremely exclusive designer collaborations.',
+		facebookImageFileName: 'F16_100Percent_Facebook.jpg',
+		twitterTitle: 'The 100% Bloomingdale\'s fall collections are here! Don\'t miss any of these exclusive designer collaborations! http://fashion.bloomingdales.com/2016-fall-campaign-100-percent-exclusive/',
+		pinterestTitle: '100% Bloomingdale\'s',
+		pinterestImageFileName: 'F16_100Percent_Pinterest.jpg',
 		facebookURL: null,
 		twitterURL: null,
 		pinterestURL: null    
@@ -23,7 +23,7 @@ $(document).ready( function($) {
 	
 	function socialSetup () {
         var baseURL = 'http://' + window.location.host + window.location.pathname,
-            baseURLAssets = 'http://' + window.location.host + '/fashion/images/projects/100-percent/';
+            baseURLAssets = 'http://' + window.location.host + '/fashion/images/projects/100-percent-exclusive-2016-summer-collection/';
 
         var facebookURL = 'https://www.facebook.com/dialog/feed';
         facebookURL += '?app_id=145634995501895';
@@ -77,6 +77,7 @@ $(document).ready( function($) {
 //===============================================================================================================//
 //===============================================================================================================//
 //===============================================================================================================//
+
 
 
 	$( window ).on('resize',function() {
