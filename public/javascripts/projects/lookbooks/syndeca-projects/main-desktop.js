@@ -11,6 +11,9 @@ window.SYNDECA.vertical = (function(window, document, $) {
     });
 
     $(window).load(function() {
+		    	
+        window.BLOOMIES.coremetrics.cmCreatePageviewTag('SyndecaLookBook', 'SyndecaLookBook');
+
     	var syndecaWrapper = $('#syndeca'),
     		syndecaHeight = syndecaWrapper.height();
 
