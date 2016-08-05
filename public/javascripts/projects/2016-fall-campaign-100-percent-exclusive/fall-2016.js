@@ -79,7 +79,14 @@ $(document).ready( function($) {
 //===============================================================================================================//
 
 
-
+    $('.backToTop').on('click', function(event){
+        event.preventDefault();
+        $('body,html').animate({
+            scrollTop: 0 ,
+            }, 700
+        );
+    });
+    
 	$( window ).on('resize',function() {
 		$('.nav_b').css({
 			'left':$('#hambuger').offset().left,

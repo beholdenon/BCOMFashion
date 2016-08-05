@@ -2,6 +2,54 @@
 @import 'foundation/_settings';
 @import 'foundation';
 
+//=================================================================//
+//GREG 
+//=================================================================//
+
+#row_greg_top{
+    background-color:#f9f8f7;
+}
+.greg_bigtitle p{
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: 3.5rem;
+}
+.greg_title p{
+    font-family: 'Lato', serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    letter-spacing: .2rem;
+    text-transform: uppercase;    
+}
+.greg_description p{
+    font-family: 'Lato', serif;
+    max-width: 890px;
+    margin: auto;
+    font-size: .9rem;
+    line-height: 2rem;
+}
+.greg_product_row div p {
+    font-size: 1rem;
+    text-transform: uppercase;
+    text-align: left;
+    line-height: 1rem;
+    padding-left: .5rem;
+}
+
+@media screen and (max-width: 850px) {
+    .greg_product_row div p {
+        font-size: 1rem;
+        text-transform: uppercase;
+        text-align: center;
+        line-height: 1rem;
+        padding-left: 0;
+    }
+}
+
+//=================================================================//
+//GREG 
+//=================================================================//
+
 
 //=================================================================//
 //VIDEO PAGE 
@@ -100,7 +148,7 @@
         color: #0575a9;
         max-width: 450px;
     }
-    .landing_description4{
+    .landing_description4 a{
         font-family: 'Libre Baskerville', serif;
         font-size: 1.5rem;
         text-transform: uppercase;
@@ -156,6 +204,13 @@
     vertical-align: middle;
 }
 .landing_title{
+    font-family: 'Libre Baskerville', serif;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+    padding-top: 1rem;
+}
+.landing_title a{
     font-family: 'Libre Baskerville', serif;
     font-size: 1.5rem;
     text-transform: uppercase;
@@ -1357,6 +1412,11 @@
 }
 
 
+@media screen and (max-width: 850px) {
+    .svg_class{
+        z-index: -1 !important;
+    }
+}
 
 
 
@@ -1691,9 +1751,6 @@ body #bl_main_container{
         padding-left:8.35%;
     }
 
-    .svg_class{
-        z-index: -1 !important;
-    }
 
     #nav_close_button {
         position:relative;
@@ -1720,6 +1777,7 @@ body #bl_main_container{
 
 
 }
+
 //=================================================================//
 //NAV
 //=================================================================//

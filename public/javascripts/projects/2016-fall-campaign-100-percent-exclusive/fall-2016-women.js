@@ -11,14 +11,6 @@ $( window ).load(function() {
 		$(this).data('initPositionTop', parseFloat($(this).css('top'), 10)  );
 	});
 
-	$('.backToTop').on('click', function(event){
-		event.preventDefault();
-		$('body,html').animate({
-			scrollTop: 0 ,
-		 	}, 700
-		);
-	});
-
 
 	$(window).scroll(function(){
 
