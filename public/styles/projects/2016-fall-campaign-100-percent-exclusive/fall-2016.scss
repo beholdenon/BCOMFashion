@@ -1415,6 +1415,7 @@
 @media screen and (max-width: 850px) {
     .svg_class{
         z-index: -1 !important;
+        display: none;
     }
 }
 
@@ -1446,6 +1447,10 @@
 //=================================================================//
 //LOOKBOOKS
 //=================================================================//
+
+.bottom_blue_bg{
+    background-color:#0072bc !important;
+}
 
 .align_left{
     text-align: left;
