@@ -69,7 +69,7 @@ var APP = {
 			// build HTML in SHOP THE LOOK section
 			$.each( products, function(i, value) {
 				if ( APP.markup[Math.floor(i/5)] === undefined ) APP.markup[Math.floor(i/5)] = [];
-				var li = "<li class='prod-"+i+"'><a href='"+value.productDetails.summary.productURL+"'><img src='"+baseImgURL+value.productDetails.primaryImage.imagename+"'><p class='brand'>"+value.productDetails.summary.brand+"</p><p class='name'>"+value.productDetails.summary.name.replace(value.productDetails.summary.brand, '')+"</p></li>";
+				var li = "<li class='prod-"+i+"'><a target='_blank' href='"+value.productDetails.summary.productURL+"'><img src='"+baseImgURL+value.productDetails.primaryImage.imagename+"'><p class='brand'>"+value.productDetails.summary.brand+"</p><p class='name'>"+value.productDetails.summary.name.replace(value.productDetails.summary.brand, '')+"</p></li>";
 				APP.markup[Math.floor(i/5)].push(li);
 			});
 
@@ -215,7 +215,7 @@ $(document).ready(function() {
 
 	$("#dynamicPROs").on("click", "li", function() {
 		var prodName = $(this).parents("#dynamicPROs").find(".pagn .cur").text() + $(this).find(".name").text().replace(/\&|\+/g, '').replace(/\s+/g, '-');
-		APP.coremetrics('Element', APP.cm.category, ("videos_products-" + removeDiacritics( prodName ).slice(0, 50) ) );
+		APP.coremetrics('Element', APP.cm.category, "videos_products-".concat( removeDiacritics( prodName ) ).slice(0, 50) ) );
 	});
 
 	$("#makeupVideo").on('ended',function() {
