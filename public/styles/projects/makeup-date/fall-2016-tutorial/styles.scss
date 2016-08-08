@@ -163,9 +163,10 @@ section a:active {
 
 	p {
 		font-size: 0.9em;
-		margin: 0;
+		margin: 0 auto;
 		padding: 0;
 		line-height: 2em;
+		max-width: 1024px;
 	}
 }
 
@@ -174,7 +175,7 @@ section a:active {
 	padding-bottom: 4em;
 
 	video {
-		width: 72%;
+		width: 74%;
 		background-color: #e2e2e2;
 		display: inline-block;
 	}
@@ -186,7 +187,7 @@ section a:active {
 	.playlist {
 		vertical-align: top;
 		text-transform: uppercase;
-		width: 16%;
+		width: 22%;
 		margin-left: 2.5%;
 		display: inline-block;
 
@@ -201,6 +202,7 @@ section a:active {
 			margin: 0;
 			padding: 0;
 			text-decoration: underline;
+			font-size: 0.9vw;
 		}
 
 		img {
@@ -322,8 +324,8 @@ section a:active {
 	    width: 5vw;
 	    height: 5vw;
 	    position: absolute;
-	    top: -5%;
-	    left: 5%;
+	    top: -4%;
+	    left: 4%;
 	    z-index: 11;
 	}
 
@@ -344,8 +346,8 @@ section a:active {
 		width: 5vw;
 		height: 5vw;
 		position: absolute;
-		top: 5%;
-		left: -5%;
+		top: 4%;
+		left: -4%;
 		z-index: 11;
 	}
 }
@@ -392,7 +394,7 @@ section a:active {
 		h4 {
 			text-transform: uppercase;
 			color: #ffffff;
-			font-size: 1.5em;
+			font-size: 1.8em;
 			font-weight: 300;
 		}
 
@@ -408,6 +410,7 @@ section a:active {
 			display: inline-block;
 			padding: 1em 0;
 			font-weight: 700;
+			font-size: 1.1em;
 
 			&:nth-child(2n-1) {
 				margin-right: 3.5em;
@@ -699,9 +702,9 @@ section a:active {
 		}
 
 		.copy {
-			font-size: 1.6em;
+			font-size: 1.35em;
 			padding: 0;
-			margin: 0;
+			margin: 0 auto;
 		}
 
 		.legal a {
