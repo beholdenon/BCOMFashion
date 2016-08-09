@@ -1740,6 +1740,8 @@ body #bl_main_container{
     width: auto;
     min-height: none;
     text-align: center;
+    
+    overflow-x:hidden;
 
 }
 
@@ -1747,15 +1749,6 @@ body #bl_main_container{
     position:absolute;
     z-index: -1;
     display: none;
-}
-
-
-
-
-@media screen and (max-width: 850px) {
-    body #bl_main_container{
-        overflow-x:hidden;
-    }
 }
 
 //=================================================================//
