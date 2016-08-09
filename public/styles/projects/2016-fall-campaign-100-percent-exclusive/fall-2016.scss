@@ -2,6 +2,61 @@
 @import 'foundation/_settings';
 @import 'foundation';
 
+
+
+
+//=================================================================//
+//LANGUAGE 
+//=================================================================//
+
+.language_bigtitle p{
+    font-family: 'Lato', serif;
+    font-size: 1.5rem;
+}
+.language_description p{
+    font-family: 'Lato', serif;
+    font-size: 1rem;
+    max-width: 600px;
+    margin: auto;
+}
+
+
+
+.language_letter_svg img {
+    width:100%;
+}
+
+.language_letter_title p {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    text-transform: uppercase;
+    line-height: 1rem;
+    padding-left: .5rem;
+}
+
+.language_letter_pronunciation img {
+    width:50%;
+}
+
+.language_letter_description p {
+    font-size: 1rem;
+    line-height: 1rem;
+    padding-left: .5rem;
+}
+
+.letter_a{
+    background-color:#fbc8b4;
+}
+.letter_b{
+    background-color:#fff4d5;
+}
+
+
+
+//=================================================================//
+//LANGUAGE 
+//=================================================================//
+
 //=================================================================//
 //GREG 
 //=================================================================//
@@ -241,7 +296,6 @@
     z-index: -1;
     transition: all 2s !important;
 }
-
 
 #row_header_svg1{
     top: -250px;
@@ -1412,10 +1466,119 @@
 }
 
 
+
+
+
+
+#greg_product_row_svg1{
+    top: 71px;
+    right: 0px;
+    width: 165px;
+    transform: rotate(-21deg);
+    z-index:1;
+}
+#greg_product_row_svg2{
+    top: 340px;
+    left: 75px;
+    width: 140px;
+    transform: rotate(9deg);
+    z-index:1;
+}
+#greg_product_row_svg3{
+    top: 550px;
+    right: 0px;
+    width: 174px;
+    transform: rotate(-5deg);
+    z-index:1;
+}
+#greg_product_row_svg4{
+    top: 920px;
+    left: 19px;
+    width: 145px;
+    transform: rotate(-28deg);
+    z-index:1;
+}
+#greg_product_row_svg5{
+    top: 1347px;
+    left: 77px;
+    width: 103px;
+    transform: rotate(20deg);
+    z-index:1;
+}
+#greg_product_row_svg6{
+    top: 1676px;
+    left: 106px;
+    width: 103px;
+    transform: rotate(-5deg);
+    z-index:1;
+}
+#greg_product_row_svg7{
+    top: 1892px;
+    right: 0px;
+    width: 153px;
+    transform: rotate(0deg);
+    z-index:1;
+}
+#greg_product_row_svg8{
+    top: 2070px;
+    right: -30px;
+    width: 105px;
+    transform: rotate(-6deg);
+    z-index:1;
+}
+#greg_product_row_svg9{
+    top: 1759px;
+    left: 82px;
+    width: 135px;
+    transform: rotate(-6deg);
+    z-index:1;
+}
+#greg_product_row_svg10{
+    top: 2240px;
+    right: 40px;
+    width: 105px;
+    transform: rotate(15deg);
+    z-index:1;
+}
+#greg_product_row_svg11{
+    top: 2320px;
+    right: -90px;
+    width: 225px;
+    transform: rotate(-9deg);
+    z-index:1;
+}
+#greg_product_row_svg12{
+    top: 2110px;
+    left: 67px;
+    width: 115px;
+    transform: rotate(0deg);
+    z-index:1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media screen and (max-width: 850px) {
     .svg_class{
         z-index: -1 !important;
-        display: none;
+        // display: none;
     }
 }
 
@@ -1492,7 +1655,7 @@
     font-size: 15px;
     letter-spacing: 2px;
     font-family: 'Lato', sans-serif;
-    padding: 33px 0 0 0;
+    padding: 23px 0 0 0;
     margin: 0 0 2.3rem 1.3rem !important;
     color: #ffebdb;
     background-color: #262636;
@@ -1502,18 +1665,30 @@
 }
 
 .bottom_exclusives{
+/*
     position: relative;
-    top: 2.3rem;
+    top: 2.3vh;
     color: #ffebdb;
     background-color: #262636;
     padding: 2vw 4vw 2vw 4vw;
     line-height: 1rem;
     width: 50%;
-    height: 2rem;
+    height: 2vh;
     min-width: 310px;
     margin: 0 auto;
     display: table;
     vertical-align: middle;
+    letter-spacing: .15vw;
+    z-index: 3;
+*/
+    position: relative;
+    top: 1.9vw;
+    color: #ffebdb;
+    background-color: #262636;
+    padding: 2vw 4vw 2vw 4vw;
+    width: 50%;
+    min-width: 310px;
+    margin: 0 auto;
     letter-spacing: .15vw;
     z-index: 3;
 }
@@ -1573,6 +1748,16 @@ body #bl_main_container{
     z-index: -1;
     display: none;
 }
+
+
+
+
+@media screen and (max-width: 850px) {
+    body #bl_main_container{
+        overflow-x:hidden;
+    }
+}
+
 //=================================================================//
 //MAIN
 //=================================================================//
