@@ -215,7 +215,7 @@ $(document).ready(function() {
 
 	$("#dynamicPROs").on("click", "li", function() {
 		var prodName = $(this).parents("#dynamicPROs").find(".pagn .cur").text() + $(this).find(".name").text().replace(/\&|\+/g, '').replace(/\s+/g, '-');
-		APP.coremetrics('Element', APP.cm.category, "videos_products-".concat( removeDiacritics( prodName ) ).slice(0, 50) ) );
+		APP.coremetrics('Element', APP.cm.category, "videos_products-".concat( removeDiacritics( prodName ) ).slice(0, 50) );
 	});
 
 	$("#makeupVideo").on('ended',function() {
