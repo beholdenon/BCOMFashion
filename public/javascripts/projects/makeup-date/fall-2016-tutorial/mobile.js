@@ -193,11 +193,7 @@ $(document).ready(function() {
 		var product = removeDiacritics( $(this).find(".name").text() ).trim().replace(/\&|\+/g, '').replace(/\s+/g, '-'),
 			parent = $(this).parents("section");
 
-		console.log("test");
-
 		APP.coremetrics('Element', APP.cm.category, (parent.attr("data-pageView") + "_products-" + product ).slice(0, 50) );
-		e.preventDefault();
-
 	});
 
 	$("#samples .sample").on("click", function () {
