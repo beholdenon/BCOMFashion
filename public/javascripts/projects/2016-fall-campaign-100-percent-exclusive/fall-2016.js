@@ -6,8 +6,6 @@ $(document).ready( function($) {
 
 	'use strict';
 
-    window.lazySizesConfig = window.lazySizesConfig || {};
-    lazySizesConfig.expand = 1000;
 
 	var social = {
 		facebookTitle: '100% Bloomingdale\'s | bloomingdales.com',
@@ -48,10 +46,15 @@ $(document).ready( function($) {
 
     }
 
+
+    window.lazySizesConfig = window.lazySizesConfig || {};
+    lazySizesConfig.expand = 1000;
+    
 	//refresh page after each element is loaded to reset element height if needed.
 	$(document).on('lazybeforeunveil', function(){
 		$(window).trigger('resize');
 	});
+
 
 	var ismobile = (mobileAndTabletcheck() ? "mbl:" : "");
     $(document).foundation();

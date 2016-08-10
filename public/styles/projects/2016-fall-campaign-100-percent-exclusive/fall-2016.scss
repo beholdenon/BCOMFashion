@@ -12,44 +12,177 @@
 .language_bigtitle p{
     font-family: 'Lato', serif;
     font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: .5rem;
 }
 .language_description p{
     font-family: 'Lato', serif;
-    font-size: 1rem;
-    max-width: 600px;
+    font-size: 1.3rem;
+    max-width: 830px;
     margin: auto;
+    letter-spacing: .05rem;
+    line-height: 2.5rem;
+}
+
+.language_explore p{
+    font-size: 1.1rem;
+    letter-spacing: .4rem;
+    font-family: 'Lato', sans-serif;
+    color: #2d2d2d;
+    cursor: pointer;
+    border: 1px black solid;
+    margin: auto;
+    padding: 1rem 1.8rem;
+    display: table;
+    background-color: white;
 }
 
 
-
 .language_letter_svg img {
-    width:100%;
+    width:85%;
 }
 
 .language_letter_title p {
     font-family: 'Playfair Display', serif;
-    font-size: 1rem;
-    text-transform: uppercase;
-    line-height: 1rem;
-    padding-left: .5rem;
+    font-size: 2rem;
+    position: relative;
+    top: -10vh;
 }
 
 .language_letter_pronunciation img {
-    width:50%;
+    position: relative;
+    top: -10vh;
 }
 
 .language_letter_description p {
-    font-size: 1rem;
-    line-height: 1rem;
-    padding-left: .5rem;
+    font-family: 'Lato', serif;
+    font-size: 1.3rem;
+    max-width: 540px;
+    margin: auto;
+    letter-spacing: .05rem;
+    line-height: 2.1rem;
+    font-weight: 300;
+    position: relative;
+    top: -8vh;
 }
 
 .letter_a{
+    color: #e93e35;
     background-color:#fbc8b4;
 }
 .letter_b{
+    color: #0575a9;
     background-color:#fff4d5;
 }
+.letter_c{
+    color: #e93e35;
+    background-color:#faf297;
+}
+.letter_d{
+    color: #fff200;
+    background-color:#00bce4;
+}
+.letter_e{
+    color: #ec008c;
+    background-color:#eed5e7;
+}
+.letter_f{
+    color: #ffffff;
+    background: #181818 url("/fashion/images/projects/2016-fall-campaign-100-percent-exclusive/language_f_bg.jpg") no-repeat; 
+    background-size: cover;
+}
+
+
+.letter_g{
+    color: #6eb43f;
+    background-color:#ebed8a;
+}
+.letter_h{
+    color: #993f98;
+    background-color:#fff4d5;
+}
+.letter_i{
+    color: #25bcd7;
+    background-color:#d8eee7;
+}
+.letter_j{
+    color: #933c06;
+    background-color:#eed5e7;
+}
+.letter_k{
+    color: #00bce4;
+    background: #181818 url("/fashion/images/projects/2016-fall-campaign-100-percent-exclusive/language_k_bg.jpg") no-repeat; 
+    background-size: cover;
+}
+.letter_l{
+    color: #c2a303;
+    background-color:#f7f0b5;
+}
+.letter_m{
+    color: #008676;
+    background-color:#d8eee7;
+}
+.letter_n{
+    color: #ee6f31;
+    background-color:#fff4d5;
+}
+.letter_o{
+    color: #7c6aa8;
+    background-color:#faf297;
+}
+.letter_p{
+    color: #624099;
+    background-color:#7ad3f7;
+}
+.letter_q{
+    color: #00bce4;
+    background: #181818 url("/fashion/images/projects/2016-fall-campaign-100-percent-exclusive/language_q_bg.jpg") no-repeat; 
+    background-size: cover;
+}
+.letter_r{
+    color: #008676;
+    background-color:#b6e1de;
+}
+.letter_s{
+    color: #0072bc;
+    background-color:#ffdb77;
+}
+.letter_t{
+    color: #6eb43f;
+    background-color:#ffefbc;
+}
+.letter_u{
+    color: #d1372c;
+    background-color:#ff937a;
+}
+.letter_v{
+    color: #cc97c4;
+    background: #181818 url("/fashion/images/projects/2016-fall-campaign-100-percent-exclusive/language_v_bg.jpg") no-repeat; 
+    background-size: cover;
+}
+.letter_w{
+    color: #008f4c;
+    background-color:#ebed8a;
+}
+.letter_x{
+    color: #b50937;
+    background-color:#fff4d5;
+}
+.letter_y{
+    color: #f36f21;
+    background-color:#ffc5b8;
+}
+.letter_z{
+    color: #624099;
+    background-color:#f9cbdf;
+}
+.language_text_black{
+    color:black !important;
+}
+.language_text_white{
+    color:white !important;
+}
+
 
 
 
@@ -160,7 +293,7 @@
     }
 
     li a {
-        padding: 16px;
+        padding: 15px;
         font-family: 'Libre Baskerville', serif;
         font-size: 1.5rem;
         text-transform: uppercase;
@@ -214,10 +347,14 @@
     }
 }
 #row_landing_sarah{
-    background-color: #ededed;
+    background-color: #000000;
+    color:white;
     .landing_description{
         max-width: 400px;
     }
+    .landing_title a{
+        color:white;
+    }    
 }
 #row_landing_behindscene{
     background-color: #21284f;
@@ -1560,7 +1697,61 @@
 
 
 
+#howtospeak_svg1{
+    top: -63px;
+    left: 330px;
+    width: 165px;
+    transform: rotate(-5deg);
+}
+#howtospeak_svg2{
+    top: 140px;
+    left: 590px;
+    width: 65px;
+    transform: rotate(0deg);
+}
+#howtospeak_svg3{
+    top: 190px;
+    left: 205px;
+    width: 135px;
+    transform: rotate(-14deg);
+}
+#howtospeak_svg4{
+    top: 340px;
+    left: 260px;
+    width: 195px;
+    transform: rotate(4deg);
+}
+#howtospeak_svg5{
+    top: 633px;
+    left: 230px;
+    width: 105px;
+    transform: rotate(-6deg);
+}
 
+#howtospeak_svg6{
+    top: 40px;
+    right: 400px;
+    width: 125px;
+    transform: rotate(-4deg);   
+}
+#howtospeak_svg7{
+    top: 10px;
+    right: 130px;
+    width: 255px;
+    transform: rotate(21deg);
+}
+#howtospeak_svg8{
+    top: 300px;
+    right: 300px;
+    width: 55px;
+    transform: rotate(0deg);
+}
+#howtospeak_svg9{
+    top: 470px;
+    right: 140px;
+    width: 305px;
+    transform: rotate(14deg);
+}
 
 
 
@@ -1806,7 +1997,9 @@ body #bl_main_container{
 .nav_b{
     position: fixed;
     z-index: 12;
-    left:-100px;
+    left:20px;
+    bottom:-100px;
+    transition: all 0.3s;
 }
 
 

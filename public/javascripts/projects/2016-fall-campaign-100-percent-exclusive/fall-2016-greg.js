@@ -19,7 +19,6 @@ $( window ).load(function() {
 		);
 	});
 
-
 	$(window).scroll(function(){
 
 		$('.svg_bg_animate').each(function(index) {
