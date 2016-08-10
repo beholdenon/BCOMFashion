@@ -189,7 +189,7 @@ $(document).ready(function() {
 		APP.coremetrics('Element', APP.cm.category, $(this).attr("data-element") );
 	});
 
-	$(".videoShop").on("click", ".shopContainer li", function (e) {
+	$(".videoShop").on("click", ".shopContainer li", function () {
 		var product = removeDiacritics( $(this).find(".name").text() ).trim().replace(/\&|\+/g, '').replace(/\s+/g, '-'),
 			parent = $(this).parents("section");
 

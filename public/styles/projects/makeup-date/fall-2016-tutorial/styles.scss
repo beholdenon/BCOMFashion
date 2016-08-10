@@ -171,6 +171,14 @@ section a:active {
 }
 
 #videoBox {
+	position: relative;
+
+	#videoLoading {
+		display: none;
+		position: absolute;
+		top: 30%;
+		left: 30%;
+	}
 
 	padding-bottom: 4em;
 
