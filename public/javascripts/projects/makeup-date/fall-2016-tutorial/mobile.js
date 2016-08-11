@@ -201,18 +201,18 @@ $(document).ready(function() {
 		APP.coremetrics('Element', APP.cm.category, "mbl:exclusive-gift_".concat( removeDiacritics( prodName ) ).slice(0, 50) );
 	});
 
-    $("#makeupVideo").on('ended',function() {
+    $(".video").on('ended',function() {
 		var vid = "-_--_--_--_--_--_--_--_--_--_--_--_--_--_--_-3-_-"+Math.round($(this)[0].duration);
         APP.coremetrics('Element', APP.cm.category, $(this).attr("data-name"), vid);
     });
 
-    $("#makeupVideo").on("play", function () {
+    $(".video").on("play", function () {
     	var vid = "-_--_--_--_--_--_--_--_--_--_--_--_--_--_--_-1-_-"+Math.round($(this)[0].duration);
     	APP.coremetrics('Element', APP.cm.category, $(this).attr("data-name"), vid);
     });
 
-    $("#makeupVideo").on("pause", function () {
-    	if ( $("#makeupVideo").get(0).ended !== true ) {
+    $(".video").on("pause", function () {
+    	if ( $(this).get(0).ended !== true ) {
     		var vid = "-_--_--_--_--_--_--_--_--_--_--_--_--_--_--_-2-_-"+Math.round($(this)[0].duration);
     		APP.coremetrics('Element', APP.cm.category, $(this).attr("data-name"), vid);
     	}
