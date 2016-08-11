@@ -19,7 +19,11 @@ $( window ).load(function() {
 				'top':(  ( $(window).scrollTop() - $(this).parent().offset().top ) / (2+(index%5)*1.5 ) + $(this).data('initPositionTop')+100  )+'px'
 			});
 		});
-
+		$('.svg_bg_animate').not('#row_odell_svg1, #row_varvatos_svg4, #row_canali_svg4, #row_kooples_men_svg2, #row_polo_svg2, #row_eleventy_svg7').each(function() {
+			$(this).css({
+				'opacity': 1-Math.abs( ($(window).scrollTop() - $(this).parent().offset().top)+100 )/500  
+			});
+		});		
 
 		if ($('#row_odell').isVisible()) {
 

@@ -5,7 +5,7 @@ $( window ).load(function() {
 
 	'use strict';
 
-	$.fn.coreTag('Pageview', 'fall16_100percent--greg');
+	$.fn.coreTag('Pageview', 'fall16_100percent--behind-the-scenes');
 
 	$('.svg_bg_animate').each(function() {
 		$(this).data('initPositionTop', parseFloat($(this).css('top'), 10)  );

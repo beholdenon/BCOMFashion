@@ -19,6 +19,13 @@ $( window ).load(function() {
 				'top':(  ( $(window).scrollTop() - $(this).parent().offset().top ) / (2+index%5) + $(this).data('initPositionTop')+100  )+'px'
 			});
 		});
+		$('.svg_bg_animate').not('#row_header_svg1, #row_aqua_svg2, #row_whistles_svg5, #row_tory_svg2,#row_kooples_svg6, #row_theory_svg5, #row_burberry_svg3,#row_salvatore_svg5, #row_wang_svg3, #row_alice_svg5, #row_karen_svg1').each(function() {
+			$(this).css({
+				'opacity': 1-Math.abs( ($(window).scrollTop() - $(this).parent().offset().top)+100 )/500  
+			});
+		});
+
+
 
 
 		if ($('#row_header').isVisible()) {

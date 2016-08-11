@@ -5,7 +5,7 @@ $( window ).load(function() {
 
 	'use strict';
 
-	$.fn.coreTag('Pageview', 'fall16_100percent--language');
+	$.fn.coreTag('Pageview', 'fall16_100percent--ABC');
 
 
 	$('.svg_bg_animate').each(function() {
@@ -28,7 +28,7 @@ $( window ).load(function() {
 		);
 	});
 
-	var languageSection=0;
+	var languageSection=-1;
 	var	languagePageRange=[0,
 						$('.letter_b').offset().top,
 						$('.letter_d').offset().top,
@@ -60,6 +60,7 @@ $( window ).load(function() {
 						"x",
 						"z",
 						"bottom"];
+	getSection($(window).scrollTop());
 
 	$(window).scroll(function(){
 
@@ -94,7 +95,7 @@ $( window ).load(function() {
 			if( topvalue>=languagePageRange[i] && topvalue<languagePageRange[i+1] ){
 				if(languageSection!==i){
 					languageSection=i;
-					$.fn.coreTag('Pageview', 'fall16_100percent--section-'+languagePageview[languageSection+1]);
+					$.fn.coreTag('Pageview', 'fall16_100percent--ABC_'+languagePageview[languageSection+1]);
 				}
 				return;
 			}

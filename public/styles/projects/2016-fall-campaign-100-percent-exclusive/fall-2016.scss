@@ -298,11 +298,16 @@
         font-size: 1.5rem;
         text-transform: uppercase;
         letter-spacing: .1rem;
+        color:black;
     }
 }
 
 #row_landing_howtospeak{
     background-color: #fff4d5;
+
+    .landing_title a{
+        color:black;
+    }
     .landing_description1{
         font-family: 'Lato', serif;
         font-size: 1.3rem;
@@ -336,29 +341,40 @@
         color: #0575a9;
         max-width: 450px;
     }
-    .landing_description4 a{
+    .landing_description4{
         font-family: 'Libre Baskerville', serif;
-        font-size: 1.5rem;
-        text-transform: uppercase;
-        letter-spacing: .1rem;
-        padding-top: 1rem;
-        max-width: 450px;
+        font-size: .83rem;
+        line-height: 2rem;
+        letter-spacing: .05rem;
         margin: auto;
+        max-width: 58%;
+        padding-bottom: 1.2rem;
+        max-width: 500px;
     }
+ 
 }
 #row_landing_sarah{
     background-color: #000000;
     color:white;
+
+    .landing_title a{
+        color:white;
+    }
     .landing_description{
         max-width: 400px;
     }
-    .landing_title a{
-        color:white;
-    }    
+    .landing_title{
+        max-width: 470px;
+        margin:auto;
+    }
+
 }
 #row_landing_behindscene{
     background-color: #21284f;
     color:#ffd3f0;
+    .landing_title a{
+        color:#ffd3f0;
+    }    
     .landing_description{
         max-width: 600px;
     }
@@ -366,21 +382,28 @@
 #row_landing_odell{
     background-color: #84817e;
     color:white;
+
+    .landing_title a{
+        color:white;
+    }    
     .landing_description{
         max-width: 600px;
     }
 }
 #row_landing_chic{
     background-color: #fff4d5;
+    .landing_title a{
+        color:#e93e35;
+    } 
     .landing_description{
         max-width: 400px;
-    }
-    .landing_title{
-        color:#e93e35;
     }
 }
 #row_landing_fallcatalogs{
     background-color: #ececec;
+    .landing_title a{
+        color:#191919;
+    }    
     .landing_description{
         max-width: 600px;
     }
@@ -453,16 +476,17 @@
     height: 200px;
     z-index: 1;
 }
-
-
-
-#row_aqua_svg1 {
-    top: -30px;
-    left: -190px;
+#row_header_svg4 {
+    top: 600px;
+    left: -310px;
     width: 300px;
     height: 300px;
     z-index: 1;
 }
+
+
+
+
 #row_aqua_svg2{
     top: 530px;
     left: 370px;
@@ -471,9 +495,6 @@
     transform: rotate(7deg);
     -webkit-transform: rotate(7deg);
 }
-
-
-
 #row_maje_svg1{
     top: 290px;
     left: 440;

@@ -21,7 +21,7 @@ $(document).ready( function($) {
 	
 	function socialSetup () {
         var baseURL = 'http://' + window.location.host + window.location.pathname,
-            baseURLAssets = 'http://' + window.location.host + '/fashion/images/projects/100-percent-exclusive-2016-summer-collection/';
+            baseURLAssets = 'http://' + window.location.host + '/fashion/images/projects/2016-fall-campaign-100-percent-exclusive/';
 
         var facebookURL = 'https://www.facebook.com/dialog/feed';
         facebookURL += '?app_id=145634995501895';
@@ -123,12 +123,12 @@ $(document).ready( function($) {
 
 		$('#mySidenavBar').click(function(){
 			$("#mySidenav").addClass('sidenav_open');
-			$.fn.trace("sidenav_open");
+            $.fn.coreTag('Element', 'side-nav_open' );
 		});
 
 		$('#nav_close_button').click(function(){
 			$("#mySidenav").removeClass('sidenav_open');
-			$.fn.trace("sidenav_close");
+            $.fn.coreTag('Element', 'side-nav_close' );
 		});
 
 		$('#capsule_collections').on('click', function () {
