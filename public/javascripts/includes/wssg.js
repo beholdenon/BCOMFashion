@@ -177,6 +177,13 @@ var SERVICES = {
                 callback(result);
             });
         },
+
+        upcGet: function(callback, upcID ) {
+            var path = '/v4/catalog/product/upc/' + upcID + '(productdetails,upcs(upcdetails),productcategory,reviews,rebates,promotions,categoryids)?retrieveallupcs=true';
+            getRequest(path, function(result) {
+                callback(result);
+            });
+        },
     },
 
     user: {
