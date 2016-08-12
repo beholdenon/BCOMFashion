@@ -27,19 +27,22 @@
 
 @import url(https://fonts.googleapis.com/css?family=Muli:400,700|Montserrat:400,700|Hammersmith+One|Nunito:400,700|Cuprum:400,700|Raleway:100,200|Source+Code+Pro:200);
 
+
 //imported CUSTOM FONTS
 @font-face {
     font-family: "Avenir W01";
     font-style: normal;
     font-weight: 200;
-    src: url("http://fast.fonts.net/dv2/3/c4352a95-7a41-48c1-83ce-d8ffd2a3b118.woff?d44f19a684109620e484157fa790e818d6a0dc7138d0a76dcc0c1fe83ad1d594119e1e62143e61da83837e1de7e89243f469542067988d81ec557bf5669a2b5d7c687c8a44a885f3a93ce17fb0e67031f423effcee120747d724b26a704c79f089960e139fa44983f1c002b3bf9466eaa7fbbf2fcfaef345392cad6d666d196f1224ec9cd88b44424bdce665920c1dc3c256c9b721f6b2cd3ab19e73916202ed&projectId=aefa21ce-6bba-4e09-b164-6f62aa32380c") format("woff");
+//  src: url("http://fast.fonts.net/dv2/3/c4352a95-7a41-48c1-83ce-d8ffd2a3b118.woff?d44f19a684109620e484157fa790e818d6a0dc7138d0a76dcc0c1fe83ad1d594119e1e62143e61da83837e1de7e89243f469542067988d81ec557bf5669a2b5d7c687c8a44a885f3a93ce17fb0e67031f423effcee120747d724b26a704c79f089960e139fa44983f1c002b3bf9466eaa7fbbf2fcfaef345392cad6d666d196f1224ec9cd88b44424bdce665920c1dc3c256c9b721f6b2cd3ab19e73916202ed&projectId=aefa21ce-6bba-4e09-b164-6f62aa32380c") format("woff");
+    src: url("./fonts/avenir/c4352a95-7a41-48c1-83ce-d8ffd2a3b118.woff") format("woff");
 }
 
 @font-face {
     font-family: "Avenir W01";
     font-style: normal;
     font-weight: 300;
-    src: url("http://fast.fonts.net/dv2/3/939cba03-5b40-4d01-9bc5-7589eca863db.woff?d44f19a684109620e484157fa790e818d6a0dc7138d0a76dcc0c1fe83ad1d594119e1e62143e61da83837e1de7e89243f469542067988d81ec557bf5669a2b5d7c687c8a44a885f3a93ce17fb0e67031f423effcee120747d724b26a704c79f089960e139fa44983f1c002b3bf9466eaa7fbbf2fcfaef345392cad6d666d196f1224ec9cd88b44424bdce665920c1dc3c256c9b721f6b2cd3ab19e73916202ed&projectId=aefa21ce-6bba-4e09-b164-6f62aa32380c") format("woff");
+//  src: url("http://fast.fonts.net/dv2/3/939cba03-5b40-4d01-9bc5-7589eca863db.woff?d44f19a684109620e484157fa790e818d6a0dc7138d0a76dcc0c1fe83ad1d594119e1e62143e61da83837e1de7e89243f469542067988d81ec557bf5669a2b5d7c687c8a44a885f3a93ce17fb0e67031f423effcee120747d724b26a704c79f089960e139fa44983f1c002b3bf9466eaa7fbbf2fcfaef345392cad6d666d196f1224ec9cd88b44424bdce665920c1dc3c256c9b721f6b2cd3ab19e73916202ed&projectId=aefa21ce-6bba-4e09-b164-6f62aa32380c") format("woff");
+    src: url("./fonts/avenir/939cba03-5b40-4d01-9bc5-7589eca863db.woff") format("woff");
 }
 
 @font-face {
@@ -47,6 +50,7 @@
     font-style: normal;
     font-weight: 400;
     src: url("http://fast.fonts.net/dv2/3/b9ebb19d-88c1-4cbd-9baf-cf51972422ec.woff?d44f19a684109620e484157fa790e818d6a0dc7138d0a76dcc0c1fe83ad1d594119e1e62143e61da83837e1de7e89243f469542067988d81ec557bf5669a2b5d7c687c8a44a885f3a93ce17fb0e67031f423effcee120747d724b26a704c79f089960e139fa44983f1c002b3bf9466eaa7fbbf2fcfaef345392cad6d666d196f1224ec9cd88b44424bdce665920c1dc3c256c9b721f6b2cd3ab19e73916202ed&projectId=aefa21ce-6bba-4e09-b164-6f62aa32380c") format("woff");
+    src: url("./fonts/avenir/b9ebb19d-88c1-4cbd-9baf-cf51972422ec.woff") format("woff");
 }
 
 @font-face {
@@ -54,6 +58,7 @@
     font-style: normal;
     font-weight: 500;
     src: url("http://fast.fonts.net/dv2/3/2cac77ec-9bc0-4ee7-87e4-27650190744f.woff?d44f19a684109620e484157fa790e818d6a0dc7138d0a76dcc0c1fe83ad1d594119e1e62143e61da83837e1de7e89243f469542067988d81ec557bf5669a2b5d7c687c8a44a885f3a93ce17fb0e67031f423effcee120747d724b26a704c79f089960e139fa44983f1c002b3bf9466eaa7fbbf2fcfaef345392cad6d666d196f1224ec9cd88b44424bdce665920c1dc3c256c9b721f6b2cd3ab19e73916202ed&projectId=aefa21ce-6bba-4e09-b164-6f62aa32380c") format("woff");
+    src: url("./fonts/avenir/2cac77ec-9bc0-4ee7-87e4-27650190744f.woff") format("woff");
 }
 
 @font-face {
@@ -61,6 +66,7 @@
     font-style: normal;
     font-weight: 800;
     src: url("http://fast.fonts.net/dv2/3/7147ec3a-8ff8-4ec9-8c5c-bd1571dc6ae6.woff?d44f19a684109620e484157fa790e818d6a0dc7138d0a76dcc0c1fe83ad1d594119e1e62143e61da83837e1de7e89243f469542067988d81ec557bf5669a2b5d7c687c8a44a885f3a93ce17fb0e67031f423effcee120747d724b26a704c79f089960e139fa44983f1c002b3bf9466eaa7fbbf2fcfaef345392cad6d666d196f1224ec9cd88b44424bdce665920c1dc3c256c9b721f6b2cd3ab19e73916202ed&projectId=aefa21ce-6bba-4e09-b164-6f62aa32380c") format("woff");
+    src: url("./fonts/avenir/7147ec3a-8ff8-4ec9-8c5c-bd1571dc6ae6.woff") format("woff");
 }
 
 @font-face {
@@ -68,6 +74,7 @@
     font-style: normal;
     font-weight: 900;
     src: url("http://fast.fonts.net/dv2/3/5a05cf7f-f332-456f-ae67-d8c26e0d35b3.woff?d44f19a684109620e484157fa790e818d6a0dc7138d0a76dcc0c1fe83ad1d594119e1e62143e61da83837e1de7e89243f469542067988d81ec557bf5669a2b5d7c687c8a44a885f3a93ce17fb0e67031f423effcee120747d724b26a704c79f089960e139fa44983f1c002b3bf9466eaa7fbbf2fcfaef345392cad6d666d196f1224ec9cd88b44424bdce665920c1dc3c256c9b721f6b2cd3ab19e73916202ed&projectId=aefa21ce-6bba-4e09-b164-6f62aa32380c") format("woff");
+    src: url("./fonts/avenir/5a05cf7f-f332-456f-ae67-d8c26e0d35b3.woff") format("woff");
 }
 
 @font-face {
@@ -75,53 +82,47 @@
     font-style: oblique;
     font-weight: 200;
     src: url("http://fast.fonts.net/dv2/3/47fd1045-6e5b-4c87-9235-cfbc2b42cde7.woff?d44f19a684109620e484157fa790e818d6a0dc7138d0a76dcc0c1fe83ad1d594119e1e62143e61da83837e1de7e89243f469542067988d81ec557bf5669a2b5d7c687c8a44a885f3a93ce17fb0e67031f423effcee120747d724b26a704c79f089960e139fa44983f1c002b3bf9466eaa7fbbf2fcfaef345392cad6d666d196f1224ec9cd88b44424bdce665920c1dc3c256c9b721f6b2cd3ab19e73916202ed&projectId=aefa21ce-6bba-4e09-b164-6f62aa32380c") format("woff");
+    src: url("./fonts/avenir/47fd1045-6e5b-4c87-9235-cfbc2b42cde7.woff") format("woff");
 }
 
 @font-face {
     font-family: "Avenir W01";
     font-style: oblique;
     font-weight: 300;
-    src: url("http://fast.fonts.net/dv2/3/ca94ed56-18fc-4856-940a-70a072607c7c.woff?d44f19a684109620e484157fa790e818d6a0dc7138d0a76dcc0c1fe83ad1d594119e1e62143e61da83837e1de7e89243f469542067988d81ec557bf5669a2b5d7c687c8a44a885f3a93ce17fb0e67031f423effcee120747d724b26a704c79f089960e139fa44983f1c002b3bf9466eaa7fbbf2fcfaef345392cad6d666d196f1224ec9cd88b44424bdce665920c1dc3c256c9b721f6b2cd3ab19e73916202ed&projectId=aefa21ce-6bba-4e09-b164-6f62aa32380c") format("woff");
+//  src: url("http://fast.fonts.net/dv2/3/ca94ed56-18fc-4856-940a-70a072607c7c.woff?d44f19a684109620e484157fa790e818d6a0dc7138d0a76dcc0c1fe83ad1d594119e1e62143e61da83837e1de7e89243f469542067988d81ec557bf5669a2b5d7c687c8a44a885f3a93ce17fb0e67031f423effcee120747d724b26a704c79f089960e139fa44983f1c002b3bf9466eaa7fbbf2fcfaef345392cad6d666d196f1224ec9cd88b44424bdce665920c1dc3c256c9b721f6b2cd3ab19e73916202ed&projectId=aefa21ce-6bba-4e09-b164-6f62aa32380c") format("woff");
+    src: url("./fonts/avenir/ca94ed56-18fc-4856-940a-70a072607c7c.woff") format("woff");
 }
 
 @font-face {
     font-family: "Avenir W01";
     font-style: oblique;
     font-weight: 400;
-    src: url("http://fast.fonts.net/dv2/3/3695342c-b5e2-4010-b0d4-56f563465922.woff?d44f19a684109620e484157fa790e818d6a0dc7138d0a76dcc0c1fe83ad1d594119e1e62143e61da83837e1de7e89243f469542067988d81ec557bf5669a2b5d7c687c8a44a885f3a93ce17fb0e67031f423effcee120747d724b26a704c79f089960e139fa44983f1c002b3bf9466eaa7fbbf2fcfaef345392cad6d666d196f1224ec9cd88b44424bdce665920c1dc3c256c9b721f6b2cd3ab19e73916202ed&projectId=aefa21ce-6bba-4e09-b164-6f62aa32380c") format("woff");
+//  src: url("http://fast.fonts.net/dv2/3/3695342c-b5e2-4010-b0d4-56f563465922.woff?d44f19a684109620e484157fa790e818d6a0dc7138d0a76dcc0c1fe83ad1d594119e1e62143e61da83837e1de7e89243f469542067988d81ec557bf5669a2b5d7c687c8a44a885f3a93ce17fb0e67031f423effcee120747d724b26a704c79f089960e139fa44983f1c002b3bf9466eaa7fbbf2fcfaef345392cad6d666d196f1224ec9cd88b44424bdce665920c1dc3c256c9b721f6b2cd3ab19e73916202ed&projectId=aefa21ce-6bba-4e09-b164-6f62aa32380c") format("woff");
+    src: url("./fonts/avenir/3695342c-b5e2-4010-b0d4-56f563465922.woff") format("woff");
 }
 
 @font-face {
     font-family: "Avenir W01";
     font-style: oblique;
     font-weight: 500;
-    src: url("http://fast.fonts.net/dv2/3/e0af2f49-a399-482b-a54e-d745e268ec80.woff?d44f19a684109620e484157fa790e818d6a0dc7138d0a76dcc0c1fe83ad1d594119e1e62143e61da83837e1de7e89243f469542067988d81ec557bf5669a2b5d7c687c8a44a885f3a93ce17fb0e67031f423effcee120747d724b26a704c79f089960e139fa44983f1c002b3bf9466eaa7fbbf2fcfaef345392cad6d666d196f1224ec9cd88b44424bdce665920c1dc3c256c9b721f6b2cd3ab19e73916202ed&projectId=aefa21ce-6bba-4e09-b164-6f62aa32380c") format("woff");
+//  src: url("http://fast.fonts.net/dv2/3/e0af2f49-a399-482b-a54e-d745e268ec80.woff?d44f19a684109620e484157fa790e818d6a0dc7138d0a76dcc0c1fe83ad1d594119e1e62143e61da83837e1de7e89243f469542067988d81ec557bf5669a2b5d7c687c8a44a885f3a93ce17fb0e67031f423effcee120747d724b26a704c79f089960e139fa44983f1c002b3bf9466eaa7fbbf2fcfaef345392cad6d666d196f1224ec9cd88b44424bdce665920c1dc3c256c9b721f6b2cd3ab19e73916202ed&projectId=aefa21ce-6bba-4e09-b164-6f62aa32380c") format("woff");
+    src: url("./fonts/avenir/e0af2f49-a399-482b-a54e-d745e268ec80.woff") format("woff");
 }
 
 @font-face {
     font-family: "Avenir W01";
     font-style: oblique;
     font-weight: 800;
-    src: url("http://fast.fonts.net/dv2/3/53554f6f-4b01-4815-87fe-82c49b8ba5a9.woff?d44f19a684109620e484157fa790e818d6a0dc7138d0a76dcc0c1fe83ad1d594119e1e62143e61da83837e1de7e89243f469542067988d81ec557bf5669a2b5d7c687c8a44a885f3a93ce17fb0e67031f423effcee120747d724b26a704c79f089960e139fa44983f1c002b3bf9466eaa7fbbf2fcfaef345392cad6d666d196f1224ec9cd88b44424bdce665920c1dc3c256c9b721f6b2cd3ab19e73916202ed&projectId=aefa21ce-6bba-4e09-b164-6f62aa32380c") format("woff");
-}
-
-@font-face{
-    font-family:"Avenir LT W01 55 Roman";
-    src:url("/fashion/styles/fonts/Avenir-LT-W01-55-Roman.eot");
-    src:url("/fashion/styles/fonts/Avenir-LT-W01-55-Roman.eot") format("eot"),url("/fashion/styles/fonts/Avenir-LT-W01-55-Roman.woff") format("woff"),url("/fashion/styles/fonts/Avenir-LT-W01-55-Roman.ttf") format("truetype"),url("/fashion/styles/fonts/Avenir-LT-W01-55-Roman.svg") format("svg");
-}
-
-@font-face{
-    font-family:"Avenir LT W01 85 Heavy";
-    src:url("/fashion/styles/fonts/Avenir LT W01 85 Heavy.eot");
-    src:url("/fashion/styles/fonts/Avenir LT W01 85 Heavy.eot") format("eot"),url("/fashion/styles/fonts/Avenir LT W01 85 Heavy.woff") format("woff"),url("/fashion/styles/fonts/Avenir LT W01 85 Heavy.ttf") format("truetype"),url("/fashion/styles/fonts/Avenir LT W01 85 Heavy.svg") format("svg");
+//  src: url("http://fast.fonts.net/dv2/3/53554f6f-4b01-4815-87fe-82c49b8ba5a9.woff?d44f19a684109620e484157fa790e818d6a0dc7138d0a76dcc0c1fe83ad1d594119e1e62143e61da83837e1de7e89243f469542067988d81ec557bf5669a2b5d7c687c8a44a885f3a93ce17fb0e67031f423effcee120747d724b26a704c79f089960e139fa44983f1c002b3bf9466eaa7fbbf2fcfaef345392cad6d666d196f1224ec9cd88b44424bdce665920c1dc3c256c9b721f6b2cd3ab19e73916202ed&projectId=aefa21ce-6bba-4e09-b164-6f62aa32380c") format("woff");
+    src: url("./fonts/avenir/53554f6f-4b01-4815-87fe-82c49b8ba5a9.woff") format("woff");
 }
 
 @font-face {
     font-family: "Avenir W01";
     font-style: oblique;
     font-weight: 900;
-    src: url("http://fast.fonts.net/dv2/3/36ec15b9-f8da-447f-8fed-a9cfdfb91fbb.woff?d44f19a684109620e484157fa790e818d6a0dc7138d0a76dcc0c1fe83ad1d594119e1e62143e61da83837e1de7e89243f469542067988d81ec557bf5669a2b5d7c687c8a44a885f3a93ce17fb0e67031f423effcee120747d724b26a704c79f089960e139fa44983f1c002b3bf9466eaa7fbbf2fcfaef345392cad6d666d196f1224ec9cd88b44424bdce665920c1dc3c256c9b721f6b2cd3ab19e73916202ed&projectId=aefa21ce-6bba-4e09-b164-6f62aa32380c") format("woff");
+//  src: url("http://fast.fonts.net/dv2/3/36ec15b9-f8da-447f-8fed-a9cfdfb91fbb.woff?d44f19a684109620e484157fa790e818d6a0dc7138d0a76dcc0c1fe83ad1d594119e1e62143e61da83837e1de7e89243f469542067988d81ec557bf5669a2b5d7c687c8a44a885f3a93ce17fb0e67031f423effcee120747d724b26a704c79f089960e139fa44983f1c002b3bf9466eaa7fbbf2fcfaef345392cad6d666d196f1224ec9cd88b44424bdce665920c1dc3c256c9b721f6b2cd3ab19e73916202ed&projectId=aefa21ce-6bba-4e09-b164-6f62aa32380c") format("woff");
+    src: url("./fonts/avenir/36ec15b9-f8da-447f-8fed-a9cfdfb91fbb.woff?d44f19a684109620e484157fa790e818d6a0dc7138d0a76dcc0c1fe83ad1d594119e1e62143e61da83837e1de7e89243f469542067988d81ec557bf5669a2b5d7c687c8a44a885f3a93ce17fb0e67031f423effcee120747d724b26a704c79f089960e139fa44983f1c002b3bf9466eaa7fbbf2fcfaef345392cad6d666d196f1224ec9cd88b44424bdce665920c1dc3c256c9b721f6b2cd3ab19e73916202ed&projectId=aefa21ce-6bba-4e09-b164-6f62aa32380c") format("woff");
 }
 
 @font-face {
@@ -134,4 +135,16 @@
     font-family: "Verdana Pro W01";
     font-weight: 400;
     src: url("http://fast.fonts.net/dv2/3/4b19b0bf-ad32-44ff-b1b7-fad4d66c53c3.woff?d44f19a684109620e484157fa790e818d6a0dc7138d0a76dcc0c1fe83ad1d594119e1e62143e61da83837e1de7e89243f469542067988d81ec557bf5669a2b5d7c687c8a44a885f3a93ce17fb0e67031f423effcee120747d724b26a704c79f089960e139fa44983f1c002b3bf9466eaa7fbbf2fcfaef345392cad6d666d196f1224ec9cd88b44424bdce665920c1dc3c256c9b721f6b2cd3ab19e73916202ed&projectId=aefa21ce-6bba-4e09-b164-6f62aa32380c") format("woff");
+}
+/* End Custom */
+
+@font-face{
+    font-family:"Avenir LT W01 55 Roman";
+    src:url("./fonts/avenir/Avenir-LT-W01-55-Roman.eot");
+    src:url("./fonts/avenir/Avenir-LT-W01-55-Roman.eot") format("eot"),url("./fonts/avenir/Avenir-LT-W01-55-Roman.woff") format("woff"),url("./fonts/avenir/Avenir-LT-W01-55-Roman.ttf") format("truetype"),url("./fonts/avenir/Avenir-LT-W01-55-Roman.svg") format("svg");
+}
+
+@font-face{
+    font-family:"Avenir LT W01 85 Heavy";
+    src:url("./fonts/avenir/Avenir LT W01 85 Heavy.eot") format("eot"),url("./fonts/avenir/Avenir LT W01 85 Heavy.woff") format("woff"),url("./fonts/avenir/Avenir LT W01 85 Heavy.ttf") format("truetype"),url("./fonts/avenir/Avenir LT W01 85 Heavy.svg") format("svg");
 }
