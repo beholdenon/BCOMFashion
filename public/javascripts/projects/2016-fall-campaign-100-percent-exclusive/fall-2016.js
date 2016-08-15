@@ -40,7 +40,7 @@ $(document).ready( function($) {
         pinterestURL += '&description=' + encodeURIComponent(social.pinterestTitle);
 
         $('#facebookLink').attr('href', facebookURL);
-        $('#instagramLink').attr('href', "https://www.instagram.com");
+        $('#instagramLink').attr('href', "https://www.instagram.com/bloomingdales/");
         $('#pinterestLink').attr('href', pinterestURL);
         $('#twitterLink').attr('href', twitterURL);
 
@@ -93,17 +93,26 @@ $(document).ready( function($) {
 	$( window ).on('resize',function() {
 		$('.nav_b').css({
 			'left':$('#hambuger').offset().left,
-			'width':$('#hambuger').width(),
-			'bottom':$(window).height()*0.04
+            'bottom':$(window).height()*0.04,
+			'width':$('#hambuger').width()
 		});
 	});
+
+    $( window ).on('touchmove',function() {
+        $('.nav_b').css({
+            'left':$('#hambuger').offset().left,
+            'bottom':$(window).height()*0.04,
+            'width':$('#hambuger').width()
+        });
+    });
+
 
 	$( window ).load(function() {
 
 		$('.nav_b').css({
-			'bottom':$('#hambuger').offset().top,
-			'left':$('#hambuger').offset().left,
-			'width':$('#hambuger').width()
+            'left':$('#hambuger').offset().left,
+            'bottom':$(window).height()*0.04,
+            'width':$('#hambuger').width()
 		});
 
 	    socialSetup();
@@ -173,6 +182,14 @@ $(document).ready( function($) {
             window.console.info(log);
         }
     };
+    $.fn.visible = function() {
+        return this.css('visibility', 'visible');
+    };
+
+    $.fn.invisible = function() {
+        return this.css('visibility', 'hidden');
+    };
+
 
     function mobileAndTabletcheck () {
         //return ($("footer").css("text-align") === "center" );

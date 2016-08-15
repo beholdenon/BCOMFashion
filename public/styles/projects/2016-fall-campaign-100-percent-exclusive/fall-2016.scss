@@ -50,6 +50,253 @@
 }
 
 
+
+#contest_step0{
+    display: none;
+    overflow:auto;
+}
+.contest_m_page0upper{
+    background-color:#faf5f5;
+}
+
+.contest_m_page0title p{
+    font-family: 'Lato', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: .1rem;
+    text-transform: uppercase;
+    color: #1d3159;  
+}
+.contest_m_page0description p{
+    font-family: 'Lato', serif;
+    font-size: 1.1rem;
+    max-width: 510px;
+    margin: auto;
+    letter-spacing: 0;
+    line-height: 1.9rem;
+    font-weight: 500; 
+}
+.contest_m_page0lower, .contest_m_button_enter p, .contest_m_button_seeallrules p, .contest_m_button_next p, .contest_m_button_back p{
+    background-color:#1d2a44 !important;
+}
+
+.contest_m_page0num{
+    width: 12%;
+}
+.contest_m_page0numdescription p{
+    font-family: 'Lato', serif;
+    font-size: 1.1rem;
+    max-width: 510px;
+    margin: auto;
+    letter-spacing: 0;
+    line-height: 1.9rem;
+    font-weight: 500; 
+    color: white;
+}
+
+
+#contest_step1{
+    display: none;
+    background-color:#1d2a44;
+    overflow:auto; 
+
+}
+
+.mc_enteryourword{
+    max-width: 70%;
+}
+#contest_m_textfield{
+    max-width: 75%;
+    margin: auto;
+  display: block;
+  width: 100%;
+  font-family: sans-serif;
+  font-size: 18px;
+  appearance: none;
+  box-shadow: none;
+  border-radius: none;    
+}
+#contest_m_textfield:focus{
+    outline: none;
+}
+.style-2 input[type="text"] {
+  padding: 10px;
+  border: solid 5px #c9c9c9;
+  transition: border 0.3s;
+}
+.style-2 input[type="text"]:focus,
+.style-2 input[type="text"].focus {
+  border: solid 5px #969696;
+}
+
+
+
+
+#contest_step2{
+    display: none;
+}
+.contest_m_page21{
+    background-color:#c2e6e0;
+}
+
+.mc_designit {
+    max-width: 40%;
+}
+.contest_m_page2description{
+    color:black;
+}
+
+.contest_m_page24{
+    background-color:#181c4d;
+}
+
+
+
+
+#canvasBloom_mobile {
+    position: relative;
+    top: 0px;
+    left: 0px;
+    border: 2px solid yellow;
+    z-index: 10;
+    width: 100%;
+}
+
+.download {
+    position:absolute;
+    top:610px;
+    left:100px;
+    color:#666;
+    cursor:pointer;
+}
+.download:hover {
+    color:#999;
+}
+
+.color_picker{
+    height:60px;
+    border: 1px white solid;
+}
+#color_picker_color1{
+    background-color:#b50937;
+}
+#color_picker_color2{
+    background-color:#e93e35;
+}
+#color_picker_color3{
+    background-color:#f7941e;
+}
+#color_picker_color4{
+    background-color:#fff200;
+}
+#color_picker_color5{
+    background-color:#f7f0b5;
+}
+#color_picker_color6{
+    background-color:#ebed8a;
+}
+#color_picker_color7{
+    background-color:#6eb43f;
+}
+#color_picker_color8{
+    background-color:#008676;
+}
+
+
+#color_picker_color9{
+    background-color:#f8e5e5;
+}
+#color_picker_color10{
+    background-color:#cc97c4;
+}
+#color_picker_color11{
+    background-color:#eed5e7;
+}
+#color_picker_color12{
+    background-color:#cbcbcb;
+}
+#color_picker_color13{
+    background-color:#ffffff;
+}
+#color_picker_color14{
+    background-color:#d8eee7;
+}
+#color_picker_color15{
+    background-color:#74c8ba;
+}
+#color_picker_color16{
+    background-color:#181c4d;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+#contest_step3{
+    display: none;
+    background-color:#181c4d;
+}
+.contest_m_youtdidit p{
+    font-family: 'Playfair Display', serif;
+    font-size: 4.3rem;
+    max-width: 500px;
+    margin: auto;
+    color: white;
+    line-height: 5rem;
+}
+.contest_m_youtdidit_description p{
+    font-family: 'Lato', sans-serif;
+    font-size: 1.5rem;
+    max-width: 460px;
+    margin: auto;
+    color: white;
+    line-height: 2.8rem;
+}
+
+.contest_m_button p{
+    font-family: 'Lato', sans-serif;
+    font-size: 2rem;
+    letter-spacing: .7rem;
+    max-width: 90%;
+    padding: 1.4rem 0;
+    margin: auto;
+    color: white;
+    background-color: #181c4d;
+    border: 1px white solid;
+    cursor: pointer;
+}
+
+
+
+#contest_step4{
+    display: none;
+    background-color:#fff200;
+    overflow:auto;
+}
+.contest_m_keepitclean{
+    max-width: 70%;
+}
+.contest_m_button_tryagain p{
+    font-family: 'Lato', sans-serif;
+    font-size: 2.3rem;
+    letter-spacing: .4rem;
+    max-width: 70%;
+    padding: 1.4rem 0;
+    margin: auto;
+    color: black;
+    background-color: #fff200;
+    border: 1px black solid;
+    cursor: pointer;
+}
+
 //=================================================================//
 //CONTEST DESKTOP 
 //=================================================================//
@@ -2272,35 +2519,6 @@ body #bl_main_container{
 
 
 
-
-
-
-
-
-
-
-
-
-
-    canvas {
-        position:absolute;
-        top:300px;
-        left:100px;
-        border:2px solid yellow;
-        z-index: 10;
-    }
-
-    .download {
-        position:absolute;
-        top:610px;
-        left:100px;
-
-        cursor:pointer;
-        color:#666;
-    }
-    .download:hover {
-        color:#999;
-    }
 
 
 
