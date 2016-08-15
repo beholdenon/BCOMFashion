@@ -189,6 +189,11 @@ $(document).ready(function() {
 		APP.coremetrics('Element', APP.cm.category, $(this).attr("data-element") );
 	});
 
+	$(".video-placeholder").on("click", function () {
+		$(this).hide();
+		$(this).parent().find("video").show().get(0).play();
+	});
+
 	$(".videoShop").on("click", ".shopContainer li", function () {
 		var product = removeDiacritics( $(this).find(".name").text() ).trim().replace(/\&|\+/g, '').replace(/\s+/g, '-'),
 			parent = $(this).parents("section");
