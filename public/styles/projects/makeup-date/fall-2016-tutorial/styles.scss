@@ -182,10 +182,12 @@ section a:active {
 
 	padding-bottom: 4em;
 
-	video {
+	#makeupVideo,
+	#video-placeholder {
 		width: 74%;
 		background-color: #e2e2e2;
 		display: inline-block;
+		cursor: pointer;
 	}
 
 	.active img {
