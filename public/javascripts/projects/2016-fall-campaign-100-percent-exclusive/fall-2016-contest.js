@@ -3,6 +3,7 @@ $( window ).load(function() {
 //===============================================================================================================//
 //===============================================================================================================//
 
+
 	'use strict';
 
 	$.fn.coreTag('Pageview', 'fall16_100percent--sweeps');
@@ -19,17 +20,14 @@ $( window ).load(function() {
 	// createjs.Touch.enable(stage);
 
 	// enabled mouse over / out events
-	stage.enableMouseOver(10);
-	stage.mouseMoveOutside = true; // keep tracking the mouse even when it leaves the canvas
+	//stage.enableMouseOver(10);
+	//stage.mouseMoveOutside = true; // keep tracking the mouse even when it leaves the canvas
 
-
-
-
-
-
-
-
-
+	//preload svgs
+	// var characters=['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','1','2','3','4','5','6','7','8','9','0','special1','special2','special3','special4'];
+	// for(var k=0;k<characters.length;k++){
+	// 	$.fn.preload('/fashion/images/projects/2016-fall-campaign-100-percent-exclusive/svg/'+characters[k]+'.svg');
+	// }
 
 	if( $("#contest_step1").height() < $(window).height() )	$("#contest_step1").height($(window).height());
 	if( $("#contest_step4").height() < $(window).height() )	$("#contest_step4").height($(window).height());
@@ -81,6 +79,8 @@ $( window ).load(function() {
 
 		charLeftPos=0;
 		finalword=$('#contest_m_textfield').val();
+		finalword = finalword.replace(/\s+/g, '');
+
 
 		for (var j = 0; j < foulwords.length; j++) {
 			if( finalword.toLowerCase() === foulwords[j].toLowerCase() ){
@@ -95,7 +95,7 @@ $( window ).load(function() {
 		charArr = finalword.split('') ;
 		stage.removeAllChildren();
 		for (var i = 0; i < charArr.length; i++) {
-			createChar( charArr[i] );
+			createChar( charArr[i],i);
 		}
 
 
@@ -112,72 +112,61 @@ $( window ).load(function() {
 
 
 	$('.contest_m_button_savetophone').click(function() {
+	    var $img = $("<img/>");
+	    $img.attr("src", $('#canvasBloom_mobile')[0].toDataURL() );
+
+	    // this.href = $('#canvasBloom_mobile')[0].toDataURL();
+		//$.fn.trace( $('#canvasBloom_mobile')[0].toDataURL().replace('data:image/png;base64,','') );
+
+    	// $img.attr("src", "data:image/png;base64," + $('#canvasBloom_mobile')[0].toDataURL().replace('data:image/png;base64,',''));
+    	$("#contest_screenshot").prepend($img);
 		contestGoToPage(3);
+
+
 	});
 	$('.contest_m_button_home').click(function() {
 		contestGoToPage(0);
 	});
 
+	$(".color_picker").on("click", function(){
+		var shape = new createjs.Shape();
+		shape.graphics.beginFill(""+$(this).css("background-color")).drawRect(0, 0, canvas.width, canvas.width);
+		stage.addChild(shape);
+		stage.setChildIndex( shape, stage.getNumChildren()-(charArr.length+1));
 
+        update = true;
 
-
-$(".color_picker").on("click", function(){
-	$("#canvasBloom_mobile").css({
-		'background-color':$(this).css("background-color")
 	});
-});
 
 
-	function createChar(inputChar){
+	function createChar(inputChar,positionIndex){
 		var imageb = new Image();
 		imageb.src = '/fashion/images/projects/2016-fall-campaign-100-percent-exclusive/svg/'+inputChar+'.svg';
+		imageb.index=positionIndex;
 		imageb.onload = handleImageLoad;
-	}	
+	}
 
 
 	function handleImageLoad(event) {
+
+		$.fn.trace(event.target.index);
+
 	    var image = event.target;
 	    var bitmap = new createjs.Bitmap(image);
+        bitmap.scaleX = bitmap.scaleY = ( (canvas.width) / (200*charArr.length) );
+        var bitmapWidth=200*bitmap.scaleX;
 
-	    charLeftPos = charLeftPos + ( (canvas.width-80) /charArr.length);
-        bitmap.x = charLeftPos;
-        bitmap.y = 50 + parseInt( (canvas.height-50) * Math.random() );
+	    charLeftPos = charLeftPos + ( (canvas.width) / charArr.length );
+	    // charLeftPos = charLeftPos + bitmap.image.width;
+        // bitmap.x = charLeftPos-( (canvas.width) / charArr.length ) ;
+        bitmap.x = (canvas.width / charArr.length )*(event.target.index) ;
+        bitmap.y = (canvas.height-bitmapWidth)/2 ;
+
         //bitmap.rotation = parseInt( 360 * Math.random() );
-        bitmap.regX = parseInt( (bitmap.image.width / 2) );
-        bitmap.regY = parseInt( (bitmap.image.height / 2) );
-
-        bitmap.scaleX = bitmap.scaleY = bitmap.scale = Math.random() * 0.1 + 1;
         bitmap.name = "bmp_"+bitmap.x;
-        bitmap.cursor = "pointer";
 
 	    stage.addChild(bitmap);
 
-        // using "on" binds the listener to the scope of the currentTarget by default
-        // in this case that means it executes in the scope of the button.
-        bitmap.on("mousedown", function (evt) {
-            this.parent.addChild(this);
-            this.offset = {x: this.x - evt.stageX, y: this.y - evt.stageY};
-        });
-
-        // the pressmove event is dispatched when the mouse moves after a mousedown on the target until the mouse is released.
-        bitmap.on("pressmove", function (evt) {
-            this.x = evt.stageX + this.offset.x;
-            this.y = evt.stageY + this.offset.y;
-            // indicate that the stage should be updated on the next tick:
-            update = true;
-        });
-
-        bitmap.on("rollover", function (/*evt*/) {
-            this.scaleX = this.scaleY = this.scale * 1.2;
-            update = true;
-        });
-
-        bitmap.on("rollout", function (/*evt*/) {
-            this.scaleX = this.scaleY = this.scale;
-            update = true;
-        });
-
-	    //examples.hideDistractor();
 
         update = true;
 	    createjs.Ticker.addEventListener("tick", tick);
@@ -224,7 +213,13 @@ $(".color_picker").on("click", function(){
 		$('#contest_mobile').children().children('.row').each(function () {
 			$(this).hide();
 		});
-		$("#contest_step"+pagenum).show();    	
+		$("#contest_step"+pagenum).show();
+        $('body,html').animate({
+            scrollTop: 0 ,
+            }, 100
+        );
+
+
     }
 
 

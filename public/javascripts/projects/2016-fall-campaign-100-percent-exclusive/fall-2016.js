@@ -182,6 +182,11 @@ $(document).ready( function($) {
             window.console.info(log);
         }
     };
+    
+    $.fn.preload = function(thisSrc) {
+        $('<img/>')[0].src = thisSrc;
+    };
+
     $.fn.visible = function() {
         return this.css('visibility', 'visible');
     };
