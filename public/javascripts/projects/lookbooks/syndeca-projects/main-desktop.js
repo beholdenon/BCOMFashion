@@ -10,18 +10,25 @@ window.SYNDECA.vertical = (function(window, document, $) {
         }, 'slow' );
     });
 
+    $( window ).scroll(function() {
+      checkHeightAndShowBackToTop();
+    });
+
     $(window).load(function() {
 		    	
         window.BLOOMIES.coremetrics.cmCreatePageviewTag('SyndecaLookBook', 'SyndecaLookBook');
-
-    	var syndecaWrapper = $('#syndeca'),
-    		syndecaHeight = syndecaWrapper.height();
-
-    	if(syndecaHeight >= 1000) {
-    		var backToTopBtn = $('.desktop_back_to_top');
-    		backToTopBtn.show();
-    	}
+        checkHeightAndShowBackToTop();
 
     });
+
+    function checkHeightAndShowBackToTop(){
+        var syndecaWrapper = $('#syndeca'),
+            syndecaHeight = syndecaWrapper.height();
+
+        if(syndecaHeight >= 1000) {
+            var backToTopBtn = $('.desktop_back_to_top');
+            backToTopBtn.show();
+        }
+    }
 
 }(window, document, jQuery));
