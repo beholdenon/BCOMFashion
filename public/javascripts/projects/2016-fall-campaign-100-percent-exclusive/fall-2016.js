@@ -81,6 +81,10 @@ $(document).ready( function($) {
 //===============================================================================================================//
 //===============================================================================================================//
 
+    if((navigator.userAgent.match(/iPad/i)) && (navigator.userAgent.match(/iPad/i)!== null)){
+        $('video').prop("controls",true);
+    }
+
 
     $('.backToTop').on('click', function(event){
         event.preventDefault();
@@ -91,6 +95,11 @@ $(document).ready( function($) {
     });
     
 	$( window ).on('resize',function() {
+        
+        $('#hambuger').css({
+            'height':$('#hambuger').width()
+        });
+
 		$('.nav_b').css({
 			'left':$('#hambuger').offset().left,
             'bottom':$(window).height()*0.04,
@@ -98,16 +107,11 @@ $(document).ready( function($) {
 		});
 	});
 
-    $( window ).on('touchmove',function() {
-        $('.nav_b').css({
-            'left':$('#hambuger').offset().left,
-            'bottom':$(window).height()*0.04,
-            'width':$('#hambuger').width()
-        });
-    });
-
-
 	$( window ).load(function() {
+
+        $('#hambuger').css({
+            'height':$('#hambuger').width()
+        });
 
 		$('.nav_b').css({
             'left':$('#hambuger').offset().left,

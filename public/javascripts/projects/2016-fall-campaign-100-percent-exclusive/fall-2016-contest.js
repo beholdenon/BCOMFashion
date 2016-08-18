@@ -213,7 +213,7 @@ $( window ).load(function() {
             scrollTop: 0 ,
             }, 100
         );
-		$.fn.coreTag('Pageview', 'ffall16_100percent--sweeps'+pagenum);
+		$.fn.coreTag('Pageview', 'fall16_100percent--sweeps'+pagenum);
     }
 
 
