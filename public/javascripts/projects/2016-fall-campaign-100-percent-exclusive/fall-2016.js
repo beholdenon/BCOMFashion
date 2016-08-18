@@ -127,10 +127,20 @@ $(document).ready( function($) {
 	    });
 
 	    $('[linkURL]').click(function() {
-	        window.location = $( this ).attr( "linkURL" );
+            window.open($( this ).attr( "linkURL"), "_self");
 	    });
 
-		$('#mySidenavBar').click(function(){
+        $('[linkURLblank]').css({
+            'cursor':'pointer'
+        });
+
+        $('[linkURLblank]').click(function() {
+
+            window.open( $( this ).attr( "linkURLblank"), "_blank");
+        });
+
+
+		$('#mySidenavBar, #hambuger').click(function(){
 			$("#mySidenav").addClass('sidenav_open');
             $.fn.coreTag('Element', 'side-nav_open' );
 		});

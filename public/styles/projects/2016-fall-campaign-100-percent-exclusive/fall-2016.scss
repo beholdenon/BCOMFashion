@@ -2,6 +2,28 @@
 @import 'foundation/_settings';
 @import 'foundation';
 
+//=================================================================//
+//SEE THE RULES
+//=================================================================//
+.seetherules_title p{
+    font-size: 2rem;
+    letter-spacing: .2rem;
+    font-family: 'Lato', sans-serif;
+    color: black;
+    border: 2px black solid;
+    padding: 1.2rem 4.5rem;
+}
+.seetherules_description p{
+    font-size: .8rem;
+    letter-spacing: .05rem;
+    font-family: 'Lato', sans-serif;
+    color: black;
+    padding: 1rem 1rem;
+    text-align: left;
+}
+//=================================================================//
+//SEE THE RULES
+//=================================================================//
 
 //=================================================================//
 //CONTEST DESKTOP 
@@ -335,7 +357,8 @@
 
 
 .language_letter_svg img {
-    width:85%;
+    width: 85%;
+    padding-bottom: 2rem;
 }
 
 .language_letter_title p {
@@ -664,6 +687,9 @@
         max-width: 470px;
         margin:auto;
     }
+    video{
+        width: 100% !important;
+    }
 
 }
 #row_landing_behindscene{
@@ -677,7 +703,7 @@
     }
 }
 #row_landing_odell{
-    background-color: #84817e;
+    background-color: #3e3e3b;
     color:white;
 
     .landing_title a{
@@ -697,7 +723,7 @@
     }
 }
 #row_landing_fallcatalogs{
-    background-color: #ececec;
+    background-color: #f5f5f5;
     .landing_title a{
         color:#191919;
     }    
@@ -2266,13 +2292,14 @@
 //=================================================================//
 body #bl_main_container{
     width:100%;
+
     font-family: 'Lato', sans-serif;
     line-height: 0;
 
     box-sizing: border-box;
     position: relative;
     width: auto;
-    min-height: none;
+    min-height: 100%;
     text-align: center;
     
     overflow-x:hidden;
@@ -2318,7 +2345,7 @@ body #bl_main_container{
 //NAV
 //=================================================================//
 #mySidenavBar{
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     width: 8.35%;
@@ -2328,21 +2355,23 @@ body #bl_main_container{
     background-color: #25252d;
     z-index: 10;
     cursor: pointer;
-    // opacity: .7;
 }
 
 #hambuger{
-    position: absolute;
+    position: fixed;
     top: 4%;
-    left: 27%;
-    width: 45%;
+    left: 2%;
+    width: 4%;
+    max-width: 50px;
+    z-index: 11;
 }
 .nav_b{
     position: fixed;
-    z-index: 12;
-    left:20px;
     bottom:-100px;
-    transition: all 0.3s;
+    left: 2%;
+    max-width: 50px;
+    // transition: all 0.3s;
+    z-index: 13;
 }
 
 
@@ -2355,7 +2384,7 @@ body #bl_main_container{
     overflow-x: hidden; /* Disable horizontal scroll */
     transition: all 0.3s;
     background-color: #25252d;
-    z-index: 11;
+    z-index: 12;
     // opacity: .7;
 }
 
@@ -2497,9 +2526,20 @@ body #bl_main_container{
     #mySidenav ul li a {
         font-size: 2.5vh;
     }
-
-
 }
+
+@media all and (min-width: 851px) {
+    #hambuger{
+        left: 17px;
+        width: 35px;
+    }
+    .nav_b{
+        left: 20px;
+        width: 50px;
+    }
+}
+
+
 
 //=================================================================//
 //NAV
