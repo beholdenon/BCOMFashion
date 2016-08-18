@@ -174,10 +174,16 @@ $(document).ready(function() {
 	$("#videoBox .vidBox").on("click", function () {
 		$(this).addClass('active').siblings().removeClass('active');
 		APP.srcSwitcher( "#makeupVideo", $(this).attr("data-source") );
-		$('#makeupVideo').attr("data-name", $(this).attr("data-element"));
+		$('#makeupVideo').show().attr("data-name", $(this).attr("data-element"));
+		$("#video-placeholder").hide();
 
 		$('#prodShell').html("<img class='loader' src='/fashion/images/ajax-loader.gif'/>");
 		APP.updateShop( APP.products[ $(this).attr("data-upc") ].upc );
+	});
+
+	$("#video-placeholder").on("click", function () {
+		$(this).hide();
+		$("#makeupVideo").show().get(0).play();	
 	});
 
 	$("#prosLeft").on("click", function () {
