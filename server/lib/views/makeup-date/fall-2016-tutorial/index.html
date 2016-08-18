@@ -280,6 +280,17 @@
 <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" />
 
 <script type="application/javascript" src="/fashion/javascripts/libs/jquery-1.11.2.min.js"></script>
+<script type="text/javascript">
+    var dateCheck = new Date();
+    if ( dateCheck.getFullYear() >= 2016 && dateCheck.getMonth() >= 8 ) {
+        if ( dateCheck.getDate() >= 3 || ( dateCheck.getDate() === 3 && dateCheck.getHours() >= 3 ) ) {
+            $("#makeup_hero .subHeader, #makeup_hero .smallHeader, #Gift-with-Purchase, #samples, #sweepstakes").remove();
+            $("[data-element='nav_sweepstakes'], [data-element='nav_exclusive-gift']").remove();
+            $("#book-footer").css('background-color', '#ffffff');
+            $("#book-footer span, #book-footer a").css('color', "#000000");
+        }  
+    }
+</script>
 <script type="application/javascript" src="/fashion/javascripts/includes/wssg.js"></script>
 <script type="application/javascript" src="/fashion/javascripts/projects/makeup-date/fall-2016-tutorial/main.js"></script>
 
