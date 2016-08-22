@@ -3,29 +3,52 @@
 <meta name="apple-itunes-app" content="app-id=525536985">
 <meta name="google-site-verification" content="HxmQD264GfTUypnVtDjz56-BOQ5MtGH6biw0qvD-lDE" />
 <meta name="fragment" content="!">
-<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
-<link rel="shortcut icon" href="/fashion/favicon.ico">
+<meta name="viewport" content="width=device-width" />
+<link href="/fashion/favicon.ico" rel="shortcut icon">
 
 <!--============[ CSS: Global ]============-->
-<link rel="stylesheet" href="/fashion/styles/main.css" />
+<link href="/fashion/styles/main.css" rel="stylesheet" />
+<link href="//{{assetsHost}}/styles/bcom/base/main.css" rel="stylesheet" />
+
+<!--============[ JS: Variables ]============-->
+<script type="text/javascript">
+	window.commonAssetsServer = "//{{assetsHost}}/";
+	window.unsecureServer = "//{{assetsHost}}/";
+	window.secureServer = "//{{assetsHost}}/";	
+	window.pdpAssetServer = "";
+	window.ENV_CONFIG = "dev";
+</script>
+
+<!--============[ JS: Common (MacysUI) ]============-->
+<script src="//{{assetsHost}}/js/bcom/base/Common.js" type="text/javascript"></script>
+
+<!--============[ JS: Global Header and Footer Assets and Properties  ]============-->
+<script src="//{{assetsHost}}/js/min/vendor/script/requirejs/require-inline.js" data-require="globals" type="text/javascript"></script>
+{{#if args.isMobile}}
+	<script>
+		var Globals = require('globals');
+		Globals.setValue("DeviceType", "PHONE");
+	</script>
+{{/if}}
+<script src="//{{assetsHost}}/web20/assets/script/modernizr/modernizr-2.6.2-min.js" type="text/javascript"></script>
 
 <!--============[ JS: Utils ]============-->
-<script data-main="/fashion/javascripts/main.js" src="/fashion/javascripts/libs/requirejs.js"></script>
-<script type="text/javascript">var ENV_CONFIG = "dev";</script>
-<script src="http://assets.bloomingdales.com/web20/assets/script/bloomies/base/userObject.js"></script>
-<script src="/fashion/javascripts/includes/globalns.js"></script>
+<script src="/fashion/javascripts/require_config.js" type="text/javascript"></script>
+<script src="/fashion/javascripts/main.js" type="text/javascript"></script>
+<script src="http://assets.bloomingdales.com/web20/assets/script/bloomies/base/userObject.js" type="text/javascript"></script>
+<script src="/fashion/javascripts/includes/globalns.js" type="text/javascript"></script>
 
 <!--============[ JS: Cookies ]============-->
-<script src="http://assets.bloomingdales.com/javascript/cookieJar.js"></script>
-<script src="http://assets.bloomingdales.com/javascript/standard_2.js"></script>
+<script src="http://assets.bloomingdales.com/javascript/cookieJar.js" type="text/javascript"></script>
+<script src="http://assets.bloomingdales.com/javascript/standard_2.js" type="text/javascript"></script>
 
 <!--============[ JS: Coremetrics ]============-->
-<script src="/fashion/javascripts/libs/eluminate.js"></script>
-<script src="http://assets.bloomingdales.com/javascript/cmcustom.js"></script>
-<script src="http://assets.bloomingdales.com/web20/assets/script/bloomies/base/cmFunctions.js"></script>
+<script src="/fashion/javascripts/libs/eluminate.js" type="text/javascript"></script>
+<script src="http://assets.bloomingdales.com/javascript/cmcustom.js" type="text/javascript"></script>
+<script src="http://assets.bloomingdales.com/web20/assets/script/bloomies/base/cmFunctions.js" type="text/javascript"></script>
 
 <!--============[ JS: BrightTag ]============-->
-<script src="//s.btstatic.com/tag.js">
+<script src="//s.btstatic.com/tag.js" type="text/javascript">
 	   { site: "nl6o4FJ" }
 </script>
 <noscript>

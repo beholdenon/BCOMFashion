@@ -65,28 +65,41 @@ module.exports = {
         notes: 'Server side mobile detection layout, with custom header & footer',
         tags: ['non-responsive','custom header & footer'],
         handler: function(req, res) {
-            var requestPath = (req.url.path).substring(1),
+            var requestPath = (req.url.pathname).substring(1),
                 deviceDetectProc = deviceDetectParams(requestPath, req);
 
             return res.view(deviceDetectProc.view, { args: deviceDetectProc.args }, { layout: 'nonresponsiveCustomHF'});           
         }
-    },   
+    },
+    bare: {
+        description: 'Bare layout, no header or footer, empty head element with no added css or script',
+        notes: 'Server side mobile detection layout, with no header or footer',
+        tags: [],
+        handler: function(req, res) {
+            var requestPath = (req.url.path).substring(1),
+                deviceDetectProc = deviceDetectParams(requestPath, req);
 
+            return res.view(deviceDetectProc.view, { args: deviceDetectProc.args }, { layout: 'bare'});
+        }
+    },
     fallback: {
-        description: 'Serve non-responsive stadard layout',
+        description: 'Serve non-responsive standard layout',
         notes: 'This is the default fallback route if not explicitly captured',
         tags: ['fallback', 'static'],
         handler: function(req, res) {
-            var requestPath = req.params.path,
-                deviceDetectProc = deviceDetectParams(requestPath, req);
-
-            if (requestPath !== '' && requestPath !== undefined) {
-                //render standard view
-                return res.view(deviceDetectProc.view, { args: deviceDetectProc.args });
-            } else {
+            var requestPath = req.params.path;
+            if (requestPath === '' || requestPath === undefined) {
                 // if route not captured, redirect to the main site
                 return res.redirect('http://www.bloomingdales.com');
             }
+            // get rid of trailing spaces, add a trailing slash if missing, then redirect
+            if (requestPath.indexOf('#') < 0 && requestPath.indexOf('?') < 0 && requestPath.indexOf('.') < 0 && ! /\/$/.test(requestPath)) {
+                requestPath = requestPath.replace(/\/?\s?$/, '/');
+                var url = '/' + requestPath;
+                return res.redirect(url);
+            }
+            var deviceDetectProc = deviceDetectParams(requestPath, req);
+            return res.view(deviceDetectProc.view, { args: deviceDetectProc.args, assetsHost: process.env.BASE_ASSETS });
         }
     }
 };
