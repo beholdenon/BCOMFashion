@@ -199,6 +199,10 @@ section a:active {
 	.video {
 	    width: 90vw;
 	    
+	    &.loading {
+  			background: #000000 url("/fashion/images/ajax-loader-white.gif") center center no-repeat;
+	    }
+
 	}
 
 	.vTitle,

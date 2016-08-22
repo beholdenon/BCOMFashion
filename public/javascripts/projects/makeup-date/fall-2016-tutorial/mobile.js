@@ -206,6 +206,14 @@ $(document).ready(function() {
 		APP.coremetrics('Element', APP.cm.category, "mbl:exclusive-gift_".concat( removeDiacritics( prodName ) ).slice(0, 50) );
 	});
 
+	$(".video").on("loadstart", function() {
+		$(this).addClass('loading');
+	});
+
+	$(".video").on('canplay', function () {
+		$(this).removeClass('loading');
+	});
+
     $(".video").on('ended',function() {
 		var vid = "-_--_--_--_--_--_--_--_--_--_--_--_--_--_--_-3-_-"+Math.round($(this)[0].duration);
         APP.coremetrics('Element', APP.cm.category, $(this).attr("data-name"), vid);
