@@ -26,12 +26,16 @@ var APP = {
 
 	srcSwitcher: function (target, source) {
 		$(target).attr('src', source).css('visibility','hidden');
-		$('#videoLoading').show();
-		setTimeout(function() {
+		
+		$(target).on("loadstart", function() {
+			$('#videoLoading').show();
+		});
+		
+		$(target).on("canplay", function() {
 			$('#videoLoading').hide();
 			$(target).css('visibility', 'visible');
 			$(target)[0].play();
-		}, 500);
+		});
 	},
 
 	// updates the active element on the sticky nav

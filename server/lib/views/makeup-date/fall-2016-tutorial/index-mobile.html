@@ -23,7 +23,7 @@
 <div id="stickyNav">
   <h3 class="playfair italic">Red Lip Report</h3>
   <ul id="navigation" style="display:none;">
-    <li class="montserrat point caps active" data-scroll="Red-Lip-Report" data-element="mbl:">Red Lip Report</li>
+    <li class="montserrat point caps active" data-scroll="Red-Lip-Report" data-element="mbl:nav_red-lip-report">Red Lip Report</li>
     <li class="montserrat point caps" data-scroll="Glossy-Candy-Apple" data-element="mbl:nav_glossy-candy-apple-how-to-video">Glossy Candy Apple How-To Video</li>
     <li class="montserrat point caps" data-scroll="Crimson-Crème" data-element="mbl:nav_crimson-creme-how-to-video">Crimson Crème How-To Video</li>
     <li class="montserrat point caps" data-scroll="Black-Cherry" data-element="mbl:nav_black-cherry-how-to-video">Black Cherry How-To Video</li>
@@ -58,7 +58,7 @@
 <section id="Crimson-Crème" data-pageview="mbl:video-medium-red">
   <div class="video-wrapper">
     <img class="video-placeholder" src="/fashion/images/projects/makeup-date/fall-2016-tutorial/video2.jpg"/>
-    <video style="display:none" data-name="mbl:video-medium-red_video-medium-red" class="video" src="//brightcove.hs.llnwd.net/v1/uds/pd/75934411001/201608/1579/75934411001_5069998978001_5069974758001.mp4?pubId=75934411001&videoId=5069974758001" controls></video>
+    <video style="display:none" data-name="mbl:video-medium-red_video-medium-red" class="video" src="//brightcove.hs.llnwd.net/e1/uds/pd/75934411001/75934411001_5069998978001_5069974758001.mp4?pubId=75934411001&videoId=5069974758001" controls></video>
     <h2 class="vTitle montserrat">Medium Red:<br/>crimson crème</h2>
     <p class="vCopy playfair italic">Pair your bright lip with navy blue winged liner for a decidedly downtown look.</p>
   </div>
@@ -72,7 +72,7 @@
 <section id="Black-Cherry" data-pageview="mbl:video-dark-red">
   <div class="video-wrapper">
     <img class="video-placeholder" src="/fashion/images/projects/makeup-date/fall-2016-tutorial/video3.jpg"/>
-    <video style="display:none" data-name="mbl:video-dark-red_video-dark-red" class="video" src="//brightcove.hs.llnwd.net/v1/uds/pd/75934411001/201608/2621/75934411001_5069998655001_5069970591001.mp4?pubId=75934411001&videoId=5069970591001" controls></video>
+    <video style="display:none" data-name="mbl:video-dark-red_video-dark-red" class="video" src="//brightcove.hs.llnwd.net/e1/uds/pd/75934411001/75934411001_5069998655001_5069970591001.mp4?pubId=75934411001&videoId=5069970591001" controls></video>
     <h2 class="vTitle montserrat">DARK Red:<br/>Bold Black Cherry</h2>
     <p class="vCopy playfair italic">Turn up the drama with dark red lips and a sultry smoky eye.</p>
   </div>
@@ -261,6 +261,13 @@
 <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" />
 
 <script type="application/javascript" src="/fashion/javascripts/libs/jquery-1.11.2.min.js"></script>
+<script type="text/javascript">
+    var dateCheck = new Date(2016,8,3);
+    if ( dateCheck.getFullYear() >= 2016 && dateCheck.getMonth() >= 8 &&  dateCheck.getDate() >= 3 ) {
+        $("#makeup_hero .subHeader, #makeup_hero .smallHeader, #Gift-with-Purchase, #samples, #sweepstakes").remove();
+        $("[data-scroll='Gift-with-Purchase'], [data-scroll='sweepstakes']").remove();
+    }
+</script>
 <script type="application/javascript" src="/fashion/javascripts/includes/wssg.js"></script>
 <script type="application/javascript" src="/fashion/javascripts/projects/makeup-date/fall-2016-tutorial/mobile.js"></script>
 
