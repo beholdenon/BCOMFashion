@@ -39,7 +39,7 @@ var routes = [
     { method: 'GET',  path: '/international/china-brazil/components/{path*}',   config: require('./lib/handlers/assets').ngViews },
     { method: 'GET',  path: '/international/china-brazil/',                     config: require('./lib/handlers/views').responsiveCustomHF },
     { method: 'GET',  path: '/100-percent-2016/coming-soon/',                   config: require('./lib/handlers/views').responsiveCustomHF },
-    { method: 'GET',  path: '/100-percent-exclusive-2016-summer-collection/',   config: require('./lib/handlers/views').responsiveCustomHF },
+    { method: 'GET',  path: '/2016-fall-campaign-100-percent-exclusive/{path*}',   config: require('./lib/handlers/views').responsiveCustomHF },
     { method: 'GET',  path: '/outlet-touch-screen/',                            config: require('./lib/handlers/views').responsiveCustomHF },
     { method: 'GET',  path: '/{path*}',                                         config: require('./lib/handlers/views').fallback }
 ];
