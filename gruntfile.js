@@ -14,8 +14,8 @@ module.exports = function(grunt) {
     require('./build/setDefaultEnv')(grunt, '.env');
     var NODE_ENV = grunt.option('env') || process.env.NODE_ENV;
 
-    //Set current project folder path ( can be empty as '' )    
-    var PROJECT_FOLDER = '/about-us/buy-online-pickup-in-store/';
+    //Sets current project folder path ( can be empty as '' )
+    var PROJECT_FOLDER = grunt.option('pf') || process.env.PROJECT_FOLDER;
 
     grunt.initConfig({
         //Project paths
