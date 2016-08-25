@@ -42,8 +42,8 @@
 
     <div class="gpgm-the-get">
         <h4>THE GET:</h4>
-        <p>Based on the amount you spend at Bloomingdale's and bloomingdales.com, you’ll be mailed a Give Pink, Get More Card
-            worth up to $250, just in time for holiday shopping in early December. You can use it at any Bloomingdale’s store and
+        <p>Based on the amount you spend at Bloomingdale's and bloomingdales.com, you’ll be mailed a <b>Give Pink, Get More Card
+            worth up to $250</b>, just in time for holiday shopping in early December. You can use it at any Bloomingdale’s store and
             bloomingdales.com.**</br>
             <a href="javascript:pop('/popup.ognc?popupID=536037','myDynaPop','scrollbars,width=575,height=600')">INFO/EXCLUSIONS</a> &nbsp;
             <a href="#" onclick="hp_TOC()" >TERMS &amp; CONDITIONS</a>
@@ -62,7 +62,10 @@
 
 <script type="text/javascript">
     //Set CM
-    BLOOMIES.coremetrics.cmCreatePageviewTag("MBL:fall16_give_pink", "MBL:fall16_give_pink");
+    function applyPageViewCM(){
+        BLOOMIES.coremetrics.cmCreatePageviewTag("MBL:fall16_give_pink", "MBL:fall16_give_pink");
+    }
+    window.onload = applyPageViewCM;
 
     function hp_TOC() {
         BLOOMIES.coremetrics.cmCreatePageElementTag("MBL:hp-TOC", "MBL:fall16_give_pink");
