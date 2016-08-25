@@ -95,11 +95,19 @@ function getRequest(path, callback, body) {
         url: path,
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        success: function ( data ) {
+            callback(data);
+        },
+        error: function (xhr, status, err) {
+            callback('error');
+            console.log('Request Error:');
+            console.log('______________');
+            console.log(xhr);
+            console.log(status);
+            console.log(err);
+            console.log('______________');
         }
-    }).success(function(data) {
-        callback(data);
-    }).fail(function(err){
-        console.log(err);
     });
 
 }
@@ -114,13 +122,20 @@ function postRequest(path, callback, body) {
         headers: {
             'Content-Type': 'application/json',
             'Accept': 'application/json',
-        }
-    }).success(function(data) {
-        callback(data);
-    }).fail(function(err){
-        console.log(err);
+        },
+        success: function ( data ) {
+            callback(data);
+        },
+        error: function (xhr, status, err) {
+            callback('error');
+            console.log('Request Error:');
+            console.log('______________');
+            console.log(xhr);
+            console.log(status);
+            console.log(err);
+            console.log('______________');
+        }   
     });
-
 }
 
 var SERVICES = {

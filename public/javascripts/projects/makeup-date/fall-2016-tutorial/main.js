@@ -74,23 +74,28 @@ var APP = {
 
 		// get product data from WSSG
 		SERVICES.product.upcGet(function(res){
-			products = res.product;
+			if ( res === 'error') {
+				$('#dynamicPROs').hide();
+			} else {
+				products = res.product;
 
-			// build HTML in SHOP THE LOOK section
-			$.each( products, function(i, value) {
-				if ( APP.markup[Math.floor(i/5)] === undefined ) APP.markup[Math.floor(i/5)] = [];
-				var li = "<li class='prod-"+i+"'><a target='_blank' href='"+value.productDetails.summary.productURL+"'><img src='"+baseImgURL+value.productDetails.primaryImage.imagename+"'><p class='brand'>"+value.productDetails.summary.brand+"</p><p class='name'>"+value.productDetails.summary.name.replace(value.productDetails.summary.brand, '')+"</p></li>";
-				APP.markup[Math.floor(i/5)].push(li);
-			});
+				// build HTML in SHOP THE LOOK section
+				$.each( products, function(i, value) {
+					if ( APP.markup[Math.floor(i/5)] === undefined ) APP.markup[Math.floor(i/5)] = [];
+					var li = "<li class='prod-"+i+"'><a target='_blank' href='"+value.productDetails.summary.productURL+"'><img src='"+baseImgURL+value.productDetails.primaryImage.imagename+"'><p class='brand'>"+value.productDetails.summary.brand+"</p><p class='name'>"+value.productDetails.summary.name.replace(value.productDetails.summary.brand, '')+"</p></li>";
+					APP.markup[Math.floor(i/5)].push(li);
+				});
 
-			$.each(APP.markup[APP.currentPage], function(i, value) {
-				html += value;
-			});
+				$.each(APP.markup[APP.currentPage], function(i, value) {
+					html += value;
+				});
 
-			html+="</ul>";
-			$('#prodShell').html(html);
-			$('#dynamicPROs .pagn .cur').text(1);
-			$('#dynamicPROs .pagn .tot').text( Math.ceil( products.length/5 ) );
+				html+="</ul>";
+				$('#prodShell').html(html);
+				$('#dynamicPROs .pagn .cur').text(1);
+				$('#dynamicPROs .pagn .tot').text( Math.ceil( products.length/5 ) );
+			}
+			
 
 		}, data.join(","));
 	},
