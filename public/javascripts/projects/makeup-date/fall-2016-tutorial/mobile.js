@@ -66,25 +66,29 @@ var APP = {
 		
 		APP.markup = [];
 		APP.currentPage = 0;
+		data = ['a','b'];
 
 		// get product data from WSSG
 		SERVICES.product.upcGet(function(res){
-			products = res.product;
-			APP.markup = [];
-			// build HTML in SHOP THE LOOK section
-			$.each( products, function(i, value) {
-				var li = "<li class='prod-"+i+"'><a href='"+value.productDetails.summary.productURL+"'><img src='"+baseImgURL+value.productDetails.primaryImage.imagename+"'><p class='brand'>"+value.productDetails.summary.brand+"</p><p class='name'>"+value.productDetails.summary.name.replace(value.productDetails.summary.brand, '')+"</p></li>";
-				APP.markup.push(li);
-			});
+			if ( res === 'error') {
+				$(target).parents('.videoShop').hide();
+			} else {
+				products = res.product;
+				APP.markup = [];
+				// build HTML in SHOP THE LOOK section
+				$.each( products, function(i, value) {
+					var li = "<li class='prod-"+i+"'><a href='"+value.productDetails.summary.productURL+"'><img src='"+baseImgURL+value.productDetails.primaryImage.imagename+"'><p class='brand'>"+value.productDetails.summary.brand+"</p><p class='name'>"+value.productDetails.summary.name.replace(value.productDetails.summary.brand, '')+"</p></li>";
+					APP.markup.push(li);
+				});
 
-			$.each(APP.markup, function(i, value) {
-				console.log(value);
-				html += value;
-			});
+				$.each(APP.markup, function(i, value) {
+					console.log(value);
+					html += value;
+				});
 
-			html+="</ul>";
-			$(target).html(html);
-
+				html+="</ul>";
+				$(target).html(html);
+			}
 		}, data.join(","));
 	},
 
