@@ -1,33 +1,17 @@
-$( window ).load(function() {
-
-//===============================================================================================================//
-//===============================================================================================================//
+$(document).ready( function($) {
 
 	'use strict';
+    if($.fn.postContest()){
+		$('a[coremetricTag="landing_sweepstakes"]').text("DESIGN YOUR OWN WORD");
+		$('#row_landing_chic').find('.landing_description').text("Create your own exclusive word using artist Greg Lamarche’s letters and post it to Instagram—everyone should witness your brilliance.");
+    }
 
-	$.fn.coreTag('Pageview', 'fall16_100percent--landing');
 
-	// $('.svg_bg_animate').each(function() {
-	// 	$(this).data('initPositionTop', parseFloat($(this).css('top'), 10)  );
-	// });
+	$( window ).load(function() {
 
-	// $('.backToTop').on('click', function(event){
-	// 	event.preventDefault();
-	// 	$('body,html').animate({
-	// 		scrollTop: 0 ,
-	// 	 	}, 700
-	// 	);
-	// });
+		$.fn.coreTag('Pageview', 'fall16_100percent--landing');
+	  
+	});
 
-	// $(window).scroll(function(){
-
-	// 	$('.svg_bg_animate').each(function(index) {
-	// 		$(this).css({
-	// 			'top':(  ( $(window).scrollTop() - $(this).parent().offset().top ) / (5+index%5) + $(this).data('initPositionTop')+100  )+'px'
-	// 		});
-	// 	});
-
-	// });
-  
 });
 

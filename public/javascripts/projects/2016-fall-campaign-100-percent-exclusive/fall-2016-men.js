@@ -93,11 +93,11 @@ $( window ).load(function() {
 
 		}
 
-		if ($('#row_burberry_men').isVisible()) {
-			$('#row_eleventy_svg7').css({
-				'top':(1600)+'px'
-			});
-		}
+		// if ($('#row_burberry_men').isVisible()) {
+		// 	$('#row_eleventy_svg7').css({
+		// 		'top':(1600)+'px'
+		// 	});
+		// }
 
 	});
 

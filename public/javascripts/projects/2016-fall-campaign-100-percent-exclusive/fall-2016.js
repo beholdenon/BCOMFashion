@@ -93,7 +93,7 @@ $(document).ready( function($) {
             }, 700
         );
     });
-    
+
 	$( window ).on('resize',function() {
         
         $('#hambuger').css({
@@ -180,6 +180,18 @@ $(document).ready( function($) {
         }
     };
 
+
+    $.fn.postContest = function() {
+        return true;
+        // var todayDate = new Date();
+        // var postContestDate = new Date("September 24, 2016");
+        // return (todayDate > postContestDate);
+    };
+
+    if($.fn.postContest()){
+        $('a[coremetricTag="side-nav_sweepstakes"] span').text("DESIGN YOUR OWN WORD");
+    }
+
     $.fn.isVisible = function() {
         var rect = this[0].getBoundingClientRect();
         return (
@@ -261,9 +273,6 @@ $(document).ready( function($) {
             window.Globals.Coremetrics.attr42 = attr;
         }
     }
-
-
-
     
 });
 
