@@ -1,0 +1,100 @@
+.intro {
+  position: relative;
+  overflow: hidden;
+  padding: 25px 0;
+
+  .intro-left {
+    margin-top: 45px;
+  }
+
+  .intro-right{
+    padding: 0 .45455em 0 0;
+    h2.title {
+      font-family: Avenir, Helvetica, Arial, sans-serif;
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      text-align: center;
+    }
+    h3.subtitle {
+      height: 80px;
+      width: 100%;
+      margin-bottom: 20px;
+      background: url('/fashion/images/projects/campaign/give-pink-get-more/banner.jpg') no-repeat;
+      background-size: contain;
+      white-space: nowrap;
+      color: transparent;
+      font-size: 0;
+    }
+    a.button {
+      padding: 0 1.25rem;
+      font-size: 1rem;
+      line-height: 2.75rem;
+      height: 2.91667rem;
+      letter-spacing: 0.02083rem;
+      text-transform: uppercase;
+      border-color: #000;
+      background: #000;
+      color: #fff;
+      border-style: solid;
+      border-width: 1px;
+      cursor: pointer;
+      font-family: Avenir, Helvetica, Arial, sans-serif;
+      font-weight: bold;
+      margin: 16px 0;
+      position: relative;
+      text-decoration: none;
+      text-align: center;
+      display: inline-block;
+    }
+    h4 {
+      padding-top: 0;
+      padding-bottom: 0;
+      letter-spacing: 3px;
+      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+      color: #fc03b5 !important;
+      text-transform: uppercase;
+      font-size: 18px;
+    }
+  }
+
+  .gpgm-the-give {
+    margin: 0;
+    p {
+      font-family: HelveticaLTStd, Helvetica, Arial, sans-serif;
+      font-size: 12px;
+      line-height: 1.4;
+      a {
+        font-weight: bold;
+      }
+    }
+  }
+
+  .gpgm-the-get {
+    h4 {
+      margin: 12px 0;
+      padding: 0;
+    }
+    p {
+      line-height: 1.6;
+      font-size: 11px;
+      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+      letter-spacing: 0.4px;
+      color: #333333;
+      margin: 0;
+      a {
+        color: #333333;
+        font-size: 10px;
+      }
+    }
+  }
+
+  .gpgm-footer {
+    line-height: 1.6;
+    font-size: 10px;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    letter-spacing: 0.5px;
+    color: #333333;
+  }
+}
