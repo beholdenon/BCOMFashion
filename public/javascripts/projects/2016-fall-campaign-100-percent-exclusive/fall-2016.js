@@ -182,10 +182,10 @@ $(document).ready( function($) {
 
 
     $.fn.postContest = function() {
-        return true;
-        // var todayDate = new Date();
-        // var postContestDate = new Date("September 24, 2016");
-        // return (todayDate > postContestDate);
+        // return true;
+        var todayDate = new Date();
+        var postContestDate = new Date("September 24, 2016");
+        return (todayDate > postContestDate);
     };
 
     if($.fn.postContest()){
