@@ -39,9 +39,10 @@ module.exports = {
         notes: 'Serve one code base for any device type',
         tags: ['responsive'],
         handler: function(req, res) {
-            var requestPath = (req.url.path).substring(1),
-                responsiveCustomHFView = requestPath + 'index';
+            var requestPath = (req.url.pathname).substring(1),
+                responsiveCustomHFView = requestPath + '/index';
 
+            responsiveCustomHFView = responsiveCustomHFView.replace('//', '/');
             return res.view(responsiveCustomHFView, null, { layout: 'responsive' });
         }
     },
@@ -51,10 +52,11 @@ module.exports = {
         notes: 'Serve single html view for desktop and mobile; exclude standard H&F',
         tags: ['custom header & footer', 'static'],
         handler: function(req, res) {
-            var requestPath = (req.url.path).substring(1),
-                responsiveCustomHFView = requestPath + 'index';
+            var requestPath = (req.url.pathname).substring(1),
+                responsiveCustomHFView = requestPath + '/index';
 
-            return res.view(responsiveCustomHFView, null, { layout: 'responsiveCustomHF' });
+            responsiveCustomHFView = responsiveCustomHFView.replace('//', '/');
+            return res.view(responsiveCustomHFView, { assetsHost: process.env.BASE_ASSETS }, { layout: 'responsiveCustomHF' });
         }
     },
 
