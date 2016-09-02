@@ -733,7 +733,7 @@
         color:#e93e35;
     } 
     .landing_description{
-        max-width: 400px;
+        max-width: 420px;
     }
 }
 #row_landing_fallcatalogs{
@@ -859,7 +859,7 @@
 }
 #row_maje_svg1{
     top: 290px;
-    left: 440;
+    left: 440px;
     width: 149px;
     transform: rotate(10deg);
 }
@@ -2291,6 +2291,10 @@
 //=================================================================//
 //MAIN
 //=================================================================//
+body{
+    min-width: initial !important;
+}
+
 body #bl_main_container{
     width:100%;
     max-width: none;
