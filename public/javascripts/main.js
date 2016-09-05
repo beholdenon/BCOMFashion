@@ -1,47 +1,11 @@
-/**
- * 
- * Need to move the requirejs-config section to a different file
- * Currently it's here because, this file loaded thru data-main in index.html
- * 
- */
-
-(function() {
-    var paths = {
-            'backbone': 'libs/backbone',
-            'handlebars': 'libs/handlebars',
-            'jquery': 'libs/jquery',
-            'require': 'libs/requirejs',
-            'underscore': 'libs/lodash',
-            'globalns': 'includes/globalns',
-            'desktopHeader': 'includes/desktopHeader',
-            'mobileHeader': 'includes/mobileHeader',
-            'coremetrics': 'includes/coremetrics'
-        },
-        shim = {
-            'backbone': {
-                'deps': ['underscore', 'jquery'],
-                'exports': 'Backbone'
-            },
-            'handlebars': {
-                'exports': 'Handlebars'
-            }
-        };
-
-    require.config({
-        paths: paths,
-        shim: shim
-    });
-})();
-
-define([
-    'backbone',
+require([
     'jquery',
     'underscore',
-    'desktopHeader',
-    'mobileHeader',
-    'coremetrics'
-], function(Backbone, $, _, DesktopHeader, MobileHeader, Coremetrics) {
-    
+    'coremetrics',
+    'globals',
+    'globalHeaderFooter',    
+], function($, _, Coremetrics, Globals, GlobalHF) {
+
     // init global app namespace object
     window.Globals = {
         env: window.ENV_CONFIG || 'dev',
@@ -62,16 +26,11 @@ define([
         window.Globals.deviceType = 'desktop';
     }
 
-    if (typeof window.Globals.mobileOS !== "undefined") {
-        MobileHeader();
-    } else {
-        DesktopHeader();
-    }
+    // Initialize Global Header and Footer from MacysUI
+    window.useNewDesign = true;
+    GlobalHF();
 
-    // show/hide the DOWNLOAD THE BIG BROWN BAG APP footer btn based on the mobile OS detection
-    BLOOMIES.BBBappBtn();
-
-    // init CM: env setup; pageview; nav links clicks
+    // Initialize Coremetrics clientID and fire PageView tags
     Coremetrics.initCoreMetrics();
 
     Backbone.history.start({

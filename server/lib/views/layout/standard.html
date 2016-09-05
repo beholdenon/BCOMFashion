@@ -6,32 +6,31 @@
         <!--============[ CSS: Mobile Specific ]============-->
         {{#if args.isMobile}}
             <link rel="stylesheet" href="/fashion/styles/mobile_styles.css"/>
+            <link rel="stylesheet" href="//{{assetsHost}}/styles/bcom/base/main-mobile.css?stop_mobi=yes">
         {{/if}}
 
         <!--============[ JS: Require Modules ]============-->
     </head>
 
-    {{#if isTablet}}
-        <body id="bcomFashion" class="tablet">
+    {{#if args.isTablet}}
+        <body id="bcomFashion" class="responsive">
+    {{else if args.isMobile}}
+        <body id="bcomFashion" class="bl_mobile responsive">
     {{else}}
-        <body id="bcomFashion">
+        <body id="bcomFashion" class="responsive">
     {{/if}} 
 
-        {{#if args.isMobile}}
-            {{> header-mobile}}            
-            {{> sidenav-mobile-top}}            
-        {{else}}
-            {{> header}}
-        {{/if}} 
-
+        <header class="responsive"></header>
+    {{#unless args.isMobile}}
+        <div class="row collapse">
+    {{/unless}}
         <div id="bl_main_container">
             {{! Every view gets inserted here }}
             {{{content}}}
         </div>
         
-        {{#if args.isMobile}}
-            {{> sidenav-mobile-bottom}} 
-            {{> footer-mobile}}
+        <footer class="responsive"></footer>
+       {{#if args.isMobile}}
             
             {{#if args.isMobileiOS}} 
 
@@ -39,9 +38,10 @@
             {{else}}
                 <script type="text/javascript">var MOBILE_OS = "Android";</script>
             {{/if}}            
-        {{else}}
-            {{> footer}}
-        {{/if}}     
+        {{/if}}
+        {{#unless args.isMobile}}
+            </div>
+        {{/unless}}
 
         <!-- inject -->
 

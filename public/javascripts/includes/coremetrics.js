@@ -2,7 +2,8 @@
 
 define([
     'underscore',
-    'jquery'
+    'jquery',
+    'globalns'
 ], function(_, $) {
 
     function setEnvironment() {

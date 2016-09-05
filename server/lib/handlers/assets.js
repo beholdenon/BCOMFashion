@@ -1,7 +1,8 @@
 'use strict';
 
 var serviceProxy = require('./../helpers/serviceProxy'),
-    Path = require('path');
+    Path = require('path'),
+    Device = require('./../helpers/deviceDetection');
 
 module.exports = {
     fashion: {
@@ -40,6 +41,64 @@ module.exports = {
                 passThrough: true,
                 mapUri: function(req, callback) {
                     var uri = 'http://www.bloomingdales.com' + decodeURIComponent(req.url.path);
+                    callback(null, uri, headers);
+                },
+                onResponse: serviceProxy.onResponseRedirect
+            });
+        }
+    },
+
+    hfHandler: {
+        handler: function(req, res) {
+            var headers = {
+                accept: 'application/json',
+                'Content-Type': 'application/json'
+            };
+
+            res.proxy({
+                timeout: serviceProxy.timeout,
+                passThrough: true,
+                mapUri: function(req, callback) {
+                    var uri = 'http://' + process.env.BASE_ASSETS + decodeURIComponent(req.url.path);
+                    callback(null, uri, headers);
+                },
+                onResponse: serviceProxy.onResponseRedirect
+            });
+        }
+    },
+    bagHandler: {
+        handler: function(req, res) {
+
+            res.proxy({
+                timeout: serviceProxy.timeout,
+                passThrough: true,
+                mapUri: function(req, callback) {
+                    var uri = 'http://' + process.env.BASE_ASSETS + decodeURIComponent(req.url.path);
+                    callback(null, uri);
+                }
+            });
+        },
+        payload: {
+          output: 'stream',
+          parse: false
+        }
+    },
+    
+    topNav: {
+        handler: function(req, res) {
+            var headers = {
+                accept: 'application/json',
+                'Content-Type': 'application/json'
+            };
+
+            var deviceType = Device.detectDevice(req),
+                mobileParam = ( deviceType === 'desktop' || deviceType === 'tablet' ? '' : '&stop_mobi=yes' );
+
+            res.proxy({
+                timeout: serviceProxy.timeout,
+                passThrough: true,
+                mapUri: function(req, callback) {
+                    var uri = 'http://' + process.env.BASE_ASSETS + decodeURIComponent(req.url.path) + mobileParam;
                     callback(null, uri, headers);
                 },
                 onResponse: serviceProxy.onResponseRedirect

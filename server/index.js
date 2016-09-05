@@ -11,7 +11,8 @@ server.connection({
     port: process.env.PORT,
     routes: {
         files: { relativeTo: Path.join(__dirname, 'public') },
-        state: { failAction: 'ignore' }       
+        state: { failAction: 'ignore' },
+        cors: true    
     },
     state: { ignoreErrors: false, strictHeader: false } 
 });
@@ -32,14 +33,20 @@ var routes = [
     { method: 'GET',  path: '/getBag/{path*}',                                  config: require('./lib/handlers/api').getbag },
     { method: 'POST', path: '/addToBag/{path*}',                                config: require('./lib/handlers/api').addbag },
     { method: 'GET',  path: '/fashion/{path*}',                                 config: require('./lib/handlers/assets').fashion },
+    { method: 'GET',  path: '/img/{path*}',                                     config: require('./lib/handlers/assets').hfHandler },
+    { method: 'GET',  path: '/web20/assets/{path*}',                            config: require('./lib/handlers/assets').hfHandler },
+    { method: 'GET',  path: '/shop/flyout',                                     config: require('./lib/handlers/assets').hfHandler },
+    { method: 'GET',  path: '/dyn_img/cat_splash/{path*}',                      config: require('./lib/handlers/assets').hfHandler },
+    { method: 'GET',  path: '/popup.ognc',                                      config: require('./lib/handlers/assets').hfHandler },
+    { method: 'POST',  path: '/bag/view',                                      config: require('./lib/handlers/assets').bagHandler },
+    { method: 'GET',  path: '/shop/topnav',                                     config: require('./lib/handlers/assets').topNav },
+    { method: 'GET',  path: '/catalog/{path*}',                                 config: require('./lib/handlers/assets').shop },
     { method: 'GET',  path: '/shop/{path*}',                                    config: require('./lib/handlers/assets').shop },
     { method: 'GET',  path: '/akamai/{path*}',                                  config: require('./lib/handlers/akamai') },
-    // { method: 'GET',  path: '/{--path--}',                                      config: require('./lib/handlers/views').responsive }, 
-    // { method: 'GET',  path: '/{--path--}',                                      config: require('./lib/handlers/views').nonResponsiveCustomHF },
     { method: 'GET',  path: '/international/china-brazil/components/{path*}',   config: require('./lib/handlers/assets').ngViews },
     { method: 'GET',  path: '/international/china-brazil/',                     config: require('./lib/handlers/views').responsiveCustomHF },
     { method: 'GET',  path: '/100-percent-2016/coming-soon/',                   config: require('./lib/handlers/views').responsiveCustomHF },
-    { method: 'GET',  path: '/2016-fall-campaign-100-percent-exclusive/{path*}',   config: require('./lib/handlers/views').responsiveCustomHF },
+    { method: 'GET',  path: '/2016-fall-campaign-100-percent-exclusive/{path*}',config: require('./lib/handlers/views').responsiveCustomHF },
     { method: 'GET',  path: '/outlet-touch-screen/',                            config: require('./lib/handlers/views').responsiveCustomHF },
     { method: 'GET',  path: '/{path*}',                                         config: require('./lib/handlers/views').fallback }
 ];

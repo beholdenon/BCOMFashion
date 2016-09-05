@@ -173,7 +173,8 @@ module.exports = function(grunt) {
                     cwd: '<%= node.source %>',
                     src: [
                         'package.json',
-                        'Procfile'
+                        'Procfile',
+                        '.env'
                     ],
                     dest: '<%= node.destination %>'
                 }]                
