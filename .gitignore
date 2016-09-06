@@ -1,3 +1,6 @@
+# Webstorm
+.idea/*
+
 # Don't commit OSX files or npm generated files
 .DS_Store
 .sass-cache
@@ -12,6 +15,9 @@ node_modules/.bin
 bin
 *.log
 .env
+*-compiled*
+server/lib/views/navdata.js
+public/images/titles
 
 # Ignore everything in the target folder
 target
@@ -31,3 +37,4 @@ Gemfile.lock
 *.gzip
 *.zip
 *.project
+
