@@ -10,7 +10,6 @@ require([
     window.Globals = {
         env: window.ENV_CONFIG || 'dev',
         deviceType: null,
-        mobileOS: window.MOBILE_OS,
         Coremetrics: {
             pageID: null,
             catID: null,
@@ -18,9 +17,9 @@ require([
         }
     };
 
-    if ($('body').hasClass('mobile')) {
+    if ($('body').hasClass('bl_mobile')) {
         window.Globals.deviceType = 'mobile';
-    } else if ($('body').hasClass('tablet')) {
+    } else if ($('body').hasClass('bl_tablet')) {
         window.Globals.deviceType = 'tablet';
     } else {
         window.Globals.deviceType = 'desktop';
@@ -33,8 +32,4 @@ require([
     // Initialize Coremetrics clientID and fire PageView tags
     Coremetrics.initCoreMetrics();
 
-    Backbone.history.start({
-        pushState: true,
-        urlRoot: '/'
-    });
 });

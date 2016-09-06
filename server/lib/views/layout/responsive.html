@@ -11,37 +11,29 @@
         <!--============[ JS: Require Modules ]============-->
     </head>
 
-    {{#if isTablet}}
-        <body id="bcomFashion" class="tablet">
+    {{#if args.isTablet}}
+        <body id="bcomFashion" class="responsive bl_trulyResponsive">
+    {{else if args.isMobile}}
+        <body id="bcomFashion" class="bl_mobile responsive bl_trulyResponsive">
     {{else}}
-        <body id="bcomFashion">
+        <body id="bcomFashion" class="responsive bl_trulyResponsive">
     {{/if}} 
 
-        {{#if args.isMobile}}
-            {{> header-mobile}}            
-            {{> sidenav-mobile-top}}            
-        {{else}}
-            {{> header}}
-        {{/if}} 
+        <header class="responsive"></header>
+        {{#unless args.isMobile}}
+            {{! Desktop and Tablet Views should have a row wrapping the bl_main_container div }}
+            <div class="row collapse">
+        {{/unless}}
 
-        <div id="bl_main_container">
-            {{! Every view gets inserted here }}
-            {{{content}}}
-        </div>
+                <div id="bl_main_container">
+                    {{! Every view gets inserted here }}
+                    {{{content}}}
+                </div>
         
-        {{#if args.isMobile}}
-            {{> sidenav-mobile-bottom}} 
-            {{> footer-mobile}}
-            
-            {{#if args.isMobileiOS}}
-
-            <script type="text/javascript">var MOBILE_OS = "iOS";</script>
-            {{else}}
-                <script type="text/javascript">var MOBILE_OS = "Android";</script>
-            {{/if}}            
-        {{else}}
-            {{> footer}}
-        {{/if}}     
+        <footer class="responsive"></footer>
+        {{#unless args.isMobile}}
+            </div>
+        {{/unless}}
 
         <!-- inject -->
 
