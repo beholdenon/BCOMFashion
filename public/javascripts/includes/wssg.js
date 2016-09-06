@@ -140,6 +140,29 @@ function postRequest(path, callback, body) {
 
 var SERVICES = {
 
+    brightCove: {
+        getURL: function (callback, video_id) {
+            var path = "//api.brightcove.com/services/library?command=find_video_by_id&video_id="+video_id+"&video_fields=FLVURL&media_delivery=http&token=2uKb24EVrCM2ytEfXsGX91YC2eB41If1K6i82P-j9GATvAlc5o-kKg..";
+            
+            $.ajax({
+                type: "GET",
+                url: path,
+                dataType: "jsonp",
+                cache: false,
+                crossDomain: true,
+                processData: true,
+
+                success: function (jsondata) {
+                    callback(jsondata.FLVURL);
+                },
+                error: function (xhr, status, errorThrown) {
+                    console.log(errorThrown + '\n' + status + '\n' + xhr.statusText);
+                }
+
+            });
+        },
+    },
+
     category: {
 
         index: function(callback, catID) {
