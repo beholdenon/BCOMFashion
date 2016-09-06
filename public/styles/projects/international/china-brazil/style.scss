@@ -1,3 +1,7 @@
+@import "vendor/foundation/components/top-bar",
+		"vendor/foundation/components/datepicker",
+		"vendor/foundation/components/offcanvas";
+
 $small-breakpoint:  640px;
 $medium-lower-bound: 641px;
 $medium-breakpoint: 1024px;
@@ -27,6 +31,11 @@ $large-up: "#{$screen} and (min-width:#{$large-lower-bound})";
     url('/fashion/styles/fonts/fontawesome-webfont.svg?v=4.4.0#fontawesomeregular') format('svg');
     font-weight: normal;
     font-style: normal;
+}
+
+// Overwrite Foundation default link colors
+a {
+    color: #000 !important;
 }
 
 //prevent flickering on Angular bindings
