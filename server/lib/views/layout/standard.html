@@ -6,7 +6,6 @@
         <!--============[ CSS: Mobile Specific ]============-->
         {{#if args.isMobile}}
             <link rel="stylesheet" href="/fashion/styles/mobile_styles.css"/>
-            <link rel="stylesheet" href="//{{assetsHost}}/styles/bcom/base/main-mobile.css?stop_mobi=yes">
         {{/if}}
 
         <!--============[ JS: Require Modules ]============-->
@@ -15,7 +14,7 @@
     {{#if args.isTablet}}
         <body id="bcomFashion" class="responsive">
     {{else if args.isMobile}}
-        <body id="bcomFashion" class="bl_mobile responsive">
+        <body id="bcomFashion" class="bl_mobile responsive bl_trulyResponsive">
     {{else}}
         <body id="bcomFashion" class="responsive">
     {{/if}} 

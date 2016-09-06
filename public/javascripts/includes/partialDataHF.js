@@ -5,28 +5,61 @@
 define(function() {
 
 	var partialData = {};
-	partialData.header = {
+    partialData.header = {
         seasonalAd: {
-            "adKeys": [],
+            "adKeys": ["null_ad_1"],
             "id": 0,
-            "items": [],
+            "items": [{
+                "adLinkKeys": ["null_ad_1_adLink_1"],
+                "adLinks": [{
+                    "adId": 0,
+                    "coordinates": "0,0,947,47",
+                    "key": "null_ad_1_adLink_1",
+                    "text": "1220Seasonal2016",
+                    "url": "http://www1.bloomingdales.com/shop/fashion-lookbooks-videos-style-guide?id=13668&cm_sp=hp-_-seasonal_ad-_-fpl_fall16"
+                }],
+                "fileName": "1220_Seasonal_Ad_01.jpg",
+                "height": 50,
+                "id": 0,
+                "key": "null_ad_1",
+                "text": "",
+                "width": 962
+            }],
             "key": "",
-            "name": ""
+            "name": "SEASONAL_AD"
         },
         seasonalAction: {
             seasonalActionOff: {
-                "adKeys": [],
+                "adKeys": ["null_ad_1"],
                 "id": 0,
-                "items": [],
+                "items": [{
+                    "adLinkKeys": [],
+                    "adLinks": [],
+                    "fileName": "1220_seasonal-ad_02v2.jpg",
+                    "height": 28,
+                    "id": 0,
+                    "key": "null_ad_1",
+                    "text": "",
+                    "width": 294
+                }],
                 "key": "",
-                "name": ""
+                "name": "SEASONAL_ACTION_OFF"
             },
             seasonalActionOn: {
-                "adKeys": [],
+                "adKeys": ["null_ad_1"],
                 "id": 0,
-                "items": [],
+                "items": [{
+                    "adLinkKeys": [],
+                    "adLinks": [],
+                    "fileName": "1220_seasonal-ad_02v2.jpg",
+                    "height": 28,
+                    "id": 0,
+                    "key": "null_ad_1",
+                    "text": "",
+                    "width": 294
+                }],
                 "key": "",
-                "name": ""
+                "name": "SEASONAL_ACTION_ON"
             },
         },
         headerGna: {
