@@ -40,10 +40,11 @@ module.exports = {
         tags: ['responsive'],
         handler: function(req, res) {
             var requestPath = (req.url.pathname).substring(1),
+                deviceDetectProc = deviceDetectParams(requestPath, req),
                 responsiveCustomHFView = requestPath + '/index';
 
             responsiveCustomHFView = responsiveCustomHFView.replace('//', '/');
-            return res.view(responsiveCustomHFView, null, { layout: 'responsive' });
+            return res.view(deviceDetectProc.view, { args: deviceDetectProc.args, assetsHost: process.env.BASE_ASSETS }, { layout: 'responsive' });
         }
     },
 
