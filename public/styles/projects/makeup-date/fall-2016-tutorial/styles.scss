@@ -1,9 +1,24 @@
 $mauve: #c91042;
 
-div#bl_main_container {
+body > div.row.collapse {
+	max-width: 100%; 
+}
+
+footer.responsive {
+	max-width: 80.16667rem;
+	margin: 0 auto;
+
+	.footerBar {
+		display: none;
+	}
+}
+
+body .row #bl_main_container {
 	min-width: auto;
 	max-width: 100%;
 	width: 100%;
+	margin: 0;
+	padding: 0;
 	position: relative;
 }
 
@@ -729,7 +744,7 @@ section a:active {
 }
 
 #book-footer {
-	background-color: #000000;
+	background-color: #ffffff;
 	text-align: center;
 	font-size: 1.25vw;
 
@@ -737,7 +752,7 @@ section a:active {
 		display: inline-block;
 		font-family: inherit;
 		font-weight: 700;
-		color: #ffffff;
+		color: #000000;
 		font-size: 1em;
 		line-height: 5em;
 		margin: 0 1.5em;
