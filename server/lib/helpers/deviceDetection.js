@@ -9,6 +9,7 @@ device.detectDevice = function(req) {
 
     if( typeof akamaiHeader !== undefined && akamaiHeader ) {
         deviceType = akamaiHeader.toLowerCase();
+        deviceType = deviceType === 'phone' ? 'mobile' : deviceType;
     }
     else {
         if (/iPhone/i.test(UA)) {
