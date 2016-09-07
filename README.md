@@ -2,29 +2,25 @@
 ----------------
 1. Install **Git Bash** - https://git-scm.com/
 
-2. Install **Python 2.7.10** - https://www.python.org/downloads/release/python-2710/
-> during installation opt for: CUSTOMIZE PYTHON -> ADD PYTHON.EXE TO PATH -> Will be installed on local hardrive
-
-3. Install **NodeJS** - https://nodejs.org/en/download/ 
+2. Install **NodeJS** - https://nodejs.org/en/download/ 
 > verify node installed correctly by running: ```node -v``` and it will log the version number)
 
-4. Update npm by running: ```npm update -g npm```
+3. Update npm: ```npm update -g npm```
 
-5. Install **Grunt** by running: ```npm install -g grunt-cli```
+4. Install **Grunt**: ```npm install -g grunt-cli```
 
-6. Install **Ruby** using the *Ruby Installer* - http://rubyinstaller.org/
+5. Install **Ruby** via *Ruby Installer* - http://rubyinstaller.org/
 
-6. Install **Compass** by running: ```gem install compass```
+6. Install **Compass**: ```gem install compass```
 
 
 ###Project Setup
 ----------------
-1. Clone the *BCOMFashion* repo: git clone git@code.devops.fds.com:CAP/BCOMFashion.git
+1. Clone *BCOMFashion* app: ```git clone git@code.devops.fds.com:CAP/BCOMFashion.git```
 
-2. Install node dependencies by running ```npm install``` in the BCOMFashion directory
+2. Install node dependencies running ```npm install``` inside the BCOMFashion directory
 
-3. To test/develop locally, edit **.env** file variables as follows:
-	- NODE_ENV=dev
-> When pushing code to a remote branch make sure you change back these variables to **production**
+3. To develop/test locally, inside the **.env** file edit **NODE_ENV=dev**
+> Required: When pushing code to the repo, change back **NODE_ENV=production**
 
-4. Run the node server: ```grunt``` and it will open the app in your default browser.
+4. Start the application: ```grunt``` and access it in the browser ```http://localhost:3000```.
