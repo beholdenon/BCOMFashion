@@ -19,12 +19,11 @@
 
 ###Project Setup
 ----------------
-1. Clone the *BCOMFashion* repo: git clone http://wdsgerrit:8080/p/BCOMFashion.git
+1. Clone the *BCOMFashion* repo: git clone git@code.devops.fds.com:CAP/BCOMFashion.git
 
 2. Install node dependencies by running ```npm install``` in the BCOMFashion directory
 
 3. To test/develop locally, edit **.env** file variables as follows:
-	- ENV=dev
 	- NODE_ENV=dev
 > When pushing code to a remote branch make sure you change back these variables to **production**
 
