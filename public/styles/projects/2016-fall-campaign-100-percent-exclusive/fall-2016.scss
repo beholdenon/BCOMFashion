@@ -986,6 +986,7 @@
     left: -60px;
     width: 150px;
     transform: rotate(0deg);
+    z-index: 1;
 }
 #row_kooples_svg5{
     top: 576px;
@@ -1651,13 +1652,13 @@
     transform: rotate(-10deg);
 }
 #row_theory_men_svg2{
-    top: -110px;
+    top: -180px;
     left: -28px;
     width: 110px;
     transform: rotate(0deg);
 }
 #row_theory_men_svg3{
-    top: -89px;
+    top: -139px;
     left: 216px;
     width: 94px;
     transform: rotate(30deg);
@@ -1701,7 +1702,7 @@
     transform: rotate(7deg);
 }
 #row_vince_men_svg3{
-    top: -130px;
+    top: -180px;
     left: -132px;
     width: 274px;
     transform: rotate(-10deg);
@@ -2236,6 +2237,7 @@
         box-shadow: -10px 10px 0 #ffebdb;
         text-transform: uppercase;
         cursor: pointer;
+        font-weight: 300;
     }    
 }
 
@@ -2391,7 +2393,8 @@ body #bl_main_container{
     transition: all 0.3s;
     background-color: #25252d;
     z-index: 12;
-    // opacity: .7;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
 }
 
 .sidenav_open{
@@ -2489,7 +2492,7 @@ body #bl_main_container{
 }
 
 .nav_shop_all_exclusives{
-    font-weight: 900 !important;
+    font-weight: 600 !important;
 }
 
 

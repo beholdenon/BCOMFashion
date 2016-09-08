@@ -49,7 +49,7 @@ $( window ).load(function() {
 		if ($('#row_jars').isVisible()) {
 
 			$('#row_waterford_svg2').css({
-				'top':(850)+'px',
+				'top':(820)+'px',
 			});
 		}
 		
