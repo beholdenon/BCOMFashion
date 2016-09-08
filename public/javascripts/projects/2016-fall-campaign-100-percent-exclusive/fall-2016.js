@@ -6,6 +6,7 @@ $(document).ready( function($) {
 
 	'use strict';
 
+    $('body').removeClass('bl_trulyResponsive');
 
 	var social = {
 		facebookTitle: '100% Bloomingdale\'s | bloomingdales.com',
