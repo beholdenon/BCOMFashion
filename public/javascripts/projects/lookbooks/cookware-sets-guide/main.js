@@ -3,6 +3,7 @@
 var APP = {
 
     cm: 'spring16_cookware',
+    isTablet: $('body').hasClass('bl_tablet') ? true : false ,
 
     social: {
             facebookTitle: 'The Cookware Guide | bloomingdales.com',
@@ -95,6 +96,10 @@ var APP = {
         });
     },
 
+    calcNavOffset: function () {
+        APP.topNav = $('#topNav').offset().top;
+    },
+
     stickyNav: function () {
     	if  ( $(window).scrollTop() > APP.topNav ) {
     		$('#topNav').addClass('sticky');
@@ -109,6 +114,10 @@ var APP = {
         var windowBottom = $(document).scrollTop() + $(window).height(),
             backBottom = $('.desktop_back_to_top').offset().top + $('.desktop_back_to_top').height(),
             footerBottom = $('.desktop_footer').offset().top + $('.desktop_footer').height();
+
+            console.log(windowBottom);
+            console.log(backBottom);
+            console.log(footerBottom);
         
         if ( backBottom > windowBottom ) {
             $('.desktop_back_to_top').addClass('float').removeClass('abs').removeAttr('style');
@@ -188,25 +197,21 @@ $(document).ready(function() {
 	$('.loyalist-gift-card').on('click', function() { APP.coremetrics('Element', APP.cm, 'loyalist-gift-card'); });
 	$('.loyalist-sign-up').on('click', function() { APP.coremetrics('Element', APP.cm, 'loyalist-sign-up'); });
 
-	//back to top listener
-    $('.desktop_back_to_top').on('click', function() {
-        $('html, body').animate({
-            scrollTop: 0
-        }, 'slow', function(){
-            //scrolling complete; appmed class "origin" to the button node
-            $('.desktop_back_to_top').addClass('origin');
-        });
-
-        APP.coremetrics('Element', APP.cm, 'back_to_top');
-    });
-
 	$(window).scroll(function(){
-		APP.floatingGraphic();
+		//APP.floatingGraphic();
 		APP.scrollMetrics();
-		APP.stickyNav();
+        if( ! APP.isTablet ) {
+		  APP.stickyNav();
+        }
 	});
 
-	APP.stickyNav();
+    setTimeout(function() {
+        APP.calcNavOffset();
+    }, 4000);
+
+    if( ! APP.isTablet ) {
+	   APP.stickyNav();
+    }
 
 });
 
@@ -219,6 +224,6 @@ $(window).load(function() {
 		}
 	};
 
-	APP.floatingGraphic();
+	//APP.floatingGraphic();
 	APP.coremetrics('Pageview', APP.cm, APP.cm + '_'+section());
 });

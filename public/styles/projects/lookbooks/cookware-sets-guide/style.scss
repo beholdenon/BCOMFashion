@@ -5,14 +5,35 @@
   font-family: "Libre Baskerville", serif;
 }
 
+body {
+  font-size: 11px;
+  position: relative;
+}
+
 #bl_main_container {
   font-family: "Lato", Arial, sans-serif;
+  font-size: 11px;
+  background: #fff;
+  color: #222;
+  cursor: auto;
+  font-style: normal;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+  position: relative;
 }
 
 ul {
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
+}
+
+/* Lists */
+ul,
+ol,
+dl {
+  line-height: 1.6;
 }
 
 #topNav {
@@ -35,7 +56,7 @@ ul {
 		padding: 0 1.25em;
 		display: inline-block;
     cursor: pointer;
-    font-weight: 700;
+    font-weight: 500;
     color: #fff;
     font-size: 14px;
 	}
@@ -94,14 +115,19 @@ ul {
 		}
 
     h1 {
-      font-size: 3rem;
+      font-size: 2.75rem;
       font-weight: 700;
+      line-height: 46.2px;
     }
-    h2 {font-size: 2.5rem;}
+    h2 {
+      font-size: 27.5px;
+      line-height: 38.5px;
+    }
 
     p {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       width: 90%;
+      line-height: 1.6;
     }
 
 		.selection {
@@ -112,7 +138,7 @@ ul {
     	margin-right: 0.5em;
 
       .topper {
-        margin: 0.5rem 0;
+        margin: 5.5px 0;
         display: block;
         font-weight: 700;
         font-size: 1.25em;
@@ -149,6 +175,7 @@ ul {
     }
 
 		button {
+      font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
 			background-color: transparent;
 			border: 1px solid #fff;
 			color: #000;
@@ -229,6 +256,10 @@ section {
   a {
     margin-bottom: 0;
   }
+
+  button {
+    line-height: normal;
+  }
 }
 
 .shop-section {
@@ -281,13 +312,16 @@ section {
       font-weight: 400;
       margin: 0.15em 0;
       font-family: "Libre Baskerville", sans-serif;
+      line-height: 1.4;
+      padding-bottom: 0.25em;
     }
 
     p {
       line-height: 2.25em;
       width: 54%;
       font-size: 1.2em;
-
+      margin-bottom: 0.75em;
+      margin-top: 0.75em;
     }
 
     button.shop {
@@ -303,6 +337,7 @@ section {
       font-weight: 900;
       width: 200px;
       height: 40px;
+      border: none;
     }
 
   }
@@ -657,4 +692,8 @@ aside{
   .desktop_back_to_top{
     display: block;
   }
+}
+a:link, a:active, a:visited {
+  color: #000;
+  font-style: normal;
 }
