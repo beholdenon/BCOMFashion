@@ -50,7 +50,7 @@ $( window ).load(function() {
 
 		if ($('#row_canali').isVisible()) {
 			$('#row_varvatos_svg4').css({
-				'top':(760)+'px'
+				'top':(710)+'px'
 			});			
 
 			$('#row_canali_svg4').css({

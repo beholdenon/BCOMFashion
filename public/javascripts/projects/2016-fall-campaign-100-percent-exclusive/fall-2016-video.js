@@ -1,3 +1,5 @@
+/* globals SERVICES */
+
 $( window ).load(function() {
 
 //===============================================================================================================//
@@ -16,6 +18,16 @@ $( window ).load(function() {
     $('#hundredpercentvideo').on('ended', function () {
         $.fn.coreTag('Element', "video-ended");
     });
+
+
+    var tar = $("#hundredpercentvideo"),
+        id = tar.attr('data-id');
+    
+    SERVICES.brightCove.getURL( function(res) {
+        tar.attr('src', res);
+    }, id);
+
+
 
    
 });

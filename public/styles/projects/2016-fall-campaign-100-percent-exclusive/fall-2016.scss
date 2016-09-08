@@ -2,6 +2,215 @@
 @import 'foundation/_settings';
 @import 'foundation';
 
+
+
+//=================================================================//
+//FIX FOR NEW MAIN
+//=================================================================//
+@media only screen and (min-width: 600px){
+/*
+    .medium-push-1 {
+        left: 0;
+        right: 0;
+    }
+    .medium-push-2 {
+        left: 0;
+        right: 0;
+    }
+    .medium-push-3 {
+        left: 0;
+        right: 0;
+    }
+    .medium-push-4 {
+        left: 0;
+        right: 0;
+    }
+    .medium-push-5 {
+        left: 0;
+        right: 0;
+    }               
+    .medium-push-6 {
+        left: 0;
+        right: 0;
+    }
+    .medium-push-7 {
+        left: 0;
+        right: 0;
+    }
+    .medium-push-8 {
+        left: 0;
+        right: 0;
+    }
+    .medium-push-9 {
+        left: 0;
+        right: 0;
+    }
+    .medium-push-10 {
+        left: 0;
+        right: 0;
+    }
+    .medium-push-11 {
+        left: 0;
+        right: 0;
+    }
+    .medium-push-12 {
+        left: 0;
+        right: 0;
+    }
+    .medium-push-13 {
+        left: 0;
+        right: 0;
+    }
+    .medium-push-14 {
+        left: 0;
+        right: 0;
+    }
+    .medium-push-15 {
+        left: 0;
+        right: 0;
+    }
+    .medium-push-16 {
+        left: 0;
+        right: 0;
+    }
+    .medium-push-17 {
+        left: 0;
+        right: 0;
+    }
+    .medium-push-18 {
+        left: 0;
+        right: 0;
+    }
+    .medium-push-19 {
+        left: 0;
+        right: 0;
+    }
+    .medium-push-20 {
+        left: 0;
+        right: 0;
+    }
+    .medium-push-21 {
+        left: 0;
+        right: 0;
+    }
+    .medium-push-22 {
+        left: 0;
+        right: 0;
+    }
+    .medium-push-23 {
+        left: 0;
+        right: 0;
+    }
+    .medium-push-24 {
+        left: 0;
+        right: 0;
+    }
+
+
+    .medium-pull-1 {
+        left: 0;
+        right: 0;
+    }
+    .medium-pull-2 {
+        left: 0;
+        right: 0;
+    }
+    .medium-pull-3 {
+        left: 0;
+        right: 0;
+    }
+    .medium-pull-4 {
+        left: 0;
+        right: 0;
+    }
+    .medium-pull-5 {
+        left: 0;
+        right: 0;
+    }               
+    .medium-pull-6 {
+        left: 0;
+        right: 0;
+    }
+    .medium-pull-7 {
+        left: 0;
+        right: 0;
+    }
+    .medium-pull-8 {
+        left: 0;
+        right: 0;
+    }
+    .medium-pull-9 {
+        left: 0;
+        right: 0;
+    }
+    .medium-pull-10 {
+        left: 0;
+        right: 0;
+    }
+    .medium-pull-11 {
+        left: 0;
+        right: 0;
+    }
+    .medium-pull-12 {
+        left: 0;
+        right: 0;
+    }
+    .medium-pull-13 {
+        left: 0;
+        right: 0;
+    }
+    .medium-pull-14 {
+        left: 0;
+        right: 0;
+    }
+    .medium-pull-15 {
+        left: 0;
+        right: 0;
+    }
+    .medium-pull-16 {
+        left: 0;
+        right: 0;
+    }
+    .medium-pull-17 {
+        left: 0;
+        right: 0;
+    }
+    .medium-pull-18 {
+        left: 0;
+        right: 0;
+    }
+    .medium-pull-19 {
+        left: 0;
+        right: 0;
+    }
+    .medium-pull-20 {
+        left: 0;
+        right: 0;
+    }
+    .medium-pull-21 {
+        left: 0;
+        right: 0;
+    }
+    .medium-pull-22 {
+        left: 0;
+        right: 0;
+    }
+    .medium-pull-23 {
+        left: 0;
+        right: 0;
+    }
+    .medium-pull-24 {
+        left: 0;
+        right: 0;
+    }   
+*/
+}
+
+//=================================================================//
+//FIX FOR NEW MAIN
+//=================================================================//
+
+
 //=================================================================//
 //SEE THE RULES
 //=================================================================//
@@ -575,6 +784,7 @@
         color: black;
         text-transform: uppercase;
         white-space: nowrap;
+        text-decoration: underline;
     }
 
 }
@@ -986,6 +1196,7 @@
     left: -60px;
     width: 150px;
     transform: rotate(0deg);
+    z-index: 2;
 }
 #row_kooples_svg5{
     top: 576px;
@@ -1651,13 +1862,13 @@
     transform: rotate(-10deg);
 }
 #row_theory_men_svg2{
-    top: -110px;
+    top: -180px;
     left: -28px;
     width: 110px;
     transform: rotate(0deg);
 }
 #row_theory_men_svg3{
-    top: -89px;
+    top: -139px;
     left: 216px;
     width: 94px;
     transform: rotate(30deg);
@@ -1701,7 +1912,7 @@
     transform: rotate(7deg);
 }
 #row_vince_men_svg3{
-    top: -130px;
+    top: -180px;
     left: -132px;
     width: 274px;
     transform: rotate(-10deg);
@@ -1774,7 +1985,7 @@
     transform: rotate(0deg);
 }
 #row_canali_svg2{
-    top: -100px;
+    top: -160px;
     left: 119px;
     width: 110px;
     transform: rotate(0deg);
@@ -2229,13 +2440,15 @@
         font-size: 15px;
         letter-spacing: 2px;
         font-family: 'Lato', sans-serif;
-        padding: 23px 0 0 0;
+        padding: 33px 0 0 0;
         margin: 0 0 2.3rem 1.3rem !important;
         color: #ffebdb;
         background-color: #262636;
         box-shadow: -10px 10px 0 #ffebdb;
         text-transform: uppercase;
         cursor: pointer;
+        font-weight: 300;
+        line-height: 0 !important;
     }    
 }
 
@@ -2391,7 +2604,8 @@ body #bl_main_container{
     transition: all 0.3s;
     background-color: #25252d;
     z-index: 12;
-    // opacity: .7;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
 }
 
 .sidenav_open{
@@ -2489,7 +2703,7 @@ body #bl_main_container{
 }
 
 .nav_shop_all_exclusives{
-    font-weight: 900 !important;
+    font-weight: 600 !important;
 }
 
 
