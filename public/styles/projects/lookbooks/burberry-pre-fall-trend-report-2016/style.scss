@@ -266,7 +266,7 @@ ul {
 	}
 /*section*/
 	.desktop_main_container section{
-		font-size: 0;
+		font-size: 11px;
 		overflow: hidden;
 	}
 	article[class^="desktop_horizontal_"] > div {
@@ -688,4 +688,8 @@ ul {
 		font-weight: 800;
 		z-index: 10;
 	}
+}
+a:link, a:active, a:visited {
+  color: #000;
+  font-style: normal;
 }
