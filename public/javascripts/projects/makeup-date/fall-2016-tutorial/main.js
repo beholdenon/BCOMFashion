@@ -6,14 +6,16 @@ var APP = {
 	cm: {
 		category: "fall16_makeupdate"
 	},
+	isTablet: $('body').hasClass('bl_tablet') ? true : false,
 	currentPage: 0,
 	currentHero: 1,
 	markup: [],
 	pageview: "",
 
 	stickyNav: function () {
-		if ( $(document).scrollTop() > APP.navStart ) {
-			$('#navigation').css('top', $(document).scrollTop() - $('header').height() - 1 + 'px');
+		var tabletHeaderOffset = (APP.isTablet ? $('header').height() - $('#zeroNav').height() : 0 );
+		if ( $(document).scrollTop() + tabletHeaderOffset > APP.navStart ) {
+			$('#navigation').css('top', $(document).scrollTop() - $('header').height() - 1 + tabletHeaderOffset +'px');
 		} else if ( $(document).scrollTop() <= APP.navStart ) {
 			$('#navigation').css('top', APP.navStart - $('header').height() - 1 + 'px');
 		}
@@ -144,7 +146,7 @@ var APP = {
         if (window.location.href.indexOf('fashion.bloomingdales.com') < 0) {
             window.console.info(log);
         }
-    },
+    }
 
 };
 
@@ -153,13 +155,19 @@ $(window).load(function() {
 });
 
 $(document).ready(function() {
-	APP.navStart = $("header").height() + $("#makeup_hero").height() + 1;
-	APP.stickyNav();
+	var headerEl = $('header');
+
+	setTimeout(function() {
+		APP.navStart = $("header").height() + $("#makeup_hero").height() + 1;
+		APP.stickyNav();
+	}, 3000);
 	APP.heroRotation();
 
 	$(window).resize( function(){
-		APP.navStart = $("header").height() + $("#makeup_hero").height() + 1;
-		APP.stickyNav();
+		if( headerEl.height() > 0 ){
+			APP.navStart = $("header").height() + $("#makeup_hero").height() + 1;
+			APP.stickyNav();
+		}
 	});
 
 	$.getJSON('/fashion/javascripts/projects/makeup-date/fall-2016-tutorial/shop.json', function(json) {
@@ -171,7 +179,9 @@ $(document).ready(function() {
 	});
 
 	$(document).scroll( function() {
-		APP.stickyNav();
+		if( headerEl.height() > 0 ){
+			APP.stickyNav();
+		}
 		APP.updateNav();
 	});
 
