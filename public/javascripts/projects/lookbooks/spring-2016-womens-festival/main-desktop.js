@@ -5,6 +5,7 @@ window.TEMPLATE.vertical = (function(window, document, $) {
 
     var APP = {
         cm: 'Spring16_womensfestival', //coremetrics project prefix
+        isTablet: $('body').hasClass('bl_tablet') ? true : false,
         views: {
             sectionInViewport: null
         },
@@ -62,6 +63,10 @@ window.TEMPLATE.vertical = (function(window, document, $) {
         $('.desktop_main_container').show().addClass('loaded');
         $('.desktop_header').addClass('active');
 
+        if( APP.isTablet){
+            $('.desktop_nav').css({'z-index': 'initial'});
+        }
+
         window.setTimeout(function() {
             self.stickyNav();
             self.deepLinks();
@@ -108,10 +113,12 @@ window.TEMPLATE.vertical = (function(window, document, $) {
             //landing on an ancored URL
             if (self.views.sectionInViewport !== null) self.removeActiveNavBtn();
         } else {
-            $('.desktop_nav').css({
-                'top': 0,
-                'position': 'fixed'
-            });
+            if(! APP.isTablet){
+                $('.desktop_nav').css({
+                    'top': 0,
+                    'position': 'fixed'
+                });
+            }
 
             self.markActiveNavBtn();
         }
