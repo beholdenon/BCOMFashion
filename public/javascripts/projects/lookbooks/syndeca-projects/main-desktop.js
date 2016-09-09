@@ -2,6 +2,7 @@ window.SYNDECA = window.SYNDECA || {};
 
 window.SYNDECA.vertical = (function(window, document, $) {
     'use strict';
+    var isTablet = $('body').hasClass('bl_tablet') ? true : false;
 
     //back to top listener
     $('.desktop_back_to_top, #syndeca_mobile_back_to_top_button').on('click', function() {
@@ -11,13 +12,17 @@ window.SYNDECA.vertical = (function(window, document, $) {
     });
 
     $( window ).scroll(function() {
-      checkHeightAndShowBackToTop();
+        if( !isTablet ) {
+            checkHeightAndShowBackToTop();
+        }
     });
 
     $(window).load(function() {
 		    	
         window.BLOOMIES.coremetrics.cmCreatePageviewTag('SyndecaLookBook', 'SyndecaLookBook');
-        checkHeightAndShowBackToTop();
+        if( !isTablet ) {
+            checkHeightAndShowBackToTop();
+        }
 
     });
 
