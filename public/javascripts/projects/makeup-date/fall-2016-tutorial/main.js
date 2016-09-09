@@ -163,20 +163,6 @@ $(document).ready(function() {
 	}, 3000);
 	APP.heroRotation();
 
-	$(".vidBox").each(function() {
-		var tar = $(this),
-			id = tar.attr('data-id');
-		
-		SERVICES.brightCove.getURL( function(res) {
-			tar.attr('data-source', res);
-		}, id);
-	});
-
-	SERVICES.brightCove.getURL( function(res) {
-		$("#makeupVideo").attr('src', res);
-	}, $("#makeupVideo").attr('data-id') );
-	
-
 	$(window).resize( function(){
 		if( headerEl.height() > 0 ){
 			APP.navStart = $("header").height() + $("#makeup_hero").height() + 1;
