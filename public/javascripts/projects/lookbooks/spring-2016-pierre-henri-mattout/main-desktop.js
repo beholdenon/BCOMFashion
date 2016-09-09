@@ -5,6 +5,7 @@ window.PHM_2016 = (function(window, document, $) {
 
     var APP = {
         cm: 'spring16_mensphm', //coremetrics project prefix
+        isTablet: $('body').hasClass('bl_tablet') ? true : false,
         views: {
             sectionInViewport: null
         },
@@ -64,10 +65,15 @@ window.PHM_2016 = (function(window, document, $) {
         $('.desktop_header').addClass('active');
 
         window.setTimeout(function() {
-            self.stickyNav();
+            if( ! APP.isTablet ) {
+                $('.desktop_nav_placeholder').show();
+                self.stickyNav();
+            } else {
+                $('.desktop_nav_placeholder').remove();
+            }
             self.stickyBottomNav();
             self.deepLinks();
-        }, 500);
+        }, 1000);
 
         self.removeLoader(); 
 
@@ -265,7 +271,9 @@ window.PHM_2016 = (function(window, document, $) {
         });  
 
         $(window).scroll(function() {
-            APP.stickyNav();
+            if( ! APP.isTablet ) {
+                APP.stickyNav();
+            }
             APP.stickyBottomNav();
             APP.desktopHeaderVisible();
             APP.floatingGraphic();

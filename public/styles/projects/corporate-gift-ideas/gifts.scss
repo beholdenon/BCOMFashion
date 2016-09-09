@@ -1,3 +1,240 @@
+// Adding old styles for fixing compatibility of the project with the new main.css from macysUI
+body {
+  font-size: 11px;
+  background: white;
+  color: black;
+  padding: 0;
+  margin: 0;
+  font-family: Arial, Helvetica, Verdana, Sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  line-height: normal;
+  cursor: auto;
+  -webkit-text-size-adjust: 100%;
+}
+
+button, .button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border-radius: 0;
+  border-style: solid;
+  border-width: 0;
+  cursor: pointer;
+  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-weight: normal;
+  line-height: normal;
+  margin: 0 0 1.81818rem;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  padding: 1.45455rem 2.90909rem 1.54545rem 2.90909rem;
+  font-size: 1.45455rem;
+  background-color: #008CBA;
+  border-color: #007095;
+  color: #fff;
+  transition: background-color 300ms ease-out;
+}
+button:hover, button:focus, .button:hover, .button:focus {
+  background-color: #007095;
+}
+button:hover, button:focus, .button:hover, .button:focus {
+  color: #fff;
+}
+button.secondary, .button.secondary {
+  background-color: #e7e7e7;
+  border-color: #b9b9b9;
+  color: #333333;
+}
+button.secondary:hover, button.secondary:focus, .button.secondary:hover, .button.secondary:focus {
+  background-color: #b9b9b9;
+}
+button.secondary:hover, button.secondary:focus, .button.secondary:hover, .button.secondary:focus {
+  color: #333333;
+}
+button.success, .button.success {
+  background-color: #43AC6A;
+  border-color: #368a55;
+  color: #fff;
+}
+button.success:hover, button.success:focus, .button.success:hover, .button.success:focus {
+  background-color: #368a55;
+}
+button.success:hover, button.success:focus, .button.success:hover, .button.success:focus {
+  color: #fff;
+}
+button.alert, .button.alert {
+  background-color: #f04124;
+  border-color: #cf2a0e;
+  color: #fff;
+}
+button.alert:hover, button.alert:focus, .button.alert:hover, .button.alert:focus {
+  background-color: #cf2a0e;
+}
+button.alert:hover, button.alert:focus, .button.alert:hover, .button.alert:focus {
+  color: #fff;
+}
+button.warning, .button.warning {
+  background-color: #f08a24;
+  border-color: #cf6e0e;
+  color: #fff;
+}
+button.warning:hover, button.warning:focus, .button.warning:hover, .button.warning:focus {
+  background-color: #cf6e0e;
+}
+button.warning:hover, button.warning:focus, .button.warning:hover, .button.warning:focus {
+  color: #fff;
+}
+button.info, .button.info {
+  background-color: #a0d3e8;
+  border-color: #61b6d9;
+  color: #333333;
+}
+button.info:hover, button.info:focus, .button.info:hover, .button.info:focus {
+  background-color: #61b6d9;
+}
+button.info:hover, button.info:focus, .button.info:hover, .button.info:focus {
+  color: #fff;
+}
+button.large, .button.large {
+  padding: 1.63636rem 3.27273rem 1.72727rem 3.27273rem;
+  font-size: 1.81818rem;
+}
+button.small, .button.small {
+  padding: 1.27273rem 2.54545rem 1.36364rem 2.54545rem;
+  font-size: 1.18182rem;
+}
+button.tiny, .button.tiny {
+  padding: 0.90909rem 1.81818rem 1rem 1.81818rem;
+  font-size: 1rem;
+}
+button.expand, .button.expand {
+  padding-left: 0;
+  padding-right: 0;
+  width: 100%;
+}
+button.left-align, .button.left-align {
+  text-align: left;
+  text-indent: 1.09091rem;
+}
+button.right-align, .button.right-align {
+  text-align: right;
+  padding-right: 1.09091rem;
+}
+button.radius, .button.radius {
+  border-radius: 3px;
+}
+button.round, .button.round {
+  border-radius: 1000px;
+}
+button.disabled, button[disabled], .button.disabled, .button[disabled] {
+  background-color: #008CBA;
+  border-color: #007095;
+  color: #fff;
+  box-shadow: none;
+  cursor: default;
+  opacity: 0.7;
+}
+button.disabled:hover, button.disabled:focus, button[disabled]:hover, button[disabled]:focus, .button.disabled:hover, .button.disabled:focus, .button[disabled]:hover, .button[disabled]:focus {
+  background-color: #007095;
+}
+button.disabled:hover, button.disabled:focus, button[disabled]:hover, button[disabled]:focus, .button.disabled:hover, .button.disabled:focus, .button[disabled]:hover, .button[disabled]:focus {
+  color: #fff;
+}
+button.disabled:hover, button.disabled:focus, button[disabled]:hover, button[disabled]:focus, .button.disabled:hover, .button.disabled:focus, .button[disabled]:hover, .button[disabled]:focus {
+  background-color: #008CBA;
+}
+button.disabled.secondary, button[disabled].secondary, .button.disabled.secondary, .button[disabled].secondary {
+  background-color: #e7e7e7;
+  border-color: #b9b9b9;
+  color: #333333;
+  box-shadow: none;
+  cursor: default;
+  opacity: 0.7;
+}
+button.disabled.secondary:hover, button.disabled.secondary:focus, button[disabled].secondary:hover, button[disabled].secondary:focus, .button.disabled.secondary:hover, .button.disabled.secondary:focus, .button[disabled].secondary:hover, .button[disabled].secondary:focus {
+  background-color: #b9b9b9;
+}
+button.disabled.secondary:hover, button.disabled.secondary:focus, button[disabled].secondary:hover, button[disabled].secondary:focus, .button.disabled.secondary:hover, .button.disabled.secondary:focus, .button[disabled].secondary:hover, .button[disabled].secondary:focus {
+  color: #333333;
+}
+button.disabled.secondary:hover, button.disabled.secondary:focus, button[disabled].secondary:hover, button[disabled].secondary:focus, .button.disabled.secondary:hover, .button.disabled.secondary:focus, .button[disabled].secondary:hover, .button[disabled].secondary:focus {
+  background-color: #e7e7e7;
+}
+button.disabled.success, button[disabled].success, .button.disabled.success, .button[disabled].success {
+  background-color: #43AC6A;
+  border-color: #368a55;
+  color: #fff;
+  box-shadow: none;
+  cursor: default;
+  opacity: 0.7;
+}
+button.disabled.success:hover, button.disabled.success:focus, button[disabled].success:hover, button[disabled].success:focus, .button.disabled.success:hover, .button.disabled.success:focus, .button[disabled].success:hover, .button[disabled].success:focus {
+  background-color: #368a55;
+}
+button.disabled.success:hover, button.disabled.success:focus, button[disabled].success:hover, button[disabled].success:focus, .button.disabled.success:hover, .button.disabled.success:focus, .button[disabled].success:hover, .button[disabled].success:focus {
+  color: #fff;
+}
+button.disabled.success:hover, button.disabled.success:focus, button[disabled].success:hover, button[disabled].success:focus, .button.disabled.success:hover, .button.disabled.success:focus, .button[disabled].success:hover, .button[disabled].success:focus {
+  background-color: #43AC6A;
+}
+button.disabled.alert, button[disabled].alert, .button.disabled.alert, .button[disabled].alert {
+  background-color: #f04124;
+  border-color: #cf2a0e;
+  color: #fff;
+  box-shadow: none;
+  cursor: default;
+  opacity: 0.7;
+}
+button.disabled.alert:hover, button.disabled.alert:focus, button[disabled].alert:hover, button[disabled].alert:focus, .button.disabled.alert:hover, .button.disabled.alert:focus, .button[disabled].alert:hover, .button[disabled].alert:focus {
+  background-color: #cf2a0e;
+}
+button.disabled.alert:hover, button.disabled.alert:focus, button[disabled].alert:hover, button[disabled].alert:focus, .button.disabled.alert:hover, .button.disabled.alert:focus, .button[disabled].alert:hover, .button[disabled].alert:focus {
+  color: #fff;
+}
+button.disabled.alert:hover, button.disabled.alert:focus, button[disabled].alert:hover, button[disabled].alert:focus, .button.disabled.alert:hover, .button.disabled.alert:focus, .button[disabled].alert:hover, .button[disabled].alert:focus {
+  background-color: #f04124;
+}
+button.disabled.warning, button[disabled].warning, .button.disabled.warning, .button[disabled].warning {
+  background-color: #f08a24;
+  border-color: #cf6e0e;
+  color: #fff;
+  box-shadow: none;
+  cursor: default;
+  opacity: 0.7;
+}
+button.disabled.warning:hover, button.disabled.warning:focus, button[disabled].warning:hover, button[disabled].warning:focus, .button.disabled.warning:hover, .button.disabled.warning:focus, .button[disabled].warning:hover, .button[disabled].warning:focus {
+  background-color: #cf6e0e;
+}
+button.disabled.warning:hover, button.disabled.warning:focus, button[disabled].warning:hover, button[disabled].warning:focus, .button.disabled.warning:hover, .button.disabled.warning:focus, .button[disabled].warning:hover, .button[disabled].warning:focus {
+  color: #fff;
+}
+button.disabled.warning:hover, button.disabled.warning:focus, button[disabled].warning:hover, button[disabled].warning:focus, .button.disabled.warning:hover, .button.disabled.warning:focus, .button[disabled].warning:hover, .button[disabled].warning:focus {
+  background-color: #f08a24;
+}
+button.disabled.info, button[disabled].info, .button.disabled.info, .button[disabled].info {
+  background-color: #a0d3e8;
+  border-color: #61b6d9;
+  color: #333333;
+  box-shadow: none;
+  cursor: default;
+  opacity: 0.7;
+}
+button.disabled.info:hover, button.disabled.info:focus, button[disabled].info:hover, button[disabled].info:focus, .button.disabled.info:hover, .button.disabled.info:focus, .button[disabled].info:hover, .button[disabled].info:focus {
+  background-color: #61b6d9;
+}
+button.disabled.info:hover, button.disabled.info:focus, button[disabled].info:hover, button[disabled].info:focus, .button.disabled.info:hover, .button.disabled.info:focus, .button[disabled].info:hover, .button[disabled].info:focus {
+  color: #fff;
+}
+button.disabled.info:hover, button.disabled.info:focus, button[disabled].info:hover, button[disabled].info:focus, .button.disabled.info:hover, .button.disabled.info:focus, .button[disabled].info:hover, .button[disabled].info:focus {
+  background-color: #a0d3e8;
+}
+
+// end of the old main.css code
+
+.custom.dropdown.jumpTo {
+	display: none;
+}
 
 .magazine-viewport .container{
 	position:absolute;
@@ -415,6 +652,8 @@
   font-weight: bold;
   margin: 15px 0 0;
   background: none;
+  margin-top: 15px !important;
+
 	
   	.left-control,
   	.right-control {
@@ -424,6 +663,7 @@
   	}
 
 	label {
+		color: #4d4d4d;
   		font-size: 9px;
   		text-transform: uppercase;
   		font-weight: bold;
@@ -431,6 +671,46 @@
   		width: 20%;
   		margin: 0;
   		padding: 0;
+  		line-height: 27px;
+  		text-align: center;
+  		vertical-align: top;
+	}
+	
+	select {
+	  -webkit-appearance: none !important;
+	  -moz-appearance: none !important;
+	  background-color: #FAFAFA;
+	  border-radius: 0;
+	  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeD0iMTJweCIgeT0iMHB4IiB3aWR0aD0iMjRweCIgaGVpZ2h0PSIzcHgiIHZpZXdCb3g9IjAgMCA2IDMiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDYgMyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHBvbHlnb24gcG9pbnRzPSI1Ljk5MiwwIDIuOTkyLDMgLTAuMDA4LDAgIi8+PC9zdmc+);
+	  background-position: 100% center;
+	  background-repeat: no-repeat;
+	  border-style: solid;
+	  border-width: 1px;
+	  border-color: #cccccc;
+	  color: rgba(0, 0, 0, 0.75);
+	  font-family: inherit;
+	  font-size: 1.27273rem;
+	  line-height: normal;
+	  padding: 0.72727rem;
+	  border-radius: 0;
+	  height: 3.36364rem;
+	}
+	select::-ms-expand {
+	  display: none;
+	}
+	select.radius {
+	  border-radius: 3px;
+	}
+	select:hover {
+	  background-color: #f3f3f3;
+	  border-color: #999999;
+	}
+	select:disabled {
+	  background-color: #DDDDDD;
+	  cursor: default;
+	}
+	select[multiple] {
+	  height: auto;
 	}
 
 	select {
@@ -443,6 +723,8 @@
   		outline: none;
   		width: 50%;
   		display: inline-block;
+  		position: inherit;
+    	visibility: inherit;
 	}
 
 	ul.button-group {
@@ -450,9 +732,14 @@
   		height: 31px;
   		padding: 3px;
   		list-style-type: none;
+  		font-size: 11px;
+  		line-height: 1.6;
+  		margin-bottom: 20px;
+  		margin-left: 12.1px;
 
   		li {
   			display: inline-block;
+  			margin: 0;
   		}
 
   		li:first-child .button {
@@ -465,8 +752,12 @@
   		text-decoration: none;
   		background: #fff;
   		border-left: 1px solid #ccc;
-  		padding-top: 5px;
-  		padding-bottom: 5px;
+  		font-size: 11px;
+  		line-height: normal;
+  		letter-spacing: normal;
+  		margin-bottom: 20px;
+  		padding: 5px 20px;
+  		color: #333333;
 	}
 }
 
