@@ -165,3 +165,14 @@ a:link, a:active, a:visited {
     -webkit-font-smoothing: antialiased;
     -moz-font-smoothing: antialiased;
 }
+.bl_mobile {
+	.desktop_main_container {
+		section.lv {
+			.lv-content {
+				.row {
+					margin: 0;
+				}
+			}
+		}
+	}
+}
