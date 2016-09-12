@@ -64,8 +64,8 @@
 
                 Coremetrics.tag('Element', pageID, prefix + view);
             } else {
-                var url = null,
-                    device = (windowWidth < 641) ? 'mobileLinks:' : 'desktopLinks';
+                var url = null;
+                var device = (windowWidth < 641) ? 'mobileLinks' : 'desktopLinks';
 
                 url = copy.ENG.home.shop[device][view];
 
