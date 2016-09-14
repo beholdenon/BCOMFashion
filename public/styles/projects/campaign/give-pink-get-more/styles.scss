@@ -1,0 +1,541 @@
+// VARIABLES
+
+$pink: #fc04b0;
+$lightpink: #ffdff2;
+$darkgrey: #5e5e5e;
+$mediumgrey: #d0d0d0;
+$lightgrey: #f6f6f6;
+$legal: #6e6e6e;
+
+// ========= GLOBAL OVERWRITES
+
+body > div.row.collapse {
+    max-width: 100%;
+}
+
+body .row {
+
+	#bl_main_container {
+		width: 100%;
+		margin: 0;
+		padding: 0;
+	}
+}
+
+footer.responsive {
+    max-width: 962px;
+    margin: 0 auto;
+}
+
+footer #cmFooterBar {
+	display: none;
+}
+
+// ========= MAIN STYLES
+
+#Pink-Campaign {
+
+	h1, h2, h3 {
+		font-family: "Montserrat", sans-serif;
+	}
+
+	h2 {
+		font-size: 30px;
+		font-weight: 700;
+	}
+
+	h3 {
+		font-size: 20px;
+		font-weight: 700;
+	}
+
+	p {
+		color: #333333;
+		font-family: "Lato", sans-serif;
+		font-size: 13px;
+	}
+
+	a:hover, a:focus {
+		color: $pink;
+	}
+
+	.pinkText {
+		color: $pink;
+	}
+
+	.iblk {
+		display: inline-block;
+	}
+
+	.legal,
+	.legal p {
+		font-family: Helvetica, sans-serif;
+		font-size: 9px;
+		text-transform: uppercase;
+	}
+
+	section#Give-Pink-Introduction {
+
+		.greyBg {
+			background-color: $lightgrey; 
+			width: 100%;
+		}
+		
+		width: 100%;
+		position: relative;
+		margin-bottom: 7.5em;
+
+		#main-img {
+			margin: 0 auto;
+			display: block;
+		}
+
+		.sub-right a {
+			color: $darkgrey;
+		}
+	}
+
+	.sub-section {
+		max-width: 962px;
+		text-align: center;
+		display: block;
+		margin: 3em auto 0;
+
+		.sub-left,
+		.sub-right {
+			position: relative;
+			width: 44%;
+			margin: 1.5em 0;
+			padding: 0 2.5%;
+			display: inline-block;
+			vertical-align: top;
+
+			img {
+				display: block;
+				margin: 0 auto;
+			}
+
+			p {
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
+
+		.sub-left {
+			img.pad {
+				padding-bottom: 4em;
+			}
+		}
+
+		.sub-right {
+			
+			&.border {
+				border-left: 1px solid #d5d5d5;
+			}
+
+			p {
+				font-family: "Helvetica", sans-serif;
+			}
+
+			img.pad {
+				padding-bottom: 0.5em;
+			}
+
+			a {
+				font-family: "Helvetica", sans-serif;
+				text-transform: uppercase;
+
+				&:first-child {
+					margin-right: 1.5em;
+				}
+			}
+		}
+
+	}
+
+	.legal {
+
+		width: 65%;
+		display: block;
+		margin: 0 auto 2em;
+
+		h3 {
+			margin-bottom: 1em;
+		}
+
+		p {
+			margin: 0 0;
+			padding: 0 0;
+			color: $legal;
+		}
+
+	}
+
+
+	section.tape {
+		background-color: $lightgrey;
+		width: 100%;
+		position: relative;
+		text-align: center;
+		margin-bottom: 8em;
+
+		.heading {
+			position: relative;
+			margin: 0 auto;
+			display: block;
+			top: -3em;
+		}
+
+		h2 {
+			font-size: 26px;
+		}
+
+		p {
+			max-width: 415px;
+			padding: 2em 0 3em;
+			margin: 0 auto;
+		}
+
+		&:last-of-type {
+			margin-bottom: 0;
+		}
+	}
+
+	#stories {
+		margin: 3em auto 10em;
+		display: block;
+		max-width: 962px;
+	}
+
+	.fixedCont {
+		max-width: 1110px;
+		display: block;
+		margin: 0 auto;
+		padding-bottom: 5em;
+	}
+
+	.columnLayout {
+		display: inline-block;
+		vertical-align: top;
+		text-align: center;
+		position: relative;
+
+		&.column-one {
+			width: 28%;
+		}
+
+		&.column-two {
+			width: 40%;
+		}
+
+		&.column-three {
+			width: 28%;
+		}
+	}
+
+	.highZone {
+		width: 310px;
+		display: block;
+		margin: 0 auto;
+	}
+
+	.lowZone {
+		width: 250px;
+		display: block;
+		margin: 0 auto;
+	}
+
+	#designerShirt {
+		padding-top: 5.5em;
+	}
+
+	#donaldRobertson {
+
+	}
+
+	.pinkArrow {
+		position: relative;
+
+		&:before {
+			position: absolute;
+			content: "";
+			border-right: 16px solid $pink;
+			border-top: 10px solid transparent;
+			border-bottom: 10px solid transparent;
+			left: 0.75em;
+			top: 0.25em;
+		}
+	}
+
+	#bubbleText {
+		font-family: "Lato", sans-serif;
+		position: absolute;
+		top: -2%;
+		right: 5%;
+		color: #ffffff;
+	}
+
+	#Pink-in-Action {
+		background-color: transparent;
+
+		.tonyMessage {
+			text-align: left;
+			margin-left: 5em;
+
+			p {
+				padding: 1.15em 0;
+				margin: 0;
+			}
+
+		}
+
+	}
+
+	#donations {
+		background-color: $lightpink;
+		text-align: center;
+		max-width: 962px;
+		padding:  2em 0;
+		margin: 5em auto;
+	}
+
+	#the-Carey-Foundation,
+	#Marisa-Acocella-Marchetto-Foundation {
+		text-align: left;
+		margin: 0 auto;
+		max-width: 962px;
+
+		p {
+			padding: 1.15em 0;
+			margin: 0;
+		}
+
+		.iblk {
+			width: 45%;
+
+			img {
+				margin-bottom: 2.5em;
+			}
+		}
+	}
+
+	#the-Carey-Foundation {
+		display: block;
+		margin-bottom: 8em;
+
+		.iblk {
+			margin-right: 3em;
+		}
+	}
+
+	#Marisa-Acocella-Marchetto-Foundation {
+		display: block;
+
+		.iblk {
+			padding-top: 10em;
+			margin-left: 3em;
+		}
+	}
+
+	#doctors {
+		display: block;
+		position: relative;
+		max-width: 1200px;
+		margin: 8em auto 0;
+
+		li {
+			list-style-type: none;
+			position: relative;
+		}
+
+		.arrow {
+			position: absolute;
+			z-index: 10;
+			top: 40%;
+			cursor: pointer;
+		}
+
+		.arrowL {
+			left: 2%;
+		}
+
+		.arrowR {
+			right: 2%;
+			transform: rotate(180deg);
+		}
+
+		.intro {
+			position: absolute;
+			top: 35%;
+			margin: 0 auto;
+			padding: 2em 0;
+			left: 0;
+			right: 0;
+			width: 55em;
+			background-color: #ffffff;
+			border: 3px solid $pink;
+
+			p {
+				margin: 0 auto;
+				padding: 0;
+				max-width: 26em;
+			}
+		}
+
+	}
+
+	#doctorDots {
+		list-style-type: none;
+		text-align: center;
+		margin: 0.5em 0 8em;
+
+		li {
+			display: inline-block;
+			background-color: $mediumgrey;
+			border-radius: 100%;
+			width: 1em;
+			height: 1em;
+			margin: 1em 1em;
+
+			&.active {
+				background-color: $darkgrey;
+			}
+		}
+
+
+
+	}
+
+	#Pretty-in-Pink {
+		background-color: transparent;
+
+		p {
+			max-width: 35em;
+			margin: 0 auto 2.5em;
+			padding: 0;
+		}
+
+		a {
+			font-size: 1.5em;
+			font-weight: 700;
+			letter-spacing: 0.05em;
+		}
+	}
+
+	#pink-products {
+		max-width: 1200px;
+		text-align: center;
+		margin: 0 auto 8em;
+		display: block;
+		list-style-type: none;
+
+		li {
+			display: inline-block;
+			width: 30%;
+			margin-right:1%;
+			vertical-align: top;
+
+			&:nth-child(3n) {
+				margin-right: 0;
+			}
+
+			img {
+				margin-bottom: 0.5em;
+			}
+
+			.name {
+				font-weight: 700;
+				width: 230px;
+				text-transform: uppercase;
+				font-size: 13px;
+				margin: 0 auto;
+			}
+
+			.description {
+				width: 280px;
+				margin: 0.5em auto 0;
+			}
+
+			a {
+				text-decoration: none;
+				outline: none;
+
+				&:hover .name,
+				&:focus .name {
+					color: $pink;
+				}
+			}
+
+
+		}
+
+	}
+
+	#Pink-Happenings {
+		position: relative;
+
+		.realign {
+			position: relative;
+			bottom: 1em;
+		}
+
+		h2 {
+			width: 50%;
+			margin: 0.5em auto 0;
+			line-height: 1.2em;
+			text-transform: uppercase;
+		}
+		
+		h4 {
+			margin: 0;
+			padding: 0;
+			text-transform: uppercase;
+		}
+
+		p {
+			text-align: center;
+			margin: 0.5em auto;
+			padding: 0;
+			width: 95%;
+		}
+
+		.legal {
+			font-family: Helvetica, sans-serif;
+			color: $legal;
+			text-transform: uppercase;
+		}
+
+		a {
+			font-weight: 700;
+			font-size: 16px;
+			margin: 1em 0 0;
+			display: inline-block;
+		}
+	}
+
+	#backToTop {
+		line-height: 5em;
+		text-transform: uppercase;
+		color: #ffffff;
+		background-color: #000000;
+		text-align: center;
+		font-size: 16px;
+		font-weight: 700;
+		cursor: pointer;
+
+		img {
+			margin-left: 1em;
+		}
+
+	}
+}
+
+@media screen and ( max-width: 1110px ) {
+	#Pink-Campaign  {
+		#bubbleText {
+			font-size: 1.08vw;		
+		}
+	}
+}
+
