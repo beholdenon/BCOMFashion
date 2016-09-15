@@ -341,12 +341,27 @@ footer #cmFooterBar {
 	#doctors {
 		display: block;
 		position: relative;
+		width: 90vw;
 		max-width: 1200px;
+		max-height: 650px;
+		height: 60vw;
 		margin: 8em auto 0;
+		overflow: hidden;
 
 		li {
 			list-style-type: none;
-			position: relative;
+			position: absolute;
+			left: 101%;
+			top: 0;
+
+			&.active {
+				left: 0;
+				top: 0;
+			}
+
+			img {
+				width: 100%;
+			}
 		}
 
 		.arrow {

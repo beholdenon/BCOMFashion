@@ -38,4 +38,72 @@ var PINK = {
 
 $(document).ready(function() {
 	// PINK.updateShop(PINK.products);
+
+	SERVICES.brightCove.getURL(function(res){
+		$('#stories').attr('src', res);
+	}, 5124807676001 );
+
+	$('#stories').on('click', function () {
+		$(this)[0].play();
+	});
+
+	$('.arrow').on('click', function () {
+		var arrow = $(this);
+		if ( !$(this).hasClass('locked') ) {
+			var activeElem = $('#doctors li.active'),
+				nextElem = getNext(),
+				direction = -1,
+				distance = $('#doctors').width();
+
+			$('.arrow').addClass('locked');
+
+
+			if ( arrow.hasClass('arrowL') ) {
+				direction = 1;
+				nextElem.css('left', distance*-1);
+			} else {
+				nextElem.css('left', distance);
+			}
+
+			console.log('==========');
+			// console.log(nextElem);
+
+			$(activeElem, nextElem).animate(
+				{left: "+="+distance*direction},
+				500, 
+				function() {
+					activeElem.removeClass('active');
+					nextElem.addClass('active');
+
+					console.log($('#doctors li.active'));
+
+					$('.arrow').removeClass('locked');
+
+					$('#doctorDots li').eq( $('#doctors li').index('.active') ).addClass('active').siblings().removeClass('active');
+			});
+
+			function getNext() {
+				var pos = $('#doctors li').index('.active');
+				// console.log('1:'+pos);
+
+				if ( arrow.hasClass('arrowR') && pos >= $('#doctors li').length-1 ) {
+					pos = 0;
+					// console.log('2:'+pos);
+				} else if ( arrow.hasClass('arrowL') && pos <= 0 ) {
+					pos =  $('#doctors li').length-1;
+					// console.log('3:'+pos);
+				} else if ( arrow.hasClass('arrowR') ) {
+					pos++;
+					// console.log('4:'+pos);
+				} else {
+					pos--;
+					// console.log('5:'+pos);
+				}
+
+				// console.log('6:'+pos);
+
+				return $('#doctors li').eq(pos);
+			}
+		}
+	});
 });

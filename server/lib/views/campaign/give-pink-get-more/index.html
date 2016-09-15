@@ -115,7 +115,8 @@
 		<ul id="doctors">
 			<img class="arrow arrowL" src="/fashion/images/projects/campaign/give-pink-get-more/fall-2016/arrow.png" />
 			<img class="arrow arrowR" src="/fashion/images/projects/campaign/give-pink-get-more/fall-2016/arrow.png" />
-			<li id="d-1">
+			
+			<li class="active entry">
 				<img src="/fashion/images/projects/campaign/give-pink-get-more/fall-2016/doctor-1.jpg"/>
 				<div class="intro">
 					<h2>BREAST CANCER RESEARCH FOUNDATION<sup>&reg;</sup></h2>
@@ -123,11 +124,21 @@
 					<p>Five BCRF researchers. One goal: breast cancer prevention and treatment. Here’s an update on their pivotal research.</p>
 				</div>
 			</li>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
+			<li class="dannenberg">
+				<img src="/fashion/images/projects/campaign/give-pink-get-more/fall-2016/Dannenberg.jpg"/>
+			</li>
+			<li class="brugge">
+				<img src="/fashion/images/projects/campaign/give-pink-get-more/fall-2016/Brugge.jpg"/>
+			</li>
+			<li class="lange">
+				<img src="/fashion/images/projects/campaign/give-pink-get-more/fall-2016/Lange.jpg"/>
+			</li>
+			<li class="press">
+				<img src="/fashion/images/projects/campaign/give-pink-get-more/fall-2016/Press.jpg"/>
+			</li>
+			<li class="lippman">
+				<img src="/fashion/images/projects/campaign/give-pink-get-more/fall-2016/Lippman.jpg"/>
+			</li>
 		</ul>
 		<ul id="doctorDots">
 			<li class="active"></li>
@@ -251,14 +262,3 @@
 <script type="application/javascript" src="/fashion/javascripts/libs/jquery-1.11.2.min.js"></script>
 <script type="application/javascript" src="/fashion/javascripts/includes/wssg.js"></script>
 <script type="application/javascript" src="/fashion/javascripts/projects/campaign/give-pink-get-more/pink-fall-2016.js"></script>
-<script type="text/javascript">
-	
-	SERVICES.brightCove.getURL(function(res){
-		$('#stories').attr('src', res);
-	}, 5124807676001 );
-
-	$('#stories').on('click', function () {
-		$(this)[0].play();
-	});
-
-</script>
