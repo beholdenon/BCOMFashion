@@ -1,0 +1,711 @@
+body > div.row.collapse {
+	max-width: 100%; 
+}
+
+footer.responsive {
+	max-width: 80.16667rem;
+	margin: 0 auto;
+
+	.footerBar {
+		display: none;
+	}
+}
+
+body .row #bl_main_container {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+} 
+
+header {
+	border-bottom: 0;
+}
+
+.charlotte-tilbury {
+	background-color: #000000;
+
+	h1, h2, h3, h4, p, a, span, div {
+		font-family: "Lato", Arial, sans-serif;	
+		color: #fff;
+		font-weight: 400;
+		margin: 0;
+		padding: 0;
+		line-height: 1.25em;
+	}
+
+	h1, h2 {
+		font-weight: 300;
+		font-size: 80px;
+		text-transform: uppercase;
+		line-height: 0.9em;
+		display: inline-block;
+	}
+
+	h3 {
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+	}
+
+	h3, p  {
+		// font-size: 17px;
+		font-size: 1.2vw;
+	}
+
+	a {
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+		border-bottom: 1px solid #888;
+		padding-bottom: 0.25em;
+		text-decoration: none;
+		font-size: 1.075vw;
+		font-weight: 700;
+	}
+
+	.centered {
+		margin: 0 auto;
+	}
+
+	.essentials-video,
+	.tablet-image {
+		max-width: 1366px;
+    	width: 100%;
+	}
+
+	#tablet-image {
+		display: none;
+	}
+
+	.centered {
+		width: 80%;
+		position: absolute;
+		left: 0;
+		right: 0;
+		text-align: center;
+	}
+
+	.lights h2:after {
+		content:"";
+		background: url('/fashion/images/projects/lookbooks/charlotte-tilbury/dotted-bg.png') repeat-x;
+		display: block;
+		margin-top: 0.25em;
+		width: 100%;
+		height: 10px;
+	}
+
+	.highlighted {
+		position: relative;
+		display: inline-block;
+		z-index: 1;
+		
+		&:after {
+			position: absolute;
+			content: "";
+			top: 30%;
+			height: 44%;
+			left: -3%;
+			width: 106%;
+			background-color: #490614;
+			z-index: -1;
+		}
+	}
+
+	.rotated {
+		transform: rotate(180deg);
+	}
+
+}
+
+#hero {
+	position: relative;
+
+	#CT-Header {
+		background-image: url(/fashion/images/projects/lookbooks/charlotte-tilbury/charlotte-curtain.jpg);
+		background-position: right 40% center;
+		background-repeat: no-repeat;
+		height: 498px;
+		width: 100%;
+	}
+
+	#headerRotate {
+		position: absolute;
+		left: 42.5vw;
+		top: 0;
+		height: 500px;
+	}
+
+	.content {
+		position: absolute;
+		display: block;
+		max-width: 520px;
+		top: 15%;
+		left: 45%;
+		margin-left: -500px;
+		text-align: center;
+
+		h3 {
+			padding: 0.75em 0;
+			letter-spacing: 0.5em;
+		}
+
+		.copy {
+			font-size: 17px;
+			padding-top: 20px;
+			line-height: 1.8em;
+			width: 70%;
+			margin: 0 auto;
+		}
+	}
+
+
+}
+
+#best-sellers,
+#signature-looks {
+	position: relative;
+	text-align: center;
+
+	h2 {
+		display: inline-block;
+	}
+}
+
+#best-sellers {
+	padding: 0 0 1.5em;
+	position: relative;
+	min-height: 60vw;
+	overflow: hidden;
+
+	.copy {
+		position: absolute;
+		top: 50%;
+		left: 15%;
+    	width: 24vw;
+		padding-left: 3.5%;
+		font-size: 1.3em;
+		text-align: left;
+
+		p {
+			line-height: 1.8em;
+			width: 100%;
+			margin: 5% auto 0;
+			text-align: left;
+			word-spacing: 0.25rem;
+		}
+
+		a {
+			top: 1.5em;
+			position: relative;
+		}
+	}
+
+	.centered {
+		top: 8em;
+		z-index: 10;
+	}
+
+	h3.highlight {
+		position: relative;
+		display: inline-block;
+		z-index: 1;
+		font-weight: 700;
+		text-align: center;
+		letter-spacing: 0.24em;
+		margin-bottom: 1em;
+
+		&:after {
+			position: absolute;
+			content: "";
+			top: 30%;
+			height: 44%;
+			left: -3%;
+			width: 106%;
+			background-color: #490614;
+			z-index: -1;
+		}
+	}
+
+	.videoSlide {
+		display: none;
+		position: absolute;
+		left: 0;
+		right: 0;
+    	width: 100%;
+
+		&.active {
+			display: inline-block;
+		}
+	}
+}
+
+#essential-arrows,
+#products {
+	position: relative;
+	left: 0;
+	top: 0;
+
+	img {
+		width: 3vw;
+	}
+
+	.left-arrow {
+
+		.pagination {
+			left: 50%;
+		}
+	}
+
+	.right-arrow {
+		
+		.pagination {
+			left: -10%;
+		}
+	}
+
+	.right-arrow,
+	.left-arrow {
+		z-index: 10;
+		cursor: pointer;
+		position: absolute;
+	}
+
+	.pagination {
+		position: absolute;
+		top: 35%;
+		font-size: 1.2vw;
+	}
+}
+
+#essential-arrows{
+	.arrow {
+		top: 35vw;
+	}
+
+	.left-arrow {
+		left: 10vw;
+	}
+
+	.right-arrow {
+		left: 85vw;
+	}
+
+	.pagination {
+		position: absolute;
+		top: 35%;
+		font-size: 1.2vw;
+	}
+}
+
+#products {
+
+	a {
+		border-bottom: 0;
+	}
+
+	.arrow {
+		top: 35%;
+		width: 3%;
+	}
+
+	.left-arrow {
+		left: 2.5%;
+	}
+
+	.right-arrow {
+		left: 94%;
+	}
+
+	.pagination {
+		position: absolute;
+		top: 33%;
+		font-size: 1vw;
+		color: #000;
+
+		span {
+			color: #000;
+		}
+	}
+}
+
+#signature-looks {
+	padding: 4em 0;
+
+	#signature-video {
+		display: none;
+	}
+
+	#signature-video,
+	#exclusive-placeholder {
+		width: 63%;
+		margin-right: 2%;
+	}
+
+	.content {
+		margin-top: 15%;
+		display: inline-block;
+		width: 80%;
+		max-width: 100%;
+
+		.hund-logo {
+			display: inline-block;
+		}
+
+		.RS {
+			vertical-align: top;
+			text-align: left;
+			width: 32%;
+			display: inline-block;
+			padding-top: 3em;
+
+			.brand,
+			.text {
+				vertical-align: top;
+				display: inline-block;
+			}
+
+			.brand { width: 15%}
+			.text {
+				width: 70%;
+				margin-left: 4%;
+				letter-spacing: 0.05em;
+			}
+
+			h3 {
+				
+			}
+
+			.copy {
+				margin-top: 1.5em;
+				line-height: 1.8em;
+			}
+
+			a.shop {
+				margin-top: 1.5em;
+				display: inline-block;
+			}
+		}
+
+	}
+}
+
+#products {
+	display: inline-block;
+	background-color: #ffffff;
+	color: #000000;
+	width: 78%;
+	margin: 2.5em auto 0;
+	padding: 2em 0;
+	position: relative;
+
+	ul {
+		list-style-type: none;
+		margin: 0 auto;
+		padding: 0 0 0 0;
+		width:85%;
+		text-align: left; 
+	}
+
+	.product {
+		width: 14.5%;
+		margin-right: 2%;
+		display: inline-block;
+		vertical-align: top;
+
+		&:last-of-type {
+			margin-right: 0;
+		}
+
+		img {
+			height: auto;
+			width: 100%;
+		}
+
+		p {
+			color: #000000;
+			text-transform: uppercase;
+			font-size: 0.75vw;
+			font-weight: 400;
+			padding: 0.5em 0 0;
+			text-align: center;
+		}
+	}
+}
+
+#who-today {
+	width: 100%;
+	margin: 3em 0;
+
+	.centered {
+		position: relative;
+		margin: 8em auto 6em;
+
+		p {
+			width: 70%;
+			margin: 2em auto 1.5em;
+			line-height: 1.8em;
+		}
+	}
+
+	.looks {
+		text-align: center;
+		list-style-type: none;
+		margin: 0 auto;
+		padding: 0;
+
+		li {
+			width: 20%;
+			margin: 0 0 1.5em 0;
+			padding: 0;
+			display: inline-block;
+		}
+
+		.look-spot {
+			background-image: url("/fashion/images/projects/lookbooks/charlotte-tilbury/looks.jpg");
+			background-repeat: no-repeat;
+			background-size: 500%;
+			width: 100%;
+			height: 19vw;
+		}
+
+		#look-2 .look-spot { background-position: 25% 0; }
+		#look-3 .look-spot { background-position: 50% 0; }
+		#look-4 .look-spot { background-position: 75% 0; }
+		#look-5 .look-spot { background-position: 100% 0; }
+		#look-6 .look-spot { background-position: 0 101%; }
+		#look-7 .look-spot { background-position: 25% 101%; }
+		#look-8 .look-spot { background-position: 50% 101%; }
+		#look-9 .look-spot { background-position: 75% 101%; }
+		#look-10 .look-spot { background-position: 100% 101%; }
+
+		a {
+			border:0;
+
+			p {
+				margin: 1em auto;
+				display: inline-block;
+				font-weight: 700;
+				font-size: 1.1vw;
+				border-bottom: 1px solid #888;
+			}
+		}
+	}
+}
+
+#backstage {
+	position: relative;
+	padding-bottom: 6em;
+
+	h2 {
+		letter-spacing: 0.05em;
+	}
+
+	a.ct-button {
+		border: 3px solid #ffffff;
+		display: block;
+		letter-spacing: 0.15em;
+		padding: 1.35em 0;
+		margin: 0 auto;
+		width: 24em;
+		text-align: center;
+		left: 0;
+		right: 0;
+		font-size: 1.35vw;
+	}
+}
+
+#interview {
+	width: 95%;
+	max-width: 968px;
+	margin: 0 auto;
+	padding: 22em 0 5em;
+
+	.thin {
+		width: 37%;
+		display: inline-block;
+		vertical-align: top;
+
+		h3:first-of-type {
+			margin-top: 1em;
+		}
+	}
+
+	img.thick {
+		width: 55%;
+		padding: 0 10%;
+	}
+
+	.thick {
+		width: 58%;
+		display: inline-block;
+		vertical-align: top;
+		padding-left: 4%;
+	}
+
+	h3 {
+		font-size: 16px;
+
+		&.pad {
+			margin-bottom: 1.5em;	
+		}
+
+		&.expand:after {
+			width: 114%;
+			left: -7%;
+		}
+	}
+
+	p {
+		margin-bottom: 2.25em;
+		line-height: 1.8em;
+		font-size: 15px;
+	}
+
+}
+
+@media only screen
+and (min-device-width:1024px) {
+	.essentials-video {
+		display: inline-block;
+	}
+
+	.tablet-image {
+		display: none;
+	}
+}
+
+
+// // Tablet Landscape
+// @media only screen 
+// and (min-device-width : 760px) 
+// and (max-device-width : 1024px) 
+// and (orientation : landscape) { 
+// 	.charlotte-tilbury {
+// 		#hero {
+// 			.content {
+// 				left: 46%;
+// 			}
+
+// 			#CT-Header {
+// 				background-position: right 43% center;
+// 			}
+// 		}
+
+// 		h1 {
+// 			font-size: 60px;
+// 		}
+
+// 		h3 {
+// 			font-size: 1.6vw;
+// 		}
+
+// 		.essentials-video {
+// 			display: none;
+// 		}
+
+// 		.tablet-image {
+// 			display: inline-block;
+// 			width: 80%;
+// 		}
+// 	}
+// }
+
+header.responsive #zeroNav #innerZeroNav,
+header.responsive #aboveNav,
+footer.responsive .footerDivider,
+footer.responsive ul.footerBottomLinks { width: 100%; }
+
+header.responsive #aboveNav .aboveNavRight .aboveNavSearch {
+	right: 10rem;
+	width: 180%;
+}
+
+// Tablet portrait
+@media screen and (max-width: 1024px) { 
+
+	.charlotte-tilbury {
+		#hero {
+			.content {
+				left: 50%;
+
+				.copy {
+					width: 60%;
+				}
+			}
+
+			#CT-Header {
+				background-image: url(/fashion/images/projects/lookbooks/charlotte-tilbury/hero-1.jpg);
+				background-position: right 44% top;
+				background-size: 230%;
+				height: 42vw;
+			}
+		}
+
+		video#headerRotate {
+			display: none;
+		}
+
+		h1, h2 {
+			font-size: 6vw;
+		}
+
+		h3,
+		p,
+		a {
+		    font-size: 1.4vw;
+		}
+
+		#best-sellers {
+			.copy {
+				width: 28%;
+			}
+
+			.centered {
+				top: 2em;
+			}
+		}
+
+		#signature-looks {
+
+			.content {
+				text-align: left;
+
+				.RS {
+					padding-top: 0;
+					width: 40%;
+				}
+			}
+
+			#signature-video, 
+			#exclusive-placeholder {
+	    		width: 55%;
+	    	}
+
+			
+		}
+
+		#products {
+			width: 80%;
+		}
+
+		.essentials-video {
+			display: none;
+		}
+
+		.tablet-image {
+			display: inline-block;
+			width: 80%;
+		}
+
+		#backstage {
+		    padding-bottom: 12em;
+		}
+
+		#interview {
+
+			h3 {
+				font-size: 1.68vw;
+			}
+
+		}
+	}
+}
