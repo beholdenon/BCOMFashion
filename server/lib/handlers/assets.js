@@ -91,8 +91,8 @@ module.exports = {
                 'Content-Type': 'application/json'
             };
 
-            var deviceType = Device.detectDevice(req),
-                mobileParam = '&stop_mobi=yes';
+            // var deviceType = Device.detectDevice(req),
+            var mobileParam = '&stop_mobi=yes';
 
             res.proxy({
                 timeout: serviceProxy.timeout,
