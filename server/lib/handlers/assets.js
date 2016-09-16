@@ -92,7 +92,7 @@ module.exports = {
             };
 
             var deviceType = Device.detectDevice(req),
-                mobileParam = ( deviceType === 'desktop' || deviceType === 'tablet' ? '' : '&stop_mobi=yes' );
+                mobileParam = '&stop_mobi=yes';
 
             res.proxy({
                 timeout: serviceProxy.timeout,
