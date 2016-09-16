@@ -158,15 +158,16 @@ $(document).ready(function() {
 	var headerEl = $('header');
 
 	setTimeout(function() {
-		APP.navStart = $("header").height() + $("#makeup_hero").height() + 1;
-		APP.stickyNav();
+	APP.navStart = $("header").height() + $("#makeup_hero").height() + 1;
+	APP.stickyNav();
 	}, 3000);
+	
 	APP.heroRotation();
 
 	$(window).resize( function(){
 		if( headerEl.height() > 0 ){
-			APP.navStart = $("header").height() + $("#makeup_hero").height() + 1;
-			APP.stickyNav();
+		APP.navStart = $("header").height() + $("#makeup_hero").height() + 1;
+		APP.stickyNav();
 		}
 	});
 
@@ -180,7 +181,7 @@ $(document).ready(function() {
 
 	$(document).scroll( function() {
 		if( headerEl.height() > 0 ){
-			APP.stickyNav();
+		APP.stickyNav();
 		}
 		APP.updateNav();
 	});
