@@ -1,0 +1,333 @@
+// VARIABLES
+
+$pink: #fc04b0;
+$lightpink: #ffdff2;
+$darkgrey: #5e5e5e;
+$mediumgrey: #d0d0d0;
+$lightgrey: #f6f6f6;
+$legal: #6e6e6e;
+
+// ========= GLOBAL OVERWRITES
+
+body > div.row.collapse {
+    max-width: 100%;
+}
+
+body .row {
+
+	#bl_main_container {
+		width: 100%;
+		margin: 0;
+		padding: 0;
+	}
+}
+
+footer.responsive {
+    max-width: 962px;
+    margin: 0 auto;
+}
+
+footer #cmFooterBar {
+	display: none;
+}
+
+// ========= MAIN STYLES
+
+#Pink-Campaign {
+	font-size: 3.25vw;
+
+	h1, h2, h3 {
+		font-family: "Montserrat", sans-serif;
+	}
+
+	h2 {
+		font-size: 2.46em;
+		font-weight: 700;
+	}
+
+	h3 {
+		font-size: 1.64em;
+		font-weight: 700;
+	}
+
+	h4 {
+		font-weight: 700;
+		font-size: 1.15em;
+	}
+
+	p {
+		color: #333333;
+		font-family: "Lato", sans-serif;
+		font-size: 1em;
+	}
+
+	a.noUnderline {
+		text-decoration: none;
+	}
+
+	// a:hover, a:focus {
+	// 	color: $pink;
+	// }
+
+	.pinkText {
+		color: $pink;
+	}
+
+	.iblk {
+		display: inline-block;
+	}
+
+	.legal,
+	.legal p {
+		font-family: Helvetica, sans-serif;
+		font-size: 0.74em;
+		text-transform: uppercase;
+	}
+
+	#main-img {
+		display: block;
+		margin: 1em 0 0;
+	}
+
+	hr.grey-line {
+		width: 90%;
+		color: #888;
+		height: 1px;
+		display: block;
+		margin: 2em auto;
+	}
+
+	#the_Give,
+	#the_Get,
+	#Enroll {
+		text-align: center;
+
+		width: 85%;
+		margin: 0 auto;
+	}
+
+	#the_Give {
+		img.pad {
+			margin: 0 auto 1em;
+		}
+	}
+
+	#the_Get {
+		img{
+			display: block;
+			margin: 0 auto 0.2em;
+		}
+
+		p {
+			padding-bottom: 0;
+		}
+
+		a {
+			font-family: "Helvetica", sans-serif;
+			text-transform: uppercase;
+			font-size: 0.75em;
+
+			&:first-child {
+				margin-right: 1.5em;
+			}
+
+			&:hover,
+			&:focus {
+				color: $pink;
+			}
+		}
+	}
+
+	#Enroll {
+
+		h3 {
+			margin: 0.5em 0 1em;
+		}
+
+		p {
+			font-size: 0.75em;
+			color: $legal;
+		}
+
+	}
+
+	section.tape {
+		
+		&.grey {
+			background-color: $lightgrey;
+		}
+
+		width: 100%;
+		position: relative;
+		text-align: center;
+		padding-bottom: 2em;
+		margin-top: 4em;
+		margin-bottom: 0.5em;
+
+		img.heading {
+			position: relative;
+			margin: 0 auto;
+			display: block;
+			top: -6vw;
+			width: 70%;
+		}
+	}
+
+	#stories {
+		width: 100vw;
+		margin-bottom: 2em;
+	}
+
+	#Im-Still-Me {
+		
+		p {
+			max-width: 75%;
+			margin: 1em auto 0;
+		}
+	}
+
+	#Collab-for-a-Cure {
+		margin-bottom: 10em;
+
+		h4 {
+			color: $pink;
+			margin: 1em 0 2em;
+		}
+
+		#donaldRobertson {
+			margin-bottom: 1em;
+		}
+
+		p.artInfo {
+			max-width: 85%;
+			margin: 0 auto;
+		}
+
+		.pinkArrow {
+			position: relative;
+
+			&:before {
+				position: absolute;
+				content: "";
+				border-right: 16px solid $pink;
+				border-top: 10px solid transparent;
+				border-bottom: 10px solid transparent;
+				left: -1.25em;
+				top: 0.15em;
+			}
+		}
+	}
+
+	#shirt {
+		position: relative;
+		margin-bottom: 5em;
+
+		.rightAligned {
+			position: relative;
+			top: 10vw;
+			left: 50%;
+			width: 45%;
+			text-align: left;
+			font-size: 0.85em;
+
+			p {
+				margin: 0;
+			}
+
+			a {
+				display: block;
+				font-weight: 700;
+				font-size: 1.2em;
+				margin: 0.5em 0 1.5em;
+				padding: 0;
+			}
+		}
+	}
+
+	#designerShirt {
+		position: absolute;
+		left: -13vw;
+		top: 5vw;
+		width: 65%;
+	}
+
+	// PRODUCTS
+
+	#Pretty-in-Pink {
+		padding-bottom: 0;
+	}
+
+	ul#pink-products {
+		text-align: center;
+		list-style-type: none;
+
+		li {
+			display: inline-block;
+			vertical-align: top;
+			width: 40%;
+			margin-bottom: 1em;
+			font-size: 0.9em;
+
+			&:nth-child(2n-1) {
+				margin-left: 7.5%;
+				margin-right: 4%;
+			}
+
+			&:nth-child(2n) {
+				margin-right: 7.5%;
+			}
+
+			a {
+				text-decoration: none;
+			}
+
+			img {
+				margin-bottom: 0.5em;
+			}
+
+			.name {
+				font-weight: 700;
+				text-transform: uppercase;
+				margin: 0 auto;
+			}
+		}
+
+	}
+
+	a#blackButton {
+		display: block;
+		line-height: 4em;
+		text-transform: uppercase;
+		color: #ffffff;
+		background-color: #000000;
+		text-align: center;
+		font-size: 1.3em;
+		font-weight: 700;
+		cursor: pointer;
+		margin-bottom: 3px;
+	}
+
+	div#backToTop {
+		line-height: 4em;
+		text-transform: uppercase;
+		color: #ffffff;
+		background-color: #000000;
+		text-align: center;
+		font-size: 1.3em;
+		font-weight: 700;
+		cursor: pointer;
+		position: relative;
+
+		&:after {
+			content: "";
+			border-bottom: 12px solid #fff;
+			border-left: 10px solid transparent;
+			border-right: 10px solid transparent;
+			position: absolute;
+			top: 42%;
+			left: 70%;
+		}
+
+	}
+}
+
