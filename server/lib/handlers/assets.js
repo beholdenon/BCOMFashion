@@ -1,8 +1,8 @@
 'use strict';
 
 var serviceProxy = require('./../helpers/serviceProxy'),
-    Path = require('path'),
-    Device = require('./../helpers/deviceDetection');
+    Path = require('path');
+    // Device = require('./../helpers/deviceDetection');
 
 module.exports = {
     fashion: {

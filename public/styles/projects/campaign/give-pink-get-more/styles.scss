@@ -200,6 +200,38 @@ footer #cmFooterBar {
 		&:last-of-type {
 			margin-bottom: 0;
 		}
+
+		.highZone {
+			width: 310px;
+			display: block;
+			margin: 0 auto;
+		}
+
+		.lowZone {
+			width: 250px;
+			display: block;
+			margin: 0 auto;
+
+			p {
+				padding: 0.5em 0 2em;
+
+				&.donated {
+					line-height: 1.75em;
+				}
+
+				&.learn {
+					padding: 2em 0 0.5em;
+				}		
+			}
+
+			a {
+				font-weight: 700;
+
+				&.shop {
+					font-size:1.4em;
+				}
+			}
+		}
 	}
 
 	#stories {
@@ -232,18 +264,6 @@ footer #cmFooterBar {
 		&.column-three {
 			width: 28%;
 		}
-	}
-
-	.highZone {
-		width: 310px;
-		display: block;
-		margin: 0 auto;
-	}
-
-	.lowZone {
-		width: 250px;
-		display: block;
-		margin: 0 auto;
 	}
 
 	#designerShirt {
@@ -348,9 +368,10 @@ footer #cmFooterBar {
 		margin: 8em auto 0;
 		overflow: hidden;
 
-		li {
+		& > li {
 			list-style-type: none;
 			position: absolute;
+			width: 100%;
 			left: 101%;
 			top: 0;
 
@@ -396,6 +417,56 @@ footer #cmFooterBar {
 				padding: 0;
 				max-width: 26em;
 			}
+		}
+
+		.positionLeft {
+			
+			.information {
+				left: 15%;
+				top: 22%;
+			}
+
+		}
+
+		.information {
+			position: absolute;
+			top: 18%;
+			left: 55%;
+			text-align: left;
+			width: 30%;
+			font-size: 1.2em;
+
+			h2, p, a, ul li {
+				color: #ffffff;
+				font-family: "Lato", Arial;
+			}		
+
+			h2 {
+				text-transform: uppercase;
+			}
+			
+			p {
+				margin: 0;
+				padding: 1em 0;
+			}
+
+			a {
+				font-weight: 700;
+				padding: 0.5em 0;
+				text-transform: uppercase;
+			}
+
+			ul {
+				list-style-position: inside;
+				color: #ffffff;
+				margin-left: 0;
+
+				li {
+					list-style-type: disc;
+					padding-top: 1em;
+				}
+			}
+
 		}
 
 	}
@@ -461,7 +532,7 @@ footer #cmFooterBar {
 
 			.name {
 				font-weight: 700;
-				width: 230px;
+				width: 260px;
 				text-transform: uppercase;
 				font-size: 13px;
 				margin: 0 auto;
@@ -496,8 +567,8 @@ footer #cmFooterBar {
 		}
 
 		h2 {
-			width: 50%;
-			margin: 0.5em auto 0;
+			width: 80%;
+			margin: 0.1em auto 0;
 			line-height: 1.2em;
 			text-transform: uppercase;
 		}
@@ -506,6 +577,10 @@ footer #cmFooterBar {
 			margin: 0;
 			padding: 0;
 			text-transform: uppercase;
+
+			&.subHeader {
+				padding: 0.2em 0;
+			}
 		}
 
 		p {
@@ -518,6 +593,7 @@ footer #cmFooterBar {
 		.legal {
 			font-family: Helvetica, sans-serif;
 			color: $legal;
+			font-size: 9px;
 			text-transform: uppercase;
 		}
 
