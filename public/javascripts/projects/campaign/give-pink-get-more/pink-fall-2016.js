@@ -9,7 +9,7 @@ var PINK = {
 	tags: [],
 
 	getNext: function (arrow) {
-		var pos = $('.active').index('#doctors > li');
+		var pos = $('#doctors .active').index('#doctors > li');
 
 		if ( arrow.hasClass('arrowR') && pos >= $('#doctors > li').length-1 ) {
 			pos = 0;
@@ -20,7 +20,7 @@ var PINK = {
 		} else {
 			pos--;
 		}
-		console.log( $('#doctors > li').eq(pos) );
+
 		return $('#doctors > li').eq(pos);
 	},
 

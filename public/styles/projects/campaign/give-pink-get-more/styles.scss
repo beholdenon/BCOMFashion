@@ -497,14 +497,14 @@ footer #cmFooterBar {
 			
 			.information {
 				left: 15%;
-				top: 22%;
+				top: 7vw;
 			}
 
 		}
 
 		.information {
 			position: absolute;
-			top: 18%;
+			top: 6vw;
 			left: 55%;
 			text-align: left;
 			width: 30%;
@@ -703,3 +703,30 @@ footer #cmFooterBar {
 	}
 }
 
+@media screen and (max-width: 1024px ) {
+
+	#Pink-Campaign {
+		#doctors .arrow {
+			top: 18vw;
+		}
+
+		#doctors > li  .information {
+			font-size: 0.8em;
+		}
+	}
+
+	
+
+}
+
+@media screen and (max-width: 1024px ) and (orientation: landscape) {
+	#Pink-Campaign #pinkNav.fixed {
+		top: 14%;
+	}
+}
+
+@media screen and (max-width: 1024px ) and (orientation: portrait) {
+	#Pink-Campaign #pinkNav.fixed {
+		top: 8.5%;
+	}
+}
