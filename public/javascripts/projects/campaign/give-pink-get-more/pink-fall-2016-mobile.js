@@ -4,25 +4,39 @@
 var PINK = {
 
 	cm: {
-		category: '',
+		category: 'mbl:fall16-pinkmicrosite',
 	},
 
-	getNext: function (arrow) {
-		var pos = $('.active').index('#doctors > li');
+	coremetrics: function (tagType, categoryID, pageID, attributes) {
+        if (tagType === 'Pageview') {
+            try {
+                window.BLOOMIES.coremetrics.cmCreatePageviewTag(pageID, categoryID);
+            } catch (e) {
+                PINK.logErr('CoreM_err: ' + e);
+            }
+            PINK.logErr('CoreM ::: tagType: Pageview; categoryID: ' + categoryID + '; pageID: ' + pageID);
+        } else if (tagType === 'Element') {
+            try {
+                window.BLOOMIES.coremetrics.cmCreatePageElementTag(pageID, categoryID, attributes || null );
+            } catch (e) {
+                PINK.logErr('CoreM_err: ' + e);
+            }
 
-		if ( arrow.hasClass('arrowR') && pos >= $('#doctors > li').length-1 ) {
-			pos = 0;
-		} else if ( arrow.hasClass('arrowL') && pos <= 0 ) {
-			pos =  $('#doctors > li').length-1;
-		} else if ( arrow.hasClass('arrowR') ) {
-			pos++;
-		} else {
-			pos--;
-		}
-		console.log( $('#doctors > li').eq(pos) );
-		return $('#doctors > li').eq(pos);
-	}
+            PINK.logErr('CoreM ::: tagType: Element; categoryID: ' + categoryID + '; pageID: ' + pageID);
+        }
+    },
+
+    logErr: function (log) {
+        //log errors only on DEV mode
+        if (window.location.href.indexOf('fashion.bloomingdales.com') < 0) {
+            window.console.info(log);
+        }
+    },
 };
+
+$(window).load(function() {
+	PINK.coremetrics('Pageview', PINK.cm.category, PINK.cm.category );
+});
 
 $(document).ready(function() {
 	// PINK.updateShop(PINK.products);
@@ -41,34 +55,8 @@ $(document).ready(function() {
 	    }, 'slow');
 	});
 
-	$('.arrow').on('click', function () {
-		var arrow = $(this),
-			activeElem = $('#doctors > li.active'),
-			nextElem = PINK.getNext(arrow),
-			direction = 1;
-			// distance = $('#doctors').width();
+	// COREMETRICS
 
-		if ( arrow.hasClass('arrowR') ) {
-			direction = -1;
-		}
 
-		activeElem.removeClass('active').hide();
-		nextElem.addClass('active').show();
-		$('#doctorDots li').eq( $('.active').index('#doctors > li') ).addClass('active').siblings().removeClass('active');
 
-		// nextElem.css('left', distance*(direction*-1));
-		
-		// $('.arrow').fadeOut('slow').promise().then( function() {
-		// 	$(activeElem, nextElem).animate({left: "+="+distance*direction},500).promise().then(
-		// 		function() {
-		// 			activeElem.removeClass('active');
-		// 			nextElem.addClass('active');
-
-		// 			$('.arrow').fadeIn('slow');
-
-		// 			$('#doctorDots li').eq( $('#doctors li').index('.active') ).addClass('active').siblings().removeClass('active');
-		// 	});
-		// });
-			
-	});
 });

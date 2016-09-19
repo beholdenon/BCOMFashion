@@ -1,38 +1,12 @@
-/* globals SERVICES */
+/* globals SERVICES, Hammer */
 'use strict';
 
 var PINK = {
 
 	cm: {
-		category: '',
+		category: 'fall16-pinkmicrosite',
 	},
-	products: [1797784, 1797783, 1693401, 1465431, 1805172, 1822574, 1511841, 1801586, 1801585],
-
-	// updates the dynamicPROs
-	updateShop: function( data ) {
-		var products,
-			html = "",
-			baseImgURL = "http://images.bloomingdales.com/is/image/BLM/products/4/optimized/";
-		
-		// get product data from WSSG
-		SERVICES.product.get(function(res){
-			console.log(res);
-
-			if ( res === 'error') {
-				$('#pink-products').hide();
-			} else {
-				products = res.product;
-
-				// build HTML in SHOP THE LOOK section
-				$.each( products, function(i, value) {
-					html += "<li class='prod-"+i+"'><a target='_blank' href='"+value.productDetails.summary.productURL+"'><img src='"+baseImgURL+value.productDetails.primaryImage.imagename+"'><p class='name'>"+value.productDetails.summary.brand+" "+value.productDetails.summary.name.replace(value.productDetails.summary.brand)+", $"+value.upcs[0].upcDetails.price.retail.pricevalue+"</p><p class='description'>"+value.productDetails.summary.description+"</p></li>";
-				});
-
-				$('#pink-products').html(html);
-			}
-			
-		}, data.join(","));
-	},
+	tags: [],
 
 	getNext: function (arrow) {
 		var pos = $('.active').index('#doctors > li');
@@ -48,24 +22,126 @@ var PINK = {
 		}
 		console.log( $('#doctors > li').eq(pos) );
 		return $('#doctors > li').eq(pos);
-	}
+	},
+
+	coremetrics: function (tagType, categoryID, pageID, attributes) {
+        if (tagType === 'Pageview') {
+            try {
+                window.BLOOMIES.coremetrics.cmCreatePageviewTag(pageID, categoryID);
+            } catch (e) {
+                PINK.logErr('CoreM_err: ' + e);
+            }
+            PINK.logErr('CoreM ::: tagType: Pageview; categoryID: ' + categoryID + '; pageID: ' + pageID);
+        } else if (tagType === 'Element') {
+            try {
+                window.BLOOMIES.coremetrics.cmCreatePageElementTag(pageID, categoryID, attributes || null );
+            } catch (e) {
+                PINK.logErr('CoreM_err: ' + e);
+            }
+
+            PINK.logErr('CoreM ::: tagType: Element; categoryID: ' + categoryID + '; pageID: ' + pageID);
+        }
+    },
+
+    logErr: function (log) {
+        //log errors only on DEV mode
+        if (window.location.href.indexOf('fashion.bloomingdales.com') < 0) {
+            window.console.info(log);
+        }
+    },
 };
 
-$(document).ready(function() {
-	// PINK.updateShop(PINK.products);
+$(window).load(function() {
+	PINK.coremetrics('Pageview', PINK.cm.category, PINK.cm.category );
+});
 
+$(document).ready(function() {
+
+	// Video Call from BrightCove API
 	SERVICES.brightCove.getURL(function(res){
 		$('#stories').attr('src', res);
 	}, 5124807676001 );
 
+	// Play video on poster click
 	$('#stories').on('click', function () {
 		$(this)[0].play();
 	});
 
+	// back to top button
 	$("#backToTop").on("click tap", function () {
 		$('html, body').animate({
 	        scrollTop: 0
 	    }, 'slow');
+	});
+
+	var fixedOffset = 150;
+
+	// Navigation
+
+	setTimeout( function () {
+		fixedOffset = $('header.responsive').height();
+		
+		if ( $(document).scrollTop() >= fixedOffset) {
+			$('#pinkNav').removeAttr('style');
+			$('#pinkNav').css('height', 0);
+			$('#pinkNav').addClass('fixed');
+			$('html, body').animate({
+		        scrollTop: $(document).scrollTop() + 1
+		    }, 300);
+			$('#pinkNav').animate({height: '5.5em'}, 500);
+			
+		} else {
+			$('#pinkNav').removeClass('fixed');
+			$('#pinkNav').css('top', fixedOffset);
+		}
+
+	}, 3000);
+
+	$(document).scroll( function() {
+
+		var scrolled = $(window).scrollTop() + $(window).height();
+
+		if ($(document).scrollTop() >= fixedOffset) {
+			$('#pinkNav').removeAttr('style');
+			$('#pinkNav').addClass('fixed');
+		} else {
+			$('#pinkNav').removeClass('fixed');
+			$('#pinkNav').css('top', fixedOffset);
+		}
+
+        $('section').each(function() {
+        	var section = $(this);
+
+            if ( section.is(':visible') && section.attr('id') !== undefined && scrolled > section.offset().top && PINK.tags.indexOf( section.attr('id') ) < 0 ) {
+                PINK.tags = [];
+                PINK.tags.push( section.attr('id') );
+                PINK.coremetrics('Pageview', PINK.cm.category, PINK.cm.category + '_' + section.attr('id'));
+                $('#pinkNav li').removeClass('active');
+                $("[data-target=" + section.attr('id') + "]").addClass('active');
+            }
+        });
+
+	});
+
+	$('#pinkNav li').on('click tap', function () {
+		var goTo = $(this).attr('data-target'),
+			loc = $('#'+goTo).offset().top - $('#pinkNav').height() - $('#Im-Still-Me img.heading').height() - 30 ;
+
+		$('html, body').animate({
+	        scrollTop: loc
+	    }, 'slow');
+
+	});
+
+	// Slideshow navigation
+	var sellerSwipe = new Hammer( document.getElementById('doctors') );
+	sellerSwipe.on('swipe', function(ev) {
+		//Hammer.js: left = 2, right = 4
+		if ( ev.direction === 2 ) {
+			$(".arrowR").trigger('click');
+		} else if ( ev.direction === 4) {
+			$(".arrowL").trigger('click');
+		}
 	});
 
 	$('.arrow').on('click', function () {
@@ -82,20 +158,78 @@ $(document).ready(function() {
 		activeElem.removeClass('active').hide();
 		nextElem.addClass('active').show();
 		$('#doctorDots li').eq( $('.active').index('#doctors > li') ).addClass('active').siblings().removeClass('active');
-
-		// nextElem.css('left', distance*(direction*-1));
-		
-		// $('.arrow').fadeOut('slow').promise().then( function() {
-		// 	$(activeElem, nextElem).animate({left: "+="+distance*direction},500).promise().then(
-		// 		function() {
-		// 			activeElem.removeClass('active');
-		// 			nextElem.addClass('active');
-
-		// 			$('.arrow').fadeIn('slow');
-
-		// 			$('#doctorDots li').eq( $('#doctors li').index('.active') ).addClass('active').siblings().removeClass('active');
-		// 	});
-		// });
-			
 	});
+
+	
+	// COREMETRICS
+
+	$("[data-element]").on("click", function () {
+
+		if ( $(this)[0].hasAttribute('data-attribute') ) {
+			var attr = $(this).attr('data-attribute'),
+				attrNum = attr.substring(0, attr.indexOf(':')),
+				attrVal = attr.substring(attr.indexOf(':')+1);
+
+			for ( var i= parseInt(attrNum); i > 1; i-- ) {
+				attrVal = '-_-' + attrVal;
+			}
+
+			PINK.coremetrics('Element', PINK.cm.category, $(this).attr("data-element"), attrVal );
+		} else {
+			PINK.coremetrics('Element', PINK.cm.category, $(this).attr("data-element") );
+		}
+		
+	});
+
+	$("video").on("play", function() {
+		var attrNum = 16,
+			attrVal = 2;
+
+		for ( var i= parseInt(attrNum); i > 1; i-- ) {
+			attrVal = '-_-' + attrVal;
+		}
+
+		PINK.coremetrics('Element', PINK.cm.category, $(this).attr("data-video"), attrVal );
+	});
+
+	$('video').on('ended',function(){
+		var attrNum = 16,
+			attrVal = 3;
+
+		for ( var i= parseInt(attrNum); i > 1; i-- ) {
+			attrVal = '-_-' + attrVal;
+		}
+			
+		PINK.coremetrics('Element', PINK.cm.category, $(this).attr("data-video"), attrVal );
+	});
+
+	$("video").on("pause", function() {
+		var attrNum = 16,
+			attrVal = 1;
+
+		for ( var i= parseInt(attrNum); i > 1; i-- ) {
+			attrVal = '-_-' + attrVal;
+		}
+			
+		PINK.coremetrics('Element', PINK.cm.category, $(this).attr("data-video"), attrVal );
+	});
+
+	// $("#products").on('click', 'li.product', function() {
+	// 	var targ = $(this);
+
+	// 	var attrNum = 29,
+	// 		attrVal = targ.find('a').attr('href').substring( targ.find('a').attr('href').indexOf('ID=') + 3 ),
+	// 		pName = removeDiacritics( targ.find('.name').text().replace('PINK Tilbury','').replace(/\&|\+|\,/g, '').replace(/\s+/g, '-') );
+
+	// 	console.log(attrVal);
+
+	// 	for ( var i= parseInt(attrNum); i > 1; i-- ) {
+	// 		attrVal = '-_-' + attrVal;
+	// 	}
+
+	// 	PINK.coremetrics('Element', PINK.cm.category, ('signature-looks_'+pName).slice(0, 50), attrVal );
+	// });
+
+	
+
 });

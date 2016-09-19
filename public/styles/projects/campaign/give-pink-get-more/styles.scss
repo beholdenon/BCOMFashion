@@ -78,6 +78,61 @@ footer #cmFooterBar {
 		text-transform: uppercase;
 	}
 
+	#navPlaceholder {
+		height: 6em;
+		width: 100%;
+		display: block;
+		margin-bottom: 1em;
+	}
+
+	#pinkNav {
+		position: absolute;
+		z-index: 100;
+		background-color: #ffdff2;
+		font-weight: 700;
+		text-align: center;
+		padding: 1.25em 0 0;
+		height: 5.5em;
+		font-size: 1.05em;
+		display: block;
+		width: 100%; 
+
+		&.fixed {
+			position: fixed;
+			top: 0;
+		}
+		
+		ul.cont {
+			max-width: 962px;
+			margin: 0 auto;
+
+			li {
+				vertical-align: top;
+				display: inline-block;
+				width: 15%;
+				margin-right: 1.5%;
+				font-weight: 700;
+				cursor: pointer;
+				text-transform: uppercase;
+
+				&.oLine {
+					line-height: 2.85em;
+				}
+
+				&:last-child {
+					margin: 0;
+				}
+
+				&.active {
+					border-bottom: 4px solid $pink;
+					cursor: default;
+				}
+			}
+
+		}
+
+	}
+
 	section#Give-Pink-Introduction {
 
 		.greyBg {
@@ -574,7 +629,6 @@ footer #cmFooterBar {
 
 
 		}
-
 	}
 
 	#Pink-Happenings {
