@@ -62,6 +62,12 @@ $(document).ready(function() {
 		$(this)[0].play();
 	});
 
+	$("#backToTop").on("click tap", function () {
+		$('html, body').animate({
+	        scrollTop: 0
+	    }, 'slow');
+	});
+
 	$('.arrow').on('click', function () {
 		var arrow = $(this),
 			activeElem = $('#doctors > li.active'),

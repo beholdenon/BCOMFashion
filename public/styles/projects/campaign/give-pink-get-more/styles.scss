@@ -55,9 +55,13 @@ footer #cmFooterBar {
 		font-size: 13px;
 	}
 
-	a:hover, a:focus {
-		color: $pink;
+	a.noUnderline {
+		text-decoration: none;
 	}
+
+	// a:hover, a:focus {
+	// 	color: $pink;
+	// }
 
 	.pinkText {
 		color: $pink;
@@ -92,6 +96,11 @@ footer #cmFooterBar {
 
 		.sub-right a {
 			color: $darkgrey;
+
+			&:hover,
+			&:focus {
+				color: $pink;
+			}
 		}
 	}
 
@@ -149,6 +158,11 @@ footer #cmFooterBar {
 				&:first-child {
 					margin-right: 1.5em;
 				}
+
+				&:hover,
+				&:focus {
+					color: $pink;
+				}
 			}
 		}
 
@@ -159,6 +173,10 @@ footer #cmFooterBar {
 		width: 65%;
 		display: block;
 		margin: 0 auto 2em;
+
+		a:hover, a:focus {
+			color: $pink;
+		}
 
 		h3 {
 			margin-bottom: 1em;
@@ -213,10 +231,11 @@ footer #cmFooterBar {
 			margin: 0 auto;
 
 			p {
-				padding: 0.5em 0 2em;
+				margin: 0.5em 0 2em;
 
 				&.donated {
 					line-height: 1.75em;
+					padding: 0;
 				}
 
 				&.learn {
