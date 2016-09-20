@@ -125,7 +125,7 @@ $(document).ready(function() {
 
 	$('#pinkNav li').on('click tap', function () {
 		var goTo = $(this).attr('data-target'),
-			loc = $('#'+goTo).offset().top - $('#pinkNav').height() - $('#Im-Still-Me img.heading').height() - 30 ;
+			loc = $('#'+goTo).offset().top - $('#pinkNav').height() - $('#Im-Still-Me img.heading').height() - $(window).height()*0.1 ;
 
 		$('html, body').animate({
 	        scrollTop: loc
