@@ -159,7 +159,7 @@ $(document).ready(function() {
 
 		activeElem.removeClass('active').hide();
 		nextElem.addClass('active').show();
-		$('#doctorDots li').eq( $('.active').index('#doctors > li') ).addClass('active').siblings().removeClass('active');
+		$('#doctorDots li').eq( $('#doctors .active').index('#doctors > li') ).addClass('active').siblings().removeClass('active');
 	});
 
 	
@@ -214,24 +214,6 @@ $(document).ready(function() {
 		}
 			
 		PINK.coremetrics('Element', PINK.cm.category, $(this).attr("data-video"), attrVal );
-	});
-
-	// $("#products").on('click', 'li.product', function() {
-	// 	var targ = $(this);
-
-	// 	var attrNum = 29,
-	// 		attrVal = targ.find('a').attr('href').substring( targ.find('a').attr('href').indexOf('ID=') + 3 ),
-	// 		pName = removeDiacritics( targ.find('.name').text().replace('PINK Tilbury','').replace(/\&|\+|\,/g, '').replace(/\s+/g, '-') );
-
-	// 	console.log(attrVal);
-
-	// 	for ( var i= parseInt(attrNum); i > 1; i-- ) {
-	// 		attrVal = '-_-' + attrVal;
-	// 	}
-
-	// 	PINK.coremetrics('Element', PINK.cm.category, ('signature-looks_'+pName).slice(0, 50), attrVal );
-	// });
-
-	
+	});	
 
 });
