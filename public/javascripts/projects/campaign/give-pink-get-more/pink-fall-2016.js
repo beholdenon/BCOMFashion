@@ -116,9 +116,10 @@ $(document).ready(function() {
             	if ( scrolled > section.offset().top + $(window).height() * 0.4 ) {
 	                PINK.tags = [];
 	                PINK.tags.push( section.attr('id') );
-	                PINK.coremetrics('Pageview', PINK.cm.category, PINK.cm.category + '_' + section.attr('id'));
 	                $('#pinkNav li').removeClass('active');
 	                $("[data-target=" + section.attr('id') + "]").addClass('active');
+
+	                PINK.coremetrics('Pageview', PINK.cm.category, PINK.cm.category + '_' + section.attr('id'));
 	            }
             }
         });
