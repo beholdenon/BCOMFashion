@@ -57,6 +57,55 @@ $(document).ready(function() {
 
 	// COREMETRICS
 
+	$("[data-element]").on("click", function () {
 
+		if ( $(this)[0].hasAttribute('data-attribute') ) {
+			var attr = $(this).attr('data-attribute'),
+				attrNum = attr.substring(0, attr.indexOf(':')),
+				attrVal = attr.substring(attr.indexOf(':')+1);
+
+			for ( var i= parseInt(attrNum); i > 1; i-- ) {
+				attrVal = '-_-' + attrVal;
+			}
+
+			PINK.coremetrics('Element', PINK.cm.category, $(this).attr("data-element").slice(0, 50), attrVal );
+		} else {
+			PINK.coremetrics('Element', PINK.cm.category, $(this).attr("data-element").slice(0, 50) );
+		}
+		
+	});
+
+	$("video").on("play", function() {
+		var attrNum = 16,
+			attrVal = 2;
+
+		for ( var i= parseInt(attrNum); i > 1; i-- ) {
+			attrVal = '-_-' + attrVal;
+		}
+
+		PINK.coremetrics('Element', PINK.cm.category, $(this).attr("data-video"), attrVal );
+	});
+
+	$('video').on('ended',function(){
+		var attrNum = 16,
+			attrVal = 3;
+
+		for ( var i= parseInt(attrNum); i > 1; i-- ) {
+			attrVal = '-_-' + attrVal;
+		}
+			
+		PINK.coremetrics('Element', PINK.cm.category, $(this).attr("data-video"), attrVal );
+	});
+
+	$("video").on("pause", function() {
+		var attrNum = 16,
+			attrVal = 1;
+
+		for ( var i= parseInt(attrNum); i > 1; i-- ) {
+			attrVal = '-_-' + attrVal;
+		}
+			
+		PINK.coremetrics('Element', PINK.cm.category, $(this).attr("data-video"), attrVal );
+	});
 
 });
