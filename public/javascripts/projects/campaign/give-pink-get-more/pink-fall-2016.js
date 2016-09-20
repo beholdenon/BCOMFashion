@@ -62,10 +62,10 @@ $(document).ready(function() {
 		$('#stories').attr('src', res);
 	}, 5124807676001 );
 
-	// Play video on poster click
-	$('#stories').on('click', function () {
-		$(this)[0].play();
-	});
+	// Play video on poster click -- REMOVED DUE TO FIREFOX ISSUE
+	// $('#stories').on('click', function () {
+	// 	$(this)[0].play();
+	// });
 
 	// back to top button
 	$("#backToTop").on("click tap", function () {
