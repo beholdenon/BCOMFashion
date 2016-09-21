@@ -59,6 +59,7 @@ footer #cmFooterBar {
 		color: #333333;
 		font-family: "Lato", sans-serif;
 		font-size: 1em;
+		letter-spacing: 0.025em;
 	}
 
 	a.noUnderline {
@@ -144,9 +145,10 @@ footer #cmFooterBar {
 			margin: 0.5em 0 1em;
 		}
 
-		p {
+		.legal {
 			font-size: 0.75em;
 			color: $legal;
+			font-family: Helvetica, Arial, sans-serif;
 		}
 
 	}
@@ -205,6 +207,7 @@ footer #cmFooterBar {
 
 		.pinkArrow {
 			position: relative;
+			text-transform: uppercase;
 
 			&:before {
 				position: absolute;
@@ -225,8 +228,8 @@ footer #cmFooterBar {
 		.rightAligned {
 			position: relative;
 			top: 10vw;
-			left: 50%;
-			width: 45%;
+			left: 48%;
+			width: 50%;
 			text-align: left;
 			font-size: 0.85em;
 
@@ -246,7 +249,7 @@ footer #cmFooterBar {
 
 	#designerShirt {
 		position: absolute;
-		left: -13vw;
+		left: -16vw;
 		top: 5vw;
 		width: 65%;
 	}
