@@ -7,6 +7,7 @@ define([
 ], function(_, $) {
 
     function setEnvironment() {
+
         if (window.Globals.env === 'dev') {
             return cmSetTest(); // jshint ignore:line
         } else if (window.Globals.env === 'production') {
@@ -16,7 +17,7 @@ define([
                 return cmSetTest(); // jshint ignore:line
             }
         } else {
-            throw 'ERROR: unidentified env variable';
+            throw 'ERROR: unidentified env variable: ' + window.Globals.env;
         }
     }
 
@@ -52,7 +53,7 @@ define([
 
     function initCoreMetrics(categoryID) {
         window.BLOOMIES.coremetrics.pageViewExploreAttributes = new window.BLOOMIES.coremetrics.exploreAttributes();
-        
+
         var pageID = 'fashion_' + pageName(),
             catID = categoryID || 'xx-xx-xx-xx',
             attr = '';
@@ -72,7 +73,33 @@ define([
 
             window.Globals.Coremetrics.attr42 = attr;
 
-            // return pageViewTag(pageID, catID, '42', attr); ---default pageview tag firing on every view
+            // return pageViewTag(pageID, catID, '42', attr); //---default pageview tag firing on every view
+
+            var isMobile = false;
+            if ($('.bl_mobile')[0]){
+                isMobile = true;
+            }
+
+
+            // coremetrics data might have been added by handlebars directive, check and initialize if so
+            var cmDataEl = $('#cmdata')[0];
+            if (cmDataEl) {
+                var categoryId =  cmDataEl.dataset.categoryid;
+                var pageId = cmDataEl.dataset.pageid;
+                window.BLOOMIES.coremetrics.cmCreatePageviewTag(pageId, categoryId);
+                // also check if elements have been marked with cm data, is so
+                $("a[data-cm]").on('click', function () {
+                    var mblPrefix = '';
+                    if (isMobile){
+                        mblPrefix = 'mbl:'
+                    }
+                    var attrCm = $(this).data('cm');
+                    if (typeof attrCm === 'string' && attrCm.length > 0) {
+                        window.BLOOMIES.coremetrics.cmCreatePageElementTag(mblPrefix + attrCm, mblPrefix + categoryId);
+                    }
+                });
+
+            }
         }
     }
 

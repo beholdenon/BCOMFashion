@@ -1,0 +1,225 @@
+
+/* Tiles Based Left Navigation Starts */
+#bl_leftNavContainer {
+    float: left;
+    width: 192px;
+    padding: 10px 0;
+    margin:0;
+    UL {
+        margin: 0 0 20px;
+        padding: 0;
+        list-style: none;
+        &.level2 {
+            margin-left:10px;
+            padding: 0;
+            padding-top:1px;
+            padding-bottom:5px;
+            list-style: none;
+        }
+        LI {
+            margin-left: 0;
+            line-height:1.5;
+        }
+        LI:only-child {
+            margin-bottom:-10px;
+        }
+        &.level2 LI {
+            margin: 0;
+        }
+    }
+    A, .level2 A {
+        text-decoration: none;
+        color: #333333;
+        font-weight: normal;
+    }
+    A:hover {
+        color: #D90EAC;
+    }
+    .bl_leftNav_header {
+        font-weight: bold;
+        font-family: "Avenir LT W01",Helvetica,Arial,sans-serif;
+        -webkit-font-smoothing: none !important;
+        color: #000000;
+        A {
+            font-weight:bold;
+        }
+    }
+    .level1Selected A, .level2 .level2Selected A {
+        color: #D90EAC;
+        font-weight: bold;
+    }
+}
+/* Tiles based left nav stops */
+
+
+
+/*
+  from globalCommon.css
+*/
+.newLayout {
+    .bl_main {
+        background: none;
+        padding: 0;
+    }
+    #bl_main_container {
+        width:inherit;
+        max-width: 962px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: left;
+        padding: 0;
+    }
+    #bl_hp_main {
+        border: none;
+    }
+    #facets {
+        width: 176px;
+    }
+    DIV.seoContent {
+        margin-left: 0;
+    }
+    #filters, #pageNumbersTop, #filtersBottom, #pageNumbersBottom, #breadcrumbs {
+        padding-right: 0;
+        padding-left: 24px;
+    }
+}
+
+/* From here down, page specific styles */
+
+// amfAR
+.lp_amfAR_video{
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 10%;
+    left: 51%;
+    height:27%
+}
+// b.cause
+.bcause_img {
+    max-width: 105%;
+    position: relative;
+    margin-bottom:10px;
+    IMG {
+        max-width: 105%;
+        padding-right:10px;
+    }
+}
+.lp_philanthropy {
+    position: relative;
+    float: left;
+    max-width: 100%;
+}
+// history
+#bl_history {
+    max-width: 700px;
+    background: #ffffff;
+    p {
+        &.bl_history_header {
+            font-weight: bold;
+            padding: 0;
+            margin: 0;
+        }
+
+        &.bl_history_desc {
+            padding-top: 5px;
+            margin: 0;
+        }
+    }
+}
+.bl_history_photos {
+    float: left;
+    width: 100px;
+    IMG {
+        margin-bottom: 4px;
+    }
+}
+.bl_history_list {
+    float: left;
+    max-width: 600px;
+}
+
+.bl_history_dates {
+    float: left;
+    width: 100px;
+    font-weight: bold;
+    margin-top: 3px;
+}
+
+.bl_history_info {
+    max-width: 500px;
+    float: left;
+    clear: right;
+    margin-bottom: 5px;
+    margin-top:5px;
+}
+// new store
+.cs_new_store_img {
+    float: left;
+    width: 120px;
+    margin: 0 10px 0 0;
+    padding: 0;
+   // text-align: center;
+}
+.cs_new_store_text {
+    float: left;
+    max-width: 480px;
+    padding: 0 0 0 0;
+    margin-bottom:30px;
+}
+.cs_new_store_text_bottom {
+    float: left;
+    max-width: 480px;
+    padding: 0 0 0 140px;
+}
+.cs_new_store_main{
+    padding: 0;
+    margin: 0 0 20px 0;
+    max-width: 620px;
+    overflow: hidden;
+    border-bottom: 1px solid #dddddd;
+}
+.cs_new_store_main_bottom{
+    padding: 0 0 10px 0;
+    margin: 0 0 20px 0;
+    max-width: 620px;
+}
+.cs_new_store_item {
+    max-width: 520px;
+    margin: 10px 0 10px 0;
+    padding: 0;
+    UL {
+        list-style-type: disc;
+    }
+    LI {
+        padding: 0 0 5px 0;
+        margin: 0 0 0 170px;
+    }
+}
+// shopping services
+.ss_main_cont_aligmt {
+    max-width: 723px;
+    padding: 0 5px 0 0;
+    UL {
+        list-style-type: none;
+        width: 355px;
+        float: left;
+        padding: 0 5px 20px 0;
+        margin: 0;
+    }
+    LI {
+        text-align: left;
+    }
+}
+
+@media screen and (max-width: 768px){
+    DIV.bl_nav_side {
+        padding-left: 10px;
+    }
+}
+@media screen and (max-width: 699px){
+    DIV.bl_nav_side {
+        display:none;
+    }
+}
+
