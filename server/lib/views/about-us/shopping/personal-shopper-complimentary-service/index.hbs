@@ -1,0 +1,125 @@
+<!-- {pageTitle: "Personal Shoppers", pageLabel: "Personal Shoppers &mdash; Shopping Services &mdash; About Us | Bloomingdale's"} -->
+{{{coremetrics 'Personal_Shoppers_(ab-sh-xx-xx.personal)' 'ab-sh-xx-xx'}}}
+<div class="about_us">
+    {{>title}}
+    <div id="bl_main_wrapper" class='newLayout'>
+        <div class="bl_main">
+            <div id="bl_hp_main">
+                <table>
+                    <tr>
+                        <td>
+                            <div class="bl_nav_side">
+                                <!--BEGIN LOCAL NAVIGATION-->
+                                <div class="gn_left_nav_container">
+                                    <div id="bl_leftNavContainer">
+                                        {{>leftnav}}
+                                    </div>
+                                </div>
+                                <!--END LOCAL NAVIGATION-->
+                            </div>
+                        </td>
+                        <td>
+                            <div class="lp_philanthropy bl_cu_mainContent">
+                                {{>titleimage}}
+                                <div class="row" style="padding-top:20px;">
+
+                                    <div class="large-17 columns" style="padding-left:0px;">
+                                        <p>Let us put all of Bloomingdale's At Your Service - our knowledgeable personal shoppers will make your
+                                            shopping experience like no other in the world. We're at-the-ready for your every shopping need, from
+                                            offering fashion trend advice to selecting the perfect patterns for your home. It's fast, it's easy, and
+                                            it's COMPLIMENTARY!
+                                            <a href="#" data-reveal-id="myModal">
+                                                Click here</a>
+                                            to view a list of At Your Service phone numbers and locations.
+                                        </p>
+                                        <p><b>What do personal shoppers do?</b>
+                                            Quite simply, our personal shoppers save you time. They'll pre-shop the store for you, then present an array of items for your review in a private setting at our store. However you choose to shop, our consultants are here for your convenience, to make your life a little less hectic. </p>
+                                        <div class="consultants-assits">
+                                            <ul>
+                                                <li>They'll assist you in selecting the perfect gift for any occasion and any recipient - providing you the gift of time. </li>
+                                                <li>They'll shop the full store, from clothing to home and much more to insure they address all your needs - whether it's for yourself or something for your family or friends.</li>
+                                                <li>They'll identify your style preferences and select items tailored to your personal taste.</li>
+                                                <li>They'll suggest the most appropriate merchandise for any occasion, and will keep you abreast of the latest trends, in-store events and, of course, what's on sale.</li>
+                                                <li>They'll coordinate everything from alterations to gift wrapping, and they'll organize the delivery or shipment of your purchases.</li>
+                                                <li>They'll work with your schedule and budget.</li>
+                                            </ul>
+                                        </div>
+                                        <p><b>Special date reminders</b>
+                                            Let's face it, you've probably forgotten special events that are supposed to be forever imprinted on your inner-calendar. At Bloomingdale's, our personal shoppers will keep a register of important dates in your life and give you a reminder call as important birthdays, anniversaries or upcoming occasions approach.</p>
+
+                                        <p><b>No obligation at any time</b>
+                                            Bloomingdale's personal shoppers will never put any pressure on you to purchase any of the items they suggest.
+                                            They're just there to make your shopping experience easier. This complimentary service is available in most of our
+                                            stores every time you shop.
+                                            <a href="#" data-reveal-id="myModal">
+                                                Click here</a> to view a list of At Your Service phone numbers and locations. </p>
+                                    </div>
+                                    <div class="large-7 columns" style="text-align:center;">
+                                        <img src="http://assets.bloomingdales.com/navapp/web20/assets/img/personalShoppers/shopping-bag.jpg" class="shoppingBagImage" alt="Shopping Image">
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="myModal" class="reveal-modal small"
+     data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+    <div class="hshim" style="height:20px;"></div>
+    {{>atyourservice}}
+    <img  class="close-reveal-modal" aria-label="Close"
+          src="/fashion/images/projects/about-us/newPanel_close.png"
+          width="26" height="26" alt="Close Window" border="0" class="bl_pop">
+</div>
+
+
+<script type="text/javascript" src="/fashion/javascripts/libs/foundation-4.3.1/foundation.min.js"></script>
+
+<script>
+
+  require(['jquery'], function($){
+    $(document).foundation();
+
+    $('#new').on('opened', function () {
+        $(document).foundation('section', 'reflow');
+    });
+    $(".reveal-modal").on("open", function () {
+        var body = $('body');
+        body.scrollTop(0);
+        console.log('scroll');
+        body.addClass("modal-open");
+        var pageId = 'At Your Service (ab-sh-xx-xx.atyourservice)';
+        if (body.hasClass('bl_mobile')){
+           pageId = 'mbl: ' + pageId;
+        }
+        BLOOMIES.coremetrics.cmCreatePageviewTag(pageId,'(ab-sh-xx-xx.atyourservice)',"","");
+    });
+    $('.close-reveal-modal').bind("click touchstart", function () {
+        var body = $('body');
+        body.removeClass('modal-open');
+    });
+
+  });
+
+</script>
+<style>
+    DIV#myModal.reveal-modal.small.open{
+        top: 0;
+    }
+    body.modal-open {
+        overflow: hidden;
+        position: fixed;
+        width:100%;
+    }
+    .reveal-modal {
+        overflow-y: auto;
+        position: fixed;
+        padding:2.2rem;
+    }
+</style>
+
+
+
