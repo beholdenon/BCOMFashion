@@ -40,7 +40,7 @@ define( [ "LeftNav" ], function ( LeftNav ) {
                 {
                     text: 'Pick Up In Store',
                     //href: '/about/newstores/',
-                    href: '//fashion.bloomingdales.com/about-us/buy-online-pickup-in-store/?cm_sp=ways_to_shop-_-bops',
+                    href: '/about-us/buy-online-pickup-in-store/?cm_sp=ways_to_shop-_-bops',
                     id: 'about_pickUpInStore',
                     secure: false
                 }
@@ -245,7 +245,7 @@ define( [ "LeftNav" ], function ( LeftNav ) {
                     text: 'AFFILIATE PROGRAM',
                     label: 'Affiliate Program',
                     //href: '/about/newstores/',
-                    href: '//fashion.bloomingdales.com/about-us/affiliate-program-network-partner/?cm_sp=about_us-_-left_nav-_-affiliate',
+                    href: '/about-us/affiliate-program-network-partner/?cm_sp=about_us-_-left_nav-_-affiliate',
                     id: 'about_affiliateProgram',
                     secure: false
                 }
