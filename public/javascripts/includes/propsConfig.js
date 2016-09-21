@@ -62,7 +62,8 @@ define(function() {
 	    partnerFusionBaseURL: 'https://uat04.mobile.citibank.com',
 	    updatedBonusOffersLinkTestEnabled: true,
 	    credit32016Enabled: false,
-	    tabletPersistentSearchBarEnabled: true
+	    tabletPersistentSearchBarEnabled: true,
+	    spoHFDesktopExperienceEnabled: false
 	};
 
 	return props;
