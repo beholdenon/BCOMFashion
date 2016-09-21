@@ -735,7 +735,7 @@ module.exports = function(grunt) {
         grunt.task.run([
 
             'babel',
-            //'jshint',
+            'jshint',
             'clean:all',
             'useminPrepare',
             'compass:dist',

@@ -3,6 +3,7 @@
 var device = {};
 
 device.detectDevice = function(req) {
+
     var UA = req.headers['user-agent'],
         deviceType,
         akamaiHeader = req.headers['x-bloomingdales-device'];

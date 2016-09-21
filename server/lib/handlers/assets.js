@@ -1,8 +1,8 @@
 'use strict';
 
-var serviceProxy = require('./../helpers/serviceProxy'),
-    Path = require('path'),
-    Device = require('./../helpers/deviceDetection');
+var serviceProxy = require('./../helpers/serviceProxy');
+var    Path = require('path');
+   //Device = require('./../helpers/deviceDetection');
 
 module.exports = {
     fashion: {
@@ -91,8 +91,8 @@ module.exports = {
                 'Content-Type': 'application/json'
             };
 
-            var deviceType = Device.detectDevice(req),
-                mobileParam = '&stop_mobi=yes';
+            //var deviceType = Device.detectDevice(req);
+            var mobileParam = '&stop_mobi=yes';
 
             res.proxy({
                 timeout: serviceProxy.timeout,
