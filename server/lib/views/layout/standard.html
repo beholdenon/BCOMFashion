@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
     <head>
-        {{> head}} 
 
         <!--============[ CSS: Mobile Specific ]============-->
         {{#if args.isMobile}}
@@ -9,6 +8,8 @@
         {{/if}}
 
         <!--============[ JS: Require Modules ]============-->
+        {{> head}}
+
     </head>
 
     {{#if args.isTablet}}
@@ -29,11 +30,11 @@
                     {{! Every view gets inserted here }}
                     {{{content}}}
                 </div>
-        
-        <footer class="responsive"></footer>
         {{#unless args.isMobile}}
             </div>
         {{/unless}}
+
+    <footer class="responsive"></footer>
 
         <!-- inject -->
 
