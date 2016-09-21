@@ -102,7 +102,8 @@ server.on('request-internal', function(request, event, tags) {
         console.log('\n--------------------------------------------------\n' +
                         'SERVER INTERNAL ERROR::\n'+
                         Object.keys(tags).join(', '), '~', (event.data ? event.data.stack || JSON.stringify(event.data) : '') +
-                        '\n--------------------------------------------------\n');       
+                        '\n' + request.path +
+                        '\n--------------------------------------------------\n');
     }
 });
 
