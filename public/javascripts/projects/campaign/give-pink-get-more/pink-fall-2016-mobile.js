@@ -45,10 +45,6 @@ $(document).ready(function() {
 		$('#stories').attr('src', res);
 	}, 5124807676001 );
 
-	$('#stories').on('click', function () {
-		$(this)[0].play();
-	});
-
 	$("#backToTop").on("click tap", function () {
 		$('html, body').animate({
 	        scrollTop: 0
