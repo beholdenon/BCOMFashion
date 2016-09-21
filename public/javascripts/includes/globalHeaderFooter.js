@@ -15,6 +15,10 @@ define([
 	    
         (function(){
             var props = PropsConfig;
+            if( window.Globals.deviceType !== 'mobile' || window.location.search.indexOf('stop_mobi=yes') > -1 ){
+                props.spoHFDesktopExperienceEnabled = true;
+            }
+
             Globals.setValue("props", props);
         })();
 
