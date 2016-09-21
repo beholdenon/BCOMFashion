@@ -118,8 +118,6 @@ $(document).ready(function() {
 	                PINK.tags.push( section.attr('id') );
 	                $('#pinkNav li').removeClass('active');
 	                $("[data-target=" + section.attr('id') + "]").addClass('active');
-
-	                PINK.coremetrics('Pageview', PINK.cm.category, PINK.cm.category + '_' + section.attr('id'));
 	            }
             }
         });
