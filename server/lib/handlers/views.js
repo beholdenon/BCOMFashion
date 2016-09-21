@@ -72,17 +72,6 @@ module.exports = {
             return res.view(deviceDetectProc.view, { args: deviceDetectProc.args }, { layout: 'nonresponsiveCustomHF'});           
         }
     },
-    bare: {
-        description: 'Bare layout, no header or footer, empty head element with no added css or script',
-        notes: 'Server side mobile detection layout, with no header or footer',
-        tags: [],
-        handler: function(req, res) {
-            var requestPath = (req.url.path).substring(1),
-                deviceDetectProc = deviceDetectParams(requestPath, req);
-
-            return res.view(deviceDetectProc.view, { args: deviceDetectProc.args }, { layout: 'bare'});
-        }
-    },
     fallback: {
         description: 'Serve non-responsive standard layout',
         notes: 'This is the default fallback route if not explicitly captured',
