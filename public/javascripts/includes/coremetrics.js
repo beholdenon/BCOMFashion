@@ -80,7 +80,6 @@ define([
                 isMobile = true;
             }
 
-
             // coremetrics data might have been added by handlebars directive, check and initialize if so
             var cmDataEl = $('#cmdata')[0];
             if (cmDataEl) {
@@ -91,11 +90,11 @@ define([
                 $("a[data-cm]").on('click', function () {
                     var mblPrefix = '';
                     if (isMobile){
-                        mblPrefix = 'mbl:'
+                        mblPrefix = 'mbl: ';
                     }
                     var attrCm = $(this).data('cm');
                     if (typeof attrCm === 'string' && attrCm.length > 0) {
-                        window.BLOOMIES.coremetrics.cmCreatePageElementTag(mblPrefix + attrCm, mblPrefix + categoryId);
+                        window.BLOOMIES.coremetrics.cmCreatePageElementTag(mblPrefix + attrCm, categoryId);
                     }
                 });
 

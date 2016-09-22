@@ -66,10 +66,12 @@
         </div>
     </div>
 </div>
+
 <div id="myModal" class="reveal-modal small"
      data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
     <div class="hshim" style="height:20px;"></div>
     {{>atyourservice}}
+    <div class="hshim" style="height:20px;"></div>
     <img  class="close-reveal-modal" aria-label="Close"
           src="/fashion/images/projects/about-us/newPanel_close.png"
           width="26" height="26" alt="Close Window" border="0" class="bl_pop">
@@ -118,6 +120,18 @@
         overflow-y: auto;
         position: fixed;
         padding:2.2rem;
+    }
+    .column, .columns {
+        padding-left:inherit;
+        padding-right:inherit;
+    }
+    .reveal-modal {
+        max-height: 80vh;
+    }
+    @media only screen and (max-width: 58.18182em) {
+        .reveal-modal {
+            max-height: 90vh;
+        }
     }
 </style>
 
