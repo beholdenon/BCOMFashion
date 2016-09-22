@@ -1,0 +1,24 @@
+@import '../../vendor/foundation/components/reveal';
+
+HTML, BODY {
+  font-size: 12px;
+  font-family:"Avenir W01",Helvetica,Arial,sans-serif;
+}
+@media only screen and (max-width: 58.18182em) {
+  .reveal-modal {
+      min-height: 90vh;
+  }
+}
+.row {
+  max-width: 80.16667rem;
+}
+.reveal-modal .row {
+  margin: 0 auto;
+  max-width: 90.90909rem;
+  width: 100%;
+}
+
+
+
+
+

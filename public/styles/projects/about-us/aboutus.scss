@@ -1,0 +1,655 @@
+
+//@import "vendor/foundation/components/reveal";
+
+/* override main.css */
+BODY {
+    font-family: "Avenir W01",Helvetica,Arial,sans-serif;
+    line-height: 1.5;
+    min-width: 200px;
+}
+DIV {
+    line-height:1.5;
+}
+
+/* end main.css override */
+
+
+
+/* Specific to about us pages */
+
+
+.about_us {
+    DIV.bl_cu_mainContent {
+        padding: 0 0 20px 0;
+        float: left;
+        background-color: #ffffff;
+        max-width: 728px;
+    }
+    IMG {
+        max-width:105%;
+    }
+    UL {
+        margin-left:15px;
+    }
+    .img_shim {
+        margin-left: -40px;
+    }
+    #bl_hp_main TABLE {
+        border: none;
+    }
+
+    .bl_cs_item UL {
+        list-style-type: none;
+        width: 210px;
+        float: left;
+        padding: 0 20px 30px 0;
+        margin: 0;
+    }
+    .bl_cs_banner {
+        padding: 10px 0 10px 0;
+        text-align: center;
+    }
+    .bl_breadcrumb_object {
+        padding: 0 0 5px 0;
+        color: #666666;
+        line-height:1.3;
+    }
+    .bl_header_pg_img {
+        border-style: solid;
+        border-color: #000000;
+        border-width: 0 0 1px 0;
+        padding: 0 0 5px 0;
+        width:100%;
+        margin-top:15px;
+    }
+
+    DIV {
+        &.hshim {
+            height: 20px;
+        }
+        &.hshim2{
+            height:10px;
+        }
+        &.bl_nav_side {
+            float: left;
+            padding: 0 0 20px 0;
+            padding: 0 0 20px 0;
+            width: 214px;
+        }
+
+    }
+    TD {
+        vertical-align: top;
+        padding: 0;
+        font-size:1rem;
+    }
+    SPAN {
+        &.bl_breadcrumb_link {
+            line-height: 1;
+        }
+        &.bl_breadcrumb_link A {
+            font-size: .9rem;
+            font-weight: normal;
+            text-decoration: none;
+        }
+        &.bl_breadcrumb_bold {
+            font-size: .9rem;
+            font-weight: bold;
+        }
+    }
+}
+
+/* Tiles Based Left Navigation Starts */
+#bl_leftNavContainer {
+    float: left;
+    width: 192px;
+    padding: 10px 0;
+    margin:0;
+    UL {
+        margin: 0 0 20px;
+        padding: 0;
+        list-style: none;
+        &.level2 {
+            margin-left:10px;
+            padding: 0;
+            padding-top:1px;
+            padding-bottom:5px;
+            list-style: none;
+        }
+        LI {
+            margin-left: 0;
+            line-height:1.5;
+        }
+        LI:only-child {
+            margin-bottom:-10px;
+        }
+        &.level2 LI {
+            margin: 0;
+        }
+    }
+    A, .level2 A {
+        text-decoration: none;
+        color: #333333;
+        font-weight: normal;
+    }
+    A:hover {
+        color: #D90EAC;
+    }
+    .bl_leftNav_header {
+        font-weight: bold;
+        font-family: "Avenir LT W01",Helvetica,Arial,sans-serif;
+        //-webkit-font-smoothing: none !important;
+        color: #000000;
+        A {
+            font-weight:bold;
+        }
+    }
+    .level1Selected A, .level2 .level2Selected A {
+        color: #D90EAC;
+        font-weight: bold;
+    }
+}
+/* Tiles based left nav stops */
+
+
+
+/*
+  from globalCommon.css
+*/
+.newLayout {
+    .bl_main {
+        background: none;
+        padding: 0;
+    }
+    #bl_main_container {
+        width:inherit;
+        max-width: 962px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: left;
+        padding: 0;
+    }
+    #bl_hp_main {
+        border: none;
+    }
+    #facets {
+        width: 176px;
+    }
+    DIV.seoContent {
+        margin-left: 0;
+    }
+    #filters, #pageNumbersTop, #filtersBottom, #pageNumbersBottom, #breadcrumbs {
+        padding-right: 0;
+        padding-left: 24px;
+    }
+
+
+    /* From here down, page specific styles */
+
+    // amfAR
+    .lp_amfAR_video{
+        padding: 0;
+        margin: 0;
+        position: absolute;
+        top: 10%;
+        left: 51%;
+        height:27%
+    }
+    // b.cause
+    .bcause_img {
+        max-width: 105%;
+        position: relative;
+        margin-bottom:10px;
+        IMG {
+            max-width: 105%;
+            padding-right:10px;
+        }
+    }
+    .lp_philanthropy {
+        position: relative;
+        float: left;
+        max-width: 100%;
+    }
+    // history
+    #bl_history {
+        max-width: 700px;
+        background: #ffffff;
+        p {
+            &.bl_history_header {
+                font-weight: bold;
+                padding: 0;
+                margin: 0;
+            }
+
+            &.bl_history_desc {
+                padding-top: 5px;
+                margin: 0;
+            }
+        }
+    }
+    .bl_history_photos {
+        float: left;
+        width: 100px;
+        IMG {
+            margin-bottom: 4px;
+        }
+    }
+    .bl_history_list {
+        float: left;
+        max-width: 600px;
+    }
+
+    .bl_history_dates {
+        float: left;
+        width: 100px;
+        font-weight: bold;
+        margin-top: 3px;
+    }
+
+    .bl_history_info {
+        max-width: 500px;
+        float: left;
+        clear: right;
+        margin-bottom: 5px;
+        margin-top:5px;
+    }
+    // new store
+    .cs_new_store_img {
+        float: left;
+        width: 120px;
+        margin: 0 10px 0 0;
+        padding: 0;
+        // text-align: center;
+    }
+    .cs_new_store_text {
+        float: left;
+        max-width: 480px;
+        padding: 0 0 0 0;
+        margin-bottom:30px;
+    }
+    .cs_new_store_text_bottom {
+        float: left;
+        max-width: 480px;
+        padding: 0 0 0 140px;
+    }
+    .cs_new_store_main{
+        padding: 0;
+        margin: 0 0 20px 0;
+        max-width: 620px;
+        overflow: hidden;
+        border-bottom: 1px solid #dddddd;
+    }
+    .cs_new_store_main_bottom{
+        padding: 0 0 10px 0;
+        margin: 0 0 20px 0;
+        max-width: 620px;
+    }
+    .cs_new_store_item {
+        max-width: 520px;
+        margin: 10px 0 10px 0;
+        padding: 0;
+        UL {
+            list-style-type: disc;
+        }
+        LI {
+            padding: 0 0 5px 0;
+            margin: 0 0 0 170px;
+        }
+    }
+    // shopping services
+    .ss_main_cont_aligmt {
+        max-width: 723px;
+        padding: 0 5px 0 0;
+        UL {
+            list-style-type: none;
+            width: 355px;
+            float: left;
+            padding: 0 5px 20px 0;
+            margin: 0;
+        }
+        LI {
+            text-align: left;
+        }
+    }
+    // visitor services
+    #bl_vsMainWithMargin {
+        width: 490px;
+        margin-right: 20px;
+        float: left;
+    }
+    .bl_vsHeader,
+    .bl_vsSubHeader,
+    .bl_vsCityHeader {
+        font-weight: bold;
+    }
+    .bl_vsHeader {
+        font-size: 16px;
+        margin-bottom:10px;
+    }
+    .bl_vsSubHeader {
+        font-size: 12px;
+    }
+    .bl_vsCityHeader {
+        font-size: 10pt;
+    }
+    #bl_vsMainWithMargin {
+        width: 490px;
+        margin-right: 20px;
+        float: left;
+    }
+    #bl_vsEmailNews {
+        width: 215px;
+        float: right;
+        background-color: #f0f0f0;
+        TD {
+            padding-right:4px;
+        }
+        INPUT {
+            height:1.5rem;
+            padding:3px;
+            margin:0;
+            margin-bottom:4px;
+        }
+        .bl_inputCover{
+            height:2px;
+        }
+    }
+    #bl_vsEmailErrorDiv {
+        display: none;
+    }
+    ul#bl_vsList
+    {
+        padding: 0 14px;
+    }
+    #bl_vsLeftList {
+        float: left;
+        min-width: 150px;
+        margin: 0;
+        padding: 0;
+    }
+    .bl_vsPullRight {
+        float: right !important;
+    }
+    #bl_vsRightList {
+        float: left;
+        margin: 0;
+        padding: 0;
+    }
+    #bl_vsLeftList p, #bl_vsRightList p {
+        margin: 2px 0;
+    }
+    ul#bl_vsList li {
+        margin: 3px 0;
+    }
+    #bl_vsEmailNewsInner {
+        padding: 0 10px;
+    }
+    #bl_vsAgeDisclaimer {
+        width: 170px;
+        font-size:.8rem;
+    }
+    #bl_vsSubmitDiv {
+        margin: 12px 0;
+        float: right;
+    }
+    // studio services
+    DIV {
+        .bl_cs_brown_bag {
+            text-align: left;
+            float: left;
+            width: 190px;
+        }
+        .bl_cs_mainContent {
+            float: left;
+            padding: 0 20px 15px 1px;
+            max-width: 513px;
+        }
+    }
+
+
+
+    // Ways to Shop
+    @mixin ways_mobile {
+        .ways_to_shop {
+            .row {
+                text-align: center;
+            }
+            .main {
+                padding:20px;
+            }
+            H4 {
+                font-size:1.4rem;
+            }
+            .hshim {
+                display:none;
+            }
+            #frow .ffoot {
+                margin-top:10px;
+                font-size:1.4rem;
+            }
+            #smallDart {display:none}
+            #bigDart {display:block}
+            .line {
+                margin-left: auto;
+                margin-right: auto;
+            }
+            IMG.left_pic {
+                margin: 0;
+                height: 300px;
+            }
+            IMG.right_pic {
+                margin: 0;
+            }
+            .section.text_section {
+                height: 220px;
+                margin-bottom: 40px;
+            }
+            DIV.section_m {
+                display: block;
+            }
+            DIV.section_d {
+                display: none;
+            }
+            DIV.section_f {
+                line-height: 1.2;
+                font-size: 1.5rem;
+            }
+            #ways_to_shop_header {
+                font-size: 1.2rem;
+            }
+        }
+    }
+    .bl_mobile {
+        .about_us.ways_to_shop {margin-left:0;}
+        @include ways_mobile;
+    }
+    .ways_to_shop {
+        #bigDart {display:none}
+        @media (max-width: 1024px) {
+            #smallDart {display:none}
+            #bigDart {display:block}
+            #frow DIV.section_f {
+                line-height: 1.2;
+                font-size: 1.5rem;
+            }
+            .row {
+                text-align: center;
+            }
+            .line {
+                margin-left:auto;
+                margin-right:auto;
+            }
+            IMG.left_pic {
+                margin:0;
+            }
+            IMG.right_pic {
+                margin:0;
+            }
+            .section.text_section {
+                height:220px;
+                margin-bottom:40px;
+            }
+            DIV.section_m {
+                display:block;
+            }
+            DIV.section_d {
+                display:none;
+            }
+            #ways_to_shop_header{
+                font-size:1.2rem;
+            }
+        }
+
+        #ways_to_shop_header {
+            margin-bottom: 20px;
+        }
+        #bl_main_container {
+            width: inherit;
+            padding: 0;
+        }
+        .content {
+            max-width: 560px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .heading {
+            text-align: center;
+            IMG {
+                margin-top: 60px;
+                margin-bottom: 20px;
+            }
+        }
+        .section_m {
+            display: none;
+        }
+        .section {
+            height: 285px;
+            BUTTON {
+                margin-top: 40px;
+            }
+            .dummy {
+                position: relative;
+                top: 50%;
+                transform: translateY(-50%);
+                margin-right: 20px;
+            }
+        }
+        .line {
+            width: 60px;
+            margin-top: 6px;
+            margin-bottom: 8px;
+            height: 3px;
+            border-radius: 10px;
+            &.green {
+                background: #2cf09f;
+            }
+            &.purple {
+                background: #932bfd;
+            }
+        }
+        .right_pic {
+            margin-left: 20px;
+        }
+        .left_pic {
+            height: 256px;
+            margin-right: 20px;
+        }
+        #frow {
+            padding: 16px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            text-align: center;
+            background: #000;
+            color: #fff;
+            DIV {
+                line-height: 2;
+            }
+            .ftitle {
+                font-size: 1.4rem;
+                font-weight: bold;
+            }
+            .ffoot {
+                font-size: .8rem;
+                font-weight: bold;
+                text-decoration:underline;
+            }
+            TABLE {
+                margin-left: auto;
+                margin-right: auto;
+                TD {
+                    line-height: 1.5;
+                }
+            }
+
+        }
+        BUTTON {
+            height: 3rem;
+            line-height: 3rem;
+        }
+    }
+    //sizing charts
+    DIV {
+        .about-shop-sizing-charts {
+            IMG {
+                margin-bottom:8px;
+            }
+        }
+    }
+
+
+    @media screen and (max-width: 768px){
+        .about_us {
+            DIV.bl_nav_side {
+                padding-left: 10px;
+            }
+        }
+    }
+    @media screen and (max-width: 699px){
+        DIV.bl_nav_side {
+            display:none;
+        }
+        DIV.bl_cu_mainContent {
+            //    margin-left:20px;
+        }
+        .about_us {
+            IMG {
+                max-width:100%;
+            }
+            .displayBlock.img_shim {
+                margin-left: -20px;
+            }
+            .bl_cs_banner {
+                margin-right: 10px;
+            }
+        }
+        /*    .about_us DIV.lp_philanthropy {
+                margin-left:10px;
+            }*/
+        .bcause_img IMG {
+            max-width:100%;
+        }
+    }
+
+
+}
+.bl_mobile {
+
+    .about_us {
+        margin-left:10px;
+        IMG {
+            max-width:100%;
+            // padding-left:10px;
+        }
+        .bcause_IMG {
+            max-width:100%;
+        }
+        .lp_amfAR_video {
+            display:none;
+        }
+        .bl_nav_side {
+            display:none;
+        }
+    }
+
+}
+
