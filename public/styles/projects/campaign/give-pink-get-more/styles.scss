@@ -292,7 +292,8 @@ footer #cmFooterBar {
 				}
 
 				&.learn {
-					padding: 2em 0 0.5em;
+					padding: 2em 0 0;
+					margin-bottom: 0.25em;
 				}		
 			}
 
@@ -361,7 +362,7 @@ footer #cmFooterBar {
 		font-family: "Lato", sans-serif;
 		position: absolute;
 		top: -2%;
-		right: 5%;
+		right: 4%;
 		color: #ffffff;
 	}
 
