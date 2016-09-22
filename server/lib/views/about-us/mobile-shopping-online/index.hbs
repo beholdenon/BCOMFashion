@@ -7,20 +7,26 @@
         font-family: 'Libre Baskerville', serif;
         font-size:2.5rem;
     }
-    .item.center {
+    .item.center DIV {
         text-align:center;
         margin-left:auto;
         margin-right:auto;
     }
-    .item.left {
+    .item.left DIV{
         text-align:left;
     }
-    .item.right {
+    .item.right DIV{
         text-align:right;
+        float:right;
+        clear:both;
     }
     .item {
-        margin:60px;
-        width:415px;
+        clear:both;
+        margin:30px;
+    }
+    .subitem {
+        width:280px;
+        margin-top:20px;
     }
 </style>
 <div class="about_us ways_to_shop">
@@ -76,7 +82,7 @@
 
                     <div class="item center">
                         <div class="LBHeading">Scan &amp; Send</div>
-                        <div>
+                        <div class="subitem">
                             Shopping in store and don't see your size or color?
                             Scan items to check availability&mdash;then have them shipped
                             right to your door.
@@ -85,7 +91,7 @@
 
                     <div class="item left">
                         <div class="LBHeading">Pick Up In Store</div>
-                        <div>
+                        <div class="subitem">
                             Shopping in store and don't see your size or color?
                             Scan items to check availability&mdash;then have shipped right to your door.
                         </div>
@@ -93,21 +99,21 @@
 
                     <div class="item right">
                         <div class="LBHeading">Store Guides</div>
-                        <div>
+                        <div class="subitem">
                             Enhance your in-store experience with event listings, directories, store hours and more.
                         </div>
                     </div>
 
                     <div class="item center">
                         <div class="LBHeading">Wish List</div>
-                        <div>
+                        <div class="subitem">
                             Save all the items you love in one place and easily add them to your Big Brown Bag.
                         </div>
                     </div>
 
                     <div class="item left">
                         <div class="LBHeading">Alerts</div>
-                        <div>
+                        <div class="subitem">
                             Never miss a sale or new arrival with push notifications. Plus, turn them on in store and
                             we'll alert you to nearby items that are on sale.
                         </div>
@@ -115,14 +121,14 @@
 
                     <div class="item right">
                         <div class="LBHeading">Manage All Your Accounts</div>
-                        <div>
+                        <div class="subitem">
                             Easily look up and redeem Reward Cards, pay your bill and update your preferences.
                         </div>
                     </div>
 
                     <div class="item center">
                         <div class="LBHeading">Registry</div>
-                        <div>
+                        <div class="subitem">
                             Create and manage your registry: You can even
                             scan and add items with your phone when in store.
                         </div>

@@ -90,7 +90,7 @@ define([
                 $("a[data-cm]").on('click', function () {
                     var mblPrefix = '';
                     if (isMobile){
-                        mblPrefix = 'mbl:';
+                        mblPrefix = 'mbl: ';
                     }
                     var attrCm = $(this).data('cm');
                     if (typeof attrCm === 'string' && attrCm.length > 0) {
