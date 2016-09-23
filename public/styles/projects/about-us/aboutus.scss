@@ -452,12 +452,10 @@ DIV {
         .section.text_section {
             height: 220px;
             margin-bottom: 40px;
+            margin-top:30px;
         }
-        DIV.section_m {
-            display: block;
-        }
-        DIV.section_d {
-            display: none;
+        .section.h_shim {
+            margin-top:30px;
         }
         DIV.section_f {
             line-height: 1.2;
@@ -465,6 +463,11 @@ DIV {
         }
         #ways_to_shop_header {
             font-size: 1.2rem;
+        }
+        .heading {
+            IMG {
+                margin-top: 50px;
+            }
         }
     }
 }
@@ -482,9 +485,9 @@ DIV {
             line-height: 1.2;
             font-size: 1.5rem;
         }
-        .row {
+/*        .row {
             text-align: center;
-        }
+        }*/
         .line {
             margin-left:auto;
             margin-right:auto;
@@ -498,12 +501,6 @@ DIV {
         .section.text_section {
             height:220px;
             margin-bottom:40px;
-        }
-        DIV.section_m {
-            display:block;
-        }
-        DIV.section_d {
-            display:none;
         }
         #ways_to_shop_header{
             font-size:1.2rem;
@@ -525,7 +522,7 @@ DIV {
     .heading {
         text-align: center;
         IMG {
-            margin-top: 60px;
+            margin-top: 50px;
             margin-bottom: 20px;
         }
     }
@@ -536,12 +533,6 @@ DIV {
         height: 285px;
         BUTTON {
             margin-top: 40px;
-        }
-        .dummy {
-            position: relative;
-            top: 50%;
-            transform: translateY(-50%);
-            margin-right: 20px;
         }
     }
     .line {
@@ -590,7 +581,6 @@ DIV {
                 line-height: 1.5;
             }
         }
-
     }
     BUTTON {
         height: 3rem;
