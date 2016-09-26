@@ -7,15 +7,18 @@
         font-family: 'Libre Baskerville', serif;
         font-size:2.5rem;
     }
-    .item.center DIV {
+    .item.right DIV.LBHeading {
+        padding-bottom:0px;
+    }
+    .item.center, .item.center DIV {
         text-align:center;
         margin-left:auto;
         margin-right:auto;
     }
-    .item.left DIV{
+    .item.left, .item.left DIV {
         text-align:left;
     }
-    .item.right{
+    .item.right, .item.right DIV{
         text-align:right;
         float:right;
         clear:both;
@@ -23,11 +26,18 @@
     }
     .item {
         clear:both;
-        margin:30px;
+        margin:0px;
+        margin-bottom:40px;
+        padding:80px;
+        padding-left:40px;
+        padding-right:40px;
     }
     .subitem {
         width:280px;
         margin-top:20px;
+    }
+    .item.right .subitem{
+        float:right;
     }
     .ways_to_shop .content {
         width:500px;
@@ -35,6 +45,30 @@
     .ways_to_shop .right_pic {
         margin:0px;
     }
+    .app_logos {
+        margin-top:10px;
+    }
+    .app_logos TD {
+        padding-left:0px;
+        padding-right:8px;
+    }
+    .app_logos IMG {
+        height:36px;
+    }
+    .item .m_icon {
+        height:46px;
+        margin-top:-40px;
+        margin-bottom:40px;
+        z-index:111;
+    }
+    .item.center IMG {
+        margin-left:auto;
+        margin-right:auto;
+    }
+    .right .m_icon {
+        float:right;
+    }
+
 </style>
 <div class="about_us ways_to_shop">
 
@@ -57,33 +91,40 @@
 
                     <div class="hshim"></div>
 
+                    <div  class="item"
+                          style="background:url('/fashion/images/projects/mobile-app/mobile-app.png') no-repeat; padding:20px; background-size:500px; background-position-y:40px;">
+                        <table>
+                            <tr>
+                                <td style="padding-top:60px">
+                                    <div style="padding-right:20px">
+                                        <div class="LBHeading longTitle">Bloomingdale's App</div>
+                                        <div style="margin-top:10px;">
+                                            Your Fashion- &amp; Feature-Packed<br>
+                                            Shopping Companion
+                                        </div>
+                                    </div>
+                                    <table class="app_logos"><tr>
+                                        <td><img src="/fashion/images/projects/mobile-app/app_store.png"></td>
+                                        <td><img src="/fashion/images/projects/mobile-app/google_app.png"></td>
+                                    </tr></table>
+                                <td>
+                                    <a href="http://www1.bloomingdales.com/media/about/mobile.jsp?cm_sp=ways_to_shop-_-n-_-APP_Learn_More"
+                                       data-cm="ways_to_shop-_-n-_-APP_Learn_More">
+                                        <img
+                                                alt=""
+                                                class="right_pic"
+                                                src="/fashion/images/projects/ways-to-shop/phone.png">
+                                    </a>
+                                </td>
+                            </tr>
 
-                    <div style="background:url('/fashion/images/projects/mobile-app/mobile-app.png') no-repeat; padding:20px; background-size:contain">
-
-                        <table><tr><td style="vertical-align:middle">
-                            <div style="padding-right:20px">
-                                <div class="LBHeading longTitle">Bloomingdale's App</div>
-                                <div style="margin-top:20px;background-image: url('paper.gif');">
-                                   Your Fashion- &amp; Feature-Packed<br>
-                                    Shopping Companion
-                                </div>
-
-                                </a>
-                            </div>
-                        </td><td>
-                            <a href="http://www1.bloomingdales.com/media/about/mobile.jsp?cm_sp=ways_to_shop-_-n-_-APP_Learn_More"
-                               data-cm="ways_to_shop-_-n-_-APP_Learn_More">
-                                <img
-                                        alt=""
-                                        class="right_pic"
-                                        src="/fashion/images/projects/ways-to-shop/phone.png">
-                            </a>
-                        </td></tr></table>
+                        </table>
 
 
                     </div>
 
-                    <div class="item center">
+                    <div class="item center" style="background:url('/fashion/images/projects/mobile-app/scan.png') no-repeat center">
+                        <img class="m_icon" src="/fashion/images/projects/mobile-app/scan_icon.png">
                         <div class="LBHeading">Scan &amp; Send</div>
                         <div class="subitem">
                             Shopping in store and don't see your size or color?
@@ -92,7 +133,8 @@
                         </div>
                     </div>
 
-                    <div class="item left">
+                    <div class="item left" style="background:url('/fashion/images/projects/mobile-app/pickup.png') no-repeat left;  background-size:243px">
+                        <img class="m_icon" src="/fashion/images/projects/mobile-app/pickup_icon.png">
                         <div class="LBHeading">Pick Up In Store</div>
                         <div class="subitem">
                             Shopping in store and don't see your size or color?
@@ -100,21 +142,24 @@
                         </div>
                     </div>
 
-                    <div class="item right">
+                    <div class="item right" style="background:url('/fashion/images/projects/mobile-app/guides.png') no-repeat right; background-size:243px;">
+                        <img class="m_icon" src="/fashion/images/projects/mobile-app/guide_icon.png">
                         <div class="LBHeading">Store Guides</div>
                         <div class="subitem">
                             Enhance your in-store experience with event listings, directories, store hours and more.
                         </div>
                     </div>
 
-                    <div class="item center">
+                    <div class="item center" style="background:url('/fashion/images/projects/mobile-app/wishlist.png') no-repeat center">
+                        <img class="m_icon" src="/fashion/images/projects/mobile-app/wishlist_icon.png">
                         <div class="LBHeading">Wish List</div>
                         <div class="subitem">
                             Save all the items you love in one place and easily add them to your Big Brown Bag.
                         </div>
                     </div>
 
-                    <div class="item left">
+                    <div class="item left" style="background:url('/fashion/images/projects/mobile-app/alerts.png') no-repeat left;background-size:243px">
+                        <img class="m_icon" src="/fashion/images/projects/mobile-app/alerts_icon.png">
                         <div class="LBHeading">Alerts</div>
                         <div class="subitem">
                             Never miss a sale or new arrival with push notifications. Plus, turn them on in store and
@@ -122,14 +167,15 @@
                         </div>
                     </div>
 
-                    <div class="item right">
+                    <div class="item right" style="padding-left:0px; background:url('/fashion/images/projects/mobile-app/manage.png') no-repeat right; background-size:243px">
+                        <img class="m_icon" src="/fashion/images/projects/mobile-app/manage_icon.png">
                         <div class="LBHeading">Manage All Your Accounts</div>
                         <div class="subitem">
                             Easily look up and redeem Reward Cards, pay your bill and update your preferences.
                         </div>
                     </div>
 
-                    <div class="item center">
+                    <div class="item center" style="background:url('/fashion/images/projects/mobile-app/registry.png') no-repeat center; background-size:243px">
                         <div class="LBHeading">Registry</div>
                         <div class="subitem">
                             Create and manage your registry: You can even
@@ -142,6 +188,10 @@
             </td>
         </tr>
     </table>
+    <table class="app_logos" style="margin-left:auto;margin-right:auto;"><tr>
+        <td><img src="/fashion/images/projects/mobile-app/app_store.png"></td>
+        <td><img src="/fashion/images/projects/mobile-app/google_app.png"></td>
+    </tr></table>
     <div class="hshim"></div>
     <div class="hshim"></div>
     <div class="hshim"></div>
