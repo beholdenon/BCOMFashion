@@ -418,6 +418,13 @@ DIV {
 }
 
 // Ways to Shop
+.about_us {
+    .LBHeading {
+        font-family: 'Libre Baskerville', serif;
+        font-size: 2.5rem;
+        white-space: nowrap;
+    }
+}
 @mixin ways_mobile {
     .ways_to_shop {
         .row {
@@ -516,7 +523,7 @@ DIV {
     }
     .content {
         max-width: 560px;
-        margin-left: auto;
+        margin-left: 80px;
         margin-right: auto;
     }
     .heading {
