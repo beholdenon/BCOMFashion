@@ -423,18 +423,22 @@ DIV {
         font-family: 'Libre Baskerville', serif;
         font-size: 2.5rem;
         white-space: nowrap;
+        line-height:1.2;
     }
 }
 @mixin ways_mobile {
     .ways_to_shop {
+        .LBHeading {
+            white-space:normal;
+        }
         .row {
             text-align: center;
         }
         .main {
-            padding:20px;
+         //   padding:20px;
         }
         .content {
-            margin-left:0px;
+            max-width:90%;
         }
         H4 {
             font-size:1.4rem;
@@ -476,13 +480,12 @@ DIV {
         }
         .heading {
             IMG {
-                margin-top: 50px;
+                margin-top: 35px;
             }
         }
     }
 }
 .bl_mobile {
-    .about_us.ways_to_shop {margin-left:0;}
     @include ways_mobile;
 }
 
@@ -525,8 +528,8 @@ DIV {
         padding: 0;
     }
     .content {
-        max-width: 560px;
-        margin-left: 80px;
+        max-width: 520px;
+        margin-left: auto;
         margin-right: auto;
     }
     .heading {
@@ -559,7 +562,7 @@ DIV {
         }
     }
     .right_pic {
-        margin-left: 45px;
+        margin-left: 15px;
     }
     .left_pic {
         height: 256px;
@@ -602,7 +605,7 @@ DIV {
 .bl_mobile {
 
     .about_us {
-        margin-left:10px;
+        //margin-left:10px;
         IMG {
             max-width:100%;
             // padding-left:10px;
