@@ -25,8 +25,8 @@ define( [ "LeftNav" ], function ( LeftNav ) {
                 },
                 {
                     text: 'Bloomingdale\'s App',
-                    //href: '/about-us/mobile-shopping-online',
-                    href: '//www1.bloomingdales.com/media/about/mobile.jsp',
+                    href: '/about-us/mobile-shopping-online',
+                    //href: '//www1.bloomingdales.com/media/about/mobile.jsp',
                     id: 'about_onlineMobile',
                     secure: false
                 },

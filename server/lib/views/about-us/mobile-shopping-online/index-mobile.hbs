@@ -28,8 +28,9 @@
     .item {
         clear:both;
         margin:0px;
-        margin-bottom:40px;
+        margin-bottom:0px;
         padding:80px;
+        padding-top:40px;
         padding-left:40px;
         padding-right:40px;
     }
@@ -56,12 +57,7 @@
     .app_logos IMG {
         height:36px;
     }
-    .item .m_icon {
-        height:46px;
-        margin-top:-40px;
-        margin-bottom:40px;
-        z-index:111;
-    }
+
     .item.center IMG {
         margin-left:auto;
         margin-right:auto;
@@ -69,9 +65,9 @@
     .right .m_icon {
         float: right;
     }
-    .icon-* {
+    div[class^="icon-"]  {
         margin-top:-40px;
-        margin-bottom:40px;
+        margin-bottom:15px;
     }
 
 </style>
@@ -96,11 +92,45 @@
 
                     <div class="hshim"></div>
 
-                    <div  class="item"
+                    <div  class="item hide-for-medium hide-for-large"
+                          style="background:url('/fashion/images/projects/mobile-app/mobile-app.png') no-repeat; padding:20px; background-size:500px; background-position-y:213px;">
+                        <table style="margin-left:auto;margin-right:auto">
+                            <tr>
+                                <td style="padding-top:43px; text-align:center">
+                                    <div >
+                                        <div class="LBHeading longTitle">Bloomingdale's App</div>
+                                        <div style="margin-top:10px;">
+                                            Your Fashion- &amp; Feature-Packed
+                                            Shopping Companion
+                                        </div>
+                                    </div>
+                                    <div class="hshim"></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:center">
+                                    <a href="http://www1.bloomingdales.com/media/about/mobile.jsp?cm_sp=ways_to_shop-_-n-_-APP_Learn_More"
+                                       data-cm="ways_to_shop-_-n-_-APP_Learn_More">
+                                        <img
+                                                alt=""
+                                                class="right_pic"
+                                                src="/fashion/images/projects/ways-to-shop/phone.png">
+                                    </a>
+                                </td>
+                            </tr>
+                        </table>
+                        <table class="app_logos" style="margin-left:auto;margin-right:auto"><tr>
+                            <td><img src="/fashion/images/projects/mobile-app/app_store.png"></td>
+                            <td><div style="width:30px"></div></td>
+                            <td><img src="/fashion/images/projects/mobile-app/google_app.png"></td>
+                        </tr></table>
+                    </div>
+
+                    <div  class="item hide-for-small"
                           style="background:url('/fashion/images/projects/mobile-app/mobile-app.png') no-repeat; padding:20px; background-size:500px; background-position-y:40px;">
                         <table>
                             <tr>
-                                <td style="padding-top:60px">
+                                <td style="padding-top:43px">
                                     <div style="padding-right:20px">
                                         <div class="LBHeading longTitle">Bloomingdale's App</div>
                                         <div style="margin-top:10px;">
@@ -108,10 +138,12 @@
                                             Shopping Companion
                                         </div>
                                     </div>
+                                    <div class="hshim"></div>
                                     <table class="app_logos"><tr>
                                         <td><img src="/fashion/images/projects/mobile-app/app_store.png"></td>
                                         <td><img src="/fashion/images/projects/mobile-app/google_app.png"></td>
                                     </tr></table>
+                                </td>
                                 <td>
                                     <a href="http://www1.bloomingdales.com/media/about/mobile.jsp?cm_sp=ways_to_shop-_-n-_-APP_Learn_More"
                                        data-cm="ways_to_shop-_-n-_-APP_Learn_More">
@@ -122,15 +154,11 @@
                                     </a>
                                 </td>
                             </tr>
-
                         </table>
-
-
                     </div>
 
                     <div class="item center" style="background:url('/fashion/images/projects/mobile-app/scan.png') no-repeat center">
                         <div class="icon-scan_icon"></div>
-                        <img src="/fashion/images/projects/mobile-app/scan_icon.png"/>
                         <div class="LBHeading">Scan &amp; Send</div>
                         <div class="subitem">
                             Shopping in store and don't see your size or color?
@@ -181,7 +209,7 @@
                         </div>
                     </div>
 
-                    <div class="item center" style="background:url('/fashion/images/projects/mobile-app/registry.png') no-repeat center; background-size:243px">
+                    <div class="item center" style="background:url('/fashion/images/projects/mobile-app/registry.png') no-repeat center; background-size:227px">
                         <div class="LBHeading">Registry</div>
                         <div class="subitem">
                             Create and manage your registry: You can even
@@ -194,6 +222,9 @@
             </td>
         </tr>
     </table>
+    <div class="hshim"></div>
+    <div class="hshim"></div>
+    <div class="hshim"></div>
     <table class="app_logos" style="margin-left:auto;margin-right:auto;"><tr>
         <td><img src="/fashion/images/projects/mobile-app/app_store.png"></td>
         <td><img src="/fashion/images/projects/mobile-app/google_app.png"></td>
