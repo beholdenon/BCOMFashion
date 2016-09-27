@@ -18,8 +18,8 @@ define( [ "LeftNav" ], function ( LeftNav ) {
                     type: 'header',
                     text: 'WAYS TO SHOP',
                     label: 'Ways To Shop',
-                    href: 'http://www1.bloomingdales.com/ways-to-shop/index.jsp',
-                    //href: '/about-us/store-events-ways-to-shop/',
+                    //href: 'http://www1.bloomingdales.com/ways-to-shop/index.jsp',
+                    href: '/about-us/store-events-ways-to-shop/',
                     id: 'about_waysToShop',
                     secure: false
                 },

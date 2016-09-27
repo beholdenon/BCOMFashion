@@ -363,7 +363,7 @@ module.exports = function(grunt) {
                         },
                         ext: '.hbs',
                         filter: function (filepath) {
-                            if (/mobile/.test(filepath)){return false;}
+                            if (/-mobile/.test(filepath)){return false;}
                             // Return false if the mobile version of the file exists.
                             filepath = filepath.replace(/(\.*)\.hbs$/, "$1-mobile.hbs");
                             if (grunt.file.exists(filepath)) {return false;}

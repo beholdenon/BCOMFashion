@@ -49,6 +49,24 @@ pieces of data to the page. Do this by adding a comment at the top, like this:
 
 When grunt is run, html pages will be generated from the hbs files. 
 
+##Adding New Mobile Pages with grunt createMobile
+
+For all files with an .hbs extension, the grunt "createMobile" task checks to
+see if there is a file with the same name + "-mobile". If there isn't,
+it creates this file by copying the original file. It also adjust the coremetrics
+tag in the mobile file. 
+
+Example: 
+
+original file: "foo.hbs"
+new file: "foo-mobile.hbs"
+
+In the above case, if foo-mobile already exists, grunt createMobile will do nothing. 
+This is so that on a case by case basis you can have files for mobile that are either
+just copies of the original or are hand customized. If you have changed
+the original file and you want grunt to update the mobile file, delete it.
+The grunt createMobile task will not touch the file if it already exists.
+
 ###Coremetrics
 
 In order to add coremetrics data to a page, you need to add the following
@@ -65,12 +83,36 @@ be used by coremetrics.js to initialize with the right data.
 <div id="cmdata"  data-pageid="lp-xx-xx-xx.bcrf" data-categoryid="lp-xx-xx-xx"></div>
 ```
 
+## Checking links in files
+
+The grunt task "checkPages" can be used to check that all links in a given
+page or path are valid links. Add files or paths to the pageUrls array
+in the checkPages task in gruntfile.js to let the task know which 
+pages to check.
+
+## Using ES6 in client files
+
+In Webstorm, Files -> Settings -> Languages & Frameworks -> Javascript language version = ECMAScript 6
+
+Create a source file named with a filename extension of ".es6". When you run grunt, this will automatically
+be compiled via babel to an ES5 file with the same name + "-compiled.js". 
+
+## Using Foundation Reveal
+
+Reveal is Foundation's modal. See the file personal-shopper-complimentary-service as an example. 
+Because the Foundation version used at Macy's doesn't get initialized, we need to pull in a 
+separate version, see code in above page. Foundation.min.js contains the Reveal modal. 
+
+In addition, the Foundation reveal css needs to be added to any page using the modal, see above
+example.
+
 ##Using The Bloomies LeftNav component
 -----------------------------
 
 This project currently does NOT use the MacysUI LeftNav component. However,
-it does use config files that are compatible with that component, so switching
-to the MacysUI LeftNav component is simply a matter of pointing to that component.
+it does use config files that are compatible with single level menus using
+that component. If you are using a single level component, you can switch
+to using the MacyUI component following the steps below.
 
 In order to use the MacysUI LeftNav component, add the following to the 
 paths object in main.js:
@@ -109,19 +151,3 @@ And, it also needs to run the drawMenus method on startup:
         }
     );
 ```   
-
-## Using ES6 on client files
-
-In Webstorm, Files -> Settings -> Languages & Frameworks -> Javascript language version = ECMAScript 6
-
-Create a source file named with a filename extension of ".es6". When you run grunt, this will automatically
-be compiled via babel to an ES5 file with the same name + "-compiled.js". 
-
-## Using Foundation Reveal
-
-Reveal is Foundation's modal. See the file personal-shopper-complimentary-service as an example. 
-Because the Foundation version used at Macy's doesn't get initialized, we need to pull in a 
-separate version, see code in above page. Foundation.min.js contains the Reveal modal. 
-
-In addition, the Foundation reveal css needs to be added to any page using the modal, see above
-example.
