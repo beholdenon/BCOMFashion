@@ -83,6 +83,18 @@ be used by coremetrics.js to initialize with the right data.
 <div id="cmdata"  data-pageid="lp-xx-xx-xx.bcrf" data-categoryid="lp-xx-xx-xx"></div>
 ```
 
+## Generating sprite files for projects
+
+You can tell grunt to create a sprite file containing all of the images in a particular
+folder. First, update the grunt 'sprite' task with the folder information. Then run
+
+```
+grunt projectSprites
+```
+
+This will generate the files 'project-sprites.png' and 'project-sprites.css'. See
+the mobile-app project for an example.
+
 ## Checking links in files
 
 The grunt task "checkPages" can be used to check that all links in a given

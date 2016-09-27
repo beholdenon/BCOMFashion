@@ -1,6 +1,7 @@
 <!-- {pageTitle:"Bloomingdale's App", pageLabel:"Experience New Ways to Shop Online at Bloomingdale’s!"} -->
 {{{coremetrics 'Ways_to_Shop' 'Ways_to_Shop'}}}
 <link href='https://fonts.googleapis.com/css?family=Libre+Baskerville:400' rel='stylesheet' type='text/css'>
+<link href='/fashion/images/projects/mobile-app/project-sprites.css' rel='stylesheet' type='text/css'>
 {{>title}}
 <style>
     .LBHeading {
@@ -66,7 +67,11 @@
         margin-right:auto;
     }
     .right .m_icon {
-        float:right;
+        float: right;
+    }
+    .icon-* {
+        margin-top:-40px;
+        margin-bottom:40px;
     }
 
 </style>
@@ -124,7 +129,8 @@
                     </div>
 
                     <div class="item center" style="background:url('/fashion/images/projects/mobile-app/scan.png') no-repeat center">
-                        <img class="m_icon" src="/fashion/images/projects/mobile-app/scan_icon.png">
+                        <div class="icon-scan_icon"></div>
+                        <img src="/fashion/images/projects/mobile-app/scan_icon.png"/>
                         <div class="LBHeading">Scan &amp; Send</div>
                         <div class="subitem">
                             Shopping in store and don't see your size or color?
@@ -134,7 +140,7 @@
                     </div>
 
                     <div class="item left" style="background:url('/fashion/images/projects/mobile-app/pickup.png') no-repeat left;  background-size:243px">
-                        <img class="m_icon" src="/fashion/images/projects/mobile-app/pickup_icon.png">
+                        <div class="icon-pickup_icon"></div>
                         <div class="LBHeading">Pick Up In Store</div>
                         <div class="subitem">
                             Shopping in store and don't see your size or color?
@@ -143,7 +149,7 @@
                     </div>
 
                     <div class="item right" style="background:url('/fashion/images/projects/mobile-app/guides.png') no-repeat right; background-size:243px;">
-                        <img class="m_icon" src="/fashion/images/projects/mobile-app/guide_icon.png">
+                        <div class="icon-guide_icon"></div>
                         <div class="LBHeading">Store Guides</div>
                         <div class="subitem">
                             Enhance your in-store experience with event listings, directories, store hours and more.
@@ -151,7 +157,7 @@
                     </div>
 
                     <div class="item center" style="background:url('/fashion/images/projects/mobile-app/wishlist.png') no-repeat center">
-                        <img class="m_icon" src="/fashion/images/projects/mobile-app/wishlist_icon.png">
+                        <div class="icon-wishlist_icon"></div>
                         <div class="LBHeading">Wish List</div>
                         <div class="subitem">
                             Save all the items you love in one place and easily add them to your Big Brown Bag.
@@ -159,7 +165,7 @@
                     </div>
 
                     <div class="item left" style="background:url('/fashion/images/projects/mobile-app/alerts.png') no-repeat left;background-size:243px">
-                        <img class="m_icon" src="/fashion/images/projects/mobile-app/alerts_icon.png">
+                        <div class="icon-alerts_icon"></div>
                         <div class="LBHeading">Alerts</div>
                         <div class="subitem">
                             Never miss a sale or new arrival with push notifications. Plus, turn them on in store and
@@ -168,7 +174,7 @@
                     </div>
 
                     <div class="item right" style="padding-left:0px; background:url('/fashion/images/projects/mobile-app/manage.png') no-repeat right; background-size:243px">
-                        <img class="m_icon" src="/fashion/images/projects/mobile-app/manage_icon.png">
+                        <div class="icon-manage_icon"></div>
                         <div class="LBHeading">Manage All Your Accounts</div>
                         <div class="subitem">
                             Easily look up and redeem Reward Cards, pay your bill and update your preferences.
