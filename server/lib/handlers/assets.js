@@ -2,16 +2,31 @@
 
 var serviceProxy = require('./../helpers/serviceProxy'),
     Path = require('path');
-    // Device = require('./../helpers/deviceDetection');
 
 module.exports = {
-    fashion: {
-        description: 'Server static assets',
+    static: {
+        description: 'Static assets',
         notes: 'All requests that begin with /fashion are assumed to be static assets in /public',
         tags: ['static'],
-        handler: {
-            directory: {
-                path: './'
+        handler: function(req, res) {
+            let env = process.env.NODE_ENV;
+            let filePath = '/' + req.url.path.split('/').splice(2).join('/').replace(/\?.*/,'');
+
+            if (env === 'dev') {
+                filePath = '.' + filePath;
+                res.file(filePath);
+            } else if (env === 'production'){
+                res.proxy({
+                    timeout: serviceProxy.timeout,
+                    passThrough: true,
+                    mapUri: function(req, callback) {
+                        let uri = 'http://' + process.env.NETSTORAGE + process.env.NETSTORAGE_ROOT_DIR + filePath;
+                        callback(null, uri);
+                    },
+                    onResponse: serviceProxy.onResponseRedirect
+                });
+            } else {
+                console.log('Incorrect NODE_ENV configuration.');
             }
         }
     },
@@ -21,7 +36,7 @@ module.exports = {
         notes: 'Requests made by Angular to load template components',
         tags: ['angular views'],
         handler: function(req, res) {
-            var ngView = Path.join(__dirname, '../views', req.url.path);
+            let ngView = Path.join(__dirname, '../views', req.url.path);
             res.file(ngView);
         }         
     },
@@ -40,7 +55,7 @@ module.exports = {
                 timeout: serviceProxy.timeout,
                 passThrough: true,
                 mapUri: function(req, callback) {
-                    var uri = 'http://www.bloomingdales.com' + decodeURIComponent(req.url.path);
+                    let uri = 'http://' + process.env.BASE_ASSETS + decodeURIComponent(req.url.path);
                     callback(null, uri, headers);
                 },
                 onResponse: serviceProxy.onResponseRedirect
@@ -59,7 +74,7 @@ module.exports = {
                 timeout: serviceProxy.timeout,
                 passThrough: true,
                 mapUri: function(req, callback) {
-                    var uri = 'http://' + process.env.BASE_ASSETS + decodeURIComponent(req.url.path);
+                    let uri = 'http://' + process.env.BASE_ASSETS + decodeURIComponent(req.url.path);
                     callback(null, uri, headers);
                 },
                 onResponse: serviceProxy.onResponseRedirect
@@ -73,7 +88,7 @@ module.exports = {
                 timeout: serviceProxy.timeout,
                 passThrough: true,
                 mapUri: function(req, callback) {
-                    var uri = 'http://' + process.env.BASE_ASSETS + decodeURIComponent(req.url.path);
+                    let uri = 'http://' + process.env.BASE_ASSETS + decodeURIComponent(req.url.path);
                     callback(null, uri);
                 }
             });
@@ -86,19 +101,17 @@ module.exports = {
     
     topNav: {
         handler: function(req, res) {
+            var mobileParam = '&stop_mobi=yes';
             var headers = {
                 accept: 'application/json',
                 'Content-Type': 'application/json'
             };
 
-            // var deviceType = Device.detectDevice(req),
-            var mobileParam = '&stop_mobi=yes';
-
             res.proxy({
                 timeout: serviceProxy.timeout,
                 passThrough: true,
                 mapUri: function(req, callback) {
-                    var uri = 'http://' + process.env.BASE_ASSETS + decodeURIComponent(req.url.path) + mobileParam;
+                    let uri = 'http://' + process.env.BASE_ASSETS + decodeURIComponent(req.url.path) + mobileParam;
                     callback(null, uri, headers);
                 },
                 onResponse: serviceProxy.onResponseRedirect
