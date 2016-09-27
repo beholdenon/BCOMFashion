@@ -32,7 +32,7 @@ var routes = [
     { method: 'GET',  path: '/v4/{path*}',                                          config: require('./lib/handlers/api').v4 },
     { method: 'GET',  path: '/getBag/{path*}',                                      config: require('./lib/handlers/api').getbag },
     { method: 'POST', path: '/addToBag/{path*}',                                    config: require('./lib/handlers/api').addbag },
-    { method: 'GET',  path: '/fashion/{path*}',                                     config: require('./lib/handlers/assets').fashion },
+    { method: 'GET',  path: '/fashion/{path*}',                                     config: require('./lib/handlers/assets').static },
     { method: 'GET',  path: '/img/{path*}',                                         config: require('./lib/handlers/assets').hfHandler },
     { method: 'GET',  path: '/web20/assets/{path*}',                                config: require('./lib/handlers/assets').hfHandler },
     { method: 'GET',  path: '/shop/flyout',                                         config: require('./lib/handlers/assets').hfHandler },
