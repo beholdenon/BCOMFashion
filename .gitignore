@@ -19,9 +19,6 @@ bin
 server/lib/views/navdata.js
 public/images/titles
 
-# Ignore generated sprite files
-project-sprites.*
-
 # Ignore everything in the target folder
 target
 
