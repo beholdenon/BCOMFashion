@@ -1,10 +1,10 @@
 'use strict';
 
-var serviceProxy = require('./../helpers/serviceProxy'),
-    Path = require('path');
+let serviceProxy = require('./../helpers/serviceProxy');
+let Path = require('path');
 
 module.exports = {
-    static: {
+    netstorage: {
         description: 'Static assets',
         notes: 'All requests that begin with /fashion are assumed to be static assets in /public',
         tags: ['static'],
@@ -31,20 +31,7 @@ module.exports = {
         }
     },
 
-    ngViews: {
-        description: 'Angular views',
-        notes: 'Requests made by Angular to load template components',
-        tags: ['angular views'],
-        handler: function(req, res) {
-            let ngView = Path.join(__dirname, '../views', req.url.path);
-            res.file(ngView);
-        }         
-    },
-
-    shop: {
-        description: 'customer ui server proxy (for development only)',
-        notes: 'Redirect api urls that should go to the server',
-        tags: ['navapp'],
+    commonAssets: {
         handler: function(req, res) {
             var headers = {
                 accept: 'application/json',
@@ -55,7 +42,7 @@ module.exports = {
                 timeout: serviceProxy.timeout,
                 passThrough: true,
                 mapUri: function(req, callback) {
-                    let uri = 'http://' + process.env.BASE_ASSETS + decodeURIComponent(req.url.path);
+                    let uri = 'http://' + process.env.BASE_ASSETS  + decodeURIComponent(req.url.path);
                     callback(null, uri, headers);
                 },
                 onResponse: serviceProxy.onResponseRedirect
@@ -63,42 +50,6 @@ module.exports = {
         }
     },
 
-    hfHandler: {
-        handler: function(req, res) {
-            var headers = {
-                accept: 'application/json',
-                'Content-Type': 'application/json'
-            };
-
-            res.proxy({
-                timeout: serviceProxy.timeout,
-                passThrough: true,
-                mapUri: function(req, callback) {
-                    let uri = 'http://' + process.env.BASE_ASSETS + decodeURIComponent(req.url.path);
-                    callback(null, uri, headers);
-                },
-                onResponse: serviceProxy.onResponseRedirect
-            });
-        }
-    },
-    bagHandler: {
-        handler: function(req, res) {
-
-            res.proxy({
-                timeout: serviceProxy.timeout,
-                passThrough: true,
-                mapUri: function(req, callback) {
-                    let uri = 'http://' + process.env.BASE_ASSETS + decodeURIComponent(req.url.path);
-                    callback(null, uri);
-                }
-            });
-        },
-        payload: {
-          output: 'stream',
-          parse: false
-        }
-    },
-    
     topNav: {
         handler: function(req, res) {
             var mobileParam = '&stop_mobi=yes';
@@ -116,6 +67,34 @@ module.exports = {
                 },
                 onResponse: serviceProxy.onResponseRedirect
             });
+        }
+    },
+
+    bagHandler: {
+        handler: function(req, res) {
+
+            res.proxy({
+                timeout: serviceProxy.timeout,
+                passThrough: true,
+                mapUri: function(req, callback) {
+                    let uri = 'http://' + process.env.BASE_ASSETS  + decodeURIComponent(req.url.path);
+                    callback(null, uri);
+                }
+            });
+        },
+        payload: {
+          output: 'stream',
+          parse: false
+        }
+    },
+
+    ngViews: {
+        description: 'Angular views',
+        notes: 'Requests made by Angular to load template components',
+        tags: ['angular views'],
+        handler: function(req, res) {
+            let ngView = Path.join(__dirname, '../views', req.url.path);
+            res.file(ngView);
         }
     }
 };
