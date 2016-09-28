@@ -39,6 +39,8 @@ module.exports = {
         notes: 'Serve one code base for any device type',
         tags: ['responsive'],
         handler: function(req, res) {
+            console.log('hi mom');
+            debugger;
             var requestPath = (req.url.pathname).substring(1),
                 deviceDetectProc = deviceDetectParams(requestPath, req),
                 responsiveCustomHFView = requestPath + '/index';

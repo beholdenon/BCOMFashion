@@ -1,4 +1,4 @@
-<!-- {pageTitle: "Help USA", pageLabel:"Help USA &mdash; b.cause Philanthropy &mdash; About Us | Bloomingdale's"} -->
+<!-- {pageTitle: "Hawaii Ala Moana", pageLabel:"Hawaii Ala Moana | Bloomingdale's"} -->
 {{{coremetrics 'fall15_hawaii--hp' 'fall15_hawaii'}}}
 {{title}}
 <style type="text/css">
@@ -889,3 +889,31 @@ NEVER FORGET!</span>
   
     </div>
 </div>
+
+<script>
+
+  require(['backbone'], function(Backbone){
+
+			var HRouter = Backbone.Router.extend({
+
+			  routes: {
+			    "help":                 "help",    // #help
+			    "search/:query":        "search",  // #search/kiwis
+			    "search/:query/p:page": "search"   // #search/kiwis/p7
+			  },
+
+			  help: function() {
+			    console.log('hi mom')
+			  },
+
+			  search: function(query, page) {
+			  
+			  }
+
+			});
+			var hrouter = new HRouter();
+			Backbone.history.start({pushState: true})
+
+  
+  });
+</script>
