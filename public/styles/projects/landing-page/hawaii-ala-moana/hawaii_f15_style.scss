@@ -1,0 +1,1058 @@
+#bl_main_container {
+  width: 100% !important;
+}
+
+.header15, .footer15 {
+  position: relative;
+  z-index: 10;
+}
+
+#bl_main_lookbook_container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+  padding: 0;
+}
+
+video#hawaii_f15_videobg {
+  position: relative;
+  z-index: -100;
+  background: url(hawaii_f15_video_bg.jpg) no-repeat;
+  background-size: cover;
+}
+
+.desktop-artwork-link{
+  text-decoration: none !important;
+  background-image: url('hawaii_f15_nothing.png');
+}
+
+#twitterWidget > * {
+  margin-top: -13px !important;
+}
+
+/*utility classes*/
+.hawaii_f15_padding_5{
+  padding: 5px;
+}
+.hawaii_f15_padding_10{
+  padding: 10px;
+}
+.hawaii_f15_padding_20{
+  padding: 20px;
+}
+.hawaii_f15_padding_50{
+  padding: 50px;
+}
+.hawaii_f15_padding_top_5{
+  padding-top: 5px;
+}
+.hawaii_f15_padding_top_10{
+  padding-top: 10px;
+}
+.hawaii_f15_padding_top_20{
+  padding-top: 20px;
+}
+.hawaii_f15_padding_bottom_5{
+  padding-bottom: 5px;
+}
+.hawaii_f15_padding_bottom_10{
+  padding-bottom: 10px;
+}
+.hawaii_f15_padding_bottom_20{
+  padding-bottom: 20px;
+}
+.hawaii_f15_padding_bottom_45{
+  padding-bottom: 45px;
+}
+.hawaii_f15_margin_5{
+  margin: 5px;
+}
+.hawaii_f15_margin_10{
+  margin: 10px;
+}
+.hawaii_f15_margin_20{
+  margin: 20px;
+}
+.hawaii_f15_margin_top_5{
+  margin-top: 5px;
+}
+.hawaii_f15_margin_top_10{
+  margin-top: 10px;
+}
+.hawaii_f15_margin_top_20{
+  margin-top: 20px;
+}
+.hawaii_f15_margin_bottom_5{
+  margin-bottom: 5px;
+}
+.hawaii_f15_margin_bottom_10{
+  margin-bottom: 10px;
+}
+.hawaii_f15_margin_bottom_20{
+  margin-bottom: 20px;
+}
+.hawaii_f15_margin_bottom_30{
+  margin-bottom: 30px;
+}
+.hawaii_f15_margin_bottom_45{
+  margin-bottom: 45px;
+}
+#hawaii_f15_desktop_loader{
+  position: fixed;
+  display: block;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  z-index: 10000004;
+  background: #fff;
+}
+#hawaii_f15_desktop_loader > img{
+  position: absolute;
+  left: 50%;
+  margin-left: -15px;
+  top: 50% !important;
+  margin-top: -30px !important;
+}
+#hawaii_f15_desktop_landing {
+  position: relative;
+}
+
+#hawaii_f15_desktop_landing_header  > img{
+  position: absolute;
+  top: -2.5%;
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: 0;
+}
+#hawaii_f15_desktop_main_container{
+  position: relative;
+  font-family: 'Lato', sans-serif;
+  text-align: center;
+  /*text-transform: uppercase;*/
+  color:#000;
+  letter-spacing: 1px;
+  width: 100%;
+  /*overflow: hidden;*/
+}
+.centeredContent {
+  width: 962px;
+}
+
+/* header */
+#hawaii_f15_desktop_main_container > .header15{
+  height: auto;
+  font-size: 0;
+  min-width: 962px !important;
+  position: relative;
+}
+#hawaii_f15_desktop_main_container > .header15 > img{
+  width: 100%;
+}
+#hawaii_f15_desktop_main_container > ul{
+  list-style-type: none;
+}
+
+#hawaii_f15_desktop_main_container > .header15 > h1 {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 54.5%;
+  text-align: center;
+  font-size: 99px;
+  color: #FFF;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 25px;}
+
+#hawaii_f15_header_bloomingdales{
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 38.8%;
+  text-align: center;
+  font-size: 42px;
+  color: #FFF;
+  font-weight: 300;
+  line-height: 24px;
+  letter-spacing: 7px;
+}
+
+.sectionTitle {
+  font-size: 16px;
+  position: absolute;
+  text-transform: uppercase;
+  color: #FF8133;
+  letter-spacing: 3px;
+  font-weight: 700;
+}
+
+.brandsText {
+  font-size: 16px;
+  position: absolute;
+  text-transform: uppercase;
+  color: #000;
+  letter-spacing: 1px;
+  font-weight: 400;
+  line-height: 3;
+}
+
+.brandsTitle {
+  color: #FF8133;
+  letter-spacing: 3px;
+  font-weight: 700;
+}
+
+.sectionSubTitle {
+  position: absolute;
+  font-weight: 300;
+  text-transform: uppercase;
+  font-size: 12px;
+  color: #FF8133;
+}
+
+.sectionCopy {
+  font-size: 13px;
+  font-family: arial, sans-serif;
+  position: absolute;
+  text-align: left;
+  line-height: 22px;
+  letter-spacing: 0.5px;
+}
+
+.sectionFooterSmall {
+  bottom: 15px;
+  font-size: 8px;
+  font-family: arial, sans-serif;
+  position: absolute;
+  text-align: left;
+  margin-left: 55px;
+}
+
+.sectionLineSeparator {
+  border-bottom: 1px solid #C6C6C6;
+  width: 315px;
+  position: absolute;
+}
+
+#hawaii_f15_so_01 > .sectionTitle {
+  left: 487px;
+  top: 85px;
+}
+
+#hawaii_f15_so_01 > .sectionSubTitle {
+  left: 487px;
+  top: 111px;
+  border-top: 2px solid #FF8133;
+  padding-top: 25px;
+}
+
+#hawaii_f15_so_01 > .sectionCopy {
+  left: 487px;
+  top: 165px;
+}
+
+#hawaii_f15_so_01 > .sectionCopy > table {
+  margin-top: 25px;
+  border-spacing: 0;
+}
+
+#hawaii_f15_so_02 > .sectionTitle {
+  left: 55px;
+  top: 205px;
+}
+#hawaii_f15_so_02 > .sectionCopy {
+  left: 55px;
+  top: 250px;
+  width: 255px;
+}
+.sectionLinks {
+  position: absolute;
+  font-weight: 700;
+  font-family: arial, sans-serif;
+  font-size: 12px;
+  width: 315px;
+  text-align: left;
+}
+.sectionLinks > a {
+  text-decoration: underline !important;
+  font-weight: 700;
+  font-family: arial, sans-serif;
+  font-size: 12px;
+}
+#hawaii_f15_so_02 > #hawaii_f15_so_02_Link1 {
+  left: 55px;
+  top: 442px;
+}
+
+#hawaii_f15_so_02 > #hawaii_f15_so_02_Link2 {
+  left: 55px;
+  top: 482px;
+}
+
+#hawaii_f15_so_02 > .sectionLineSeparator {
+  left: 55px;
+  top: 560px;
+}
+
+#hawaii_f15_brands_01 > .sectionTitle {
+  left: 487px;
+  top: 85px;
+}
+#hawaii_f15_brands_01 > .sectionCopy {
+  left: 486px;
+  top: 119px;
+  width: 455px;
+  border-top: 2px solid #FF8133;
+  padding-top: 25px;
+}
+
+#hawaii_f15_brands_02 > #womensFashion {
+  top: 170px;
+  left: 85px;
+}
+
+#hawaii_f15_brands_02 > #sectionHandbags {
+  top: 650px;
+  left: 630px;
+}
+#hawaii_f15_brands_03 > #sectionBeauty {
+  top: 75px;
+  left: 175px;
+}
+#hawaii_f15_brands_03 > #sectionShoes {
+  top: 490px;
+  left: 625px;
+}
+#hawaii_f15_brands_04 > #sectionAcessories {
+  top: 85px;
+  left: 160px;
+}
+#hawaii_f15_brands_04 > #mensFashion {
+  top: 520px;
+  left: 630px;
+}
+#hawaii_f15_brands_04 > #sectionHome {
+  top: 945px;
+  left: 95px;
+}
+
+#hawaii_f15_sh_01 > .sectionTitle {
+  left: 487px;
+  top: 115px;
+}
+#hawaii_f15_sh_01 > .sectionCopy {
+  left: 487px;
+  top: 143px;
+  width: 412px;
+  border-top: 2px solid #FF8133;
+  padding-top: 25px;
+}
+
+#hawaii_f15_desktop_storeHighlights > div > .sectionCopy > table {
+  margin-top: 25px;
+  border-spacing: 0;
+}
+
+#hawaii_f15_sh_04 > .sectionCopy > table > tbody > tr > td {
+  vertical-align: top;
+  text-transform: uppercase;
+  font-size: 11.5px;
+  font-weight: 700;
+  line-height: 2.2;
+  letter-spacing: 0.6px;
+}
+
+#hawaii_f15_sh_04 > .sectionCopy > table > tbody > tr > td.cellRight {
+  padding-left: 42px;
+}
+
+#hawaii_f15_sh_02, #hawaii_f15_sh_03 {
+  border-bottom: 1px solid #C6C6C6;
+}
+
+#hawaii_f15_sh_02,
+#hawaii_f15_sh_03,
+#hawaii_f15_sh_04 {
+  padding: 40px 0;
+}
+
+#hawaii_f15_desktop_storeHighlights > div > .orangeBox > .orangeBoxTitle {
+  border-bottom: 1px solid #fff;
+  padding-bottom: 20px;
+  line-height: 2;
+}
+
+#hawaii_f15_sh_02 > .orangeBox,
+#hawaii_f15_sh_03 > .orangeBox,
+#hawaii_f15_sh_04 > .orangeBox {
+  position: relative;
+}
+
+
+#hawaii_f15_sh_02 > .orangeBox {
+  padding: 77px 83px;
+}
+#hawaii_f15_sh_03 > .orangeBox {
+  float: right;
+  padding: 61px 58px;
+}
+#hawaii_f15_sh_04 > .orangeBox {
+  padding: 93px 95px;
+}
+
+#hawaii_f15_sh_02 > .orangeBox,
+#hawaii_f15_sh_04 > .orangeBox {
+  float: left;
+}
+
+#hawaii_f15_sh_02 > .sectionCopy {
+  width: 400px;
+  left: 487px;
+  top: 112px;
+}
+#hawaii_f15_sh_03 > .sectionCopy {
+  width: 402px;
+  left: 70px;
+  top: 82px;
+}
+
+#hawaii_f15_sh_03 > .sectionCopy.koContent {
+  left: 0;
+  top: 52px;
+}
+
+#hawaii_f15_sh_04 > .sectionCopy {
+  width: 485px;
+  left: 487px;
+  top: 52px;
+}
+
+#hawaii_f15_rewards_01 > .sectionTitle {
+  text-align: left;
+  color: #919191;
+  letter-spacing: 4.7px;
+  line-height: 2.35;
+  border-bottom: 1px solid #919191;
+  padding-bottom: 16px;
+}
+#hawaii_f15_rewards_02 > .sectionTitle {
+  text-align: left;
+  color: #453894;
+  letter-spacing: 4px;
+  line-height: 2;
+  border-bottom: 1px solid #453894;
+  padding-bottom: 16px;
+}
+
+#hawaii_f15_rewards_01 > .sectionCopy {
+  top: 42px;
+  left: 500px;
+  width: 402.6px;
+}
+
+#hawaii_f15_rewards_02 > .sectionCopy {
+  width: 404px;
+  top: 52px;
+  left: 0;
+}
+
+#InternationalClub, #InternationalClubJp, #InternationalClubCn, #InternationalClubKo {
+  top: 248px;
+  left: 79px;
+  width: 257px;
+}
+
+#InternationalClubJp {
+  font-family: 'Lato' !important;
+}
+
+#InternationalClubCn,
+#InternationalClubKo {
+  text-align: center !important;
+}
+
+#loyaltyClub, #loyaltyClubJp, #loyaltyClubCn, #loyaltyClubKo  {
+  left: 614px;
+  top: 333px;
+}
+
+#loyaltyClubCn,
+#loyaltyClubKo {
+  width: 284px;
+  text-align: center !important;
+}
+
+.textBlue{
+  color: #453894;
+  font-family: 'Lato', arial, sans-serif;
+  font-weight: 700;
+}
+
+.textBlack{
+  color: #000;
+  font-family: 'Lato', arial, sans-serif;
+  font-weight: 700;
+}
+
+.sectionFooter {
+  font-size: 8px;
+  line-height: 1.5;
+  letter-spacing: 0.1px;
+}
+
+.cellRight {
+  padding-left: 30px;
+}
+.bannerSeparator {
+  height: 154px;
+  background-size: cover !important;
+  -webkit-background-size: cover !important;
+  -moz-background-size: cover !important;
+  -o-background-size: cover !important;
+}
+#skyBanner {
+  background: url('hawaii_f15_desktop_sky_banner.jpg') no-repeat;
+}
+.waterBanner {
+  background: url('hawaii_f15_desktop_water_banner.jpg') no-repeat;
+}
+.orangeBox {
+  background-color: #FF8133;
+  padding: 55px;
+  position: absolute;
+  text-align: left;
+}
+
+#hawaii_f15_so_02 > .orangeBox {
+  left: 0px;
+  top: -30px;
+}
+
+#hawaii_f15_so_03 > .orangeBox {
+  right: 0px;
+  top: -123px;
+}
+
+#hawaii_f15_brands_02 > .orangeBox {
+  left: 0px;
+  top: -125px;
+  padding: 55px 110px 50px 100px;
+}
+
+#hawaii_f15_so_03 > table {
+  padding-top: 160px;
+  border-spacing: 0;
+}
+
+#hawaii_f15_so_03 > table > tbody > tr > td {
+  text-align: left;
+  vertical-align: top;
+  width: 200px;
+  padding-right: 53px;
+  padding-bottom: 45px;
+}
+
+.lastItem {
+  padding-right: 0 !important;
+}
+
+#hawaii_f15_so_03 > table > tbody > tr > td > .tableTitle {
+  color: #FF8133;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+#hawaii_f15_so_03 > table > tbody > tr > td > .tableSubTitle {
+  color: #FF8133;
+  font-family: arial, sans-serif;
+  font-style: italic;
+  font-size: 11px;
+  margin: 5px 0;
+  letter-spacing: 0.25px;
+}
+
+#hawaii_f15_so_03 > table > tbody > tr > td > .tableCopy {
+  font-family: arial, sans-serif;
+  font-size: 13px;
+  line-height: 1.7;
+  letter-spacing: 0.25px;
+}
+
+.orangeBoxTitle {
+  color: #fff;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 700;
+}
+.orangeBoxSeparator {
+  border-bottom: 1px solid #fff;
+  margin: 12px 0 20px;
+}
+.orangeBoxSubTitle {
+  color: #fff;
+  font-family: arial, sans-serif;
+  font-size: 13px;
+  line-height: 19px;
+}
+
+a.hawaii_f15_desktop_cta{
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-weight: bold;
+  font-size: 20px;
+  padding: 40px;
+  border: 2px solid #000;
+  text-decoration: none;
+  letter-spacing: 1px;
+  z-index: 3;
+  transition: all 0.3s ease 0s;
+}
+a.hawaii_f15_desktop_cta:hover{
+  color: #fff;
+  background: #000;
+  transition: all 0.3s ease 0s;
+}
+#hawaii_f15_desktop_nav_placeholder{
+  position:relative;
+  width: 100%;
+  height: 42px;
+}
+
+#hawaii_f15_desktop_nav_header_shopall {
+  color: #FFF;
+  right: 35px;
+  position: absolute;
+  font-size: 13px;
+  line-height: 42px;
+  text-decoration: none;
+}
+
+/* navigation */
+#hawaii_f15_desktop_main_container nav{
+  background-color: #000;
+  height: 42px;
+  width: 100%;
+  overflow: hidden;
+  z-index: 98;
+}
+#hawaii_f15_desktop_main_container nav ul{
+  left: 0;
+  top: 0;
+  display: block;
+  margin: 0 auto;
+  padding: 0;
+  width: 962px;
+  text-align: left;
+}
+#hawaii_f15_desktop_main_container nav ul li{
+  display: inline-table;
+  height: 42px;
+  text-align: center;
+  width: 33%;
+}
+#hawaii_f15_desktop_main_container nav ul li a,
+#hawaii_f15_desktop_nav_shopall{
+  color: #fff;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 12px;
+  line-height: 42px;
+  text-decoration: none;
+  font-family: 'Lato', sans-serif;
+  letter-spacing: 3px;
+}
+#hawaii_f15_desktop_nav_shopall{
+  float: right;
+  padding-right: 20px;
+}
+
+#hawaii_f15_desktop_main_container nav ul li a.active,
+#hawaii_f15_desktop_main_container nav ul li a:active {
+  color: #FF8133;
+}
+
+.nav_desktop_hover_state ul li a:hover,
+.nav_desktop_hover_state a:hover {
+  color: #FF8133 !important;
+}
+
+/*section*/
+#hawaii_f15_desktop_main_container section{
+  font-size: 0;
+  overflow: hidden;
+}
+
+/*acticle*/
+#hawaii_f15_desktop_main_container article{
+  position: relative;
+  width: 100%;
+}
+#hawaii_f15_desktop_main_container article > div.left,
+#hawaii_f15_desktop_main_container article > div.right{
+  position: relative;
+  float: left;
+  display: inline-block;
+}
+#hawaii_f15_desktop_main_container article > div.left > div.top,
+#hawaii_f15_desktop_main_container article > div.left > div.bottom,
+#hawaii_f15_desktop_main_container article > div.right > div.top,
+#hawaii_f15_desktop_main_container article > div.right > div.bottom{
+  z-index: 0;
+  display: block;
+  position: relative;
+  width: 100%;
+}
+#hawaii_f15_desktop_main_container article > div.left > div.top,
+#hawaii_f15_desktop_main_container article > div.right > div.top{
+  float: left;
+}
+#hawaii_f15_desktop_main_container article > div.left > div.bottom,
+#hawaii_f15_desktop_main_container article > div.right > div.bottom{
+  clear: both;
+}
+#hawaii_f15_desktop_main_container article > div.left > div.top img,
+#hawaii_f15_desktop_main_container article > div.left > div.bottom img,
+#hawaii_f15_desktop_main_container article > div.right > div.top img,
+#hawaii_f15_desktop_main_container article > div.right > div.bottom img{
+  z-index: 1;
+  width: 100%;
+}
+#hawaii_f15_desktop_main_container article > div.left > div.top a,
+#hawaii_f15_desktop_main_container article > div.left > div.bottom a,
+#hawaii_f15_desktop_main_container article > div.right > div.top a,
+#hawaii_f15_desktop_main_container article > div.right > div.bottom a{
+  z-index: 2;
+}
+#hawaii_f15_desktop_main_container blockquote{
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+#hawaii_f15_desktop_main_container blockquote img{
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: auto;
+  float: left;
+}
+#hawaii_f15_desktop_main_container blockquote p{
+  padding: 0 40px;
+  margin: 0;
+  height: inherit;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+/*custome styles*/
+#hawaii_f15_desktop_main_container p.title{
+  font-family: 'Libre Baskerville', sans-serif;
+  font-weight: 300;
+  font-size: 30px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  margin: 0;
+  padding: 0;
+}
+#hawaii_f15_desktop_main_container p.callout{
+  font-family: 'Libre Baskerville', sans-serif;
+  font-weight: 700;
+  font-size: 40px;
+  text-align: left;
+  text-transform: none;
+  letter-spacing: -2px;
+  overflow: hidden;
+}
+
+.slide {
+  left: 499px;
+  position: absolute;
+  height: 619px;
+  width: 499px;
+}
+
+.slide_nav {display:block; position:absolute; top:260px; width:45px; height:80px; text-indent:-9999px; cursor:pointer; }
+#left_arrow {position: absolute; left:5px; background-position: 3px 10px;}
+#right_arrow {position: absolute; right:5px; background-position: -39px 10px;}
+
+/*footer*/
+.footer15{
+  position: relative;
+  display: block;
+  background-color: #000;
+  height: 106px;
+  min-width: 962px !important;
+  margin-bottom: 0px;
+  text-align:center;
+}
+
+.footer15 > #footerContainer{
+  position: relative;
+  display: block;
+  background-color: #000;
+  height: 106px;
+  min-width: 962px !important;
+  margin-bottom: 0px;
+  width: 962px;
+  margin: 0 auto;
+}
+
+.footer15 > #footerContainer > img {
+  position: absolute;
+  left: 0;
+  top: -19px;
+}
+
+.footer15 > #footerContainer > #footerCopy {
+  position: absolute;
+  left: 82px;
+  top: 18px;
+  line-height: 18px;
+  width: 300px;
+}
+
+.footer15 > #footerContainer > #footerCopy > h1 {
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 3px;
+}
+
+.footer15 > #footerContainer > #footerCopy > #copySmaller {
+  font-family: arial, sans-serif;
+  font-size: 10px;
+  color: #fff;
+  font-weight: 300 !important;
+  letter-spacing: 0px;
+}
+.footer15 > #footerContainer > #footerArrows {
+  color: #fff;
+  position: absolute;
+  left: 373px;
+  top: 71px;
+}
+
+.footer15 > #footerContainer > #twitterWidget {
+  width: 420px;
+  position: absolute;
+  left: 408px;
+  top: 16px;
+  border-left: 1px solid #919191;
+  border-right: 1px solid #919191;
+  height: 75px;
+
+}
+
+.hawaii_f15_brands_footer {
+  position: relative;
+  margin: 70px auto 35px;
+}
+
+.hawaii_f15_desktop_shop_bcom{
+  border: 2px solid #000;
+  font-family: arial;
+  font-size: 14px !important;
+  font-weight: bold !important;
+  letter-spacing: 4px;
+  padding: 18px 30px;
+  transition: all 0.3s ease 0s;
+}
+
+.hawaii_f15_desktop_shop_bcom:hover{
+  color: #fff;
+  background-color: #000;
+  transition: all 0.3s ease 0s;
+}
+ul#hawaii_f15_desktop_socialshare_container{
+  direction: rtl;
+}
+ul#hawaii_f15_desktop_socialshare_container li{
+  display: inline-block;
+  position: relative;
+  box-sizing: border-box;
+  width: 23px;
+  height: 23px;
+  text-align: center;
+  border: 1px solid #000;
+  border-radius: 100%;
+  margin: 43px 4px;
+  cursor:pointer;
+  background-color: #fff;
+}
+ul#hawaii_f15_desktop_socialshare_container li:hover{
+  color: #fff;
+  background-color: #FF8133;
+}
+ul#hawaii_f15_desktop_socialshare_container li:first-child{
+  border-right: 1px solid #000;
+}
+ul#hawaii_f15_desktop_socialshare_container li i {
+  font-size: 14px;
+  line-height: 23px;
+}
+
+/*aside section*/
+#hawaii_f15_desktop_main_container > aside{
+  position: absolute;
+  top: 0;
+  height: 100%;
+  float: right;
+  right: 0;
+  background-color: red;
+}
+#hawaii_f15_desktop_floating_graphic{
+  display: none;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  padding: 0;
+  margin: -70px 0 0 461px; /* top value = graphic_width/2 ; left_value = 962px / 2 - offset*/
+  outline: 0;
+  border: 0;
+  background: transparent;
+  transition: all 0.9s ease 0s;
+  z-index: 9;
+}
+#hawaii_f15_desktop_back_to_top{
+  display: none;
+  position: absolute;
+  right: -72px; /* right = -(graphic_width) */
+  bottom: 164px; /*  top = -(2 x graphic_width + 20px) */
+  width: 72px;
+  height: 72px;
+  padding: 0;
+  margin: 0;
+  outline: 0;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.9s ease 0s;
+}
+#hawaii_f15_desktop_back_to_top > img{
+  left: 0;
+  top: 0;
+  position: absolute;
+}
+#hawaii_f15_desktop_back_to_top > img:hover{
+  left: -72px;
+  position: absolute;
+}
+@media only screen and (min-width: 1230px) {
+  #hawaii_f15_desktop_floating_graphic{
+    display: block;
+  }
+}
+@media only screen and (min-width: 1130px) {
+  #hawaii_f15_desktop_back_to_top{
+    display: block;
+  }
+}
+
+/* Hawaii Translation Update*/
+
+.languageOverlayActive {
+  overflow: hidden;
+}
+
+.jpContent, .cnContent, .koContent {
+  display: none;
+  font-family: sans-serif !important;
+}
+.jpContent *, .cnContent *, .koContent * {
+  font-family: sans-serif !important;
+}
+
+html body #bl_main_container .overlay.lang {
+  background: rgba(0, 0, 0, 0.9);
+}
+html body #bl_main_container .overlay {
+  position: fixed;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  bottom: 0;
+  right: 0;
+  top: 0;
+  z-index: 10000001;
+  left: 0;
+  display: none;
+}
+
+html body #bl_main_container .overlay.lang .overlay-container {
+  position: relative;
+  width: 310px;
+  margin: 0 auto;
+  top: 160px;
+  top: calc(50vh - 159px);
+}
+
+html body #bl_main_container .overlay.lang .overlay-container span {
+  font-size: 20px;
+  color: #fff;
+  font-family: 'Libre Baskerville', serif;
+  text-align: center;
+  display: block;
+  margin-bottom: 40px;
+}
+
+html body #bl_main_container .overlay.lang .overlay-container ul {
+  margin: 0;
+  padding-left: 0;
+  border-bottom: solid 1px #4d4643;
+}
+
+html body #bl_main_container .overlay.lang .overlay-container img {
+  width: 310px;
+  margin-bottom: 5vh;
+}
+
+html body #bl_main_container .overlay.lang .overlay-container ul li {
+  font-size: 16px;
+  letter-spacing: 3px;
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  cursor: pointer;
+  height: 72px;
+  line-height: 72px;
+  border-top: solid 1px #4d4643;
+  list-style-type: none;
+  font-family: arial;
+}
+
+html body #bl_main_container .overlay.lang .overlay-container ul li:hover {
+  color: #FF8133;
+}
+
+ul.headerLanguageSwitcher {
+  position: absolute;
+  left: 50%;
+  top: 10px;
+  min-width: 962px;
+  margin-left: -481px;
+  font-size: 16px;
+  font-family: sans-serif;
+  text-align: left;
+  padding-left: 0
+}
+
+ul.headerLanguageSwitcher li {
+  display: inline;
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 15px;
+  margin: -3px;
+  cursor: pointer;
+}
+
+ul.headerLanguageSwitcher li:hover {
+  background-color: rgba(255,255,255,0.8);
+  color: #FF8133;
+}
