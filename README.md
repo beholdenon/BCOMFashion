@@ -1,36 +1,56 @@
-##Pre-requisites
-----------------
-1. Install **Git Bash** - https://git-scm.com/
+##Prerequisite Software Installations
+--------------------------------------
+1.  [Git Bash](https://git-scm.com/)
 
-2. Install **Python 2.7.10** - https://www.python.org/downloads/release/python-2710/
-> during installation opt for: CUSTOMIZE PYTHON -> ADD PYTHON.EXE TO PATH -> Will be installed on local hardrive
+2.  [nodeJS 4.4.4](https://nodejs.org/en/download/)
+    > during installation, opt for 'Add to PATH', which will expose nodeJS to globally  
+    > on completion, open terminal to verify global installation by executing: ```node -v``` ; this should log nodeJS ver
 
-3. Install **NodeJS** - https://nodejs.org/en/download/ 
-> verify node installed correctly by running: ```node -v``` and it will log the version number)
+3.  Update npm: in terminal run  ```npm update -g npm```
 
-4. Update npm by running: ```npm update -g npm```
+4.  **Grunt**: in terminal run ```npm install -g grunt-cli```
 
-5. Install **Grunt** by running: ```npm install -g grunt-cli```
+5.  **Ruby**
+    >[WINDOWS] [Ruby Installer 1.9.3-p551](http://rubyinstaller.org/downloads/archives)
+    >[macOS] ```brew install ruby``` (if need to install *Homebrew* follow guide here - http://brew.sh/)
 
-6. Install **Ruby** using the *Ruby Installer* - http://rubyinstaller.org/
-
-6. Install **Compass** by running: ```gem install compass```
+6.  **Compass**: in terminal run ```gem update --system ; gem install compass```
 
 
 ##Project Setup
 ----------------
-1. Clone the *BCOMFashion* repo: git clone http://wdsgerrit:8080/p/BCOMFashion.git
+1. Clone *BCOMFashion* repo: ```git clone git@code.devops.fds.com:CAP/BCOMFashion.git```
 
-2. Install node dependencies by running ```npm install``` in the BCOMFashion directory
+2. In **.env** file, edit ```NODE_ENV=dev```
 
-3. To test/develop locally, edit **.env** file variables as follows:
-	- ENV=dev
-	- NODE_ENV=dev
-> When pushing code to a remote branch make sure you change back these variables to **production**
+3. Install node dependencies for the project. In terminal, go to BCOMFashion directory and run ```npm install``` 
 
-4. Run the node server: ```grunt``` and it will open the app in your default browser.
+4. Start the application: in terminal run ```grunt``` and  it will open automatically the browser; otherwise, check terminal for server address (eg. [http://localhost:3000](http://localhost:3000)).
 
-##Adding New Pages
+
+##Development Workflow
+----------------------
+Develop in a *FEATURE/B-xxxxx* branch. A code push to remote will trigger [Jenkins Review](http://web-ci.devops.fds.com/jenkins/view/BCOMFashion/view/test/job/BCOM_test_REVIEW/) job (incl. unit-tests and func-tests): 
+
+*test* branch is the staging branch. Merge Request from the *FEATURE/B-xxxxx* to *test* will trigger a [Jenkins Deploy](http://web-ci.devops.fds.com/jenkins/view/BCOMFashion/view/test/job/BCOM_test_DEPLOY/) job. At the completion, server-side code will be deployed to Heroku and front-end code to NetStorage (location: http://netstorage.bloomingdales.com/netstorage/fashion/dev). Application can be accessed at http://fashion-test.bloomingdales.com/.   
+
+*master* branch is used for UAT and also represents the release branch. Code will move here only after QA sign-off. Merge Request will trigger a [Jenkins Deploy](http://web-ci.devops.fds.com/jenkins/view/BCOMFashion/view/MASTER/job/BCOM_Master_DEPLOY/) job. At completion, server-side code will be deployed to Heroku and front-end code to NetStorage, in 2 buckets: http://netstorage.bloomingdales.com/netstorage/fashion/QA and http://netstorage.bloomingdales.com/netstorage/fashion/prod. Application can be accessed at http://fashion-preprod.bloomingdales.com/.
+At UAT sign-off, an artifact version is provided to RE for production deployment. 
+
+
+##CI-CD Workflow
+-----------------
+- Repo in [Gitlab](https://code.devops.fds.com/CAP/BCOMFashion).
+- CI [Jenkins](http://web-ci.devops.fds.com/jenkins/view/BCOMFashion/)
+- Artifact repo - [Artifactory](http://ci-artifacts.devops.fds.com/macys-release-local/com/macys/BCOMFashion/BCOMFashion/) 
+- CD [udeploy](https://udeploy/)
+- Platform provider is [Heroku](https://www.heroku.com/). Currently there are 3 environments:
+    - Staging:  [fashion-test](https://dashboard.heroku.com/apps/fashion-test)
+    - UAT:  [fashion-preprod](https://dashboard.heroku.com/apps/fashion-preprod)
+    - Production: [fashion](https://dashboard.heroku.com/apps/fashion)
+
+
+###Adding New Pages
 -------------------
 The body of new pages will usually be created under
 ``` server/lib/view/name-of-page/index.hbs```
@@ -65,7 +85,7 @@ be used by coremetrics.js to initialize with the right data.
 <div id="cmdata"  data-pageid="lp-xx-xx-xx.bcrf" data-categoryid="lp-xx-xx-xx"></div>
 ```
 
-##Using The Bloomies LeftNav component
+###Using The Bloomies LeftNav component
 -----------------------------
 
 This project currently does NOT use the MacysUI LeftNav component. However,
@@ -110,14 +130,14 @@ And, it also needs to run the drawMenus method on startup:
     );
 ```   
 
-## Using ES6 on client files
+### Using ES6 on client files
 
 In Webstorm, Files -> Settings -> Languages & Frameworks -> Javascript language version = ECMAScript 6
 
 Create a source file named with a filename extension of ".es6". When you run grunt, this will automatically
 be compiled via babel to an ES5 file with the same name + "-compiled.js". 
 
-## Using Foundation Reveal
+### Using Foundation Reveal
 
 Reveal is Foundation's modal. See the file personal-shopper-complimentary-service as an example. 
 Because the Foundation version used at Macy's doesn't get initialized, we need to pull in a 
