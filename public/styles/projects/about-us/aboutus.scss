@@ -418,13 +418,27 @@ DIV {
 }
 
 // Ways to Shop
+.about_us {
+    .LBHeading {
+        font-family: 'Libre Baskerville', serif;
+        font-size: 2.5rem;
+        white-space: nowrap;
+        line-height:1.2;
+    }
+}
 @mixin ways_mobile {
     .ways_to_shop {
+        .LBHeading {
+            white-space:normal;
+        }
         .row {
             text-align: center;
         }
         .main {
-            padding:20px;
+         //   padding:20px;
+        }
+        .content {
+            max-width:90%;
         }
         H4 {
             font-size:1.4rem;
@@ -452,12 +466,10 @@ DIV {
         .section.text_section {
             height: 220px;
             margin-bottom: 40px;
+            margin-top:30px;
         }
-        DIV.section_m {
-            display: block;
-        }
-        DIV.section_d {
-            display: none;
+        .section.h_shim {
+            margin-top:30px;
         }
         DIV.section_f {
             line-height: 1.2;
@@ -466,10 +478,14 @@ DIV {
         #ways_to_shop_header {
             font-size: 1.2rem;
         }
+        .heading {
+            IMG {
+                margin-top: 35px;
+            }
+        }
     }
 }
 .bl_mobile {
-    .about_us.ways_to_shop {margin-left:0;}
     @include ways_mobile;
 }
 
@@ -482,9 +498,9 @@ DIV {
             line-height: 1.2;
             font-size: 1.5rem;
         }
-        .row {
+/*        .row {
             text-align: center;
-        }
+        }*/
         .line {
             margin-left:auto;
             margin-right:auto;
@@ -499,12 +515,6 @@ DIV {
             height:220px;
             margin-bottom:40px;
         }
-        DIV.section_m {
-            display:block;
-        }
-        DIV.section_d {
-            display:none;
-        }
         #ways_to_shop_header{
             font-size:1.2rem;
         }
@@ -518,14 +528,14 @@ DIV {
         padding: 0;
     }
     .content {
-        max-width: 560px;
+        max-width: 520px;
         margin-left: auto;
         margin-right: auto;
     }
     .heading {
         text-align: center;
         IMG {
-            margin-top: 60px;
+            margin-top: 50px;
             margin-bottom: 20px;
         }
     }
@@ -536,12 +546,6 @@ DIV {
         height: 285px;
         BUTTON {
             margin-top: 40px;
-        }
-        .dummy {
-            position: relative;
-            top: 50%;
-            transform: translateY(-50%);
-            margin-right: 20px;
         }
     }
     .line {
@@ -558,7 +562,7 @@ DIV {
         }
     }
     .right_pic {
-        margin-left: 45px;
+        margin-left: 15px;
     }
     .left_pic {
         height: 256px;
@@ -590,7 +594,6 @@ DIV {
                 line-height: 1.5;
             }
         }
-
     }
     BUTTON {
         height: 3rem;
@@ -602,7 +605,7 @@ DIV {
 .bl_mobile {
 
     .about_us {
-        margin-left:10px;
+        //margin-left:10px;
         IMG {
             max-width:100%;
             // padding-left:10px;

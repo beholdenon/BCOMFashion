@@ -25,7 +25,7 @@ server.views({
     layoutPath: Path.join(__dirname, 'lib/views/layout'),
     layout: 'standard',
     partialsPath: Path.join(__dirname, '/lib/views/partials')
-});
+}); 
 
 var routes = [
     { method: 'GET',  path: '/v3/{path*}',                                          config: require('./lib/handlers/api').v3 },
