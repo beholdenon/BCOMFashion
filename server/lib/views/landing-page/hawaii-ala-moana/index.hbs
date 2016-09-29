@@ -893,26 +893,74 @@ NEVER FORGET!</span>
 <script>
 
   require(['backbone'], function(Backbone){
+  
+      var languageControl = {
+        currentLang: 'en',
+        cmDictionary: {
+            en: '',
+            eng: '',
+            jp: 'japanese',
+            cn: 'chinese',
+            ko: 'korean'
+        },
+        name: {
+            en: 'english',            
+            eng: 'english',
+            jp: 'japanese',
+            cn: 'chinese',
+            ko: 'korean'
+        }
+    };
 
 			var HRouter = Backbone.Router.extend({
 
 			  routes: {
-			    "help":                 "help",    // #help
-			    "search/:query":        "search",  // #search/kiwis
-			    "search/:query/p:page": "search"   // #search/kiwis/p7
+           "*actions": "defaultAction"  
 			  },
-
-			  help: function() {
-			    console.log('hi mom')
-			  },
-
-			  search: function(query, page) {
-			  
-			  }
-
+				defaultAction: function(lang){
+				  console.log('xxxx', lang);
+					if (! lang){
+						lang = '';
+					} 
+					languageControl.currentLang = lang;
+					                try {
+                    localStorage.setItem( 'hawaii_15_languageChoice', lang );
+                } catch (e) {
+                    console.log('Error trying to save data to the localStorage. If you are using Private Navigation this might be the reason. Error:', e);
+                }
+				}
 			});
+
+
+        function foo(){
+
+                var langChoice = 'ko';
+                languageControl.currentLang = langChoice;
+                try {
+                    localStorage.setItem( 'hawaii_15_languageChoice', langChoice );
+                } catch (e) {
+                    console.log('Error trying to save data to the localStorage. If you are using Private Navigation this might be the reason. Error:', e);
+                }
+/*
+                switchLanguage(langChoice);
+                if($( '#languageOverlay' ).is(':visible')) {
+                    $( '#languageOverlay' ).css({ 'display' : 'none' });
+                    $( 'body' ).removeClass('languageOverlayActive');
+                    clickSource = '';
+                }
+*/
+                //coreMetrics("Element",namespace.coremetrics, clickSource + 'language_' + languageControl.name[langChoice] );
+
+
+
+        }
+
+
 			var hrouter = new HRouter();
-			Backbone.history.start({pushState: true})
+			Backbone.history.start({
+			  root: '/landing-page/hawaii-ala-moana/',
+			  pushState: true}
+			)
 
   
   });
