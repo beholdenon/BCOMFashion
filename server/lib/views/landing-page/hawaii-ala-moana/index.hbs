@@ -919,11 +919,14 @@ NEVER FORGET!</span>
 			  },
 				defaultAction: function(lang){
 				  console.log('xxxx', lang);
-					if (! lang){
+					if (! lang || lang === null){
 						lang = '';
 					} 
+					if (! lang in languageControl){
+					  lang = '';
+					}
 					languageControl.currentLang = lang;
-					                try {
+					      try {
                     localStorage.setItem( 'hawaii_15_languageChoice', lang );
                 } catch (e) {
                     console.log('Error trying to save data to the localStorage. If you are using Private Navigation this might be the reason. Error:', e);
