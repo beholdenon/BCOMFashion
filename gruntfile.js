@@ -64,7 +64,7 @@ module.exports = function(grunt) {
                     './build/hideLevel.js',
                     './build/coremetrics.js'
                 ],
-                templateData: './server/lib/views/navdata.js',
+                templateData: './.tmp/navdata.js',
                 partials: ['./server/lib/views/partials/leftnav.hbs',
                     './server/lib/views/partials/breadcrumbs.hbs',
                     './server/lib/views/partials/title.hbs',

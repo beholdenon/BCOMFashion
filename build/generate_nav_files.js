@@ -56,7 +56,7 @@
              nav = JSON.stringify(nav);
              nav = '{data:' + nav + '}';
              try {
-                 fs.writeFileSync('./server/lib/views/navdata.js', nav);
+                 fs.writeFileSync('./.tmp/navdata.js', nav);
                  process.exit(0);
              } catch (e){
                  console.log(e);

@@ -70,6 +70,10 @@ DIV {
         &.hshim2{
             height:10px;
         }
+        // shim for desktop only
+        .dshim {
+            height:10px;
+        }
         &.bl_nav_side {
             float: left;
             padding: 0 0 20px 0;
@@ -472,6 +476,9 @@ DIV {
         .section.h_shim {
             margin-top:30px;
         }
+        .section.dshim {
+            display:none;
+        }
         DIV.section_f {
             line-height: 1.2;
             font-size: 1.5rem;
@@ -487,11 +494,16 @@ DIV {
     }
 }
 .bl_mobile {
+    .ways_to_shop .m_break {display:block;}
+    .ways_to_shop .contentb {padding:10px;}
     @include ways_mobile;
 }
 
 .ways_to_shop {
     #bigDart {display:none}
+    .m_break {
+        display:none;
+    }
     @media (max-width: 736px) {
         #smallDart {display:none}
         #bigDart {display:block}
@@ -529,7 +541,10 @@ DIV {
         padding: 0;
     }
     .content {
-        max-width: 520px;
+        width: 724px;
+    }
+    .contentb {
+        max-width: 610px;
         margin-left: auto;
         margin-right: auto;
     }
@@ -551,8 +566,8 @@ DIV {
     }
     .line {
         width: 60px;
-        margin-top: 6px;
-        margin-bottom: 8px;
+        margin-top: 7px;
+        margin-bottom: 10px;
         height: 3px;
         border-radius: 10px;
         &.green {
