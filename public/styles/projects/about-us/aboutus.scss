@@ -438,13 +438,14 @@ DIV {
          //   padding:20px;
         }
         .content {
-            max-width:90%;
+            width:inherit;
+            margin-left:0px;
         }
         H4 {
             font-size:1.4rem;
         }
         .hshim {
-            display:none;
+         //   display:none;
         }
         #frow .ffoot {
             margin-top:10px;
@@ -603,7 +604,9 @@ DIV {
 
 
 .bl_mobile {
-
+    .bl_main {
+        padding:10px;
+    }
     .about_us {
         //margin-left:10px;
         IMG {
