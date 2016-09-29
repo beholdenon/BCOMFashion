@@ -59,7 +59,7 @@ module.exports = {
 
             res.proxy({
                 timeout: serviceProxy.timeout,
-                passThrough: true,
+                passThrough: false,
                 mapUri: function(req, callback) {
                     let uri = 'http://' + process.env.BASE_ASSETS + req.url.path;
                     callback(null, uri, headers);
