@@ -15,7 +15,7 @@ module.exports = function(grunt) {
     var NODE_ENV = grunt.option('env') || process.env.NODE_ENV;
 
     //Sets current project folder path ( can be empty as '' )
-    var PROJECT_FOLDER = grunt.option('pf') || process.env.PROJECT_FOLDER;
+    var PROJECT_DIR = grunt.option('pf') || process.env.PROJECT_DIR;
 
     grunt.loadTasks('./build/grunt-compile-handlebars/tasks');
 
@@ -196,7 +196,7 @@ module.exports = function(grunt) {
                 '.tmp/**/*'
             ],
             projectFolderImages: [
-                '<%= node.destination %>/public/images/projects'+PROJECT_FOLDER
+                '<%= node.destination %>/public/images/projects'+PROJECT_DIR
             ],
             projectSprites: [
                 '<%= node.source %>/public/images/projects/**/project-sprites.png',
@@ -300,11 +300,11 @@ module.exports = function(grunt) {
             projectFolderImageClient: {
                 files: [{
                     expand: true,
-                    cwd: '<%= node.source %>/public/images/projects'+PROJECT_FOLDER,
+                    cwd: '<%= node.source %>/public/images/projects'+PROJECT_DIR,
                     src: [
                         '**/*.{gif,jpg,png}'
                     ],
-                    dest: '<%= node.destination %>/public/images/projects'+PROJECT_FOLDER
+                    dest: '<%= node.destination %>/public/images/projects'+PROJECT_DIR
                 }]
             },
             jsClient: {
@@ -434,6 +434,7 @@ module.exports = function(grunt) {
                 nonull: true
             }
         },
+
         jshint: {
             options: {
                 jshintrc: '.jshintrc',
@@ -609,7 +610,7 @@ module.exports = function(grunt) {
                         nodemon.on('config:update', function() {
                             // Delay before server listens on port
                             setTimeout(function() {
-                                require('open')('http://localhost:3000' + ((PROJECT_FOLDER!=='') ? PROJECT_FOLDER : '/about-us/buy-online-pickup-in-store/')     );
+                                require('open')('http://localhost:3000' + ((PROJECT_DIR!=='') ? PROJECT_DIR : '/about-us/buy-online-pickup-in-store/')     );
                             }, 1000);
                         });
 
@@ -637,7 +638,7 @@ module.exports = function(grunt) {
 		watch: {
             projectFolderImageClient: {
                 files: [
-                    '<%= node.source %>/public/images/projects'+ PROJECT_FOLDER +'{,**/}*.{gif,jpg,png}'
+                    '<%= node.source %>/public/images/projects'+ PROJECT_DIR +'{,**/}*.{gif,jpg,png}'
                 ],
                 tasks: [
                     'clean:projectFolderImages',
