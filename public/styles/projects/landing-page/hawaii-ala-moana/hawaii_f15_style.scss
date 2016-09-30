@@ -1,7 +1,6 @@
 #bl_main_container {
   width: 100% !important;
 }
-
 .header15, .footer15 {
   position: relative;
   z-index: 10;
@@ -1055,4 +1054,211 @@ ul.headerLanguageSwitcher li {
 ul.headerLanguageSwitcher li:hover {
   background-color: rgba(255,255,255,0.8);
   color: #FF8133;
+}
+
+
+
+.hawaii_f15_mobile_main_container-bl_main_container_reset {
+  width: 100% !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding: 0 !important;
+}
+
+#hawaii_f15_mobile_main_container {
+  display: block;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  border: 0 none;
+}
+
+#hawaii_f15_mobile_main_container img.hawaii_f15-imap {
+  display: block;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  border: 0 none;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+#hawaii_f15_mobile_main_container article.landing,
+#hawaii_f15_mobile_main_container article.content {
+  display: block;
+  position: relative;
+  overflow: hhidden;
+}
+
+#hawaii_f15_mobile_main_container article.landing section.menu {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: auto;
+}
+
+#hawaii_f15_mobile_main_container article.landing section.menu a {
+  display: block;
+  position: absolute;
+  padding: 0;
+  margin: 0;
+  width: 80.00000000%;
+  height: 20.952987%;
+  left: 10.46875000%;
+  top: 0;
+  overflow: hidden;
+  text-indent: -999px;
+  border: 0 none;
+  color: transparent;
+  background: transparent url( 'hawaii_f15_nothing.png' ) scroll repeat 0 0;
+}
+
+#hawaii_f15_mobile_main_container a {
+  -webkit-tap-highlight-color: rgba(255, 94, 153, 0.4) !important;
+}
+
+#hawaii_f15_mobile_main_container nav,
+#hawaii_f15_mobile_main_container nav div,
+#hawaii_f15_mobile_main_container nav div div,
+#hawaii_f15_mobile_main_container nav div a,
+#hawaii_f15_mobile_main_container nav div img,
+#hawaii_f15_mobile_main_container article.content section,
+#hawaii_f15_mobile_main_container article.content section div,
+#hawaii_f15_mobile_main_container article.content section div a,
+#hawaii_f15_mobile_main_container article.content section div img {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  /*border: 0 none;*/
+}
+
+#hawaii_f15_mobile_main_container article.content > section {
+  padding-top: 1px !important;
+}
+#hawaii_f15_mobile_main_container nav {
+  height: 50px;
+  line-height: 50px;
+  color: #fff;
+  background-color: #000;
+  text-align: center;
+  font-family: arial, sans-serif;
+
+}
+
+#hawaii_f15_mobile_main_container nav a {
+  color: #fff;
+  font-size: 4vw;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-bottom: 1px solid #fff;
+}
+
+#hawaii_f15_mobile_main_container nav a.toggler {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 17.5%;
+  z-index: 10;
+}
+
+#hawaii_f15_mobile_main_container nav a.toggler i {
+  font-size: 1.6em;
+  line-height: 0px;
+  padding-left: 0.15em;
+}
+
+#hawaii_f15_mobile_main_container nav.flying {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 10;
+  height: auto;
+}
+
+#hawaii_f15_mobile_main_container nav div div ul {
+  margin: 0;
+  padding: 0;
+}
+
+#hawaii_f15_mobile_main_container nav div div ul li {
+  display: inline;
+  font-size: 4vw;
+}
+#hawaii_f15_mobile_main_container nav div div ul li > a{
+  display: initial;
+  border: none;
+  padding: 15px 20px;
+}
+
+#hawaii_f15_mobile_main_container nav.flying div.dropdown {
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  -webkit-transform: translate( 0, -100% );
+  transform: translate( 0, -100% );
+}
+
+#hawaii_f15_mobile_main_container nav.flying div.dropdown.visible {
+  -webkit-transform: translate( 0, 0 );
+  transform: translate( 0, 0 );
+}
+
+#hawaii_f15_mobile_main_container nav.flying div.dropdown a {
+  padding: 1px 0 0 0;
+  background: #fff none scroll repeat 0 0;
+}
+
+#hawaii_f15_mobile_main_container article.content section div .mapped {
+  display: block;
+  position: absolute !important;
+  width: auto;
+  height: auto;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  color: transparent;
+  text-indent: -999px;
+  border: 0 none;
+  background: transparent url( 'hawaii_f15_nothing.png' ) scroll repeat 0 0;
+}
+
+#hawaii_f15_mobile_main_container article.content section div.info p.footnote {
+  text-align: center;
+  line-height: 1.1em;
+  font-size:  12px;
+  text-indent: 0;
+}
+
+#hawaii_f15_mobile_main_container a.jpMobileContent,
+#hawaii_f15_mobile_main_container a.cnMobileContent,
+#hawaii_f15_mobile_main_container a.koMobileContent,
+#hawaii_f15_mobile_main_container article.content section div a.jpMobileContent,
+#hawaii_f15_mobile_main_container article.content section div a.cnMobileContent,
+#hawaii_f15_mobile_main_container article.content section div a.koMobileContent,
+#hawaii_f15_mobile_main_container article.content section div img.jpMobileContent,
+#hawaii_f15_mobile_main_container article.content section div img.cnMobileContent,
+#hawaii_f15_mobile_main_container article.content section div img.koMobileContent {
+  display: none;
+}
+html body #bl_main_container .overlay.lang .overlay-container ul li a{
+  font-size: 16px;
+  letter-spacing: 3px;
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  height: 72px;
+  line-height: 72px;
+  font-family: arial;
+  text-decoration: none;
 }

@@ -5,7 +5,7 @@ require(['jquery', 'backbone'], function($, Backbone){
         projectGlobalPrefix: 'hawaii_f15',
         environment: 'astra', //legacy || astra 
         environmentProjectFolder: 'cat_splash', // for a Legacy project, set this to the folder name which is created in the /specialProjects,
-                                                       // for an Astra project, set this to { homepage_pools || cat_splash } 
+        // for an Astra project, set this to { homepage_pools || cat_splash }
         coremetrics: 'fall15_hawaii',
         views: {
             sectionInViewport: 'header'
@@ -57,9 +57,9 @@ require(['jquery', 'backbone'], function($, Backbone){
                     return list.join('-_-');
                 }
                 return null;
-            }    
+            }
         }
-        
+
     };
 
     var languageControl = {
@@ -72,7 +72,7 @@ require(['jquery', 'backbone'], function($, Backbone){
             ko: 'korean'
         },
         name: {
-            en: 'english',            
+            en: 'english',
             eng: 'english',
             jp: 'japanese',
             cn: 'chinese',
@@ -100,136 +100,136 @@ require(['jquery', 'backbone'], function($, Backbone){
 
         // listeners:
 
-            $( 'li.languageOption' ).on( 'click', function ( ) {
+        $( 'li.languageOption' ).on( 'click', function ( ) {
 
-                var langChoice = $(this).data('lang');
-                var clickSource = 'dropdown-nav_';
-                languageControl.currentLang = langChoice;
-                try {
-                    localStorage.setItem( 'hawaii_15_languageChoice', langChoice );
-                } catch (e) {
-                    console.log('Error trying to save data to the localStorage. If you are using Private Navigation this might be the reason. Error:', e);
-                }
+            var langChoice = $(this).data('lang');
+            var clickSource = 'dropdown-nav_';
+            languageControl.currentLang = langChoice;
+            try {
+                localStorage.setItem( 'hawaii_15_languageChoice', langChoice );
+            } catch (e) {
+                console.log('Error trying to save data to the localStorage. If you are using Private Navigation this might be the reason. Error:', e);
+            }
 
-                switchLanguage(langChoice);
-                hrouter.navigate(langChoice);
-                if($( '#languageOverlay' ).is(':visible')) {
-                    $( '#languageOverlay' ).css({ 'display' : 'none' });
-                    $( 'body' ).removeClass('languageOverlayActive');
-                    clickSource = '';
-                }
-
-                /* jshint ignore:start */
-                coreMetrics("Element",namespace.coremetrics, clickSource + 'language_' + languageControl.name[langChoice] );
-                /* jshint ignore:end */
-              });
-
-
-            $( 'a.desktop-artwork-link, a.mobile-artwork-link' ).on( 'click', function (  ) {
-                var attrCm = $(this).data('cm');
-                if ( typeof attrCm === 'string' && attrCm.length > 0 ) {
-                    /* jshint ignore:start */
-                   BLOOMIES.coremetrics.cmCreatePageElementTag( attrCm, namespace.coremetrics + languageControl.cmDictionary[languageControl.currentLang]);
-                    /* jshint ignore:end */
-                }
-              });
-
-            $('#'+ namespace.projectGlobalPrefix +'_desktop_nav > ul > li > a, a.project_link').on("click", function(event) {
-                var hash = $(this).attr('href');
-                hash = hash.substring(1, hash.length);
-                console.log(hash);
-                addressChange(event, hash);
-            });
+            switchLanguage(langChoice);
+            hrouter.navigate(langChoice);
+            if($( '#languageOverlay' ).is(':visible')) {
+                $( '#languageOverlay' ).css({ 'display' : 'none' });
+                $( 'body' ).removeClass('languageOverlayActive');
+                clickSource = '';
+            }
 
             /* jshint ignore:start */
-            $('#'+ namespace.projectGlobalPrefix +'_desktop_back_to_top').on('click', function(){
-                $("html, body").animate({ scrollTop: 0 }, "slow");
-                coreMetrics("Element",namespace.coremetrics,"back_to_top");
-            });          
-            $('#'+ namespace.projectGlobalPrefix +'_desktop_shop_all_collection').on('click', function(){
-                coreMetrics("Element",namespace.coremetrics,"bottom_shop_all_collection");
-            });
-            $('#'+ namespace.projectGlobalPrefix +'_desktop_shop_all_featured').on('click', function(){
-                coreMetrics("Element",namespace.coremetrics,"bottom_shop_all_featured");
-            });
-            $('#'+ namespace.projectGlobalPrefix +'_desktop_nav_shopall').on('click', function(){
-                coreMetrics("Element",namespace.coremetrics,"shop_all_top");
-            });
-
-            $('#'+ namespace.projectGlobalPrefix +'_desktop_main_container img').on('click', function(){
-                if (isHotImages(this)){
-                    var hash = $(this).attr('data-url');
-                    window.open(hash, '_self');
-                    hash = hash.replace('http://www1.bloomingdales.com/shop/','');
-                    hash = hash.split('?')[0];
-                    hash = hash.substring(hash.indexOf("/") + 1);
-                    coreMetrics("Element",namespace.coremetrics,"shop_now_"+ hash +"-image");
-                }
-            });   
-
-            $('#'+ namespace.projectGlobalPrefix +'_mobile_main_container img').on('click', function(){
-                if (isHotImages(this)){
-                    var hash = $(this).attr('data-url');
-                    var cmTag = $(this).attr('data-cm');
-                    window.open(hash, '_self');
-                    // hash = hash.replace('http://m.bloomingdales.com/shop/','');
-                    // hash = hash.split('?')[0];
-                    // hash = hash.substring(hash.indexOf("/") + 1);
-                    coreMetrics("Element",namespace.coremetrics,"shop_now_"+ cmTag +"-image");
-                }
-            }); 
-            $('#'+ namespace.projectGlobalPrefix +'_mobile_shop_all').on('click', function(){
-                coreMetrics("Element",namespace.coremetrics,"shop_all_bottom");
-            });
-            $('#'+ namespace.projectGlobalPrefix +'_mobile_info_header > a').on('click', function(){
-                coreMetrics("Element",namespace.coremetrics,"shop_all_top");
-            });
-            $('#'+ namespace.projectGlobalPrefix +'_mobile_back_to_top').on('click', function(){
-                $("html, body").animate({ scrollTop: 0 }, "slow");
-                coreMetrics("Element",namespace.coremetrics,"back_to_top");
-            });
-
-
-            // social share
-            $('#'+ namespace.projectGlobalPrefix +'_desktop_socialshare_facebook').on('click', function(){
-                window.open(namespace.urls.facebookShareURL, '_blank', 'width=608,height=342');
-                coreMetrics('Element',namespace.coremetrics,'social-fb');
-            });
-            $('#'+ namespace.projectGlobalPrefix +'_desktop_socialshare_twitter').on('click', function(){
-                window.open(namespace.urls.twitterShareURL, '_blank', 'width=740,height=340');
-                coreMetrics('Element',namespace.coremetrics,'social-twitter');
-            });
-            $('#'+ namespace.projectGlobalPrefix +'_desktop_socialshare_weibo').on('click', function(){
-                window.open(namespace.urls.weiboShareURL, '_blank');
-                coreMetrics('Element',namespace.coremetrics,'social-weibo');
-            });
-            $('#'+ namespace.projectGlobalPrefix +'_desktop_socialshare_pinterest').on('click', function(){
-                window.open(namespace.urls.pinterestShareURL, '_blank', 'width=770,height=380');
-                coreMetrics('Element',namespace.coremetrics,'social-pinterest');
-            });
-
-            $('#'+ namespace.projectGlobalPrefix +'_mobile_socialshare_facebook').on('click', function(){
-                window.open(namespace.urls.facebookShareURL, '_blank', 'width=608,height=342');
-                coreMetrics('Element',namespace.coremetrics,'social-fb');
-            });
-            $('#'+ namespace.projectGlobalPrefix +'_mobile_socialshare_twitter').on('click', function(){
-                window.open(namespace.urls.twitterShareURL, '_blank', 'width=740,height=340');
-                coreMetrics('Element',namespace.coremetrics,'social-twitter');
-            });
-            $('#'+ namespace.projectGlobalPrefix +'_mobile_socialshare_pinterest').on('click', function(){
-                window.open(namespace.urls.pinterestShareURL, '_blank', 'width=770,height=380');
-                coreMetrics('Element',namespace.coremetrics,'social-pinterest');
-            });
+            coreMetrics("Element",namespace.coremetrics, clickSource + 'language_' + languageControl.name[langChoice] );
             /* jshint ignore:end */
+        });
 
-            socialShare();
+
+        $( 'a.desktop-artwork-link, a.mobile-artwork-link' ).on( 'click', function (  ) {
+            var attrCm = $(this).data('cm');
+            if ( typeof attrCm === 'string' && attrCm.length > 0 ) {
+                /* jshint ignore:start */
+                BLOOMIES.coremetrics.cmCreatePageElementTag( attrCm, namespace.coremetrics + languageControl.cmDictionary[languageControl.currentLang]);
+                /* jshint ignore:end */
+            }
+        });
+
+        $('#'+ namespace.projectGlobalPrefix +'_desktop_nav > ul > li > a, a.project_link').on("click", function(event) {
+            var hash = $(this).attr('href');
+            hash = hash.substring(1, hash.length);
+            console.log(hash);
+            addressChange(event, hash);
+        });
+
+        /* jshint ignore:start */
+        $('#'+ namespace.projectGlobalPrefix +'_desktop_back_to_top').on('click', function(){
+            $("html, body").animate({ scrollTop: 0 }, "slow");
+            coreMetrics("Element",namespace.coremetrics,"back_to_top");
+        });
+        $('#'+ namespace.projectGlobalPrefix +'_desktop_shop_all_collection').on('click', function(){
+            coreMetrics("Element",namespace.coremetrics,"bottom_shop_all_collection");
+        });
+        $('#'+ namespace.projectGlobalPrefix +'_desktop_shop_all_featured').on('click', function(){
+            coreMetrics("Element",namespace.coremetrics,"bottom_shop_all_featured");
+        });
+        $('#'+ namespace.projectGlobalPrefix +'_desktop_nav_shopall').on('click', function(){
+            coreMetrics("Element",namespace.coremetrics,"shop_all_top");
+        });
+
+        $('#'+ namespace.projectGlobalPrefix +'_desktop_main_container img').on('click', function(){
+            if (isHotImages(this)){
+                var hash = $(this).attr('data-url');
+                window.open(hash, '_self');
+                hash = hash.replace('http://www1.bloomingdales.com/shop/','');
+                hash = hash.split('?')[0];
+                hash = hash.substring(hash.indexOf("/") + 1);
+                coreMetrics("Element",namespace.coremetrics,"shop_now_"+ hash +"-image");
+            }
+        });
+
+        $('#'+ namespace.projectGlobalPrefix +'_mobile_main_container img').on('click', function(){
+            if (isHotImages(this)){
+                var hash = $(this).attr('data-url');
+                var cmTag = $(this).attr('data-cm');
+                window.open(hash, '_self');
+                // hash = hash.replace('http://m.bloomingdales.com/shop/','');
+                // hash = hash.split('?')[0];
+                // hash = hash.substring(hash.indexOf("/") + 1);
+                coreMetrics("Element",namespace.coremetrics,"shop_now_"+ cmTag +"-image");
+            }
+        });
+        $('#'+ namespace.projectGlobalPrefix +'_mobile_shop_all').on('click', function(){
+            coreMetrics("Element",namespace.coremetrics,"shop_all_bottom");
+        });
+        $('#'+ namespace.projectGlobalPrefix +'_mobile_info_header > a').on('click', function(){
+            coreMetrics("Element",namespace.coremetrics,"shop_all_top");
+        });
+        $('#'+ namespace.projectGlobalPrefix +'_mobile_back_to_top').on('click', function(){
+            $("html, body").animate({ scrollTop: 0 }, "slow");
+            coreMetrics("Element",namespace.coremetrics,"back_to_top");
+        });
+
+
+        // social share
+        $('#'+ namespace.projectGlobalPrefix +'_desktop_socialshare_facebook').on('click', function(){
+            window.open(namespace.urls.facebookShareURL, '_blank', 'width=608,height=342');
+            coreMetrics('Element',namespace.coremetrics,'social-fb');
+        });
+        $('#'+ namespace.projectGlobalPrefix +'_desktop_socialshare_twitter').on('click', function(){
+            window.open(namespace.urls.twitterShareURL, '_blank', 'width=740,height=340');
+            coreMetrics('Element',namespace.coremetrics,'social-twitter');
+        });
+        $('#'+ namespace.projectGlobalPrefix +'_desktop_socialshare_weibo').on('click', function(){
+            window.open(namespace.urls.weiboShareURL, '_blank');
+            coreMetrics('Element',namespace.coremetrics,'social-weibo');
+        });
+        $('#'+ namespace.projectGlobalPrefix +'_desktop_socialshare_pinterest').on('click', function(){
+            window.open(namespace.urls.pinterestShareURL, '_blank', 'width=770,height=380');
+            coreMetrics('Element',namespace.coremetrics,'social-pinterest');
+        });
+
+        $('#'+ namespace.projectGlobalPrefix +'_mobile_socialshare_facebook').on('click', function(){
+            window.open(namespace.urls.facebookShareURL, '_blank', 'width=608,height=342');
+            coreMetrics('Element',namespace.coremetrics,'social-fb');
+        });
+        $('#'+ namespace.projectGlobalPrefix +'_mobile_socialshare_twitter').on('click', function(){
+            window.open(namespace.urls.twitterShareURL, '_blank', 'width=740,height=340');
+            coreMetrics('Element',namespace.coremetrics,'social-twitter');
+        });
+        $('#'+ namespace.projectGlobalPrefix +'_mobile_socialshare_pinterest').on('click', function(){
+            window.open(namespace.urls.pinterestShareURL, '_blank', 'width=770,height=380');
+            coreMetrics('Element',namespace.coremetrics,'social-pinterest');
+        });
+        /* jshint ignore:end */
+
+        socialShare();
     });
 
     $(window).scroll(function(){
         if (namespace.state.isDesktop){
             stickyNav();
             desktopHeaderVisible();
-          //  floatingGrasphic();
+            //  floatingGrasphic();
         } else {
             // mobileStickyFooter();
             // mobileSectionCoreMetrics();
@@ -245,10 +245,10 @@ require(['jquery', 'backbone'], function($, Backbone){
         deepLinks();
         languageChoiceChecker();
 
-		$("img.lazy").show().lazyload({
-			threshold : 200,
-			effect : "fadeIn"
-		});
+        $("img.lazy").show().lazyload({
+            threshold : 200,
+            effect : "fadeIn"
+        });
 
         $('#'+ namespace.projectGlobalPrefix +'_desktop_main_container').addClass('loaded');
         $('#'+ namespace.projectGlobalPrefix +'_desktop_header').addClass('active');
@@ -289,7 +289,7 @@ require(['jquery', 'backbone'], function($, Backbone){
                 'margin-top': '-42px'
             });
 
-           // updateHash('');
+            // updateHash('');
         }else{
             $('#'+ namespace.projectGlobalPrefix +'_desktop_nav').css({
                 'top': 0,
@@ -374,10 +374,10 @@ require(['jquery', 'backbone'], function($, Backbone){
                         if ( ( nav.flags & 1 ) === 0 ) // lock bit needs to be enabled...
                             return;
                         if ( ( nav.flags & 2 ) === 0 ) // hides if no longer visible...
-                            // nav.hndl.css( 'display', 'none' );
-                            // nav.hndl.slideUp();
+                        // nav.hndl.css( 'display', 'none' );
+                        // nav.hndl.slideUp();
                         // unlock...
-                        nav.flags ^= 1;
+                            nav.flags ^= 1;
                     }
                 }
             }
@@ -422,7 +422,7 @@ require(['jquery', 'backbone'], function($, Backbone){
                     arts.cnt.nav.hndl.slideToggle();
                 } else if( opt === 'hide' ) {
                     arts.cnt.nav.hndl.slideUp();
-                } 
+                }
             },
             landing: function ( ) {
                 var lnd = arts.lnd, cnt = arts.cnt;
@@ -455,6 +455,7 @@ require(['jquery', 'backbone'], function($, Backbone){
 
         // init root container...
         cont = $( '#hawaii_f15_mobile_main_container' );
+
         cont.on( 'click', 'a', function ( e ) {
 
             var a = $( this ),
@@ -526,45 +527,45 @@ require(['jquery', 'backbone'], function($, Backbone){
             languageControl.currentLang = langChoice;
             $( '.enMobileContent, .jpMobileContent, .cnMobileContent, .koMobileContent' ).css({ 'display' : 'none' });
             $( '.' + langChoice + 'MobileContent' ).css({ 'display' : 'block' });
-            
+
         }
     }
 
     function loadMobileCSS( href, before, media ){
-      // ARGUMENTS EXPLAINED:
-          // `href` is the URL for your CSS file.
-          // `before` optionally defines the element we'll use as a reference for injecting our <link>
-          // By default, `before` uses the first <script> element in the page.
-          // However, since the order in which stylesheets are referenced matters, you might need a more specific location in your document.
-          // If so, pass a different reference element to the `before` argument and it'll insert before that instead
-          // note: `insertBefore` is used instead of `appendChild`, for safety re: http://www.paulirish.com/2011/surefire-dom-element-insertion/
-      var ss = window.document.createElement( "link" );
-      var ref = before || window.document.getElementsByTagName( "script" )[ 0 ];
-      var sheets = window.document.styleSheets;
-      ss.rel = "stylesheet";
-      ss.href = href;
-      // temporarily, set media to something non-matching to ensure it'll fetch without blocking render
-      ss.media = "only x";
-      // inject link
-      ref.parentNode.insertBefore( ss, ref );
-      // This function sets the link's media back to `all` so that the stylesheet applies once it loads
-      // It is designed to poll until document.styleSheets includes the new sheet.
-      function toggleMedia(){
-        var defined;
-        for( var i = 0; i < sheets.length; i++ ){
-          if( sheets[ i ].href && sheets[ i ].href.indexOf( href ) > -1 ){
-            defined = true;
-          }
+        // ARGUMENTS EXPLAINED:
+        // `href` is the URL for your CSS file.
+        // `before` optionally defines the element we'll use as a reference for injecting our <link>
+        // By default, `before` uses the first <script> element in the page.
+        // However, since the order in which stylesheets are referenced matters, you might need a more specific location in your document.
+        // If so, pass a different reference element to the `before` argument and it'll insert before that instead
+        // note: `insertBefore` is used instead of `appendChild`, for safety re: http://www.paulirish.com/2011/surefire-dom-element-insertion/
+        var ss = window.document.createElement( "link" );
+        var ref = before || window.document.getElementsByTagName( "script" )[ 0 ];
+        var sheets = window.document.styleSheets;
+        ss.rel = "stylesheet";
+        ss.href = href;
+        // temporarily, set media to something non-matching to ensure it'll fetch without blocking render
+        ss.media = "only x";
+        // inject link
+        ref.parentNode.insertBefore( ss, ref );
+        // This function sets the link's media back to `all` so that the stylesheet applies once it loads
+        // It is designed to poll until document.styleSheets includes the new sheet.
+        function toggleMedia(){
+            var defined;
+            for( var i = 0; i < sheets.length; i++ ){
+                if( sheets[ i ].href && sheets[ i ].href.indexOf( href ) > -1 ){
+                    defined = true;
+                }
+            }
+            if( defined ){
+                ss.media = media || "all";
+            }
+            else {
+                setTimeout( toggleMedia );
+            }
         }
-        if( defined ){
-          ss.media = media || "all";
-        }
-        else {
-          setTimeout( toggleMedia );
-        }
-      }
-      toggleMedia();
-      return ss;
+        toggleMedia();
+        return ss;
     }
 
     function mobileStickyFooter(){
@@ -607,21 +608,21 @@ require(['jquery', 'backbone'], function($, Backbone){
                 if (el.indexOf(namespace.views.sectionInViewport) > -1){
                     $('#'+ namespace.projectGlobalPrefix +'_mobile_'+ el).addClass('active');
                 }
-            });  
+            });
         }
     }
     function coreMetrics(tag_type, category_name, tag_value){
         category_name = category_name + languageControl.cmDictionary[languageControl.currentLang];
         if(tag_type=="Pageview"){
             try {
-               BLOOMIES.coremetrics.cmCreatePageviewTag(tag_value, category_name);
+                BLOOMIES.coremetrics.cmCreatePageviewTag(tag_value, category_name);
             } catch (e) {
                 trace("Coremetrics Library Not Found..." + e);
             }
             trace("{{{{{{{{ Pageview- category_name: "+category_name+" tag_value: "+tag_value+" }}}}}}}}");
         }else if(tag_type=="Element"){
             try {
-               BLOOMIES.coremetrics.cmCreatePageElementTag(tag_value, category_name);
+                BLOOMIES.coremetrics.cmCreatePageElementTag(tag_value, category_name);
             } catch (e) {
                 trace("Coremetrics Library Not Found... " + e);
             }
@@ -636,7 +637,7 @@ require(['jquery', 'backbone'], function($, Backbone){
             console.info(logString);
         }
     }
-    
+
     function socialShare(){
         var baseURL = null;
 
@@ -649,7 +650,7 @@ require(['jquery', 'backbone'], function($, Backbone){
         } catch (e) {
             trace('Social share issue: ' + e);
         }
-        
+
         var pageURL = namespace.urls.pageURL;
         pageURL = pageURL.substr(pageURL.lastIndexOf('/'));
         pageURL = pageURL.slice(0,-4);
@@ -663,7 +664,7 @@ require(['jquery', 'backbone'], function($, Backbone){
         } catch (e) {
             trace('Social share issue: ' + e);
         }
-       
+
         namespace.urls.pageURL = baseURL + namespace.urls.pageURL;
 
         namespace.urls.facebookShareURL = 'https://www.facebook.com/dialog/feed';
@@ -680,8 +681,63 @@ require(['jquery', 'backbone'], function($, Backbone){
         namespace.urls.pinterestShareURL = 'http://pinterest.com/pin/create/button/?';
         namespace.urls.pinterestShareURL += 'url=' + encodeURIComponent(namespace.urls.pageURL);
         namespace.urls.pinterestShareURL += '&media=' + encodeURIComponent(baseURLAssets + namespace.socialShare.pinterestImageFileName);
-        namespace.urls.pinterestShareURL += '&description=' + encodeURIComponent(namespace.socialShare.pinterestTitle);        
+        namespace.urls.pinterestShareURL += '&description=' + encodeURIComponent(namespace.socialShare.pinterestTitle);
     }
+
+/*    var timer;
+    var currentHash;*/
+
+/*    function getHash() {
+        var hash = window.location.hash;
+        if ( typeof hash !== 'string' ) {
+            hash = '';
+        }
+        if ( hash.indexOf('#') === 0 ) {
+            hash = hash.substring(1);
+        }
+        return hash;
+    }*/
+
+/*    function hashUpdater() {
+        var hash = getHash();
+        if ( hash !== currentHash && namespace.state.isDesktop ) {
+            window.location.hash = currentHash === '' ? '#/' : '#/' + currentHash + '/';
+            if ( currentHash !== '' ) {
+                coreMetrics("Pageview", namespace.coremetrics, namespace.coremetrics + "--" + currentHash);
+            }
+        }
+        timer = void 0;
+    }*/
+
+/*    function updateHash(newHash) {
+        if ( currentHash !== newHash ) {
+            currentHash = newHash;
+            if ( typeof timer !== 'undefined' ) {
+                window.clearTimeout(timer);
+            }
+            timer = window.setTimeout(hashUpdater, 500);
+        }
+    }*/
+
+/*    function removeActiveNavBtn(){
+        return $('.'+ namespace.projectGlobalPrefix +'_desktop_nav > ul > li > a').removeClass('active');
+    }*/
+
+/*    function hotImages(){
+        // for each image check if it has attached a data-url attr to switch to pointer cursor
+        $('#'+ namespace.projectGlobalPrefix +'_desktop_main_container img').each(function(){
+            var attr = $(this).attr('data-url');
+
+            if (typeof attr !== typeof undefined && attr !== false && attr !== '#'){
+                $(this).css('cursor','pointer');
+                addImageID(this);
+            }
+        });
+    }*/
+
+
+
+
     /* Start Deep Links functionality */
     var HRouter = Backbone.Router.extend({
 
@@ -731,21 +787,21 @@ require(['jquery', 'backbone'], function($, Backbone){
     });
     /* End Deep Links functionality */
 
-/*    function decodeHtmlEntity(str) {
-      return str.replace(/&#(\d+);/g, function(match, dec) {
-        return String.fromCharCode(dec);
-      });
-    }
+    /*    function decodeHtmlEntity(str) {
+     return str.replace(/&#(\d+);/g, function(match, dec) {
+     return String.fromCharCode(dec);
+     });
+     }
 
-    function encodeHtmlEntity(str) {
-      var buf = [];
-      for (var i=str.length-1;i>=0;i--) {
-        buf.unshift(['&#', str[i].charCodeAt(), ';'].join(''));
-      }
-      return buf.join('');
-    }
-*/
-/*
+     function encodeHtmlEntity(str) {
+     var buf = [];
+     for (var i=str.length-1;i>=0;i--) {
+     buf.unshift(['&#', str[i].charCodeAt(), ';'].join(''));
+     }
+     return buf.join('');
+     }
+     */
+    /*
      function addImageID(elementID){
      var attr = $(elementID).attr('src');
 
@@ -764,61 +820,8 @@ require(['jquery', 'backbone'], function($, Backbone){
      $('#hawaii_f15_desktop_floating_graphic').css('top','50%');
      }
      }
-*/
+     */
 
-/*
-     var timer;
-     var currentHash;
-
-     function getHash() {
-     var hash = window.location.hash;
-     if ( typeof hash !== 'string' ) {
-     hash = '';
-     }
-     if ( hash.indexOf('#') === 0 ) {
-     hash = hash.substring(1);
-     }
-     return hash;
-     }
-
-
-     function hashUpdater() {
-     var hash = getHash();
-     if ( hash !== currentHash && namespace.state.isDesktop ) {
-     window.location.hash = currentHash === '' ? '#/' : '#/' + currentHash + '/';
-     if ( currentHash !== '' ) {
-     coreMetrics("Pageview", namespace.coremetrics, namespace.coremetrics + "--" + currentHash);
-     }
-     }
-     timer = void 0;
-     }
-
-     function updateHash(newHash) {
-     if ( currentHash !== newHash ) {
-     currentHash = newHash;
-     if ( typeof timer !== 'undefined' ) {
-     window.clearTimeout(timer);
-     }
-     timer = window.setTimeout(hashUpdater, 500);
-     }
-     }
-
-     function removeActiveNavBtn(){
-     return $('.'+ namespace.projectGlobalPrefix +'_desktop_nav > ul > li > a').removeClass('active');
-     }
-
-     function hotImages(){
-     // for each image check if it has attached a data-url attr to switch to pointer cursor
-     $('#'+ namespace.projectGlobalPrefix +'_desktop_main_container img').each(function(){
-     var attr = $(this).attr('data-url');
-
-     if (typeof attr !== typeof undefined && attr !== false && attr !== '#'){
-     $(this).css('cursor','pointer');
-     addImageID(this);
-     }
-     });
-     }
-*/
 
 
     // Export
