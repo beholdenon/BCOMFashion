@@ -254,7 +254,9 @@ module.exports = function(grunt) {
                         'public/favicon.ico', 
                         'public/images/**',
                         'public/styles/fonts/**',
-                        'public/assets/**'
+                        'public/assets/**',
+                        'public/styles/projects/**/*.png',
+                        'public/styles/projects/**/*.jpg'
                     ],
                     dest: '<%= node.destination %>/'
                 }, {
@@ -376,6 +378,7 @@ module.exports = function(grunt) {
                         expand: true,
                         src: [
                             './server/lib/views/about-us/**/*.hbs',
+                            './server/lib/views//**/*.hbs',
                             './server/lib/views/media/about/**/*.hbs'
                         ],
                         rename: function(dest, src) {
