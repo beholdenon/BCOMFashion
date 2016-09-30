@@ -42,7 +42,7 @@ module.exports = {
                 timeout: serviceProxy.timeout,
                 passThrough: true,
                 mapUri: function(req, callback) {
-                    let uri = 'http://' + process.env.BASE_ASSETS  + decodeURIComponent(req.url.path);
+                    let uri = 'http://' + process.env.BASE_ASSETS + req.url.path;
                     callback(null, uri, headers);
                 },
                 onResponse: serviceProxy.onResponseRedirect
@@ -52,7 +52,6 @@ module.exports = {
 
     topNav: {
         handler: function(req, res) {
-            var mobileParam = '&stop_mobi=yes';
             var headers = {
                 accept: 'application/json',
                 'Content-Type': 'application/json'
@@ -60,9 +59,9 @@ module.exports = {
 
             res.proxy({
                 timeout: serviceProxy.timeout,
-                passThrough: true,
+                passThrough: false,
                 mapUri: function(req, callback) {
-                    let uri = 'http://' + process.env.BASE_ASSETS + decodeURIComponent(req.url.path) + mobileParam;
+                    let uri = 'http://' + process.env.BASE_ASSETS + req.url.path;
                     callback(null, uri, headers);
                 },
                 onResponse: serviceProxy.onResponseRedirect
@@ -77,7 +76,7 @@ module.exports = {
                 timeout: serviceProxy.timeout,
                 passThrough: true,
                 mapUri: function(req, callback) {
-                    let uri = 'http://' + process.env.BASE_ASSETS  + decodeURIComponent(req.url.path);
+                    let uri = 'http://' + process.env.BASE_ASSETS  + req.url.path;
                     callback(null, uri);
                 }
             });
