@@ -1,0 +1,500 @@
+@font-face {
+	font-family: "Champion";
+	src: 	url(/fashion/styles/fonts/champion-htf-bantamweight.woff) format('woff'), 
+			url(/fashion/styles/fonts/champion-htf-bantamweight.ttf) format('truetype');
+}
+
+#rf_sp15 {
+	display: block;
+	margin: 0 auto;
+	width: 962px;
+	font-family: Arial, helvetica, sans-serif;
+}
+
+#rf_sp15 a,
+#rf_sp15 a:hover,
+#rf_sp15 a:visited,
+#rf_sp15 a:active {
+	color: #000;
+	font-size: 14px;
+}
+
+#rf_sp15 h3 {
+	font-size: 24px;
+	font-weight: 700;
+	margin: 0;
+	padding: 0;
+}
+
+#rf_sp15 p {
+	font-size: 14px;
+	margin:0;
+	padding:0;
+}
+
+#rf_sp15 ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+#rf_sp15 li {
+	text-align: center;
+}
+
+#rug_nav {margin-top: 10px;}
+
+#rug_nav li {
+	display: inline-block;
+	font-size: 10px;
+	font-weight: 700;
+	color: #555;
+	background-color: #cecece;
+	padding: 8px 0;
+	margin: 0 2px 0 0;
+	line-height: 14px;
+	width: 18em;
+	cursor: pointer;
+}
+
+#rug_nav li.active,
+#rug_nav li:hover {
+	background-color: #000;
+	color: #fff;
+}
+
+#rug_nav #navigation-social,
+#rug_nav #navigation-social ul, 
+#rug_nav #navigation-social li {
+	background-color: transparent;
+	font-size: 0;
+	width: auto;
+	padding: 0;
+	margin: 0;
+}
+
+#rug_nav #navigation-social {cursor: default;}
+
+#rug_nav #navigation-social li {
+	width: 18px;
+	height: 18px;
+	padding: 0;
+	margin: 14px 5px 0 0;
+}
+
+	#rf_finder .bg-1 {	background-image: url('/fashion/images/projects/fashion-tips/buying-rug-guide-2016/bg-1.jpg');}
+	#rf_finder .bg-2 {	background-image: url('/fashion/images/projects/fashion-tips/buying-rug-guide-2016/bg-2.jpg');}
+	#rf_finder .bg-3 {	background-image: url('/fashion/images/projects/fashion-tips/buying-rug-guide-2016/bg-3.jpg');}
+	#rf_finder .heading-1 { background-image: url('/fashion/images/projects/fashion-tips/buying-rug-guide-2016/heading-1.png');}
+
+	#rf_finder .low-down { background-image: url('/fashion/images/projects/fashion-tips/buying-rug-guide-2016/low-down.jpg');}
+	#rf_finder .low-down-size { background-image: url('/fashion/images/projects/fashion-tips/buying-rug-guide-2016/low-down-size.jpg');}
+
+	#rf_finder .itemBlock {background-image: url('/fashion/images/projects/fashion-tips/buying-rug-guide-2016/copy-1.jpg');}
+	#rf_guide .ToC .g3 {background-image: url('/fashion/images/projects/fashion-tips/buying-rug-guide-2016/guide-top.jpg');}
+
+	#rf_guide .guide-section .heading {background-image: url('/fashion/images/projects/fashion-tips/buying-rug-guide-2016/guide-left.jpg');}
+
+	#rug_nav #navigation-social li {background-image: url('/fashion/images/projects/fashion-tips/buying-rug-guide-2016/sprite-social.jpg');}
+
+/* ========== FINDER STYLES =========== */
+
+#rf_finder,
+#rf_glossary {
+	margin-top: 5px;
+}
+
+#rf_finder .bg-1 {
+	background-repeat: no-repeat;
+	height: 900px;
+}
+
+#rf_finder .heading-1 { 
+	background-repeat: no-repeat;
+	height: 105px;
+	width: 425px;
+	position: relative;
+	top: 60px;
+	left: 35px;
+}
+
+#rf_finder .rAdjust {
+	margin-right: 3px;
+}
+
+#rf_finder .currentStep {
+	position: relative;
+	float: right;
+	margin-top: 0px;
+	clear: both;
+
+	line-height: 90px;
+	text-align: center;
+	font-family: "Champion", Arial, helvetica, sans-serif;
+	font-size: 30px;
+	vertical-align: middle;
+	letter-spacing: 2px;
+
+	width: 455px;
+	background-color: #000;
+	color: #fff;
+}
+
+#rf_finder .total {
+	color:#797979;
+	margin-right: 50px;
+}
+
+#rf_finder .instruction {
+	font-size: 36px;
+}
+
+#rf_finder .text {
+	margin-right: 10px;
+}
+
+#rf_finder .steps {
+	float: right;
+	clear: both;
+}
+
+#rf_finder .steps li {
+	margin-top: 30px;
+	width: 190px;
+	background-color: #000;
+	color: #fff;
+	cursor: pointer;
+}
+
+#rf_finder .steps h3 {
+	display: table-cell;
+	color: #fff;
+	height: 40px;
+	width: 190px;
+	padding-top: 10px;
+	vertical-align: bottom;
+	text-align: center;
+	font-family: "Champion", Arial, helvetica, sans-serif;
+	font-size: 32px;
+	font-weight: 400;
+}
+
+#rf_finder .steps p {
+	vertical-align: top;
+	height: 32px;
+	font-size: 12px;
+	font-weight: 700;
+}
+
+#rf_finder .low-down,
+#rf_finder .low-down-size {
+	display: block;
+	
+	background-repeat: no-repeat;
+	width: 962px;
+	height: 30px;
+	margin-bottom: 50px;
+}
+
+#rf_finder .subSelect {
+	margin: 30px 0;
+	position: relative;
+}
+
+#rf_finder .subSelect img {
+	position: relative;
+	z-index: 1;
+	display: block;
+	margin: 0 auto;
+}
+
+#rf_finder .subSelect .btn {
+	position: absolute;
+	z-index: 5;
+	background-color: #000;
+	color: #fff;
+	text-align: center;
+	line-height: 40px;
+	cursor: pointer;
+	font-size: 12px;
+	width: 220px;
+}
+
+#rf_finder .subSelect .btn_small {
+	width: 110px;
+}
+
+
+#rf_finder .subSelect .btn:hover {
+	background-color: #fff;
+	color: #000;
+	border: 1px solid #9d9d9d;
+	font-weight: 700;
+	font-size: 12px;
+}
+
+#rf_finder .subSelect .box-1 {left:130px; top:390px;}
+#rf_finder .subSelect .box-2 {left:610px; top:390px;}
+#rf_finder .subSelect .box-3 {left:130px; top:920px;}
+#rf_finder .subSelect .box-4 {left:610px; top:920px;}
+#rf_finder .subSelect .box-5 {left:130px; top:470px;}
+#rf_finder .subSelect .box-6 {left:610px; top:470px;}
+#rf_finder .subSelect .box-7 {left:20px;  top:480px;}
+#rf_finder .subSelect .box-8 {left:360px; top:480px;}
+#rf_finder .subSelect .box-9 {left:720px; top:480px;}
+
+#rf_finder hr {
+	height: 1px;
+	border: none;
+	background-color: #000;
+	margin: 50px 0;
+	width: 100%;
+}
+
+#rf_finder .highlights {
+	margin-bottom: 80px;
+}
+
+#rf_finder .itemBlock {
+	display: block;
+	background-repeat: no-repeat;
+	min-height: 320px;
+}
+
+#rf_finder .item-1 {height: 320px;}
+#rf_finder .item-2 {height: 380px; background-position: 0 -350px;}
+#rf_finder .item-3 {height: 380px; background-position: 0 -750px;}
+#rf_finder .item-4 {height: 380px; background-position: 0 -1135px;}
+#rf_finder .item-5 {height: 380px; background-position: 0 -1535px;}
+
+#rf_finder .item-1 a,
+#rf_finder .item-3 a { left: 305px; top: 220px; font-weight: 700; font-size: 14px;}
+
+#rf_finder .item-3 a {left:330px;top:275px;}
+
+#rf_finder .item-2 a,
+#rf_finder .item-4 a,
+#rf_finder .item-5 a {left: 575px; top: 280px; font-weight: 700; font-size: 14px;}
+
+/* ========== FINDER STEP 2 =========== */
+
+#rf_finder .bg-2 {
+	background-repeat: no-repeat;
+	height: 280px;
+	width:100%;
+}
+
+#rf_finder .bg-3 {
+	background-repeat: no-repeat;
+	height: 280px;
+	width:100%;
+}
+
+#rf_finder .soFar {
+	font-size: 16px;
+	margin-top: 70px;
+	margin-bottom: 10px;
+	width: 455px;
+}
+
+#rf_finder .step-1 .currentStep {
+	margin-top: 70px;
+}
+
+
+/* ========== GUIDE STYLES =========== */
+
+#rf_guide .ToC a {
+	text-decoration: none;
+
+}
+
+#rf_guide .bottomLink,
+#rf_guide .bottomLink:hover,
+#rf_guide .bottomLink:active {
+	margin: 40px auto;
+	display: block;
+	width:100px;
+	text-align: center;
+	font-size: 30px;
+	font-family: "Champion", Arial, helvetica, sans-serif;
+}
+
+#rf_guide .ToC {
+	width: 100%;
+	margin-top: 20px;
+	text-align: justify;
+    -ms-text-justify: distribute-all-lines;
+    text-justify: distribute-all-lines;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #9d9d9d;
+}
+
+#rf_guide .ToC:after {
+    content: '';
+    width: 100%;
+    display: inline-block;
+    font-size: 0;
+    line-height: 0
+}
+
+#rf_guide .ToC .g3 {
+	display: inline-block;
+	width: 33%;
+	background-repeat: no-repeat;
+	height: 140px;
+	cursor: pointer;
+}
+
+#rf_guide .ToC .g3,
+#rf_guide .ToC .g3 h2,
+#rf_guide .ToC .g3 h4,
+#rf_guide .ToC .g3 p {
+	font-size: 0;
+	text-indent: -9999px;
+}
+
+#rf_guide .ToC .heading {cursor: default;}
+#rf_guide .one {background-position: -330px 0;}
+#rf_guide .two {background-position: -660px 0;}
+#rf_guide .three {background-position: 0px -145px;}
+#rf_guide .four {background-position: -330px -145px;}
+#rf_guide .five {background-position: -660px -145px;}
+
+#guide-layout .heading {background-position: 0 -120px;}
+#guide-design .heading {background-position: 0 -240px;}
+#guide-pads .heading {background-position: 0 -350px;}
+#guide-care .heading {background-position: 0 -480px;}
+
+#rf_guide li {
+	text-align: left;
+	padding: 5px 0;
+}
+
+#rf_guide li .left-even {display: inline-block; width:100px; margin: 15px 0 0px 50px;}
+#rf_guide li .middle-even {display: inline-block; width: 30px;}
+#rf_guide li .right-even { display: inline-block; width: auto;}
+
+#rf_guide .guide-section {
+	width: 100%;
+	text-align: justify;
+    -ms-text-justify: distribute-all-lines;
+    text-justify: distribute-all-lines;
+    font-size: 14px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #9d9d9d;
+}
+
+#rf_guide .space {
+	margin-bottom: 20px;
+}
+
+#rf_guide .guide-section h4 {
+	font-size: 12px;
+	font-weight: 800;
+	text-transform: uppercase;
+	margin-top: 30px;
+	margin-bottom: 5px;
+	font-family: Arial, sans-serif;
+	text-align: left;
+}
+
+#rf_guide .guide-section:after {
+    content: '';
+    width: 100%;
+    display: inline-block;
+    font-size: 0;
+    line-height: 0
+}
+
+#rf_guide .guide-section .heading,
+#rf_guide .guide-section .copy {
+	display: inline-block;
+	padding: 0;
+	margin: 20px 0 0 0;
+}
+
+#rf_guide .guide-section .heading {
+	width: 32%;
+	height: 110px;
+	vertical-align: top;
+}
+
+#rf_guide .guide-section .copy {
+	width: 60%;
+	height: auto;
+}
+
+/* ========== GLOSSARY STYLES =========== */
+
+#rf_glossary .group {
+	margin-top: 2px;
+	padding-top: 3px;
+	border-top: 1px solid #9d9d9d;
+}
+
+#rf_glossary .group.spacer {
+	height: 100px;
+}
+
+#rf_glossary .group .letter {
+	display: table-cell;
+	font-family: "Champion", Arial, helvetica, sans-serif;
+	font-size: 70px;
+	text-align: center;
+	position: relative;
+	height: 100%;
+	min-height: 120px;
+	padding-top:30px;
+
+	width: 150px;
+	background-color: #f2f2f2;
+	vertical-align: top;
+}
+
+#rf_glossary .group .copy {
+	display: table-cell;
+	padding-left: 80px;
+}
+
+#rf_glossary h4 {
+	font-size: 14px;
+	font-weight: 700;
+	text-transform: uppercase;
+	margin-top: 30px;
+	margin-bottom: 5px;
+	font-family: Arial, sans-serif;
+}
+
+#rf_glossary p {
+	margin-bottom: 50px;
+}
+
+/* ========== SOCIAL =========== */
+
+#rug_nav #navigation-social li {
+	background-repeat: no-repeat;
+	margin-right: 12px;
+	padding: 2px 2px 0 0;
+}
+
+#rug_nav #rf-facebook {background-position: -4px -4px;}
+#rug_nav #rf-facebook:hover {background-position: -4px -34px;}
+#rug_nav #rf-twitter {background-position: -34px -4px;}
+#rug_nav #rf-twitter:hover {background-position: -34px -34px;}
+#rug_nav #rf-pinterest {background-position: -64px -4px;}
+#rug_nav #rf-pinterest:hover {background-position: -64px -34px;}
+
+/* ========== GENERIC STYLES =========== */
+
+.caps {text-transform: uppercase;}
+.left {float: left;}
+.right {float: right; right: 0;}
+.pA{position: absolute;}
+.pR {position: relative;}
+.pF {position: fixed;}
+
+.seo-text {
+	font-size: 0;
+	text-indent: -9999px;
+}
