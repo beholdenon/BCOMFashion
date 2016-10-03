@@ -99,17 +99,17 @@ $(document).ready(function () {
 
 		// history.replaceState(null,null,url);
 
-		BLOOMIES.coremetrics.cmCreatePageviewTag('fall14_rugsguide--'+$(this).data("cm"), cmProjectCategory);
+		BLOOMIES.coremetrics.cmCreatePageviewTag('fall14_rugsguide--'+ $(this).attr("data-cm"), cmProjectCategory);
 	});
 
 	$('#rug_nav .tab').on('click', function ( ){
 		
 		var navChoice = $(this),
-			cmElementTag;
+			cmElementTag = '';
 
 		if (navChoice.attr('id') !== "navigation-shop" && navChoice.attr('id') !== "navigation-social") {
 
-			cmElementTag = $(this).data("cm");
+			cmElementTag = $(this).attr("data-cm");
 			
 			navChoice.addClass('active').siblings().removeClass('active');
 			$(navChoice.data("link")).show().siblings().hide();
@@ -124,16 +124,13 @@ $(document).ready(function () {
 	$( '#navigation-social a, #navigation-socia-mobile a' ).on('click', function(){
 		BLOOMIES.coremetrics.cmCreatePageElementTag($(this).attr('class'), cmProjectCategory);
 	});
-	$( '#rf_guide a, .highlights a' ).on('click', function(){
-		BLOOMIES.coremetrics.cmCreatePageElementTag($(this).data('cm'), cmProjectCategory);
-	});
 
-	$('.fireElementTag').click(function() {
-        var attrCm = $(this).data('cm');
+	$('.fireElementTag, #rf_guide a, .highlights a').click( function() {
+        var attrCm = $(this).attr('data-cm');
         if ( typeof attrCm === 'string' && attrCm.length > 0 ) {
             BLOOMIES.coremetrics.cmCreatePageElementTag( attrCm, cmProjectCategory );
         }
-      });
+	});
 
 	$('.choice-1').on('click', function () {
 		$(".step-1").hide();
