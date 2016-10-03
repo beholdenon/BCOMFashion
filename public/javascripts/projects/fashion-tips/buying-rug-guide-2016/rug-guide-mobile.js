@@ -8,7 +8,7 @@ $(document).ready(function() {
 	evObj.initMouseEvent("click", true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
 
 	var opt1, opt2,	opt3;
-	// cmProjectCategory = "fall14_rugsguide";
+	cmProjectCategory = "mbl:fall14_rugsguide";
 
 	var lookbookUrl = "http://www.bloomingdales.com/fashion-index/rug-finder-2015.jsp",
 		lookbookUrlBitly = "http://bit.ly/1AoboF4",
@@ -23,6 +23,10 @@ $(document).ready(function() {
 			mobileArrowToggle();	
 		});
 		
+	});
+
+	$(window).load( function() {
+		BLOOMIES.coremetrics.cmCreatePageviewTag(cmProjectCategory + '--find-your-rug', cmProjectCategory);
 	});
 
 	if(BLOOMIES.isTouch){
