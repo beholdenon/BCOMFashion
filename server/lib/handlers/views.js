@@ -71,8 +71,20 @@ module.exports = {
         }
     },
 
-    nonResponsiveCustomHF: {
+    nonResponsive: {
         description: 'Non-responsive layout',
+        notes: 'Server side mobile detection layout',
+        tags: ['non-responsive'],
+        handler: function(req, res) {
+            var requestPath = (req.url.pathname).substring(1),
+                deviceDetectProc = deviceDetectParams(requestPath, req);
+
+            return res.view(deviceDetectProc.view, { args: deviceDetectProc.args, assetsHost: process.env.BASE_ASSETS });           
+        }
+    },
+
+    nonResponsiveCustomHF: {
+        description: 'Non-responsive layout Custom Header and Footer',
         notes: 'Server side mobile detection layout, with custom header & footer',
         tags: ['non-responsive','custom header & footer'],
         handler: function(req, res) {
@@ -82,6 +94,7 @@ module.exports = {
             return res.view(deviceDetectProc.view, { args: deviceDetectProc.args }, { layout: 'nonresponsiveCustomHF'});           
         }
     },
+    
     fallback: {
         description: 'Serve non-responsive standard layout',
         notes: 'This is the default fallback route if not explicitly captured',
