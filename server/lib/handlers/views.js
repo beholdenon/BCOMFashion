@@ -47,6 +47,16 @@ module.exports = {
             return res.view(deviceDetectProc.view, { args: deviceDetectProc.args, assetsHost: process.env.BASE_ASSETS }, { layout: 'responsive' });
         }
     },
+    responsiveDeepLinks: {
+        description: 'Responsive layout with deep link param allowed on end of url, e.g. foo/bar/linkname',
+        notes: 'Serve one code base for any device type',
+        tags: ['responsive'],
+        handler: function(req, res) {
+            var route = req.route.path.substring(1).replace(/{.*?}/,'');
+            var deviceDetectProc = deviceDetectParams(route, req);
+            return res.view(deviceDetectProc.view, { args: deviceDetectProc.args, assetsHost: process.env.BASE_ASSETS }, { layout: 'responsive' });
+        }
+    },
 
     responsiveCustomHF: {
         description: 'Responsive custom Header&Footer layout',

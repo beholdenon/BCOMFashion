@@ -64,7 +64,7 @@ module.exports = function(grunt) {
                     './build/hideLevel.js',
                     './build/coremetrics.js'
                 ],
-                templateData: './server/lib/views/navdata.js',
+                templateData: './.tmp/navdata.js',
                 partials: ['./server/lib/views/partials/leftnav.hbs',
                     './server/lib/views/partials/breadcrumbs.hbs',
                     './server/lib/views/partials/title.hbs',
@@ -75,6 +75,23 @@ module.exports = function(grunt) {
 
                 ]
             }
+        },
+        sprite: {
+            mobileApp: {
+                src: [
+                    '<%= node.source %>/public/images/projects/mobile-app/*.png',
+                    ],
+                dest: '<%= node.source %>/public/images/projects/mobile-app/project-sprites.png',
+                destCss: '<%= node.source %>/public/images/projects/mobile-app/project-sprites.css'
+            },
+            waysToShop: {
+                src: [
+                    '<%= node.source %>/public/images/projects/ways-to-shop/*.png'
+                ],
+                dest: '<%= node.source %>/public/images/projects/ways-to-shop/project-sprites.png',
+                destCss: '<%= node.source %>/public/images/projects/ways-to-shop/project-sprites.css'
+            }
+
         },
         htmlSnapshot: {
             all: {
@@ -180,7 +197,11 @@ module.exports = function(grunt) {
             ],
             projectFolderImages: [
                 '<%= node.destination %>/public/images/projects'+PROJECT_DIR
-            ],            
+            ],
+            projectSprites: [
+                '<%= node.source %>/public/images/projects/**/project-sprites.png',
+                '<%= node.source %>/public/images/projects/**/project-sprites.css',
+            ],
             options: {
                 force: true,
                 deleteEmptyFolders: false,
@@ -233,7 +254,9 @@ module.exports = function(grunt) {
                         'public/favicon.ico', 
                         'public/images/**',
                         'public/styles/fonts/**',
-                        'public/assets/**'
+                        'public/assets/**',
+                        'public/styles/projects/**/*.png',
+                        'public/styles/projects/**/*.jpg'
                     ],
                     dest: '<%= node.destination %>/'
                 }, {
@@ -355,6 +378,7 @@ module.exports = function(grunt) {
                         expand: true,
                         src: [
                             './server/lib/views/about-us/**/*.hbs',
+                            './server/lib/views//**/*.hbs',
                             './server/lib/views/media/about/**/*.hbs'
                         ],
                         rename: function(dest, src) {
@@ -727,6 +751,9 @@ module.exports = function(grunt) {
                 logConcurrentOutput: true
             }
         }        
+    });
+    grunt.registerTask('projectSprites', 'Create sprite files for projects', function() {
+        grunt.task.run(['clean:projectSprites','sprite']);
     });
     grunt.registerTask('createMobile', 'copy:createMobile');
     grunt.registerTask('default', 'build');
