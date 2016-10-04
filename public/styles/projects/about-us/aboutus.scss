@@ -435,9 +435,8 @@ DIV {
         .LBHeading {
             white-space:normal;
         }
-        .row {
-            text-align: center;
-        }
+
+
         .main {
          //   padding:20px;
         }
@@ -457,10 +456,10 @@ DIV {
         }
         #smallDart {display:none}
         #bigDart {display:block}
-        .line {
+/*        .line {
             margin-left: auto;
             margin-right: auto;
-        }
+        }*/
         IMG.left_pic {
             margin: 0;
             height: 300px;
@@ -504,6 +503,13 @@ DIV {
     .m_break {
         display:none;
     }
+    @media (max-width: 376px) {
+        .sm-centered {
+          text-align: center;
+          margin-left: auto;
+          margin-right: auto;
+        }
+    }
     @media (max-width: 736px) {
         #smallDart {display:none}
         #bigDart {display:block}
@@ -514,10 +520,10 @@ DIV {
 /*        .row {
             text-align: center;
         }*/
-        .line {
+/*        .line {
             margin-left:auto;
             margin-right:auto;
-        }
+        }*/
         IMG.left_pic {
             margin:0;
         }
