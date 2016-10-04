@@ -746,6 +746,16 @@ require(['jquery', 'backbone'], function($, Backbone){
         },
         defaultAction: function(lang){
 
+            var aliases = {
+              japan : 'jp',
+              china : 'ch',
+              korea : 'ko'
+            };
+
+            if (aliases[lang]){
+                lang = aliases[lang];
+            }
+
             var savedLang = localStorage.getItem('hawaii_15_languageChoice');
             console.log('lang = ', lang, savedLang);
 
