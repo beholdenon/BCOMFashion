@@ -84,7 +84,7 @@ new file: "foo-mobile.hbs"
 In the above case, if foo-mobile already exists, grunt createMobile will do nothing. 
 This is so that on a case by case basis you can have files for mobile that are either
 just copies of the original or are hand customized. If you have changed
-the original file and you want grunt to update the mobile file, delete it.
+the original file and you want grunt to update the mobile file, delete the mobile file.
 The grunt createMobile task will not touch the file if it already exists.
 
 ###Coremetrics
