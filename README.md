@@ -103,6 +103,28 @@ be used by coremetrics.js to initialize with the right data.
 <div id="cmdata"  data-pageid="lp-xx-xx-xx.bcrf" data-categoryid="lp-xx-xx-xx"></div>
 ```
 
+## Routing
+
+### Deep Links
+
+The page currently at /landing-page/hawaii-ala-moana has deep links implemented via 
+Backbone on the client side. For example
+```
+/landing-page/hawaii-ala-moana/jp
+```
+
+displays the page with Japanese text. In order to set up the server so that Backbone
+handles the "jp" param, you need to tell the server to ignore this param like so (in index.js):
+```
+ { 
+   method: 'GET',  
+   path: '/landing-page/hawaii-ala-moana/{deeplinks?}',          
+   config: require('./lib/handlers/views').fallback },
+ }
+```
+
+The 'fallback' handler will strip out the {deeplinks?} piece and then proceed as usual. 
+
 ## Generating sprite files for projects
 
 You can tell grunt to create a sprite file containing all of the images in a particular
