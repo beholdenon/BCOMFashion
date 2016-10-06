@@ -342,7 +342,21 @@ require(['jquery', 'backbone'], function($, Backbone){
     }
     /* jshint ignore:end */
 
-
+    function switchLanguageMobile ( opt ) {
+        var clickSource = 'dropdown-nav_';
+        $( '.enMobileContent, .jpMobileContent, .cnMobileContent, .koMobileContent' ).css({ 'display' : 'none' });
+        $( '.' + opt + 'MobileContent' ).css({ 'display' : 'block' });
+        languageControl.currentLang = opt;
+        localStorage.setItem( 'mbl_hawaii_languageChoice', opt );
+        if($( '#mobileLanguageOverlay' ).is(':visible')) {
+            $( '#mobileLanguageOverlay' ).css({ 'display' : 'none' });
+            $( 'body' ).removeClass('languageOverlayActive');
+            clickSource = '';
+        }
+        /* jshint ignore:start */
+        coreMetrics("Element",namespace.coremetrics, clickSource + 'language_' + languageControl.name[opt] );
+        /* jshint ignore:end */
+    }
 
     function initMobile(){
 
@@ -436,21 +450,7 @@ require(['jquery', 'backbone'], function($, Backbone){
                 }
                 acts.nav( 'hide' );
             },
-            language: function ( opt ) {
-                var clickSource = 'dropdown-nav_';
-                $( '.enMobileContent, .jpMobileContent, .cnMobileContent, .koMobileContent' ).css({ 'display' : 'none' });
-                $( '.' + opt + 'MobileContent' ).css({ 'display' : 'block' });
-                languageControl.currentLang = opt;
-                localStorage.setItem( 'mbl_hawaii_languageChoice', opt );
-                if($( '#mobileLanguageOverlay' ).is(':visible')) {
-                    $( '#mobileLanguageOverlay' ).css({ 'display' : 'none' });
-                    $( 'body' ).removeClass('languageOverlayActive');
-                    clickSource = '';
-                }
-                /* jshint ignore:start */
-                coreMetrics("Element",namespace.coremetrics, clickSource + 'language_' + languageControl.name[opt] );
-                /* jshint ignore:end */
-            }
+            language: switchLanguageMobile
         };
 
         // init root container...
@@ -776,12 +776,14 @@ require(['jquery', 'backbone'], function($, Backbone){
             var ok = true;
             try {
                 localStorage.setItem( 'hawaii_15_languageChoice', lang );
+                localStorage.setItem( 'mbl_hawaii_languageChoice', lang );
             } catch (e) {
                 console.log('Error trying to save data to the localStorage. If you are using Private Navigation this might be the reason. Error:', e);
                 ok = false;
             }
             if (! ok) {
                 switchLanguage(lang);
+                switchLanguageMobile(lang);
             }
         }
     });
