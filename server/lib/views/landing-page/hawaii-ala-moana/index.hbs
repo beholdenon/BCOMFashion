@@ -1,8 +1,12 @@
 <!-- {pageTitle: "Hawaii Ala Moana", pageLabel:"Hawaii Ala Moana | Bloomingdale's"} -->
 {{{coremetrics 'fall15_hawaii--hp' 'fall15_hawaii'}}}
-{{title}}
+{{>title}}
 <meta name="description" content="Aloha Hawaii! Bloomingdale’s department store is conveniently located at Ala Moana Center, Honolulu. Check out the special events and special offers online!">
 <style type="text/css">
+DIV.row.collapse.mod_row {
+    width:100%;
+    max-width:100%;
+}
 /* header */
 	#hawaii_f15_desktop_main_container > .header15{
 		height: auto;
@@ -13,29 +17,35 @@
 	#hawaii_f15_desktop_main_container > .header15 > img{
 		width: 100%;
 	}
-	#hawaii_f15_desktop_main_container > ul{
+	#hawaii_f15_desktop_main_container > ul {
 		list-style-type: none;
-}
-
-#hawaii_f15_desktop_main_container > .header15 > h1 {
-    position: absolute;
-    width: 100%;
-    left: 0;
-    top: 54.5%;
-    text-align: center;
-    font-size: 99px;
-    color: #FFF;
-    font-weight: 700;
-    line-height: 24px;
-    letter-spacing: 25px;}
+  }
+	A.desktop-artwork-link:hover {
+	   color:#000;
+	}	
+	#hawaii_f15_desktop_main_container > .header15 > h1 {
+	    position: absolute;
+	    width: 100%;
+	    left: 0;
+	    top: 54.5%;
+	    text-align: center;
+	    font-size: 99px;
+	    color: #FFF;
+	    font-weight: 700;
+	    line-height: 24px;
+	    letter-spacing: 25px;
+	}
     
-header15, .footer15 { 
-	position: relative;
-	z-index: 10;
-}    
-.bl_mobile DIV.footer15 {
-     display:none;
-}
+	.header15, .footer15 { 
+		position: relative;
+		z-index: 10;
+	}    
+	.bl_mobile DIV.footer15 {
+	     display:none;
+	}
+	.newLayout  #bl_main_container {
+      max-width: 100%;
+  }
 	
 </style>
 <div id="bl_main_wrapper" class="newLayout">
