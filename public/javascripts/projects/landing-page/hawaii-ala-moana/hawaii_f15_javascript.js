@@ -747,6 +747,7 @@ require(['jquery', 'backbone'], function($, Backbone){
         defaultAction: function(lang){
 
             var aliases = {
+              en    : 'eng',
               japan : 'jp',
               china : 'ch',
               korea : 'ko'
