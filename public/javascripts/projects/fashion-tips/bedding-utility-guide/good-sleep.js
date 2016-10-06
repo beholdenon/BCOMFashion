@@ -1,5 +1,7 @@
 
-(function(window) {
+// (function(window) {
+
+require( [ 'jquery', window.BLOOMIES.coremetrics ], function ( $, Coremetrics ) {	
 	document.body.className += ' fall15_utilityfinder_loading';
 
 	var $ = jQuery,
@@ -52,7 +54,6 @@
 	};
 
 	var Coremetrics = (function() {
-
 		var opts = {
 			debug: false,
 			mobile: false,
@@ -96,7 +97,7 @@
 				console.log('Coremetrics', tagFunction, categoryName, tagValue, cmAttributes);
 			}
 			try {
-				BLOOMIES.coremetrics[tagFunction](tagValue, categoryName, cmAttributes);
+				Coremetrics[tagFunction](tagValue, categoryName, cmAttributes);
 			}
 			catch(e) {
 				console.log('Coremetrics is not enabled');
@@ -935,7 +936,9 @@
 
 	// Listenrs
 
-}(window));
+
+});
+// }(window));
 
 /**
  * jQuery.browser.mobile (http://detectmobilebrowser.com/)
