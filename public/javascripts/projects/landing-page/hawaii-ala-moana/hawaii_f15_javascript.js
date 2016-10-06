@@ -747,18 +747,13 @@ require(['jquery', 'backbone'], function($, Backbone){
         defaultAction: function(lang){
 
             var aliases = {
-              en    : 'eng',
+              eng    : 'en',
               japan : 'jp',
               china : 'ch',
               korea : 'ko'
             };
 
-            if (aliases[lang]){
-                lang = aliases[lang];
-            }
-
             var savedLang = localStorage.getItem('hawaii_15_languageChoice');
-            console.log('lang = ', lang, savedLang);
 
             if (typeof languageControl.name[lang] === 'undefined'){
                 lang = '';
@@ -772,6 +767,10 @@ require(['jquery', 'backbone'], function($, Backbone){
             if (!lang){
                 lang = savedLang;
             }
+            if (aliases[lang]){
+                lang = aliases[lang];
+            }
+
             languageControl.currentLang = lang;
 
             var ok = true;
@@ -782,10 +781,10 @@ require(['jquery', 'backbone'], function($, Backbone){
                 console.log('Error trying to save data to the localStorage. If you are using Private Navigation this might be the reason. Error:', e);
                 ok = false;
             }
-            if (! ok) {
+            //if (! ok) {
                 switchLanguage(lang);
                 switchLanguageMobile(lang);
-            }
+            //}
         }
     });
 
