@@ -543,19 +543,19 @@
 		module.answers = null;
 		module.menu = null;
 		module.links = {
-			'on-my-side:down':                '//www.bloomingdales.com/shop/home/designer-down-pillows-comforters/Bed_type,Fill_type,Pillow_density/Pillow,Duck%20Down,Firm?id=1004679',
-			'on-my-side:down-alternative':    '//www.bloomingdales.com/shop/home/designer-down-pillows-comforters/Bed_type,Fill_type,Pillow_density/Pillow,Down%20Alternative,Firm?id=1004679',
-			'on-my-side:memory-foam':         '//www.bloomingdales.com/shop/home/designer-down-pillows-comforters/Bed_type,Fill_type,Pillow_density/Pillow,Memory%20Foam,Firm?id=1004679',
-			'on-my-back:down':                '//www.bloomingdales.com/shop/home/designer-down-pillows-comforters/Bed_type,Fill_type,Pillow_density/Pillow,Duck%20Down,Medium?id=1004679',
-			'on-my-back:down-alternative':    '//www.bloomingdales.com/shop/home/designer-down-pillows-comforters/Bed_type,Fill_type,Pillow_density/Pillow,Down%20Alternative,Medium?id=1004679',
-			'on-my-back:memory-foam':         '//www.bloomingdales.com/shop/home/designer-down-pillows-comforters/Bed_type,Fill_type,Pillow_density/Pillow,Memory%20Foam,Medium?id=1004679',
-			'on-my-stomach:down':             '//www.bloomingdales.com/shop/home/designer-down-pillows-comforters/Bed_type,Fill_type,Pillow_density/Pillow,Duck%20Down,Soft?id=1004679',
-			'on-my-stomach:down-alternative': '//www.bloomingdales.com/shop/home/designer-down-pillows-comforters/Bed_type,Fill_type,Pillow_density/Pillow,Down%20Alternative,Soft?id=1004679',
-			'on-my-stomach:memory-foam':      '//www.bloomingdales.com/shop/home/designer-down-pillows-comforters/Bed_type,Fill_type,Pillow_density/Pillow,Memory%20Foam,Soft?id=1004679',
-			'warm-and-cozy:yes':              '//www.bloomingdales.com/shop/home/designer-down-pillows-comforters/Bed_type,Comforter_weight,Fill_type/Comforter,Heavy|Medium,Down Alternative?id=1004679',
-			'warm-and-cozy:no':               '//www.bloomingdales.com/shop/home/designer-down-pillows-comforters/Bed_type,Comforter_weight,Fill_type/Comforter,Heavy|Medium,Duck Down?id=1004679',
-			'a-little-cooler:yes':            '//www.bloomingdales.com/shop/home/designer-down-pillows-comforters/Bed_type,Comforter_weight,Fill_type/Comforter,Light|Medium,Down Alternative?id=1004679',
-			'a-little-cooler:no':             '//www.bloomingdales.com/shop/home/designer-down-pillows-comforters/Bed_type,Comforter_weight,Fill_type/Comforter,Light|Medium,Duck Down?id=1004679'
+			'on-my-side:down':                '//www.bloomingdales.com/shop/home/designer-down-pillows-comforters/Bed_type,Fill_type,Pillow_density,Productsperpage/Pillow,Duck%20Down%7CAllergy%20Free%20Down%7CFeather%2FDown,Firm,180?id=1004679',
+			'on-my-side:down-alternative':    '//www.bloomingdales.com/shop/home/designer-down-pillows-comforters/Bed_type,Fill_type_site,Pillow_density_site/Pillow,Down Alternative,Firm?id=1004679',
+			'on-my-side:memory-foam':         '//www.bloomingdales.com/shop/home/designer-down-pillows-comforters/Bed_type,Fill_type_site,Pillow_density_site/Pillow,Memory Foam,Firm?id=1004679',
+			'on-my-back:down':                '//www.bloomingdales.com/shop/home/designer-down-pillows-comforters/Bed_type,Fill_type,Pillow_density,Productsperpage/Pillow,Duck%20Down%7CAllergy%20Free%20Down%7CFeather%2FDown,Medium,180?id=1004679',
+			'on-my-back:down-alternative':    '//www.bloomingdales.com/shop/home/designer-down-pillows-comforters/Bed_type,Fill_type_site,Pillow_density_site/Pillow,Down Alternative,Medium|Medium%2FFirm|Soft%2FMedium?id=1004679',
+			'on-my-back:memory-foam':         '//www.bloomingdales.com/shop/home/designer-down-pillows-comforters/Bed_type,Fill_type_site,Pillow_density_site/Pillow,Memory Foam,Medium|Medium%2FFirm?id=1004679',
+			'on-my-stomach:down':             '//www.bloomingdales.com/shop/home/designer-down-pillows-comforters/Bed_type,Fill_type,Pillow_density,Productsperpage/Pillow,Duck%20Down%7CAllergy%20Free%20Down%7CFeather%2FDown,Soft,180?id=1004679',
+			'on-my-stomach:down-alternative': '//www.bloomingdales.com/shop/home/designer-down-pillows-comforters/Bed_type,Fill_type_site,Pillow_density_site/Pillow,Down Alternative,Soft?id=1004679',
+			'on-my-stomach:memory-foam':      '//www.bloomingdales.com/shop/home/designer-down-pillows-comforters/Bed_type,Fill_type_site,Pillow_density_site/Pillow,Memory Foam,Soft?id=1004679',
+			'warm-and-cozy:yes':              '//www.bloomingdales.com/shop/home/designer-down-pillows-comforters/Bed_type,Comforter_weight,Fill_type,Productsperpage/Comforter,Heavy%7CMedium,Down%20Alternative%7CAllergy%20Free%20Down,180?id=1004679',
+			'warm-and-cozy:no':               '//www.bloomingdales.com/shop/home/designer-down-pillows-comforters/Bed_type,Comforter_weight_site,Fill_type_site/Comforter,Heavy|Medium,Duck Down?id=1004679',
+			'a-little-cooler:yes':            '//www.bloomingdales.com/shop/home/designer-down-pillows-comforters/Bed_type,Comforter_weight,Fill_type,Productsperpage/Comforter,Light%7CMedium,Down%20Alternative%7CAllergy%20Free%20Down,180?id=1004679',
+			'a-little-cooler:no':             '//www.bloomingdales.com/shop/home/designer-down-pillows-comforters/Bed_type,Comforter_weight_site,Fill_type_site/Comforter,Light|Medium,Duck Down?id=1004679'
 		};
 
 		// Load the Mobile CSS
