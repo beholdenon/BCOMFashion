@@ -119,5 +119,27 @@
 				padding-bottom: 25px;
 			}
 		}
-	} 
+	}
+	.registry-bp-bottom-section {
+
+		margin-top: 10vw;
+
+		.registry-bp-back-top-arrow {
+			text-align: center;
+		    font-size: 10vw;
+		    margin-bottom: -8.33vw;
+		}
+
+		.registry-bp-back-to-top-button {
+		    display: block;
+		    text-align: center;
+		    background-color: #000;
+		    color: #fff;
+		    font-family: Avenir;
+		    text-decoration: none;
+		    padding: 20px;
+		    font-size: 4.60625vw;
+		    letter-spacing: 0.2em; 
+		}
+	}
 }
