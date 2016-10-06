@@ -103,6 +103,11 @@ be used by coremetrics.js to initialize with the right data.
 <div id="cmdata"  data-pageid="lp-xx-xx-xx.bcrf" data-categoryid="lp-xx-xx-xx"></div>
 ```
 
+In order to get the Grunt task to process your hbs file, also check to see
+if the folder is listed in the 'string-replace:dist' task. If this folder
+is not listed, the mobile page will not get 'mbl:' prepended to the 
+coremetrics data element.
+
 ## Generating sprite files for projects
 
 You can tell grunt to create a sprite file containing all of the images in a particular
