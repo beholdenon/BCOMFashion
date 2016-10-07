@@ -1,5 +1,5 @@
-##Prerequisite Software Installations
---------------------------------------
+#Software Installation
+
 1.  [Git Bash](https://git-scm.com/)
 
 2.  [nodeJS 4.4.4](https://nodejs.org/en/download/)
@@ -17,8 +17,8 @@
 6.  **Compass**: in terminal run ```gem update --system ; gem install compass```
 
 
-##Project Setup
-----------------
+#Project Setup
+
 1. Clone *BCOMFashion* repo: ```git clone git@code.devops.fds.com:CAP/BCOMFashion.git```
 
 2. In **.env** file, edit ```NODE_ENV=dev```
@@ -28,8 +28,8 @@
 4. Start the application: in terminal run ```grunt``` and  it will open automatically the browser; otherwise, check terminal for server address (eg. [http://localhost:3000](http://localhost:3000)).
 
 
-##Development Workflow
-----------------------
+#Development Workflow
+
 Develop in a *FEATURE/B-xxxxx* branch. A code push to remote will trigger [Jenkins Review](http://web-ci.devops.fds.com/jenkins/view/BCOMFashion/view/test/job/BCOM_test_REVIEW/) job (incl. unit-tests and func-tests): 
 
 *test* branch is the staging branch. Merge Request from the *FEATURE/B-xxxxx* to *test* will trigger a [Jenkins Deploy](http://web-ci.devops.fds.com/jenkins/view/BCOMFashion/view/test/job/BCOM_test_DEPLOY/) job. At the completion, server-side code will be deployed to Heroku and front-end code to NetStorage (location: http://netstorage.bloomingdales.com/netstorage/fashion/dev). Application can be accessed at http://fashion-test.bloomingdales.com/.   
@@ -38,8 +38,8 @@ Develop in a *FEATURE/B-xxxxx* branch. A code push to remote will trigger [Jenki
 At UAT sign-off, an artifact version is provided to RE for production deployment. 
 
 
-##CI-CD Workflow
------------------
+#CI-CD Workflow
+
 - Repo in [Gitlab](https://code.devops.fds.com/CAP/BCOMFashion).
 - CI [Jenkins](http://web-ci.devops.fds.com/jenkins/view/BCOMFashion/)
 - Artifact repo - [Artifactory](http://ci-artifacts.devops.fds.com/macys-release-local/com/macys/BCOMFashion/BCOMFashion/) 
@@ -50,10 +50,15 @@ At UAT sign-off, an artifact version is provided to RE for production deployment
     - Production: [fashion](https://dashboard.heroku.com/apps/fashion)
 
 
-###Adding New Pages
--------------------
+#Adding New Pages
+
 The body of new pages will usually be created under
-``` server/lib/view/name-of-page/index.hbs```
+``` 
+server/lib/views/project-name/name-of-page/index.hbs
+```
+
+It is necessary to use the '.hbs' extension in order for
+grunt-compile-handlebars to process the page. 
 
 You can use the following handlebars partials:
 
@@ -69,7 +74,7 @@ pieces of data to the page. Do this by adding a comment at the top, like this:
 
 When grunt is run, html pages will be generated from the hbs files. 
 
-##Adding New Mobile Pages with grunt createMobile
+#Adding New Mobile Pages with grunt createMobile
 
 For all files with an .hbs extension, the grunt "createMobile" task checks to
 see if there is a file with the same name + "-mobile". If there isn't,
@@ -87,7 +92,12 @@ just copies of the original or are hand customized. If you have changed
 the original file and you want grunt to update the mobile file, delete the mobile file.
 The grunt createMobile task will not touch the file if it already exists.
 
-###Coremetrics
+The mobile file will simply be a copy of the regular html file, EXCEPT all
+the coremetrics partial (if it exists) will get changed so that the categoryid
+and pageid get prepended with 'mbl:'. So, no additional work is necessary
+for getting coremetrics mobile to work.
+
+#Coremetrics
 
 In order to add coremetrics data to a page, you need to add the following
 handlebars partial to the .hbs file.
@@ -97,13 +107,25 @@ handlebars partial to the .hbs file.
 ```
 
 This will output a tag (after compilation) like the following, which will 
-be used by coremetrics.js to initialize with the right data.
+be used by coremetrics.js to initialize a PageView coremetric tag with the right data.
 
 ```
 <div id="cmdata"  data-pageid="lp-xx-xx-xx.bcrf" data-categoryid="lp-xx-xx-xx"></div>
 ```
 
-## Routing
+Coremetrics.js also will create an element tag for any element which has a data-cm attribute.
+
+Example of an html element with a data-cm attribute that coremetrics will create an coremetric
+element tag for (from store-events-ways-to-shop.index.hbs):
+
+```
+<a href="http://www1.bloomingdales.com/media/about/mobile.jsp?cm_sp=ways_to_shop-_-n-_-APP_Learn_More"
+   data-cm="ways_to_shop-_-n-_-APP_Learn_More">
+```
+
+
+
+# Routing
 
 ### Deep Links
 
@@ -125,7 +147,7 @@ handles the "jp" param, you need to tell the server to ignore this param like so
 
 The 'fallback' handler will strip out the {deeplinks?} piece and then proceed as usual. 
 
-## Generating sprite files for projects
+# Generating sprite files for projects
 
 You can tell grunt to create a sprite file containing all of the images in a particular
 folder. First, update the grunt 'sprite' task with the folder information. Then run
@@ -137,21 +159,21 @@ grunt projectSprites
 This will generate the files 'project-sprites.png' and 'project-sprites.css'. See
 the mobile-app project for an example.
 
-## Checking links in files
+# Checking links in files
 
 The grunt task "checkPages" can be used to check that all links in a given
 page or path are valid links. Add files or paths to the pageUrls array
 in the checkPages task in gruntfile.js to let the task know which 
 pages to check.
 
-## Using ES6 in client files
+# Using ES6 in client files
 
 In Webstorm, Files -> Settings -> Languages & Frameworks -> Javascript language version = ECMAScript 6
 
 Create a source file named with a filename extension of ".es6". When you run grunt, this will automatically
 be compiled via babel to an ES5 file with the same name + "-compiled.js". 
 
-## Using Foundation Reveal
+# Using Foundation Reveal
 
 Reveal is Foundation's modal. See the file personal-shopper-complimentary-service as an example. 
 Because the Foundation version used at Macy's doesn't get initialized, we need to pull in a 
@@ -160,7 +182,7 @@ separate version, see code in above page. Foundation.min.js contains the Reveal 
 In addition, the Foundation reveal css needs to be added to any page using the modal, see above
 example.
 
-###Using The Bloomies LeftNav component
+#Using The Bloomies LeftNav component
 
 This project currently does NOT use the MacysUI LeftNav component. However,
 it does use config files that are compatible with single level menus using
@@ -205,18 +227,3 @@ And, it also needs to run the drawMenus method on startup:
     );
 ```   
 
-### Using ES6 on client files
-
-In Webstorm, Files -> Settings -> Languages & Frameworks -> Javascript language version = ECMAScript 6
-
-Create a source file named with a filename extension of ".es6". When you run grunt, this will automatically
-be compiled via babel to an ES5 file with the same name + "-compiled.js". 
-
-### Using Foundation Reveal
-
-Reveal is Foundation's modal. See the file personal-shopper-complimentary-service as an example. 
-Because the Foundation version used at Macy's doesn't get initialized, we need to pull in a 
-separate version, see code in above page. Foundation.min.js contains the Reveal modal. 
-
-In addition, the Foundation reveal css needs to be added to any page using the modal, see above
-example.

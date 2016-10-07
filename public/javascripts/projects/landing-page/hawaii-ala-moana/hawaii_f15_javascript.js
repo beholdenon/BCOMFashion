@@ -270,7 +270,7 @@ require(['jquery', 'backbone'], function($, Backbone){
     }
 
     function switchLanguage(langChoice){
-        $( '.engContent, .jpContent, .cnContent, .koContent' ).css({ 'display' : 'none' });
+        $( '.enContent, .jpContent, .cnContent, .koContent' ).css({ 'display' : 'none' });
         $( '.' + langChoice + 'Content' ).css({ 'display' : 'block' });
     }
 
