@@ -283,6 +283,9 @@ require(['jquery', 'backbone'], function($, Backbone){
     }
 
     function stickyNav(){
+
+        if ($('.bl_tablet').length > 0){return;}
+
         if($(window).scrollTop() < ($('#'+ namespace.projectGlobalPrefix +'_desktop_nav_placeholder').offset().top)){
             $('#'+ namespace.projectGlobalPrefix +'_desktop_nav').css({
                 'position':'relative',
@@ -781,10 +784,10 @@ require(['jquery', 'backbone'], function($, Backbone){
                 console.log('Error trying to save data to the localStorage. If you are using Private Navigation this might be the reason. Error:', e);
                 ok = false;
             }
-            //if (! ok) {
+            if (! ok) {
                 switchLanguage(lang);
                 switchLanguageMobile(lang);
-            //}
+            }
         }
     });
 
