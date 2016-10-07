@@ -425,9 +425,10 @@ DIV {
 .about_us {
     .LBHeading {
         font-family: Georgia, 'Times New Roman', serif;
-        font-size: 2.5rem;
+        font-size: 3.5rem;
         white-space: nowrap;
         line-height:1.2;
+        letter-spacing: 0.02rem;
     }
 }
 @mixin ways_mobile {
