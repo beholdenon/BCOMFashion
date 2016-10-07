@@ -10,15 +10,14 @@ require([
 ], function($, Coremetrics) {
 
 	var APP = {
-		cm: 'BWEDD_Registry_Home',
-		cmElementCat: 'BWEDD_WHY_REGISTER'
+		cm: 'MBL:BWEDD_Registry_Home'
 	};
 
 	APP.init = function () {
 		var self = this;
 
 		self.listeners();
-		Coremetrics.pageViewTag( 'BWEDD_Why_Register', self.cm );
+		Coremetrics.pageViewTag( 'mbl:BWEDD_Why_Register', self.cm );
 	};
 
 	APP.listeners = function () {
@@ -27,9 +26,17 @@ require([
 			event.preventDefault();
 			event.stopPropagation();
 
+			var elementCM = {
+				elementID: 'mbl: back-to-top',
+				elementCategory: APP.cm
+			};
+
 			$('html, body').animate({
 	            scrollTop: 0
 	        }, 'slow' );
+
+	        Coremetrics.elementTag(elementCM);
+
 		});
 	};
 
