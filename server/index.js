@@ -34,6 +34,7 @@ var routes = [
     { method: 'POST', path: '/addToBag/{path*}',                                    config: require('./lib/handlers/api').addbag },
     { method: 'GET',  path: '/fashion/{path*}',                                     config: require('./lib/handlers/assets').netstorage },
     { method: 'GET',  path: '/registry/wedding/benefits-perks/',                    config: require('./lib/handlers/views').nonResponsive },
+    { method: 'GET',  path: '/registry/wedding/checklist/',                         config: require('./lib/handlers/views').nonResponsive },
     { method: 'GET',  path: '/img/{path*}',                                         config: require('./lib/handlers/assets').commonAssets },
     { method: 'GET',  path: '/web20/assets/{path*}',                                config: require('./lib/handlers/assets').commonAssets },
     { method: 'GET',  path: '/shop/flyout/{path*}',                                 config: require('./lib/handlers/assets').commonAssets },
