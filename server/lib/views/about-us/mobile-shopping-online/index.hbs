@@ -39,12 +39,12 @@
         margin-right:20px;
         margin-left:20px;
         padding-top:40px;
-        padding-left:18px;
-        padding-right:18px;
+        padding-left:13px;
+        padding-right:13px;
     }
     .bl_mobile  .subitem {
         width:inherit;
-        font-size:1.3rem;
+        font-size:1.2rem;
         line-height:1.5;
     }
     .bl_mobile  .LBHeading {
@@ -67,6 +67,11 @@
         margin-top:10px;
         width:260px;
     }
+    .bl_mobile .app_logos {
+        margin-top:10px;
+        width:inherit;
+    }
+
     .app_logos TD {
         padding-left:4px;
         padding-right:4px;
@@ -83,16 +88,19 @@
     .right .m_icon {
         float: right;
     }
-    div[class^="icon-"]  {
+    DIV[class^="icon-"]  {
         margin-top:-40px;
         margin-bottom:15px;
     }
-    div[class^="icon-"].icon_left {
+    DIV[class^="icon-"].icon_left {
         margin-left:-25px;
         margin-top:-25px;
     }
-    div[class^="icon-"].icon_right {
+    DIV[class^="icon-"].icon_right {
         margin-right:-35px;
+    }
+    .bl_mobile DIV.mobile_hide {
+        display:none;
     }
 </style>
 <div class="about_us ways_to_shop mobile_app">
@@ -146,16 +154,18 @@
                                     <img src="/fashion/images/projects/mobile-app/app_store.png">
                                 </a>
                             </td>
-                            <td><div style="width:30px"></div></td>
+                            <td></td>
                             <td>
                                 <a id="dgp" href="http://app.appsflyer.com/com.bloomies.android?pid=bcom_mobile_page&amp;c=Androidlink" target="_blank">
                                   <img src="/fashion/images/projects/mobile-app/google_app.png">
                                 </a>
                             </td>
                         </tr></table>
-                        <div class="hshim"></div>
-                        <div class="hshim"></div>
-                        <div class="hshim"></div>
+                        <div class="mobile_hide">
+                          <div class="hshim"></div>
+                          <div class="hshim"></div>
+                          <div class="hshim"></div>
+                        </div>
                     </div>
 
                     <div  class="item hide-for-small"
@@ -216,7 +226,7 @@
                         </div>
                     </div>
 
-                    <div class="item right" style="background:url('/fashion/images/projects/mobile-app/guides.png') no-repeat right; background-size:243px;">
+                    <div class="item right" style="background:url('/fashion/images/projects/mobile-app/guides.png') no-repeat right; background-size:243px; margin-bottom:30px;">
                         <div class="icon-guide_icon icon_right"></div>
                         <div class="LBHeading">Store Guides</div>
                         <div class="subitem">
@@ -244,7 +254,7 @@
                     <div class="item right"
                          style="padding-left:0px; background:url('/fashion/images/projects/mobile-app/manage.png') no-repeat right; background-size:243px; margin-bottom:30px">
                         <div class="icon-manage_icon icon_right"></div>
-                        <div class="LBHeading" style="font-size:2.0rem">Manage All Your Accounts</div>
+                        <div class="LBHeading" style="font-size:2.1rem">Manage All Your Accounts</div>
                         <div class="subitem">
                             Easily look up and redeem Reward Cards, pay your bill and update your preferences.
                         </div>
