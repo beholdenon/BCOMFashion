@@ -347,6 +347,7 @@ module.exports = function(grunt) {
                     src: [
                         'package.json',
                         'Procfile',
+                        '.gitignore',
                         '.env'
                     ],
                     dest: '<%= node.destination %>'
@@ -729,6 +730,7 @@ module.exports = function(grunt) {
             grunt: {
                 files: [
                     '.env',
+                    '.gitignore',
                     'gruntfile.js',
                     'grunt/**'
                 ],
