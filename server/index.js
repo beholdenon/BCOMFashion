@@ -25,23 +25,24 @@ server.views({
     layoutPath: Path.join(__dirname, 'lib/views/layout'),
     layout: 'standard',
     partialsPath: Path.join(__dirname, '/lib/views/partials')
-});
+}); 
 
 var routes = [
     { method: 'GET',  path: '/v3/{path*}',                                          config: require('./lib/handlers/api').v3 },
     { method: 'GET',  path: '/v4/{path*}',                                          config: require('./lib/handlers/api').v4 },
     { method: 'GET',  path: '/getBag/{path*}',                                      config: require('./lib/handlers/api').getbag },
     { method: 'POST', path: '/addToBag/{path*}',                                    config: require('./lib/handlers/api').addbag },
-    { method: 'GET',  path: '/fashion/{path*}',                                     config: require('./lib/handlers/assets').fashion },
-    { method: 'GET',  path: '/img/{path*}',                                         config: require('./lib/handlers/assets').hfHandler },
-    { method: 'GET',  path: '/web20/assets/{path*}',                                config: require('./lib/handlers/assets').hfHandler },
-    { method: 'GET',  path: '/shop/flyout',                                         config: require('./lib/handlers/assets').hfHandler },
-    { method: 'GET',  path: '/dyn_img/cat_splash/{path*}',                          config: require('./lib/handlers/assets').hfHandler },
-    { method: 'GET',  path: '/popup.ognc',                                          config: require('./lib/handlers/assets').hfHandler },
+    { method: 'GET',  path: '/fashion/{path*}',                                     config: require('./lib/handlers/assets').netstorage },
+    { method: 'GET',  path: '/img/{path*}',                                         config: require('./lib/handlers/assets').commonAssets },
+    { method: 'GET',  path: '/web20/assets/{path*}',                                config: require('./lib/handlers/assets').commonAssets },
+    { method: 'GET',  path: '/shop/flyout/{path*}',                                 config: require('./lib/handlers/assets').commonAssets },
+    { method: 'GET',  path: '/dyn_img/cat_splash/{path*}',                          config: require('./lib/handlers/assets').commonAssets },
+    { method: 'GET',  path: '/popup.ognc',                                          config: require('./lib/handlers/assets').commonAssets },
+    { method: 'GET',  path: '/catalog/{path*}',                                     config: require('./lib/handlers/assets').commonAssets },
+    { method: 'GET',  path: '/registry/wedding/{path*}',                            config: require('./lib/handlers/assets').commonAssets },
     { method: 'POST', path: '/bag/view',                                            config: require('./lib/handlers/assets').bagHandler },
     { method: 'GET',  path: '/shop/topnav',                                         config: require('./lib/handlers/assets').topNav },
-    { method: 'GET',  path: '/catalog/{path*}',                                     config: require('./lib/handlers/assets').shop },
-    { method: 'GET',  path: '/shop/{path*}',                                        config: require('./lib/handlers/assets').shop },
+    { method: 'GET',  path: '/shop/{path*}',                                        config: require('./lib/handlers/assets').commonAssets },
     { method: 'GET',  path: '/akamai/{path*}',                                      config: require('./lib/handlers/akamai') },
     { method: 'GET',  path: '/international/china-brazil/components/{path*}',       config: require('./lib/handlers/assets').ngViews },
     { method: 'GET',  path: '/makeup-date/fall-2016-tutorial/',                     config: require('./lib/handlers/views').responsive },

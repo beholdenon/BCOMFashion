@@ -8,7 +8,6 @@ require([
 
     // init global app namespace object
     window.Globals = {
-        env: window.ENV_CONFIG || 'dev',
         deviceType: null,
         Coremetrics: {
             pageID: null,
