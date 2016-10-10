@@ -60,6 +60,11 @@ body > #bl_main_wrapper #bl_main_container {
 	font-size: 962px;
 }
 
+#fall15_utilityfinder_desktop a:hover, 
+#fall15_utilityfinder_desktop a:focus {
+    color: inherit;
+}
+
 .fall15_utilityfinder_content {
 	font-size: 0.01em;
 	width: 100em;
@@ -95,6 +100,7 @@ body > #bl_main_wrapper #bl_main_container {
     line-height: 44px;
     font-size: 1.24em;
     letter-spacing: 0.11em;
+    outline: none;
 }
 
 #fall15_utilityfinder_navbar > a:hover,
