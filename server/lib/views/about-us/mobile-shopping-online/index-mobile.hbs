@@ -25,6 +25,7 @@
         clear:both;
         padding-bottom:40px;
     }
+
     .item {
         clear:both;
         margin:0;
@@ -33,20 +34,21 @@
         padding-left:40px;
         padding-right:40px;
     }
-    .subitem {
-        width:380px;
-        margin-top:20px;
-        line-height:1.3;
-        font-size:1.3rem;
+    .bl_mobile .item {
+        clear:both;
+        margin-right:20px;
+        margin-left:20px;
+        padding-top:40px;
+        padding-left:20px;
+        padding-right:20px;
     }
     .bl_mobile  .subitem {
-        width:360px;
+        width:inherit;
         font-size:1.3rem;
         line-height:1.5;
     }
     .bl_mobile  .LBHeading {
-        width:300px;
-        font-size: 3.0rem;
+        font-size: 2.6rem;
         white-space: nowrap;
         line-height:1.2;
         letter-spacing: 0.02rem;
@@ -215,7 +217,7 @@
                     </div>
 
                     <div class="item right" style="background:url('/fashion/images/projects/mobile-app/guides.png') no-repeat right; background-size:243px;">
-                        <div class="icon-guide_icon"></div>
+                        <div class="icon-guide_icon icon_right"></div>
                         <div class="LBHeading">Store Guides</div>
                         <div class="subitem">
                             Enhance your in-store experience with event listings, directories, store hours and more.
@@ -239,9 +241,10 @@
                         </div>
                     </div>
 
-                    <div class="item right" style="padding-left:0px; background:url('/fashion/images/projects/mobile-app/manage.png') no-repeat right; background-size:243px; margin-bottom:30px">
+                    <div class="item right"
+                         style="padding-left:0px; background:url('/fashion/images/projects/mobile-app/manage.png') no-repeat right; background-size:243px; margin-bottom:30px">
                         <div class="icon-manage_icon icon_right"></div>
-                        <div class="LBHeading">Manage All Your Accounts</div>
+                        <div class="LBHeading" style="font-size:2.0rem">Manage All Your Accounts</div>
                         <div class="subitem">
                             Easily look up and redeem Reward Cards, pay your bill and update your preferences.
                         </div>
@@ -250,7 +253,7 @@
                     <div class="hshim"></div>
                     <div class="item center" style="background:url('/fashion/images/projects/mobile-app/registry.png') no-repeat center; background-size:227px">
                         <div class="LBHeading">Registry</div>
-                        <div class="subitem">
+                        <div class="subitem" style="">
                             Create and manage your registry: You can<br>
                             even scan and add items with your phone<br>
                             when in store.
