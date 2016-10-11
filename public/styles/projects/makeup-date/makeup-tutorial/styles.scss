@@ -49,6 +49,7 @@ section a:active {
 	color: inherit;
 	text-decoration: inherit;
 	font-family: inherit;
+	outline: none;
 }
 
 #nav_placeholder {
@@ -96,6 +97,7 @@ section a:active {
 	position: relative;
 	padding: 0;
 	margin: 0;
+	background-color: #000000;
 
 	.arrow.point {
 		position: absolute;
@@ -108,9 +110,12 @@ section a:active {
 
 	.heroImage {
 		width: 100%;
+		max-width: 2000px;
+		margin: 0 auto;
 		position: absolute;
 		top: 0;
 		left: 0;
+		right: 0;
 		z-index: 5;
 	}
 
@@ -225,7 +230,7 @@ section a:active {
 	#makeupVideo,
 	#video-placeholder {
 		width: 74%;
-		background-color: #e2e2e2;
+		max-width: 1200px;
 		display: inline-block;
 		cursor: pointer;
 	}
@@ -543,9 +548,12 @@ section a:active {
 #Gift-with-Purchase {
 	position: relative;
 	font-size: 1.2vw;
+	background-color: #e0e0e0;
+	text-align: center;
 
 	img {
 		width: 100%;
+		max-width: 1200px;
 	}
 
 	.arrow.point {
@@ -560,7 +568,7 @@ section a:active {
 	.absolute {
 		position: absolute;
 		width: 40%;
-		left: 5%;
+		left: 15%;
 		top: 15%;
 		text-align: center;
 		cursor: default;
@@ -704,6 +712,7 @@ section a:active {
 		display: flex;
 		display: -webkit-flex;
 		width: 80%;
+		max-width: 1200px;
 		padding: 0;
 		margin: 0 auto;
 		font-family: inherit;

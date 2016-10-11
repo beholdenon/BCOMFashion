@@ -86,7 +86,7 @@ var APP = {
 				// build HTML in SHOP THE LOOK section
 				$.each( products, function(i, value) {
 					if ( APP.markup[Math.floor(i/5)] === undefined ) APP.markup[Math.floor(i/5)] = [];
-					var li = "<li class='prod-"+i+"'><a target='_blank' href='"+value.productDetails.summary.productURL+"'><img src='"+baseImgURL+value.productDetails.primaryImage.imagename+"'><p class='brand'>"+value.productDetails.summary.brand+"</p><p class='name'>"+value.productDetails.summary.name.replace(value.productDetails.summary.brand, '')+"</p></li>";
+					var li = "<li class='prod-"+i+"'><a target='_blank' href='"+value.productDetails.summary.productURL+"'><img alt='"+value.productDetails.summary.name+"' src='"+baseImgURL+value.productDetails.primaryImage.imagename+"'><p class='brand'>"+value.productDetails.summary.brand+"</p><p class='name'>"+value.productDetails.summary.name.replace(value.productDetails.summary.brand, '')+"</p></li>";
 					APP.markup[Math.floor(i/5)].push(li);
 				});
 
@@ -223,11 +223,6 @@ $(document).ready(function() {
 		$('#prodShell').html("<img class='loader' src='/fashion/images/ajax-loader.gif'/>");
 		
 		APP.updateShop( APP.products[ $(this).attr("data-upc") ].upc );
-	});
-
-	$("#video-placeholder").on("click", function () {
-		$(this).hide();
-		$("#makeupVideo").show().get(0).play();	
 	});
 
 	$("#prosLeft").on("click", function () {
