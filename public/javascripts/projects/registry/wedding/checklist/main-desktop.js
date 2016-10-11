@@ -45,9 +45,10 @@ require([
 
 			$sections.each( function( i, el ) {
 				var $section = $( el ),
+					$window = $( window ),
 					sectionTopPos = $section.offset().top,
 					sectionTopMaxPos = sectionTopPos + $section.height(),
-					windowTopPos = $( window ).scrollTop();
+					windowTopPos = $window.scrollTop() + ($window.height() / 2);
 
 				if ( !$section.data( 'cmFired' ) && 
 						( windowTopPos >= sectionTopPos &&
