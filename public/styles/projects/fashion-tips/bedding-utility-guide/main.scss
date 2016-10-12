@@ -1,0 +1,462 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,700italic,900italic);
+
+/**** COMMON ****/
+body {
+	display: table;
+	width: 100%;
+}
+
+body header,
+body footer {
+	background-color: #fff;
+	position: relative;
+	z-index: 4;
+}
+
+body > #bl_main_wrapper #bl_main_container {
+	width: 100%;
+}
+
+.fall15_utilityfinder_clearfix:after,
+.fall15_utilityfinder_mob_clearfix:after {
+	content: '.';
+	visibility: hidden;
+	display: block;
+	clear: both;
+	height: 0;
+	font-size: 0;
+    outline: none;
+}
+
+.fall15_utilityfinder_loading footer {
+	width: 100%;
+	position: fixed;
+	bottom: 0;
+}
+.fall15_utilityfinder_loaded #fall15_utilityfinder_loader {
+	display: none;
+}
+#fall15_utilityfinder_loader {
+	display: block;
+	z-index: 1;
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-color: #fff;
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+
+#fall15_utilityfinder_desktop,
+#fall15_utilityfinder_mobile {
+	font-family: 'Lato', sans-serif;
+	display: none;
+	overflow: hidden;
+}
+
+#fall15_utilityfinder_desktop {
+	font-size: 962px;
+}
+
+#fall15_utilityfinder_desktop a:hover, 
+#fall15_utilityfinder_desktop a:focus {
+    color: inherit;
+}
+
+.fall15_utilityfinder_content {
+	font-size: 0.01em;
+	width: 100em;
+	margin: 0 auto;
+}
+
+/**** DESKTOP ****/
+#fall15_utilityfinder_desktop a {
+    text-transform: uppercase;
+}
+
+.fall15_utilityfinder_content a {
+    text-decoration: none;
+}
+
+.fall15_utilityfinder_navbar_wrapper {
+    background-color: #000;
+}
+
+#fall15_utilityfinder_navbar {
+    width: 962px;
+    height: 43px;
+    margin: 0 auto;
+    position: relative;
+}
+
+#fall15_utilityfinder_navbar > a {
+    color: #858585;
+    display: block;
+    float: left;
+    margin: 0 24px 0 27px;
+    height: 43px;
+    line-height: 44px;
+    font-size: 1.24em;
+    letter-spacing: 0.11em;
+    outline: none;
+}
+
+#fall15_utilityfinder_navbar > a:hover,
+#fall15_utilityfinder_navbar > a.fall15_utilityfinder_marked {
+    color: #fff;
+}
+
+#fall15_utilityfinder_carrot {
+    background-color: #fff;
+    visibility: hidden;
+    position: absolute;
+    bottom: 0;
+    left: 27px;
+    width: 166px;
+    height: 5px;
+    z-index: 1;
+}
+
+#fall15_utilityfinder_social {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding-top: 13px;
+}
+
+#fall15_utilityfinder_social > a {
+    background-repeat: no-repeat;
+    width: 16px;
+    height: 16px;
+    display: block;
+    float: left;
+    margin-right: 13px;
+}
+
+.fall15_utilityfinder_facebook {
+    background-position: 0 0;
+}
+
+.fall15_utilityfinder_twitter {
+    background-position: -16px 0;
+}
+
+.fall15_utilityfinder_pinterest {
+    background-position: -32px 0;
+}
+
+/* Chapter: Landing */
+.fall15_utilityfinder_chapter {
+    display: none;
+}
+
+#fall15_utilityfinder_landing {
+    display: block;
+}
+
+.fall15_utilityfinder_topic {
+    height: 60.914760914761em;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+.fall15_utilityfinder_footer {
+    display: none;
+    position: relative;
+}
+
+.fall15_utilityfinder_footer a {
+    color: #fff;
+    text-decoration: underline;
+    font-size: 16px;
+    display: block;
+}
+
+.fall15_utilityfinder_footer_text {
+    position: absolute;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 300;
+    word-spacing: 0.2em;
+    letter-spacing: 0.025em;
+}
+
+.fall15_utilityfinder_footer_text p {
+    margin:0 0 10px 0;
+}
+
+.fall15_utilityfinder_topic {
+    position: relative;
+}
+
+.fall15_utilityfinder_topic > * {
+    position: absolute;
+    text-align: center;
+    margin: 0;
+}
+
+.fall15_utilityfinder_topic h1 {
+    color: transparent;
+    font-size: 5.5em;
+    text-transform: uppercase;
+    font-family: serif;
+    font-weight: normal;
+    word-spacing: 0.05em;
+    letter-spacing: 0.06em;
+    top: 3em;
+    width: 100%;
+}
+
+.fall15_utilityfinder_topic p {
+    font-size: 1.5em;
+    letter-spacing: 0.0333333em;
+    width: 100%;
+    top: 15.1em;
+}
+
+.fall15_utilityfinder_topic h2 {
+    color: transparent;
+    font-size: 4.4em;
+    font-family: serif;
+    font-weight: normal;
+    top: 3.45em;
+    width: 100%;
+    word-spacing: 0.05em;
+    letter-spacing: 0.04em;
+}
+
+.fall15_utilityfinder_main h2 {
+    top: 6.28em;
+    letter-spacing: 0.06em;
+}
+
+a.fall15_utilityfinder_button {
+    font-size: 1.7em;
+    font-weight: 600;
+    text-transform: uppercase;
+    line-height: 4.8em;
+    top: 13.65em;
+    width: 23.1%;
+    border: 2px solid #000;
+}
+
+a.fall15_utilityfinder_button_2ln {
+    line-height: 1.4em;
+    padding: 1em 0;
+}
+
+.fall15_utilityfinder_textbox {
+    width: 23.1%;
+    color: #000;
+    font-size: 16px;
+    word-spacing: 0.05em;
+    letter-spacing: 0.04em;
+    line-height: 1.15;
+}
+
+#fall15_utilityfinder_footer-pillows .fall15_utilityfinder_footer_text {
+    top: 9.45em;
+    left: 33.24em;
+    width: 35.1%;
+}
+
+#fall15_utilityfinder_footer-comforters .fall15_utilityfinder_footer_text {
+    top: 7.8em;
+    left: 4.6em;
+    width: 40.75%;
+}
+
+#fall15_utilityfinder_footer-pillows a {
+    margin-top: 1.5em;
+}
+
+#fall15_utilityfinder_footer-comforters a {
+    margin-top: 2em;
+}
+
+.fall15_utilityfinder_main a.fall15_utilityfinder_button {
+    top: 20.4em;
+}
+
+.fall15_utilityfinder_2btn_left_button {
+    left: 14.6em;
+}
+.fall15_utilityfinder_2btn_right_button {
+    left: 30.5em;
+}
+
+#fall15_utilityfinder_pillows .fall15_utilityfinder_textbox {
+    top: 20em;
+}
+
+#fall15_utilityfinder_pillows-filling h2 {
+    top: 3.75em;
+    word-spacing: 0.1em;
+}
+
+#fall15_utilityfinder_pillows-filling a.fall15_utilityfinder_button {
+    top: 14.65em;
+}
+
+#fall15_utilityfinder_pillows-filling .fall15_utilityfinder_textbox {
+    top: 21.5em;
+}
+
+
+#fall15_utilityfinder_comforters h2 {
+    top: 4.9em;
+    word-spacing: 0.125em;
+}
+
+#fall15_utilityfinder_comforters-allergies h2 {
+    top: 5.15em;
+    word-spacing: 0.05em;
+}
+
+.fall15_utilityfinder_3col_left {
+    left: 7.5em;
+}
+.fall15_utilityfinder_3col_center {
+    left: 22.55em;
+}
+.fall15_utilityfinder_3col_right {
+    left: 37.6em;
+}
+
+.fall15_utilityfinder_3text_left {
+    left: 7.8em;
+}
+.fall15_utilityfinder_3text_center {
+    left: 23.1em;
+}
+.fall15_utilityfinder_3text_right {
+    left: 38.5em;
+}
+
+
+
+/* Chapter: Comforters */
+a.fall15_utilityfinder_comforters_q1 {
+    top: 17.65em;
+}
+
+/* Chapter: Basics */
+.fall15_utilityfinder_section {
+    border-bottom: 2px solid #000;
+    padding-bottom: 0.6em;
+    text-align: left;
+}
+
+.fall15_utilityfinder_section:last-child {
+    border-bottom: none;
+}
+
+.fall15_utilityfinder_text {
+    width: 65%;
+    padding-top: 1em;
+    margin-left: auto;
+}
+
+.fall15_utilityfinder_heading {
+    padding-bottom: 3em;
+}
+
+.fall15_utilityfinder_heading .fall15_utilityfinder_text {
+    padding-top: 2.5em;
+}
+
+.fall15_utilityfinder_heading .fall15_utilityfinder_text p {
+    font-size: 1.7em;
+    line-height: 120%;
+    margin-bottom: 0;
+}
+
+.fall15_utilityfinder_text > * {
+    margin: 0;
+}
+
+.fall15_utilityfinder_text p {
+    font-size: 1.62em;
+    letter-spacing: 0.0333333em;
+    line-height: 130%;
+    margin-bottom: 1.3em;
+}
+
+.fall15_utilityfinder_text p span {
+    font-weight: bold;
+}
+
+.fall15_utilityfinder_text a {
+    display: table;
+    font-size: 1.6em;
+    font-weight: 800;
+    text-decoration: underline;
+    letter-spacing: 0.075em;
+    line-height: 185%;
+}
+
+.fall15_utilityfinder_links {
+    position: relative;
+    margin-top: 1.1em;
+    width: 53.5%;
+}
+
+.fall15_utilityfinder_links a:nth-child(even) {
+    float: right;
+}
+
+.fall15_utilityfinder_links a:nth-child(odd) {
+    float: left;
+}
+
+.fall15_utilityfinder_section h1,
+.fall15_utilityfinder_section h2 {
+    position: absolute;
+    font-family: serif;
+    font-weight: normal;
+    text-transform: uppercase;
+    margin-top: 0.3em;
+    line-height: 120%;
+    color: transparent;
+    z-index: 2;
+}
+
+.fall15_utilityfinder_section h1 {
+    font-size: 5.4em;
+    margin-left: 0.15em;
+    letter-spacing: 0.06em;
+}
+
+.fall15_utilityfinder_section h2 {
+    font-size: 2.6em;
+    margin-left: 0.45em;
+    letter-spacing: 0.07em;
+}
+
+.fall15_utilityfinder_basics_heading {
+    position: absolute;
+    display: block;
+    content: '';
+    width: 302px;
+    height: 99px;
+    margin-left: 9px;
+    margin-top: 28px;
+    background-position: center top;
+    background-repeat: no-repeat;
+    z-index: 1;
+}
+
+.fall15_utilityfinder_basics_sub {
+    position: absolute;
+    display: block;
+    content: '';
+    width: 302px;
+    height: 19px;
+    margin-left: 9px;
+    margin-top: 13px;
+    background-repeat: no-repeat;
+    z-index: 1;
+}

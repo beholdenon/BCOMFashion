@@ -1,0 +1,663 @@
+$mauve: #c91042;
+
+#bl_main_container {
+	min-width: auto;
+	max-width: 100%;
+	width: 100%;
+	position: relative;
+}
+
+.montserrat {
+	font-family: "Montserrat", Arial;
+}
+
+.playfair {
+	font-family: "Playfair Display", Arial;
+}
+
+.italic {
+	font-style: italic;
+}
+
+.caps {
+	text-transform: uppercase;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: "Montserrat", Arial;
+}
+
+section a:link,
+section a:visited,
+section a:active {
+	font-size: inherit;
+	color: inherit;
+	text-decoration: inherit;
+	font-family: inherit;
+}
+
+.point {
+	cursor: pointer;
+}
+
+#navPlaceholder {
+	height: 12vw;
+}
+
+#stickyNav {
+	position: absolute;
+	text-align: center;
+    width: 100vw;
+    background-color: #ffffff;
+    z-index: 50;
+
+	h3 {
+		color: $mauve;
+		padding: 0;
+		margin: 0;
+		vertical-align: top;
+		font-size: 7vw;
+		text-transform: uppercase;
+
+		&:before {
+			content: "";
+			margin-right: 0.5em;
+			border-top: 3vw solid #000;
+			border-left: 2vw solid transparent;
+			border-right: 2vw solid transparent;
+			display: inline-block;
+			position: relative;
+			bottom: 0.1em;
+			transition-duration: 0.75s;
+		}
+
+		&.open:before {
+			transform: rotate(180deg);
+		}
+	}
+
+	h3,
+	ul li {
+		line-height: 12vw;
+		border-bottom: 1px solid #444;
+		font-weight: 700;
+	}
+
+	ul {
+		padding: 0;
+		margin: 0;
+		max-height: 80vh;
+    	overflow: scroll;
+
+		li {
+
+			&.active {
+				display: none;
+			}
+
+		}
+
+	}
+
+}
+
+#makeup_hero {
+	position: relative;
+	padding: 0;
+	margin: 0;
+
+	.heroImage {
+		width: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 5;
+	}
+
+	.heroPlaceholder {
+		display: block;
+		width: 100%;
+	}
+
+	.copy {
+		position: absolute;
+		top: 40%;
+		width: 100%;
+		padding: 0 4%;
+		font-size: 5vw;
+		color: #ffffff;
+		text-align: center;
+		z-index: 10;
+
+		h1 {
+			font-size: 1.35em;
+			color: inherit;
+			letter-spacing: 0.15em;
+			word-spacing: 0.3em;
+			margin: 0;
+			padding: 0;
+			line-height: 1em;
+		}
+
+		p {
+			padding: 0;
+			margin:0;
+
+			&.subHeader {
+				font-size: 0.6em;
+			}
+
+			&.smallHeader {
+				margin-top: 0.5em;
+				font-size: 0.5em;
+			}
+
+			.exclusionsLink {
+				text-decoration: underline;
+				cursor: pointer;
+			}
+		}
+
+	}
+
+}
+
+#Red-Lip-Report {
+	background-color: #000000;
+	color: #ffffff;
+	padding: 1vw 5vw;
+	text-align: center;
+	margin: 0;
+
+	p, h2 {
+		color: inherit;
+		width: 85vw;
+		line-height: 1.5em;
+		display: inline-block;
+	}
+
+	p {
+		font-size: 3.25vw;
+	}
+
+	h2 {
+		padding: 1vw 0;
+		margin: 0;
+		text-transform: uppercase;
+		letter-spacing: 0.2em;
+		font-size: 6vw;
+		font-weight: 700;
+	}
+}
+
+.video-wrapper {
+	background-color: #000000;
+	color: #ffffff;
+	padding: 2.5vw 5vw;
+	text-align: center;
+	
+	.video {
+	    width: 90vw;
+	    
+	    &.loading {
+  			background: #000000 url("/fashion/images/ajax-loader-white.gif") center center no-repeat;
+	    }
+
+	}
+
+	.vTitle,
+	.vCopy {
+		color: #ffffff;
+		width: 80vw;
+		display: inline-block;
+	}
+
+	.vTitle {
+		margin: 1em 0 0;
+		padding: 0;
+		letter-spacing: 0.2em;
+		text-transform: uppercase;
+	}
+
+	.vCopy {
+		font-size: 1.55em;
+	}
+
+}
+
+.videoShop {
+	text-align: center;
+
+	h3 {
+		display: inline-block;
+		text-transform: uppercase;
+		margin: 0;
+		padding: 1em 0;
+	}
+
+	.prodShell {
+
+		.shopContainer {
+			list-style-type: none;
+
+			li {
+				font-size: 3vw;
+				display: inline-block;
+				width: 40vw;
+				margin: 0;
+				padding: 0 5vw 5vw;
+				vertical-align: top;
+
+				img {
+					height: 30vw;
+				}
+
+				.brand,
+				.name {
+					font-family: "Montserrat", Arial;
+					font-size: 1em;
+					line-height: 1.25em;
+					margin: 0;
+					padding: 0;
+				}
+
+				.brand {
+					font-weight: bold;
+					text-decoration: underline;
+				}
+			}
+
+		}
+
+	}
+
+}
+
+#Red-Lip-Tips {
+	background-color: #000000;
+	color: #ffffff;
+	border-top: 2px solid $mauve;
+	padding: 2vw 3.5vw;
+
+	h2 {
+		display: block;
+		min-width: 60%;
+		text-align: center;
+		line-height: 1.6em;
+		padding: 0;
+		margin: 0 auto;
+
+		&.spaced {
+			letter-spacing: 0.3em;
+			font-weight: 700;
+			padding-bottom: 1em;
+		}
+	}
+
+	h2,	h4,	p, a {
+		color: inherit;
+	}
+
+	h2, h4 {
+		text-transform: uppercase;
+	}
+
+	.relative {position: relative;}
+	.absolute {
+		position: absolute;
+		z-index: 15;
+
+		a {
+			text-decoration: underline;
+			line-height: 1.6em;
+			display: block;
+			margin-bottom: 0.25em;
+			padding: 0.5em 0;
+			font-weight: 700;
+		}
+	}
+
+
+	#prep,
+	#shade,
+	#make-it-last {
+		display: block;
+	}	
+
+	#prep {
+		min-height: 110vw;
+
+		.absolute {
+			top: 6vw;
+			left: 12vw;
+			width: 37vw; 
+		}
+	}
+
+	#shade {
+		min-height: 110vw;
+
+		.absolute {
+			top: 3vw;
+			left: 58vw;
+		}
+	}
+
+	#make-it-last {
+		min-height: 110vw;
+
+		.absolute {
+			top: 0; 
+			left: 20vw;
+			width: 39vw;
+		}
+	}
+}
+
+#Gift-with-Purchase {
+	position: relative;
+	font-size: 3vw;
+	border-top: 2px solid $mauve;
+	border-bottom: 2px solid $mauve;
+
+	img {
+		width: 100%;
+	}
+
+	.absolute {
+		position: absolute;
+		width: 90%;
+		left: 5%;
+		top: 4vw;
+		text-align: center;
+		cursor: default;
+
+		a {
+			font-size: inherit;
+			font-weight: 800;
+			text-decoration: inherit;
+		}
+
+		h2.caps {
+			letter-spacing: 0.2em;
+		}
+
+		p.caps {
+			letter-spacing: 0.05em;
+		}
+
+		div.caps a {
+			text-decoration: underline;
+
+			&:last-child {
+				margin-left: 2em;
+			}
+		}
+	}
+
+	h2, h3, p, a { 
+		padding: 0;
+		margin: 0;
+		text-decoration: none;
+		line-height: 1.4em;
+	}
+
+	h2 {
+		font-weight: 700;
+		font-size: 2.4em;
+		font-family: inherit;
+		letter-spacing: 0.15em;
+	}
+
+	h3 {
+		font-size: inherit;
+		font-size: 1.65em;
+		margin-bottom: 1em;
+		font-weight: 400;
+	}
+
+	p,
+	a {
+		font-family: inherit;
+		font-size: inherit;
+		color: inherit;
+		font-weight: 700;
+	}
+
+	.loyallist {
+		position: absolute;
+		left: 60%;
+		top: 40%;
+		background-color: #000000;
+		height: 35vw;
+		width: 35vw;
+		text-align: center;
+		border-radius: 100%;
+		font-weight: 800;
+		font-size: 0.8em;
+		padding: 2em 2em 0;
+		color: #ffffff;
+
+		.fine {
+			font-weight: 400;
+			font-size: 0.85em;
+			margin-top: 1em;
+			color: #dddddd;
+		}
+
+		.exclusionsLink {
+			text-decoration: underline;
+		}
+	}
+
+}
+
+.loyallist {
+	color: #453894;
+
+	strong {
+		font-size: 2.5em;
+	}
+}
+
+
+#samples {
+	font-size: 1.25vw;
+
+	h3 {
+		letter-spacing: 0.15em;
+		font-size: 3em;
+		padding: 1em 4em;
+		text-align: center;
+	}
+
+	ul.sampleProducts {
+		width: 80%;
+		padding: 0;
+		margin: 0 auto;
+		font-family: inherit;
+		font-size: inherit;
+		list-style-type: none;
+
+		.prod {
+			background-color: #cccccc;
+			width: auto;
+		}
+
+		a {
+			display: inline-block;
+			width: 45%;
+			font-size: inherit;
+			text-decoration: none;
+			text-align: center;
+
+			&:nth-child(2n-1) {
+				margin-right: 5vw;
+			}
+		}
+
+		li {
+			display: inline-block;
+			padding: 0.25em 0 1em;
+			vertical-align: top;
+			font-size: 2em;
+			position: relative;
+
+			.brand {
+				font-weight: 800;
+			}
+
+			.brand,
+			.name {
+				font-family: "Montserrat", Arial;
+				margin: 0;
+				text-transform: uppercase;
+				font-size: inherit;
+				line-height: 1.75em;
+			}
+		}
+
+		.loyallist {
+			position: absolute;
+			top: 5vw;
+			background-color: #453894;
+			height: 35vw;
+			width: 35vw;
+			text-align: center;
+			border-radius: 100%;
+			font-weight: 800;
+			font-size: 0.6em;
+			padding: 0 1em 0;
+			color: #ffffff;
+
+			
+
+			a {
+				font-size: inherit;
+				font-weight: 800;
+				text-decoration: inherit;
+				margin: 0;
+				width: 100%;
+			}
+
+			p.caps {
+				letter-spacing: 0.05em;
+				font-size: 1.8em;
+				line-height: 1.5em;
+
+				&.fine {
+					font-weight: 400;
+					font-size: 1.1em;
+					margin-top: 1em;
+					color: #dddddd;
+				}
+
+				.exclusionsLink {
+					text-decoration: underline;
+					margin: 0;
+					width: auto;
+					display: block;
+				}
+			}
+		}
+	}
+}
+
+#sweepstakes {
+	position: relative;
+	font-size: 4.25vw;
+	border-top: 2px solid $mauve;
+	border-bottom: 2px solid $mauve;
+
+	img {
+		width: 100%;
+	}
+
+	.absolute{
+		position: absolute;
+		text-align: center;
+		top: 10%;
+		left: 17%;
+		width: 64%;
+
+		h2 {
+			font-size: 1.4em;
+			font-weight: 800;
+			letter-spacing: 0.35em;
+			padding: 0;
+			margin: 0;
+			line-height: 1.2em;
+		}
+
+		.copy {
+			font-size: 0.85em;
+			padding: 0;
+			margin: 0;
+		}
+
+		.legal a {
+			text-transform: uppercase;
+			margin: 1em 1em 0;
+			font-weight: 800;
+			font-size: 0.75em;
+			display: inline-block;
+			text-decoration: underline;
+		}
+	}
+}
+
+
+#book-footer {
+	list-style-type: none;
+	text-align: center;
+	text-transform: uppercase;
+	padding: 0;
+	margin: 0;
+	width: 100vw;
+
+	li {
+		background-color: #000000;
+		color: #ffffff;
+		line-height: 4.5em;
+		font-size: 3vw;
+		border-top: 1px solid #ffffff;
+		font-weight: 700;
+		text-decoration: underline;
+
+		a {
+			color: inherit;
+			font-size: inherit;
+			font-weight: inherit;
+		}
+
+		&.alt {
+			background-color: #ffffff;
+			color: #000000;
+		}
+
+		&.backToTop {
+			background-color: $mauve;
+			color: #000000;
+			text-decoration: underline;
+		}
+
+	}
+
+
+}
+
+@media screen and (max-width: 350px) {
+	#Red-Lip-Tips #shade,
+	#Red-Lip-Tips #prep,
+	#Red-Lip-Tips #make-it-last {
+		height: 60vh;
+	}
+}
+
+// @media screen and (orientation: landscape) {
+// 	#Red-Lip-Tips #shade,
+// 	#Red-Lip-Tips #prep,
+// 	#Red-Lip-Tips #make-it-last {
+// 		height: 60vh;
+// 	}
+// }

@@ -1,7 +1,7 @@
 $(document).ready(function(){
 
   var $ = jQuery,
-        coreMetricsDefaultPageID = 'fall14_newbornessentials',
+        coreMetricsDefaultPageID = 'MBL:fall14_newbornessentials',
         lookbooks, currentLookbook;
 
     function runDesktopLookbooks(){
