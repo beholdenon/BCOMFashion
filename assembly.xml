@@ -13,7 +13,7 @@
 			</includes>
 			<excludes>
 				<exclude>public/**</exclude>
-			</excludes>
+            </excludes>
 		</fileSet>
 	</fileSets>
 
