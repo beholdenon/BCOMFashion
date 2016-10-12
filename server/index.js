@@ -48,11 +48,11 @@ var routes = [
     { method: 'GET',  path: '/international/china-brazil/components/{path*}',       config: require('./lib/handlers/assets').ngViews },
     { method: 'GET',  path: '/makeup-date/fall-2016-tutorial/',                     config: require('./lib/handlers/views').responsive },
     { method: 'GET',  path: '/lookbooks/spring-2016-pierre-henri-mattout/{path*}',  config: require('./lib/handlers/views').responsive },
-    { method: 'GET',  path: '/landing-page/hawaii-ala-moana/{path?}',               config: require('./lib/handlers/views').responsiveDeepLinks },
     { method: 'GET',  path: '/international/china-brazil/',                         config: require('./lib/handlers/views').responsiveCustomHF },
     { method: 'GET',  path: '/100-percent-2016/{path*}',                            config: require('./lib/handlers/views').responsiveCustomHF },
     { method: 'GET',  path: '/2016-fall-campaign-100-percent-exclusive/{path*}',    config: require('./lib/handlers/views').responsiveCustomHF },
     { method: 'GET',  path: '/outlet-touch-screen/',                                config: require('./lib/handlers/views').responsiveCustomHF },
+    { method: 'GET',  path: '/landing-page/hawaii-ala-moana/{deeplinks?}',          config: require('./lib/handlers/views').fallback },
     { method: 'GET',  path: '/{path*}',                                             config: require('./lib/handlers/views').fallback }
 ];
 

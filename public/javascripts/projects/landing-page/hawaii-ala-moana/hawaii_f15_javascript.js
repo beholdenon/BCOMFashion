@@ -81,12 +81,13 @@ require(['jquery', 'backbone'], function($, Backbone){
     };
 
     $(window).load(function(){
-        //detect device 
+
+        //detect device
         var deviceDetected = window.Detect({ useUA: true }),
             ua = navigator.userAgent;
         if( deviceDetected === 'mobiledevice' || deviceDetected === 'smartphone' || ( deviceDetected === 'firefox' && ua.match('Mobile') )) {
             namespace.state.isDesktop = false;
-            namespace.coremetrics = 'MBL:' + namespace.coremetrics;
+            namespace.coremetrics = 'mbl: ' + namespace.coremetrics;
             initMobile();
         }else{
             var isAndroid = ua.search(/\bAndroid\b/) !== -1;
@@ -270,7 +271,7 @@ require(['jquery', 'backbone'], function($, Backbone){
     }
 
     function switchLanguage(langChoice){
-        $( '.engContent, .jpContent, .cnContent, .koContent' ).css({ 'display' : 'none' });
+        $( '.enContent, .jpContent, .cnContent, .koContent' ).css({ 'display' : 'none' });
         $( '.' + langChoice + 'Content' ).css({ 'display' : 'block' });
     }
 
@@ -283,6 +284,9 @@ require(['jquery', 'backbone'], function($, Backbone){
     }
 
     function stickyNav(){
+
+        if ($('.bl_tablet').length > 0){return;}
+
         if($(window).scrollTop() < ($('#'+ namespace.projectGlobalPrefix +'_desktop_nav_placeholder').offset().top)){
             $('#'+ namespace.projectGlobalPrefix +'_desktop_nav').css({
                 'position':'relative',
@@ -342,7 +346,21 @@ require(['jquery', 'backbone'], function($, Backbone){
     }
     /* jshint ignore:end */
 
-
+    function switchLanguageMobile ( opt ) {
+        var clickSource = 'dropdown-nav_';
+        $( '.enMobileContent, .jpMobileContent, .cnMobileContent, .koMobileContent' ).css({ 'display' : 'none' });
+        $( '.' + opt + 'MobileContent' ).css({ 'display' : 'block' });
+        languageControl.currentLang = opt;
+        localStorage.setItem( 'mbl_hawaii_languageChoice', opt );
+        if($( '#mobileLanguageOverlay' ).is(':visible')) {
+            $( '#mobileLanguageOverlay' ).css({ 'display' : 'none' });
+            $( 'body' ).removeClass('languageOverlayActive');
+            clickSource = '';
+        }
+        /* jshint ignore:start */
+        coreMetrics("Element",namespace.coremetrics, clickSource + 'language_' + languageControl.name[opt] );
+        /* jshint ignore:end */
+    }
 
     function initMobile(){
 
@@ -408,7 +426,7 @@ require(['jquery', 'backbone'], function($, Backbone){
                     // schedule page view tag...
                     /* jshint ignore:start */
                     window.setTimeout( function () {
-                        var pageTag = "fall15_hawaii--" + opt.replace( /-+/g, '_' );
+                        var pageTag = "mbl: fall15_hawaii--" + opt.replace( /-+/g, '_' );
                         try {
                             coreMetrics( "Pageview", namespace.coremetrics, pageTag );
                         } catch ( e ) { /* silence is golden... */ }
@@ -436,21 +454,7 @@ require(['jquery', 'backbone'], function($, Backbone){
                 }
                 acts.nav( 'hide' );
             },
-            language: function ( opt ) {
-                var clickSource = 'dropdown-nav_';
-                $( '.enMobileContent, .jpMobileContent, .cnMobileContent, .koMobileContent' ).css({ 'display' : 'none' });
-                $( '.' + opt + 'MobileContent' ).css({ 'display' : 'block' });
-                languageControl.currentLang = opt;
-                localStorage.setItem( 'mbl_hawaii_languageChoice', opt );
-                if($( '#mobileLanguageOverlay' ).is(':visible')) {
-                    $( '#mobileLanguageOverlay' ).css({ 'display' : 'none' });
-                    $( 'body' ).removeClass('languageOverlayActive');
-                    clickSource = '';
-                }
-                /* jshint ignore:start */
-                coreMetrics("Element",namespace.coremetrics, clickSource + 'language_' + languageControl.name[opt] );
-                /* jshint ignore:end */
-            }
+            language: switchLanguageMobile
         };
 
         // init root container...
@@ -512,7 +516,7 @@ require(['jquery', 'backbone'], function($, Backbone){
             cont.addClass( 'loaded' ).show();
             removeLoader();
             mobileLanguageChoiceChecker();
-            coreMetrics( "Pageview", namespace.coremetrics, "fall15_hawaii--hp" );
+            coreMetrics( "Pageview", namespace.coremetrics, "mbl: fall15_hawaii--hp" );
         }, 250);
         /* jshint ignore:end */
 
@@ -621,6 +625,9 @@ require(['jquery', 'backbone'], function($, Backbone){
             }
             trace("{{{{{{{{ Pageview- category_name: "+category_name+" tag_value: "+tag_value+" }}}}}}}}");
         }else if(tag_type=="Element"){
+            if ($('.bl_mobile').length > 0){
+                tag_value = 'mbl: ' + tag_value;
+            }
             try {
                 BLOOMIES.coremetrics.cmCreatePageElementTag(tag_value, category_name);
             } catch (e) {
@@ -747,17 +754,13 @@ require(['jquery', 'backbone'], function($, Backbone){
         defaultAction: function(lang){
 
             var aliases = {
+              eng    : 'en',
               japan : 'jp',
               china : 'ch',
               korea : 'ko'
             };
 
-            if (aliases[lang]){
-                lang = aliases[lang];
-            }
-
             var savedLang = localStorage.getItem('hawaii_15_languageChoice');
-            console.log('lang = ', lang, savedLang);
 
             if (typeof languageControl.name[lang] === 'undefined'){
                 lang = '';
@@ -771,17 +774,23 @@ require(['jquery', 'backbone'], function($, Backbone){
             if (!lang){
                 lang = savedLang;
             }
+            if (aliases[lang]){
+                lang = aliases[lang];
+            }
+
             languageControl.currentLang = lang;
 
             var ok = true;
             try {
                 localStorage.setItem( 'hawaii_15_languageChoice', lang );
+                localStorage.setItem( 'mbl_hawaii_languageChoice', lang );
             } catch (e) {
                 console.log('Error trying to save data to the localStorage. If you are using Private Navigation this might be the reason. Error:', e);
                 ok = false;
             }
             if (! ok) {
                 switchLanguage(lang);
+                switchLanguageMobile(lang);
             }
         }
     });
