@@ -32,7 +32,7 @@ var routes = [
     { method: 'GET',  path: '/v4/{path*}',                                          config: require('./lib/handlers/api').v4 },
     { method: 'GET',  path: '/getBag/{path*}',                                      config: require('./lib/handlers/api').getbag },
     { method: 'POST', path: '/addToBag/{path*}',                                    config: require('./lib/handlers/api').addbag },
-    { method: 'POST', path: '/bag/add',                                             config: require('./lib/handlers/api').addbag },
+    { method: 'POST', path: '/bag/add',                                             config: require('./lib/handlers/api').addMultiToBag },
     { method: 'GET',  path: '/fashion/{path*}',                                     config: require('./lib/handlers/assets').netstorage },
     { method: 'GET',  path: '/registry/wedding/benefits-perks/',                    config: require('./lib/handlers/views').nonResponsive },
     { method: 'GET',  path: '/img/{path*}',                                         config: require('./lib/handlers/assets').commonAssets },

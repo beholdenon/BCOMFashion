@@ -119,5 +119,22 @@ module.exports = {
 
             }
         }
+    },
+
+    addMultiToBag: {
+        description: 'bag service calls',
+        notes: 'reqs for bag service calls require the specialized bag services key',
+        tags: ['developer.bloomingdales.com', 'api', 'bag'],
+        payload: {
+            output: 'data',
+            parse: false
+        },
+        handler: function(req, res) {
+            //var route = req.route.path.substring(1).replace(/{.*?}/,'');
+            //var deviceDetectProc = deviceDetectParams(route, req);
+            //return res.view(deviceDetectProc.view, { args: deviceDetectProc.args, assetsHost: process.env.BASE_ASSETS }, { layout: 'responsive' });
+            res("ok");
+        }
     }
+
 };
