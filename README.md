@@ -147,7 +147,22 @@ handles the "jp" param, you need to tell the server to ignore this param like so
 
 The 'fallback' handler will strip out the {deeplinks?} piece and then proceed as usual. 
 
-# Generating sprite files for projects
+# Grunt
+
+## Build
+
+Normally you'll run grunt with no task specified. The default grunt tasks does a complete build.
+
+If you haven't changed any scss files, and you don't want to run jshint on every change, you can run
+
+```
+grunt qbuild
+```
+
+This will skip the compass task (generates css from scss), babel, and jshint. Before committing
+though you should definitely run a regular full build with jshint etc.
+
+## Generating sprite files for projects
 
 You can tell grunt to create a sprite file containing all of the images in a particular
 folder. First, update the grunt 'sprite' task with the folder information. Then run
@@ -159,12 +174,17 @@ grunt projectSprites
 This will generate the files 'project-sprites.png' and 'project-sprites.css'. See
 the mobile-app project for an example.
 
-# Checking links in files
+## Checking links in files
 
 The grunt task "checkPages" can be used to check that all links in a given
 page or path are valid links. Add files or paths to the pageUrls array
 in the checkPages task in gruntfile.js to let the task know which 
 pages to check.
+
+## htmlSnapshot
+
+This task is currently not being used but could be used in a future project. It uses
+a headless browser to download a copy of the html of a page to a specified folder.
 
 # Using ES6 in client files
 
