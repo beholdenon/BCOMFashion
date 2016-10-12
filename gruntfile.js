@@ -794,4 +794,20 @@ module.exports = function(grunt) {
             ]);
         }
     });
+    // Quick build - skips compass and jshint
+    grunt.registerTask('qbuild', 'Build based on the NODE_ENV value.', function() {
+        grunt.task.run([
+            'copy:all',
+            'execute', // create the nav data used in the compile-handlebars step
+            'compile-handlebars', // this processes files in the views folder and overwrites files in target
+            'usemin',
+            'string-replace'
+        ]);
+
+        grunt.task.run([
+            'inject:livereload',
+            'concurrent:dev'
+        ]);
+    });
+
 };
