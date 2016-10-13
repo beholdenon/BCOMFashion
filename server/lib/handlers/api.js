@@ -133,7 +133,7 @@ module.exports = {
             //var route = req.route.path.substring(1).replace(/{.*?}/,'');
             //var deviceDetectProc = deviceDetectParams(route, req);
             //return res.view(deviceDetectProc.view, { args: deviceDetectProc.args, assetsHost: process.env.BASE_ASSETS }, { layout: 'responsive' });
-            res("ok");
+            res({result: "ok"});
         }
     }
 
