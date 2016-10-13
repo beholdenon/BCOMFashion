@@ -1,8 +1,11 @@
 <!-- {pageTitle: "Hawaii Ala Moana", pageLabel:"Hawaii Ala Moana | Bloomingdale's"} -->
-{{{coremetrics 'fall15_hawaii--hp' 'fall15_hawaii'}}}
-{{title}}
+{{>title}}
 <meta name="description" content="Aloha Hawaii! Bloomingdale’s department store is conveniently located at Ala Moana Center, Honolulu. Check out the special events and special offers online!">
 <style type="text/css">
+DIV.row.collapse.mod_row {
+    width:100%;
+    max-width:100%;
+}
 /* header */
 	#hawaii_f15_desktop_main_container > .header15{
 		height: auto;
@@ -13,29 +16,38 @@
 	#hawaii_f15_desktop_main_container > .header15 > img{
 		width: 100%;
 	}
-	#hawaii_f15_desktop_main_container > ul{
+	#hawaii_f15_desktop_main_container > ul {
 		list-style-type: none;
-}
-
-#hawaii_f15_desktop_main_container > .header15 > h1 {
-    position: absolute;
-    width: 100%;
-    left: 0;
-    top: 54.5%;
-    text-align: center;
-    font-size: 99px;
-    color: #FFF;
-    font-weight: 700;
-    line-height: 24px;
-    letter-spacing: 25px;}
+  }
+	A.desktop-artwork-link:hover {
+	   color:#000;
+	}	
+	A:hover {
+	   color:#000;
+	}	
+	#hawaii_f15_desktop_main_container > .header15 > h1 {
+	    position: absolute;
+	    width: 100%;
+	    left: 0;
+	    top: 54.5%;
+	    text-align: center;
+	    font-size: 99px;
+	    color: #FFF;
+	    font-weight: 700;
+	    line-height: 24px;
+	    letter-spacing: 25px;
+	}
     
-header15, .footer15 { 
-	position: relative;
-	z-index: 10;
-}    
-.bl_mobile DIV.footer15 {
-     display:none;
-}
+	.header15, .footer15 { 
+		position: relative;
+		z-index: 10;
+	}    
+	.bl_mobile DIV.footer15 {
+	     display:none;
+	}
+	.newLayout  #bl_main_container {
+      max-width: 100%;
+  }
 	
 </style>
 <div id="bl_main_wrapper" class="newLayout">
@@ -48,7 +60,7 @@ header15, .footer15 {
         <link href="/fashion/styles/projects/landing-page/hawaii-ala-moana/hawaii_f15_style.css" rel="stylesheet" type="text/css" />
         <div id="bl_main_lookbook_container">
             <div id="hawaii_f15_desktop_loader" style="position: fixed; display: block; height: 100%; width: 100%; left: 0; top: 0; z-index: 10000004; background: #fff;">
-                <img src="https://www.bloomingdales.com/dyn_img/cat_splash/hawaii_f15_loader.gif" style="position: absolute; left: 50%; margin-left: -15px; top: 50% !important; margin-top: -30px !important;" 
+                <img src="/fashion/images/projects/landing-page/hawaii-ala-moana/hawaii_f15_loader.gif" style="position: absolute; left: 50%; margin-left: -15px; top: 50% !important; margin-top: -30px !important;" 
                 alt='Bloomingdale’s Ala Moana Shopping Center – Honolulu - Hawaii'/>
             </div>
             <div id="hawaii_f15_desktop_main_container">
@@ -58,7 +70,7 @@ header15, .footer15 {
                         <div>
                             <span>Choose Your Language</span>
                             <ul>
-                                <li class="languageOption" data-lang="eng">ENGLISH</li>
+                                <li class="languageOption" data-lang="en">ENGLISH</li>
                                 <li class="languageOption" data-lang="jp">&#x65e5;&#x672c;&#x8a9e;</li>
                                 <li class="languageOption" data-lang="cn">&#x4e2d;&#x6587;</li>
                                 <li class="languageOption" data-lang="ko">&#xD55C;&#xAD6D;&#xC5B4;</li>
@@ -67,10 +79,10 @@ header15, .footer15 {
                     </div>
                 </div>
                 <div class="header15" id="hawaii_f15_desktop_header">
-                    <img src="https://www.bloomingdales.com/dyn_img/cat_splash/hawaii_f15_desktop_hero.jpg" data-url="#" 
+                    <img src="/fashion/images/projects/landing-page/hawaii-ala-moana/hawaii_f15_desktop_hero.jpg" data-url="#" 
                     alt="Bloomingdale’s Ala Moana Shopping Center – Honolulu - Hawaii"/>
                     <ul class="headerLanguageSwitcher">
-                        <li class="languageOption" data-lang="eng">ENG</li>
+                        <li class="languageOption" data-lang="en">ENG</li>
                         <li class="languageOption" data-lang="jp">&#x65e5;&#x672c;&#x8a9e;</li>
                         <li class="languageOption" data-lang="cn">&#x4e2d;&#x6587;</li>
                         <li class="languageOption" data-lang="ko">&#xD55C;&#xAD6D;&#xC5B4;</li>
@@ -81,7 +93,7 @@ header15, .footer15 {
                 <div id="hawaii_f15_desktop_nav_placeholder">
                 </div>
                 <nav id="hawaii_f15_desktop_nav" class="nav_desktop_hover_state">
-                    <ul class="engContent">
+                    <ul class="enContent">
                         <li>
                             <a class="hawaii_f15_desktop_nav_brands active" href="#brands">BRANDS</a>
                         </li>
@@ -131,13 +143,13 @@ header15, .footer15 {
                         <div id="hawaii_f15_brands_01"
                              style="display: block; position: relative; margin: 0 auto; padding: 0; width: 962px; height: auto; left: 0; top: 0; overflow: hidden;">
                             <img style="display: block; position: relative; margin: 0; left: 0; top: 0; 962px; height: auto;"
-                                 src="https://www.bloomingdales.com/dyn_img/cat_splash/hawaii_f15_desktop_brands_01.jpg" 
+                                 src="/fashion/images/projects/landing-page/hawaii-ala-moana/hawaii_f15_desktop_brands_01.jpg" 
                                  alt="Bloomingdale’s Ala Moana Center – Women’s Designer Clothing" />
-                            <div class="sectionTitle engContent">Brands</div>
+                            <div class="sectionTitle enContent">Brands</div>
                             <div class="sectionTitle jpContent">&#x30d6;&#x30e9;&#x30f3;&#x30c9;</div>
                             <div class="sectionTitle cnContent">&#x54c1;&#x724c;</div>
                             <div class="sectionTitle koContent">&#xBE0C;&#xB79C;&#xB4DC;</div>
-                            <div class="sectionCopy engContent">Aloha, Hawai&rsquo;i! We&rsquo;re Bloomingdale&rsquo;s, a New York City shopping institution with a history as rich, proud&mdash;and dare we say gorgeous&mdash; as Hawaii&rsquo;s own. With an utterly original take on style, we boldly mix passion and fashion with wit and substance for a life lived in good taste and good fun. Today we&rsquo;re thrilled to meld our island&rsquo;s legendary fashion heritage with your islands&rsquo; natural beauty in a state-of-the-art, colorful and vibrant store as stunning as its tropical surroundings.<br>
+                            <div class="sectionCopy enContent">Aloha, Hawai&rsquo;i! We&rsquo;re Bloomingdale&rsquo;s, a New York City shopping institution with a history as rich, proud&mdash;and dare we say gorgeous&mdash; as Hawaii&rsquo;s own. With an utterly original take on style, we boldly mix passion and fashion with wit and substance for a life lived in good taste and good fun. Today we&rsquo;re thrilled to meld our island&rsquo;s legendary fashion heritage with your islands&rsquo; natural beauty in a state-of-the-art, colorful and vibrant store as stunning as its tropical surroundings.<br>
                                 <br>
                                 With an exceptionally cool, curated mix of fashion designers for women, men and even the keikis, ground-breaking beauty, plus armloads of premium bags, outfit-making shoes, and row after row of standout sunnies&mdash;our newest store promises to elevate your look, your home, and most definitely your mood (just taste our famous fro-yo). We&rsquo;re Bloomingdale&rsquo;s Ala Moana Center&mdash;your new fashion paradise.</div>
                             <div class="sectionCopy jpContent">&#x30cf;&#x30ef;&#x30a4;&#x306e;&#x7686;&#x3055;&#x3093;&#x30a2;&#x30ed;&#x30cf;&#xff01;&#x79c1;&#x305f;&#x3061;&#x306f;Bloomingdale&#039;s&#x3068;&#x3044;&#x3046;&#x30cb;&#x30e5;&#x30fc;&#x30e8;&#x30fc;&#x30af;&#x306e;&#x30c7;&#x30d1;&#x30fc;&#x30c8;&#x3067;&#x3059;&#x3002;&#x79c1;&#x305f;&#x3061;&#x306e;&#x6b74;&#x53f2;&#x306f;&#x53e4;&#x304f;&#x3001;&#x8a87;&#x308a;&#x306b;&#x6e80;&#x3061;&#x3001;&#x3042;&#x3048;&#x3066;&#x8a00;&#x308f;&#x305b;&#x3066;&#x3044;&#x305f;&#x3060;&#x3051;&#x3070;&#x3001;&#x30cf;&#x30ef;&#x30a4;&#x306e;&#x6b74;&#x53f2;&#x3068;&#x540c;&#x3058;&#x3088;&#x3046;&#x306b;&#x7d20;&#x6674;&#x3089;&#x3057;&#x3044;&#x3082;&#x306e;&#x3067;&#x3059;&#x3002;&#x30b9;&#x30bf;&#x30a4;&#x30eb;&#x306b;&#x72ec;&#x81ea;&#x306e;&#x89e3;&#x91c8;&#x3092;&#x52a0;&#x3048;&#x3001;&#x6bce;&#x65e5;&#x3092;&#x30bb;&#x30f3;&#x30b9;&#x826f;&#x304f;&#x697d;&#x3057;&#x304f;&#x904e;&#x3054;&#x305b;&#x308b;&#x3088;&#x3046;&#x3001;&#x30d1;&#x30c3;&#x30b7;&#x30e7;&#x30f3;&#x3068;&#x30d5;&#x30a1;&#x30c3;&#x30b7;&#x30e7;&#x30f3;&#x306b;&#x30a6;&#x30a3;&#x30c3;&#x30c8;&#x3068;&#x5b9f;&#x7528;&#x6027;&#x3092;&#x5927;&#x80c6;&#x306b;&#x7d44;&#x307f;&#x5408;&#x308f;&#x305b;&#x3066;&#x3044;&#x307e;&#x3059;&#x3002;&#x3053;&#x306e;&#x5ea6;&#x3001;&#x79c1;&#x305f;&#x3061;&#x306e;&#x5cf6;&#xff08;&#x30de;&#x30f3;&#x30cf;&#x30c3;&#x30bf;&#x30f3;&#x5cf6;&#xff09;&#x3067;&#x57f9;&#x308f;&#x308c;&#x305f;&#x30d5;&#x30a1;&#x30c3;&#x30b7;&#x30e7;&#x30f3;&#x306e;&#x4f1d;&#x7d71;&#x3068;&#x7686;&#x3055;&#x3093;&#x306e;&#x5cf6;&#x306e;&#x81ea;&#x7136;&#x7f8e;&#x304c;&#x878d;&#x5408;&#x3055;&#x308c;&#x3001;&#x30cf;&#x30ef;&#x30a4;&#x306e;&#x30c8;&#x30ed;&#x30d4;&#x30ab;&#x30eb;&#x306a;&#x74b0;&#x5883;&#x3068;&#x540c;&#x3058;&#x304f;&#x3089;&#x3044;&#x7d20;&#x6674;&#x3089;&#x3057;&#x3044;&#x3001;&#x6700;&#x65b0;&#x8a2d;&#x5099;&#x3092;&#x5099;&#x3048;&#x305f;&#x83ef;&#x3084;&#x304b;&#x3067;&#x6d3b;&#x6c17;&#x3042;&#x308b;&#x5e97;&#x8217;&#x304c;&#x751f;&#x307e;&#x308c;&#x305f;&#x3053;&#x3068;&#x306b;&#x3001;&#x5927;&#x304d;&#x306a;&#x559c;&#x3073;&#x3092;&#x611f;&#x3058;&#x3066;&#x3044;&#x307e;&#x3059;&#x3002;<br>
@@ -155,10 +167,10 @@ header15, .footer15 {
                         <div id="hawaii_f15_brands_02"
                              style="display: block; position: relative; margin: 0 auto; padding: 0; width: 962px; height: auto; left: 0; top: 0; overflow: visible;">
                             <img style="display: block; position: relative; margin: 0; left: 0; top: 0; 962px; height: auto;"
-                                 src="https://www.bloomingdales.com/dyn_img/cat_splash/hawaii_f15_desktop_brands_02.jpg" 
+                                 src="/fashion/images/projects/landing-page/hawaii-ala-moana/hawaii_f15_desktop_brands_02.jpg" 
                                  alt="Bloomingdale’s Ala Moana Center – Women’s Fashion - Women's Designer Handbags" />
                             <div class="orangeBox">
-                                <div class="orangeBoxTitle engContent">We have an incredible<br>selection of<br>coveted designers</div>
+                                <div class="orangeBoxTitle enContent">We have an incredible<br>selection of<br>coveted designers</div>
                                 <div class="orangeBoxTitle jpContent">&#x5f53;&#x5e97;&#x306b;&#x306f;&#x4eba;&#x6c17;&#x30c7;&#x30b6;&#x30a4;&#x30ca;&#x30fc;&#x30d6;&#x30e9;&#x30f3;&#x30c9;
                                     <br>&#x306e;&#x9a5a;&#x304f;&#x307b;&#x3069;&#x306e;&#x30bb;&#x30ec;&#x30af;&#x30b7;&#x30e7;&#x30f3;
                                     <br>&#x304c;&#x63c3;&#x3063;&#x3066;&#x3044;&#x307e;&#x3059;</div>
@@ -168,7 +180,7 @@ header15, .footer15 {
                                 </div>
                             </div>
                             <div id="womensFashion" class="brandsText">
-                                <span class="brandsTitle engContent">Women&rsquo;s FASHION</span>
+                                <span class="brandsTitle enContent">Women&rsquo;s FASHION</span>
                                 <span class="brandsTitle jpContent">&#x5a66;&#x4eba;&#x30d5;&#x30a1;&#x30c3;&#x30b7;&#x30e7;&#x30f3;</span>
                                 <span class="brandsTitle cnContent">&#x5973;&#x88c5;</span>
                                 <span class="brandsTitle koContent">&#xC5EC;&#xC131;&#xC6A9; &#xC758;&#xB958;</span>
@@ -179,7 +191,7 @@ header15, .footer15 {
                                 Adidas BY Stella McCartney
                             </div>
                             <div id="sectionHandbags" class="brandsText">
-                                <span class="brandsTitle engContent">HANDBAGS</span>
+                                <span class="brandsTitle enContent">HANDBAGS</span>
                                 <span class="brandsTitle jpContent">&#x30cf;&#x30f3;&#x30c9;&#x30d0;&#x30c3;&#x30b0;</span>
                                 <span class="brandsTitle cnContent">&#x624b;&#x888b;</span>
                                 <span class="brandsTitle koContent">&#xD578;&#xB4DC;&#xBC31;</span>
@@ -192,10 +204,10 @@ header15, .footer15 {
                         <div id="hawaii_f15_brands_03"
                              style="display: block; position: relative; margin: 0 auto; padding: 0; width: 962px; height: auto; left: 0; top: 0; overflow: hidden;">
                             <img style="display: block; position: relative; margin: 0; left: 0; top: 0; 962px; height: auto;"
-                                 src="https://www.bloomingdales.com/dyn_img/cat_splash/hawaii_f15_desktop_brands_03.jpg" 
+                                 src="/fashion/images/projects/landing-page/hawaii-ala-moana/hawaii_f15_desktop_brands_03.jpg" 
                                  alt="Bloomingdale’s Ala Moana Center – Skincare - Women’s Designer Shoes" />
                             <div id="sectionBeauty" class="brandsText">
-                                <span class="brandsTitle engContent">BEAUTY</span>
+                                <span class="brandsTitle enContent">BEAUTY</span>
                                 <span class="brandsTitle jpContent">&#x5316;&#x7ca7;&#x54c1;</span>
                                 <span class="brandsTitle cnContent">&#x7f8e;&#x5bb9;</span>
                                 <span class="brandsTitle koContent">&#xD654;&#xC7A5;&#xD488;</span>
@@ -206,7 +218,7 @@ header15, .footer15 {
                                 Herm&egrave;s
                             </div>
                             <div id="sectionShoes" class="brandsText">
-                                <span class="brandsTitle engContent">SHOES</span>
+                                <span class="brandsTitle enContent">SHOES</span>
                                 <span class="brandsTitle jpContent">&#x9774;</span>
                                 <span class="brandsTitle cnContent">&#x978b;&#x7c7b;</span>
                                 <span class="brandsTitle koContent">&#xC2E0;&#xBC1C;</span>
@@ -220,10 +232,10 @@ header15, .footer15 {
                         <div id="hawaii_f15_brands_04"
                              style="display: block; position: relative; margin: 0 auto; padding: 0; width: 962px; height: auto; left: 0; top: 0; overflow: hidden;">
                             <img style="display: block; position: relative; margin: 0; left: 0; top: 0; 962px; height: auto;"
-                                 src="https://www.bloomingdales.com/dyn_img/cat_splash/hawaii_f15_desktop_brands_04.jpg" 
+                                 src="/fashion/images/projects/landing-page/hawaii-ala-moana/hawaii_f15_desktop_brands_04.jpg" 
                                  alt="“Bloomingdale’s Ala Moana Center – Women’s Designer Sunglasses - Men's Designer Clothing - Home Decor" />
                             <div id="sectionAcessories" class="brandsText">
-                                <span class="brandsTitle engContent">ACCESSORIES</span>
+                                <span class="brandsTitle enContent">ACCESSORIES</span>
                                 <span class="brandsTitle jpContent">&#x30a2;&#x30af;&#x30bb;&#x30b5;&#x30ea;&#x30fc;</span>
                                 <span class="brandsTitle cnContent">&#x914d;&#x9970;</span>
                                 <span class="brandsTitle koContent">&#xC545;&#xC138;&#xC11C;&#xB9AC;</span>
@@ -234,7 +246,7 @@ header15, .footer15 {
                                 Chan Luu
                             </div>
                             <div id="mensFashion" class="brandsText">
-                                <span class="brandsTitle engContent">MEN&rsquo;S FASHION</span>
+                                <span class="brandsTitle enContent">MEN&rsquo;S FASHION</span>
                                 <span class="brandsTitle jpContent">&#x7d33;&#x58eb;&#x30d5;&#x30a1;&#x30c3;&#x30b7;&#x30e7;&#x30f3;</span>
                                 <span class="brandsTitle cnContent">&#x7537;&#x88c5;</span>
                                 <span class="brandsTitle koContent">&#xB0A8;&#xC131;&#xC6A9; &#xC758;&#xB958;</span>
@@ -245,7 +257,7 @@ header15, .footer15 {
                                 Canali
                             </div>
                             <div id="sectionHome" class="brandsText">
-                                <span class="brandsTitle engContent">HOME</span>
+                                <span class="brandsTitle enContent">HOME</span>
                                 <span class="brandsTitle jpContent">&#x5bb6;&#x5ead;&#x7528;&#x54c1;</span>
                                 <span class="brandsTitle cnContent">&#x5bb6;&#x5c45;&#x7528;&#x54c1;</span>
                                 <span class="brandsTitle koContent">&#xAC00;&#xC815;&#xC6A9;&#xD488;</span>
@@ -256,7 +268,7 @@ header15, .footer15 {
                                 Baccarat
                             </div>
                         </div>
-                        <div class="hawaii_f15_brands_footer engContent">
+                        <div class="hawaii_f15_brands_footer enContent">
                             <a class="hawaii_f15_desktop_shop_bcom desktop-artwork-link" href="http://www1.bloomingdales.com/" data-cm="shop_bloomingdales">SHOP BLOOMINGDALES.COM</a>
                         </div>
                         <div class="hawaii_f15_brands_footer jpContent">
@@ -273,12 +285,12 @@ header15, .footer15 {
                         <div id="hawaii_f15_sh_01"
                              style="display: block; position: relative; margin: 0 auto; padding: 0; width: 962px; height: auto; left: 0; top: 0; overflow: hidden;">
                             <img style="display: block; position: relative; margin: 0; left: 0; top: 0; 962px; height: auto;"
-                                 src="https://www.bloomingdales.com/dyn_img/cat_splash/hawaii_f15_desktop_sh_01.jpg" alt="" />
-                            <div class="sectionTitle engContent">STORE HIGHLIGHTS</div>
+                                 src="/fashion/images/projects/landing-page/hawaii-ala-moana/hawaii_f15_desktop_sh_01.jpg" alt="" />
+                            <div class="sectionTitle enContent">STORE HIGHLIGHTS</div>
                             <div class="sectionTitle jpContent">&#x5f53;&#x5e97;&#x306e;&#x30cf;&#x30a4;&#x30e9;&#x30a4;&#x30c8;</div>
                             <div class="sectionTitle cnContent">&#x672c;&#x5e97;&#x7279;&#x8272;</div>
                             <div class="sectionTitle koContent">&#xC800;&#xC7A5; &#xD558;&#xC774;&#xB77C;&#xC774;&#xD2B8;</div>
-                            <div class="sectionCopy engContent">MAKE SOME FASHION WAVES! With tech-savvy fitting rooms, a luxurious in-house spa, a beauty bar stocked with internationally adored products&mdash;plus a roster of crave-worthy designers from local faves to world-renowned fashion houses, our Hawaii store is a true East-meets-West shopping destination.
+                            <div class="sectionCopy enContent">MAKE SOME FASHION WAVES! With tech-savvy fitting rooms, a luxurious in-house spa, a beauty bar stocked with internationally adored products&mdash;plus a roster of crave-worthy designers from local faves to world-renowned fashion houses, our Hawaii store is a true East-meets-West shopping destination.
                                 <table>
                                     <tr>
                                         <td>Bloomingdale&rsquo;s<br>Ala Moana Center<br>1450 Ala Moana Blvd.<br>Honolulu, HI 96814</td>
@@ -319,12 +331,12 @@ header15, .footer15 {
                         <div id="hawaii_f15_sh_02"
                              style="display: block; position: relative; margin: 0 auto; width: 962px; height: auto; left: 0; top: 0; overflow: hidden;">
                             <div class="orangeBox">
-                                <div class="orangeBoxTitle engContent">WE HAVE AN AMAZING<br>WELCOME CENTER</div>
+                                <div class="orangeBoxTitle enContent">WE HAVE AN AMAZING<br>WELCOME CENTER</div>
                                 <div class="orangeBoxTitle jpContent">&#x5f53;&#x5e97;&#x306b;&#x306f;&#x7d20;&#x6674;&#x3089;&#x3057;&#x3044;&#x30a6;&#x30a7;&#x30eb;&#x30ab;&#x30e0;<br>&#x30bb;&#x30f3;&#x30bf;&#x30fc;&#x304c;&#x5099;&#x3048;&#x3089;&#x308c;&#x3066;&#x3044;&#x307e;&#x3059;</div>
                                 <div class="orangeBoxTitle cnContent">&#x4f53;&#x9a8c;&#x6211;&#x4eec;&#x670d;&#x52a1;<br>&#x5468;&#x5168;&#x7684;&#x95ee;&#x8be2;&#x5904;</div>
                                 <div class="orangeBoxTitle koContent">&#xD6CC;&#xB96D;&#xD55C; &#xD658;&#xC601;&#xC13C;&#xD130;&#xAC00;&#xB9C8;&#xB828;&#xB418;&#xC5C8;&#xC2B5;&#xB2C8;&#xB2E4;.</div>
                             </div>
-                            <div class="sectionCopy engContent">Stop by the Welcome Center on 1 to pick up a store directory, check your luggage or coats, and enjoy a refreshing local drink. Style advisors, multi-lingual associates, and alteration services are also available&mdash;just ask us!</div>
+                            <div class="sectionCopy enContent">Stop by the Welcome Center on 1 to pick up a store directory, check your luggage or coats, and enjoy a refreshing local drink. Style advisors, multi-lingual associates, and alteration services are also available&mdash;just ask us!</div>
                             <div class="sectionCopy jpContent">&#x30a6;&#x30a7;&#x30eb;&#x30ab;&#x30e0;&#x30bb;&#x30f3;&#x30bf;&#x30fc;&#xff08;&#xff11;&#x968e;&#xff09;&#x3067;&#x306f;&#x3001;&#x30d5;&#x30ed;&#x30a2;&#x6848;&#x5185;&#x30ac;&#x30a4;&#x30c9;&#x306e;&#x914d;&#x5e03;&#x3001;&#x304a;&#x8377;&#x7269;&#x30fb;&#x30b3;&#x30fc;&#x30c8;&#x304a;&#x9810;&#x304b;&#x308a;&#x3001;&#x5730;&#x5143;&#x306e;&#x30c9;&#x30ea;&#x30f3;&#x30af;&#x306e;&#x63d0;&#x4f9b;&#x3092;&#x884c;&#x3063;&#x3066;&#x304a;&#x308a;&#x307e;&#x3059;&#x3002;&#x30b9;&#x30bf;&#x30a4;&#x30eb;&#x30fb;&#x30a2;&#x30c9;&#x30d0;&#x30a4;&#x30b6;&#x30fc;&#x3001;&#x591a;&#x8a00;&#x8a9e;&#x30b9;&#x30bf;&#x30c3;&#x30d5;&#x3001;&#x30b5;&#x30a4;&#x30ba;&#x76f4;&#x3057;&#x3082;&#x3054;&#x5229;&#x7528;&#x306b;&#x306a;&#x308c;&#x307e;&#x3059;&#x306e;&#x3067;&#x3001;&#x3069;&#x3046;&#x305e;&#x304a;&#x7533;&#x3057;&#x4ed8;&#x3051;&#x304f;&#x3060;&#x3055;&#x3044;&#xff01;</div>
                             <div class="sectionCopy cnContent">&#x5149;&#x4e34;&#x6211;&#x4eec;&#x4e00;&#x5c42;&#x7684;&#x95ee;&#x8be2;&#x5904;&#x53d6;&#x5f97;&#x5e97;&#x5185;&#x65b9;&#x5411;&#x6307;&#x5f15;&#xff0c;&#x4e5f;&#x53ef;&#x4ee5;&#x5bc4;&#x5b58;&#x60a8;&#x7684;&#x884c;&#x674e;&#x7bb1;&#x6216;&#x8005;&#x5916;&#x5957;&#xff0c;&#x518d;&#x559d;&#x4e00;&#x676f;&#x7f8e;&#x5473;&#x7684;&#x5f53;&#x5730;&#x996e;&#x54c1;&#x3002;&#x65f6;&#x5c1a;&#x987e;&#x95ee;&#x3001;&#x7cbe;&#x901a;&#x591a;&#x56fd;&#x8bed;&#x8a00;&#x7684;&#x4e13;&#x5458;&#x8fd8;&#x6709;&#x670d;&#x88c5;&#x4fee;&#x6539;&#x670d;&#x52a1;&#x4e5f;&#x4f1a;&#x5728;&#x573a;&#x5e2e;&#x52a9;&#x60a8;&#x3002;&#x8fc7;&#x6765;&#x6253;&#x58f0;&#x62db;&#x547c;&#x5427;&#xff01;</div>
                             <div class="sectionCopy koContent">1&#xCE35;&#xC5D0; &#xC704;&#xCE58;&#xD55C; &#xD658;&#xC601;&#xC13C;&#xD130;&#xB97C; &#xBC29;&#xBB38;&#xD558;&#xC154;&#xC11C; &#xBC31;&#xD654;&#xC810; &#xC548;&#xB0B4;&#xCC45;&#xC790;&#xB97C; &#xC774;&#xC6A9;&#xD558;&#xC2DC;&#xACE0;, &#xC9D0;&#xC774;&#xB098; &#xCF54;&#xD2B8;&#xB97C; &#xB9E1;&#xACA8;&#xC8FC;&#xC2ED;&#xC2DC;&#xC624;. &#xC0C1;&#xCF8C;&#xD55C; &#xB85C;&#xCEEC; &#xC74C;&#xB8CC;&#xB3C4; &#xC990;&#xAE30;&#xC2ED;&#xC2DC;&#xC624;. &#xC2A4;&#xD0C0;&#xC77C; &#xB3C4;&#xC6B0;&#xBBF8;, &#xC678;&#xAD6D;&#xC5B4; &#xC9C0;&#xC6D0;, &#xADF8;&#xB9AC;&#xACE0; &#xC218;&#xC120; &#xC11C;&#xBE44;&#xC2A4;&#xB3C4; &#xAC00;&#xB2A5;&#xD569;&#xB2C8;&#xB2E4;. &#xC800;&#xD76C;&#xC5D0;&#xAC8C; &#xBB3C;&#xC5B4;&#xB9CC; &#xBCF4;&#xC2ED;&#xC2DC;&#xC624;.</div>
@@ -332,12 +344,12 @@ header15, .footer15 {
                         <div id="hawaii_f15_sh_03"
                              style="display: block; position: relative; margin: 0 auto; width: 962px; height: auto; left: 0; top: 0; overflow: hidden;">
                             <div class="orangeBox">
-                                <div class="orangeBoxTitle engContent">REFUEL AT FORTY CARROTS<br>(WE HAVE THE ORIGINAL<br>FROZEN YOGURT!)</div>
+                                <div class="orangeBoxTitle enContent">REFUEL AT FORTY CARROTS<br>(WE HAVE THE ORIGINAL<br>FROZEN YOGURT!)</div>
                                 <div class="orangeBoxTitle jpContent">FORTY CARROTS&#x3067;&#x5143;&#x6c17;&#x88dc;&#x7d66;&#x3092;<br>&#xff08;&#x5f53;&#x5e97;&#x306b;&#x306f;&#x30aa;&#x30ea;&#x30b8;&#x30ca;&#x30eb;&#x306e;<br>&#x30d5;&#x30ed;&#x30fc;&#x30ba;&#x30f3;&#x30e8;&#x30fc;&#x30b0;&#x30eb;&#x30c8;&#x304c;&#x3042;&#x308a;&#x307e;&#x3059;&#xff01;&#xff09;</div>
                                 <div class="orangeBoxTitle cnContent">&#x6765;FORTY CARROTS&#x5145;&#x7535;<br>&#xff08;&#x6211;&#x4eec;&#x6709;&#x539f;&#x88c5;&#x51bb;&#x9178;&#x5976;&#xff01;&#xff09;</div>
                                 <div class="orangeBoxTitle koContent">Forty Carrots&#xC5D0;&#xC11C;&#xC7AC;&#xCDA9;&#xC804;&#xD558;&#xC2ED;&#xC2DC;&#xC624;.<br>(&#xC624;&#xB9AC;&#xC9C0;&#xB0A0; &#xD504;&#xB85C;&#xC98C; &#xC694;&#xAC70;&#xD2B8;&#xAC00;&#xC900;&#xBE44;&#xB418;&#xC5B4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;)</div>
                             </div>
-                            <div class="sectionCopy engContent">Take a break&mdash;and fuel up for some shopping&mdash;at Forty Carrots, located on the third floor. Our delicious signature frozen yogurt was the first of its kind when it launched in 1975, and since then, we&rsquo;ve swirled out millions of servings to our legions of fans (search #fortycarrots on Instagram to start obsessing!). Also on the menu: smoothies made with Hawaiian ingredients and delicious light local fare.</div>
+                            <div class="sectionCopy enContent">Take a break&mdash;and fuel up for some shopping&mdash;at Forty Carrots, located on the third floor. Our delicious signature frozen yogurt was the first of its kind when it launched in 1975, and since then, we&rsquo;ve swirled out millions of servings to our legions of fans (search #fortycarrots on Instagram to start obsessing!). Also on the menu: smoothies made with Hawaiian ingredients and delicious light local fare.</div>
                             <div class="sectionCopy jpContent">&#xff13;&#x968e;&#x306b;&#x3042;&#x308b;Forty Carrots&#x3067;&#x3001;&#x4f11;&#x61a9; &mdash; &#x305d;&#x3057;&#x3066;&#x30b7;&#x30e7;&#x30c3;&#x30d4;&#x30f3;&#x30b0;&#x306b;&#x5fc5;&#x8981;&#x306a;&#x5143;&#x6c17;&#x3092;&#x88dc;&#x7d66; &mdash; &#x3057;&#x307e;&#x3057;&#x3087;&#x3046;&#x3002;&#x5f53;&#x5e97;&#x306e;&#x6709;&#x540d;&#x306a;&#x30aa;&#x30ea;&#x30b8;&#x30ca;&#x30eb;&#x30d5;&#x30ed;&#x30fc;&#x30ba;&#x30f3;&#x30e8;&#x30fc;&#x30b0;&#x30eb;&#x30c8;&#x306f;&#x3001;1975&#x5e74;&#x306e;&#x8ca9;&#x58f2;&#x958b;&#x59cb;&#x6642;&#x3001;&#x3053;&#x306e;&#x7a2e;&#x3067;&#x521d;&#x3081;&#x3066;&#x306e;&#x3082;&#x306e;&#x3067;&#x3057;&#x305f;&#x3002;&#x305d;&#x308c;&#x4ee5;&#x6765;&#x3001;&#x591a;&#x6570;&#x306e;&#x30d5;&#x30a1;&#x30f3;&#x306e;&#x305f;&#x3081;&#x306b;&#x4f55;&#x767e;&#x4e07;&#x30ab;&#x30c3;&#x30d7;&#x3082;&#x306e;&#x30d5;&#x30ed;&#x30fc;&#x30ba;&#x30f3;&#x30e8;&#x30fc;&#x30b0;&#x30eb;&#x30c8;&#x306e;&#x6e26;&#x3092;&#x5dfb;&#x3044;&#x3066;&#x304d;&#x307e;&#x3057;&#x305f;&#xff08;&#x3055;&#x3042;Instagram&#x3067;#fortycarrots&#x306e;&#x691c;&#x7d22;&#x3092;&#x3002;&#x304d;&#x3063;&#x3068;&#x3068;&#x308a;&#x3053;&#x306b;&#x306a;&#x308b;&#x306f;&#x305a;&#x3067;&#x3059;&#xff01;&#xff09;&#x3002;&#x307e;&#x305f;&#x3001;&#x30e1;&#x30cb;&#x30e5;&#x30fc;&#x306b;&#x306f;&#x30cf;&#x30ef;&#x30a4;&#x306e;&#x98df;&#x6750;&#x304b;&#x3089;&#x4f5c;&#x3089;&#x308c;&#x305f;&#x30b9;&#x30e0;&#x30fc;&#x30b8;&#x30fc;&#x3068;&#x5730;&#x5143;&#x306e;&#x7f8e;&#x5473;&#x3057;&#x3044;&#x8efd;&#x98df;&#x3082;&#x3054;&#x3056;&#x3044;&#x307e;&#x3059;&#x3002;</div>
                             <div class="sectionCopy cnContent">&#x6b47;&#x4f1a;&#x5427;&#xff0c;&#x6765;&#x4e09;&#x5c42;&#x7684; Forty Carrots &#x5145;&#x7535;&#x4e00;&#x4e0b;&#xff0c;&#x4e3a;&#x60a8;&#x63a5;&#x4e0b;&#x53bb;&#x7684;&#x8d2d;&#x7269;&#x6d3b;&#x52a8;&#x8865;&#x8865;&#x529b;&#x6c14;&#x3002;&#x6211;&#x4eec;&#x7f8e;&#x5473;&#x7684;&#x8457;&#x540d;&#x51b0;&#x51bb;&#x9178;&#x5976;&#x5728; 1975 &#x5e74;&#x63a8;&#x51fa;&#x65f6;&#x72ec;&#x4e00;&#x65e0;&#x4e8c;&#xff0c;&#x81f3;&#x4eca;&#x6211;&#x4eec;&#x8d62;&#x5f97;&#x4f17;&#x591a;&#x7684;&#x7c89;&#x4e1d;&#xff0c;&#x5e76;&#x4e3a;&#x4ed6;&#x4eec;&#x4e0d;&#x65ad;&#x5e26;&#x6765;&#x65b0;&#x9c9c;&#x7f8e;&#x5473;&#xff08;&#x5728; Instagram &#x8ba2;&#x9605; #fortycarrots &#x52a0;&#x5165;&#x4ed6;&#x4eec;&#x7684;&#x884c;&#x5217;&#xff09;&#x3002;&#x83dc;&#x5355;&#x4e0a;&#x8fd8;&#x6709;&#x4f7f;&#x7528;&#x590f;&#x5a01;&#x5937;&#x539f;&#x6599;&#x7684;&#x51b0;&#x6c99;&#x548c;&#x5176;&#x4ed6;&#x7f8e;&#x5473;&#x672c;&#x5730;&#x5c0f;&#x98df;&#x3002;</div>
                             <div class="sectionCopy koContent">3&#xCE35;&#xC5D0; &#xC704;&#xCE58;&#xD55C; Forty Carrots&#xC5D0;&#xC11C; &#xC7A0;&#xC2DC; &#xD734;&#xC2DD;&#xC744; &#xCDE8;&#xD558;&#xC2ED;&#xC2DC;&#xC624;. &#xADF8;&#xB9AC;&#xACE0; &#xB2E4;&#xC74C; &#xC1FC;&#xD551;&#xC744; &#xC704;&#xD574; &#xC7AC;&#xCDA9;&#xC804;&#xD558;&#xC2ED;&#xC2DC;&#xC624;. &#xC800;&#xD76C;&#xC758; &#xB9DB;&#xC788;&#xACE0; &#xC720;&#xBA85;&#xD55C; &#xD504;&#xB85C;&#xC98C; &#xC694;&#xAC70;&#xD2B8;&#xB294; 1975&#xB144;&#xC5D0; &#xB9CC;&#xB4E4;&#xC5B4;&#xC84C;&#xC744; &#xB54C; &#xC0C8;&#xB85C;&#xC6B4; &#xC885;&#xB958;&#xC758; &#xAC83;&#xC774;&#xC5C8;&#xC2B5;&#xB2C8;&#xB2E4;. &#xADF8; &#xC774;&#xD6C4;&#xB85C; &#xC218;&#xBC31;&#xB9CC;&#xAC1C;&#xC758; &#xD504;&#xB85C;&#xC98C; &#xC694;&#xAC70;&#xD2B8;&#xB97C; &#xC800;&#xD76C;&#xC758; &#xD32C;&#xB4E4;&#xC5D0;&#xAC8C; &#xB9CC;&#xB4E4;&#xC5B4; &#xC8FC;&#xACE0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. (#fortycarrots&#xB97C; &#xC778;&#xC2A4;&#xD0C0;&#xADF8;&#xB7A8;&#xC5D0;&#xC11C; &#xCC3E;&#xC544;&#xBCF4;&#xC138;&#xC694;. &#xC5EC;&#xB7EC;&#xBD84;&#xB3C4; &#xC911;&#xB3C5;&#xB420; &#xAC70;&#xC608;&#xC694;) &#xB610;&#xD55C; &#xBA54;&#xB274;&#xC5D0;&#xB294; &#xD558;&#xC640;&#xC774;&#xC5D0;&#xC11C; &#xB098;&#xC628; &#xC7AC;&#xB8CC;&#xB4E4;&#xB85C; &#xB9CC;&#xB4E0; &#xC2A4;&#xBB34;&#xB514;&#xC640; &#xB9DB;&#xC788;&#xACE0; &#xAC04;&#xB2E8;&#xD55C; &#xC2DD;&#xC0AC;&#xAC00; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</div>
@@ -345,12 +357,12 @@ header15, .footer15 {
                         <div id="hawaii_f15_sh_04"
                              style="display: block; position: relative; margin: 0 auto; width: 962px; height: auto; left: 0; top: 0; overflow: hidden;">
                             <div class="orangeBox">
-                                <div class="orangeBoxTitle engContent">SHOPPING SERVICES</div>
+                                <div class="orangeBoxTitle enContent">SHOPPING SERVICES</div>
                                 <div class="orangeBoxTitle jpContent">&#x30b7;&#x30e7;&#x30c3;&#x30d4;&#x30f3;&#x30b0;&#x30fb;&#x30b5;&#x30fc;&#x30d3;&#x30b9;</div>
                                 <div class="orangeBoxTitle cnContent">&#x8d2d;&#x7269;&#x670d;&#x52a1;</div>
                                 <div class="orangeBoxTitle koContent">&#xC1FC;&#xD551; &#xC11C;&#xBE44;&#xC2A4;</div>
                             </div>
-                            <div class="sectionCopy engContent">Looking for even more? Don&rsquo;t miss our list of ever-expanding services created to make your shopping experience with us the best it can get. Amenities also offered at Bloomingdale&rsquo;s Ala Moana include:
+                            <div class="sectionCopy enContent">Looking for even more? Don&rsquo;t miss our list of ever-expanding services created to make your shopping experience with us the best it can get. Amenities also offered at Bloomingdale&rsquo;s Ala Moana include:
                                 <table>
                                     <tr>
                                         <td>The Aloha Community Room<br>Concierge<br>Multi-lingual Associates<br>Tailoring Services<br>Beauty Advisors</td>
@@ -390,12 +402,12 @@ header15, .footer15 {
                         <div id="hawaii_f15_rewards_01"
                              style="display: block; position: relative; margin: 0 auto; padding: 0; width: 962px; height: auto; left: 0; top: 0; overflow: hidden;">
                             <img style="display: block; position: relative; margin: 0; left: 0; top: 0; 962px; height: auto;"
-                                 src="https://www.bloomingdales.com/dyn_img/cat_splash/hawaii_f15_desktop_rewards_01.jpg" alt="" />
-                            <div id="InternationalClub" class="sectionTitle engContent">Bloomingdale&#039;s<br>International Club</div>
+                                 src="/fashion/images/projects/landing-page/hawaii-ala-moana/hawaii_f15_desktop_rewards_01.jpg" alt="" />
+                            <div id="InternationalClub" class="sectionTitle enContent">Bloomingdale&#039;s<br>International Club</div>
                             <div id="InternationalClubJp" class="sectionTitle jpContent">Bloomingdale&#039;s<br>International Club</div>
                             <div id="InternationalClubCn" class="sectionTitle cnContent">Bloomingdale&#039;s<br>&#x56fd;&#x9645;&#x4ff1;&#x4e50;&#x90e8;</div>
                             <div id="InternationalClubKo" class="sectionTitle koContent">Bloomingdale&#039;s<br>&#xC778;&#xD130;&#xB0B4;&#xC154;&#xB110; &#xD074;&#xB7FD;</div>
-                            <div class="sectionCopy engContent">Bloomingdale&rsquo;s International Club is a special reward program for international shoppers.* Earn 1 point for every dollar you spend, which you can redeem for gift cards, services and special experiences:<br>
+                            <div class="sectionCopy enContent">Bloomingdale&rsquo;s International Club is a special reward program for international shoppers.* Earn 1 point for every dollar you spend, which you can redeem for gift cards, services and special experiences:<br>
                                 <br>
                                 <span class="textBlack">EARN A GIFT CARD</span>
                                 <br>
@@ -469,12 +481,12 @@ NEVER FORGET!</span>
                         <div id="hawaii_f15_rewards_02"
                              style="display: block; position: relative; margin: 0 auto; padding: 0; width: 962px; height: auto; left: 0; top: 0; overflow: hidden;">
                             <img style="display: block; position: relative; margin: 0; left: 0; top: 0; 962px; height: auto;"
-                                 src="https://www.bloomingdales.com/dyn_img/cat_splash/hawaii_f15_desktop_rewards_02.jpg" alt="" />
-                            <div id="loyaltyClub" class="sectionTitle engContent">DOMESTIC LOYALTY CLUB</div>
+                                 src="/fashion/images/projects/landing-page/hawaii-ala-moana/hawaii_f15_desktop_rewards_02.jpg" alt="" />
+                            <div id="loyaltyClub" class="sectionTitle enContent">DOMESTIC LOYALTY CLUB</div>
                             <div id="loyaltyClubJp" class="sectionTitle jpContent">DOMESTIC LOYALTY CLUB</div>
                             <div id="loyaltyClubCn" class="sectionTitle cnContent">&#x7f8e;&#x56fd;&#x793c;&#x8d4f;&#x4ff1;&#x4e50;&#x90e8;</div>
                             <div id="loyaltyClubKo" class="sectionTitle koContent">&#xAD6D;&#xB0B4; LOYALTY CLUB</div>
-                            <div class="sectionCopy engContent">Live In the US? Domestic Loyallists Get:<br>
+                            <div class="sectionCopy enContent">Live In the US? Domestic Loyallists Get:<br>
                                 <br>
                                 <span class="textBlue">FREE SHIPPING</span>
                                 <br>
@@ -500,11 +512,14 @@ NEVER FORGET!</span>
                                 <br>
                                 <br>
                                 <div class="sectionLinks">
-                                    <a class="desktop-artwork-link" href="/loyallist/enrollment?action=createprofileandenroll" data-cm="become_a_loyallist">BECOME A LOYALLIST</a>&mdash;IT&rsquo;S EASY, IT&rsquo;S FREE!
+                                    <a class="desktop-artwork-link" href="//www.bloomingdales.com/loyallist/enrollment?action=createprofileandenroll" data-cm="become_a_loyallist">BECOME A LOYALLIST</a>&mdash;IT&rsquo;S EASY, IT&rsquo;S FREE!
                                 </div>
                                 <br>
                                 <br>
-                                <div class="sectionFooter">*Points are not earned in Nespresso shops and restaurants, on store services, sales tax, or when redeeming Bloomingdale&rsquo;s Gift and Reward Cards. On December 31 of each year, 75% of all remaining points on your account will be forfeited. See Bloomingdale&#039;s Loyallist Terms and Conditions for complete details.<br>
+                                <div class="sectionFooter">*Points are not earned in Nespresso shops and restaurants, on store services, sales tax, or when redeeming Bloomingdale&rsquo;s Gift and Reward Cards. 
+                                On December 31 of each year, 75% of all remaining points on your account will be forfeited. See Bloomingdale&#039;s Loyallist 
+                                <a href="//www.customerservice-bloomingdales.com/app/answers/detail/a_id/614/theme/popup" target="_blank">Terms and Conditions</a>
+                                 for complete details.<br>
                                     **Double Points are not earned on shoe purchases at Bloomingdale&rsquo;s The Outlet Stores.<br>
                                     *** Reward Cards cannot be redeemed in Nespresso shops, exchanged for cash, used to purchase Bloomingdale&rsquo;s Gift Cards, or used as payment on Bloomingdale&rsquo;s account balance(s). U.S. Stores only. Not valid at Bloomingdale&#039;s Dubai.<br>
                                     &dagger; Power Points will be added to your Points Account Balance 60 days after you make a qualifying purchase, unless your merchandise has not shipped, in which case your Power Points will be added when your merchandise ships. Qualifying purchase must take place at one register and be on one receipt.<br>
@@ -533,11 +548,13 @@ NEVER FORGET!</span>
                                 <b>&#x30c0;&#x30d6;&#x30eb;&#x3001;&#x30c8;&#x30ea;&#x30d7;&#x30eb;</b>&#x3001;&#x305d;&#x3057;&#x3066;<b>Power Points</b>&#x306a;&#x3069;&#x3001;&#x3082;&#x3063;&#x3068;&#x65e9;&#x304f;&#x30ea;&#x30ef;&#x30fc;&#x30c9;&#x30ab;&#x30fc;&#x30c9;&#x3092;&#x7372;&#x5f97;&#x3067;&#x304d;&#x308b;&#x30c1;&#x30e3;&#x30f3;&#x30b9;&#x3092;&#x6570;&#x591a;&#x304f;&#x3054;&#x7528;&#x610f;&#x3057;&#x3066;&#x3044;&#x307e;&#x3059;&#x3002;&dagger;<br>
                                 <br>
                                 <div class="sectionLinks">
-                                    <a class="desktop-artwork-link" href="/loyallist/enrollment?action=createprofileandenroll" data-cm="become_a_loyallist">LOYALLIST&#x306b;&#x306a;&#x308a;&#x307e;&#x3057;&#x3087;&#x3046;</a> - &#x7c21;&#x5358;&#x3001;&#x3057;&#x304b;&#x3082;&#x7121;&#x6599;&#x3067;&#x3059;&#xff01;
+                                    <a class="desktop-artwork-link" href="//www.bloomingdales.com/loyallist/enrollment?action=createprofileandenroll" data-cm="become_a_loyallist">LOYALLIST&#x306b;&#x306a;&#x308a;&#x307e;&#x3057;&#x3087;&#x3046;</a> - &#x7c21;&#x5358;&#x3001;&#x3057;&#x304b;&#x3082;&#x7121;&#x6599;&#x3067;&#x3059;&#xff01;
                                 </div>
                                 <br>
                                 <br>
-                                <div class="sectionFooter">*Nespresso&#x30b7;&#x30e7;&#x30c3;&#x30d7;&#x307e;&#x305f;&#x306f;&#x30ec;&#x30b9;&#x30c8;&#x30e9;&#x30f3;&#x3001;&#x30b9;&#x30c8;&#x30a2;&#x30b5;&#x30fc;&#x30d3;&#x30b9;&#x3001;&#x58f2;&#x4e0a;&#x7a0e;&#x3001;Bloomingdale&#039;s&#x306e;&#x30ae;&#x30d5;&#x30c8;&#x30ab;&#x30fc;&#x30c9;&#x307e;&#x305f;&#x306f;&#x30ea;&#x30ef;&#x30fc;&#x30c9;&#x30ab;&#x30fc;&#x30c9;&#x3067;&#x306e;&#x3054;&#x8cfc;&#x5165;&#x306b;&#x30dd;&#x30a4;&#x30f3;&#x30c8;&#x306f;&#x4ed8;&#x304d;&#x307e;&#x305b;&#x3093;&#x3002;&#x6bce;&#x5e74;12&#x6708;31&#x65e5;&#x3001;&#x30a2;&#x30ab;&#x30a6;&#x30f3;&#x30c8;&#x5185;&#x306e;&#x6b8b;&#x308a;&#x5168;&#x30dd;&#x30a4;&#x30f3;&#x30c8;&#x306e;75&#xff05;&#x306f;&#x5931;&#x52b9;&#x3057;&#x307e;&#x3059;&#x3002;&#x5168;&#x8a73;&#x7d30;&#x306b;&#x3064;&#x304d;&#x307e;&#x3057;&#x3066;&#x306f;&#x3001;Bloomingdale&#039;s &#x306e;Loyallist<u>&#x898f;&#x7d04;&#xff08;&#x82f1;&#x8a9e;&#x7248;&#x306e;&#x307f;&#xff09;</u>&#x3092;&#x304a;&#x8aad;&#x307f;&#x304f;&#x3060;&#x3055;&#x3044;&#x3002;<br>
+                                <div class="sectionFooter">*Nespresso&#x30b7;&#x30e7;&#x30c3;&#x30d7;&#x307e;&#x305f;&#x306f;&#x30ec;&#x30b9;&#x30c8;&#x30e9;&#x30f3;&#x3001;&#x30b9;&#x30c8;&#x30a2;&#x30b5;&#x30fc;&#x30d3;&#x30b9;&#x3001;&#x58f2;&#x4e0a;&#x7a0e;&#x3001;Bloomingdale&#039;s&#x306e;&#x30ae;&#x30d5;&#x30c8;&#x30ab;&#x30fc;&#x30c9;&#x307e;&#x305f;&#x306f;&#x30ea;&#x30ef;&#x30fc;&#x30c9;&#x30ab;&#x30fc;&#x30c9;&#x3067;&#x306e;&#x3054;&#x8cfc;&#x5165;&#x306b;&#x30dd;&#x30a4;&#x30f3;&#x30c8;&#x306f;&#x4ed8;&#x304d;&#x307e;&#x305b;&#x3093;&#x3002;&#x6bce;&#x5e74;12&#x6708;31&#x65e5;&#x3001;&#x30a2;&#x30ab;&#x30a6;&#x30f3;&#x30c8;&#x5185;&#x306e;&#x6b8b;&#x308a;&#x5168;&#x30dd;&#x30a4;&#x30f3;&#x30c8;&#x306e;75&#xff05;&#x306f;&#x5931;&#x52b9;&#x3057;&#x307e;&#x3059;&#x3002;&#x5168;&#x8a73;&#x7d30;&#x306b;&#x3064;&#x304d;&#x307e;&#x3057;&#x3066;&#x306f;&#x3001;Bloomingdale&#039;s &#x306e;Loyallist
+                                <a  target="_blank" href="https://www.customerservice-bloomingdales.com/app/answers/detail/a_id/614/theme/popup">&#x898f;&#x7d04;&#xff08;&#x82f1;&#x8a9e;&#x7248;&#x306e;&#x307f;&#xff09;</a>
+                                &#x3092;&#x304a;&#x8aad;&#x307f;&#x304f;&#x3060;&#x3055;&#x3044;&#x3002;<br>
                                     **Bloomingdale&#039;s&#x306e;The Outlet Store&#x3067;&#x306e;&#x9774;&#x306e;&#x304a;&#x8cb7;&#x3044;&#x4e0a;&#x3052;&#x306b;&#x306f;&#x3001;&#x30c0;&#x30d6;&#x30eb;&#x30dd;&#x30a4;&#x30f3;&#x30c8;&#x306f;&#x4ed8;&#x4e0e;&#x3055;&#x308c;&#x307e;&#x305b;&#x3093;&#x3002;<br>
                                     *** &#x30ea;&#x30ef;&#x30fc;&#x30c9;&#x30ab;&#x30fc;&#x30c9;&#x306f;&#x3001;Nespresso&#x30b7;&#x30e7;&#x30c3;&#x30d7;&#x3067;&#x306e;&#x304a;&#x652f;&#x6255;&#x3001;&#x73fe;&#x91d1;&#x3078;&#x306e;&#x4ea4;&#x63db;&#x3001;Bloomingdale&#039;s&#x30ae;&#x30d5;&#x30c8;&#x30ab;&#x30fc;&#x30c9;&#x306e;&#x8cfc;&#x5165;&#x3001;&#x307e;&#x305f;&#x306f;Bloomingdale&#039;s&#x306e;&#x6b8b;&#x9ad8;&#x306e;&#x652f;&#x6255;&#x306b;&#x306f;&#x3054;&#x4f7f;&#x7528;&#x3044;&#x305f;&#x3060;&#x3051;&#x307e;&#x305b;&#x3093;&#x3002;&#x7c73;&#x56fd;&#x5185;&#x306e;&#x5e97;&#x8217;&#x3067;&#x306e;&#x307f;&#x6709;&#x52b9;&#x3067;&#x3059;&#x3002;Bloomingdale&#039;s&#x30c7;&#x30e5;&#x30d0;&#x30a4;&#x3067;&#x306f;&#x3054;&#x5229;&#x7528;&#x3067;&#x304d;&#x307e;&#x305b;&#x3093;&#x3002;<br>
                                     &dagger; Power Point&#x306f;&#x3001;&#x6709;&#x52b9;&#x306a;&#x3054;&#x8cfc;&#x5165;&#x306e;60&#x65e5;&#x5f8c;&#x306b;&#x304a;&#x5ba2;&#x69d8;&#x306e;&#x30dd;&#x30a4;&#x30f3;&#x30c8;&#x30fb;&#x30a2;&#x30ab;&#x30a6;&#x30f3;&#x30c8;&#x30fb;&#x30d0;&#x30e9;&#x30f3;&#x30b9;&#x306b;&#x52a0;&#x7b97;&#x3055;&#x308c;&#x307e;&#x3059;&#x3002;&#x305f;&#x3060;&#x3057;&#x3001;&#x3054;&#x8cfc;&#x5165;&#x54c1;&#x304c;&#x767a;&#x9001;&#x524d;&#x306e;&#x5834;&#x5408;&#x306f;&#x3001;Power Point&#x306f;&#x767a;&#x9001;&#x6642;&#x306e;&#x52a0;&#x7b97;&#x3068;&#x306a;&#x308a;&#x307e;&#x3059;&#x3002;&#x6709;&#x52b9;&#x306b;&#x306a;&#x308b;&#x306e;&#x306f;&#x3001;&#xff11;&#x3064;&#x306e;&#x30ec;&#x30b8;&#x306b;&#x3066;&#x306e;&#xff11;&#x679a;&#x306e;&#x30ec;&#x30b7;&#x30fc;&#x30c8;&#x3067;&#x306e;&#x3054;&#x8cfc;&#x5165;&#x3067;&#x3059;&#x3002;<br>
@@ -566,7 +583,7 @@ NEVER FORGET!</span>
                                 <b>&#x6709;&#x4e86;&#x53cc;&#x500d;&#x3001;&#x4e09;&#x500d;&#x548c; Power Points</b>&#x79ef;&#x5206;&#xff0c;&#x8d5a;&#x53d6;&#x5956;&#x52b1;&#x5361;&#x7684;&#x673a;&#x4f1a;&#x591a;&#x4e0d;&#x80dc;&#x6570;&#xff01;.&dagger; <br>
                                 <br>
                                 <div class="sectionLinks">
-                                    <a class="desktop-artwork-link" href="/loyallist/enrollment?action=createprofileandenroll" data-cm="become_a_loyallist">&#x6210;&#x4e3a; LOYALLIST</a> &mdash; &#x7b80;&#x5355;&#x3001;&#x514d;&#x8d39;&#xff01;
+                                    <a class="desktop-artwork-link" href="//www.bloomingdales.com/loyallist/enrollment?action=createprofileandenroll" data-cm="become_a_loyallist">&#x6210;&#x4e3a; LOYALLIST</a> &mdash; &#x7b80;&#x5355;&#x3001;&#x514d;&#x8d39;&#xff01;
                                 </div>
                                 <br>
                                 <br>
@@ -598,11 +615,11 @@ NEVER FORGET!</span>
                                 <br>&#xC801;&#xB9BD; &#xCE74;&#xB4DC;&#xB97C; &#xB354;&#xBE14;, &#xD2B8;&#xB9AC;&#xD50C; &#xADF8;&#xB9AC;&#xACE0; <b>Power Points</b>&#xB85C; &#xB354; &#xBE60;&#xB974;&#xAC8C; &#xBC1B;&#xC744; &#xC218; &#xC788;&#xB294; &#xC544;&#xC8FC; &#xB9CE;&#xC740; &#xAE30;&#xD68C;&#xB4E4;&#xC774; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#x2020; <br>
                                 <br>
                                 <div class="sectionLinks">
-                                    <a class="desktop-artwork-link" href="/loyallist/enrollment?action=createprofileandenroll" data-cm="become_a_loyallist">Loyallist&#xAC00; &#xB418;&#xC138;&#xC694;- &#xAC00;&#xC785;&#xD558;&#xAE30; &#xC544;&#xC8FC; &#xC27D;&#xACE0;, &#xBB34;&#xB8CC;&#xC785;&#xB2C8;&#xB2E4;!</a>
+                                    <a class="desktop-artwork-link" href="//www.bloomingdales.com/loyallist/enrollment?action=createprofileandenroll" data-cm="become_a_loyallist">Loyallist&#xAC00; &#xB418;&#xC138;&#xC694;- &#xAC00;&#xC785;&#xD558;&#xAE30; &#xC544;&#xC8FC; &#xC27D;&#xACE0;, &#xBB34;&#xB8CC;&#xC785;&#xB2C8;&#xB2E4;!</a>
                                 </div>
                                 <br>
                                 <br>
-                                <div class="sectionFooter">*&#xD3EC;&#xC778;&#xD2B8;&#xB294;Nespresso Shop, &#xC2DD;&#xB2F9;, &#xB9E4;&#xC7A5; &#xC11C;&#xBE44;&#xC2A4;, &#xD310;&#xB9E4;&#xC138;&#xC5D0;&#xC11C;&#xB294; &#xBC1B;&#xC744; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;. &#xB610;&#xD55C;Bloomingdale&#x27;s &#xC0C1;&#xD488;&#xAD8C;&#xC774;&#xB098; &#xC801;&#xB9BD; &#xCE74;&#xB4DC;&#xB85C; &#xBB3C;&#xAC74;&#xC744; &#xAD6C;&#xC785;&#xD560; &#xB54C;&#xB294; &#xC801;&#xC6A9;&#xB418;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;. &#xB9E4;&#xB144; 12&#xC6D4; 31&#xC77C;&#xC5D0;&#xB294; &#xACE0;&#xAC1D;&#xB2D8;&#xC758; &#xACC4;&#xC815;&#xC5D0; &#xB204;&#xC801;&#xB41C; &#xD3EC;&#xC778;&#xD2B8;&#xC758; 75%&#xAC00; &#xC18C;&#xBA78;&#xB429;&#xB2C8;&#xB2E4;. &#xC790;&#xC138;&#xD55C; &#xC138;&#xBD80;&#xC0AC;&#xD56D;&#xC740;Bloomingdale&#x2019;s Loyallist&#xC758; &#xC57D;&#xAD00;&#xC744; &#xBCF4;&#xC2ED;&#xC2DC;&#xC624;.<br />**&#xB354;&#xBE14; &#xD3EC;&#xC778;&#xD2B8;&#xB294;Bloomingdale&#x2019;s The Outlet Stores&#xC5D0;&#xC11C; &#xC2E0;&#xBC1C;&#xC744; &#xAD6C;&#xB9E4;&#xD558;&#xC2E4; &#xACBD;&#xC6B0; &#xBC1B;&#xC73C;&#xC2E4; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.***&#xA0;&#xC801;&#xB9BD; &#xCE74;&#xB4DC;&#xB294; Nespresso Shop&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xD558; &#xC2E4; &#xC218; &#xC5C6;&#xACE0;, &#xD604;&#xAE08;&#xC73C;&#xB85C; &#xAD50;&#xD658;&#xC774; &#xB418;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.&#xB610;&#xD55C; Bloomingdale&#x27;s &#xC0C1;&#xD488;&#xAD8C; &#xAD6C;&#xB9E4;&#xB098; Bloomingdale&#x2019;s &#xC794;&#xC561; &#xC9C0;&#xBD88;&#xB85C; &#xC0AC;&#xC6A9; &#xB420; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;. &#xBBF8;&#xAD6D; &#xB0B4;&#xC758; &#xB9E4;&#xC7A5;&#xC5D0;&#xC11C;&#xB9CC; &#xC0AC;&#xC6A9; &#xAC00;&#xB2A5;&#xD569;&#xB2C8;&#xB2E4;. Bloomingdale&#x27;s Dubai&#xC5D0;&#xC11C;&#xB294; &#xC720;&#xD6A8;&#xD558;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.<br />&#x2020;. Power Points&#xB294; &#xC720;&#xD6A8;&#xD55C; &#xC0C1;&#xD488; &#xAD6C;&#xB9E4;&#xC77C;&#xBD80;&#xD130; 60&#xC77C; &#xD6C4;&#xC5D0; &#xACE0;&#xAC1D;&#xB2D8;&#xC758; &#xD3EC;&#xC778;&#xD2B8; &#xACC4;&#xC815; &#xC794;&#xACE0;&#xC5D0; &#xC801;&#xB9BD;&#xB429;&#xB2C8;&#xB2E4;. &#xAD6C;&#xB9E4;&#xD488;&#xC774; &#xBC30;&#xC1A1;&#xB418;&#xC9C0; &#xC54A;&#xC558;&#xC744; &#xACBD;&#xC6B0;, &#xACE0;&#xAC1D;&#xB2D8;&#xC758; Power Points&#xB294; &#xAD6C;&#xB9E4;&#xD488;&#xC774; &#xBC30;&#xC1A1;&#xB41C; &#xD6C4; &#xC801;&#xB9BD; &#xB420; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;. Power Points&#xC801;&#xC6A9; &#xAD6C;&#xB9E4;&#xB294; &#xD55C; &#xACC4;&#xC0B0;&#xB300;&#xC5D0;&#xC11C; &#xD55C; &#xC7A5;&#xC758; &#xC601;&#xC218;&#xC99D;&#xC5D0; &#xC0AC;&#xC2E0; &#xC0C1;&#xD488;&#xB0B4;&#xC5ED;&#xC774; &#xB098;&#xC640; &#xC788;&#xC5B4;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.<br />&#x2020;&#x2020;&#xAD6C;&#xB9E4;&#xB294; &#xBC18;&#xB4DC;&#xC2DC; Bloomingdale&#x27;s Card&#xB098; Loyallist ID&#xC640; &#xD568;&#xAED8; &#xC774;&#xB8E8;&#xC5B4;&#xC838;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;. bloomingdales.com&#xC5D0;&#xC11C; &#xAD6C;&#xB9E4;&#xD558;&#xC2E0; &#xBB34;&#xB8CC; &#xC77C;&#xBC18; &#xBC30;&#xC1A1;&#xC740; &#xBBF8;&#xAD6D;&#xB0B4; &#xB2E8; &#xD55C; &#xC8FC;&#xC18C;&#xC5D0;&#xB9CC; &#xAC00;&#xB2A5;&#xD569;&#xB2C8;&#xB2E4;. &#xB2E8;, Bloomingdale&#x27;s &#xC0C1;&#xD488;&#xAD8C;, &#xAC00;&#xAD6C;, &#xB9E4;&#xD2B8;&#xB9AC;&#xC2A4;&#xB294; &#xD3EC;&#xD568;&#xB418;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC774;&#xC804; &#xAD6C;&#xB9E4;&#xC5D0;&#xB294; &#xBB34;&#xB8CC;&#xBC30;&#xC1A1;&#xC740; &#xC801;&#xC6A9;&#xB418;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;. &#xB9E4;&#xC7A5;&#xC5D0;&#xC11C; &#xD558;&#xB294; &#xBB34;&#xB8CC;&#xBC30;&#xC1A1;&#xC740; &#xB9E4;&#xC7A5; &#xBC29;&#xBB38; &#xC8FC;&#xBB38;&#xC774; &#xB41C; &#xC0C1;&#xD0DC;&#xC5D0;&#xC11C; &#xBC29;&#xBB38; &#xC911;&#xC778; &#xB9E4;&#xC7A5;&#xC5D0;&#xB294; &#xC81C;&#xD488;&#xC774; &#xC5C6;&#xC9C0;&#xB9CC; &#xB2E4;&#xB978; Bloomingdale&##x27;s Department Store&#xC5D0; &#xC788;&#xC744; &#xACBD;&#xC6B0;&#xC5D0; &#xC801;&#xC6A9;&#xC774; &#xB429;&#xB2C8;&#xB2E4;. &#xBE60;&#xB978; &#xBC30;&#xC1A1;&#xC774; &#xB420; &#xACBD;&#xC6B0;&#xC5D0;&#xB294; &#xBCC4;&#xB3C4;&#xC758; &#xBC30;&#xC1A1;&#xBE44;&#xAC00; &#xBD80;&#xACFC;&#xB420; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</div>
+                                <div class="sectionFooter">*&#xD3EC;&#xC778;&#xD2B8;&#xB294;Nespresso Shop, &#xC2DD;&#xB2F9;, &#xB9E4;&#xC7A5; &#xC11C;&#xBE44;&#xC2A4;, &#xD310;&#xB9E4;&#xC138;&#xC5D0;&#xC11C;&#xB294; &#xBC1B;&#xC744; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;. &#xB610;&#xD55C;Bloomingdale&#x27;s &#xC0C1;&#xD488;&#xAD8C;&#xC774;&#xB098; &#xC801;&#xB9BD; &#xCE74;&#xB4DC;&#xB85C; &#xBB3C;&#xAC74;&#xC744; &#xAD6C;&#xC785;&#xD560; &#xB54C;&#xB294; &#xC801;&#xC6A9;&#xB418;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;. &#xB9E4;&#xB144; 12&#xC6D4; 31&#xC77C;&#xC5D0;&#xB294; &#xACE0;&#xAC1D;&#xB2D8;&#xC758; &#xACC4;&#xC815;&#xC5D0; &#xB204;&#xC801;&#xB41C; &#xD3EC;&#xC778;&#xD2B8;&#xC758; 75%&#xAC00; &#xC18C;&#xBA78;&#xB429;&#xB2C8;&#xB2E4;. &#xC790;&#xC138;&#xD55C; &#xC138;&#xBD80;&#xC0AC;&#xD56D;&#xC740;Bloomingdale&#x2019;s Loyallist&#xC758; &#xC57D;&#xAD00;&#xC744; &#xBCF4;&#xC2ED;&#xC2DC;&#xC624;.<br />**&#xB354;&#xBE14; &#xD3EC;&#xC778;&#xD2B8;&#xB294;Bloomingdale&#x2019;s The Outlet Stores&#xC5D0;&#xC11C; &#xC2E0;&#xBC1C;&#xC744; &#xAD6C;&#xB9E4;&#xD558;&#xC2E4; &#xACBD;&#xC6B0; &#xBC1B;&#xC73C;&#xC2E4; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.***&#xA0;&#xC801;&#xB9BD; &#xCE74;&#xB4DC;&#xB294; Nespresso Shop&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xD558; &#xC2E4; &#xC218; &#xC5C6;&#xACE0;, &#xD604;&#xAE08;&#xC73C;&#xB85C; &#xAD50;&#xD658;&#xC774; &#xB418;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.&#xB610;&#xD55C; Bloomingdale&#x27;s &#xC0C1;&#xD488;&#xAD8C; &#xAD6C;&#xB9E4;&#xB098; Bloomingdale&#x2019;s &#xC794;&#xC561; &#xC9C0;&#xBD88;&#xB85C; &#xC0AC;&#xC6A9; &#xB420; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;. &#xBBF8;&#xAD6D; &#xB0B4;&#xC758; &#xB9E4;&#xC7A5;&#xC5D0;&#xC11C;&#xB9CC; &#xC0AC;&#xC6A9; &#xAC00;&#xB2A5;&#xD569;&#xB2C8;&#xB2E4;. Bloomingdale&#x27;s Dubai&#xC5D0;&#xC11C;&#xB294; &#xC720;&#xD6A8;&#xD558;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.<br />&#x2020;. Power Points&#xB294; &#xC720;&#xD6A8;&#xD55C; &#xC0C1;&#xD488; &#xAD6C;&#xB9E4;&#xC77C;&#xBD80;&#xD130; 60&#xC77C; &#xD6C4;&#xC5D0; &#xACE0;&#xAC1D;&#xB2D8;&#xC758; &#xD3EC;&#xC778;&#xD2B8; &#xACC4;&#xC815; &#xC794;&#xACE0;&#xC5D0; &#xC801;&#xB9BD;&#xB429;&#xB2C8;&#xB2E4;. &#xAD6C;&#xB9E4;&#xD488;&#xC774; &#xBC30;&#xC1A1;&#xB418;&#xC9C0; &#xC54A;&#xC558;&#xC744; &#xACBD;&#xC6B0;, &#xACE0;&#xAC1D;&#xB2D8;&#xC758; Power Points&#xB294; &#xAD6C;&#xB9E4;&#xD488;&#xC774; &#xBC30;&#xC1A1;&#xB41C; &#xD6C4; &#xC801;&#xB9BD; &#xB420; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;. Power Points&#xC801;&#xC6A9; &#xAD6C;&#xB9E4;&#xB294; &#xD55C; &#xACC4;&#xC0B0;&#xB300;&#xC5D0;&#xC11C; &#xD55C; &#xC7A5;&#xC758; &#xC601;&#xC218;&#xC99D;&#xC5D0; &#xC0AC;&#xC2E0; &#xC0C1;&#xD488;&#xB0B4;&#xC5ED;&#xC774; &#xB098;&#xC640; &#xC788;&#xC5B4;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.<br />&#x2020;&#x2020;&#xAD6C;&#xB9E4;&#xB294; &#xBC18;&#xB4DC;&#xC2DC; Bloomingdale&#x27;s Card&#xB098; Loyallist ID&#xC640; &#xD568;&#xAED8; &#xC774;&#xB8E8;&#xC5B4;&#xC838;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;. bloomingdales.com&#xC5D0;&#xC11C; &#xAD6C;&#xB9E4;&#xD558;&#xC2E0; &#xBB34;&#xB8CC; &#xC77C;&#xBC18; &#xBC30;&#xC1A1;&#xC740; &#xBBF8;&#xAD6D;&#xB0B4; &#xB2E8; &#xD55C; &#xC8FC;&#xC18C;&#xC5D0;&#xB9CC; &#xAC00;&#xB2A5;&#xD569;&#xB2C8;&#xB2E4;. &#xB2E8;, Bloomingdale&#x27;s &#xC0C1;&#xD488;&#xAD8C;, &#xAC00;&#xAD6C;, &#xB9E4;&#xD2B8;&#xB9AC;&#xC2A4;&#xB294; &#xD3EC;&#xD568;&#xB418;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC774;&#xC804; &#xAD6C;&#xB9E4;&#xC5D0;&#xB294; &#xBB34;&#xB8CC;&#xBC30;&#xC1A1;&#xC740; &#xC801;&#xC6A9;&#xB418;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;. &#xB9E4;&#xC7A5;&#xC5D0;&#xC11C; &#xD558;&#xB294; &#xBB34;&#xB8CC;&#xBC30;&#xC1A1;&#xC740; &#xB9E4;&#xC7A5; &#xBC29;&#xBB38; &#xC8FC;&#xBB38;&#xC774; &#xB41C; &#xC0C1;&#xD0DC;&#xC5D0;&#xC11C; &#xBC29;&#xBB38; &#xC911;&#xC778; &#xB9E4;&#xC7A5;&#xC5D0;&#xB294; &#xC81C;&#xD488;&#xC774; &#xC5C6;&#xC9C0;&#xB9CC; &#xB2E4;&#xB978; Bloomingdale&#x27;s Department Store&#xC5D0; &#xC788;&#xC744; &#xACBD;&#xC6B0;&#xC5D0; &#xC801;&#xC6A9;&#xC774; &#xB429;&#xB2C8;&#xB2E4;. &#xBE60;&#xB978; &#xBC30;&#xC1A1;&#xC774; &#xB420; &#xACBD;&#xC6B0;&#xC5D0;&#xB294; &#xBCC4;&#xB3C4;&#xC758; &#xBC30;&#xC1A1;&#xBE44;&#xAC00; &#xBD80;&#xACFC;&#xB420; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</div>
                             </div>
                         </div>
                     </section>
@@ -622,7 +639,7 @@ NEVER FORGET!</span>
             <div id="hawaii_f15_mobile_main_container" style="display:none;">
                 <div id="mobileLanguageOverlay" class="overlay row lang" style="">
                     <div class="overlay-container">
-                        <img src="https://www.bloomingdales.com/dyn_img/cat_splash/hawaii_f15_Bloomingdales-Logo.png" alt="bloomingdales logo">
+                        <img src="/fashion/images/projects/landing-page/hawaii-ala-moana/hawaii_f15_Bloomingdales-Logo.png" alt="bloomingdales logo">
                         <div>
                             <span>Choose Your Language</span>
                             <ul>
@@ -863,13 +880,13 @@ NEVER FORGET!</span>
                             <a class="mapped koMobileContent" href="/popup.ognc?popupID=527444" target="_blank" data-cm="rewards-info_exclusions"
                                style="width: 39.625%; height: 2.24321%; left: 30.4062%; top: 35.6%;">Info/Exclusions</a>
                             <!-- Loyallist Link -->
-                            <a class="mapped enMobileContent" href="/loyallist/enrollment?action=createprofileandenroll" data-cm="rewards-become_loyallist"
+                            <a class="mapped enMobileContent" href="//www.bloomingdales.com/loyallist/enrollment?action=createprofileandenroll" data-cm="rewards-become_loyallist"
                                style="width: 35.62500000%; height: 2.24321133%; left: 16.40625000%; top: 77.39079103%;">Become a Loyallist</a>
-                            <a class="mapped jpMobileContent" href="/loyallist/enrollment?action=createprofileandenroll" data-cm="rewards-become_loyallist"
+                            <a class="mapped jpMobileContent" href="//www.bloomingdales.com/loyallist/enrollment?action=createprofileandenroll" data-cm="rewards-become_loyallist"
                                style="width: 35.62500000%; height: 2.24321133%; left: 16.40625000%; top: 77.39079103%;">Become a Loyallist</a>
-                            <a class="mapped cnMobileContent" href="/loyallist/enrollment?action=createprofileandenroll" data-cm="rewards-become_loyallist"
+                            <a class="mapped cnMobileContent" href="//www.bloomingdales.com/loyallist/enrollment?action=createprofileandenroll" data-cm="rewards-become_loyallist"
                                style="width: 30%; height: 2.24321133%; left: 25.40625%; top: 75.190791%;">Become a Loyallist</a>
-                            <a class="mapped koMobileContent" href="/loyallist/enrollment?action=createprofileandenroll" data-cm="rewards-become_loyallist"
+                            <a class="mapped koMobileContent" href="//www.bloomingdales.com/loyallist/enrollment?action=createprofileandenroll" data-cm="rewards-become_loyallist"
                                style="width: 30%; height: 2.24321133%; left: 15.4062%; top: 76.7%;">Become a Loyallist</a>
                             <!-- Terms and Conditions Link -->
                             <a class="mapped enMobileContent" href="https://customerservice.bloomingdales.com/app/answers/detail/a_id/614/theme/popup" target="_blank" data-cm="rewards-terms_conditions"

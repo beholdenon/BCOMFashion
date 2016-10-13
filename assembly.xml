@@ -7,14 +7,21 @@
 	<fileSets>
 		<fileSet>
 			<directory>target</directory>
-			<outputDirectory>/</outputDirectory>
+			<outputDirectory>server</outputDirectory>
 			<includes>
 				<include>**/*</include>
 			</includes>
 			<excludes>
 				<exclude>public/**</exclude>
-			</excludes>
+            </excludes>
 		</fileSet>
+                <fileSet>
+                        <directory>target</directory>
+                        <outputDirectory>assets</outputDirectory>
+                        <includes>
+                                <include>public/**</include>
+                        </includes>
+                </fileSet>
 	</fileSets>
 
 </assembly>
