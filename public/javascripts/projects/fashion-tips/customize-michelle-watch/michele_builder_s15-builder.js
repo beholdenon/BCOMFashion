@@ -2140,10 +2140,7 @@ window.blmwbs15.builder = ( function bl_mwbs15_builder( window, document,  $, Ha
         $.post( '/bag/add', payload, function( response ) {
 
             var i, key, item, items, cookie;
-
             try {
-
-                response = $.parseJSON( response );
                 items = response.bagItems;
                 for ( i = 0; i < items.length; i++ ) {
                     item = items[i], key = item.upcID + '';

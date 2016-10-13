@@ -105,18 +105,13 @@ module.exports = {
                 passThrough: true,
                 acceptEncoding: false,
                 mapUri: function(req, res) {
-
                     var headers = serviceProxy.getHeaders(req, process.env.SERVICES_KEY);
-                    req.url.host = serviceProxy.getHost(req, process.env.CATEGORYINDEXV3_HOST || process.env.API_HOST);
-
+                    req.url.host = serviceProxy.getHost(req, process.env.BASE_ASSETS);
                     req.app.parser = require('./../parsers/category');
-                    req.url.pathname = req.url.pathname = 'order/v1/bags';
-
+                    req.url.pathname = req.url.pathname = 'bag/add';
                     res(null, req.url.format(req.url), headers);
                 },
-
                 onResponse: serviceProxy.defaultOnResponse
-
             }
         }
     },
