@@ -11,9 +11,9 @@ var APP = {
 	markup: [],
 	pageview: "",
 	vSection: [
-		"#Glossy-Candy-Apple .prodShell",
-		"#Crimson-Crème .prodShell",
-		"#Black-Cherry .prodShell"
+		"#the-sparkly-cat-eye .prodShell",
+		"#the-copper-eye .prodShell",
+		"#the-blurred-lip .prodShell"
 	],
 
 	stickyNav: function () {
@@ -77,12 +77,11 @@ var APP = {
 				APP.markup = [];
 				// build HTML in SHOP THE LOOK section
 				$.each( products, function(i, value) {
-					var li = "<li class='prod-"+i+"'><a href='"+value.productDetails.summary.productURL+"'><img src='"+baseImgURL+value.productDetails.primaryImage.imagename+"'><p class='brand'>"+value.productDetails.summary.brand+"</p><p class='name'>"+value.productDetails.summary.name.replace(value.productDetails.summary.brand, '')+"</p></li>";
+					var li = "<li class='prod-"+i+"'><a href='"+value.productDetails.summary.productURL+"'><img alt='"+value.productDetails.summary.name+"' src='"+baseImgURL+value.productDetails.primaryImage.imagename+"'><p class='brand'>"+value.productDetails.summary.brand+"</p><p class='name'>"+value.productDetails.summary.name.replace(value.productDetails.summary.brand, '')+"</p></li>";
 					APP.markup.push(li);
 				});
 
 				$.each(APP.markup, function(i, value) {
-					console.log(value);
 					html += value;
 				});
 
@@ -157,6 +156,15 @@ $(document).ready(function() {
 		APP.stickyNav();
 	});
 
+	$("video").each(function() {
+		var tar = $(this),
+			id = tar.attr('data-id');
+		
+		SERVICES.brightCove.getURL( function(res) {
+			tar.attr('src', res);
+		}, id);
+	});
+
 	$.getJSON('/fashion/javascripts/projects/makeup-date/fall-2016-tutorial/shop.json', function(json) {
 		APP.products = json.products;
 		console.log('data call complete');
@@ -184,6 +192,34 @@ $(document).ready(function() {
 		APP.updateNav();
 	});
 
+	// essentials section button interaction
+	$('#essential-copy .tapPoint').on('click tap', function() {
+		var tar = $(this),
+			close = tar.html().indexOf('+');
+
+		$('#essential-copy .tapPoint').html('+').css('display', 'block');
+		$('#essential-copy').find('span.bg').css({
+			'opacity': 0
+		});
+		
+		if ( close >= 0 ) {
+			tar.html('-');
+			tar.parent().find('span.bg').css('opacity', 1);
+			console.log(tar.parent().attr('class'));
+
+				// due to design issues, this hides and show buttons that overlap with text
+				// boxes due to z-indexing.
+				if ( tar.parent().attr('class').indexOf('cartier') >= 0 ) {
+					$('.prodSpot.gucci .tapPoint').hide();
+				} else if ( tar.parent().attr('class').indexOf('gucci') >= 0 ) {
+					$('.prodSpot.clinique .tapPoint').hide();
+				}
+
+		}	
+		
+	});
+
+	// interaction for clicking a nav link and scrolling to target
 	$(".point").on("click", function () {
 		APP.scrollTo( $(this).attr("data-scroll") );
 	});
@@ -191,11 +227,6 @@ $(document).ready(function() {
 	// coremetrics events
 	$("[data-element]").on("click", function () {
 		APP.coremetrics('Element', APP.cm.category, $(this).attr("data-element") );
-	});
-
-	$(".video-placeholder").on("click", function () {
-		$(this).hide();
-		$(this).parent().find("video").show().get(0).play();
 	});
 
 	$(".videoShop").on("click", ".shopContainer li", function () {

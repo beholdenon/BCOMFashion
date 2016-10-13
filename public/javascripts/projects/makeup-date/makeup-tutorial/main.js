@@ -43,6 +43,7 @@ var APP = {
 
 	// updates the active element on the sticky nav
 	updateNav: function () {
+
 		$.each( $('section'), function() {
 			var box = $(this)[0].getBoundingClientRect();
 			if ( box.top <= ( 0 + $(window).height() / 3) && box.bottom >= ( 0 + $(window).height() / 3) ) {
@@ -80,6 +81,9 @@ var APP = {
 		SERVICES.product.upcGet(function(res){
 			if ( res === 'error') {
 				$('#dynamicPROs').hide();
+				$('#evening-essentials').css({
+					'border-top': '1px solid #fff'
+				});
 			} else {
 				products = res.product;
 
@@ -96,6 +100,7 @@ var APP = {
 
 				html+="</ul>";
 				$('#prodShell').html(html);
+				$('#dotShell').html('');
 				for (var i = Math.ceil( products.length/5 ); i>0; i--) {
 					if ( i === Math.ceil( products.length/5 ) ) {classes = 'active';} else { classes = '';} 
 					$('#dotShell').append('<li class="dots '+ classes + '"></li>');
@@ -196,7 +201,7 @@ $(document).ready(function() {
 		}
 	});
 
-	$.getJSON('/fashion/javascripts/projects/makeup-date/fall-2016-tutorial/shop.json', function(json) {
+	$.getJSON('/fashion/javascripts/projects/makeup-date/makeup-tutorial/shop.json', function(json) {
 		APP.products = json.products;
 		// console.log('data call complete');
 	}).done( function () {
