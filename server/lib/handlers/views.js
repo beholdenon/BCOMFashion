@@ -33,7 +33,7 @@ var deviceDetectParams = function (requestPath, req) {
     return {view: view, args: args};
 };
 
-module.exports = {
+module.exports = { 
     responsive: {
         description: 'Responsive layout',
         notes: 'Serve one code base for any device type',
