@@ -47,6 +47,17 @@ module.exports = {
             return res.view(deviceDetectProc.view, { args: deviceDetectProc.args, assetsHost: process.env.BASE_ASSETS }, { layout: 'responsive' });
         }
     },
+    nonResponsive: {
+        description: 'Non-responsive layout',
+        notes: 'Server side mobile detection layout',
+        tags: ['non-responsive'],
+        handler: function(req, res) {
+            var requestPath = (req.url.pathname).substring(1),
+                deviceDetectProc = deviceDetectParams(requestPath, req);
+
+            return res.view(deviceDetectProc.view, { args: deviceDetectProc.args, assetsHost: process.env.BASE_ASSETS });
+        }
+    },
     responsiveCustomHF: {
         description: 'Responsive custom Header&Footer layout',
         notes: 'Serve single html view for desktop and mobile; exclude standard H&F',
@@ -59,6 +70,7 @@ module.exports = {
             return res.view(responsiveCustomHFView, { assetsHost: process.env.BASE_ASSETS }, { layout: 'responsiveCustomHF' });
         }
     },
+
     nonResponsiveCustomHF: {
         description: 'Non-responsive layout',
         notes: 'Server side mobile detection layout, with custom header & footer',
