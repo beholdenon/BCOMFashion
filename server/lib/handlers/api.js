@@ -106,7 +106,7 @@ module.exports = {
                 acceptEncoding: false,
                 mapUri: function(req, res) {
                     var headers = serviceProxy.getHeaders(req, process.env.SERVICES_KEY);
-                    req.url.host = serviceProxy.getHost(req, process.env.BASE_ASSETS);
+                    req.url.host = process.env.BASE_ASSETS;
                     req.app.parser = require('./../parsers/category');
                     req.url.pathname = req.url.pathname = 'bag/add';
                     res(null, req.url.format(req.url), headers);
