@@ -73,16 +73,16 @@ section a:active {
 	z-index: 15;
 
 	li {
-		width: 15%;
-		margin: 0 2%;
+		width: 16.5%;
+		margin: 0 1.5%;
 		padding: 0;
 		display: inline-block;
 		font-weight: 900;
 		font-size: 1.25em;
 		text-align: center;
 		
-		&.active,
-		&:hover {
+		&.active {
+		// &:hover {
 			cursor: pointer;
 			color: $lightPink;
 		}
@@ -99,13 +99,21 @@ section a:active {
 	margin: 0;
 	background-color: #000000;
 
+
 	.arrow.point {
 		position: absolute;
-	    left: 46%;
-	    bottom: 0;
-	    width: 8vw;
-	    height: 4vw;
-	    z-index: 10;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		width: 8em;
+		height: 4em;
+		z-index: 10;
+		background-color: #fff;
+		border-radius: 8em 8em 0 0;
+		margin: 0 auto;
+		background-image: url(/fashion/images/projects/makeup-date/makeup-tutorial/down-arrow.png);
+		background-repeat: no-repeat;
+		background-position: 2.25em 1.65em;
 	}
 
 	.heroImage {
@@ -126,7 +134,7 @@ section a:active {
 
 	.copy {
 		position: absolute;
-		top: 6%;
+		top: 4%;
 		right: 2%;
 		width: 38%;
 		font-size: 1.25vw;
@@ -140,9 +148,9 @@ section a:active {
 			letter-spacing: 0.5em;
 			font-weight: 900;
 			text-align: center;
-			margin: 0.75em auto 0;
+			margin: 0.25em auto 0;
 			padding: 0;
-			line-height: 1.35em;
+			line-height: 1.15em;
 			text-transform: uppercase;
 		}
 
@@ -156,7 +164,7 @@ section a:active {
 			&.pink {
 				color: $lightPink;
 				margin: 0.75em 0;
-				line-height: 2em;
+				line-height: 1.25em;
 				letter-spacing: 0.4em;
 			}
 		}
@@ -178,9 +186,21 @@ section a:active {
 
 	}
 
+	.pinkBg {
+		background-color: #cc6666;
+		color: #000;
+		margin: 0.75em auto 0.25em;
+		font-weight: 800;
+		line-height: 1.5em;
+		font-size: 1.5em;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+		width: 50%;
+	}
+
 }
 
-#Red-Lip-Report {
+#how-to-videos {
 	background-color: #000000;
 	color: #ffffff;
 	text-align: center;
@@ -459,15 +479,15 @@ section a:active {
 }
 
 #essentials-bg {
-	max-width: 1200px;
-	width: 100vw;
+	width: 1200px;
+	min-width: 1200px;
 }
 
 #essential-copy {
 	position: absolute;
 	top: 0;
 	display: block;
-	width: 80%;
+	width: 1200px;
 	height: 100%;
 	margin: 0 auto;
 	left: 0;
@@ -527,8 +547,8 @@ section a:active {
 
 		&.clinique {
 			left: 77%;
-			top: 39%;
-			width: 15%;
+			top: 38%;
+			width: 19%;
 		}
 
 		&.dior {
@@ -538,7 +558,7 @@ section a:active {
 
 		&.clarins {
 			left: 36%;
-			top: 82%;
+			top: 80%;
 		}
 
 	}
@@ -547,7 +567,7 @@ section a:active {
 
 #Gift-with-Purchase {
 	position: relative;
-	font-size: 1.2vw;
+	font-size: 14px;
 	background-color: #e0e0e0;
 	text-align: center;
 
@@ -669,9 +689,9 @@ section a:active {
 		color: #fff;
 		background-color: #453894;
 		display: inline-block;
-		width: 65%;
+		width: 30em;
 		letter-spacing: 0.05em;
-		padding: 0.9em 0;
+		padding: 1.25em 0;
 		font-family: "Open Sans", sans-serif;
 
 		a {
@@ -909,6 +929,7 @@ section a:active {
 		color: #000000;
 		text-transform: uppercase;
 		font-size: 1em;
+		font-weight: 800;
 		line-height: 5em;
 		text-decoration: underline;
 		cursor: pointer;
@@ -938,4 +959,19 @@ section a:active {
 		}
 	}
 
+}
+
+
+@media screen and (max-width: 1024px) {
+
+	#evening-essentials {
+		#essential-copy {
+			width: 100vw;
+		}
+
+		#essentials-bg {
+			width: 100vw;
+			min-width: 100vw;
+		}
+	}
 }
