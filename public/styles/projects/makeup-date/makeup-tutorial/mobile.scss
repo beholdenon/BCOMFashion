@@ -611,6 +611,8 @@ section a:active {
 
 #samples {
 	font-size: 1.25vw;
+	position: relative;
+	z-index: -1;
 
 	h3 {
 		letter-spacing: 0.15em;
@@ -713,6 +715,7 @@ section a:active {
 
 #sweepstakes {
 	position: relative;
+	z-index:-1;
 	font-size: 4.25vw;
 	border-top: 2px solid #000;
 

@@ -188,10 +188,16 @@ $(document).ready(function() {
 	});
 
 	SERVICES.brightCove.getURL( function(res) {
+		
 		$("#makeupVideo").attr('src', res);
+		
+		setTimeout(function () {
+			$('.playlist .vidBox').css('height', APP.resizeVideoThumbnails() + 'px');
+		}, 100);
+
 	}, $("#makeupVideo").attr('data-id') );
 
-	$('.playlist .vidBox').css('height', APP.resizeVideoThumbnails() + 'px');
+	// $('.playlist .vidBox').css('height', APP.resizeVideoThumbnails() + 'px');
 
 	$(window).resize( function(){
 		if( headerEl.height() > 0 ){
