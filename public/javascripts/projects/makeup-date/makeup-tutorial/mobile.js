@@ -199,12 +199,16 @@ $(document).ready(function() {
 
 		$('#essential-copy .tapPoint').html('+').css('display', 'block');
 		$('#essential-copy').find('span.bg').css({
-			'opacity': 0
+			'opacity': 0,
+			'visibility': 'hidden'
 		});
 		
 		if ( close >= 0 ) {
 			tar.html('-');
-			tar.parent().find('span.bg').css('opacity', 1);
+			tar.parent().find('span.bg').css({
+				'opacity': 1,
+				'visibility': 'visible'
+			});
 			console.log(tar.parent().attr('class'));
 
 				// due to design issues, this hides and show buttons that overlap with text
