@@ -1,22 +1,15 @@
 $mauve: #c91042;
+$lightPink: #cc6666;
+$loyallist: #453894;
 
 #bl_main_container {
 	min-width: auto;
 	max-width: 100%;
 	width: 100%;
 	position: relative;
-}
+	font-size: 12px;
+	font-family: "Lato", Arial, sans-serif;
 
-.montserrat {
-	font-family: "Montserrat", Arial;
-}
-
-.playfair {
-	font-family: "Playfair Display", Arial;
-}
-
-.italic {
-	font-style: italic;
 }
 
 .caps {
@@ -52,11 +45,11 @@ section a:active {
     z-index: 50;
 
 	h3 {
-		color: $mauve;
+		color: #000;
 		padding: 0;
 		margin: 0;
 		vertical-align: top;
-		font-size: 7vw;
+		font-size: 6.5vw;
 		text-transform: uppercase;
 
 		&:before {
@@ -90,6 +83,7 @@ section a:active {
     	overflow: scroll;
 
 		li {
+			font-weight: 800;
 
 			&.active {
 				display: none;
@@ -99,95 +93,6 @@ section a:active {
 
 	}
 
-}
-
-#makeup_hero {
-	position: relative;
-	padding: 0;
-	margin: 0;
-
-	.heroImage {
-		width: 100%;
-		position: absolute;
-		top: 0;
-		left: 0;
-		z-index: 5;
-	}
-
-	.heroPlaceholder {
-		display: block;
-		width: 100%;
-	}
-
-	.copy {
-		position: absolute;
-		top: 40%;
-		width: 100%;
-		padding: 0 4%;
-		font-size: 5vw;
-		color: #ffffff;
-		text-align: center;
-		z-index: 10;
-
-		h1 {
-			font-size: 1.35em;
-			color: inherit;
-			letter-spacing: 0.15em;
-			word-spacing: 0.3em;
-			margin: 0;
-			padding: 0;
-			line-height: 1em;
-		}
-
-		p {
-			padding: 0;
-			margin:0;
-
-			&.subHeader {
-				font-size: 0.6em;
-			}
-
-			&.smallHeader {
-				margin-top: 0.5em;
-				font-size: 0.5em;
-			}
-
-			.exclusionsLink {
-				text-decoration: underline;
-				cursor: pointer;
-			}
-		}
-
-	}
-
-}
-
-#Red-Lip-Report {
-	background-color: #000000;
-	color: #ffffff;
-	padding: 1vw 5vw;
-	text-align: center;
-	margin: 0;
-
-	p, h2 {
-		color: inherit;
-		width: 85vw;
-		line-height: 1.5em;
-		display: inline-block;
-	}
-
-	p {
-		font-size: 3.25vw;
-	}
-
-	h2 {
-		padding: 1vw 0;
-		margin: 0;
-		text-transform: uppercase;
-		letter-spacing: 0.2em;
-		font-size: 6vw;
-		font-weight: 700;
-	}
 }
 
 .video-wrapper {
@@ -216,11 +121,15 @@ section a:active {
 		margin: 1em 0 0;
 		padding: 0;
 		letter-spacing: 0.2em;
+		font-size: 1.5em;
+		font-weight: 700;
 		text-transform: uppercase;
 	}
 
 	.vCopy {
-		font-size: 1.55em;
+		font-size: 1.25em;
+		font-weight: 300;
+		margin: 0.5em 0;
 	}
 
 }
@@ -273,10 +182,110 @@ section a:active {
 
 }
 
-#Red-Lip-Tips {
+
+#makeup_hero {
+	position: relative;
+	padding: 0;
+	margin: 0;
+	color: #ffffff;
+
+	.heroImage {
+		width: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 5;
+	}
+
+	.heroPlaceholder {
+		display: block;
+		width: 100%;
+	}
+
+	.copy {
+		position: absolute;
+		top: 10%;
+		width: 50%;
+		font-size: 3vw;
+		color: #ffffff;
+		text-align: center;
+		right: 1%;
+		z-index: 10;
+
+		h1 {
+			font-size: 1.9em;
+			color: inherit;
+			letter-spacing: 0.5em;
+			font-weight: 900;
+			text-align: center;
+			margin: 0.5em auto 0;
+			padding: 0;
+			line-height: 1.35em;
+			text-transform: uppercase;
+		}
+
+		h2 {
+			color: #ffffff;
+			font-size: 0.8em;
+			font-weight: 900;
+			text-transform: uppercase;
+			letter-spacing: 0.1em;
+			line-height: 1.65em;
+
+			&.pink {
+				color: $lightPink;
+				margin: 0.75em 0;
+				line-height: 2em;
+				font-size: 0.95em;
+				letter-spacing: 0.4em;
+			}
+		}
+
+		.pinkBg {
+			background-color: #cc6666;
+			color: #000;
+			margin: 0.75em auto;
+			font-weight: 800;
+			line-height: 2em;
+			font-size: 0.75em;
+			letter-spacing: 0.1em;
+			text-transform: uppercase;
+			width: 45%;
+		}
+
+		p {
+			width: 85%;
+			margin: 0 auto;
+			line-height: 1.8em;
+
+			&.legal {
+				font-family: "Open Sans", sans-serif;
+				font-weight: 400;
+				font-size: 0.8em;
+			}
+
+			&.subHeader {
+				font-size: 0.6em;
+			}
+
+			&.smallHeader {
+				margin-top: 0.5em;
+				font-size: 0.5em;
+			}
+
+			.exclusionsLink {
+				text-decoration: underline;
+				cursor: pointer;
+			}
+		}
+
+	}
+
+}
+
+#the-makeup-date {
 	background-color: #000000;
 	color: #ffffff;
-	border-top: 2px solid $mauve;
 	padding: 2vw 3.5vw;
 
 	h2 {
@@ -285,7 +294,10 @@ section a:active {
 		text-align: center;
 		line-height: 1.6em;
 		padding: 0;
-		margin: 0 auto;
+		margin: 0.5em auto 0;
+		font-size: 2em;
+		text-transform: uppercase;
+		font-weight: 800;
 
 		&.spaced {
 			letter-spacing: 0.3em;
@@ -317,30 +329,11 @@ section a:active {
 		}
 	}
 
-
-	#prep,
-	#shade,
-	#make-it-last {
-		display: block;
-	}	
-
-	#prep {
-		min-height: 110vw;
-
-		.absolute {
-			top: 6vw;
-			left: 12vw;
-			width: 37vw; 
-		}
-	}
-
-	#shade {
-		min-height: 110vw;
-
-		.absolute {
-			top: 3vw;
-			left: 58vw;
-		}
+	.copy {
+		text-align: center;
+		font-size: 1.1em;
+		width: 90%;
+		margin: 1em auto 0;
 	}
 
 	#make-it-last {
@@ -354,14 +347,140 @@ section a:active {
 	}
 }
 
-#Gift-with-Purchase {
+
+#essentials {
+	text-align: center;
+	background-color: #000000;
 	position: relative;
-	font-size: 3vw;
-	border-top: 2px solid $mauve;
-	border-bottom: 2px solid $mauve;
+}
+
+#essentials-bg {
+	max-width: 1200px;
+	width: 100vw;
+}
+
+#essential-copy {
+	position: absolute;
+	top: 0;
+	display: block;
+	width: 90%;
+	height: 100%;
+	margin: 0 auto;
+	left: 0;
+	right: 0;
+	color: #fff;
+	text-align: center;
+
+	h2 {
+		color: inherit;
+		font-weight: 900;
+		text-transform: uppercase;
+		letter-spacing: 0.2em;
+		font-size: 2em;
+		margin-top: 0.5em;
+	}
+
+	p {
+		font-size: 1em;
+	}
+
+	p.prodSpot {
+		position: absolute;
+		max-width: 50%;
+		text-align: left;
+		font-size: 0.95em;
+
+		.tapPoint {
+			display: inline-block;
+			border: 1px solid #fff;
+			background-color: transparent;
+			color: #fff;
+			width: 25px;
+			height: 25px;
+			font-size: 1.65em;
+			line-height: 1.2em;
+			text-align: center;
+			border-radius: 100%;
+			position: absolute;
+			z-index: 12;
+
+			&.lSide {
+				left: -1.75em;
+			}
+
+			&.rSide {
+				left: 9.5em;
+			}
+
+			&.bot {
+				bottom: 0;
+			}
+		}
+
+		span.bg {
+			opacity: 0;
+			display: block;
+			background-color: rgba(256,256,256, 0.9);
+			color: #000;
+			padding: 0.75em;
+			z-index: 11;
+			transition: 0.5s;
+		}
+
+		a {
+			text-decoration: underline;
+			text-transform: uppercase;
+			display: block;
+			margin-bottom: 0.25em;
+			font-weight: 800;
+			letter-spacing: 0.1em;
+			outline: none;
+		}
+
+		&.gucci {
+			left: 50%;
+			top: 32%;
+		}
+
+		&.lancome {
+			left: 10%;
+			top: 41%;
+		}
+
+		&.cartier {
+			left: 21%;
+			top: 23%;
+		}
+
+		&.clinique {
+			left: 35%;
+			top: 45%;
+		}
+
+		&.dior {
+			left: 36%;
+			top: 48%;
+		}
+
+		&.clarins {
+			left: 36%;
+			top: 54%;
+		}
+
+	}
+
+}
+
+#exclusive-gift {
+	position: relative;
+	font-size: 12px;
 
 	img {
-		width: 100%;
+		width: 80%;
+		display: block;
+		margin: 0 auto 0;
+		padding-top: 17em;
+		padding-bottom: 2em;
 	}
 
 	.absolute {
@@ -380,6 +499,9 @@ section a:active {
 
 		h2.caps {
 			letter-spacing: 0.2em;
+			font-size: 2em;
+			font-weight: 800;
+			margin-top: 0.25em;
 		}
 
 		p.caps {
@@ -388,10 +510,23 @@ section a:active {
 
 		div.caps a {
 			text-decoration: underline;
+			margin-top: 1em;
+			display: 	inline-block;
 
 			&:last-child {
 				margin-left: 2em;
 			}
+		}
+
+		.online {
+			background-color: $lightPink;
+			font-weight: 900;
+			font-size: 1.2em;
+			letter-spacing: 0.2em;
+			width: auto;
+			display:  inline-block;
+			padding: 0 1em;
+			line-height: 1.8em;
 		}
 	}
 
@@ -416,38 +551,13 @@ section a:active {
 		font-weight: 400;
 	}
 
-	p,
 	a {
-		font-family: inherit;
-		font-size: inherit;
 		color: inherit;
 		font-weight: 700;
 	}
 
-	.loyallist {
-		position: absolute;
-		left: 60%;
-		top: 40%;
-		background-color: #000000;
-		height: 35vw;
-		width: 35vw;
-		text-align: center;
-		border-radius: 100%;
-		font-weight: 800;
-		font-size: 0.8em;
-		padding: 2em 2em 0;
-		color: #ffffff;
-
-		.fine {
-			font-weight: 400;
-			font-size: 0.85em;
-			margin-top: 1em;
-			color: #dddddd;
-		}
-
-		.exclusionsLink {
-			text-decoration: underline;
-		}
+	p {
+		font-size: 1.25em;
 	}
 
 }
@@ -457,6 +567,44 @@ section a:active {
 
 	strong {
 		font-size: 2.5em;
+	}
+}
+
+#loyallist-bar {
+	background-color: #453894;
+	padding: 1.25em 5%;
+	text-align: center;
+	display: block;
+	position: relative;
+
+	.loyallist {
+		color: #fff;
+		font-weight: 300;
+		font-size: 1.15em;
+	}
+
+	.bubble {
+		position: absolute;
+		color: #fff;
+		border-radius: 100%;
+		top: -1em;
+		background-color: #453894;
+		width: 2em;
+		line-height: 2em;
+		left: 0;
+		right: 0;
+		margin: 0 auto;
+		font-weight: 900;
+		font-size: 1.5em;
+	}
+
+	a {
+		color: #fff;
+	}
+
+	p {
+		margin: 0;
+		padding: 0;
 	}
 }
 
@@ -566,8 +714,7 @@ section a:active {
 #sweepstakes {
 	position: relative;
 	font-size: 4.25vw;
-	border-top: 2px solid $mauve;
-	border-bottom: 2px solid $mauve;
+	border-top: 2px solid #000;
 
 	img {
 		width: 100%;
@@ -622,12 +769,13 @@ section a:active {
 		font-size: 3vw;
 		border-top: 1px solid #ffffff;
 		font-weight: 700;
-		text-decoration: underline;
+		text-decoration: inherit;		
 
 		a {
 			color: inherit;
 			font-size: inherit;
 			font-weight: inherit;
+			text-decoration: underline;
 		}
 
 		&.alt {
@@ -636,9 +784,10 @@ section a:active {
 		}
 
 		&.backToTop {
-			background-color: $mauve;
+			background-color: $lightPink;
 			color: #000000;
 			text-decoration: underline;
+			font-weight: 800;
 		}
 
 	}

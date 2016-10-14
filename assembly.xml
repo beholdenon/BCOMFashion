@@ -1,5 +1,5 @@
 <assembly>
-	<id>BCOMFashion</id> 
+	<id>BCOMFashion</id>
 	<formats>
 		<format>tar.gz</format>
 	</formats>
@@ -15,13 +15,12 @@
 				<exclude>public/**</exclude>
             </excludes>
 		</fileSet>
-                <fileSet>
-                        <directory>target</directory>
-                        <outputDirectory>assets</outputDirectory>
-                        <includes>
-                                <include>public/**</include>
-                        </includes>
-                </fileSet>
+		<fileSet>
+			<directory>target</directory>
+			<outputDirectory>assets</outputDirectory>
+			<includes>
+				<include>public/**</include>
+			</includes>
+		</fileSet>
 	</fileSets>
-
 </assembly>
