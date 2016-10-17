@@ -56,37 +56,44 @@ $font-family-sans-serif: Avenir, helvetica, arial, sans-serif;
         border: 3px solid #000;
         color: #000;
         font-size: 16px;
+        height: auto;
         margin: 190px 0 0;
         padding: 0 30px;
         width: 200px;
 
         &.rwc-button-download {
             margin-top: 0;
+            padding-top: 3px;
+            padding-bottom: 3px;
             text-transform: none;
             width: auto;
         }
     }
 
     &.rwc-hero {
-        background: transparent url('/fashion/images/projects/registry/wedding/checklist/hero.jpg') no-repeat;
-        color: #fff;
-        height: 461px;
-        padding-top: 90px;
-
-        .rwc-content {
-            font-size: 18px;
-            line-height: 2;
-            text-align: center;
+        .rwc-hero-content {
+            left: 0;
+            margin: 0 auto;
+            position: absolute;
+            right: 0;
+            top: 90px;
+            width: 475px;
         }
 
-        .rwc-content-header {
+        .rwc-header {
             margin-bottom: 25px;
         }
 
-        .rwc-content-title {
+        .rwc-title {
+            background-color: transparent;
             color: #fff;
-            font-family: $font-family-serif;
             font-size: 52px;
+            font-weight: normal;
+            letter-spacing: 0;
+            margin: 0;
+            padding: 0;
+            text-transform: none;
+            width: auto;
         }
 
         .rwc-line {
@@ -95,13 +102,22 @@ $font-family-sans-serif: Avenir, helvetica, arial, sans-serif;
             width: 250px;
         }
 
+        .rwc-content {
+            color: #fff;
+            font-size: 18px;
+            line-height: 2;
+            padding: 0 65px;
+            text-align: center;
+        }
+
+        .rwc-footer {
+            height: auto;
+        }
+
         .rwc-button {
             background-color: transparent;
             border-color: #FFF;
             color: #FFF;
-            margin: 0;
-            text-transform: none;
-            width: auto;
         }
     }
 
