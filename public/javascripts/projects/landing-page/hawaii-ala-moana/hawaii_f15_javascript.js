@@ -285,7 +285,13 @@ require(['jquery', 'backbone'], function($, Backbone){
 
     function stickyNav(){
 
-        if ($('.bl_tablet').length > 0){return;}
+        if ($('.bl_tablet').length > 0){
+            $('#'+ namespace.projectGlobalPrefix +'_desktop_nav').css({
+                // 'position':'relative',
+                'margin-top': '-42px'
+            });
+            return;
+        }
 
         if($(window).scrollTop() < ($('#'+ namespace.projectGlobalPrefix +'_desktop_nav_placeholder').offset().top)){
             $('#'+ namespace.projectGlobalPrefix +'_desktop_nav').css({
