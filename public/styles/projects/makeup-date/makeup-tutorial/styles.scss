@@ -533,7 +533,7 @@ section a:active {
 		}
 
 		&.lancome {
-			left: 10%;
+			left: 8%;
 			top: 41%;
 			width: 11%;
 
@@ -977,13 +977,17 @@ section a:active {
 		}
 	}
 
-	.lancome {
-		left: 6%;
-		top: 40%;
-		width: 11%;
+	#essential-copy {
+		p.prodSpot {
+			&.lancome {
+				left: 4%;
+				top: 41%;
+				width: 12%;
 
-		a {
-			width: 140%;
+				a {
+					width: 140%;
+				}
+			}
 		}
 	}
 
