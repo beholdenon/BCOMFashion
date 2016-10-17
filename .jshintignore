@@ -1,4 +1,10 @@
 **/*-compiled.js
 **/*navdata.js
 
-**/javascripts/projects/fashion-tips/**
+/public/javascripts/projects/fashion-tips/baby-essentials-must-haves-checklist/*
+/public/javascripts/projects/fashion-tips/buying-rug-guide-2016/*
+/public/javascripts/projects/fashion-tips/bedding-utility-guide/*
+
+**/*jquery*
+**/*hammer.min.js
+**/*hawaii_f15_detectDevice.js
