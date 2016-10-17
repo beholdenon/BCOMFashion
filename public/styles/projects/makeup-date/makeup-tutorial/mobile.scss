@@ -3,7 +3,7 @@ $lightPink: #cc6666;
 $loyallist: #453894;
 
 #bl_main_container {
-	min-width: auto;
+	min-width: none;
 	max-width: 100%;
 	width: 100%;
 	position: relative;
@@ -17,7 +17,7 @@ $loyallist: #453894;
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-family: "Montserrat", Arial;
+	font-family: "Lato", Arial;
 }
 
 section a:link,
@@ -163,7 +163,7 @@ section a:active {
 
 				.brand,
 				.name {
-					font-family: "Montserrat", Arial;
+					font-family: "Lato", Arial;
 					font-size: 1em;
 					line-height: 1.25em;
 					margin: 0;
@@ -377,11 +377,12 @@ section a:active {
 		text-transform: uppercase;
 		letter-spacing: 0.2em;
 		font-size: 2em;
-		margin-top: 0.5em;
+		margin: 0.5em auto 0;
+		max-width: 60%;
 	}
 
 	p {
-		font-size: 1em;
+		font-size: 0.9em;
 	}
 
 	p.prodSpot {
@@ -405,11 +406,11 @@ section a:active {
 			z-index: 12;
 
 			&.lSide {
-				left: -1.75em;
+				left: -11vw;
 			}
 
 			&.rSide {
-				left: 10.5em;
+				left: 50vw;
 			}
 
 			&.bot {
@@ -449,7 +450,7 @@ section a:active {
 
 		&.cartier {
 			left: 21%;
-			top: 23%;
+			top: 25%;
 		}
 
 		&.clinique {
@@ -630,7 +631,6 @@ section a:active {
 		list-style-type: none;
 
 		.prod {
-			background-color: #cccccc;
 			width: auto;
 		}
 
@@ -653,13 +653,9 @@ section a:active {
 			font-size: 2em;
 			position: relative;
 
-			.brand {
-				font-weight: 800;
-			}
-
 			.brand,
 			.name {
-				font-family: "Montserrat", Arial;
+				font-weight: 800;
 				margin: 0;
 				text-transform: uppercase;
 				font-size: inherit;
@@ -797,19 +793,3 @@ section a:active {
 
 
 }
-
-@media screen and (max-width: 350px) {
-	#Red-Lip-Tips #shade,
-	#Red-Lip-Tips #prep,
-	#Red-Lip-Tips #make-it-last {
-		height: 60vh;
-	}
-}
-
-// @media screen and (orientation: landscape) {
-// 	#Red-Lip-Tips #shade,
-// 	#Red-Lip-Tips #prep,
-// 	#Red-Lip-Tips #make-it-last {
-// 		height: 60vh;
-// 	}
-// }
