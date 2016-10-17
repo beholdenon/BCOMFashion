@@ -165,11 +165,11 @@ $(document).ready(function() {
 		}, id);
 	});
 
-	$.getJSON('/fashion/javascripts/projects/makeup-date/makeup-tutorial/shop.json', function(json) {
+	$.getJSON('/fashion/javascripts/projects/makeup-date/makeup-tutorial/shop.json', function( json ) {
 		APP.products = json.products;
-		console.log('data call complete');
+		// console.log('data call complete');
 	}).done( function () {
-		console.log('starting build');
+		// console.log('starting build');
 		var n = 0;
 		$.each(APP.products, function(i) {
 			APP.updateShop( APP.products[i].upc, APP.vSection[n] );	
