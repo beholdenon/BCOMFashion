@@ -379,7 +379,8 @@ module.exports = function(grunt) {
                         src: [
                             './server/lib/views/about-us/**/*.hbs',
                             './server/lib/views/landing-page/**/*.hbs',
-                            './server/lib/views/media/about/**/*.hbs'
+                            './server/lib/views/fashion-index/**/*.hbs',
+                            './server/lib/views/media/**/*.hbs'
                         ],
                         rename: function(dest, src) {
                             var name =  src.replace(/(\.*)\.hbs$/, "$1-mobile.hbs");
