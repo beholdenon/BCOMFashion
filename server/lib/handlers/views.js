@@ -33,7 +33,7 @@ var deviceDetectParams = function (requestPath, req) {
     return {view: view, args: args};
 };
 
-module.exports = {
+module.exports = { 
     responsive: {
         description: 'Responsive layout',
         notes: 'Serve one code base for any device type',
@@ -47,7 +47,17 @@ module.exports = {
             return res.view(deviceDetectProc.view, { args: deviceDetectProc.args, assetsHost: process.env.BASE_ASSETS }, { layout: 'responsive' });
         }
     },
+    nonResponsive: {
+        description: 'Non-responsive layout',
+        notes: 'Server side mobile detection layout',
+        tags: ['non-responsive'],
+        handler: function(req, res) {
+            var requestPath = (req.url.pathname).substring(1),
+                deviceDetectProc = deviceDetectParams(requestPath, req);
 
+            return res.view(deviceDetectProc.view, { args: deviceDetectProc.args, assetsHost: process.env.BASE_ASSETS });
+        }
+    },
     responsiveCustomHF: {
         description: 'Responsive custom Header&Footer layout',
         notes: 'Serve single html view for desktop and mobile; exclude standard H&F',
@@ -77,7 +87,18 @@ module.exports = {
         notes: 'This is the default fallback route if not explicitly captured',
         tags: ['fallback', 'static'],
         handler: function(req, res) {
-            var requestPath = req.params.path;
+
+            var requestPath;
+
+            // Check for path with deeplinks param. Deep link
+            // param will be dropped and handled on client. Otherwise,
+            // proceed as usual.
+            if (/\{deeplinks\?}/.test(req.route.path)){
+                requestPath = req.route.path.substring(1).replace(/{.*?}/,'');
+            } else {
+                requestPath = req.params.path;//  || req.path;
+            }
+
             if (requestPath === '' || requestPath === undefined) {
                 // if route not captured, redirect to the main site
                 return res.redirect('http://www.bloomingdales.com');

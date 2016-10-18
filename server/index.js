@@ -32,6 +32,7 @@ var routes = [
     { method: 'GET',  path: '/v4/{path*}',                                          config: require('./lib/handlers/api').v4 },
     { method: 'GET',  path: '/getBag/{path*}',                                      config: require('./lib/handlers/api').getbag },
     { method: 'POST', path: '/addToBag/{path*}',                                    config: require('./lib/handlers/api').addbag },
+    { method: 'POST', path: '/bag/add/{path*}',                                      config: require('./lib/handlers/api').addbag },
     { method: 'GET',  path: '/fashion/{path*}',                                     config: require('./lib/handlers/assets').netstorage },
     { method: 'GET',  path: '/img/{path*}',                                         config: require('./lib/handlers/assets').commonAssets },
     { method: 'GET',  path: '/web20/assets/{path*}',                                config: require('./lib/handlers/assets').commonAssets },
@@ -51,6 +52,7 @@ var routes = [
     { method: 'GET',  path: '/100-percent-2016/{path*}',                            config: require('./lib/handlers/views').responsiveCustomHF },
     { method: 'GET',  path: '/2016-fall-campaign-100-percent-exclusive/{path*}',    config: require('./lib/handlers/views').responsiveCustomHF },
     { method: 'GET',  path: '/outlet-touch-screen/',                                config: require('./lib/handlers/views').responsiveCustomHF },
+    { method: 'GET',  path: '/landing-page/hawaii-ala-moana/{deeplinks?}',          config: require('./lib/handlers/views').fallback },
     { method: 'GET',  path: '/{path*}',                                             config: require('./lib/handlers/views').fallback }
 ];
 
