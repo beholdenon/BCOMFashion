@@ -26,7 +26,7 @@ DIV {
         max-width: 728px;
     }
     IMG {
-        max-width:105%;
+        //max-width:105%;
     }
     UL {
         margin-left:15px;
@@ -68,6 +68,10 @@ DIV {
             height: 20px;
         }
         &.hshim2{
+            height:10px;
+        }
+        // shim for desktop only
+        .dshim {
             height:10px;
         }
         &.bl_nav_side {
@@ -420,10 +424,11 @@ DIV {
 // Ways to Shop
 .about_us {
     .LBHeading {
-        font-family: 'Libre Baskerville', serif;
-        font-size: 2.5rem;
+        font-family: Georgia, 'Times New Roman', serif;
+        font-size: 3.5rem;
         white-space: nowrap;
         line-height:1.2;
+        letter-spacing: 0.02rem;
     }
 }
 @mixin ways_mobile {
@@ -431,20 +436,20 @@ DIV {
         .LBHeading {
             white-space:normal;
         }
-        .row {
-            text-align: center;
-        }
+
+
         .main {
          //   padding:20px;
         }
         .content {
-            max-width:90%;
+            width:inherit;
+            margin-left:0px;
         }
         H4 {
             font-size:1.4rem;
         }
         .hshim {
-            display:none;
+         //   display:none;
         }
         #frow .ffoot {
             margin-top:10px;
@@ -452,10 +457,10 @@ DIV {
         }
         #smallDart {display:none}
         #bigDart {display:block}
-        .line {
+/*        .line {
             margin-left: auto;
             margin-right: auto;
-        }
+        }*/
         IMG.left_pic {
             margin: 0;
             height: 300px;
@@ -470,6 +475,9 @@ DIV {
         }
         .section.h_shim {
             margin-top:30px;
+        }
+        .section.dshim {
+            display:none;
         }
         DIV.section_f {
             line-height: 1.2;
@@ -486,11 +494,23 @@ DIV {
     }
 }
 .bl_mobile {
+    .ways_to_shop .m_break {display:block;}
+    .ways_to_shop .contentb {padding:10px;}
     @include ways_mobile;
 }
 
 .ways_to_shop {
     #bigDart {display:none}
+    .m_break {
+        display:none;
+    }
+    @media (max-width: 480px) {
+        .sm-centered {
+          text-align: center;
+          margin-left: auto;
+          margin-right: auto;
+        }
+    }
     @media (max-width: 736px) {
         #smallDart {display:none}
         #bigDart {display:block}
@@ -501,10 +521,10 @@ DIV {
 /*        .row {
             text-align: center;
         }*/
-        .line {
+/*        .line {
             margin-left:auto;
             margin-right:auto;
-        }
+        }*/
         IMG.left_pic {
             margin:0;
         }
@@ -518,6 +538,10 @@ DIV {
         #ways_to_shop_header{
             font-size:1.2rem;
         }
+        .content_frame {
+            margin-left:auto;
+            margin-right:auto;
+        }
     }
 
     #ways_to_shop_header {
@@ -528,7 +552,10 @@ DIV {
         padding: 0;
     }
     .content {
-        max-width: 520px;
+        width: 724px;
+    }
+    .contentb {
+        max-width: 610px;
         margin-left: auto;
         margin-right: auto;
     }
@@ -550,8 +577,8 @@ DIV {
     }
     .line {
         width: 60px;
-        margin-top: 6px;
-        margin-bottom: 8px;
+        margin-top: 7px;
+        margin-bottom: 10px;
         height: 3px;
         border-radius: 10px;
         &.green {
@@ -603,7 +630,9 @@ DIV {
 
 
 .bl_mobile {
-
+    .bl_main {
+        padding:10px;
+    }
     .about_us {
         //margin-left:10px;
         IMG {
@@ -637,8 +666,8 @@ DIV {
     DIV.bl_nav_side {
         display:none;
     }
-    DIV.bl_cu_mainContent {
-        //    margin-left:20px;
+    .mobile_app DIV.content {
+        margin-left:40px;
     }
     .about_us {
         IMG {
