@@ -1,0 +1,114 @@
+/*
+Icon classes can be used entirely standalone. They are named after their original file names.
+
+Example usage in HTML:
+
+`display: block` sprite:
+<div class="icon-home"></div>
+
+To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+
+// CSS
+.icon {
+  display: inline-block;
+}
+
+// HTML
+<i class="icon icon-home"></i>
+*/
+.icon-alerts {
+  background-image: url(project-sprites.png);
+  background-position: 0px -323px;
+  width: 301px;
+  height: 258px;
+}
+.icon-alerts_icon {
+  background-image: url(project-sprites.png);
+  background-position: -658px -581px;
+  width: 70px;
+  height: 63px;
+}
+.icon-app_store {
+  background-image: url(project-sprites.png);
+  background-position: -663px -516px;
+  width: 130px;
+  height: 44px;
+}
+.icon-google_app {
+  background-image: url(project-sprites.png);
+  background-position: -793px -516px;
+  width: 130px;
+  height: 42px;
+}
+.icon-guide_icon {
+  background-image: url(project-sprites.png);
+  background-position: -573px -581px;
+  width: 85px;
+  height: 65px;
+}
+.icon-guides {
+  background-image: url(project-sprites.png);
+  background-position: -663px -258px;
+  width: 301px;
+  height: 258px;
+}
+.icon-manage {
+  background-image: url(project-sprites.png);
+  background-position: -663px 0px;
+  width: 301px;
+  height: 258px;
+}
+.icon-manage_icon {
+  background-image: url(project-sprites.png);
+  background-position: -728px -581px;
+  width: 70px;
+  height: 48px;
+}
+.icon-mobile-app {
+  background-image: url(project-sprites.png);
+  background-position: 0px 0px;
+  width: 663px;
+  height: 323px;
+}
+.icon-pickup {
+  background-image: url(project-sprites.png);
+  background-position: -301px -323px;
+  width: 301px;
+  height: 258px;
+}
+.icon-pickup_icon {
+  background-image: url(project-sprites.png);
+  background-position: -602px -384px;
+  width: 45px;
+  height: 66px;
+}
+.icon-registry {
+  background-image: url(project-sprites.png);
+  background-position: 0px -581px;
+  width: 279px;
+  height: 262px;
+}
+.icon-scan {
+  background-image: url(project-sprites.png);
+  background-position: -279px -581px;
+  width: 158px;
+  height: 237px;
+}
+.icon-scan_icon {
+  background-image: url(project-sprites.png);
+  background-position: -602px -450px;
+  width: 44px;
+  height: 44px;
+}
+.icon-wishlist {
+  background-image: url(project-sprites.png);
+  background-position: -437px -581px;
+  width: 136px;
+  height: 221px;
+}
+.icon-wishlist_icon {
+  background-image: url(project-sprites.png);
+  background-position: -602px -323px;
+  width: 61px;
+  height: 61px;
+}
