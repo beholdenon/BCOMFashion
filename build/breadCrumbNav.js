@@ -10,6 +10,7 @@ var _ = require('lodash');
 
 function breadCrumbNav(data, pageTitle){
 
+    pageTitle = pageTitle.replace(/[']/,'');
     var pageId = "about_" + _.camelCase(pageTitle);
 
     var comparator = function(o){

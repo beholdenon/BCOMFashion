@@ -18,16 +18,16 @@ define( [ "LeftNav" ], function ( LeftNav ) {
                     type: 'header',
                     text: 'WAYS TO SHOP',
                     label: 'Ways To Shop',
-                    href: 'http://www1.bloomingdales.com/ways-to-shop/index.jsp',
-                    //href: '/about-us/store-events-ways-to-shop/',
+                    //href: 'http://www1.bloomingdales.com/ways-to-shop/index.jsp',
+                    href: '/about-us/store-events-ways-to-shop/',
                     id: 'about_waysToShop',
                     secure: false
                 },
                 {
                     text: 'Bloomingdale\'s App',
-                    //href: '/about-us/mobile-shopping-online',
-                    href: '//www1.bloomingdales.com/media/about/mobile.jsp',
-                    id: 'about_onlineMobile',
+                    href: '/about-us/mobile-shopping-online',
+                    //href: '//www1.bloomingdales.com/media/about/mobile.jsp',
+                    id: 'about_bloomingdalesApp',
                     secure: false
                 },
                 {

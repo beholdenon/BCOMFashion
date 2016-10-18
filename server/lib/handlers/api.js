@@ -105,19 +105,31 @@ module.exports = {
                 passThrough: true,
                 acceptEncoding: false,
                 mapUri: function(req, res) {
-
                     var headers = serviceProxy.getHeaders(req, process.env.SERVICES_KEY);
-                    req.url.host = serviceProxy.getHost(req, process.env.CATEGORYINDEXV3_HOST || process.env.API_HOST);
-
+                    req.url.host = process.env.BASE_ASSETS;
                     req.app.parser = require('./../parsers/category');
-                    req.url.pathname = req.url.pathname = 'order/v1/bags';
-
+                    req.url.pathname = req.url.pathname = 'bag/add';
                     res(null, req.url.format(req.url), headers);
                 },
-
                 onResponse: serviceProxy.defaultOnResponse
-
             }
         }
+    },
+
+    addMultiToBag: {
+        description: 'bag service calls',
+        notes: 'reqs for bag service calls require the specialized bag services key',
+        tags: ['developer.bloomingdales.com', 'api', 'bag'],
+        payload: {
+            output: 'data',
+            parse: false
+        },
+        handler: function(req, res) {
+            //var route = req.route.path.substring(1).replace(/{.*?}/,'');
+            //var deviceDetectProc = deviceDetectParams(route, req);
+            //return res.view(deviceDetectProc.view, { args: deviceDetectProc.args, assetsHost: process.env.BASE_ASSETS }, { layout: 'responsive' });
+            res({result: "ok"});
+        }
     }
+
 };
