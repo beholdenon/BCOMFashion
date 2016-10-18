@@ -36,10 +36,13 @@ window.blmwbs15.main = ( function bl_mwbs15_main( window, document,  $ ) {
             $( '#blmwbs15_intro_ie8' ).show();
             window.blmwbs15.builder.utils.coremetrics( 'page', 'error-ie8' );
         } else {
-            $( '#blmwbs15_intro_main' ).show();
-            window.blmwbs15.builder.utils.coremetrics( 'page', 'hp' );
-            // initialize builder...
-            window.blmwbs15.builder.start();
+            window.onload = function(){
+                console.log('foo');
+              $( '#blmwbs15_intro_main' ).show();
+              window.blmwbs15.builder.utils.coremetrics( 'page', 'hp' );
+              // initialize builder...
+                window.blmwbs15.builder.start();
+            };
         }
 
         $( '#blmwbs15_intro_loader' ).fadeOut( 400 );

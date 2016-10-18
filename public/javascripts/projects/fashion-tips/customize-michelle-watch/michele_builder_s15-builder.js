@@ -1979,6 +1979,9 @@ window.blmwbs15.builder = ( function bl_mwbs15_builder( window, document,  $, Ha
     app.utils.coremetrics = function ( type, tag, attributes ) {
 
         var category = 'spring15_michele';
+        if ($('.bl_mobile').length > 0){
+            category = 'mbl:' + category;
+        }
 
         try {
             switch ( type ) {

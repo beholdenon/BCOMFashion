@@ -82,7 +82,9 @@ window.blmwbs15.mobile = ( function bl_mwbs15_mobile( window, document,  $ ) {
             window.blmwbs15.builder.utils.coremetrics( 'element', 'Shop-Now' );
         } );
 
-        window.blmwbs15.builder.utils.coremetrics( 'page', 'hp' );
+        window.onload = function(){
+            window.blmwbs15.builder.utils.coremetrics( 'page', 'hp' );
+        };
 
     }
 
