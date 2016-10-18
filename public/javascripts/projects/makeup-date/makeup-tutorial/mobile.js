@@ -77,7 +77,7 @@ var APP = {
 				APP.markup = [];
 				// build HTML in SHOP THE LOOK section
 				$.each( products, function(i, value) {
-					var li = "<li class='prod-"+i+"'><a href='"+value.productDetails.summary.productURL+"'><img alt='"+value.productDetails.summary.name+"' src='"+baseImgURL+value.productDetails.primaryImage.imagename+"'><p class='brand'>"+value.productDetails.summary.brand+"</p><p class='name'>"+value.productDetails.summary.name.replace(value.productDetails.summary.brand, '')+"</p></li>";
+					var li = "<li class='prod-"+i+"' data-attribute='29:"+value.id+"' ><a href='"+value.productDetails.summary.productURL+"' ><img alt='"+value.productDetails.summary.name+"' src='"+baseImgURL+value.productDetails.primaryImage.imagename+"'><p class='brand'>"+value.productDetails.summary.brand+"</p><p class='name'>"+value.productDetails.summary.name.replace(value.productDetails.summary.brand, '')+"</p></li>";
 					APP.markup.push(li);
 				});
 
@@ -230,19 +230,61 @@ $(document).ready(function() {
 
 	// coremetrics events
 	$("[data-element]").on("click", function () {
-		APP.coremetrics('Element', APP.cm.category, $(this).attr("data-element") );
+
+		if ( $(this)[0].hasAttribute('data-attribute') ) {
+			var attr = $(this).attr('data-attribute'),
+				attrNum = attr.substring(0, attr.indexOf(':')),
+				attrVal = attr.substring(attr.indexOf(':')+1);
+
+			for ( var i= parseInt(attrNum); i > 1; i-- ) {
+				attrVal = '-_-' + attrVal;
+			}
+
+			APP.coremetrics('Element', APP.cm.category, $(this).attr("data-element"), attrVal );
+		} else {
+			APP.coremetrics('Element', APP.cm.category, $(this).attr("data-element") );
+		}
+
 	});
 
 	$(".videoShop").on("click", ".shopContainer li", function () {
 		var product = removeDiacritics( $(this).find(".name").text() ).trim().replace(/\&|\+/g, '').replace(/\s+/g, '-'),
-			parent = $(this).parents("section");
+			parent = $(this).parents("section"),
+			attr = $(this).attr('data-attribute'),
+			attrNum = attr.substring(0, attr.indexOf(':')),
+			attrVal = attr.substring(attr.indexOf(':')+1);
 
-		APP.coremetrics('Element', APP.cm.category, (parent.attr("data-pageView") + "_products-" + product ).slice(0, 50) );
+		for ( var i= parseInt(attrNum); i > 1; i-- ) {
+			attrVal = '-_-' + attrVal;
+		}
+
+		APP.coremetrics('Element', APP.cm.category, (parent.attr("data-pageView") + "_products-" + product ).slice(0, 50), attrVal);
 	});
 
+
+
 	$("#samples .sample").on("click", function () {
-		var prodName = $(this).find(".name").text().replace(/\&|\+/g, '').replace(/\s+/g, '-');
-		APP.coremetrics('Element', APP.cm.category, "mbl:exclusive-gift_".concat( removeDiacritics( prodName ) ).slice(0, 50) );
+		var target = $(this),
+			prodName = target.find(".name").text().replace(/\&|\+/g, '').replace(/\s+/g, '-'),
+			attrVal = target.parent().attr('href').substring( target.parent().attr('href').indexOf('ID=') + 3 );
+
+		for ( var i = 29; i > 1; i-- ) {
+			attrVal = '-_-' + attrVal;
+		}
+
+		APP.coremetrics('Element', APP.cm.category, "mbl:exclusive-gift_".concat( removeDiacritics( prodName ) ).slice(0, 50), attrVal );
+	});
+
+	$('#evening-essentials .prodSpot a').on("click", function () {
+		var target = $(this),
+			prodName = target.text().replace(/\&|\+/g, '').replace(/\s+/g, '-'),
+			attrVal = target.attr('href').substring( target.find('a').attr('href').indexOf('ID=') + 3 );
+
+		for ( var i = 29; i > 1; i-- ) {
+			attrVal = '-_-' + attrVal;
+		}
+
+		APP.coremetrics('Element', APP.cm.category, "mbl:essentials_".concat( removeDiacritics( prodName ) ).slice(0, 50), attrVal );
 	});
 
 	$(".video").on("loadstart", function() {
