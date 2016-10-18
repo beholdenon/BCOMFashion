@@ -176,6 +176,7 @@ section a:active {
 
 			&.legal {
 				font-family: "Open Sans", sans-serif;
+				font-size: 0.85em;
 			}
 
 		}
@@ -196,6 +197,7 @@ section a:active {
 		letter-spacing: 0.1em;
 		text-transform: uppercase;
 		width: 50%;
+		font-family: "Open Sans", sans-serif;
 	}
 
 }
@@ -213,7 +215,7 @@ section a:active {
 		font-weight: bold;
 		font-size: 2.75em;
 		margin: 0.8em 0 0.25em;
-		padding: 0.25em;
+		padding: 1em 0.25em 0.25em;
 		letter-spacing: 0.4em;
 	}
 
@@ -531,7 +533,7 @@ section a:active {
 		}
 
 		&.lancome {
-			left: 10%;
+			left: 8%;
 			top: 41%;
 			width: 11%;
 
@@ -974,4 +976,19 @@ section a:active {
 			min-width: 100vw;
 		}
 	}
+
+	#essential-copy {
+		p.prodSpot {
+			&.lancome {
+				left: 4%;
+				top: 41%;
+				width: 12%;
+
+				a {
+					width: 140%;
+				}
+			}
+		}
+	}
+
 }

@@ -188,10 +188,16 @@ $(document).ready(function() {
 	});
 
 	SERVICES.brightCove.getURL( function(res) {
+		
 		$("#makeupVideo").attr('src', res);
+		
+		setTimeout(function () {
+			$('.playlist .vidBox').css('height', APP.resizeVideoThumbnails() + 'px');
+		}, 100);
+
 	}, $("#makeupVideo").attr('data-id') );
 
-	$('.playlist .vidBox').css('height', APP.resizeVideoThumbnails() + 'px');
+	// $('.playlist .vidBox').css('height', APP.resizeVideoThumbnails() + 'px');
 
 	$(window).resize( function(){
 		if( headerEl.height() > 0 ){
@@ -263,14 +269,49 @@ $(document).ready(function() {
 	// COREMETRICS ELEMENT TAGS
 
 	$("[data-element]").on("click", function () {
-		APP.coremetrics('Element', APP.cm.category, $(this).attr("data-element") );
+		if ( $(this)[0].hasAttribute('data-attribute') ) {
+			var attr = $(this).attr('data-attribute'),
+				attrNum = attr.substring(0, attr.indexOf(':')),
+				attrVal = attr.substring(attr.indexOf(':')+1);
+
+			for ( var i= parseInt(attrNum); i > 1; i-- ) {
+				attrVal = '-_-' + attrVal;
+			}
+
+			APP.coremetrics('Element', APP.cm.category, $(this).attr("data-element"), attrVal );
+		} else {
+			APP.coremetrics('Element', APP.cm.category, $(this).attr("data-element") );
+		}
 	});
 
+	// code-driven coremetrics for the samples in the exclusive gifts section
 	$("#samples .sample").on("click", function () {
-		var prodName = $(this).find(".name").text().replace(/\&|\+/g, '').replace(/\s+/g, '-');
-		APP.coremetrics('Element', APP.cm.category, "exclusive-gift_".concat( removeDiacritics( prodName ) ).slice(0, 50) );
+		var target = $(this),
+			prodName = target.find(".name").text().replace(/\&|\+/g, '').replace(/\s+/g, '-'),
+			attrVal = target.parent().attr('href').substring( target.parent().attr('href').indexOf('ID=') + 3 );
+
+		for ( var i = 29; i > 1; i-- ) {
+			attrVal = '-_-' + attrVal;
+		}
+
+
+		APP.coremetrics('Element', APP.cm.category, "exclusive-gift_".concat( removeDiacritics( prodName ) ).slice(0, 50), attrVal );
 	});
 
+	//essentials section dynamic element tags
+	$('#evening-essentials .prodSpot').on("click", function () {
+		var target = $(this),
+			prodName = target.find('a').text().replace(/\&|\+/g, '').replace(/\s+/g, '-'),
+			attrVal = target.find('a').attr('href').substring( target.find('a').attr('href').indexOf('ID=') + 3 );
+
+		for ( var i = 29; i > 1; i-- ) {
+			attrVal = '-_-' + attrVal;
+		}
+
+		APP.coremetrics('Element', APP.cm.category, "essentials_".concat( removeDiacritics( prodName ) ).slice(0, 50), attrVal );
+	});
+
+	// dynamic Coremetrics tags for the dynamic video products
 	$("#dynamicPROs").on("click", "li", function() {
 		var prodName = $(this).parents("#dynamicPROs").find(".pagn .cur").text() + $(this).find(".name").text().replace(/\&|\+/g, '').replace(/\s+/g, '-');
 		APP.coremetrics('Element', APP.cm.category, "videos_products-".concat( removeDiacritics( prodName ) ).slice(0, 50) );
