@@ -285,9 +285,18 @@ require(['jquery', 'backbone'], function($, Backbone){
 
     function stickyNav(){
 
+        var isTablet = false;
         if ($('.bl_tablet').length > 0){
+            isTablet = true;
+        }
+        if ($('HEADER.locked').length > 0){
+            isTablet = true;
+        }
+
+        if (isTablet){
             $('#'+ namespace.projectGlobalPrefix +'_desktop_nav').css({
-                // 'position':'relative',
+                'position':'relative',
+                'z-index': 0,
                 'margin-top': '-42px'
             });
             return;
