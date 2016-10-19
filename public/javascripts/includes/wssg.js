@@ -140,6 +140,12 @@ function postRequest(path, callback, body) {
 
 var SERVICES = {
 
+    getCookieValue: function ( name ) {
+      var value = "; " + document.cookie;
+      var parts = value.split("; " + name + "=");
+      if (parts.length == 2) return parts.pop().split(";").shift();
+    },
+
     brightCove: {
         getURL: function (callback, video_id) {
             var path = "//api.brightcove.com/services/library?command=find_video_by_id&video_id="+video_id+"&video_fields=FLVURL&media_delivery=http&token=2uKb24EVrCM2ytEfXsGX91YC2eB41If1K6i82P-j9GATvAlc5o-kKg..";
@@ -278,7 +284,7 @@ var SERVICES = {
                 params.push(bagOptions);
             }
 
-            var path = '/getBag/order/v1/bags?' + params.join("&");
+            var path = '/order/v1/bags?' + params.join("&");
             getRequest(path, function(result) {
                 callback(result);
             });
@@ -286,7 +292,7 @@ var SERVICES = {
         },
 
         add: function(callback, upcId, quantity, userId) {
-            var path = "/addToBag/";
+            var path = "/order/v1/bags";
             var body = {};
 
             if (userId != undefined && userId != '') path += "?userid="+userId;
