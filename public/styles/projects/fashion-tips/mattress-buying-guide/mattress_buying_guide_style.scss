@@ -1,0 +1,874 @@
+
+#bl_main_lookbook_container {
+	width: 962px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: left;
+	padding: 0;
+	position: relative;
+	font-family: 'Lato', sans-serif;
+}
+
+#bl_main_lookbook_container sup {
+	font-size: 0.5625em;
+}
+
+.desktop-artwork-link{
+	text-decoration: none !important;
+	background-image: url('mattress_buying_guide_nothing.png');
+}
+
+/*utility classes*/
+.serif_font {
+	font-family: serif;
+	font-size: 1.7201834862em;
+	vertical-align: middle;
+}
+
+.mattress_buying_guide_clear {
+	clear: both;
+}
+.mattress_buying_guide_padding_5{
+	padding: 5px;
+}
+.mattress_buying_guide_padding_10{
+	padding: 10px;
+}
+.mattress_buying_guide_padding_20{
+	padding: 20px;
+}
+.mattress_buying_guide_padding_50{
+	padding: 50px;
+}
+.mattress_buying_guide_padding_top_5{
+	padding-top: 5px;
+}
+.mattress_buying_guide_padding_top_10{
+	padding-top: 10px;
+}
+.mattress_buying_guide_padding_top_20{
+	padding-top: 20px;
+}
+.mattress_buying_guide_padding_bottom_5{
+	padding-bottom: 5px;
+}
+.mattress_buying_guide_padding_bottom_10{
+	padding-bottom: 10px;
+}
+.mattress_buying_guide_padding_bottom_20{
+	padding-bottom: 20px;
+}
+.mattress_buying_guide_padding_bottom_45{
+	padding-bottom: 45px;
+}
+.mattress_buying_guide_margin_5{
+	margin: 5px;
+}
+.mattress_buying_guide_margin_10{
+	margin: 10px;
+}
+.mattress_buying_guide_margin_20{
+	margin: 20px;
+}
+.mattress_buying_guide_margin_top_5{
+	margin-top: 5px;
+}
+.mattress_buying_guide_margin_top_10{
+	margin-top: 10px;
+}
+.mattress_buying_guide_margin_top_20{
+	margin-top: 20px;
+}
+.mattress_buying_guide_margin_bottom_5{
+	margin-bottom: 5px;
+}
+.mattress_buying_guide_margin_bottom_10{
+	margin-bottom: 10px;
+}
+.mattress_buying_guide_margin_bottom_20{
+	margin-bottom: 20px;
+}
+.mattress_buying_guide_margin_bottom_30{
+	margin-bottom: 30px;
+}
+.mattress_buying_guide_margin_bottom_45{
+	margin-bottom: 45px;
+}
+
+.mattress_buying_guide_p {
+	font-size: 14px;
+	display: block;
+}
+
+.mattress_buying_guide_h1 {
+	font-family: 'Libre Baskerville', serif;
+	font-size: 28px;
+	text-transform: uppercase;
+	display: block;
+}
+
+.mbg-col-left {
+	float: left;
+	max-width: 50%;
+}
+.mbg-col-right {
+	float: right;
+}
+a.mattress_buying_guide_desktop_cta{
+	display: block;
+    font-weight: 900;
+    font-size: 16px;
+	padding: 8px 0px;
+	border: 2px solid #000;
+	text-decoration: none;
+	text-align: center;
+	letter-spacing: 1px;
+	z-index: 3;
+	transition: all 0.3s ease 0s;
+	color: #000;
+}
+a.mattress_buying_guide_desktop_cta:hover{
+	color: #fff;
+	background: #000;
+	transition: all 0.3s ease 0s;
+}
+
+#mattress_buying_guide_desktop_main_container {
+	position: relative;
+    font-family: 'Lato', sans-serif;
+	color:#000;
+    letter-spacing: 1px;
+    font-size: 14px;
+	width: 100%;	
+}
+
+#mattress_buying_guide_desktop_nav_placeholder{
+    position:relative;
+    width: 100%;
+    height: 29px;
+}
+
+/* navigation */
+	#mattress_buying_guide_desktop_main_container nav{
+		background-color: #000;
+		height: 29px;
+		width: 962px;
+		overflow: visible;
+		z-index: 98;
+		text-align: left;
+	}
+	#mattress_buying_guide_desktop_main_container nav ul{
+		top: 0;
+		margin: 0;
+		padding: 0;
+		display: inline;
+	}
+
+	#mattress_buying_guide_desktop_main_container nav ul li{
+		display: inline-table;
+		height: 29px;
+		padding: 0 0 0 16px;
+	}
+	#mattress_buying_guide_desktop_main_container nav ul li a {
+		color: #8E8D8D;
+		font-weight: normal;
+		text-transform: uppercase;
+		font-size: 10px;
+		line-height: 29px;
+		text-decoration: none;
+		font-family: 'Lato', sans-serif;
+		letter-spacing: 0.05em;
+    	word-spacing: 0.05em;
+	}
+	#mattress_buying_guide_desktop_main_container nav ul li a.active,
+	#mattress_buying_guide_desktop_main_container nav ul li a:active {
+		color: #fff;
+	}
+
+	.nav_desktop_hover_state ul li a:hover,
+	.nav_desktop_hover_state a:hover,
+	.nav_desktop_hover_state a:hover i {
+		color: #fff !important;
+	}
+
+	#mattress_buying_guide_desktop_main_container nav ul.mattress_buying_guide_desktop_social_icons {
+		float: right;
+	    margin-right: 16px;
+	    line-height: 29px;
+	}
+
+	.mattress_buying_guide_desktop_socialshare_icon {
+		color: #fff;
+		cursor: pointer;
+	}
+
+/*section*/
+	#mattress_buying_guide_desktop_main_container section{
+		overflow: hidden;
+	}
+
+/*footer*/
+	#mattress_buying_guide_desktop_main_container > #mattress_buying_guide_desktop_footer{
+		position: relative;
+		display: block;
+		height: 48px;
+		min-width: 962px !important;
+		margin-bottom: 30px;
+		padding-top: 20px;
+		border-top: 1px solid #000;
+	}	
+	#mattress_buying_guide_desktop_footer a.mattress_buying_guide_desktop_cta {
+		width: 192px;
+	}	
+	#mattress_buying_guide_desktop_footer-need_help {
+		margin-left: 52px;
+		font-size: 16px;
+		font-weight: 600;
+	}
+	#mattress_buying_guide_desktop_footer-request_call {
+		margin-left: 58px;
+	}
+	#mattress_buying_guide_desktop_footer-info {
+		font-size: 12px;
+		float: right !important;
+	    font-weight: 600;
+	    letter-spacing: 0px;
+	    margin-top: 5px;
+	}
+	#mattress_buying_guide_desktop_main_container > #mattress_buying_guide_desktop_footer > * {
+		float: left;
+	}
+
+/* Buying Guide */
+
+#mattress_buying_guide_desktop_buying_guide {
+	padding-left: 47px;
+}
+
+#mattress_buying_guide_h1-buying_guide {
+	margin-top: 98px;
+}
+
+#mattress_buying_guide_p-buying_guide {
+	margin: 36px 0;
+}
+
+#mattress_buying_guide_find_your_mattress-link {
+	margin: 15px 0;
+}
+#mattress_buying_guide_all_about-link {
+	margin: 15px 0;
+}
+
+#mattress_buying_guide_desktop_buying_guide a.mattress_buying_guide_desktop_cta {
+	width: 242px;
+}
+
+/* Quiz */
+
+#mattress_buying_guide_desktop_quiz {
+	padding-left: 45px;
+}
+
+#mattress_buying_guide_desktop_quiz > * {
+	display: none;
+}
+
+#mattress_buying_guide_desktop_quiz .mbg-col-left {
+	max-width: 53%;
+	padding-top: 34px;
+}
+
+.mattress_buying_guide_quiz_step {
+	font-size: 24px;
+	font-family: 'Libre Baskerville', serif;
+	font-style: italic;
+	font-weight: 400;
+}
+
+#mattress_buying_guide_desktop_quiz .mattress_buying_guide_h1 {
+	margin: 30px 0 24px 0;
+}
+
+a.quiz_button {
+	padding: 0;
+	margin: 0 12px 10px 0;
+	float: left;
+	width: 118px;
+	height: 135px;
+	font-size: 14px;
+	position: relative;
+}
+
+.button_content {
+	position: absolute;
+    text-align: center;
+    width: 100%;
+    top: 34px;
+    /*transform: translateY(-50%);*/
+}
+
+.button_content_step01 {
+	top: 40%;
+	transform: translateY(-50%);
+}
+
+#quiz_memory_foam_button {
+	top: 25px;
+}
+
+a.quiz_button:hover .button_line_separator {
+	border-color: #fff;
+}
+
+.button_line_separator {
+	width: 16px;
+    display: block;
+    border-bottom: solid 1px #000;
+    margin: 5px auto;
+}
+
+.button_small_text {
+	font-size: 12px;
+    font-weight: 400;
+    position: absolute;
+    line-height: 1.2;
+    left: 0;
+    width: 100%;
+}
+
+.button_strong_text {
+	font-weight: 600;
+}
+
+a.mattress_buying_guide_inactive_link {
+	color: #d3d3d3;
+	cursor: default;
+	border-color: #d3d3d3;
+	pointer-events: none;
+}
+a.mattress_buying_guide_inactive_link:hover {
+	background-color: #fff;
+	color: #d3d3d3;
+}
+
+a.mattress_buying_guide_inactive_link * {
+	border-color: #d3d3d3;
+}
+a.mattress_buying_guide_inactive_link:hover .button_line_separator {
+	border-color: #d3d3d3;
+}
+
+a.mattress_buying_guide_choice_selected {
+	color: #fff;
+	background: #000;
+}
+a.mattress_buying_guide_choice_selected .button_line_separator {
+	border-color: #fff;
+}
+
+/* Featured Brands */
+
+#mattress_buying_guide_desktop_brands .mattress_buying_guide_p {
+    word-spacing: -1px;
+    letter-spacing: 0.5px;
+}
+
+#mattress_buying_guide_brands_h1 {
+	margin: 46px 46px 60px;
+}
+
+.featured_brands_small_column {
+	width: auto;
+	max-width: 48.9%;
+	float: left;
+}
+
+.featured_brands_large_column {
+	width: auto;
+	max-width: 51%;
+	float: left;
+}
+
+.mattress_buying_guide_brands_title {
+	display: block;
+	font-size: 18px;
+	font-weight: 900;
+	text-align: left;
+	border-bottom: 1px solid #000;
+	width: 203px;
+	padding-bottom: 12px;
+	margin: 20px 0 15px;
+}
+
+#brand_kluft_text {
+	width: 440px;
+	margin-bottom: 50px;
+}
+
+#brand_shifman_text {
+	width: 395px;
+	margin-bottom: 50px;
+}
+
+#mattress_buying_guide_desktop_brands .mattress_buying_guide_desktop_cta {
+	width: 190px;
+}
+
+#mattress_buying_guide_brands-shifman {
+	margin-top: 70px;
+	margin-bottom: 70px;
+}
+
+#mattress_buying_guide_brands-shifman .featured_brands_small_column > * {
+	margin-left: 48px;
+}
+
+#mattress_buying_guide_brands-shifman .featured_brands_large_column {
+	float: right;
+}
+
+#brand_kluft_text_col {
+	margin-left: 68px;
+}
+
+#mattress_buying_guide_brands-asteria .featured_brands_small_column {
+	margin-left: 55px;
+}
+
+#mattress_buying_guide_brands-asteria .mattress_buying_guide_p {
+    width: 380px;
+}
+
+/* List Style (Why Bloomies & Glossary) */
+
+.mattress_buying_guide_list_separator {
+	border-bottom: 1px solid #000;
+	width: 100%;
+}
+
+.mattress_buying_guide_desktop_list-number {
+	font-family: 'Libre Baskerville', serif;
+	font-style: italic;
+	font-size: 30px;
+	float: left;
+	margin-right: 20px;
+}
+
+.mattress_buying_guide_list_item {
+	padding: 30px 0;
+}
+
+.mattress_buying_guide_list_item:after { 
+   content: " ";
+   display: block; 
+   height: 0; 
+   clear: both;
+}
+
+.mattress_buying_guide_desktop_list-title {
+	font-size: 18px;
+	font-weight: 900;
+	float: left;
+	letter-spacing: 0.001em;
+}
+
+.mattress_buying_guide_desktop_list-description {
+	font-size: 14px;
+	width: 410px;
+	float: right;
+	letter-spacing: 0.055em;
+}
+
+/* Why Bloomingdale's */
+
+#mattress_buying_guide_h1-why_bloomingdales {
+	margin: 46px 46px 10px;
+}
+
+#mattress_buying_guide_list_wrapper-why {
+	padding-left: 46px;
+	width: 670px;
+}
+
+#mattress_buying_guide_list_wrapper-why .mattress_buying_guide_desktop_list-description {
+	font-size: 12px;
+	letter-spacing: 0.001em;
+}
+
+.mattress_buying_guide_list_item .mattress_buying_guide_desktop_cta {
+	width: 190px;
+	margin-top: 20px;
+}
+
+/* Glossary */
+
+#mattress_buying_guide_h1-glossary {
+	margin: 46px 46px 10px;
+}
+
+#mattress_buying_guide_list_wrapper-glossary {
+	padding-left: 46px;
+	width: 602px;
+}
+
+/* Overlays */
+
+.mattress_buying_guide_desktop_overlay {
+	display: none;
+	position: absolute;
+	height: auto;
+    width: 100%;
+    left: 0px;
+    top: 0px;
+    z-index: 99;
+    background: rgb(255, 255, 255);
+}
+
+.mattress_buying_guide_close_overlay {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 50px;
+	height: 50px;
+}
+
+.mattress_buying_guide_overlay_title {
+	color: #fff;
+	font-family: 'Libre Baskerville', serif;
+	font-size: 32px;
+	position: absolute;
+}
+
+.mattress_buying_guide_overlay_img_text {
+	position: absolute;
+	color: #fff;
+	font-size: 14px;
+	font-family: 'Lato', serif;
+	font-weight: 300;
+    word-spacing: 0.125em;
+    letter-spacing: 0.04125em;
+}
+
+.mattress_buying_guide_overlay_body {
+	margin-top: 53px;
+	margin-left: 56px;
+}
+
+#mattress_buying_guide_overlay_title-comfort_guarantee {
+	top: 49px;
+	left: 56px;
+}
+
+#mattress_buying_guide_overlay_img_text-comfort_guarantee {
+	top: 148px;
+    left: 56px;
+    width: 408px; 
+}
+
+#mattress_buying_guide_comfort_guarantee_body_title:after {
+	content: " ";
+   	display: block; 
+   	height: 0; 
+   	clear: both;
+}
+
+#mattress_buying_guide_comfort_guarantee_body_title {
+	border-bottom: 1px solid #000;
+	padding-bottom: 18px;
+	margin-bottom: 22px;
+}
+
+.mattress_buying_guide_overlay_body_title {
+	font-size: 17.44px;
+	font-family: 'Lato', serif;
+	font-weight: 900;
+	word-spacing: 0.001em;
+    letter-spacing: 0.025em;
+}
+
+#mattress_buying_guide_comfort_guarantee_body_left_title {
+	float: left;
+}
+
+#mattress_buying_guide_comfort_guarantee_body_right_title {
+	float: right;
+	margin-right: 75px;
+}
+
+#mattress_buying_guide_overlay_table {
+	font-size: 14px;
+	font-family: 'Lato', serif;
+}
+
+td.td_font_serif {
+	font-family: serif, sans-serif;
+	padding-left: 0px !important;
+}
+
+#mattress_buying_guide_overlay_table td {
+    word-spacing: 0.25em;
+    padding-left: 8px;
+    letter-spacing: 0.03em;
+}
+
+#mattress_buying_guide_overlay_body-worrynomore {
+	margin-top: 33px;
+}
+
+#mattress_buying_guide_overlay_title-worrynomore {
+	top: 49px;
+	left: 56px;
+	line-height: 1;
+}
+
+#mattress_buying_guide_overlay_img_text-worrynomore {
+	top: 185px;
+    left: 56px;
+    width: 325px; 
+}
+
+#mattress_buying_guide_worrynomore_body_title {
+	margin-bottom: 18px;
+}
+
+.mattress_buying_guide_p-worrynomore {
+	width: 595px;
+    word-spacing: 0.075em;
+    letter-spacing: 0.025em;
+}
+
+#worrynomore-list {
+	list-style: none;
+	font-size: 14px;
+	margin: 30px 0;
+    padding: 0;
+}
+
+#worrynomore-list li {
+	margin: 13px 0;
+	width: 620px;
+}
+
+.worrynomore_list_item-text {
+	display: block;
+    padding: 4px 18px;
+}
+
+#worrynomore-list .serif_font {
+	font-size: 1.3em;
+	float: left;
+}
+
+#mattress_buying_guide_p-footer_note {
+	font-size: 10px;
+	margin-left: 18px;
+	margin-bottom: 40px;
+	word-spacing: 0.05em;
+}
+
+#mattress_buying_guide_overlay-black_div {
+	color: #fff;
+	background-color: #000;
+	padding-top: 42px;
+	padding-left: 56px;
+}
+
+#mattress_buying_guide_worrynomore_black_div_title {
+	font-weight: 600;
+	font-size: 18px;
+}
+
+#mattress_buying_guide_overlay-black_div .mattress_buying_guide_p {
+	font-weight: 300;
+}
+
+#black_div_overlay_subtitle {
+	margin-left: 25px;
+	margin-top: 15px;
+	font-family: 'Libre Baskerville', serif;
+	word-spacing: 0.05em;
+}
+
+#mattress_buying_guide_overlay-black_div table {
+	font-weight: 300;
+    font-size: 14px;
+    margin-top: 20px;
+    padding-bottom: 35px;
+    word-spacing: 0.05em;
+    letter-spacing: 0.025em;
+}
+
+td.black_div-right_col {
+	padding-left: 100px;
+}
+
+#overlay_body_title-worrynomore_last_section {
+	font-weight: 400;
+	font-family: 'Libre Baskerville', serif;
+	font-size: 18px;
+}
+
+#overlay_worrynomore_footer_wrapper {
+
+}
+
+.worrynomore_footer_col {
+	width: 196px;
+	float: left;
+	margin-top: 30px;
+	margin-left: 32px;  
+}
+
+#worrynomore_footer_col-first_col {
+	margin-left: 0;
+}
+
+.worrynomore_footer_col-title {
+	border-bottom: 1px solid #000;
+	font-family: 'Lato', sans-serif;
+	font-weight: 900;
+	font-size: 16px;
+	padding-bottom: 12px;
+	margin-bottom: 12px;
+	letter-spacing: 0.035em;
+}
+
+.worrynomore_footer_col ul {
+	list-style: none;
+    padding: 0;
+    font-size: 14px;
+}
+
+.worrynomore_footer_col ul li {
+	margin: 10px 0;
+}
+
+.worrynomore_footer_col ul li .serif_font {
+	float: left;
+}
+
+.worrynomore_footer_item-text {
+	display: block;
+	padding: 6px 20px; 
+}
+
+/* Benefits of Sleep */
+
+#mattress_buying_guide_h1-benefits_of_sleep {
+	margin-top: 42px;
+	margin-left: 46px;
+}
+
+#mattress_buying_guide_p-benefits_of_sleep {
+	margin-top: 38px;
+	margin-left: 50px;
+	width: 345px;
+}
+
+#mattress_buying_guide-table_benefits_of_sleep {
+	margin-top: 12px;
+	margin-left: 50px;
+	font-size: 14px;
+	width: 424px;
+	border-spacing: 2px 22px;
+
+}
+
+#mattress_buying_guide-table_benefits_of_sleep td {
+	vertical-align: top;
+	padding-right: 8px;
+}
+
+#mattress_buying_guide-table_benefits_of_sleep td.td_font_serif {
+	font-size: 16px;
+}
+
+/* A Well-Made Bed */
+
+.well_made_bed_text_left {
+	padding-left: 46px;
+	max-width: 395px;
+}
+
+.well_made_bed_text_right {
+    max-width: 405px;
+    float: left;
+    margin-left: 39px;
+}
+
+#mattress_buying_guide_h1-well_made_bed {
+	margin-top: 46px;
+}
+
+.p-well_made_bed {
+	font-size: 18px;
+	font-weight: 900;
+	margin-top: 18px;
+}
+
+.well_made_bed-title {
+	font-size: 16px;
+	font-weight: 900;
+	border-bottom: 1px solid #000;
+	padding-bottom: 11px;
+	margin-bottom: 11px;
+	margin-top: 20px;
+	width: 198px;
+	display: block;
+}
+
+#mattress_buying_guide_desktop_well_made_bed .mattress_buying_guide_p {
+	word-spacing: 0.055em;
+    letter-spacing: 0.05em;
+    line-height: 1.2;
+}
+
+#mattress_buying_guide_desktop_well_made_bed .mattress_buying_guide-row {
+	margin-bottom: 70px;
+}
+
+.well_made_bed_libre_font {
+	display: block;
+	font-family: 'Libre Baskerville', serif;
+	font-size: 14px;
+	letter-spacing: 0px;
+	margin: 12px 0 18px;
+}
+
+.mbg_reset_margin_top {
+	margin-top: 0;
+}
+
+.well_made_bed_comfort_level_bottom_text {
+	margin-top: 40px;
+}
+
+.comfort_level_black_circle {
+	background-color: #000;
+	color: #fff;
+	font-size: 15.8px;
+	font-family: 'Libre Baskerville', serif;
+	display: block;
+    height: 54px;
+    width: 54px;
+    line-height: 54px;
+    text-align: center;
+    border-radius: 100%;
+    float: left;
+    margin-top: 8px;
+}
+
+.well_made_bed_libre_bottom {
+    float: left;
+    margin-left: 20px;
+    width: 310px;
+    display: block;
+	font-family: 'Libre Baskerville', serif;
+	font-size: 14px;
+	letter-spacing: 0px;
+}
+
+#well_made_bed_size_section {
+	margin-bottom: 70px;
+}
