@@ -209,7 +209,6 @@ $(document).ready(function() {
 				'opacity': 1,
 				'visibility': 'visible'
 			});
-			console.log(tar.parent().attr('class'));
 
 				// due to design issues, this hides and show buttons that overlap with text
 				// boxes due to z-indexing.
@@ -275,10 +274,10 @@ $(document).ready(function() {
 		APP.coremetrics('Element', APP.cm.category, "mbl:exclusive-gift_".concat( removeDiacritics( prodName ) ).slice(0, 50), attrVal );
 	});
 
-	$('#evening-essentials .prodSpot a').on("click", function () {
+	$('#essential-copy a').on("click", function () {
 		var target = $(this),
 			prodName = target.text().replace(/\&|\+/g, '').replace(/\s+/g, '-'),
-			attrVal = target.attr('href').substring( target.find('a').attr('href').indexOf('ID=') + 3 );
+			attrVal = target.attr('href').substring( target.attr('href').indexOf('ID=') + 3 );
 
 		for ( var i = 29; i > 1; i-- ) {
 			attrVal = '-_-' + attrVal;
