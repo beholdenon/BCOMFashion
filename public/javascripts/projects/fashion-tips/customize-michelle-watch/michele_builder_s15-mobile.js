@@ -63,11 +63,11 @@ window.blmwbs15.mobile = ( function bl_mwbs15_mobile( window, document,  $ ) {
         });
 
         function onSliderSwipeRight() {
-            window.blmwbs15.builder.utils.coremetrics( 'element', 'Right-Arrow' );
+            window.blmwbs15.builder.utils.coremetrics( 'element', 'mbl:Right-Arrow' );
         }
 
         function onSliderSwipeLeft() {
-            window.blmwbs15.builder.utils.coremetrics( 'element', 'Left-Arrow' );
+            window.blmwbs15.builder.utils.coremetrics( 'element', 'mbl:Left-Arrow' );
         }
 
         function onSliderSwipe() {
