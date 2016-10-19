@@ -79,7 +79,7 @@ window.blmwbs15.mobile = ( function bl_mwbs15_mobile( window, document,  $ ) {
 
         $( '#blmwbs15_mobile_footer > img' ).on( 'click', function() {
             window.open( '/shop/MICHELE?id=1003996', '_blank' );
-            window.blmwbs15.builder.utils.coremetrics( 'element', 'Shop-Now' );
+            window.blmwbs15.builder.utils.coremetrics( 'element', 'mbl:Shop-Now' );
         } );
 
         window.onload = function(){
