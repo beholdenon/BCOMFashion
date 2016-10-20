@@ -63,11 +63,11 @@ window.blmwbs15.mobile = ( function bl_mwbs15_mobile( window, document,  $ ) {
         });
 
         function onSliderSwipeRight() {
-            window.blmwbs15.builder.utils.coremetrics( 'element', 'Right-Arrow' );
+            window.blmwbs15.builder.utils.coremetrics( 'element', 'mbl:Right-Arrow' );
         }
 
         function onSliderSwipeLeft() {
-            window.blmwbs15.builder.utils.coremetrics( 'element', 'Left-Arrow' );
+            window.blmwbs15.builder.utils.coremetrics( 'element', 'mbl:Left-Arrow' );
         }
 
         function onSliderSwipe() {
@@ -79,7 +79,7 @@ window.blmwbs15.mobile = ( function bl_mwbs15_mobile( window, document,  $ ) {
 
         $( '#blmwbs15_mobile_footer > img' ).on( 'click', function() {
             window.open( '/shop/MICHELE?id=1003996', '_blank' );
-            window.blmwbs15.builder.utils.coremetrics( 'element', 'Shop-Now' );
+            window.blmwbs15.builder.utils.coremetrics( 'element', 'mbl:Shop-Now' );
         } );
 
         window.onload = function(){

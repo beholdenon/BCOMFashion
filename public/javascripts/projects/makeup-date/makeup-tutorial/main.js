@@ -132,7 +132,7 @@ var APP = {
 	},
 
 	resizeVideoThumbnails: function () {
-		return Math.ceil( $('#makeupVideo').height()/2.99 );
+		return Math.ceil( $('#makeupVideo').height()/3.01 );
 	},
 
 	coremetrics: function (tagType, categoryID, pageID, attributes) {
@@ -192,7 +192,9 @@ $(document).ready(function() {
 		$("#makeupVideo").attr('src', res);
 		
 		setTimeout(function () {
-			$('.playlist .vidBox').css('height', APP.resizeVideoThumbnails() + 'px');
+			$('.playlist .vidBox').css({
+				'height': APP.resizeVideoThumbnails() + 'px'
+			});
 		}, 100);
 
 	}, $("#makeupVideo").attr('data-id') );
@@ -202,7 +204,9 @@ $(document).ready(function() {
 	$(window).resize( function(){
 		if( headerEl.height() > 0 ){
 			APP.navStart = $("header").height() + $("#makeup_hero").height() + 1;
-			$('.playlist .vidBox').css('height', APP.resizeVideoThumbnails() + 'px');
+			$('.playlist .vidBox').css({
+				'height': APP.resizeVideoThumbnails() + 'px'
+			});
 			APP.stickyNav();
 		}
 	});
