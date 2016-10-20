@@ -1,5 +1,5 @@
 $mauve: #c91042;
-$lightPink: #cc6666;
+$lightPink: #e3999b;
 $loyallist: #453894;
 
 body > div.row.collapse {
@@ -39,7 +39,7 @@ body .row #bl_main_container {
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-family: "Montserrat", Arial;
+	font-family: "Raleway", Arial;
 }
 
 section a:link,
@@ -149,7 +149,7 @@ section a:active {
 			letter-spacing: 0.5em;
 			font-weight: 900;
 			text-align: center;
-			margin: 0.25em auto 0;
+			margin: 1.25em auto 0;
 			padding: 0;
 			line-height: 1.15em;
 			text-transform: uppercase;
@@ -157,10 +157,11 @@ section a:active {
 
 		h2 {
 			color: #ffffff;
-			font-size: 1.55em;
-			font-weight: 900;
-			text-transform: uppercase;
+			font-weight: 800;
+			font-size: 1.5em;
 			letter-spacing: 0.1em;
+			text-transform: uppercase;
+			font-family: "Open Sans", sans-serif;
 
 			&.pink {
 				color: $lightPink;
@@ -377,6 +378,7 @@ section a:active {
 	min-height: 100px;
 	list-style-type: none;
 	width: 70%;
+	max-width: 1200px;
 	overflow: hidden;
 	margin: 2em auto 1.5em;
 	text-align: center;
@@ -389,7 +391,7 @@ section a:active {
 
 	li {
 		text-align: center;
-		width: 13.25vw;
+		width: 18%;
 		display: inline-block;
 		vertical-align: top;
 
@@ -628,10 +630,11 @@ section a:active {
 			}
 
 			h3 {
-				font-weight: 400;
-				line-height: 1.2em;
-				margin: 0;
+				font-weight: 400; 
 				font-size: 1.2em;
+				line-height: 1.2em;
+				letter-spacing: 0.05em; 
+				margin: 0;
 			}
 
 			div.caps {
@@ -775,11 +778,9 @@ section a:active {
 				line-height: 1.25em;
 				text-transform: uppercase;
 				font-size: inherit;
-				font-family: "Montserrat", Arial;
 			}
 
 			.description {
-				font-family: "Montserrat", Arial;
 				margin: 0.25em auto 0;
 				width: 90%;
 				padding: 0;
@@ -810,12 +811,12 @@ section a:active {
 
 	h2 {
 		color: #ffffff;
-		font-size: 3.25em;
-		letter-spacing: 0.2em;
+		font-size: 2.4em;
+		letter-spacing: 0.4em;
 		font-family: inherit;
 		padding: 2.5% 0 0;
 		margin: 0;
-		font-weight: 700;
+		font-weight: 800;
 	}
 
 	.details {
@@ -841,7 +842,7 @@ section a:active {
 			display: inline-block;
 			font-size: 1.2em;
 			font-weight: 800;
-			margin-top: 1em;
+			margin-top: 1.5em;
 			margin-bottom: 0.25em;
 			letter-spacing: 0.2em;
 		}
