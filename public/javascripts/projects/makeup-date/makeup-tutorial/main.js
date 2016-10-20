@@ -123,7 +123,7 @@ var APP = {
 			$('#hero-'+fade).css('z-index',4);
 			$('#hero-'+APP.currentHero).css('z-index',5).animate({
 				'opacity': 1},
-				1200, function() {
+				1700, function() {
 				$('#hero-'+fade).css({"opacity":0});
 			});
 
