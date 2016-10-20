@@ -2,7 +2,7 @@
   Created by Joe Orr 08/16
 
   The leftNav config files are in the format expected by the PROD
-  (backbone) component so that this site can maitain compatibility
+  (backbone) component so that this site can maintain compatibility
   with that component. However this format is not suitable for use
   by handlebars templates. In order to build the menu via our
   current process we need this configuration info to be taken out
