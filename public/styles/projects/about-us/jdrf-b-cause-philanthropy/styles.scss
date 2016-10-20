@@ -1,0 +1,161 @@
+// ======================================
+// JDRF redesign
+// Author: Alessandro Ribeiro
+// Date: 10/18/2016
+// Project: /about-us/jdrf-b-cause-philanthropy/
+// ======================================
+
+$font-family-serif: Georgia, Cambria, "Times New Roman", Times, serif;
+$font-family-sans-serif: Avenir, helvetica, arial, sans-serif;
+
+.bl_mobile .bl_main {
+    padding: 0;
+}
+
+.jdrf-main {
+    h1 {
+        color: #3068ad;
+        font-family: $font-family-serif;
+        font-size: 2.5rem;
+        font-weight: bold;
+        line-height: 2.75rem;
+        letter-spacing: -0.025rem;
+    }
+
+    .jdrf-header {
+        padding: 0 0 15px;
+        text-align: center;
+    }
+
+    .jdrf-logo {
+        margin: 5px 0;
+    }
+
+    .jdrf-body {
+        img {
+            width: 100%;
+        }
+
+        p {
+            letter-spacing: 0.030rem;
+        }
+
+        h2 {
+            font-size: 1.083rem;
+            font-weight: bold;
+            letter-spacing: 0.025rem;
+            line-height: 1.417rem;
+            margin: 15px 0;
+            text-transform: uppercase;
+        }
+
+        blockquote {
+            border: 0;
+            margin: 0;
+            padding: 30px 15px;
+
+            p {
+                color: #000;
+                font-size: 1.583rem;
+                font-weight: 300;
+                letter-spacing: 0.010rem;
+                line-height: 1.833rem;
+                margin-bottom: 15px;
+                position: relative;
+                text-indent: 30px;
+
+                &:before, &:after {
+                    background: transparent url('/fashion/images/projects/about-us/jdrf-b-cause-philanthropy/jdrf-quote.png') no-repeat;
+                    content: " ";
+                    display: block;
+                    height: 71px;
+                    position: absolute;
+                    width: 78px;
+                }
+
+                &:before {
+                    left: -20px;
+                    top: -20px;
+                }
+
+                &:after {
+                    bottom: -20px;
+                    right: -20px;
+                    -webkit-transform: rotate(180deg);
+                       -moz-transform: rotate(180deg);
+                        -ms-transform: rotate(180deg);
+                         -o-transform: rotate(180deg);
+                            transform: rotate(180deg);
+                }
+            }
+
+            cite {
+                color: #000;
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 600;
+                display: block;
+
+                &:before {
+                    content: "\2014 \2009";
+                }
+            }
+        }
+
+        h3 {
+            background-color: #3068ad;
+            color: #fff;
+            font-size: 1.5rem;
+            font-weight: bold;
+            letter-spacing: 0.050rem;
+            line-height: 1.5rem;
+            margin-bottom: 15px;
+            padding: 10px 5px 3px 5px;
+            text-transform: uppercase;
+        }
+    }
+
+    .jdrf-footer {
+        border-top: 1px solid #b7b7b7;
+        font-size: 1.083rem;
+        letter-spacing: 0.005rem;
+        margin-top: 10px;
+        padding: 10px 0;
+
+        h4 {
+            color: #000;
+            font-size: 2rem;
+            font-weight: 600;
+            letter-spacing: -0.050rem;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        a {
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .jdrf-main {
+        .medium-13 {
+            padding-right: 10px;
+        }
+
+        .jdrf-header {
+            padding: 15px 0;
+            text-align: left;
+        }
+
+        .jdrf-logo {
+            float: right;
+            margin: 0;
+        }
+
+        .jdrf-body h2 {
+            margin: 0 0 15px;
+        }
+    }
+}
