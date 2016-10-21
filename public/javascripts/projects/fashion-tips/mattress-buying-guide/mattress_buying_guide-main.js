@@ -115,7 +115,7 @@ require(['jquery'], function($) {
 
         if ($('.bl_mobile').length > 0) {
             namespace.state.isDesktop = false;
-            namespace.coremetrics = 'MBL:' + namespace.coremetrics;
+          //  namespace.coremetrics = 'MBL:' + namespace.coremetrics;
             initMobile();
         } else {
             if ($('.bl_tablet').length > 0) {
