@@ -8,7 +8,7 @@
   current process we need this configuration info to be taken out
   and put into a simple json format.
 
-  This script gets the data out of the navigation config files and put in
+  This script gets the data out of the navigation config files and puts it in
   a simple json file. In order to do this we need to mock the
   dependencies of the config file (that is, mock the LeftNav component).
 

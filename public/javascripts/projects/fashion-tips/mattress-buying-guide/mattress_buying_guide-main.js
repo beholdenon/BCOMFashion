@@ -177,8 +177,8 @@ require(['jquery'], function($) {
         if (window.location.hash === '') {
             coreMetrics('Pageview', namespace.coremetrics, namespace.coremetrics + '--hp');
         }
-
         stickyNav();
+        //window.setTimeout(function(){stickyNav();}, 2100);
         deepLinks();
 
     }
@@ -347,18 +347,32 @@ require(['jquery'], function($) {
     }
 
     function stickyNav() {
-        if ($(window).scrollTop() < ($('#' + namespace.projectGlobalPrefix + '_desktop_nav_placeholder').offset().top)) {
+
+        var top = 0;
+
+        var lockedHeaderEl = $('HEADER.responsive.locked');
+        if (lockedHeaderEl.length > 0){
+            if (lockedHeaderEl.css("position") === 'fixed'){
+                $('#' + namespace.projectGlobalPrefix + '_desktop_nav').css({
+                    'position': 'relative',
+                    'margin-top': 0 - top - 29 + 'px',
+                    'z-index': 0
+                });
+                return;
+            }
+        }
+        if ($(window).scrollTop() <= ($('#' + namespace.projectGlobalPrefix + '_desktop_nav_placeholder').offset().top) - top) {
             $('#' + namespace.projectGlobalPrefix + '_desktop_nav').css({
                 'position': 'relative',
-                'margin-top': '-29px'
+                'margin-top': 0 - top - 29 + 'px'
             });
 
             // updateHash('');
         } else {
             $('#' + namespace.projectGlobalPrefix + '_desktop_nav').css({
-                'top': 0,
+                'top': top,
                 'position': 'fixed',
-                'margin-top': '0'
+                'margin-top': 0
             });
         }
     }
