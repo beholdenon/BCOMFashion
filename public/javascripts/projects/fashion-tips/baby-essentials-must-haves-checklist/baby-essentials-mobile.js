@@ -130,7 +130,7 @@ $(document).ready(function(){
         var thisPageViewID = $(this).data('cm-pageview-tag'),
             thisCategory = coreMetricsDefaultPageID;
 
-        BLOOMIES.coremetrics.cmCreatePageviewTag(thisPageViewID, thisCategory);
+        BLOOMIES.coremetrics.cmCreatePageviewTag('mbl:' + thisPageViewID, thisCategory);
       });
 
       $('*[data-cm-element-tag]').click(function(event) {
@@ -145,7 +145,7 @@ $(document).ready(function(){
           thisElementTag = thisElementTag + '-' + $('[data-cm-category-base]').data('cm-category-base') ;
         }
 
-        BLOOMIES.coremetrics.cmCreatePageElementTag(thisElementTag, thisCategory);
+        BLOOMIES.coremetrics.cmCreatePageElementTag('mbl:' + thisElementTag, thisCategory);
       });
 
       // swipe events
@@ -289,15 +289,15 @@ $(document).ready(function(){
        if( target.siblings().hasClass( 'active' ) ) {
         target.siblings().slideUp('fast').removeClass( 'active' );
         targetArrow.removeClass( 'fa-angle-up' ).addClass( 'fa-angle-down' );
-        BLOOMIES.coremetrics.cmCreatePageElementTag( drawerCM + '-close_drawer', categoryName );
+        BLOOMIES.coremetrics.cmCreatePageElementTag( 'mbl:' + drawerCM + '-close_drawer', categoryName );
       } else {
         target.parent().siblings().children('.section-content').removeClass('active').slideUp('fast').siblings().children('i').removeClass( 'fa-angle-up' ).addClass( 'fa-angle-down' );
         targetArrow.removeClass( 'fa-angle-down' ).addClass( 'fa-angle-up' );
         target.siblings().slideDown('fast').addClass( 'active' );
 
 
-        BLOOMIES.coremetrics.cmCreatePageElementTag( drawerCM + '-expand_drawer', categoryName );
-        BLOOMIES.coremetrics.cmCreatePageviewTag('fall15_babylove--' + drawerCM, categoryName);
+        BLOOMIES.coremetrics.cmCreatePageElementTag( 'mbl:' + drawerCM + '-expand_drawer', categoryName );
+        BLOOMIES.coremetrics.cmCreatePageviewTag('mbl:fall15_babylove--' + drawerCM, categoryName);
 
         window.setTimeout(function () {
           $('html, body').animate({ scrollTop: target.offset().top }, 500);
@@ -310,7 +310,7 @@ $(document).ready(function(){
     $( 'a.mobile-artwork-link' ).click( function ( event ) {
     var attrCm = $(this).data('cm');
     if ( typeof attrCm === 'string' && attrCm.length > 0 ) {
-        BLOOMIES.coremetrics.cmCreatePageElementTag( attrCm, categoryName );
+        BLOOMIES.coremetrics.cmCreatePageElementTag( 'mbl:' + attrCm, categoryName );
     }
   });
 
@@ -323,7 +323,7 @@ $(document).ready(function(){
       if( sectionID == '') {
         sectionID = '#/mbl_clothing';
         emptyHash = true;
-        BLOOMIES.coremetrics.cmCreatePageviewTag('fall15_babylove--hp', categoryName);
+        BLOOMIES.coremetrics.cmCreatePageviewTag('mbl:fall15_babylove--hp', categoryName);
       }
 
       console.log(sectionID);
@@ -338,7 +338,7 @@ $(document).ready(function(){
         target.parent().siblings().children('.section-content').removeClass('active').slideUp('fast').siblings().children('i').removeClass( 'fa-angle-up' ).addClass( 'fa-angle-down' );
         targetArrow.removeClass( 'fa-angle-down' ).addClass( 'fa-angle-up' );
         target.siblings().slideDown('fast').addClass( 'active' );
-        BLOOMIES.coremetrics.cmCreatePageviewTag('fall15_babylove--' + drawerCM, categoryName);
+        BLOOMIES.coremetrics.cmCreatePageviewTag('mbl:fall15_babylove--' + drawerCM, categoryName);
 
       }
       window.setTimeout(function () {
