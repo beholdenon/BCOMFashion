@@ -90,6 +90,8 @@ module.exports = {
 
             var requestPath;
 
+            // override the user agent by passing in a query
+            // (for developers)
             if (req.query.UA){
                 req.headers['user-agent'] = req.query.UA;
             }

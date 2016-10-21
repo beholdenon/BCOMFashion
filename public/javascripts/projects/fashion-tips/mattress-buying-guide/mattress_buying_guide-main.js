@@ -273,6 +273,7 @@ require(['jquery'], function($) {
     }
 
     function coreMetrics(tag_type, category_name, tag_value) {
+        if (true){return;}
         if (tag_type === "Pageview") {
             try {
                 BLOOMIES.coremetrics.cmCreatePageviewTag(tag_value, category_name);
