@@ -90,6 +90,10 @@ module.exports = {
 
             var requestPath;
 
+            if (req.query.UA){
+                req.headers['user-agent'] = req.query.UA;
+            }
+
             // Check for path with deeplinks param. Deep link
             // param will be dropped and handled on client. Otherwise,
             // proceed as usual.
