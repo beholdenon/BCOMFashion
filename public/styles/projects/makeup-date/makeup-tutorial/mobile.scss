@@ -1,4 +1,3 @@
-$mauve: #c91042;
 $lightPink: #e3999b;
 $loyallist: #453894;
 
@@ -244,7 +243,7 @@ section a:active {
 		}
 
 		.pinkBg {
-			background-color: #cc6666;
+			background-color: $lightPink;
 			color: #000;
 			margin: 0.75em auto;
 			font-weight: 800;

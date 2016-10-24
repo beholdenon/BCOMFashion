@@ -28,7 +28,7 @@ require([
         window.BLOOMIES.coremetrics.cmCreatePageviewTag( self.cmElementCat, self.cm, '', '' );
 	};
 
-	APP.fireSectionCoremetrics = function( $section, attributes ) {
+	APP.fireSectionCoremetrics = function( $section, isPageViewTag, attributes ) {
 		var self = this,
 			sectionName = $section.find( '.rwc-title' ).text().trim().replace( ' ', '_' ) || 'Hero',
 			elementID = self.cmElementCat + '-' + sectionName,
@@ -46,7 +46,12 @@ require([
 			}
 		}
 
-		window.BLOOMIES.coremetrics.cmCreatePageElementTag( elementID, elementCat, attrVal );
+		if ( isPageViewTag ) {
+			window.BLOOMIES.coremetrics.pageViewExploreAttributes = '';
+			window.BLOOMIES.coremetrics.cmCreatePageviewTag( elementID, elementCat.replace('MBL:', ''), '', '' );
+		} else {
+			window.BLOOMIES.coremetrics.cmCreatePageElementTag( elementID, elementCat, attrVal );
+		}
 	};
 
 	APP.stickyTopNav = function( windowTopPos ) {
@@ -98,7 +103,7 @@ require([
 				scrollTop: $('.rwc-' + sectionName).offset().top - topPos
 			}, 'slow');
 
-			APP.fireSectionCoremetrics( $section, {
+			APP.fireSectionCoremetrics( $section, false, {
 				2: APP.cmElementCat
 			} );
 		} );
@@ -115,7 +120,7 @@ require([
 					sectionTopMaxPos = sectionTopPos + $section.height();
 
 				if ( !$section.data( 'cmFired' ) && ( windowTopPos >= sectionTopPos && windowTopPos <= sectionTopMaxPos ) ) {
-					APP.fireSectionCoremetrics( $section );
+					APP.fireSectionCoremetrics( $section, true );
 					$section.data( 'cmFired', true );
 					return false;
 				}
