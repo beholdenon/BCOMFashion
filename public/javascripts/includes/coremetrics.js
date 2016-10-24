@@ -74,19 +74,25 @@ define([
             if ($('.bl_mobile')[0]){
                 isMobile = true;
             }
-
+            var mblPrefix = '';
+            if (isMobile){
+                mblPrefix = 'mbl: ';
+            }
             // coremetrics data might have been added by handlebars directive, check and initialize if so
             var cmDataEl = $('#cmdata')[0];
             if (cmDataEl) {
+
                 var categoryId =  cmDataEl.dataset.categoryid;
                 var pageId = cmDataEl.dataset.pageid;
+                categoryId = categoryId.replace(/^mbl:/,'');
+                pageId = pageId.replace(/^mbl:/,'');
+
+                categoryId = mblPrefix + categoryId;
+                pageId = mblPrefix + pageId;
+
                 window.BLOOMIES.coremetrics.cmCreatePageviewTag(pageId, categoryId);
-                // also check if elements have been marked with cm data, is so
+                // also check if elements have been marked with cm data, is so create cm function
                 $("a[data-cm]").on('click', function () {
-                    var mblPrefix = '';
-                    if (isMobile){
-                        mblPrefix = 'mbl: ';
-                    }
                     var attrCm = $(this).data('cm');
                     if (typeof attrCm === 'string' && attrCm.length > 0) {
                         window.BLOOMIES.coremetrics.cmCreatePageElementTag(mblPrefix + attrCm, categoryId);
