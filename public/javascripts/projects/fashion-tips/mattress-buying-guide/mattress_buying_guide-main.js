@@ -1,7 +1,6 @@
 require(['jquery'], function($) {
 
     /* jshint camelcase:false */
-    /* globals BLOOMIES */
 
     'use strict';
 
@@ -114,7 +113,6 @@ require(['jquery'], function($) {
 
         if ($('.bl_mobile').length > 0) {
             namespace.state.isDesktop = false;
-            namespace.coremetrics = 'MBL:' + namespace.coremetrics;
             initMobile();
         } else {
             if ($('.bl_tablet').length > 0) {
@@ -129,15 +127,12 @@ require(['jquery'], function($) {
         // social share
         $('#' + namespace.projectGlobalPrefix + '_desktop_socialshare_facebook').on('click', function () {
             window.open(namespace.urls.facebookShareURL, '_blank', 'width=608,height=342');
-            coreMetrics('Element', namespace.coremetrics, 'social-fb');
         });
         $('#' + namespace.projectGlobalPrefix + '_desktop_socialshare_twitter').on('click', function () {
             window.open(namespace.urls.twitterShareURL, '_blank', 'width=740,height=340');
-            coreMetrics('Element', namespace.coremetrics, 'social-twitter');
         });
         $('#' + namespace.projectGlobalPrefix + '_desktop_socialshare_pinterest').on('click', function () {
             window.open(namespace.urls.pinterestShareURL, '_blank', 'width=770,height=380');
-            coreMetrics('Element', namespace.coremetrics, 'social-pinterest');
         });
 
 
@@ -149,11 +144,7 @@ require(['jquery'], function($) {
         $('#' + namespace.projectGlobalPrefix + '_desktop_main_container').addClass('loaded');
         $('#' + namespace.projectGlobalPrefix + '_desktop_header').addClass('active');
 
-        if (window.location.hash === '') {
-            coreMetrics('Pageview', namespace.coremetrics, namespace.coremetrics + '--hp');
-        }
         stickyNav();
-        //window.setTimeout(function(){stickyNav();}, 2100);
         deepLinks();
 
     }
@@ -179,16 +170,11 @@ require(['jquery'], function($) {
             $('#' + namespace.projectGlobalPrefix + '_mobile_main_container').addClass('loaded');
 
             removeLoader();
-            //mobileSectionCoreMetrics();
 
             deepLinks();
             // localMobileDebug();
 
             mobileStickyNavBar();
-
-            if (window.location.hash === '') {
-                coreMetrics("Pageview", namespace.coremetrics.replace("MBL:", ""), namespace.coremetrics.replace("MBL:", "") + "--hp");
-            }
 
         }, 100);
     }
