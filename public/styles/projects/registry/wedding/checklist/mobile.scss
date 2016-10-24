@@ -1,0 +1,188 @@
+// ======================================
+// Registry Checklist Mobile redesign
+// Author: Alessandro Ribeiro
+// Date: 10/04/2016
+// Project: /registry/wedding/checklist
+// ======================================
+
+$font-family-serif: Georgia, Cambria, "Times New Roman", Times, serif;
+$font-family-sans-serif: Avenir, helvetica, arial, sans-serif;
+
+.registry-wedding-checklist {
+    font-family: $font-family-sans-serif;
+}
+
+.rwc-topnav-container {
+    position: relative;
+
+    &.sticky {
+        border-top: 0;
+        left: 0;
+        position: fixed;
+        top: 0;
+        width: 100vw;
+        z-index: 100;
+    }
+
+    .rwc-topnav-head {
+        background-color: #000;
+        color: #fff;
+        font-size: 4vw;
+        padding: 5vw 6vw;
+        text-align: center;
+        text-transform: uppercase;
+
+        span {
+            border-left: 2.3vw solid transparent;
+            border-right: 2.3vw solid transparent;
+            border-top: 2.3vw solid #fff;
+            display: inline-block;
+            margin-left: 4vw;
+            transition: all 0.5s ease;
+
+        }
+
+        &.opened span {
+            transform: rotate(180deg);
+            -webkit-transform: rotate(180deg);
+            -moz-transform: rotate(180deg);
+        }
+    }
+
+    .rwc-topnav-sub {
+        background-color: #000;
+        border-top: 0.5vw solid #fff;
+        display: none;
+        position: absolute;
+        width: 100vw;
+        z-index: 101;
+
+        ul {
+            margin: 0;
+        }
+
+        .rwc-topnav-sublink {
+            color: #fff;
+            border-bottom: 0.5vw solid #fff;
+            display: block;
+            font-size: 4vw;
+            padding: 5vw 6vw;
+            text-align: center;
+            text-decoration: none;
+        }
+    }
+}
+
+.rwc-section {
+    margin-bottom: 18vw;
+    position: relative;
+
+    img {
+        width: 100vw;
+
+        &[class$="img-body"] {
+            padding: 10vw 4vw;
+        }
+    }
+
+    .rwc-header, .rwc-footer {
+        position: absolute;
+        width: 100vw;
+    }
+
+    .rwc-header {
+        top: -5vw;
+    }
+
+    .rwc-content {
+        background-color: #ededed;
+    }
+
+    .rwc-footer {
+        bottom: -5vw;
+    }
+
+    .rwc-title {
+        background-color: #fff;
+        font-family: $font-family-serif;
+        font-size: 4vw;
+        font-weight: bold;
+        letter-spacing: 0.7vw;
+        margin: 0 11vw -20px;
+        padding: 10px 0;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    a.rwc-button {
+        background-color: #fff;
+        border: 0.7vw solid #000;
+        color: #000;
+        display: block;
+        font-size: 3.5vw;
+        margin: 0 19vw;
+        padding: 0 4vw;
+
+        &.rwc-button-download {
+            height: auto;
+            line-height: 5.5vw;
+            margin-top: 0;
+            padding: 2.5vw 8vw;
+            text-transform: none;
+        }
+    }
+
+    &.rwc-hero {
+        height: 92vw;
+        margin-bottom: 10vw;
+
+        img {
+            padding: 0;
+        }
+
+        .rwc-content {
+            background-color: transparent;
+            color: #fff;
+            font-size: 3.5vw;
+            line-height: 5.5vw;
+            position: absolute;
+            text-align: center;
+            top: 18vw;
+
+            p {
+                line-height: 5.5vw;
+                margin: 0 18.5vw 8vw;
+            }
+        }
+
+        .rwc-title {
+            background-color: transparent;
+            color: #fff;
+            font-family: $font-family-serif;
+            font-size: 9.5vw;
+            font-weight: normal;
+            letter-spacing: 0;
+            margin-bottom: 2vw;
+            padding: 0;
+            text-transform: none;
+        }
+
+        .rwc-line {
+            height: 0.15vw;
+            margin: 0 31vw 4vw;
+        }
+
+        .rwc-button {
+            background-color: transparent;
+            border-color: #FFF;
+            color: #FFF;
+            font-weight: normal;
+            @extend .rwc-button-download;
+            margin: 0 20vw;
+        }
+    }
+}
+
+div.rwc-section {
+    margin-bottom: 4vw;
+}
