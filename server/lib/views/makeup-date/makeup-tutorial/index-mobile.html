@@ -23,11 +23,11 @@
   <h3 class="">the makeup date</h3>
   <ul id="navigation" style="display:none;">
     <li class="point caps active" data-scroll="the-makeup-date">the makeup date</li>
-    <li class="point caps" data-scroll="the-sparkly-cat-eye" data-element="mbl:nav_the-sparkly-cat-eye">THE SPARKLY CAT EYE</li>
+    <li class="point caps" data-scroll="how-to-videos" data-element="mbl:nav_the-sparkly-cat-eye">THE SPARKLY CAT EYE</li>
     <li class="point caps" data-scroll="the-copper-eye" data-element="mbl:nav_the-copper-eye">THE COPPER EYE</li>
     <li class="point caps" data-scroll="the-blurred-lip" data-element="mbl:nav_the-blurred-lip">THE BLURRED LIP</li>
     <li class="point caps" data-scroll="essentials" data-element="mbl:nav_essentials">ESSENTIALS</li>
-    <li class="point caps" data-scroll="exclusive-gift" data-element="mbl:nav_exculsive-gift">exclusive gift</li>
+    <li class="point caps" data-scroll="gift-with-purchase" data-element="mbl:nav_exculsive-gift">exclusive gift</li>
     <li class="point caps" data-scroll="sweepstakes" data-element="mbl:nav_sweepstakes">sweepstakes</li>
   </ul>
 </div>
@@ -37,7 +37,7 @@
     <h2 class="videoHeader ">how-to videos</h2>
 </section>
 
-<section id="the-sparkly-cat-eye" data-pageview="mbl:video-the-sparkly-cat-eye">
+<section id="how-to-videos" data-pageview="mbl:video-the-sparkly-cat-eye">
   <div class="video-wrapper">
     <video data-name="mbl:videos_video-the-sparkly-cat-eye" class="video" src="" data-id='5175343308001' poster="/fashion/images/projects/makeup-date/makeup-tutorial/poster.png" controls></video>
     <h2 class="vTitle ">the sparkly cat eye</h2>
@@ -119,7 +119,7 @@
     </div>
 </section>
 
-<section id="exclusive-gift" class="" data-pageview="mbl:exclusive-gift">
+<section id="gift-with-purchase" class="" data-pageview="mbl:exclusive-gift">
     <a href="http://www.bloomingdales.com/shop/product?ID=1896995" data-element="mbl:exclusive-gift_image">
         <img alt="Bloomingdale’s Beauty Gift with Purchase 2016" src="/fashion/images/projects/makeup-date/makeup-tutorial/gwp-mobile.jpg"/>
     </a>
@@ -137,6 +137,7 @@
         </div>
         
 </section>
+
 <div id="loyallist-bar" data-pseudo="exclusive-gift">
     <div class="bubble">+</div>
     <p class="loyallist">Loyallists get Triple Points on all beauty purchases!<br/>Ends 12/16. <a data-element="exclusive-gift_info-exclusions" href="javascript:pop('http://www.bloomingdales.com/popup.ognc?popupID=563664','myDynaPop','width=575,height=350')" class="exclusionsLink">SEE INFO</a></p>
@@ -247,7 +248,7 @@
 <script type="text/javascript">
     var dateCheck = new Date();
     if ( dateCheck.getFullYear() >= 2016 && dateCheck.getMonth() >= 11 &&  dateCheck.getDate() >= 17 ) {
-        $("#makeup_hero .subHeader, #makeup_hero .smallHeader, #Gift-with-Purchase, #samples, #sweepstakes").remove();
+        $("#makeup_hero .subHeader, #makeup_hero .smallHeader, #gift-with-purchase, #samples, #sweepstakes").remove();
         $("[data-scroll='Gift-with-Purchase'], [data-scroll='sweepstakes']").remove();
     }
 </script>
