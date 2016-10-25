@@ -1,6 +1,7 @@
 require(['jquery'], function($) {
 
     /* jshint camelcase:false */
+    /* globals BLOOMIES */
 
     'use strict';
 
@@ -9,6 +10,7 @@ require(['jquery'], function($) {
         environment: 'astra', //legacy || astra 
         environmentProjectFolder: 'cat_splash', // for a Legacy project, set this to the folder name which is created in the /specialProjects,
         // for an Astra project, set this to { homepage_pools || cat_splash }
+        coremetrics: 'fall15_mattressguide',
         state: {
             isDesktop: true
         },
@@ -113,6 +115,7 @@ require(['jquery'], function($) {
 
         if ($('.bl_mobile').length > 0) {
             namespace.state.isDesktop = false;
+          //  namespace.coremetrics = 'MBL:' + namespace.coremetrics;
             initMobile();
         } else {
             if ($('.bl_tablet').length > 0) {
@@ -124,15 +127,42 @@ require(['jquery'], function($) {
             removeLoader();
         }
 
+        // listeners:
+        $('ul.mattress_buying_guide_nav_links_list a').on('click', function () {
+            var attrCm = $(this).data('cm');
+            if (typeof attrCm === 'string' && attrCm.length > 0) {
+                BLOOMIES.coremetrics.cmCreatePageElementTag('topnav--' + attrCm, namespace.coremetrics.replace("MBL:", ""));
+            }
+        });
+
+        $('a.desktop-artwork-link, a.mobile-artwork-link').on('click', function () {
+            var attrCm = $(this).data('cm');
+            if (typeof attrCm === 'string' && attrCm.length > 0) {
+                BLOOMIES.coremetrics.cmCreatePageElementTag(attrCm, namespace.coremetrics.replace("MBL:", ""));
+            }
+        });
+
+        $('a.quiz_button, a.quiz_mobile_button').on('click', function () {
+            var attrCm = $(this).data('choice'),
+                attrStep = $(this).data('step');
+
+            if (typeof attrCm === 'string' && attrCm.length > 0) {
+                BLOOMIES.coremetrics.cmCreatePageElementTag(attrStep + '_' + attrCm, namespace.coremetrics.replace("MBL:", ""));
+            }
+        });
+
         // social share
         $('#' + namespace.projectGlobalPrefix + '_desktop_socialshare_facebook').on('click', function () {
             window.open(namespace.urls.facebookShareURL, '_blank', 'width=608,height=342');
+            coreMetrics('Element', namespace.coremetrics, 'social-fb');
         });
         $('#' + namespace.projectGlobalPrefix + '_desktop_socialshare_twitter').on('click', function () {
             window.open(namespace.urls.twitterShareURL, '_blank', 'width=740,height=340');
+            coreMetrics('Element', namespace.coremetrics, 'social-twitter');
         });
         $('#' + namespace.projectGlobalPrefix + '_desktop_socialshare_pinterest').on('click', function () {
             window.open(namespace.urls.pinterestShareURL, '_blank', 'width=770,height=380');
+            coreMetrics('Element', namespace.coremetrics, 'social-pinterest');
         });
 
 
@@ -144,7 +174,11 @@ require(['jquery'], function($) {
         $('#' + namespace.projectGlobalPrefix + '_desktop_main_container').addClass('loaded');
         $('#' + namespace.projectGlobalPrefix + '_desktop_header').addClass('active');
 
+        if (window.location.hash === '') {
+            coreMetrics('Pageview', namespace.coremetrics, namespace.coremetrics + '--hp');
+        }
         stickyNav();
+        //window.setTimeout(function(){stickyNav();}, 2100);
         deepLinks();
 
     }
@@ -170,11 +204,16 @@ require(['jquery'], function($) {
             $('#' + namespace.projectGlobalPrefix + '_mobile_main_container').addClass('loaded');
 
             removeLoader();
+            //mobileSectionCoreMetrics();
 
             deepLinks();
             // localMobileDebug();
 
             mobileStickyNavBar();
+
+            if (window.location.hash === '') {
+                coreMetrics("Pageview", namespace.coremetrics.replace("MBL:", ""), namespace.coremetrics.replace("MBL:", "") + "--hp");
+            }
 
         }, 100);
     }
@@ -234,6 +273,24 @@ require(['jquery'], function($) {
         return ss;
     }
 
+    function coreMetrics(tag_type, category_name, tag_value) {
+        if (tag_type === "Pageview") {
+            try {
+                BLOOMIES.coremetrics.cmCreatePageviewTag(tag_value, category_name);
+            } catch (e) {
+                trace("Coremetrics Library Not Found..." + e);
+            }
+            trace("{{{{{{{{ Pageview- category_name: " + category_name + " tag_value: " + tag_value + " }}}}}}}}");
+        } else if (tag_type === "Element") {
+            try {
+                BLOOMIES.coremetrics.cmCreatePageElementTag(tag_value, category_name);
+            } catch (e) {
+                trace("Coremetrics Library Not Found... " + e);
+            }
+
+            trace("{{{{{{{{ Element- category_name: " + category_name + " tag_value: " + tag_value + " }}}}}}}}");
+        }
+    }
 
     function trace(log_string) {
         if (window.location.href.indexOf('bloomingdales.com') < 0) {
@@ -336,6 +393,7 @@ require(['jquery'], function($) {
 
             if (dropDown.is(':visible') === false) {
                 dropDown.slideDown('slow');
+                BLOOMIES.coremetrics.cmCreatePageElementTag('topnav_open_dropdown', namespace.coremetrics.replace("MBL:", ""));
             }
         });
 
@@ -345,6 +403,7 @@ require(['jquery'], function($) {
 
             if (dropDown.is(':visible') === true) {
                 dropDown.slideUp('slow');
+                BLOOMIES.coremetrics.cmCreatePageElementTag('topnav_close_dropdown', namespace.coremetrics.replace("MBL:", ""));
             }
         });
 
@@ -355,19 +414,23 @@ require(['jquery'], function($) {
 
             hash = hash.substring(1, hash.length);
             if (typeof attrCm === 'string' && attrCm.length > 0) {
+                BLOOMIES.coremetrics.cmCreatePageElementTag('topnav--' + attrCm, namespace.coremetrics.replace("MBL:", ""));
             }
             //addressChange(event, hash);
         });
 
         $('#' + namespace.projectGlobalPrefix + '_mobile_socialshare_facebook').on('click', function () {
             window.open(namespace.urls.facebookShareURL, '_blank', 'width=608,height=342');
+            coreMetrics('Element', namespace.coremetrics.replace("MBL:", ""), 'social-fb');
             console.log('clicked mobile FB');
         });
         $('#' + namespace.projectGlobalPrefix + '_mobile_socialshare_twitter').on('click', function () {
             window.open(namespace.urls.twitterShareURL, '_blank', 'width=740,height=340');
+            coreMetrics('Element', namespace.coremetrics.replace("MBL:", ""), 'social-twitter');
         });
         $('#' + namespace.projectGlobalPrefix + '_mobile_socialshare_pinterest').on('click', function () {
             window.open(namespace.urls.pinterestShareURL, '_blank', 'width=770,height=380');
+            coreMetrics('Element', namespace.coremetrics.replace("MBL:", ""), 'social-pinterest');
         });
     }
 
@@ -439,6 +502,9 @@ require(['jquery'], function($) {
                 }
             }
 
+            if (hash !== '' && hash !== 'quiz') {
+                coreMetrics("Pageview", namespace.coremetrics.replace("MBL:", ""), namespace.coremetrics.replace("MBL:", "") + "--" + ( hash === 'buying_guide' ? 'hp' : hash ));
+            }
             if (hash.indexOf('quiz') >= 0) {
                 quizView(deviceView);
             }
@@ -458,10 +524,12 @@ require(['jquery'], function($) {
             $('#mattress_buying_guide_quiz' + deviceView + '01').siblings().hide();
             $('#mattress_buying_guide_quiz' + deviceView + '01').fadeIn();
 
+            coreMetrics("Pageview", namespace.coremetrics.replace("MBL:", ""), namespace.coremetrics.replace("MBL:", "") + "--find_your_mattress_size");
         } else if (step === 1) {
             $('#mattress_buying_guide_quiz' + deviceView + '02').siblings().hide();
             $('#mattress_buying_guide_quiz' + deviceView + '02').fadeIn();
 
+            coreMetrics("Pageview", namespace.coremetrics.replace("MBL:", ""), namespace.coremetrics.replace("MBL:", "") + "--find_your_mattress_comfort_level");
         } else if (step === 2) {
             $('#mattress_buying_guide_quiz' + deviceView + '03').siblings().hide();
             $('#mattress_buying_guide_quiz' + deviceView + '03').fadeIn();
@@ -487,6 +555,7 @@ require(['jquery'], function($) {
 
             });
 
+            coreMetrics("Pageview", namespace.coremetrics.replace("MBL:", ""), namespace.coremetrics.replace("MBL:", "") + "--find_your_mattress_style");
         }
 
     }
@@ -516,8 +585,10 @@ require(['jquery'], function($) {
     $(window).scroll(function () {
         if (namespace.state.isDesktop) {
             stickyNav();
+            //  floatingGrasphic();
         } else {
             updateMobileStickyNavPosition();
+            // mobileSectionCoreMetrics();
         }
     });
 
