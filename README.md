@@ -202,7 +202,7 @@ separate version, see code in above page. Foundation.min.js contains the Reveal 
 In addition, the Foundation reveal css needs to be added to any page using the modal, see above
 example.
 
-#Using The Bloomies LeftNav component
+# Using The Bloomies LeftNav component
 
 This project currently does NOT use the MacysUI LeftNav component. However,
 it does use config files that are compatible with single level menus using
