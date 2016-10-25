@@ -531,6 +531,12 @@ module.exports = function(grunt) {
                     },
                     {
                         expand: true,
+                        cwd: '<%= node.destination %>/lib/views/fashion-tips/',
+                        src: '**/*mobile.html',
+                        dest: '<%= node.destination %>/lib/views/fashion-tips/'
+                    },
+                    {
+                        expand: true,
                         cwd: '<%= node.destination %>/lib/views/landing-page/',
                         src: '**/*mobile.html',
                         dest: '<%= node.destination %>/lib/views/landing-page/'

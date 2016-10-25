@@ -78,6 +78,7 @@ define([
             // coremetrics data might have been added by handlebars directive, check and initialize if so
             var cmDataEl = $('#cmdata')[0];
             if (cmDataEl) {
+
                 var categoryId =  cmDataEl.dataset.categoryid;
                 var pageId = cmDataEl.dataset.pageid;
                 window.BLOOMIES.coremetrics.cmCreatePageviewTag(pageId, categoryId);
