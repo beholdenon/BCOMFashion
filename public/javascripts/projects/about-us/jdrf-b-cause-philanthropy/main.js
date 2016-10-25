@@ -18,6 +18,11 @@ require([
     APP.coremetrics = function (categoryID, pageID) {
         var self = this;
 
+        if ( $('.bl_mobile').length > 0 ){
+            categoryID = 'mbl:' + categoryID;
+            pageID = 'mbl:' + pageID;
+        }
+
         try {
             window.BLOOMIES.coremetrics.cmCreatePageElementTag(pageID, categoryID, APP.cmAttrbute2 );
         } catch (e) {
