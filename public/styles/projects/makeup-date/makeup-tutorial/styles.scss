@@ -61,6 +61,7 @@ section a:active {
 #navigation {
 	display: block;
 	list-style-type: none;
+	border-bottom: 1px solid #d9d9d9;
 	margin: 0;
 	padding: 0 5%;
 	line-height: 5em;
@@ -482,7 +483,7 @@ section a:active {
 	}
 }
 
-#evening-essentials {
+#essentials {
 	text-align: center;
 	background-color: #000000;
 	position: relative;
@@ -575,7 +576,7 @@ section a:active {
 
 }
 
-#Gift-with-Purchase {
+#gift-with-purchase {
 	position: relative;
 	font-size: 14px;
 	background-color: #e0e0e0;
@@ -973,7 +974,7 @@ section a:active {
 
 @media screen and (max-width: 1024px) {
 
-	#evening-essentials {
+	#essentials {
 		#essential-copy {
 			width: 100vw;
 		}

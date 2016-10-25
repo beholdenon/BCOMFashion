@@ -23,8 +23,8 @@
 
 <ul id="navigation">
     <li class="point caps " data-element="nav_videos" data-scroll="how-to-videos">videos</li>
-    <li class="point caps " data-element="nav_essentials" data-scroll="evening-essentials">essentials</li>
-    <li class="point caps " data-element="nav_exclusive-gift" data-scroll="Gift-with-Purchase">exclusive gift</li>
+    <li class="point caps " data-element="nav_essentials" data-scroll="essentials">essentials</li>
+    <li class="point caps " data-element="nav_exclusive-gift" data-scroll="gift-with-purchase">exclusive gift</li>
     <li class="point caps " data-element="nav_events" data-scroll="celebrate-in-store">events</li>
     <li class="point caps " data-element="nav_sweepstakes" data-scroll="sweepstakes">sweepstakes</li>
 </ul>
@@ -85,7 +85,7 @@
     </div>
 </section>
 
-<section id="evening-essentials" data-pageView="essentials" class="">
+<section id="essentials" data-pageView="essentials" class="">
     <img id='essentials-bg' alt="Evening Makeup Essentials – Bloomingdale's" src='/fashion/images/projects/makeup-date/makeup-tutorial/editorial_bg.jpg'/>
 
     <div id="essential-copy">
@@ -121,7 +121,7 @@
 
 </section>
 
-<section id="Gift-with-Purchase" data-pageView="exclusive-gift" class="">
+<section id="gift-with-purchase" data-pageView="exclusive-gift" class="">
     <a href="http://www1.bloomingdales.com/shop/product?ID=1896995" data-element="exclusive-gift_image">
         <img src="/fashion/images/projects/makeup-date/makeup-tutorial/gwp.jpg" alt="Bloomingdale's Beauty Gifts with Purchase 2016"/>
     </a>
@@ -278,7 +278,7 @@
 <script type="text/javascript">
     var dateCheck = new Date();
     if ( dateCheck.getFullYear() >= 2016 && dateCheck.getMonth() >= 11 &&  dateCheck.getDate() >= 17 ) {
-        $("#makeup_hero .subHeader, #makeup_hero .smallHeader, #Gift-with-Purchase, #samples, #sweepstakes").remove();
+        $("#makeup_hero .subHeader, #makeup_hero .smallHeader, #gift-with-purchase, #samples, #sweepstakes").remove();
         $("[data-element='nav_sweepstakes'], [data-element='nav_exclusive-gift']").remove();
         $("#book-footer").css('background-color', '#ffffff');
         $("#book-footer span, #book-footer a").css('color', "#000000");
