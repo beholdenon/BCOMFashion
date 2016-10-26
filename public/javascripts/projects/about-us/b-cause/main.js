@@ -38,7 +38,7 @@ require([
 
     $( window ).load(function() {
         if ( $('.bl_mobile').length === 0 ) {
-            $('.b-cause-link').attr('target', '_blank');
+            $('.b-cause-body .b-cause-link').attr('target', '_blank');
         }
 
         $('.jdrf-link').on('click', function () {
