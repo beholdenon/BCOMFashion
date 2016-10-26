@@ -2194,7 +2194,7 @@ window.blmwbs15.builder = ( function bl_mwbs15_builder( window, document,  $, Ha
         $.ajax({
             type: 'GET',
             dataType: 'text',
-            url: url.replace( '{{id}}', args.id ),
+            url: '/p' + url.replace( '{{id}}', args.id ),
             error: callback,
             success: function( response ) {
                 try {
@@ -2244,7 +2244,7 @@ window.blmwbs15.builder = ( function bl_mwbs15_builder( window, document,  $, Ha
         $.ajax({
             type: 'GET',
             dataType: 'text',
-            url: app.utils.getCategoryUrl( args ),
+            url: '/p' + app.utils.getCategoryUrl( args ),
             error: callback,
             success: function ( response ) {
 
@@ -2322,7 +2322,7 @@ window.blmwbs15.builder = ( function bl_mwbs15_builder( window, document,  $, Ha
         $.ajax({
             type: 'GET',
             dataType: 'text',
-            url: app.utils.getProductsInfoUrl( args ),
+            url: '/p' + app.utils.getProductsInfoUrl( args ),
             error: callback,
             success: function ( response ) {
 
