@@ -71,8 +71,8 @@ module.exports = function(grunt) {
                     './server/lib/views/partials/titleimage.hbs',
                     './server/lib/views/partials/titleimagec.hbs',
                     './server/lib/views/partials/navitem.hbs',
-                    './server/lib/views/partials/atyourservice.hbs'
-
+                    './server/lib/views/partials/atyourservice.hbs',
+                    './server/lib/views/partials/bcausefooter.hbs'
                 ]
             }
         },

@@ -8,14 +8,10 @@ require([
     'jquery'
 ], function( $ ) {
 
-    var APP = {
-        cmElementCat: 'b_cause_links',
-        cmAttrbute2: '-_-lp-xx-xx-xx.jdrf',
-        cmLinkName: 'jdrf'
-    };
+    var APP = {};
 
     //(req) CM business logic
-    APP.coremetrics = function (categoryID, pageID) {
+    APP.coremetrics = function (categoryID, pageID, attributes) {
         var self = this;
 
         if ( $('.bl_mobile').length > 0 ){
@@ -24,7 +20,7 @@ require([
         }
 
         try {
-            window.BLOOMIES.coremetrics.cmCreatePageElementTag(pageID, categoryID, APP.cmAttrbute2 );
+            window.BLOOMIES.coremetrics.cmCreatePageElementTag(pageID, categoryID, attributes );
         } catch (e) {
             self.logErr('CoreM_err: ' + e);
         }
@@ -41,8 +37,24 @@ require([
     };
 
     $( window ).load(function() {
+        if ( $('.bl_mobile').length === 0 ) {
+            $('.b-cause-link').attr('target', '_blank');
+        }
+
         $('.jdrf-link').on('click', function () {
-            APP.coremetrics(APP.cmElementCat, APP.cmLinkName);
+            var cmElementCat = 'b_cause_links',
+                cmAttrbute2 = '-_-lp-xx-xx-xx.jdrf',
+                cmLinkName = 'jdrf';
+
+            APP.coremetrics(cmElementCat, cmLinkName, cmAttrbute2);
+        });
+
+        $('.childmind-link').on('click', function () {
+            var cmElementCat = 'b_cause_links',
+                cmAttrbute2 = '-_-lp-xx-xx-xx.childmind',
+                cmLinkName = 'childmind';
+
+            APP.coremetrics(cmElementCat, cmLinkName, cmAttrbute2);
         });
 	});
 });
