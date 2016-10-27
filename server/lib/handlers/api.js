@@ -118,7 +118,7 @@ module.exports = {
     proxy: {
         description: 'proxy, sends any request over to bloomingdales.com',
         handler: function (req, res) {
-            var host = process.env.BASE_ASSETS1 || process.env.BASE_ASSETS;
+            var host = process.env.BASE_ASSETSX1 || process.env.BASE_ASSETS;
             if (! host){
                 host = 'www1.bloomingdales.com';
             }
