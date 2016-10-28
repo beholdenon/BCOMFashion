@@ -4,7 +4,8 @@
 require( [ 'jquery', window.BLOOMIES.coremetrics ], function ( $, Coremetrics ) {	
 	document.body.className += ' fall15_utilityfinder_loading';
 
-	var $ = jQuery,
+	var isDebugMode = window.location.search && window.location.search.indexOf('debug=true'),
+		$ = jQuery,
 		baseUrlAssets = '/fashion/images/projects/fashion-tips/bedding-utility-guide/',
   		baseUrlScriptAssets = '/fashion/javascripts/projects/fashion-tips/bedding-utility-guide/',
   		baseUrlStyleAssets = '/fashion/styles/projects/fashion-tips/bedding-utility-guide/';
@@ -670,7 +671,11 @@ require( [ 'jquery', window.BLOOMIES.coremetrics ], function ( $, Coremetrics ) 
 					cmid = anchor.attr( 'data-cmid' ),
 					href = anchor.attr( 'href' );
 				if ( typeof cmid === 'string' ) {
-					Coremetrics.element( cmid );
+					var metricsValue = 'mbl:' + cmid;
+					if (isDebugMode) {
+						console.log(metricsValue);
+					}
+					Coremetrics.element( metricsValue );
 				}
 				if ( typeof href === 'string' && href.indexOf( '#/' ) === 0 ) {
 					event.preventDefault();
@@ -688,7 +693,9 @@ require( [ 'jquery', window.BLOOMIES.coremetrics ], function ( $, Coremetrics ) 
 				}
 			} );
 			window.addEventListener( 'popstate', function ( event ) {
-				console.log(event);
+				if (isDebugMode) {
+					console.log(event);
+				}
 				var args,
 					action,
 					page,
