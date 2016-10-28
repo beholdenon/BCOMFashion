@@ -1,0 +1,21 @@
+// ======================================
+// BCRF redesign
+// Author: Alessandro Ribeiro
+// Date: 10/18/2016
+// Project: /about-us/pink-campaign-b-cause-philanthropy/
+// ======================================
+
+@import "../b-cause/styles";
+
+.b-cause-main {
+    h1 {
+        color: #e2528a;
+        padding: 15px 0;
+    }
+
+    .b-cause-body {
+        article {
+            margin-bottom: 15px;
+        }
+    }
+}
