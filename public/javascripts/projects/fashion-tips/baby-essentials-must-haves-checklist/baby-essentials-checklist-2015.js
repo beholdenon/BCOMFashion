@@ -251,7 +251,7 @@
       // SOCIAL
       var sharingLinks = (function ($, location) {
           var pageURL = escape(location.protocol + "//" + location.host + location.pathname),
-              assetsHost = $("#bcom_serverside_parameters").attr("data-host-assets") || "",
+              assetsHost = $("#bcom_serverside_parameters").attr("data-host-assets") || "//" + location.host,
               pinterestMedia = escape(assetsHost + "/images/projects/fashion-tips/baby-essentials-must-haves-checklist/icon_pinterest.jpg"),
               pinterestDescription = escape("The Essentials: Baby Love | bloomingdales.com");
           return {
