@@ -6,9 +6,9 @@ require( [ 'jquery', window.BLOOMIES.coremetrics ], function ( $, Coremetrics ) 
 
 	var isDebugMode = window.location.search && window.location.search.indexOf('debug=true'),
 		$ = jQuery,
-		baseUrlAssets = '/fashion/images/projects/fashion-tips/bedding-utility-guide/',
-  		baseUrlScriptAssets = '/fashion/javascripts/projects/fashion-tips/bedding-utility-guide/',
-  		baseUrlStyleAssets = '/fashion/styles/projects/fashion-tips/bedding-utility-guide/';
+		baseUrlAssets = '/fashion/images/projects/fashion-tips/good-sleep-guide/',
+  		baseUrlScriptAssets = '/fashion/javascripts/projects/fashion-tips/good-sleep-guide/',
+  		baseUrlStyleAssets = '/fashion/styles/projects/fashion-tips/good-sleep-guide/';
 
 	var Utils = {};
 
@@ -750,7 +750,7 @@ require( [ 'jquery', window.BLOOMIES.coremetrics ], function ( $, Coremetrics ) 
 		};
 
 		module.loadExternalModules = function () {
-			window.require( [ '/fashion/javascripts/projects/fashion-tips/bedding-utility-guide/mobile-pages.js' ], function ( pagesModule ) {
+			window.require( [ '/fashion/javascripts/projects/fashion-tips/good-sleep-guide/mobile-pages.js' ], function ( pagesModule ) {
 				module.rootNode.find( 'section[data-page-type]' ).each( function ( index, element ) {
 					var page = pagesModule.pageWithSubpages( element, $( element ).attr( 'data-page-type' ) );
 					if ( page !== null ) {
@@ -838,7 +838,7 @@ require( [ 'jquery', window.BLOOMIES.coremetrics ], function ( $, Coremetrics ) 
 			return {
 				selector: selector,
 				assetsHost: assetsHost,
-				pageURL: '//fashion.bloomingdales.com/fashion-tips/bedding-utility-guide/',
+				pageURL: '//fashion.bloomingdales.com/fashion-tips/good-sleep-guide/',
 				facebook: {
 					name: 'THE GOOD SLEEP GUIDE | bloomingdales.com',
 					description: 'Discover the perfect pillows and comforters based on how you sleep with our simple guide. The rest is easy.',
