@@ -244,15 +244,10 @@ $(document).ready(function(){
     }
 
     function getAssetsHost () {
-      // "use strict";
-      // var $paramsElm = $("#bcom_serverside_parameters"),
-      //
-      //     hostUrl = $paramsElm ? $paramsElm.attr("data-host-assets") :
-      //
-      // return $paramsElm.length > 0 && $paramsElm.attr("data-host-assets").length > 0 ?
-      //
-      //
-      //  || "//" + location.host
+      var $paramsElm = $("#bcom_serverside_parameters"),
+          localHostUrl = "//" + window.location.host,
+          paramsElmHostUrl = $paramsElm && $paramsElm.attr("data-host-assets") ?  $paramsElm.attr("data-host-assets") : "";
+      return paramsElmHostUrl.length > 0 ? paramsElmHostUrl : localHostUrl;
     }
 
     function getShraringLinks () {

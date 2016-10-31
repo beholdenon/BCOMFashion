@@ -248,10 +248,18 @@
         // BLOOMIES.coremetrics.cmCreatePageviewTag(cmPageID, cmCategoryID, searchTerm, searchResults);
       }
 
+
+      function getAssetsHost () {
+          var $paramsElm = $("#bcom_serverside_parameters"),
+              localHostUrl = "//" + window.location.host,
+              paramsElmHostUrl = $paramsElm && $paramsElm.attr("data-host-assets") ? $paramsElm.attr("data-host-assets") : "";
+          return paramsElmHostUrl.length > 0 ? paramsElmHostUrl : localHostUrl;
+      }
+
       // SOCIAL
       var sharingLinks = (function ($, location) {
           var pageURL = escape(location.protocol + "//" + location.host + location.pathname),
-              assetsHost = $("#bcom_serverside_parameters").attr("data-host-assets") || "//" + location.host,
+              assetsHost = getAssetsHost(),
               pinterestMedia = escape(assetsHost + "/images/projects/fashion-tips/baby-essentials-must-haves-checklist/icon_pinterest.jpg"),
               pinterestDescription = escape("The Essentials: Baby Love | bloomingdales.com");
           return {
