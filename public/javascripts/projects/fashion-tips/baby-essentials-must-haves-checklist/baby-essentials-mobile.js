@@ -53,7 +53,6 @@ $(document).ready(function(){
 
     }
 
-    // SHOW OVERLAY
     function showOverlay(overlayName){
       var overlayElement = $('.overlay-wrapper'),
           overlayTop = $(window).scrollTop() - overlayElement.parent().offset().top,
@@ -244,25 +243,26 @@ $(document).ready(function(){
       // BLOOMIES.coremetrics.cmCreatePageviewTag(cmPageID, cmCategoryID, searchTerm, searchResults);
     }
 
-    // SOCIAL
-    var sharingLinks = (function ($, location) {
-        var pageURL = escape(location.protocol + "//" + location.host + location.pathname),
-            assetsHost = $("#bcom_serverside_parameters").attr("data-host-assets") || "",
-            pinterestMedia = escape(assetsHost + "/web20/assets/img/specialProjects/baby-essentials-checklist-2015/icon_pinterest.jpg"),
+    function getShraringLinks () {
+        var location = window.location,
+            pageURL = escape(location.protocol + "//" + location.host + location.pathname),
+            assetsHost = $("#bcom_serverside_parameters").attr("data-host-assets") || "//fashion.bloomingdales.com",
+            pinterestMedia = escape(assetsHost + "/images/projects/fashion-tips/baby-essentials-must-haves-checklist/icon_pinterest.jpg"),
             pinterestDescription = escape("The Essentials: Baby Love | bloomingdales.com");
         return {
             facebook: "https://www.facebook.com/sharer/sharer.php?u=" + pageURL,
             pinterest: "http://pinterest.com/pin/create/button/?url=" + pageURL + "&media=" + pinterestMedia + "&description=" + pinterestDescription,
             twitter: "https://twitter.com/home?status=Shopping%20for%20two%3F%20Check%20out%20our%20list%20of%20baby%20essentials%20@bloomingdales.com%20http%3A//bit.ly/1CpFCyP"
         };
-    })($, window.location);
+    }
 
     $('div.layout-desktop').hide();
     $('div.layout-mobile').show();
 
     var categoryName = 'fall15_babylove',
         wasClick = false,
-        hash = window.location.hash;
+        hash = window.location.hash,
+        sharingLinks = getShraringLinks();
 
     // if( hash == '') {
     //   hash = '#/mbl_clothing';
@@ -350,7 +350,6 @@ $(document).ready(function(){
       }, 350);
     }         
 
-    
     // fire page view tag for mobile
 
     $( window ).on( 'hashchange' , function() {

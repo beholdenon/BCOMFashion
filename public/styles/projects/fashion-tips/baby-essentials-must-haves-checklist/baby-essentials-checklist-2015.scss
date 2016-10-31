@@ -329,11 +329,10 @@
   color: #343434;
   display: none;
   font-size: 1.2em;
-
+  padding-bottom: 1em;
   .tip {
     font-size: 0.85em;
   }
-
 }
 
 .tip-section.is-visible {
@@ -341,6 +340,7 @@
 }
 
 .tip-section h2 {
+  font-size: 13px;
   color: #000;
   letter-spacing: 1px;
   margin-top: 1em;

@@ -252,7 +252,7 @@
       var sharingLinks = (function ($, location) {
           var pageURL = escape(location.protocol + "//" + location.host + location.pathname),
               assetsHost = $("#bcom_serverside_parameters").attr("data-host-assets") || "",
-              pinterestMedia = escape(assetsHost + "/web20/assets/img/specialProjects/baby-essentials-checklist-2015/icon_pinterest.jpg"),
+              pinterestMedia = escape(assetsHost + "/images/projects/fashion-tips/baby-essentials-must-haves-checklist/icon_pinterest.jpg"),
               pinterestDescription = escape("The Essentials: Baby Love | bloomingdales.com");
           return {
               facebook: "https://www.facebook.com/sharer/sharer.php?u=" + pageURL,
