@@ -3970,79 +3970,79 @@
                             h3: '1872年 – グレート・イースト・サイド・バザール',
                             p: 'Bloomingdale兄弟「場所、場所、場所は,（商売は場所が重要の意）」というフレーズの生みの親であり、最初の店を938 Third Avenueにオープンしました。最新のパリモードがディスプレイされたウィンドウは注目を集め、レジャーとしてはウィンドウショッピングをするのが、ニューヨークでたちまち人気となりました。'
                         }, {
-                            h3: 'BLOOMINGDALE\'S PREDICTS THE FUTURE',
-                            p: 'Poised at the "retail crossroads" of New York, the new store at 59th Street and Third Avenue boasts a sky carriage, (i.e., an elevator). Thirteen years later, Lyman Bloomingdale finances a young inventor\'s idea of an "inclined elevator" and the escalator is born.'
+                            h3: '未来を予見したBloomingdale\'s',
+                            p: '59丁目と3番街というニューヨーク小売業のクロスロードに構えられた新しいショップは、「スカイ・キャリッジ（エレベーター）」が自慢の種でした。13年後、Lyman Bloomingdaleは「傾斜させたエレベーター」というアイディアを持つ若い発明家を資金援助し、エスカレーターの誕生を見ました。'
                         }],
                         y1900: [{
-                            h3: 'A Slogan Known Around the World',
-                            p: 'The IRT Third Avenue El, or elevated train, is the transportation method of choice for turn-of-the-century Bloomingdale\'s shoppers, so much so that billboards, beach umbrellas and comic strips all over the city (and the world) boast the popular slogan, "All Cars Transfer to Bloomingdale\'s." Gold footprints were embedded into the sidewalk so people would follow them off the train and into Bloomingdale\'s.'
+                            h3: '世界的に著名となったスローガン',
+                            p: '20世紀初め頃のBloomingdale\'sのお客様が最も利用した交通手段はIRTのThird Avenue El（3番街高架鉄道）であったため、ニューヨーク（そして世界）中のビルボード、ビーチパラソル、漫画に「All Cars Transfer to Bloomingdale\'s（全車両Bloomingdale\'s行き）」という有名なスローガンが載りました。駅からBloomingdale\'sまでの歩道には金色の足跡が埋め込まれ、人々はそれをたどって行ったのです。'
                         }, {
-                            h3: '1910–To a (Model) T',
-                            p: 'Bloomingdale\'s becomes the first store in New York City to use Henry Ford\'s Model T for deliveries.'
+                            h3: '1910年 – ぴったりなT型フォード',
+                            p: 'Bloomingdale\'sは、ニューヨークで初めてフォード社のT型フォードを配達に使用したショップです。'
                         }],
                         y1920: [{
-                            h3: 'Bloomingdale\'s Gets a Glamorous Makeover',
-                            p: 'Bloomingdale\'s anchors itself on Lexington Avenue and adds eleven new stories, capturing the new craze for Art Deco glamour with of-the-moment materials like black granite, limestone and terracotta. It occupies the entire block from Lexington to Third Avenue and from 59th to 60th Street. It is actually 10 buildings that are interconnected.'
+                            h3: 'Bloomingdale\'s 魅力的に変身',
+                            p: 'Bloomingdale\'sはレキシントン街に腰を落ち着け、フロアをさらに11階増やし、黒花崗岩、石灰岩、テラコッタなどの流行の素材を使用して、当時一世を風靡したアールデコのスタイルを取り入れました。レキシントン街から3番街、59丁目から60丁目の1ブロック全体を占め、実に10もの建物がつながれたのです。'
                         }],
                         y1940: [{
-                            h3: 'Bloomingdale\'s Turns 75 and Parties Like a Teenager',
-                            p: 'To mark her Diamond Jubilee, Bloomingdale\'s invites America\'s hottest 26 designers—including luminaries Claire McCardell, Pauline Trigere and Jo Copeland—to create a couture outfit for the store windows. The store also launches the first-ever home furnishings showroom.'
+                            h3: '75歳になったBloomingdale\'s ティーンエージャーのようにパーティでお祝い',
+                            p: 'ダイヤモンド・ジュビリー（75周年）を記念して、Bloomingdale\'sはショップのウィンドウを飾るオートクチュール衣装を制作してもらうため、著名なClaire McCardell、Pauline Trigere、Jo Copelandなどのアメリカで最も熱い26人のデザイナーを招聘しました。また、初のホーム用品のショールームも設けられました。'
                         }],
                         y1960: [{
-                            h3: 'Fashion Explodes',
-                            p: 'Men on the moon. The Mustang. Mod shops. And more. Bloomingdale\'s is the first store to give an admiring American audience to European visionaries like Yves Saint Laurent and Courrèges.'
+                            h3: 'ファッション爆発',
+                            p: '人類の月面着陸。マスタング。モッズ・ショップ。その他いろいろ。Bloomingdale\'sは、ショップとして初めてYves Saint LaurentやCourrègesなどのヨーロッパの先進的デザイナーを紹介し、アメリカの人々を魅了しました。'
                         }, {
-                            h3: 'Get Groovy, Baby',
-                            p: 'Starting in the fall of \'63, Bloomingdale\'s is the first store to commission the era\'s grooviest artists to illustrate the shopping bag. Artists like Jonah Kinigstein and Michael Vollbracht revolutionize the Bloomingdale\'s bag, making them instant art collectibles. Shopping bags would never be the same.'
+                            h3: 'かっこよくなろうよ',
+                            p: 'ショップとして初めて、その時代で一番かっこいいアーティストにショッピングバッグのデザインを依頼することをBloomingdale\'sが始めたのは、1963年秋のことでした。Jonah KinigsteinやMichael Vollbrachtなどのアーティストによって革命的に変わったBloomingdale\'sのバッグは、瞬く間にコレクターズ・アート・アイテムとなりました。これはショッピングバッグの歴史を変えたのです。'
                         }],
                         y1970: [{
-                            h3: 'Bloomingdale\'s Goes Hollywood',
-                            p: 'The decade of decadence starts off with a bang as Bloomingdale\'s partners with Hollywood and Broadway. Major movies are filmed in the 59th Street store. Woody Allen\'s <i>Manhattan</i>, <i>Starting Over</i> and <i>The Electric Horseman</i> are just the beginning, with <i>Splash</i> and <i>Moscow on the Hudson</i> following in the \'80s.'
+                            h3: 'Bloomingdale\'s ハリウッドへ進出',
+                            p: 'デカダンスの10年は、Bloomingdale\'sがハリウッドとブロードウェーのパートナーとなった大事件で幕を開けました。著名な映画が59th Street店で撮影され、「マンハッタン」（Woody Allen監督）、「結婚ゲーム」、「出逢い」などの作品はほんの始まりに過ぎず、その後「スプラッシュ」、「ハドソン河のモスコー」と80年代にも続きました。'
                         }, {
-                            h3: 'Bloomingdale\'s Launches the Big 3',
-                            p: 'Ralph Lauren, Donna Karan and Calvin Klein get their big starts at Bloomingdale\'s, proving yet again that the store champions youth, newness and fresh outlooks.'
+                            h3: 'Bloomingdale\'sにビッグ3登場',
+                            p: 'Ralph Lauren、Donna Karan、Calvin KleinがBloomingdale\'sでビッグなスタートを切り、当店が若者、新しいこと、フレッシュな展望をサポートする存在であることを、またしても証明しました。'
                         }, {
-                            h3: 'Iconic',
-                            p: 'Bloomingdale\'s iconic Big Brown Bag first hit the streets in 1973. The Little Brown Bag followed a year later and the Medium Brown Bag was the final addition. Bloomingdale\'s has commissioned the most recognizable shopping bags in history and they can be seen in museum collections around the world.'
+                            h3: 'ショップの象徴',
+                            p: 'Bloomingdale\'sを象徴するBig Brown Bagは、1973年に初めて登場しました。次の年にはLittle Brown Bagが続き、Medium Brown Bagは最後に仲間入りしました。Bloomingdale\'sの歴史上最も認知度の高いショッピングバッグは、世界の美術館で収蔵品として展示されています。'
                         }],
                         y1980: [{
-                            h3: 'Bloomingdale\'s sells the "sizzle."',
-                            p: 'Warhol calls Bloomingdale\'s "the new kind of museum for the \'80s." And, each day, the store transforms itself into a cutting-edge gallery of the latest and greatest. Bloomingdale\'s jumps aboard the decade of gala glamour. Star fashion figures like Karl Lagerfeld, Diane von Furstenberg, Liza Minnelli and Oscar de la Renta jet in for glamorous store openings.'
+                            h3: '「イメージ」を売るBloomingdale\'s',
+                            p: 'Andy WarholはBloomingdale\'sのことを「80年代の新しいタイプのミュージアム」と呼びました。毎日、ショップは最も新しく、最も素晴らしいものをディスプレイする最先端のギャラリーとなるのです。Bloomingdale\'sはガラ・グラマーの時代もすぐ取り入れました。Karl Lagerfeld、Diane von Furstenberg、Liza Minnelli、Oscar de la Rentaなどのファッション界のスターたちが、ショップの華やかなオープニングにジェット機で駆けつけて来ました。 '
                         }, {
-                            h3: '1988–Year of the Dragon',
-                            p: 'A year before President Nixon traveled to China, Bloomingdale\'s was already making strides in rekindling a trade relationship with mainland China. Fifteen years later, in 1988, following up on the popular success of its first China campaign, the 59th Street flagship offers a 7-week epic panorama of fashion and design from the Orient, celebrating 10 years of trade with the People\'s Republic. Decked out accordingly, the store shines like a jewel from the Forbidden City.'
+                            h3: '1988年 – イヤー・オブ・ザ・ドラゴン',
+                            p: 'ニクソン大統領が中国を訪問する1年前に、Bloomingdale\'sはすでに中国本土との通商関係再開を進めていました。その15年後の1988年、初めての中国キャンペーンの大成功に続き、中国との10年の取引を祝って、59th Street flagship店は東洋からのファッションとデザインを7週間にわたって壮大に紹介しました。このテーマで飾りあげられたショップは紫禁城の宝石のように輝きました。'
                         }],
                         y1990: [{
-                            h3: 'The New Gold Rush',
-                            p: 'Four new California stores in four days: Century City, Stanford, Sherman Oaks and Newport Beach. And one year later, Beverly Center. Bloomingdale\'s is now the only upscale, full-selection department store with a national presence. Californians celebrate by shopping—and then going to the beach.'
+                            h3: 'ニュー・ゴールド・ラッシュ',
+                            p: 'カリフォルニアに新しいショップが4日間に4店（Century City、Stanford、Sherman Oaks、Newport Beach）オープンしました。その1年後にはBeverly Centerも加わりました。Bloomingdale\'sは、今や全国規模の幅広い品の揃った高級デパートとして唯一の存在となりました。カリフォルニアの人々はオープンをショッピングで祝い、その後はもちろんビーチへ行っていました。'
                         }],
                         y2000: [{
-                            h3: 'Bloomingdale\'s Gets Downtown Fashion Cred',
-                            p: 'All good things get better when they move downtown. Bloomingdale\'s opens in SoHo. A historic cast-iron façade building on Broadway transforms into a polished gem of 21st century fashion.'
+                            h3: 'Bloomingdale\'s ダウンタウンのファッションクレド獲得',
+                            p: 'ダウンタウンへ移れば、いいものはもっと良くなるものです。Bloomingdale\'sはSoHo店をオープンし、ブロードウェーにあるキャスト・アイアンのファサードを持つ歴史建築は、21世紀ファッションの殿堂として輝きを取り戻しました。'
                         }, {
-                            h3: 'Going Digital',
-                            p: 'bloomingdales.com is born. From designer clothing and luxury beauty products to handbags and statement shoes, the site gives customers around the globe world-class fashion at their fingertips.'
+                            h3: 'デジタル時代へ',
+                            p: 'bloomingdales.comが誕生しました。このサイトで、デザイナーズ・ブランドの服や豪華なビューティ用品から、ハンドバッグやステートメント・シューズまで揃った世界トップクラスのファッションを、世界中のお客様が指先操作だけで手に入れることができます。 '
                         }, {
-                            h3: 'Beauty Revamp',
-                            p: 'The main B-way floor at 59th Street gets "the biggest makeover in NYC," with an array of state-of-the-art kiosks from top beauty brands.'
+                            h3: 'ビューティ刷新',
+                            p: '59th Street店のメインフロアは「ニューヨーク最大のメークオーバー」を受け、トップクラスのビューティ・ブランドの最先端のキオスクが並ぶ場所となりました。'
                         }],
                         y2010: [{
-                            h3: '2011–A Gleaming New Space for Fine Jewelry',
-                            p: 'Designed to showcase every facet of the world\'s best designers, including David Yurman, the fine jewelry department at 59th Street—visited by over 400,000 people from over 230 countries and all 50 states—is an NYC Concierge Choice Award–winner five years running.'
+                            h3: '2011年 – 新しい宝飾品コーナーのきらめき',
+                            p: '59th Street店 – 230か国および50の州から40万を超える人が訪れ、5年連続で「NYCコンシェルジュ・チョイス・アワード」を受賞したショップ – には、David Yurmanなどの世界最高のジュエリー・デザイナーの様々な面が表れた作品を紹介するため、高級宝飾品コーナーが設けられました。'
                         }, {
-                            h3: 'No Limit to Being Like No Other',
-                            p: 'Today, there\'s no stopping where Bloomingdale\'s can go. The type of innovation synonymous with the brand since its first days continues to be central to its mission of luxury. By looking back at the triumphs of the past, Bloomingdale\'s beholds the future. It\'s a future like no other.'
+                            h3: '世界に名だたる存在に限界はありません',
+                            p: '現在、Bloomingdale\'sの行く手を遮るものは何もありません。創立の日から当店ブランドと同義であるイノベーションは、これからもラグジュアリー追及という使命の中心であり続けるでしょう。Bloomingdale\'sは、輝かしい歴史を振り返り、そこに未来を見ます。それは世界に名だたる存在である未来です。'
                         }]
                     }
                 },
                 designer: {
                     header: {
-                        h1: 'So Many Names in Just One Store',
-                        h2: 'We Handpick the Best Designers in Fashion, Beauty and Beyond'
+                        h1: '1つの店舗に膨大な数のブランド',
+                        h2: '当店はファッション、ビューティをはじめとする最高のデザイナーズ・ブランドを選び抜きます'
                     },
                     article: [
-                        'Bloomingdale\'s carries an unrivaled selection of designer brands including CHANEL, Dior, Michael Kors, MCM, Tory Burch, Marc Jacobs, Armani and Ralph Lauren.',
-                        'Searching for the latest (and most coveted) beauty products? Find all of your favorite skin care, makeup and fragrance brands including La Mer, Estée Lauder, Gucci, Chloé, Clinique, Lancôme and kate spade new york.'
+                        'CHANEL、Dior、Michael Kors、MCM、Tory Burch、Marc Jacobs、Armani、Ralph Laurenなど、デザイナーズ・ブランドがBloomingdale’sほど揃っているところは他にありません。',
+                        '最新（そして一番人気）のビューティ用品をお探しですか？La Mer、Estée Lauder、Gucci、Chloé、Clinique、Lancôme、kate spade new yorkなど、当店に揃っているスキンケア、コスメ、香水のブランドから、お気に入りのものはすべて見つかるでしょう。'
                     ]
                 },
                 stores: {
@@ -4825,21 +4825,21 @@
                     },
                     right: {
                         name: '名前:',
-                        nameErr: 'Please tell us your name',
+                        nameErr: '私達にあなたの名前を教えてください',
                         email: 'Eメール:',
-                        emailErr1: 'Please tell us your email',
-                        emailErr2: 'Invalid email address',
+                        emailErr1: '私達にあなたの電子メールを教えてください',
+                        emailErr2: '無効なメールアドレス',
                         phone: '携帯電話番号（任意）:',
-                        phoneErr: 'Invalid phone number',
+                        phoneErr: '無効な電話番号',
                         party: 'お越しいただくお客様の人数:',
-                        partyErr: 'Please tell us your party size',
+                        partyErr: '全員の人数を教えてください',
                         dates: 'アメリカ旅行の日程:',
                         arriving: '到着日:',
                         departing: '出発日:',
-                        datesErr: 'Select date',
+                        datesErr: '日にちを選択',
                         storesH: 'ご来店希望店舗:',
                         storesM: '店舗をお選びください',
-                        storesErr: 'Please select a store',
+                        storesErr: '店舗をお選びください',
                         stores: [
                             {id: 'New York', name: 'ニューヨーク', disabled: 'true'},
                             {id: '59th Street Flagship, New York City', name: '59th Street Flagship, New York City', disabled: 'false'},
