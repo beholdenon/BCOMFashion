@@ -52,6 +52,12 @@
                 case 'CN':
                     pageID = 'fall15_chinamicrosite';
                     break;
+                case 'ESP':
+                    pageID = 'fall15_spanishmicrosite';
+                    break;
+                case 'JP':
+                    pageID = 'fall15_japanmicrosite';
+                    break;
                 default:
                     pageID = 'fall15_englishmicrosite';
             }

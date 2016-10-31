@@ -113,10 +113,7 @@
             var globalLang,
                 el = jQuery($event.target);
 
-            jQuery('.lang-opt').removeClass('active');
-            el.parent('li').addClass('active');
-
-            globalLang = el.attr('data-lang');
+            globalLang = el.attr('data-lang') || el.parent().attr('data-lang');
 
             AppGlobals.setAttr('lang', globalLang);
             localStorageService.set('lang', globalLang);
@@ -130,6 +127,12 @@
                 case 'CN':
                     pageID = 'fall15_chinamicrosite';
                     break;
+                case 'ESP':
+                    pageID = 'fall15_spanishmicrosite';
+                    break;
+                case 'JP':
+                    pageID = 'fall15_japanmicrosite';
+                    break;
                 default:
                     pageID = 'fall15_englishmicrosite';
             }
@@ -138,12 +141,19 @@
             $rootScope.$broadcast('lang:change', {
                 lang: globalLang
             });
+            jQuery('.top-bar-section .flags').toggleClass('active');
 
             //Coremetrics tag
             var windowWidth = $window.innerWidth,
                 prefix = (windowWidth < 641) ? 'MBL:' : '',             
                 tag = prefix + 'language-btn_' + globalLang;
             Coremetrics.tag('Element', pageID, tag);
+        };
+
+        $scope.langModal = function () {
+
+            jQuery('.top-bar-section .flags').toggleClass('active');
+
         };
 
         $scope.footerCM = function() {
