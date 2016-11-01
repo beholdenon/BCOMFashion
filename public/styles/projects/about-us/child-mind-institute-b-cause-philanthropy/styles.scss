@@ -17,9 +17,37 @@
     }
 
     .b-cause-body {
+        h1 {
+            margin: 25px 30px;
+        }
+
+        h2 {
+            margin-right: 140px;
+        }
+
         h3 {
             background-color: #08c5d9;
             margin-bottom: 5px;
+        }
+
+        .b-cause-logo {
+            display: block;
+            margin: 15px auto;
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .b-cause-main {
+        .b-cause-body {
+            h1 {
+                margin: 25px 140px 25px 0;
+            }
+
+            .b-cause-logo {
+                display: inline;
+                margin: 15px 0;
+            }
         }
     }
 }
