@@ -162,7 +162,7 @@ define( [ "LeftNav" ], function ( LeftNav ) {
                 },
                 {
                     text: 'BCRF',
-                    href: '/about-us/breast-cancer-research-foundation-b-cause-philanthropy/',
+                    href: '/about-us/pink-campaign-b-cause-philanthropy/',
                     id: 'about_bcrf'
                 },
                 {
