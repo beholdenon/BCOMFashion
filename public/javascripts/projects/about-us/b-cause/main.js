@@ -38,7 +38,7 @@ require([
 
     $( window ).load(function() {
         if ( $('.bl_mobile').length === 0 ) {
-            $('.b-cause-link').attr('target', '_blank');
+            $('.b-cause-body .b-cause-link').attr('target', '_blank');
         }
 
         $('.jdrf-link').on('click', function () {
@@ -47,6 +47,13 @@ require([
                 cmLinkName = 'jdrf';
 
             APP.coremetrics(cmElementCat, cmLinkName, cmAttrbute2);
+        });
+
+        $('.bcrf-link').on('click', function () {
+            var cmElementCat = 'b_cause_links',
+                cmAttrbute2 = '-_-lp-xx-xx-xx.bcrf';
+
+            APP.coremetrics(cmElementCat, $(this).data('linkName'), cmAttrbute2);
         });
 
         $('.childmind-link').on('click', function () {
