@@ -93,12 +93,13 @@ require( [ 'jquery', window.BLOOMIES.coremetrics ], function ( $, Coremetrics ) 
 		};
 
 		this.trigger = function(tagValue, attributes, tagFunction) {
-			var cmAttributes = Coremetrics.convertAttributes(attributes);
+			var cmAttributes = Coremetrics.convertAttributes(attributes),
+				preparedTagValue = (window.BLOOMIES.isMobile ? 'mbl:' + tagValue : tagValue);
 			if(opts.debug) {
-				console.log('Coremetrics', tagFunction, categoryName, tagValue, cmAttributes);
+				console.log('Coremetrics', tagFunction, categoryName, preparedTagValue, cmAttributes);
 			}
 			try {
-				Coremetrics[tagFunction](tagValue, categoryName, cmAttributes);
+				Coremetrics[tagFunction](preparedTagValue, categoryName, cmAttributes);
 			}
 			catch(e) {
 				console.log('Coremetrics is not enabled');
@@ -671,11 +672,7 @@ require( [ 'jquery', window.BLOOMIES.coremetrics ], function ( $, Coremetrics ) 
 					cmid = anchor.attr( 'data-cmid' ),
 					href = anchor.attr( 'href' );
 				if ( typeof cmid === 'string' ) {
-					var metricsValue = 'mbl:' + cmid;
-					if (isDebugMode) {
-						console.log(metricsValue);
-					}
-					Coremetrics.element( metricsValue );
+					Coremetrics.element( cmid );
 				}
 				if ( typeof href === 'string' && href.indexOf( '#/' ) === 0 ) {
 					event.preventDefault();
