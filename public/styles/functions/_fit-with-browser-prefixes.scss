@@ -1,0 +1,73 @@
+/**
+ * Prefixes specified properties within `$lists` and returns a new list
+ * with prefixed properties added.
+ * $lists - Value definition(s) list.
+ * $prefixProps - Props to prefix within value(s) list.
+ *
+ * @note for list of lists with length 1 you should append a ',' at the end of your list of lists to ensure that the sublist
+ *  doesn't get separated with $separator;  E.g.,
+ *
+ * @example:
+ * ```
+ *
+ *    $aniSpeed: 0.34s;
+ *    transition: fit-with-browser-prefix ((opacity $aniSpeed,), opacity);
+ *
+ * ```
+ *
+ * The previous will generate ```
+ *
+ *    transition: -o-opacity 0.34s, -ms-opacity 0.34s, -moz-opacity 0.34s, -webkit-opacity 0.34s, opacity 0.34s;
+ *
+ * ```
+ */
+@function first-in-tuple-with-browser-prefix($lists, $prefixProps, $separator: comma) {
+  // Outgoing list
+  $out: ();
+
+  // Loop through lists
+  @each $list in $lists {
+
+    // If first prop in arg list in $prefixProps
+    @if index($prefixProps, nth($list, 1)) != null {
+
+      // For each browser prefix replace
+      @each $prefix in $broswer-prefixes {
+        $newList: join((), $list, space);
+        $newList: set-nth($newList, 1, $prefix + nth($list, 1));
+        $out: append($out, $newList, $separator);
+      }
+      $out: append($out, $list, $separator);
+    }
+    // Else property shouldn't be prefixed;  Add it to outgoing list
+    @else {
+      $out: append($out, $list, $separator);
+    }
+  }
+
+  // Return new list of lists
+  @return $out;
+}
+
+/**
+ * Same as above function just shorter name.
+ * $lists - Value definition(s) list.
+ * $prefixProps - Props to prefix within value(s) list.
+ *
+ * @note for list of lists with length 1 you should append a ',' at the end of your list of lists to ensure that the sublist
+ *  doesn't get separated with $separator;  E.g.,
+ *
+ * @example:
+ * ```
+ *    $aniSpeed: 0.34s;
+ *    fit-with-browser-prefix ((opacity $aniSpeed,), opacity);
+ * ```
+ * The previous will generate ```
+ *
+ *    -o-opacity 0.34s, -ms-opacity 0.34s, -moz-opacity 0.34s, -webkit-opacity 0.34s, opacity 0.34s
+ *
+ * ```
+ */
+@function fit-with-browser-prefix($lists, $prefixProps, $separator: comma) {
+  @return first-in-tuple-with-browser-prefix($lists, $prefixProps, $separator);
+}
