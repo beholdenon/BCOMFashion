@@ -1303,7 +1303,7 @@ html {
             .content {
               article {
                 &.black {
-                  max-width: 100%;
+                  max-width: 100% !important;
                   background-color: #000;
                   h2 {
                     color: #fff;
@@ -2069,7 +2069,8 @@ html {
               div {
                 height: 475px;
                 padding-left: 40px;
-                padding-right: 40px;  
+                padding-right: 40px;
+                margin-bottom: 40px;
                 @media #{$small-only} {
                   padding-left: 5%;
                   padding-right: 5%;  
@@ -2099,7 +2100,7 @@ html {
                 }                   
                 }
                 p {
-                  margin-bottom: 40px;
+                  // margin-bottom: 40px;
                 }   
               }
               }

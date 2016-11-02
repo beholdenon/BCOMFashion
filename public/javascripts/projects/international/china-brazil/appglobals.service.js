@@ -176,7 +176,7 @@
                         h2: 'We Handpick the Best Designers in Fashion, Beauty and Beyond'
                     },
                     article: [
-                        'Bloomingdale\'s carries an unrivaled selection of designer brands including CHANEL, Dior, Michael Kors, MCM, Tory Burch, Marc Jacobs, Armani and Ralph Lauren.',
+                        'Bloomingdale\'s carries an unrivaled selection of designer brands including CHANEL, Dior, Michael Kors, MCM, Tory Burch, MARC JACOBS, Armani and Ralph Lauren.',
                         'Searching for the latest (and most coveted) beauty products? Find all of your favorite skin care, makeup and fragrance brands including La Mer, Estée Lauder, Gucci, Chloé, Clinique, Lancôme and kate spade new york.'
                     ]
                 },
@@ -227,7 +227,7 @@
                                 designersImg: '/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-59ST_02.jpg',
                                 designers: [
                                     'BVLGARI',
-                                    'Burberry London',
+                                    'Burberry',
                                     'Canali',
                                     'CHANEL', 
                                     'COACH',
@@ -241,7 +241,7 @@
                                     'La Mer',
                                     'Longchamp', 
                                     'Louis Vuitton', 
-                                    'Marc Jacobs',
+                                    'MARC JACOBS',
                                     'Michael Kors', 
                                     'Montblanc', 
                                     'Movado', 
@@ -330,7 +330,7 @@
                                 designersImg: '/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-SOHO.jpg',                                
                                 designers: [
                                     'BVLGARI',
-                                    'Burberry London',
+                                    'Burberry',
                                     'Canali',
                                     'CHANEL', 
                                     'COACH',
@@ -344,7 +344,7 @@
                                     'La Mer',
                                     'Longchamp', 
                                     'Louis Vuitton', 
-                                    'Marc Jacobs',
+                                    'MARC JACOBS',
                                     'Michael Kors', 
                                     'Montblanc', 
                                     'Movado', 
@@ -394,7 +394,7 @@
                                 dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Hawaii_EN.pdf',
                                 designersImg: '/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-ALA-MOANA.jpg',                                  
                                 designers: [
-                                    'Burberry London',
+                                    'Burberry',
                                     'Chloé',
                                     'Clinique',
                                     'Fendi',
@@ -471,7 +471,7 @@
                                 dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Chicago_EN.pdf',
                                 designersImg: '/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-NORTH-MICHIGAN-AVENUE.jpg',                                                                  
                                 designers: [
-                                    'Burberry London',
+                                    'Burberry',
                                     'Canada Goose',
                                     'Chloé',
                                     'COACH',
@@ -481,7 +481,7 @@
                                     'Gucci',
                                     'Kiehl\'s Since 1851',
                                     'La Mer',
-                                    'Marc Jacobs',
+                                    'MARC JACOBS',
                                     'MCM',
                                     'Michael Kors',
                                     'Moncler',
@@ -581,7 +581,7 @@
                                 designers: [
                                     'Alice + Olivia',
                                     'BCBGMAXAZRIA',
-                                    'Burberry London', 
+                                    'Burberry', 
                                     'Calvin Klein',
                                     'CHANEL',
                                     'COACH',
@@ -649,7 +649,7 @@
                                 dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_SouthCoastPlaza_EN.pdf',
                                 designersImg: '/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-SOUTH-COAST-PLAZA.jpg',
                                 designers: [
-                                    'Burberry London',
+                                    'Burberry',
                                     'Calvin Klein',
                                     'Canada Goose',
                                     'CHANEL',
@@ -668,7 +668,7 @@
                                     'Longchamp',
                                     'Longines Watches',
                                     'Louis Vuitton',
-                                    'Marc Jacobs',
+                                    'MARC JACOBS',
                                     'MCM',
                                     'Michael Kors',
                                     'Miu Miu',
@@ -808,7 +808,7 @@
                                     'Baccarat',
                                     'Bernardaud',
                                     'BVLGARI',
-                                    'Burberry London',
+                                    'Burberry',
                                     'Calvin Klein ',
                                     'Canali ',
                                     'CHANEL ',
@@ -882,7 +882,7 @@
                                 dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Orlando_EN.pdf',
                                 designersImg: '/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-ORLANDO.jpg',
                                 designers: [
-                                    'Burberry London',
+                                    'Burberry',
                                     'Canali ',
                                     'COACH',
                                     'DIANE von FURSTENBERG ',
@@ -1183,7 +1183,7 @@
                                 dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_NewYork_PT.pdf',
                                 designers: [
                                     'BVLGARI',
-                                    'Burberry London',
+                                    'Burberry',
                                     'Canali',
                                     'CHANEL', 
                                     'COACH',
@@ -1197,7 +1197,7 @@
                                     'La Mer',
                                     'Longchamp', 
                                     'Louis Vuitton', 
-                                    'Marc Jacobs',
+                                    'MARC JACOBS',
                                     'Michael Kors', 
                                     'Montblanc', 
                                     'Movado', 
@@ -1285,7 +1285,7 @@
                                 dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_NewYork_PT.pdf',
                                 designers: [
                                     'BVLGARI',
-                                    'Burberry London',
+                                    'Burberry',
                                     'Canali',
                                     'CHANEL', 
                                     'COACH',
@@ -1299,7 +1299,7 @@
                                     'La Mer',
                                     'Longchamp', 
                                     'Louis Vuitton', 
-                                    'Marc Jacobs',
+                                    'MARC JACOBS',
                                     'Michael Kors', 
                                     'Montblanc', 
                                     'Movado', 
@@ -1348,7 +1348,7 @@
                                 dInfo: 'Baixe nosso guia de boas-vindas antes de chegar.',
                                 dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Hawaii_EN.pdf',
                                 designers: [
-                                    'Burberry London',
+                                    'Burberry',
                                     'Chloé',
                                     'Clinique',
                                     'Fendi',
@@ -1424,7 +1424,7 @@
                                 dInfo: 'Baixe o nosso guia de boas-vindas antes de chegar.',
                                 dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Chicago_EN.pdf',
                                 designers: [
-                                    'Burberry London',
+                                    'Burberry',
                                     'Canada Goose',
                                     'Chloé',
                                     'COACH',
@@ -1434,7 +1434,7 @@
                                     'Gucci',
                                     'Kiehl\'s Since 1851',
                                     'La Mer',
-                                    'Marc Jacobs',
+                                    'MARC JACOBS',
                                     'MCM',
                                     'Michael Kors',
                                     'Moncler',
@@ -1524,7 +1524,7 @@
                                 designers: [
                                     'Alice + Olivia',
                                     'BCBGMAXAZRIA',
-                                    'Burberry London', 
+                                    'Burberry', 
                                     'Calvin Klein',
                                     'CHANEL',
                                     'COACH',
@@ -1586,7 +1586,7 @@
                                 dInfo: 'Baixe o nosso guia de boas-vindas antes de chegar.',
                                 dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_SouthCoastPlaza_EN.pdf',
                                 designers: [
-                                    'Burberry London',
+                                    'Burberry',
                                     'Calvin Klein',
                                     'Canada Goose',
                                     'CHANEL',
@@ -1605,7 +1605,7 @@
                                     'Longchamp',
                                     'Longines Watches',
                                     'Louis Vuitton',
-                                    'Marc Jacobs',
+                                    'MARC JACOBS',
                                     'MCM',
                                     'Michael Kors',
                                     'Miu Miu',
@@ -1743,7 +1743,7 @@
                                     'Baccarat',
                                     'Bernardaud',
                                     'BVLGARI',
-                                    'Burberry London',
+                                    'Burberry',
                                     'Calvin Klein ',
                                     'Canali ',
                                     'CHANEL ',
@@ -1816,7 +1816,7 @@
                                 dInfo: 'Baixe o nosso guia de boas-vindas antes de chegar.',
                                 dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Orlando_PT.pdf',
                                 designers: [
-                                    'Burberry London',
+                                    'Burberry',
                                     'Canali ',
                                     'COACH',
                                     'DIANE von FURSTENBERG ',
@@ -1872,7 +1872,7 @@
                         h2: 'Escolhemos A Dedo Os Melhores Designers De Moda, Beleza E Cia.'
                     },
                     article: [
-                        'A Bloomingdale\'s traz uma seleção incomparável de marcas de grife incluindo CHANEL, Dior, Michael Kors, MCM, Tory Burch, Marc Jacobs, Armani e Ralph Lauren.',
+                        'A Bloomingdale\'s traz uma seleção incomparável de marcas de grife incluindo CHANEL, Dior, Michael Kors, MCM, Tory Burch, MARC JACOBS, Armani e Ralph Lauren.',
                         'Procura os produtos de beleza mais novos (e mais cobiçados)? Encontre todos os seus produtos favoritos para cuidados da pele, maquiagem e marcas de fragrâncias como La Mer, Estée Lauder, Gucci, Chloé, Clinique, Lancôme e Kate Spade New York.'
                     ]
                 },                
@@ -2087,7 +2087,7 @@
                         h2: '我们精心挑选最优质的时装、美容等设计师品牌'
                     },
                     article: [
-                        'Bloomingdale\'s 为您带来 CHANEL、Dior、Michael Kors、MCM、Tory Burch、Marc Jacobs、Armani 和 Ralph Lauren 等一系列无与伦比的设计师品牌。',
+                        'Bloomingdale\'s 为您带来 CHANEL、Dior、Michael Kors、MCM、Tory Burch、MARC JACOBS、Armani 和 Ralph Lauren 等一系列无与伦比的设计师品牌。',
                         '想要寻找最新和最炙手可热的美容产品？ 选购 La Mer、Estée Lauder、Gucci、Chloé、Clinique、Lancôme 和 kate spade new york 等众多您最喜爱的护肤品、化妆品和香水品牌。'
                     ]
                 }, 
@@ -2137,7 +2137,7 @@
                                 dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_NewYork_CN.pdf',
                                 designers: [
                                     'BVLGARI',
-                                    'Burberry London',
+                                    'Burberry',
                                     'Canali',
                                     'CHANEL', 
                                     'COACH',
@@ -2151,7 +2151,7 @@
                                     'La Mer',
                                     'Longchamp', 
                                     'Louis Vuitton', 
-                                    'Marc Jacobs',
+                                    'MARC JACOBS',
                                     'Michael Kors', 
                                     'Montblanc', 
                                     'Movado', 
@@ -2239,7 +2239,7 @@
                                 dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_NewYork_CN.pdf',
                                 designers: [
                                     'BVLGARI',
-                                    'Burberry London',
+                                    'Burberry',
                                     'Canali',
                                     'CHANEL', 
                                     'COACH',
@@ -2253,7 +2253,7 @@
                                     'La Mer',
                                     'Longchamp', 
                                     'Louis Vuitton', 
-                                    'Marc Jacobs',
+                                    'MARC JACOBS',
                                     'Michael Kors', 
                                     'Montblanc', 
                                     'Movado', 
@@ -2302,7 +2302,7 @@
                                 dInfo: '在您到达之前下载我们的欢迎手册。',
                                 dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Hawaii_CN.pdf',
                                 designers: [
-                                    'Burberry London',
+                                    'Burberry',
                                     'Chloé',
                                     'Clinique',
                                     'Fendi',
@@ -2378,7 +2378,7 @@
                                 dInfo: '在您到达之前下载我们的欢迎手册。',
                                 dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Chicago_CN.pdf',
                                 designers: [
-                                    'Burberry London',
+                                    'Burberry',
                                     'Canada Goose',
                                     'Chloé',
                                     'COACH',
@@ -2388,7 +2388,7 @@
                                     'Gucci',
                                     'Kiehl\'s Since 1851',
                                     'La Mer',
-                                    'Marc Jacobs',
+                                    'MARC JACOBS',
                                     'MCM',
                                     'Michael Kors',
                                     'Moncler',
@@ -2486,7 +2486,7 @@
                                 designers: [
                                     'Alice + Olivia',
                                     'BCBGMAXAZRIA',
-                                    'Burberry London', 
+                                    'Burberry', 
                                     'Calvin Klein',
                                     'CHANEL',
                                     'COACH',
@@ -2553,7 +2553,7 @@
                                 dInfo: '在到达之前下载我们的欢迎手册。',
                                 dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_SouthCoastPlaza_CN.pdf',
                                 designers: [
-                                    'Burberry London',
+                                    'Burberry',
                                     'Calvin Klein',
                                     'Canada Goose',
                                     'CHANEL',
@@ -2572,7 +2572,7 @@
                                     'Longchamp',
                                     'Longines Watches',
                                     'Louis Vuitton',
-                                    'Marc Jacobs',
+                                    'MARC JACOBS',
                                     'MCM',
                                     'Michael Kors',
                                     'Miu Miu',
@@ -2710,7 +2710,7 @@
                                     'Baccarat',
                                     'Bernardaud',
                                     'BVLGARI',
-                                    'Burberry London',
+                                    'Burberry',
                                     'Calvin Klein ',
                                     'Canali ',
                                     'CHANEL ',
@@ -2783,7 +2783,7 @@
                                 dInfo: '在到达之前下载我们的欢迎手册。',
                                 dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Orlando_EN.pdf',
                                 designers: [
-                                    'Burberry London',
+                                    'Burberry',
                                     'Canali ',
                                     'COACH',
                                     'DIANE von FURSTENBERG ',
@@ -2980,87 +2980,87 @@
                 },
                 heritage: {
                     header: {
-                        h1: 'The Story of Bloomingdale\'s',
-                        h2: 'A Brief-ish History'
+                        h1: 'La historia de Bloomingdale\'s',
+                        h2: 'Una historia abreviada'
                     },
                     article: {
                         y1880: [{
-                            h3: '1872–A GREAT EAST SIDE BAZAAR',
-                            p: 'The Bloomingdale Brothers coin the phrase, "Location, location, location," and open their first store at 938 Third Avenue. Attention-grabbing window displays feature the latest Paris fashions. Soon, window shopping becomes a popular New York pastime.'
+                            h3: '1872 - Un gran bazar en el East Side',
+                            p: 'Los hermanos Bloomingdale idearon la frase "Ubicación, ubicación, ubicación" y abrieron su primera tienda en el número 938 de la Tercera Avenida. Llamativos escaparates exhiben las últimas tendencias de París. En poco tiempo, mirar escaparates se convierte en un pasatiempo popular en Nueva York.'
                         }, {
-                            h3: 'BLOOMINGDALE\'S PREDICTS THE FUTURE',
-                            p: 'Poised at the "retail crossroads" of New York, the new store at 59th Street and Third Avenue boasts a sky carriage, (i.e., an elevator). Thirteen years later, Lyman Bloomingdale finances a young inventor\'s idea of an "inclined elevator" and the escalator is born.'
+                            h3: 'Bloomingdales\'s predice el futuro',
+                            p: 'Ubicada en la "intersección de las ventas al por menor" de Nueva York, la nueva tienda localizada en la Calle 59 y Tercera Avenida cuenta con un carruaje hacia el cielo (es decir, un ascensor). Trece años más tarde, Lyman Bloomingdale financia la idea de un joven inventor de un "ascensor inclinado" y nace la escalera eléctrica.'
                         }],
                         y1900: [{
-                            h3: 'A Slogan Known Around the World',
-                            p: 'The IRT Third Avenue El, or elevated train, is the transportation method of choice for turn-of-the-century Bloomingdale\'s shoppers, so much so that billboards, beach umbrellas and comic strips all over the city (and the world) boast the popular slogan, "All Cars Transfer to Bloomingdale\'s." Gold footprints were embedded into the sidewalk so people would follow them off the train and into Bloomingdale\'s.'
+                            h3: 'Un eslogan conocido en todo el mundo',
+                            p: 'La línea de la Tercera Avenida de IRT, o tren elevado, es el método de transporte de elección para los clientes de Bloomingdales\'s a fines de siglo, tanto así que hay anuncios espectaculares, sombrillas de playa y tiras cómicas por toda la ciudad (y el mundo) con el popular eslogan "Todos los vagones trasbordan en Bloomingdales\'s". Se incrustaron huellas de oro en la acera para que la gente las siguiera al bajar del tren para llegar a Bloomingdales\'s.'
                         }, {
-                            h3: '1910–To a (Model) T',
-                            p: 'Bloomingdale\'s becomes the first store in New York City to use Henry Ford\'s Model T for deliveries.'
+                            h3: '1910–Todo marcha sobre ruedas',
+                            p: 'Bloomingdales\'s se convierte en la primera tienda de la ciudad de Nueva York en usar el Modelo T de Henry Ford para hacer entregas.'
                         }],
                         y1920: [{
-                            h3: 'Bloomingdale\'s Gets a Glamorous Makeover',
-                            p: 'Bloomingdale\'s anchors itself on Lexington Avenue and adds eleven new stories, capturing the new craze for Art Deco glamour with of-the-moment materials like black granite, limestone and terracotta. It occupies the entire block from Lexington to Third Avenue and from 59th to 60th Street. It is actually 10 buildings that are interconnected.'
+                            h3: 'Bloomingdales\'s es objeto de una glamorosa remodelación',
+                            p: 'Bloomingdales\'s se establece en la Avenida Lexington y añade once pisos nuevos, capturando la nueva popularidad del glamour del Art Deco con los materiales del momento, como granito negro, piedra caliza y terracota. Ocupa toda la manzana desde Lexington hasta la Tercera Avenida y de la Calle 59 a la Calle 60. De hecho, se compone de 10 edificios que están interconectados.'
                         }],
                         y1940: [{
-                            h3: 'Bloomingdale\'s Turns 75 and Parties Like a Teenager',
-                            p: 'To mark her Diamond Jubilee, Bloomingdale\'s invites America\'s hottest 26 designers—including luminaries Claire McCardell, Pauline Trigere and Jo Copeland—to create a couture outfit for the store windows. The store also launches the first-ever home furnishings showroom.'
+                            h3: 'Bloomingdales\'s cumple 75 años y festeja como un adolescente',
+                            p: 'Con motivo de su aniversario de diamante, Bloomingdales\'s invita a los 26 diseñadores más populares de Estados Unidos, incluyendo a las celebridades Claire McCardell, Pauline Trigere y Jo Copeland, para crear un atuendo de alta costura para los escaparates de la tienda. Además, la tienda lanza el primer piso de ventas de muebles y accesorios para el hogar.'
                         }],
                         y1960: [{
-                            h3: 'Fashion Explodes',
-                            p: 'Men on the moon. The Mustang. Mod shops. And more. Bloomingdale\'s is the first store to give an admiring American audience to European visionaries like Yves Saint Laurent and Courrèges.'
+                            h3: 'La moda explota',
+                            p: 'El hombre en la luna. El Mustang. Tiendas mod. Y más. Bloomingdales\'s es la primera tienda en proporcionar un público americano admirador a visionarios europeos como Yves Saint Laurent y Courrèges.'
                         }, {
-                            h3: 'Get Groovy, Baby',
-                            p: 'Starting in the fall of \'63, Bloomingdale\'s is the first store to commission the era\'s grooviest artists to illustrate the shopping bag. Artists like Jonah Kinigstein and Michael Vollbracht revolutionize the Bloomingdale\'s bag, making them instant art collectibles. Shopping bags would never be the same.'
+                            h3: 'A ponerse en onda',
+                            p: 'A partir del otoño de 1963, Bloomingdales\'s es la primera tienda en contratar a los artistas más en onda de la época para ilustrar la bolsa de compras. Artistas como Jonah Kinigstein y Michael Vollbracht revolucionan las bolsas de Bloomingdales\'s, convirtiéndolas en obras de arte coleccionables de manera instantánea. Las bolsas de compras jamás volverían a ser lo mismo.'
                         }],
                         y1970: [{
-                            h3: 'Bloomingdale\'s Goes Hollywood',
-                            p: 'The decade of decadence starts off with a bang as Bloomingdale\'s partners with Hollywood and Broadway. Major movies are filmed in the 59th Street store. Woody Allen\'s <i>Manhattan</i>, <i>Starting Over</i> and <i>The Electric Horseman</i> are just the beginning, with <i>Splash</i> and <i>Moscow on the Hudson</i> following in the \'80s.'
+                            h3: 'Bloomingdales\'s se asocia con Hollywood',
+                            p: 'La década de la decadencia comienza en grande al tiempo que Bloomingdales\'s se asocia con Hollywood y Broadway. Importantes películas se filman en la tienda de la Calle 59. Cintas como Manhattan, de Woody Allen, Comenzar de nuevo y El jinete eléctrico son solo el comienzo, seguidas por Splash y Moscú en Nueva York en la década de 1980.'
                         }, {
-                            h3: 'Bloomingdale\'s Launches the Big 3',
-                            p: 'Ralph Lauren, Donna Karan and Calvin Klein get their big starts at Bloomingdale\'s, proving yet again that the store champions youth, newness and fresh outlooks.'
+                            h3: 'Bloomingdales\'s lanza a los 3 grandes diseñadores',
+                            p: 'Ralph Lauren, Donna Karan y Calvin Klein logran sus grandes comienzos en Bloomingdales\'s, probando una vez más que la tienda favorece las perspectivas jóvenes, nuevas y frescas.'
                         }, {
-                            h3: 'Iconic',
-                            p: 'Bloomingdale\'s iconic Big Brown Bag first hit the streets in 1973. The Little Brown Bag followed a year later and the Medium Brown Bag was the final addition. Bloomingdale\'s has commissioned the most recognizable shopping bags in history and they can be seen in museum collections around the world.'
+                            h3: 'Íconos',
+                            p: 'La icónica Big Brown Bag de Bloomingdales\'s llegó al mundo por primera vez en 1973. La Little Brown Bag le siguió un año después y la Medium Brown Bag fue la última incorporación. Bloomingdales\'s ha creado las bolsas de compras más identificables de la historia y se pueden apreciar en colecciones de museos alrededor del mundo.'
                         }],
                         y1980: [{
-                            h3: 'Bloomingdale\'s sells the "sizzle."',
-                            p: 'Warhol calls Bloomingdale\'s "the new kind of museum for the \'80s." And, each day, the store transforms itself into a cutting-edge gallery of the latest and greatest. Bloomingdale\'s jumps aboard the decade of gala glamour. Star fashion figures like Karl Lagerfeld, Diane von Furstenberg, Liza Minnelli and Oscar de la Renta jet in for glamorous store openings.'
+                            h3: 'Bloomingdales\'s pone a la venta "lo vibrante".',
+                            p: 'Wharhol llama a Bloomingdales\'s "el nuevo tipo de museo para la década de 1980". Y, cada día, la tienda se transforma en una galería de vanguardia de lo más reciente y novedoso. Bloomingdales\'s se une a la década del glamour de gala. Celebridades de la moda como Karl Lagerfeld, Diane von Furstenberg, Liza Minnelli y Oscar de la Renta viajan exclusivamente para asistir a las glamorosas inauguraciones de las tiendas.'
                         }, {
-                            h3: '1988–Year of the Dragon',
-                            p: 'A year before President Nixon traveled to China, Bloomingdale\'s was already making strides in rekindling a trade relationship with mainland China. Fifteen years later, in 1988, following up on the popular success of its first China campaign, the 59th Street flagship offers a 7-week epic panorama of fashion and design from the Orient, celebrating 10 years of trade with the People\'s Republic. Decked out accordingly, the store shines like a jewel from the Forbidden City.'
+                            h3: '1988–El año del dragón',
+                            p: 'Un año antes de que el presidente Nixon viajara a China, Bloomingdales\'s ya se encontraba haciendo esfuerzos para reavivar una relación comercial con China continental. Quince años después, en 1988, dando seguimiento al gran éxito de su primera campaña en China, la tienda insignia de la Calle 59 ofrece un panorama épico de 7 semanas sobre moda y el diseño del Oriente, en celebración de sus 10 años de comercio con la República Popular. Engalanada de manera acorde, la tienda brilla como una joya de la Ciudad Prohibida.'
                         }],
                         y1990: [{
-                            h3: 'The New Gold Rush',
-                            p: 'Four new California stores in four days: Century City, Stanford, Sherman Oaks and Newport Beach. And one year later, Beverly Center. Bloomingdale\'s is now the only upscale, full-selection department store with a national presence. Californians celebrate by shopping—and then going to the beach.'
+                            h3: 'La nueva fiebre del oro',
+                            p: 'Cuatro nuevas tiendas en California en cuatro días: Century City, Stanford, Sherman Oaks y Newport Beach. Y un año después, Beverly Center. Ahora Bloomingdales\'s es la única tienda departamental de lujo con una variedad completa que tiene presencia a nivel nacional. Los californianos van de compras para celebrar, y luego se dirigen a la playa.'
                         }],
                         y2000: [{
-                            h3: 'Bloomingdale\'s Gets Downtown Fashion Cred',
-                            p: 'All good things get better when they move downtown. Bloomingdale\'s opens in SoHo. A historic cast-iron façade building on Broadway transforms into a polished gem of 21st century fashion.'
+                            h3: 'Bloomingdales\'s adquiere prestigio en el centro de la ciudad',
+                            p: 'Todo lo bueno se vuelve mejor al llegar al centro de la ciudad. Bloomingdales\'s abre una tienda en SoHo. Un histórico edificio con fachada de hierro fundido en Broadway se transforma en una gema brillante de la moda del siglo XXI.'
                         }, {
-                            h3: 'Going Digital',
-                            p: 'bloomingdales.com is born. From designer clothing and luxury beauty products to handbags and statement shoes, the site gives customers around the globe world-class fashion at their fingertips.'
+                            h3: 'El cambio a medios digitales',
+                            p: 'Nace bloomingdales.com. Desde ropa de diseñador y lujosos productos de belleza hasta bolsos de mano y zapatos de moda, el sitio web le brinda moda de clase mundial a sus clientes, todo al alcance de sus manos.'
                         }, {
-                            h3: 'Beauty Revamp',
-                            p: 'The main B-way floor at 59th Street gets "the biggest makeover in NYC," with an array of state-of-the-art kiosks from top beauty brands.'
+                            h3: 'Belleza renovada',
+                            p: 'El piso principal B-way de la Calle 59 recibe "la más extensa renovación en la ciudad de Nueva York", con una variedad de modernos quioscos de las principales marcas de belleza.'
                         }],
                         y2010: [{
-                            h3: '2011–A Gleaming New Space for Fine Jewelry',
-                            p: 'Designed to showcase every facet of the world\'s best designers, including David Yurman, the fine jewelry department at 59th Street—visited by over 400,000 people from over 230 countries and all 50 states—is an NYC Concierge Choice Award–winner five years running.'
+                            h3: '22011–Un nuevo y reluciente espacio para la joyería fina',
+                            p: 'El departamento de joyería fina de la Calle 59, diseñado para hacer lucir cada faceta de los mejores diseñadores del mundo, incluyendo a David Yurman, y visitado por más de 400,000 personas de más de 230 países y los 50 estados del país, ha sido el ganador del galardón NYC Concierge Choice Award durante cinco años consecutivos.'
                         }, {
-                            h3: 'No Limit to Being Like No Other',
-                            p: 'Today, there\'s no stopping where Bloomingdale\'s can go. The type of innovation synonymous with the brand since its first days continues to be central to its mission of luxury. By looking back at the triumphs of the past, Bloomingdale\'s beholds the future. It\'s a future like no other.'
+                            h3: 'No hay límites para ser excepcional',
+                            p: 'En la actualidad, nada puede detener a Bloomingdales\'s. La clase de innovación que ha sido sinónimo de la marca desde su comienzo continúa siendo una parte central de su misión de lujo. Al mirar atrás y ver los triunfos del pasado, Bloomingdales\'s contempla el futuro. Es un futuro inigualable.'
                         }]
                     }
                 },
                 designer: {
                     header: {
-                        h1: 'So Many Names in Just One Store',
-                        h2: 'We Handpick the Best Designers in Fashion, Beauty and Beyond'
+                        h1: 'Muchísimas marcas en una sola tienda',
+                        h2: 'Seleccionamos a los mejores diseñadores del mundo de la moda, belleza y más'
                     },
                     article: [
-                        'Bloomingdale\'s carries an unrivaled selection of designer brands including CHANEL, Dior, Michael Kors, MCM, Tory Burch, Marc Jacobs, Armani and Ralph Lauren.',
-                        'Searching for the latest (and most coveted) beauty products? Find all of your favorite skin care, makeup and fragrance brands including La Mer, Estée Lauder, Gucci, Chloé, Clinique, Lancôme and kate spade new york.'
+                        'Bloomingdale’s tiene una selección sin igual de marcas de diseñador incluyendo CHANEL, Dior, Michael Kors, MCM, Tory, Burch, MARC JACOBS, Armani y Ralph Lauren.',
+                        '¿Busca los más novedosos (y codiciados) productos de belleza? Encuentre todas sus marcas favoritas de cuidado de la piel, maquillaje y fragancias incluyendo La Mer, Estée Lauder, Gucci, Chloé, Clinique, Lancôme y Kate Spade New York.'
                     ]
                 },
                 stores: {
@@ -3071,7 +3071,7 @@
                     dropdown: {
                         default: 'Please Select a Store',
                         list: [
-                            {id: 'null', name: 'NEW YORK',                              disabled: 'true'},
+                            {id: 'null', name: 'Nueva York',                              disabled: 'true'},
                             {id: '0',    name: '59th Street Flagship, New York City',   disabled: 'false'},
                             {id: '1',    name: 'SoHo, New York City',                   disabled: 'false'},
                             {id: 'null', name: 'HAWAII',                                disabled: 'true'},
@@ -3090,27 +3090,27 @@
                         copy: 'Bloomingdale\'s has stores all over the U.S. Our Visitor\'s Centers in <b>New York</b>, <b>Hawaii</b>, <b>Chicago</b>, <b>Miami</b> and <b>San Francisco</b> offer a full range of amenities for international customers. Multilingual associates can help you plan the ultimate shopping experience. They\'ll give you a store directory in your chosen language and special events information, as well as arrange complimentary personal stylist appointments, package delivery to your hotel, restaurant reservations (including those located within our stores) and much more. Beach bound? Our many outposts in Southern California—including South Coast Plaza in Ocean County, San Diego and Los Angeles—plus Honolulu, mean you\'ll never be far from the top fashions.'
                     },
                     storeData: {
-                        storeHours: 'Store Hours',
+                        storeHours: 'Horario de atención',
                         directions: 'Directions',
-                        designers: 'Featured Designers',
-                        dining: 'In-Store Dining',
-                        services: 'Services',
-                        servicesSubHead: 'Our associates will show you why Bloomingdale\'s is like no other store in the world. Look for us wearing flag pins from your country. We can help you find the fashion you love and assist with a range of personalized services.',
+                        designers: 'DISEÑADORES QUE ENCONTRARÁ',
+                        dining: 'RESTAURANTES EN LA TIENDA',
+                        services: 'SERVICIOS',
+                        servicesSubHead: 'Nuestros asociados le mostrarán por qué Bloomingdale’s no tiene comparación en todo el mundo. Nos podrá identificar por los prendedores con la bandera de su país. Podemos ayudarle a encontrar su vestimenta favorita y brindarle una amplia gama de servicios personalizados.',
                         loyalty: 'Join the International Loyalty Club',
                         loyaltySubHead: 'Our special rewards program was created for international shoppers.* For every dollar you spend, you\'ll earn one point toward gift cards, services and exceptional experiences. Right now, you can enroll in the program at Bloomingdale \'  s Ala Moana, but points can be earned and redeemed at any full-line Bloomingdale \'  s location in the United States.**',
                         id: [
                             {
                                 name: '59th Street Flagship',
-                                addr: '1000 Third Avenue  New York, NY 10022<br/>+1 212-705-2000',
-                                hours: 'Monday–Saturday: Store Opens 10AM <span>|</span> Sunday: Store Opens 11AM',
-                                descr: 'Discover Bloomingdale\'s iconic heritage and award-winning hospitality. Begin your day at our flagship store with a stop at our first floor balcony Visitor\'s Center. Our multilingual directory will provide a road map to your shopping trip. Looking for a more personal experience? Learn about our in-store services, from stylist appointments to alterations to restaurant reservations. We\'ll help you arrange all that and more.',
-                                dTile: 'VISITING NEW YORK?',
-                                dInfo: 'Download our welcome booklet before you arrive.',
+                                addr: '1000 Third Avenue Nueva York, NY 10022<br/>+1 212-705-2000',
+                                hours: 'De lunes a sábados: la tienda abre a las 10:00 a.m.<span>|</span> Domingos: la tienda abre a las 11:00 a.m.',
+                                descr: 'Descubra el legado emblemático y la galardonada hospitalidad de Bloomingdale\'s. Inicie su día en nuestra tienda insignia visitando nuestro Centro de Visitantes, ubicado en el balcón del primer piso. Nuestro directorio en varios idiomas le permitirá armar el recorrido de su excursión de compras. ¿Está buscando una experiencia más personalizada? Conozca los servicios brindados en nuestra tienda, que van desde citas con estilistas y alteraciones de ropa hasta reservas en restaurantes. Le ayudaremos a organizar todo esto y mucho más.',
+                                dTile: '¿DE VISITA EN NUEVA YORK?',
+                                dInfo: 'Descargue nuestro folleto de bienvenida antes de llegar.',
                                 dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_NewYork_EN.pdf',
                                 designersImg: '/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-59ST_02.jpg',
                                 designers: [
                                     'BVLGARI',
-                                    'Burberry London',
+                                    'Burberry',
                                     'Canali',
                                     'CHANEL', 
                                     'COACH',
@@ -3124,7 +3124,7 @@
                                     'La Mer',
                                     'Longchamp', 
                                     'Louis Vuitton', 
-                                    'Marc Jacobs',
+                                    'MARC JACOBS',
                                     'Michael Kors', 
                                     'Montblanc', 
                                     'Movado', 
@@ -3139,81 +3139,81 @@
                                 ],
                                 restaurants: [
                                     {
-                                        name: '<b>FORTY CARROTS</b> <span>|</span>   7th floor <span>|</span>   212-705-3085',
-                                        sched: 'Open Daily <span>|</span>   Dine In: 10:30AM–1 hour before store closing <br/>Takeout: 10AM–1/2 hour before store closing',
-                                        description: 'A visit isn\'t complete without our famous frozen yogurt. You\'ll also find freshly made salads, sandwiches, soups, a fresh juice bar and selection of Tavalon premium teas. Counter, table service and takeout available.',
+                                        name: '<b>FORTY CARROTS</b> <span>|</span>   7.° piso <span>|</span>   212-705-3085',
+                                        sched: 'Abierto todos los días <span>|</span>  Para comer en el restaurante: de 10:30 a. m. a una hora antes del cierre de la tienda <br/>Para llevar: de 10:00 a. m. a media hora antes del cierre de la tienda',
+                                        description: 'Su visita no estará completa sin nuestro famoso yogur helado. También podrá encontrar ensaladas recién preparadas, sándwiches, sopas, un bar de jugos frescos y una selección de tés Tavalon de la más alta calidad. Servicio disponible en la barra, en mesas y para llevar.',
                                         imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_01.jpg'
                                     },
                                     {
-                                        name: '<b>FL!P</b> <span>|</span>   Mid-Level <span>|</span>   212-705-3085',
-                                        sched: 'Open Daily <span>|</span>   Dine In: 11AM–1 hour before store closing ',
-                                        description: 'Enjoy the "haute couture" of American hamburgers, as well as salads, microbrew beers, a full bar and a variety of French fries, at this laid-back spot in our Men\'s Store.',
+                                        name: '<b>FL!P</b> <span>|</span>   Nivel medio <span>|</span>   212-705-3085',
+                                        sched: 'Abierto todos los días <span>|</span>   Para comer en el restaurante: de 11:00 a. m. a una hora antes del cierre de la tienda ',
+                                        description: 'En este lugar relajado dentro de nuestra Tienda para Caballeros, disfrute de unas hamburguesas de “alta costura” al estilo estadounidense, ensaladas, cervezas artesanales, servicio de bar completo y una variedad de papas fritas.',
                                         imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_02.jpg'
                                     },
                                     {
-                                        name: '<b>DAVID BURKE AT BLOOMINGDALE\'S </b> <span>|</span>   Street Level <br />   212-705-3800',
-                                        sched: 'Open Daily <span>|</span>   In the Box (to go) 10AM–9PM <span>|</span>   In the Bar (to stay) 11AM–9 PM ',
-                                        description: 'Chef David Burke, one of the leading pioneers of American cooking, brings together delicious fare and top service in a lively atmosphere.',
+                                        name: '<b>DAVID BURKE AT BLOOMINGDALE\'S </b> <span>|</span>   Nivel exterior <br />   212-705-3800',
+                                        sched: 'Abierto todos los días <span>|</span> In the Box (para llevar): de 10:00 a.m. a 9:00 p.m. <span>|</span> In the Bar (para comer en el restaurante): de 11:00 a.m. a 9:00 p.m. ',
+                                        description: 'El chef David Burke, uno de los principales precursores de la cocina estadounidense, nos trae una comida deliciosa y el mejor servicio en un ambiente alegre.',
                                         imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_04.jpg'
                                     },
                                     {
-                                        name: '<b>MAGNOLIA BAKERY</b> <span>|</span>   Street Level <span>|</span>   212-265-5320',
-                                        sched: 'Monday–Friday 7AM–10PM <br/> Saturday 8AM–10PM <span>|</span>   Sunday 8AM–9PM',
+                                        name: '<b>MAGNOLIA BAKERY</b> <span>|</span>   Nivel exterior <span>|</span>   212-265-5320',
+                                        sched: 'De lunes a viernes, de 7:00 a.m. a 10:00 p.m.  <br/> Sábados, de 8:00 a.m. a 10:00 p.m. <span>|</span>   Domingos, de 8:00 a.m. a 9:00 p.m.',
                                         description: 'A classic American bakery cherished for its old-fashioned desserts and vintage décor, Magnolia serves a range of handmade baked goods, including pies, cakes, cheesecakes, banana pudding, cupcakes and muffins. Here early? Magnolia opens even before the store does.',
                                         imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_03.jpg'
                                     },
                                     {
-                                        name: '<b>LE TRAIN BLEU </b> <span>|</span>   6th floor <span>|</span>   212-705-2100',
+                                        name: '<b>LE TRAIN BLEU </b> <span>|</span>  6.° piso <span>|</span>   212-705-2100',
                                         sched: 'Monday–Wednesday, Friday–Saturday 10:30AM–5PM <span>|</span>  Thursday 10:30AM–7PM <span>|</span>  Sunday 11:30AM–4:30PM',
-                                        description: '<i>Reservations recommended</i><br/>A romantic replica of a turn-of-the-century railway dining car, Le Train Bleu offers the finest American-Continental fare, including daily brunch, lunch and a prix-fixe dinner menu.',
+                                        description: '<i>Se recomienda hacer reservaciones</i><br/>Le Train Bleu, una romántica réplica de un vagón restaurante de ferrocarril de fines de siglo, ofrece la mejor comida estadounidense y europea, ya sea en el brunch, el almuerzo o la cena de menú fijo, que se sirven todos los días.',
                                         imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_05.jpg'
                                     },
                                     {
-                                        name: '<b>B CAFÉ </b> <span>|</span>   6th floor <span>|</span>   212-705-2073',
-                                        sched: 'Open Daily <span>|</span>   10AM–store closing',
-                                        description: 'Stop by this coffee and snack bar for quick and healthy treats, or to enjoy a light lunch or dinner featuring on-the-go versions of many Le Train Bleu favorites.',
+                                        name: '<b>B CAFÉ </b> <span>|</span>   6.° piso  <span>|</span>   212-705-2073',
+                                        sched: 'Abierto todos los días <span>|</span>   De 10:00 a. m. hasta el cierre de la tienda ',
+                                        description: 'Visite este café y bar de comidas livianas para darse un gusto rápido y saludable o para disfrutar de un almuerzo o una cena ligera, donde podrá saborear versiones para llevar de muchos de los platos favoritos de Le Train Bleu.',
                                         imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_06.jpg'
                                     } 
                                 ],
                                 services: [
                                     {
-                                        title: 'WE\'LL GATHER YOUR GIFT LIST ',
-                                        description: 'Shopping for gifts is so easy at Bloomingdale\'s. Just send our multilingual specialist your wish list before you visit and you\'ll find all your items waiting when you arrive.<br /> Call 212-705-2359 or 212-705-3488 <br/> Email <a class="fucsia" href="mailto:international_visitors@bloomingdales.com">international_visitors@bloomingdales.com</a>'
+                                        title: 'PODEMOS ENCARGARNOS DE SU LISTA DE REGALOS',
+                                        description: 'Comprar regalos es muy fácil en Bloomingdale’s. Simplemente envíe su lista de deseos a uno de nuestros especialistas políglotos antes de su visita y encontrará todos los artículos listos a su llegada.<br /> Llame al 212-705-2359 o al 212-705-3488 <br/> Envíe un correo electrónico a <a class="fucsia" href="mailto:international_visitors@bloomingdales.com">international_visitors@bloomingdales.com</a>'
                                     },
                                     {
-                                        title: 'PERSONAL STYLISTS ON CALL',
-                                        description: 'Our personal stylists are available to shop the store with you, or select wardrobe and home décor options to your taste—all for free. <br/> At Your Service (For Her) 212-705-3135 <br/> At His Service 212-705-3030 '
+                                        title: 'PESTILISTAS PERSONALES DISPONIBLES ',
+                                        description: 'Nuestros estilistas personales están disponibles para recorrer la tienda con usted o para elegir opciones de guardarropa y de decoración para el hogar acorde a sus gustos, sin cargo adicional. <br/> A Sus Órdenes (Para ella) 212-705-3135 <br/> A Sus Órdenes (Para él) 212-705-3030 '
                                     },
                                     {
-                                        title: 'PAYMENT MADE EASY ',
-                                        description: 'We accept the American Express® Global Travel Card and all forms of China UnionPay.<div class="unionpay">'
+                                        title: 'PAGO SIMPLIFICADO ',
+                                        description: 'Aceptamos La Tarjeta de Viajes Global American Express&reg;'
                                     },
                                     {
-                                        title: 'QUICK ALTERATIONS ',
-                                        description: 'We perform professional tailoring and alteration services on site by request. Prices are available at the time of your fitting.'
+                                        title: 'ALTERACIONES DE ROPA RÁPIDAS ',
+                                        description: 'Brindamos servicios de sastrería profesional y alteraciones de ropa en la tienda, por solicitud. Los precios están disponibles en el momento de la prueba.'
                                     },
                                     {
-                                        title: 'DELIVERY TO YOUR HOTEL ',
-                                        description: 'We will gladly deliver your purchases of $250 USD or more to your Manhattan hotel—for free. Just drop them off at our first floor balcony Visitor\'s Center.'
+                                        title: 'DENVÍO A SU HOTEL ',
+                                        description: 'Con gusto enviaremos sus compras de USD 250 o más a su hotel en Manhattan, sin cargo adicional. Tan solo déjelas en nuestro Centro de Visitantes, ubicado en el balcón del primer piso.'
                                     },
                                     {
-                                        title: 'CARDS & RIBBON TO TAKE HOME ',
-                                        description: 'We will gift wrap your purchases, or you can pick up cards, boxes, wrapping paper and ribbon to take home at our gift wrapping station on the sixth floor. '
+                                        title: 'TARJETAS Y MOÑOS PARA LLEVAR ',
+                                        description: 'Envolveremos sus compras para regalo, o puede elegir sus tarjetas, cajas, papel de regalo y moños para llevarse a casa, en nuestro puesto de envoltura de regalos, ubicado en el sexto piso.'
                                     }
                                 ]
                             },
                             {
                                 name: 'SoHo',
-                                addr: '504 Broadway  New York, NY 10012<br/>+1 212-729-5900',
-                                hours: 'Monday–Saturday: Store Opens 10AM <span>|</span> Sunday: Opens 12PM',
-                                descr: 'Explore our downtown store in SoHo, the city\'s most fashionable neighborhood. You\'ll find all the stylish energy of our uptown flagship but with the feel of a fashion boutique. Check out our bustling beauty floor, then peruse our latest designer arrivals. As always, multilingual associates are available to help make your visit a memorable one.',
-                                dTile: 'VISITING NEW YORK?',
-                                dInfo: 'Download our welcome booklet before you arrive.',
+                                addr: '504 Broadway  Nueva York, NY 10012<br/>+1 212-729-5900',
+                                hours: 'De lunes a sábados: la tienda abre a las 10:00 a.m. <span>|</span> Domingos: la tienda abre a las 12:00 p.m.',
+                                descr: 'Explore nuestra tienda del centro en SoHo, la zona que está más a la moda de la ciudad. Encontrará toda la energía y el estilo de nuestra tienda insignia de la parte alta de la ciudad, pero con el aspecto de una boutique de alta costura. Visite nuestro animado piso de belleza y explore las últimas novedades de los diseñadores. Como siempre, nuestros asociados políglotos están disponibles para ayudarle a que su visita sea memorable.',
+                                dTile: '¿DE VISITA EN NUEVA YORK?',
+                                dInfo: 'Descargue nuestro folleto de bienvenida antes de llegar.',
                                 dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_NewYork_EN.pdf',
                                 designersImg: '/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-SOHO.jpg',                                
                                 designers: [
                                     'BVLGARI',
-                                    'Burberry London',
+                                    'Burberry',
                                     'Canali',
                                     'CHANEL', 
                                     'COACH',
@@ -3227,7 +3227,7 @@
                                     'La Mer',
                                     'Longchamp', 
                                     'Louis Vuitton', 
-                                    'Marc Jacobs',
+                                    'MARC JACOBS',
                                     'Michael Kors', 
                                     'Montblanc', 
                                     'Movado', 
@@ -3242,28 +3242,28 @@
                                 ],
                                 restaurants: [
                                     {
-                                        name: '<b>FORTY CARROTS</b> <span>|</span>   2nd floor  <span>|</span>   212-729-5900',
-                                        sched: 'Monday–Friday 10AM–8PM <span>|</span>   Saturday 10AM–7PM  <span>|</span> Sunday 12PM–7PM',
-                                        description: 'A visit isn\'t complete without our famous frozen yogurt. You\'ll also find freshly made salads, sandwiches, soups, a fresh juice bar and selection of Tavalon premium teas. Counter, table service and takeout available.',
+                                        name: '<b>FORTY CARROTS</b> <span>|</span>   2.° piso  <span>|</span>   212-729-5900',
+                                        sched: 'De lunes a viernes, de 10:00 a.m. a 8:00 p.m. <span>|</span>   Sábados, de 10:00 a.m. a 7:00 p.m.  <span>|</span> Domingos, de 12:00 p.m. a 7:00 p.m.',
+                                        description: 'Su visita no estará completa sin nuestro famoso yogur helado.',
                                         imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_01.jpg'
                                     }
                                 ],
                                 services: [
                                     {
-                                        title: 'WE\'LL GATHER YOUR GIFT LIST ',
-                                        description: 'Shopping for gifts is so easy at Bloomingdale\'s. Just send our multilingual specialist your wish list before you visit and you\'ll find all your items waiting when you arrive.<br /> Call 212-705-2098 or email <a class="fucsia" href="mailto:international_visitors@bloomingdales.com">international_visitors@bloomingdales.com</a>'
+                                        title: 'PODEMOS ENCARGARNOS DE SU LISTA DE REGALOS ',
+                                        description: 'Comprar regalos es muy fácil en Bloomingdale’s. Simplemente envíe su lista de deseos a uno de nuestros especialistas políglotos antes de su visita y encontrará todos los artículos listos a su llegada.<br /> Llame al 212-705-2098 o envíe un correo electrónico a <a class="fucsia" href="mailto:international_visitors@bloomingdales.com">international_visitors@bloomingdales.com</a>'
                                     },
                                     {
-                                        title: 'PAYMENT MADE EASY ',
-                                        description: 'We accept the American Express® Global Travel Card and all forms of China UnionPay.<div class="unionpay">'
+                                        title: 'PAGO SIMPLIFICADO ',
+                                        description: 'Aceptamos La Tarjeta de Viajes Global American Express&reg;'
                                     },
                                     {
-                                        title: 'QUICK ALTERATIONS ',
-                                        description: 'We perform professional tailoring and alteration services on site by request. Prices are available at the time of your fitting.'
+                                        title: 'ALTERACIONES DE ROPA RÁPIDAS ',
+                                        description: 'Brindamos servicios de sastrería profesional y alteraciones de ropa en la tienda, por solicitud. Los precios están disponibles en el momento de la prueba.'
                                     },
                                     {
-                                        title: 'DELIVERY TO YOUR HOTEL ',
-                                        description: 'We will gladly deliver your purchases of $250 USD or more to your Manhattan hotel—for free. Just drop them off with any sales associate.'
+                                        title: 'ENVÍO A SU HOTEL ',
+                                        description: 'Con gusto enviaremos sus compras de USD 250 o más a su hotel en Manhattan, sin cargo adicional. Tan solo entrégueselas a cualquier asociado de ventas.'
                                     }
                                 ]                               
                             },
@@ -3277,7 +3277,7 @@
                                 dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Hawaii_EN.pdf',
                                 designersImg: '/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-ALA-MOANA.jpg',                                  
                                 designers: [
-                                    'Burberry London',
+                                    'Burberry',
                                     'Chloé',
                                     'Clinique',
                                     'Fendi',
@@ -3354,7 +3354,7 @@
                                 dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Chicago_EN.pdf',
                                 designersImg: '/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-NORTH-MICHIGAN-AVENUE.jpg',                                                                  
                                 designers: [
-                                    'Burberry London',
+                                    'Burberry',
                                     'Canada Goose',
                                     'Chloé',
                                     'COACH',
@@ -3364,7 +3364,7 @@
                                     'Gucci',
                                     'Kiehl\'s Since 1851',
                                     'La Mer',
-                                    'Marc Jacobs',
+                                    'MARC JACOBS',
                                     'MCM',
                                     'Michael Kors',
                                     'Moncler',
@@ -3464,7 +3464,7 @@
                                 designers: [
                                     'Alice + Olivia',
                                     'BCBGMAXAZRIA',
-                                    'Burberry London', 
+                                    'Burberry', 
                                     'Calvin Klein',
                                     'CHANEL',
                                     'COACH',
@@ -3532,7 +3532,7 @@
                                 dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_SouthCoastPlaza_EN.pdf',
                                 designersImg: '/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-SOUTH-COAST-PLAZA.jpg',
                                 designers: [
-                                    'Burberry London',
+                                    'Burberry',
                                     'Calvin Klein',
                                     'Canada Goose',
                                     'CHANEL',
@@ -3551,7 +3551,7 @@
                                     'Longchamp',
                                     'Longines Watches',
                                     'Louis Vuitton',
-                                    'Marc Jacobs',
+                                    'MARC JACOBS',
                                     'MCM',
                                     'Michael Kors',
                                     'Miu Miu',
@@ -3691,7 +3691,7 @@
                                     'Baccarat',
                                     'Bernardaud',
                                     'BVLGARI',
-                                    'Burberry London',
+                                    'Burberry',
                                     'Calvin Klein ',
                                     'Canali ',
                                     'CHANEL ',
@@ -3765,7 +3765,7 @@
                                 dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Orlando_EN.pdf',
                                 designersImg: '/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-ORLANDO.jpg',
                                 designers: [
-                                    'Burberry London',
+                                    'Burberry',
                                     'Canali ',
                                     'COACH',
                                     'DIANE von FURSTENBERG ',
@@ -3843,18 +3843,18 @@
                     },
                     right: {
                         name: 'Nombre:',
-                        nameErr: 'Please tell us your name',
+                        nameErr: 'Por favor díganos su nombre',
                         email: 'Correo electrónico:',
-                        emailErr1: 'Please tell us your email',
-                        emailErr2: 'Invalid email address',
+                        emailErr1: 'Proporcione su correo electrónico',
+                        emailErr2: 'Dirección de correo electrónico no válida',
                         phone: 'N.° de teléfono móvil (opcional):',
-                        phoneErr: 'Invalid phone number',
+                        phoneErr: 'Numero de telefono invalido',
                         party: 'Cantidad de personas que viajarán conmigo:',
-                        partyErr: 'Please tell us your party size',
+                        partyErr: 'Díganos el número de personas en su grupo',
                         dates: 'Fechas en las que tengo previsto viajar a EE. UU.:',
                         arriving: 'Arribo:',
                         departing: 'Partida:',
-                        datesErr: 'Select date',
+                        datesErr: 'Seleccione una fecha ',
                         storesH: 'Me gustaría visitar:',
                         storesM: 'Seleccione una tienda',
                         storesErr: 'Seleccione una tienda',
@@ -3881,7 +3881,7 @@
                             {id: 'Aventura', name: 'Aventura', disabled: 'false'},
                             {id: 'Orlando', name: 'Orlando', disabled: 'false'}
                         ],
-                        submit: 'submit',
+                        submit: 'Enviar',
                         submitHead: 'thank you for<br/>your submission',
                         submitBody: 'A member of our tourism team will contact you shortly.'
                     }
@@ -3904,14 +3904,14 @@
                         mobile: {
                             h1: 'ようこそ',
                             h2: 'オシャレなものをすべて見ましょう。 <br/>' +
-                                'それにはまず Bloomingdale’s へお越しください。',
-                            p: '1872年以来、Bloomingdale’s はオシャレの中心地であり、世界中で今一番人気のあるブランドのファッション、靴、ハンドバッグ、化粧品、高級宝飾品、贈答品が揃っています。当店独特の心のこもったおもてなし（多言語スタッフ、スペシャル・コンシェルジュ・サービスなど）でお客様をお迎えいたしますので、ご希望は叶えられ、くつろぎながらお買い物をお楽しみいただけるでしょう。これは、Bloomingdale’s が世界に名だたる存在である理由のほんの一端です。'
+                                'それにはまず Bloomingdale\'s へお越しください。',
+                            p: '1872年以来、Bloomingdale\'s はオシャレの中心地であり、世界中で今一番人気のあるブランドのファッション、靴、ハンドバッグ、化粧品、高級宝飾品、贈答品が揃っています。当店独特の心のこもったおもてなし（多言語スタッフ、スペシャル・コンシェルジュ・サービスなど）でお客様をお迎えいたしますので、ご希望は叶えられ、くつろぎながらお買い物をお楽しみいただけるでしょう。これは、Bloomingdale\'s が世界に名だたる存在である理由のほんの一端です。'
                         },
                         desktop: {
                             h1: 'ようこそ',
                             h2: 'オシャレなものをすべて見ましょう。 <br/>' +
-                                'それにはまず Bloomingdale’s へお越しください。',
-                            p: '1872年以来、Bloomingdale’s はオシャレの中心地であり、世界中で今一番人気のあるブランドのファッション、靴、ハンドバッグ、化粧品、高級宝飾品、贈答品が揃っています。当店独特の心のこもったおもてなし（多言語スタッフ、スペシャル・コンシェルジュ・サービスなど）でお客様をお迎えいたしますので、ご希望は叶えられ、くつろぎながらお買い物をお楽しみいただけるでしょう。これは、Bloomingdale’s が世界に名だたる存在である理由のほんの一端です。'
+                                'それにはまず Bloomingdale\'s へお越しください。',
+                            p: '1872年以来、Bloomingdale\'s はオシャレの中心地であり、世界中で今一番人気のあるブランドのファッション、靴、ハンドバッグ、化粧品、高級宝飾品、贈答品が揃っています。当店独特の心のこもったおもてなし（多言語スタッフ、スペシャル・コンシェルジュ・サービスなど）でお客様をお迎えいたしますので、ご希望は叶えられ、くつろぎながらお買い物をお楽しみいただけるでしょう。これは、Bloomingdale\'s が世界に名だたる存在である理由のほんの一端です。'
                         }
                     },
                     cat: [
@@ -4041,7 +4041,7 @@
                         h2: '当店はファッション、ビューティをはじめとする最高のデザイナーズ・ブランドを選び抜きます'
                     },
                     article: [
-                        'CHANEL、Dior、Michael Kors、MCM、Tory Burch、Marc Jacobs、Armani、Ralph Laurenなど、デザイナーズ・ブランドがBloomingdale’sほど揃っているところは他にありません。',
+                        'CHANEL、Dior、Michael Kors、MCM、Tory Burch、MARC JACOBS、Armani、Ralph Laurenなど、デザイナーズ・ブランドがBloomingdale\'sほど揃っているところは他にありません。',
                         '最新（そして一番人気）のビューティ用品をお探しですか？La Mer、Estée Lauder、Gucci、Chloé、Clinique、Lancôme、kate spade new yorkなど、当店に揃っているスキンケア、コスメ、香水のブランドから、お気に入りのものはすべて見つかるでしょう。'
                     ]
                 },
@@ -4092,7 +4092,7 @@
                                 designersImg: '/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-59ST_02.jpg',
                                 designers: [
                                     'BVLGARI',
-                                    'Burberry London',
+                                    'Burberry',
                                     'Canali',
                                     'CHANEL', 
                                     'COACH',
@@ -4106,7 +4106,7 @@
                                     'La Mer',
                                     'Longchamp', 
                                     'Louis Vuitton', 
-                                    'Marc Jacobs',
+                                    'MARC JACOBS',
                                     'Michael Kors', 
                                     'Montblanc', 
                                     'Movado', 
@@ -4195,7 +4195,7 @@
                                 designersImg: '/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-SOHO.jpg',                                
                                 designers: [
                                     'BVLGARI',
-                                    'Burberry London',
+                                    'Burberry',
                                     'Canali',
                                     'CHANEL', 
                                     'COACH',
@@ -4209,7 +4209,7 @@
                                     'La Mer',
                                     'Longchamp', 
                                     'Louis Vuitton', 
-                                    'Marc Jacobs',
+                                    'MARC JACOBS',
                                     'Michael Kors', 
                                     'Montblanc', 
                                     'Movado', 
@@ -4259,7 +4259,7 @@
                                 dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Hawaii_EN.pdf',
                                 designersImg: '/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-ALA-MOANA.jpg',                                  
                                 designers: [
-                                    'Burberry London',
+                                    'Burberry',
                                     'Chloé',
                                     'Clinique',
                                     'Fendi',
@@ -4336,7 +4336,7 @@
                                 dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Chicago_EN.pdf',
                                 designersImg: '/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-NORTH-MICHIGAN-AVENUE.jpg',                                                                  
                                 designers: [
-                                    'Burberry London',
+                                    'Burberry',
                                     'Canada Goose',
                                     'Chloé',
                                     'COACH',
@@ -4346,7 +4346,7 @@
                                     'Gucci',
                                     'Kiehl\'s Since 1851',
                                     'La Mer',
-                                    'Marc Jacobs',
+                                    'MARC JACOBS',
                                     'MCM',
                                     'Michael Kors',
                                     'Moncler',
@@ -4446,7 +4446,7 @@
                                 designers: [
                                     'Alice + Olivia',
                                     'BCBGMAXAZRIA',
-                                    'Burberry London', 
+                                    'Burberry', 
                                     'Calvin Klein',
                                     'CHANEL',
                                     'COACH',
@@ -4514,7 +4514,7 @@
                                 dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_SouthCoastPlaza_EN.pdf',
                                 designersImg: '/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-SOUTH-COAST-PLAZA.jpg',
                                 designers: [
-                                    'Burberry London',
+                                    'Burberry',
                                     'Calvin Klein',
                                     'Canada Goose',
                                     'CHANEL',
@@ -4533,7 +4533,7 @@
                                     'Longchamp',
                                     'Longines Watches',
                                     'Louis Vuitton',
-                                    'Marc Jacobs',
+                                    'MARC JACOBS',
                                     'MCM',
                                     'Michael Kors',
                                     'Miu Miu',
@@ -4673,7 +4673,7 @@
                                     'Baccarat',
                                     'Bernardaud',
                                     'BVLGARI',
-                                    'Burberry London',
+                                    'Burberry',
                                     'Calvin Klein ',
                                     'Canali ',
                                     'CHANEL ',
@@ -4747,7 +4747,7 @@
                                 dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Orlando_EN.pdf',
                                 designersImg: '/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-ORLANDO.jpg',
                                 designers: [
-                                    'Burberry London',
+                                    'Burberry',
                                     'Canali ',
                                     'COACH',
                                     'DIANE von FURSTENBERG ',
