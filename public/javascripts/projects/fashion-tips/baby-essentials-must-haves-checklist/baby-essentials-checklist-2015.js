@@ -206,12 +206,14 @@
             }
           }
 
+
           $('a.scroll-anchor').each(function () {
-            var o, n, a = $(this);
-            n = a.attr('name');
+            var o,
+                a = $(this),
+                n = a.attr('name');
             if ( typeof n === 'string' ) {
               o = +(a.data('scroll-offset')) || 0;
-              anchors['/' + n] = Math.floor(a.offset().top + o);
+              anchors['/' + n] = Math.floor(a.offset().top + o) - getScrollTopOffset($w, getPageHeader());
             }
           });
 
@@ -237,7 +239,7 @@
           if ( (hash = getHash()) in anchors ) {
             window.setTimeout(function () {
               $("body, html").animate({
-                  scrollTop: anchors[hash]
+                  scrollTop: anchors[hash] - getScrollTopOffset($w, getPageHeader())
               }, 500);
             }, 500);
           }
@@ -248,11 +250,18 @@
         // BLOOMIES.coremetrics.cmCreatePageviewTag(cmPageID, cmCategoryID, searchTerm, searchResults);
       }
 
+      function getAssetsHost () {
+          var $paramsElm = $("#bcom_serverside_parameters"),
+              localHostUrl = "//" + window.location.host,
+              paramsElmHostUrl = $paramsElm && $paramsElm.attr("data-host-assets") ? $paramsElm.attr("data-host-assets") : "";
+          return paramsElmHostUrl.length > 0 ? paramsElmHostUrl : localHostUrl;
+      }
+
       // SOCIAL
       var sharingLinks = (function ($, location) {
           var pageURL = escape(location.protocol + "//" + location.host + location.pathname),
-              assetsHost = $("#bcom_serverside_parameters").attr("data-host-assets") || "",
-              pinterestMedia = escape(assetsHost + "/web20/assets/img/specialProjects/baby-essentials-checklist-2015/icon_pinterest.jpg"),
+              assetsHost = getAssetsHost(),
+              pinterestMedia = escape(assetsHost + "/images/projects/fashion-tips/baby-essentials-must-haves-checklist/icon_pinterest.jpg"),
               pinterestDescription = escape("The Essentials: Baby Love | bloomingdales.com");
           return {
               facebook: "https://www.facebook.com/sharer/sharer.php?u=" + pageURL,
