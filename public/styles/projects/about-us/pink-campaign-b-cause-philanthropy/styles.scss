@@ -1,20 +1,21 @@
 // ======================================
-// JDRF redesign
+// BCRF redesign
 // Author: Alessandro Ribeiro
 // Date: 10/18/2016
-// Project: /about-us/jdrf-b-cause-philanthropy/
+// Project: /about-us/pink-campaign-b-cause-philanthropy/
 // ======================================
 
 @import "../b-cause/styles";
 
 .b-cause-main {
     h1 {
-        color: #3068ad;
+        color: #e2528a;
+        padding: 15px 0;
     }
 
     .b-cause-body {
-        h3 {
-            background-color: #3068ad;
+        article {
+            margin-bottom: 15px;
         }
     }
 }

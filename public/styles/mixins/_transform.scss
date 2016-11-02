@@ -1,0 +1,7 @@
+/**
+ * Sets transform property to $value for all browser prefixes.
+ * $value - transform value(s).  Default `undefined`.
+ */
+@mixin transform ($value) {
+  @include with-browser-prefixes(transform, $value);
+}
