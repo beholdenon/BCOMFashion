@@ -42,7 +42,7 @@ module.exports = {
                 timeout: serviceProxy.timeout,
                 passThrough: true,
                 mapUri: function(req, callback) {
-                    let uri = 'http://' + process.env.BASE_ASSETS + req.url.path;
+                    let uri = process.env.BASE_ASSETS + req.url.path;
                     callback(null, uri, headers);
                 },
                 onResponse: serviceProxy.onResponseRedirect
@@ -59,9 +59,9 @@ module.exports = {
 
             res.proxy({
                 timeout: serviceProxy.timeout,
-                passThrough: false,
+                passThrough: true,
                 mapUri: function(req, callback) {
-                    let uri = 'http://' + process.env.BASE_ASSETS + req.url.path;
+                    let uri = process.env.BASE_HOST + req.url.path;
                     callback(null, uri, headers);
                 },
                 onResponse: serviceProxy.onResponseRedirect
@@ -76,7 +76,7 @@ module.exports = {
                 timeout: serviceProxy.timeout,
                 passThrough: true,
                 mapUri: function(req, callback) {
-                    let uri = 'http://' + process.env.BASE_ASSETS  + req.url.path;
+                    let uri = process.env.BASE_HOST  + req.url.path;
                     callback(null, uri);
                 }
             });
