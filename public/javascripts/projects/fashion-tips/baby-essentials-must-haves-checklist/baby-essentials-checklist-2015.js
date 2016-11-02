@@ -206,12 +206,14 @@
             }
           }
 
+
           $('a.scroll-anchor').each(function () {
-            var o, n, a = $(this);
-            n = a.attr('name');
+            var o,
+                a = $(this),
+                n = a.attr('name');
             if ( typeof n === 'string' ) {
               o = +(a.data('scroll-offset')) || 0;
-              anchors['/' + n] = Math.floor(a.offset().top + o);
+              anchors['/' + n] = Math.floor(a.offset().top + o) - getScrollTopOffset($w, getPageHeader());
             }
           });
 
@@ -237,7 +239,7 @@
           if ( (hash = getHash()) in anchors ) {
             window.setTimeout(function () {
               $("body, html").animate({
-                  scrollTop: anchors[hash]
+                  scrollTop: anchors[hash] - getScrollTopOffset($w, getPageHeader())
               }, 500);
             }, 500);
           }
@@ -247,7 +249,6 @@
         // BLOOMIES.coremetrics.cmCreatePageElementTag(cmCatId, cmCategory, attributes);
         // BLOOMIES.coremetrics.cmCreatePageviewTag(cmPageID, cmCategoryID, searchTerm, searchResults);
       }
-
 
       function getAssetsHost () {
           var $paramsElm = $("#bcom_serverside_parameters"),
