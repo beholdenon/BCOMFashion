@@ -53,6 +53,9 @@ At the conclusion of UAT sign-off, the PM on the story moves the card to Ready f
 [Jenkins triggers a Deploy](http://web-ci.devops.fds.com/jenkins/view/BCOMFashion/view/MASTER/job/BCOM_Master_DEPLOY/) job. At completion, server-side code will be deployed to Heroku and front-end code to NetStorage (location: http://netstorage.bloomingdales.com/netstorage/fashion/prod). 
 Application can be accessed at http://fashion-preprod.bloomingdales.com/.
 
+*Note: 
+For a PROD hotfix, which may be executed directly from the master branch, it is required to move the code (via Gitlab cherry-pick) into the test branch.
+
 ![Development Workflow](./tools/workflow.jpg)
 
 #CI-CD Workflow
