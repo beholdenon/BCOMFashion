@@ -3072,7 +3072,7 @@
                         default: 'Please Select a Store',
                         list: [
                             {id: 'null', name: 'Nueva York',                              disabled: 'true'},
-                            {id: '0',    name: '59th Street Flagship, New York City',   disabled: 'false'},
+                            {id: '0',    name: '59th Street Flagship, Nueva York City',   disabled: 'false'},
                             {id: '1',    name: 'SoHo, New York City',                   disabled: 'false'},
                             {id: 'null', name: 'HAWAII',                                disabled: 'true'},
                             {id: '2',    name: 'Ala Moana, Honolulu',                   disabled: 'false'},
@@ -3096,8 +3096,8 @@
                         dining: 'RESTAURANTES EN LA TIENDA',
                         services: 'SERVICIOS',
                         servicesSubHead: 'Nuestros asociados le mostrarán por qué Bloomingdale’s no tiene comparación en todo el mundo. Nos podrá identificar por los prendedores con la bandera de su país. Podemos ayudarle a encontrar su vestimenta favorita y brindarle una amplia gama de servicios personalizados.',
-                        loyalty: 'Join the International Loyalty Club',
-                        loyaltySubHead: 'Our special rewards program was created for international shoppers.* For every dollar you spend, you\'ll earn one point toward gift cards, services and exceptional experiences. Right now, you can enroll in the program at Bloomingdale \'  s Ala Moana, but points can be earned and redeemed at any full-line Bloomingdale \'  s location in the United States.**',
+                        loyalty: 'Súmese al Club de Fidelidad para Clientes Internacionales',
+                        loyaltySubHead: 'Nuestro programa especial de recompensas fue creado para los compradores internacionales*. Por cada dólar que gaste, sumará puntos para obtener tarjetas de regalo, servicios y experiencias extraordinarias. Puede inscribirse en el programa ahora mismo, en la tienda de Bloomingdale’s de Ala Moana, y sumar y canjear puntos en cualquier tienda de línea completa de Bloomingdale’s de los Estados Unidos**.',
                         id: [
                             {
                                 name: '59th Street Flagship',
@@ -3270,10 +3270,10 @@
                             {
                                 name: 'Ala Moana',
                                 addr: '1450 Ala Moana Blvd  Honolulu, HI 96814<br/>+1 808-644-7511',
-                                hours: 'Monday–Saturday: 10AM–8PM | Sunday: 11AM–7PM',
-                                descr: 'Say aloha to our newest outpost in tropical Honolulu. Located in the Ala Moana Center, Hawaii\'s premier shopping destination, this three-story store boasts a range of amenities tailored to the overseas shopper. Stop by our International Welcome Center and speak with one of our multilingual associates. We offer international style advisor appointments, on-site alterations, restaurant reservations and much more.</p><p style="margin-top: 10px;">Planning a return visit? Sign up for our International Loyalty Club and earn points toward gift cards, special services and authentic Hawaiian adventures.',
-                                dTile: 'VISITING HAWAII?',
-                                dInfo: 'Download our welcome booklet before you arrive.',
+                                hours: 'De lunes a sábados: de 9:30 a.m. a 9:00 p.m. | Domingos: de 10:00 a.m. a 7:00 p.m.',
+                                descr: 'Dígale aloha a nuestra nueva tienda en la tropical Honolulu. Ubicada en el centro comercial Ala Moana Center, el principal destino de compras de Hawái, esta tienda de tres pisos cuenta con una gama de servicios adecuados para el comprador extranjero. Visite nuestro Centro de Visitantes Internacionales y hable con uno de nuestros asociados políglotos. Ofrecemos citas con un asesor estilístico internacional, alteraciones de ropa, reservas en restaurantes y mucho más.</p><p style="margin-top: 10px;">¿Tiene previsto regresar? Inscríbase en nuestro Club de Fidelidad para Clientes Internacionales y junte puntos para obtener tarjetas de regalo, servicios especiales y auténticas aventuras hawaianas.</p>',
+                                dTile: '¿DE VISITA EN HAWÁI?',
+                                dInfo: 'Descargue nuestro folleto de bienvenida antes de llegar.',
                                 dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Hawaii_EN.pdf',
                                 designersImg: '/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-ALA-MOANA.jpg',                                  
                                 designers: [
@@ -3297,60 +3297,60 @@
                                 ],
                                 restaurants: [
                                     {
-                                        name: '<b>FORTY CARROTS</b> <span>|</span>   3rd floor  ',
-                                        sched: 'Open Daily 11:30AM–1 hour before store closing',
-                                        description: 'A visit isn\'t complete without our famous frozen yogurt.',
+                                        name: '<b>FORTY CARROTS</b> <span>|</span>   3.° piso ',
+                                        sched: 'Abierto todos los días Desde las 11:00 a. m.',
+                                        description: 'Su visita no estará completa sin nuestro famoso yogur helado.',
                                         imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_01.jpg'
                                     }
                                 ],
                                 services: [
                                     {
-                                        title: 'FULL-SERVICE WELCOME CENTER AND CONCIERGE DESK',
-                                        description: 'At the Welcome Center, we\'ll greet you with a complimentary coat and bag check, plus a multilingual store directory. Should you need it, our associates can arrange personal stylist appointments and free package delivery to your hotel. Stop by our concierge desk for alterations and pick-ups or to learn more about Hawaii\'s amenities and attractions.'
+                                        title: 'CENTRO DE VISITANTES Y MOSTRADOR DE CONSERJERÍA DE SERVICIO COMPLETO',
+                                        description: 'En el Centro de Visitantes, le brindaremos un servicio de guardarropa gratuito y un directorio de la tienda en varios idiomas. Si lo necesita, nuestros asociados pueden organizar citas con un estilista personal y un servicio gratuito de envíos de paquetes a su hotel. Visite nuestro mostrador de conserjería para realizar alteraciones de ropa y retiros, o para conocer más sobre las actividades recreativas y las atracciones turísticas de Hawái.'
                                     },
                                     {
-                                        title: 'PERSONAL STYLISTS AND BEAUTY ADVISORS ON CALL ',
-                                        description: 'Our stylists are available to shop the store with you, or select wardrobe options to your taste—all for free. Interested in a beauty consultation? Our experienced advisors will find you perfect products from the most coveted brands.'
+                                        title: 'ESTILISTAS PERSONALES Y ASESORES DE BELLEZA DISPONIBLES ',
+                                        description: 'Nuestros estilistas están disponibles para recorrer la tienda con usted o para elegir opciones de guardarropa acorde a sus gustos, sin cargo adicional. ¿Le interesa realizar una consulta de belleza? Nuestros asesores experimentados hallarán los productos perfectos para usted, de las marcas más codiciadas.'
                                     },
                                     {
-                                        title: 'QUICK ALTERATIONS ',
-                                        description: 'We perform professional tailoring and alteration services on site by request. Prices are available at the time of your fitting.'
+                                        title: 'ALTERACIONES DE ROPA RÁPIDAS ',
+                                        description: 'Brindamos servicios de sastrería profesional y alteraciones de ropa en la tienda, por solicitud. Los precios están disponibles en el momento de la prueba.'
                                     },
                                     {
-                                        title: 'CURRENCY CONVERSION ',
-                                        description: 'Steps away from Bloomingdale\'s, you\'ll find a currency exchange located conveniently within the Ala Moana Center.'
+                                        title: 'CONVERSIÓN DE DIVISAS',
+                                        description: 'Brindamos servicios de sastrería profesional y alteraciones de ropa en la tienda, por solicitud. Los precios están disponibles en el momento de la prueba.'
                                     },
                                     {
-                                        title: 'KICK BACK IN OUR VIP ROOM',
-                                        description: 'The first in the Bloomingdale\'s fleet, our limited-access lounge is located within the Welcome Center. Select tourists can indulge in amenities, including: light food and beverage, a TV, private bathroom, charging stations, a Bluetooth printer for boarding passes and iPads® preloaded with the Bloomingdale\'s app and helpful travel guides in nearly every language. One-day access to the lounge is available to tourists with receipts of $500 or more.',
+                                        title: 'RELÁJESE EN NUESTRA SALA VIP',
+                                        description: 'Nuestro salón de acceso restringido, el primero de las tiendas de Bloomingdale’s, está ubicado dentro del Centro de Visitantes. Algunos turistas selectos pueden disfrutar de diversos servicios, que incluyen comidas ligeras y bebidas, televisión, baño privado, puestos de carga de dispositivos móviles, una impresora Bluetooth para imprimir tarjetas de embarque y iPads® precargadas con la aplicación de Bloomingdale’s y con útiles guías de viajes en casi todos los idiomas. El acceso por un día al salón está disponible para turistas con recibos de compras por USD 500 o más.',
                                     }
                                 ],
                                 loyalty: [
                                     {
-                                        title: 'EARN A GIFT CARD',
-                                        description: '500 points = $25 gift card, good for any merchandise at Bloomingdale\'s Ala Moana.'
+                                        title: 'OBTENGA UNA TARJETA DE REGALO',
+                                        description: '500 puntos = una tarjeta de regalo por USD 25, que puede utilizar para comprar cualquier artículo en la tienda de Bloomingdale’s de Ala Moana.'
                                     },
                                     {
-                                        title: 'ENJOY STORE SERVICES',
-                                        description: 'Your points can earn you complimentary package delivery back to your hotel, lunch or a car service to your next destination. For more information, see an associate at the Welcome Center on the first floor.'
+                                        title: 'DISFRUTE DE LOS SERVICIOS DE LA TIENDA',
+                                        description: 'Con sus puntos, podrá obtener servicios de envío gratuito de paquetes a su hotel, almuerzos o servicios de transporte a su siguiente destino. Para obtener más información, hable con un asociado en el Centro de Visitantes, ubicado en el primer piso.'
                                     },
                                     {
-                                        title: 'INDULGE IN AN EXPERIENCE YOU\'LL NEVER FORGET',
-                                        description: 'Redeem your points for authentic Hawaiian adventures! For more information, see an associate at the Welcome Center on the first floor.'
+                                        title: 'DESE EL GUSTO DE VIVIR UNA EXPERIENCIA QUE NUNCA OLVIDARÁ',
+                                        description: '¡Puede canjear sus puntos por auténticas aventuras hawaianas! Para obtener más información, hable con un asociado en el Centro de Visitantes, ubicado en el primer piso.'
                                     },
                                     {
                                         title: '',
-                                        description: '*Proof of international address required.<br/>**Points cannot be redeemed at Bloomingdale\'s outlet stores or on bloomingdales.com. Points can only be redeemed for services or experiences at Bloomingdale\'s Ala Moana.'
+                                        description: '*Es necesario demostrar un domicilio internacional.<br/>**No es posible canjear los puntos en tiendas de descuento de Bloomingdale’s o en bloomingdales.com. Los puntos solo pueden ser canjeados por servicios o experiencias en Bloomingdale’s de Ala Moana.'
                                     }                                      
                                 ]                                    
                             },
                             {
                                 name: 'North Michigan Avenue',
                                 addr: '900 North Michigan Avenue  Chicago, IL 60611<br/>+1 312-440-4460 ',
-                                hours: 'Monday–Saturday: 10AM–8PM | Sunday: 11AM–7PM',
-                                descr: 'Planning a trip to the Windy City? Let Bloomingdale\'s be your fashion guide. Fill out your wardrobe with our vast collection of designer names, or stock up on your favorite beauty products. Our multilingual associates can help tailor your shopping trip to your every need.',
-                                dTile: 'VISITING CHICAGO?',
-                                dInfo: 'Download our welcome booklet before you arrive.',
+                                hours: 'De lunes a sábados: de 10:00 a.m. a 8:00 p.m. | Domingos: de 11:00 a.m. a 7:00 p.m.',
+                                descr: '¿Tiene previsto un viaje a la Ciudad de los Vientos? Permita que Bloomingdale’s sea su guía de moda. Complete su guardarropa con nuestra amplia colección de marcas de diseño o encuentre sus productos de belleza favoritos. Nuestros asociados políglotos pueden ayudarle a adecuar su excursión de compras para satisfacer todas sus necesidades.',
+                                dTile: '¿DE VISITA EN CHICAGO?',
+                                dInfo: 'Descargue nuestro folleto de bienvenida antes de llegar.',
                                 dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Chicago_EN.pdf',
                                 designersImg: '/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-NORTH-MICHIGAN-AVENUE.jpg',                                                                  
                                 designers: [
@@ -3377,40 +3377,40 @@
                                 ],
                                 restaurants: [
                                     {
-                                        name: '<b>FORTY CARROTS</b> <span>|</span> 6th floor <span>|</span> 312-440-4861',
-                                        sched: 'Monday–Saturday 11AM–6PM',
-                                        description: 'A visit isn\'t complete without our famous frozen yogurt.',
+                                        name: '<b>FORTY CARROTS</b> <span>|</span> 6.° piso <span>|</span> 312-440-4861',
+                                        sched: 'De lunes a sábados, de 11:00 a.m. a 6:00 p.m.',
+                                        description: 'Su visita no estará completa sin nuestro famoso yogur helado.',
                                         imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_01.jpg'
                                     }
                                 ],
                                 services: [
                                     {
-                                        title: 'WE\'LL GATHER YOUR GIFT LIST ',
-                                        description: 'Shopping for gifts is so easy at Bloomingdale\'s. Just send our multilingual specialist your wish list before you visit and you\'ll find all your items waiting when you arrive.<br /> Call 312-440-4596 or email <a class="fucsia" href="mailto:international_visitors@bloomingdales.com">international_visitors@bloomingdales.com</a>'
+                                        title: 'PODEMOS ENCARGARNOS DE SU LISTA DE REGALOS ',
+                                        description: 'Comprar regalos es muy fácil en Bloomingdale’s. Simplemente envíe su lista de deseos a uno de nuestros especialistas políglotos antes de su visita y encontrará todos los artículos listos a su llegada.<br /> Llame al 312-440-4596 o envíe un correo electrónico a <a class="fucsia" href="mailto:international_visitors@bloomingdales.com">international_visitors@bloomingdales.com</a>'
                                     },
                                     {
-                                        title: 'PERSONAL STYLISTS ON CALL',
-                                        description: 'Our personal stylists are available to shop the store with you, or select wardrobe and home decor options to your taste—all for free. <br/> At Your Service 312-440-4887 '
+                                        title: 'ESTILISTAS PERSONALES DISPONIBLES',
+                                        description: 'Nuestros estilistas personales están disponibles para recorrer la tienda con usted o para elegir opciones de guardarropa y de decoración para el hogar acorde a sus gustos, sin cargo adicional.<br/> A Sus Órdenes (Para ella) 312-440-4887 '
 
                                     },
                                     {
-                                        title: 'PAYMENT MADE EASY ',
-                                        description: 'We accept the American Express® Global Travel Card and all forms of China UnionPay.<div class="unionpay">'
+                                        title: 'PAGO SIMPLIFICADO',
+                                        description: 'Aceptamos La Tarjeta de Viajes Global American Express&reg;'
 
                                     },
                                     {
-                                        title: 'QUICK ALTERATIONS ',
-                                        description: 'We perform professional tailoring and alteration services on site by request. Prices are available at the time of your fitting.'
+                                        title: 'ALTERACIONES DE ROPA RÁPIDAS ',
+                                        description: 'Brindamos servicios de sastrería profesional y alteraciones de ropa en la tienda, por solicitud. Los precios están disponibles en el momento de la prueba.'
 
                                     },
                                     {
-                                        title: 'DELIVERY TO YOUR HOTEL ',
-                                        description: 'We will gladly deliver your purchases of $250 USD or more to your downtown hotel—for free. Just drop them off at our third floor Visitor\'s Center. '
+                                        title: 'ALTERACIONES DE ROPA RÁPIDAS ',
+                                        description: 'Con gusto enviaremos sus compras de USD 250 o más a su hotel en el centro, sin cargo adicional. Tan solo déjelas en nuestro Centro de Visitantes, ubicado en el tercer piso.'
 
                                     },
                                     {
-                                        title: 'CARDS & RIBBON TO TAKE HOME ',
-                                        description: 'We will gift wrap your purchases, or you can pick up cards, boxes, wrapping paper and ribbon to take home. Visit the fifth floor Customer Service desk. '
+                                        title: 'TARJETAS Y MOÑOS PARA LLEVAR',
+                                        description: 'Envolveremos sus compras para regalo, o puede elegir sus tarjetas, cajas, papel de regalo y moños para llevarse a casa. Visite la mesa de Servicio al Cliente, ubicada en el quinto piso.'
 
                                     }
                                 ]  
@@ -3455,10 +3455,10 @@
                             {
                                 name: 'San Francisco Centre',
                                 addr: '845 Market Street  San Francisco, CA<br/>+1 415-856-5402',
-                                hours: 'Monday–Saturday: 10AM–9PM | Sunday: 11AM–8PM',
-                                descr: 'Discover the best of San Francisco shopping. First stop, Bloomingdale\'s. Head to our Visitor\'s Center for a multilingual directory, or speak to our multilingual associates to tailor your experience to your needs. Learn more about our in-store amenities below.',
-                                dTile: 'VISITING SAN FRANCISCO?',
-                                dInfo: 'Download our welcome booklet before you arrive.',
+                                hours: 'De lunes a sábados: de 10:00 a.m. a 9:00 p.m. | Domingos: de 11:00 a.m. a 8:00 p.m.',
+                                descr: 'Descubra la mejor forma de hacer compras en San Francisco. Su primera parada: Bloomingdale’s. En nuestro Centro de Visitantes podrá obtener un directorio en varios idiomas o hablar con nuestros asociados políglotos para adecuar su experiencia a la medida de sus necesidades. A continuación, podrá conocer más sobre los servicios brindados en nuestra tienda.',
+                                dTile: '¿DE VISITA EN SAN FRANCISCO?',
+                                dInfo: 'Descargue nuestro folleto de bienvenida antes de llegar.',
                                 dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_SanFran_EN.pdf',
                                 designersImg: '/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-SAN-FRANCISCO-CENTRE.jpg',
                                 designers: [
@@ -3492,32 +3492,32 @@
                                 ],
                                 services: [
                                     {
-                                        title: 'WE\'LL GATHER YOUR GIFT LIST ',
-                                        description: 'Shopping for gifts is so easy at Bloomingdale\'s. Just send our multilingual specialist your wish list before you visit and you\'ll find all your items waiting when you arrive.<br /> Call 415-856-5477 or email <a class="fucsia" href="mailto:international_visitors@bloomingdales.com">international_visitors@bloomingdales.com</a>'
+                                        title: 'PODEMOS ENCARGARNOS DE SU LISTA DE REGALOS ',
+                                        description: 'Comprar regalos es muy fácil en Bloomingdale’s. Simplemente envíe su lista de deseos a uno de nuestros especialistas políglotos antes de su visita y encontrará todos los artículos listos a su llegada.<br /> Llame al 415-856-5477 o envíe un correo electrónico a <a class="fucsia" href="mailto:international_visitors@bloomingdales.com">international_visitors@bloomingdales.com</a>'
                                     },
                                     {
-                                        title: 'PERSONAL STYLISTS ON CALL',
-                                        description: 'Our personal stylists are available to shop the store with you, or select wardrobe and home decor options to your taste—all for free. <br/> At Your Service 415-856-5538 '
+                                        title: 'ESTILISTAS PERSONALES DISPONIBLES ',
+                                        description: 'Nuestros estilistas personales están disponibles para recorrer la tienda con usted o para elegir opciones de guardarropa y de decoración para el hogar acorde a sus gustos, sin cargo adicional. <br/> A Sus Órdenes (Para ella) 415-856-5538 '
 
                                     },
                                     {
-                                        title: 'PAYMENT MADE EASY ',
-                                        description: 'We accept the American Express® Global Travel Card and all forms of China UnionPay.<div class="unionpay">'
+                                        title: 'PAGO SIMPLIFICADO ',
+                                        description: 'Aceptamos La Tarjeta de Viajes Global American Express&reg;'
 
                                     },
                                     {
-                                        title: 'QUICK ALTERATIONS ',
-                                        description: 'We perform professional tailoring and alteration services on site by request. Prices are available at the time of your fitting.'
+                                        title: 'ALTERACIONES DE ROPA RÁPIDAS',
+                                        description: 'Brindamos servicios de sastrería profesional y alteraciones de ropa en la tienda, por solicitud. Los precios están disponibles en el momento de la prueba.'
 
                                     },
                                     {
-                                        title: 'DELIVERY TO YOUR HOTEL ',
-                                        description: 'We will gladly deliver your purchases of $250 USD or more to your downtown hotel—for free. Just drop them off at our first floor balcony Visitor\'s Center.'
+                                        title: 'ENVÍO A SU HOTEL ',
+                                        description: 'Con gusto enviaremos sus compras de USD 250 a su hotel en el centro, sin cargo adicional. Tan solo déjelas en nuestro Centro de Visitantes, ubicado en el balcón del primer piso.'
 
                                     },
                                     {
-                                        title: 'CARDS & RIBBON TO TAKE HOME ',
-                                        description: 'We will gift wrap your purchases, or you can pick up cards, boxes, wrapping paper and ribbon to take home at the Visitor\'s Center.'
+                                        title: 'TARJETAS Y MOÑOS PARA LLEVAR ',
+                                        description: 'En el Centro de Visitantes, envolveremos sus compras para regalo, o puede elegir sus tarjetas, cajas, papel de regalo y moños para llevarse a casa.'
 
                                     }
                                 ]                               
@@ -3525,10 +3525,10 @@
                             {
                                 name: 'South Coast Plaza',
                                 addr: '3333 Bristol St  Costa Mesa, CA 92626<br/>+1 714-824-4600',
-                                hours: 'Monday–Saturday: 10AM–9PM | Sunday: 11AM–7PM',
-                                descr: 'With the best designer selection, edited specifically for Southern California, South Coast Plaza is a must-go shopping destination. New to the Golden State? Multilingual associates will make your stay that much better. Start with a store directory in your chosen language or add to your shopping trip with our in-store amenities below.',
-                                dTile: 'VISITING COSTA MESA?',
-                                dInfo: 'Download our welcome booklet before you arrive.',
+                                hours: 'De lunes a sábados: de 10:00 a.m. a 9:00 p.m. | Domingos: de 11:00 a.m. a 7:00 p.m.',
+                                descr: 'Con la mejor selección de diseñadores, adaptados específicamente para el sur de California, South Coast Plaza es un destino de compras imperdible. ¿Primera vez en el Estado Dorado? Nuestros asociados políglotos le ayudarán a que su estadía sea fantástica. Comience por obtener un directorio de la tienda en su idioma y agregue a su excursión de compras los servicios brindados en nuestra tienda, que figuran a continuación.',
+                                dTile: '¿DE VISITA EN COSTA MESA?',
+                                dInfo: 'Descargue nuestro folleto de bienvenida antes de llegar.',
                                 dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_SouthCoastPlaza_EN.pdf',
                                 designersImg: '/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-SOUTH-COAST-PLAZA.jpg',
                                 designers: [
@@ -3570,8 +3570,8 @@
                                 ],
                                 restaurants: [
                                     {
-                                        name: '<b>AnQi by Crustacean Gourmet Bistro & Noodle Bar</b> <br/>  Ground Floor <span>|</span> 714-557-5679',
-                                        sched: 'Lunch: Open Daily 11:30AM–2:30PM <br/> Noodle Bar: Open Daily 11:30AM–5:30PM <br/> Dinner: Sunday–Thursday 5:30PM–10:30PM <br/>Friday–Saturday 5:30PM–11:00PM <br/> Red Happy Hour: Monday–Friday 4PM–7PM',
+                                        name: '<b>AnQi by Crustacean Bistró Gourmet y Bar de Noodles</b> <br/>  Planta baja <span>|</span> 714-557-5679',
+                                        sched: 'Almuerzo: Abierto todos los días, de 11:30 a.m. a 2:30 p.m.<br/> Bar de Noodles: Abierto todos los días, de 11:30 a.m. a 5:30 p.m.<br/> Cena: De domingos a jueves, de 5:30 p.m. a 10:30 p.m. <br/>Viernes y sábados, de 5:30 p.m. a 11:00 p.m. <br/> Red Happy Hour (Hora feliz): De lunes a viernes, de 4:00 p.m. a 7:00 p.m.',
                                         description: '',
                                         imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_08.jpg'
                                     },
@@ -3584,16 +3584,16 @@
                                 ],
                                 services: [
                                     {
-                                        title: 'QUICK ALTERATIONS ',
-                                        description: 'We perform professional tailoring and alteration services on site by request. Prices are available at the time of your fitting. '
+                                        title: 'ALTERACIONES DE ROPA RÁPIDAS ',
+                                        description: 'Brindamos servicios de sastrería profesional y alteraciones de ropa en la tienda, por solicitud. Los precios están disponibles en el momento de la prueba.'
                                     },
                                     {
-                                        title: 'CARDS & RIBBON TO TAKE HOME ',
-                                        description: 'We will gift wrap your purchases, or you can pick up cards, boxes, wrapping paper and ribbon to take home. Find it all on the lower level.'
+                                        title: 'TARJETAS Y MOÑOS PARA LLEVAR',
+                                        description: 'Envolveremos sus compras para regalo, o puede elegir sus tarjetas, cajas, papel de regalo y moños para llevarse a casa. Podrá encontrar todo esto en el nivel inferior.'
                                     },
                                     {
-                                        title: 'PAYMENT MADE EASY ',
-                                        description: 'We accept all forms of China UnionPay.<div class="unionpay">'
+                                        title: 'PAGO SIMPLIFICADO ',
+                                        description: 'Aceptamos La Tarjeta de Viajes Global American Express&reg;'
                                     }
                                 ]                                    
                             },
