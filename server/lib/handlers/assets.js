@@ -61,7 +61,7 @@ module.exports = {
                 timeout: serviceProxy.timeout,
                 passThrough: true,
                 mapUri: function(req, callback) {
-                    let uri = process.env.BASE_HOST + req.url.path;
+                    let uri = process.env.BASE_ASSETS + req.url.path;
                     callback(null, uri, headers);
                 },
                 onResponse: serviceProxy.onResponseRedirect
