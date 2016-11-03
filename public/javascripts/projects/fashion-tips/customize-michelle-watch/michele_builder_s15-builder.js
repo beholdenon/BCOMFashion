@@ -34,7 +34,8 @@ window.blmwbs15.builder = ( function bl_mwbs15_builder( window, document,  $, Ha
             strapSortByViewport: 'blmwbs15_builder_options_sort_straps',
             noItemsInBagError: 'Please select a product before adding to your brown bag.',
             strapsLoadingNone: 'We\'re sorry\u2014your selection is unavailable. Please choose a different combination and try again.',
-            strapsLoadingError: 'We\'re sorry\u2014your selection is unavailable\nat this time. Please choose a different watch\nhead or try again later.'
+            strapsLoadingError: 'We\'re sorry\u2014your selection is unavailable\nat this time. Please choose a different watch\nhead or try again later.',
+            addToBagNotAvailableError: 'We\'re sorry the add to bag service is currently unavailable.  If the problem persits please contact us at customer service.',
         },
         domain: {
             heads: null,
@@ -2120,6 +2121,7 @@ window.blmwbs15.builder = ( function bl_mwbs15_builder( window, document,  $, Ha
             key,
             result = {},
             payload = { source: 'PDPA2B' },
+            out = {"item": {}},
             callback = function () {
                 app.utils.schedule( args, 'callback' );
             };
@@ -2127,6 +2129,8 @@ window.blmwbs15.builder = ( function bl_mwbs15_builder( window, document,  $, Ha
         // prepare request payload...
         for ( i = 0; i < args.upcIds.length; i++ ) {
             key = args.upcIds[i];
+            out.item.upcId = key;
+            out.item.quantity = 1;
             payload[ 'upcId[' + key + ']' ] = '1';
             result[ key ] = {
                 isOK: false,
@@ -2175,7 +2179,13 @@ window.blmwbs15.builder = ( function bl_mwbs15_builder( window, document,  $, Ha
                 app.utils.log( args );
             } finally { callback(); }
 
-        } );
+        })
+            .fail(function (error) {
+                console.error('Failed to add to bag.  Error recieved: ', error);
+                app.routines.runtime.displayErrorMessage( app.consts.addToBagNotAvailableError );
+                app.views.heads.unblockUI();
+                app.views.straps.hideLoader();
+            });
 
     };
 
