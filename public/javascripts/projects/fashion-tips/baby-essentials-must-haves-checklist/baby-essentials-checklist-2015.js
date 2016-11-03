@@ -277,7 +277,9 @@
 
   $(window).load( function () {
     // Fire general pageview tag
-      BLOOMIES.coremetrics.cmCreatePageviewTag('fall14_newbornessentials-hp', coreMetricsDefaultPageID);
+    BLOOMIES.coremetrics.cmCreatePageviewTag('fall14_newbornessentials-hp', coreMetricsDefaultPageID);
   });
 
 })();
+
+

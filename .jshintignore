@@ -6,4 +6,5 @@
 /public/javascripts/projects/fashion-tips/bedding-utility-guide/*
 
 **/*jquery*
+**/*hammer.min.js
 **/*hawaii_f15_detectDevice.js

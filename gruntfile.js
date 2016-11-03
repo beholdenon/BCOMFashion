@@ -347,7 +347,6 @@ module.exports = function(grunt) {
                     src: [
                         'package.json',
                         'Procfile',
-                        '.gitignore',
                         '.env'
                     ],
                     dest: '<%= node.destination %>'
@@ -379,8 +378,12 @@ module.exports = function(grunt) {
                         expand: true,
                         src: [
                             './server/lib/views/about-us/**/*.hbs',
-                            './server/lib/views//**/*.hbs',
-                            './server/lib/views/media/about/**/*.hbs'
+                            './server/lib/views/media/about/**/*.hbs',
+                            './server/lib/views/fashion-tips/**/*.hbs',
+                            './server/lib/views/fashion-index/**/*.hbs',
+                            './server/lib/views/landing-page/**/*.hbs'
+
+
                         ],
                         rename: function(dest, src) {
                             var name =  src.replace(/(\.*)\.hbs$/, "$1-mobile.hbs");
@@ -525,6 +528,12 @@ module.exports = function(grunt) {
                         cwd: '<%= node.destination %>/lib/views/fashion-index/',
                         src: '**/*mobile.html',
                         dest: '<%= node.destination %>/lib/views/fashion-index/'
+                    },
+                    {
+                        expand: true,
+                        cwd: '<%= node.destination %>/lib/views/fashion-tips/',
+                        src: '**/*mobile.html',
+                        dest: '<%= node.destination %>/lib/views/fashion-tips/'
                     },
                     {
                         expand: true,
@@ -742,7 +751,6 @@ module.exports = function(grunt) {
             grunt: {
                 files: [
                     '.env',
-                    '.gitignore',
                     'gruntfile.js',
                     'grunt/**'
                 ],
@@ -806,4 +814,20 @@ module.exports = function(grunt) {
             ]);
         }
     });
+    // Quick build - skips compass and jshint
+    grunt.registerTask('qbuild', 'Build based on the NODE_ENV value.', function() {
+        grunt.task.run([
+            'copy:all',
+            'execute', // create the nav data used in the compile-handlebars step
+            'compile-handlebars', // this processes files in the views folder and overwrites files in target
+            'usemin',
+            'string-replace'
+        ]);
+
+        grunt.task.run([
+            'inject:livereload',
+            'concurrent:dev'
+        ]);
+    });
+
 };
