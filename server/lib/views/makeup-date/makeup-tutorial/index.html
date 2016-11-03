@@ -283,10 +283,8 @@
 <script type="text/javascript">
     (function() {
         var currentDate = new Date(),
-            // endPromotion = new Date( 2016, 11, 17 ); // post event #1, after December 17, 2016
-            endPromotion = new Date( 2015, 11, 17 ), // post-event test date
+            endPromotion = new Date( 2016, 11, 17 ); // post event #1, after December 17, 2016
             endEvents = new Date( 2017, 0, 28 ); // post event #2, after January 28th, 2017
-            // endEvents = new Date( 2015, 0, 28 ); // 2nd post-event test date
 
         if ( currentDate >= endPromotion ) {
             $("#makeup_hero .subHeader, #makeup_hero .smallHeader, #gift-with-purchase, #samples, #sweepstakes, .backToTop .upArrow, .backToTop .upCover, #makeup_hero .pinkBg, #makeup_hero .points, #makeup_hero .legal").remove();

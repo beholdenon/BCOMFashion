@@ -303,7 +303,7 @@ $(document).ready(function() {
 	});
 
 	//essentials section dynamic element tags
-	$('#evening-essentials .prodSpot').on("click", function () {
+	$('#essential-copy .prodSpot').on("click", function (el) {
 		var target = $(this),
 			prodName = target.find('a').text().replace(/\&|\+/g, '').replace(/\s+/g, '-'),
 			attrVal = target.find('a').attr('href').substring( target.find('a').attr('href').indexOf('ID=') + 3 );
@@ -313,6 +313,7 @@ $(document).ready(function() {
 		}
 
 		APP.coremetrics('Element', APP.cm.category, "essentials_".concat( removeDiacritics( prodName ) ).slice(0, 50), attrVal );
+		el.preventDefault();
 	});
 
 	// dynamic Coremetrics tags for the dynamic video products
