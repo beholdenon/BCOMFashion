@@ -100,16 +100,18 @@ module.exports = {
         },
         handler: {
             proxy: {
-                protocol: 'http',
+                protocol: 'https',
                 timeout: serviceProxy.timeout,
                 passThrough: true,
                 acceptEncoding: false,
                 mapUri: function(req, res) {
-                    var headers = serviceProxy.getHeaders(req, process.env.SERVICES_KEY);
-                    req.url.host = process.env.BASE_ASSETS;
-                    req.app.parser = require('./../parsers/category');
-                    req.url.pathname = req.url.pathname = 'bag/add';
-                    res(null, req.url.format(req.url), headers);
+                    var headers = serviceProxy.getHeaders(req, process.env.SERVICES_KEY),
+                        upstreamUrl;
+                    req.url.host = process.env.API_SUBDOMAIN + '.' + process.env.API_HOST;
+                    req.app.parser = require('./../parsers/add-to-bag');
+                    req.url.pathname = 'order/v1/bags';
+                    upstreamUrl = req.url.format(req.url);
+                    res(null, upstreamUrl, headers);
                 },
                 onResponse: serviceProxy.defaultOnResponse
             }
