@@ -313,7 +313,6 @@ $(document).ready(function() {
 		}
 
 		APP.coremetrics('Element', APP.cm.category, "essentials_".concat( removeDiacritics( prodName ) ).slice(0, 50), attrVal );
-		el.preventDefault();
 	});
 
 	// dynamic Coremetrics tags for the dynamic video products
