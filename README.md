@@ -247,3 +247,21 @@ And, it also needs to run the drawMenus method on startup:
     );
 ```   
 
+# Using The Head Helpers
+Handlebar helpers have been written in order to insert HTML meta tags such as `<meta>`, `<title>`, and `<canonical>` into the `<head>` section of the page. Without these helpers, these meta tags are inserted within the `<body>` tag, which is not ideal. These helpers are invoked by using HTML comment syntax from within the view you are working on. The 3 helpers are `headMeta`, `headTitle`, and `headCanonical`. They are invoked as follows:
+
+```
+<!--headMeta={"name":"description", "content":"There's always a Big Brown Bag within reach! Stop in. Log on. Tap away."}-->
+<!--headTitle={"title":"The Makeup Date: Fall 2016 Makeup Tutorials"}-->
+<!--headCanonical={"href":"www.bloomingdales.com"}-->
+```
+Will insert the following tags in the `<head>`
+```
+<meta content="There's always a Big Brown Bag within reach! Stop in. Log on. Tap away." name="description">
+<title>The Makeup Date: Fall 2016 Makeup Tutorials</title>
+<link rel="canonical" href="www.bloomingdales.com">
+```
+Note the key-value pairs passed in as arguments to the helper. These are used in the headTags partial.
+
+**NOTE** the handler will only check the first 20 lines of the file and use a RegEx to see if it contains any of the `<!--head*= -->` helpers.
+

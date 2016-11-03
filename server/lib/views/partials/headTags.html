@@ -1,0 +1,17 @@
+{{#if args.headMeta}}
+    {{#if args.headMeta.content}}
+        {{#if args.headMeta.name}}
+            <meta content="{{{args.headMeta.content}}}" name="{{args.headMeta.name}}" />
+        {{/if}}
+    {{/if}}
+{{/if}}
+
+{{#if args.headTitle}}
+    <title>{{{args.headTitle.title}}}</title>
+{{/if}}
+
+{{#if args.headCanonical}}
+    {{#if args.headCanonical.href}}
+        <link rel="canonical" href="{{args.headCanonical.href}}" />
+    {{/if}}
+{{/if}}
