@@ -41,10 +41,11 @@ module.exports = {
         handler: function(req, res) {
             var requestPath = (req.url.pathname).substring(1),
                 deviceDetectProc = deviceDetectParams(requestPath, req),
-                responsiveCustomHFView = requestPath + '/index';
+                responsiveCustomHFView = requestPath + '/index',
+                slashMinSuffix = ( req.query.debug === '1' ? '' : '/min' );
 
             responsiveCustomHFView = responsiveCustomHFView.replace('//', '/');
-            return res.view(deviceDetectProc.view, { args: deviceDetectProc.args, assetsHost: process.env.BASE_ASSETS }, { layout: 'responsive' });
+            return res.view(deviceDetectProc.view, { args: deviceDetectProc.args, assetsHost: process.env.BASE_ASSETS, slashMinSuffix: slashMinSuffix }, { layout: 'responsive' });
         }
     },
     nonResponsive: {
@@ -53,9 +54,10 @@ module.exports = {
         tags: ['non-responsive'],
         handler: function(req, res) {
             var requestPath = (req.url.pathname).substring(1),
-                deviceDetectProc = deviceDetectParams(requestPath, req);
+                deviceDetectProc = deviceDetectParams(requestPath, req),
+                slashMinSuffix = ( req.query.debug === '1' ? '' : '/min' );
 
-            return res.view(deviceDetectProc.view, { args: deviceDetectProc.args, assetsHost: process.env.BASE_ASSETS });
+            return res.view(deviceDetectProc.view, { args: deviceDetectProc.args, assetsHost: process.env.BASE_ASSETS, slashMinSuffix: slashMinSuffix });
         }
     },
     responsiveCustomHF: {
@@ -64,10 +66,11 @@ module.exports = {
         tags: ['custom header & footer', 'static'],
         handler: function(req, res) {
             var requestPath = (req.url.pathname).substring(1),
-                responsiveCustomHFView = requestPath + '/index';
+                responsiveCustomHFView = requestPath + '/index',
+                slashMinSuffix = ( req.query.debug === '1' ? '' : '/min' );
 
             responsiveCustomHFView = responsiveCustomHFView.replace('//', '/');
-            return res.view(responsiveCustomHFView, { assetsHost: process.env.BASE_ASSETS }, { layout: 'responsiveCustomHF' });
+            return res.view(responsiveCustomHFView, { assetsHost: process.env.BASE_ASSETS, slashMinSuffix: slashMinSuffix }, { layout: 'responsiveCustomHF' });
         }
     },
 
@@ -77,9 +80,10 @@ module.exports = {
         tags: ['non-responsive','custom header & footer'],
         handler: function(req, res) {
             var requestPath = (req.url.pathname).substring(1),
-                deviceDetectProc = deviceDetectParams(requestPath, req);
+                deviceDetectProc = deviceDetectParams(requestPath, req),
+                slashMinSuffix = ( req.query.debug === '1' ? '' : '/min' );
 
-            return res.view(deviceDetectProc.view, { args: deviceDetectProc.args }, { layout: 'nonresponsiveCustomHF'});           
+            return res.view(deviceDetectProc.view, { args: deviceDetectProc.args, assetsHost: process.env.BASE_ASSETS, slashMinSuffix: slashMinSuffix }, { layout: 'nonresponsiveCustomHF'});           
         }
     },
     fallback: {
@@ -88,14 +92,15 @@ module.exports = {
         tags: ['fallback', 'static'],
         handler: function(req, res) {
 
-            var requestPath;
+            var requestPath,
+                slashMinSuffix = ( req.query.debug === '1' ? '' : '/min' );
 
             // override the user agent by passing in a query
             // (for developers)
             if (req.query.UA){
                 req.headers['user-agent'] = req.query.UA;
             }
-
+            
             // Check for path with deeplinks param. Deep link
             // param will be dropped and handled on client. Otherwise,
             // proceed as usual.
@@ -116,7 +121,7 @@ module.exports = {
                 return res.redirect(url);
             }
             var deviceDetectProc = deviceDetectParams(requestPath, req);
-            return res.view(deviceDetectProc.view, { args: deviceDetectProc.args, assetsHost: process.env.BASE_ASSETS });
+            return res.view(deviceDetectProc.view, { args: deviceDetectProc.args, assetsHost: process.env.BASE_ASSETS, slashMinSuffix: slashMinSuffix});
         }
     }
 };
