@@ -5,22 +5,21 @@ var fs = require('fs'),
     headMetaRegEx = /<!--headMeta=(.*)-->/,
     headTitleRegEx = /<!--headTitle=(.*)-->/,
     headCanonicalRegEx=/<!--headCanonical=(.*)-->/;
+    
+let args = {
+    isMobile: false,
+    isMobileAndroid: false,
+    isMobileiOS: false,
+    isTablet: false,
+    headTitle: '',
+    headMeta: '',
+    headCanonical: ''
+};
 
-var deviceDetectParams = function (requestPath, req) {
-    var device = require('./../helpers/deviceDetection'),
-        deviceType = device.detectDevice(req),
-        serverDate = new Date(),
-        view,
-        args = {
-            isMobile: false,
-            isMobileAndroid: false,
-            isMobileiOS: false,
-            isTablet: false,
-            serverYear: serverDate.getFullYear(),
-            headTitle: '',
-            headMeta: '',
-            headCanonical: ''
-        };
+var detectMobileDeviceView = function detectMobileDeviceView(requestPath, req) {
+    var view,
+        device = require('./../helpers/deviceDetection'),
+        deviceType = device.detectDevice(req);    
 
     if (deviceType.indexOf('mobile') > -1) {
         view = requestPath + 'index-mobile';
@@ -38,13 +37,13 @@ var deviceDetectParams = function (requestPath, req) {
         
         view = requestPath + 'index';
     }
-
-    return {view: view, args: args};
+    
+    return { view: view };        
 };
 
 // Reads the file passed in and checks if any of the head* helpers are used
 // Use of a head* helper is done using HTML comments <!-- -->
-var detectHeadHelpers = function(file, args) {
+var headHelpers = function headHelpers(file, args) {
     var contents,
         lines;
     try {
@@ -77,7 +76,7 @@ var detectHeadHelpers = function(file, args) {
         }
         
     } catch (e) {
-        console.log("Error reading file name " + file + " in detectHeadHelpers function");
+        console.log("Error reading file name " + file + " in headHelpers function");
         console.log(e.message);
     }
     
@@ -85,137 +84,77 @@ var detectHeadHelpers = function(file, args) {
 };
 
 module.exports = { 
-    responsive: {
-        description: 'Responsive layout',
-        notes: 'Serve one code base for any device type',
-        tags: ['responsive'],
-        handler: function(req, res) {
-            var requestPath = (req.url.pathname).substring(1),
-                deviceDetectProc = deviceDetectParams(requestPath, req),
-                responsiveCustomHFView = requestPath + '/index',
-                slashMinSuffix = ( req.query.debug === '1' ? '' : '/min' ),
-                fileToRead,
-                dir,
-                file;
-
-            responsiveCustomHFView = responsiveCustomHFView.replace('//', '/');
-            
-            fileToRead = deviceDetectProc.view + ".html";
-            dir = path.join(__dirname, '..', 'views');
-            file = dir + '/' + fileToRead;
-
-            // Check if any head* helpers are used
-            // Use of a head* helper is done using HTML comments <!-- headHelper= -->
-            // If so, add them to deviceDetectProc.args
-            deviceDetectProc.args = detectHeadHelpers(file, deviceDetectProc.args);
-            
-            return res.view(deviceDetectProc.view, { args: deviceDetectProc.args, assetsHost: process.env.BASE_ASSETS, slashMinSuffix: slashMinSuffix }, { layout: 'responsive' });
-        }
-    },
     nonResponsive: {
         description: 'Non-responsive layout',
-        notes: 'Server side mobile detection layout',
+        notes: 'Reading Akamai headers, and based on device type (phone, tablet, desktop), serve either index.html or index-mobile.html layout',
         tags: ['non-responsive'],
         handler: function(req, res) {
             var requestPath = (req.url.pathname).substring(1),
-                deviceDetectProc = deviceDetectParams(requestPath, req),
+                deviceDetectProc = detectMobileDeviceView(requestPath, req),
                 slashMinSuffix = ( req.query.debug === '1' ? '' : '/min' ),
                 fileToRead,
                 dir,
                 file;
 
             fileToRead = deviceDetectProc.view + ".html";
-            
             dir = path.join(__dirname, '..', 'views');
             file = dir + '/' + fileToRead;
-            
+                        
             // Check if any head* helpers are used
             // Use of a head* helper is done using HTML comments <!-- headHelper= -->
-            // If so, add them to deviceDetectProc.args
-            deviceDetectProc.args = detectHeadHelpers(file, deviceDetectProc.args);                
+            // If so, add them to args
+            args = headHelpers(file, args);                
 
-            return res.view(deviceDetectProc.view, { args: deviceDetectProc.args, assetsHost: process.env.BASE_ASSETS, slashMinSuffix: slashMinSuffix });
+            return res.view(deviceDetectProc.view, { args: args, assetsHost: process.env.BASE_ASSETS, slashMinSuffix: slashMinSuffix }, { layout: 'nonResponsive' });
         }
     },
     responsiveCustomHF: {
-        description: 'Responsive custom Header&Footer layout',
-        notes: 'Serve single html view for desktop and mobile; exclude standard H&F',
+        description: 'Responsive pages that use a custom Header&Footer',
+        notes: 'Serve common html view for both desktop and mobile; exclude standard H&F',
         tags: ['custom header & footer', 'static'],
         handler: function(req, res) {
             var requestPath = (req.url.pathname).substring(1),
                 responsiveCustomHFView = requestPath + '/index',
                 slashMinSuffix = ( req.query.debug === '1' ? '' : '/min' ),
                 dir,
-                file,
-                args = {};
-            
-            responsiveCustomHFView = responsiveCustomHFView.replace('//', '/');
+                file;
             
             dir = path.join(__dirname, '..', 'views');
             file = dir + '/' + responsiveCustomHFView + '.html';
-                        
+                                    
             // Check if any head* helpers are used
             // Use of a head* helper is done using HTML comments <!-- headHelper= -->
             // If so, add them to deviceDetectProc.args
-            args = detectHeadHelpers(file, args);
+            args = headHelpers(file, args);
 
             return res.view(responsiveCustomHFView, { assetsHost: process.env.BASE_ASSETS, slashMinSuffix: slashMinSuffix }, { layout: 'responsiveCustomHF' });
         }
     },
-    nonResponsiveCustomHF: {
-        description: 'Non-responsive layout Custom Header and Footer',
-        notes: 'Server side mobile detection layout, with custom header & footer',
-        tags: ['non-responsive','custom header & footer'],
-        handler: function(req, res) {
-            var requestPath = (req.url.pathname).substring(1),
-                deviceDetectProc = deviceDetectParams(requestPath, req),
-                slashMinSuffix = ( req.query.debug === '1' ? '' : '/min' ),
-                fileToRead,
-                dir,
-                file;
-
-            fileToRead = deviceDetectProc.view + ".html";
-            dir = path.join(__dirname, '..', 'views');
-            file = dir + '/' + fileToRead;
-
-            // Check if any head* helpers are used
-            // Use of a head* helper is done using HTML comments <!-- headHelper= -->
-            // If so, add them to deviceDetectProc.args
-            deviceDetectProc.args = detectHeadHelpers(file, deviceDetectProc.args);                
-
-            return res.view(deviceDetectProc.view, { args: deviceDetectProc.args, assetsHost: process.env.BASE_ASSETS, slashMinSuffix: slashMinSuffix }, { layout: 'nonresponsiveCustomHF'});           
-        }
-    },
-    
     fallback: {
-        description: 'Serve non-responsive standard layout',
+        description: 'Serve responsive standard layout',
         notes: 'This is the default fallback route if not explicitly captured',
         tags: ['fallback', 'static'],
         handler: function(req, res) {
-            var requestPath,
-                deviceDetectProc,
+            var slashMinSuffix = ( req.query.debug === '1' ? '' : '/min' ),
+                requestPath,
                 fileToRead,
-                slashMinSuffix = ( req.query.debug === '1' ? '' : '/min' ),
                 dir,
                 file;
 
-            // override the user agent by passing in a query
-            // (for developers)
+            // (for dev only) override the user agent by passing in a query
             if (req.query.UA){
                 req.headers['user-agent'] = req.query.UA;
             }
-
-            // Check for path with deeplinks param. Deep link
-            // param will be dropped and handled on client. Otherwise,
-            // proceed as usual.
+            
+            // Handle URL deeplinks params: discard fragment on the server-side and handle it on client-side. 
             if (/\{deeplinks\?}/.test(req.route.path)){
                 requestPath = req.route.path.substring(1).replace(/{.*?}/,'');
             } else {
                 requestPath = req.params.path;//  || req.path;
             }
-
+            
+            // if route not captured, redirect to the main site
             if (requestPath === '' || requestPath === undefined) {
-                // if route not captured, redirect to the main site
                 return res.redirect('http://www.bloomingdales.com');
             }
             
@@ -226,19 +165,17 @@ module.exports = {
                 return res.redirect(url);
             }
 
-            deviceDetectProc = deviceDetectParams(requestPath, req);
-                        
-            fileToRead = deviceDetectProc.view + ".html";
-            
+            //deviceDetectProc = deviceDetectParams(requestPath, req);
+            fileToRead = requestPath + "index.html";
             dir = path.join(__dirname, '..', 'views');
             file = dir + '/' + fileToRead;
             
             // Check if any head* helpers are used
             // Use of a head* helper is done using HTML comments <!-- headHelper= -->
-            // If so, add them to deviceDetectProc.args
-            deviceDetectProc.args = detectHeadHelpers(file, deviceDetectProc.args);
-                                    
-            return res.view(deviceDetectProc.view, { args: deviceDetectProc.args, assetsHost: process.env.BASE_ASSETS, slashMinSuffix: slashMinSuffix});
+            // If so, add them to args
+            args = headHelpers(file, args);
+            
+            return res.view(requestPath + "index", { args: args, assetsHost: process.env.BASE_ASSETS, slashMinSuffix: slashMinSuffix});
         }
     }
 };
