@@ -3,7 +3,7 @@
 1.  [Git Bash](https://git-scm.com/)
 
 2.  [nodeJS 4.4.4](https://nodejs.org/en/download/)
-    > during installation, opt for 'Add to PATH', which will expose nodeJS to globally  
+    > during installation, opt for 'Add to PATH', which will expose nodeJS to globally
     > on completion, open terminal to verify global installation by executing: ```node -v``` ; this should log nodeJS ver
 
 3.  Update npm: in terminal run  ```npm update -g npm```
@@ -30,13 +30,33 @@
 
 #Development Workflow
 
-Develop in a *FEATURE/B-xxxxx* branch. A code push to remote will trigger [Jenkins Review](http://web-ci.devops.fds.com/jenkins/view/BCOMFashion/view/test/job/BCOM_test_REVIEW/) job (incl. unit-tests and func-tests): 
+1. DEVELOPER picks up a story, moves story card to In Dev, branch out a unique feature branch from test. Proper nomenclature: FEATURE/{V1 story #} (eg. FEATURE/B-12345).
 
-*test* branch is the staging branch. Merge Request from the *FEATURE/B-xxxxx* to *test* will trigger a [Jenkins Deploy](http://web-ci.devops.fds.com/jenkins/view/BCOMFashion/view/test/job/BCOM_test_DEPLOY/) job. At the completion, server-side code will be deployed to Heroku and front-end code to NetStorage (location: http://netstorage.bloomingdales.com/netstorage/fashion/dev). Application can be accessed at http://fashion-test.bloomingdales.com/.   
+2. On code complete, DEV pushes the local branch to remote. 
+This op triggers [Jenkins Review](http://web-ci.devops.fds.com/jenkins/view/BCOMFashion/view/test/job/BCOM_test_REVIEW/) job (which performs unit-tests and func-tests). 
+DEV moves the story card to Ready for Test
 
-*master* branch is used for UAT and also represents the release branch. Code will move here only after QA sign-off. Merge Request will trigger a [Jenkins Deploy](http://web-ci.devops.fds.com/jenkins/view/BCOMFashion/view/MASTER/job/BCOM_Master_DEPLOY/) job. At completion, server-side code will be deployed to Heroku and front-end code to NetStorage, in 2 buckets: http://netstorage.bloomingdales.com/netstorage/fashion/QA and http://netstorage.bloomingdales.com/netstorage/fashion/prod. Application can be accessed at http://fashion-preprod.bloomingdales.com/.
-At UAT sign-off, an artifact version is provided to RE for production deployment. 
+3. QA picks up the story and moves it's card to In Test. They checkout the feature branch and run the project locally. 
+In case of defects, they open a defect card for DEV to fix.
+After a successful validation, QA moves story to Ready for Showcase.
 
+4. DEV prepares the Merge Request for his feature branch into test. *test* branch is used for staging.
+This op triggers a [Jenkins Deploy](http://web-ci.devops.fds.com/jenkins/view/BCOMFashion/view/test/job/BCOM_test_DEPLOY/) job. 
+In case of a red build, DEV investigates Jenkins logs to determine root cause.
+On a successful log, server-side code will be deployed to Heroku and front-end code to NetStorage (location: http://netstorage.bloomingdales.com/netstorage/fashion/dev). 
+
+5. QA and business performs UAT validation at this step. The app can be accessed at http://fashion-test.bloomingdales.com/.
+In case of more fixes needed, QA opens defects cards, DEV delivers fixes repeating step #4.
+At the conclusion of UAT sign-off, the PM on the story moves the card to Ready for Release
+
+6. DEV cherry-picks his code via Gitlab interface into master. *master* represents the release branch and code moved here is production-ready. 
+[Jenkins triggers a Deploy](http://web-ci.devops.fds.com/jenkins/view/BCOMFashion/view/MASTER/job/BCOM_Master_DEPLOY/) job. At completion, server-side code will be deployed to Heroku and front-end code to NetStorage (location: http://netstorage.bloomingdales.com/netstorage/fashion/prod). 
+Application can be accessed at http://fashion-preprod.bloomingdales.com/.
+
+*Note: 
+For a PROD hotfix, which may be executed directly from the master branch, it is required to move the code (via Gitlab cherry-pick) into the test branch.
+
+![Development Workflow](./tools/workflow.jpg)
 
 #CI-CD Workflow
 
