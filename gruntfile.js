@@ -10,7 +10,7 @@ module.exports = function(grunt) {
     //Display the elapsed execution time of grunt tasks
     require('time-grunt')(grunt);
 
-    //Sets the default config specified in the .env for runnning grunt tasks without having to set options
+    //Sets the default config specified in the .env for running grunt tasks without having to set options
     require('./build/setDefaultEnv')(grunt, '.env');
     var NODE_ENV = grunt.option('env') || process.env.NODE_ENV;
 
@@ -345,9 +345,9 @@ module.exports = function(grunt) {
                     expand: true,
                     cwd: '<%= node.source %>',
                     src: [
+                        'envconfigs/**/.*',
                         'package.json',
-                        'Procfile',
-                        '.env'
+                        'Procfile'
                     ],
                     dest: '<%= node.destination %>'
                 }]                
