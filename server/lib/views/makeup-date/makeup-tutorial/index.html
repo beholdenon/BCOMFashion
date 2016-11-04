@@ -10,7 +10,7 @@
     <img id="hero-3" class="heroImage" style="opacity:0;" src="/fashion/images/projects/makeup-date/makeup-tutorial/hero-3.jpg" alt="Makeup Tutorial & Shop - The Makeup Date 2016 Bloomingdale's"/>
     <div class="copy">
         <div class="pinkBg">2 days only!</div>
-        <h2>13-piece gift +<br/>TRIPLE POINTS FOR LOYALLISTS</h2>
+        <h2 class="points">13-piece gift +<br/>TRIPLE POINTS FOR LOYALLISTS</h2>
         <p class="legal">Ends 12/16. <a href="javascript:pop('http://www.bloomingdales.com/popup.ognc?popupID=563664','myDynaPop','width=575,height=350')" data-element="hero_info-popup" class="exclusionsLink">SEE INFO</a></p>
         <h1 class="title">The Makeup Date</h1>
         <h2 class="pink">party edition</h2>
@@ -246,6 +246,11 @@
             <p>South Coast Plaza</p>
             <p>Stanford</p>
         </div>
+
+        <div class='post-event'>
+            <p>to rsvp and get more information, contact your local store.</p>
+            <a href="//locations.bloomingdales.com/store-locator">find a store near you</a>
+        </div>
     </div>
 </section>
 
@@ -276,13 +281,30 @@
 
 <script type="application/javascript" src="/fashion/javascripts/libs/jquery-1.11.2.min.js"></script>
 <script type="text/javascript">
-    var dateCheck = new Date();
-    if ( dateCheck.getFullYear() >= 2016 && dateCheck.getMonth() >= 11 &&  dateCheck.getDate() >= 17 ) {
-        $("#makeup_hero .subHeader, #makeup_hero .smallHeader, #gift-with-purchase, #samples, #sweepstakes").remove();
-        $("[data-element='nav_sweepstakes'], [data-element='nav_exclusive-gift']").remove();
-        $("#book-footer").css('background-color', '#ffffff');
-        $("#book-footer span, #book-footer a").css('color', "#000000");
-    }
+    (function() {
+        var currentDate = new Date(),
+            endPromotion = new Date( 2016, 11, 17 ); // post event #1, after December 17, 2016
+            endEvents = new Date( 2017, 0, 28 ); // post event #2, after January 28th, 2017
+
+        if ( currentDate >= endPromotion ) {
+            $("#makeup_hero .subHeader, #makeup_hero .smallHeader, #gift-with-purchase, #samples, #sweepstakes, .backToTop .upArrow, .backToTop .upCover, #makeup_hero .pinkBg, #makeup_hero .points, #makeup_hero .legal").remove();
+            $("[data-element='nav_sweepstakes'], [data-element='nav_exclusive-gift']").remove();
+            $("#book-footer").css('background-color', '#ffffff');
+            $("#book-footer span, #book-footer a").css('color',"#000000");
+            
+
+            $(".backToTop").css({
+                'color': "#ffffff",
+                'background-color': '#000000'
+            });
+        }
+
+        if ( currentDate >= endEvents ) {
+            $("#celebrate-in-store .events").remove();
+            $('#celebrate-in-store .post-event').show();
+        }
+    })();
 </script>
+
 <script type="application/javascript" src="/fashion/javascripts/includes/wssg.js"></script>
 <script type="application/javascript" src="/fashion/javascripts/projects/makeup-date/makeup-tutorial/main.js"></script>
