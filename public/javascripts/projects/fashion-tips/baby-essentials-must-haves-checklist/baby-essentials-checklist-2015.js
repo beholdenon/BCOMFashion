@@ -252,7 +252,7 @@
 
       function getAssetsHost () {
           var $paramsElm = $("#bcom_serverside_parameters"),
-              localHostUrl = "//" + window.location.host,
+              localHostUrl = "http://" + window.location.host,
               paramsElmHostUrl = $paramsElm && $paramsElm.attr("data-host-assets") ? $paramsElm.attr("data-host-assets") : "";
           return paramsElmHostUrl.length > 0 ? paramsElmHostUrl : localHostUrl;
       }
@@ -261,7 +261,7 @@
       var sharingLinks = (function ($, location) {
           var pageURL = escape(location.protocol + "//" + location.host + location.pathname),
               assetsHost = getAssetsHost(),
-              pinterestMedia = escape(assetsHost + "/images/projects/fashion-tips/baby-essentials-must-haves-checklist/icon_pinterest.jpg"),
+              pinterestMedia = escape(assetsHost + "/fashion/images/projects/fashion-tips/baby-essentials-must-haves-checklist/icon_pinterest.jpg"),
               pinterestDescription = escape("The Essentials: Baby Love | bloomingdales.com");
           return {
               facebook: "https://www.facebook.com/sharer/sharer.php?u=" + pageURL,
@@ -284,11 +284,17 @@
 
   });
 
-  $(window).load( function () {
+  $(function () {
+
     // Fire general pageview tag
     BLOOMIES.coremetrics.cmCreatePageviewTag('fall14_newbornessentials-hp', coreMetricsDefaultPageID);
+
+      // Get og:url meta tags
+      jQuery('[property="og:url"]').each(function (item) {
+          var $item = $(item);
+          $item.attr('property', 'http://' + window.location.host + $item.attr('property'));
+      });
+
   });
 
 })();
-
-
