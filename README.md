@@ -21,8 +21,7 @@
 
 1. Clone *BCOMFashion* repo: ```git clone git@code.devops.fds.com:CAP/BCOMFashion.git```
 
-2. Copy ./envconfigs/qa/.env-props into the project root folder and rename the file to **.env**
-Set ```NODE_ENV=dev```
+2. In **.env** file, edit ```NODE_ENV=dev```
 
 3. Install node dependencies for the project. In terminal, go to BCOMFashion directory and run ```npm install``` 
 
