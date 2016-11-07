@@ -2188,7 +2188,6 @@ window.blmwbs15.builder = ( function bl_mwbs15_builder( window, document,  $, Ha
 
             // Make all requests
             requests = requestParamsList.map(function (item) {
-
                 // If an update is required then api requires this variable set
                 // @see update bag at http://developer.bloomingdales.com/io-docs
                 // if (requestMethod === 'patch') {
