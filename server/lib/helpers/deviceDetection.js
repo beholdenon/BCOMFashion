@@ -11,20 +11,12 @@ device.detectDevice = function(req) {
     if( typeof akamaiHeader !== undefined && akamaiHeader ) {
         deviceType = akamaiHeader.toLowerCase();
         deviceType = deviceType === 'phone' ? 'mobile' : deviceType;
-    }
-    else {
-        if (/iPhone/i.test(UA)) {
-            deviceType = 'mobile.iOS';
-        } else if (/iPad/i.test(UA)) {
-            deviceType = 'tablet';
-        } else if (/Android/i.test(UA)) {
-            if (/Mobile/i.test(UA)) {
-                deviceType = 'mobile.Android';
-            } else {
-                deviceType = 'tablet';
-            }
+    } else {
+        // In case Akamai services are unavailable, rely on User Agent detection
+        if( /Mobi/i.test(UA) ) {
+            deviceType = 'mobile'; 
         } else {
-            deviceType = 'desktop';
+            deviceType = 'desktop'; 
         }
     }
 
