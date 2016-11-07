@@ -1,7 +1,7 @@
 'use strict';
 
-let serviceProxy = require('./../helpers/serviceProxy');
-let Path = require('path');
+let serviceProxy = require('./../helpers/serviceProxy'),
+    Path = require('path');
 
 module.exports = {
     netstorage: {

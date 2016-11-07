@@ -34,7 +34,12 @@ window.blmwbs15.builder = ( function bl_mwbs15_builder( window, document,  $, Ha
             strapSortByViewport: 'blmwbs15_builder_options_sort_straps',
             noItemsInBagError: 'Please select a product before adding to your brown bag.',
             strapsLoadingNone: 'We\'re sorry\u2014your selection is unavailable. Please choose a different combination and try again.',
-            strapsLoadingError: 'We\'re sorry\u2014your selection is unavailable\nat this time. Please choose a different watch\nhead or try again later.'
+            strapsLoadingError: 'We\'re sorry\u2014your selection is unavailable\nat this time. Please choose a different watch\nhead or try again later.',
+            addToBagNotAvailableError: 'We\'re sorry the add to bag service is currently unavailable.  If the problem persits please contact us at customer service.',
+            onlineUidCookieName: 'bloomingdales_online_uid',
+            onlineGuidCookieName: 'bloomingdales_online_guid',
+            onlineCookieName: 'bloomingdales_online',
+            bagGuidCookieName: 'bloomingdales_bagguid'
         },
         domain: {
             heads: null,
@@ -2114,69 +2119,116 @@ window.blmwbs15.builder = ( function bl_mwbs15_builder( window, document,  $, Ha
      * Routines
      */
 
+    /**
+     * @note Uses v1 add to bag api
+     * @see api docs http://developer.bloomingdales.com/io-docs
+     */
     app.routines.addToBag = function ( args ) {
+        // Get default user id and guid cookies
+        var defaultUserGuidCookie = app.utils.getCookie(app.consts.onlineGuidCookieName),
+            defaultUserUidCookie = app.utils.getCookie(app.consts.onlineUidCookieName),
 
-        var i,
-            key,
-            result = {},
-            payload = { source: 'PDPA2B' },
-            callback = function () {
-                app.utils.schedule( args, 'callback' );
-            };
+            // Resolve bag request url (send user id or guid based on if it is available)
+            bagRequestPath = (function () {
+                var out = '/bag/add';
+                if (defaultUserUidCookie) {
+                    out += '?userId=' + defaultUserUidCookie;
+                }
+                else if (defaultUserGuidCookie) {
+                    out += '?userGuid=' + defaultUserGuidCookie;
 
-        // prepare request payload...
-        for ( i = 0; i < args.upcIds.length; i++ ) {
-            key = args.upcIds[i];
-            payload[ 'upcId[' + key + ']' ] = '1';
-            result[ key ] = {
-                isOK: false,
-                id: null,
-                upcId: key,
-                errors: null
-            };
-        }
+                }
+                return out;
+            }()),
 
-        // set output data...
-        args.result = result;
-        args.error = null;
+            // Reduce upcIds list to array of param object for individual post requests
+            requestParamsList = args.upcIds.reduce(function (out, upcId) {
+                out.push({
+                    item: {
+                        upcId: upcId,
+                        quantity: 1
+                    },
+                });
+                return out;
+            }, []),
 
-        $.post( '/bag/add', payload, function( response ) {
+            // Aggregate a next call args that gets forward to the ui handler portion of this ajax request
+            nextCallArgs = $.extend(true, {
+                result: null,
+                error: null
+            }, args),
 
-            var i, key, item, items, cookie;
-            try {
-                items = response.bagItems;
-                for ( i = 0; i < items.length; i++ ) {
-                    item = items[i], key = item.upcID + '';
-                    if ( key in result ) {
-                        result[key].id = item.masterProductID;
-                        result[key].errors = item.errorCodes ? item.errorCodes.slice(0) : null;
-                        result[key].isOK = ( !result[key].errors || result[key].errors.length === 0 );
-                    }
+            // Add to bag request success callback
+            bagRequestSuccess = function( response ) {
+                // Seed params to forward to next add to bag handler
+                // Reduce items list to expect parameters object
+                nextCallArgs = response.bag.items.reduce(function (out, item) {
+                        out[item.upcId] = {
+                            id: item.productId,
+                            upcId: item.upcId,
+                            error: item.errors ? item.errors.slice(0).message : null,
+                            isOK: true
+                        };
+                        return out;
+                    },
+                    // reduce on aggregator
+                    nextCallArgs
+                );
+
+                // 'online_uid' cookie
+                if ( response.bag.owner.userId && !app.utils.getCookie( app.consts.onlineUidCookieName ) ) {
+                    app.utils.setCookie( app.consts.onlineUidCookieName,
+                        response.bag.owner.userId, app.consts.cookieExpire );
                 }
 
-                cookie = 'bloomingdales_online_uid';
-                if ( !app.utils.getCookie( cookie ) && response.userId ) {
-                    app.utils.setCookie( cookie, response.userId, app.consts.cookieExpire );
+                // 'online_guid' cookie
+                if ( response.bag.owner.userGuid && !app.utils.getCookie( app.consts.onlineGuidCookieName ) ) {
+                    app.utils.setCookie( app.consts.onlineGuidCookieName,
+                        response.bag.owner.userGuid, app.consts.cookieExpire );
                 }
 
-                cookie = 'bloomingdales_online';
-                if ( !app.utils.getCookie( cookie ) && response.machineId ) {
-                    app.utils.setCookie( cookie, response.machineId, app.consts.cookieExpire );
+                // 'baguid' cookie
+                if ( response.bag.bagGUID && !app.utils.getCookie( app.consts.bagGuidCookieName ) ) {
+                    app.utils.setCookie( app.consts.bagGuidCookieName,
+                        response.bag.bagGUID, app.consts.cookieExpire );
                 }
+            },
 
-                cookie = 'bloomingdales_bagguid';
-                if ( !app.utils.getCookie( cookie ) && response.bagGuid ) {
-                    app.utils.setCookie( cookie, response.bagGuid, app.consts.cookieExpire );
-                }
+            // Forward the rest of the add to bag functionality here
+            allBagRequestsComplete = function () {
+                app.utils.schedule( nextCallArgs, 'callback' );
+            },
 
-            } catch ( e ) {
-                args.error = e;
+            // Add to bag request failure handler
+            bagRequestFailure = function (error) {
                 app.utils.log( 'ROUTINES/ADDTOBAG: UNEXPECTED ERROR...' );
-                app.utils.log( args );
-            } finally { callback(); }
+                nextCallArgs.error = error;
+                app.utils.schedule( nextCallArgs, 'callback' );
+                console.error('Failed to add to bag.  Error recieved: ', error);
+                app.routines.runtime.displayErrorMessage( app.consts.addToBagNotAvailableError );
+                app.views.heads.unblockUI();
+                app.views.straps.hideLoader();
+            },
 
-        } );
+            // Make all requests and save them to respond to their completion
+            requests = requestParamsList.map(function (item) {
+                // Make post request to add to bag service
+                return $.post(bagRequestPath, JSON.stringify(item), bagRequestSuccess, 'json');
+            });
 
+        // Wait for all requests to complete
+        $.when(requests)
+            .then(allBagRequestsComplete)
+            .fail(bagRequestFailure);
+    };
+
+    app.routines.ensureBagGuid = function () {
+        var bagGuid = app.utils.getCookie(app.consts.bagGuidCookieName);
+
+        // Make request for bag and store it
+        if (bagGuid) {
+
+        }
     };
 
     app.routines.getProductInfo = function ( args ) {
