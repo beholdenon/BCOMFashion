@@ -60,6 +60,7 @@ section a:active {
 
 #navigation {
 	display: block;
+	text-align: center;
 	list-style-type: none;
 	border-bottom: 1px solid #d9d9d9;
 	margin: 0;
@@ -858,20 +859,26 @@ section a:active {
 	}
 
 	.post-event {
+		display: none;
 		color: #fff;
 		text-transform: uppercase;
-		font-size: 1.35em;
-		width: 58%;
+		width: 60%;
 		margin: 0 auto;
 	}
 
-	p.post-event{
-		padding-top: 6vw;
-		padding-bottom: 4vw;
+	.post-event p {
+		padding-top: 2em;
+		padding-bottom: 0.5em;
+		font-weight: 700;
+		font-size: 1.2em;
+		letter-spacing: 0.2em;
 	}
 
-	a.post-event {
-		border-bottom: 1px solid #b5b5b5;
+	.post-event a {
+		border-bottom: 1px solid #ddd;
+		font-size: 0.9em;
+		font-weight: 800;
+		letter-spacing: 0.2em;
 	}
 }
 

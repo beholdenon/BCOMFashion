@@ -303,7 +303,7 @@ $(document).ready(function() {
 	});
 
 	//essentials section dynamic element tags
-	$('#evening-essentials .prodSpot').on("click", function () {
+	$('#essential-copy .prodSpot').on("click", function () {
 		var target = $(this),
 			prodName = target.find('a').text().replace(/\&|\+/g, '').replace(/\s+/g, '-'),
 			attrVal = target.find('a').attr('href').substring( target.find('a').attr('href').indexOf('ID=') + 3 );

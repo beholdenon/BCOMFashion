@@ -17,7 +17,7 @@
 
     function getOptStatusCookie () {
         var optStatus = cI('CMOptout');
-        return  optStatus && OPTS.indexOf(optStatus) > -1 ? optStatus : OPT_IN_ANON;
+        return  optStatus && OPTS.indexOf(optStatus) > -1 ? optStatus : OPT_IN;
     }
 
     function getOptStatusNewExpireDate () {
