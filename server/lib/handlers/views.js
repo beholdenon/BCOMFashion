@@ -8,8 +8,6 @@ var fs = require('fs'),
     
 let args = {
     isMobile: false,
-    isMobileAndroid: false,
-    isMobileiOS: false,
     isTablet: false,
     headTitle: '',
     headMeta: '',
@@ -17,27 +15,20 @@ let args = {
 };
 
 var detectMobileDeviceView = function detectMobileDeviceView(requestPath, req) {
-    var view,
+    var view = requestPath + 'index',
         device = require('./../helpers/deviceDetection'),
         deviceType = device.detectDevice(req);    
-
-    if (deviceType.indexOf('mobile') > -1) {
+        
+    args.isTablet = false;
+    args.isMobile = false;
+    
+    if (deviceType === 'mobile') {
         view = requestPath + 'index-mobile';
         args.isMobile = true;
-
-        if (deviceType.indexOf('Android') > -1) {
-            args.isMobileAndroid = true;
-        } else if (deviceType.indexOf('iOS') > -1) {
-            args.isMobileiOS = true;
-        }
-    } else {
-        if (deviceType === 'tablet') {
-            args.isTablet = true;
-        }
-        
-        view = requestPath + 'index';
+    } else if (deviceType === 'tablet') {
+        args.isTablet = true;
     }
-    
+        
     return { view: view };        
 };
 
