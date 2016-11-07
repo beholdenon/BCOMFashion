@@ -11,7 +11,7 @@
 'use strict';
 
 let sjl = require('sjljs'),
-    addToBagMessages = require('./../../../configs/add-to-bag-messages'),
+    addToBagMessages = {}, //require('./../../../configs/add-to-bag-messages'),
     unknownErrorMessageMsg = 'An unknown error occurred.';
 
 function getErrorMessageFromErrorCode (code) {
@@ -61,7 +61,7 @@ module.exports = {
         var response = sjl.jsonClone(payload) || {};
 
         // If request not successful, get error messages and forward them
-        if (!payload || !payload.success) {
+        if (sjl.isEmptyOrNotOfType(payload, Object)) {
             let errorMessages = getPayloadErrorMessages(payload);
             response.errorMessages = errorMessages;
             response.errorMessage = errorMessages.length > 0 ? errorMessages[0] : unknownErrorMessageMsg;

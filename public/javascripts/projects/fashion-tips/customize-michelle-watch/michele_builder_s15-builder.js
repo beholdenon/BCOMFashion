@@ -36,6 +36,9 @@ window.blmwbs15.builder = ( function bl_mwbs15_builder( window, document,  $, Ha
             strapsLoadingNone: 'We\'re sorry\u2014your selection is unavailable. Please choose a different combination and try again.',
             strapsLoadingError: 'We\'re sorry\u2014your selection is unavailable\nat this time. Please choose a different watch\nhead or try again later.',
             addToBagNotAvailableError: 'We\'re sorry the add to bag service is currently unavailable.  If the problem persits please contact us at customer service.',
+            onlineUidCookieName: 'bloomingdales_online_uid',
+            onlineCookieName: 'bloomingdales_online',
+            bagGuidCookieName: 'bloomingdales_bagguid'
         },
         domain: {
             heads: null,
@@ -2115,82 +2118,109 @@ window.blmwbs15.builder = ( function bl_mwbs15_builder( window, document,  $, Ha
      * Routines
      */
 
+    /**
+     * @note Uses v1 add to bag api
+     * @see api docs http://developer.bloomingdales.com/io-docs
+     */
     app.routines.addToBag = function ( args ) {
+        var defaultBagGuidCookie = app.utils.getCookie(app.consts.bagGuidCookieName),
+            requestMethod = 'post', //defaultBagGuidCookie ? 'PATCH' : 'POST', // @see 'add to bag' and 'update bag' functionality at http://developer.bloomingdales.com/io-docs
+            bagRequestPath = '/bag/add', //+ (defaultBagGuidCookie ? '/' + defaultBagGuidCookie + '/items' : ''), // same as above @see
+            requestParamsList = args.upcIds.reduce(function (out, upcId) {
+                out.push({
+                    item: {
+                        upcId: upcId,
+                        quantity: 1
+                    },
+                });
+                return out;
+            }, []),
+            nextCallArgs = $.extend(true, {
+                result: null,
+                error: null
+            }, args),
+            bagRequestSuccess = function( response ) {
+                // Seed params to forward to next add to bag handler
+                // Reduce items list to expect parameters object
+                nextCallArgs = response.bag.items.reduce(function (out, item) {
+                        out[item.upcId] = {
+                            id: item.productId,
+                            upcId: item.upcId,
+                            error: item.errors ? item.errors.slice(0) : null,
+                            isOK: true
+                        };
+                        return out;
+                    },
+                    // reduce on aggregator
+                    nextCallArgs
+                );
 
-        var i,
-            key,
-            result = {},
-            payload = { source: 'PDPA2B' },
-            out = {"item": {}},
-            callback = function () {
-                app.utils.schedule( args, 'callback' );
-            };
-
-        // prepare request payload...
-        for ( i = 0; i < args.upcIds.length; i++ ) {
-            key = args.upcIds[i];
-            out.item.upcId = key;
-            out.item.quantity = 1;
-            payload[ 'upcId[' + key + ']' ] = '1';
-            result[ key ] = {
-                isOK: false,
-                id: null,
-                upcId: key,
-                errors: null
-            };
-        }
-
-        // set output data...
-        args.result = result;
-        args.error = null;
-
-        $.post( '/bag/add', payload, function( response ) {
-
-            var i, key, item, items, cookie;
-            try {
-                items = response.bagItems;
-                for ( i = 0; i < items.length; i++ ) {
-                    item = items[i], key = item.upcID + '';
-                    if ( key in result ) {
-                        result[key].id = item.masterProductID;
-                        result[key].errors = item.errorCodes ? item.errorCodes.slice(0) : null;
-                        result[key].isOK = ( !result[key].errors || result[key].errors.length === 0 );
-                    }
+                // 'online_uid' cookie
+                if ( response.bag.owner.userId && !app.utils.getCookie( app.consts.onlineCookieName ) ) {
+                    app.utils.setCookie( app.consts.onlineCookieName, response.bag.owner.userId, app.consts.cookieExpire );
                 }
 
-                cookie = 'bloomingdales_online_uid';
-                if ( !app.utils.getCookie( cookie ) && response.userId ) {
-                    app.utils.setCookie( cookie, response.userId, app.consts.cookieExpire );
+                // 'online' cookie
+                if ( response.machineId && !app.utils.getCookie( app.const.onlineUidCookieName ) ) {
+                    app.utils.setCookie( app.consts.onlineUidCookieName, response.machineId, app.consts.cookieExpire );
                 }
 
-                cookie = 'bloomingdales_online';
-                if ( !app.utils.getCookie( cookie ) && response.machineId ) {
-                    app.utils.setCookie( cookie, response.machineId, app.consts.cookieExpire );
+                // 'baguid' cookie
+                if ( response.bag.bagGUID && !app.utils.getCookie( app.consts.bagGuidCookieName ) ) {
+                    app.utils.setCookie( app.consts.bagGuidCookieName, response.bag.bagGUID, app.consts.cookieExpire );
                 }
+            },
 
-                cookie = 'bloomingdales_bagguid';
-                if ( !app.utils.getCookie( cookie ) && response.bagGuid ) {
-                    app.utils.setCookie( cookie, response.bagGuid, app.consts.cookieExpire );
-                }
+            // Forward the rest of the add to bag functionality here
+            allBagRequestsComplete = function () {
+                app.utils.schedule( nextCallArgs, 'callback' );
+            },
 
-            }
-            catch ( e ) {
-                args.error = e;
+            bagRequestFailure = function (error) {
                 app.utils.log( 'ROUTINES/ADDTOBAG: UNEXPECTED ERROR...' );
-                app.utils.log( args );
-            }
-            finally {
-                callback();
-            }
-
-        })
-            .fail(function (error) {
+                nextCallArgs.error = error;
+                app.utils.schedule( nextCallArgs, 'callback' );
                 console.error('Failed to add to bag.  Error recieved: ', error);
                 app.routines.runtime.displayErrorMessage( app.consts.addToBagNotAvailableError );
                 app.views.heads.unblockUI();
                 app.views.straps.hideLoader();
+            },
+
+            // Make all requests
+            requests = requestParamsList.map(function (item) {
+
+                // If an update is required then api requires this variable set
+                // @see update bag at http://developer.bloomingdales.com/io-docs
+                // if (requestMethod === 'patch') {
+                //     item.item.sequenceNumber = 22;
+                // }
+                
+                // Using $.ajax instead of shorthand ($.post, etc.) to allow using 'PATCH' request
+                // method for updates (as per api docs http://developer.bloomingdales.com/io-docs)
+                return $.ajax({
+                        url: bagRequestPath,
+                        method: requestMethod,
+                        dataType: 'json',
+                        data: JSON.stringify(item)
+                    })
+                    .then(
+                        bagRequestSuccess
+                    );
             });
 
+        // Wait for all requests to complete
+        $.when(requests)
+            .then(allBagRequestsComplete)
+            .fail(bagRequestFailure);
+    };
+
+    app.routines.ensureBagGuid = function () {
+        var bagGuid = app.utils.getCookie(app.consts.bagGuidCookieName);
+
+        // Make request for bag and store it
+        if (bagGuid) {
+
+        }
     };
 
     app.routines.getProductInfo = function ( args ) {

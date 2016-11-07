@@ -1,7 +1,7 @@
 'use strict';
 
-let serviceProxy = require('./../helpers/serviceProxy');
-let Path = require('path');
+let serviceProxy = require('./../helpers/serviceProxy'),
+    Path = require('path');
 
 module.exports = {
     netstorage: {
@@ -42,8 +42,18 @@ module.exports = {
                 timeout: serviceProxy.timeout,
                 passThrough: true,
                 mapUri: function(req, callback) {
-                    let uri = 'http://' + process.env.BASE_ASSETS + req.url.path;
-                    callback(null, uri, headers);
+                    var url;
+                    if (process.env.NODE_ENV === 'dev' &&
+                        req.info.host &&
+                        req.info.host.indexOf('localhost') > -1 &&
+                        req.url.pathname.indexOf('\/shop\/flyout\/') > -1)
+                    {
+                        url = req.headers.host + req.url.format(req.url).path;
+                    }
+                    else {
+                        url = 'http://' + process.env.BASE_ASSETS + req.url.path;
+                    }
+                    callback(null, url, headers);
                 },
                 onResponse: serviceProxy.onResponseRedirect
             });
