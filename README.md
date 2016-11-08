@@ -273,15 +273,17 @@ Handlebar helpers have been written in order to insert HTML meta tags such as `<
 ```
 <!--headMeta={"name":"description", "content":"There's always a Big Brown Bag within reach! Stop in. Log on. Tap away."}-->
 <!--headTitle={"title":"The Makeup Date: Fall 2016 Makeup Tutorials"}-->
-<!--headCanonical={"href":"www.bloomingdales.com"}-->
+<!--headCanonical={"href":"/about-us/new-store-openings/"}-->
 ```
 Will insert the following tags in the `<head>`
 ```
 <meta content="There's always a Big Brown Bag within reach! Stop in. Log on. Tap away." name="description">
 <title>The Makeup Date: Fall 2016 Makeup Tutorials</title>
-<link rel="canonical" href="www.bloomingdales.com">
+<link rel="canonical" href="http://www.fashion.bloomingdales.com/about-us/new-store-openings/">
 ```
 Note the key-value pairs passed in as arguments to the helper. These are used in the headTags partial.
+
+**NOTE** for headCanonical, you only need to pass the relative URL as an argument (prepended with a forward slash). The helper will prepend the production host name, which is set in PROD_HOST property of the .env file.
 
 **NOTE** the handler will only check the first 20 lines of the file and use a RegEx to see if it contains any of the `<!--head*= -->` helpers.
 
