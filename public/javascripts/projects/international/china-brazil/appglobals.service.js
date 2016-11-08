@@ -3001,7 +3001,7 @@
                             p: 'El piso principal B-way de la Calle 59 recibe "la más extensa renovación en la ciudad de Nueva York", con una variedad de modernos quioscos de las principales marcas de belleza.'
                         }],
                         y2010: [{
-                            h3: '22011–Un nuevo y reluciente espacio para la joyería fina',
+                            h3: '2011–Un nuevo y reluciente espacio para la joyería fina',
                             p: 'El departamento de joyería fina de la Calle 59, diseñado para hacer lucir cada faceta de los mejores diseñadores del mundo, incluyendo a David Yurman, y visitado por más de 400,000 personas de más de 230 países y los 50 estados del país, ha sido el ganador del galardón NYC Concierge Choice Award durante cinco años consecutivos.'
                         }, {
                             h3: 'No hay límites para ser excepcional',
@@ -3825,7 +3825,7 @@
                     }
                 },                
                 footer: [
-                    'OBTENGA UN 10 % DE AHORRO: <b><u>INSCRÍBASE</u></b> PARA RECIBIR CORREOS ELECTRÓNICOSSAVE',
+                    'OBTENGA UN 10 % DE AHORRO: <b><u>INSCRÍBASE</u></b> PARA RECIBIR CORREOS ELECTRÓNICOS',
                     'Like no other store in the world'
                 ]
             },
