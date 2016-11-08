@@ -35,14 +35,19 @@ var detectMobileDeviceView = function detectMobileDeviceView(requestPath, req) {
 
 // Reads the file passed in and checks if any of the head* helpers are used
 // Use of a head* helper is done using HTML comments <!-- -->
-var headHelpers = function headHelpers(file, args) {
+var headHelpers = function headHelpers(file) {
     var contents,
         lines;
     try {
+        
+        // Reset args.head* properties to null
+        args.headTitle = '';
+        args.headMeta = '';
+        args.headCanonical = '';
+        
         // If the file doesn't exist, readFileSync will throw an error
         contents = fs.readFileSync(file, 'utf8');
         lines = contents.split("\n");
-                
         // Read only first 20 lines of file
         for (var i = 0; i < 20; i++) {
             var headMetaMatches = headMetaRegEx.exec(lines[i]),
@@ -57,6 +62,9 @@ var headHelpers = function headHelpers(file, args) {
             }
             if (headCanonicalMatches) {
                 args.headCanonical = JSON.parse(headCanonicalMatches[1]);
+                if (args.headCanonical.href && args.headCanonical.href.indexOf('http') === -1) {
+                    args.headCanonical.href = process.env.PROD_HOST + args.headCanonical.href;
+                }
             }            
         }
         
@@ -95,7 +103,7 @@ module.exports = {
             // Check if any head* helpers are used
             // Use of a head* helper is done using HTML comments <!-- headHelper= -->
             // If so, add them to args
-            args = headHelpers(file, args);                
+            args = headHelpers(file);                
 
             return res.view(deviceDetectProc.view, { args: args, assetsHost: process.env.BASE_ASSETS, slashMinSuffix: slashMinSuffix }, { layout: 'nonResponsive' });
         }
@@ -117,7 +125,7 @@ module.exports = {
             // Check if any head* helpers are used
             // Use of a head* helper is done using HTML comments <!-- headHelper= -->
             // If so, add them to deviceDetectProc.args
-            args = headHelpers(file, args);
+            args = headHelpers(file);
 
             return res.view(responsiveCustomHFView, { assetsHost: process.env.BASE_ASSETS, slashMinSuffix: slashMinSuffix }, { layout: 'responsiveCustomHF' });
         }
@@ -168,7 +176,7 @@ module.exports = {
             // Check if any head* helpers are used
             // Use of a head* helper is done using HTML comments <!-- headHelper= -->
             // If so, add them to args
-            args = headHelpers(file, args);
+            args = headHelpers(file);
             
             return res.view(requestPath + "index", { args: args, assetsHost: process.env.BASE_ASSETS, slashMinSuffix: slashMinSuffix});
         }
