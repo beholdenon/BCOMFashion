@@ -134,7 +134,7 @@ module.exports = {
             // If so, add them to deviceDetectProc.args
             deviceDetectProc.args = detectHeadHelpers(file, deviceDetectProc.args);                
 
-            return res.view(deviceDetectProc.view, { args: deviceDetectProc.args, assetsHost: process.env.BASE_ASSETS });
+            return res.view(deviceDetectProc.view, { args: deviceDetectProc.args, assetsHost: process.env.BASE_ASSETS, slashMinSuffix: slashMinSuffix });
         }
     },
     responsiveCustomHF: {
@@ -183,7 +183,7 @@ module.exports = {
             // If so, add them to deviceDetectProc.args
             deviceDetectProc.args = detectHeadHelpers(file, deviceDetectProc.args);                
 
-            return res.view(deviceDetectProc.view, { args: deviceDetectProc.args }, { layout: 'nonresponsiveCustomHF'});           
+            return res.view(deviceDetectProc.view, { args: deviceDetectProc.args, assetsHost: process.env.BASE_ASSETS, slashMinSuffix: slashMinSuffix }, { layout: 'nonresponsiveCustomHF'});           
         }
     },
     
