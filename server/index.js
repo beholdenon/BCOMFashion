@@ -48,6 +48,7 @@ var routes = [
     { method: 'GET',  path: '/shop/topnav',                                                                 config: require('./lib/handlers/assets').topNav },
     { method: 'GET',  path: '/shop/{path*}',                                                                config: require('./lib/handlers/assets').commonAssets },
     { method: 'GET',  path: '/international/china-brazil/components/{path*}',                               config: require('./lib/handlers/assets').ngViews },
+<<<<<<< HEAD
     { method: 'GET',  path: '/landing-page/hawaii-ala-moana/{deeplinks?}',                                  config: require('./lib/handlers/views').adaptive },
     { method: 'GET',  path: '/about-us/affiliate-program-network-partner/',                                 config: require('./lib/handlers/views').adaptive },
     { method: 'GET',  path: '/about-us/amfar-b-cause-philanthropy/',                                        config: require('./lib/handlers/views').adaptive },
