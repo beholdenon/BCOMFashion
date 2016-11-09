@@ -58,9 +58,9 @@
                 <li class="flag-button" ng:class="{true:'show', false:''}[lang === 'CN']"><a href="#" data-lang="CN" ng-click="langModal($event)"><img src="/fashion/images/projects/international/china-brazil/flags/ChineseFlag.png"/></a></li>
                 <li class="flag-button" ng:class="{true:'show', false:''}[lang === 'JP']"><a href="#" data-lang="JP" ng-click="langModal($event)"><img src="/fashion/images/projects/international/china-brazil/flags/JapFlag.png"/></a></li>
                 <li class="flag-button" ng:class="{true:'show', false:''}[lang === 'ESP']"><a href="#" data-lang="ESP" ng-click="langModal($event)"><img src="/fashion/images/projects/international/china-brazil/flags/EspFlag.png"/></a></li>
-                <li><a href="#" ng-click="showSocialShareOverlay()"><i class="fa fa-share-alt"></i></a></li>
+                <li><a href="#" ng-click="shareModal($event)"><i class="fa fa-share-alt"></i></a></li>
             </ul>
-            <ul class="right flags">
+            <ul class="right flags" ng-class="{true:'active', false:''}[flagModal]">
                 <li class="lang-opt" ng:class="{true:'active', false:''}[lang === 'ENG']">
                     <a href="#" data-lang="ENG" ng-click="langOnClick($event)"><p>ENG</p><img src="/fashion/images/projects/international/china-brazil/flags/EngFlag.png"/></a>
                 </li>
@@ -77,6 +77,19 @@
                     <a href="#" data-lang="JP" ng-click="langOnClick($event)"><p>日本語</p><img src="/fashion/images/projects/international/china-brazil/flags/JapFlag.png"/></a>
                 </li>
             </ul>
+            <div class="right social" ng-class="{'active':socialModal === true, 'weixin':weixinOn === true}">
+                <div class="row icons">
+                    <div class="icon small-centered columns"><a href="#" ng-click="share('fb', lang)"><i class="fa fa-facebook"></i></a></div>
+                    <div class="icon small-centered columns"><a href="#" ng-click="share('twitter', lang)"><i class="fa fa-twitter"></i></a></div>
+                    <div class="icon small-centered columns"><a href="#" ng-click="share('pinterest', lang)"><i class="fa fa-pinterest"></i></a></div>
+                    <div ng-show="lang === 'ENG' || lang === 'CN' " class="icon small-4 small-centered columns"><a href="#" ng-click="share('weibo', lang)"><i class="fa fa-weibo"></i></a></div>
+                    <div ng-show="lang === 'ENG' || lang === 'CN' " class="icon small-4 small-centered columns"><a href="#" ng-click="share('weixin', lang)"><i class="fa fa-weixin"></i></a></div>   
+                </div>
+                <div class="row QR">
+                    <div class="copy small-24 small-centered columns" ng-cloak>//copy[lang].socialshare.weixin.text//</div> 
+                    <div class="img small-20 small-centered columns"><img src="/fashion/images/projects/international/china-brazil/Bloomingdales_QR_Code.jpg" /></div> 
+                </div>              
+            </div>
         </section>
     </nav>
 </div>

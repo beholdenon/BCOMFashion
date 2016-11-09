@@ -7,6 +7,10 @@
 
     function MainCtrl($rootScope, $scope, $window, $location, localStorageService, AppGlobals, SocialShare, Coremetrics) {
         $scope.lang = AppGlobals.getAttr('lang');
+        $scope.weixinOn = false;
+        $scope.flagModal = false;
+        $scope.socialModal = false;
+
         var copy = $scope.copy = AppGlobals.getAttr('copy');
 
         $scope.goto = function($event, view) {
@@ -151,9 +155,38 @@
         };
 
         $scope.langModal = function () {
+            if ( $scope.flagModal === true ) {
+                $scope.flagModal = false;
+            } else {
+                $scope.flagModal = true;
+            }
+            $scope.socialModal = false;
+            $scope.weixinOn = false;
+        };
 
-            jQuery('.top-bar-section .flags').toggleClass('active');
+        $scope.shareModal = function () {
+            if ( $scope.socialModal === true ) {
+                $scope.socialModal = false;
+            } else {
+                $scope.socialModal = true;
+            }
+            $scope.flagModal = false;
+            $scope.weixinOn = false;
+        };
 
+        $scope.share = function(service, lang) {
+            if (service !== 'weixin'){
+                $window.open(SocialShare[service](lang), '_blank', 'width=608,height=342');
+            } else {
+                $scope.weixinOn = true;
+            }
+
+            //Coremetrics tag          
+            var pageID = AppGlobals.getAttr('cm_pageID'),
+                windowWidth = $window.innerWidth,
+                prefix = (windowWidth < 641) ? 'MBL:' : '',            
+                tag = prefix + 'socialshare-';                   
+            Coremetrics.tag('Element', pageID, tag + service);               
         };
 
         $scope.footerCM = function() {

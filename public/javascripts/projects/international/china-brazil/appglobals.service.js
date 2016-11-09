@@ -933,7 +933,7 @@
                         description: 'International Tourism | bloomingdales.com'
                     },
                     twitter: {
-                        text: 'Love to shop @bloomingdales? Check out their international site for new designer clothing, accessories & beauty. http://bit.ly/1M3fLiB'
+                        text: 'Love to shop @bloomingdales? Check out their international site for new designer clothing, accessories & beauty. http://fashion.bloomingdales.com/international/'
                     },
                     weibo: {
                         url: 'http://weibo.com/bloomingdalesusa',
@@ -1859,7 +1859,7 @@
                         description: 'Turismo Internacional | bloomingdales.com'
                     },
                     twitter: {
-                        text: 'Ama comprar na @bloomingdales? Veja o site Internacional para novos designers de roupas, acessórios e beleza. http://bit.ly/1M3fLiB'
+                        text: 'Ama comprar na @bloomingdales? Veja o site Internacional para novos designers de roupas, acessórios e beleza. http://fashion.bloomingdales.com/international/'
                     },
                     weibo: {
                         url: '',
@@ -2798,7 +2798,7 @@
                         description: '国际旅行 丨 bloomingdales.com'
                     },
                     twitter: {
-                        text: '享受在@bloomingdales的消费体验？别忘了查看Bloomingdale\'s国际官方网站上最新设计师服装、饰品以及美妆产品的更新。 http://bit.ly/1M3fLiB'
+                        text: '享受在@bloomingdales的消费体验？别忘了查看Bloomingdale\'s国际官方网站上最新设计师服装、饰品以及美妆产品的更新。 http://fashion.bloomingdales.com/international/'
                     },
                     weibo: {
                         url: 'http://weibo.com/bloomingdalesusa',
@@ -3755,21 +3755,21 @@
                 },                
                 socialshare: {
                     fb: {
-                        name: 'International Tourism | bloomingdales.com',
-                        description: 'From designer clothing to the most-coveted beauty brands, explore all that Bloomingdale\'s has to offer on their updated international site.'
+                        name: 'Turismo internacional | bloomingdales.com',
+                        description: 'Desde ropa de diseñador hasta las marcas de belleza más codiciadas, explore todo lo que Bloomingdale\'s ofrece en su sitio internacional actualizado.'
                     },
                     pinterest: {
-                        description: 'International Tourism | bloomingdales.com'
+                        description: 'Turismo internacional | bloomingdales.com'
                     },
                     twitter: {
-                        text: 'Love to shop @bloomingdales? Check out their international site for new designer clothing, accessories & beauty. http://bit.ly/1M3fLiB'
+                        text: '¿Le encanta comprar @bloomingdales? En su sitio internacional encontrará nueva ropa de diseñador y accesorios. http://fashion.bloomingdales.com/international/#/spanish'
                     },
                     weibo: {
                         url: 'http://weibo.com/bloomingdalesusa',
-                        title: 'Discover Bloomingdale\'s luxury fashions, storied history and world-class hospitality on their updated international site.'
+                        title: 'Descubra las modas de lujo de Bloomingdale\'s, su interesante historia y su hospitalidad de clase mundial en su sitio internacional actualizado.'
                     },
                     weixin: {
-                        text: 'Scan the QR code to receive push notifications from Bloomingdale\'s.'
+                        text: 'Escanear el código QR para recibir notificaciones push desde Bloomingdale\'s.'
                     }
                 },
                 contactUs: {
@@ -4718,21 +4718,21 @@
                 },                
                 socialshare: {
                     fb: {
-                        name: 'International Tourism | bloomingdales.com',
-                        description: 'From designer clothing to the most-coveted beauty brands, explore all that Bloomingdale\'s has to offer on their updated international site.'
+                        name: '国際観光 | bloomingdales.com',
+                        description: 'デザイナーズブランドのファッションから一番人気のビューティ用品まで、新しくなったBloomingdale\'sの国際ウェブサイトがご提供するものをすべてチェックしてください。'
                     },
                     pinterest: {
-                        description: 'International Tourism | bloomingdales.com'
+                        description: '国際観光 | bloomingdales.com'
                     },
                     twitter: {
-                        text: 'Love to shop @bloomingdales? Check out their international site for new designer clothing, accessories & beauty. http://bit.ly/1M3fLiB'
+                        text: 'Bloomingdale\'sウェブサイトでのお買い物はお好きですか？デザイナーズブランドの新しいファッション、アクセサリー、ビューティ用品を国際ウェブサイトでチェックしてください。 http://fashion.bloomingdales.com/international/#/japanese'
                     },
                     weibo: {
                         url: 'http://weibo.com/bloomingdalesusa',
-                        title: 'Discover Bloomingdale\'s luxury fashions, storied history and world-class hospitality on their updated international site.'
+                        title: '新しくなった国際ウェブサイトで、Bloomingdale\'sの豪華なファッション、店史のエピソード、世界トップクラスのおもてなしについてチェックしてください。'
                     },
                     weixin: {
-                        text: 'Scan the QR code to receive push notifications from Bloomingdale\'s.'
+                        text: 'Bloomingdale\'sからのプッシュ通知を受信するためのQRコードをスキャンします。'
                     }
                 },
                 contactUs: {

@@ -121,7 +121,7 @@
                     pageID = 'fall15_spanishmicrosite';
                     break;
                 case 'JP':
-                    pageID = 'fall15_japanmicrosite';
+                    pageID = 'fall15_japanesemicrosite';
                     break;
                 default:
                     pageID = 'fall15_englishmicrosite';

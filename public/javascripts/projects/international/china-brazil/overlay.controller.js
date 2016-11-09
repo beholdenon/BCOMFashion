@@ -80,21 +80,6 @@
             Coremetrics.tag('Element', pageID, tag);              
         };
 
-        $scope.share = function(service, lang) {
-            if (service !== 'weixin'){
-                $window.open(SocialShare[service](lang), '_blank', 'width=608,height=342');
-            } else {
-                $scope.overlay.weixinOn = true;
-            }
-
-            //Coremetrics tag          
-            var pageID = AppGlobals.getAttr('cm_pageID'),
-                windowWidth = $window.innerWidth,
-                prefix = (windowWidth < 641) ? 'MBL:' : '',            
-                tag = prefix + 'socialshare-';                   
-            Coremetrics.tag('Element', pageID, tag + service);               
-        };
-
         $rootScope.$on('overlay:show', function(ev, args) {
             $scope.overlay.template = args.template;
             $scope.overlay.weixinOn = args.weixin || null;
