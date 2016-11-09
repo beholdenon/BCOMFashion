@@ -3021,29 +3021,29 @@
                 },
                 stores: {
                     header: {
-                        h1: 'Choose Your Destination',
-                        h2: 'We\'ll meet you at the Visitor\'s Center'
+                        h1: 'Elija su destino',
+                        h2: 'Nos encontraremos con usted en el Centro de visitantes'
                     },
                     dropdown: {
-                        default: 'Please Select a Store',
+                        default: 'Seleccione una tienda',
                         list: [
-                            {id: 'null', name: 'Nueva York',                            disabled: 'true'},
-                            {id: '0',    name: '59th Street Flagship, Nueva York',      disabled: 'false'},
-                            {id: '1',    name: 'SoHo, Nueva York',                      disabled: 'false'},
-                            {id: 'null', name: 'HAWAII',                                disabled: 'true'},
-                            {id: '2',    name: 'Ala Moana, Honolulu',                   disabled: 'false'},
-                            {id: 'null', name: 'ILLINOIS',                              disabled: 'true'},
-                            {id: '3',    name: 'North Michigan Avenue, Chicago',        disabled: 'false'},
-                            {id: '4',    name: 'Medinah Home, Chicago',                 disabled: 'false'},
-                            {id: 'null', name: 'CALIFORNIA',                            disabled: 'true'},
-                            {id: '5',    name: 'San Francisco Centre, San Francisco',   disabled: 'false'},
-                            {id: '6',    name: 'South Coast Plaza, Costa Mesa',         disabled: 'false'},
-                            {id: '7',    name: 'Tiendas en el Sur de California',       disabled: 'false'},
-                            {id: 'null', name: 'FLORIDA',                               disabled: 'true'},
-                            {id: '8',    name: 'Aventura',                              disabled: 'false'},
-                            {id: '9',    name: 'Orlando',                               disabled: 'false'}
+                            {id: 'null', name: 'Nueva York',                                      disabled: 'true'},
+                            {id: '0',    name: '59th Street Flagship, Ciudad de Nueva York',      disabled: 'false'},
+                            {id: '1',    name: 'SoHo, Ciudad de Nueva York',                      disabled: 'false'},
+                            {id: 'null', name: 'HAWAII',                                          disabled: 'true'},
+                            {id: '2',    name: 'Ala Moana, Honolulu',                             disabled: 'false'},
+                            {id: 'null', name: 'ILLINOIS',                                        disabled: 'true'},
+                            {id: '3',    name: 'North Michigan Avenue, Chicago',                  disabled: 'false'},
+                            {id: '4',    name: 'Medinah Home, Chicago',                           disabled: 'false'},
+                            {id: 'null', name: 'CALIFORNIA',                                      disabled: 'true'},
+                            {id: '5',    name: 'San Francisco Centre, San Francisco',             disabled: 'false'},
+                            {id: '6',    name: 'South Coast Plaza, Costa Mesa',                   disabled: 'false'},
+                            {id: '7',    name: 'Tiendas en el Sur de California',                 disabled: 'false'},
+                            {id: 'null', name: 'FLORIDA',                                         disabled: 'true'},
+                            {id: '8',    name: 'Aventura',                                        disabled: 'false'},
+                            {id: '9',    name: 'Orlando',                                         disabled: 'false'}
                         ],
-                        copy: 'Bloomingdale\'s has stores all over the U.S. Our Visitor\'s Centers in <b>New York</b>, <b>Hawaii</b>, <b>Chicago</b>, <b>Miami</b> and <b>San Francisco</b> offer a full range of amenities for international customers. Multilingual associates can help you plan the ultimate shopping experience. They\'ll give you a store directory in your chosen language and special events information, as well as arrange complimentary personal stylist appointments, package delivery to your hotel, restaurant reservations (including those located within our stores) and much more. Beach bound? Our many outposts in Southern California—including South Coast Plaza in Ocean County, San Diego and Los Angeles—plus Honolulu, mean you\'ll never be far from the top fashions.'
+                        copy: 'Bloomingdale\'s cuenta con tiendas a lo largo y ancho de Estados Unidos. Nuestros Centros de visitantes en Nueva York, Hawaii, Chicago, Miami y San Francisco ofrecen una gama completa de amenidades para los clientes internacionales.  Contamos con asociados políglotas que pueden ayudarle a planear una experiencia de compras sin igual.  Le entregarán un directorio de la tienda en el idioma que usted elija, así como información sobre eventos especiales, además de organizar citas de cortesía con un estilista personal, entrega de paquetes en su hotel, reservaciones en restaurantes (incluyendo los localizados dentro de nuestras tiendas) y mucho más.   ¿Se dirige a la playa?  Nuestros muchos establecimientos en el Sur de California, incluyendo South Coast Plaza en Ocean  County, San Diego y Los Angeles, además de Honolulú, le permitirán estar cerca de lo más destacado de la moda en todo momento.'
                     },
                     storeData: {
                         storeHours: 'Horario de atención',
