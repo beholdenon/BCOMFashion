@@ -663,8 +663,17 @@ module.exports = function(grunt) {
                 options: {
                     reload: true
                 }                
-            },            
-		    jsClient: {
+            },
+            handlebars: {
+                files: [
+                    '<%= node.source %>/server/lib/views/{,**/}*.hbs'
+                ],
+                tasks: [
+                    'compile-handlebars', // this processes files in the views folder and overwrites files in target
+                    'string-replace'
+                ]
+            },
+            jsClient: {
 		        files: [
                     '<%= node.source %>/public/javascripts/main.js',
                     '<%= node.source %>/public/javascripts/includes/{,**/}*.{js,json}',
@@ -712,7 +721,8 @@ module.exports = function(grunt) {
             viewsProjects: {
                 files: [
                     '<%= node.source %>/server/lib/views/lookbooks/{,**/}*.html',
-                    '<%= node.source %>/server/lib/views/international/{,**/}*.html'                    
+                    '<%= node.source %>/server/lib/views/service/{,**/}*.html',
+                    '<%= node.source %>/server/lib/views/international/{,**/}*.html'
                 ],
                 tasks: [
                     'copy:viewsProjects'

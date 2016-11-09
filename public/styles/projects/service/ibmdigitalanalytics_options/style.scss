@@ -1,0 +1,142 @@
+@import "../../../variables";
+@import "../../../functions/functions";
+@import "../../../mixins";
+@import "../../../includes/clearfix";
+
+#ibm_analytics_optout {
+  box-sizing: border-box;
+  padding: 21px 0;
+  text-align: left;
+
+  /** Info/sections padding bottom **/
+  > .section {
+    padding-bottom: 13px;
+  }
+
+  p,
+  h1 {
+    margin-bottom: 21px;
+  }
+
+  .opt-status-alert-wrapper {
+    margin-bottom: 34px;
+    height: auto;
+    opacity: 1;
+    overflow: hidden;
+
+    @include with-browser-prefixes(transition, (
+            fit-with-browser-prefix((opacity $ani-speed-8,), opacity),
+            height $ani-speed-5,
+            margin-bottom $ani-speed-8
+    ));
+
+    &.closed {
+      height: 0;
+      margin-bottom: 0;
+      opacity: 0;
+    }
+
+    &.opt-status-alert-msg .opt-status-alert {
+      padding-left: 8px;
+    }
+
+    .opt-status-alert {
+      box-sizing: border-box;
+      margin-bottom: 0;
+    }
+  }
+
+  p,
+  fieldset,
+  .form-field {
+    margin-bottom: 21px;
+  }
+
+  fieldset:last-child {
+    margin-bottom: 0;
+  }
+
+  fieldset {
+    border: none;
+    padding: 0;
+
+    legend {
+      font-size: 21px;
+      font-weight: normal;
+      margin: 0 0 21px;
+      padding: 0;
+    }
+
+    button {
+      font-weight: normal;
+      text-transform: uppercase;
+      box-sizing: border-box;
+    }
+
+    .button-group {
+      width: 100%;
+    }
+  }
+
+  .form-field {
+    label {
+      display: inline-block;
+      max-width: 89%;
+      margin-left: 0;
+      margin-bottom: 0;
+      white-space: normal;
+    }
+    label em {
+      font-weight: bold;
+    }
+    [type="radio"],
+    [type="radio"] + span {
+      margin: 0 13px 0 0;
+    }
+  }
+
+  .form-field button {
+    font-weight: normal;
+  }
+
+}
+
+@media only screen and (min-device-width : 320px) and (max-device-width: 480px),
+only screen and (min-device-width: 360px) and (max-device-width: 640px),
+only screen and (min-device-width: 414px) and (max-device-width: 736px),
+only screen and (min-device-width: 480px) and (max-device-width: 640px),
+only screen and (max-device-width: 767px)
+{
+  #ibm_analytics_optout {
+    padding: 21px;
+
+    form fieldset .form-field {
+      label {
+        display: inline-block;
+        width: 89%;
+      }
+      [type="radio"],
+      [type="radio"] + span {
+        box-sizing: border-box;
+        max-width: 8%;
+        margin-right: 3%;
+        margin-bottom: 13px;
+      }
+    }
+
+    form fieldset .button-group {
+      width: 100%;
+
+      li,
+      button {
+        width: 100%;
+      }
+
+      li {
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
+  }
+}
+
