@@ -1,0 +1,23 @@
+<script>
+    /**
+     * Facebook Javascript Sdk autoload.
+     * @see https://developers.facebook.com/docs/javascript/quickstart
+     */
+    window.fbAsyncInit = function() {
+        FB.init({
+            // appId copied from: ./public/javascripts/projects/lookbooks/burberry-pre-fall-trend-report-2016/main-desktop.js
+            appId      : '145634995501895',
+            xfbml      : true,
+            version    : 'v2.8'
+        });
+        FB.AppEvents.logPageView();
+    };
+
+    (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
