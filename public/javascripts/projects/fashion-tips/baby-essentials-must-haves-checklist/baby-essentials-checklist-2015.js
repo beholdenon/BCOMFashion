@@ -6,7 +6,7 @@
     lookbooks, currentLookbook;
 
 
-  $(document).ready(function(){
+  $(document).ready(function() {
 
       function runDesktopLookbooks(){
         var newbornLookBook = new BloomiesLookbook($('#qa-auto-look-book'), {
@@ -259,20 +259,48 @@
 
       // SOCIAL
       var sharingLinks = (function ($, location) {
-          var pageURL = escape(location.protocol + "//" + location.host + location.pathname),
-              assetsHost = getAssetsHost(),
-              pinterestMedia = escape(assetsHost + "/fashion/images/projects/fashion-tips/baby-essentials-must-haves-checklist/icon_pinterest.jpg"),
-              pinterestDescription = escape("The Essentials: Baby Love | bloomingdales.com");
+
+            // Get page url for Pinterest share url
+            var pageURL = escape(location.protocol + "//" + location.host + location.pathname),
+
+                // Get asset host and with protocol
+                assetsHost = getAssetsHost(),
+
+                // Get 'og:*' properties and compose Facebook share popup url
+                $ogProperties = $('[property^="og"]'),
+                fbTitle = $ogProperties.filter('[property="og:title"]').eq(0).attr('content'),
+                fbDescription = $ogProperties.filter('[property="og:description"]').eq(0).attr('content'),
+                fbImageUrl = $ogProperties.filter('[property="og:image"]').eq(0).attr('content'),
+                fbPath = $ogProperties.filter('[property="og:url"]').eq(0).attr('content'),
+                fbUrl = 'https://www.facebook.com/dialog/feed' + '?app_id=145634995501895' +
+                  '&name=' + encodeURIComponent(fbTitle) +
+                  '&description=' + encodeURIComponent(fbDescription) +
+                  '&link=' + encodeURIComponent(assetsHost) + fbPath +
+                  '&picture=' + encodeURIComponent('http://' + window.location.host + fbImageUrl) +
+                  '&display=popup&redirect_uri=' + encodeURIComponent('https://www.facebook.com/'),
+
+                // Compose pinterest url
+                pinterestMedia = escape(assetsHost + "/fashion/images/projects/fashion-tips/baby-essentials-must-haves-checklist/icon_pinterest.jpg"),
+                pinterestDescription = escape(fbTitle);
+
+          // Forward link urls to requester
           return {
-              facebook: "https://www.facebook.com/sharer/sharer.php?u=" + pageURL,
+              facebook: fbUrl,
               pinterest: "http://pinterest.com/pin/create/button/?url=" + pageURL + "&media=" + pinterestMedia + "&description=" + pinterestDescription,
               twitter: "https://twitter.com/home?status=Shopping%20for%20two%3F%20Check%20out%20our%20list%20of%20baby%20essentials%20@bloomingdales.com%20http%3A//bit.ly/1CpFCyP"
           };
       })($, window.location);
 
-
       // START THE LOOKBOOK
       $('.sprite-btn-facebook').attr('href', sharingLinks.facebook);
+        // .click(function (e) {
+        //     e.preventDefault();
+        //         // core metrics
+        //         // share on facebook
+        //     window.open(sharingLinks.facebookURL, '_blank', 'width=608,height=342'); 
+        //     // self.coremetrics('Element', self.cm, 'social-fb');
+        // });
+
       $('.sprite-btn-twitter').attr('href', sharingLinks.twitter);
       $('.sprite-btn-pinterest').attr('href', sharingLinks.pinterest);
 
@@ -288,12 +316,6 @@
 
     // Fire general pageview tag
     BLOOMIES.coremetrics.cmCreatePageviewTag('fall14_newbornessentials-hp', coreMetricsDefaultPageID);
-
-      // Get og:url meta tags
-      jQuery('[property="og:url"]').each(function (item) {
-          var $item = $(item);
-          $item.attr('property', 'http://' + window.location.host + $item.attr('property'));
-      });
 
   });
 
