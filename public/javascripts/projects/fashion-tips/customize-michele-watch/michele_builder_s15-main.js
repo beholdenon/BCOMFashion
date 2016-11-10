@@ -37,7 +37,6 @@ window.blmwbs15.main = ( function bl_mwbs15_main( window, document,  $ ) {
             window.blmwbs15.builder.utils.coremetrics( 'page', 'error-ie8' );
         } else {
             window.onload = function(){
-                console.log('foo');
               $( '#blmwbs15_intro_main' ).show();
               window.blmwbs15.builder.utils.coremetrics( 'page', 'hp' );
               // initialize builder...
