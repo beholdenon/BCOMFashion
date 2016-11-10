@@ -26,6 +26,7 @@
             <div id="bl_main_container">
                 {{! Every view gets inserted here }}
                 {{{content}}}
+                <input type="hidden" name="timeStamp" value="{{{args.timeStamp}}}">
             </div>
             {{#unless args.isMobile}}
                 </div>

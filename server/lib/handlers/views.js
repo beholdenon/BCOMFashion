@@ -7,6 +7,7 @@ var fs = require('fs'),
     headCanonicalRegEx=/<!--headCanonical=(.*)-->/;
     
 let args = {
+    timeStamp: new Date(),
     isMobile: false,
     isTablet: false,
     headTitle: '',
@@ -151,6 +152,9 @@ module.exports = {
             } else {
                 requestPath = req.params.path;//  || req.path;
             }
+            
+            // Need this call in order to change args    
+            detectMobileDeviceView(requestPath, req);
             
             // if route not captured, redirect to the main site
             if (requestPath === '' || requestPath === undefined) {
