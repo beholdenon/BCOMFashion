@@ -2222,15 +2222,6 @@ window.blmwbs15.builder = ( function bl_mwbs15_builder( window, document,  $, Ha
             .fail(bagRequestFailure);
     };
 
-    app.routines.ensureBagGuid = function () {
-        var bagGuid = app.utils.getCookie(app.consts.bagGuidCookieName);
-
-        // Make request for bag and store it
-        if (bagGuid) {
-
-        }
-    };
-
     app.routines.getProductInfo = function ( args ) {
 
         var url = '/catalog/product/quickview/?id={{id}}',
