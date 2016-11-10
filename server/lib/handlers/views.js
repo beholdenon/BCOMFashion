@@ -121,7 +121,7 @@ module.exports = {
             file = deviceDetectProc.view + ".html";
             args = headHelpers(file);                
 
-            return res.view(deviceDetectProc, { args: args, assetsHost: process.env.BASE_ASSETS, slashMinSuffix: slashMinSuffix }, { layout: 'nonResponsive' });
+            return res.view(deviceDetectProc, { args: args, assetsHost: process.env.BASE_ASSETS, slashMinSuffix: slashMinSuffix });
         }
     },
     responsiveCustomHF: {
