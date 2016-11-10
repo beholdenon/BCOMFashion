@@ -5,7 +5,7 @@ define( [ "bcomLeftNav/about/AboutLeftNav", "iShip" ], function ( aboutLeftNav, 
             href: '/landingpages/amfar/',
             id: 'about_amfAr'
         }, {
-            text: 'BCRF',
+            text: 'pink Campaign',
             href: '/landingpages/bcrf/',
             id: 'about_bcrf'
         }, {
@@ -13,7 +13,7 @@ define( [ "bcomLeftNav/about/AboutLeftNav", "iShip" ], function ( aboutLeftNav, 
             href: '/landingpages/childmind/',
             id: 'about_childMindInstitute'
         }, {
-            text: 'Help USA',
+            text: 'HELP USA & Mentoring USA',
             href: '/landingpages/mentoringusa/',
             id: 'about_helpUsa'
         }, {
