@@ -161,8 +161,8 @@ define( [ "LeftNav" ], function ( LeftNav ) {
                     id: 'about_amfAr'
                 },
                 {
-                    text: 'BCRF',
-                    href: '/about-us/breast-cancer-research-foundation-b-cause-philanthropy/',
+                    text: 'pink Campaign',
+                    href: '/about-us/pink-campaign-b-cause-philanthropy/',
                     id: 'about_bcrf'
                 },
                 {
@@ -171,7 +171,7 @@ define( [ "LeftNav" ], function ( LeftNav ) {
                     id: 'about_childMindInstitute'
                 },
                 {
-                    text: 'Help USA',
+                    text: 'HELP USA & Mentoring USA',
                     href: '/about-us/help-usa-b-cause-philanthropy/',
                     id: 'about_helpUsa'
                 },
@@ -181,6 +181,26 @@ define( [ "LeftNav" ], function ( LeftNav ) {
                     id: 'about_jdrf'
                 }
 
+            ],
+            [
+                {
+                    type:'header',
+                    text: 'DIVERSITY & INCLUSION',
+                    label: 'diversity & inclusion',
+                    href: '/about-us/diversity-inclusion/',
+                    id: 'about_diversityInclusion',
+                    secure: false
+                }
+            ],
+            [
+                {
+                    type:'header',
+                    text: 'EMPLOYEE GIVING & VONLUNTEERISM',
+                    label: 'employee giving & volunteerism',
+                    href: '/about-us/giving-back-to-community/',
+                    id: 'about_newStores',
+                    secure: false
+                }
             ],
             [
                 {
