@@ -117,14 +117,20 @@ module.exports = {
             }
         }
     },
+
     proxy: {
         description: 'proxy, sends any request over to bloomingdales.com',
         handler: function (req, res) {
-            var host = process.env.BASE_ASSETS1 || process.env.BASE_ASSETS;
-            if (! host){
-                host = 'www1.bloomingdales.com';
-            }
-            var uri = 'http://' + host + '/' + req.raw.req.url.replace(/^\/p\//,''); //+ req.params.path;
+            // Get base host and populate uri
+            var baseAssets = process.env.BASE_HOST || process.env.BASE_ASSETS,
+
+                // Add trailing slash if doesn't have one
+                host = baseAssets + (/\/$/.test(baseAssets) === false ? '\/' : ''),
+
+                // Get uri
+                uri = (host.indexOf('http') === 0 ? host : 'http://' + host) + req.url.path.replace(/^\/p\//,'');
+
+            // Return proxy
             return res.proxy({
                 redirects: 2,
                 uri: uri

@@ -6,66 +6,65 @@
 
 window.blmwbs15 = window.blmwbs15 || {};
 
-window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hammer) {
+window.blmwbs15.builder = ( function bl_mwbs15_builder( window, document,  $, Hammer ) {
 
     'use strict';
 
-    var Cookie = require('cookie'),
-        app = {
-            cache: {},
-            consts: {
-                headsCategoryId: '1004412',
-                strapsCategoryId: '1004564',
-                facetNameStrapSize: 'STRAP_SIZE',
-                facetNameCollections: 'MICHELE_COLLECTIONS',
-                facetNameBandType: 'MICHELE_BAND_TYPE',
-                facetNameColor: 'MICHELE_COLOR',
-                facetValueBandTypeStrap: 'Strap',
-                facetValueBandTypeBracelet: 'Bracelet',
-                pdpUrlPath: '/shop/product/?ID={{id}}',
-                scene7HeadUrl: 'http://s7d5.scene7.com/is/image/BLMDev/{{id}}?fmt=png-alpha&wid=135&hei=135&resMode=sharp2',
-                scene7StrapUrl: 'http://s7d5.scene7.com/is/image/BLMDev/{{id}}?fmt=png-alpha&wid=100&hei=135&resMode=sharp2',
-                scene7HeadPDPUrl: 'http://s7d5.scene7.com/is/image/BLMDev/{{id}}?fmt=png-alpha&wid=325&hei=360&resMode=sharp2', // &fit=hfit,1
-                scene7MatchUrl: 'http://s7d5.scene7.com/is/image/BLMDev/{{head}}_{{strap}}?fmt=png-alpha&wid=325&hei=360&resMode=sharp2',
-                scene7PDPUrlBase: 'http://macys-o.scene7.com/is/image/BLM/products/',
-                scene7PDPUrlParams: '?&wid=325&hei=360&qlt=90,0&layer=comp&op_sharpen=0&resMode=sharp2&op_usm=0.7,1.0,0.5,0&fmt=jpeg',
-                cookieExpire: new Date(new Date().getTime() + ( 9 * 24 * 3600 * 1000 )), // days
-                menuViewport: 'blmwbs15_builder_options',
-                headSortByViewport: 'blmwbs15_builder_options_sort_heads',
-                strapSortByViewport: 'blmwbs15_builder_options_sort_straps',
-                noItemsInBagError: 'Please select a product before adding to your brown bag.',
-                strapsLoadingNone: 'We\'re sorry\u2014your selection is unavailable. Please choose a different combination and try again.',
-                strapsLoadingError: 'We\'re sorry\u2014your selection is unavailable\nat this time. Please choose a different watch\nhead or try again later.',
-                addToBagNotAvailableError: 'We\'re sorry the add to bag service is currently unavailable.  If the problem persits please contact us at customer service.',
-                onlineUidCookieName: 'bloomingdales_online_uid',
-                onlineGuidCookieName: 'bloomingdales_online_guid',
-                onlineCookieName: 'bloomingdales_online',
-                bagGuidCookieName: 'bloomingdales_bagguid'
-            },
-            domain: {
-                heads: null,
-                straps: null,
-                bag: null
-            },
-            control: {actions: {heads: {}, straps: {}, bag: {}, options: {}}},
-            views: {
-                menu: null,
-                heads: null,
-                straps: null,
-                display: null,
-                bag: null
-            },
-            utils: {
-                processors: {}
-            },
-            routines: {init: {}, runtime: {}},
-            queue: new Queue(),
-            state: {
-                init: 1, // first init stage...
-                isBlocked: false,
-                log4js: false
-            }
-        };
+    var app = {
+        cache: {},
+        consts: {
+            headsCategoryId: '1004412',
+            strapsCategoryId: '1004564',
+            facetNameStrapSize: 'STRAP_SIZE',
+            facetNameCollections: 'MICHELE_COLLECTIONS',
+            facetNameBandType: 'MICHELE_BAND_TYPE',
+            facetNameColor: 'MICHELE_COLOR',
+            facetValueBandTypeStrap: 'Strap',
+            facetValueBandTypeBracelet: 'Bracelet',
+            pdpUrlPath: '/shop/product/?ID={{id}}',
+            scene7HeadUrl: 'http://s7d5.scene7.com/is/image/BLMDev/{{id}}?fmt=png-alpha&wid=135&hei=135&resMode=sharp2',
+            scene7StrapUrl: 'http://s7d5.scene7.com/is/image/BLMDev/{{id}}?fmt=png-alpha&wid=100&hei=135&resMode=sharp2',
+            scene7HeadPDPUrl: 'http://s7d5.scene7.com/is/image/BLMDev/{{id}}?fmt=png-alpha&wid=325&hei=360&resMode=sharp2', // &fit=hfit,1
+            scene7MatchUrl: 'http://s7d5.scene7.com/is/image/BLMDev/{{head}}_{{strap}}?fmt=png-alpha&wid=325&hei=360&resMode=sharp2',
+            scene7PDPUrlBase: 'http://macys-o.scene7.com/is/image/BLM/products/',
+            scene7PDPUrlParams: '?&wid=325&hei=360&qlt=90,0&layer=comp&op_sharpen=0&resMode=sharp2&op_usm=0.7,1.0,0.5,0&fmt=jpeg',
+            cookieExpire: 9, // days
+            menuViewport: 'blmwbs15_builder_options',
+            headSortByViewport: 'blmwbs15_builder_options_sort_heads',
+            strapSortByViewport: 'blmwbs15_builder_options_sort_straps',
+            noItemsInBagError: 'Please select a product before adding to your brown bag.',
+            strapsLoadingNone: 'We\'re sorry\u2014your selection is unavailable. Please choose a different combination and try again.',
+            strapsLoadingError: 'We\'re sorry\u2014your selection is unavailable\nat this time. Please choose a different watch\nhead or try again later.',
+            addToBagNotAvailableError: 'We\'re sorry the add to bag service is currently unavailable.  If the problem persits please contact us at customer service.',
+            onlineUidCookieName: 'bloomingdales_online_uid',
+            onlineGuidCookieName: 'bloomingdales_online_guid',
+            onlineCookieName: 'bloomingdales_online',
+            bagGuidCookieName: 'bloomingdales_bagguid'
+        },
+        domain: {
+            heads: null,
+            straps: null,
+            bag: null
+        },
+        control: { actions: { heads: {}, straps: {}, bag: {}, options: {} } },
+        views: {
+            menu: null,
+            heads: null,
+            straps: null,
+            display: null,
+            bag: null
+        },
+        utils: {
+            processors: {}
+        },
+        routines: { init: {}, runtime: {} },
+        queue: new Queue(),
+        state: {
+            init: 1, // first init stage...
+            isBlocked: false,
+            log4js: false
+        }
+    };
 
     /*
      * Constructors
@@ -78,12 +77,12 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
         this.cache = null;
     }
 
-    View.prototype.getGUIElement = function (n) {
+    View.prototype.getGUIElement = function ( n ) {
         var s = this.selectors,
             c = this.cache,
             e = c[n] || null;
-        if (!e && n in s) {
-            e = $(s[n]).eq(0);
+        if ( !e && n in s ) {
+            e = $( s[n] ).eq( 0 );
             c[n] = e;
         }
         return e;
@@ -91,7 +90,7 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
 
     // MenuView
 
-    function MenuView(id) {
+    function MenuView( id ) {
 
         this.isOK = false;
         this.id = id;
@@ -106,25 +105,25 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
 
     MenuView.prototype.selectors = {
         options: '.menu_view-options',
-        option: '.menu_view-options > .menu_view-option',
-        flyout: '.menu_view-flyout'
+        option:  '.menu_view-options > .menu_view-option',
+        flyout:  '.menu_view-flyout'
     };
 
     MenuView.prototype.init = function () {
 
         var key, sels = this.selectors;
 
-        this.cache.viewport = $('#' + this.id);
+        this.cache.viewport = $( '#' + this.id );
 
-        for (key in sels) {
-            this.cache[key] = this.cache.viewport.find(sels[key]);
-            if (this.cache[key].length < 1) {
+        for ( key in sels ) {
+            this.cache[key] = this.cache.viewport.find( sels[key] );
+            if ( this.cache[key].length < 1 ) {
                 this.cache = null;
                 return;
             }
         }
 
-        if (this.cache.option.length !== this.cache.flyout.length) {
+        if ( this.cache.option.length !== this.cache.flyout.length ) {
             this.cache = null;
             return;
         }
@@ -133,18 +132,18 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
         key = sels = void 0;
 
         // add NOP handler...
-        this.cache.flyout.on('click', function (event) {
-            if (event && !$(event.target).is('a.blmwbs15_button')) {
+        this.cache.flyout.on( 'click', function ( event ) {
+            if ( event && !$( event.target ).is( 'a.blmwbs15_button' ) ) {
                 event.preventDefault();
                 event.stopPropagation();
             }
-        });
+        } );
 
         this.isOK = true;
 
     };
 
-    MenuView.prototype.open = function (index) {
+    MenuView.prototype.open = function ( index ) {
 
         var option,
             flyout,
@@ -152,28 +151,28 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
             activeClass = this.classNames.active;
 
         // basic check...
-        if (!this.isOK || index < 0 || index >= this.cache.option.length) {
+        if ( !this.isOK || index < 0 || index >= this.cache.option.length ) {
             return;
         }
 
         // return to initial state...
-        this.cache.option.removeClass(activeClass);
+        this.cache.option.removeClass( activeClass );
         this.cache.flyout.hide();
 
         // get referred items
-        option = this.cache.option.eq(index);
-        flyout = this.cache.flyout.eq(index);
+        option = this.cache.option.eq( index );
+        flyout = this.cache.flyout.eq( index );
 
         // set flyout offset...
         offset = this.cache.options.position();
-        offset.top += this.cache.options.outerHeight(false);
+        offset.top += this.cache.options.outerHeight( false );
         offset.left += option.position().left;
-        flyout.css(offset);
+        flyout.css( offset );
 
         // display correct items...
-        option.addClass(activeClass);
+        option.addClass( activeClass );
         flyout.show();
-        this.cache.viewport.addClass(activeClass);
+        this.cache.viewport.addClass( activeClass );
 
     };
 
@@ -181,35 +180,35 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
 
         var activeClass = this.classNames.active;
 
-        if (this.isOK && this.cache.viewport.hasClass(activeClass)) {
+        if ( this.isOK && this.cache.viewport.hasClass( activeClass ) ) {
             this.cache.flyout.hide();
-            this.cache.option.removeClass(activeClass);
-            this.cache.viewport.removeClass(activeClass);
+            this.cache.option.removeClass( activeClass );
+            this.cache.viewport.removeClass( activeClass );
         }
 
     };
 
-    MenuView.prototype.toggle = function (index) {
+    MenuView.prototype.toggle = function ( index ) {
 
         var activeClass = this.classNames.active;
 
         // basic check...
-        if (!this.isOK || index < 0 || index >= this.cache.option.length) {
+        if ( !this.isOK || index < 0 || index >= this.cache.option.length ) {
             return;
         }
 
-        if (this.cache.viewport.hasClass(activeClass)
-            && this.cache.option.eq(index).hasClass(activeClass)) {
+        if ( this.cache.viewport.hasClass( activeClass )
+            && this.cache.option.eq( index ).hasClass( activeClass ) ) {
             this.close();
         } else {
-            this.open(index);
+            this.open( index );
         }
 
     };
 
     // SortByView
 
-    function SortByView(id) {
+    function SortByView( id ) {
         this.id = id;
         this.cache = {};
     }
@@ -223,39 +222,39 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
     };
 
     SortByView.prototype.init = function () {
-        this.cache.viewport = $('#' + this.id);
-        this.cache.options = this.cache.viewport.find('a.blmwbs15_checkbox');
+        this.cache.viewport = $( '#' + this.id );
+        this.cache.options = this.cache.viewport.find( 'a.blmwbs15_checkbox' );
     };
 
-    SortByView.prototype.select = function (name) {
+    SortByView.prototype.select = function ( name ) {
         var option, checkedClass = this.classNames.checked;
-        if (typeof name === 'string') {
-            option = this.cache.options.filter('[data-name="' + name + '"]');
-            if (option.hasClass(checkedClass)) {
-                option.removeClass(checkedClass);
+        if ( typeof name === 'string' ) {
+            option = this.cache.options.filter( '[data-name="' + name + '"]' );
+            if ( option.hasClass( checkedClass ) ) {
+                option.removeClass( checkedClass );
             } else {
-                this.cache.options.removeClass(checkedClass);
-                option.addClass(checkedClass);
+                this.cache.options.removeClass( checkedClass );
+                option.addClass( checkedClass );
             }
         }
     };
 
-    SortByView.prototype.forceSelection = function (name) {
+    SortByView.prototype.forceSelection = function ( name ) {
         var checkedClass = this.classNames.checked;
-        this.cache.options.removeClass(checkedClass);
-        if (typeof name === 'string') {
-            this.cache.options.filter('[data-name="' + name + '"]').addClass(checkedClass);
+        this.cache.options.removeClass( checkedClass );
+        if ( typeof name === 'string' ) {
+            this.cache.options.filter( '[data-name="' + name + '"]' ).addClass( checkedClass );
         }
     };
 
     SortByView.prototype.getSelected = function () {
-        var option = this.cache.options.filter(this.selectors.checked).attr('data-name');
+        var option = this.cache.options.filter( this.selectors.checked ).attr( 'data-name' );
         return ( typeof option === 'string' ? option : null );
     };
 
     // Refine By View
 
-    function RefineByView(id) {
+    function RefineByView( id ) {
         this.isOK = false;
         this.id = id;
         this.container = null;
@@ -289,37 +288,37 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
             version,
             container;
 
-        if (this.isOK) {
+        if ( this.isOK ) {
 
             // release current options...
             this.options = null;
 
             // remove elements from UI...
             container = this.container;
-            container.find(this.selectors.optionWrappers).remove();
+            container.find( this.selectors.optionWrappers ).remove();
 
             // get information from data source...
-            options = this.optionsSource.getOptions(true);
+            options = this.optionsSource.getOptions( true );
             version = this.optionsSource.version;
 
-            if (options.length > 0) {
+            if ( options.length > 0 ) {
                 frag = document.createDocumentFragment();
-                for (i = 0, lim = options.length; i < lim; i++) {
+                for ( i = 0, lim = options.length; i < lim; i++ ) {
                     option = options[i];
-                    a = document.createElement('a');
+                    a = document.createElement( 'a' );
                     a.className = this.classNames.optionElement;
                     a.href = '#';
-                    a.appendChild(document.createTextNode(option.name));
-                    dd = document.createElement('dd');
+                    a.appendChild( document.createTextNode( option.name ) );
+                    dd = document.createElement( 'dd' );
                     dd.className = this.classNames.optionElementWrapper;
-                    dd.appendChild(a);
-                    frag.appendChild(dd);
+                    dd.appendChild( a );
+                    frag.appendChild( dd );
                     options[i] = {
-                        element: $(a),
+                        element: $( a ),
                         option: option
                     };
                 }
-                container.get(0).appendChild(frag);
+                container.get( 0 ).appendChild( frag );
             }
 
             // update properties...
@@ -339,29 +338,29 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
             options,
             shouldHide;
 
-        if (this.isOK && this.options !== null) {
+        if ( this.isOK && this.options !== null ) {
             shouldHide = true;
             options = this.options;
-            for (i = 0, lim = options.length; i < lim; i++) {
+            for ( i = 0, lim = options.length; i < lim; i++ ) {
                 option = options[i].option, element = options[i].element;
-                if (option.count > 0) {
-                    if (option.isChecked) {
-                        element.addClass(this.classNames.optionElementChecked);
+                if ( option.count > 0 ) {
+                    if ( option.isChecked ) {
+                        element.addClass( this.classNames.optionElementChecked );
                     } else {
-                        element.removeClass(this.classNames.optionElementChecked);
+                        element.removeClass( this.classNames.optionElementChecked );
                     }
-                    element.removeClass(this.classNames.optionElementHidden);
-                    if (shouldHide) {
+                    element.removeClass( this.classNames.optionElementHidden );
+                    if ( shouldHide ) {
                         shouldHide = false;
                     }
                 } else {
-                    element.addClass(this.classNames.optionElementHidden);
+                    element.addClass( this.classNames.optionElementHidden );
                 }
             }
-            if (shouldHide) {
-                this.container.addClass(this.classNames.optionElementHidden);
+            if ( shouldHide ) {
+                this.container.addClass( this.classNames.optionElementHidden );
             } else {
-                this.container.removeClass(this.classNames.optionElementHidden);
+                this.container.removeClass( this.classNames.optionElementHidden );
             }
         }
 
@@ -374,11 +373,11 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
             options,
             checkedClass;
 
-        if (this.isOK && this.options !== null) {
+        if ( this.isOK && this.options !== null ) {
             options = this.options;
             checkedClass = this.classNames.optionElementChecked;
-            for (i = 0, lim = options.length; i < lim; i++) {
-                options[i].option.setChecked(options[i].element.hasClass(checkedClass));
+            for ( i = 0, lim = options.length; i < lim; i++ ) {
+                options[i].option.setChecked( options[i].element.hasClass( checkedClass ) );
             }
         }
 
@@ -386,25 +385,25 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
 
     RefineByView.prototype.render = function () {
         var options;
-        if (this.isOK) {
-            if (this.options === null || this.optionsVersion !== this.optionsSource.version) {
+        if ( this.isOK ) {
+            if ( this.options === null || this.optionsVersion !== this.optionsSource.version ) {
                 this.renderOptions();
             }
             this.sync();
         }
     };
 
-    RefineByView.prototype.init = function (optionsSource) {
+    RefineByView.prototype.init = function ( optionsSource ) {
 
         var container,
             checkedClass;
 
-        if (!optionsSource) {
+        if ( !optionsSource ) {
             return;
         }
 
-        container = $(this.selectors.container + this.id);
-        if (container.length !== 1) {
+        container = $( this.selectors.container + this.id );
+        if ( container.length !== 1 ) {
             return;
         }
 
@@ -412,23 +411,23 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
         checkedClass = this.classNames.optionElementChecked;
 
         // add click handler...
-        container.on('click', this.selectors.options, null, function (event) {
+        container.on( 'click', this.selectors.options, null, function ( event ) {
             var prefix,
-                target = $(this),
+                target = $( this ),
                 text = target.text();
-            if (target.hasClass(checkedClass)) {
-                target.removeClass(checkedClass);
+            if ( target.hasClass( checkedClass ) ) {
+                target.removeClass( checkedClass );
                 prefix = 'Deselect-Refine-';
             } else {
-                target.addClass(checkedClass);
+                target.addClass( checkedClass );
                 prefix = 'Select-Refine-';
             }
-            if (typeof text === 'string') {
-                app.utils.coremetrics('element', prefix + text.replace(/\W/g, '_'));
+            if ( typeof text === 'string' ) {
+                app.utils.coremetrics( 'element', prefix + text.replace( /\W/g, '_' ) );
             }
             event.preventDefault();
             event.stopPropagation();
-        });
+        } );
 
         // save state...
         this.container = container;
@@ -453,11 +452,11 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
             options,
             checkedClass;
 
-        if (this.isOK && this.options !== null) {
+        if ( this.isOK && this.options !== null ) {
             options = this.options;
             checkedClass = this.classNames.optionElementChecked;
-            for (i = 0, lim = options.length; i < lim; i++) {
-                options[i].element.removeClass(checkedClass);
+            for ( i = 0, lim = options.length; i < lim; i++ ) {
+                options[i].element.removeClass( checkedClass );
             }
         }
 
@@ -474,9 +473,9 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
         };
         this.selectors = {
             viewport: '#blmwbs15_builder_display_watch',
-            image: 'img#blmwbs15_builder_display_image',
-            message: '#blmwbs15_builder_display_message',
-            control: '#blmwbs15_builder_display_control'
+            image:    'img#blmwbs15_builder_display_image',
+            message:  '#blmwbs15_builder_display_message',
+            control:  '#blmwbs15_builder_display_control'
         };
         this.cache = {
             handler: null
@@ -485,16 +484,16 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
     }
 
     DisplayView.prototype = new View();
-    DisplayView.prototype.setImage = function (imageUrl) {
+    DisplayView.prototype.setImage = function ( imageUrl ) {
 
         var self = this;
 
         // restore image settings...
-        self.getGUIElement('image').css('visibility', 'hidden');
-        self.getGUIElement('image').css('opacity', '1.0');
+        self.getGUIElement('image').css( 'visibility', 'hidden' );
+        self.getGUIElement('image').css( 'opacity', '1.0' );
 
         // choose which path to take...
-        if (typeof imageUrl !== 'string') {
+        if ( typeof imageUrl !== 'string' ) {
             self.image = null;
             self.getGUIElement('control').hide();
             self.getGUIElement('message').show();
@@ -504,19 +503,19 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
         // prepare UI elements...
         self.getGUIElement('message').hide();
         self.getGUIElement('control').show();
-        self.getGUIElement('viewport').addClass(self.classNames.loading);
+        self.getGUIElement('viewport').addClass( self.classNames.loading );
 
-        if (typeof self.cache.handler !== 'function') {
+        if ( typeof self.cache.handler !== 'function' ) {
 
             // create heandler...
             self.cache.handler = function () {
 
-                if (self.image === this) {
+                if ( self.image === this ) {
                     self.getGUIElement('viewport')
-                        .removeClass(self.classNames.loading);
+                        .removeClass( self.classNames.loading );
                     self.getGUIElement('image')
-                        .prop('src', self.image.src)
-                        .css('visibility', 'visible');
+                        .prop( 'src', self.image.src )
+                        .css( 'visibility', 'visible' );
                 }
 
             };
@@ -524,7 +523,7 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
         }
 
         // load image...
-        self.image = document.createElement('img');
+        self.image = document.createElement( 'img' );
         self.image.onload = self.cache.handler;
         self.image.onerror = self.cache.handler;
         self.image.src = imageUrl;
@@ -533,26 +532,26 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
 
     DisplayView.prototype.toggleHelp = function () {
         var message, image;
-        if (this.image !== null) {
+        if ( this.image !== null ) {
             message = this.getGUIElement('message');
             image = this.getGUIElement('image');
-            if (message.is(':visible')) {
+            if ( message.is( ':visible' ) ) {
                 message.hide();
-                image.css('opacity', '1.0');
+                image.css( 'opacity', '1.0' );
             } else {
                 message.show();
-                image.css('opacity', '0.4');
+                image.css( 'opacity', '0.4' );
             }
         }
     };
 
     DisplayView.prototype.isHelpOverImage = function () {
-        return ( this.image !== null && this.getGUIElement('message').is(':visible') );
+        return ( this.image !== null && this.getGUIElement( 'message' ).is( ':visible' ) );
     };
 
     // CategoryView
 
-    function CategoryView(name) {
+    function CategoryView( name ) {
 
         this.isLocked = false;
         this.isUIBlocked = false;
@@ -570,13 +569,13 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
             loading: 'blmwbs15_loading'
         };
         this.selectors = {
-            root: '#blmwbs15_builder_' + name + 's',
-            viewport: '#blmwbs15_builder_' + name + 's_viewport',
+            root:      '#blmwbs15_builder_' + name + 's',
+            viewport:  '#blmwbs15_builder_' + name + 's_viewport',
             container: '#blmwbs15_builder_' + name + 's_container',
-            arrowUp: '#blmwbs15_builder_' + name + 's a.blmwbs15_arrow_up',
+            arrowUp:   '#blmwbs15_builder_' + name + 's a.blmwbs15_arrow_up',
             arrowDown: '#blmwbs15_builder_' + name + 's a.blmwbs15_arrow_down',
             uiBlocker: '#blmwbs15_builder_' + name + 's .blmwbs15_uiblocker',
-            item: '.blmwbs15_builder_' + name + ':first'
+            item:      '.blmwbs15_builder_' + name + ':first'
         };
         this.cache = {};
 
@@ -589,7 +588,7 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
     CategoryView.prototype.pageSize = 6;
     CategoryView.prototype.pageRows = 3;
 
-    CategoryView.prototype.resetCounters = function (count) {
+    CategoryView.prototype.resetCounters = function ( count ) {
         var pageSize = this.pageSize,
             diff = count % pageSize;
         this.page = 1;
@@ -600,8 +599,8 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
     CategoryView.prototype.resetView = function () {
         this.getGUIElement('arrowUp').hide();
         this.getGUIElement('arrowDown').hide();
-        this.getGUIElement('container').css('top', 0).empty();
-        this.resetCounters(0);
+        this.getGUIElement('container').css( 'top', 0 ).empty();
+        this.resetCounters( 0 );
     };
 
     CategoryView.prototype.updateScrollerState = function () {
@@ -617,32 +616,32 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
     };
 
     CategoryView.prototype.unblockUI = function () {
-        this.getGUIElement('container').css('opacity', '1.0');
+        this.getGUIElement('container').css( 'opacity', '1.0' );
         this.getGUIElement('uiBlocker').hide();
         this.isUIBlocked = false;
     };
 
     CategoryView.prototype.blockUI = function () {
         this.getGUIElement('uiBlocker').show();
-        this.getGUIElement('container').css('opacity', '0.4');
+        this.getGUIElement('container').css( 'opacity', '0.4' );
         this.isUIBlocked = true;
     };
 
     CategoryView.prototype.displayLoader = function () {
         this.blockUI();
-        this.getGUIElement('uiBlocker').addClass(this.classNames.loading);
+        this.getGUIElement('uiBlocker').addClass( this.classNames.loading );
     };
 
     CategoryView.prototype.hideLoader = function () {
-        this.getGUIElement('uiBlocker').removeClass(this.classNames.loading);
+        this.getGUIElement('uiBlocker').removeClass( this.classNames.loading );
         this.unblockUI();
     };
 
     CategoryView.prototype.blockSelection = function () {
         var blocker = this.cache.selectionBlocker;
-        if (!blocker) {
-            blocker = $(document.createElement('div'));
-            blocker.css({
+        if ( !blocker ) {
+            blocker = $( document.createElement( 'div' ) );
+            blocker.css( {
                 'display': 'block',
                 'position': 'absolute',
                 'left': 0,
@@ -650,10 +649,10 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
                 'width': '100%',
                 'height': '100%',
                 'background': 'transparent none'
-            });
+            } );
             this.cache.selectionBlocker = blocker;
         }
-        this.getGUIElement('container').append(blocker);
+        this.getGUIElement('container').append( blocker );
     };
 
     // not sure if it's needed...
@@ -664,7 +663,7 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
     //     }
     // };
 
-    CategoryView.prototype.renderItems = function (items) {
+    CategoryView.prototype.renderItems = function ( items ) {
 
         var i,
             item,
@@ -677,71 +676,71 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
             buttonCls = this.classNames.button,
             documentFragment = document.createDocumentFragment();
 
-        for (i = 0, length = items.length; i < length; i++) {
+        for ( i = 0, length = items.length; i < length; i++ ) {
 
             // create parent node
             item = items[i];
-            parentNode = document.createElement('div');
+            parentNode = document.createElement( 'div' );
             parentNode.className = itemCls;
 
             // image
-            childNode = document.createElement('img');
+            childNode = document.createElement( 'img' );
             childNode.alt = item.name;
             childNode.title = item.name;
             childNode.src = item.getImage();
-            parentNode.appendChild(childNode);
+            parentNode.appendChild( childNode );
 
             // price big
-            childNode = document.createElement('span');
-            childNode.appendChild(document.createTextNode(item.priceBig));
-            parentNode.appendChild(childNode);
+            childNode = document.createElement( 'span' );
+            childNode.appendChild( document.createTextNode( item.priceBig ) );
+            parentNode.appendChild( childNode );
 
             // price net
-            if (typeof item.priceNet === 'string' && item.priceNet.length > 0) {
-                childNode = document.createElement('span');
+            if ( typeof item.priceNet === 'string' && item.priceNet.length > 0 ) {
+                childNode = document.createElement( 'span' );
                 childNode.className = saleCls;
-                childNode.appendChild(document.createTextNode(item.priceNet));
-                parentNode.appendChild(childNode);
+                childNode.appendChild( document.createTextNode( item.priceNet ) );
+                parentNode.appendChild( childNode );
             }
 
             // link
-            childNode = document.createElement('a');
+            childNode = document.createElement( 'a' );
             childNode.className = buttonCls;
             childNode.href = route + item.id;
-            childNode.appendChild(document.createTextNode('Select'));
-            parentNode.appendChild(childNode);
+            childNode.appendChild( document.createTextNode( 'Select' ) );
+            parentNode.appendChild( childNode );
 
-            documentFragment.appendChild(parentNode);
+            documentFragment.appendChild( parentNode );
 
         }
 
         // insert into DOM
-        this.getGUIElement('container').get(0).appendChild(documentFragment);
+        this.getGUIElement( 'container' ).get( 0 ).appendChild( documentFragment );
 
     };
 
     CategoryView.prototype.render = function () {
         var items;
         this.resetView();
-        if (this.category) {
+        if ( this.category ) {
             items = this.category.getItems();
-            this.resetCounters(items.length);
-            this.renderItems(items);
+            this.resetCounters( items.length );
+            this.renderItems( items );
             this.updateScrollerState();
         }
     };
 
-    CategoryView.prototype.scroll = function (dir) {
+    CategoryView.prototype.scroll = function ( dir ) {
 
         var page, self = this;
 
-        if (self.isLocked) {
+        if ( self.isLocked ) {
             return;
         }
 
-        if (dir === 'down' && self.page < self.pageCount) {
+        if ( dir === 'down' && self.page < self.pageCount ) {
             page = self.page + 1;
-        } else if (dir === 'up' && self.page > 1) {
+        } else if ( dir === 'up' && self.page > 1 ) {
             page = self.page - 1;
         } else return;
 
@@ -749,15 +748,15 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
         self.isLocked = true;
 
         // retrieve scroll height from cache...
-        if (!self.cache.sizeOfScrollRow || !self.cache.sizeOfScrollHeight) {
-            self.cache.sizeOfScrollRow = self.getGUIElement('container').children(self.selectors.item).outerHeight(true);
+        if ( !self.cache.sizeOfScrollRow || !self.cache.sizeOfScrollHeight ) {
+            self.cache.sizeOfScrollRow = self.getGUIElement( 'container' ).children( self.selectors.item ).outerHeight( true );
             self.cache.sizeOfScrollHeight = self.cache.sizeOfScrollRow > 0
                 ? self.pageRows * self.cache.sizeOfScrollRow
                 : 0;
         }
 
         // retrive handler from cache...
-        if (!self.cache.fnScrollHandler) {
+        if ( !self.cache.fnScrollHandler ) {
             self.cache.fnScrollHandler = function () {
                 self.updateScrollerState();
                 self.isLocked = false;
@@ -765,9 +764,9 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
         }
 
         // schedule animation...
-        self.getGUIElement('container').animate({
+        self.getGUIElement( 'container' ).animate( {
             top: -1 * ( page - 1 ) * self.cache.sizeOfScrollHeight
-        }, 500, 'swing', self.cache.fnScrollHandler);
+        }, 500, 'swing', self.cache.fnScrollHandler );
 
         // update page...
         self.page = page;
@@ -775,14 +774,14 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
     };
 
     CategoryView.prototype.rewind = function () {
-        if (!this.isLocked) {
+        if ( !this.isLocked ) {
             this.page = 1;
-            this.getGUIElement('container').css('top', 0);
+            this.getGUIElement('container').css( 'top', 0 );
             this.updateScrollerState();
         }
     };
 
-    CategoryView.prototype.init = function (category) {
+    CategoryView.prototype.init = function ( category ) {
 
         var gm, self = this;
 
@@ -790,11 +789,11 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
         this.category = category;
 
         // set gesture recognizers...
-        gm = new Hammer.Manager(this.getGUIElement('viewport').get(0));
-        gm.add(new Hammer.Pan({direction: Hammer.DIRECTION_VERTICAL, threshold: 50}));
-        gm.on('panstart', function (e) {
-            self.scroll(e.direction === Hammer.DIRECTION_DOWN ? 'up' : 'down');
-        });
+        gm = new Hammer.Manager( this.getGUIElement( 'viewport' ).get( 0 ) );
+        gm.add( new Hammer.Pan( { direction: Hammer.DIRECTION_VERTICAL, threshold: 50 } ) );
+        gm.on( 'panstart', function ( e ) {
+            self.scroll( e.direction === Hammer.DIRECTION_DOWN ? 'up' : 'down' );
+        } );
 
     };
 
@@ -818,19 +817,19 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
             disabled: 'disabled'
         };
         this.selectors = {
-            head: '#blmwbs15_builder_display_item_head',
-            headText: '#blmwbs15_builder_display_item_head a.blmwbs15_text',
-            headPrice: '#blmwbs15_builder_display_item_head span.blmwbs15_price',
-            headPriceSale: '#blmwbs15_builder_display_item_head span.blmwbs15_price_sale',
-            headCheckbox: '#blmwbs15_builder_display_item_head a.blmwbs15_checkbox',
-            strap: '#blmwbs15_builder_display_item_strap',
-            strapText: '#blmwbs15_builder_display_item_strap a.blmwbs15_text',
-            strapPrice: '#blmwbs15_builder_display_item_strap span.blmwbs15_price',
+            head:           '#blmwbs15_builder_display_item_head',
+            headText:       '#blmwbs15_builder_display_item_head a.blmwbs15_text',
+            headPrice:      '#blmwbs15_builder_display_item_head span.blmwbs15_price',
+            headPriceSale:  '#blmwbs15_builder_display_item_head span.blmwbs15_price_sale',
+            headCheckbox:   '#blmwbs15_builder_display_item_head a.blmwbs15_checkbox',
+            strap:          '#blmwbs15_builder_display_item_strap',
+            strapText:      '#blmwbs15_builder_display_item_strap a.blmwbs15_text',
+            strapPrice:     '#blmwbs15_builder_display_item_strap span.blmwbs15_price',
             strapPriceSale: '#blmwbs15_builder_display_item_strap span.blmwbs15_price_sale',
-            strapCheckbox: '#blmwbs15_builder_display_item_strap a.blmwbs15_checkbox',
-            total: '#blmwbs15_builder_display_total > span.blmwbs15_price',
-            button: '#blmwbs15_builder_display_total > a.blmwbs15_button',
-            errorMessages: '#blmwbs15_builder_display_total > #blmwbs15_error_messages'
+            strapCheckbox:  '#blmwbs15_builder_display_item_strap a.blmwbs15_checkbox',
+            total:          '#blmwbs15_builder_display_total > span.blmwbs15_price',
+            button:         '#blmwbs15_builder_display_total > a.blmwbs15_button',
+            errorMessages:  '#blmwbs15_builder_display_total > #blmwbs15_error_messages'
         };
         this.cache = {};
 
@@ -841,7 +840,7 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
     BagView.prototype.resetView = function () {
         this.getGUIElement('head').hide();
         this.getGUIElement('strap').hide();
-        this.getGUIElement('total').text('$0.00');
+        this.getGUIElement('total').text( '$0.00' );
     };
 
     BagView.prototype.render = function () {
@@ -851,57 +850,57 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
             href = app.consts.pdpUrlPath;
 
         // head
-        if (( head = this.bag.getHead() ) !== null) {
-            this.getGUIElement('headText')
-                .attr('href', href.replace('{{id}}', head.id))
-                .html(head.name);
-            this.getGUIElement('headPrice').text(head.priceBig);
-            if (typeof head.priceNet === 'string' && head.priceNet.length > 0) {
-                this.getGUIElement('headPriceSale').text(head.priceNet).show();
+        if ( ( head = this.bag.getHead() ) !== null ) {
+            this.getGUIElement( 'headText' )
+                .attr( 'href', href.replace( '{{id}}', head.id ) )
+                .html( head.name );
+            this.getGUIElement( 'headPrice' ).text( head.priceBig );
+            if ( typeof head.priceNet === 'string' && head.priceNet.length > 0 ) {
+                this.getGUIElement( 'headPriceSale' ).text( head.priceNet ).show();
             } else {
-                this.getGUIElement('headPriceSale').hide();
+                this.getGUIElement( 'headPriceSale' ).hide();
             }
-            if (this.bag.getState('head')) {
-                this.getGUIElement('head').removeClass(this.classNames.disabled);
-                this.getGUIElement('headCheckbox').addClass(this.classNames.checked);
+            if ( this.bag.getState( 'head' ) ) {
+                this.getGUIElement( 'head' ).removeClass( this.classNames.disabled );
+                this.getGUIElement( 'headCheckbox' ).addClass( this.classNames.checked );
             } else {
-                this.getGUIElement('head').addClass(this.classNames.disabled);
-                this.getGUIElement('headCheckbox').removeClass(this.classNames.checked);
+                this.getGUIElement( 'head' ).addClass( this.classNames.disabled );
+                this.getGUIElement( 'headCheckbox' ).removeClass( this.classNames.checked );
             }
-            this.getGUIElement('head').show();
+            this.getGUIElement( 'head' ).show();
         } else {
-            this.getGUIElement('head').hide();
+            this.getGUIElement( 'head' ).hide();
         }
 
         // strap
-        if (( strap = this.bag.getStrap() ) !== null) {
-            this.getGUIElement('strapText')
-                .attr('href', href.replace('{{id}}', strap.id))
-                .html(strap.name);
-            this.getGUIElement('strapPrice').text(strap.priceBig);
-            if (typeof strap.priceNet === 'string' && strap.priceNet.length > 0) {
-                this.getGUIElement('strapPriceSale').text(strap.priceNet).show();
+        if ( ( strap = this.bag.getStrap() ) !== null ) {
+            this.getGUIElement( 'strapText' )
+                .attr( 'href', href.replace( '{{id}}', strap.id ) )
+                .html( strap.name );
+            this.getGUIElement( 'strapPrice' ).text( strap.priceBig );
+            if ( typeof strap.priceNet === 'string' && strap.priceNet.length > 0 ) {
+                this.getGUIElement( 'strapPriceSale' ).text( strap.priceNet ).show();
             } else {
-                this.getGUIElement('strapPriceSale').hide();
+                this.getGUIElement( 'strapPriceSale' ).hide();
             }
-            if (this.bag.getState('strap')) {
-                this.getGUIElement('strap').removeClass(this.classNames.disabled);
-                this.getGUIElement('strapCheckbox').addClass(this.classNames.checked);
+            if ( this.bag.getState( 'strap' ) ) {
+                this.getGUIElement( 'strap' ).removeClass( this.classNames.disabled );
+                this.getGUIElement( 'strapCheckbox' ).addClass( this.classNames.checked );
             } else {
-                this.getGUIElement('strap').addClass(this.classNames.disabled);
-                this.getGUIElement('strapCheckbox').removeClass(this.classNames.checked);
+                this.getGUIElement( 'strap' ).addClass( this.classNames.disabled );
+                this.getGUIElement( 'strapCheckbox' ).removeClass( this.classNames.checked );
             }
-            this.getGUIElement('strap').show();
+            this.getGUIElement( 'strap' ).show();
         } else {
-            this.getGUIElement('strap').hide();
+            this.getGUIElement( 'strap' ).hide();
         }
 
         // total
-        this.getGUIElement('total').text(app.utils.moneyFormat(this.bag.getTotal()));
+        this.getGUIElement( 'total' ).text( app.utils.moneyFormat( this.bag.getTotal() ) );
 
     };
 
-    BagView.prototype.displayError = function (message) {
+    BagView.prototype.displayError = function ( message ) {
 
         var self = this;
 
@@ -909,53 +908,53 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
         self.errors.message = message;
         message = void 0;
 
-        if (self.errors.isAnimationRunning) {
+        if ( self.errors.isAnimationRunning ) {
             // nothing to do...
             return;
         }
 
         // warm up...
 
-        if (!self.errors.originalMargin) {
-            self.errors.originalMargin = self.getGUIElement('button').css('marginTop');
+        if ( !self.errors.originalMargin ) {
+            self.errors.originalMargin = self.getGUIElement( 'button' ).css( 'marginTop' );
         }
 
-        if (typeof self.errors.showingFunction !== 'function') {
+        if ( typeof self.errors.showingFunction !== 'function' ) {
             self.errors.showingFunction = function () {
-                self.getGUIElement('errorMessages').html(self.errors.message).show();
-                self.errors.timer = window.setTimeout(self.errors.hidingFunction, self.errors.delay);
+                self.getGUIElement( 'errorMessages' ).html( self.errors.message ).show();
+                self.errors.timer = window.setTimeout( self.errors.hidingFunction, self.errors.delay );
                 self.errors.isAnimationRunning = false;
                 self.errors.isTimeoutRunning = true;
             };
         }
 
-        if (typeof self.errors.hidingFunction !== 'function') {
+        if ( typeof self.errors.hidingFunction !== 'function' ) {
             self.errors.hidingFunction = function () {
-                self.getGUIElement('errorMessages').hide();
-                self.getGUIElement('button').animate({
+                self.getGUIElement( 'errorMessages' ).hide();
+                self.getGUIElement( 'button' ).animate( {
                     'marginTop': self.errors.originalMargin
-                }, 300);
+                }, 300 );
                 self.errors.isTimeoutRunning = false;
             };
         }
 
-        if (self.errors.isTimeoutRunning) {
-            window.clearTimeout(self.errors.timer);
-            self.getGUIElement('errorMessages').html(self.errors.message);
-            self.errors.timer = window.setTimeout(self.errors.hidingFunction, self.errors.delay);
+        if ( self.errors.isTimeoutRunning ) {
+            window.clearTimeout( self.errors.timer );
+            self.getGUIElement( 'errorMessages' ).html( self.errors.message );
+            self.errors.timer = window.setTimeout( self.errors.hidingFunction, self.errors.delay );
             return;
         }
 
         // show up...
 
         self.errors.isAnimationRunning = true;
-        self.getGUIElement('button').animate({
+        self.getGUIElement( 'button' ).animate( {
             'marginTop': 5
-        }, 300, 'swing', self.errors.showingFunction);
+        }, 300, 'swing', self.errors.showingFunction );
 
     };
 
-    BagView.prototype.init = function (bag) {
+    BagView.prototype.init = function ( bag ) {
         this.bag = bag;
     };
 
@@ -976,20 +975,20 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
 
     Bag.prototype.getTotal = function () {
         var total = 0;
-        if (this.head.ref !== null) {
-            if (this.head.isChecked) {
+        if ( this.head.ref !== null ) {
+            if ( this.head.isChecked ) {
                 total += this.head.ref.price;
             }
-            if (this.strap.ref !== null && this.strap.isChecked) {
+            if ( this.strap.ref !== null && this.strap.isChecked ) {
                 total += this.strap.ref.price;
             }
         }
         return total;
     };
 
-    Bag.prototype.setHead = function (head) {
+    Bag.prototype.setHead = function ( head ) {
 
-        if (this.head.ref !== head) {
+        if ( this.head.ref !== head ) {
             // update head...
             this.head.ref = ( typeof head === 'object' ) ? head : null;
             this.head.isChecked = true;
@@ -1003,9 +1002,9 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
 
     };
 
-    Bag.prototype.setStrap = function (strap) {
+    Bag.prototype.setStrap = function ( strap ) {
 
-        if (this.head.ref !== null && this.strap.ref !== strap) {
+        if ( this.head.ref !== null && this.strap.ref !== strap ) {
             this.strap.ref = ( typeof strap === 'object' ) ? strap : null;
             this.strap.isChecked = true;
             return true;
@@ -1015,10 +1014,10 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
 
     };
 
-    Bag.prototype.toggleState = function (item) {
-        if (item in this) {
+    Bag.prototype.toggleState = function ( item ) {
+        if ( item in this  ) {
             item = this[item];
-            if (item.ref !== null) {
+            if ( item.ref !== null ) {
                 item.isChecked = !item.isChecked;
                 return true;
             }
@@ -1026,8 +1025,8 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
         return false;
     };
 
-    Bag.prototype.getState = function (item) {
-        if (item in this) {
+    Bag.prototype.getState = function ( item ) {
+        if ( item in this ) {
             return this[item].isChecked;
         }
         return false;
@@ -1041,8 +1040,8 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
         return this.strap.ref;
     };
 
-    Bag.prototype.getItemIfChecked = function (item) {
-        if (item in this && this[item].isChecked) {
+    Bag.prototype.getItemIfChecked = function ( item ) {
+        if ( item in this && this[item].isChecked ) {
             return this[item].ref;
         }
         return null;
@@ -1050,7 +1049,7 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
 
     // Head
 
-    function Head(id) {
+    function Head( id ) {
         this.id = id; // String
         this.size = null; // String
         this.collection = null; // String
@@ -1062,8 +1061,8 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
     Head.prototype.imagePdpBaseUrl = app.consts.scene7HeadPDPUrl;
     Head.prototype.getPdpImage = function () {
 
-        if (this.imagePdp === null) {
-            this.imagePdp = this.imagePdpBaseUrl.replace('{{id}}', this.id);
+        if ( this.imagePdp === null ) {
+            this.imagePdp = this.imagePdpBaseUrl.replace( '{{id}}', this.id );
         }
 
         return this.imagePdp;
@@ -1072,7 +1071,7 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
 
     // Item
 
-    function Item(id) {
+    function Item( id ) {
         this.isOK = false; // boolean
         this.id = id; // String
         this.upcId = null; // String
@@ -1087,8 +1086,8 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
 
     Item.prototype.getImage = function () {
 
-        if (this.image === null) {
-            this.image = this.imageBaseUrl.replace('{{id}}', this.id);
+        if ( this.image === null ) {
+            this.image = this.imageBaseUrl.replace( '{{id}}', this.id );
         }
 
         return this.image;
@@ -1097,9 +1096,9 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
 
     Item.prototype.isValid = function () {
 
-        if (this.price > 0
+        if ( this.price > 0
             && typeof this.name === 'string' && this.name.length > 0
-            && typeof this.priceBig === 'string' && this.priceBig.length > 0) {
+            && typeof this.priceBig === 'string' && this.priceBig.length > 0 ) {
             return true;
         }
 
@@ -1107,15 +1106,15 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
 
     };
 
-    Item.prototype.setName = function (name) {
+    Item.prototype.setName = function ( name ) {
         this.name = typeof name === 'string'
-            ? name.replace(/^\s*michele\s*/i, '')
+            ? name.replace( /^\s*michele\s*/i, '' )
             : null;
     };
 
     // FilterOption
 
-    function FilterOption(id, name, count) {
+    function FilterOption( id, name, count ) {
         this.id = id;
         this.name = name;
         this.count = count;
@@ -1123,8 +1122,8 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
         this.isDirty = false;
     }
 
-    FilterOption.prototype.setChecked = function (flag) {
-        if (this.isChecked !== !!flag) {
+    FilterOption.prototype.setChecked = function ( flag ) {
+        if ( this.isChecked !== !!flag ) {
             this.isChecked = !this.isChecked;
             this.isDirty = true;
         }
@@ -1137,7 +1136,7 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
 
     // Filter
 
-    function Filter(id, name) {
+    function Filter( id, name ) {
         this.id = id;
         this.name = name;
         this.version = 0;
@@ -1145,67 +1144,67 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
         this.savedOptions = null;
     }
 
-    Filter.prototype.sorter = function (a, b) {
+    Filter.prototype.sorter = function ( a, b ) {
         return ( a.name < b.name ? -1 : ( a.name > b.name ? 1 : 0 ) );
     };
 
-    Filter.prototype.addOption = function (option) {
+    Filter.prototype.addOption = function ( option ) {
         var found = option.id in this.options;
-        if (found) {
-            this.options[option.id].count += option.count;
+        if ( found ) {
+            this.options[ option.id ].count += option.count;
         } else {
-            this.options[option.id] = option;
+            this.options[ option.id ] = option;
             this.version++;
         }
     };
 
-    Filter.prototype.getOption = function (optionId) {
+    Filter.prototype.getOption = function ( optionId ) {
         var option = null;
-        if (optionId in this.options) {
-            option = this.options[optionId];
+        if ( optionId in this.options ) {
+            option = this.options[ optionId ];
         }
         return option;
     };
 
-    Filter.prototype.setOptionState = function (optionId, checked) {
-        var option = this.getOption(optionId);
-        if (option) {
-            option.setChecked(checked);
+    Filter.prototype.setOptionState = function ( optionId, checked ) {
+        var option = this.getOption( optionId );
+        if ( option ) {
+            option.setChecked( checked );
         }
     };
 
-    Filter.prototype.isOptionChecked = function (optionId) {
-        var option = this.getOption(optionId);
+    Filter.prototype.isOptionChecked = function ( optionId ) {
+        var option = this.getOption( optionId );
         return option ? option.isChecked : false;
     };
 
     Filter.prototype.hasChanges = function () {
         var key, option;
-        for (key in this.options) {
-            option = this.options[key];
-            if (option.isDirty) {
+        for ( key in this.options ) {
+            option = this.options[ key ];
+            if ( option.isDirty ) {
                 return true;
             }
         }
         return false;
     };
 
-    Filter.prototype.getOptions = function (sorted) {
+    Filter.prototype.getOptions = function ( sorted ) {
 
         var key,
             option,
             options = [];
 
-        for (key in this.options) {
-            option = this.options[key];
-            if (option.isDirty) {
+        for ( key in this.options ) {
+            option = this.options[ key ];
+            if ( option.isDirty ) {
                 option.isDirty = false;
             }
-            options.push(option);
+            options.push( option );
         }
 
-        if (sorted && options.length > 1) {
-            options.sort(this.sorter);
+        if ( sorted && options.length > 1 ) {
+            options.sort( this.sorter );
         }
 
         return options;
@@ -1213,32 +1212,32 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
     };
 
     Filter.prototype.getQueryString = function () {
-        var i, lim, option, string = null, options = this.getOptions(true);
-        for (i = 0, lim = options.length; i < lim; i++) {
+        var i, lim, option, string = null, options = this.getOptions( true );
+        for ( i = 0, lim = options.length; i < lim; i++ ) {
             option = options[i];
-            if (option.isChecked) {
-                if (string !== null) {
+            if ( option.isChecked ) {
+                if ( string !== null ) {
                     string += ';;' + option.id;
                 } else {
                     string = option.id;
                 }
             }
         }
-        return ( typeof string === 'string' && string.length > 0 ? window.escape(string) : null );
+        return ( typeof string === 'string' && string.length > 0 ? window.escape( string ) : null );
     };
 
-    Filter.prototype.setFromQueryString = function (queryString) {
+    Filter.prototype.setFromQueryString = function ( queryString ) {
 
         var i, lim, option, options;
 
-        if (typeof queryString !== 'string' || queryString.length < 1) {
+        if ( typeof queryString !== 'string' || queryString.length < 1 ) {
             return;
         }
 
-        options = window.unescape(queryString).split(';;');
-        for (i = 0, lim = options.length; i < lim; i++) {
-            option = this.getOption(options[i]);
-            if (option) {
+        options = window.unescape( queryString ).split( ';;' );
+        for ( i = 0, lim = options.length; i < lim; i++ ) {
+            option = this.getOption( options[i] );
+            if ( option ) {
                 option.isChecked = true;
                 option.isDirty = false;
             }
@@ -1248,12 +1247,12 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
 
     Filter.prototype.getIdsFromCheckedOptions = function () {
         var key, option, options = this.options, checked = [];
-        for (key in options) {
+        for ( key in options ) {
             option = options[key];
-            if (option.isChecked) {
-                checked.push(option.id);
+            if ( option.isChecked ) {
+                checked.push( option.id );
             }
-            if (option.isDirty) {
+            if ( option.isDirty ) {
                 option.isDirty = false;
             }
         }
@@ -1262,19 +1261,19 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
 
     Filter.prototype.clearOptions = function () {
         var key, option, options = this.options;
-        for (key in options) {
-            option = options[key];
+        for ( key in options ) {
+            option = options[ key ];
             option.clear();
         }
     };
 
-    Filter.prototype.reset = function (keepChecked) {
+    Filter.prototype.reset = function ( keepChecked ) {
         var key, options = this.options;
-        for (key in options) {
-            if (keepChecked && options[key].isChecked) {
+        for ( key in options ) {
+            if ( keepChecked && options[ key ].isChecked ) {
                 continue;
             }
-            delete options[key];
+            delete options[ key ];
         }
         this.version++;
     };
@@ -1285,8 +1284,8 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
             savedOptions = {},
             options = this.options;
 
-        for (key in options) {
-            savedOptions[key] = options[key];
+        for ( key in options ) {
+            savedOptions[ key ] = options[ key ];
         }
 
         // save options snapshot...
@@ -1300,13 +1299,13 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
             option,
             savedOptions = this.savedOptions;
 
-        if (savedOptions) {
+        if ( savedOptions ) {
             // remove all options...
-            this.reset(false);
-            for (key in savedOptions) {
-                option = savedOptions[key];
+            this.reset( false );
+            for ( key in savedOptions ) {
+                option = savedOptions[ key ];
                 option.clear();
-                this.options[key] = option;
+                this.options[ key ] = option;
             }
             this.version++;
         }
@@ -1315,7 +1314,7 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
 
     // Category+
 
-    function Category(itemType) {
+    function Category( itemType ) {
         this.itemType = itemType;
         this.map = {};
         this.list = [];
@@ -1325,27 +1324,27 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
         this.filters = {};
     }
 
-    Category.prototype.addFilter = function (filter) {
+    Category.prototype.addFilter = function ( filter ) {
         var found = filter.id in this.filters;
-        if (!found) {
-            this.filters[filter.id] = filter;
+        if ( !found ) {
+            this.filters[ filter.id ] = filter;
             return true;
         }
         return false;
     };
 
-    Category.prototype.getFilter = function (filterId) {
+    Category.prototype.getFilter = function ( filterId ) {
         var filter = null;
-        if (filterId in this.filters) {
-            filter = this.filters[filterId];
+        if ( filterId in this.filters ) {
+            filter = this.filters[ filterId ];
         }
         return filter;
     };
 
-    Category.prototype.add = function (id) {
+    Category.prototype.add = function ( id ) {
         var found = ( id in this.map );
-        if (!found) {
-            this.map[id] = new this.itemType(id);
+        if ( !found ) {
+            this.map[id] = new this.itemType( id );
             this.total++;
             return true;
         }
@@ -1353,10 +1352,10 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
     };
 
     Category.prototype.sortingOptions = {
-        'price-asc': function (a, b) {
+        'price-asc': function ( a, b ) {
             return a.price - b.price;
         },
-        'price-desc': function (a, b) {
+        'price-desc': function ( a, b ) {
             return b.price - a.price;
         }
     };
@@ -1371,19 +1370,19 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
             list = this.list,
             map = this.map;
 
-        if (list) {
-            for (i = 0, length = list.length; i < length; i++) {
+        if ( list ) {
+            for ( i = 0, length = list.length; i < length; i++ ) {
                 id = list[i];
-                if (id in map) {
-                    item = map[id];
-                    if (item.isOK) {
-                        items.push(item);
+                if ( id in map ) {
+                    item = map[ id ];
+                    if ( item.isOK ) {
+                        items.push( item );
                     }
                 }
             }
-            if (typeof this.sorting === 'string'
-                && this.sorting in this.sortingOptions) {
-                items.sort(this.sortingOptions[this.sorting]);
+            if ( typeof this.sorting === 'string'
+                && this.sorting in this.sortingOptions ) {
+                items.sort( this.sortingOptions[ this.sorting ] );
             }
         }
 
@@ -1400,11 +1399,11 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
             list = this.list,
             map = this.map;
 
-        if (list) {
-            for (i = 0, length = list.length; i < length; i++) {
+        if ( list ) {
+            for ( i = 0, length = list.length; i < length; i++ ) {
                 id = list[i];
-                if (id in map) {
-                    if (map[id].isOK) {
+                if ( id in map ) {
+                    if ( map[ id ].isOK ) {
                         count++;
                     }
                 }
@@ -1419,12 +1418,12 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
         this.list = [];
     };
 
-    Category.prototype.append = function (list) {
+    Category.prototype.append = function ( list ) {
         var i, length, item;
-        for (i = 0, length = list.length; i < length; i++) {
+        for ( i = 0, length = list.length; i < length; i++ ) {
             item = list[i];
-            this.add(item);
-            this.list.push(item);
+            this.add( item );
+            this.list.push( item );
         }
     };
 
@@ -1432,33 +1431,33 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
         var id,
             list = [],
             map = this.map;
-        for (id in map) {
-            if (!map[id].isOK) {
-                list.push(id);
+        for ( id in map ) {
+            if ( !map[id].isOK ) {
+                list.push( id );
             }
         }
         return list;
     };
 
-    Category.prototype.isFilterOptionChecked = function (filterId, optionId) {
-        var filter = this.getFilter(filterId);
-        return filter ? filter.isOptionChecked(optionId) : false;
+    Category.prototype.isFilterOptionChecked = function ( filterId, optionId ) {
+        var filter = this.getFilter( filterId );
+        return filter ? filter.isOptionChecked( optionId ) : false;
     };
 
-    Category.prototype.getFilterOptions = function (filterId, sorted) {
-        var filter = this.getFilter(filterId);
-        return filter ? filter.getOptions(sorted) : null;
+    Category.prototype.getFilterOptions = function ( filterId, sorted ) {
+        var filter = this.getFilter( filterId );
+        return filter ? filter.getOptions( sorted ) : null;
     };
 
-    Category.prototype.getQueryStringForFilterOptions = function (filterId) {
-        var filter = this.getFilter(filterId);
+    Category.prototype.getQueryStringForFilterOptions = function ( filterId ) {
+        var filter = this.getFilter( filterId );
         return filter ? filter.getQueryString() : null;
     };
 
-    Category.prototype.setFilterOptionsFromQueryString = function (filterId, queryString) {
-        var filter = this.getFilter(filterId);
-        if (filter) {
-            filter.setFromQueryString(queryString);
+    Category.prototype.setFilterOptionsFromQueryString = function ( filterId, queryString ) {
+        var filter = this.getFilter( filterId );
+        if ( filter ) {
+            filter.setFromQueryString( queryString );
         }
     };
 
@@ -1469,8 +1468,8 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
             list = this.list,
             original = [];
 
-        if (list && list.length > 0) {
-            for (i = 0, lim = list.length; i < lim; i++) {
+        if ( list && list.length > 0 ) {
+            for ( i = 0, lim = list.length; i < lim; i++ ) {
                 original[i] = list[i];
             }
         }
@@ -1479,7 +1478,7 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
 
     };
 
-    Category.prototype.filterBy = function (filterId, prop) {
+    Category.prototype.filterBy = function ( filterId, prop ) {
 
         var i,
             j,
@@ -1494,28 +1493,28 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
             map,
             original = this.original;
 
-        if (original && original.length > 0
-            && ( filter = this.getFilter(filterId) ) !== null) {
+        if ( original && original.length > 0
+            && ( filter = this.getFilter( filterId ) ) !== null ) {
             checked = filter.getIdsFromCheckedOptions();
-            if (checked.length < 1) {
+            if ( checked.length < 1 ) {
                 list = original;
             } else {
                 map = this.map;
                 list = [];
                 ilim = original.length;
                 jlim = checked.length;
-                for (i = 0; i < ilim; i++) {
+                for ( i = 0; i < ilim; i++ ) {
                     id = original[i];
-                    val = map[id][prop];
+                    val = map[ id ][ prop ];
                     found = false;
-                    for (j = 0; j < jlim; j++) {
-                        if (val === checked[j]) {
+                    for ( j = 0; j < jlim; j++ ) {
+                        if ( val === checked[j] ) {
                             found = true;
                             break;
                         }
                     }
-                    if (found) {
-                        list.push(id);
+                    if ( found ) {
+                        list.push( id );
                     }
                 }
             }
@@ -1531,8 +1530,8 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
             original = this.original,
             list = [];
 
-        if (original && original.length > 0) {
-            for (i = 0, lim = original.length; i < lim; i++) {
+        if ( original && original.length > 0 ) {
+            for ( i = 0, lim = original.length; i < lim; i++ ) {
                 list[i] = original[i];
             }
         }
@@ -1543,7 +1542,7 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
 
     Category.prototype.clearFilters = function () {
         var key, filters = this.filters;
-        for (key in filters) {
+        for ( key in filters ) {
             filters[key].clearOptions();
         }
     };
@@ -1554,14 +1553,14 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
 
         var dict = null,
             regex = /\{\{(\w+)\}\}/g,
-            replfn = function (m, n) {
+            replfn = function ( m, n )  {
                 return ( n in dict ) ? dict[n] : '';
             };
 
-        this.replace = function (text, dictionary) {
+        this.replace = function ( text, dictionary ) {
             var result;
             dict = dictionary;
-            result = text.replace(regex, replfn);
+            result = text.replace( regex, replfn );
             dict = null;
             return result;
         };
@@ -1577,42 +1576,38 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
 
                 var d, n;
 
-                if (!q || !(n = q.shift())) {
+                if ( !q || !(n = q.shift()) ) {
                     u = false;
                     return;
                 }
 
                 // "done" callback for cooperative task queueing
-                d = function (success, data) {
+                d = function ( success, data ) {
                     var cf = success ? n.sc : n.fl;
-                    if (typeof cf !== 'function') {
-                        window.setTimeout(dq, 0);
+                    if ( typeof cf !== 'function' ) {
+                        window.setTimeout( dq, 0 );
                     } else {
-                        window.setTimeout(function () {
-                            try {
-                                cf.call(s, data);
-                            }
-                            finally {
-                                window.setTimeout(dq, 0);
-                            }
-                        }, 0);
+                        window.setTimeout( function () {
+                            try { cf.call( s, data ); }
+                            finally { window.setTimeout( dq, 0 ); }
+                        }, 0 );
                     }
                 };
 
                 try {
-                    n.fn.call(s, n.dt, d);
-                } catch (e) {
-                    d(false, e);
+                    n.fn.call( s, n.dt, d );
+                } catch ( e ) {
+                    d( false, e );
                 }
 
             };
 
-        s.next = function next(func, data, success, failure) {
-            if (q) {
-                q.push({fn: func, dt: data, sc: success, fl: failure});
-                if (!u) {
+        s.next = function next( func, data, success, failure ) {
+            if ( q ) {
+                q.push( { fn: func, dt: data, sc: success, fl: failure } );
+                if ( !u ) {
                     u = true;
-                    window.setTimeout(dq, 0);
+                    window.setTimeout( dq, 0 );
                 }
             }
             return s;
@@ -1635,7 +1630,7 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
         this.regexImage = /<img\s+class="thumbnailImage(?:\s+[^"]*)?"\s+id="image_(\d+)"\s+src="([^"]+)"/g; // g
         this.regexImageUrl = /\d+\/optimized\/\d+_fpx.tif\b/; // NO g
         this.regexName = /<a\s+id="prodShortDesc_(\d+)"[^>]*>([^<]+)<\/a>/g; // g
-        this.regexShortDesc = /<div\s+id="shortDesc_(\d+)"[^>]*>/g; // g
+		this.regexShortDesc = /<div\s+id="shortDesc_(\d+)"[^>]*>/g; // g
         this.regexBrandName = /\bclass="brandName"[^>]*>\s*<a(?:\s+[^>]*)?>([^<]+)<\/a>\s*<\//g; // g
         this.regexProdName = /\bclass="prodName"[^>]*>\s*<a(?:\s+[^>]*)?>([^<]+)<\/a>\s*<\//g; // g;
         this.regexPrice = /<div\s+id="priceSaleThumbnails_(\d+)"[^>]*>/g;  // g
@@ -1662,7 +1657,7 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
         return this.parsedInfo;
     };
 
-    ThumbnailAPIParser.prototype.parse = function (text, needsImage) {
+    ThumbnailAPIParser.prototype.parse = function ( text, needsImage ) {
 
         var match,
             id,
@@ -1678,7 +1673,7 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
 
         /* ID */
         this.regexStart.lastIndex = this.startIndex;
-        if (( match = this.regexStart.exec(text) ) === null) {
+        if ( ( match = this.regexStart.exec( text ) ) === null ) {
             return false;
         }
         this.startIndex = this.regexStart.lastIndex;
@@ -1686,38 +1681,38 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
         id = match[1];
 
         /* Image */
-        if (needsImage) {
+        if ( needsImage ) {
             this.regexImage.lastIndex = this.startIndex;
-            if (( match = this.regexImage.exec(text) ) === null || match[1] !== id) {
+            if ( ( match = this.regexImage.exec( text ) ) === null || match[1] !== id ) {
                 return false;
             }
             this.startIndex = this.regexImage.lastIndex;
             // save image address...
             image = match[2];
             // update image address...
-            if (( match = this.regexImageUrl.exec(image) ) !== null) {
+            if ( ( match = this.regexImageUrl.exec( image ) ) !== null ) {
                 image = this.imageUrlBase + match[0] + this.imageUrlParams;
             }
         }
 
         /* Name */
         this.regexName.lastIndex = this.startIndex;
-        this.regexShortDesc.lastIndex = this.startIndex;
-        if (( match = this.regexName.exec(text) ) !== null && match[1] === id) {
+		this.regexShortDesc.lastIndex = this.startIndex;
+        if ( ( match = this.regexName.exec( text ) ) !== null && match[1] === id ) {
             this.startIndex = this.regexName.lastIndex;
             name = match[2];
-        } else if (( match = this.regexShortDesc.exec(text) ) !== null && match[1] === id) {
+        } else if ( ( match = this.regexShortDesc.exec( text ) ) !== null && match[1] === id ) {
             this.startIndex = this.regexShortDesc.lastIndex;
             name = "";
             this.regexBrandName.lastIndex = this.startIndex;
-            if (( match = this.regexBrandName.exec(text) ) !== null) {
+            if ( ( match = this.regexBrandName.exec( text ) ) !== null ) {
                 this.startIndex = this.regexBrandName.lastIndex;
                 name += match[1];
             }
             this.regexProdName.lastIndex = this.startIndex;
-            if (( match = this.regexProdName.exec(text) ) !== null) {
+            if ( ( match = this.regexProdName.exec( text ) ) !== null ) {
                 this.startIndex = this.regexProdName.lastIndex;
-                if (name.length > 0 && name.charAt(name.length - 1) !== " ") {
+                if ( name.length > 0 && name.charAt( name.length - 1 ) !== " " ) {
                     name += " ";
                 }
                 name += match[1];
@@ -1728,27 +1723,27 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
 
         /* Price */
         this.regexPrice.lastIndex = this.startIndex;
-        if (( match = this.regexPrice.exec(text) ) === null || match[1] !== id) {
+        if ( ( match = this.regexPrice.exec( text ) ) === null || match[1] !== id ) {
             return false;
         }
         this.startIndex = this.regexPrice.lastIndex;
 
         /* Price End (Price Net in Hidden Field) */
         this.regexEndPrice.lastIndex = this.startIndex;
-        if (( match = this.regexEndPrice.exec(text) ) === null) {
+        if ( ( match = this.regexEndPrice.exec( text ) ) === null ) {
             return false;
         }
         this.startIndex = this.regexEndPrice.lastIndex;
         // save price..
-        price = +( match[1].replace(this.regexNonDigit, '') );
+        price = +( match[1].replace( this.regexNonDigit, '' ) );
         // get prices substring
-        prices = text.substring(this.regexPrice.lastIndex, this.regexEndPrice.lastIndex);
+        prices = text.substring( this.regexPrice.lastIndex, this.regexEndPrice.lastIndex );
         this.regexPriceBig.lastIndex = 0;
-        if (( match = this.regexPriceBig.exec(prices) ) !== null) {
-            if (match[1].length > 0) {
+        if ( ( match = this.regexPriceBig.exec( prices ) ) !== null ) {
+            if ( match[1].length > 0 ) {
                 big = match[1] + ' ' + match[2];
                 this.regexPriceSale.lastIndex = this.regexPriceBig.lastIndex;
-                if (( match = this.regexPriceSale.exec(prices) ) !== null) {
+                if ( ( match = this.regexPriceSale.exec( prices ) ) !== null ) {
                     net = match[1];
                 }
             } else {
@@ -1786,7 +1781,7 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
 
     }
 
-    CategoryAPIParser.prototype.parse = function (text) {
+    CategoryAPIParser.prototype.parse = function ( text ) {
 
         var ids, numbers, count, match;
 
@@ -1796,19 +1791,19 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
 
         // ids...
         this.regexIds.lastIndex = 0;
-        if (( match = this.regexIds.exec(text) ) === null) {
+        if ( ( match = this.regexIds.exec( text ) ) === null ) {
             return false;
         }
         ids = match[1];
 
         // numbers from ids...
-        if (( match = this.regexNumbers.exec(ids) ) !== null) {
-            numbers = match[1].split(this.regexSeparator);
+        if ( ( match = this.regexNumbers.exec( ids ) ) !== null ) {
+            numbers = match[1].split( this.regexSeparator );
         }
 
         // count...
         this.regexCount.lastIndex = this.regexIds.lastIndex;
-        if (( match = this.regexCount.exec(text) ) === null) {
+        if ( ( match = this.regexCount.exec( text ) ) === null ) {
             return false;
         }
         count = +match[1];
@@ -1825,104 +1820,103 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
      * Utils
      */
 
-    app.utils.log = function (arg) {
+    app.utils.log = function ( arg ) {
         var expr;
-        if (app.state.log4js) {
+        if ( app.state.log4js ) {
             try {
                 expr = '[MWBS15] ';
-                if (typeof arg === 'string') {
-                    window.console.log(expr + arg);
+                if ( typeof arg === 'string' ) {
+                    window.console.log( expr + arg );
                 } else {
-                    window.console.log(expr + 'See below...');
-                    window.console.log(arg);
+                    window.console.log( expr + 'See below...' );
+                    window.console.log( arg );
                 }
-            } catch (e) { /* working silently... */
+            } catch ( e ) { /* working silently... */ }
+        }
+    };
+
+    app.utils.schedule = function ( object, method, data ) {
+        if ( typeof object === 'object' && object !== null ) {
+            if ( typeof method === 'string' ) {
+                method = object[ method ];
+            }
+            if ( typeof method === 'function' ) {
+                window.setTimeout( function scheduledMethod() {
+                    method.call( object, data );
+                }, 0 );
             }
         }
     };
 
-    app.utils.schedule = function (object, method, data) {
-        if (typeof object === 'object' && object !== null) {
-            if (typeof method === 'string') {
-                method = object[method];
-            }
-            if (typeof method === 'function') {
-                window.setTimeout(function scheduledMethod() {
-                    method.call(object, data);
-                }, 0);
-            }
-        }
-    };
-
-    app.utils.moneyFormat = function (number) {
+    app.utils.moneyFormat = function ( number ) {
 
         var index, digits, money;
 
-        if (( number |= 0 ) < 100) {
+        if ( ( number |= 0 ) < 100 ) {
             money = ( number < 10 ? '0.0' : '0.' ) + number;
         } else {
             digits = number + '';
             index = digits.length - 2;
-            money = '.' + digits.substr(index, 2);
+            money = '.' + digits.substr( index, 2 );
             do {
                 index -= 3;
-                money = ( index <= 0 ? digits.substr(0, index + 3) : ',' + digits.substr(index, 3) ) + money;
-            } while (index > 0);
+                money = ( index <= 0 ? digits.substr( 0, index + 3 ) : ',' + digits.substr( index, 3 ) ) + money;
+            } while ( index > 0 );
         }
 
         return '$' + money;
 
     };
 
-    app.utils.trySet = function (obj, attr, val) {
-        if (typeof obj === 'object' && obj !== null) {
+    app.utils.trySet = function ( obj, attr, val ) {
+        if ( typeof obj === 'object' && obj !== null ) {
             obj[attr] = val;
         }
     };
 
-    app.utils.getCategoryUrl = function (args) {
+    app.utils.getCategoryUrl = function ( args ) {
 
         // /catalog/category/facetedmeta?edge=hybrid&parentCategoryId=undefined&categoryId=1003999&dynamicfacet=true&sortBy=ORIGINAL&productsPerPage=96&STRAP_SIZE=16mm&facetName=STRAP_SIZE
         var facet,
             baseUrl = '/catalog/category/facetedmeta?edge=hybrid&parentCategoryId=undefined&categoryId={{categoryId}}&dynamicfacet=true&pageIndex={{pageIndex}}&sortBy={{sortBy}}&productsPerPage=96',
             facetQuery = '&{{facetName}}={{facetValue}}&facetName={{facetName}}',
-            url = app.utils.replacer.replace(baseUrl, args);
+            url = app.utils.replacer.replace( baseUrl, args );
 
         // prepare url
-        if (args.facets) for (facet in args.facets) {
-            url += app.utils.replacer.replace(facetQuery, {
+        if ( args.facets ) for ( facet in args.facets ) {
+            url += app.utils.replacer.replace( facetQuery, {
                 facetName: facet,
                 facetValue: args.facets[facet]
-            });
+            } );
         }
 
-        app.utils.log(url);
+        app.utils.log( url );
 
         return url;
 
     };
 
-    app.utils.getProductsInfoUrl = function (args) {
+    app.utils.getProductsInfoUrl = function ( args ) {
 
         // /shop/catalog/product/thumbnail/1?edge=hybrid&limit=none&categoryId=1004564&ids=1277609,1277610,476088,476087,1130536,1124429,483604,1170719,1124426,1214948,878112,833223,833222,615684,605195,605192,584691,568879,495197,484342,483634,455825,1124432,1124428,1124427,1032694,1032693,1026288,1026287,1026286,1026285,1026284,999095,948488,695850,653127,600041,591854,584686,558479,495195,484344,483620,483561,455824,102713,100787
         var slice,
             url = null,
             baseUrl = '/shop/catalog/product/thumbnail/1?edge=hybrid&limit=none&categoryId={{categoryId}}&ids={{ids}}';
 
-        if (args.startIndex < args.ids.length) {
+        if ( args.startIndex < args.ids.length ) {
 
             // get partial list of ids
-            slice = args.ids.slice(args.startIndex, args.startIndex + 72);
+            slice = args.ids.slice( args.startIndex, args.startIndex + 72 );
             args.expectedCount = slice.length;
             args.startIndex += args.expectedCount;
 
             // build URL
-            url = app.utils.replacer.replace(baseUrl, {
+            url = app.utils.replacer.replace( baseUrl, {
                 categoryId: args.categoryId,
-                ids: slice.join(',')
-            });
+                ids: slice.join( ',' )
+            } );
 
-            app.utils.log(url);
+            app.utils.log( url );
 
         }
 
@@ -1930,52 +1924,52 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
 
     };
 
-    // app.utils.getCookie = function ( name ) {
-    //
-    //     var match,
-    //         value = null,
-    //         cookies = document.cookie,
-    //         regex = /\s*([^;=]+)=([^;]*);?/g;
-    //
-    //     while ( ( match = regex.exec( cookies ) ) !== null) {
-    //         if ( name === match[1] ) {
-    //             value = window.unescape( match[2] );
-    //             break;
-    //          }
-    //      }
-    //
-    //     return value;
-    //
-    // };
+    app.utils.getCookie = function ( name ) {
 
-    // app.utils.setCookie = function ( name, value, days ) {
-    //
-    //     var expires,
-    //         cookie = name + '=' + window.escape( value );
-    //
-    //     if ( days ) {
-    //         expires = new Date();
-    //         expires.setTime( expires.getTime() + ( days * 24 * 3600 * 1000 ) );
-    //         cookie += '; expires=' + expires.toGMTString();
-    //     }
-    //
-    //     cookie += '; path=/';
-    //
-    //     // save cookie...
-    //     document.cookie = cookie;
-    //
-    // };
+        var match,
+            value = null,
+            cookies = document.cookie,
+            regex = /\s*([^;=]+)=([^;]*);?/g;
 
-    app.utils.getCoremetricsAttributes = function (attributes) {
+        while ( ( match = regex.exec( cookies ) ) !== null) {
+            if ( name === match[1] ) {
+                value = window.unescape( match[2] );
+                break;
+             }
+         }
+
+        return value;
+
+    };
+
+    app.utils.setCookie = function ( name, value, days ) {
+
+        var expires,
+            cookie = name + '=' + window.escape( value );
+
+        if ( days ) {
+            expires = new Date();
+            expires.setTime( expires.getTime() + ( days * 24 * 3600 * 1000 ) );
+            cookie += '; expires=' + expires.toGMTString();
+        }
+
+        cookie += '; path=/';
+
+        // save cookie...
+        document.cookie = cookie;
+
+    };
+
+    app.utils.getCoremetricsAttributes = function ( attributes ) {
 
         var i, index, value, list;
 
-        if (typeof attributes === 'object' && attributes !== null) {
+        if ( typeof attributes === 'object' && attributes !== null ) {
             list = [];
-            for (index in attributes) {
+            for ( index in attributes ) {
                 value = attributes[index];
                 index = +index - 1;
-                for (i = list.length; i < index; i++) {
+                for ( i = list.length; i < index; i++ ) {
                     list[i] = '';
                 }
                 list[index] = value;
@@ -1987,41 +1981,40 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
 
     };
 
-    app.utils.coremetrics = function (type, tag, attributes) {
+    app.utils.coremetrics = function ( type, tag, attributes ) {
 
         var category = 'spring15_michele';
-        if ($('.bl_mobile').length > 0) {
+        if ($('.bl_mobile').length > 0){
             category = 'mbl:' + category;
         }
 
         try {
-            switch (type) {
-                case 'page':
-                    window.BLOOMIES.coremetrics.cmCreatePageviewTag(
-                        category + '--' + tag,
-                        category
-                    );
-                    break;
-                case 'element':
-                    window.BLOOMIES.coremetrics.cmCreatePageElementTag(
-                        tag,
-                        category,
-                        app.utils.getCoremetricsAttributes(attributes)
-                    );
-                    break;
-                case 'shop':
-                    window.cmCreateShopAction5Tag(
-                        attributes.id,
-                        attributes.name,
-                        attributes.quantity,
-                        attributes.price,
-                        category
-                    );
-                    window.cmDisplayShop5s();
-                    break;
+            switch ( type ) {
+            case 'page':
+                window.BLOOMIES.coremetrics.cmCreatePageviewTag(
+                    category + '--' + tag,
+                    category
+                );
+                break;
+            case 'element':
+                window.BLOOMIES.coremetrics.cmCreatePageElementTag(
+                    tag,
+                    category,
+                    app.utils.getCoremetricsAttributes( attributes )
+                );
+                break;
+            case 'shop':
+                window.cmCreateShopAction5Tag(
+                    attributes.id,
+                    attributes.name,
+                    attributes.quantity,
+                    attributes.price,
+                    category
+                );
+                window.cmDisplayShop5s();
+                break;
             }
-        } catch (e) { /* silence is golden... */
-        }
+        } catch ( e ) { /* silence is golden... */ }
 
     };
 
@@ -2037,7 +2030,7 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
      * Utils / Processors
      */
 
-    app.utils.processors.parseStrapSizes = function (response) {
+    app.utils.processors.parseStrapSizes = function ( response ) {
 
         var name,
             count,
@@ -2046,16 +2039,16 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
             regexName = /\sclass="STRAP_SIZE"[^>]*>(\d+mm)<\//g,
             regexCount = /\sid="count_STRAP_SIZE_(\d+mm)"[^>]*>\[(\d+)\]<\//g;
 
-        while ((match = regexName.exec(response)) !== null) {
+        while ( (match = regexName.exec( response )) !== null ) {
             // save name
             name = match[1], count = 0;
             // search for count
             regexCount.lastIndex = regexName.lastIndex;
-            if ((match = regexCount.exec(response)) !== null
-                && match[1] === name) {
+            if ( (match = regexCount.exec( response )) !== null
+                && match[1] === name ) {
                 count = +match[2];
             }
-            straps.push({name: name, count: count});
+            straps.push( { name: name, count: count } );
         }
 
         return {
@@ -2066,7 +2059,7 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
 
     };
 
-    app.utils.processors.parseMicheleCollections = function (response) {
+    app.utils.processors.parseMicheleCollections = function ( response ) {
 
         var name,
             count,
@@ -2075,15 +2068,15 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
             regexName = /\sclass="(?:MICHELE_COLLECTIONS|MICHELE_COLLECTIONS hiddenSingleSelectFactes)"[^>]*>([^<]+)<\//g,
             regexCount = /\sid="count_MICHELE_COLLECTIONS_(?:[^"]+)"[^>]*>\[(\d+)\]<\//g;
 
-        while ((match = regexName.exec(response)) !== null) {
+        while ( (match = regexName.exec( response )) !== null ) {
             // save name
             name = match[1], count = 0;
             // search for count
             regexCount.lastIndex = regexName.lastIndex;
-            if ((match = regexCount.exec(response)) !== null) {
+            if ( (match = regexCount.exec( response )) !== null ) {
                 count = +match[1];
             }
-            collections.push({name: name, count: count});
+            collections.push( { name: name, count: count } );
         }
 
         return {
@@ -2094,7 +2087,7 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
 
     };
 
-    app.utils.processors.parseMicheleColors = function (response) {
+    app.utils.processors.parseMicheleColors = function ( response ) {
 
         var name,
             count,
@@ -2103,15 +2096,15 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
             regexName = /\sclass="(?:MICHELE_COLOR|MICHELE_COLOR hiddenSingleSelectFactes)"[^>]*>([^<]+)<\//g,
             regexCount = /\sid="count_MICHELE_COLOR_(?:[^"]+)"[^>]*>\[(\d+)\]<\//g;
 
-        while ((match = regexName.exec(response)) !== null) {
+        while ( (match = regexName.exec( response )) !== null ) {
             // save name
             name = match[1], count = 0;
             // search for count
             regexCount.lastIndex = regexName.lastIndex;
-            if ((match = regexCount.exec(response)) !== null) {
+            if ( (match = regexCount.exec( response )) !== null ) {
                 count = +match[1];
             }
-            colors.push({name: name, count: count});
+            colors.push( { name: name, count: count } );
         }
 
         return {
@@ -2130,10 +2123,10 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
      * @note Uses v1 add to bag api
      * @see api docs http://developer.bloomingdales.com/io-docs
      */
-    app.routines.addToBag = function (args) {
+    app.routines.addToBag = function ( args ) {
         // Get default user id and guid cookies
-        var defaultUserGuidCookie = Cookie.get(app.consts.onlineGuidCookieName),
-            defaultUserUidCookie = Cookie.get(app.consts.onlineUidCookieName),
+        var defaultUserGuidCookie = app.utils.getCookie(app.consts.onlineGuidCookieName),
+            defaultUserUidCookie = app.utils.getCookie(app.consts.onlineUidCookieName),
 
             // Resolve bag request url (send user id or guid based on if it is available)
             bagRequestPath = (function () {
@@ -2166,7 +2159,7 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
             }, args),
 
             // Add to bag request success callback
-            bagRequestSuccess = function (response) {
+            bagRequestSuccess = function( response ) {
                 // Seed params to forward to next add to bag handler
                 // Reduce items list to expect parameters object
                 nextCallArgs = response.bag.items.reduce(function (out, item) {
@@ -2183,36 +2176,36 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
                 );
 
                 // 'online_uid' cookie
-                if (response.bag.owner.userId && !Cookie.get(app.consts.onlineUidCookieName)) {
-                    Cookie.set(app.consts.onlineUidCookieName,
-                        response.bag.owner.userId, null, {expires: app.consts.cookieExpire});
+                if ( response.bag.owner.userId && !app.utils.getCookie( app.consts.onlineUidCookieName ) ) {
+                    app.utils.setCookie( app.consts.onlineUidCookieName,
+                        response.bag.owner.userId, app.consts.cookieExpire );
                 }
 
                 // 'online_guid' cookie
-                if (response.bag.owner.userGuid && !Cookie.get(app.consts.onlineGuidCookieName)) {
-                    Cookie.set(app.consts.onlineGuidCookieName,
-                        response.bag.owner.userGuid, null, {expires: app.consts.cookieExpire});
+                if ( response.bag.owner.userGuid && !app.utils.getCookie( app.consts.onlineGuidCookieName ) ) {
+                    app.utils.setCookie( app.consts.onlineGuidCookieName,
+                        response.bag.owner.userGuid, app.consts.cookieExpire );
                 }
 
                 // 'baguid' cookie
-                if (response.bag.bagGUID && !Cookie.get(app.consts.bagGuidCookieName)) {
-                    Cookie.set(app.consts.bagGuidCookieName,
-                        response.bag.bagGUID, null, {expires: app.consts.cookieExpire});
+                if ( response.bag.bagGUID && !app.utils.getCookie( app.consts.bagGuidCookieName ) ) {
+                    app.utils.setCookie( app.consts.bagGuidCookieName,
+                        response.bag.bagGUID, app.consts.cookieExpire );
                 }
             },
 
             // Forward the rest of the add to bag functionality here
             allBagRequestsComplete = function () {
-                app.utils.schedule(nextCallArgs, 'callback');
+                app.utils.schedule( nextCallArgs, 'callback' );
             },
 
             // Add to bag request failure handler
             bagRequestFailure = function (error) {
-                app.utils.log('ROUTINES/ADDTOBAG: UNEXPECTED ERROR...');
+                app.utils.log( 'ROUTINES/ADDTOBAG: UNEXPECTED ERROR...' );
                 nextCallArgs.error = error;
-                app.utils.schedule(nextCallArgs, 'callback');
+                app.utils.schedule( nextCallArgs, 'callback' );
                 console.error('Failed to add to bag.  Error recieved: ', error);
-                app.routines.runtime.displayErrorMessage(app.consts.addToBagNotAvailableError);
+                app.routines.runtime.displayErrorMessage( app.consts.addToBagNotAvailableError );
                 app.views.heads.unblockUI();
                 app.views.straps.hideLoader();
             },
@@ -2229,20 +2222,11 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
             .fail(bagRequestFailure);
     };
 
-    app.routines.ensureBagGuid = function () {
-        var bagGuid = Cookie.get(app.consts.bagGuidCookieName);
-
-        // Make request for bag and store it
-        if (bagGuid) {
-
-        }
-    };
-
-    app.routines.getProductInfo = function (args) {
+    app.routines.getProductInfo = function ( args ) {
 
         var url = '/catalog/product/quickview/?id={{id}}',
             callback = function () {
-                app.utils.schedule(args, 'callback');
+                app.utils.schedule( args, 'callback' );
             };
 
         // set output data...
@@ -2253,24 +2237,22 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
         $.ajax({
             type: 'GET',
             dataType: 'text',
-            url: '/p' + url.replace('{{id}}', args.id),
+            url: '/p' + url.replace( '{{id}}', args.id ),
             error: callback,
-            success: function (response) {
+            success: function( response ) {
                 try {
-                    args.response = $.parseJSON(response.replace(/[\n\r]+/g, ''));
+                    args.response = $.parseJSON( response.replace( /[\n\r]+/g, '' ) );
                     args.isOK = true;
                 } catch (e) {
                     args.error = e;
-                    app.utils.log('ROUTINES/GETPRODUCTINFO: ERROR PARSING JSON RESPONSE...');
-                } finally {
-                    callback();
-                }
+                    app.utils.log( 'ROUTINES/GETPRODUCTINFO: ERROR PARSING JSON RESPONSE...' );
+                } finally { callback(); }
             }
         });
 
     };
 
-    app.routines.getCategoryItems = function (args) {
+    app.routines.getCategoryItems = function ( args ) {
 
         var key, defs = {
                 isOK: false,
@@ -2284,18 +2266,18 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
                 items: null // Array
             },
             callback = function callback() {
-                app.utils.schedule(args, 'callback');
+                app.utils.schedule( args, 'callback' );
             };
 
         // reproduce default structure
-        for (key in defs) {
-            if (!(key in args)) {
+        for ( key in defs ) {
+            if ( !(key in args) ) {
                 args[key] = defs[key];
             }
         }
 
-        if (typeof args.categoryId !== 'string'
-            || args.categoryId.length < 1) {
+        if ( typeof args.categoryId !== 'string'
+            || args.categoryId.length < 1 ) {
             throw 'ROUTINES/GETCATEGORYITEMS: BAD PARAMETERS';
         }
 
@@ -2305,30 +2287,30 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
         $.ajax({
             type: 'GET',
             dataType: 'text',
-            url: '/p' + app.utils.getCategoryUrl(args),
+            url: '/p' + app.utils.getCategoryUrl( args ),
             error: callback,
-            success: function (response) {
+            success: function ( response ) {
 
                 var processor,
                     parser = app.utils.categoryAPIParser;
 
                 // execute addtiona data processors...
-                if (args.processors) while (args.processors.length > 0) {
+                if ( args.processors ) while ( args.processors.length > 0 ) {
                     processor = args.processors.shift();
-                    if (typeof processor === 'function') {
-                        if (!args.results) {
+                    if ( typeof processor === 'function' ) {
+                        if ( !args.results ) {
                             args.results = [];
                         }
-                        args.results.push(processor.call(args, response));
+                        args.results.push( processor.call( args, response ) );
                     }
                 }
 
-                if (parser.parse(response)) {
+                if ( parser.parse( response ) ) {
                     args.count = parser.count;
-                    args.items = args.items ? args.items.concat(parser.ids) : parser.ids;
-                    if (args.items.length < args.count) {
+                    args.items = args.items ? args.items.concat( parser.ids ) : parser.ids;
+                    if ( args.items.length < args.count ) {
                         args.pageIndex = parser.ids.length > 0 ? args.pageIndex + 1 : 1;
-                        app.utils.schedule(app.routines, 'getCategoryItems', args);
+                        app.utils.schedule( app.routines, 'getCategoryItems', args );
                         // prevent callback from being called
                         return;
                     }
@@ -2345,7 +2327,7 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
 
     };
 
-    app.routines.getProductsInfo = function (args) {
+    app.routines.getProductsInfo = function ( args ) {
 
         var key, defs = {
                 isOK: false,
@@ -2358,22 +2340,22 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
                 items: null // Object
             },
             callback = function callback() {
-                app.utils.schedule(args, 'callback');
+                app.utils.schedule( args, 'callback' );
             };
 
         // reproduce default structure
-        for (key in defs) {
-            if (!(key in args)) {
+        for ( key in defs ) {
+            if ( !(key in args) ) {
                 args[key] = defs[key];
             }
         }
 
-        if (typeof args.categoryId !== 'string'
+        if ( typeof args.categoryId !== 'string'
             || args.categoryId.length < 1
             || typeof args.ids !== 'object'
             || args.ids === null
             || args.ids.length < 1
-            || args.ids.length <= args.startIndex) {
+            || args.ids.length <= args.startIndex ) {
             throw 'ROUTINES/GETPRODUCTSINFO: BAD PARAMETERS';
         }
 
@@ -2383,9 +2365,9 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
         $.ajax({
             type: 'GET',
             dataType: 'text',
-            url: '/p' + app.utils.getProductsInfoUrl(args),
+            url: '/p' + app.utils.getProductsInfoUrl( args ),
             error: callback,
-            success: function (response) {
+            success: function ( response ) {
 
                 var item,
                     isOK = true,
@@ -2393,20 +2375,20 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
                     // retrievedCount = 0,
                     parser = app.utils.thumbnailAPIParser;
 
-                if (typeof args.items !== 'object' || args.items === null) {
+                if ( typeof args.items !== 'object' || args.items === null ) {
                     args.items = {};
                     args.count = 0;
                 }
 
                 parser.reset();
-                while (parser.parse(response, needsImage)) {
+                while ( parser.parse( response, needsImage ) ) {
                     item = parser.getParsedInfo();
                     // // repeated?
                     // if ( item.id in args.items ) {
                     //     isOK = false;
                     //     break;
                     // }
-                    args.items[item.id] = item;
+                    args.items[ item.id ] = item;
                     args.count++;
                     // retrievedCount++;
                 }
@@ -2416,8 +2398,8 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
                 //     isOK = false;
                 // }
 
-                if (isOK && args.startIndex < args.ids.length) {
-                    app.utils.schedule(app.routines, 'getProductsInfo', args);
+                if ( isOK && args.startIndex < args.ids.length ) {
+                    app.utils.schedule( app.routines, 'getProductsInfo', args );
                     // prevent callback from being called
                     return;
                 }
@@ -2437,12 +2419,12 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
      * Routines / Runtime
      */
 
-    app.routines.runtime.exception = function (data) {
-        app.utils.log('ROUTINES/RUNTIME/EXCEPTION');
-        app.utils.log(data);
+    app.routines.runtime.exception = function ( data ) {
+        app.utils.log( 'ROUTINES/RUNTIME/EXCEPTION' );
+        app.utils.log( data );
     };
 
-    app.routines.runtime.verifyStrapsRetrieval = function (qData, qCallback) {
+    app.routines.runtime.verifyStrapsRetrieval = function ( qData, qCallback ) {
 
         var i,
             len,
@@ -2450,38 +2432,38 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
             hasErrors = false;
 
         // update color facets...
-        if (qData.colorFacetQueryString) {
-            app.domain.straps.setFilterOptionsFromQueryString(app.consts.facetNameColor, qData.colorFacetQueryString);
+        if ( qData.colorFacetQueryString ) {
+            app.domain.straps.setFilterOptionsFromQueryString( app.consts.facetNameColor, qData.colorFacetQueryString );
         }
 
         // check for errors...
-        for (i = 0, len = tasks.length; i < len; i++) {
-            if (!tasks[i].isOK) {
+        for ( i = 0, len = tasks.length; i < len; i++ ) {
+            if ( !tasks[i].isOK ) {
                 hasErrors = true;
                 break;
             }
         }
 
         // check if result set is empty...
-        if (app.domain.straps.countItems() < 1) {
-            if (hasErrors) {
-                app.utils.log('ROUTINES/RUNTIME/VERIFYSTRAPSRETRIEVAL: Error on API calls...');
-                app.utils.log(qData);
+        if ( app.domain.straps.countItems() < 1 ) {
+            if ( hasErrors ) {
+                app.utils.log( 'ROUTINES/RUNTIME/VERIFYSTRAPSRETRIEVAL: Error on API calls...' );
+                app.utils.log( qData );
                 // display error message...
-                app.routines.runtime.displayErrorMessage(app.consts.strapsLoadingError);
+                app.routines.runtime.displayErrorMessage( app.consts.strapsLoadingError );
             } else {
                 // display empty result set message...
-                app.routines.runtime.displayErrorMessage(app.consts.strapsLoadingNone);
+                app.routines.runtime.displayErrorMessage( app.consts.strapsLoadingNone );
             }
         }
 
         // invoke callback if any...
-        if (typeof qData.callback === 'function') {
-            window.setTimeout(qData.callback, 0);
+        if ( typeof qData.callback === 'function' ) {
+            window.setTimeout( qData.callback, 0 );
         }
 
         // notify queue...
-        qCallback(true, null);
+        qCallback( true, null );
 
     };
 
@@ -2497,72 +2479,72 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
 
     };
 
-    app.routines.runtime.updateStrapFilters = function (struct, shouldReset) {
+    app.routines.runtime.updateStrapFilters = function ( struct, shouldReset ) {
 
         var filter, options, option;
 
-        if (typeof struct !== 'object' || struct === null) {
+        if ( typeof struct !== 'object' || struct === null ) {
             return;
         }
 
-        filter = app.domain.straps.getFilter(struct.id);
-        if (filter) {
-            if (shouldReset) {
-                filter.reset(true);
+        filter = app.domain.straps.getFilter( struct.id );
+        if ( filter ) {
+            if ( shouldReset ) {
+                filter.reset( true );
             }
             options = struct.options;
-            for (var i = 0; i < options.length; i++) {
+            for (var i = 0; i < options.length; i++ ) {
                 option = options[i];
-                filter.addOption(new FilterOption(option.name, option.name, option.count));
+                filter.addOption( new FilterOption( option.name, option.name, option.count ) );
             }
         }
 
     };
 
-    app.routines.runtime.loadStraps = function (qData, qCallback) {
+    app.routines.runtime.loadStraps = function ( qData, qCallback ) {
 
         var prefix = 'ROUTINES/RUNTIME/LOADSTRAPS: ';
 
         // make sure there is a selected head...
-        if (typeof qData !== 'object' || qData === null) {
-            qCallback(false, prefix + 'Invalid Argument...');
+        if ( typeof qData !== 'object' || qData === null ) {
+            qCallback( false, prefix + 'Invalid Argument...' );
             return;
         }
 
         // issue API call...
-        app.routines.getCategoryItems({
+        app.routines.getCategoryItems( {
             categoryId: app.consts.strapsCategoryId,
-            processors: [app.utils.processors.parseMicheleColors],
+            processors: [ app.utils.processors.parseMicheleColors ],
             facets: typeof qData.facets === 'object' ? qData.facets : null,
             callback: function () {
-                if (this.isOK) {
-                    if (this.items && this.items.length > 0) {
-                        app.domain.straps.append(this.items);
+                if ( this.isOK ) {
+                    if ( this.items && this.items.length > 0 ) {
+                        app.domain.straps.append( this.items );
                     }
-                    if (this.results && this.results.length > 0) {
-                        app.routines.runtime.updateStrapFilters(this.results[0], qData.shouldResetFilters);
+                    if ( this.results && this.results.length > 0 ) {
+                        app.routines.runtime.updateStrapFilters( this.results[0], qData.shouldResetFilters );
                     }
-                    app.utils.trySet(qData, 'isOK', true);
-                    qCallback(true, null);
+                    app.utils.trySet( qData, 'isOK', true );
+                    qCallback( true, null );
                 } else {
-                    qCallback(false, prefix + 'Bad API Response...');
+                    qCallback( false, prefix + 'Bad API Response...' );
                 }
             }
-        });
+        } );
 
     };
 
-    app.routines.runtime.loadStrapsInfo = function (qData, qCallback) {
+    app.routines.runtime.loadStrapsInfo = function ( qData, qCallback ) {
 
         var invalidIds = app.domain.straps.getInvalidItems();
-        if (invalidIds.length < 1) {
-            app.utils.trySet(qData, 'isOK', true);
-            qCallback(true, null);
+        if ( invalidIds.length < 1 ) {
+            app.utils.trySet( qData, 'isOK', true );
+            qCallback( true, null );
             return;
         }
 
         // issue API call...
-        app.routines.getProductsInfo({
+        app.routines.getProductsInfo( {
             categoryId: app.consts.strapsCategoryId,
             ids: invalidIds,
             callback: function () {
@@ -2575,41 +2557,41 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
                     errCount = 0,
                     prefix = 'ROUTINES/RUNTIME/LOADSTRAPSINFO: ';
 
-                if (this.isOK && this.items !== null
-                    && typeof this.items === 'object') {
+                if ( this.isOK && this.items !== null
+                    && typeof this.items === 'object' ) {
                     items = this.items;
-                    for (id in items) {
+                    for ( id in items ) {
                         item = items[id];
                         strap = map[id];
-                        if (strap) {
-                            strap.setName(item.name);
+                        if ( strap ) {
+                            strap.setName( item.name );
                             strap.price = item.price;
                             strap.priceBig = item.priceBig;
                             strap.priceNet = item.priceNet;
                             strap.isOK = strap.isValid();
-                            if (!strap.isOK) {
+                            if ( !strap.isOK ) {
                                 errCount++;
-                                app.utils.log(prefix + 'INVALID INFO FOR STRAP ID #' + id);
+                                app.utils.log( prefix + 'INVALID INFO FOR STRAP ID #' + id );
                             }
                         } else {
                             errCount++;
-                            app.utils.log(prefix + 'ID #' + id + ' NOT FOUND IN LOCAL DATA');
+                            app.utils.log( prefix + 'ID #' + id + ' NOT FOUND IN LOCAL DATA' );
                         }
                     }
-                    if (errCount > 0) {
-                        app.utils.log(prefix + errCount + ' ERROR(S) WHILE LOADING STRAP INFO');
+                    if ( errCount > 0 ) {
+                        app.utils.log( prefix + errCount + ' ERROR(S) WHILE LOADING STRAP INFO' );
                     }
-                    app.utils.trySet(qData, 'isOK', true);
-                    qCallback(true, null);
+                    app.utils.trySet( qData, 'isOK', true );
+                    qCallback( true, null );
                 } else {
-                    qCallback(false, prefix + 'Bad API Response...');
+                    qCallback( false, prefix + 'Bad API Response...' );
                 }
             }
-        });
+        } );
 
     };
 
-    app.routines.runtime.performStrapsRetrieval = function (callback) {
+    app.routines.runtime.performStrapsRetrieval = function ( callback ) {
 
         var i,
             args,
@@ -2629,17 +2611,17 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
         app.domain.straps.clear();
 
         // get color facets...
-        colorFacet = app.domain.straps.getQueryStringForFilterOptions(app.consts.facetNameColor);
-        if (colorFacet) {
+        colorFacet = app.domain.straps.getQueryStringForFilterOptions( app.consts.facetNameColor );
+        if ( colorFacet ) {
             context.colorFacetQueryString = colorFacet;
         }
 
         // check if any head is selected...
         head = app.domain.bag.getHead();
-        if (head) {
+        if ( head ) {
 
             // use head size as size facet...
-            sizeFacet = window.escape(head.size);
+            sizeFacet = window.escape( head.size );
 
             // check if bracelets are checked...
             needsBracelet = app.domain.straps.isFilterOptionChecked(
@@ -2654,69 +2636,64 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
             );
 
             // bracelets request...
-            if (needsBracelet || !needsStrap) {
-                args = {isOK: false, task: app.routines.runtime.loadStraps, facets: {}, shouldResetFilters: true};
-                args.facets[app.consts.facetNameBandType] = app.consts.facetValueBandTypeBracelet;
-                args.facets[app.consts.facetNameCollections] = window.escape(head.collection); // set bracelet collection...
-                args.facets[app.consts.facetNameStrapSize] = sizeFacet;
-                if (colorFacet) {
-                    args.facets[app.consts.facetNameColor] = colorFacet;
+            if ( needsBracelet || !needsStrap ) {
+                args = { isOK: false, task: app.routines.runtime.loadStraps, facets: {}, shouldResetFilters: true  };
+                args.facets[ app.consts.facetNameBandType ] = app.consts.facetValueBandTypeBracelet;
+                args.facets[ app.consts.facetNameCollections ] = window.escape( head.collection ); // set bracelet collection...
+                args.facets[ app.consts.facetNameStrapSize ] = sizeFacet;
+                if ( colorFacet ) {
+                    args.facets[ app.consts.facetNameColor ] = colorFacet;
                 }
-                context.tasks.push(args);
+                context.tasks.push( args );
             }
 
             // straps request...
-            if (needsStrap || !needsBracelet) {
-                args = {
-                    isOK: false,
-                    task: app.routines.runtime.loadStraps,
-                    facets: {},
-                    shouldResetFilters: ( context.tasks.length < 1 )
-                };
-                args.facets[app.consts.facetNameBandType] = app.consts.facetValueBandTypeStrap;
-                args.facets[app.consts.facetNameStrapSize] = sizeFacet;
-                if (colorFacet) {
-                    args.facets[app.consts.facetNameColor] = colorFacet;
+            if ( needsStrap || !needsBracelet ) {
+                args = { isOK: false, task: app.routines.runtime.loadStraps, facets: {}, shouldResetFilters: ( context.tasks.length < 1 ) };
+                args.facets[ app.consts.facetNameBandType ] = app.consts.facetValueBandTypeStrap;
+                args.facets[ app.consts.facetNameStrapSize ] = sizeFacet;
+                if ( colorFacet ) {
+                    args.facets[ app.consts.facetNameColor ] = colorFacet;
                 }
-                context.tasks.push(args);
+                context.tasks.push( args );
             }
 
         } else {
 
             // since no head is selected, a single request is enough...
-            args = {isOK: false, task: app.routines.runtime.loadStraps, facets: {}, shouldResetFilters: true};
+            args = { isOK: false, task: app.routines.runtime.loadStraps, facets: {}, shouldResetFilters: true };
 
             // strap size...
-            sizeFacet = app.domain.heads.getQueryStringForFilterOptions(app.consts.facetNameStrapSize);
-            if (sizeFacet) {
-                args.facets[app.consts.facetNameStrapSize] = sizeFacet;
+            sizeFacet = app.domain.heads.getQueryStringForFilterOptions( app.consts.facetNameStrapSize );
+            if ( sizeFacet ) {
+                args.facets[ app.consts.facetNameStrapSize ] = sizeFacet;
             }
 
             // band type...
-            bandTypeFacet = app.domain.straps.getQueryStringForFilterOptions(app.consts.facetNameBandType);
-            if (bandTypeFacet) {
-                args.facets[app.consts.facetNameBandType] = bandTypeFacet;
+            bandTypeFacet = app.domain.straps.getQueryStringForFilterOptions( app.consts.facetNameBandType );
+            if ( bandTypeFacet ) {
+                args.facets[ app.consts.facetNameBandType ] = bandTypeFacet;
             }
 
             // strap color...
-            if (colorFacet) {
-                args.facets[app.consts.facetNameColor] = colorFacet;
+            if ( colorFacet ) {
+                args.facets[ app.consts.facetNameColor ] = colorFacet;
             }
 
-            context.tasks.push(args);
+            context.tasks.push( args );
 
         }
 
         // create task for information loading...
-        context.tasks.push({
+        context.tasks.push( {
             isOK: false,
             task: app.routines.runtime.loadStrapsInfo
-        });
+        } );
 
         // enqueue tasks...
-        for (i = 0; i < context.tasks.length; i++) {
+        for ( i = 0; i < context.tasks.length; i++ ) {
             args = context.tasks[i];
-            app.queue.next(args.task, args, null, app.routines.runtime.exception);
+            app.queue.next( args.task, args, null, app.routines.runtime.exception );
         }
 
         // enqueue verification task (the last one)...
@@ -2729,33 +2706,33 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
 
     };
 
-    app.routines.runtime.doSelectStrap = function (strap) {
+    app.routines.runtime.doSelectStrap = function ( strap ) {
 
         var image;
 
         // set selected strap...
-        if (app.domain.bag.setStrap(strap)) {
+        if ( app.domain.bag.setStrap( strap ) ) {
             app.views.bag.render();
             // display image of head and strap match...
-            image = app.utils.replacer.replace(app.consts.scene7MatchUrl, {
+            image = app.utils.replacer.replace( app.consts.scene7MatchUrl, {
                     head: ( app.domain.bag.getHead() ).id,
                     strap: ( app.domain.bag.getStrap() ).id
                 }
             );
-            app.views.display.setImage(image);
+            app.views.display.setImage( image );
         }
 
     };
 
-    app.routines.runtime.doSelectHead = function (head) {
+    app.routines.runtime.doSelectHead = function ( head ) {
 
-        if (app.views.heads.isUIBlocked) {
+        if ( app.views.heads.isUIBlocked ) {
             // nothing to do if UI is blocked...
             return;
         }
 
         // set selected head...
-        if (!app.domain.bag.setHead(head)) {
+        if ( !app.domain.bag.setHead( head ) ) {
             // nothing to do... this is the currently selected head...
             return;
         }
@@ -2763,259 +2740,258 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
         // update views...
         app.views.heads.blockUI();
         app.views.straps.displayLoader();
-        app.views.display.setImage(head.getPdpImage());
+        app.views.display.setImage( head.getPdpImage() );
         app.views.bag.render();
 
         // self explained...
-        app.routines.runtime.performStrapsRetrieval(app.routines.runtime.updateViewsForHeadSelection);
+        app.routines.runtime.performStrapsRetrieval( app.routines.runtime.updateViewsForHeadSelection );
 
     };
 
     app.routines.runtime.refineHeadsByStrapSize = function () {
 
         // perform filtering
-        app.domain.heads.filterBy(app.consts.facetNameStrapSize, 'size');
-        window.setTimeout(app.routines.runtime.updateHeadsCategoryView, 100);
+        app.domain.heads.filterBy( app.consts.facetNameStrapSize, 'size' );
+        window.setTimeout( app.routines.runtime.updateHeadsCategoryView, 100 );
 
     };
 
     app.routines.runtime.doRefineBy = function () {
 
         // will heads be refined?
-        if (app.views.refine.size.hasChanges()) {
+        if ( app.views.refine.size.hasChanges() ) {
             // unselect head (and consequently strap), if any...
-            if (app.domain.bag.setHead(null)) {
-                app.views.display.setImage(null);
+            if ( app.domain.bag.setHead( null ) ) {
+                app.views.display.setImage( null );
                 app.views.bag.render();
             }
             // update category view UI and schedule local refine by...
             app.views.heads.displayLoader();
-            window.setTimeout(app.routines.runtime.refineHeadsByStrapSize, 500);
+            window.setTimeout( app.routines.runtime.refineHeadsByStrapSize, 500 );
         }
 
         // will straps be refined?
-        if (app.views.refine.size.hasChanges()
+        if ( app.views.refine.size.hasChanges()
             || app.views.refine.type.hasChanges()
-            || app.views.refine.color.hasChanges()) {
+            || app.views.refine.color.hasChanges() ) {
             // update category view UI and retrieve straps from server...
             app.views.straps.displayLoader();
-            app.routines.runtime.performStrapsRetrieval(app.routines.runtime.updateStrapsCategoryView);
+            app.routines.runtime.performStrapsRetrieval( app.routines.runtime.updateStrapsCategoryView );
         }
 
     };
 
     app.routines.runtime.displayAppFailureMessage = function () {
 
-        var intro = $('#blmwbs15_intro');
+        var intro = $( '#blmwbs15_intro' );
 
-        $('#blmwbs15_intro_main, #blmwbs15_intro_ie8').hide();
-        $('#blmwbs15_intro_error').show();
-        $('#blmwbs15_contents, #blmwbs15_bar').hide();
-        if (intro.is(':animated')) {
-            intro.fadeIn(400);
+        $( '#blmwbs15_intro_main, #blmwbs15_intro_ie8' ).hide();
+        $( '#blmwbs15_intro_error' ).show();
+        $( '#blmwbs15_contents, #blmwbs15_bar' ).hide();
+        if ( intro.is( ':animated' ) ) {
+            intro.fadeIn( 400 );
         } else {
             intro.show();
         }
 
         // coremetrics...
-        app.utils.coremetrics('page', 'error-failure');
+        app.utils.coremetrics( 'page', 'error-failure' );
 
     };
 
-    app.routines.runtime.displayErrorMessage = function (message, href) {
+    app.routines.runtime.displayErrorMessage = function ( message, href ) {
 
         var jObj = app.cache.jErrorMessageOverlay;
 
         // cache miss...
-        if (!jObj) {
-            jObj = $('#blmwbs15_overlay_error_message');
+        if ( !jObj ) {
+            jObj = $( '#blmwbs15_overlay_error_message' );
             app.cache.jErrorMessageOverlay = jObj;
         }
 
         // display blocker without loader...
-        app.routines.runtime.setBlockedState(true, false);
+        app.routines.runtime.setBlockedState( true, false );
 
         // set href...
-        if (typeof href !== 'string') {
+        if ( typeof href !== 'string' ) {
             href = '#/builder/acknowledge';
         }
 
         // prepare overlay...
-        jObj.find('span.blmwbs15_text').html(message);
-        jObj.find('a.blmwbs15_button').attr('href', href);
+        jObj.find( 'span.blmwbs15_text' ).html( message );
+        jObj.find( 'a.blmwbs15_button' ).attr( 'href', href );
         jObj.show();
 
     };
 
-    app.routines.runtime.setBlockedState = function (isBlocked, showLoader) {
+    app.routines.runtime.setBlockedState = function ( isBlocked, showLoader ) {
 
-        var blocker = $('#blmwbs15_full_uiblocker');
+        var blocker = $( '#blmwbs15_full_uiblocker' );
 
         // app state...
-        if (isBlocked) {
+        if ( isBlocked ) {
             app.state.isBlocked = true;
             blocker.show();
         } else {
             app.state.isBlocked = false;
-            blocker.children('div.blmwbs15_overlay').hide();
+            blocker.children( 'div.blmwbs15_overlay' ).hide();
             blocker.hide();
         }
 
         // loader state...
-        if (showLoader) {
-            blocker.addClass('blmwbs15_loading');
+        if ( showLoader ) {
+            blocker.addClass( 'blmwbs15_loading' );
         } else {
-            blocker.removeClass('blmwbs15_loading');
+            blocker.removeClass( 'blmwbs15_loading' );
         }
 
     };
 
-    app.routines.runtime.addToBagError = function (data) {
+    app.routines.runtime.addToBagError = function ( data ) {
 
         var message = typeof data === 'string'
             ? data
             : 'Error adding products to bag... Please try again later.';
 
-        app.routines.runtime.displayErrorMessage(message);
+        app.routines.runtime.displayErrorMessage( message );
 
         // coremetrics...
-        app.utils.coremetrics('element', 'error', {'32': message});
+        app.utils.coremetrics( 'element', 'error', { '32': message } );
 
     };
 
-    app.routines.runtime.addToBagSuccess = function (data) {
+    app.routines.runtime.addToBagSuccess = function ( data ) {
 
-        app.routines.runtime.setBlockedState(true, false);
-        $('#blmwbs15_a2b_confirmation').show();
+        app.routines.runtime.setBlockedState( true, false );
+        $( '#blmwbs15_a2b_confirmation' ).show();
 
         // coremetrics...
-        if (data.head) {
-            app.utils.coremetrics('shop', null, {
+        if ( data.head ) {
+            app.utils.coremetrics( 'shop', null, {
                 id: data.head.id,
                 name: data.head.name,
                 quantity: 1,
-                price: app.utils.moneyFormat(data.head.price)
-            });
+                price: app.utils.moneyFormat( data.head.price )
+            } );
         }
-        if (data.strap) {
-            app.utils.coremetrics('shop', null, {
+        if ( data.strap ) {
+            app.utils.coremetrics( 'shop', null, {
                 id: data.strap.id,
                 name: data.strap.name,
                 quantity: 1,
-                price: app.utils.moneyFormat(data.strap.price)
-            });
+                price: app.utils.moneyFormat( data.strap.price )
+            } );
         }
 
     };
 
-    app.routines.runtime.findUpcId = function (qData, qCallback) {
+    app.routines.runtime.findUpcId = function ( qData, qCallback ) {
 
         var item = qData;
 
-        app.routines.getProductInfo({
+        app.routines.getProductInfo( {
             id: item.id,
             callback: function () {
                 var upcId, isOK = false;
-                if (this.isOK) {
+                if ( this.isOK ) {
                     try {
                         upcId = this.response.upcmap[0].upcID;
-                        if (typeof upcId === 'number'
-                            || ( typeof upcId === 'string' && upcId.length > 0 )) {
+                        if ( typeof upcId === 'number'
+                            || ( typeof upcId === 'string' && upcId.length > 0 ) ) {
                             item.upcId = upcId + '';
                             isOK = true;
                         }
-                    } catch (e) { /* silently leave... */
-                    }
+                    } catch ( e ) { /* silently leave... */ }
                 }
-                qCallback(isOK, isOK ? null : {
+                qCallback( isOK, isOK ? null : {
                     info: 'ROUTINES/RUNTIME/FINDUPCID: ERROR RETRIEVING PRODUCT UPCID...',
                     item: item
-                });
+                } );
             }
-        });
+        } );
 
     };
 
-    app.routines.runtime.tryAddingToBag = function (qData, qCallback) {
+    app.routines.runtime.tryAddingToBag = function ( qData, qCallback ) {
 
         var head = qData.head,
             strap = qData.strap,
             upcIds = [];
 
         // check if information was correctly retrieved...
-        if (( head && !head.upcId ) || ( strap && !strap.upcId )) {
-            qCallback(false, 'Error retrieving product information. Please, try again later.');
+        if ( ( head && !head.upcId ) || ( strap && !strap.upcId ) ) {
+            qCallback( false, 'Error retrieving product information. Please, try again later.' );
             return;
         }
 
-        if (head) {
-            upcIds.push(head.upcId);
+        if ( head ) {
+            upcIds.push( head.upcId );
         }
 
-        if (strap) {
-            upcIds.push(strap.upcId);
+        if ( strap ) {
+            upcIds.push( strap.upcId );
         }
 
-        if (upcIds.length < 1) {
-            qCallback(false, app.consts.noItemsInBagError);
+        if ( upcIds.length < 1 ) {
+            qCallback( false, app.consts.noItemsInBagError );
             return;
         }
 
         // send add to bag call
-        app.routines.addToBag({
+        app.routines.addToBag( {
             upcIds: upcIds,
             callback: function () {
                 var key,
                     item,
                     errorMessage = '',
                     isOK = true;
-                if (this.error !== null) {
+                if ( this.error !== null ) {
                     isOK = false;
                     errorMessage = 'Unexpected error while adding to bag... Please try again later.';
-                } else for (key in this.result) {
+                } else for ( key in this.result ) {
                     item = this.result[key];
-                    if (!item.isOK) {
+                    if ( !item.isOK ) {
                         isOK = false;
-                        if (item.errors && item.errors.length > 0) {
-                            if (errorMessage.length > 0) {
+                        if ( item.errors && item.errors.length > 0 ) {
+                            if ( errorMessage.length > 0 ) {
                                 errorMessage += '\n';
                             }
                             errorMessage += ( head && head.upcId === item.upcId ? 'Head' : 'Strap' ) + ':\n';
-                            errorMessage += item.errors.join('\n') + '\n';
+                            errorMessage += item.errors.join( '\n' ) + '\n';
                         }
                     }
                 }
-                qCallback(isOK, isOK ? qData : errorMessage);
+                qCallback( isOK, isOK ? qData : errorMessage );
             }
-        });
+        } );
 
     };
 
     app.routines.runtime.doAddToBag = function () {
 
         var context,
-            head = app.domain.bag.getItemIfChecked('head'),
-            strap = app.domain.bag.getItemIfChecked('strap');
+            head = app.domain.bag.getItemIfChecked( 'head' ),
+            strap = app.domain.bag.getItemIfChecked( 'strap' );
 
-        if (app.state.isBlocked) {
+        if ( app.state.isBlocked ) {
             return;
         }
 
-        if (!head && !strap) {
+        if ( !head && !strap ) {
             // none selected...
-            app.routines.runtime.displayErrorMessage(app.consts.noItemsInBagError);
+            app.routines.runtime.displayErrorMessage( app.consts.noItemsInBagError );
             return;
         }
 
         // block app...
-        app.routines.runtime.setBlockedState(true, true);
+        app.routines.runtime.setBlockedState( true, true );
 
         context = {
             head: head,
             strap: strap
         };
 
-        if (head && !head.upcId) {
+        if ( head && !head.upcId ) {
             app.queue.next(
                 app.routines.runtime.findUpcId,
                 head,
@@ -3024,7 +3000,7 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
             );
         }
 
-        if (strap && !strap.upcId) {
+        if ( strap && !strap.upcId ) {
             app.queue.next(
                 app.routines.runtime.findUpcId,
                 strap,
@@ -3051,7 +3027,7 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
     app.routines.runtime.updateStrapsCategoryView = function () {
         app.views.straps.render()
         app.views.straps.hideLoader();
-        if (!app.domain.bag.getHead()) {
+        if ( !app.domain.bag.getHead() ) {
             app.views.straps.blockSelection();
         }
     };
@@ -3060,25 +3036,25 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
      * Routines / Init
      */
 
-    app.routines.init.failure = function (data) {
+    app.routines.init.failure = function ( data ) {
 
         // stop queue...
         this.kill();
 
         // log error...
-        app.utils.log('ROUTINES/INIT/FAILURE: Error on stage #' + app.state.init);
+        app.utils.log( 'ROUTINES/INIT/FAILURE: Error on stage #' + app.state.init );
 
         // display a nice message to user...
         app.routines.runtime.displayAppFailureMessage();
 
     };
 
-    app.routines.init.progress = function (data) {
+    app.routines.init.progress = function ( data ) {
         // increment init state...
         app.state.init++;
     };
 
-    app.routines.init.success = function (data) {
+    app.routines.init.success = function ( data ) {
 
         var colorFilter;
 
@@ -3086,8 +3062,8 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
         app.domain.straps.setOriginalList();
 
         // save filter's initial state
-        colorFilter = app.domain.straps.getFilter(app.consts.facetNameColor);
-        if (colorFilter) {
+        colorFilter = app.domain.straps.getFilter( app.consts.facetNameColor );
+        if ( colorFilter ) {
             colorFilter.saveOptionsSnapshot();
         }
 
@@ -3103,13 +3079,13 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
         app.views.straps.blockUI();
 
         // log...
-        app.utils.log('MICHELE WATCH BUILDER SUCCESSFULLY INITIALIZED!');
+        app.utils.log( 'MICHELE WATCH BUILDER SUCCESSFULLY INITIALIZED!' );
 
     };
 
-    app.routines.init.loadAllHeadIds = function (qData, qCallback) {
+    app.routines.init.loadAllHeadIds = function ( qData, qCallback ) {
 
-        app.routines.getCategoryItems({
+        app.routines.getCategoryItems( {
             categoryId: app.consts.headsCategoryId,
             processors: [
                 app.utils.processors.parseStrapSizes,
@@ -3119,37 +3095,37 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
 
                 var i, j, filter, option, result;
 
-                if (this.isOK
+                if ( this.isOK
                     && this.items && this.items.length > 0
-                    && this.results && this.results.length === 2) {
+                    && this.results && this.results.length === 2 ) {
                     // update app domain
-                    app.domain.heads.append(this.items);
-                    for (i = 0; i < this.results.length; i++) {
+                    app.domain.heads.append( this.items );
+                    for ( i = 0; i < this.results.length; i++ ) {
                         result = this.results[i];
-                        filter = app.domain.heads.getFilter(result.id);
-                        if (!filter) {
-                            filter = new Filter(result.id, result.name);
-                            app.domain.heads.addFilter(filter);
+                        filter = app.domain.heads.getFilter( result.id );
+                        if ( !filter ) {
+                            filter = new Filter( result.id, result.name );
+                            app.domain.heads.addFilter( filter );
                         }
-                        for (j = 0; j < result.options.length; j++) {
+                        for ( j = 0; j < result.options.length; j++ ) {
                             option = result.options[j];
-                            filter.addOption(new FilterOption(option.name, option.name, option.count));
+                            filter.addOption( new FilterOption( option.name, option.name, option.count ) );
                         }
                     }
-                    qCallback(true, null);
+                    qCallback( true, null );
                 } else {
-                    app.utils.log('ROUTINES/INIT/LOADALLHEADIDS: UNEXPECTED API CALL RESULT');
-                    qCallback(false, null);
+                    app.utils.log( 'ROUTINES/INIT/LOADALLHEADIDS: UNEXPECTED API CALL RESULT' );
+                    qCallback( false, null );
                 }
 
             }
-        });
+        } );
 
     };
 
-    app.routines.init.loadHeadsInfo = function (qData, qCallback) {
+    app.routines.init.loadHeadsInfo = function ( qData, qCallback ) {
 
-        app.routines.getProductsInfo({
+        app.routines.getProductsInfo( {
             categoryId: app.consts.headsCategoryId,
             ids: app.domain.heads.list,
             // needsImage: true,
@@ -3162,143 +3138,143 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
                     errCount = 0,
                     prefix = 'ROUTINES/INIT/LOADHEADSINFO: ';
 
-                if (this.isOK && this.items !== null
-                    && typeof this.items === 'object') {
+                if ( this.isOK && this.items !== null
+                    && typeof this.items === 'object' ) {
                     map = app.domain.heads.map;
-                    for (id in map) {
+                    for ( id in map ) {
                         item = this.items[id];
-                        if (item) {
+                        if ( item ) {
                             head = map[id];
-                            head.setName(item.name);
+                            head.setName( item.name );
                             head.price = item.price;
                             head.priceBig = item.priceBig;
                             head.priceNet = item.priceNet;
                             // head.imagePdp = item.image;
                         } else {
                             errCount++;
-                            app.utils.log(prefix + 'NO INFO FOUND FOR HEAD ID #' + id);
+                            app.utils.log( prefix + 'NO INFO FOUND FOR HEAD ID #' + id );
                         }
                     }
-                    if (errCount > 0) {
-                        app.utils.log(prefix + errCount + ' ERROR(S) WHILE LOADING HEADS INFO');
+                    if ( errCount > 0 ) {
+                        app.utils.log( prefix + errCount + ' ERROR(S) WHILE LOADING HEADS INFO' );
                     }
-                    qCallback(true, null);
+                    qCallback( true, null );
                 } else {
-                    qCallback(false, prefix + 'Bad API Response...');
+                    qCallback( false, prefix + 'Bad API Response...' );
                 }
             }
-        });
+        } );
 
     };
 
-    app.routines.init.loadFilteringInfo = function (qData, qCallback) {
+    app.routines.init.loadFilteringInfo = function ( qData, qCallback ) {
 
         var fnAssign,
             fnCallback,
             fnDispatch,
             dtOption,
-            dtOptions = app.domain.heads.getFilterOptions(qData.filter, false);
+            dtOptions = app.domain.heads.getFilterOptions( qData.filter, false );
 
-        if (!dtOptions || dtOptions.length < 1) {
-            qCallback(false, null);
-            app.utils.log('ROUTINES/INIT/LOADFILTERINGINFO: NO OPTIONS FOUND FOR FILTER "' + qData.filter + '"');
+        if ( !dtOptions || dtOptions.length < 1 ) {
+            qCallback( false, null );
+            app.utils.log( 'ROUTINES/INIT/LOADFILTERINGINFO: NO OPTIONS FOUND FOR FILTER "' + qData.filter + '"' );
             return;
         }
 
-        fnAssign = function (ids, attrVal) {
+        fnAssign = function ( ids, attrVal ) {
             var i,
                 id,
                 len = ids.length,
                 attr = qData.attribute,
                 heads = app.domain.heads.map;
-            for (i = 0; i < len; i++) {
+            for ( i = 0; i < len; i++ ) {
                 id = ids[i];
-                if (id in heads) {
+                if ( id in heads ) {
                     heads[id][attr] = attrVal;
                 }
             }
         },
-            fnCallback = function () {
-                if (this.isOK) {
-                    fnAssign(this.items, dtOption.id);
-                    fnDispatch(this);
-                } else {
-                    qCallback(false, null);
-                }
-            },
-            fnDispatch = function (args) {
-                if (dtOptions.length <= 0) {
-                    qCallback(true, null);
-                } else {
-                    // get next strap size in queue
-                    dtOption = dtOptions.shift();
-                    // update args object and recall
-                    args.facets[qData.filter] = dtOption.id;
-                    args.pageIndex = 1;
-                    args.items = null;
-                    args.count = 0;
-                    app.routines.getCategoryItems(args);
-                }
-            };
+        fnCallback = function () {
+            if ( this.isOK ) {
+                fnAssign( this.items, dtOption.id );
+                fnDispatch( this );
+            } else {
+                qCallback( false, null );
+            }
+        },
+        fnDispatch = function ( args ) {
+            if ( dtOptions.length <= 0 ) {
+                qCallback( true, null );
+            } else {
+                // get next strap size in queue
+                dtOption = dtOptions.shift();
+                // update args object and recall 
+                args.facets[ qData.filter ] = dtOption.id;
+                args.pageIndex = 1;
+                args.items = null;
+                args.count = 0;
+                app.routines.getCategoryItems( args );
+            }
+        };
 
         // dispatch request
-        fnDispatch({
+        fnDispatch( {
             categoryId: app.consts.headsCategoryId,
             callback: fnCallback,
             facets: {}
-        });
+        } );
 
     };
 
-    app.routines.init.verifyHeads = function (qData, qCallback) {
+    app.routines.init.verifyHeads = function ( qData, qCallback ) {
         var id, head, count = 0, heads = app.domain.heads.map;
-        for (id in heads) {
-            head = heads[id];
-            if (head.isValid()
+        for ( id in heads ) {
+            head = heads[ id ];
+            if ( head.isValid()
                 && typeof head.collection === 'string'
                 && head.collection.length > 0
                 && typeof head.size === 'string'
-                && head.size.length > 0) {
+                && head.size.length > 0 ) {
                 head.isOK = true;
                 continue;
             }
             count++;
-            app.utils.log('ROUTINES/INIT/VERIFYHEADS: HEAD #' + id + ' DID NOT PASS VALIDATION...');
+            app.utils.log( 'ROUTINES/INIT/VERIFYHEADS: HEAD #' + id + ' DID NOT PASS VALIDATION...' );
         }
-        if (count > 0) {
-            app.utils.log('ROUTINES/INIT/VERIFYHEADS: ' + count + ' INVALID HEADS...');
+        if ( count > 0 ) {
+            app.utils.log( 'ROUTINES/INIT/VERIFYHEADS: ' + count + ' INVALID HEADS...' );
         }
         // save current list as original list...
         app.domain.heads.setOriginalList();
-        qCallback(true, null);
+        qCallback( true, null );
     };
 
-    app.routines.init.loadStraps = function (qData, qCallback) {
+    app.routines.init.loadStraps = function ( qData, qCallback ) {
 
         // issue API call...
-        app.routines.getCategoryItems({
+        app.routines.getCategoryItems( {
             categoryId: app.consts.strapsCategoryId,
-            processors: [app.utils.processors.parseMicheleColors],
+            processors: [ app.utils.processors.parseMicheleColors ],
             // facets: {
             //     'MICHELE_BAND_TYPE': 'Strap',
             //     'STRAP_SIZE': '16mm'
             // },
             callback: function () {
-                if (this.isOK) {
-                    if (this.items && this.items.length > 0) {
+                if ( this.isOK ) {
+                    if ( this.items && this.items.length > 0 ) {
                         // add just a subset of returned items...
-                        app.domain.straps.append(this.items);
+                        app.domain.straps.append( this.items );
                         // app.domain.straps.append( this.items.slice(0, 6) );
-                        if (this.results && this.results.length > 0) {
-                            app.routines.runtime.updateStrapFilters(this.results[0], true);
+                        if ( this.results && this.results.length > 0 ) {
+                            app.routines.runtime.updateStrapFilters( this.results[0], true );
                         }
                     }
-                    qCallback(true, null);
+                    qCallback( true, null );
                 } else {
-                    qCallback(false, 'ROUTINES/INIT/LOADSTRAPS: Bad API Response...');
+                    qCallback( false, 'ROUTINES/INIT/LOADSTRAPS: Bad API Response...' );
                 }
             }
-        });
+        } );
 
     };
 
@@ -3307,71 +3283,71 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
         var filter;
 
         // band size filter... ( heads )
-        filter = new Filter(app.consts.facetNameStrapSize, 'Band Size');
-        app.domain.heads.addFilter(filter);
+        filter = new Filter( app.consts.facetNameStrapSize, 'Band Size' );
+        app.domain.heads.addFilter( filter );
 
         // band type filter... ( straps )
-        filter = new Filter(app.consts.facetNameBandType, 'Band Type');
-        filter.addOption(new FilterOption(app.consts.facetValueBandTypeBracelet, 'Bracelet', 1));
-        filter.addOption(new FilterOption(app.consts.facetValueBandTypeStrap, 'Strap', 1));
-        app.domain.straps.addFilter(filter);
+        filter = new Filter( app.consts.facetNameBandType, 'Band Type' );
+        filter.addOption( new FilterOption( app.consts.facetValueBandTypeBracelet, 'Bracelet', 1 ) );
+        filter.addOption( new FilterOption( app.consts.facetValueBandTypeStrap, 'Strap', 1 ) );
+        app.domain.straps.addFilter( filter );
 
         // band color filter... ( straps )
-        filter = new Filter(app.consts.facetNameColor, 'Band Color');
-        app.domain.straps.addFilter(filter);
+        filter = new Filter( app.consts.facetNameColor, 'Band Color' );
+        app.domain.straps.addFilter( filter );
 
     };
 
     app.routines.init.start = function () {
 
-        app.domain.heads = new Category(Head);
-        app.domain.straps = new Category(Item);
+        app.domain.heads = new Category( Head );
+        app.domain.straps = new Category( Item );
         app.domain.bag = new Bag();
 
         // initialize strap filters
         app.routines.init.initMainFilters();
 
         // create heads view
-        app.views.heads = new CategoryView('head');
-        app.views.heads.init(app.domain.heads);
+        app.views.heads = new CategoryView( 'head' );
+        app.views.heads.init( app.domain.heads );
         app.views.heads.resetView();
         app.views.heads.displayLoader();
 
         // create straps view
-        app.views.straps = new CategoryView('strap');
-        app.views.straps.init(app.domain.straps);
+        app.views.straps = new CategoryView( 'strap' );
+        app.views.straps.init( app.domain.straps );
         app.views.straps.resetView();
         app.views.straps.displayLoader();
 
         // create display view
         app.views.display = new DisplayView();
-        app.views.display.setImage(null);
+        app.views.display.setImage( null );
 
         // create bag view
         app.views.bag = new BagView();
-        app.views.bag.init(app.domain.bag);
+        app.views.bag.init( app.domain.bag );
         app.views.bag.resetView();
 
         // create sorting views
         app.views.sorting = {
-            heads: new SortByView(app.consts.headSortByViewport),
-            straps: new SortByView(app.consts.strapSortByViewport)
+            heads:  new SortByView( app.consts.headSortByViewport ),
+            straps: new SortByView( app.consts.strapSortByViewport )
         };
         app.views.sorting.heads.init();
         app.views.sorting.straps.init();
 
         // create refine views
         app.views.refine = {
-            size: new RefineByView('blmwbs15_builder_options_refine_size'),
-            type: new RefineByView('blmwbs15_builder_options_refine_type'),
-            color: new RefineByView('blmwbs15_builder_options_refine_color')
+            size:  new RefineByView( 'blmwbs15_builder_options_refine_size' ),
+            type:  new RefineByView( 'blmwbs15_builder_options_refine_type' ),
+            color: new RefineByView( 'blmwbs15_builder_options_refine_color' )
         };
-        app.views.refine.size.init(app.domain.heads.getFilter(app.consts.facetNameStrapSize));
-        app.views.refine.type.init(app.domain.straps.getFilter(app.consts.facetNameBandType));
-        app.views.refine.color.init(app.domain.straps.getFilter(app.consts.facetNameColor));
+        app.views.refine.size.init( app.domain.heads.getFilter( app.consts.facetNameStrapSize ) );
+        app.views.refine.type.init( app.domain.straps.getFilter( app.consts.facetNameBandType ) );
+        app.views.refine.color.init( app.domain.straps.getFilter( app.consts.facetNameColor ) );
 
         // create menu view
-        app.views.menu = new MenuView(app.consts.menuViewport);
+        app.views.menu = new MenuView( app.consts.menuViewport );
         app.views.menu.init();
 
         // enqueue tasks
@@ -3424,80 +3400,80 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
      * Actions
      */
 
-    app.control.actions.heads.select = function (frags, href) {
+    app.control.actions.heads.select = function ( frags, href ) {
 
         var head,
             heads = app.domain.heads.map,
             id = frags && frags[0];
 
-        if (id && id in heads) {
+        if ( id && id in heads ) {
             head = heads[id];
-            app.routines.runtime.doSelectHead(head);
-            app.utils.coremetrics('element', 'Select-Watch', {'29': head.id});
+            app.routines.runtime.doSelectHead( head );
+            app.utils.coremetrics( 'element', 'Select-Watch', { '29': head.id } );
         }
 
     };
 
-    app.control.actions.straps.select = function (frags, href) {
+    app.control.actions.straps.select = function ( frags, href ) {
 
         var strap,
             straps = app.domain.straps.map,
             id = frags && frags[0];
 
-        if (id && id in straps) {
+        if ( id && id in straps ) {
             strap = straps[id];
-            app.routines.runtime.doSelectStrap(strap);
-            app.utils.coremetrics('element', 'Select-Band', {'29': strap.id});
+            app.routines.runtime.doSelectStrap( strap );
+            app.utils.coremetrics( 'element', 'Select-Band', { '29': strap.id } );
         }
 
     };
 
-    app.control.actions.heads.scroll = function (frags, href) {
+    app.control.actions.heads.scroll = function ( frags, href ) {
 
-        if (frags && frags[0]) {
-            app.views.heads.scroll(frags[0]);
+        if ( frags && frags[0] ) {
+            app.views.heads.scroll( frags[0] );
         }
 
     };
 
-    app.control.actions.straps.scroll = function (frags, href) {
+    app.control.actions.straps.scroll = function ( frags, href ) {
 
-        if (frags && frags[0]) {
-            app.views.straps.scroll(frags[0]);
+        if ( frags && frags[0] ) {
+            app.views.straps.scroll( frags[0] );
         }
 
     };
 
-    app.control.actions.bag.checkbox = function (frags, href) {
+    app.control.actions.bag.checkbox = function ( frags, href ) {
 
         var type, tag, id;
 
-        if (frags && frags[0]) {
+        if ( frags && frags[0] ) {
             type = frags[0];
-            if (app.domain.bag.toggleState(type)) {
+            if ( app.domain.bag.toggleState( type ) ) {
                 app.views.bag.render();
 
                 // coremetrics...
-                tag = app.domain.bag.getState(type) ? 'Add' : 'Remove';
-                if (type === 'head') {
+                tag = app.domain.bag.getState( type ) ? 'Add' : 'Remove';
+                if ( type === 'head' ) {
                     tag += '-Watch';
                     id = (app.domain.bag.getHead()).id
                 } else {
                     tag += '-Band';
                     id = (app.domain.bag.getStrap()).id
                 }
-                app.utils.coremetrics('element', tag, {'29': id});
+                app.utils.coremetrics( 'element', tag, { '29': id } );
 
             }
         }
 
     };
 
-    app.control.actions.bag.add = function (frags, href) {
+    app.control.actions.bag.add = function ( frags, href ) {
         app.routines.runtime.doAddToBag();
     };
 
-    app.control.actions.bag.confirmation = function (frags, href) {
+    app.control.actions.bag.confirmation = function ( frags, href ) {
 
         // if ( app.domain.bag.getState( 'head' ) ) {
         //     app.domain.bag.toggleState( 'head' );
@@ -3509,14 +3485,14 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
 
         // app.views.bag.render();
 
-        app.routines.runtime.setBlockedState(false);
+        app.routines.runtime.setBlockedState( false );
 
     };
 
-    app.control.actions.options.refine = function (frags, href) {
+    app.control.actions.options.refine = function ( frags, href ) {
 
         var operation = frags && frags[0];
-        switch (operation) {
+        switch ( operation ) {
             case 'submit':
                 app.views.refine.size.commit();
                 app.views.refine.type.commit();
@@ -3533,67 +3509,67 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
 
     };
 
-    app.control.actions.options.sorting = function (frags, href) {
+    app.control.actions.options.sorting = function ( frags, href ) {
         var prefix, sel, id = frags && frags[0];
-        switch (id) {
+        switch ( id ) {
             case 'straps':
             case 'heads':
                 sel = frags[1];
                 prefix = sel !== app.views.sorting[id].getSelected() ? 'Select-Sort-' : 'Deselect-Sort-';
-                app.views.sorting[id].select(sel);
-                app.utils.coremetrics('element', prefix + id + '-' + sel);
+                app.views.sorting[id].select( sel );
+                app.utils.coremetrics( 'element', prefix + id + '-' + sel );
                 break;
             case 'submit':
                 sel = app.views.sorting.heads.getSelected();
-                if (app.domain.heads.sorting !== sel) {
+                if ( app.domain.heads.sorting !== sel ) {
                     app.views.heads.displayLoader();
                     app.domain.heads.sorting = sel;
-                    app.utils.schedule(app.routines.runtime, 'updateHeadsCategoryView');
+                    app.utils.schedule( app.routines.runtime, 'updateHeadsCategoryView' );
                 }
                 sel = app.views.sorting.straps.getSelected();
-                if (app.domain.straps.sorting !== sel) {
+                if ( app.domain.straps.sorting !== sel ) {
                     app.views.straps.displayLoader();
                     app.domain.straps.sorting = sel;
-                    app.utils.schedule(app.routines.runtime, 'updateStrapsCategoryView');
+                    app.utils.schedule( app.routines.runtime, 'updateStrapsCategoryView' );
                 }
                 app.views.menu.close();
                 break;
         }
     };
 
-    app.control.actions.menu = function (frags, href) {
+    app.control.actions.menu = function ( frags, href ) {
         var option = frags && frags[0];
-        if (option === 'refine' || option === 'sort') {
+        if ( option === 'refine' || option === 'sort' ) {
             // update refine view...
             app.views.refine.size.render();
             app.views.refine.type.render();
             app.views.refine.color.render();
             // update sorting views...
-            app.views.sorting.heads.forceSelection(app.domain.heads.sorting);
-            app.views.sorting.straps.forceSelection(app.domain.straps.sorting);
+            app.views.sorting.heads.forceSelection( app.domain.heads.sorting );
+            app.views.sorting.straps.forceSelection( app.domain.straps.sorting );
             // open menu...
-            app.views.menu.toggle(option === 'sort' ? 1 : 0);
-        } else if (option === 'close') {
+            app.views.menu.toggle( option === 'sort' ? 1 : 0 );
+        } else if ( option === 'close' ) {
             app.views.menu.close();
         }
     };
 
-    app.control.actions.help = function (frags, href) {
+    app.control.actions.help = function ( frags, href ) {
 
         // clear display
         app.views.display.toggleHelp();
 
     };
 
-    app.control.actions.clear = function (frags, href) {
+    app.control.actions.clear = function ( frags, href ) {
 
         var colorFilter;
 
         // clear display
-        app.views.display.setImage(null);
+        app.views.display.setImage( null );
 
         // bag
-        app.domain.bag.setHead(null);
+        app.domain.bag.setHead( null );
         app.views.bag.render();
 
         // domains
@@ -3610,8 +3586,8 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
         app.views.straps.blockUI();
 
         // filters
-        colorFilter = app.domain.straps.getFilter(app.consts.facetNameColor);
-        if (colorFilter) {
+        colorFilter = app.domain.straps.getFilter( app.consts.facetNameColor );
+        if ( colorFilter ) {
             colorFilter.restoreSavedOptions();
         }
 
@@ -3620,29 +3596,29 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
     app.control.actions.acknowledge = function () {
 
         // just remove ui blocker and any overlays...
-        app.routines.runtime.setBlockedState(false);
+        app.routines.runtime.setBlockedState( false );
 
     };
 
-    app.control.actions.show = function (frags, href) {
+    app.control.actions.show = function ( frags, href ) {
 
         // app.utils.log( 'Fragments: ' + frags.join(', ') );
         // app.utils.log( 'Href: ' + href );
 
         var hash = '/builder',
-            intro = $('#blmwbs15_intro');
+            intro = $( '#blmwbs15_intro' );
 
-        $('#blmwbs15_tabs > a').removeClass('selected');
-        $('#blmwbs15_tab_builder').addClass('selected');
-        $('#blmwbs15_builder').show();
-        $('#blmwbs15_featured').hide();
-        $('#blmwbs15_contents, #blmwbs15_bar').show();
+        $( '#blmwbs15_tabs > a' ).removeClass( 'selected' );
+        $( '#blmwbs15_tab_builder' ).addClass( 'selected' );
+        $( '#blmwbs15_builder' ).show();
+        $( '#blmwbs15_featured' ).hide();
+        $( '#blmwbs15_contents, #blmwbs15_bar' ).show();
 
         // change hash...
-        if (intro.is(':visible')) {
-            intro.fadeOut(500, function () {
+        if ( intro.is( ':visible' ) ) {
+            intro.fadeOut( 500, function () {
                 window.location.hash = hash;
-            });
+            } );
         } else {
             window.location.hash = hash;
         }
@@ -3651,7 +3627,7 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
         window.blmwbs15.main.selected = 'builder';
 
         // page view...
-        app.utils.coremetrics('page', 'builder');
+        app.utils.coremetrics( 'page', 'builder' );
 
     };
 
@@ -3664,14 +3640,13 @@ window.blmwbs15.builder = (function bl_mwbs15_builder(window, document, $, Hamme
         var queryString, loggerRegex = /\blog4js=true\b/;
         try {
             queryString = window.location.search + '';
-            app.state.log4js = loggerRegex.test(queryString);
-        } catch (e) { /* silence is golden... */
-        }
+            app.state.log4js = loggerRegex.test( queryString );
+        } catch ( e ) { /* silence is golden... */ }
 
-        window.setTimeout(app.routines.init.start, 0);
+        window.setTimeout( app.routines.init.start, 0 );
 
     };
 
     return app;
 
-})(window, window.document, jQuery, Hammer);
+} )( window, window.document, jQuery, Hammer );
