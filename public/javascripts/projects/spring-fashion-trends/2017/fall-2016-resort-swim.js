@@ -15,7 +15,7 @@ $(document).ready( function($) {
 
 	$( window ).load(function() {
 
-		// $.fn.coreTag('Pageview', 'spring17_resort--swim');
+		$.fn.coreTag('Pageview', 'spring17_resort--swim');
 
 		var update = true;
 		var canvas = document.getElementById("canvasBloom_mobile");
