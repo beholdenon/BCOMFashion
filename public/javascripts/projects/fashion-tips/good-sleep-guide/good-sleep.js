@@ -22,7 +22,7 @@ require( [ 'jquery', window.BLOOMIES.coremetrics ], function ( $, Coremetrics ) 
 			'a-little-cooler:no':             '//www.bloomingdales.com/shop/home/designer-down-pillows-comforters/Bed_type,Comforter_weight_site,Fill_type_site/Comforter,Light|Medium,Duck Down?id=1004679'
 		};
 
-	var Utils = {};g
+	var Utils = {};
 
 	Utils.options = function(options, option, value) {
 		if(typeof option === 'undefined') {

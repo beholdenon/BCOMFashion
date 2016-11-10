@@ -30,14 +30,15 @@ var detectMobileDeviceView = function detectMobileDeviceView(requestPath, req) {
         args.isTablet = true;
     }
         
-    return { view: view };        
+    return view;        
 };
 
 // Reads the file passed in and checks if any of the head* helpers are used
 // Use of a head* helper is done using HTML comments <!-- -->
 var headHelpers = function headHelpers(file) {
     var contents,
-        lines;
+        lines,
+        dir;
     try {
         
         // Reset args.head* properties to null
@@ -46,6 +47,9 @@ var headHelpers = function headHelpers(file) {
         args.headCanonical = '';
         
         // If the file doesn't exist, readFileSync will throw an error
+        dir = path.join(__dirname, '..', 'views');
+        file = dir + '/' + file;
+        
         contents = fs.readFileSync(file, 'utf8');
         lines = contents.split("\n");
         // Read only first 20 lines of file
@@ -83,29 +87,41 @@ var headHelpers = function headHelpers(file) {
     return args;
 };
 
+// Handle URL deeplinks params: discard fragment on the server-side and handle it on client-side. 
+var detectDeepLinks = function detectDeepLinks(req, defaultReqPath){
+    var requestPath;
+
+    if (/\{deeplinks\?}/.test(req.route.path)){
+        requestPath = req.route.path.substring(1).replace(/{.*?}/,'');
+    } else {
+        requestPath = defaultReqPath;
+    }
+    return requestPath;
+};
+
 module.exports = { 
-    nonResponsive: {
+    adaptive: {
         description: 'Non-responsive layout',
         notes: 'Reading Akamai headers, and based on device type (phone, tablet, desktop), serve either index.html or index-mobile.html layout',
         tags: ['non-responsive'],
         handler: function(req, res) {
             var requestPath = (req.url.pathname).substring(1),
-                deviceDetectProc = detectMobileDeviceView(requestPath, req),
+                deviceDetectProc,
                 slashMinSuffix = ( req.query.debug === '1' ? '' : '/min' ),
-                fileToRead,
-                dir,
                 file;
+                
+            requestPath = detectDeepLinks(req, requestPath);
+            
+            deviceDetectProc = detectMobileDeviceView(requestPath, req);
 
-            fileToRead = deviceDetectProc.view + ".html";
-            dir = path.join(__dirname, '..', 'views');
-            file = dir + '/' + fileToRead;
                         
             // Check if any head* helpers are used
             // Use of a head* helper is done using HTML comments <!-- headHelper= -->
             // If so, add them to args
+            file = deviceDetectProc.view + ".html";
             args = headHelpers(file);                
 
-            return res.view(deviceDetectProc.view, { args: args, assetsHost: process.env.BASE_ASSETS, slashMinSuffix: slashMinSuffix }, { layout: 'nonResponsive' });
+            return res.view(deviceDetectProc, { args: args, assetsHost: process.env.BASE_ASSETS, slashMinSuffix: slashMinSuffix }, { layout: 'nonResponsive' });
         }
     },
     responsiveCustomHF: {
@@ -114,20 +130,15 @@ module.exports = {
         tags: ['custom header & footer', 'static'],
         handler: function(req, res) {
             var requestPath = (req.url.pathname).substring(1),
-                responsiveCustomHFView = requestPath + '/index',
                 slashMinSuffix = ( req.query.debug === '1' ? '' : '/min' ),
-                dir,
-                file;
-            
-            dir = path.join(__dirname, '..', 'views');
-            file = dir + '/' + responsiveCustomHFView + '.html';
-                                    
+                file = requestPath + '/index.html';
+                                                
             // Check if any head* helpers are used
             // Use of a head* helper is done using HTML comments <!-- headHelper= -->
             // If so, add them to deviceDetectProc.args
             args = headHelpers(file);
 
-            return res.view(responsiveCustomHFView, { assetsHost: process.env.BASE_ASSETS, slashMinSuffix: slashMinSuffix }, { layout: 'responsiveCustomHF' });
+            return res.view(file, { assetsHost: process.env.BASE_ASSETS, slashMinSuffix: slashMinSuffix }, { layout: 'responsiveCustomHF' });
         }
     },
     fallback: {
@@ -136,9 +147,7 @@ module.exports = {
         tags: ['fallback', 'static'],
         handler: function(req, res) {
             var slashMinSuffix = ( req.query.debug === '1' ? '' : '/min' ),
-                requestPath,
-                fileToRead,
-                dir,
+                requestPath = req.params.path,
                 file;
 
             // (for dev only) override the user agent by passing in a query
@@ -146,12 +155,7 @@ module.exports = {
                 req.headers['user-agent'] = req.query.UA;
             }
             
-            // Handle URL deeplinks params: discard fragment on the server-side and handle it on client-side. 
-            if (/\{deeplinks\?}/.test(req.route.path)){
-                requestPath = req.route.path.substring(1).replace(/{.*?}/,'');
-            } else {
-                requestPath = req.params.path;//  || req.path;
-            }
+            requestPath = detectDeepLinks(req, requestPath);
             
             // Need this call in order to change args    
             detectMobileDeviceView(requestPath, req);
@@ -168,14 +172,11 @@ module.exports = {
                 return res.redirect(url);
             }
 
-            //deviceDetectProc = deviceDetectParams(requestPath, req);
-            fileToRead = requestPath + "index.html";
-            dir = path.join(__dirname, '..', 'views');
-            file = dir + '/' + fileToRead;
             
             // Check if any head* helpers are used
             // Use of a head* helper is done using HTML comments <!-- headHelper= -->
             // If so, add them to args
+            file = requestPath + "index.html";
             args = headHelpers(file);
             
             return res.view(requestPath + "index", { args: args, assetsHost: process.env.BASE_ASSETS, slashMinSuffix: slashMinSuffix});
