@@ -2085,6 +2085,38 @@ window.blmwbs15.builder = ( function bl_mwbs15_builder( window, document,  $, Ha
      */
 
     /**
+     * Expects a number which sets 'CartItem' in 'GCs' multi cookie.
+     * @see https://assets.bloomingdales.com/js/bcom/components/addToBag/AddToBag.js?timenow=2.30.0-SNAPSHOT and search for `GCs`
+     * @param num {Number} - Number to set cookie to.
+     * @returns {Number|*} - Passed in number.
+     */
+    app.routines.setItemsInBagTotalCookie = function (num) {
+        Cookie.set( 'CartItem', num, 'GCs' );
+        return num;
+    };
+
+    /**
+     * Sets the item in cart total in the pages header.
+     * @param num {Number} - Items in bag number.
+     * @return {Void}
+     */
+    app.routines.setItemsInBagTotalInHeader = function (num) {
+        // Get 'num cart items' element(s)
+        var $desktopNumItemsElm = $( '#brownBagItemsTotal' ),
+            $tabletNumItemsElm = $( 'a.basket .show-for-medium' );
+
+        // Set number of items in cart for non-responsive header
+        if ($desktopNumItemsElm.length > 0) {
+            $desktopNumItemsElm.html( num + (num === 1 ? '  ITEM ' : '  ITEMS ' ));
+        }
+
+        // Set number of items in cart for responsive header
+        if ($tabletNumItemsElm.length > 0) {
+            $tabletNumItemsElm.html(num);
+        }
+    };
+
+    /**
      * @note Uses v1 add to bag api
      * @see api docs http://developer.bloomingdales.com/io-docs
      */
@@ -2157,6 +2189,11 @@ window.blmwbs15.builder = ( function bl_mwbs15_builder( window, document,  $, Ha
                     Cookie.set( app.consts.bagGuidCookieName,
                         response.bag.bagGUID, null, {expires: app.consts.cookieExpire} );
                 }
+
+                // Set items in bag total
+                app.routines.setItemsInBagTotalInHeader(
+                    app.routines.setItemsInBagTotalCookie(response.bag.bagSummary.itemCount)
+                );
             },
 
             // Forward the rest of the add to bag functionality here
