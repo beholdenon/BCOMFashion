@@ -72,13 +72,13 @@ window.blmwbs15.mobile = ( function bl_mwbs15_mobile( window, document,  $ ) {
 
         function onSliderSwipe() {
             var index = slider.getCurrentSlide() + 1;
-            $('#blmwbs15_mobile_slider > img').attr('src', michele_builder_s15_baseUrlAssets +'-mobile-slider-n'+ index +'.png');
+            $('#blmwbs15_mobile_slider > img').attr('src', michele_builder_s15_baseUrlAssets.replace('\/styles\/', '\/images\/') +'-mobile-slider-n'+ index +'.png');
             //coreMetrics('PageView','spring15_michele','MBL:spring15_michele--featured-designs-'+ index);
             window.blmwbs15.builder.utils.coremetrics( 'page', 'featured-designs-' + index );
         }
 
         $( '#blmwbs15_mobile_footer > img' ).on( 'click', function() {
-            window.open( '/shop/MICHELE?id=1003996', '_blank' );
+            window.open( 'http://www.bloomingdales.com/shop/MICHELE?id=1003996', '_blank' );
             window.blmwbs15.builder.utils.coremetrics( 'element', 'mbl:Shop-Now' );
         } );
 
