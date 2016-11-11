@@ -30,7 +30,6 @@ server.views({
 var routes = [
     { method: 'GET',  path: '/v3/{path*}',                                                                  config: require('./lib/handlers/api').v3 },
     { method: 'GET',  path: '/v4/{path*}',                                                                  config: require('./lib/handlers/api').v4 },
-    { method: 'GET',  path: '/p/{path*}',                                                                   config: require('./lib/handlers/api').proxy },
     { method: 'GET',  path: '/getBag/{path*}',                                                              config: require('./lib/handlers/api').getbag },
     { method: 'POST', path: '/addToBag/{path*}',                                                            config: require('./lib/handlers/api').addbag },
     { method: 'POST', path: '/bag/add/{path*}',                                                             config: require('./lib/handlers/api').addbag },
