@@ -26,19 +26,26 @@
 
 <!--============[ JS: Common (MacysUI) ]============-->
 <script src="{{assetsHost}}/js{{slashMinSuffix}}/bcom/base/Common.js" type="text/javascript"></script>
+<script src="/fashion/javascripts/require_config.js" type="text/javascript"></script>
+
 
 <!--============[ JS: Global Header and Footer Assets and Properties  ]============-->
-<script src="{{assetsHost}}/js{{slashMinSuffix}}/vendor/script/requirejs/require-inline.js" data-require="globals" type="text/javascript"></script>
-{{#if args.isMobile}}
-	<script>
-		var Globals = require('globals');
-		Globals.setValue("DeviceType", "PHONE");
-	</script>
-{{/if}}
+<script src="/fashion/javascripts/includes/propsConfig.js"></script>
+<script src="{{assetsHost}}/js{{slashMinSuffix}}/vendor/script/requirejs/require-inline.js" data-require="globals,propsConfig,cookie" type="text/javascript"></script>
+<script>
+	(function(){
+		var Globals = require('globals'),
+			props = require('propsConfig');
+		Globals.setValue('props', props);
+		{{#if args.isMobile}}
+			Globals.setValue("DeviceType", "PHONE");
+		{{/if}}
+	})();
+</script>
 <script src="{{assetsHost}}/web20/assets/script/modernizr/modernizr-2.6.2-min.js" type="text/javascript"></script>
 
 <!--============[ JS: Utils ]============-->
-<script src="/fashion/javascripts/require_config.js" type="text/javascript"></script>
+
 <script src="/fashion/javascripts/main.js" type="text/javascript"></script>
 <script src="{{assetsHost}}/web20/assets/script/bloomies/base/userObject.js" type="text/javascript"></script>
 <script src="/fashion/javascripts/includes/globalns.js" type="text/javascript"></script>

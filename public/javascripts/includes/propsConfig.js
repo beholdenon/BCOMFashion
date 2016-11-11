@@ -1,6 +1,6 @@
-'use strict';
-
-define(function() {
+// Since this file is being loaded in line we need the module name definition here
+define('propsConfig', [], function() {
+	'use strict';
 
 	var props = {};
 	props = {
