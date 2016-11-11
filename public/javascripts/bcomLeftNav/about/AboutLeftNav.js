@@ -161,9 +161,9 @@ define( [ "LeftNav" ], function ( LeftNav ) {
                     id: 'about_amfAr'
                 },
                 {
-                    text: 'pink Campaign',
+                    text: 'Pink Campaign',
                     href: '/about-us/pink-campaign-b-cause-philanthropy/',
-                    id: 'about_bcrf'
+                    id: 'about_pinkCampaign'
                 },
                 {
                     text: 'Child Mind Institute',
@@ -185,20 +185,20 @@ define( [ "LeftNav" ], function ( LeftNav ) {
             [
                 {
                     type:'header',
-                    text: 'DIVERSITY & INCLUSION',
-                    label: 'diversity & inclusion',
-                    href: '/about-us/diversity-inclusion/',
-                    id: 'about_diversityInclusion',
+                    text: 'EMPLOYEE GIVING & VONLUNTEERISM',
+                    label: 'employee giving & volunteerism',
+                    href: '/about-us/giving-back-to-community/',
+                    id: 'about_employeeGiving',
                     secure: false
                 }
             ],
             [
                 {
                     type:'header',
-                    text: 'EMPLOYEE GIVING & VONLUNTEERISM',
-                    label: 'employee giving & volunteerism',
-                    href: '/about-us/giving-back-to-community/',
-                    id: 'about_newStores',
+                    text: 'DIVERSITY & INCLUSION',
+                    label: 'diversity & inclusion',
+                    href: '/about-us/diversity-inclusion/',
+                    id: 'about_diversityInclusion',
                     secure: false
                 }
             ],
