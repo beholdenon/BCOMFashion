@@ -1,11 +1,12 @@
-$(document).ready( function($) {
+'use strict';
 
-	'use strict';
-
-	$( window ).load(function() {
-
-		$.fn.coreTag('Pageview', 'spring17_resort--hp');
-
-	});
+$(document).ready(function() {
 
 });
+
+$( window ).load(function() {
+
+	$.fn.coreTag('Pageview', 'spring17_resort--hp');
+
+});
+

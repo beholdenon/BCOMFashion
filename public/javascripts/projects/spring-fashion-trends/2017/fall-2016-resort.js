@@ -9,12 +9,12 @@ $(document).ready( function($) {
     //$('body').removeClass('bl_trulyResponsive');
 
     var social = {
-        facebookTitle: '100% Bloomingdale\'s | bloomingdales.com',
-        facebookDescription: 'The fall collections are here! Don\'t miss any of these utterly unique, extremely exclusive designer collaborations.',
-        facebookImageFileName: 'F16_100Percent_Facebook.jpg',
-        twitterTitle: 'The 100% Bloomingdale\'s fall collections are here! Don\'t miss any of these exclusive designer collaborations! http://fashion.bloomingdales.com/2016-fall-campaign-100-percent-exclusive/',
-        pinterestTitle: '100% Bloomingdale\'s',
-        pinterestImageFileName: 'F16_100Percent_Pinterest.jpg',
+        facebookTitle: 'The Pre-Spring 17 Trend Report | Bloomingdales.com',
+        facebookDescription: 'A first glimpse of the sartorial season ahead, revealed in four fantastically fashionable editorials.',
+        facebookImageFileName: 'Resort_FACEBOOK.jpg',
+        twitterTitle: 'Get a first glimpse at the sartorial season ahead with @bloomingdales Pre-Spring 17 Trend Report',
+        pinterestTitle: 'The Pre-Spring 17 Trend Report | Bloomingdales.com',
+        pinterestImageFileName: 'Resort_PINTEREST.jpg',
         facebookURL: null,
         twitterURL: null,
         pinterestURL: null    

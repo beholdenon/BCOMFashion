@@ -333,6 +333,15 @@ ul#Resort2016Winter_stickynav_content {
 	    letter-spacing: .4px;
 	    text-align: left;
     	line-height: 25px;
+		a{
+			font-family: 'Lato', sans-serif;
+		    font-size: 13px;
+		    font-weight: 300;
+		    color: black;
+		    letter-spacing: .4px;
+		    text-align: left;
+	    	line-height: 25px;			
+		}
     }
 	.bottomLeft{
 	    position: absolute;
@@ -386,26 +395,30 @@ ul#Resort2016Winter_stickynav_content {
     }
 
 	.shoulder_text3{
-	    font-family: 'Playfair Display', serif;
-	    font-size: 26px;
-	    font-weight: 600;
-	    color: white;
-	    text-align: center;
-	    padding-top: 6vh;
-	    padding-bottom: 6vh;
-	    letter-spacing: 2px;
-	    margin: auto;
+		a{
+		    font-family: 'Playfair Display', serif;
+		    font-size: 26px;
+		    font-weight: 600;
+		    color: white;
+		    text-align: center;
+		    padding-top: 6vh;
+		    padding-bottom: 6vh;
+		    letter-spacing: 2px;
+		    margin: auto;
+		}
     }
 	.shoulder_text4{
-	    font-family: 'Playfair Display', serif;
-	    font-size: 26px;
-	    font-weight: 600;
-	    color: black;
-	    text-align: center;
-	    padding-top: 6vh;
-	    padding-bottom: 6vh;
-	    letter-spacing: 2px;
-	    margin: auto;
+		a{
+		    font-family: 'Playfair Display', serif;
+		    font-size: 26px;
+		    font-weight: 600;
+		    color: black;
+		    text-align: center;
+		    padding-top: 6vh;
+		    padding-bottom: 6vh;
+		    letter-spacing: 2px;
+		    margin: auto;			
+		}
     }
 
 	.shoulder_text_bg_color{
