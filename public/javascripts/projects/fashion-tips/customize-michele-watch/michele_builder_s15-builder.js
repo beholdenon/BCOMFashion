@@ -10,7 +10,8 @@ window.blmwbs15.builder = ( function bl_mwbs15_builder( window, document,  $, Ha
 
     'use strict';
 
-    var app = {
+    var Cookie = require('cookie'),
+        app = {
         cache: {},
         consts: {
             headsCategoryId: '1004412',
@@ -28,7 +29,7 @@ window.blmwbs15.builder = ( function bl_mwbs15_builder( window, document,  $, Ha
             scene7MatchUrl: 'http://s7d5.scene7.com/is/image/BLMDev/{{head}}_{{strap}}?fmt=png-alpha&wid=325&hei=360&resMode=sharp2',
             scene7PDPUrlBase: 'http://macys-o.scene7.com/is/image/BLM/products/',
             scene7PDPUrlParams: '?&wid=325&hei=360&qlt=90,0&layer=comp&op_sharpen=0&resMode=sharp2&op_usm=0.7,1.0,0.5,0&fmt=jpeg',
-            cookieExpire: 9, // days
+            cookieExpire: new Date( new Date().getTime() + 9 * 24 * 3600 * 1000 ),
             menuViewport: 'blmwbs15_builder_options',
             headSortByViewport: 'blmwbs15_builder_options_sort_heads',
             strapSortByViewport: 'blmwbs15_builder_options_sort_straps',
@@ -1924,42 +1925,6 @@ window.blmwbs15.builder = ( function bl_mwbs15_builder( window, document,  $, Ha
 
     };
 
-    app.utils.getCookie = function ( name ) {
-
-        var match,
-            value = null,
-            cookies = document.cookie,
-            regex = /\s*([^;=]+)=([^;]*);?/g;
-
-        while ( ( match = regex.exec( cookies ) ) !== null) {
-            if ( name === match[1] ) {
-                value = window.unescape( match[2] );
-                break;
-             }
-         }
-
-        return value;
-
-    };
-
-    app.utils.setCookie = function ( name, value, days ) {
-
-        var expires,
-            cookie = name + '=' + window.escape( value );
-
-        if ( days ) {
-            expires = new Date();
-            expires.setTime( expires.getTime() + ( days * 24 * 3600 * 1000 ) );
-            cookie += '; expires=' + expires.toGMTString();
-        }
-
-        cookie += '; path=/';
-
-        // save cookie...
-        document.cookie = cookie;
-
-    };
-
     app.utils.getCoremetricsAttributes = function ( attributes ) {
 
         var i, index, value, list;
@@ -2125,8 +2090,8 @@ window.blmwbs15.builder = ( function bl_mwbs15_builder( window, document,  $, Ha
      */
     app.routines.addToBag = function ( args ) {
         // Get default user id and guid cookies
-        var defaultUserGuidCookie = app.utils.getCookie(app.consts.onlineGuidCookieName),
-            defaultUserUidCookie = app.utils.getCookie(app.consts.onlineUidCookieName),
+        var defaultUserGuidCookie = Cookie.get(app.consts.onlineGuidCookieName),
+            defaultUserUidCookie = Cookie.get(app.consts.onlineUidCookieName),
 
             // Resolve bag request url (send user id or guid based on if it is available)
             bagRequestPath = (function () {
@@ -2176,21 +2141,21 @@ window.blmwbs15.builder = ( function bl_mwbs15_builder( window, document,  $, Ha
                 );
 
                 // 'online_uid' cookie
-                if ( response.bag.owner.userId && !app.utils.getCookie( app.consts.onlineUidCookieName ) ) {
-                    app.utils.setCookie( app.consts.onlineUidCookieName,
-                        response.bag.owner.userId, app.consts.cookieExpire );
+                if ( response.bag.owner.userId && !Cookie.get( app.consts.onlineUidCookieName ) ) {
+                    Cookie.set( app.consts.onlineUidCookieName,
+                        response.bag.owner.userId, null, {expires: app.consts.cookieExpire} );
                 }
 
                 // 'online_guid' cookie
-                if ( response.bag.owner.userGuid && !app.utils.getCookie( app.consts.onlineGuidCookieName ) ) {
-                    app.utils.setCookie( app.consts.onlineGuidCookieName,
-                        response.bag.owner.userGuid, app.consts.cookieExpire );
+                if ( response.bag.owner.userGuid && !Cookie.get( app.consts.onlineGuidCookieName ) ) {
+                    Cookie.set( app.consts.onlineGuidCookieName,
+                        response.bag.owner.userGuid, null, {expires: app.consts.cookieExpire} );
                 }
 
                 // 'baguid' cookie
-                if ( response.bag.bagGUID && !app.utils.getCookie( app.consts.bagGuidCookieName ) ) {
-                    app.utils.setCookie( app.consts.bagGuidCookieName,
-                        response.bag.bagGUID, app.consts.cookieExpire );
+                if ( response.bag.bagGUID && !Cookie.get( app.consts.bagGuidCookieName ) ) {
+                    Cookie.set( app.consts.bagGuidCookieName,
+                        response.bag.bagGUID, null, {expires: app.consts.cookieExpire} );
                 }
             },
 
