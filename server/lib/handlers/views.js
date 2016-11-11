@@ -118,7 +118,7 @@ module.exports = {
             // Check if any head* helpers are used
             // Use of a head* helper is done using HTML comments <!-- headHelper= -->
             // If so, add them to args
-            file = deviceDetectProc.view + ".html";
+            file = deviceDetectProc + ".html";
             args = headHelpers(file);                
 
             return res.view(deviceDetectProc, { args: args, assetsHost: process.env.BASE_ASSETS, slashMinSuffix: slashMinSuffix });
@@ -138,7 +138,7 @@ module.exports = {
             // If so, add them to deviceDetectProc.args
             args = headHelpers(file);
 
-            return res.view(file, { assetsHost: process.env.BASE_ASSETS, slashMinSuffix: slashMinSuffix }, { layout: 'responsiveCustomHF' });
+            return res.view(file, { args: args, assetsHost: process.env.BASE_ASSETS, slashMinSuffix: slashMinSuffix }, { layout: 'responsiveCustomHF' });
         }
     },
     fallback: {
