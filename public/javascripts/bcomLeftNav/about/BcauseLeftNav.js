@@ -5,9 +5,9 @@ define( [ "bcomLeftNav/about/AboutLeftNav", "iShip" ], function ( aboutLeftNav, 
             href: '/landingpages/amfar/',
             id: 'about_amfAr'
         }, {
-            text: 'pink Campaign',
+            text: 'Pink Campaign',
             href: '/landingpages/bcrf/',
-            id: 'about_bcrf'
+            id: 'about_pinkCampaign'
         }, {
             text: 'Child Mind Institute',
             href: '/landingpages/childmind/',
