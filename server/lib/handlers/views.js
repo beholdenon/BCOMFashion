@@ -99,6 +99,26 @@ var detectDeepLinks = function detectDeepLinks(req, defaultReqPath){
     return requestPath;
 };
 
+let sjl = require('sjljs'),
+    doesPathExist = require('../helpers/doesPathExist'),
+    staticDataRootPath = path.join(__dirname, '../data/static'),
+    pathToFlattenedToSlug = filePath => {
+        return filePath.replace(/[^\-_a-z0-9]/gim, '-').replace(/[^a-z\d]+$/i, '');
+    },
+    slugToPossibleDataPath = (slug, dataPathRoot) => {
+        return path.normalize(path.join(dataPathRoot, slug + '.json'));
+    },
+    getPathStaticData = pathname => {
+        let beginProcess = sjl.compose(doesPathExist, slug => slugToPossibleDataPath(slug, staticDataRootPath), pathToFlattenedToSlug);
+        return beginProcess (pathname)
+            .then(filePath => {
+                return require(filePath);
+            })
+            .catch(() => {
+                return {};
+            });
+    };
+
 module.exports = { 
     adaptive: {
         description: 'Non-responsive layout',
@@ -119,9 +139,41 @@ module.exports = {
             // Use of a head* helper is done using HTML comments <!-- headHelper= -->
             // If so, add them to args
             file = deviceDetectProc + ".html";
-            args = headHelpers(file);                
+            args = headHelpers(file);
 
-            return res.view(deviceDetectProc, { args: args, assetsHost: process.env.BASE_ASSETS, slashMinSuffix: slashMinSuffix });
+
+            // Check if we have any static data to merge to `args` before rendering view
+            // then render it and return the promise
+            return (new Promise((resolve) => {
+
+                getPathStaticData(requestPath)
+                    .then(sjl.curry(sjl.extend, true, {}, args)) // merge any returned static data to args
+                    .then(mergedArgs => {
+                        resolve(
+                            res.view(
+                                requestPath + "index",
+                                {
+                                    args: mergedArgs,
+                                    assetsHost: process.env.BASE_ASSETS,
+                                    slashMinSuffix: slashMinSuffix
+                                }
+                            )
+                        );
+                    })
+                    .catch(mergedArgs => {
+                        resolve(
+                            res.view(
+                                requestPath + "index",
+                                {
+                                    args: mergedArgs,
+                                    assetsHost: process.env.BASE_ASSETS,
+                                    slashMinSuffix: slashMinSuffix
+                                }
+                            )
+                        );
+                    });
+            }));
+
         }
     },
     responsiveCustomHF: {
@@ -172,7 +224,6 @@ module.exports = {
                 return res.redirect(url);
             }
 
-            
             // Check if any head* helpers are used
             // Use of a head* helper is done using HTML comments <!-- headHelper= -->
             // If so, add them to args

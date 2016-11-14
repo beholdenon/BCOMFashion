@@ -1,0 +1,53 @@
+{{!-- Do Not change file to *.hbs;  'compile-handlebars' task has no way of injecting data into handlebars templates from the Hapi.js route handlers. --}}
+{{!-- Head Tags --}}
+<title>{{args.designerName}} - Bloomingdale&rsquo;s</title>
+<meta name="description" content="Shop In Store for James Perse with Free Shipping and Free Returns. Bloomingdale's like no other store in the world."/>
+<link rel="stylesheet" href="/fashion/styles/projects/in-store/in-store-base.css"/>
+
+{{!-- Core Metrics Data --}}
+<input id="cmdata" type="hidden" data-categoryid="no_results-store_only_{{{args.machineReadableDesignerName}}}" data-pageid="onsite_search" />
+
+{{!-- Content Element --}}
+<section id="in-store" class="clearfix">
+    <!-- @todo @note Can't use header here due to bloomies header scripts running some javascript on the first occurring header tags -->
+    <div class="in-store-main-header in-store-header">
+        <h1 class="in-store-title">{{&args.designerName}}</h1>
+        {{#if args.designerDescription}}
+            <h3 class="in-store-sub-title">
+                {{&args.designerDescription}}
+            </h3>
+        {{/if}}
+    </div>
+    <section class="in-store-body">
+        <div class="in-store-body-header in-store-header">
+            <h2 class="in-store-title">{{&args.designerName}} IS ONLY AVAILABLE AT DEDICATED BOUTIQUES</h2>
+            <p class="in-store-sub-title">in select Bloomingdale's stores. Please call or visit one of the follow
+                locations for assistance.</p>
+        </div>
+        <section class="in-store-body-body">
+            <div class="in-store-addresses">
+                {{#each args.addressColumns}}
+                    <ul class="in-store-addresses-column">
+                        {{#each this}}
+                            <li>
+                                <a href="{{&url}}">
+                                    <h4 class="in-store-title">{{&name}}</h4>
+                                </a>
+                                <a href="{{&url}}">
+                                    <p>
+                                        {{&streetAddress}}<br/>
+                                        {{&cityStateZip}}
+                                    </p>
+                                </a>
+                                <a href="tel:{{&phoneNumberHrefSuffix}}">{{&phoneNumber}}</a>
+                            </li>
+                        {{/each}}
+                    </ul>
+                {{/each}}
+            </div>
+        </section>
+    </section>
+</section>
+
+<!-- Page Scripts -->
+<script type="application/javascript" src="/fashion/javascripts/projects/in-store/index.js"></script>
