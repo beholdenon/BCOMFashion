@@ -56,3 +56,16 @@
         }
     }
 }
+
+@media screen and (max-width: 699px) {
+    .b-cause-main {
+        .b-cause-body {
+            
+            text-align: center;
+            ul {
+                    text-align: initial;
+                    display: inline-block;
+            }
+        }
+    }
+}
