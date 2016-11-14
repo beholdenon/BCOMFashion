@@ -10,7 +10,8 @@ window.blmwbs15.builder = ( function bl_mwbs15_builder( window, document,  $, Ha
 
     'use strict';
 
-    var app = {
+    var Cookie = require('cookie'),
+        app = {
         cache: {},
         consts: {
             headsCategoryId: '1004412',
@@ -28,7 +29,7 @@ window.blmwbs15.builder = ( function bl_mwbs15_builder( window, document,  $, Ha
             scene7MatchUrl: 'http://s7d5.scene7.com/is/image/BLMDev/{{head}}_{{strap}}?fmt=png-alpha&wid=325&hei=360&resMode=sharp2',
             scene7PDPUrlBase: 'http://macys-o.scene7.com/is/image/BLM/products/',
             scene7PDPUrlParams: '?&wid=325&hei=360&qlt=90,0&layer=comp&op_sharpen=0&resMode=sharp2&op_usm=0.7,1.0,0.5,0&fmt=jpeg',
-            cookieExpire: 9, // days
+            cookieExpire: new Date( new Date().getTime() + 9 * 24 * 3600 * 1000 ),
             menuViewport: 'blmwbs15_builder_options',
             headSortByViewport: 'blmwbs15_builder_options_sort_heads',
             strapSortByViewport: 'blmwbs15_builder_options_sort_straps',
@@ -1924,42 +1925,6 @@ window.blmwbs15.builder = ( function bl_mwbs15_builder( window, document,  $, Ha
 
     };
 
-    app.utils.getCookie = function ( name ) {
-
-        var match,
-            value = null,
-            cookies = document.cookie,
-            regex = /\s*([^;=]+)=([^;]*);?/g;
-
-        while ( ( match = regex.exec( cookies ) ) !== null) {
-            if ( name === match[1] ) {
-                value = window.unescape( match[2] );
-                break;
-             }
-         }
-
-        return value;
-
-    };
-
-    app.utils.setCookie = function ( name, value, days ) {
-
-        var expires,
-            cookie = name + '=' + window.escape( value );
-
-        if ( days ) {
-            expires = new Date();
-            expires.setTime( expires.getTime() + ( days * 24 * 3600 * 1000 ) );
-            cookie += '; expires=' + expires.toGMTString();
-        }
-
-        cookie += '; path=/';
-
-        // save cookie...
-        document.cookie = cookie;
-
-    };
-
     app.utils.getCoremetricsAttributes = function ( attributes ) {
 
         var i, index, value, list;
@@ -2120,13 +2085,45 @@ window.blmwbs15.builder = ( function bl_mwbs15_builder( window, document,  $, Ha
      */
 
     /**
+     * Expects a number which sets 'CartItem' in 'GCs' multi cookie.
+     * @see https://assets.bloomingdales.com/js/bcom/components/addToBag/AddToBag.js?timenow=2.30.0-SNAPSHOT and search for `GCs`
+     * @param num {Number} - Number to set cookie to.
+     * @returns {Number|*} - Passed in number.
+     */
+    app.routines.setItemsInBagTotalCookie = function (num) {
+        Cookie.set( 'CartItem', num, 'GCs' );
+        return num;
+    };
+
+    /**
+     * Sets the item in cart total in the pages header.
+     * @param num {Number} - Items in bag number.
+     * @return {Void}
+     */
+    app.routines.setItemsInBagTotalInHeader = function (num) {
+        // Get 'num cart items' element(s)
+        var $desktopNumItemsElm = $( '#brownBagItemsTotal' ),
+            $tabletNumItemsElm = $( 'a.basket .show-for-medium' );
+
+        // Set number of items in cart for non-responsive header
+        if ($desktopNumItemsElm.length > 0) {
+            $desktopNumItemsElm.html( num + (num === 1 ? '  ITEM ' : '  ITEMS ' ));
+        }
+
+        // Set number of items in cart for responsive header
+        if ($tabletNumItemsElm.length > 0) {
+            $tabletNumItemsElm.html(num);
+        }
+    };
+
+    /**
      * @note Uses v1 add to bag api
      * @see api docs http://developer.bloomingdales.com/io-docs
      */
     app.routines.addToBag = function ( args ) {
         // Get default user id and guid cookies
-        var defaultUserGuidCookie = app.utils.getCookie(app.consts.onlineGuidCookieName),
-            defaultUserUidCookie = app.utils.getCookie(app.consts.onlineUidCookieName),
+        var defaultUserGuidCookie = Cookie.get(app.consts.onlineGuidCookieName),
+            defaultUserUidCookie = Cookie.get(app.consts.onlineUidCookieName),
 
             // Resolve bag request url (send user id or guid based on if it is available)
             bagRequestPath = (function () {
@@ -2176,22 +2173,27 @@ window.blmwbs15.builder = ( function bl_mwbs15_builder( window, document,  $, Ha
                 );
 
                 // 'online_uid' cookie
-                if ( response.bag.owner.userId && !app.utils.getCookie( app.consts.onlineUidCookieName ) ) {
-                    app.utils.setCookie( app.consts.onlineUidCookieName,
-                        response.bag.owner.userId, app.consts.cookieExpire );
+                if ( response.bag.owner.userId && !Cookie.get( app.consts.onlineUidCookieName ) ) {
+                    Cookie.set( app.consts.onlineUidCookieName,
+                        response.bag.owner.userId, null, {expires: app.consts.cookieExpire} );
                 }
 
                 // 'online_guid' cookie
-                if ( response.bag.owner.userGuid && !app.utils.getCookie( app.consts.onlineGuidCookieName ) ) {
-                    app.utils.setCookie( app.consts.onlineGuidCookieName,
-                        response.bag.owner.userGuid, app.consts.cookieExpire );
+                if ( response.bag.owner.userGuid && !Cookie.get( app.consts.onlineGuidCookieName ) ) {
+                    Cookie.set( app.consts.onlineGuidCookieName,
+                        response.bag.owner.userGuid, null, {expires: app.consts.cookieExpire} );
                 }
 
                 // 'baguid' cookie
-                if ( response.bag.bagGUID && !app.utils.getCookie( app.consts.bagGuidCookieName ) ) {
-                    app.utils.setCookie( app.consts.bagGuidCookieName,
-                        response.bag.bagGUID, app.consts.cookieExpire );
+                if ( response.bag.bagGUID && !Cookie.get( app.consts.bagGuidCookieName ) ) {
+                    Cookie.set( app.consts.bagGuidCookieName,
+                        response.bag.bagGUID, null, {expires: app.consts.cookieExpire} );
                 }
+
+                // Set items in bag total
+                app.routines.setItemsInBagTotalInHeader(
+                    app.routines.setItemsInBagTotalCookie(response.bag.bagSummary.itemCount)
+                );
             },
 
             // Forward the rest of the add to bag functionality here
