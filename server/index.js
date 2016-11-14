@@ -71,7 +71,6 @@ var routes = [
     { method: 'GET',  path: '/about-us/shopping/sizecharts/mens-womens-kids-shoes/',                        config: require('./lib/handlers/views').adaptive },
     { method: 'GET',  path: '/about-us/shopping/sizecharts/womens-petite-plus/',                            config: require('./lib/handlers/views').adaptive },
     { method: 'GET',  path: '/about-us/store-events-ways-to-shop/',                                         config: require('./lib/handlers/views').adaptive },
-    { method: 'GET',  path: '/about-us/diversity-inclusion/',                                               config: require('./lib/handlers/views').adaptive },
     { method: 'GET',  path: '/campaign/give-pink-get-more/{path*}',                                         config: require('./lib/handlers/views').adaptive },
     { method: 'GET',  path: '/catalogs/',                                                                   config: require('./lib/handlers/views').adaptive },
     { method: 'GET',  path: '/charlotte-tilbury-makeup/',                                                   config: require('./lib/handlers/views').adaptive },
