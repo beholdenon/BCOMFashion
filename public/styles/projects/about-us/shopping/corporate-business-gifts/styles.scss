@@ -115,6 +115,16 @@ $font-family-sans-serif: Avenir, helvetica, arial, sans-serif;
             font-style: italic;
             margin-bottom: 6.71vw;
             padding: 3.12vw 5vw;
+
+            span {
+                &.email-desktop {
+                    display: none;
+                }
+
+                &.email-mobile {
+                    display: inline;
+                }
+            }
         }
 
         address {
@@ -176,7 +186,7 @@ $font-family-sans-serif: Avenir, helvetica, arial, sans-serif;
         width: 742px;
 
         section {
-            margin-bottom: 40px;
+            margin-bottom: 40px !important;
         }
 
         p {
@@ -278,6 +288,14 @@ $font-family-sans-serif: Avenir, helvetica, arial, sans-serif;
 
                 span {
                     font-style: normal;
+
+                    &.email-desktop {
+                        display: inline;
+                    }
+
+                    &.email-mobile {
+                        display: none;
+                    }
                 }
             }
         }

@@ -47,9 +47,7 @@ require([
             $('.holiday').remove();
         }
 
-        $( '.phone-number' ).on('click', function(e) {
-            e.preventDefault();
-
+        $( '.phone-number' ).on('click', function() {
             if ( isMobile ) {
                 APP.coremetrics(cmElementCat, cmElementId);
             }
