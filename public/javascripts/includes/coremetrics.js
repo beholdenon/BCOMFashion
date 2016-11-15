@@ -10,7 +10,7 @@ define([
         return ( $('.bl_mobile')[0] ) ? true : false;
     })();
     
-    function preprendMobilePrefix(attribute) {
+    function prependMobilePrefix(attribute) {
         if (isMobile) {
             return 'mbl: ' + attribute;
         } 
@@ -35,8 +35,8 @@ define([
     }
 
     function pageViewTag (pageID, catID, attrID, attrData){
-        pageID = preprendMobilePrefix(pageID);
-        catID = preprendMobilePrefix(catID);
+        pageID = prependMobilePrefix(pageID);
+        catID = prependMobilePrefix(catID);
 
         window.BLOOMIES.coremetrics.pageViewExploreAttributes = new window.BLOOMIES.coremetrics.exploreAttributes();
 
@@ -51,8 +51,8 @@ define([
 
     function elementTag(element) {
         // Prepend 'mobl' to both ID and elementCategory
-        element.elementID = preprendMobilePrefix(element.elementID);
-        element.elementCategory = preprendMobilePrefix(element.elementCategory);
+        element.elementID = prependMobilePrefix(element.elementID);
+        element.elementCategory = prependMobilePrefix(element.elementCategory);
         
         return window.cmCreatePageElementTag(element.elementID, element.elementCategory, element.attributes || null);
     }
@@ -91,14 +91,14 @@ define([
             // coremetrics data might have been added by handlebars directive, check and initialize if so
             var cmDataEl = $('#cmdata')[0];
             if (cmDataEl) {
-                var categoryId = preprendMobilePrefix(cmDataEl.dataset.categoryid);
-                var pageId = preprendMobilePrefix(cmDataEl.dataset.pageid);
+                var categoryId = prependMobilePrefix(cmDataEl.dataset.categoryid);
+                var pageId = prependMobilePrefix(cmDataEl.dataset.pageid);
                 
                 window.BLOOMIES.coremetrics.cmCreatePageviewTag(pageId, categoryId);
                 
                 // also check if elements have been marked with cm data, is so
                 $("a[data-cm]").on('click', function () {
-                    var attrCm = preprendMobilePrefix( $(this).data('cm') );
+                    var attrCm = prependMobilePrefix( $(this).data('cm') );
                     
                     if (typeof attrCm === 'string' && attrCm.length > 0) {
                         window.BLOOMIES.coremetrics.cmCreatePageElementTag(attrCm, categoryId);
@@ -112,6 +112,7 @@ define([
         initCoreMetrics: initCoreMetrics,
         pageViewTag: pageViewTag,
         elementTag: elementTag,
-        linkClickTag: linkClickTag
+        linkClickTag: linkClickTag,
+        prependMobilePrefix: prependMobilePrefix
     };
 });
