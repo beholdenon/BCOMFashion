@@ -602,7 +602,9 @@ aside{
 
 @media only screen and (min-width: 1600px) {
   #bl_main_container {
-    max-width: 1292px;
+    max-width: 962px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   #masthead {
