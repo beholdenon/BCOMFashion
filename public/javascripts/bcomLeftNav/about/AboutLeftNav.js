@@ -250,18 +250,6 @@ define( [ "LeftNav" ], function ( LeftNav ) {
             [
                 {
                     type:'header',
-                    text: 'DIVERSITY',
-                    label: 'Diversity',
-                    //href: '/about/newstores/',
-                    href: 'http://www.macysdiversityleadership.com/',
-                    id: 'about_diversity',
-                    target: '_blank',
-                    secure: false
-                }
-            ],
-            [
-                {
-                    type:'header',
                     text: 'AFFILIATE PROGRAM',
                     label: 'Affiliate Program',
                     //href: '/about/newstores/',
