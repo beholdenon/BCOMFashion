@@ -185,7 +185,7 @@ define( [ "LeftNav" ], function ( LeftNav ) {
             [
                 {
                     type:'header',
-                    text: 'EMPLOYEE GIVING & VONLUNTEERISM',
+                    text: 'EMPLOYEE GIVING & VOLUNTEERISM',
                     label: 'employee giving & volunteerism',
                     href: '/about-us/giving-back-to-community/',
                     id: 'about_employeeGiving',
