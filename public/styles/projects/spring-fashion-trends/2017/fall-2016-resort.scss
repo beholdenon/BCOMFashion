@@ -230,6 +230,119 @@ ul#Resort2016Winter_stickynav_content {
 	    background-color:#d6dfe0;
 	}
 
+	.swim_text1{
+		font-family: 'Lato', sans-serif;
+		font-size: 19px;
+		font-weight: 300;
+		letter-spacing: 9px;
+		color: black;
+		padding: 3.5vh 0 0 0;
+		max-width: 500px;
+		text-align: center;
+		margin: auto;
+		text-transform: uppercase;
+	}
+
+	.swim_text2{
+		font-family: 'Lato', sans-serif;
+		font-size: 16px;
+		font-weight: 300;
+		color: black;
+		text-align: center;
+		padding: 1vh 0 6vh 0;
+		letter-spacing: 1px;
+		max-width: 1220px;
+		margin: auto;
+		line-height: 3vh;
+    }
+
+	.swim_text3{
+	    font-family: 'Lato', sans-serif;
+	    font-size: 38px;
+	    font-weight: 300;
+	    color: black;
+	    letter-spacing: 4px;
+	    margin-bottom: 0;
+	    padding-bottom: 2vh;
+	}
+	.swim_text4{
+	    font-family: 'Lato', sans-serif;
+	    font-size: 27px;
+	    font-weight: 300;
+	    color: black;
+	    letter-spacing: 2px;
+	    padding-top: 3vh;
+	}
+
+	.swim_text5{
+	    font-family: 'Lato', sans-serif;
+	    font-size: 18px;
+	    font-weight: 300;
+	    color: black;
+	    letter-spacing: 4px;
+	    line-height: 3vh;
+	    text-transform: uppercase;
+	    width: 100%;  
+	}
+
+
+	.swim_vendorTag{
+			font-family: 'Lato', sans-serif;
+		    font-size: 13px;
+		    font-weight: 500;
+		    letter-spacing: .4px;
+		    text-align: left;
+	    	line-height: 25px;
+		    text-decoration: none;
+		    text-transform: uppercase;	
+			a{
+				font-family: 'Lato', sans-serif;
+			    font-size: 13px;
+			    font-weight: 500;
+			    letter-spacing: .4px;
+			    text-align: left;
+		    	line-height: 25px;
+			    text-decoration: none;
+			    text-transform: uppercase;	
+			}
+	}
+	.swim_topLeft{
+	    position: absolute;
+	    top: 15px;
+	    left: 15px;
+	    text-align: left;
+	}
+	.swim_bottomLeft{
+	    position: absolute;
+	    bottom: 15px;
+	    left: 15px;
+	    text-align: left;
+	}
+	.swim_bottomRight{
+	    position: absolute;
+	    bottom: 15px;
+	    right: 15px;
+	    text-align: right;
+	}	
+	.swim_topRight{
+	    position: absolute;
+	    top: 15px;
+	    right: 15px;
+	    text-align: right;
+	}
+	.swim_bottomCenter{
+	    position: absolute;
+	    bottom: 0;
+	    text-align: center;
+	    width: 100%;
+	}
+	.swim_whitetext{
+		color:white;
+	}
+	.swim_blacktext{
+		color:black;
+	}
+
 
 /*==========================================================================*/
 /*===========jacketsjacketsjacketsjacketsjackets============================*/
