@@ -1,4 +1,11 @@
 <!-- {pageTitle: "amfAR", pageLabel: "Bloomingdale’s Partners with amfAR to Help End HIV/AIDS"} -->
+<script type="text/javascript">
+    function applyElementTagCM() {
+        var exploreAttribute = new BLOOMIES.coremetrics.exploreAttributes({2: "lp-xx-xx-xx.amfar"});
+        BLOOMIES.coremetrics.cmCreatePageElementTag("amfar", "b_cause_links", exploreAttribute.toString());
+    }
+    window.onload = applyElementTagCM;
+</script>
 {{{coremetrics 'lp-xx-xx-xx.amfar' 'lp-xx-xx-xx'}}}
 <div class="about_us">
     {{>title}}
@@ -63,7 +70,17 @@
                                         </div>
                                     </div>
                                 </section>
-                                {{> bcausefooter}}
+                                <!-- This is an individual case where common footer will not be used -->
+                                <section class="row b-cause-footer">
+                                    <div class="small-24 medium-13 columns">
+                                        <h4>in your city</h4>
+                                        <p>Discover the charitable events and more that are happening at your local Bloomingdale's. <a href="http://locations.bloomingdales.com/store-locator" class="b-cause-link">Learn more</a></p>
+                                    </div>
+                                    <div class="small-24 medium-11 columns">
+                                        <h4>DIVERSITY & INCLUSION</h4>
+                                        <p>Bloomingdale's encourages a culture of varied experiences and perspectives. <a href="http://fashion.bloomingdales.com/about-us/diversity-inclusion/" class="b-cause-link">Learn more</a></p>
+                                    </div>
+                                </section>
                             </article>
                         </td>
                     </tr>
