@@ -216,8 +216,9 @@ ul#Resort2016Winter_stickynav_content {
 
 
 
-
-
+/*==========================================================================*/
+/*==========================swimswimswimswimswim============================*/
+/*==========================================================================*/
 
 	#canvasBloom_mobile {
 	    position: relative;
@@ -230,6 +231,9 @@ ul#Resort2016Winter_stickynav_content {
 	}
 
 
+/*==========================================================================*/
+/*===========jacketsjacketsjacketsjacketsjackets============================*/
+/*==========================================================================*/
 
 
 
@@ -324,7 +328,9 @@ ul#Resort2016Winter_stickynav_content {
 	    margin: auto;
 	}
 
-
+/*==========================================================================*/
+/*======shouldershouldershouldershouldershoulder============================*/
+/*==========================================================================*/
 
 	.vendorTag{
 		font-family: 'Lato', sans-serif;
@@ -377,7 +383,7 @@ ul#Resort2016Winter_stickynav_content {
 	    font-weight: 600;
 	    color: black;
 	    text-align: center;
-	    padding: 4vh 5vw 0 5vw;
+	    padding: 4vh 0 0 0;
 	    letter-spacing: 2px;
 	    max-width: 1270px;
 	    margin: auto;
@@ -389,7 +395,7 @@ ul#Resort2016Winter_stickynav_content {
 		font-weight: 300;
 		color: black;
 		text-align: center;
-		padding: 1vh 5vw 6vh 5vw;
+		padding: 1vh 0 6vh 0;
 		letter-spacing: 2px;
 		max-width: 1070px;
 		margin: auto;
@@ -472,6 +478,113 @@ ul#Resort2016Winter_stickynav_content {
 	.shoulder_bgtext_3{
 		min-height: 301px;
 	}
+/*==========================================================================*/
+/*======femininefemininefemininefemininefeminine============================*/
+/*==========================================================================*/
+
+	.feminine_shop_button{
+
+		a{
+		    font-family: "Lato", sans-serif;
+		    font-size: 1.3vw;
+		    font-weight: 800;
+		    padding: 2vh 3.1vw;
+		    letter-spacing: .2vw;
+		    text-decoration: none;
+			background-color: #fee4d5;
+			color: black;
+		}
+	}
+	.feminine_shop_button1{
+	    position: absolute;
+	    top: 31vw;
+	    left: 4vw;
+	}
+
+	.feminine_shop_button2{
+	    position: absolute;
+	    top: 31vw;
+	    left: 0;
+	}
+
+	.feminine_shop_button4{
+	    position: absolute;
+		top: 37vw;
+		right: 5vw;
+   	}
+
+	.feminine_vendorTag{
+			font-family: 'Lato', sans-serif;
+		    font-size: 13px;
+		    font-weight: 500;
+		    letter-spacing: .4px;
+		    text-align: left;
+	    	line-height: 25px;
+		    text-decoration: none;
+		    text-transform: uppercase;	
+			a{
+				font-family: 'Lato', sans-serif;
+			    font-size: 13px;
+			    font-weight: 500;
+			    letter-spacing: .4px;
+			    text-align: left;
+		    	line-height: 25px;
+			    text-decoration: none;
+			    text-transform: uppercase;	
+			}
+	}
+	.feminine_topLeft{
+	    position: absolute;
+	    top: 15px;
+	    left: 15px;
+	    text-align: left;
+	}
+	.feminine_bottomLeft{
+	    position: absolute;
+	    bottom: 15px;
+	    left: 15px;
+	    text-align: left;
+	}
+	.feminine_bottomRight{
+	    position: absolute;
+	    bottom: 15px;
+	    right: 15px;
+	    text-align: right;
+	}	
+	.feminine_topRight{
+	    position: absolute;
+	    top: 15px;
+	    right: 15px;
+	    text-align: right;
+	}
+	.feminine_bottomCenter{
+	    position: absolute;
+	    bottom: 0;
+	    text-align: center;
+	    width: 100%;
+	}
+	.feminine_whitetext{
+		color:white;
+	}
+	.feminine_blacktext{
+		color:black;
+	}
+	.positionInherit{
+		position:inherit;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -490,15 +603,22 @@ ul#Resort2016Winter_stickynav_content {
 	#backtotop1{
 		display:inline-block;
     	padding: 50px;
+    	cursor: pointer;
 	}
 
 
+/*==========================================================================*/
+/*======customsize customsize customsize customsize customsize =============*/
+/*==========================================================================*/
 
 
 	@media screen and (max-width: 600px) {
 		.landing_text1{
 			display: none;
 		}
+		img{
+			margin:auto;
+		}		
 
 		.jackets_text3{
 		    padding-top: inherit;
@@ -524,6 +644,35 @@ ul#Resort2016Winter_stickynav_content {
 			}
 		}
 
+		.shoulder_text1{
+		    padding: 4vh 5vw 0 5vw;
+		}
+
+		.shoulder_text2{
+			padding: 1vh 5vw 6vh 5vw;
+	    }
+
+
+		.feminine_shop_button1{
+			display:none;
+		}
+		.feminine_shop_button2{
+			display:none;
+		}
+		.feminine_shop_button4{
+			display:none;
+		}
+		.feminine_shop_button3{
+		    margin: 5.5em 0 5.5em 0;
+
+			a {
+			    font-size: 5vw;
+			    padding: 1.7vh 7vw;
+			    letter-spacing: .7vw;
+			}
+
+   		}
+
 	}
 
 
@@ -538,6 +687,29 @@ ul#Resort2016Winter_stickynav_content {
 			    font-size: 23px;
 			    padding: 22px 57px;
 			    letter-spacing: 3px;
+			}
+		}
+
+		.feminine_shop_button1{
+		    position: absolute;
+		    top: 520px;
+		    left: 70px;
+		}
+		.feminine_shop_button2{
+		    position: absolute;
+		    top: 520px;
+		    left: 0;
+		}
+		.feminine_shop_button4{
+		    position: absolute;
+		    top: 634px;
+		    right: 52px;
+		}
+
+		.feminine_shop_button{
+			a{
+				font-size: 23px;
+				padding: 20px 60px;
 			}
 		}
 
