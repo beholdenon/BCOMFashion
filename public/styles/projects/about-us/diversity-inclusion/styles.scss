@@ -1,0 +1,71 @@
+// ======================================
+// b.cause updates - Diversity & Inclusion
+// Author: Leonardo Brandao
+// Date: 11/08/2016
+// Project: /about-us/diversity-inclusion/
+// ======================================
+
+@import "../b-cause/styles";
+
+.b-cause-main {
+    h1 {
+        color: #000;
+    }
+
+    p {
+        margin-bottom: 1em;
+    }
+
+    .b-cause-body {
+        h1 {
+            margin: 25px 30px;
+        }
+
+        h3 {
+            background-color: #08c5d9;
+            margin-bottom: 5px;
+        }
+
+        ul li {
+            margin-left: 15px;
+        }
+
+        img {
+            display: block;
+            margin: 25px auto;
+        }
+
+        map area {
+            cursor: default;
+        }
+
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .b-cause-main {
+        .b-cause-body {
+            h1 {
+                margin: 25px 25px 15px 0;
+            }
+
+            .b-cause-logo {
+                display: inline;
+                margin: 15px 0;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 699px) {
+    .b-cause-main {
+        .b-cause-body {
+            
+            text-align: center;
+            ul {
+                    text-align: initial;
+                    display: inline-block;
+            }
+        }
+    }
+}

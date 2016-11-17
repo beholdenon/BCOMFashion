@@ -1,15 +1,9 @@
 <!DOCTYPE html>
 <html>
     <head>
-
-        <!--============[ CSS: Mobile Specific ]============-->
-        {{#if args.isMobile}}
-            <link rel="stylesheet" href="/fashion/styles/mobile_styles.css"/>
-        {{/if}}
+        {{> head}} 
 
         <!--============[ JS: Require Modules ]============-->
-        {{> head}}
-
     </head>
 
     {{#if args.isTablet}}
@@ -20,24 +14,25 @@
         <body id="bcomFashion" class="responsive">
     {{/if}} 
 
-        <header class="responsive"></header>
-        {{#unless args.isMobile}}
-            {{! Desktop and Tablet Views should have a row wrapping the bl_main_container div }}
-            <div class="row collapse mod_row">
-        {{/unless}}
+            <header class="responsive"></header>
+            {{#unless args.isMobile}}
+                {{! Desktop and Tablet Views should have a row wrapping the bl_main_container div }}
+                <div class="row collapse mod_row">
+            {{/unless}}
 
-                <div id="bl_main_container">
-                    {{! Every view gets inserted here }}
-                    {{{content}}}
-                </div>
-        {{#unless args.isMobile}}
+            <div id="bl_main_container">
+                {{! Every view gets inserted here }}
+                {{{content}}}
+                <input type="hidden" name="timeStamp" value="{{{args.timeStamp}}}">
             </div>
-        {{/unless}}
+            {{#unless args.isMobile}}
+                </div>
+            {{/unless}}
 
-    <footer class="responsive"></footer>
+            <footer class="responsive"></footer>
 
         <!-- inject -->
 
-    </body>
+        </body>
 
 </html>

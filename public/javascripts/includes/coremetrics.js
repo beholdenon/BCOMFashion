@@ -5,25 +5,39 @@ define([
     'jquery',
     'globalns'
 ], function(_, $) {
-
-    function setEnvironment() {
-
-        if (window.location.host === 'fashion.bloomingdales.com'){
-            return cmSetProduction(); // jshint ignore:line
-        } else {
-            return cmSetTest(); // jshint ignore:line
+    
+    var isMobile = (function () {
+        return ( $('.bl_mobile')[0] ) ? true : false;
+    })();
+    
+    function prependMobilePrefix(attribute) {
+        if (isMobile) {
+            return 'mbl: ' + attribute;
+        } 
+        else {
+            return attribute;
         }
-        
     }
-
+    
     function pageName() {
         //return the last segment of the page URL to be used as an pageview CM id
         var path = window.location.pathname.split('/');
 
         return path[path.length - 2];
     }
+    
+    function setEnvironment() {
+        if (window.location.host === 'fashion.bloomingdales.com' || window.location.host === 'bloomingdales.com'){
+            return cmSetProduction(); // jshint ignore:line
+        } else {
+            return cmSetTest(); // jshint ignore:line
+        }
+    }
 
     function pageViewTag (pageID, catID, attrID, attrData){
+        pageID = prependMobilePrefix(pageID);
+        catID = prependMobilePrefix(catID);
+
         window.BLOOMIES.coremetrics.pageViewExploreAttributes = new window.BLOOMIES.coremetrics.exploreAttributes();
 
         var attr = parseInt(attrID);
@@ -36,6 +50,10 @@ define([
     }
 
     function elementTag(element) {
+        // Prepend 'mobl' to both ID and elementCategory
+        element.elementID = prependMobilePrefix(element.elementID);
+        element.elementCategory = prependMobilePrefix(element.elementCategory);
+        
         return window.cmCreatePageElementTag(element.elementID, element.elementCategory, element.attributes || null);
     }
 
@@ -70,30 +88,22 @@ define([
 
             // return pageViewTag(pageID, catID, '42', attr); //---default pageview tag firing on every view
 
-            var isMobile = false;
-            if ($('.bl_mobile')[0]){
-                isMobile = true;
-            }
-
             // coremetrics data might have been added by handlebars directive, check and initialize if so
             var cmDataEl = $('#cmdata')[0];
             if (cmDataEl) {
-
-                var categoryId =  cmDataEl.dataset.categoryid;
-                var pageId = cmDataEl.dataset.pageid;
+                var categoryId = prependMobilePrefix(cmDataEl.dataset.categoryid);
+                var pageId = prependMobilePrefix(cmDataEl.dataset.pageid);
+                
                 window.BLOOMIES.coremetrics.cmCreatePageviewTag(pageId, categoryId);
+                
                 // also check if elements have been marked with cm data, is so
                 $("a[data-cm]").on('click', function () {
-                    var mblPrefix = '';
-                    if (isMobile){
-                        mblPrefix = 'mbl: ';
-                    }
-                    var attrCm = $(this).data('cm');
+                    var attrCm = prependMobilePrefix( $(this).data('cm') );
+                    
                     if (typeof attrCm === 'string' && attrCm.length > 0) {
-                        window.BLOOMIES.coremetrics.cmCreatePageElementTag(mblPrefix + attrCm, categoryId);
+                        window.BLOOMIES.coremetrics.cmCreatePageElementTag(attrCm, categoryId);
                     }
                 });
-
             }
         }
     }
@@ -102,6 +112,7 @@ define([
         initCoreMetrics: initCoreMetrics,
         pageViewTag: pageViewTag,
         elementTag: elementTag,
-        linkClickTag: linkClickTag
+        linkClickTag: linkClickTag,
+        prependMobilePrefix: prependMobilePrefix
     };
 });
