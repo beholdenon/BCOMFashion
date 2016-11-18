@@ -1,0 +1,61 @@
+body.bl_adaptive {
+    min-width: 0;
+    max-width: none;
+    width: auto;
+}
+
+.bl_adaptive .row #bl_main_container {
+    max-width: 962px;
+    min-width: 0;
+    width: auto;
+    margin: 0 auto;
+} 
+
+#browser-list {
+    .browser-icon {
+        border: 2px solid #ccc;
+        height: 136px;
+        width: 116px;
+        margin-right: 20px;
+        margin-bottom: 20px;
+        cursor: pointer;
+        padding-top: 5px;
+        h5 {
+            text-align: center;
+        }
+    }
+    .browser-icon-container {
+        margin: 0 auto;
+        height: 88px;
+        width: 88px;
+    }
+    .single-line {
+        margin-top: 5px;
+    }
+}
+
+// 600px is the width of screen when there are 2 columns of browser icons
+// When this happens, center heading text,
+// and make button full width
+@media (max-width: 600px) {
+    #no-session-cookie {
+        padding-left: 21px;
+        padding-right: 21px;
+    }
+    #head-text-group {
+        margin-top: 18px;
+    }
+    .head-text {
+        text-align: center;
+    }
+    #browser-list {
+        .browser-icon {
+            margin-top: 0px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+    #go-back-button {
+        width: 100%;
+    }
+}
