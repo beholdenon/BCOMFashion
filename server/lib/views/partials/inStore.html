@@ -1,11 +1,11 @@
 {{!-- Do Not change file to *.hbs;  'compile-handlebars' task has no way of injecting data into handlebars templates from the Hapi.js route handlers. --}}
 {{!-- Head Tags --}}
 <title>{{args.designerName}} - Bloomingdale&rsquo;s</title>
-<meta name="description" content="Shop In Store for James Perse with Free Shipping and Free Returns. Bloomingdale's like no other store in the world."/>
+<meta name="description" content="Shop In Store for {{args.designerName}} with Free Shipping and Free Returns. Bloomingdale's like no other store in the world."/>
 <link rel="stylesheet" href="/fashion/styles/projects/in-store/in-store-base.css"/>
 
 {{!-- Core Metrics Data --}}
-<input id="cmdata" type="hidden" data-categoryid="no_results-store_only_{{{args.machineReadableDesignerName}}}" data-pageid="onsite_search" />
+<input id="cmdata" type="hidden" data-categoryid="no_results-store_only_{{args.machineReadableDesignerName}}" data-pageid="onsite_search" />
 
 {{!-- Content Element --}}
 <section id="in-store" class="clearfix">
@@ -20,7 +20,8 @@
     </div>
     <section class="in-store-body">
         <div class="in-store-body-header in-store-header">
-            <h2 class="in-store-title">{{&args.designerName}} IS ONLY AVAILABLE AT DEDICATED BOUTIQUES</h2>
+            <h2 class="in-store-title">
+                {{#if args.title2Prefix}}{{&args.title2Prefix}}{{else}}{{&args.designerName}}{{/if}} IS ONLY AVAILABLE AT DEDICATED BOUTIQUES</h2>
             <p class="in-store-sub-title">in select Bloomingdale's stores. Please call or visit one of the follow
                 locations for assistance.</p>
         </div>
@@ -30,10 +31,10 @@
                     <ul class="in-store-addresses-column">
                         {{#each this}}
                             <li>
-                                <a href="{{&url}}">
+                                <a href="{{> inStoreUrlPartial }}">
                                     <h4 class="in-store-title">{{&name}}</h4>
                                 </a>
-                                <a href="{{&url}}">
+                                <a href="{{> inStoreUrlPartial }}">
                                     <p>
                                         {{&streetAddress}}<br/>
                                         {{&cityStateZip}}
