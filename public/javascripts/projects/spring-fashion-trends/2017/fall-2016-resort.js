@@ -59,7 +59,8 @@ $(document).ready( function($) {
 
     var ismobile = (mobileAndTabletcheck() ? "mbl:" : "");
     
-    $(document).foundation();
+    //$(document).foundation();
+    $(document).foundation('equalizer', 'reflow');
 
 
 

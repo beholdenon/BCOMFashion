@@ -67,7 +67,7 @@ ul#Resort2016Winter_stickynav_content {
 		    letter-spacing: .1vw;
 		    text-align: center;
 		    text-decoration: none;
-		    padding: 24px 34px;
+		    padding: 25px 34px 24px 34px;
 		    transition: 0.3s;
 		    display: inline-block;
 
@@ -145,7 +145,7 @@ ul#Resort2016Winter_stickynav_content {
 
 
 #Resort2016Winter{
-	max-width:1679px;
+	max-width:1680px;
 	margin: auto;
     text-align:center;
 
@@ -270,41 +270,42 @@ ul#Resort2016Winter_stickynav_content {
 	    font-size: 27px;
 	    font-weight: 300;
 	    color: black;
-	    letter-spacing: 2px;
-	    padding-top: 3vh;
+	    letter-spacing: 3px;
+	    padding: 3vh 0 3vh 0;
+	    max-width: 970px;
+	    margin: auto;
 	}
 
 	.swim_text5{
 	    font-family: 'Lato', sans-serif;
-	    font-size: 18px;
+	    font-size: 19px;
 	    font-weight: 300;
 	    color: black;
-	    letter-spacing: 4px;
-	    line-height: 3vh;
+	    letter-spacing: 9px;
+	    line-height: 4.5vh;
 	    text-transform: uppercase;
-	    width: 100%;  
+	    width: 100%;
+		padding-top: 3vh;
 	}
 
 
 	.swim_vendorTag{
+		font-family: 'Lato', sans-serif;
+	    font-size: 13px;
+	    font-weight: 500;
+	    letter-spacing: .4px;
+	    text-align: left;
+    	line-height: 17px;
+	    text-decoration: none;
+		a{
 			font-family: 'Lato', sans-serif;
 		    font-size: 13px;
 		    font-weight: 500;
 		    letter-spacing: .4px;
 		    text-align: left;
-	    	line-height: 25px;
+	    	line-height: 17px;
 		    text-decoration: none;
-		    text-transform: uppercase;	
-			a{
-				font-family: 'Lato', sans-serif;
-			    font-size: 13px;
-			    font-weight: 500;
-			    letter-spacing: .4px;
-			    text-align: left;
-		    	line-height: 25px;
-			    text-decoration: none;
-			    text-transform: uppercase;	
-			}
+		}
 	}
 	.swim_topLeft{
 	    position: absolute;
@@ -332,7 +333,7 @@ ul#Resort2016Winter_stickynav_content {
 	}
 	.swim_bottomCenter{
 	    position: absolute;
-	    bottom: 0;
+	    bottom: 1vw;
 	    text-align: center;
 	    width: 100%;
 	}
@@ -342,6 +343,10 @@ ul#Resort2016Winter_stickynav_content {
 	.swim_blacktext{
 		color:black;
 	}
+	.swim4yellow_bg{
+	    background: url('/fashion/images/projects/spring-fashion-trends/2017/swim4yellow.png') no-repeat;
+    	background-position: center; 
+    }
 
 
 /*==========================================================================*/
@@ -356,10 +361,12 @@ ul#Resort2016Winter_stickynav_content {
 	    font-weight: 500;
 	    color: white;
 	    text-align: center;
-    	padding: 6vh 5vw 0 5vw;
     	letter-spacing: 2px;
-	    max-width: 1160px;
+	    max-width: 1120px;
 	    margin: auto;
+		padding-top: 6vh;
+	    padding-left: 20px;
+	    padding-right: 20px;
 	}
 
 	.jackets_text2{
@@ -368,35 +375,38 @@ ul#Resort2016Winter_stickynav_content {
 		font-weight: 300;
 	    color: white;
 	    text-align: center;
-		padding: 1vh 5vw 6vh 5vw;
 	    letter-spacing: 2px;
-	    max-width: 1280px;
+    	max-width: 1240px;
 	    margin: auto;
 	    line-height: 3vh;
+	    padding-top: 1vh;
+	    padding-bottom: 6vh;
+	    padding-left: 20px;
+	    padding-right: 20px;
     }
 
 	.jackets_text3{
 		font-family: 'Lato', sans-serif;
-	    font-size: 38px;
+	    font-size: 2.2vw;
 	    font-weight: 400;
 	    color: black;
 	    padding-top: 8vw;
 	    letter-spacing: 2px;
-	    max-width: 630px;
-	    // line-height: 7vh;
+	    max-width: 500px;
 	    margin-left: -70px;
 	    margin-bottom: 0;
 	    text-align:left;
 	}
 	.jackets_text4{
 	    font-family: 'Lato', sans-serif;
-	    font-size: 18px;
+	    font-size: 1.2vw;
 	    font-weight: 300;
 	    color: black;
 	    letter-spacing: 2px;
 	    line-height: 3vh;
 	    margin-left: -70px;
 	    text-align:left;
+		padding-bottom: 1vw;
 	}
 	.shop_lookbook_btn{
 
@@ -741,12 +751,13 @@ ul#Resort2016Winter_stickynav_content {
 		    text-align: center;
 			padding-left: 5vw;
 		    padding-right: 5vw;
+		    font-size: 28px;
 		}
 		.jackets_text4{
-		    line-height: 6vh;
 		    margin-left: inherit;
 		    margin-bottom: inherit;
 		    text-align: center;
+		    font-size: 15px;
 		}
 		.shop_lookbook_btn{
 			text-align:center;
@@ -794,7 +805,14 @@ ul#Resort2016Winter_stickynav_content {
 		.landing_text1{
 			padding-top: 330px;
     		line-height: 64px;
-    	}		
+    	}
+
+		.jackets_text3{
+			font-size: 38px;
+		}
+		.jackets_text4{
+		    font-size: 18px;
+		}
 		.shop_lookbook_btn{	
 			a{
 			    font-size: 23px;
