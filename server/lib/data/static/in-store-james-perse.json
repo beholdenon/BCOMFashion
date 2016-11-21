@@ -10,7 +10,11 @@
         "cityStateZip": "New York, NY 10022",
         "phoneNumber": "(212) 705-2000",
         "phoneNumberHrefSuffix": "+1-212-705-2000",
-        "url": "http://locations.bloomingdales.com/59th-street?cm_sp=categorysplash_james-perse_james-perse_1-_-row1_imagemap_n-_-_59th-street&cm_sp=search_no_results-_-store_only-{james_perse}-_-{59TH-STREET-LEXINGTON-AVENUE}"
+        "urlArgs": {
+          "addressAlias": "59th-street",
+          "designerAlias": "james_perse",
+          "addressFullDetail": "59TH-STREET-LEXINGTON-AVENUE"
+        }
       },
       {
         "name": "Sherman Oaks Fashion Square",
@@ -18,7 +22,11 @@
         "cityStateZip": "Sherman Oaks, CA 91423",
         "phoneNumber": "(818) 325-2200",
         "phoneNumberHrefSuffix": "+1-818-325-2200",
-        "url": "http://locations.bloomingdales.com/sherman-oaks-fashion-square?cm_sp=categorysplash_james-perse_james-perse_1-_-row1_imagemap_n-_-_sherman-oaks-fashion-square&cm_sp=search_no_results-_-store_only-{james_perse}-_-{SHERMAN-OAKS-FASHION-SQUARE}"
+        "urlArgs": {
+          "addressAlias": "sherman-oaks-fashion-square",
+          "designerAlias": "james_perse",
+          "addressFullDetail": "SHERMAN-OAKS-FASHION-SQUARE"
+        }
       },
       {
         "name": "Santa Monica Place",
@@ -26,7 +34,11 @@
         "cityStateZip": "Santa Monica, CA 90401",
         "phoneNumber": "(310) 985-6400",
         "phoneNumberHrefSuffix": "+1-310-985-6400",
-        "url": "http://locations.bloomingdales.com/santa-monica-place?cm_sp=categorysplash_james-perse_james-perse_1-_-row1_imagemap_n-_-_santa-monica-place&cm_sp=search_no_results-_-store_only-{james_perse}-_-{SANTA-MONICA-PLACE}"
+        "urlArgs": {
+          "addressAlias": "santa-monica-place",
+          "designerAlias": "james_perse",
+          "addressFullDetail": "SANTA-MONICA-PLACE"
+        }
       }
     ],
     [
@@ -36,7 +48,11 @@
         "cityStateZip": "Aventura, FL 33180",
         "phoneNumber": "(305) 792-1000",
         "phoneNumberHrefSuffix": "+1-305-792-1000",
-        "url": "http://locations.bloomingdales.com/aventura?cm_sp=categorysplash_james-perse_james-perse_1-_-row1_imagemap_n-_-_aventura&cm_sp=search_no_results-_-store_only-{james_perse}-_-{AVENTURA-MALL}"
+        "urlArgs": {
+          "addressAlias": "aventura",
+          "designerAlias": "james_perse",
+          "addressFullDetail": "AVENTURA-MALL"
+        }
       },
       {
         "name": "San Francisco Centre",
@@ -44,7 +60,11 @@
         "cityStateZip": "San Francisco, CA 94103",
         "phoneNumber": "(415) 856-5300",
         "phoneNumberHrefSuffix": "+1-415-856-5300",
-        "url": "http://locations.bloomingdales.com/san-francisco-centre?cm_sp=categorysplash_james-perse_james-perse_1-_-row1_imagemap_n-_-_san-francisco-centre&cm_sp=search_no_results-_-store_only-{james_perse}-_-{SAN-FRANCISCO-CENTRE}"
+        "urlArgs": {
+          "addressAlias": "san-francisco-centre",
+          "designerAlias": "james_perse",
+          "addressFullDetail": "SAN-FRANCISCO-CENTRE"
+        }
       }
     ],
     [
@@ -54,15 +74,23 @@
         "cityStateZip": "Los Angeles, CA 90067",
         "phoneNumber": "(310) 772-2100",
         "phoneNumberHrefSuffix": "+1-310-722-2100",
-        "url": "http://locations.bloomingdales.com/century-city?cm_sp=categorysplash_james-perse_james-perse_1-_-row1_imagemap_n-_-_century-city&cm_sp=search_no_results-_-store_only-{james_perse}-_-{CENTURY-CITY}"
+        "urlArgs": {
+          "addressAlias": "century-city",
+          "designerAlias": "james_perse",
+          "addressFullDetail": "CENTURY-CITY"
+        }
       },
       {
-        "name": "Standford",
+        "name": "Stanford",
         "streetAddress": "1 Stanford Shopping Center",
         "cityStateZip": "Palo Alto, CA 94304",
         "phoneNumber": "(650) 463-2000",
         "phoneNumberHrefSuffix": "+1-650-463-2000",
-        "url": "http://locations.bloomingdales.com/stanford?cm_sp=categorysplash_james-perse_james-perse_1-_-row1_imagemap_n-_-_standford&cm_sp=search_no_results-_-store_only-{james_perse}-_-{STANDFORD}"
+        "urlArgs": {
+          "addressAlias": "stanford",
+          "designerAlias": "james_perse",
+          "addressFullDetail": "STANFORD"
+        }
       }
     ],
     [
@@ -72,7 +100,11 @@
         "cityStateZip": "Los Angeles, CA 90048",
         "phoneNumber": "(310) 360-2700",
         "phoneNumberHrefSuffix": "+1-310-360-2700",
-        "url": "http://locations.bloomingdales.com/beverly-center?cm_sp=categorysplash_james-perse_james-perse_1-_-row1_imagemap_n-_-_beverly-center&cm_sp=search_no_results-_-store_only-{james_perse}-_-{BEVERLY-CENTER}"
+        "urlArgs": {
+          "addressAlias": "beverly-center",
+          "designerAlias": "james_perse",
+          "addressFullDetail": "BEVERLY-CENTER"
+        }
       },
       {
         "name": "Ala Moana Center",
@@ -80,7 +112,11 @@
         "cityStateZip": "Honolulu, HI 96814",
         "phoneNumber": "(808) 664-7511",
         "phoneNumberHrefSuffix": "+1-808-664-7511",
-        "url": "http://locations.bloomingdales.com/ala-moana-center?cm_sp=categorysplash_james-perse_james-perse_1-_-row1_imagemap_n-_-_ala-moana-center&cm_sp=search_no_results-_-store_only-{james_perse}-_-{ALA-MOANA-CENTER}"
+        "urlArgs": {
+          "addressAlias": "ala-moana-center",
+          "designerAlias": "james_perse",
+          "addressFullDetail": "ALA-MOANA-CENTER"
+        }
       }
     ]
   ]
