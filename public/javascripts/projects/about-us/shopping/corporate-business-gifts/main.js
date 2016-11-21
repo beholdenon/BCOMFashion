@@ -41,7 +41,7 @@ require([
             cmElementCat = 'Business_Gifts',
             cmElementId = 'business_gifts_phonenumber',
             serverDate = new Date( $('input[name="timeStamp"]').val() ),
-            expirationDate = new Date(2017,0,1,0,1);
+            expirationDate = new Date(2016,11,26,0,1);
 
         if ( serverDate >= expirationDate ) {
             $('.holiday').remove();
@@ -60,8 +60,10 @@ require([
             APP.coremetrics(cmElementCat, cmElementId, cmAttrbute2);
         });
 
-        $('.store').on('click', function () {
-            var cmElementId = 'business_gifts_stores',
+        $('.store-top, .store-bottom').on('click', function () {
+            var link = $( this ),
+                className = link.attr('class'),
+                cmElementId = 'business_gifts_stores' + (className.indexOf( 'top' ) !== -1 ? '_top_' : '_bottom_') + link.data('cm'),
                 cmAttrbute2 = '-_-Corporate_Services_(ab-sh-xx-xx.corporate)';
 
             APP.coremetrics(cmElementCat, cmElementId, cmAttrbute2);
