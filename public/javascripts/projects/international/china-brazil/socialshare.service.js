@@ -7,7 +7,7 @@
 
     function SocialShare($rootScope, $window, $location, AppGlobals) {
         var hostURL = 'http://' + $location.host() + ':' + $location.port(),
-            pageUrl = hostURL + '/international/china-brazil/',
+            pageUrl = hostURL + '/international/',
             mediaUrl = hostURL + '/fashion/images/projects/international/china-brazil',
             copy = AppGlobals.getAttr('copy'),
             service = {

@@ -1,0 +1,23 @@
+<div class="bl_breadcrumb_object">{{{breadCrumbNav data pageTitle}}}</div>
+<div class="hshim"></div>
+{{#data}}
+    <ul>
+        {{#.}}
+            <li class="{{{selectedClass id ../../pageTitle header}}} {{display}}">
+                {{>navitem}}
+            </li>
+            {{#unless text}}
+                <ul class="level2 {{{hideLevel ../../../pageTitle .}}}">
+                  {{#.}}
+                      <li class="{{{selectedClass id ../../../../pageTitle header}}} {{display}}">
+                          {{>navitem}}
+                      </li>
+                  {{/.}}
+                </ul>
+            {{/unless}}
+        {{/.}}
+    </ul>
+    {{#if @first}}
+       <div class="hshim2"></div>
+    {{/if}}
+{{/data}}

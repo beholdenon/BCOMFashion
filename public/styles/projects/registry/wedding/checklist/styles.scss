@@ -1,0 +1,139 @@
+// ======================================
+// Registry Checklist redesign
+// Author: Alessandro Ribeiro
+// Date: 10/04/2016
+// Project: /registry/wedding/checklist
+// ======================================
+
+$font-family-serif: Georgia, Cambria, "Times New Roman", Times, serif;
+$font-family-sans-serif: Avenir, helvetica, arial, sans-serif;
+
+@mixin generate-page-section($name, $width: 420px) {
+    &.rwc-#{$name} {
+        .rwc-content {
+            background-color: #ededed;
+            height: $width;
+        }
+
+        .rwc-footer {
+            background: transparent url('/fashion/images/projects/registry/wedding/checklist/#{$name}-bottom.jpg') no-repeat;
+        }
+
+        .rwc-#{$name}-img {
+            margin-top: 50px;
+        }
+    }
+}
+
+.registry-wedding-checklist {
+    font-family: $font-family-sans-serif;
+}
+
+.rwc-section {
+    margin-bottom: 70px;
+    position: relative;
+    text-align: center;
+
+    .rwc-title {
+        background-color: #fff;
+        display: inline-block;
+        font-family: $font-family-serif;
+        font-size: 18px;
+        font-weight: bold;
+        letter-spacing: 0.2em;
+        margin-bottom: -20px;
+        padding: 10px 0;
+        text-transform: uppercase;
+        width: 294px;
+    }
+
+    .rwc-footer {
+        height: 210px;
+    }
+
+    a.rwc-button {
+        background-color: #fff;
+        border: 3px solid #000;
+        color: #000;
+        font-size: 16px;
+        height: auto;
+        margin: 190px 0 0;
+        padding: 0 30px;
+        width: 200px;
+
+        &.rwc-button-download {
+            margin-top: 0;
+            padding-top: 3px;
+            padding-bottom: 3px;
+            text-transform: none;
+            width: auto;
+        }
+    }
+
+    &.rwc-hero {
+        .rwc-hero-content {
+            left: 0;
+            margin: 0 auto;
+            position: absolute;
+            right: 0;
+            top: 90px;
+            width: 475px;
+        }
+
+        .rwc-header {
+            margin-bottom: 25px;
+        }
+
+        .rwc-title {
+            background-color: transparent;
+            color: #fff;
+            font-size: 52px;
+            font-weight: normal;
+            letter-spacing: 0;
+            margin: 0;
+            padding: 0;
+            text-transform: none;
+            width: auto;
+        }
+
+        .rwc-line {
+            height: 1px;
+            margin: 0 auto;
+            width: 250px;
+        }
+
+        .rwc-content {
+            color: #fff;
+            font-size: 18px;
+            line-height: 2;
+            padding: 0 65px;
+            text-align: center;
+        }
+
+        .rwc-footer {
+            height: auto;
+        }
+
+        .rwc-button {
+            background-color: transparent;
+            border-color: #FFF;
+            color: #FFF;
+        }
+    }
+
+    // Add settings section
+    @include generate-page-section("settings");
+
+    // Add cutlery section
+    @include generate-page-section("cutlery");
+
+    // Add barware section
+    @include generate-page-section("barware");
+
+    // Add stemware section
+    @include generate-page-section("stemware");
+
+    // Add bedding section
+    @include generate-page-section("bedding", 210px);
+}
+

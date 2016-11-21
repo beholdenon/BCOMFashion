@@ -2,13 +2,13 @@
   Created by Joe Orr 08/16
 
   The leftNav config files are in the format expected by the PROD
-  (backbone) component so that this site can maitain compatibility
+  (backbone) component so that this site can maintain compatibility
   with that component. However this format is not suitable for use
   by handlebars templates. In order to build the menu via our
   current process we need this configuration info to be taken out
   and put into a simple json format.
 
-  This script gets the data out of the navigation config files and put in
+  This script gets the data out of the navigation config files and puts it in
   a simple json file. In order to do this we need to mock the
   dependencies of the config file (that is, mock the LeftNav component).
 
@@ -56,7 +56,7 @@
              nav = JSON.stringify(nav);
              nav = '{data:' + nav + '}';
              try {
-                 fs.writeFileSync('./server/lib/views/navdata.js', nav);
+                 fs.writeFileSync('./.tmp/navdata.js', nav);
                  process.exit(0);
              } catch (e){
                  console.log(e);

@@ -13,6 +13,7 @@ function selectedClass(itemId, pageTitle, isHeader){
   if (! pageTitle){
     return '';
   }
+  pageTitle = pageTitle.replace(/[']/,'');
   var pageId = "about_" + _.camelCase(pageTitle);
   var css = '';
   if (isHeader){

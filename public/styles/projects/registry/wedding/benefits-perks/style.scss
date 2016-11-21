@@ -1,0 +1,217 @@
+.registry-benefits-perks {
+
+	a:hover, a:focus, a:active, a:visited {
+		color: inherit;
+	}
+
+	.registry-bp-section {
+		.registry-bp-section-item {
+			position: relative;
+
+			img {
+				width: 100%;
+			}
+
+			div, ul, a {
+				position: absolute;
+			}
+
+			.bp-hero-title-line1 {
+				top: 75px;
+				left: 86px;
+				font-family: georgia, serif;
+				color: #fff;
+				font-size: 40px;
+			}
+
+			.bp-hero-title-line2 {
+				top: 117px;
+				left: 86px;
+				font-family: georgia, serif;
+				color: #fff;
+				font-size: 64px;	
+			}
+
+			.bp-hero-copy {
+				top: 211px;
+				left: 87px;
+				color: #fff;
+				font-size: 16px;
+				font-family: Avenir;
+				width: 360px;
+			}
+
+			.bp-hero-list {
+				color: #fff;
+				top: 294px;
+				left: 87px;
+				font-family: Avenir;
+				font-size: 20px;
+				list-style-type: none;
+				font-style: italic;
+
+				li {
+
+					a {
+						
+						position: relative;
+						color: #fff;
+						font-family: Avenir;
+						font-size: 20px;
+						text-decoration: none;
+
+						span {
+							text-decoration: underline;
+							font-size: 16px;
+							font-style: normal;
+						}
+					}
+
+				}
+			}
+
+			.registry-bp-section-title {
+				font-size: 39px;
+				font-family: georgia, serif;
+
+			}	
+
+			.registry-bp-section-copy {
+				font-size: 15px;
+				font-family: Avenir;
+				border-top: 1px solid #000;
+				padding-top: 20px;
+				line-height: 23px;
+				letter-spacing: 0.025em;
+				word-spacing: 0.25em;
+			}
+
+			.registry-bp-section-link {
+				font-size: 15px;
+				font-family: Avenir;
+				font-weight: bold;
+			}
+
+		}
+
+		&#something-for-everyone {
+
+			.registry-bp-section-title {
+			    top: 112px;
+			    left: 161px;
+			}
+
+			.registry-bp-section-copy {
+				top: 215px;
+				left: 79px;
+				width: 320px;
+			}
+
+			.registry-bp-section-link {
+				top: 350px;
+				left: 79px;
+			}
+		}
+		&#personal-consultants {
+
+			margin-top: 10px;
+
+			.registry-bp-section-title {
+			    top: 127px;
+			    left: 693px;
+			}
+
+			.registry-bp-section-copy {
+				top: 235px;
+				left: 597px;
+				width: 310px;
+			}
+		}
+
+		&#completion-offers {
+
+			margin-top: 10px;
+
+			.registry-bp-section-title {
+			    top: 62px;
+			    left: 79px;
+			    width: 395px;
+			    padding-left: 95px;
+			    padding-bottom: 12px;
+			    border-bottom: 1px solid #000;
+			}
+
+			.registry-bp-section-copy {
+				top: 163px;
+				left: 79px;
+				width: 415px;
+				border-top: none;
+			}
+
+			#registry-bp-see-more-offers-link {
+				top: 370px;
+				left: 79px;
+			}
+
+			#registry-bp-info-exclusions-link {
+				top: 370px;
+				left: 279px;
+			}
+		}
+		&#thank-you-manager {
+
+			margin-top: 10px;
+
+			.registry-bp-section-title {
+				top: 127px;
+				left: 691px;
+			}
+
+			.registry-bp-section-copy {
+				top: 226px;
+				left: 596px;
+				width: 322px;
+			}
+
+		}
+		&#special-events {
+
+			margin-top: 10px;
+			margin-bottom: -1px;
+			
+			.registry-bp-section-title {
+				top: 99px;
+    			left: 172px;
+			}
+
+			.registry-bp-section-copy {
+				top: 200px;
+				left: 79px;
+				width: 310px;
+			}
+
+			.registry-bp-section-link {
+				top: 363px;
+				left: 79px;
+			}
+		}
+	}
+	.registry-bp-section-blackbg {
+		color: #fff;
+		background-color: #000;
+
+		div {
+			font-family: Avenir;
+			font-size: 16px;
+			display: inline-block;
+			padding: 24px 0;
+			margin-left: 148px;
+
+			a {
+				color: #fff;
+				font-family: Avenir;
+				font-size: 16px;
+			}
+		}
+	}
+}
