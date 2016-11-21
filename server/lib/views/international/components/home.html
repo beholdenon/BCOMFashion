@@ -53,8 +53,14 @@
     <div class="shop-online width-962">
         <h2><a href="#" ng-click="$event.preventDefault(); goto($event, 'http://www1.bloomingdales.com/')" ng-cloak>//copy[lang].home.shop.title//</a></h2>
 	   	<div class="subtitle" ng-show="lang !== 'ENG'">
-            <span ng-cloak>//copy[lang].home.shop.subtitle//</span>
-            <img ng-src="//lang === 'POR' && '/fashion/images/projects/international/china-brazil/paypal.png' || '/fashion/images/projects/international/china-brazil/alipay.png'//" /> 
+            <div ng-show="lang === 'CN' || lang === 'POR' || lang === 'ESP'" >
+                <span ng-cloak>//copy[lang].home.shop.subtitle//</span>
+                <img ng-src="//(lang === 'POR' || lang === 'ESP') && '/fashion/images/projects/international/china-brazil/paypal.png' || '/fashion/images/projects/international/china-brazil/alipay.png'//" /> 
+            </div>
+            <div ng-show="lang === 'JP'">
+                <img src="/fashion/images/projects/international/china-brazil/paypal.png" /> 
+                <span ng-cloak>//copy[lang].home.shop.subtitle//</span>
+            </div>
         </div>
         <ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-2">
             <li class="img-overlay" ng-click="goto($event, 'women')">
@@ -100,5 +106,11 @@
             	<div class="shop-stores bottom" ng-cloak>//copy[lang].home.shop.ctas[8]//</div>
             </li>
         </ul>        
+    </div>
+    <div class="pdf-download width-962">
+        <p class="large-20">
+            <span ng-cloak>//copy[lang].home.pdf.span//</span>
+            <a ng-href="//copy[lang].home.pdf.link//" ng-cloak>//copy[lang].home.pdf.a//</a>
+        </p>
     </div>    
 </section>

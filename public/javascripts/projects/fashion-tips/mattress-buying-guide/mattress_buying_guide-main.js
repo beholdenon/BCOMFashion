@@ -1,4 +1,4 @@
-require(['jquery'], function($) {
+require(['jquery', 'coremetrics'], function($, CoreMetrics) {
 
     /* jshint camelcase:false */
     /* globals BLOOMIES */
@@ -115,7 +115,6 @@ require(['jquery'], function($) {
 
         if ($('.bl_mobile').length > 0) {
             namespace.state.isDesktop = false;
-          //  namespace.coremetrics = 'MBL:' + namespace.coremetrics;
             initMobile();
         } else {
             if ($('.bl_tablet').length > 0) {
@@ -131,23 +130,27 @@ require(['jquery'], function($) {
         $('ul.mattress_buying_guide_nav_links_list a').on('click', function () {
             var attrCm = $(this).data('cm');
             if (typeof attrCm === 'string' && attrCm.length > 0) {
-                BLOOMIES.coremetrics.cmCreatePageElementTag('topnav--' + attrCm, namespace.coremetrics.replace("MBL:", ""));
+                BLOOMIES.coremetrics.cmCreatePageElementTag('topnav--' + attrCm, namespace.coremetrics);
             }
         });
 
         $('a.desktop-artwork-link, a.mobile-artwork-link').on('click', function () {
-            var attrCm = $(this).data('cm');
+            var attrCm = CoreMetrics.prependMobilePrefix( $(this).data('cm') ),
+                category = CoreMetrics.prependMobilePrefix(namespace.coremetrics);
+                
             if (typeof attrCm === 'string' && attrCm.length > 0) {
-                BLOOMIES.coremetrics.cmCreatePageElementTag(attrCm, namespace.coremetrics.replace("MBL:", ""));
+                BLOOMIES.coremetrics.cmCreatePageElementTag(attrCm, category);
             }
         });
 
         $('a.quiz_button, a.quiz_mobile_button').on('click', function () {
             var attrCm = $(this).data('choice'),
-                attrStep = $(this).data('step');
+                attrStep = $(this).data('step'),
+                id = CoreMetrics.prependMobilePrefix(attrStep + '_' + attrCm),
+                category = CoreMetrics.prependMobilePrefix(namespace.coremetrics);
 
             if (typeof attrCm === 'string' && attrCm.length > 0) {
-                BLOOMIES.coremetrics.cmCreatePageElementTag(attrStep + '_' + attrCm, namespace.coremetrics.replace("MBL:", ""));
+                BLOOMIES.coremetrics.cmCreatePageElementTag(id, category);
             }
         });
 
@@ -212,7 +215,7 @@ require(['jquery'], function($) {
             mobileStickyNavBar();
 
             if (window.location.hash === '') {
-                coreMetrics("Pageview", namespace.coremetrics.replace("MBL:", ""), namespace.coremetrics.replace("MBL:", "") + "--hp");
+                coreMetrics("Pageview", namespace.coremetrics, namespace.coremetrics + "--hp");
             }
 
         }, 100);
@@ -274,6 +277,9 @@ require(['jquery'], function($) {
     }
 
     function coreMetrics(tag_type, category_name, tag_value) {
+        category_name = CoreMetrics.prependMobilePrefix(category_name);
+        tag_value = CoreMetrics.prependMobilePrefix(tag_value);
+                
         if (tag_type === "Pageview") {
             try {
                 BLOOMIES.coremetrics.cmCreatePageviewTag(tag_value, category_name);
@@ -389,48 +395,53 @@ require(['jquery'], function($) {
 
         $('a#mattress_buying_guide_mobile_nav-arrow_down, a#mattress_buying_guide_mobile_nav_section_name').on('click', function () {
             event.preventDefault();
-            var dropDown = $('#mattress_buying_guide_mobile_dropdown');
+            var dropDown = $('#mattress_buying_guide_mobile_dropdown'),
+                id = CoreMetrics.prependMobilePrefix('topnav_open_dropdown'),
+                category = CoreMetrics.prependMobilePrefix(namespace.coremetrics);
 
             if (dropDown.is(':visible') === false) {
                 dropDown.slideDown('slow');
-                BLOOMIES.coremetrics.cmCreatePageElementTag('topnav_open_dropdown', namespace.coremetrics.replace("MBL:", ""));
+                BLOOMIES.coremetrics.cmCreatePageElementTag(id, category);
             }
         });
 
         $('a#mattress_buying_guide_mobile_nav-arrow_up').on('click', function () {
             event.preventDefault();
-            var dropDown = $('#mattress_buying_guide_mobile_dropdown');
+            var dropDown = $('#mattress_buying_guide_mobile_dropdown'),
+                id = CoreMetrics.prependMobilePrefix('topnav_close_dropdown'),
+                category = CoreMetrics.prependMobilePrefix(namespace.coremetrics);
 
             if (dropDown.is(':visible') === true) {
                 dropDown.slideUp('slow');
-                BLOOMIES.coremetrics.cmCreatePageElementTag('topnav_close_dropdown', namespace.coremetrics.replace("MBL:", ""));
+                BLOOMIES.coremetrics.cmCreatePageElementTag(id, category);
             }
         });
 
         $('#mattress_buying_guide_mobile_dropdown > li > a').on("click", function () {
             $('#mattress_buying_guide_mobile_dropdown').slideUp('slow');
             var hash = $(this).attr('href'),
-                attrCm = $(this).data('cm');
+                attrCm = $(this).data('cm'),
+                id = CoreMetrics.prependMobilePrefix('topnav--' + attrCm),
+                category = CoreMetrics.prependMobilePrefix(namespace.coremetrics);
 
             hash = hash.substring(1, hash.length);
             if (typeof attrCm === 'string' && attrCm.length > 0) {
-                BLOOMIES.coremetrics.cmCreatePageElementTag('topnav--' + attrCm, namespace.coremetrics.replace("MBL:", ""));
+                BLOOMIES.coremetrics.cmCreatePageElementTag(id, category);
             }
             //addressChange(event, hash);
         });
 
         $('#' + namespace.projectGlobalPrefix + '_mobile_socialshare_facebook').on('click', function () {
             window.open(namespace.urls.facebookShareURL, '_blank', 'width=608,height=342');
-            coreMetrics('Element', namespace.coremetrics.replace("MBL:", ""), 'social-fb');
-            console.log('clicked mobile FB');
+            coreMetrics('Element', namespace.coremetrics, 'social-fb');
         });
         $('#' + namespace.projectGlobalPrefix + '_mobile_socialshare_twitter').on('click', function () {
             window.open(namespace.urls.twitterShareURL, '_blank', 'width=740,height=340');
-            coreMetrics('Element', namespace.coremetrics.replace("MBL:", ""), 'social-twitter');
+            coreMetrics('Element', namespace.coremetrics, 'social-twitter');
         });
         $('#' + namespace.projectGlobalPrefix + '_mobile_socialshare_pinterest').on('click', function () {
             window.open(namespace.urls.pinterestShareURL, '_blank', 'width=770,height=380');
-            coreMetrics('Element', namespace.coremetrics.replace("MBL:", ""), 'social-pinterest');
+            coreMetrics('Element', namespace.coremetrics, 'social-pinterest');
         });
     }
 
@@ -503,7 +514,7 @@ require(['jquery'], function($) {
             }
 
             if (hash !== '' && hash !== 'quiz') {
-                coreMetrics("Pageview", namespace.coremetrics.replace("MBL:", ""), namespace.coremetrics.replace("MBL:", "") + "--" + ( hash === 'buying_guide' ? 'hp' : hash ));
+                coreMetrics("Pageview", namespace.coremetrics, namespace.coremetrics + "--" + ( hash === 'buying_guide' ? 'hp' : hash ));
             }
             if (hash.indexOf('quiz') >= 0) {
                 quizView(deviceView);
@@ -524,12 +535,12 @@ require(['jquery'], function($) {
             $('#mattress_buying_guide_quiz' + deviceView + '01').siblings().hide();
             $('#mattress_buying_guide_quiz' + deviceView + '01').fadeIn();
 
-            coreMetrics("Pageview", namespace.coremetrics.replace("MBL:", ""), namespace.coremetrics.replace("MBL:", "") + "--find_your_mattress_size");
+            coreMetrics("Pageview", namespace.coremetrics, namespace.coremetrics + "--find_your_mattress_size");
         } else if (step === 1) {
             $('#mattress_buying_guide_quiz' + deviceView + '02').siblings().hide();
             $('#mattress_buying_guide_quiz' + deviceView + '02').fadeIn();
 
-            coreMetrics("Pageview", namespace.coremetrics.replace("MBL:", ""), namespace.coremetrics.replace("MBL:", "") + "--find_your_mattress_comfort_level");
+            coreMetrics("Pageview", namespace.coremetrics, namespace.coremetrics + "--find_your_mattress_comfort_level");
         } else if (step === 2) {
             $('#mattress_buying_guide_quiz' + deviceView + '03').siblings().hide();
             $('#mattress_buying_guide_quiz' + deviceView + '03').fadeIn();
@@ -555,7 +566,7 @@ require(['jquery'], function($) {
 
             });
 
-            coreMetrics("Pageview", namespace.coremetrics.replace("MBL:", ""), namespace.coremetrics.replace("MBL:", "") + "--find_your_mattress_style");
+            coreMetrics("Pageview", namespace.coremetrics, namespace.coremetrics + "--find_your_mattress_style");
         }
 
     }

@@ -161,9 +161,9 @@ define( [ "LeftNav" ], function ( LeftNav ) {
                     id: 'about_amfAr'
                 },
                 {
-                    text: 'BCRF',
-                    href: '/about-us/breast-cancer-research-foundation-b-cause-philanthropy/',
-                    id: 'about_bcrf'
+                    text: 'Pink Campaign',
+                    href: '/about-us/pink-campaign-b-cause-philanthropy/',
+                    id: 'about_pinkCampaign'
                 },
                 {
                     text: 'Child Mind Institute',
@@ -171,7 +171,7 @@ define( [ "LeftNav" ], function ( LeftNav ) {
                     id: 'about_childMindInstitute'
                 },
                 {
-                    text: 'Help USA',
+                    text: 'HELP USA & Mentoring USA',
                     href: '/about-us/help-usa-b-cause-philanthropy/',
                     id: 'about_helpUsa'
                 },
@@ -181,6 +181,26 @@ define( [ "LeftNav" ], function ( LeftNav ) {
                     id: 'about_jdrf'
                 }
 
+            ],
+            [
+                {
+                    type:'header',
+                    text: 'EMPLOYEE GIVING & VOLUNTEERISM',
+                    label: 'Employee Giving & Volunteerism',
+                    href: '/about-us/giving-back-to-community/',
+                    id: 'about_employeeGiving',
+                    secure: false
+                }
+            ],
+            [
+                {
+                    type:'header',
+                    text: 'DIVERSITY & INCLUSION',
+                    label: 'Diversity & Inclusion',
+                    href: '/about-us/diversity-inclusion/',
+                    id: 'about_diversityInclusion',
+                    secure: false
+                }
             ],
             [
                 {
@@ -224,18 +244,6 @@ define( [ "LeftNav" ], function ( LeftNav ) {
                     href: '//www.bloomingdalesjobs.com/',
                     target: '_blank',
                     id: 'about_careers',
-                    secure: false
-                }
-            ],
-            [
-                {
-                    type:'header',
-                    text: 'DIVERSITY',
-                    label: 'Diversity',
-                    //href: '/about/newstores/',
-                    href: 'http://www.macysdiversityleadership.com/',
-                    id: 'about_diversity',
-                    target: '_blank',
                     secure: false
                 }
             ],

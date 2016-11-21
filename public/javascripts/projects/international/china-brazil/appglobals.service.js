@@ -88,6 +88,11 @@
                             kids: 'http://www1.bloomingdales.com/shop/all-kids?id=1003623',
                             sale: 'http://www1.bloomingdales.com/shop/sale/all-sale-clearance?id=1003304'
                         }
+                    },
+                    pdf: {
+                        span: 'Learn how to shop our site and get answers to frequently asked questions.',
+                        a: 'download now',
+                        link: '/fashion/assets/projects/international/china-brazil/guides/Tourism_Microsite_International_Shopping_Guide_English.pdf'
                     }
                 },
                 heritage: {
@@ -171,7 +176,7 @@
                         h2: 'We Handpick the Best Designers in Fashion, Beauty and Beyond'
                     },
                     article: [
-                        'Bloomingdale\'s carries an unrivaled selection of designer brands including CHANEL, Dior, Michael Kors, MCM, Tory Burch, Marc Jacobs, Armani and Ralph Lauren.',
+                        'Bloomingdale\'s carries an unrivaled selection of designer brands including CHANEL, Dior, Michael Kors, MCM, Tory Burch, MARC JACOBS, Armani and Ralph Lauren.',
                         'Searching for the latest (and most coveted) beauty products? Find all of your favorite skin care, makeup and fragrance brands including La Mer, Estée Lauder, Gucci, Chloé, Clinique, Lancôme and kate spade new york.'
                     ]
                 },
@@ -220,9 +225,10 @@
                                 dInfo: 'Download our welcome booklet before you arrive.',
                                 dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_NewYork_EN.pdf',
                                 designersImg: '/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-59ST_02.jpg',
+                                designersAlt: 'Bloomingdale\'s International – Women\'s Designer Shoes',
                                 designers: [
                                     'BVLGARI',
-                                    'Burberry London',
+                                    'Burberry',
                                     'Canali',
                                     'CHANEL', 
                                     'COACH',
@@ -236,7 +242,7 @@
                                     'La Mer',
                                     'Longchamp', 
                                     'Louis Vuitton', 
-                                    'Marc Jacobs',
+                                    'MARC JACOBS',
                                     'Michael Kors', 
                                     'Montblanc', 
                                     'Movado', 
@@ -273,19 +279,7 @@
                                         sched: 'Monday–Friday 7AM–10PM <br/> Saturday 8AM–10PM <span>|</span>   Sunday 8AM–9PM',
                                         description: 'A classic American bakery cherished for its old-fashioned desserts and vintage décor, Magnolia serves a range of handmade baked goods, including pies, cakes, cheesecakes, banana pudding, cupcakes and muffins. Here early? Magnolia opens even before the store does.',
                                         imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_03.jpg'
-                                    },
-                                    {
-                                        name: '<b>LE TRAIN BLEU </b> <span>|</span>   6th floor <span>|</span>   212-705-2100',
-                                        sched: 'Monday–Wednesday, Friday–Saturday 10:30AM–5PM <span>|</span>  Thursday 10:30AM–7PM <span>|</span>  Sunday 11:30AM–4:30PM',
-                                        description: '<i>Reservations recommended</i><br/>A romantic replica of a turn-of-the-century railway dining car, Le Train Bleu offers the finest American-Continental fare, including daily brunch, lunch and a prix-fixe dinner menu.',
-                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_05.jpg'
-                                    },
-                                    {
-                                        name: '<b>B CAFÉ </b> <span>|</span>   6th floor <span>|</span>   212-705-2073',
-                                        sched: 'Open Daily <span>|</span>   10AM–store closing',
-                                        description: 'Stop by this coffee and snack bar for quick and healthy treats, or to enjoy a light lunch or dinner featuring on-the-go versions of many Le Train Bleu favorites.',
-                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_06.jpg'
-                                    } 
+                                    }
                                 ],
                                 services: [
                                     {
@@ -323,9 +317,10 @@
                                 dInfo: 'Download our welcome booklet before you arrive.',
                                 dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_NewYork_EN.pdf',
                                 designersImg: '/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-SOHO.jpg',                                
+                                designersAlt: 'Bloomingdale\'s International – Women\'s Designer Handbags',                                
                                 designers: [
                                     'BVLGARI',
-                                    'Burberry London',
+                                    'Burberry',
                                     'Canali',
                                     'CHANEL', 
                                     'COACH',
@@ -339,7 +334,7 @@
                                     'La Mer',
                                     'Longchamp', 
                                     'Louis Vuitton', 
-                                    'Marc Jacobs',
+                                    'MARC JACOBS',
                                     'Michael Kors', 
                                     'Montblanc', 
                                     'Movado', 
@@ -382,14 +377,15 @@
                             {
                                 name: 'Ala Moana',
                                 addr: '1450 Ala Moana Blvd  Honolulu, HI 96814<br/>+1 808-644-7511',
-                                hours: 'Monday–Saturday: 10AM–8PM | Sunday: 11AM–7PM',
+                                hours: 'Monday–Saturday: 9:30AM–9PM | Sunday: 10AM–7PM',
                                 descr: 'Say aloha to our newest outpost in tropical Honolulu. Located in the Ala Moana Center, Hawaii\'s premier shopping destination, this three-story store boasts a range of amenities tailored to the overseas shopper. Stop by our International Welcome Center and speak with one of our multilingual associates. We offer international style advisor appointments, on-site alterations, restaurant reservations and much more.</p><p style="margin-top: 10px;">Planning a return visit? Sign up for our International Loyalty Club and earn points toward gift cards, special services and authentic Hawaiian adventures.',
                                 dTile: 'VISITING HAWAII?',
                                 dInfo: 'Download our welcome booklet before you arrive.',
                                 dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Hawaii_EN.pdf',
-                                designersImg: '/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-ALA-MOANA.jpg',                                  
+                                designersImg: '/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-ALA-MOANA.jpg',
+                                designersAlt: 'Bloomingdale\'s International – Women\'s Designer Shoes & Handbags',                                  
                                 designers: [
-                                    'Burberry London',
+                                    'Burberry',
                                     'Chloé',
                                     'Clinique',
                                     'Fendi',
@@ -410,7 +406,7 @@
                                 restaurants: [
                                     {
                                         name: '<b>FORTY CARROTS</b> <span>|</span>   3rd floor  ',
-                                        sched: 'Open Daily 11:30AM–1 hour before store closing',
+                                        sched: 'Open Daily 11:00AM',
                                         description: 'A visit isn\'t complete without our famous frozen yogurt.',
                                         imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_01.jpg'
                                     }
@@ -464,9 +460,10 @@
                                 dTile: 'VISITING CHICAGO?',
                                 dInfo: 'Download our welcome booklet before you arrive.',
                                 dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Chicago_EN.pdf',
-                                designersImg: '/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-NORTH-MICHIGAN-AVENUE.jpg',                                                                  
+                                designersImg: '/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-NORTH-MICHIGAN-AVENUE.jpg',
+                                designersAlt: 'Bloomingdale\'s International – Women\'s Designer Jackets',                                                                   
                                 designers: [
-                                    'Burberry London',
+                                    'Burberry',
                                     'Canada Goose',
                                     'Chloé',
                                     'COACH',
@@ -476,7 +473,7 @@
                                     'Gucci',
                                     'Kiehl\'s Since 1851',
                                     'La Mer',
-                                    'Marc Jacobs',
+                                    'MARC JACOBS',
                                     'MCM',
                                     'Michael Kors',
                                     'Moncler',
@@ -535,7 +532,8 @@
                                 dTile: 'VISITING CHICAGO?',
                                 dInfo: 'Download our welcome booklet before you arrive.',
                                 dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Chicago_EN.pdf',
-                                designersImg: '/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-MEDINAH-HOME.jpg',                                                                                                  
+                                designersImg: '/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-MEDINAH-HOME.jpg',
+                                designersAlt: 'Bloomingdale\'s International – Designer Luggage',                                                                                                   
                                 designers: [
                                     'Nespresso',
                                     'Rimowa',
@@ -573,10 +571,11 @@
                                 dInfo: 'Download our welcome booklet before you arrive.',
                                 dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_SanFran_EN.pdf',
                                 designersImg: '/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-SAN-FRANCISCO-CENTRE.jpg',
+                                designersAlt: 'Bloomingdale\'s International – Women\'s Designer Jackets',
                                 designers: [
                                     'Alice + Olivia',
                                     'BCBGMAXAZRIA',
-                                    'Burberry London', 
+                                    'Burberry', 
                                     'Calvin Klein',
                                     'CHANEL',
                                     'COACH',
@@ -643,8 +642,9 @@
                                 dInfo: 'Download our welcome booklet before you arrive.',
                                 dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_SouthCoastPlaza_EN.pdf',
                                 designersImg: '/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-SOUTH-COAST-PLAZA.jpg',
+                                designersAlt: 'Bloomingdale\'s International – Women\'s Designer Shoes & Handbags',
                                 designers: [
-                                    'Burberry London',
+                                    'Burberry',
                                     'Calvin Klein',
                                     'Canada Goose',
                                     'CHANEL',
@@ -663,7 +663,7 @@
                                     'Longchamp',
                                     'Longines Watches',
                                     'Louis Vuitton',
-                                    'Marc Jacobs',
+                                    'MARC JACOBS',
                                     'MCM',
                                     'Michael Kors',
                                     'Miu Miu',
@@ -686,13 +686,7 @@
                                         sched: 'Lunch: Open Daily 11:30AM–2:30PM <br/> Noodle Bar: Open Daily 11:30AM–5:30PM <br/> Dinner: Sunday–Thursday 5:30PM–10:30PM <br/>Friday–Saturday 5:30PM–11:00PM <br/> Red Happy Hour: Monday–Friday 4PM–7PM',
                                         description: '',
                                         imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_08.jpg'
-                                    },
-                                    {
-                                        name: '<b>Holsteins</b> <span>|</span> Ground Floor <span>|</span> 714-352-2525',
-                                        sched: 'Monday - Thursday: 11AM–12AM <br/> Friday & Saturday: 11AM–2AM  <br/> Sunday: 11AM–12AM ',
-                                        description: '',
-                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_09.jpg'
-                                    }                                    
+                                    }                                  
                                 ],
                                 services: [
                                     {
@@ -717,7 +711,8 @@
                                 dTile: 'VISITING SOUTHERN CALIFORNIA?',
                                 dInfo: 'Download our welcome booklet before you arrive.',
                                 dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_SouthernCalifornia_EN.pdf',
-                                designersImg: '',                                
+                                designersImg: '',
+                                designersAlt: '',
                                 stores: [
                                     {
                                         area: 'Orange County',
@@ -793,17 +788,18 @@
                             {
                                 name: 'AVENTURA',
                                 addr: '19555 Biscayne Boulevard  Aventura, FL 33180<br/>+1 305-792-1246',
-                                hours: 'Monday–Saturday: 10AM–10PM <span>|</span> Sunday: 12PM–9PM',
+                                hours: 'Monday–Wednesday: 10AM–9:30PM <span>|</span> Thusday-Saturday: 10AM-10PM <span>|</span> Sunday: 12PM–8:30PM',
                                 descr: 'Planning your vacation itinerary? Start with a trip to Florida\'s Aventura store. Explore our extensive selection of designer fashions, beauty brands, luxurious accessories and more. Get shopping with a store directory in your chosen language and be sure to make the most of your experience with our in-store amenities listed below.',
                                 dTile: 'VISITING AVENTURA?',
                                 dInfo: 'Download our welcome booklet before you arrive.',
                                 dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Aventura_EN.pdf',
                                 designersImg: '/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-AVENTURA.jpg',
+                                designersAlt: 'Bloomingdale\'s International – Women\'s Designer Shoes & Handbags',
                                 designers: [
                                     'Baccarat',
                                     'Bernardaud',
                                     'BVLGARI',
-                                    'Burberry London',
+                                    'Burberry',
                                     'Calvin Klein ',
                                     'Canali ',
                                     'CHANEL ',
@@ -845,7 +841,7 @@
                                 restaurants: [
                                     {
                                         name: '<b>59TH & LEX CAFE</b> <span>|</span> 2nd floor <span>|</span> 305-792-1180',
-                                        sched: 'Monday–Saturday 10AM–7:30PM <span>|</span> Sunday 12PM–5PM',
+                                        sched: 'Monday–Saturday 10AM–8PM <span>|</span> Sunday 12PM–7PM',
                                         description: '',
                                         imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_06.jpg'
                                     }
@@ -876,8 +872,9 @@
                                 dInfo: 'Download our welcome booklet before you arrive.',
                                 dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Orlando_EN.pdf',
                                 designersImg: '/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-ORLANDO.jpg',
+                                designersAlt: 'Bloomingdale\'s International – Women\'s Designer Handbags',
                                 designers: [
-                                    'Burberry London',
+                                    'Burberry',
                                     'Canali ',
                                     'COACH',
                                     'DIANE von FURSTENBERG ',
@@ -936,7 +933,7 @@
                         description: 'International Tourism | bloomingdales.com'
                     },
                     twitter: {
-                        text: 'Love to shop @bloomingdales? Check out their international site for new designer clothing, accessories & beauty. http://bit.ly/1M3fLiB'
+                        text: 'Love to shop @bloomingdales? Check out their international site for new designer clothing, accessories & beauty. http://fashion.bloomingdales.com/international/'
                     },
                     weibo: {
                         url: 'http://weibo.com/bloomingdalesusa',
@@ -1178,7 +1175,7 @@
                                 dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_NewYork_PT.pdf',
                                 designers: [
                                     'BVLGARI',
-                                    'Burberry London',
+                                    'Burberry',
                                     'Canali',
                                     'CHANEL', 
                                     'COACH',
@@ -1192,7 +1189,7 @@
                                     'La Mer',
                                     'Longchamp', 
                                     'Louis Vuitton', 
-                                    'Marc Jacobs',
+                                    'MARC JACOBS',
                                     'Michael Kors', 
                                     'Montblanc', 
                                     'Movado', 
@@ -1229,19 +1226,7 @@
                                         sched: 'Aberto Diariamente  <span>|</span>   Na caixa (para levar) 10:00h–21:00h <span>|</span>   No bar (para ficar) 11:00h–21:00h ',
                                         description: 'Chef David Burke, um dos maiores pioneiros da culinária americana, reúne pratos deliciosos e serviço top em uma atmosfera animada.',
                                         imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_04.jpg'
-                                    },
-                                    {
-                                        name: '<b>LE TRAIN BLEU </b> <span>|</span>   6º. andar  <span>|</span>   212-705-2100',
-                                        sched: 'Segunda-feira–Quarta-feira, Sexta-feira–Sábado 10:30h–17:00h <span>|</span> Quinta-feira 10:30h–19:00h <span>|</span> Domingo 11:30h–16:30h',
-                                        description: '<i>Recomendamos fazer reserva </i><br/>Uma réplica de um jantar romântico no vagão de trem na virada do século passado, o Le Train Bleu oferece os melhores preços de todos os EUA, incluindo brunch, almoço e um menu de jantar com preços fixos.',
-                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_05.jpg'
-                                    },
-                                    {
-                                        name: '<b>B CAFÉ </b> <span>|</span>   6º. andar  <span>|</span>   212-705-2073',
-                                        sched: 'Aberto todos os dias <span>|</span> 10:00h até a loja fechar ',
-                                        description: 'Faça uma parada neste café e lanchonete para delícias rápidas e saudáveis, ou para saborear um almoço ou jantar leve com versões para viagem de muitas das opções favoritas do Le Train Bleu.',
-                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_06.jpg'
-                                    } 
+                                    }
                                 ],
                                 services: [
                                     {
@@ -1280,7 +1265,7 @@
                                 dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_NewYork_PT.pdf',
                                 designers: [
                                     'BVLGARI',
-                                    'Burberry London',
+                                    'Burberry',
                                     'Canali',
                                     'CHANEL', 
                                     'COACH',
@@ -1294,7 +1279,7 @@
                                     'La Mer',
                                     'Longchamp', 
                                     'Louis Vuitton', 
-                                    'Marc Jacobs',
+                                    'MARC JACOBS',
                                     'Michael Kors', 
                                     'Montblanc', 
                                     'Movado', 
@@ -1337,13 +1322,13 @@
                             {
                                 name: 'Ala Moana',
                                 addr: '1450 Ala Moana Blvd  Honolulu, HI 96814<br/>+1 808-644-7511',
-                                hours: 'Segunda-feira - Sábado: 10:00h-20:00h <span>|</span> Domingo: 11:00h-19:00h',                                
+                                hours: 'Segunda-feira - Sábado: 9:30h-21:00h <span>|</span> Domingo: 10:00h-19:00h',                                
                                 descr: 'Diga "Aloha" para nossa mais nova filial na tropical Honolulu. Localizada no Ala Moana Center, atração e principal local de compras no Havaí, esta loja de três andares oferece uma variedade de comodidades sob medida para o cliente no além-mar. Passe em nosso Centro Internacional de Visitantes e fale com um dos nossos atendentes multilíngues. Nós oferecemos consultoria com personal stylist, ajustes no próprio local, reservas em restaurantes e muito mais.</p><p style="margin-top: 10px;">Está pensando em nos visitar de novo? Inscreva-se em nosso International Loyalty Club e ganhe pontos em cartões de presente, serviços especiais e em aventuras havaianas autênticas.',
                                 dTile: 'VISITANDO O HAVAÍ?',
                                 dInfo: 'Baixe nosso guia de boas-vindas antes de chegar.',
                                 dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Hawaii_EN.pdf',
                                 designers: [
-                                    'Burberry London',
+                                    'Burberry',
                                     'Chloé',
                                     'Clinique',
                                     'Fendi',
@@ -1364,7 +1349,7 @@
                                 restaurants: [
                                     {
                                         name: '<b>FORTY CARROTS</b> <span>|</span>   3º. andar ',
-                                        sched: 'Aberto todos os dias <span>|</span>  11:30h – 1 hora antes da loja fechar',
+                                        sched: 'Aberto todos os dias <span>|</span>  11:00h',
                                         description: 'Sua visita só estará completa após experimentar nosso famoso iogurte frozen.',
                                         imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_01.jpg'
                                     }
@@ -1419,7 +1404,7 @@
                                 dInfo: 'Baixe o nosso guia de boas-vindas antes de chegar.',
                                 dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Chicago_EN.pdf',
                                 designers: [
-                                    'Burberry London',
+                                    'Burberry',
                                     'Canada Goose',
                                     'Chloé',
                                     'COACH',
@@ -1429,7 +1414,7 @@
                                     'Gucci',
                                     'Kiehl\'s Since 1851',
                                     'La Mer',
-                                    'Marc Jacobs',
+                                    'MARC JACOBS',
                                     'MCM',
                                     'Michael Kors',
                                     'Moncler',
@@ -1519,7 +1504,7 @@
                                 designers: [
                                     'Alice + Olivia',
                                     'BCBGMAXAZRIA',
-                                    'Burberry London', 
+                                    'Burberry', 
                                     'Calvin Klein',
                                     'CHANEL',
                                     'COACH',
@@ -1581,7 +1566,7 @@
                                 dInfo: 'Baixe o nosso guia de boas-vindas antes de chegar.',
                                 dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_SouthCoastPlaza_EN.pdf',
                                 designers: [
-                                    'Burberry London',
+                                    'Burberry',
                                     'Calvin Klein',
                                     'Canada Goose',
                                     'CHANEL',
@@ -1600,7 +1585,7 @@
                                     'Longchamp',
                                     'Longines Watches',
                                     'Louis Vuitton',
-                                    'Marc Jacobs',
+                                    'MARC JACOBS',
                                     'MCM',
                                     'Michael Kors',
                                     'Miu Miu',
@@ -1623,13 +1608,7 @@
                                         sched: 'Piso Térreo Almoço: Aberto todos os dias 11:30h – 14:30h <br/>Noodle Bar: Aberto todos os dias 11:30h – 17:30h <br/>Jantar:   Domingo – Quinta-feira 17:30h – 20:30h <br/>Sexta-feira – Sábado 17:30h – 23:00h <br/>Red Happy Hour: Segunda-feira – Sexta-feira 16:00h – 19:00h',
                                         description: '',
                                         imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_08.jpg'
-                                    },
-                                    {
-                                        name: '<b>Holsteins</b> <span>|</span> Piso Térreo <span>|</span> 714-352-2525',
-                                        sched: 'Segunda-feira – Quinta-feira 11:00h – 24:00h  <br/> Sexta-feira – Sábado: 11:00h - 2:00h  <br/>Domingo 11:00h – 24:00h ',
-                                        description: '',
-                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_09.jpg'
-                                    }                                       
+                                    }                                    
                                 ],
                                 services: [
                                     {
@@ -1729,7 +1708,7 @@
                             {
                                 name: 'AVENTURA',
                                 addr: '19555 Biscayne Boulevard  Aventura, FL 33180<br/>+1 305-792-1246',
-                                hours: 'Segunda-feira - Sábado: 10:00h-22:00h <span>|</span> Domingo: 12:00h-21:00h',                                  
+                                hours: 'Segunda-Quarta-feira: 10h-9:30h <span>|</span> Quinta-Sábado: 10h-10h <span>|</span> Domingo: 12h-8:30h',                                  
                                 descr: 'Planejando o roteiro das suas férias? Comece com uma parada na loja de Aventura, na Flórida. Explore a nossa ampla seleção de estilistas, marcas de beleza, acessórios de luxo e muito mais. Comece a comprar com um catálogo da loja no seu idioma escolhido e não se esqueça de aproveitar ao máximo sua experiência com nossos serviços nas lojas listadas abaixo.',
                                 dTile: 'VISITANDO AVENTURA?',
                                 dInfo: 'Baixe o nosso guia de boas-vindas antes de chegar.',
@@ -1738,7 +1717,7 @@
                                     'Baccarat',
                                     'Bernardaud',
                                     'BVLGARI',
-                                    'Burberry London',
+                                    'Burberry',
                                     'Calvin Klein ',
                                     'Canali ',
                                     'CHANEL ',
@@ -1780,7 +1759,7 @@
                                 restaurants: [
                                     {
                                         name: '<b>59TH & LEX CAFE</b> <span>|</span> 2º. piso <span>|</span>  +1 305-792-1180',
-                                        sched: 'Segunda-feira–Sábado 10:00h–19:30h <span>|</span> Domingo 12:00h–17:00h',
+                                        sched: 'Segunda-feira–Sábado 10:00h–20:00h <span>|</span> Domingo 12:00h–19:00h',
                                         description: '',
                                         imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_06.jpg'
                                     }
@@ -1811,7 +1790,7 @@
                                 dInfo: 'Baixe o nosso guia de boas-vindas antes de chegar.',
                                 dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Orlando_PT.pdf',
                                 designers: [
-                                    'Burberry London',
+                                    'Burberry',
                                     'Canali ',
                                     'COACH',
                                     'DIANE von FURSTENBERG ',
@@ -1867,7 +1846,7 @@
                         h2: 'Escolhemos A Dedo Os Melhores Designers De Moda, Beleza E Cia.'
                     },
                     article: [
-                        'A Bloomingdale\'s traz uma seleção incomparável de marcas de grife incluindo CHANEL, Dior, Michael Kors, MCM, Tory Burch, Marc Jacobs, Armani e Ralph Lauren.',
+                        'A Bloomingdale\'s traz uma seleção incomparável de marcas de grife incluindo CHANEL, Dior, Michael Kors, MCM, Tory Burch, MARC JACOBS, Armani e Ralph Lauren.',
                         'Procura os produtos de beleza mais novos (e mais cobiçados)? Encontre todos os seus produtos favoritos para cuidados da pele, maquiagem e marcas de fragrâncias como La Mer, Estée Lauder, Gucci, Chloé, Clinique, Lancôme e Kate Spade New York.'
                     ]
                 },                
@@ -1880,7 +1859,7 @@
                         description: 'Turismo Internacional | bloomingdales.com'
                     },
                     twitter: {
-                        text: 'Ama comprar na @bloomingdales? Veja o site Internacional para novos designers de roupas, acessórios e beleza. http://bit.ly/1M3fLiB'
+                        text: 'Ama comprar na @bloomingdales? Veja o site Internacional para novos designers de roupas, acessórios e beleza. http://fashion.bloomingdales.com/international/'
                     },
                     weibo: {
                         url: '',
@@ -1944,7 +1923,7 @@
                 },
                 footer: [
                     'DESCONTO DE 10% - <b><u>CADASTRE-SE</u></b> PARA RECEBER E-MAILS',
-                    'Como nenhuma outra loja no mundo'
+                    'like no other store in the world'
                 ]                                          
             },
             CN: {
@@ -2082,7 +2061,7 @@
                         h2: '我们精心挑选最优质的时装、美容等设计师品牌'
                     },
                     article: [
-                        'Bloomingdale\'s 为您带来 CHANEL、Dior、Michael Kors、MCM、Tory Burch、Marc Jacobs、Armani 和 Ralph Lauren 等一系列无与伦比的设计师品牌。',
+                        'Bloomingdale\'s 为您带来 CHANEL、Dior、Michael Kors、MCM、Tory Burch、MARC JACOBS、Armani 和 Ralph Lauren 等一系列无与伦比的设计师品牌。',
                         '想要寻找最新和最炙手可热的美容产品？ 选购 La Mer、Estée Lauder、Gucci、Chloé、Clinique、Lancôme 和 kate spade new york 等众多您最喜爱的护肤品、化妆品和香水品牌。'
                     ]
                 }, 
@@ -2132,7 +2111,7 @@
                                 dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_NewYork_CN.pdf',
                                 designers: [
                                     'BVLGARI',
-                                    'Burberry London',
+                                    'Burberry',
                                     'Canali',
                                     'CHANEL', 
                                     'COACH',
@@ -2146,7 +2125,7 @@
                                     'La Mer',
                                     'Longchamp', 
                                     'Louis Vuitton', 
-                                    'Marc Jacobs',
+                                    'MARC JACOBS',
                                     'Michael Kors', 
                                     'Montblanc', 
                                     'Movado', 
@@ -2183,19 +2162,7 @@
                                         sched: '周一至周五上午 7:00–晚上 10:00<br/> 周六上午 8:00 <span>|</span>   Sunday 8AM–9PM',
                                         description: 'Magnolia 是一个拥有传统甜点和古老装饰风格的经典美式面包房，这里可供应一系列手工烘培食品，包括馅饼、蛋糕、乳酪蛋糕、香蕉布丁、纸杯蛋糕和松饼。来早了？Magnolia 的营业时间甚至比门店还早。',
                                         imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_03.jpg'
-                                    },
-                                    {
-                                        name: '<b>LE TRAIN BLEU </b> <span>|</span> 6 层 <span>|</span>   212-705-2100',
-                                        sched: '周一至周三，周五至周六上午 10:30–下午 5:00 <span>|</span> 周四上午 10:30–晚上 7:00 <span>|</span> 周日上午 11:30–下午 4:30 ',
-                                        description: '<i>建议提前预订</i><br/>Le Train Bleu 重现了上世纪初浪漫的铁路餐车，为您提供最精美的美洲大陆饮食，包括每日早午餐、午餐和定价晚餐。',
-                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_05.jpg'
-                                    },
-                                    {
-                                        name: '<b>B CAFÉ </b> <span>|</span>   6 层 <span>|</span>   212-705-2073',
-                                        sched: '营业时间 <span>|</span> 上午 10:00–门店打烊',
-                                        description: '在这咖啡小吃店稍作休息，品尝便捷健康的美食，或享用一份以多种外带版 Le Train Bleu 美食为特色的简单午餐或晚餐。',
-                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_06.jpg'
-                                    } 
+                                    }
                                 ],
                                 services: [
                                     {
@@ -2234,7 +2201,7 @@
                                 dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_NewYork_CN.pdf',
                                 designers: [
                                     'BVLGARI',
-                                    'Burberry London',
+                                    'Burberry',
                                     'Canali',
                                     'CHANEL', 
                                     'COACH',
@@ -2248,7 +2215,7 @@
                                     'La Mer',
                                     'Longchamp', 
                                     'Louis Vuitton', 
-                                    'Marc Jacobs',
+                                    'MARC JACOBS',
                                     'Michael Kors', 
                                     'Montblanc', 
                                     'Movado', 
@@ -2291,13 +2258,13 @@
                             {
                                 name: '阿拉莫阿那购物中心店',
                                 addr: '1450 Ala Moana Blvd  Honolulu, HI 96814<br/>+1 808-644-7511',
-                                hours: '周一 – 周六： 上午 10:00－晚上 8:00 <span>|</span> 周日： 上午 11:00－晚上 7:00',                                
+                                hours: '周一 – 周六： 上午 9:30－晚上 9:00 <span>|</span> 周日： 上午 10:00－晚上 7:00',                                
                                 descr: '跟我们在热带檀香山设立的最新商店打个招呼。这座三层楼高的商店位于夏威夷黄金购物地带阿拉莫阿那购物中心店，内部配备有各种便利设施，专为海外购物者量身打造。我们提供个人形象设计师会面、现场改衣、餐厅订位等等。',
                                 dTile: '正在前往夏威夷的途中？',
                                 dInfo: '在您到达之前下载我们的欢迎手册。',
                                 dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Hawaii_CN.pdf',
                                 designers: [
-                                    'Burberry London',
+                                    'Burberry',
                                     'Chloé',
                                     'Clinique',
                                     'Fendi',
@@ -2318,7 +2285,7 @@
                                 restaurants: [
                                     {
                                         name: '<b>FORTY CARROTS</b> <span>|</span>   3 层',
-                                        sched: '营业时间 上午 11:30 － 关店前 1 小时',
+                                        sched: '营业时间 上午 11:00',
                                         description: '只有品尝了我们著名的冷冻酸奶，才算不虚此行。',
                                         imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_01.jpg'
                                     }                                    
@@ -2373,7 +2340,7 @@
                                 dInfo: '在您到达之前下载我们的欢迎手册。',
                                 dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Chicago_CN.pdf',
                                 designers: [
-                                    'Burberry London',
+                                    'Burberry',
                                     'Canada Goose',
                                     'Chloé',
                                     'COACH',
@@ -2383,7 +2350,7 @@
                                     'Gucci',
                                     'Kiehl\'s Since 1851',
                                     'La Mer',
-                                    'Marc Jacobs',
+                                    'MARC JACOBS',
                                     'MCM',
                                     'Michael Kors',
                                     'Moncler',
@@ -2481,7 +2448,7 @@
                                 designers: [
                                     'Alice + Olivia',
                                     'BCBGMAXAZRIA',
-                                    'Burberry London', 
+                                    'Burberry', 
                                     'Calvin Klein',
                                     'CHANEL',
                                     'COACH',
@@ -2548,7 +2515,7 @@
                                 dInfo: '在到达之前下载我们的欢迎手册。',
                                 dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_SouthCoastPlaza_CN.pdf',
                                 designers: [
-                                    'Burberry London',
+                                    'Burberry',
                                     'Calvin Klein',
                                     'Canada Goose',
                                     'CHANEL',
@@ -2567,7 +2534,7 @@
                                     'Longchamp',
                                     'Longines Watches',
                                     'Louis Vuitton',
-                                    'Marc Jacobs',
+                                    'MARC JACOBS',
                                     'MCM',
                                     'Michael Kors',
                                     'Miu Miu',
@@ -2590,13 +2557,7 @@
                                         sched: '午餐： 营业时间 上午 11:30 － 下午 2:30  Noodle Bar： 营业时间 上午 11:30 － 下午 5:30  晚餐： 周日 － 周四 下午 5:30 － 晚上 10:30  周五 － 周六下午5:30 － 晚上 11:00  红酒优惠时间： 周一 － 周五下午 4:00 － 晚上 7:00',
                                         description: '',
                                         imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_08.jpg'
-                                    },
-                                    {
-                                        name: '<b>Holsteins</b> <span>|</span> 1 层 <span>|</span> 714-352-2525',
-                                        sched: '周一 - 周四： 营业时间 上午 11：00 - 12:00 <br/> 周五 - 周六： 营业时间 上午 11：00 - 2:00  <br/> 周日： 营业时间 上午 11：00 - 12:00',
-                                        description: '',
-                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_09.jpg'
-                                    }                                      
+                                    }                                    
                                 ],
                                 services: [
                                     {
@@ -2696,7 +2657,7 @@
                             {
                                 name: '阿文图拉购物中心店',
                                 addr: '19555 Biscayne Boulevard  Aventura, FL 33180 <br/>+1 305-792-1246',
-                                hours: '营业时间 周一 － 周六： 上午 10:00 － 晚上 10:00  <span>|</span>  周日： 中午 12:00 － 晚上 9:00  正',
+                                hours: '营业时间 周一至周三：上午10点至晚上9:30 <span>|</span> 周四至周六：上午10点至晚上10点 <span>|</span> 周日：中午 - 晚上8:30',
                                 descr: '正在规划您的假日旅程？从佛罗里达州阿文图拉购物中心店启程吧。在此我们提供种类繁多的设计时尚、美容品牌、奢侈饰品及其他商品供您选择。根据中文门店指南进行购物，同时我们邀您尽可能多地进入下方列示的店内设施进行体验。',
                                 dTile: '来阿文图拉购物中心店观光？',
                                 dInfo: '在到达之前下载我们的欢迎手册。',
@@ -2705,7 +2666,7 @@
                                     'Baccarat',
                                     'Bernardaud',
                                     'BVLGARI',
-                                    'Burberry London',
+                                    'Burberry',
                                     'Calvin Klein ',
                                     'Canali ',
                                     'CHANEL ',
@@ -2747,7 +2708,7 @@
                                 restaurants: [
                                     {
                                         name: '<b>59TH & LEX CAFE</b> <span>|</span>  二楼 <span>|</span> 305-792-1180',
-                                        sched: '周一 － 周六 上午  10:00 － 晚上  7:30 <span>|</span> 周日中午 12:00－下午  5:00',
+                                        sched: '周一 － 周六 上午  10:00 － 晚上  8:00 <span>|</span> 周日中午 12:00－下午  7:00',
                                         description: '',
                                         imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_06.jpg'
                                     }
@@ -2778,7 +2739,7 @@
                                 dInfo: '在到达之前下载我们的欢迎手册。',
                                 dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Orlando_EN.pdf',
                                 designers: [
-                                    'Burberry London',
+                                    'Burberry',
                                     'Canali ',
                                     'COACH',
                                     'DIANE von FURSTENBERG ',
@@ -2837,7 +2798,7 @@
                         description: '国际旅行 丨 bloomingdales.com'
                     },
                     twitter: {
-                        text: '享受在@bloomingdales的消费体验？别忘了查看Bloomingdale\'s国际官方网站上最新设计师服装、饰品以及美妆产品的更新。 http://bit.ly/1M3fLiB'
+                        text: '享受在@bloomingdales的消费体验？别忘了查看Bloomingdale\'s国际官方网站上最新设计师服装、饰品以及美妆产品的更新。 http://fashion.bloomingdales.com/international/'
                     },
                     weibo: {
                         url: 'http://weibo.com/bloomingdalesusa',
@@ -2901,9 +2862,1936 @@
                 },                   
                 footer: [
                     '<b><u>订阅</u></b>电子邮件，立省 10%',
-                    '世界上独一无二的百货店'
+                    'like no other store in the world'
                 ]                                                             
-            }
+            },
+            ESP: {
+                nav: [
+                    'NUESTRO LEGADO',
+                    'CENTRO DEL DISEÑADOR',
+                    'VISITE NUESTRAS TIENDAS',
+                    'TIENDA EN LÍNEA'
+                ],
+                mobileSubHeader: 'INTERNATIONAL TOURISM',
+                home: {
+                    header: {
+                        mobile: {
+                            h1: 'Bienvenido',
+                            h2: 'Conozca todos los lugares con estilo <br/>' +
+                                'comenzando por una visita a Bloomingdale\'s',
+                            p: 'Desde 1872, Bloomingdale\'s se encuentra en el centro del estilo al ofrecer la vestimenta, los zapatos, los bolsos de mano, el maquillaje, la joyería fina y los regalos de los diseñadores más codiciados del mundo. Cuando nuestros clientes visitan nuestras tiendas, disfrutan de toques personales exclusivos&mdash;como asociados políglotos y servicios especiales de conserjería&mdash;que los hacen sentirse bienvenidos y cuidados como en casa. Estas son solo algunas de las cosas que hacen que Bloomingdale\'s no tenga comparación en todo el mundo.'
+                        },
+                        desktop: {
+                            h1: 'Bienvenido',
+                            h2: 'Conozca todos los lugares con estilo <br/>' +
+                                'comenzando por una visita a Bloomingdale\'s',
+                            p: 'Desde 1872, Bloomingdale\'s se encuentra en el centro del estilo al ofrecer la vestimenta, los zapatos, los bolsos de mano, el maquillaje, la joyería fina y los regalos de los diseñadores más codiciados del mundo. Cuando nuestros clientes visitan nuestras tiendas, disfrutan de toques personales exclusivos&mdash;como asociados políglotos y servicios especiales de conserjería&mdash;que los hacen sentirse bienvenidos y cuidados como en casa. Estas son solo algunas de las cosas que hacen que Bloomingdale\'s no tenga comparación en todo el mundo.'
+                        }
+                    },
+                    cat: [
+                        'Nuestro Legado',
+                        'Centro del Diseñador',
+                        'Visite Nuestras Tiendas'
+                    ],
+                    shop: {
+                        title: 'TIENDA EN LÍNEA',
+                        subtitle: 'Aceptamos pagos por',
+                        ctas: [
+                            'Ropa Para Damas',
+                            'Bolsos de Mano',
+                            'Calzado',
+                            'Joyería y Accesorios',
+                            'Ropa Para Caballeros',
+                            'Hogar',
+                            'Ropa Para Niños',
+                            'Lo Nuevo',
+                            'Liquidación'
+                        ],
+                        desktopLinks: {
+                            women: 'http://www1.bloomingdales.com/shop/womens-apparel?id=2910',
+                            handbags: 'http://www1.bloomingdales.com/shop/handbags?id=16958',
+                            shoes: 'http://www1.bloomingdales.com/shop/shoes?id=16961',
+                            jewelry: 'http://www1.bloomingdales.com/shop/jewelry-accessories?id=3376',
+                            men: 'http://www1.bloomingdales.com/shop/mens?id=3864',
+                            home: 'http://www1.bloomingdales.com/shop/home?id=3865',
+                            kids: 'http://www1.bloomingdales.com/shop/kids?id=3866',
+                            sale: 'http://www1.bloomingdales.com/shop/sale?id=3977'
+                        },
+                        mobileLinks: {
+                            women: 'http://www1.bloomingdales.com/shop/womens-apparel/all-women?id=1003340',
+                            handbags: 'http://www1.bloomingdales.com/shop/all-handbags-wallets-cases?id=1001396',
+                            shoes: 'http://www1.bloomingdales.com/shop/shoes/all-shoes?id=17411',
+                            jewelry: 'http://www1.bloomingdales.com/shop/all-jewelry-accessories?id=1003593',
+                            men: 'http://www1.bloomingdales.com/shop/mens/all-men?id=1003601',
+                            home: 'http://www1.bloomingdales.com/shop/home?id=1003615',
+                            kids: 'http://www1.bloomingdales.com/shop/all-kids?id=1003623',
+                            sale: 'http://www1.bloomingdales.com/shop/sale/all-sale-clearance?id=1003304'
+                        }
+                    },
+                    pdf: {
+                        span: 'Conozca cómo comprar en nuestra tienda y obtenga respuestas a las preguntas frecuentes.',
+                        a: 'DESCARGAR AHORA',
+                        link: '/fashion/assets/projects/international/china-brazil/guides/Tourism_Microsite_International_Shopping_Guide_Spanish.pdf'
+                    }
+                },
+                heritage: {
+                    header: {
+                        h1: 'La historia de Bloomingdale\'s',
+                        h2: 'Una historia abreviada'
+                    },
+                    article: {
+                        y1880: [{
+                            h3: '1872 - Un gran bazar en el East Side',
+                            p: 'Los hermanos Bloomingdale idearon la frase "Ubicación, ubicación, ubicación" y abrieron su primera tienda en el número 938 de la Tercera Avenida. Llamativos escaparates exhiben las últimas tendencias de París. En poco tiempo, mirar escaparates se convierte en un pasatiempo popular en Nueva York.'
+                        }, {
+                            h3: 'Bloomingdales\'s predice el futuro',
+                            p: 'Ubicada en la "intersección de las ventas al por menor" de Nueva York, la nueva tienda localizada en la Calle 59 y Tercera Avenida cuenta con un carruaje hacia el cielo (es decir, un ascensor). Trece años más tarde, Lyman Bloomingdale financia la idea de un joven inventor de un "ascensor inclinado" y nace la escalera eléctrica.'
+                        }],
+                        y1900: [{
+                            h3: 'Un eslogan conocido en todo el mundo',
+                            p: 'La línea de la Tercera Avenida de IRT, o tren elevado, es el método de transporte de elección para los clientes de Bloomingdales\'s a fines de siglo, tanto así que hay anuncios espectaculares, sombrillas de playa y tiras cómicas por toda la ciudad (y el mundo) con el popular eslogan "Todos los vagones trasbordan en Bloomingdales\'s". Se incrustaron huellas de oro en la acera para que la gente las siguiera al bajar del tren para llegar a Bloomingdales\'s.'
+                        }, {
+                            h3: '1910–Todo marcha sobre ruedas',
+                            p: 'Bloomingdales\'s se convierte en la primera tienda de la ciudad de Nueva York en usar el Modelo T de Henry Ford para hacer entregas.'
+                        }],
+                        y1920: [{
+                            h3: 'Bloomingdales\'s es objeto de una glamorosa remodelación',
+                            p: 'Bloomingdales\'s se establece en la Avenida Lexington y añade once pisos nuevos, capturando la nueva popularidad del glamour del Art Deco con los materiales del momento, como granito negro, piedra caliza y terracota. Ocupa toda la manzana desde Lexington hasta la Tercera Avenida y de la Calle 59 a la Calle 60. De hecho, se compone de 10 edificios que están interconectados.'
+                        }],
+                        y1940: [{
+                            h3: 'Bloomingdales\'s cumple 75 años y festeja como un adolescente',
+                            p: 'Con motivo de su aniversario de diamante, Bloomingdales\'s invita a los 26 diseñadores más populares de Estados Unidos, incluyendo a las celebridades Claire McCardell, Pauline Trigere y Jo Copeland, para crear un atuendo de alta costura para los escaparates de la tienda. Además, la tienda lanza el primer piso de ventas de muebles y accesorios para el hogar.'
+                        }],
+                        y1960: [{
+                            h3: 'La moda explota',
+                            p: 'El hombre en la luna. El Mustang. Tiendas mod. Y más. Bloomingdales\'s es la primera tienda en proporcionar un público americano admirador a visionarios europeos como Yves Saint Laurent y Courrèges.'
+                        }, {
+                            h3: 'A ponerse en onda',
+                            p: 'A partir del otoño de 1963, Bloomingdales\'s es la primera tienda en contratar a los artistas más en onda de la época para ilustrar la bolsa de compras. Artistas como Jonah Kinigstein y Michael Vollbracht revolucionan las bolsas de Bloomingdales\'s, convirtiéndolas en obras de arte coleccionables de manera instantánea. Las bolsas de compras jamás volverían a ser lo mismo.'
+                        }],
+                        y1970: [{
+                            h3: 'Bloomingdales\'s se asocia con Hollywood',
+                            p: 'La década de la decadencia comienza en grande al tiempo que Bloomingdales\'s se asocia con Hollywood y Broadway. Importantes películas se filman en la tienda de la Calle 59. Cintas como Manhattan, de Woody Allen, Comenzar de nuevo y El jinete eléctrico son solo el comienzo, seguidas por Splash y Moscú en Nueva York en la década de 1980.'
+                        }, {
+                            h3: 'Bloomingdales\'s lanza a los 3 grandes diseñadores',
+                            p: 'Ralph Lauren, Donna Karan y Calvin Klein logran sus grandes comienzos en Bloomingdales\'s, probando una vez más que la tienda favorece las perspectivas jóvenes, nuevas y frescas.'
+                        }, {
+                            h3: 'Íconos',
+                            p: 'La icónica Big Brown Bag de Bloomingdales\'s llegó al mundo por primera vez en 1973. La Little Brown Bag le siguió un año después y la Medium Brown Bag fue la última incorporación. Bloomingdales\'s ha creado las bolsas de compras más identificables de la historia y se pueden apreciar en colecciones de museos alrededor del mundo.'
+                        }],
+                        y1980: [{
+                            h3: 'Bloomingdales\'s pone a la venta "lo vibrante".',
+                            p: 'Wharhol llama a Bloomingdales\'s "el nuevo tipo de museo para la década de 1980". Y, cada día, la tienda se transforma en una galería de vanguardia de lo más reciente y novedoso. Bloomingdales\'s se une a la década del glamour de gala. Celebridades de la moda como Karl Lagerfeld, Diane von Furstenberg, Liza Minnelli y Oscar de la Renta viajan exclusivamente para asistir a las glamorosas inauguraciones de las tiendas.'
+                        }, {
+                            h3: '1988–El año del dragón',
+                            p: 'Un año antes de que el presidente Nixon viajara a China, Bloomingdales\'s ya se encontraba haciendo esfuerzos para reavivar una relación comercial con China continental. Quince años después, en 1988, dando seguimiento al gran éxito de su primera campaña en China, la tienda insignia de la Calle 59 ofrece un panorama épico de 7 semanas sobre moda y el diseño del Oriente, en celebración de sus 10 años de comercio con la República Popular. Engalanada de manera acorde, la tienda brilla como una joya de la Ciudad Prohibida.'
+                        }],
+                        y1990: [{
+                            h3: 'La nueva fiebre del oro',
+                            p: 'Cuatro nuevas tiendas en California en cuatro días: Century City, Stanford, Sherman Oaks y Newport Beach. Y un año después, Beverly Center. Ahora Bloomingdales\'s es la única tienda departamental de lujo con una variedad completa que tiene presencia a nivel nacional. Los californianos van de compras para celebrar, y luego se dirigen a la playa.'
+                        }],
+                        y2000: [{
+                            h3: 'Bloomingdales\'s adquiere prestigio en el centro de la ciudad',
+                            p: 'Todo lo bueno se vuelve mejor al llegar al centro de la ciudad. Bloomingdales\'s abre una tienda en SoHo. Un histórico edificio con fachada de hierro fundido en Broadway se transforma en una gema brillante de la moda del siglo XXI.'
+                        }, {
+                            h3: 'El cambio a medios digitales',
+                            p: 'Nace bloomingdales.com. Desde ropa de diseñador y lujosos productos de belleza hasta bolsos de mano y zapatos de moda, el sitio web le brinda moda de clase mundial a sus clientes, todo al alcance de sus manos.'
+                        }, {
+                            h3: 'Belleza renovada',
+                            p: 'El piso principal B-way de la Calle 59 recibe "la más extensa renovación en la ciudad de Nueva York", con una variedad de modernos quioscos de las principales marcas de belleza.'
+                        }],
+                        y2010: [{
+                            h3: '2011–Un nuevo y reluciente espacio para la joyería fina',
+                            p: 'El departamento de joyería fina de la Calle 59, diseñado para hacer lucir cada faceta de los mejores diseñadores del mundo, incluyendo a David Yurman, y visitado por más de 400,000 personas de más de 230 países y los 50 estados del país, ha sido el ganador del galardón NYC Concierge Choice Award durante cinco años consecutivos.'
+                        }, {
+                            h3: 'No hay límites para ser excepcional',
+                            p: 'En la actualidad, nada puede detener a Bloomingdales\'s. La clase de innovación que ha sido sinónimo de la marca desde su comienzo continúa siendo una parte central de su misión de lujo. Al mirar atrás y ver los triunfos del pasado, Bloomingdales\'s contempla el futuro. Es un futuro inigualable.'
+                        }]
+                    }
+                },
+                designer: {
+                    header: {
+                        h1: 'Muchísimas marcas en una sola tienda',
+                        h2: 'Seleccionamos a los mejores diseñadores del mundo de la moda, belleza y más'
+                    },
+                    article: [
+                        'Bloomingdale\'s tiene una selección sin igual de marcas de diseñador incluyendo CHANEL, Dior, Michael Kors, MCM, Tory, Burch, MARC JACOBS, Armani y Ralph Lauren.',
+                        '¿Busca los más novedosos (y codiciados) productos de belleza? Encuentre todas sus marcas favoritas de cuidado de la piel, maquillaje y fragancias incluyendo La Mer, Estée Lauder, Gucci, Chloé, Clinique, Lancôme y Kate Spade New York.'
+                    ]
+                },
+                stores: {
+                    header: {
+                        h1: 'Elija su destino',
+                        h2: 'Nos encontraremos con usted en el Centro de visitantes'
+                    },
+                    dropdown: {
+                        default: 'Seleccione una tienda',
+                        list: [
+                            {id: 'null', name: 'Nueva York',                                      disabled: 'true'},
+                            {id: '0',    name: '59th Street Flagship, Ciudad de Nueva York',      disabled: 'false'},
+                            {id: '1',    name: 'SoHo, Ciudad de Nueva York',                      disabled: 'false'},
+                            {id: 'null', name: 'HAWAII',                                          disabled: 'true'},
+                            {id: '2',    name: 'Ala Moana, Honolulu',                             disabled: 'false'},
+                            {id: 'null', name: 'ILLINOIS',                                        disabled: 'true'},
+                            {id: '3',    name: 'North Michigan Avenue, Chicago',                  disabled: 'false'},
+                            {id: '4',    name: 'Medinah Home, Chicago',                           disabled: 'false'},
+                            {id: 'null', name: 'CALIFORNIA',                                      disabled: 'true'},
+                            {id: '5',    name: 'San Francisco Centre, San Francisco',             disabled: 'false'},
+                            {id: '6',    name: 'South Coast Plaza, Costa Mesa',                   disabled: 'false'},
+                            {id: '7',    name: 'Tiendas en el Sur de California',                 disabled: 'false'},
+                            {id: 'null', name: 'FLORIDA',                                         disabled: 'true'},
+                            {id: '8',    name: 'Aventura',                                        disabled: 'false'},
+                            {id: '9',    name: 'Orlando',                                         disabled: 'false'}
+                        ],
+                        copy: 'Bloomingdale\'s cuenta con tiendas a lo largo y ancho de Estados Unidos. Nuestros Centros de visitantes en Nueva York, Hawaii, Chicago, Miami y San Francisco ofrecen una gama completa de amenidades para los clientes internacionales.  Contamos con asociados políglotas que pueden ayudarle a planear una experiencia de compras sin igual.  Le entregarán un directorio de la tienda en el idioma que usted elija, así como información sobre eventos especiales, además de organizar citas de cortesía con un estilista personal, entrega de paquetes en su hotel, reservaciones en restaurantes (incluyendo los localizados dentro de nuestras tiendas) y mucho más.   ¿Se dirige a la playa?  Nuestros muchos establecimientos en el Sur de California, incluyendo South Coast Plaza en Ocean  County, San Diego y Los Angeles, además de Honolulú, le permitirán estar cerca de lo más destacado de la moda en todo momento.'
+                    },
+                    storeData: {
+                        storeHours: 'Horario de atención',
+                        directions: 'Directions',
+                        designers: 'DISEÑADORES QUE ENCONTRARÁ',
+                        dining: 'RESTAURANTES EN LA TIENDA',
+                        services: 'SERVICIOS',
+                        servicesSubHead: 'Nuestros asociados le mostrarán por qué Bloomingdale\'s no tiene comparación en todo el mundo. Nos podrá identificar por los prendedores con la bandera de su país. Podemos ayudarle a encontrar su vestimenta favorita y brindarle una amplia gama de servicios personalizados.',
+                        loyalty: 'Súmese al Club de Fidelidad para Clientes Internacionales',
+                        loyaltySubHead: 'Nuestro programa especial de recompensas fue creado para los compradores internacionales*. Por cada dólar que gaste, sumará puntos para obtener tarjetas de regalo, servicios y experiencias extraordinarias. Puede inscribirse en el programa ahora mismo, en la tienda de Bloomingdale\'s de Ala Moana, y sumar y canjear puntos en cualquier tienda de línea completa de Bloomingdale\'s de los Estados Unidos**.',
+                        id: [
+                            {
+                                name: '59th Street Flagship',
+                                addr: '1000 Third Avenue Nueva York, NY 10022<br/>+1 212-705-2000',
+                                hours: 'De lunes a sábados: la tienda abre a las 10:00 a.m.<span>|</span> Domingos: la tienda abre a las 11:00 a.m.',
+                                descr: 'Descubra el legado emblemático y la galardonada hospitalidad de Bloomingdale\'s. Inicie su día en nuestra tienda insignia visitando nuestro Centro de Visitantes, ubicado en el balcón del primer piso. Nuestro directorio en varios idiomas le permitirá armar el recorrido de su excursión de compras. ¿Está buscando una experiencia más personalizada? Conozca los servicios brindados en nuestra tienda, que van desde citas con estilistas y alteraciones de ropa hasta reservas en restaurantes. Le ayudaremos a organizar todo esto y mucho más.',
+                                dTile: '¿DE VISITA EN NUEVA YORK?',
+                                dInfo: 'Descargue nuestro folleto de bienvenida antes de llegar.',
+                                dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_NewYork_EN.pdf',
+                                designersImg: '/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-59ST_02.jpg',
+                                designers: [
+                                    'BVLGARI',
+                                    'Burberry',
+                                    'Canali',
+                                    'CHANEL', 
+                                    'COACH',
+                                    'DIANE von FURSTENBERG',
+                                    'Dior',
+                                    'Donna Karan',
+                                    'Estée Lauder',
+                                    'Fendi',
+                                    'Giorgio Armani',
+                                    'Jimmy Choo',
+                                    'La Mer',
+                                    'Longchamp', 
+                                    'Louis Vuitton', 
+                                    'MARC JACOBS',
+                                    'Michael Kors', 
+                                    'Montblanc', 
+                                    'Movado', 
+                                    'Prada', 
+                                    'Ralph Lauren', 
+                                    'Salvatore Ferragamo', 
+                                    'Sandro',
+                                    'Shiseido', 
+                                    'Tory Burch', 
+                                    'Vera Wang',
+                                    'Z Zegna'
+                                ],
+                                restaurants: [
+                                    {
+                                        name: '<b>FORTY CARROTS</b> <span>|</span>   7.° piso <span>|</span>   212-705-3085',
+                                        sched: 'Abierto todos los días <span>|</span>  Para comer en el restaurante: de 10:30 a. m. a una hora antes del cierre de la tienda <br/>Para llevar: de 10:00 a. m. a media hora antes del cierre de la tienda',
+                                        description: 'Su visita no estará completa sin nuestro famoso yogur helado. También podrá encontrar ensaladas recién preparadas, sándwiches, sopas, un bar de jugos frescos y una selección de tés Tavalon de la más alta calidad. Servicio disponible en la barra, en mesas y para llevar.',
+                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_01.jpg'
+                                    },
+                                    {
+                                        name: '<b>FL!P</b> <span>|</span>   Nivel medio <span>|</span>   212-705-3085',
+                                        sched: 'Abierto todos los días <span>|</span>   Para comer en el restaurante: de 11:00 a. m. a una hora antes del cierre de la tienda ',
+                                        description: 'En este lugar relajado dentro de nuestra Tienda para Caballeros, disfrute de unas hamburguesas de “alta costura” al estilo estadounidense, ensaladas, cervezas artesanales, servicio de bar completo y una variedad de papas fritas.',
+                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_02.jpg'
+                                    },
+                                    {
+                                        name: '<b>DAVID BURKE AT BLOOMINGDALE\'S </b> <span>|</span>   Nivel exterior <br />   212-705-3800',
+                                        sched: 'Abierto todos los días <span>|</span> In the Box (para llevar): de 10:00 a.m. a 9:00 p.m. <span>|</span> In the Bar (para comer en el restaurante): de 11:00 a.m. a 9:00 p.m. ',
+                                        description: 'El chef David Burke, uno de los principales precursores de la cocina estadounidense, nos trae una comida deliciosa y el mejor servicio en un ambiente alegre.',
+                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_04.jpg'
+                                    },
+                                    {
+                                        name: '<b>MAGNOLIA BAKERY</b> <span>|</span>   Nivel exterior <span>|</span>   212-265-5320',
+                                        sched: 'De lunes a viernes, de 7:00 a.m. a 10:00 p.m.  <br/> Sábados, de 8:00 a.m. a 10:00 p.m. <span>|</span>   Domingos, de 8:00 a.m. a 9:00 p.m.',
+                                        description: 'A classic American bakery cherished for its old-fashioned desserts and vintage décor, Magnolia serves a range of handmade baked goods, including pies, cakes, cheesecakes, banana pudding, cupcakes and muffins. Here early? Magnolia opens even before the store does.',
+                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_03.jpg'
+                                    }
+                                ],
+                                services: [
+                                    {
+                                        title: 'PODEMOS ENCARGARNOS DE SU LISTA DE REGALOS',
+                                        description: 'Comprar regalos es muy fácil en Bloomingdale\'s. Simplemente envíe su lista de deseos a uno de nuestros especialistas políglotos antes de su visita y encontrará todos los artículos listos a su llegada.<br /> Llame al 212-705-2359 o al 212-705-3488 <br/> Envíe un correo electrónico a <a class="fucsia" href="mailto:international_visitors@bloomingdales.com">international_visitors@bloomingdales.com</a>'
+                                    },
+                                    {
+                                        title: 'PESTILISTAS PERSONALES DISPONIBLES ',
+                                        description: 'Nuestros estilistas personales están disponibles para recorrer la tienda con usted o para elegir opciones de guardarropa y de decoración para el hogar acorde a sus gustos, sin cargo adicional. <br/> A Sus Órdenes (Para ella) 212-705-3135 <br/> A Sus Órdenes (Para él) 212-705-3030 '
+                                    },
+                                    {
+                                        title: 'PAGO SIMPLIFICADO ',
+                                        description: 'Aceptamos La Tarjeta de Viajes Global American Express&reg;'
+                                    },
+                                    {
+                                        title: 'ALTERACIONES DE ROPA RÁPIDAS ',
+                                        description: 'Brindamos servicios de sastrería profesional y alteraciones de ropa en la tienda, por solicitud. Los precios están disponibles en el momento de la prueba.'
+                                    },
+                                    {
+                                        title: 'DENVÍO A SU HOTEL ',
+                                        description: 'Con gusto enviaremos sus compras de USD 250 o más a su hotel en Manhattan, sin cargo adicional. Tan solo déjelas en nuestro Centro de Visitantes, ubicado en el balcón del primer piso.'
+                                    },
+                                    {
+                                        title: 'TARJETAS Y MOÑOS PARA LLEVAR ',
+                                        description: 'Envolveremos sus compras para regalo, o puede elegir sus tarjetas, cajas, papel de regalo y moños para llevarse a casa, en nuestro puesto de envoltura de regalos, ubicado en el sexto piso.'
+                                    }
+                                ]
+                            },
+                            {
+                                name: 'SoHo',
+                                addr: '504 Broadway  Nueva York, NY 10012<br/>+1 212-729-5900',
+                                hours: 'De lunes a sábados: la tienda abre a las 10:00 a.m. <span>|</span> Domingos: la tienda abre a las 12:00 p.m.',
+                                descr: 'Explore nuestra tienda del centro en SoHo, la zona que está más a la moda de la ciudad. Encontrará toda la energía y el estilo de nuestra tienda insignia de la parte alta de la ciudad, pero con el aspecto de una boutique de alta costura. Visite nuestro animado piso de belleza y explore las últimas novedades de los diseñadores. Como siempre, nuestros asociados políglotos están disponibles para ayudarle a que su visita sea memorable.',
+                                dTile: '¿DE VISITA EN NUEVA YORK?',
+                                dInfo: 'Descargue nuestro folleto de bienvenida antes de llegar.',
+                                dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_NewYork_EN.pdf',
+                                designersImg: '/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-SOHO.jpg',                                
+                                designers: [
+                                    'BVLGARI',
+                                    'Burberry',
+                                    'Canali',
+                                    'CHANEL', 
+                                    'COACH',
+                                    'DIANE von FURSTENBERG',
+                                    'Dior',
+                                    'Donna Karan',
+                                    'Estée Lauder',
+                                    'Fendi',
+                                    'Giorgio Armani',
+                                    'Jimmy Choo',
+                                    'La Mer',
+                                    'Longchamp', 
+                                    'Louis Vuitton', 
+                                    'MARC JACOBS',
+                                    'Michael Kors', 
+                                    'Montblanc', 
+                                    'Movado', 
+                                    'Prada', 
+                                    'Ralph Lauren', 
+                                    'Salvatore Ferragamo', 
+                                    'Sandro',
+                                    'Shiseido', 
+                                    'Tory Burch', 
+                                    'Vera Wang',
+                                    'Z Zegna'
+                                ],
+                                restaurants: [
+                                    {
+                                        name: '<b>FORTY CARROTS</b> <span>|</span>   2.° piso  <span>|</span>   212-729-5900',
+                                        sched: 'De lunes a viernes, de 10:00 a.m. a 8:00 p.m. <span>|</span>   Sábados, de 10:00 a.m. a 7:00 p.m.  <span>|</span> Domingos, de 12:00 p.m. a 7:00 p.m.',
+                                        description: 'Su visita no estará completa sin nuestro famoso yogur helado.',
+                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_01.jpg'
+                                    }
+                                ],
+                                services: [
+                                    {
+                                        title: 'PODEMOS ENCARGARNOS DE SU LISTA DE REGALOS ',
+                                        description: 'Comprar regalos es muy fácil en Bloomingdale\'s. Simplemente envíe su lista de deseos a uno de nuestros especialistas políglotos antes de su visita y encontrará todos los artículos listos a su llegada.<br /> Llame al 212-705-2098 o envíe un correo electrónico a <a class="fucsia" href="mailto:international_visitors@bloomingdales.com">international_visitors@bloomingdales.com</a>'
+                                    },
+                                    {
+                                        title: 'PAGO SIMPLIFICADO ',
+                                        description: 'Aceptamos La Tarjeta de Viajes Global American Express&reg;'
+                                    },
+                                    {
+                                        title: 'ALTERACIONES DE ROPA RÁPIDAS ',
+                                        description: 'Brindamos servicios de sastrería profesional y alteraciones de ropa en la tienda, por solicitud. Los precios están disponibles en el momento de la prueba.'
+                                    },
+                                    {
+                                        title: 'ENVÍO A SU HOTEL ',
+                                        description: 'Con gusto enviaremos sus compras de USD 250 o más a su hotel en Manhattan, sin cargo adicional. Tan solo entrégueselas a cualquier asociado de ventas.'
+                                    }
+                                ]                               
+                            },
+                            {
+                                name: 'Ala Moana',
+                                addr: '1450 Ala Moana Blvd  Honolulu, HI 96814<br/>+1 808-644-7511',
+                                hours: 'De lunes a sábados: de 9:30 a.m. a 9:00 p.m. | Domingos: de 10:00 a.m. a 7:00 p.m.',
+                                descr: 'Dígale aloha a nuestra nueva tienda en la tropical Honolulu. Ubicada en el centro comercial Ala Moana Center, el principal destino de compras de Hawái, esta tienda de tres pisos cuenta con una gama de servicios adecuados para el comprador extranjero. Visite nuestro Centro de Visitantes Internacionales y hable con uno de nuestros asociados políglotos. Ofrecemos citas con un asesor estilístico internacional, alteraciones de ropa, reservas en restaurantes y mucho más.</p><p style="margin-top: 10px;">¿Tiene previsto regresar? Inscríbase en nuestro Club de Fidelidad para Clientes Internacionales y junte puntos para obtener tarjetas de regalo, servicios especiales y auténticas aventuras hawaianas.</p>',
+                                dTile: '¿DE VISITA EN HAWÁI?',
+                                dInfo: 'Descargue nuestro folleto de bienvenida antes de llegar.',
+                                dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Hawaii_EN.pdf',
+                                designersImg: '/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-ALA-MOANA.jpg',                                  
+                                designers: [
+                                    'Burberry',
+                                    'Chloé',
+                                    'Clinique',
+                                    'Fendi',
+                                    'Giorgio Armani',
+                                    'Longchamp ',
+                                    'Jimmy Choo',
+                                    'Jo Malone London',
+                                    'Lancôme',
+                                    'La Mer',
+                                    'MARC BY MARC JACOBS',
+                                    'Michael Kors',
+                                    'Prada',
+                                    'Ralph Lauren',
+                                    'Rebecca Minkoff',
+                                    'Tory Burch',
+                                    'Villeroy & Boch'
+                                ],
+                                restaurants: [
+                                    {
+                                        name: '<b>FORTY CARROTS</b> <span>|</span>   3.° piso ',
+                                        sched: 'Abierto todos los días Desde las 11:00 a. m.',
+                                        description: 'Su visita no estará completa sin nuestro famoso yogur helado.',
+                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_01.jpg'
+                                    }
+                                ],
+                                services: [
+                                    {
+                                        title: 'CENTRO DE VISITANTES Y MOSTRADOR DE CONSERJERÍA DE SERVICIO COMPLETO',
+                                        description: 'En el Centro de Visitantes, le brindaremos un servicio de guardarropa gratuito y un directorio de la tienda en varios idiomas. Si lo necesita, nuestros asociados pueden organizar citas con un estilista personal y un servicio gratuito de envíos de paquetes a su hotel. Visite nuestro mostrador de conserjería para realizar alteraciones de ropa y retiros, o para conocer más sobre las actividades recreativas y las atracciones turísticas de Hawái.'
+                                    },
+                                    {
+                                        title: 'ESTILISTAS PERSONALES Y ASESORES DE BELLEZA DISPONIBLES ',
+                                        description: 'Nuestros estilistas están disponibles para recorrer la tienda con usted o para elegir opciones de guardarropa acorde a sus gustos, sin cargo adicional. ¿Le interesa realizar una consulta de belleza? Nuestros asesores experimentados hallarán los productos perfectos para usted, de las marcas más codiciadas.'
+                                    },
+                                    {
+                                        title: 'ALTERACIONES DE ROPA RÁPIDAS ',
+                                        description: 'Brindamos servicios de sastrería profesional y alteraciones de ropa en la tienda, por solicitud. Los precios están disponibles en el momento de la prueba.'
+                                    },
+                                    {
+                                        title: 'CONVERSIÓN DE DIVISAS',
+                                        description: 'Brindamos servicios de sastrería profesional y alteraciones de ropa en la tienda, por solicitud. Los precios están disponibles en el momento de la prueba.'
+                                    },
+                                    {
+                                        title: 'RELÁJESE EN NUESTRA SALA VIP',
+                                        description: 'Nuestro salón de acceso restringido, el primero de las tiendas de Bloomingdale\'s, está ubicado dentro del Centro de Visitantes. Algunos turistas selectos pueden disfrutar de diversos servicios, que incluyen comidas ligeras y bebidas, televisión, baño privado, puestos de carga de dispositivos móviles, una impresora Bluetooth para imprimir tarjetas de embarque y iPads® precargadas con la aplicación de Bloomingdale\'s y con útiles guías de viajes en casi todos los idiomas. El acceso por un día al salón está disponible para turistas con recibos de compras por USD 500 o más.',
+                                    }
+                                ],
+                                loyalty: [
+                                    {
+                                        title: 'OBTENGA UNA TARJETA DE REGALO',
+                                        description: '500 puntos = una tarjeta de regalo por USD 25, que puede utilizar para comprar cualquier artículo en la tienda de Bloomingdale\'s de Ala Moana.'
+                                    },
+                                    {
+                                        title: 'DISFRUTE DE LOS SERVICIOS DE LA TIENDA',
+                                        description: 'Con sus puntos, podrá obtener servicios de envío gratuito de paquetes a su hotel, almuerzos o servicios de transporte a su siguiente destino. Para obtener más información, hable con un asociado en el Centro de Visitantes, ubicado en el primer piso.'
+                                    },
+                                    {
+                                        title: 'DESE EL GUSTO DE VIVIR UNA EXPERIENCIA QUE NUNCA OLVIDARÁ',
+                                        description: '¡Puede canjear sus puntos por auténticas aventuras hawaianas! Para obtener más información, hable con un asociado en el Centro de Visitantes, ubicado en el primer piso.'
+                                    },
+                                    {
+                                        title: '',
+                                        description: '*Es necesario demostrar un domicilio internacional.<br/>**No es posible canjear los puntos en tiendas de descuento de Bloomingdale\'s o en bloomingdales.com. Los puntos solo pueden ser canjeados por servicios o experiencias en Bloomingdale\'s de Ala Moana.'
+                                    }                                      
+                                ]                                    
+                            },
+                            {
+                                name: 'North Michigan Avenue',
+                                addr: '900 North Michigan Avenue  Chicago, IL 60611<br/>+1 312-440-4460 ',
+                                hours: 'De lunes a sábados: de 10:00 a.m. a 8:00 p.m. | Domingos: de 11:00 a.m. a 7:00 p.m.',
+                                descr: '¿Tiene previsto un viaje a la Ciudad de los Vientos? Permita que Bloomingdale\'s sea su guía de moda. Complete su guardarropa con nuestra amplia colección de marcas de diseño o encuentre sus productos de belleza favoritos. Nuestros asociados políglotos pueden ayudarle a adecuar su excursión de compras para satisfacer todas sus necesidades.',
+                                dTile: '¿DE VISITA EN CHICAGO?',
+                                dInfo: 'Descargue nuestro folleto de bienvenida antes de llegar.',
+                                dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Chicago_EN.pdf',
+                                designersImg: '/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-NORTH-MICHIGAN-AVENUE.jpg',                                                                  
+                                designers: [
+                                    'Burberry',
+                                    'Canada Goose',
+                                    'Chloé',
+                                    'COACH',
+                                    'DIANE von FURSTENBERG',
+                                    'Estée Lauder',
+                                    'Fendi',
+                                    'Gucci',
+                                    'Kiehl\'s Since 1851',
+                                    'La Mer',
+                                    'MARC JACOBS',
+                                    'MCM',
+                                    'Michael Kors',
+                                    'Moncler',
+                                    'Ralph Lauren',
+                                    'Ray-Ban',
+                                    'Salvatore Ferragamo',
+                                    'Ted Baker',
+                                    'Tory Burch',
+                                    'UGG® Australia '
+                                ],
+                                restaurants: [
+                                    {
+                                        name: '<b>FORTY CARROTS</b> <span>|</span> 6.° piso <span>|</span> 312-440-4861',
+                                        sched: 'De lunes a sábados, de 11:00 a.m. a 6:00 p.m.',
+                                        description: 'Su visita no estará completa sin nuestro famoso yogur helado.',
+                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_01.jpg'
+                                    }
+                                ],
+                                services: [
+                                    {
+                                        title: 'PODEMOS ENCARGARNOS DE SU LISTA DE REGALOS ',
+                                        description: 'Comprar regalos es muy fácil en Bloomingdale\'s. Simplemente envíe su lista de deseos a uno de nuestros especialistas políglotos antes de su visita y encontrará todos los artículos listos a su llegada.<br /> Llame al 312-440-4596 o envíe un correo electrónico a <a class="fucsia" href="mailto:international_visitors@bloomingdales.com">international_visitors@bloomingdales.com</a>'
+                                    },
+                                    {
+                                        title: 'ESTILISTAS PERSONALES DISPONIBLES',
+                                        description: 'Nuestros estilistas personales están disponibles para recorrer la tienda con usted o para elegir opciones de guardarropa y de decoración para el hogar acorde a sus gustos, sin cargo adicional.<br/> A Sus Órdenes (Para ella) 312-440-4887 '
+
+                                    },
+                                    {
+                                        title: 'PAGO SIMPLIFICADO',
+                                        description: 'Aceptamos La Tarjeta de Viajes Global American Express&reg;'
+
+                                    },
+                                    {
+                                        title: 'ALTERACIONES DE ROPA RÁPIDAS ',
+                                        description: 'Brindamos servicios de sastrería profesional y alteraciones de ropa en la tienda, por solicitud. Los precios están disponibles en el momento de la prueba.'
+
+                                    },
+                                    {
+                                        title: 'ALTERACIONES DE ROPA RÁPIDAS ',
+                                        description: 'Con gusto enviaremos sus compras de USD 250 o más a su hotel en el centro, sin cargo adicional. Tan solo déjelas en nuestro Centro de Visitantes, ubicado en el tercer piso.'
+
+                                    },
+                                    {
+                                        title: 'TARJETAS Y MOÑOS PARA LLEVAR',
+                                        description: 'Envolveremos sus compras para regalo, o puede elegir sus tarjetas, cajas, papel de regalo y moños para llevarse a casa. Visite la mesa de Servicio al Cliente, ubicada en el quinto piso.'
+
+                                    }
+                                ]  
+                            },
+                            {
+                                name: 'Medinah Home',
+                                addr: '600 North Wabash Avenue  Chicago, IL 60611<br/>+1 312-324-7500',
+                                hours: 'De lunes a sábados:  la tienda abre a las 10:00 a.m. <span>|</span> Domingos: la tienda abre a las 12:00 p.m.',
+                                descr: 'Engalane su hogar con una visita a la tienda Medinah Home de Chicago. Aquí encontrará lujosa ropa de cama, aparatos electrodomésticos de diseñador, accesorios para baño y más. Experimente personalmente nuestra galardonada hospitalidad con un rango completo de servicios en la tienda.',
+                                dTile: '¿DE VISITA EN CHICAGO?',
+                                dInfo: 'Descargue nuestro folleto de bienvenida antes de llegar.',
+                                dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Chicago_EN.pdf',
+                                designersImg: '/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-MEDINAH-HOME.jpg',                                                                                                  
+                                designers: [
+                                    'Nespresso',
+                                    'Rimowa',
+                                    'Tumi',
+                                    'Victorinox'
+                                ],
+                                services: [
+                                    {
+                                        title: 'PODEMOS ENCARGARNOS DE SU LISTA DE REGALOS',
+                                        description: 'Comprar regalos es muy fácil en Bloomingdale\'s. Simplemente envíe su lista de deseos a uno de nuestros especialistas políglotos antes de su visita y encontrará todos los artículos listos a su llegada.<br /> Llame al 312-440-4596 o envíe un mensaje de correo electrónico a <a class="fucsia" href="mailto:international_visitors@bloomingdales.com">international_visitors@bloomingdales.com</a>'
+                                    },
+                                    {
+                                        title: 'ESTILISTAS PERSONALES DISPONIBLES',
+                                        description: 'Nuestros estilistas personales están disponibles para recorrer la tienda con usted o para elegir opciones de guardarropa y de decoración para el hogar acorde a sus gustos, sin cargo adicional.<br/> A Sus Órdenes 312-324-7633 '
+
+                                    },
+                                    {
+                                        title: 'PAGO SIMPLIFICADO',
+                                        description: 'Aceptamos La Tarjeta de Viajes Global American Express&reg;'
+
+                                    },
+                                    {
+                                        title: 'TARJETAS Y MOÑOS PARA LLEVAR',
+                                        description: 'Envolveremos sus compras para regalo, o puede elegir sus tarjetas, cajas, papel de regalo y moños para llevarse a casa. Visite nuestra estación de envoltura de regalos en el segundo piso.'
+
+                                    }
+                                ] 
+                            },
+                            {
+                                name: 'San Francisco Centre',
+                                addr: '845 Market Street  San Francisco, CA<br/>+1 415-856-5402',
+                                hours: 'De lunes a sábados: de 10:00 a.m. a 9:00 p.m. | Domingos: de 11:00 a.m. a 8:00 p.m.',
+                                descr: 'Descubra la mejor forma de hacer compras en San Francisco. Su primera parada: Bloomingdale\'s. En nuestro Centro de Visitantes podrá obtener un directorio en varios idiomas o hablar con nuestros asociados políglotos para adecuar su experiencia a la medida de sus necesidades. A continuación, podrá conocer más sobre los servicios brindados en nuestra tienda.',
+                                dTile: '¿DE VISITA EN SAN FRANCISCO?',
+                                dInfo: 'Descargue nuestro folleto de bienvenida antes de llegar.',
+                                dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_SanFran_EN.pdf',
+                                designersImg: '/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-SAN-FRANCISCO-CENTRE.jpg',
+                                designers: [
+                                    'Alice + Olivia',
+                                    'BCBGMAXAZRIA',
+                                    'Burberry', 
+                                    'Calvin Klein',
+                                    'CHANEL',
+                                    'COACH',
+                                    'Clinique', 
+                                    'Dior', 
+                                    'DIANE von FURSTENBERG',
+                                    'Elie Tahari', 
+                                    'Escada',
+                                    'Estée Lauder',
+                                    'Giorgio Armani',
+                                    'Helmut Lang',
+                                    'kate spade new york',
+                                    'La Mer',
+                                    'Lancôme',
+                                    'Longchamp', 
+                                    'Louis Vuitton', 
+                                    'MARC BY MARC JACOBS',
+                                    'Michael Kors',
+                                    'Ralph Lauren',
+                                    'Rebecca Taylor',
+                                    'Salvatore Ferragamo',
+                                    'TAG Heuer', 
+                                    'Tory Burch', 
+                                    'Trina Turk'
+                                ],
+                                services: [
+                                    {
+                                        title: 'PODEMOS ENCARGARNOS DE SU LISTA DE REGALOS ',
+                                        description: 'Comprar regalos es muy fácil en Bloomingdale\'s. Simplemente envíe su lista de deseos a uno de nuestros especialistas políglotos antes de su visita y encontrará todos los artículos listos a su llegada.<br /> Llame al 415-856-5477 o envíe un correo electrónico a <a class="fucsia" href="mailto:international_visitors@bloomingdales.com">international_visitors@bloomingdales.com</a>'
+                                    },
+                                    {
+                                        title: 'ESTILISTAS PERSONALES DISPONIBLES ',
+                                        description: 'Nuestros estilistas personales están disponibles para recorrer la tienda con usted o para elegir opciones de guardarropa y de decoración para el hogar acorde a sus gustos, sin cargo adicional. <br/> A Sus Órdenes (Para ella) 415-856-5538 '
+
+                                    },
+                                    {
+                                        title: 'PAGO SIMPLIFICADO ',
+                                        description: 'Aceptamos La Tarjeta de Viajes Global American Express&reg;'
+
+                                    },
+                                    {
+                                        title: 'ALTERACIONES DE ROPA RÁPIDAS',
+                                        description: 'Brindamos servicios de sastrería profesional y alteraciones de ropa en la tienda, por solicitud. Los precios están disponibles en el momento de la prueba.'
+
+                                    },
+                                    {
+                                        title: 'ENVÍO A SU HOTEL ',
+                                        description: 'Con gusto enviaremos sus compras de USD 250 a su hotel en el centro, sin cargo adicional. Tan solo déjelas en nuestro Centro de Visitantes, ubicado en el balcón del primer piso.'
+
+                                    },
+                                    {
+                                        title: 'TARJETAS Y MOÑOS PARA LLEVAR ',
+                                        description: 'En el Centro de Visitantes, envolveremos sus compras para regalo, o puede elegir sus tarjetas, cajas, papel de regalo y moños para llevarse a casa.'
+
+                                    }
+                                ]                               
+                            },
+                            {
+                                name: 'South Coast Plaza',
+                                addr: '3333 Bristol St  Costa Mesa, CA 92626<br/>+1 714-824-4600',
+                                hours: 'De lunes a sábados: de 10:00 a.m. a 9:00 p.m. | Domingos: de 11:00 a.m. a 7:00 p.m.',
+                                descr: 'Con la mejor selección de diseñadores, adaptados específicamente para el sur de California, South Coast Plaza es un destino de compras imperdible. ¿Primera vez en el Estado Dorado? Nuestros asociados políglotos le ayudarán a que su estadía sea fantástica. Comience por obtener un directorio de la tienda en su idioma y agregue a su excursión de compras los servicios brindados en nuestra tienda, que figuran a continuación.',
+                                dTile: '¿DE VISITA EN COSTA MESA?',
+                                dInfo: 'Descargue nuestro folleto de bienvenida antes de llegar.',
+                                dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_SouthCoastPlaza_EN.pdf',
+                                designersImg: '/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-SOUTH-COAST-PLAZA.jpg',
+                                designers: [
+                                    'Burberry',
+                                    'Calvin Klein',
+                                    'Canada Goose',
+                                    'CHANEL',
+                                    'Chloé',
+                                    'COACH',
+                                    'DIANE von FURSTENBERG',
+                                    'Dior',
+                                    'Estée Lauder',
+                                    'Fendi',
+                                    'Giorgio Armani Beauty',
+                                    'Gucci',
+                                    'Hugo Boss',
+                                    'Kiehl\'s Since 1851',
+                                    'La Mer',
+                                    'La Prairie',
+                                    'Longchamp',
+                                    'Longines Watches',
+                                    'Louis Vuitton',
+                                    'MARC JACOBS',
+                                    'MCM',
+                                    'Michael Kors',
+                                    'Miu Miu',
+                                    'Moncler',
+                                    'Montblanc',
+                                    'Prada',
+                                    'Ralph Lauren',
+                                    'Rimowa',
+                                    'Salvatore Ferragamo',
+                                    'Stuart Weitzman',
+                                    'Ted Baker',
+                                    'Tory Burch',
+                                    'Tumi',
+                                    'UGG® Australia',
+                                    'Yves Saint Laurent Beauty'
+                                ],
+                                restaurants: [
+                                    {
+                                        name: '<b>AnQi by Crustacean Bistró Gourmet y Bar de Noodles</b> <br/>  Planta baja <span>|</span> 714-557-5679',
+                                        sched: 'Almuerzo: Abierto todos los días, de 11:30 a.m. a 2:30 p.m.<br/> Bar de Noodles: Abierto todos los días, de 11:30 a.m. a 5:30 p.m.<br/> Cena: De domingos a jueves, de 5:30 p.m. a 10:30 p.m. <br/>Viernes y sábados, de 5:30 p.m. a 11:00 p.m. <br/> Red Happy Hour (Hora feliz): De lunes a viernes, de 4:00 p.m. a 7:00 p.m.',
+                                        description: '',
+                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_08.jpg'
+                                    }                                   
+                                ],
+                                services: [
+                                    {
+                                        title: 'ALTERACIONES DE ROPA RÁPIDAS ',
+                                        description: 'Brindamos servicios de sastrería profesional y alteraciones de ropa en la tienda, por solicitud. Los precios están disponibles en el momento de la prueba.'
+                                    },
+                                    {
+                                        title: 'TARJETAS Y MOÑOS PARA LLEVAR',
+                                        description: 'Envolveremos sus compras para regalo, o puede elegir sus tarjetas, cajas, papel de regalo y moños para llevarse a casa. Podrá encontrar todo esto en el nivel inferior.'
+                                    },
+                                    {
+                                        title: 'PAGO SIMPLIFICADO ',
+                                        description: 'Aceptamos La Tarjeta de Viajes Global American Express&reg;'
+                                    }
+                                ]                                    
+                            },
+                            {
+                                name: 'Tiendas en el Sur de California',
+                                addr: '',
+                                hours: '',
+                                descr: 'Con establecimientos en Los Ángeles, Orange County y San Diego, Bloomingdale\'s ha dejado su icónica marca en el Sur de California. Encuentre la moda, los accesorios, los zapatos y las marcas de belleza de su preferencia en cualquiera de nuestras tiendas. A continuación encontrará más información acerca de las amenidades que se ofrecen en nuestras tiendas.',
+                                dTile: '¿DE VISITA EN EL SUR DE CALIFORNIA?',
+                                dInfo: 'Descargue nuestro folleto de bienvenida antes de llegar.',
+                                dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_SouthernCalifornia_EN.pdf',
+                                designersImg: '',                                
+                                stores: [
+                                    {
+                                        area: 'Orange County',
+                                        list: [
+                                            {
+                                                name: 'South Coast Plaza',
+                                                addr: '3333 South Bristol Street, Costa Mesa, CA 92626<br/>+1 714-824-4600',
+                                                hours: 'Horario:<br/>Lunes–Martes 10AM–9PM <br/>Miércoles–Sábado 10AM–10PM<br/>Domingo 10AM–8PM'
+                                            },
+                                            {
+                                                name: 'Newport Fashion Island',
+                                                addr: '701 Newport Center Drive, Newport Beach, CA 92660<br/>+1 949-729-6600',
+                                                hours: 'Horario: <br/>Lunes–Martes 10AM–8PM<br/>Miércoles–Sábado 10AM–10PM<br/>Domingo 11AM–8PM '
+                                            }     
+                                        ]                                   
+                                    },
+                                    {
+                                        area: 'Los Ángeles',
+                                        list: [
+                                            {
+                                                name: 'Century City',
+                                                addr: '10250 Santa Monica Boulevard, Los Angeles, CA 90067<br/>+1 310-772-2100',
+                                                hours: 'Horario: <br/>Lunes–Martes 10AM–9PM<br/>Miércoles–Sábado  10AM–10PM<br/>Domingo 11AM–8PM '
+                                            },
+                                            {
+                                                name: 'Beverly Center',
+                                                addr: '8500 Beverly Boulevard, Los Angeles, CA 90048<br/>+1 310-360-2700',
+                                                hours: 'Horario: <br/>Lunes–Martes 10AM–9PM<br/>Miércoles–Sábado  10AM–10PM<br/>Domingo 12PM–8PM'
+                                            },
+                                            {
+                                                name: 'Santa Monica Place',
+                                                addr: '315 Colorado Avenue, Santa Monica, CA 90401<br/>+1 310-985-6400',
+                                                hours: 'Horario: <br/>Lunes–Martes 10AM–9PM<br/>Miércoles–Sábado  10AM–10PM<br/>Domingo 11AM–8PM '
+                                            },
+                                            {
+                                                name: 'Glendale Galleria',
+                                                addr: '103 South Brand Blvd., Glendale, CA 91210<br/>+1 818-638-4100',
+                                                hours: 'Horario: <br/>Lunes–Martes 10AM–9PM<br/>Miércoles–Sábado  10AM–10PM<br/>Domingo 11AM–9PM'
+                                            },
+                                            {
+                                                name: 'Sherman Oaks Fashion Square',
+                                                addr: '14060 Riverside Drive, Sherman Oaks, CA 91423<br/>+1 818-325-2200',
+                                                hours: 'Horario: <br/>Lunes–Martes 10AM–9PM<br/>Miércoles–Sábado  10AM–10PM<br/>Domingo 11AM–9PM '
+                                            }     
+                                        ]                                   
+                                    }, 
+                                    {
+                                        area: 'San Diego',
+                                        list: [
+                                            {
+                                                name: 'Fashion Valley',
+                                                addr: '7057 Friars Road, San Diego, CA 92108<br/>+1 619-610-6400',
+                                                hours: 'Horario: <br/>Lunes–Martes 10AM–8PM<br/>Miércoles 10AM–8PM<br/>Jueves-Sábado 10AM–10PM<br/>Domingo 12PM–8PM'
+                                            }   
+                                        ]                                   
+                                    }                                                                       
+                                ],
+                                services: [
+                                    {
+                                        title: 'ALTERACIONES DE ROPA RÁPIDAS',
+                                        description: 'Brindamos servicios de sastrería profesional y alteraciones de ropa en la tienda, por solicitud. Los precios están disponibles en el momento de la prueba. Disponible en establecimientos selectos.'
+                                    },
+                                    {
+                                        title: 'TARJETAS Y MOÑOS PARA LLEVAR',
+                                        description: 'Envolveremos sus compras para regalo, o puede elegir sus tarjetas, cajas, papel de regalo y moños para llevarse a casa. Disponible en establecimientos selectos.'
+                                    },
+                                    {
+                                        title: 'ESTILISTAS PERSONALES DISPONIBLES',
+                                        description: 'Nuestros estilistas personales están disponibles para recorrer la tienda con usted o para elegir opciones de guardarropa y de decoración para el hogar acorde a sus gustos, sin cargo adicional. Disponible en establecimientos selectos.'
+                                    }
+                                ]  
+                            },
+                            {
+                                name: 'AVENTURA',
+                                addr: '19555 Biscayne Boulevard  Aventura, FL 33180<br/>+1 305-792-1246',
+                                hours: 'De lunes a miércoles: de 10:00 a.m. a 9:30 p.m. <span>|</span> De jueves a sábados: de 10:00 a.m. a 10:00 p.m. <span>|</span> Domingos: de 12:00 p.m. a 8:30 p.m.',
+                                descr: '¿Está planificando su itinerario de vacaciones? Comience con una visita a la tienda Aventura de Florida. Explore nuestra amplia selección de vestimenta de diseño, marcas de belleza, accesorios de lujo y más. Comience por obtener un directorio de la tienda en su idioma y complete su experiencia con los servicios brindados en nuestra tienda, que figuran a continuación.',
+                                dTile: '¿DE VISITA EN AVENTURA?',
+                                dInfo: 'Descargue nuestro folleto de bienvenida antes de llegar.',
+                                dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Aventura_EN.pdf',
+                                designersImg: '/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-AVENTURA.jpg',
+                                designers: [
+                                    'Baccarat',
+                                    'Bernardaud',
+                                    'BVLGARI',
+                                    'Burberry',
+                                    'Calvin Klein ',
+                                    'Canali ',
+                                    'CHANEL ',
+                                    'Christofle ',
+                                    'David Yurman ',
+                                    'DIANE von FURSTENBERG ',
+                                    'Diesel ',
+                                    'Dior ',
+                                    'Fendi ',
+                                    'Furla ',
+                                    'Giorgio Armani',
+                                    'Gucci ',
+                                    'HUGO BOSS ',
+                                    'Jimmy Choo ',
+                                    'John Varvatos', 
+                                    'La Mer ',
+                                    'Lalique',
+                                    'Longchamp', 
+                                    'Louis Vuitton ',
+                                    'M·A·C ',
+                                    'MARC BY MARC JACOBS ',
+                                    'Michael Kors ',
+                                    'Miki House ',
+                                    'Montblanc ',
+                                    'Movado ',
+                                    'PANDORA',
+                                    'Prada ',
+                                    'Pratesi ',
+                                    'Ralph Lauren ',
+                                    'Roberto Coin ',
+                                    'Salvatore Ferragamo ',
+                                    'Sferra ',
+                                    'Shiseido ',
+                                    'TAG Heuer ',
+                                    'Tory Burch ',
+                                    'Villeroy & Boch ',
+                                    'Z Zegna'
+                                ],
+                                restaurants: [
+                                    {
+                                        name: '<b>59TH & LEX CAFE</b> <span>|</span> 2nd floor <span>|</span> 305-792-1180',
+                                        sched: 'De lunes a sábados: de 10:00 a.m. a 8:00 p.m. <span>|</span> Domingos: de 12:00 p.m. a 7:00 p.m.',
+                                        description: '',
+                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_06.jpg'
+                                    }
+                                ],
+                                services: [
+                                    {
+                                        title: 'PODEMOS ENCARGARNOS DE SU LISTA DE REGALOS',
+                                        description: 'Comprar regalos es muy fácil en Bloomingdale\'s. Simplemente envíe su lista de deseos a uno de nuestros especialistas políglotos antes de su visita y encontrará todos los artículos listos a su llegada.<br /> Llame al 305-792-1175 o envíe un correo electrónico a <a class="fucsia" href="mailto:international_visitors@bloomingdales.com">international_visitors@bloomingdales.com</a>'
+                                    },
+                                    {
+                                        title: 'PAGO SIMPLIFICADO',
+                                        description: 'Aceptamos La Tarjeta de Viajes Global American Express&reg;'
+
+                                    },
+                                    {
+                                        title: 'ALTERACIONES DE ROPA RÁPIDAS',
+                                        description: 'Brindamos servicios de sastrería profesional y alteraciones de ropa en la tienda, por solicitud. Los precios están disponibles en el momento de la prueba.'
+
+                                    }
+                                ]     
+                            },
+                            {
+                                name: 'ORLANDO',
+                                addr: '4152 Conroy Road  Orlando, FL 32839<br/>+1 407-264-2514',
+                                hours: 'De lunes a sábados: de 10:00 a. m. a 9:00 p. m. | Domingos: de 11:00 a. m. a 7:00 p. m.',
+                                descr: 'Con un surtido de los mejores diseñadores y marcas de belleza, la tienda de Bloomingdale\'s de Orlando es su puerta de entrada a las compras de calidad global. Visítenos durante su próximo viaje al Estado del Sol para vivir una experiencia adecuada para usted. Obtenga un directorio de la tienda en su idioma y aproveche los múltiples servicios brindados en la tienda, que figuran a continuación.',
+                                dTile: '¿DE VISITA EN ORLANDO?',
+                                dInfo: 'Descargue nuestro folleto de bienvenida antes de llegar.',
+                                dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Orlando_EN.pdf',
+                                designersImg: '/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-ORLANDO.jpg',
+                                designers: [
+                                    'Burberry',
+                                    'Canali ',
+                                    'COACH',
+                                    'DIANE von FURSTENBERG ',
+                                    'Diesel Jeans',
+                                    'Dior ',
+                                    'Fendi ',
+                                    'Frankie B Jeans ',
+                                    'John Varvatos ',
+                                    'Joie ',
+                                    'La Mer ',
+                                    'Longchamp', 
+                                    'Montblanc ',
+                                    'Movado ',
+                                    'Ralph Lauren ',
+                                    'Salvatore Ferragamo ',
+                                    'Sandro ',
+                                    'Shiseido ',
+                                    'Ted Baker ',
+                                    'Tory Burch ',
+                                    'Vince'
+                                ],
+                                restaurants: [
+                                    {
+                                        name: '<b>FORTY CARROTS</b> <span>|</span> Nivel 1 <span>|</span> 407-264-2683',
+                                        sched: 'De lunes a sábados, de 10:00 a.m. a 9:00 p.m. <span>|</span> Domingos, de 11:00 a.m. a 7:00 p.m.',
+                                        description: 'Su visita no estará completa sin nuestro famoso yogur helado.',
+                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_01.jpg'
+                                    }
+                                ],
+                                services: [
+                                    {
+                                        title: 'PODEMOS ENCARGARNOS DE SU LISTA DE REGALOS',
+                                        description: 'Comprar regalos es muy fácil en Bloomingdale\'s. Simplemente envíe su lista de deseos a uno de nuestros especialistas políglotos antes de su visita y encontrará todos los artículos listos a su llegada.<br /> Llame al 305-792-1175 o envíe un correo electrónico a <a class="fucsia" href="mailto:international_visitors@bloomingdales.com">international_visitors@bloomingdales.com</a>'
+                                    },
+                                    {
+                                        title: 'PAGO SIMPLIFICADO',
+                                        description: 'Aceptamos La Tarjeta de Viajes Global American Express&reg;'
+
+                                    },
+                                    {
+                                        title: 'ALTERACIONES DE ROPA RÁPIDAS',
+                                        description: 'Brindamos servicios de sastrería profesional y alteraciones de ropa en la tienda, por solicitud. Los precios están disponibles en el momento de la prueba.'
+
+                                    }
+                                ]       
+                            }                                
+                        ]
+                    }
+                },                
+                socialshare: {
+                    fb: {
+                        name: 'Turismo internacional | bloomingdales.com',
+                        description: 'Desde ropa de diseñador hasta las marcas de belleza más codiciadas, explore todo lo que Bloomingdale\'s ofrece en su sitio internacional actualizado.'
+                    },
+                    pinterest: {
+                        description: 'Turismo internacional | bloomingdales.com'
+                    },
+                    twitter: {
+                        text: '¿Le encanta comprar @bloomingdales? En su sitio internacional encontrará nueva ropa de diseñador y accesorios. http://fashion.bloomingdales.com/international/#/spanish'
+                    },
+                    weibo: {
+                        url: 'http://weibo.com/bloomingdalesusa',
+                        title: 'Descubra las modas de lujo de Bloomingdale\'s, su interesante historia y su hospitalidad de clase mundial en su sitio internacional actualizado.'
+                    },
+                    weixin: {
+                        text: 'Escanear el código QR para recibir notificaciones push desde Bloomingdale\'s.'
+                    }
+                },
+                contactUs: {
+                    formTitle: 'CONTACTO',
+                    left: {
+                        title: 'Avísenos sobre su viaje',
+                        p1: 'Díganos qué tienda de Bloomingdale\'s desea visitar y las fechas en que tiene previsto viajar.',
+                        p2: 'Tan solo envíe este formulario y uno de nuestros asociados políglotos se pondrá en contacto con usted.'
+                    },
+                    right: {
+                        name: 'Nombre:',
+                        nameErr: 'Por favor díganos su nombre',
+                        email: 'Correo electrónico:',
+                        emailErr1: 'Proporcione su correo electrónico',
+                        emailErr2: 'Dirección de correo electrónico no válida',
+                        phone: 'N.° de teléfono móvil (opcional):',
+                        phoneErr: 'Numero de telefono invalido',
+                        party: 'Cantidad de personas que viajarán conmigo:',
+                        partyErr: 'Díganos el número de personas en su grupo',
+                        dates: 'Fechas en las que tengo previsto viajar a EE. UU.:',
+                        arriving: 'Arribo:',
+                        departing: 'Partida:',
+                        datesErr: 'Seleccione una fecha ',
+                        storesH: 'Me gustaría visitar:',
+                        storesM: 'Seleccione una tienda',
+                        storesErr: 'Seleccione una tienda',
+                        stores: [
+                            {id: 'New York', name: 'Ciudad de Nueva York', disabled: 'true'},
+                            {id: '59th Street Flagship, New York City', name: '59th Street Flagship, Ciudad de Nueva York', disabled: 'false'},
+                            {id: 'SoHo, New York City', name: 'SoHo, Ciudad de Nueva York', disabled: 'false'},
+                            {id: 'Hawaii', name: 'Hawái', disabled: 'true'},
+                            {id: 'Ala Moana, Honolulu', name: 'Ala Moana, Honolulu', disabled: 'false'},
+                            {id: 'Illinois', name: 'Illinois', disabled: 'true'},
+                            {id: 'North Michigan Avenue, Chicago', name: 'North Michigan Avenue, Chicago', disabled: 'false'},
+                            {id: 'Medinah Home, Chicago', name: 'Medinah Home, Chicago', disabled: 'false'},
+                            {id: 'California', name: 'California', disabled: 'true'},
+                            {id: 'Beverly Center, Los Angeles', name: 'Beverly Center, Los Ángeles', disabled: 'false'},
+                            {id: 'Century City, Los Angeles', name: 'Century City, Los Ángeles', disabled: 'false'},
+                            {id: 'Fashion Valley, San Diego', name: 'Fashion Valley, San Diego', disabled: 'false'},
+                            {id: 'Glendale Galleria, Glendale', name: 'Glendale Galleria, Glendale', disabled: 'false'},
+                            {id: 'Newport Fashion Island, Newport Beach', name: 'Newport Fashion Island, Newport Beach', disabled: 'false'},
+                            {id: 'San Francisco Centre, San Francisco', name: 'San Francisco Centre, San Francisco', disabled: 'false'},
+                            {id: 'Santa Monica Place, Santa Monica', name: 'Santa Monica Place, Santa Monica', disabled: 'false'},
+                            {id: 'Sherman Oaks Fashion Square, Sherman Oaks', name: 'Sherman Oaks Fashion Square, Sherman Oaks', disabled: 'false'},
+                            {id: 'South Coast Plaza, Costa Mesa', name: 'South Coast Plaza, Costa Mesa', disabled: 'false'},
+                            {id: 'Florida', name: 'Florida', disabled: 'true'},
+                            {id: 'Aventura', name: 'Aventura', disabled: 'false'},
+                            {id: 'Orlando', name: 'Orlando', disabled: 'false'}
+                        ],
+                        submit: 'Enviar',
+                        submitHead: 'Gracias por contactarnos',
+                        submitBody: 'Un miembro de nuestro equipo se pondrá en contacto con usted en breve.'
+                    }
+                },                
+                footer: [
+                    'OBTENGA UN 10 % DE AHORRO: <b><u>INSCRÍBASE</u></b> PARA RECIBIR CORREOS ELECTRÓNICOS',
+                    'Like no other store in the world'
+                ]
+            },
+            JP: {
+                nav: [
+                    '当店の伝統',
+                    'デザイナーズ・ショップ',
+                    '各店舗のご案内',
+                    'オンライン・ショッピング'
+                ],
+                mobileSubHeader: '国際観光',
+                home: {
+                    header: {
+                        mobile: {
+                            h1: 'ようこそ',
+                            h2: 'オシャレなものをすべて見ましょう。 <br/>' +
+                                'それにはまず Bloomingdale\'s へお越しください。',
+                            p: '1872年以来、Bloomingdale\'s はオシャレの中心地であり、世界中で今一番人気のあるブランドのファッション、靴、ハンドバッグ、化粧品、高級宝飾品、贈答品が揃っています。当店独特の心のこもったおもてなし（多言語スタッフ、スペシャル・コンシェルジュ・サービスなど）でお客様をお迎えいたしますので、ご希望は叶えられ、くつろぎながらお買い物をお楽しみいただけるでしょう。これは、Bloomingdale\'s が世界に名だたる存在である理由のほんの一端です。'
+                        },
+                        desktop: {
+                            h1: 'ようこそ',
+                            h2: 'オシャレなものをすべて見ましょう。 <br/>' +
+                                'それにはまず Bloomingdale\'s へお越しください。',
+                            p: '1872年以来、Bloomingdale\'s はオシャレの中心地であり、世界中で今一番人気のあるブランドのファッション、靴、ハンドバッグ、化粧品、高級宝飾品、贈答品が揃っています。当店独特の心のこもったおもてなし（多言語スタッフ、スペシャル・コンシェルジュ・サービスなど）でお客様をお迎えいたしますので、ご希望は叶えられ、くつろぎながらお買い物をお楽しみいただけるでしょう。これは、Bloomingdale\'s が世界に名だたる存在である理由のほんの一端です。'
+                        }
+                    },
+                    cat: [
+                        '当店の伝統',
+                        'デザイナーズ・ショップ',
+                        '各店舗のご案内'
+                    ],
+                    shop: {
+                        title: 'オンライン・ショッピング',
+                        subtitle: 'もご利用いただけます',
+                        ctas: [
+                            '婦人用品',
+                            'ハンドバッグ',
+                            '靴',
+                            '宝石・アクセサリ',
+                            '紳士用品',
+                            '家庭用品',
+                            '子供用品',
+                            '新着情報',
+                            'セール'
+                        ],
+                        desktopLinks: {
+                            women: 'http://www1.bloomingdales.com/shop/womens-apparel?id=2910',
+                            handbags: 'http://www1.bloomingdales.com/shop/handbags?id=16958',
+                            shoes: 'http://www1.bloomingdales.com/shop/shoes?id=16961',
+                            jewelry: 'http://www1.bloomingdales.com/shop/jewelry-accessories?id=3376',
+                            men: 'http://www1.bloomingdales.com/shop/mens?id=3864',
+                            home: 'http://www1.bloomingdales.com/shop/home?id=3865',
+                            kids: 'http://www1.bloomingdales.com/shop/kids?id=3866',
+                            sale: 'http://www1.bloomingdales.com/shop/sale?id=3977'
+                        },
+                        mobileLinks: {
+                            women: 'http://www1.bloomingdales.com/shop/womens-apparel/all-women?id=1003340',
+                            handbags: 'http://www1.bloomingdales.com/shop/all-handbags-wallets-cases?id=1001396',
+                            shoes: 'http://www1.bloomingdales.com/shop/shoes/all-shoes?id=17411',
+                            jewelry: 'http://www1.bloomingdales.com/shop/all-jewelry-accessories?id=1003593',
+                            men: 'http://www1.bloomingdales.com/shop/mens/all-men?id=1003601',
+                            home: 'http://www1.bloomingdales.com/shop/home?id=1003615',
+                            kids: 'http://www1.bloomingdales.com/shop/all-kids?id=1003623',
+                            sale: 'http://www1.bloomingdales.com/shop/sale/all-sale-clearance?id=1003304'
+                        }
+                    },
+                    pdf: {
+                        span: '当サイトでのお買い物の仕方および「よくある質問」をご参照いただけます。',
+                        a: '今すぐダウンロード',
+                        link: '/fashion/assets/projects/international/china-brazil/guides/Tourism_Microsite_International_Shopping_Guide_Japanese.pdf'
+                    }
+                },
+                heritage: {
+                    header: {
+                        h1: 'Bloomingdale\'s ストーリー',
+                        h2: '沿革'
+                    },
+                    article: {
+                        y1880: [{
+                            h3: '1872年 – グレート・イースト・サイド・バザール',
+                            p: 'Bloomingdale兄弟「場所、場所、場所は,（商売は場所が重要の意）」というフレーズの生みの親であり、最初の店を938 Third Avenueにオープンしました。最新のパリモードがディスプレイされたウィンドウは注目を集め、レジャーとしてはウィンドウショッピングをするのが、ニューヨークでたちまち人気となりました。'
+                        }, {
+                            h3: '未来を予見したBloomingdale\'s',
+                            p: '59丁目と3番街というニューヨーク小売業のクロスロードに構えられた新しいショップは、「スカイ・キャリッジ（エレベーター）」が自慢の種でした。13年後、Lyman Bloomingdaleは「傾斜させたエレベーター」というアイディアを持つ若い発明家を資金援助し、エスカレーターの誕生を見ました。'
+                        }],
+                        y1900: [{
+                            h3: '世界的に著名となったスローガン',
+                            p: '20世紀初め頃のBloomingdale\'sのお客様が最も利用した交通手段はIRTのThird Avenue El（3番街高架鉄道）であったため、ニューヨーク（そして世界）中のビルボード、ビーチパラソル、漫画に「All Cars Transfer to Bloomingdale\'s（全車両Bloomingdale\'s行き）」という有名なスローガンが載りました。駅からBloomingdale\'sまでの歩道には金色の足跡が埋め込まれ、人々はそれをたどって行ったのです。'
+                        }, {
+                            h3: '1910年 – ぴったりなT型フォード',
+                            p: 'Bloomingdale\'sは、ニューヨークで初めてフォード社のT型フォードを配達に使用したショップです。'
+                        }],
+                        y1920: [{
+                            h3: 'Bloomingdale\'s 魅力的に変身',
+                            p: 'Bloomingdale\'sはレキシントン街に腰を落ち着け、フロアをさらに11階増やし、黒花崗岩、石灰岩、テラコッタなどの流行の素材を使用して、当時一世を風靡したアールデコのスタイルを取り入れました。レキシントン街から3番街、59丁目から60丁目の1ブロック全体を占め、実に10もの建物がつながれたのです。'
+                        }],
+                        y1940: [{
+                            h3: '75歳になったBloomingdale\'s ティーンエージャーのようにパーティでお祝い',
+                            p: 'ダイヤモンド・ジュビリー（75周年）を記念して、Bloomingdale\'sはショップのウィンドウを飾るオートクチュール衣装を制作してもらうため、著名なClaire McCardell、Pauline Trigere、Jo Copelandなどのアメリカで最も熱い26人のデザイナーを招聘しました。また、初のホーム用品のショールームも設けられました。'
+                        }],
+                        y1960: [{
+                            h3: 'ファッション爆発',
+                            p: '人類の月面着陸。マスタング。モッズ・ショップ。その他いろいろ。Bloomingdale\'sは、ショップとして初めてYves Saint LaurentやCourrègesなどのヨーロッパの先進的デザイナーを紹介し、アメリカの人々を魅了しました。'
+                        }, {
+                            h3: 'かっこよくなろうよ',
+                            p: 'ショップとして初めて、その時代で一番かっこいいアーティストにショッピングバッグのデザインを依頼することをBloomingdale\'sが始めたのは、1963年秋のことでした。Jonah KinigsteinやMichael Vollbrachtなどのアーティストによって革命的に変わったBloomingdale\'sのバッグは、瞬く間にコレクターズ・アート・アイテムとなりました。これはショッピングバッグの歴史を変えたのです。'
+                        }],
+                        y1970: [{
+                            h3: 'Bloomingdale\'s ハリウッドへ進出',
+                            p: 'デカダンスの10年は、Bloomingdale\'sがハリウッドとブロードウェーのパートナーとなった大事件で幕を開けました。著名な映画が59th Street店で撮影され、「マンハッタン」（Woody Allen監督）、「結婚ゲーム」、「出逢い」などの作品はほんの始まりに過ぎず、その後「スプラッシュ」、「ハドソン河のモスコー」と80年代にも続きました。'
+                        }, {
+                            h3: 'Bloomingdale\'sにビッグ3登場',
+                            p: 'Ralph Lauren、Donna Karan、Calvin KleinがBloomingdale\'sでビッグなスタートを切り、当店が若者、新しいこと、フレッシュな展望をサポートする存在であることを、またしても証明しました。'
+                        }, {
+                            h3: 'ショップの象徴',
+                            p: 'Bloomingdale\'sを象徴するBig Brown Bagは、1973年に初めて登場しました。次の年にはLittle Brown Bagが続き、Medium Brown Bagは最後に仲間入りしました。Bloomingdale\'sの歴史上最も認知度の高いショッピングバッグは、世界の美術館で収蔵品として展示されています。'
+                        }],
+                        y1980: [{
+                            h3: '「イメージ」を売るBloomingdale\'s',
+                            p: 'Andy WarholはBloomingdale\'sのことを「80年代の新しいタイプのミュージアム」と呼びました。毎日、ショップは最も新しく、最も素晴らしいものをディスプレイする最先端のギャラリーとなるのです。Bloomingdale\'sはガラ・グラマーの時代もすぐ取り入れました。Karl Lagerfeld、Diane von Furstenberg、Liza Minnelli、Oscar de la Rentaなどのファッション界のスターたちが、ショップの華やかなオープニングにジェット機で駆けつけて来ました。 '
+                        }, {
+                            h3: '1988年 – イヤー・オブ・ザ・ドラゴン',
+                            p: 'ニクソン大統領が中国を訪問する1年前に、Bloomingdale\'sはすでに中国本土との通商関係再開を進めていました。その15年後の1988年、初めての中国キャンペーンの大成功に続き、中国との10年の取引を祝って、59th Street flagship店は東洋からのファッションとデザインを7週間にわたって壮大に紹介しました。このテーマで飾りあげられたショップは紫禁城の宝石のように輝きました。'
+                        }],
+                        y1990: [{
+                            h3: 'ニュー・ゴールド・ラッシュ',
+                            p: 'カリフォルニアに新しいショップが4日間に4店（Century City、Stanford、Sherman Oaks、Newport Beach）オープンしました。その1年後にはBeverly Centerも加わりました。Bloomingdale\'sは、今や全国規模の幅広い品の揃った高級デパートとして唯一の存在となりました。カリフォルニアの人々はオープンをショッピングで祝い、その後はもちろんビーチへ行っていました。'
+                        }],
+                        y2000: [{
+                            h3: 'Bloomingdale\'s ダウンタウンのファッションクレド獲得',
+                            p: 'ダウンタウンへ移れば、いいものはもっと良くなるものです。Bloomingdale\'sはSoHo店をオープンし、ブロードウェーにあるキャスト・アイアンのファサードを持つ歴史建築は、21世紀ファッションの殿堂として輝きを取り戻しました。'
+                        }, {
+                            h3: 'デジタル時代へ',
+                            p: 'bloomingdales.comが誕生しました。このサイトで、デザイナーズ・ブランドの服や豪華なビューティ用品から、ハンドバッグやステートメント・シューズまで揃った世界トップクラスのファッションを、世界中のお客様が指先操作だけで手に入れることができます。 '
+                        }, {
+                            h3: 'ビューティ刷新',
+                            p: '59th Street店のメインフロアは「ニューヨーク最大のメークオーバー」を受け、トップクラスのビューティ・ブランドの最先端のキオスクが並ぶ場所となりました。'
+                        }],
+                        y2010: [{
+                            h3: '2011年 – 新しい宝飾品コーナーのきらめき',
+                            p: '59th Street店 – 230か国および50の州から40万を超える人が訪れ、5年連続で「NYCコンシェルジュ・チョイス・アワード」を受賞したショップ – には、David Yurmanなどの世界最高のジュエリー・デザイナーの様々な面が表れた作品を紹介するため、高級宝飾品コーナーが設けられました。'
+                        }, {
+                            h3: '世界に名だたる存在に限界はありません',
+                            p: '現在、Bloomingdale\'sの行く手を遮るものは何もありません。創立の日から当店ブランドと同義であるイノベーションは、これからもラグジュアリー追及という使命の中心であり続けるでしょう。Bloomingdale\'sは、輝かしい歴史を振り返り、そこに未来を見ます。それは世界に名だたる存在である未来です。'
+                        }]
+                    }
+                },
+                designer: {
+                    header: {
+                        h1: '1つの店舗に膨大な数のブランド',
+                        h2: '当店はファッション、ビューティをはじめとする最高のデザイナーズ・ブランドを選び抜きます'
+                    },
+                    article: [
+                        'CHANEL、Dior、Michael Kors、MCM、Tory Burch、MARC JACOBS、Armani、Ralph Laurenなど、デザイナーズ・ブランドがBloomingdale\'sほど揃っているところは他にありません。',
+                        '最新（そして一番人気）のビューティ用品をお探しですか？La Mer、Estée Lauder、Gucci、Chloé、Clinique、Lancôme、kate spade new yorkなど、当店に揃っているスキンケア、コスメ、香水のブランドから、お気に入りのものはすべて見つかるでしょう。'
+                    ]
+                },
+                stores: {
+                    header: {
+                        h1: '行き先をお選びください',
+                        h2: 'ビジターセンターにてお待ちしております'
+                    },
+                    dropdown: {
+                        default: '店舗をお選びください',
+                        list: [
+                            {id: 'null', name: 'ニューヨーク',                             disabled: 'true'},
+                            {id: '0',    name: '59丁目本店（ニューヨーク）',                   disabled: 'false'},
+                            {id: '1',    name: 'ソーホー店（ニューヨーク）',                     disabled: 'false'},
+                            {id: 'null', name: 'ハワイ',                                 disabled: 'true'},
+                            {id: '2',    name: 'アラモアナ店（ホノルル）',                      disabled: 'false'},
+                            {id: 'null', name: 'イリノイ',                                 disabled: 'true'},
+                            {id: '3',    name: 'ノース・ミシガン・アベニュー店（シカゴ）',             disabled: 'false'},
+                            {id: '4',    name: 'メダイナ・ホーム店（シカゴ）',                    disabled: 'false'},
+                            {id: 'null', name: 'カリフォルニア',                             disabled: 'true'},
+                            {id: '5',    name: 'サンフランシスコ・センター店（サンフランシスコ）',        disabled: 'false'},
+                            {id: '6',    name: 'サウス・コースト・プラザ店（コスタメサ）',              disabled: 'false'},
+                            {id: '7',    name: '南カリフォルニア各店',                        disabled: 'false'},
+                            {id: 'null', name: 'フロリダ',                                 disabled: 'true'},
+                            {id: '8',    name: 'アヴェントゥーラ店',                          disabled: 'false'},
+                            {id: '9',    name: 'オーランド店',                             disabled: 'false'}
+                        ],
+                        copy: 'Bloomingdale\'sは、アメリカ全体に店舗を展開しています。ニューヨーク、ハワイ、シカゴ、マイアミ、サンフランシスコの店舗のビジターセンターでは、 海外からのお客様のための設備・サービスが幅広く取り揃えられており、多言語スタッフがお客様のショッピング体験を最高のものとするためのお手伝いをいたします。スタッフはお国の言語のフロア案内ガイドの提供、スペシャル・イベント情報のお知らせに加え、無料でご利用いただけるスタイリストの予約、ホテルへの荷物配送、当店内のものを含むレストランの予約など、様々な手配も承ります。ご旅行先はビーチですか？ご旅行先はビーチですか？当店はオレンジ・カウンティ のサウス・コースト・プラザ、サンディエゴ、ロサンゼルスなど、南カリフォルニアに多くの支店を持ち、さらにホノルルにもありますので、お近くでトップ・ファッションもお楽しみいただけます。'
+                    },
+                    storeData: {
+                        storeHours: '営業時間',
+                        directions: '交通アクセス',
+                        designers: '店内のデザイナーズ・ブランド',
+                        dining: '店内レストラン',
+                        services: 'サービス',
+                        servicesSubHead: 'Bloomingdale\'s が世界に名だたる存在である理由が、当店のスタッフによっておわかりいただけるでしょう。お国の旗のピンバッジを着けているスタッフを見つけてください。お好きなファッションを見つけるお手伝い、個人に合わせた各種サービスご利用のご案内をいたします。',
+                        loyalty: 'インターナショナル・ロイヤルティ・クラブへご入会ください',
+                        loyaltySubHead: 'このスペシャルリワードプログラムは、海外からのお客様のためのものです。* ギフトカード、サービス、特別体験に引き換えられるポイントが、ご購入１ドルに対し１ポイント加算されます。当店にてすぐにご入会いただけ、ポイント加算および引き換えは、Bloomingdale\'s Ala Moanaだけでなく、アメリカ本土のすべてのBloomingdale\'s フルラインストアにて承ります。**',
+                        id: [
+                            {
+                                name: '59th Street Flagship',
+                                addr: '1000 Third Avenue  New York, NY 10022<br/>電話：212-705-2000',
+                                hours: '月曜日～土曜日: 午前10:00開店 <span>|</span> 日曜日: 午前11:00開店',
+                                descr: 'Bloomingdale\'s を象徴する伝統と受賞歴を誇るおもてなしをご体験ください。Flagship店へのご来店の日は、まず１階バルコニーのビジターセンターへお立ち寄りいただけば、各言語でのフロア案内ガイドが用意されておりますので、ショッピングのお役に立つでしょう。また、個人のご希望に叶いますよう、様々な店内サービス（お買い物をサポートするスタイリスト、サイズ直し、レストランの予約など）が用意されておりますので、どうぞご利用ください。',
+                                dTile: 'ニューヨークへご旅行ですか？',
+                                dInfo: 'いらっしゃる前に当店のウェルカム・ブックレットをダウンロードください。',
+                                dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_NewYork_EN.pdf',
+                                designersImg: '/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-59ST_02.jpg',
+                                designers: [
+                                    'BVLGARI',
+                                    'Burberry',
+                                    'Canali',
+                                    'CHANEL', 
+                                    'COACH',
+                                    'DIANE von FURSTENBERG',
+                                    'Dior',
+                                    'Donna Karan',
+                                    'Estée Lauder',
+                                    'Fendi',
+                                    'Giorgio Armani',
+                                    'Jimmy Choo',
+                                    'La Mer',
+                                    'Longchamp', 
+                                    'Louis Vuitton', 
+                                    'MARC JACOBS',
+                                    'Michael Kors', 
+                                    'Montblanc', 
+                                    'Movado', 
+                                    'Prada', 
+                                    'Ralph Lauren', 
+                                    'Salvatore Ferragamo', 
+                                    'Sandro',
+                                    'Shiseido', 
+                                    'Tory Burch', 
+                                    'Vera Wang',
+                                    'Z Zegna'
+                                ],
+                                restaurants: [
+                                    {
+                                        name: '<b>FORTY CARROTS</b> <span>|</span>   7階 <span>|</span>  電話： 212-705-3085',
+                                        sched: '毎日営業 <span>|</span>   店内での飲食: 午前10:30～Bloomingdale\'s 閉店１時間前まで  <br/>テイクアウト：午前10:00～Bloomingdale\'s 閉店30分前まで',
+                                        description: 'ご来店の際は、ご好評をいただいているフローズン・ヨーグルトをぜひお試しください。他にも作り立てのサラダ、サンドイッチ、フレッシュ・ジュース・バー、Tavalonのプレミアムティ・セレクションがお楽しみいただけます。カウンター席、テーブル席、テイクアウトがご利用になれます。',
+                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_01.jpg'
+                                    },
+                                    {
+                                        name: '<b>FL!P</b> <span>|</span>   中地下１階 <span>|</span> 電話： 212-705-3085',
+                                        sched: '毎日営業 <span>|</span>   店内での飲食: 午前11:00～Bloomingdale\'s 閉店30分前まで',
+                                        description: 'Men\'s Store（紳士用品フロア）にあるこのスポットでは、『オートクチュール』のアメリカン・ハンバーガーに、サラダ、地ビールなど各種アルコール、種類豊富なポテトフライを気楽に楽しめます。',
+                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_02.jpg'
+                                    },
+                                    {
+                                        name: '<b>DAVID BURKE AT BLOOMINGDALE\'S </b> <span>|</span> １階 <br /> 電話： 212-705-3800',
+                                        sched: '毎日営業 <span>|</span> In the Box（テイクアウト）　午前10:00～午後9:00 <span>|</span> In the Bar（店内飲食）　午前11:00～午後9:00  ',
+                                        description: 'アメリカ料理を代表するパイオニアのひとりDavid Burke（デイビッド・バーク）シェフにより、活気ある雰囲気の中で美味しい料理とトップサービスがひとつとなりました。',
+                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_04.jpg'
+                                    },
+                                    {
+                                        name: '<b>MAGNOLIA BAKERY</b> <span>|</span> １階 <span>|</span> 電話： 212-265-5320',
+                                        sched: '月曜日～金曜日　午前7:00～午後10:00 <br/> 土曜日　午前8:00～午後10:00 <span>|</span> 日曜日 午前8:00～午後9:00',
+                                        description: 'クラシックなアメリカン・ベーカリー「マグノリア」は、昔ながらのデザートと古き良き時代のインテリアで人々に愛されており、パイ、ケーキ、チーズケーキ、バナナ・プディング、カップケーキ、マフィンなど、手焼きの商品が幅広く取りそろえられています。「マグノリア」は、Bloomingdale\'s 開店よりも早い時間から営業しています。',
+                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_03.jpg'
+                                    }
+                                ],
+                                services: [
+                                    {
+                                        title: 'プレゼントの品を揃えるのはお任せください',
+                                        description: 'Bloomingdale\'s では、プレゼントのお買い物はとても簡単です。いらっしゃる前に、当店の多言語スペシャリストにご希望の品のリストを送っていただければ、ご来店時にはそれらの品はすべて揃っています。 <br /> 電話： 212-705-2359 or 212-705-3488 <br/> Eメール： <a class="fucsia" href="mailto:international_visitors@bloomingdales.com">international_visitors@bloomingdales.com</a>'
+                                    },
+                                    {
+                                        title: 'パーソナル・スタイリストの用意があります',
+                                        description: 'お買い物にご一緒し、お好みに合うファッションやインテリア用品を選ぶお手伝いをするパーソナル・スタイリストをご利用いただけます（無料）。 <br/> アト・ユア・サービス（女性用） 電話： 212-705-3135 <br/> アト・ヒズ・サービス（男性用） 電話： 212-705-3030 '
+                                    },
+                                    {
+                                        title: 'お支払いは簡単です',
+                                        description: '当店では、American Express&regグローバル・トラベル・カード、あらゆる種類の中国銀聯ユニオンペイをご利用いただけます。<div class="unionpay">'
+                                    },
+                                    {
+                                        title: 'お直しクイックサービスがあります',
+                                        description: '店内にて、専門家による仕立ておよびサイズ直しを承っております。料金はご依頼内容により異なり、フィッティング時にお知らせいたします。'
+                                    },
+                                    {
+                                        title: 'ご購入品をホテルまでお届けします',
+                                        description: '250米ドル以上お買い上げいただくと、ご宿泊のマンハッタンのホテルまで無料でお届けいたします。１階バルコニーのビジターセンターにてお申しつけください。'
+                                    },
+                                    {
+                                        title: 'カードとリボンをお持ち帰りいただけます',
+                                        description: '６階のギフトラッピング・ステーションにて、ご購入品のギフトラッピングを承ります。あるいは、お好きなメッセージカード、ボックス、ラッピングペーパー、リボンをお持ち帰りいただけます。'
+                                    }
+                                ]
+                            },
+                            {
+                                name: 'SoHo',
+                                addr: '504 Broadway  New York, NY 10012<br/>電話：212-729-5900',
+                                hours: '月曜日～土曜日: 午前10:00開店 <span>|</span> 日曜日：正午開店',
+                                descr: 'ニューヨークのダウンタウンで最もオシャレな地区SoHoに位置する当店へどうぞお越しください。アップタウンにあるFlagship店と全く同じスタイリッシュな雰囲気を持ちますが、ファッション・ブティックの趣も感じていただけるでしょう。活気にあふれるビューティ用品フロアをチェックした後は、デザイナーズ・ブランドの最新作をじっくり品定めしてください。当店でももちろん、思い出に残るお買い物体験をしていただくため、多言語スタッフがお手伝いいたします。',
+                                dTile: 'ニューヨークへご旅行ですか？',
+                                dInfo: 'いらっしゃる前に当店のウェルカム・ブックレットをダウンロードください。',
+                                dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_NewYork_EN.pdf',
+                                designersImg: '/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-SOHO.jpg',                                
+                                designers: [
+                                    'BVLGARI',
+                                    'Burberry',
+                                    'Canali',
+                                    'CHANEL', 
+                                    'COACH',
+                                    'DIANE von FURSTENBERG',
+                                    'Dior',
+                                    'Donna Karan',
+                                    'Estée Lauder',
+                                    'Fendi',
+                                    'Giorgio Armani',
+                                    'Jimmy Choo',
+                                    'La Mer',
+                                    'Longchamp', 
+                                    'Louis Vuitton', 
+                                    'MARC JACOBS',
+                                    'Michael Kors', 
+                                    'Montblanc', 
+                                    'Movado', 
+                                    'Prada', 
+                                    'Ralph Lauren', 
+                                    'Salvatore Ferragamo', 
+                                    'Sandro',
+                                    'Shiseido', 
+                                    'Tory Burch', 
+                                    'Vera Wang',
+                                    'Z Zegna'
+                                ],
+                                restaurants: [
+                                    {
+                                        name: '<b>FORTY CARROTS</b> <span>|</span> 2階 <span>|</span> 電話： 212-729-5900',
+                                        sched: '月曜日～金曜日　午前8:00～午後8:00 <span>|</span> 土曜日　午前10:00～午後7:00 <span>|</span> 日曜日　正午～午後7:00',
+                                        description: 'ご来店の際は、ご好評をいただいているフローズン・ヨーグルトをぜひお試しください。他にも作り立てのサラダ、サンドイッチ、フレッシュ・ジュース・バー、Tavalonのプレミアムティ・セレクションがお楽しみいただけます。カウンター席、テーブル席、テイクアウトがご利用になれます。',
+                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_01.jpg'
+                                    }
+                                ],
+                                services: [
+                                    {
+                                        title: 'プレゼントの品を揃えるのはお任せください',
+                                        description: 'Bloomingdale\'s では、プレゼントのお買い物はとても簡単です。いらっしゃる前に、当店の多言語スペシャリストにご希望の品のリストを送っていただければ、ご来店時にはそれらの品はすべて揃っています。 <br /> 電話： 212-705-2098 <br/>Eメール： <a class="fucsia" href="mailto:international_visitors@bloomingdales.com">international_visitors@bloomingdales.com</a>'
+                                    },
+                                    {
+                                        title: 'お支払いは簡単です',
+                                        description: '当店では、American Express&regグローバル・トラベル・カード、あらゆる種類の中国銀聯ユニオンペイをご利用いただけます。<div class="unionpay">'
+                                    },
+                                    {
+                                        title: 'お直しクイックサービスがあります',
+                                        description: '店内にて、専門家による仕立ておよびサイズ直しを承っております。料金はご依頼内容により異なり、フィッティング時にお知らせいたします。'
+                                    },
+                                    {
+                                        title: 'ご購入品をホテルまでお届けします',
+                                        description: '250米ドル以上お買い上げいただくと、ご宿泊のマンハッタンのホテルまで無料でお届けいたします。お近くの販売員にお申しつけください。'
+                                    }
+                                ]                               
+                            },
+                            {
+                                name: 'Ala Moana',
+                                addr: '1450 Ala Moana Blvd  Honolulu, HI 96814<br/>電話：808-644-7511',
+                                hours: '月曜日～土曜日：午前9:30～午後9:00 | 日曜日：午前10:00～午後7:00',
+                                descr: 'トロピカルなホノルルに登場にしたアメリカ本土外のBloomingdale\'s最新店舗にどうぞお越しください。ハワイ一番のショッピングセンターAla Moana Center内に位置するこの３階建ての店舗には、海外からのお客様への特別な設備・サービスが幅広く取り揃えられています。インターナショナル・ウェルカムセンターへお立ち寄りいただけば、多言語スタッフがご相談にのります。インターナショナル・スタイル・アドバイザーのご予約、店内サイズ直し、レストランの予約などをはじめとする多くのサービスがご利用いただけます。 ',
+                                dTile: 'ハワイへご旅行ですか？',
+                                dInfo: 'いらっしゃる前に当店のウェルカム・ブックレットをダウンロードください。',
+                                dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Hawaii_EN.pdf',
+                                designersImg: '/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-ALA-MOANA.jpg',                                  
+                                designers: [
+                                    'Burberry',
+                                    'Chloé',
+                                    'Clinique',
+                                    'Fendi',
+                                    'Giorgio Armani',
+                                    'Longchamp ',
+                                    'Jimmy Choo',
+                                    'Jo Malone London',
+                                    'Lancôme',
+                                    'La Mer',
+                                    'MARC BY MARC JACOBS',
+                                    'Michael Kors',
+                                    'Prada',
+                                    'Ralph Lauren',
+                                    'Rebecca Minkoff',
+                                    'Tory Burch',
+                                    'Villeroy & Boch'
+                                ],
+                                restaurants: [
+                                    {
+                                        name: '<b>FORTY CARROTS</b> <span>|</span> 3階',
+                                        sched: '毎日営業 午前11:00より',
+                                        description: 'ご来店の際は、ご好評をいただいているフローズン・ヨーグルトをぜひお試しください。',
+                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_01.jpg'
+                                    }
+                                ],
+                                services: [
+                                    {
+                                        title: 'ウェルカムセンターとコンシェルジュデスクが広範囲のサービスを提供します',
+                                        description: 'ウェルカムセンターでは、無料でコートと荷物をお預かりし、各国語のフロア案内ガイドも用意されています。必要に応じ、パーソナル・スタイリストご予約、購入品のホテルへの無料配送をスタッフが手配いたします。サイズ直しのご注文・お受け取り、ハワイの施設・サービスおよびアトラクションに関するご案内は、コンシェルジュデスクが承ります。'
+                                    },
+                                    {
+                                        title: 'パーソナル・スタイリストとビューティ・アドバイザーがご用命に応じます',
+                                        description: 'お買い物にご一緒し、お好みに合うファッションを選ぶお手伝いをするスタイリストをご利用いただけます（無料）。メイクに関する相談をご希望ですか？当店の経験豊富なアドバイザーが、今一番人気のある』ブランドの製品からお客様にぴったりのものを見つけます。 '
+                                    },
+                                    {
+                                        title: 'お直しクイックサービスがあります',
+                                        description: '店内にて、専門家による仕立ておよびサイズ直しを承っております。料金はご依頼内容により異なり、フィッティング時にお知らせいたします。'
+                                    },
+                                    {
+                                        title: 'CURRENCY CONVERSION ',
+                                        description: 'Bloomingdale\'s外ですが、Ala Moana Center内に通貨の両替所があって便利です。'
+                                    },
+                                    {
+                                        title: 'リラックスできるVIPルームがご利用いただけます',
+                                        description: 'Bloomingdale\'sでは初のラウンジが、ウェルカムセンター内にございます（入場には制限があります）。海外からの特別なお客様のため、軽食、お飲み物、テレビ、専用トイレ、チャージングステーション、搭乗券を印刷できるBluetoothプリンター、Bloomingdale\'sのアプリがインストールされたiPads&reg;、ほぼ全言語が揃った役立つトラベルガイドなどの設備・サービスが用意されています。500ドル以上のレシートをお持ちの海外からのお客様は、ラウンジを１日ご利用いただけます',
+                                    }
+                                ],
+                                loyalty: [
+                                    {
+                                        title: 'ギフトカードを獲得',
+                                        description: '500ポイントごとに25ドルのギフトカードに引き換えられ、Bloomingdale\'s Ala Moanaのどの商品にもご利用いただけます'
+                                    },
+                                    {
+                                        title: 'ストアサービスに利用',
+                                        description: 'ご購入品のホテルへの配送、ランチ、次の目的地までの車での送迎サービスとポイントを引き換えることができます。詳しくは、１階のウェルカムセンターでスタッフにお尋ねください。'
+                                    },
+                                    {
+                                        title: '思い出に残る楽しい体験！',
+                                        description: 'ポイントを本物のハワイアドベンチャー体験と引き換えましょう！詳しくは、１階のウェルカムセンターでスタッフにお尋ねください。'
+                                    },
+                                    {
+                                        title: '',
+                                        description: '*米国外住所の証明が必要です。<br/>**Bloomingdale\'sのアウトレットストア各店およびbloomingdales.comでは、ポイント引き換えはご利用いただけません。サービスおよび体験はBloomingdale\'s Ala Moanaのみでのお引き換えとなります。'
+                                    }                                      
+                                ]                                    
+                            },
+                            {
+                                name: 'North Michigan Avenue',
+                                addr: '900 North Michigan Avenue  Chicago, IL 60611<br/>電話：312-440-4460 ',
+                                hours: '月曜日～土曜日: 午前10:00～午後8:00 | 日曜日: 午前11:00～午後7:00',
+                                descr: 'Windy City（シカゴの愛称）へいらっしゃる予定ですか？ファッションのガイドはブルーミングデールズにお任せください。当店にずらりと揃っているデザイナーズ・ブランド・コレクションでワードローブを一杯に、またはお気に入りのビューティ用品をストックなさってはいかがでしょう。ご希望通りにショッピングをお楽しみいただけるよう、当店の多言語スタッフがお手伝いをいたします。',
+                                dTile: 'ミシガンへご旅行ですか？',
+                                dInfo: 'いらっしゃる前に当店のウェルカム・ブックレットをダウンロードください。',
+                                dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Chicago_EN.pdf',
+                                designersImg: '/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-NORTH-MICHIGAN-AVENUE.jpg',                                                                  
+                                designers: [
+                                    'Burberry',
+                                    'Canada Goose',
+                                    'Chloé',
+                                    'COACH',
+                                    'DIANE von FURSTENBERG',
+                                    'Estée Lauder',
+                                    'Fendi',
+                                    'Gucci',
+                                    'Kiehl\'s Since 1851',
+                                    'La Mer',
+                                    'MARC JACOBS',
+                                    'MCM',
+                                    'Michael Kors',
+                                    'Moncler',
+                                    'Ralph Lauren',
+                                    'Ray-Ban',
+                                    'Salvatore Ferragamo',
+                                    'Ted Baker',
+                                    'Tory Burch',
+                                    'UGG® Australia '
+                                ],
+                                restaurants: [
+                                    {
+                                        name: '<b>FORTY CARROTS</b> <span>|</span> 6階 <span>|</span> 電話：312-440-4861',
+                                        sched: '月曜日～土曜日 午前11:00～午後6:00',
+                                        description: 'ご来店の際は、ご好評をいただいているフローズン・ヨーグルトをぜひお試しください。',
+                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_01.jpg'
+                                    }
+                                ],
+                                services: [
+                                    {
+                                        title: 'プレゼントの品を揃えるのはお任せください',
+                                        description: 'Bloomingdale\'s では、プレゼントのお買い物はとても簡単です。いらっしゃる前に、当店の多言語スペシャリストにご希望の品のリストを送っていただければ、ご来店時にはそれらの品はすべて揃っています。 <br /> 電話： 312-440-4596 <br/>Eメール： <a class="fucsia" href="mailto:international_visitors@bloomingdales.com">international_visitors@bloomingdales.com</a>'
+                                    },
+                                    {
+                                        title: 'パーソナル・スタイリストの用意があります：',
+                                        description: 'お買い物にご一緒し、お好みに合うファッションやインテリア用品を選ぶお手伝いをするパーソナル・スタイリストをご利用いただけます（無料）。<br/>アト・ユア・サービス 電話: 312-440-4887 '
+
+                                    },
+                                    {
+                                        title: 'お支払いは簡単です',
+                                        description: '当店では、American Express&regグローバル・トラベル・カード、あらゆる種類の中国銀聯ユニオンペイをご利用いただけます。<div class="unionpay">'
+
+                                    },
+                                    {
+                                        title: 'お直しクイックサービスがあります',
+                                        description: '店内にて、専門家による仕立ておよびサイズ直しを承っております。料金はご依頼内容により異なり、フィッティング時にお知らせいたします。'
+
+                                    },
+                                    {
+                                        title: 'ご購入品をホテルまでお届けします',
+                                        description: '250米ドル以上お買い上げいただくと、ご宿泊のダウンタウンのホテルまで無料でお届けいたします。３階のビジターセンターにてお申しつけください。 '
+
+                                    },
+                                    {
+                                        title: 'カードとリボンをお持ち帰りいただけます',
+                                        description: 'ご購入品のギフトラッピングを承ります。あるいは、お好きなメッセージカード、ボックス、ラッピングペーパー、リボンをお持ち帰りいただけます。４階のカスタマーサービスデスクにお越しください。'
+
+                                    }
+                                ]  
+                            },
+                            {
+                                name: 'Medinah Home',
+                                addr: '600 North Wabash Avenue  Chicago, IL 60611<br/>電話：312-324-7500',
+                                hours: '月曜日～土曜日: 午前10:00開店 <span>|</span> 日曜日：正午開店',
+                                descr: 'ご家庭のステキな飾り付けのためには、シカゴのメダイナ・ホーム店へお越しください。豪華寝具、ブランドのキッチン用品、オシャレなバス用品をはじめとする多くのものが揃っています。幅広い店内サービスをご利用になり、受賞歴を誇る当店のおもてなしを、どうぞご自身でご体験ください。',
+                                dTile: 'ミシガンへご旅行ですか？',
+                                dInfo: 'いらっしゃる前に当店のウェルカム・ブックレットをダウンロードください。',
+                                dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Chicago_EN.pdf',
+                                designersImg: '/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-MEDINAH-HOME.jpg',                                                                                                  
+                                designers: [
+                                    'Nespresso',
+                                    'Rimowa',
+                                    'Tumi',
+                                    'Victorinox'
+                                ],
+                                services: [
+                                    {
+                                        title: 'プレゼントの品を揃えるのはお任せください',
+                                        description: 'Bloomingdale\'s では、プレゼントのお買い物はとても簡単です。いらっしゃる前に、当店の多言語スペシャリストにご希望の品のリストを送っていただければ、ご来店時にはそれらの品はすべて揃っています。 <br /> 電話： 312-440-4596 <br/>Eメール： <a class="fucsia" href="mailto:international_visitors@bloomingdales.com">international_visitors@bloomingdales.com</a>'
+                                    },
+                                    {
+                                        title: 'パーソナル・スタイリストの用意があります：',
+                                        description: 'お買い物にご一緒し、お好みに合うファッションやインテリア用品を選ぶお手伝いをするパーソナル・スタイリストをご利用いただけます（無料）。 <br/>アト・ユア・サービス 電話：312-324-7633 '
+
+                                    },
+                                    {
+                                        title: 'お支払いは簡単です',
+                                        description: '当店では、American Express&regグローバル・トラベル・カード、あらゆる種類の中国銀聯ユニオンペイをご利用いただけます。<div class="unionpay">'
+
+                                    },
+                                    {
+                                        title: 'カードとリボンをお持ち帰りいただけます',
+                                        description: 'ご購入品のギフトラッピングを承ります。あるいは、お好きなメッセージカード、ボックス、ラッピングペーパー、リボンをお持ち帰りいただけます。２階のギフトラップ・ステーションにお越しください。'
+
+                                    }
+                                ] 
+                            },
+                            { 
+                                name: 'San Francisco Centre',
+                                addr: '845 Market Street  San Francisco, CA<br/>電話：415-856-5402',
+                                hours: '月曜日～土曜日: 午前10:00～午後9:00 | 日曜日: 午前11:00～午後8:00',
+                                descr: 'サンフランシスコで一番のショッピングスポットを見つけましょう。まず最初に行くべき所はBloomingdale\'sです。店内のビジターセンターへまずお寄りいただけば、フロア案内ガイドは各言語揃っており、また、ご希望通りにショッピングをお楽しみいただけるよう多言語スタッフがご相談にのりますこの下で店内の設備・サービスについて詳しくご説明いたします。',
+                                dTile: 'サンフランシスコへご旅行ですか？',
+                                dInfo: 'いらっしゃる前に当店のウェルカム・ブックレットをダウンロードください。',
+                                dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_SanFran_EN.pdf',
+                                designersImg: '/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-SAN-FRANCISCO-CENTRE.jpg',
+                                designers: [
+                                    'Alice + Olivia',
+                                    'BCBGMAXAZRIA',
+                                    'Burberry', 
+                                    'Calvin Klein',
+                                    'CHANEL',
+                                    'COACH',
+                                    'Clinique', 
+                                    'Dior', 
+                                    'DIANE von FURSTENBERG',
+                                    'Elie Tahari', 
+                                    'Escada',
+                                    'Estée Lauder',
+                                    'Giorgio Armani',
+                                    'Helmut Lang',
+                                    'kate spade new york',
+                                    'La Mer',
+                                    'Lancôme',
+                                    'Longchamp', 
+                                    'Louis Vuitton', 
+                                    'MARC BY MARC JACOBS',
+                                    'Michael Kors',
+                                    'Ralph Lauren',
+                                    'Rebecca Taylor',
+                                    'Salvatore Ferragamo',
+                                    'TAG Heuer', 
+                                    'Tory Burch', 
+                                    'Trina Turk'
+                                ],
+                                services: [
+                                    {
+                                        title: 'プレゼントの品を揃えるのはお任せください',
+                                        description: 'Bloomingdale\'s では、プレゼントのお買い物はとても簡単です。いらっしゃる前に、当店の多言語スペシャリストにご希望の品のリストを送っていただければ、ご来店時にはそれらの品はすべて揃っています。 <br /> 電話： 415-856-5477 <br/>Eメール： <a class="fucsia" href="mailto:international_visitors@bloomingdales.com">international_visitors@bloomingdales.com</a>'
+                                    },
+                                    {
+                                        title: 'パーソナル・スタイリストの用意があります：',
+                                        description: 'お買い物にご一緒し、お好みに合うファッションやインテリア用品を選ぶお手伝いをするパーソナル・スタイリストをご利用いただけます（無料）。 <br/>アト・ユア・サービス 415-856-5538 '
+
+                                    },
+                                    {
+                                        title: 'お支払いは簡単です',
+                                        description: '当店では、American Express&regグローバル・トラベル・カード、あらゆる種類の中国銀聯ユニオンペイをご利用いただけます。<div class="unionpay">'
+
+                                    },
+                                    {
+                                        title: 'お直しクイックサービスがあります',
+                                        description: '店内にて、専門家による仕立ておよびサイズ直しを承っております。料金はご依頼内容により異なり、フィッティング時にお知らせいたします。'
+
+                                    },
+                                    {
+                                        title: 'ご購入品をホテルまでお届けします',
+                                        description: '250米ドルお買い上げいただくと、ご宿泊のダウンタウンのホテルまで無料でお届けいたします。１階バルコニーのビジターセンターにてお申しつけください。'
+
+                                    },
+                                    {
+                                        title: 'カードとリボンをお持ち帰りいただけます',
+                                        description: 'ビジターセンターにて、ご購入品のギフトラッピングを承ります。あるいは、お好きなメッセージカード、ボックス、ラッピングペーパー、リボンをお持ち帰りいただけます。'
+
+                                    }
+                                ]                               
+                            },
+                            {
+                                name: 'South Coast Plaza',
+                                addr: '3333 Bristol St  Costa Mesa, CA 92626<br/>電話：714-824-4600',
+                                hours: '月曜日～土曜日: 午前10:00～午後9:00 | 日曜日: 午前11:00～午後7:00',
+                                descr: '南カリフォルニアに合わせて特別に選ばれた最高のデザイナーズ・ブランド・ショップを擁するSouth Coast Plaza店は、必ず行くべきショッピングスポットです。Golden State（カリフォルニア州の愛称）は初めてですか？当店の多言語スタッフが、ご滞在をさらに快適なものとするお手伝いをいたします。お国の言葉のフロア案内ガイドのご用意があり、この下でご説明する店内の設備・サービスによって、お客様のショッピング体験はさらに楽しいものとなるでしょう。',
+                                dTile: 'コスタメサへご旅行ですか？',
+                                dInfo: 'いらっしゃる前に当店のウェルカム・ブックレットをダウンロードください。',
+                                dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_SouthCoastPlaza_EN.pdf',
+                                designersImg: '/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-SOUTH-COAST-PLAZA.jpg',
+                                designers: [
+                                    'Burberry',
+                                    'Calvin Klein',
+                                    'Canada Goose',
+                                    'CHANEL',
+                                    'Chloé',
+                                    'COACH',
+                                    'DIANE von FURSTENBERG',
+                                    'Dior',
+                                    'Estée Lauder',
+                                    'Fendi',
+                                    'Giorgio Armani Beauty',
+                                    'Gucci',
+                                    'Hugo Boss',
+                                    'Kiehl\'s Since 1851',
+                                    'La Mer',
+                                    'La Prairie',
+                                    'Longchamp',
+                                    'Longines Watches',
+                                    'Louis Vuitton',
+                                    'MARC JACOBS',
+                                    'MCM',
+                                    'Michael Kors',
+                                    'Miu Miu',
+                                    'Moncler',
+                                    'Montblanc',
+                                    'Prada',
+                                    'Ralph Lauren',
+                                    'Rimowa',
+                                    'Salvatore Ferragamo',
+                                    'Stuart Weitzman',
+                                    'Ted Baker',
+                                    'Tory Burch',
+                                    'Tumi',
+                                    'UGG® Australia',
+                                    'Yves Saint Laurent Beauty'
+                                ],
+                                restaurants: [
+                                    {
+                                        name: '<b>AnQi by Crustacean Gourmet Bistro & Noodle Bar</b> <br/>  １階 <span>|</span> 電話：714-557-5679',
+                                        sched: 'ランチ: 毎日営業　午前11:30～午後2:30 <br/> ヌードルバー： 毎日営業　午前11:30～午後5:30 <br/> ディナー： 日曜日～木曜日　午後5:30～10:30午後 <br/>金曜日・土曜日　午後5:30～午後11:00 <br/> レッド・ハッピー・アワー： 月曜日～金曜日　午後4:00～午後7:00',
+                                        description: '',
+                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_08.jpg'
+                                    }                                 
+                                ],
+                                services: [
+                                    {
+                                        title: 'お直しクイックサービスがあります',
+                                        description: '店内にて、専門家による仕立ておよびサイズ直しを承っております。料金はご依頼内容により異なり、フィッティング時にお知らせいたします。 '
+                                    },
+                                    {
+                                        title: 'カードとリボンをお持ち帰りいただけます',
+                                        description: 'ります。あるいは、お好きなメッセージカード、ボックス、ラッピングペーパー、リボンをお持ち帰りいただけます。'
+                                    },
+                                    {
+                                        title: 'お支払いは簡単です',
+                                        description: '当店では、あらゆる種類の中国銀聯ユニオンペイをご利用いただけます。<div class="unionpay">'
+                                    }
+                                ]                                    
+                            },
+                            {
+                                name: 'Southern California Stores',
+                                addr: '',
+                                hours: '',
+                                descr: 'Bloomingdale\'sの象徴的な店舗は、ロサンゼルス、オレンジ・カウンティ、サンディエゴと南カリフォルニア全体にも展開されています。どの店舗でも、お気に入りブランドのファッション、アクセサリー、靴、ビューティ用品のショッピングをお楽しみいただけるでしょう。この下で店内の設備・サービスについて詳しくご説明いたします。',
+                                dTile: '南カリフォルニアへご旅行ですか？',
+                                dInfo: 'いらっしゃる前に当店のウェルカム・ブックレットをダウンロードください。',
+                                dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_SouthernCalifornia_EN.pdf',
+                                designersImg: '',                                
+                                stores: [
+                                    {
+                                        area: 'オレンジ・カウンティ',
+                                        list: [
+                                            {
+                                                name: 'サウス・コースト・プラザ店',
+                                                addr: '3333 South Bristol Street, Costa Mesa, CA 92626<br/>電話：714-824-4600',
+                                                hours: '営業時間:<br/>月曜日・火曜日　午前10:00〜午後9:00 <br/>水曜日〜土曜日　午前10:00〜午後10:00<br/>日曜日　午前10:00〜午後8:00'
+                                            },
+                                            {
+                                                name: 'ニューポート・ファッション・アイランド店',
+                                                addr: '701 Newport Center Drive, Newport Beach, CA 92660<br/>電話：949-729-6600',
+                                                hours: '営業時間: <br/>月曜日・火曜日　午前10:00〜午後8:00<br/>水曜日〜土曜日　午前10:00〜午後10:00<br/>日曜日　午前11:00〜午後8:00'
+                                            }     
+                                        ]                                   
+                                    },
+                                    {
+                                        area: 'ロサンゼルス',
+                                        list: [
+                                            {
+                                                name: 'センチュリー・シティ店',
+                                                addr: '10250 Santa Monica Boulevard, Los Angeles, CA 90067<br/>電話：310-772-2100',
+                                                hours: '営業時間: <br/>月曜日～土曜日　午前10:00～午後9:00<br/>水曜日〜土曜日　午前10:00〜午後10:00<br/>日曜日　午前11:00〜午後8:00'
+                                            },
+                                            {
+                                                name: 'ビバリー・センター店',
+                                                addr: '8500 Beverly Boulevard, Los Angeles, CA 90048<br/>電話：310-360-2700',
+                                                hours: '営業時間: <br/>月曜日～土曜日　午前10:00～午後9:00<br/>水曜日〜土曜日　午前10:00〜午後10:00<br/>日曜日　午後12:00〜午後8:00 '
+                                            },
+                                            {
+                                                name: 'サンタモニカ・プレイス店',
+                                                addr: '315 Colorado Avenue, Santa Monica, CA 90401<br/>電話：310-985-6400',
+                                                hours: '営業時間: <br/>月曜日～土曜日　午前10:00～午後9:00<br/>水曜日〜土曜日　午前10:00〜午後10:00<br/>日曜日　午前11:00〜午後8:00'
+                                            },
+                                            {
+                                                name: 'グレンデール・ギャラリア店',
+                                                addr: '103 South Brand Blvd., Glendale, CA 91210<br/>電話：818-638-4100',
+                                                hours: '営業時間: <br/>月曜日～土曜日　午前10:00～午後9:00<br/>水曜日〜土曜日　午前10:00〜午後10:00<br/>日曜日　午前11:00〜午後9:00'
+                                            },
+                                            {
+                                                name: 'シャーマン・オークス・ファッション・スクエア店 (シャーマン・オークス)',
+                                                addr: '14060 Riverside Drive, Sherman Oaks, CA 91423<br/>電話：818-325-2200',
+                                                hours: '営業時間: <br/>月曜日～土曜日　午前10:00～午後9:00<br/>水曜日〜土曜日　午前10:00〜午後10:00<br/>日曜日　午前11:00〜午後9:00'
+                                            }     
+                                        ]                                   
+                                    }, 
+                                    {
+                                        area: 'サンディエゴ',
+                                        list: [
+                                            {
+                                                name: 'ファッション・バレー店',
+                                                addr: '7057 Friars Road, San Diego, CA 92108<br/>電話：619-610-6400',
+                                                hours: '営業時間: <br/>月曜日・火曜日　午前10:00〜午後8:00<br/>水曜日 午前10:00〜午後8:00<br/>木曜日〜土曜日　午前10:00〜午後10:00<br/>日曜日　午後12:00〜午後8:00'
+                                            }   
+                                        ]                                   
+                                    }                                                                       
+                                ],
+                                services: [
+                                    {
+                                        title: 'お直しクイックサービスがあります',
+                                        description: '店内にて、専門家による仕立ておよびサイズ直しを承っております。料金はご依頼内容により異なり、フィッティング時にお知らせいたします。 Available at select locations.'
+                                    },
+                                    {
+                                        title: 'カードとリボンをお持ち帰りいただけます',
+                                        description: 'ご購入品のギフトラッピングを承ります。あるいは、お好きなメッセージカード、ボックス、ラッピングペーパー、リボンをお持ち帰りいただけます。店舗によりご利用いただけない場合もあります。'
+                                    },
+                                    {
+                                        title: 'パーソナル・スタイリストの用意があります：',
+                                        description: 'お買い物にご一緒し、お好みに合うファッションやインテリア用品を選ぶお手伝いをするパーソナル・スタイリストをご利用いただけます（無料）。店舗によりご利用いただけない場合もあります。'
+                                    }
+                                ]  
+                            },
+                            {
+                                name: 'AVENTURA',
+                                addr: '19555 Biscayne Boulevard  Aventura, FL 33180<br/>電話：305-792-1246',
+                                hours: '月曜日～水曜日：午前10:00～午後9:30 <span>|</span> 木曜日～土曜日：午前10:00～午後10:00 <span>|</span> 日曜日：正午～午後8:30',
+                                descr: '休暇旅行の日程を計画中ですか？最初の行き先は、フロリダのAventura店にしましょう。デザイナーズ・ブランドのファッションやビューティ用品、豪華なアクセサリーをはじめとする当店の幅広いセレクションを、じっくりと品定めしてください。ショッピングでは、この下に載っている店内の設備・サービスを最大限にご利用いただけますよう、お国の言語のフロア案内ガイドをご活用ください。',
+                                dTile: 'アヴェントゥーラへご旅行ですか？',
+                                dInfo: 'いらっしゃる前に当店のウェルカム・ブックレットをダウンロードください。',
+                                dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Aventura_EN.pdf',
+                                designersImg: '/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-AVENTURA.jpg',
+                                designers: [
+                                    'Baccarat',
+                                    'Bernardaud',
+                                    'BVLGARI',
+                                    'Burberry',
+                                    'Calvin Klein ',
+                                    'Canali ',
+                                    'CHANEL ',
+                                    'Christofle ',
+                                    'David Yurman ',
+                                    'DIANE von FURSTENBERG ',
+                                    'Diesel ',
+                                    'Dior ',
+                                    'Fendi ',
+                                    'Furla ',
+                                    'Giorgio Armani',
+                                    'Gucci ',
+                                    'HUGO BOSS ',
+                                    'Jimmy Choo ',
+                                    'John Varvatos', 
+                                    'La Mer ',
+                                    'Lalique',
+                                    'Longchamp', 
+                                    'Louis Vuitton ',
+                                    'M·A·C ',
+                                    'MARC BY MARC JACOBS ',
+                                    'Michael Kors ',
+                                    'Miki House ',
+                                    'Montblanc ',
+                                    'Movado ',
+                                    'PANDORA',
+                                    'Prada ',
+                                    'Pratesi ',
+                                    'Ralph Lauren ',
+                                    'Roberto Coin ',
+                                    'Salvatore Ferragamo ',
+                                    'Sferra ',
+                                    'Shiseido ',
+                                    'TAG Heuer ',
+                                    'Tory Burch ',
+                                    'Villeroy & Boch ',
+                                    'Z Zegna'
+                                ],
+                                restaurants: [
+                                    {
+                                        name: '<b>59TH & LEX CAFE</b> <span>|</span> 2階 <span>|</span> 電話：305-792-1180',
+                                        sched: '月曜日～土曜日：午前10:00～午後8:00 <span>|</span> 日曜日：正午～午後7:00',
+                                        description: '',
+                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_06.jpg'
+                                    }
+                                ],
+                                services: [
+                                    {
+                                        title: 'プレゼントの品を揃えるのはお任せください',
+                                        description: 'Bloomingdale\'s では、プレゼントのお買い物はとても簡単です。いらっしゃる前に、当店の多言語スペシャリストにご希望の品のリストを送っていただければ、ご来店時にはそれらの品はすべて揃っています。 <br /> 電話： 305-792-1175 <br/>Eメール： <a class="fucsia" href="mailto:international_visitors@bloomingdales.com">international_visitors@bloomingdales.com</a>'
+                                    },
+                                    {
+                                        title: 'お支払いは簡単です',
+                                        description: '当店では、American Express&reg;グローバル・トラベル・カードをご利用いただけます。'
+
+                                    },
+                                    {
+                                        title: 'お直しクイックサービスがあります',
+                                        description: '店内にて、専門家による仕立ておよびサイズ直しを承っております。料金はご依頼内容により異なり、フィッティング時にお知らせいたします。'
+
+                                    }
+                                ]     
+                            },
+                            {
+                                name: 'ORLANDO',
+                                addr: '4152 Conroy Road  Orlando, FL 32839<br/>電話：407-264-2514',
+                                hours: '月曜日～土曜日：午前10:00～午後9:00 <span>|</span> 日曜日：午前11:00～午後7:00',
+                                descr: '最高ブランドのファッションとビューティの品がずらりと並んだBloomingdale’s Orlando店では、世界トップレベルのショッピング体験が待っています。Sunshine State（フロリダ州の愛称）への次のご旅行では、お客様の希望を叶える当店へお立ち寄りください。お国の言語のフロア案内ガイドを手にし、この下に載っている店内の設備・サービスを存分にご利用ください。',
+                                dTile: 'オーランドへご旅行ですか？',
+                                dInfo: 'いらっしゃる前に当店のウェルカム・ブックレットをダウンロードください。',
+                                dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Orlando_EN.pdf',
+                                designersImg: '/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-ORLANDO.jpg',
+                                designers: [
+                                    'Burberry',
+                                    'Canali ',
+                                    'COACH',
+                                    'DIANE von FURSTENBERG ',
+                                    'Diesel Jeans',
+                                    'Dior ',
+                                    'Fendi ',
+                                    'Frankie B Jeans ',
+                                    'John Varvatos ',
+                                    'Joie ',
+                                    'La Mer ',
+                                    'Longchamp', 
+                                    'Montblanc ',
+                                    'Movado ',
+                                    'Ralph Lauren ',
+                                    'Salvatore Ferragamo ',
+                                    'Sandro ',
+                                    'Shiseido ',
+                                    'Ted Baker ',
+                                    'Tory Burch ',
+                                    'Vince'
+                                ],
+                                restaurants: [
+                                    {
+                                        name: '<b>FORTY CARROTS</b> <span>|</span> １階 <span>|</span> 電話：407-264-2683',
+                                        sched: '月曜日～土曜日　午前10:00～午後9:00 <span>|</span> 日曜日　午前11:00～午後7:00',
+                                        description: 'ご来店の際は、ご好評をいただいているフローズン・ヨーグルトをぜひお試しください。',
+                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_01.jpg'
+                                    }
+                                ],
+                                services: [
+                                    {
+                                        title: 'プレゼントの品を揃えるのはお任せください',
+                                        description: 'Bloomingdale\'s では、プレゼントのお買い物はとても簡単です。いらっしゃる前に、当店の多言語スペシャリストにご希望の品のリストを送っていただければ、ご来店時にはそれらの品はすべて揃っています。 <br /> 電話： 305-792-1175 <br/>Eメール： <a class="fucsia" href="mailto:international_visitors@bloomingdales.com">international_visitors@bloomingdales.com</a>'
+                                    },
+                                    {
+                                        title: 'お支払いは簡単です',
+                                        description: '当店では、American Express&reg;グローバル・トラベル・カードをご利用いただけます。'
+
+                                    },
+                                    {
+                                        title: 'お直しクイックサービスがあります',
+                                        description: '店内にて、専門家による仕立ておよびサイズ直しを承っております。料金はご依頼内容により異なり、フィッティング時にお知らせいたします。'
+                                    }
+                                ]       
+                            }                                
+                        ]
+                    }
+                },                
+                socialshare: {
+                    fb: {
+                        name: '国際観光 | bloomingdales.com',
+                        description: 'デザイナーズブランドのファッションから一番人気のビューティ用品まで、新しくなったBloomingdale\'sの国際ウェブサイトがご提供するものをすべてチェックしてください。'
+                    },
+                    pinterest: {
+                        description: '国際観光 | bloomingdales.com'
+                    },
+                    twitter: {
+                        text: 'Bloomingdale\'sウェブサイトでのお買い物はお好きですか？デザイナーズブランドの新しいファッション、アクセサリー、ビューティ用品を国際ウェブサイトでチェックしてください。 http://fashion.bloomingdales.com/international/#/japanese'
+                    },
+                    weibo: {
+                        url: 'http://weibo.com/bloomingdalesusa',
+                        title: '新しくなった国際ウェブサイトで、Bloomingdale\'sの豪華なファッション、店史のエピソード、世界トップクラスのおもてなしについてチェックしてください。'
+                    },
+                    weixin: {
+                        text: 'Bloomingdale\'sからのプッシュ通知を受信するためのQRコードをスキャンします。'
+                    }
+                },
+                contactUs: {
+                    formTitle: 'ご連絡ください',
+                    left: {
+                        title: 'ご来店をお知らせください',
+                        p1: 'どのBloomingdale\'s 店舗へのご来店がご希望か、そしてご旅行の日程について、どうぞお知らせください。',
+                        p2: 'このフォームに記入して送信いただけば、当店の多言語スタッフが後ほどご連絡いたします。'
+                    },
+                    right: {
+                        name: '名前:',
+                        nameErr: '私達にあなたの名前を教えてください',
+                        email: 'Eメール:',
+                        emailErr1: 'Eメールアドレスをご記入ください',
+                        emailErr2: '無効なメールアドレス',
+                        phone: '携帯電話番号（任意）:',
+                        phoneErr: '無効な電話番号',
+                        party: 'お越しいただくお客様の人数:',
+                        partyErr: '全員の人数を教えてください',
+                        dates: 'アメリカ旅行の日程:',
+                        arriving: '到着日:',
+                        departing: '出発日:',
+                        datesErr: '日にちを選択',
+                        storesH: 'ご来店希望店舗:',
+                        storesM: '店舗をお選びください',
+                        storesErr: '店舗をお選びください',
+                        stores: [
+                            {id: 'New York', name: 'ニューヨーク', disabled: 'true'},
+                            {id: '59th Street Flagship, New York City', name: '59丁目本店（ニューヨーク）', disabled: 'false'},
+                            {id: 'SoHo, New York City', name: 'ソーホー店（ニューヨーク）', disabled: 'false'},
+                            {id: 'Hawaii', name: 'ハワイ', disabled: 'true'},
+                            {id: 'Ala Moana, Honolulu', name: 'アラモアナ店（ホノルル）', disabled: 'false'},
+                            {id: 'Illinois', name: 'イリノイ', disabled: 'true'},
+                            {id: 'North Michigan Avenue, Chicago', name: 'ノース・ミシガン・アベニュー店（シカゴ）', disabled: 'false'},
+                            {id: 'Medinah Home, Chicago', name: 'メダイナ・ホーム店（シカゴ）', disabled: 'false'},
+                            {id: 'California', name: 'カリフォルニア', disabled: 'true'},
+                            {id: 'Beverly Center, Los Angeles', name: 'ビバリーセンター(ロサンゼルス)', disabled: 'false'},
+                            {id: 'Century City, Los Angeles', name: 'センチュリーシティ(ロサンゼルス)', disabled: 'false'},
+                            {id: 'Fashion Valley, San Diego', name: 'ファッションバレー(サンディエゴ)', disabled: 'false'},
+                            {id: 'Glendale Galleria, Glendale', name: 'グレンデールガレリア(グレンデール)', disabled: 'false'},
+                            {id: 'Newport Fashion Island, Newport Beach', name: 'ニューポートファッションアイランド(ニューポートビーチ)', disabled: 'false'},
+                            {id: 'San Francisco Centre, San Francisco', name: 'サンフランシスコ・センター店（サンフランシスコ）', disabled: 'false'},
+                            {id: 'Santa Monica Place, Santa Monica', name: 'サンタモニカプレイス(サンタモニカ)', disabled: 'false'},
+                            {id: 'Sherman Oaks Fashion Square, Sherman Oaks', name: 'シャーマンオークスファッション広場(シャーマンオークス)', disabled: 'false'},
+                            {id: 'South Coast Plaza, Costa Mesa', name: 'サウス・コースト・プラザ店（コスタメサ）', disabled: 'false'},
+                            {id: 'Florida', name: 'フロリダ', disabled: 'true'},
+                            {id: 'Aventura', name: 'アヴェントゥーラ店', disabled: 'false'},
+                            {id: 'Orlando', name: 'オーランド店', disabled: 'false'}
+                        ],
+                        submit: 'submit',
+                        submitHead: 'thank you for<br/>your submission',
+                        submitBody: 'A member of our tourism team will contact you shortly.'
+                    }
+                },                
+                footer: [
+                    '10%オフになります—メールサービスに<b><u>サインアップ</u></b>',
+                    'like no other store in the world'
+                ]
+            },
         };
         
         var services = {
