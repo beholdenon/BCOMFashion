@@ -1,0 +1,137 @@
+{
+  "designerName": "Gucci",
+  "machineReadableDesignerName": "gucci",
+  "designerUrlAlias": "gucci",
+  "title2Prefix": "Gucci Handbags &amp; Belts",
+  "designerDescription": "",
+  "addressColumns": [
+    [
+      {
+        "name": "59th Street &amp; Lexington Avenue",
+        "streetAddress": "1000 Third Avenue",
+        "cityStateZip": "New York, NY 10022",
+        "phoneNumber": "(212) 705-2000",
+        "phoneNumberHrefSuffix": "+1-212-705-2000",
+        "urlArgs": {
+          "addressAlias": "59th-street",
+          "designerAlias": "gucci_handbags_belts",
+          "addressFullDetail": "59TH-STREET-LEXINGTON-AVENUE"
+        }
+      },
+      {
+        "name": "Aventura",
+        "streetAddress": "19555 Biscayne Boulevard",
+        "cityStateZip": "Aventura, FL 33180",
+        "phoneNumber": "(305) 792-1000",
+        "phoneNumberHrefSuffix": "+1-305-792-1000",
+        "urlArgs": {
+          "addressAlias": "aventura",
+          "designerAlias": "gucci",
+          "addressFullDetail": "AVENTURA-MALL"
+        }
+      },
+      {
+        "name": "Century City",
+        "streetAddress": "10250 Santa Monica Boulevard",
+        "cityStateZip": "Los Angeles, CA 90067",
+        "phoneNumber": "(310) 772-2100",
+        "phoneNumberHrefSuffix": "+1-310-722-2100",
+        "urlArgs": {
+          "addressAlias": "century-city",
+          "designerAlias": "gucci",
+          "addressFullDetail": "CENTURY-CITY"
+        }
+      }
+    ],
+    [
+      {
+        "name": "Chestnut Hill",
+        "streetAddress": "225 Boylston Street",
+        "cityStateZip": "Chestnut Hill, MA 02467",
+        "phoneNumber": "(617) 630-6000",
+        "phoneNumberHrefSuffix": "+1-617-630-6000",
+        "urlArgs": {
+          "addressAlias": "chestnut-hill",
+          "designerAlias": "gucci",
+          "addressFullDetail": "CHESTNUT-HILL-MALL"
+        }
+      },
+      {
+        "name": "North Michigan Avenue",
+        "streetAddress": "900 North Michigan Avenue",
+        "cityStateZip": "Chicago, IL 60611",
+        "phoneNumber": "(312) 440-4460",
+        "phoneNumberHrefSuffix": "+1-312-440-4460",
+        "urlArgs": {
+          "addressAlias": "north-michigan-avenue",
+          "designerAlias": "gucci",
+          "addressFullDetail": "NORTH-MICHIGAN-AVENUE"
+        }
+      },
+      {
+        "name": "South Coast Plaza",
+        "streetAddress": "3333 South Bristol Street",
+        "cityStateZip": "Costa Mesa, CA 92626",
+        "phoneNumber": "(714) 824-4600",
+        "phoneNumberHrefSuffix": "+1-714-824-4600",
+        "urlArgs": {
+          "addressAlias": "south-coast-plaza",
+          "designerAlias": "gucci",
+          "addressFullDetail": "SOUTH-COAST-PLAZA"
+        }
+      }
+    ],
+    [
+      {
+        "name": "Roosevelt Field",
+        "streetAddress": "630 Old Country Rd. #27",
+        "cityStateZip": "Garden City, NY 11530",
+        "phoneNumber": "(516) 873-2700",
+        "phoneNumberHrefSuffix": "+1-516-873-2700",
+        "urlArgs": {
+          "addressAlias": "roosevelt-field",
+          "designerAlias": "gucci",
+          "addressFullDetail": "ROOSEVELT-FIELD"
+        }
+      },
+      {
+        "name": "Tyson&rsquo;s Corner Center",
+        "streetAddress": "8100 Tyson&rsquo;s Corner Center",
+        "cityStateZip": "McLean, VA 22102",
+        "phoneNumber": "(703) 556-4600",
+        "phoneNumberHrefSuffix": "+1-703-556-4600",
+        "urlArgs": {
+          "addressAlias": "tysons-corner-center",
+          "designerAlias": "gucci",
+          "addressFullDetail": "TYSONS-CORNER-CENTER"
+        }
+      }
+    ],
+    [
+      {
+        "name": "Glendale Galleria",
+        "streetAddress": "103 South Brand Blvd.",
+        "cityStateZip": "Glendale, CA 91210",
+        "phoneNumber": "(818) 638-4100",
+        "phoneNumberHrefSuffix": "+1-818-638-4100",
+        "urlArgs": {
+          "addressAlias": "glendale-galleria",
+          "designerAlias": "gucci",
+          "addressFullDetail": "GLENDALE-GALLERIA"
+        }
+      },
+      {
+        "name": "San Francisco Centre",
+        "streetAddress": "845 Market Street",
+        "cityStateZip": "San Francisco, CA 94103",
+        "phoneNumber": "(415) 856-5300",
+        "phoneNumberHrefSuffix": "+1-415-856-5300",
+        "urlArgs": {
+          "addressAlias": "san-francisco-centre",
+          "designerAlias": "gucci",
+          "addressFullDetail": "SAN-FRANCISCO-CENTRE"
+        }
+      }
+    ]
+  ]
+}
