@@ -1,0 +1,223 @@
+@import '../../variables';
+@import '../../mixins';
+@import "../../includes/clearfix";
+@import "../../fonts";
+
+/** Font Families **/
+$avenir-roman: 'Avenir LT W01 55 Roman';
+$avenir-heavy: 'Avenir LT W01 85 Heavy';
+$medium-font-size: 16px;
+
+/** Colors **/
+$in-store-color: #FFF;
+$in-store-bg-color: #000;
+
+/** Margins and Padding **/
+$extra-large-margin: 55px;
+$medium-margin: 21px;
+$large-margin: 34px;
+$small-margin: 13px;
+
+/** Beginning of Desktop and Tablet style **/
+#in-store {
+  box-sizing: border-box;
+  background-color: $in-store-bg-color;
+  color: $in-store-color;
+  padding: $extra-large-margin;
+  font-size: 14px;
+
+  /** @todo Why are we doing this **/
+  a:link, a:active, a:visited {
+    font-style: normal;
+    font-weight: normal;
+  }
+
+  /** @todo Why are we doing this **/
+  *, *:before, *:after {
+    @include with-browser-prefixes(box-sizing, border-box);
+    @include with-browser-prefixes(font-smoothing, antialiased);
+  }
+
+  > *,
+  .in-store-body-header {
+    margin-bottom: $extra-large-margin;
+  }
+
+  section:last-child {
+    margin-bottom: 0;
+  }
+
+  /** Small reset **/
+  h1, h2, h3, h4, p, span, a {
+    margin: 0;
+    padding: 0;
+    color: $in-store-color;
+  }
+
+  .in-store-title {
+    text-transform: uppercase;
+    font-weight: normal;
+  }
+
+  // > header, // @note can't use header in file due to the fact that someone is manipulating all headers on the page (happening from main header code).
+  // > section > header,
+  .in-store-header {
+    text-align: center;
+
+    .in-store-title {
+      font-family: $avenir-heavy, $default-font-family;
+    }
+    p {
+      font: normal $medium-font-size $avenir-roman, $default-serif-font-family;
+      line-height: 25px;
+    }
+  }
+
+  // > header
+  .in-store-main-header {
+    border-bottom: 1px solid $in-store-color;
+
+    .in-store-title {
+      font-size: 46px;
+      line-height: 46px;
+      margin-bottom: $extra-large-margin;
+    }
+  }
+
+  // > header > section > header {
+  .in-store-body-header {
+    .in-store-title {
+      font-size: $medium-font-size;
+      line-height: 21px;
+      margin-bottom: 14px;
+    }
+  }
+
+  .in-store-addresses {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    .in-store-addresses-column { // only 4 columns at a time (desktop and tablet view)
+      display: inline-block;
+      list-style: none;
+      margin: 0 2.659% 2.659% 0;
+      padding: 0;
+      float: left;
+      width: 23%;
+
+      &:last-child {
+        margin: 0;
+      }
+    }
+
+    .in-store-addresses-column li {
+      margin-bottom: $medium-margin;
+    }
+
+    .in-store-addresses-column li,
+    .in-store-addresses-column li a {
+      display: inline-block;
+      color: $in-store-color;
+      font-family: $avenir-roman, $default-serif-font-family;
+    }
+
+    .in-store-addresses-column li a {
+      text-decoration: none;
+    }
+
+    .in-store-addresses-column li:last-child {
+      margin-bottom: 0;
+    }
+
+    .in-store-addresses-column li .in-store-title {
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 21px;
+    }
+  }
+}
+
+/** General Mobile Style **/
+@media (min-device-width: 320px) and (max-device-width: 767px) {
+  #in-store {
+    padding: $large-margin $large-margin $extra-large-margin;
+
+    > *,
+    .in-store-body-header {
+      margin-bottom: $medium-margin;
+    }
+
+    .in-store-header {
+      text-align: left;
+
+      .in-store-title + p {
+        font-size: $medium-font-size;
+      }
+    }
+
+    > .in-store-main-header .in-store-title {
+      margin-bottom: $medium-margin;
+      font-size: 21px;
+      line-height: 34px;
+    }
+
+    > .in-store-body .in-store-body-header {
+      .in-store-title {
+        font-size: $medium-font-size;
+      }
+    }
+
+    > .in-store-body {
+      .in-store-addresses-column {
+        margin-bottom: $medium-margin;
+      }
+    }
+
+  }
+}
+
+@media (min-device-width: 320px) and (max-device-width: 767px) and (orientation: portrait) {
+  #in-store {
+    > .in-store-body .in-store-body-body {
+      .in-store-addresses .in-store-addresses-column {
+        float: none;
+        width: 100%;
+        margin-right: 0;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        li {
+          display: block;
+        }
+
+        li a {
+          display: block;
+        }
+
+        li .in-store-title {
+          font-size: $medium-font-size;
+        }
+      }
+    }
+  }
+}
+
+@media (min-device-width: 320px) and (max-device-width: 767px) and (orientation: landscape) {
+  #in-store {
+    padding: 5.3% 5.3% 10.6%; // 34px 34px 55px converted to percents
+
+    > .in-store-body .in-store-body-body {
+      .in-store-addresses .in-store-addresses-column {
+        margin-right: 3%;
+        width: 31.3%;
+
+        &:nth-child(3) {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "designerName": "Helmut Lang",
+  "machineReadableDesignerName": "helmut_lang_women_clothing",
+  "title2Prefix": "Helmut Lang Women&rsquo;s Clothing",
+  "designerDescription": "",
+  "addressColumns": [
+    [
+      {
+        "name": "59th Street &amp; Lexington Avenue",
+        "streetAddress": "1000 Third Avenue",
+        "cityStateZip": "New York, NY 10022",
+        "phoneNumber": "(212) 705-2000",
+        "phoneNumberHrefSuffix": "+1-212-705-2000",
+        "urlArgs": {
+          "addressAlias": "59th-street",
+          "designerAlias": "helmut_lang_women_clothing",
+          "addressFullDetail": "59TH-STREET-LEXINGTON-AVENUE"
+        }
+      },
+      {
+        "name": "Chestnut Hill",
+        "streetAddress": "225 Boylston Street",
+        "cityStateZip": "Chestnut Hill, MA 02467",
+        "phoneNumber": "(617) 630-6000",
+        "phoneNumberHrefSuffix": "+1-617-630-6000",
+        "urlArgs": {
+          "addressAlias": "chestnut-hill",
+          "designerAlias": "helmut_lang_women_clothing",
+          "addressFullDetail": "CHESTNUT-HILL-MALL"
+        }
+      }
+    ],
+    [
+      {
+        "name": "Century City",
+        "streetAddress": "10250 Santa Monica Boulevard",
+        "cityStateZip": "Los Angeles, CA 90067",
+        "phoneNumber": "(310) 772-2100",
+        "phoneNumberHrefSuffix": "+1-310-722-2100",
+        "urlArgs": {
+          "addressAlias": "century-city",
+          "designerAlias": "helmut_lang_women_clothing",
+          "addressFullDetail": "CENTURY-CITY"
+        }
+      }
+    ],
+    [
+      {
+        "name": "San Francisco Centre",
+        "streetAddress": "845 Market Street",
+        "cityStateZip": "San Francisco, CA 94103",
+        "phoneNumber": "(415) 856-5300",
+        "phoneNumberHrefSuffix": "+1-415-856-5300",
+        "urlArgs": {
+          "addressAlias": "san-francisco-centre",
+          "designerAlias": "helmut_lang_women_clothing",
+          "addressFullDetail": "SAN-FRANCISCO-CENTRE"
+        }
+      }
+    ],
+    [
+      {
+        "name": "Aventura",
+        "streetAddress": "19555 Biscayne Boulevard",
+        "cityStateZip": "Aventura, FL 33180",
+        "phoneNumber": "(305) 792-1000",
+        "phoneNumberHrefSuffix": "+1-305-792-1000",
+        "urlArgs": {
+          "addressAlias": "aventura",
+          "designerAlias": "helmut_lang_women_clothing",
+          "addressFullDetail": "AVENTURA-MALL"
+        }
+      }
+    ]
+  ]
+}

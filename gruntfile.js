@@ -466,6 +466,7 @@ module.exports = function(grunt) {
                     imagesDir: '<%= node.source %>/public/images',
                     javascriptsDir: '<%= node.source %>/public/javascripts',
                     fontsDir: '<%= node.source %>/public/styles/fonts',
+                    outputStyle: 'compressed', //process.env.NODE_ENV.toLowerCase() === 'dev' ? 'expanded' : 'compressed',
                     noLineComments: true,
                     force: true,
                     relativeAssets: false
