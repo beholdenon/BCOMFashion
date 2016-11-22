@@ -52,9 +52,8 @@ $font-family-sans-serif: Avenir, helvetica, arial, sans-serif;
     }
 
     .hero {
-        border-bottom: 1px solid #c8c8c8;
         letter-spacing: 0.020em;
-        padding-bottom: 9vw;
+        padding-bottom: 0;
         position: relative;
         text-align: center;
 
@@ -94,6 +93,13 @@ $font-family-sans-serif: Avenir, helvetica, arial, sans-serif;
             font-weight: lighter;
             margin-bottom: 7.81vw;
             padding: 0 9vw;
+        }
+
+        hr {
+            border: 0;
+            background-color: #ebebeb;
+            height: 1px;
+            margin: 9vw 2vw 0;
         }
     }
 
@@ -228,7 +234,6 @@ $font-family-sans-serif: Avenir, helvetica, arial, sans-serif;
         }
 
         .hero {
-            border: 0;
             padding-bottom: 0;
 
             img {
@@ -267,6 +272,10 @@ $font-family-sans-serif: Avenir, helvetica, arial, sans-serif;
 
             .contact {
                 border: 1px solid #c8c8c8;
+            }
+
+            hr {
+                display: none;
             }
         }
 
