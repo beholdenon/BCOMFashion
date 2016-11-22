@@ -2,8 +2,6 @@ $(document).ready( function($) {
 
 //===============================================================================================================//
 //===============================================================================================================//
-//===============================================================================================================//
-
     'use strict';
 
     //$('body').removeClass('bl_trulyResponsive');
@@ -64,9 +62,6 @@ $(document).ready( function($) {
 
 
 
-
-
-
     // init global app namespace object
     window.Globals = {
         env: window.ENV_CONFIG || 'dev',
@@ -78,32 +73,21 @@ $(document).ready( function($) {
             attr42: null
         }
     };
-
-
-//===============================================================================================================//
 //===============================================================================================================//
 //===============================================================================================================//
 
-    if((navigator.userAgent.match(/iPad/i)) && (navigator.userAgent.match(/iPad/i)!== null)){
-        $('video').prop("controls",true);
-    }
+    // if((navigator.userAgent.match(/iPad/i)) && (navigator.userAgent.match(/iPad/i)!== null)){
+    //     $('video').prop("controls",true);
+    // }
 
 
-    $('.backToTop').on('click', function(event){
-        event.preventDefault();
-        $('body,html').animate({
-            scrollTop: 0 ,
-            }, 700
-        );
-    });
 
+    //////////nav//////////
+    //////////nav//////////
+    //////////nav//////////
     $('.nav_hamburger').on('click', function(){
         $( "#Resort2016Winter_stickynav_content" ).toggleClass( "responsive" );
     });
-
-    //////////nav//////////
-    //////////nav//////////
-    //////////nav//////////
 
     $(window).on("scroll resize",function() {
 
@@ -148,8 +132,6 @@ $(document).ready( function($) {
         } else {
             $("#Resort2016Winter_mobilebacktotop").show();
         }
-
-
     });
 
     $("header").after( $("#Resort2016Winter_stickynav") );
@@ -168,10 +150,17 @@ $(document).ready( function($) {
     //////////nav//////////
     //////////nav//////////
 
-    //////////mobilebbt//////////
-    //////////mobilebbt//////////
-    //////////mobilebbt//////////
+    $('.backToTop').on('click', function(event){
+        event.preventDefault();
+        $('body,html').animate({
+            scrollTop: 0 ,
+            }, 700
+        );
+    });
 
+    //////////mobilebtt//////////
+    //////////mobilebtt//////////
+    //////////mobilebtt//////////
     $("footer").before( $("#Resort2016Winter_mobilebacktotop") );
     $("#Resort2016Winter_mobilebacktotop").css({
         "position":"fixed",
@@ -184,22 +173,23 @@ $(document).ready( function($) {
         "font-size" : "14px",
         "padding" : "10px",
         "transition": "0.3s"
-
-
     });
-
-    //////////mobilebbt//////////
-    //////////mobilebbt//////////
-    //////////mobilebbt//////////
-
-
-
-
+    //////////mobilebtt//////////
+    //////////mobilebtt//////////
+    //////////mobilebtt//////////
 
     $( window ).load(function() {
 
         socialSetup();
-
+        
+        var pageDict = {
+            "2017" : "spring17_resort--hp",
+            "feminine-dresses" : "spring17_resort--hp",
+            "swimwear" : "spring17_resort--hp",
+            "off-the-shoulder-dresses" : "spring17_resort--hp",
+            "statement-jackets" : "spring17_resort--hp"
+        };
+        $.fn.coreTag('Pageview', pageDict[$.fn.currentPageName()] );
 
         $('[coremetricTag]').click(function() {
             $.fn.coreTag('Element', $( this ).attr( "coremetricTag" ));
@@ -218,10 +208,8 @@ $(document).ready( function($) {
         });
 
         $('[linkURLblank]').click(function() {
-
             window.open( $( this ).attr( "linkURLblank"), "_blank");
         });
-
     });
 
     $.fn.coreTag = function(tagType, pageID) {
@@ -245,6 +233,12 @@ $(document).ready( function($) {
         }
     };
 
+    $.fn.currentPageName = function() {
+        var pathname = window.location.pathname;
+        var res = pathname.split("/");
+        return res[res.length-2];
+    };
+
 
     $.fn.postContest = function() {
         // return true;
@@ -252,10 +246,6 @@ $(document).ready( function($) {
         var postContestDate = new Date("September 24, 2016");
         return (todayDate > postContestDate);
     };
-
-    if($.fn.postContest()){
-        $('a[coremetricTag="side-nav_sweepstakes"] span').text("DESIGN YOUR OWN WORD");
-    }
 
     $.fn.isVisible = function() {
         var rect = this[0].getBoundingClientRect();
@@ -338,9 +328,6 @@ $(document).ready( function($) {
             window.Globals.Coremetrics.attr42 = attr;
         }
     }
-    
-
-
 
 });
 
