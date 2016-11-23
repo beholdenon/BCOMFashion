@@ -1,23 +1,29 @@
 #browser-list {
     .browser-icon {
         border: 2px solid #ccc;
-        height: 136px;
-        width: 116px;
-        margin-right: 20px;
+        height: 120px;
+        width: 94px;
         margin-bottom: 20px;
         cursor: pointer;
         padding-top: 5px;
         h5 {
             text-align: center;
         }
-    }
-    .browser-icon-container {
-        margin: 0 auto;
-        height: 88px;
-        width: 88px;
+        .browser-icon-container {
+            margin: 0 auto;
+            height: 70px;
+            width: 60px;
+            img {
+                margin-top: 4px;
+            }
+        }
     }
     .single-line {
-        margin-top: 5px;
+        margin-top: 8px;
+    }
+    // Foundation sets the last column to float: right
+    .lastColumn {
+        float: left;
     }
 }
 
