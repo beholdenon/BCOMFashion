@@ -185,8 +185,8 @@ define( [ "LeftNav" ], function ( LeftNav ) {
             [
                 {
                     type:'header',
-                    text: 'EMPLOYEE GIVING & VONLUNTEERISM',
-                    label: 'employee giving & volunteerism',
+                    text: 'EMPLOYEE GIVING & VOLUNTEERISM',
+                    label: 'Employee Giving & Volunteerism',
                     href: '/about-us/giving-back-to-community/',
                     id: 'about_employeeGiving',
                     secure: false
@@ -196,7 +196,7 @@ define( [ "LeftNav" ], function ( LeftNav ) {
                 {
                     type:'header',
                     text: 'DIVERSITY & INCLUSION',
-                    label: 'diversity & inclusion',
+                    label: 'Diversity & Inclusion',
                     href: '/about-us/diversity-inclusion/',
                     id: 'about_diversityInclusion',
                     secure: false

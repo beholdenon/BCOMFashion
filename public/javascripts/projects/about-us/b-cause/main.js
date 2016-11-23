@@ -1,6 +1,3 @@
-/**
- * Created by Alessandro Ribeiro on 10/20/16.
- */
 
 'use strict';
 
