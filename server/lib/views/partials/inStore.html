@@ -22,7 +22,9 @@
     <section class="in-store-body">
         <div class="in-store-body-header in-store-header">
             <h2 class="in-store-title">
-                {{#if args.title2Prefix}}{{&args.title2Prefix}}{{else}}{{&args.designerName}}{{/if}} IS ONLY AVAILABLE AT DEDICATED BOUTIQUES</h2>
+                {{#if args.title2Prefix}}{{&args.title2Prefix}}{{else}}{{&args.designerName}}{{/if}}
+                {{#if args.title2Suffix}}{{&args.title2Suffix}}{{else}}IS ONLY AVAILABLE AT DEDICATED BOUTIQUES{{/if}}
+            </h2>
             <p class="in-store-sub-title">in select Bloomingdale's stores. Please call or visit one of the follow
                 locations for assistance.</p>
         </div>
