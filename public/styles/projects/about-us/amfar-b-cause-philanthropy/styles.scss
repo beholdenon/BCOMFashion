@@ -1,0 +1,32 @@
+// ======================================
+// amfAR redesign
+// Author: Julio Canario
+// Date: 11/14/2016
+// Project: /about-us/amfar-b-cause-philanthropy/
+// ======================================
+
+@import "../b-cause/styles";
+
+.b-cause-main {
+    h1 {
+        color: #3068ad;
+    }
+
+    .b-cause-body {
+        h3 {
+            background-color: #ffcc02;
+            color: #000;
+            text-transform: none;
+            margin-top: 20px;
+        }
+
+        blockquote {
+			padding-bottom: 0px;
+			padding-top: 15px;
+		}
+
+		.photo-2 {
+			margin-top: 20px;
+		}
+    }
+}

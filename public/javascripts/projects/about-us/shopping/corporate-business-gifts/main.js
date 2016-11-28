@@ -39,7 +39,8 @@ require([
     $( window ).load(function() {
         var isMobile =  $('.bl_mobile').length,
             cmElementCat = 'Business_Gifts',
-            cmElementId = 'business_gifts_phonenumber',
+            cmElementId = 'business_gifts_stores',
+            cmAttrbute2 = '-_-Corporate_Services_(ab-sh-xx-xx.corporate)',
             serverDate = new Date( $('input[name="timeStamp"]').val() ),
             expirationDate = new Date(2016,11,26,0,1);
 
@@ -47,26 +48,13 @@ require([
             $('.holiday').remove();
         }
 
-        $( '.phone-number' ).on('click', function() {
-            if ( isMobile ) {
-                APP.coremetrics(cmElementCat, cmElementId);
-            }
-        });
-
-        $('.email').on('click', function () {
-            var cmElementId = 'business_gifts_email',
-                cmAttrbute2 = '-_-Corporate_Services_(ab-sh-xx-xx.corporate)';
-
-            APP.coremetrics(cmElementCat, cmElementId, cmAttrbute2);
-        });
-
         $('.store-top, .store-bottom').on('click', function () {
             var link = $( this ),
                 className = link.attr('class'),
-                cmElementId = 'business_gifts_stores' + (className.indexOf( 'top' ) !== -1 ? '_top_' : '_bottom_') + link.data('cm'),
-                cmAttrbute2 = '-_-Corporate_Services_(ab-sh-xx-xx.corporate)';
+                elementId = cmElementId + (className.indexOf( 'top' ) !== -1 ? '_top_' : '_bottom_') + link.data('elementId');
 
-            APP.coremetrics(cmElementCat, cmElementId, cmAttrbute2);
+            if ( !isMobile && link.hasClass( 'phone-number' ) ) { return; }
+            APP.coremetrics(cmElementCat, elementId, cmAttrbute2);
         });
 	});
 });
