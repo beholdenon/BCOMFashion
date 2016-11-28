@@ -306,13 +306,19 @@ DIV {
         padding: 0 5px 0 0;
         UL {
             list-style-type: none;
-            width: 355px;
+            width: 359px;
             float: left;
             padding: 0 5px 20px 0;
             margin: 0;
+            &.right-col {
+                padding-left: 20px;
+            }
         }
         LI {
             text-align: left;
+            a {
+                text-decoration: none;
+            }
         }
     }
     // visitor services
