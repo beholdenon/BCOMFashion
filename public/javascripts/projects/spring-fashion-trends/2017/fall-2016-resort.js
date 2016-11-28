@@ -107,8 +107,10 @@ $(document).ready( function($) {
 
         if ($(document).scrollTop() > bloomHeaderHeight) {
             $('#Resort2016Winter_stickynav').css({
-                "position":"fixed",
-                "top": topnavFixedTop
+                "position":"absolute",
+                "top": "initial"
+                // "position":"fixed",
+                // "top": topnavFixedTop
             });
         } else {
             $('#Resort2016Winter_stickynav').css({
@@ -184,10 +186,10 @@ $(document).ready( function($) {
         
         var pageDict = {
             "2017" : "spring17_resort--hp",
-            "feminine-dresses" : "spring17_resort--hp",
-            "swimwear" : "spring17_resort--hp",
-            "off-the-shoulder-dresses" : "spring17_resort--hp",
-            "statement-jackets" : "spring17_resort--hp"
+            "feminine-dresses" : "spring17_resort--feminine-dresses",
+            "swimwear" : "spring17_resort--swimwear",
+            "off-the-shoulder-dresses" : "spring17_resort--off-the-shoulder-dresses",
+            "statement-jackets" : "spring17_resort--jackets"
         };
         $.fn.coreTag('Pageview', pageDict[$.fn.currentPageName()] );
 
