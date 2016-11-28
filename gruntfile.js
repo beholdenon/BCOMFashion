@@ -256,7 +256,8 @@ module.exports = function(grunt) {
                         'public/styles/fonts/**',
                         'public/assets/**',
                         'public/styles/projects/**/*.png',
-                        'public/styles/projects/**/*.jpg'
+                        'public/styles/projects/**/*.jpg',
+                        'public/data/**/*'
                     ],
                     dest: '<%= node.destination %>/'
                 }, {
@@ -284,6 +285,17 @@ module.exports = function(grunt) {
                         'styles/**'
                     ],
                     dest: '<%= node.destination %>/public'
+                }]
+            },
+            staticData: {
+                files: [{
+                    expand: true,
+                    cwd: '<%= node.source %>/server/lib/data/',
+                    src: [
+                        '*',
+                        '**'
+                    ],
+                    dest: '<%= node.destination %>/lib/data/'
                 }]
             },
             viewsProjects: {
@@ -759,7 +771,15 @@ module.exports = function(grunt) {
                     livereload: true
                 },
                 tasks: ['notify:serverReload']
-            },            
+            },
+            staticData: {
+                files: [
+                    '<%= node.source %>/server/lib/data/**/*',
+                ],
+                tasks: [
+                    'copy:staticData'
+                ]
+            },
             grunt: {
                 files: [
                     '.env',

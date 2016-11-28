@@ -1,11 +1,12 @@
 {{!-- Do Not change file to *.hbs;  'compile-handlebars' task has no way of injecting data into handlebars templates from the Hapi.js route handlers. --}}
 {{!-- Head Tags --}}
 <title>{{args.designerName}} - Bloomingdale&rsquo;s</title>
-<meta name="description" content="Shop In Store for {{args.designerName}} with Free Shipping and Free Returns. Bloomingdale's like no other store in the world."/>
+<meta name="description" content="Shop In Store for {{#if args.title2Prefix}}{{&args.title2Prefix}}{{else}}{{&args.designerName}}{{/if}} with Free Shipping and Free Returns. Bloomingdale's like no other store in the world."/>
+<link rel="canonical" href="http://www.fashion.bloomingdales.com/in-store/{{args.pageUrlDesignerAlias}}" />
 <link rel="stylesheet" href="/fashion/styles/projects/in-store/in-store-base.css"/>
 
 {{!-- Core Metrics Data --}}
-<input id="cmdata" type="hidden" data-categoryid="no_results-store_only_{{args.machineReadableDesignerName}}" data-pageid="onsite_search" />
+<input id="cmdata" type="hidden" data-pageid="no_results-store_only_{{args.machineReadableDesignerName}}" data-categoryid="onsite_search" />
 
 {{!-- Content Element --}}
 <section id="in-store" class="clearfix">
@@ -21,7 +22,9 @@
     <section class="in-store-body">
         <div class="in-store-body-header in-store-header">
             <h2 class="in-store-title">
-                {{#if args.title2Prefix}}{{&args.title2Prefix}}{{else}}{{&args.designerName}}{{/if}} IS ONLY AVAILABLE AT DEDICATED BOUTIQUES</h2>
+                {{#if args.title2Prefix}}{{&args.title2Prefix}}{{else}}{{&args.designerName}}{{/if}}
+                {{#if args.title2Suffix}}{{&args.title2Suffix}}{{else}}IS ONLY AVAILABLE AT DEDICATED BOUTIQUES{{/if}}
+            </h2>
             <p class="in-store-sub-title">in select Bloomingdale's stores. Please call or visit one of the follow
                 locations for assistance.</p>
         </div>

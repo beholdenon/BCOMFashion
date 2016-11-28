@@ -1,13 +1,14 @@
 {
   "designerName": "James Perse",
   "machineReadableDesignerName": "james_perse",
+  "pageUrlDesignerAlias": "james-perse",
   "designerDescription": "",
   "addressColumns": [
     [
       {
-        "name": "59th Street &amp; Lexington Avenue",
+        "name": "59th Street",
         "streetAddress": "1000 Third Avenue",
-        "cityStateZip": "New York, NY 10022",
+        "cityStateZip": "59th Street and Lexington Avenue<br />New York, NY 10022",
         "phoneNumber": "(212) 705-2000",
         "phoneNumberHrefSuffix": "+1-212-705-2000",
         "urlArgs": {
@@ -30,7 +31,7 @@
       },
       {
         "name": "Santa Monica Place",
-        "streetAddress": "215 Colorado Avenue",
+        "streetAddress": "315 Colorado Avenue",
         "cityStateZip": "Santa Monica, CA 90401",
         "phoneNumber": "(310) 985-6400",
         "phoneNumberHrefSuffix": "+1-310-985-6400",
@@ -45,7 +46,7 @@
       {
         "name": "Aventura",
         "streetAddress": "19555 Biscayne Boulevard",
-        "cityStateZip": "Aventura, FL 33180",
+        "cityStateZip": "The Aventura Mall<br />Aventura, FL 33180",
         "phoneNumber": "(305) 792-1000",
         "phoneNumberHrefSuffix": "+1-305-792-1000",
         "urlArgs": {

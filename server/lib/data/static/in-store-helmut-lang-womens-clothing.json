@@ -1,14 +1,15 @@
 {
   "designerName": "Helmut Lang",
   "machineReadableDesignerName": "helmut_lang_women_clothing",
-  "title2Prefix": "Helmut Lang Women&rsquo;s Clothing",
+  "title2Prefix": "Helmut Lang Women's Clothing",
+  "pageUrlDesignerAlias": "helmut-lang-womens-clothing",
   "designerDescription": "",
   "addressColumns": [
     [
       {
-        "name": "59th Street &amp; Lexington Avenue",
+        "name": "59th Street",
         "streetAddress": "1000 Third Avenue",
-        "cityStateZip": "New York, NY 10022",
+        "cityStateZip": "59th Street and Lexington Avenue<br />New York, NY 10022",
         "phoneNumber": "(212) 705-2000",
         "phoneNumberHrefSuffix": "+1-212-705-2000",
         "urlArgs": {
@@ -20,7 +21,7 @@
       {
         "name": "Chestnut Hill",
         "streetAddress": "225 Boylston Street",
-        "cityStateZip": "Chestnut Hill, MA 02467",
+        "cityStateZip": "Chestnut Hill Mall</br >Chestnut Hill, MA 02467",
         "phoneNumber": "(617) 630-6000",
         "phoneNumberHrefSuffix": "+1-617-630-6000",
         "urlArgs": {
@@ -62,7 +63,7 @@
       {
         "name": "Aventura",
         "streetAddress": "19555 Biscayne Boulevard",
-        "cityStateZip": "Aventura, FL 33180",
+        "cityStateZip": "The Aventura Mall<br />Aventura, FL 33180",
         "phoneNumber": "(305) 792-1000",
         "phoneNumberHrefSuffix": "+1-305-792-1000",
         "urlArgs": {
