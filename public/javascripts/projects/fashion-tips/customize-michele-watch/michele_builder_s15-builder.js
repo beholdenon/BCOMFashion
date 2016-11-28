@@ -6,11 +6,13 @@
 
 window.blmwbs15 = window.blmwbs15 || {};
 
+
 window.blmwbs15.builder = ( function bl_mwbs15_builder( window, document,  $, Hammer ) {
 
     'use strict';
 
     var Cookie = require('cookie'),
+        BagServiceV1 = BLOOMIES.BagServiceV1,
         app = {
         cache: {},
         consts: {
@@ -2121,25 +2123,8 @@ window.blmwbs15.builder = ( function bl_mwbs15_builder( window, document,  $, Ha
      * @see api docs http://developer.bloomingdales.com/io-docs
      */
     app.routines.addToBag = function ( args ) {
-        // Get default user id and guid cookies
-        var defaultUserGuidCookie = Cookie.get(app.consts.onlineGuidCookieName),
-            defaultUserUidCookie = Cookie.get(app.consts.onlineUidCookieName),
-
-            // Resolve bag request url (send user id or guid based on if it is available)
-            bagRequestPath = (function () {
-                var out = '/bag/add';
-                if (defaultUserUidCookie) {
-                    out += '?userId=' + defaultUserUidCookie;
-                }
-                else if (defaultUserGuidCookie) {
-                    out += '?userGuid=' + defaultUserGuidCookie;
-
-                }
-                return out;
-            }()),
-
-            // Reduce upcIds list to array of param object for individual post requests
-            requestParamsList = args.upcIds.reduce(function (out, upcId) {
+        // Reduce upcIds list to array of param object for individual post requests
+        var requestParamsList = args.upcIds.reduce(function (out, upcId) {
                 out.push({
                     item: {
                         upcId: upcId,
@@ -2172,28 +2157,12 @@ window.blmwbs15.builder = ( function bl_mwbs15_builder( window, document,  $, Ha
                     nextCallArgs
                 );
 
-                // 'online_uid' cookie
-                if ( response.bag.owner.userId && !Cookie.get( app.consts.onlineUidCookieName ) ) {
-                    Cookie.set( app.consts.onlineUidCookieName,
-                        response.bag.owner.userId, null, {expires: app.consts.cookieExpire} );
-                }
-
-                // 'online_guid' cookie
-                if ( response.bag.owner.userGuid && !Cookie.get( app.consts.onlineGuidCookieName ) ) {
-                    Cookie.set( app.consts.onlineGuidCookieName,
-                        response.bag.owner.userGuid, null, {expires: app.consts.cookieExpire} );
-                }
-
-                // 'baguid' cookie
-                if ( response.bag.bagGUID && !Cookie.get( app.consts.bagGuidCookieName ) ) {
-                    Cookie.set( app.consts.bagGuidCookieName,
-                        response.bag.bagGUID, null, {expires: app.consts.cookieExpire} );
-                }
-
                 // Set items in bag total
                 app.routines.setItemsInBagTotalInHeader(
                     app.routines.setItemsInBagTotalCookie(response.bag.bagSummary.itemCount)
                 );
+
+                return response;
             },
 
             // Forward the rest of the add to bag functionality here
@@ -2210,18 +2179,11 @@ window.blmwbs15.builder = ( function bl_mwbs15_builder( window, document,  $, Ha
                 app.routines.runtime.displayErrorMessage( app.consts.addToBagNotAvailableError );
                 app.views.heads.unblockUI();
                 app.views.straps.hideLoader();
-            },
+            };
 
-            // Make all requests and save them to respond to their completion
-            requests = requestParamsList.map(function (item) {
-                // Make post request to add to bag service
-                return $.post(bagRequestPath, JSON.stringify(item), bagRequestSuccess, 'json');
-            });
-
-        // Wait for all requests to complete
-        $.when(requests)
-            .then(allBagRequestsComplete)
-            .fail(bagRequestFailure);
+        BagServiceV1.addToBagRecursive(requestParamsList, bagRequestSuccess, bagRequestFailure)
+            .fail(bagRequestFailure)
+            .then(allBagRequestsComplete);
     };
 
     app.routines.getProductInfo = function ( args ) {
