@@ -1,6 +1,7 @@
 {
   "designerName": "James Perse",
   "machineReadableDesignerName": "james_perse",
+  "pageUrlDesignerAlias": "james-perse",
   "designerDescription": "",
   "addressColumns": [
     [
@@ -30,7 +31,7 @@
       },
       {
         "name": "Santa Monica Place",
-        "streetAddress": "215 Colorado Avenue",
+        "streetAddress": "315 Colorado Avenue",
         "cityStateZip": "Santa Monica, CA 90401",
         "phoneNumber": "(310) 985-6400",
         "phoneNumberHrefSuffix": "+1-310-985-6400",
