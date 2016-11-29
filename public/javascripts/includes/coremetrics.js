@@ -17,7 +17,7 @@ define([
             return mblTagPrefix + ' ' + (
                     attribute.toLowerCase().indexOf(mblTagPrefix) > -1 ?
                         attribute.substring(mblTagPrefix.length) : attribute
-                );
+                ).trim();
         } 
         return attribute;
     }
