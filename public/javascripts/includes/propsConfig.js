@@ -36,7 +36,7 @@ define('propsConfig', [], function() {
 	    bcomLoyaltyDashboardMyPointsEnabled: true,
 	    cookieDomain: '.bloomingdales.com',
 	    isProsInformantsEnabled: true,
-	    assetsHost: 'https://www.bloomingdales.com',
+	    assetsHost: 'https://assets.bloomingdales.com',
 	    isLoyaltyTargetedBonusOffersEnabled: true,
 	    isYAQF: true,
 	    spoHFThreeRefactoredEnabled: false,
