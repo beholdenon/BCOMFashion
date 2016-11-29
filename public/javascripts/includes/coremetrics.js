@@ -11,7 +11,6 @@ define([
     })(),
         mblTagPrefix = 'mbl:';
 
-
     function prependMobilePrefix(attribute) {
         if (isMobile) {
             return mblTagPrefix + ' ' + (
