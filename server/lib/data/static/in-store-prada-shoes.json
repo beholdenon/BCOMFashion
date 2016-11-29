@@ -1,0 +1,24 @@
+{
+  "designerName": "Prada",
+  "machineReadableDesignerName": "prada_shoes",
+  "title2Prefix": "Prada Shoes",
+  "title2Suffix": "ARE ONLY AVAILABLE AT DEDICATED BOUTIQUES",
+  "pageUrlDesignerAlias": "prada-shoes",
+  "designerDescription": "",
+  "addressColumns": [
+    [
+      {
+        "name": "59th Street",
+        "streetAddress": "1000 Third Avenue",
+        "cityStateZip": "59th Street and Lexington Avenue<br />New York, NY 10022",
+        "phoneNumber": "(212) 705-2000",
+        "phoneNumberHrefSuffix": "+1-212-705-2000",
+        "urlArgs": {
+          "addressAlias": "59th-street",
+          "designerAlias": "prada_shoes",
+          "addressFullDetail": "59TH-STREET-LEXINGTON-AVENUE"
+        }
+      }
+    ]
+  ]
+}
