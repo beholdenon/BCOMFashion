@@ -117,7 +117,7 @@ $small-margin: 13px;
 
     .in-store-addresses-column li,
     .in-store-addresses-column li a {
-      display: inline-block;
+      display: block;
       color: $in-store-color;
       font-family: $avenir-roman, $default-serif-font-family;
     }
