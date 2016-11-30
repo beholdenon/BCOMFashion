@@ -1,0 +1,89 @@
+{
+  "designerName": "CREED",
+  "machineReadableDesignerName": "creed",
+  "title2Suffix": "is ONLY AVAILABLE AT DEDICATED BOUTIQUES",
+  "pageUrlDesignerAlias": "creed",
+  "designerDescription": "",
+  "addressColumns": [
+    [
+      {
+        "name": "Chestnut Hill",
+        "streetAddress": "225 Boylston Street",
+        "cityStateZip": "Chestnut Hill Mall</br >Chestnut Hill, MA 02467",
+        "phoneNumber": "617-630-6000",
+        "phoneNumberHrefSuffix": "+1-617-630-6000",
+        "urlArgs": {
+          "addressAlias": "chestnut-hill",
+          "designerAlias": "creed",
+          "addressFullDetail": "CHESTNUT-HILL-MALL"
+        }
+      },
+      {
+        "name": "Santa Monica Place",
+        "streetAddress": "315 Colorado Avenue",
+        "cityStateZip": "Santa Monica, CA 90401",
+        "phoneNumber": "310-985-6400",
+        "phoneNumberHrefSuffix": "+1-310-985-6400",
+        "urlArgs": {
+          "addressAlias": "santa-monica-place",
+          "designerAlias": "creed",
+          "addressFullDetail": "SANTA-MONICA-PLACE"
+        }
+      }
+    ],
+    [
+      {
+        "name": "Roosevelt Field",
+        "streetAddress": "630 Old Country Rd. #27",
+        "cityStateZip": "Garden City, NY 11530",
+        "phoneNumber": "516-873-2700",
+        "phoneNumberHrefSuffix": "+1-516-873-2700",
+        "urlArgs": {
+          "addressAlias": "roosevelt-field",
+          "designerAlias": "creed",
+          "addressFullDetail": "ROOSEVELT-FIELD"
+        }
+      },
+      {
+        "name": "Glendale Galleria",
+        "streetAddress": "103 South Brand Blvd.",
+        "cityStateZip": "Glendale Galleria<br />Glendale, CA 91210",
+        "phoneNumber": "818-638-4100",
+        "phoneNumberHrefSuffix": "+1-818-638-4100",
+        "urlArgs": {
+          "addressAlias": "glendale-galleria",
+          "designerAlias": "creed",
+          "addressFullDetail": "GLENDALE-GALLERIA"
+        }
+      }
+    ],
+    [
+      {
+        "name": "SOHO",
+        "streetAddress": "504 Broadway",
+        "cityStateZip": "New York, NY 10012",
+        "phoneNumber": "212-729-5900",
+        "phoneNumberHrefSuffix": "+1-212-729-5900",
+        "urlArgs": {
+          "addressAlias": "soho",
+          "designerAlias": "creed",
+          "addressFullDetail": "SOHO"
+        }
+      }
+    ],
+    [
+      {
+        "name": "Aventura",
+        "streetAddress": "19555 Biscayne Boulevard",
+        "cityStateZip": "The Aventura Mall<br />Aventura, FL 33180",
+        "phoneNumber": "305-792-1000",
+        "phoneNumberHrefSuffix": "+1-305-792-1000",
+        "urlArgs": {
+          "addressAlias": "aventura",
+          "designerAlias": "creed",
+          "addressFullDetail": "AVENTURA-MALL"
+        }
+      }
+    ]
+  ]
+}

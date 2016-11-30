@@ -1,0 +1,52 @@
+{
+  "designerName": "CHLOÉ",
+  "machineReadableDesignerName": "chloe_clothing",
+  "title2Prefix": "CHLOÉ Women's Clothing",
+  "title2Suffix": "is ONLY AVAILABLE AT DEDICATED BOUTIQUES",
+  "pageUrlDesignerAlias": "chloe-clothing",
+  "designerDescription": "",
+  "addressColumns": [
+    [
+      {
+        "name": "Century City",
+        "streetAddress": "10250 Santa Monica Boulevard",
+        "cityStateZip": "Los Angeles, CA 90067",
+        "phoneNumber": "310-772-2100",
+        "phoneNumberHrefSuffix": "+1-310-722-2100",
+        "urlArgs": {
+          "addressAlias": "century-city",
+          "designerAlias": "chloe_clothing",
+          "addressFullDetail": "CENTURY-CITY"
+        }
+      }
+    ],
+    [
+      {
+        "name": "SHORT HILLS",
+        "streetAddress": "1200 Morris Turnpike",
+        "cityStateZip": "The Mall at Short Hills<br />Short Hills, NJ 07078",
+        "phoneNumber": "973-548-2200",
+        "phoneNumberHrefSuffix": "+1-973-548-2200",
+        "urlArgs": {
+          "addressAlias": "short-hills",
+          "designerAlias": "chloe_clothing",
+          "addressFullDetail": "THE-MALL-AT-SHORT-HILLS"
+        }
+      }
+    ],
+    [
+      {
+        "name": "North Michigan Avenue",
+        "streetAddress": "900 North Michigan Avenue",
+        "cityStateZip": "Chicago, IL 60611",
+        "phoneNumber": "312-440-4460",
+        "phoneNumberHrefSuffix": "+1-312-440-4460",
+        "urlArgs": {
+          "addressAlias": "north-michigan-avenue",
+          "designerAlias": "chloe_clothing",
+          "addressFullDetail": "NORTH-MICHIGAN-AVENUE"
+        }
+      }
+    ]
+  ]
+}

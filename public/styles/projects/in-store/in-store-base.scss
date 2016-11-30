@@ -209,7 +209,7 @@ $small-margin: 13px;
 
 @media (min-device-width: 320px) and (max-device-width: 767px) and (orientation: landscape) {
   #in-store {
-    padding: 5.3% 5.3% 10.6%; // 34px 34px 55px converted to percents
+    padding: 5.3%; // 34px 34px 55px converted to percents
 
     > .in-store-body .in-store-body-body {
       .in-store-addresses .in-store-addresses-column {
