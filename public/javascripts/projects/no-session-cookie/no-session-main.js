@@ -15,7 +15,14 @@ require(['jquery'], function($) {
         }
         
         $(".browser-icon").click(function() {
-            window.open( $(this).data("link") );
+            var url = $(this).data("link");
+            if (window.Globals.deviceType === "mobile") {
+                // Opens link in same window for mobile (phone)
+                window.location.href = url;
+            } else {   
+                // New window for tablet and desktop 
+                window.open( url );
+            }
         });
         
         $("#go-back-button").click(function() {

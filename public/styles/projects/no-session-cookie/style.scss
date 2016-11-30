@@ -1,30 +1,36 @@
 #browser-list {
     .browser-icon {
         border: 2px solid #ccc;
-        height: 136px;
-        width: 116px;
-        margin-right: 20px;
-        margin-bottom: 20px;
+        height: 103px;
+        width: 82px;
+        margin-bottom: 40px;
         cursor: pointer;
         padding-top: 5px;
         h5 {
             text-align: center;
+            &.multi-line {
+                line-height: initial;
+                margin-top: 3px;
+            }
+        }
+        .browser-icon-container {
+            margin: 0 auto;
+            height: 52px;
+            width: 52px;
         }
     }
-    .browser-icon-container {
-        margin: 0 auto;
-        height: 88px;
-        width: 88px;
-    }
     .single-line {
-        margin-top: 5px;
+        margin-top: 8px;
+    }
+    // Foundation sets the last column to float: right
+    .lastColumn {
+        float: left;
     }
 }
 
-// 600px is the width of screen when there are 2 columns of browser icons
-// When this happens, center heading text,
-// and make button full width
-@media (max-width: 599px) {
+// 630px is the max width of screen when all browser icons are on one row
+// Once the window shrinks below 630px, respond as if mobile
+@media only screen and (max-width: 630px) {
     #no-session-cookie {
         padding-left: 21px;
         padding-right: 21px;
@@ -44,5 +50,11 @@
     }
     #go-back-button {
         width: 100%;
+    }
+}
+
+@media only screen and (min-width: 630px) {
+    .desktop {
+        width: 11%;
     }
 }

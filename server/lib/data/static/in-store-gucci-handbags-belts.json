@@ -1,14 +1,16 @@
 {
   "designerName": "Gucci",
   "machineReadableDesignerName": "gucci_handbags_belts",
-  "title2Prefix": "Gucci Handbags &amp; Belts",
+  "title2Prefix": "Gucci Handbags & Belts",
+  "title2Suffix": "ARE ONLY AVAILABLE AT DEDICATED BOUTIQUES",
+  "pageUrlDesignerAlias": "gucci-handbags-belts",
   "designerDescription": "",
   "addressColumns": [
     [
       {
-        "name": "59th Street &amp; Lexington Avenue",
+        "name": "59th Street",
         "streetAddress": "1000 Third Avenue",
-        "cityStateZip": "New York, NY 10022",
+        "cityStateZip": "New York, NY 10022<br />59th Street and Lexington Avenue",
         "phoneNumber": "(212) 705-2000",
         "phoneNumberHrefSuffix": "+1-212-705-2000",
         "urlArgs": {
@@ -20,7 +22,7 @@
       {
         "name": "Aventura",
         "streetAddress": "19555 Biscayne Boulevard",
-        "cityStateZip": "Aventura, FL 33180",
+        "cityStateZip": "The Aventura Mall<br />Aventura, FL 33180",
         "phoneNumber": "(305) 792-1000",
         "phoneNumberHrefSuffix": "+1-305-792-1000",
         "urlArgs": {
@@ -46,7 +48,7 @@
       {
         "name": "Chestnut Hill",
         "streetAddress": "225 Boylston Street",
-        "cityStateZip": "Chestnut Hill, MA 02467",
+        "cityStateZip": "Chestnut Hill Mall<br />Chestnut Hill, MA 02467",
         "phoneNumber": "(617) 630-6000",
         "phoneNumberHrefSuffix": "+1-617-630-6000",
         "urlArgs": {
@@ -110,7 +112,7 @@
       {
         "name": "Glendale Galleria",
         "streetAddress": "103 South Brand Blvd.",
-        "cityStateZip": "Glendale, CA 91210",
+        "cityStateZip": "Glendale Galleria<br />Glendale, CA 91210",
         "phoneNumber": "(818) 638-4100",
         "phoneNumberHrefSuffix": "+1-818-638-4100",
         "urlArgs": {
