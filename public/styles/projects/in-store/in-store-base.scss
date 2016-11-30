@@ -68,7 +68,7 @@ $small-margin: 13px;
       font-family: $avenir-heavy, $default-font-family;
     }
     p {
-      font: normal $medium-font-size $avenir-roman, $default-serif-font-family;
+      font: bold $medium-font-size $avenir-roman, $default-serif-font-family;
       line-height: 25px;
     }
   }
@@ -131,8 +131,7 @@ $small-margin: 13px;
     }
 
     .in-store-addresses-column li .in-store-title {
-      font-weight: normal;
-      font-size: 16px;
+      font: bold $medium-font-size $avenir-roman, $default-sans-serif-font-family;
       line-height: 21px;
     }
   }
