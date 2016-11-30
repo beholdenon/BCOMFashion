@@ -141,6 +141,9 @@ $small-margin: 13px;
 @media (min-device-width: 320px) and (max-device-width: 767px) {
   #in-store {
     padding: $large-margin $large-margin $extra-large-margin;
+    .in-store-main-header {
+      border-bottom: none;
+    }
 
     > *,
     .in-store-body-header {
