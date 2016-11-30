@@ -1,6 +1,6 @@
 {{!-- Do Not change file to *.hbs;  'compile-handlebars' task has no way of injecting data into handlebars templates from the Hapi.js route handlers. --}}
 {{!-- Head Tags --}}
-<title>{{args.designerName}} - Bloomingdale&rsquo;s</title>
+<title>{{#if args.title2Prefix}}{{&args.title2Prefix}}{{else}}{{&args.designerName}}{{/if}} - Bloomingdale&rsquo;s</title>
 <meta name="description" content="Shop In Store for {{#if args.title2Prefix}}{{&args.title2Prefix}}{{else}}{{&args.designerName}}{{/if}} with Free Shipping and Free Returns. Bloomingdale's like no other store in the world."/>
 <link rel="canonical" href="http://www.fashion.bloomingdales.com/in-store/{{args.pageUrlDesignerAlias}}" />
 <link rel="stylesheet" href="/fashion/styles/projects/in-store/in-store-base.css"/>
@@ -25,7 +25,7 @@
                 {{#if args.title2Prefix}}{{&args.title2Prefix}}{{else}}{{&args.designerName}}{{/if}}
                 {{#if args.title2Suffix}}{{&args.title2Suffix}}{{else}}IS ONLY AVAILABLE AT DEDICATED BOUTIQUES{{/if}}
             </h2>
-            <p class="in-store-sub-title">in select Bloomingdale's stores. Please call or visit one of the follow
+            <p class="in-store-sub-title">in select Bloomingdale's stores. Please call or visit one of the following
                 locations for assistance.</p>
         </div>
         <section class="in-store-body-body">
