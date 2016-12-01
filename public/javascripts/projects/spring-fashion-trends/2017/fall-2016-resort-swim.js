@@ -12,15 +12,19 @@ $( window ).load(function() {
 
 	$(window).resize(function() {
 
-		if ($(window).width() < 600) {
-			// $("#canvasBloom_mobile").hide();
+		var canvasWidth = (  parseInt($(window).width()) > 1680 ? 1680 : parseInt($(window).width()) );
+		$("#canvasBloom_mobile").css({
+			'width':canvasWidth+"px"
+		});
+
+		if ($(window).width() < 600 || $(window).height() < 450) {
 			createjs.Touch.enable(false);
 			swimTouch = false;
 		} else {
-			// $("#canvasBloom_mobile").show();
 			createjs.Touch.enable(stage);
 			swimTouch = true;
 		}
+
 	});
 
 
@@ -32,13 +36,6 @@ $( window ).load(function() {
 
 
 
-	$( window ).on('resize',function() {
-		var canvasWidth = (  parseInt($(window).width()) > 1680 ? 1680 : parseInt($(window).width()) );
-		$("#canvasBloom_mobile").css({
-			'width':canvasWidth+"px"
-		});
-
-	});
 
 	var queue = new createjs.LoadQueue(true);
 	queue.loadFile("/fashion/images/projects/spring-fashion-trends/2017/swim_canvas1.jpg");
