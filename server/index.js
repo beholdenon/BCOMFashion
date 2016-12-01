@@ -99,7 +99,6 @@ var routes = [
     { method: 'GET',  path: '/lookbooks/summer-party-dining-guide-2016/',                                   config: require('./lib/handlers/views').adaptive },
     { method: 'GET',  path: '/lookbooks/',                                                                  config: require('./lib/handlers/views').adaptive },
     { method: 'GET',  path: '/makeup-date/{path*}',                                                         config: require('./lib/handlers/views').adaptive },
-    { method: 'GET',  path: '/media/about/directory/',                                                      config: require('./lib/handlers/views').adaptive },
     { method: 'GET',  path: '/media/about/history/',                                                        config: require('./lib/handlers/views').adaptive },
     { method: 'GET',  path: '/sweepstakes/win-1000-bucks-writing-reviews/',                                 config: require('./lib/handlers/views').adaptive },
     { method: 'GET',  path: '/international/china-brazil/',                                                 config: require('./lib/handlers/views').responsiveCustomHF },

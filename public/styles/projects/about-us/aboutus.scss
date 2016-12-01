@@ -661,6 +661,9 @@ DIV {
         .img_shim {
             margin-left: 0px;
         }
+        #crBanner {
+            display: none;
+        }
     }
 
 }
@@ -675,6 +678,9 @@ DIV {
 @media screen and (max-width: 699px){
     DIV.bl_nav_side {
         display:none;
+    }
+    #directory-main-content {
+        float: left;
     }
     .mobile_app DIV.content {
         margin-left:40px;
