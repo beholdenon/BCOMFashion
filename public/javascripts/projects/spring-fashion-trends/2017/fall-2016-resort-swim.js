@@ -1,25 +1,30 @@
 'use strict';
 
-$(window).resize(function() {
-
-	if ($(window).width() < 600) {
-		$("#canvasBloom_mobile").hide();
-	} else {
-		$("#canvasBloom_mobile").show();
-	}
-});
-
 $( window ).load(function() {
 
 	var update = true;
 	var canvas = document.getElementById("canvasBloom_mobile");
 	canvas.width = 1680;
 	canvas.height = 667;
+	var swimTouch = true;
 
 	var stage = new createjs.Stage(canvas);
 
-	// enable touch interactions if supported on the current device:
-	createjs.Touch.enable(stage);
+	$(window).resize(function() {
+
+		if ($(window).width() < 600) {
+			// $("#canvasBloom_mobile").hide();
+			createjs.Touch.enable(false);
+			swimTouch = false;
+		} else {
+			// $("#canvasBloom_mobile").show();
+			createjs.Touch.enable(stage);
+			swimTouch = true;
+		}
+	});
+
+
+
 
 	// enabled mouse over / out events
 	stage.enableMouseOver(10);
@@ -111,22 +116,30 @@ $( window ).load(function() {
 		bitmap.cursor = "pointer";
 
 		bitmap.on("mousedown", function (evt) {
-			this.parent.addChild(this);
-			this.offset = {x: this.x - evt.stageX, y: this.y - evt.stageY};
+			if(swimTouch){
+				this.parent.addChild(this);
+				this.offset = {x: this.x - evt.stageX, y: this.y - evt.stageY};
+			}
 		});
 
 		bitmap.on("pressmove", function (evt) {
-			this.x = evt.stageX + this.offset.x;
-			this.y = evt.stageY + this.offset.y;
-			update = true;
+			if(swimTouch){
+				this.x = evt.stageX + this.offset.x;
+				this.y = evt.stageY + this.offset.y;
+				update = true;
+			}
 		});
 
 		bitmap.on("rollover", function () {
-			update = true;
+			if(swimTouch){
+				update = true;
+			}
 		});
 
 		bitmap.on("rollout", function () {
-			update = true;
+			if(swimTouch){
+				update = true;
+			}
 		});
 
         update = true;
