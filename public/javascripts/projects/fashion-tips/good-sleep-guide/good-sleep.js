@@ -901,24 +901,23 @@ require( [ 'jquery', window.BLOOMIES.coremetrics ], function ( $, Coremetrics ) 
     	});
 
     	$('.quiz-option-link').on('click', function ( event ) {
-    		var baseBeddingURL = '//www.bloomingdales.com/shop/home/designer-down-pillows-comforters/Bed_type,',
-    			linkProjectID = '?id=1004679',
-    			pillowFilter = 'Fill_type,Pillow_density/Pillow,',
-    			comforterFilter = 'Comforter_weight,Fill_type/Comforter,',
-    			choiceID = $(this).data('choice');
+			var choiceID = $(this).data('choice'),
+				sectionId = $(this).text().trim().replace(/\s/g,'-');
 
-			// Comforters
-    		if( choiceID === 'Heavy' || choiceID === 'Light' ) {
-    			$( '#fall15_utilityfinder_comforters-yes' ).attr( 'href', baseBeddingURL + comforterFilter + choiceID + '|Medium,Down Alternative' + linkProjectID );
-    			$( '#fall15_utilityfinder_comforters-no' ).attr( 'href',  baseBeddingURL + comforterFilter + choiceID + '|Medium,Duck Down' + linkProjectID );
+			if ( sectionId ) {
+				// Comforters
+				if( choiceID === 'Heavy' || choiceID === 'Light' ) {
+					$( '#fall15_utilityfinder_comforters-yes' ).attr( 'href', CHOICE_LINK_MAP[sectionId + ':yes'] );
+					$( '#fall15_utilityfinder_comforters-no' ).attr( 'href',  CHOICE_LINK_MAP[sectionId + ':no'] );
+				}
+
+				// Pillows
+				else {
+					$( '#fall15_utilityfinder_pillows-down' ).attr( 'href', CHOICE_LINK_MAP[sectionId + ':down'] );
+					$( '#fall15_utilityfinder_pillows-down_alternative' ).attr( 'href', CHOICE_LINK_MAP[sectionId + ':down-alternative'] );
+					$( '#fall15_utilityfinder_pillows-memory_foam' ).attr( 'href', CHOICE_LINK_MAP[sectionId + ':memory-foam'] );
+				}
 			}
-
-			// Pillows
-    		else {
-				$( '#fall15_utilityfinder_pillows-down' ).attr( 'href', baseBeddingURL + pillowFilter + 'Duck Down,' + choiceID + linkProjectID );
-    			$( '#fall15_utilityfinder_pillows-down_alternative' ).attr( 'href', baseBeddingURL + pillowFilter + 'Down Alternative,' + choiceID + linkProjectID );
-    			$( '#fall15_utilityfinder_pillows-memory_foam' ).attr( 'href', baseBeddingURL + pillowFilter + 'Memory Foam,' + choiceID + linkProjectID );
-    		}
     	});
 	});
 
