@@ -8,15 +8,17 @@ define([
     
     var isMobile = (function () {
         return ( $('.bl_mobile')[0] ) ? true : false;
-    })();
-    
+    })(),
+        mblTagPrefix = 'mbl:';
+
     function prependMobilePrefix(attribute) {
         if (isMobile) {
-            return 'mbl: ' + attribute;
+            return mblTagPrefix + ' ' + (
+                    attribute.toLowerCase().indexOf(mblTagPrefix) > -1 ?
+                        attribute.substring(mblTagPrefix.length) : attribute
+                ).trim();
         } 
-        else {
-            return attribute;
-        }
+        return attribute;
     }
     
     function pageName() {
