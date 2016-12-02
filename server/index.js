@@ -81,8 +81,6 @@ var routes = [
     { method: 'GET',  path: '/fashion-tips/mattress-buying-guide/',                                         config: require('./lib/handlers/views').adaptive },
     { method: 'GET',  path: '/in-store/diane-von-furstenberg/',                                             config: require('./lib/handlers/views').adaptive },
     { method: 'GET',  path: '/in-store/louis-vuitton/',                                                     config: require('./lib/handlers/views').adaptive },
-    { method: 'GET',  path: '/in-store/creed/',                                                             config: require('./lib/handlers/views').adaptive },
-    { method: 'GET',  path: '/in-store/chloe-clothing/',                                                    config: require('./lib/handlers/views').adaptive },
     { method: 'GET',  path: '/in-store/{action}/',                                                          config: require('./lib/handlers/views').adaptiveWithStaticData },
     { method: 'GET',  path: '/lookbooks/burberry-pre-fall-trend-report-2016/',                              config: require('./lib/handlers/views').adaptive },
     { method: 'GET',  path: '/lookbooks/cookware-sets-guide/',                                              config: require('./lib/handlers/views').adaptive },

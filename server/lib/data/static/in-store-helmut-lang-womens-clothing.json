@@ -10,7 +10,7 @@
         "name": "59th Street",
         "streetAddress": "1000 Third Avenue",
         "cityStateZip": "59th Street and Lexington Avenue<br />New York, NY 10022",
-        "phoneNumber": "(212) 705-2000",
+        "phoneNumber": "212-705-2000",
         "phoneNumberHrefSuffix": "+1-212-705-2000",
         "urlArgs": {
           "addressAlias": "59th-street",
@@ -22,7 +22,7 @@
         "name": "Chestnut Hill",
         "streetAddress": "225 Boylston Street",
         "cityStateZip": "Chestnut Hill Mall</br >Chestnut Hill, MA 02467",
-        "phoneNumber": "(617) 630-6000",
+        "phoneNumber": "617-630-6000",
         "phoneNumberHrefSuffix": "+1-617-630-6000",
         "urlArgs": {
           "addressAlias": "chestnut-hill",
@@ -36,7 +36,7 @@
         "name": "Century City",
         "streetAddress": "10250 Santa Monica Boulevard",
         "cityStateZip": "Los Angeles, CA 90067",
-        "phoneNumber": "(310) 772-2100",
+        "phoneNumber": "310-772-2100",
         "phoneNumberHrefSuffix": "+1-310-722-2100",
         "urlArgs": {
           "addressAlias": "century-city",
@@ -50,7 +50,7 @@
         "name": "San Francisco Centre",
         "streetAddress": "845 Market Street",
         "cityStateZip": "San Francisco, CA 94103",
-        "phoneNumber": "(415) 856-5300",
+        "phoneNumber": "415-856-5300",
         "phoneNumberHrefSuffix": "+1-415-856-5300",
         "urlArgs": {
           "addressAlias": "san-francisco-centre",
@@ -64,7 +64,7 @@
         "name": "Aventura",
         "streetAddress": "19555 Biscayne Boulevard",
         "cityStateZip": "The Aventura Mall<br />Aventura, FL 33180",
-        "phoneNumber": "(305) 792-1000",
+        "phoneNumber": "305-792-1000",
         "phoneNumberHrefSuffix": "+1-305-792-1000",
         "urlArgs": {
           "addressAlias": "aventura",
