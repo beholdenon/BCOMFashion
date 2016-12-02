@@ -137,7 +137,11 @@ module.exports = {
         handler: function(req, res) {
             var requestPath = (req.url.pathname).substring(1),
                 slashMinSuffix = ( req.query.debug === '1' ? '' : '/min' ),
-                file = requestPath + '/index.html';
+                file = requestPath.replace(/\\/g,"/");
+                            
+            if ( requestPath.lastIndexOf('.') < 0 ) {
+              file = file + '/index.html';
+            }
                                                 
             // Check if any head* helpers are used
             // Use of a head* helper is done using HTML comments <!-- headHelper= -->

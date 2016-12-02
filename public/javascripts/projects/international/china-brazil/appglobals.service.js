@@ -1052,6 +1052,11 @@
                             'Novidades',
                             'Liquidação'
                         ]
+                    },
+                    pdf: {
+                        span: 'Aprenda como comprar em nosso site e obtenha respostas para às perguntas mais frequentes.',
+                        a: 'BAIXE AGORA',
+                        link: '/fashion/assets/projects/international/china-brazil/guides/Tourism_Microsite_International_Shopping_Guide_Portuguese.pdf'
                     }
                 },
                 heritage: {
@@ -1978,6 +1983,11 @@
                             '新品',
                             '促销'
                         ]
+                    },
+                    pdf: {
+                        span: '了解如何购买我们的网站，并获得常见问题的答案。',
+                        a: '现在下载',
+                        link: '/fashion/assets/projects/international/china-brazil/guides/Tourism_Microsite_International_Shopping_Guide_Chinese.pdf'
                     }
                 },
                 heritage: {
@@ -3115,7 +3125,7 @@
                                     {
                                         name: '<b>MAGNOLIA BAKERY</b> <span>|</span>   Nivel exterior <span>|</span>   212-265-5320',
                                         sched: 'De lunes a viernes, de 7:00 a.m. a 10:00 p.m.  <br/> Sábados, de 8:00 a.m. a 10:00 p.m. <span>|</span>   Domingos, de 8:00 a.m. a 9:00 p.m.',
-                                        description: 'A classic American bakery cherished for its old-fashioned desserts and vintage décor, Magnolia serves a range of handmade baked goods, including pies, cakes, cheesecakes, banana pudding, cupcakes and muffins. Here early? Magnolia opens even before the store does.',
+                                        description: 'Una pastelería estadounidense tradicional, apreciada por sus postres de antaño y su decorado de época; Magnolia ofrece una variedad de delicias artesanales, como tartas, pasteles, cheesecakes, budines de banana, cupcakes y muffins. ¿Ha llegado temprano? Magnolia abre sus puertas antes que abra la tienda.',
                                         imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_03.jpg'
                                     }
                                 ],
@@ -3125,7 +3135,7 @@
                                         description: 'Comprar regalos es muy fácil en Bloomingdale\'s. Simplemente envíe su lista de deseos a uno de nuestros especialistas políglotos antes de su visita y encontrará todos los artículos listos a su llegada.<br /> Llame al 212-705-2359 o al 212-705-3488 <br/> Envíe un correo electrónico a <a class="fucsia" href="mailto:international_visitors@bloomingdales.com">international_visitors@bloomingdales.com</a>'
                                     },
                                     {
-                                        title: 'PESTILISTAS PERSONALES DISPONIBLES ',
+                                        title: 'ESTILISTAS PERSONALES DISPONIBLES ',
                                         description: 'Nuestros estilistas personales están disponibles para recorrer la tienda con usted o para elegir opciones de guardarropa y de decoración para el hogar acorde a sus gustos, sin cargo adicional. <br/> A Sus Órdenes (Para ella) 212-705-3135 <br/> A Sus Órdenes (Para él) 212-705-3030 '
                                     },
                                     {
@@ -3262,7 +3272,7 @@
                                     },
                                     {
                                         title: 'CONVERSIÓN DE DIVISAS',
-                                        description: 'Brindamos servicios de sastrería profesional y alteraciones de ropa en la tienda, por solicitud. Los precios están disponibles en el momento de la prueba.'
+                                        description: 'A unos pocos pasos de Bloomingdale’s, encontrará una casa de cambio, convenientemente ubicada en el centro comercial Ala Moana Center.'
                                     },
                                     {
                                         title: 'RELÁJESE EN NUESTRA SALA VIP',
@@ -3343,12 +3353,12 @@
 
                                     },
                                     {
-                                        title: 'ALTERACIONES DE ROPA RÁPIDAS ',
+                                        title: 'ALTERACIONES DE ROPA RÁPIDAS',
                                         description: 'Brindamos servicios de sastrería profesional y alteraciones de ropa en la tienda, por solicitud. Los precios están disponibles en el momento de la prueba.'
 
                                     },
                                     {
-                                        title: 'ALTERACIONES DE ROPA RÁPIDAS ',
+                                        title: 'ENVÍO A SU HOTEL',
                                         description: 'Con gusto enviaremos sus compras de USD 250 o más a su hotel en el centro, sin cargo adicional. Tan solo déjelas en nuestro Centro de Visitantes, ubicado en el tercer piso.'
 
                                     },
