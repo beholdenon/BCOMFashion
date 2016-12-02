@@ -144,6 +144,7 @@ ul#Resort2016Winter_stickynav_content {
 
 
 #Resort2016Winter{
+
 	max-width:1680px;
 	margin: auto;
     text-align:center;
@@ -215,6 +216,94 @@ ul#Resort2016Winter_stickynav_content {
 
 
 
+
+
+
+
+/*==========================================================================*/
+/*==========================sirv sirv sirv sirv sirv =======================*/
+/*==========================================================================*/
+
+	/*
+	html { height: 100%; }
+	body {
+		height: 100%;
+		margin: 0;
+		padding: 0;
+		position: relative;
+	}*/
+	
+	.lookbook {
+		display: block;
+	}
+	.spin-box {
+		// width: 500px;
+		// height: 500px;
+		margin: auto;
+		position: relative;
+		margin-bottom: 4rem;
+	}
+
+	.spin-product-link,
+	.spin-product-link > img {
+		position: absolute;
+		top: 0; bottom: 0;
+		left: 0; right: 0;
+	}
+	.spin-product-link {
+		background-color: rgba(217, 217, 217, 0.6);
+		display: none;
+		z-index: 999999;
+	}
+	.spin-product-link > img {
+		margin: auto;
+		width:70%;
+	}
+	.spin-box:hover > .Sirv > .spin-product-link {
+		display: block;
+	}
+
+	.spin-product-link-bottom {
+		background-color: transparent;
+		top: 100%;
+		bottom: 70px;
+	}
+
+	.spin-figure .sirv-spin-hint .hint-side, .sirv-spin-hint-side {
+		background-image: url(https://sirv.sirv.com/hint-002.png);
+	}
+
+	.spin-figure .sirv-spin-hint {
+		width: 260px;
+		border: 0;
+		border-radius: 0;
+		box-shadow: none;
+		background-image: none;
+		background-color: rgba(255,255,255,0.9);
+		height: 33px;
+		opacity: 1;
+	}
+
+	.spin-figure .sirv-spin-hint .hint-text {
+		font-family: 'Avenir', 'Helvetica', 'Arial', sans-serif;
+		text-transform: uppercase;
+		font-size: 1.2rem;
+		font-weight: bold;
+		width: auto;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*==========================================================================*/
 /*==========================swimswimswimswimswim============================*/
 /*==========================================================================*/
@@ -223,7 +312,8 @@ ul#Resort2016Winter_stickynav_content {
 	    position: relative;
 	    top: 0px;
 	    left: 0px;
-	    width: 1680px;
+	    width:100%;
+	    // width: 1680px;
 	    // height:667px;
 	    z-index: 10;
 	    background-color:#d6dfe0;
@@ -407,6 +497,10 @@ ul#Resort2016Winter_stickynav_content {
 	    text-align:left;
 		padding-bottom: 1vw;
 	}
+	.double_underscore{
+		font-family: 'Roboto', sans-serif;
+    	letter-spacing: 0;
+    }
 	.shop_lookbook_btn{
 
 	    margin-left: -70px;
@@ -424,6 +518,26 @@ ul#Resort2016Winter_stickynav_content {
 		    color: white;
 		}
 	}
+
+	.shop_lookbook_spin_btn{
+		margin-top: 3em;
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: 5%;
+		z-index: 2;
+		a{
+		    font-family: "Lato", sans-serif;
+		    font-size: 1.3vw;
+		    font-weight: 400;
+		    padding: 2vh 3.1vw;
+		    letter-spacing: .2vw;
+		    text-decoration: none;
+		    background-color: black;
+		    color: white;
+		}		
+	}
+
 
 	.jackets_text5{
 	    font-family: 'Lato', sans-serif;
@@ -747,7 +861,17 @@ ul#Resort2016Winter_stickynav_content {
 /*==========================================================================*/
 /*======customsize customsize customsize customsize customsize =============*/
 /*==========================================================================*/
-
+	@media screen and (max-height: 420px){
+		.swim_text5 {
+		    line-height: inherit;
+		}
+		.shoulder_text2{
+			line-height: inherit;
+		}
+		.swim_text2{
+			line-height: inherit;			
+		}
+	}
 
 	@media screen and (max-width: 600px) {
 		.landing_text1{
@@ -773,6 +897,12 @@ ul#Resort2016Winter_stickynav_content {
 		    text-align: center;
 		    font-size: 15px;
 		}
+
+		.jackets_text6{
+		    font-size: 5vw;
+		    letter-spacing: 1px;
+		}
+
 		.shop_lookbook_btn{
 			text-align:center;
 			margin: 3vh 0;			
@@ -781,6 +911,15 @@ ul#Resort2016Winter_stickynav_content {
 			    padding: 2vh 14vw;
 			}
 		}
+		.shop_lookbook_spin_btn{
+			text-align:center;
+			margin: 3vh 0;			
+			a{
+			    font-size: 16px;
+			    padding: 2vh 14vw;
+			}			
+		}
+
 
 		.shoulder_text1{
 		    padding: 4vh 5vw 0 5vw;
@@ -813,7 +952,9 @@ ul#Resort2016Winter_stickynav_content {
 		.swim_bottomCenter{
 		    bottom: 13vw;
 		}
-
+		#canvasBloom_mobile {
+		    width: 100%;
+		}
 
 
 	}
@@ -826,6 +967,10 @@ ul#Resort2016Winter_stickynav_content {
     		line-height: 64px;
     	}
 
+		.spin-product-link > img {
+			width:400px;
+		}    	
+
 		.jackets_text3{
 			font-size: 38px;
 		}
@@ -833,6 +978,13 @@ ul#Resort2016Winter_stickynav_content {
 		    font-size: 18px;
 		}
 		.shop_lookbook_btn{	
+			a{
+			    font-size: 23px;
+			    padding: 22px 57px;
+			    letter-spacing: 3px;
+			}
+		}
+		.shop_lookbook_spin_btn{	
 			a{
 			    font-size: 23px;
 			    padding: 22px 57px;
