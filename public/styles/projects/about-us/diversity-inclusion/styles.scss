@@ -7,6 +7,16 @@
 
 @import "../b-cause/styles";
 
+.bl_mobile {
+    .b-cause-main {
+        .b-cause-body {
+            h1 {
+                font-size: 2.2rem;
+            }
+        }
+    }    
+}
+
 .b-cause-main {
     h1 {
         color: #000;
@@ -18,7 +28,7 @@
 
     .b-cause-body {
         h1 {
-            margin: 25px 30px;
+            margin: 25px 10px;
         }
 
         h3 {
@@ -39,6 +49,12 @@
             cursor: default;
         }
 
+    }
+}
+
+.b-cause-footer {
+    #b-cause-footer-diversity-inclusion {
+        display: none;
     }
 }
 

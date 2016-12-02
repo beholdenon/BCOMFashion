@@ -1,0 +1,60 @@
+#browser-list {
+    .browser-icon {
+        border: 2px solid #ccc;
+        height: 103px;
+        width: 82px;
+        margin-bottom: 40px;
+        cursor: pointer;
+        padding-top: 5px;
+        h5 {
+            text-align: center;
+            &.multi-line {
+                line-height: initial;
+                margin-top: 3px;
+            }
+        }
+        .browser-icon-container {
+            margin: 0 auto;
+            height: 52px;
+            width: 52px;
+        }
+    }
+    .single-line {
+        margin-top: 8px;
+    }
+    // Foundation sets the last column to float: right
+    .lastColumn {
+        float: left;
+    }
+}
+
+// 630px is the max width of screen when all browser icons are on one row
+// Once the window shrinks below 630px, respond as if mobile
+@media only screen and (max-width: 630px) {
+    #no-session-cookie {
+        padding-left: 21px;
+        padding-right: 21px;
+    }
+    #head-text-group {
+        margin-top: 18px;
+    }
+    .head-text {
+        text-align: center;
+    }
+    #browser-list {
+        .browser-icon {
+            margin-top: 0px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+    #go-back-button {
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 630px) {
+    .desktop {
+        width: 11%;
+    }
+}

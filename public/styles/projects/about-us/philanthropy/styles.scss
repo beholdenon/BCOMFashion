@@ -1,0 +1,158 @@
+// ======================================
+// b.cause updates - Philanthropy
+// Author: Leonardo Brandao
+// Date: 11/16/2016
+// Project: /about-us/philanthropy/
+// ======================================
+
+@import "../b-cause/styles";
+
+.b-cause-main {
+    h1 {
+        color: #000;
+    }
+
+    p {
+        margin-bottom: 1em;
+    }
+
+    .b-cause-body {
+        h1 {
+            margin: 25px 30px;
+        }
+
+        h2 {
+            font-size: 1.37rem;
+        }
+
+        img {
+            display: block;
+            margin: 25px auto;
+        }
+
+        #philanthropy_main_section {
+            position: relative;
+            padding: 0;
+
+            img {
+                width: 100%;
+            }
+
+            a {
+                position: absolute;
+                content: ' ';
+
+                img {
+                    margin: 0;
+                    width: 100%;
+                }
+            }
+
+            #jdrf {
+                top: 22.686081%;
+                left: 0;
+                width: 24.767725%;
+                height: 18.342612%;
+
+            }
+            #amfar {
+                top: 40.914561%;
+                left: 37.501587%;
+                width: 24.567725%;
+                height: 18.042612%;
+            }
+            #help_usa {
+                top: 41.018694%;
+                left: 75.03545%;
+                width: 12.298413%;
+                height: 18.042612%;
+            }
+            #child_mind {
+                top: 59.157173%;
+                left: 12.42931217%;
+                width: 12.298413%;
+                height: 18.042612%;
+            }
+            #pink_campaign {
+                top: 59.207173%;
+                left: 49.903175%;
+                width: 24.932275%;
+                height: 18.002612%;
+            }
+            #mentoring_usa {
+                top: 77.507173%;
+                left: 24.903175%;
+                width: 24.532275%;
+                height: 17.002612%;
+                cursor: initial;
+            }
+        }
+
+    }
+}
+
+.bl_mobile {
+    .b-cause-main {
+        .b-cause-body {
+
+            #philanthropy_main_section {
+             
+                #jdrf {
+                    top: 24.686081%;
+                    height: 16.342612%;
+                }
+                #amfar {
+                    top: 41.914561%;
+                    height: 15.842612%;
+                }
+                #help_usa {
+                    top: 41.818694%;
+                    left: 75.13545%;
+                    width: 12.198413%;
+                    height: 16.042612%;
+                }
+                #child_mind {
+                    top: 58.257173%;
+                    left: 12.229312%;
+                    width: 12.398413%;
+                    height: 16.042612%;
+                }
+                #pink_campaign {
+                    top: 58.257173%;
+                    left: 49.803175%;
+                    width: 24.932275%;
+                    height: 16.502612%;
+                }
+                #mentoring_usa {
+                    top: 74.907173%;
+                    height: 16.002612%;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .b-cause-main {
+        .b-cause-body {
+            h1 {
+                margin: 25px 25px 15px 0;
+            }
+
+            .b-cause-logo {
+                display: inline;
+                margin: 15px 0;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 699px) {
+    .b-cause-main {
+        .b-cause-body {
+            
+            text-align: center;
+            
+        }
+    }
+}

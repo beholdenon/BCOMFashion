@@ -63,5 +63,12 @@ require([
 
             APP.coremetrics(cmElementCat, cmLinkName, cmAttrbute2);
         });
+
+        $('.helpusa-link').on('click', function () {
+            var cmElementCat = 'b_cause_links',
+                cmAttrbute2 = '-_-lp-xx-xx-xx.mentoringusa';
+
+            APP.coremetrics(cmElementCat, $(this).data('linkName'), cmAttrbute2);
+        });
 	});
 });
