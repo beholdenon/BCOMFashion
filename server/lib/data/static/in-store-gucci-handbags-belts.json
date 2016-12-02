@@ -1,8 +1,8 @@
 {
   "designerName": "Gucci",
   "machineReadableDesignerName": "gucci_handbags_belts",
-  "title2Prefix": "Gucci Handbags and Belts",
-  "title2Suffix": "ARE ONLY AVAILABLE AT DEDICATED BOUTIQUES",
+  "title2Prefix": "Gucci Handbags & Belts",
+  "title2Suffix": "ARE ONLY AVAILABLE AT SELECT BLOOMINGDALE&rsquo;S STORES.",
   "pageUrlDesignerAlias": "gucci-handbags-belts",
   "designerDescription": "",
   "addressColumns": [
@@ -10,7 +10,7 @@
       {
         "name": "59th Street",
         "streetAddress": "1000 Third Avenue",
-        "cityStateZip": "New York, NY 10022<br />59th Street and Lexington Avenue",
+        "cityStateZip": "59th Street and Lexington Avenue<br />New York, NY 10022",
         "phoneNumber": "212-705-2000",
         "phoneNumberHrefSuffix": "+1-212-705-2000",
         "urlArgs": {
