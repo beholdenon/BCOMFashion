@@ -1985,8 +1985,8 @@
                         ]
                     },
                     pdf: {
-                        span: '了解如何购买我们的网站，并获得常见问题的答案。',
-                        a: '现在下载',
+                        span: '了解如何在我们的网站购物，并获得常见问题的答案。',
+                        a: '立即下载',
                         link: '/fashion/assets/projects/international/china-brazil/guides/Tourism_Microsite_International_Shopping_Guide_Chinese.pdf'
                     }
                 },
@@ -4025,12 +4025,12 @@
                         designers: '店内のデザイナーズ・ブランド',
                         dining: '店内レストラン',
                         services: 'サービス',
-                        servicesSubHead: 'Bloomingdale\'s が世界に名だたる存在である理由が、当店のスタッフによっておわかりいただけるでしょう。お国の旗のピンバッジを着けているスタッフを見つけてください。お好きなファッションを見つけるお手伝い、個人に合わせた各種サービスご利用のご案内をいたします。',
+                        servicesSubHead: 'ブルーミングデールズが世界に名だたる存在である理由が、当店のスタッフによっておわかりいただけるでしょう。お国の旗のピンバッジを着けているスタッフを見つけてください。お好きなファッションを見つけるお手伝い、個人に合わせた各種サービスご利用のご案内をいたします。',
                         loyalty: 'インターナショナル・ロイヤルティ・クラブへご入会ください',
                         loyaltySubHead: 'このスペシャルリワードプログラムは、海外からのお客様のためのものです。* ギフトカード、サービス、特別体験に引き換えられるポイントが、ご購入１ドルに対し１ポイント加算されます。当店にてすぐにご入会いただけ、ポイント加算および引き換えは、Bloomingdale\'s Ala Moanaだけでなく、アメリカ本土のすべてのBloomingdale\'s フルラインストアにて承ります。**',
                         id: [
                             {
-                                name: '59th Street Flagship',
+                                name: '59丁目本店（ニューヨーク）',
                                 addr: '1000 Third Avenue  New York, NY 10022<br/>電話：212-705-2000',
                                 hours: '月曜日～土曜日: 午前10:00開店 <span>|</span> 日曜日: 午前11:00開店',
                                 descr: 'Bloomingdale\'s を象徴する伝統と受賞歴を誇るおもてなしをご体験ください。Flagship店へのご来店の日は、まず１階バルコニーのビジターセンターへお立ち寄りいただけば、各言語でのフロア案内ガイドが用意されておりますので、ショッピングのお役に立つでしょう。また、個人のご希望に叶いますよう、様々な店内サービス（お買い物をサポートするスタイリスト、サイズ直し、レストランの予約など）が用意されておりますので、どうぞご利用ください。',
@@ -4044,7 +4044,6 @@
                                     'Canali',
                                     'CHANEL', 
                                     'COACH',
-                                    'DIANE von FURSTENBERG',
                                     'Dior',
                                     'Donna Karan',
                                     'Estée Lauder',
@@ -4121,7 +4120,7 @@
                                 ]
                             },
                             {
-                                name: 'SoHo',
+                                name: 'ソーホー店（ニューヨーク）',
                                 addr: '504 Broadway  New York, NY 10012<br/>電話：212-729-5900',
                                 hours: '月曜日～土曜日: 午前10:00開店 <span>|</span> 日曜日：正午開店',
                                 descr: 'ニューヨークのダウンタウンで最もオシャレな地区SoHoに位置する当店へどうぞお越しください。アップタウンにあるFlagship店と全く同じスタイリッシュな雰囲気を持ちますが、ファッション・ブティックの趣も感じていただけるでしょう。活気にあふれるビューティ用品フロアをチェックした後は、デザイナーズ・ブランドの最新作をじっくり品定めしてください。当店でももちろん、思い出に残るお買い物体験をしていただくため、多言語スタッフがお手伝いいたします。',
@@ -4135,7 +4134,6 @@
                                     'Canali',
                                     'CHANEL', 
                                     'COACH',
-                                    'DIANE von FURSTENBERG',
                                     'Dior',
                                     'Donna Karan',
                                     'Estée Lauder',
@@ -4186,10 +4184,10 @@
                                 ]                               
                             },
                             {
-                                name: 'Ala Moana',
+                                name: 'アラモアナ店（ホノルル）',
                                 addr: '1450 Ala Moana Blvd  Honolulu, HI 96814<br/>電話：808-644-7511',
                                 hours: '月曜日～土曜日：午前9:30～午後9:00 | 日曜日：午前10:00～午後7:00',
-                                descr: 'トロピカルなホノルルに登場にしたアメリカ本土外のBloomingdale\'s最新店舗にどうぞお越しください。ハワイ一番のショッピングセンターAla Moana Center内に位置するこの３階建ての店舗には、海外からのお客様への特別な設備・サービスが幅広く取り揃えられています。インターナショナル・ウェルカムセンターへお立ち寄りいただけば、多言語スタッフがご相談にのります。インターナショナル・スタイル・アドバイザーのご予約、店内サイズ直し、レストランの予約などをはじめとする多くのサービスがご利用いただけます。 ',
+                                descr: 'トロピカルなホノルルに登場にしたアメリカ本土外のBloomingdale\'s最新店舗にどうぞお越しください。ハワイ一番のショッピングセンターAla Moana Center内に位置するこの３階建ての店舗には、海外からのお客様への特別な設備・サービスが幅広く取り揃えられています。インターナショナル・ウェルカムセンターへお立ち寄りいただけば、多言語スタッフがご相談にのります。インターナショナル・スタイル・アドバイザーのご予約、店内サイズ直し、レストランの予約などをはじめとする多くのサービスがご利用いただけます。 <br/><br/> 再度お越しになる予定ですか？Bloomingdale\'sのインターナショナル・ロイヤルティ・クラブにご入会いただけば、ギフトカード、特別サービス、本物のハワイアドベンチャー体験と引き換えられるポイントを貯めることができます。',
                                 dTile: 'ハワイへご旅行ですか？',
                                 dInfo: 'いらっしゃる前に当店のウェルカム・ブックレットをダウンロードください。',
                                 dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Hawaii_EN.pdf',
@@ -4198,18 +4196,19 @@
                                     'Burberry',
                                     'Chloé',
                                     'Clinique',
-                                    'Fendi',
                                     'Giorgio Armani',
                                     'Longchamp ',
                                     'Jimmy Choo',
                                     'Jo Malone London',
-                                    'Lancôme',
                                     'La Mer',
-                                    'MARC BY MARC JACOBS',
+                                    'kate spade new york',
+                                    'Maje',
+                                    'MARC JACOBS',
                                     'Michael Kors',
                                     'Prada',
                                     'Ralph Lauren',
                                     'Rebecca Minkoff',
+                                    'Sandro',
                                     'Tory Burch',
                                     'Villeroy & Boch'
                                 ],
@@ -4235,7 +4234,7 @@
                                         description: '店内にて、専門家による仕立ておよびサイズ直しを承っております。料金はご依頼内容により異なり、フィッティング時にお知らせいたします。'
                                     },
                                     {
-                                        title: 'CURRENCY CONVERSION ',
+                                        title: '通貨の両替',
                                         description: 'Bloomingdale\'s外ですが、Ala Moana Center内に通貨の両替所があって便利です。'
                                     },
                                     {
@@ -4263,7 +4262,7 @@
                                 ]                                    
                             },
                             {
-                                name: 'North Michigan Avenue',
+                                name: 'ノース・ミシガン・アベニュー店（シカゴ）',
                                 addr: '900 North Michigan Avenue  Chicago, IL 60611<br/>電話：312-440-4460 ',
                                 hours: '月曜日～土曜日: 午前10:00～午後8:00 | 日曜日: 午前11:00～午後7:00',
                                 descr: 'Windy City（シカゴの愛称）へいらっしゃる予定ですか？ファッションのガイドはブルーミングデールズにお任せください。当店にずらりと揃っているデザイナーズ・ブランド・コレクションでワードローブを一杯に、またはお気に入りのビューティ用品をストックなさってはいかがでしょう。ご希望通りにショッピングをお楽しみいただけるよう、当店の多言語スタッフがお手伝いをいたします。',
@@ -4276,7 +4275,6 @@
                                     'Canada Goose',
                                     'Chloé',
                                     'COACH',
-                                    'DIANE von FURSTENBERG',
                                     'Estée Lauder',
                                     'Fendi',
                                     'Gucci',
@@ -4334,7 +4332,7 @@
                                 ]  
                             },
                             {
-                                name: 'Medinah Home',
+                                name: 'メダイナ・ホーム店（シカゴ）',
                                 addr: '600 North Wabash Avenue  Chicago, IL 60611<br/>電話：312-324-7500',
                                 hours: '月曜日～土曜日: 午前10:00開店 <span>|</span> 日曜日：正午開店',
                                 descr: 'ご家庭のステキな飾り付けのためには、シカゴのメダイナ・ホーム店へお越しください。豪華寝具、ブランドのキッチン用品、オシャレなバス用品をはじめとする多くのものが揃っています。幅広い店内サービスをご利用になり、受賞歴を誇る当店のおもてなしを、どうぞご自身でご体験ください。',
@@ -4371,7 +4369,7 @@
                                 ] 
                             },
                             { 
-                                name: 'San Francisco Centre',
+                                name: 'サンフランシスコ・センター店（サンフランシスコ）',
                                 addr: '845 Market Street  San Francisco, CA<br/>電話：415-856-5402',
                                 hours: '月曜日～土曜日: 午前10:00～午後9:00 | 日曜日: 午前11:00～午後8:00',
                                 descr: 'サンフランシスコで一番のショッピングスポットを見つけましょう。まず最初に行くべき所はBloomingdale\'sです。店内のビジターセンターへまずお寄りいただけば、フロア案内ガイドは各言語揃っており、また、ご希望通りにショッピングをお楽しみいただけるよう多言語スタッフがご相談にのりますこの下で店内の設備・サービスについて詳しくご説明いたします。',
@@ -4388,7 +4386,6 @@
                                     'COACH',
                                     'Clinique', 
                                     'Dior', 
-                                    'DIANE von FURSTENBERG',
                                     'Elie Tahari', 
                                     'Escada',
                                     'Estée Lauder',
@@ -4399,7 +4396,7 @@
                                     'Lancôme',
                                     'Longchamp', 
                                     'Louis Vuitton', 
-                                    'MARC BY MARC JACOBS',
+                                    'MARC JACOBS',
                                     'Michael Kors',
                                     'Ralph Lauren',
                                     'Rebecca Taylor',
@@ -4441,7 +4438,7 @@
                                 ]                               
                             },
                             {
-                                name: 'South Coast Plaza',
+                                name: 'サウス・コースト・プラザ店（コスタメサ）',
                                 addr: '3333 Bristol St  Costa Mesa, CA 92626<br/>電話：714-824-4600',
                                 hours: '月曜日～土曜日: 午前10:00～午後9:00 | 日曜日: 午前11:00～午後7:00',
                                 descr: '南カリフォルニアに合わせて特別に選ばれた最高のデザイナーズ・ブランド・ショップを擁するSouth Coast Plaza店は、必ず行くべきショッピングスポットです。Golden State（カリフォルニア州の愛称）は初めてですか？当店の多言語スタッフが、ご滞在をさらに快適なものとするお手伝いをいたします。お国の言葉のフロア案内ガイドのご用意があり、この下でご説明する店内の設備・サービスによって、お客様のショッピング体験はさらに楽しいものとなるでしょう。',
@@ -4456,7 +4453,6 @@
                                     'CHANEL',
                                     'Chloé',
                                     'COACH',
-                                    'DIANE von FURSTENBERG',
                                     'Dior',
                                     'Estée Lauder',
                                     'Fendi',
@@ -4510,7 +4506,7 @@
                                 ]                                    
                             },
                             {
-                                name: 'Southern California Stores',
+                                name: '南カリフォルニア各店',
                                 addr: '',
                                 hours: '',
                                 descr: 'Bloomingdale\'sの象徴的な店舗は、ロサンゼルス、オレンジ・カウンティ、サンディエゴと南カリフォルニア全体にも展開されています。どの店舗でも、お気に入りブランドのファッション、アクセサリー、靴、ビューティ用品のショッピングをお楽しみいただけるでしょう。この下で店内の設備・サービスについて詳しくご説明いたします。',
@@ -4591,7 +4587,7 @@
                                 ]  
                             },
                             {
-                                name: 'AVENTURA',
+                                name: 'アヴェントゥーラ店',
                                 addr: '19555 Biscayne Boulevard  Aventura, FL 33180<br/>電話：305-792-1246',
                                 hours: '月曜日～水曜日：午前10:00～午後9:30 <span>|</span> 木曜日～土曜日：午前10:00～午後10:00 <span>|</span> 日曜日：正午～午後8:30',
                                 descr: '休暇旅行の日程を計画中ですか？最初の行き先は、フロリダのAventura店にしましょう。デザイナーズ・ブランドのファッションやビューティ用品、豪華なアクセサリーをはじめとする当店の幅広いセレクションを、じっくりと品定めしてください。ショッピングでは、この下に載っている店内の設備・サービスを最大限にご利用いただけますよう、お国の言語のフロア案内ガイドをご活用ください。',
@@ -4609,7 +4605,6 @@
                                     'CHANEL ',
                                     'Christofle ',
                                     'David Yurman ',
-                                    'DIANE von FURSTENBERG ',
                                     'Diesel ',
                                     'Dior ',
                                     'Fendi ',
@@ -4622,9 +4617,9 @@
                                     'La Mer ',
                                     'Lalique',
                                     'Longchamp', 
-                                    'Louis Vuitton ',
-                                    'M·A·C ',
-                                    'MARC BY MARC JACOBS ',
+                                    'Louis Vuitton',
+                                    'M·A·C',
+                                    'MARC JACOBS',
                                     'Michael Kors ',
                                     'Miki House ',
                                     'Montblanc ',
@@ -4668,7 +4663,7 @@
                                 ]     
                             },
                             {
-                                name: 'ORLANDO',
+                                name: 'オーランド店',
                                 addr: '4152 Conroy Road  Orlando, FL 32839<br/>電話：407-264-2514',
                                 hours: '月曜日～土曜日：午前10:00～午後9:00 <span>|</span> 日曜日：午前11:00～午後7:00',
                                 descr: '最高ブランドのファッションとビューティの品がずらりと並んだBloomingdale’s Orlando店では、世界トップレベルのショッピング体験が待っています。Sunshine State（フロリダ州の愛称）への次のご旅行では、お客様の希望を叶える当店へお立ち寄りください。お国の言語のフロア案内ガイドを手にし、この下に載っている店内の設備・サービスを存分にご利用ください。',
@@ -4680,8 +4675,7 @@
                                     'Burberry',
                                     'Canali ',
                                     'COACH',
-                                    'DIANE von FURSTENBERG ',
-                                    'Diesel Jeans',
+                                    'Diesel',
                                     'Dior ',
                                     'Fendi ',
                                     'Frankie B Jeans ',
