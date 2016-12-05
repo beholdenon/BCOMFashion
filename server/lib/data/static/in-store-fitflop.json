@@ -1,0 +1,172 @@
+{
+  "designerName": "FitFlop",
+  "machineReadableDesignerName": "fit_flop",
+  "pageUrlDesignerAlias": "fitflop",
+  "designerDescription": "",
+  "addressColumns": [
+    [
+      {
+        "name": "59TH STREET",
+        "streetAddress": "1000 Third Avenue",
+        "cityStateZip": "59th Street and Lexington Avenue<br />New York, NY 10022",
+        "phoneNumber": "212-705-2000",
+        "phoneNumberHrefSuffix": "+1-212-705-2000",
+        "urlArgs": {
+          "addressAlias": "59th-street",
+          "designerAlias": "fit_flop",
+          "addressFullDetail": "59TH-STREET-LEXINGTON-AVENUE"
+        }
+      },
+      {
+        "name": "WHITE PLAINS",
+        "streetAddress": "175 Bloomingdale Road",
+        "cityStateZip": "White Plains, NY 10605",
+        "phoneNumber": "914-684-6300",
+        "phoneNumberHrefSuffix": "+1-914-684-6300",
+        "urlArgs": {
+          "addressAlias": "white-plains",
+          "designerAlias": "fit_flop",
+          "addressFullDetail": "WHITE-PLAINS"
+        }
+      },
+      {
+        "name": "NORTH MICHIGAN AVENUE",
+        "streetAddress": "900 North Michigan Avenue",
+        "cityStateZip": "Chicago, IL 60611",
+        "phoneNumber": "312-440-4460",
+        "phoneNumberHrefSuffix": "+1-312-440-4460",
+        "urlArgs": {
+          "addressAlias": "north-michigan-avenue",
+          "designerAlias": "fit_flop",
+          "addressFullDetail": "NORTH-MICHIGAN-AVENUE"
+        }
+      },
+      {
+        "name": "ALA MOANA CENTER",
+        "streetAddress": "1450 Ala Moana Blvd.",
+        "cityStateZip": "Honolulu, HI 96814",
+        "phoneNumber": "808-664-7511",
+        "phoneNumberHrefSuffix": "+1-808-664-7511",
+        "urlArgs": {
+          "addressAlias": "ala-moana-center",
+          "designerAlias": "fit_flop",
+          "addressFullDetail": "ALA-MOANA-CENTER"
+        }
+      }
+    ],
+    [
+      {
+        "name": "HUNTINGTON WALT WHITMAN",
+        "streetAddress": "270 Walt Whitman Road",
+        "cityStateZip": "Huntington Station, NY 11746",
+        "phoneNumber": "631-425-6700",
+        "phoneNumberHrefSuffix": "+1-631-425-6700",
+        "urlArgs": {
+          "addressAlias": "huntington-walt-whitman",
+          "designerAlias": "fit_flop",
+          "addressFullDetail": "HUNTINGTON-WALT-WHITMAN"
+        }
+      },
+      {
+        "name": "WILLOW GROVE PARK",
+        "streetAddress": "2400 West Moreland Park Road",
+        "cityStateZip": "Willow Grove Park Mall<br />Willow Grove, PA 19090",
+        "phoneNumber": "215-706-3300",
+        "phoneNumberHrefSuffix": "+1-215-706-3300",
+        "urlArgs": {
+          "addressAlias": "willow-grove-park",
+          "designerAlias": "fit_flop",
+          "addressFullDetail": "WILLOW-GROVE-PARK-MALL"
+        }
+      },
+      {
+        "name": "PALM BEACH GARDENS",
+        "streetAddress": "3105 PGA Boulevard",
+        "cityStateZip": "Gardens Mall <br />Palm Beach Gardens, FL 33410",
+        "phoneNumber": "561-625-2000",
+        "phoneNumberHrefSuffix": "+1-561-625-2000",
+        "urlArgs": {
+          "addressAlias": "palm-beach-gardens",
+          "designerAlias": "fit_flop",
+          "addressFullDetail": "PALM-BEACH-GARDENS-MALL"
+        }
+      }
+    ],
+    [
+      {
+        "name": "BERGEN TOWN CENTER OUTLET",
+        "streetAddress": "260 Bergen Town Center",
+        "cityStateZip": "Paramus, NJ 07652",
+        "phoneNumber": "201-490-6840",
+        "phoneNumberHrefSuffix": "+1-201-490-6840",
+        "urlArgs": {
+          "addressAlias": "bergen-town-center-outlet",
+          "designerAlias": "fit_flop",
+          "addressFullDetail": "BERGEN-TOWN-CENTER-OUTLET"
+        }
+      },
+      {
+        "name": "ROOSEVELT FIELD",
+        "streetAddress": "630 Old Country Rd.",
+        "cityStateZip": "#27<br />Garden City, NY 11530",
+        "phoneNumber": "516-873-2700",
+        "phoneNumberHrefSuffix": "+1-516-873-2700",
+        "urlArgs": {
+          "addressAlias": "roosevelt-field",
+          "designerAlias": "fit_flop",
+          "addressFullDetail": "#27"
+        }
+      },
+      {
+        "name": "ORLANDO, THE MALL AT MILLENIA",
+        "streetAddress": "4152 Conroy Road",
+        "cityStateZip": "The Mall at Millenia<br />Orlando, FL 32839",
+        "phoneNumber": "407-264-2400",
+        "phoneNumberHrefSuffix": "+1-407-264-2400",
+        "urlArgs": {
+          "addressAlias": "orlando--the-mall-at-millenia",
+          "designerAlias": "fit_flop",
+          "addressFullDetail": "THE-MALL-AT-MILLENIA"
+        }
+      }
+    ],
+    [
+      {
+        "name": "SHORT HILLS",
+        "streetAddress": "1200 Morris Turnpike",
+        "cityStateZip": "The Mall at Short Hills<br />Short Hills, NJ 07078",
+        "phoneNumber": "973-548-2200",
+        "phoneNumberHrefSuffix": "+1-973-548-2200",
+        "urlArgs": {
+          "addressAlias": "short-hills",
+          "designerAlias": "fit_flop",
+          "addressFullDetail": "THE-MALL-AT-SHORT-HILLS"
+        }
+      },
+      {
+        "name": "BOCA RATON TOWN CENTER",
+        "streetAddress": "5840 Glades Road",
+        "cityStateZip": "Boca Raton, FL 33431",
+        "phoneNumber": "561-394-2000",
+        "phoneNumberHrefSuffix": "+1-561-394-2000",
+        "urlArgs": {
+          "addressAlias": "boca-raton-town-center",
+          "designerAlias": "fit_flop",
+          "addressFullDetail": "BOCA-RATON-TOWN-CENTER"
+        }
+      },
+      {
+        "name": "SHERMAN OAKS FASHION SQUARE",
+        "streetAddress": "14060 Riverside Drive",
+        "cityStateZip": "Sherman Oaks, CA 91423",
+        "phoneNumber": "818-325-2200",
+        "phoneNumberHrefSuffix": "+1-818-325-2200",
+        "urlArgs": {
+          "addressAlias": "sherman-oaks-fashion-square",
+          "designerAlias": "fit_flop",
+          "addressFullDetail": "SHERMAN-OAKS-FASHION-SQUARE"
+        }
+      }
+    ]
+  ]
+}
