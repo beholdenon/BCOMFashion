@@ -1,0 +1,124 @@
+{
+  "designerName": "James Perse",
+  "machineReadableDesignerName": "james_perse",
+  "pageUrlDesignerAlias": "james-perse",
+  "designerDescription": "",
+  "addressColumns": [
+    [
+      {
+        "name": "59th Street",
+        "streetAddress": "1000 Third Avenue",
+        "cityStateZip": "59th Street and Lexington Avenue<br />New York, NY 10022",
+        "phoneNumber": "212-705-2000",
+        "phoneNumberHrefSuffix": "+1-212-705-2000",
+        "urlArgs": {
+          "addressAlias": "59th-street",
+          "designerAlias": "james_perse",
+          "addressFullDetail": "59TH-STREET-LEXINGTON-AVENUE"
+        }
+      },
+      {
+        "name": "Sherman Oaks Fashion Square",
+        "streetAddress": "14060 Riverside Drive",
+        "cityStateZip": "Sherman Oaks, CA 91423",
+        "phoneNumber": "818-325-2200",
+        "phoneNumberHrefSuffix": "+1-818-325-2200",
+        "urlArgs": {
+          "addressAlias": "sherman-oaks-fashion-square",
+          "designerAlias": "james_perse",
+          "addressFullDetail": "SHERMAN-OAKS-FASHION-SQUARE"
+        }
+      },
+      {
+        "name": "Santa Monica Place",
+        "streetAddress": "315 Colorado Avenue",
+        "cityStateZip": "Santa Monica, CA 90401",
+        "phoneNumber": "310-985-6400",
+        "phoneNumberHrefSuffix": "+1-310-985-6400",
+        "urlArgs": {
+          "addressAlias": "santa-monica-place",
+          "designerAlias": "james_perse",
+          "addressFullDetail": "SANTA-MONICA-PLACE"
+        }
+      }
+    ],
+    [
+      {
+        "name": "Aventura",
+        "streetAddress": "19555 Biscayne Boulevard",
+        "cityStateZip": "The Aventura Mall<br />Aventura, FL 33180",
+        "phoneNumber": "305-792-1000",
+        "phoneNumberHrefSuffix": "+1-305-792-1000",
+        "urlArgs": {
+          "addressAlias": "aventura",
+          "designerAlias": "james_perse",
+          "addressFullDetail": "AVENTURA-MALL"
+        }
+      },
+      {
+        "name": "San Francisco Centre",
+        "streetAddress": "845 Market Street",
+        "cityStateZip": "San Francisco, CA 94103",
+        "phoneNumber": "415-856-5300",
+        "phoneNumberHrefSuffix": "+1-415-856-5300",
+        "urlArgs": {
+          "addressAlias": "san-francisco-centre",
+          "designerAlias": "james_perse",
+          "addressFullDetail": "SAN-FRANCISCO-CENTRE"
+        }
+      }
+    ],
+    [
+      {
+        "name": "Century City",
+        "streetAddress": "10250 Santa Monica Boulevard",
+        "cityStateZip": "Los Angeles, CA 90067",
+        "phoneNumber": "310-772-2100",
+        "phoneNumberHrefSuffix": "+1-310-722-2100",
+        "urlArgs": {
+          "addressAlias": "century-city",
+          "designerAlias": "james_perse",
+          "addressFullDetail": "CENTURY-CITY"
+        }
+      },
+      {
+        "name": "Stanford",
+        "streetAddress": "1 Stanford Shopping Center",
+        "cityStateZip": "Palo Alto, CA 94304",
+        "phoneNumber": "650-463-2000",
+        "phoneNumberHrefSuffix": "+1-650-463-2000",
+        "urlArgs": {
+          "addressAlias": "stanford",
+          "designerAlias": "james_perse",
+          "addressFullDetail": "STANFORD"
+        }
+      }
+    ],
+    [
+      {
+        "name": "Beverly Center",
+        "streetAddress": "8500 Beverly Boulevard",
+        "cityStateZip": "Los Angeles, CA 90048",
+        "phoneNumber": "310-360-2700",
+        "phoneNumberHrefSuffix": "+1-310-360-2700",
+        "urlArgs": {
+          "addressAlias": "beverly-center",
+          "designerAlias": "james_perse",
+          "addressFullDetail": "BEVERLY-CENTER"
+        }
+      },
+      {
+        "name": "Ala Moana Center",
+        "streetAddress": "1450 Ala Moana Blvd.",
+        "cityStateZip": "Honolulu, HI 96814",
+        "phoneNumber": "808-664-7511",
+        "phoneNumberHrefSuffix": "+1-808-664-7511",
+        "urlArgs": {
+          "addressAlias": "ala-moana-center",
+          "designerAlias": "james_perse",
+          "addressFullDetail": "ALA-MOANA-CENTER"
+        }
+      }
+    ]
+  ]
+}
