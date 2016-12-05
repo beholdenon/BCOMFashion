@@ -862,19 +862,22 @@ a:hover, a:focus {
     float: left;
     margin: 0;
     padding: 8px 32px 8px 16px;
-    height: 16px;
+    height: 100%;
     line-height: 16px;
     text-decoration: none;
     text-transform: uppercase;
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
     letter-spacing: 0.02em;
-    background: transparent url('/fashion/images/projects/fashion-tips/customize-michele-watch/michele_builder_s15-options-arrow-down.png') no-repeat scroll 100% 50%;
+    background: transparent url('/fashion/images/projects/fashion-tips/customize-michele-watch/michele_builder_s15-options-arrow-down.png') no-repeat scroll 100% 75%;
 }
 
 #blmwbs15_builder_options > .menu_view-options > .menu_view-option.active {
     background-color: #fff;
     box-shadow: 6px 6px 8px rgba(56, 56, 56, 0.13);
+    &:focus {
+        outline: none;
+    }
 }
 
 #blmwbs15_builder_options > .menu_view-options > .menu_view-separator {
