@@ -74,6 +74,7 @@ var routes = [
     { method: 'GET',  path: '/fashion-index/top-fashion-outlet-store/',                                     config: require('./lib/handlers/views').adaptive },
     { method: 'GET',  path: '/fashion-tips/baby-essentials-must-haves-checklist/',                          config: require('./lib/handlers/views').adaptive },
     { method: 'GET',  path: '/fashion-tips/bedding-utility-guide/',                                         config: require('./lib/handlers/views').adaptive },
+    { method: 'GET',  path: '/fashion-tips/good-sleep-guide/',                                              config: require('./lib/handlers/views').adaptive },
     { method: 'GET',  path: '/fashion-tips/buying-rug-guide-2016/',                                         config: require('./lib/handlers/views').adaptive },
     { method: 'GET',  path: '/fashion-tips/customize-michele-watch/',                                       config: require('./lib/handlers/views').adaptive },
     { method: 'GET',  path: '/fashion-tips/mattress-buying-guide/',                                         config: require('./lib/handlers/views').adaptive },
