@@ -3,7 +3,7 @@
 node_modules/**/*.js
 /public/javascripts/projects/fashion-tips/baby-essentials-must-haves-checklist/*
 /public/javascripts/projects/fashion-tips/buying-rug-guide-2016/*
-/public/javascripts/projects/fashion-tips/bedding-utility-guide/*
+/public/javascripts/projects/fashion-tips/good-sleep-guide/*
 
 **/*jquery*
 **/*hammer.min.js
