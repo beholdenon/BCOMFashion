@@ -2,6 +2,12 @@
 {{{coremetrics 'vanity_page' 'My_wallet'}}}
 <!--headMeta={"name":"description", "content":"bWallet: All Your Cards and Offers in ONE Place! Maximize Your Savings and Make Checkout a Breeze with bWallet!"}-->
 <!--headCanonical={"href":"/bwallet"}-->
+<script type="text/javascript">
+    require( [ 'jquery', 'bcomLeftNav/account/AccountLeftNav' ], function ( $, accountLeftNav ) {
+        $( '#bl_leftNavContainer' ).empty();
+        accountLeftNav.render( '#bl_leftNavContainer', "" );
+    });
+</script>
 <div class="wallet">
     {{>title}}
     <link href="/fashion/styles/projects/bwallet/styles.css" rel="stylesheet" type="text/css" />
