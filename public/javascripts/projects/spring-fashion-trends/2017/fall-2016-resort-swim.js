@@ -1,25 +1,34 @@
 'use strict';
 
-$(window).resize(function() {
-
-	if ($(window).width() < 600) {
-		$("#canvasBloom_mobile").hide();
-	} else {
-		$("#canvasBloom_mobile").show();
-	}
-});
-
 $( window ).load(function() {
 
 	var update = true;
 	var canvas = document.getElementById("canvasBloom_mobile");
 	canvas.width = 1680;
 	canvas.height = 667;
+	var swimTouch = true;
 
 	var stage = new createjs.Stage(canvas);
 
-	// enable touch interactions if supported on the current device:
-	createjs.Touch.enable(stage);
+	$(window).resize(function() {
+
+		var canvasWidth = (  parseInt($(window).width()) > 1680 ? 1680 : parseInt($(window).width()) );
+		$("#canvasBloom_mobile").css({
+			'width':canvasWidth+"px"
+		});
+
+		if ($(window).width() < 600 || $(window).height() < 450) {
+			createjs.Touch.enable(false);
+			swimTouch = false;
+		} else {
+			createjs.Touch.enable(stage);
+			swimTouch = true;
+		}
+
+	});
+
+
+
 
 	// enabled mouse over / out events
 	stage.enableMouseOver(10);
@@ -27,13 +36,6 @@ $( window ).load(function() {
 
 
 
-	$( window ).on('resize',function() {
-		var canvasWidth = (  parseInt($(window).width()) > 1680 ? 1680 : parseInt($(window).width()) );
-		$("#canvasBloom_mobile").css({
-			'width':canvasWidth+"px"
-		});
-
-	});
 
 	var queue = new createjs.LoadQueue(true);
 	queue.loadFile("/fashion/images/projects/spring-fashion-trends/2017/swim_canvas1.jpg");
@@ -111,22 +113,30 @@ $( window ).load(function() {
 		bitmap.cursor = "pointer";
 
 		bitmap.on("mousedown", function (evt) {
-			this.parent.addChild(this);
-			this.offset = {x: this.x - evt.stageX, y: this.y - evt.stageY};
+			if(swimTouch){
+				this.parent.addChild(this);
+				this.offset = {x: this.x - evt.stageX, y: this.y - evt.stageY};
+			}
 		});
 
 		bitmap.on("pressmove", function (evt) {
-			this.x = evt.stageX + this.offset.x;
-			this.y = evt.stageY + this.offset.y;
-			update = true;
+			if(swimTouch){
+				this.x = evt.stageX + this.offset.x;
+				this.y = evt.stageY + this.offset.y;
+				update = true;
+			}
 		});
 
 		bitmap.on("rollover", function () {
-			update = true;
+			if(swimTouch){
+				update = true;
+			}
 		});
 
 		bitmap.on("rollout", function () {
-			update = true;
+			if(swimTouch){
+				update = true;
+			}
 		});
 
         update = true;
