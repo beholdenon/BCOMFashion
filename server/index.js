@@ -61,7 +61,6 @@ var routes = [
     { method: 'GET',  path: '/about-us/new-store-openings/',                                                config: require('./lib/handlers/views').adaptive },
     { method: 'GET',  path: '/about-us/pink-campaign-b-cause-philanthropy/',                                config: require('./lib/handlers/views').adaptive },
     { method: 'GET',  path: '/about-us/shopping/fashion-studio-styling-services/',                          config: require('./lib/handlers/views').adaptive },
-    { method: 'GET',  path: '/about-us/shopping/international-visitor-services/',                           config: require('./lib/handlers/views').adaptive },
     { method: 'GET',  path: '/about-us/shopping/personal-shopper-complimentary-service/',                   config: require('./lib/handlers/views').adaptive },
     { method: 'GET',  path: '/about-us/shopping/shopping-services/',                                        config: require('./lib/handlers/views').adaptive },
     { method: 'GET',  path: '/about-us/shopping/sizecharts/kids-boys-girls-clothing/',                      config: require('./lib/handlers/views').adaptive },
