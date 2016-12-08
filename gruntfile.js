@@ -197,7 +197,7 @@ module.exports = function(grunt) {
             ],
             projectFolderImages: [
                 '<%= node.destination %>/public/images/projects'+PROJECT_DIR
-            ],            
+            ],
             projectSprites: [
                 '<%= node.source %>/public/images/projects/**/project-sprites.png',
                 '<%= node.source %>/public/images/projects/**/project-sprites.css',
