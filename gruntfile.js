@@ -541,6 +541,12 @@ module.exports = function(grunt) {
                     },
                     {
                         expand: true,
+                        cwd: '<%= node.destination %>/lib/views/fashion-tips/',
+                        src: '**/*mobile.html',
+                        dest: '<%= node.destination %>/lib/views/fashion-tips/'
+                    },
+                    {
+                        expand: true,
                         cwd: '<%= node.destination %>/lib/views/landing-page/',
                         src: '**/*mobile.html',
                         dest: '<%= node.destination %>/lib/views/landing-page/'
@@ -690,7 +696,8 @@ module.exports = function(grunt) {
 		        files: [
                     '<%= node.source %>/public/javascripts/main.js',
                     '<%= node.source %>/public/javascripts/includes/{,**/}*.{js,json}',
-                    '<%= node.source %>/public/javascripts/projects/{,**/}*.{js,json}'
+                    '<%= node.source %>/public/javascripts/projects/{,**/}*.{js,json}',
+                    '<%= node.source %>/public/javascripts/services/{,**/}*.{js,json}'
                 ],
                 tasks: [
                     'jshint', 
