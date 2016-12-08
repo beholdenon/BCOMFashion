@@ -100,16 +100,18 @@ module.exports = {
         },
         handler: {
             proxy: {
-                protocol: 'http',
+                protocol: 'https',
                 timeout: serviceProxy.timeout,
                 passThrough: true,
                 acceptEncoding: false,
                 mapUri: function(req, res) {
-                    var headers = serviceProxy.getHeaders(req, process.env.SERVICES_KEY);
-                    req.url.host = process.env.BASE_ASSETS;
-                    req.app.parser = require('./../parsers/category');
-                    req.url.pathname = req.url.pathname = 'bag/add';
-                    res(null, req.url.format(req.url), headers);
+                    var headers = serviceProxy.getHeaders(req, process.env.SERVICES_KEY),
+                        upstreamUrl;
+                    req.url.host = process.env.API_SUBDOMAIN + '.' + process.env.API_HOST;
+                    req.app.parser = require('./../parsers/add-to-bag');
+                    req.url.pathname = 'order/v1/bags';
+                    upstreamUrl = req.url.format(req.url);
+                    res(null, upstreamUrl, headers);
                 },
                 onResponse: serviceProxy.defaultOnResponse
             }
@@ -130,6 +132,25 @@ module.exports = {
             //return res.view(deviceDetectProc.view, { args: deviceDetectProc.args, assetsHost: process.env.BASE_ASSETS }, { layout: 'responsive' });
             res({result: "ok"});
         }
-    }
+    },
 
+    proxy: {
+        description: 'proxy, sends any request over to bloomingdales.com',
+        handler: function (req, res) {
+            // Get base host and populate uri
+            var baseAssets = process.env.BASE_HOST,
+
+                // Add trailing slash if doesn't have one
+                host = baseAssets + (/\/$/.test(baseAssets) === false ? '\/' : ''),
+
+                // Get uri
+                uri = (host.indexOf('http') === 0 ? host : 'http://' + host) + req.url.path.replace(/^\/p\//,'');
+
+            // Return proxy
+            return res.proxy({
+                redirects: 2,
+                uri: uri
+            });
+        }
+    }
 };

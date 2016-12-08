@@ -1,0 +1,1043 @@
+
+/*
+ * @author Emanuel F. Oliveira (U06EXO)
+ * @date 2015-03-10
+ */
+
+a:hover, a:focus {
+    color: #000;
+}
+
+#blmwbs15_builder_options > .menu_view-options > .menu_view-option {
+    height: 32px;
+}
+
+#blmwbs15_window {
+    display: block;
+    position: relative;
+    margin: 0 0 10px 0;
+    padding: 0;
+    overflow: hidden;
+    width: 962px;
+    height: 614px;
+    background: transparent none no-repeat scroll 0% 0%;
+}
+
+#blmwbs15_window a.blmwbs15_flying_link {
+    display: block;
+    position: absolute;
+    overflow: hidden;
+    color: transparent;
+    text-indent: -9999px;
+    background: transparent url('/fashion/images/projects/fashion-tips/customize-michele-watch/michele_builder_s15-nothing.png') no-repeat scroll 0% 0%;
+}
+
+#blmwbs15_window .blmwbs15_invisible {
+    display: none;
+}
+
+#blmwbs15_window #blmwbs15_intro {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    width: 962px;
+    height: 614px;
+    background: transparent none no-repeat scroll 0% 0%;
+    z-index: 5; /* [1, 5] */
+}
+
+#blmwbs15_intro img#blmwbs15_intro_bg {
+    display: block;
+    position: relative;
+    margin: 0;
+    border: none;
+}
+
+#blmwbs15_intro #blmwbs15_intro_main {
+    display: block;
+    position: absolute;
+    overflow: hidden;
+    left: 78px;
+    top: 184px;
+    width: 480px;
+    height: 286px;
+    color: transparent;
+    text-indent: -9999px;
+    background: transparent url('/fashion/images/projects/fashion-tips/customize-michele-watch/michele_builder_s15-intro-text-main.png') no-repeat scroll 0% 0%;
+}
+
+#blmwbs15_intro #blmwbs15_intro_error {
+    display: block;
+    position: absolute;
+    overflow: hidden;
+    left: 110px;
+    top: 254px;
+    width: 387px;
+    height: 105px;
+    color: transparent;
+    text-indent: -9999px;
+    background: transparent url('/fashion/images/projects/fashion-tips/customize-michele-watch/michele_builder_s15-intro-text-error.png') no-repeat scroll 0% 0%;
+}
+
+#blmwbs15_intro #blmwbs15_intro_ie8 {
+    display: block;
+    position: absolute;
+    overflow: hidden;
+    left: 142px;
+    top: 254px;
+    width: 326px;
+    height: 105px;
+    color: transparent;
+    text-indent: -9999px;
+    background: transparent url('/fashion/images/projects/fashion-tips/customize-michele-watch/michele_builder_s15-intro-text-ie8.png') no-repeat scroll 0% 0%;
+}
+
+#blmwbs15_window a.blmwbs15_checkbox {
+    display: block;
+    position: relative;
+    width: 11px;
+    height: 11px;
+    overflow: hidden;
+    text-indent: -9999px;
+    color: transparent;
+    background: transparent url('/fashion/images/projects/fashion-tips/customize-michele-watch/michele_builder_s15-checkbox.png') no-repeat scroll 0 0;
+}
+
+#blmwbs15_window a.blmwbs15_checkbox.checked {
+    background-position: -33px 0;
+}
+
+#blmwbs15_window #blmwbs15_contents {
+    display: block;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    width: 962px;
+    height: 581px;
+    overflow: hidden;
+    background: transparent url('/fashion/images/projects/fashion-tips/customize-michele-watch/michele_builder_s15-builder-bg.jpg') no-repeat scroll 50% 50%;
+    z-index: 1;
+}
+
+#blmwbs15_window #blmwbs15_full_uiblocker {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: rgba( 255, 255, 255, 0.4 ) none;
+    z-index: 5;
+}
+
+#blmwbs15_full_uiblocker #blmwbs15_a2b_confirmation {
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -123px 0 0 -160px;
+    width: 320px;
+    height: 247px;
+    background: transparent url('/fashion/images/projects/fashion-tips/customize-michele-watch/michele_builder_s15-a2b-confirmation.png') no-repeat scroll 50% 50%;
+    overflow: hidden;
+}
+
+#blmwbs15_a2b_confirmation span.blmwbs15_invisible_text, #blmwbs15_a2b_confirmation a.blmwbs15_button {
+    display: block;
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    background: transparent none;
+    overflow: hidden;
+    color: transparent;
+}
+
+#blmwbs15_a2b_confirmation a.blmwbs15_button {
+    text-indent: -9999px;
+}
+
+#blmwbs15_full_uiblocker #blmwbs15_overlay_error_message {
+
+    display: block;
+    position: absolute;
+    margin: 0 0 0 -160px;
+    padding: 53px 0 0 0;
+    left: 50%;
+    top: 50%;
+    width: 320px;
+    height: auto;
+    overflow: hidden;
+    background: transparent url( "/fashion/images/projects/fashion-tips/customize-michele-watch/michele_builder_s15-overlay-error-top.png" ) no-repeat scroll 50% 0%;
+
+    /* centralize... */
+    -moz-transform: translateY( -50% );
+    -ms-transform: translateY( -50% );
+    -webkit-transform: translateY( -50% );
+    transform: translateY( -50% );
+
+}
+
+#blmwbs15_overlay_error_message div.blmwbs15_content {
+    display: block;
+    margin: 0;
+    padding: 0 33px 25px 25px;
+    width: auto;
+    height: auto;
+    background: transparent url( "/fashion/images/projects/fashion-tips/customize-michele-watch/michele_builder_s15-overlay-error-middle.png" ) repeat-y scroll 50% 0%;
+}
+
+#blmwbs15_overlay_error_message div.blmwbs15_footer {
+    display: block;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    height: 31px;
+    background: transparent url( '/fashion/images/projects/fashion-tips/customize-michele-watch/michele_builder_s15-overlay-error-bottom.png' ) no-repeat scroll 50% 0%;
+}
+
+#blmwbs15_overlay_error_message div.blmwbs15_content span.blmwbs15_text {
+    display: block;
+    margin: 0;
+    padding: 10px 0;
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+    font-style: italic;
+    white-space: pre-wrap;
+    font-size: 11px;
+    color: #ea0000;
+    text-align: center;
+    letter-spacing: 0.06em;
+    line-height: 1.2em;
+}
+
+#blmwbs15_overlay_error_message a.blmwbs15_button {
+    display: block;
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    width: 32px;
+    height: 32px;
+    left: 266px;
+    top: 14px;
+    overflow: hidden;
+    color: transparent;
+    text-indent: -9999px;
+    background: transparent url( '/fashion/images/projects/fashion-tips/customize-michele-watch/michele_builder_s15-nothing.png' ) no-repeat scroll 0% 0%;
+}
+
+#blmwbs15_window .blmwbs15_loading {
+    background-color: transparent;
+    background-repeat: no-repeat  !important;
+    background-attachment: scroll !important;
+    background-position: 50% 50% !important;
+    background-image: url('/fashion/images/projects/fashion-tips/customize-michele-watch/michele_builder_s15-ajax-loader.gif') !important;
+}
+
+/*
+ * BUILDER
+ */
+
+#blmwbs15_contents #blmwbs15_builder {
+    display: block;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    background: transparent none;
+    z-index: 1;
+}
+
+#blmwbs15_builder #blmwbs15_builder_heads {
+    display: block;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    float: left;
+    width: 36.48648648%;
+    height: 100%;
+    background: transparent none;
+}
+
+#blmwbs15_builder #blmwbs15_builder_straps {
+    display: block;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    float: left;
+    width: 25.67567567%;
+    height: 100%;
+    background: transparent none;
+}
+
+#blmwbs15_builder #blmwbs15_builder_display {
+    display: block;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    float: left;
+    width: 35.13513513%;
+    height: 100%;
+    background: transparent none;
+}
+
+#blmwbs15_builder span.blmwbs15_price_sale {
+    color: #ea0000;
+    font-weight: bold;
+}
+
+#blmwbs15_builder .blmwbs15_uiblocker {
+    display: none;
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    top:0;
+    left: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+/*
+ * BUILDER / HEADS
+ */
+
+#blmwbs15_builder_heads #blmwbs15_builder_heads_viewport {
+    display: block;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 530px;
+    top: 40px;
+    overflow: hidden;
+}
+
+#blmwbs15_builder_heads #blmwbs15_builder_heads_container {
+    display: block;
+    position: relative;
+    margin: 0 auto;
+    padding: 0;
+    overflow: hidden;
+    width: 290px;
+    height: auto;
+}
+
+#blmwbs15_builder_heads_container .blmwbs15_builder_head {
+    display: block;
+    position: relative;
+    margin: 0 0 10px 0;
+    padding: 0;
+    overflow: hidden;
+    float: left;
+    width: 145px;
+    height: 170px;
+    background: transparent none;
+}
+
+#blmwbs15_builder_heads_container .blmwbs15_builder_head img {
+    display: block;
+    position: relative;
+    margin: 0 auto 5px auto;
+    width: 135px;
+    height: 135px;
+    border: none;
+}
+
+#blmwbs15_builder_heads_container .blmwbs15_builder_head span {
+    display: block;
+    position: relative;
+    margin: 0 auto;
+    width: 135px;
+    height: 15px;
+    line-height: 15px;
+    text-align: center;
+    border: none;
+    text-transform: uppercase;
+}
+
+#blmwbs15_builder_heads_container .blmwbs15_builder_head a {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    text-indent: -999px;
+    background: transparent url( '/fashion/images/projects/fashion-tips/customize-michele-watch/michele_builder_s15-nothing.png' ) no-repeat scroll 0% 0%;
+}
+
+#blmwbs15_builder_heads a.blmwbs15_arrow_up {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 28px;
+    left: 0;
+    top: 28px;
+    background: transparent url( '/fashion/images/projects/fashion-tips/customize-michele-watch/michele_builder_s15-scroll-arrows.png' ) no-repeat scroll 50% 7px;
+}
+
+#blmwbs15_builder_heads a.blmwbs15_arrow_down {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 28px;
+    left: 0;
+    top: 550px;
+    background: transparent url( '/fashion/images/projects/fashion-tips/customize-michele-watch/michele_builder_s15-scroll-arrows.png' ) no-repeat scroll 50% -23px;
+}
+
+/*
+ * BUILDER / STRAPS
+ */
+
+#blmwbs15_builder_straps #blmwbs15_builder_straps_viewport {
+    display: block;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 530px;
+    top: 40px;
+    overflow: hidden;
+    background: transparent url('/fashion/images/projects/fashion-tips/customize-michele-watch/michele_builder_s15-divider.png') no-repeat scroll 0% 50%;
+}
+
+#blmwbs15_builder_straps #blmwbs15_builder_straps_container {
+    display: block;
+    position: relative;
+    margin: 0 auto;
+    padding: 0;
+    overflow: hidden;
+    width: 220px;
+    height: auto;
+}
+
+#blmwbs15_builder_straps_container .blmwbs15_builder_strap {
+    display: block;
+    position: relative;
+    margin: 0 0 10px 0;
+    padding: 0;
+    overflow: hidden;
+    float: left;
+    width: 110px;
+    height: 170px;
+    background: transparent none;
+}
+
+#blmwbs15_builder_straps_container .blmwbs15_builder_strap img {
+    display: block;
+    position: relative;
+    margin: 0 auto 5px auto;
+    width: 100px;
+    height: 135px;
+    border: none;
+}
+
+#blmwbs15_builder_straps_container .blmwbs15_builder_strap span {
+    display: block;
+    position: relative;
+    margin: 0 auto;
+    width: 110px;
+    height: 15px;
+    line-height: 15px;
+    text-align: center;
+    border: none;
+    text-transform: uppercase;
+}
+
+#blmwbs15_builder_straps_container .blmwbs15_builder_strap a {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    text-indent: -999px;
+    background: transparent url( '/fashion/images/projects/fashion-tips/customize-michele-watch/michele_builder_s15-nothing.png' ) no-repeat scroll 0% 0%;
+}
+
+#blmwbs15_builder_straps a.blmwbs15_arrow_up {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 28px;
+    left: 0;
+    top: 28px;
+    background: transparent url( '/fashion/images/projects/fashion-tips/customize-michele-watch/michele_builder_s15-scroll-arrows.png' ) no-repeat scroll 50% 7px;
+}
+
+#blmwbs15_builder_straps a.blmwbs15_arrow_down {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 28px;
+    left: 0;
+    top: 550px;
+    background: transparent url( '/fashion/images/projects/fashion-tips/customize-michele-watch/michele_builder_s15-scroll-arrows.png' ) no-repeat scroll 50% -23px;
+}
+
+/*
+ * BUILDER / VIEWER
+ */
+
+#blmwbs15_builder_display #blmwbs15_builder_display_viewer {
+    display: block;
+    position: relative;
+    margin: 20px 0 0 0;
+    padding: 1px 0 0 0;
+    width: 100%;
+    height: 360px;
+    border: none;
+    overflow: hidden;
+    background: transparent url('/fashion/images/projects/fashion-tips/customize-michele-watch/michele_builder_s15-display-divider.png') no-repeat scroll 0% 0%;
+}
+
+#blmwbs15_builder_display_viewer #blmwbs15_builder_display_watch {
+    display: block;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    width: 325px;
+    height: 360px;
+    border: none;
+    overflow: hidden;
+}
+
+#blmwbs15_builder_display_watch #blmwbs15_builder_display_image {
+    display: block;
+    position: relative;
+    margin: 0;
+    border: none;
+    outline: none;
+    width: 325px;
+    height: 360px;
+}
+
+#blmwbs15_builder_display_viewer #blmwbs15_builder_display_message {
+    display: block;
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    top: 0;
+    left: 0;
+    border: none;
+    color: transparent;
+    overflow: hidden;
+    width: 325px;
+    height: 360px;
+    text-indent: -999px;
+    background: transparent url('/fashion/images/projects/fashion-tips/customize-michele-watch/michele_builder_s15-initial-message.png') no-repeat scroll 50% 50%;
+}
+
+#blmwbs15_builder_display_viewer #blmwbs15_builder_display_control {
+    display: block;
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    right: 13px;
+    top: 15px;
+    width: auto;
+    height: auto;
+    border: none;
+    outline: none;
+    overflow: hidden;
+}
+
+#blmwbs15_builder_display_control a.blmwbs15_button {
+    display: block;
+    position: relative;
+    float: right;
+    clear: both;
+    margin: 0 0 10px;
+    padding: 0;
+    border: none;
+    outline: none;
+    color: transparent;
+    overflow: hidden;
+}
+
+#blmwbs15_builder_display_control a.blmwbs15_button:nth-child(1) {
+    width: 72px;
+    height: 15px;
+    background: transparent url('/fashion/images/projects/fashion-tips/customize-michele-watch/michele_builder_s15-display-clear.png') no-repeat scroll 100% 50%;
+}
+
+#blmwbs15_builder_display_control a.blmwbs15_button:nth-child(2) {
+    width: 32px;
+    height: 15px;
+    background: transparent url('/fashion/images/projects/fashion-tips/customize-michele-watch/michele_builder_s15-display-help.png') no-repeat scroll 100% 50%;
+}
+
+/*
+ * BUILDER / BAG
+ */
+
+#blmwbs15_builder_display #blmwbs15_builder_display_bag {
+    display: block;
+    position: relative;
+    margin: 0;
+    padding: 15px 0 0 0;
+    width: 100%;
+    height: auto;
+    border: none;
+    background: transparent url('/fashion/images/projects/fashion-tips/customize-michele-watch/michele_builder_s15-display-divider.png') no-repeat scroll 0% 0%;
+}
+
+#blmwbs15_builder_display_bag #blmwbs15_builder_display_items {
+    display: block;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    width: 325px;
+    height: 84px;
+}
+
+#blmwbs15_builder_display_items .blmwbs15_builder_display_item {
+    display: block;
+    position: relative;
+    margin: 0 0 10px 0;
+    padding: 0 100px 0 22px;
+    width: auto;
+    height: 32px;
+    font-size: 11px;
+}
+
+#blmwbs15_builder_display_items .blmwbs15_builder_display_item a.blmwbs15_text {
+    display: inline;
+    font-size: 1em;
+    font-weight: normal;
+    text-decoration: underline;
+}
+
+#blmwbs15_builder_display_items .blmwbs15_builder_display_item .blmwbs15_tiered_pricing {
+    display: block;
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    right: 0;
+    top: 0;
+    width: 95px;
+    height: auto;
+}
+
+#blmwbs15_builder_display_items .blmwbs15_builder_display_item .blmwbs15_tiered_pricing span.blmwbs15_price,
+#blmwbs15_builder_display_items .blmwbs15_builder_display_item .blmwbs15_tiered_pricing span.blmwbs15_price_sale {
+    display: block;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    height: auto;
+    text-align: right;
+    font-size: 1em;
+    line-height: 1em;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+#blmwbs15_builder_display_items .blmwbs15_builder_display_item.disabled a.blmwbs15_text,
+#blmwbs15_builder_display_items .blmwbs15_builder_display_item.disabled .blmwbs15_tiered_pricing span.blmwbs15_price,
+#blmwbs15_builder_display_items .blmwbs15_builder_display_item.disabled .blmwbs15_tiered_pricing span.blmwbs15_price_sale {
+    color: #b1b1b1;
+}
+
+#blmwbs15_builder_display_items .blmwbs15_builder_display_item a.blmwbs15_checkbox {
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    left: 0;
+    top: 1px;
+}
+
+#blmwbs15_builder_display_bag #blmwbs15_builder_display_total {
+    display: block;
+    position: relative;
+    margin: 0;
+    padding: 15px 0 0 0;
+    width: 325px;
+    height: auto;
+    border: none;
+    background: transparent url('/fashion/images/projects/fashion-tips/customize-michele-watch/michele_builder_s15-display-divider.png') no-repeat scroll 0% 0%;
+    font-weight: bold;
+}
+
+#blmwbs15_builder_display_total a.blmwbs15_button {
+    display: block;
+    position: relative;
+    margin: 25px 0 0 0;
+    padding: 0;
+    color: transparent;
+    overflow: hidden;
+    width: 324px;
+    height: 31px;
+    text-indent: -9999px;
+    background: transparent url('/fashion/images/projects/fashion-tips/customize-michele-watch/michele_builder_s15-add-to-bag.png') no-repeat scroll 50% 50%;
+}
+
+#blmwbs15_builder_display_total span.blmwbs15_price {
+    position: absolute;
+    right: 0;
+    top: 15px; /* must match parent padding */
+    font-weight: bold;
+}
+
+#blmwbs15_builder_display_total #blmwbs15_error_messages {
+    display: block;
+    position: relative;
+    margin: 8px 0 0 0;
+    text-align: center;
+    color: #ea0000;
+    line-height: 1em;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+/*
+ * BOTTOM BAR
+ */
+
+#blmwbs15_window #blmwbs15_bar {
+    display: block;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height: 33px;
+    z-index: 1;
+}
+
+#blmwbs15_bar #blmwbs15_tabs, #blmwbs15_bar #blmwbs15_links {
+    position: relative;
+    display: block;
+    margin: 0;
+    padding: 0;
+    float: left;
+    width: auto;
+    height: 33px;
+    overflow: hidden;
+}
+
+#blmwbs15_bar #blmwbs15_tabs a.blmwbs15_button {
+    display: block;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    float: left;
+    color: transparent;
+    text-indent: -9999px;
+    overflow: hidden;
+    height: 33px;
+    background: transparent url('/fashion/images/projects/fashion-tips/customize-michele-watch/michele_builder_s15-bottom-nav.png') no-repeat scroll 0px 0px;
+}
+
+#blmwbs15_bar #blmwbs15_tabs #blmwbs15_tab_builder {
+    width: 173px;
+    background-position: 0px -33px;
+}
+
+#blmwbs15_bar #blmwbs15_tabs #blmwbs15_tab_builder.selected {
+    background-position: 0px 0px;
+}
+
+#blmwbs15_bar #blmwbs15_tabs #blmwbs15_tab_featured {
+    width: 179px;
+    background-position: -173px 0;
+}
+
+#blmwbs15_bar #blmwbs15_tabs #blmwbs15_tab_featured.selected {
+    background-position: -173px -33px;
+}
+
+#blmwbs15_bar #blmwbs15_links {
+    width: 250px;
+}
+
+#blmwbs15_bar #blmwbs15_links a.blmwbs15_button {
+  position: relative;
+  display: block;
+  margin: 0 0 0 10px;
+  width: 229px;
+  height: 33px;
+  color: transparent;
+  text-indent: -9999px;
+  background: transparent url('/fashion/images/projects/fashion-tips/customize-michele-watch/michele_builder_s15-bottom-nav-shop-all-link.png') no-repeat scroll 50% 50%;
+  border: none;
+  outline: none;
+}
+
+#blmwbs15_bar #blmwbs15_sharing {
+    display: block;
+    position: relative;
+    margin: 8px 8px 0 0;
+    padding: 0;
+    float: right;
+    width: auto;
+    height: 18px;
+    overflow: hidden;
+}
+
+#blmwbs15_bar #blmwbs15_sharing a.blmwbs15_button {
+    display: block;
+    position: relative;
+    float: left;
+    margin: 0 0 0 10px;
+    height: 18px;
+    width: 18px;
+    color: transparent;
+    text-indent: -9999px;
+    outline: none;
+    border: none;
+    overflow: hidden;
+    background: transparent url('/fashion/images/projects/fashion-tips/customize-michele-watch/michele_builder_s15-bottom-nav-sharing-icons.png') no-repeat scroll 0px 0px;
+}
+
+#blmwbs15_bar #blmwbs15_sharing > a.blmwbs15_button.link_facebook {
+    background-position: 0px 0px;
+}
+
+#blmwbs15_bar #blmwbs15_sharing > a.blmwbs15_button.link_twitter {
+    background-position: -18px 0px;
+}
+
+#blmwbs15_bar #blmwbs15_sharing > a.blmwbs15_button.link_pinterest {
+    background-position: -36px 0px;
+}
+
+
+/*
+ * BUILDER / OPTIONS
+ */
+
+#blmwbs15_builder #blmwbs15_builder_options {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 320px;
+    height: 28px;
+    overflow: hidden;
+    background: transparent none;
+}
+
+#blmwbs15_builder #blmwbs15_builder_options.active {
+    width: 100%;
+    height: 100%;
+}
+
+#blmwbs15_builder_options > .menu_view-options {
+    display: block;
+    position: absolute;
+    left: 30px;
+    top: 4px;
+    width: auto;
+    height: 24px;
+}
+
+#blmwbs15_builder_options > .menu_view-options > .menu_view-option {
+    display: block;
+    position: relative;
+    float: left;
+    margin: 0;
+    padding: 8px 32px 8px 16px;
+    height: 100%;
+    line-height: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    letter-spacing: 0.02em;
+    background: transparent url('/fashion/images/projects/fashion-tips/customize-michele-watch/michele_builder_s15-options-arrow-down.png') no-repeat scroll 100% 75%;
+}
+
+#blmwbs15_builder_options > .menu_view-options > .menu_view-option.active {
+    background-color: #fff;
+    box-shadow: 6px 6px 8px rgba(56, 56, 56, 0.13);
+    &:focus {
+        outline: none;
+    }
+}
+
+#blmwbs15_builder_options > .menu_view-options > .menu_view-separator {
+    display: block;
+    position: relative;
+    margin: 0 8px;
+    padding: 0;
+    float: left;
+    width: 1px;
+    height: 32px;
+    background: transparent url( '/fashion/images/projects/fashion-tips/customize-michele-watch/michele_builder_s15-options-separator.png' ) no-repeat scroll 0px 10px;
+}
+
+#blmwbs15_builder_options .menu_view-flyout {
+    display: block;
+    position: absolute;
+    padding: 20px 20px 20px 28px;
+    overflow: hidden;
+    background: #fff none;
+    box-shadow: 6px 6px 8px rgba(56, 56, 56, 0.13);
+}
+
+#blmwbs15_builder_options #blmwbs15_builder_options_menu_sort {
+    left: 119px;
+    top: 36px;
+    min-width: 150px;
+}
+
+#blmwbs15_builder_options #blmwbs15_builder_options_menu_refine {
+    top: 28px;
+    left: 30px;
+    width: 440px;
+}
+
+#blmwbs15_builder_options > .menu_view-flyout a.blmwbs15_button {
+    display: block;
+    position: relative;
+    text-decoration: none;
+}
+
+#blmwbs15_builder_options > .menu_view-flyout a.blmwbs15_button_close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 35px;
+    height: 30px;
+    color: transparent;
+    text-indent: -999px;
+    background: transparent url('/fashion/images/projects/fashion-tips/customize-michele-watch/michele_builder_s15-icon-close.png') no-repeat scroll 50% 50%;
+}
+
+#blmwbs15_builder_options > .menu_view-flyout a.blmwbs15_button_clear {
+    position: absolute;
+    padding: 0 4px;
+    top: 10px;
+    right: 65px;
+    width: 62px;
+    height: 30px;
+    line-height: 30px;
+    overflow: hidden;
+    text-indent: -999px;
+    color: transparent;
+    color: #000;
+    background: transparent url('/fashion/images/projects/fashion-tips/customize-michele-watch/michele_builder_s15-refine-clear.png') no-repeat scroll 50% 50%;
+}
+
+#blmwbs15_builder_options > .menu_view-flyout a.blmwbs15_button_submit {
+    padding: 0;
+    margin: 16px 0 0 0;
+    float: right;
+    clear: both;
+    color: #fff;
+    width: 60px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    letter-spacing: 0.04em;
+    background: #000 none;
+}
+
+#blmwbs15_builder_options > .menu_view-flyout dl {
+    display: block;
+    position: relative;
+    margin: 24px 0 0 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+#blmwbs15_builder_options > .menu_view-flyout dl.hidden {
+    display: none;
+}
+
+#blmwbs15_builder_options > .menu_view-flyout dl:first-child {
+    margin: 8px 0 0 0;
+}
+
+#blmwbs15_builder_options > .menu_view-flyout dl dt {
+    display: block;
+    position: relative;
+    margin: 0px 0px 4px 0px;
+    padding: 0;
+    height: 18px;
+    line-height: 18px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+#blmwbs15_builder_options > .menu_view-flyout dl dd {
+    display: block;
+    display: block;
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+#blmwbs15_builder_options > .menu_view-flyout dl dd a.blmwbs15_checkbox {
+    display: block;
+    position: relative;
+    padding: 2px 0px 2px 20px;
+    margin: 2px 0px;
+    width: auto;
+    height: 16px;
+    line-height: 16px;
+    text-indent: 0;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: inherit;
+    background: transparent url('/fashion/images/projects/fashion-tips/customize-michele-watch/michele_builder_s15-checkbox-unchecked.png') no-repeat scroll 0% 50%;
+}
+
+#blmwbs15_builder_options > .menu_view-flyout > dl > dd > a.blmwbs15_checkbox.hidden {
+    display: none !important;
+}
+
+#blmwbs15_builder_options > .menu_view-flyout dl dd a.blmwbs15_checkbox.checked {
+    background-image: url('/fashion/images/projects/fashion-tips/customize-michele-watch/michele_builder_s15-checkbox-checked.png');
+}
+
+#blmwbs15_builder_options #blmwbs15_builder_options_menu_refine.menu_view-flyout > dl {
+    margin: 12px 0 0 0;
+    padding: 12px 0 0 0;
+    border-width: 1px 0 0 0;
+    border-style: solid;
+    border-color: #b8b8b8;
+}
+
+#blmwbs15_builder_options #blmwbs15_builder_options_menu_refine.menu_view-flyout > dl:first-child {
+    border-width: 0;
+}
+
+#blmwbs15_builder_options #blmwbs15_builder_options_menu_refine.menu_view-flyout > dl > dd {
+    float: left;
+    width: 100px;
+    margin-right: 10px;
+}
+
+#blmwbs15_builder_options #blmwbs15_builder_options_menu_refine.menu_view-flyout > dl#blmwbs15_builder_options_refine_color > dd {
+    width: 200px;
+}
