@@ -1,6 +1,8 @@
 
 //@import "vendor/foundation/components/reveal";
 
+@import "variables";
+
 /* override main.css */
 BODY {
     font-family: "Avenir W01",Helvetica,Arial,sans-serif;
@@ -325,12 +327,6 @@ DIV {
             }
         }
     }
-    // visitor services
-    #bl_vsMainWithMargin {
-        width: 490px;
-        margin-right: 20px;
-        float: left;
-    }
     .bl_vsHeader,
     .bl_vsSubHeader,
     .bl_vsCityHeader {
@@ -346,65 +342,51 @@ DIV {
     .bl_vsCityHeader {
         font-size: 10pt;
     }
-    #bl_vsMainWithMargin {
-        width: 490px;
-        margin-right: 20px;
-        float: left;
+    .columns.contact-info {
+        padding-left: 0;
     }
-    #bl_vsEmailNews {
-        width: 215px;
-        float: right;
-        background-color: #f0f0f0;
-        TD {
-            padding-right:4px;
+    #visitor-services-banner {
+        text-transform: uppercase;
+        background: #db1aab;
+        height: 32px;
+        margin-bottom: 10px;
+        margin-top: 10px;
+        #text-container {
+            margin: 0 auto;
+            max-width: 400px;
+            height: 100%;
+            #text-left {
+                float: left;
+            }
+            #text-right {
+                float: right;
+                padding-top: 5px;
+                p {
+                    font-size: 15px;
+                    font-weight: 100;
+                }
+            }
+            h4, p, a {
+                color: $white;
+            }
         }
-        INPUT {
-            height:1.5rem;
-            padding:3px;
-            margin:0;
-            margin-bottom:4px;
-        }
-        .bl_inputCover{
-            height:2px;
-        }
-    }
-    #bl_vsEmailErrorDiv {
-        display: none;
     }
     ul#bl_vsList
     {
         padding: 0 14px;
     }
-    #bl_vsLeftList {
-        float: left;
-        min-width: 150px;
+    .bl_vsLeftList, .bl_vsRightList {
         margin: 0;
         padding: 0;
     }
-    .bl_vsPullRight {
-        float: right !important;
-    }
-    #bl_vsRightList {
-        float: left;
-        margin: 0;
-        padding: 0;
-    }
-    #bl_vsLeftList p, #bl_vsRightList p {
+    .bl_vsLeftList p, .bl_vsRightList p {
         margin: 2px 0;
     }
     ul#bl_vsList li {
         margin: 3px 0;
     }
-    #bl_vsEmailNewsInner {
-        padding: 0 10px;
-    }
-    #bl_vsAgeDisclaimer {
-        width: 170px;
-        font-size:.8rem;
-    }
-    #bl_vsSubmitDiv {
-        margin: 12px 0;
-        float: right;
+    #visitor-more-info {
+        margin-top: 16px;
     }
     // studio services
     DIV {
@@ -664,6 +646,18 @@ DIV {
         #crBanner {
             display: none;
         }
+        #visitor-services-banner {
+            #text-container {                
+                #text-left {
+                    display: none;
+                }
+                #text-right {
+                    margin: 0 auto;
+                    float: none;
+                    text-align: center;
+                }
+            }
+        }
     }
 
 }
@@ -704,3 +698,25 @@ DIV {
     }
 }
 
+// At width less than 600 is when medium Foundation
+// classes stop, and small Foundation classes start
+// Apply these rules when small Foundation classes are in place
+@media screen and (max-width: 599px){
+    .newLayout {        
+        .visitor-location {
+            margin-bottom: 10px;
+            padding-left: 5px;
+            .location-state {
+                font-weight: bold;
+                text-decoration: underline;
+                margin-bottom: 0;
+            }
+            .location-address {
+                margin-top: 0px;
+            }
+        }
+        .columns.contact-info {
+            padding-left: 5px;
+        }
+    }
+}
