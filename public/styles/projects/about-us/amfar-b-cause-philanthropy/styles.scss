@@ -9,7 +9,7 @@
 
 .b-cause-main {
     h1 {
-        color: #3068ad;
+        color: #2376a5;
     }
 
     .b-cause-body {
@@ -28,5 +28,13 @@
 		.photo-2 {
 			margin-top: 20px;
 		}
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .b-cause-main {
+        .no-left-padding {
+            padding-left: 0px;
+        }
     }
 }
