@@ -15,7 +15,6 @@
                                 <!--BEGIN LOCAL NAVIGATION-->
                                 <div class="gn_left_nav_container">
                                     <div id="bl_leftNavContainer">
-                                        {{>leftnav}}
                                     </div>
                                 </div>
                                 <!--END LOCAL NAVIGATION-->
@@ -40,3 +39,8 @@
         </div>
     </div>
 </div>
+<script type="text/javascript">
+    require( [ 'jquery', 'bcomLeftNav/account/AccountLeftNav' ], function ( $, accountLeftNav ) {
+        accountLeftNav.render( '#bl_leftNavContainer', "" );
+    });
+</script>
