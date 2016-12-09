@@ -35,7 +35,7 @@
     <article class="content row" ng:class="{true:'mobile-por', false:''}[lang === 'POR']">
         <p ng-bind="copy[lang].stores.dropdown.copy" text-to-html="copy[lang].stores.dropdown.copy" ng-cloak></p>
     </article>
-    <article class="store-data width-962 row" ng-show="storeSelection !== null">
+    <article class="store-data width-962 row" ng-show="storeSelection !== null" ng:class="{true:'', false:'hide-pdf'}[lang === 'ENG' || lang === 'CN' || lang === 'POR' ]">
         <div class="left small-cnbr-24 small-cnbr-centered medium-cnbr-6 medium-cnbr-centered large-cnbr-12 large-cnbr-centered columns">
         	<h3 ng-cloak>//copy[lang].stores.storeData.id[storeSelection].name//</h3>
         	<h4 ng-bind="copy[lang].stores.storeData.id[storeSelection].addr" text-to-html="copy[lang].stores.storeData.id[storeSelection].addr" ng-cloak></h4>
@@ -43,7 +43,7 @@
         	<p class="hrs" ng-bind="copy[lang].stores.storeData.id[storeSelection].hours" text-to-html="copy[lang].stores.storeData.id[storeSelection].hours" ng-cloak>/p>
         	<p ng-bind="copy[lang].stores.storeData.id[storeSelection].descr" text-to-html="copy[lang].stores.storeData.id[storeSelection].descr" ng-cloak></p>
         </div>
-        <div class="right small-cnbr-24 small-cnbr-centered medium-cnbr-6 medium-cnbr-centered large-cnbr-12 large-cnbr-centered columns" ng:class="{true:'soca', false:''}[storeSelection === '7']" >
+        <div class="right small-cnbr-24 small-cnbr-centered medium-cnbr-6 medium-cnbr-centered large-cnbr-12 large-cnbr-centered columns" ng:class="{true:'soca', false:''}[storeSelection === '7']">
         	<h3>//copy[lang].stores.storeData.id[storeSelection].dTile//</h3>
         	<h4>//copy[lang].stores.storeData.id[storeSelection].dInfo//</h4>
         	<img src="/fashion/images/projects/international/china-brazil/StoresDownloadBooklet.jpg" />
