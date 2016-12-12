@@ -1,7 +1,7 @@
 {
   "designerName": "Gucci",
   "machineReadableDesignerName": "gucci_handbags_belts",
-  "title2Prefix": "Gucci Handbags & Belts",
+  "title2Prefix": "Gucci Handbags and Belts",
   "title2Suffix": "ARE ONLY AVAILABLE AT SELECT BLOOMINGDALE&rsquo;S STORES.",
   "pageUrlDesignerAlias": "gucci-handbags-belts",
   "designerDescription": "",
@@ -36,7 +36,7 @@
         "streetAddress": "10250 Santa Monica Boulevard",
         "cityStateZip": "Los Angeles, CA 90067",
         "phoneNumber": "310-772-2100",
-        "phoneNumberHrefSuffix": "+1-310-722-2100",
+        "phoneNumberHrefSuffix": "+1-310-772-2100",
         "urlArgs": {
           "addressAlias": "century-city",
            "designerAlias": "gucci_handbags_belts",

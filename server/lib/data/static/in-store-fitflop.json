@@ -1,7 +1,7 @@
 {
-  "designerName": "FITFLOP",
+  "designerName": "FitFlop",
   "machineReadableDesignerName": "fit_flop",
-  "pageUrlDesignerAlias": "fit-flop",
+  "pageUrlDesignerAlias": "fitflop",
   "designerDescription": "",
   "addressColumns": [
     [
@@ -94,15 +94,15 @@
     ],
     [
       {
-        "name": "BERGEN SHOPS AT RIVERSIDE",
-        "streetAddress": "400 Hackensack Avenue",
-        "cityStateZip": "The Shops at Riverside<br />Hackensack, NJ 07601",
-        "phoneNumber": "201-457-2000",
-        "phoneNumberHrefSuffix": "+1-201-457-2000",
+        "name": "BERGEN TOWN CENTER OUTLET",
+        "streetAddress": "260 Bergen Town Center",
+        "cityStateZip": "Paramus, NJ 07652",
+        "phoneNumber": "201-490-6840",
+        "phoneNumberHrefSuffix": "+1-201-490-6840",
         "urlArgs": {
-          "addressAlias": "bergen-shops-at-riverside",
+          "addressAlias": "bergen-town-center-outlet",
           "designerAlias": "fit_flop",
-          "addressFullDetail": "THE-SHOPS-AT-RIVERSIDE"
+          "addressFullDetail": "BERGEN-TOWN-CENTER-OUTLET"
         }
       },
       {
