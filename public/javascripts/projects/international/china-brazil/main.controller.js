@@ -26,16 +26,16 @@
                     case 'http://www1.bloomingdales.com/#':
                         // $event.preventDefault();
                         view = 'top-nav_shop';
-                        Coremetrics.tag('Element', pageID, prefix + view);
+                        Coremetrics.tag('Element', prefix + pageID, prefix + view);
                         break;
                     case 'http://www1.bloomingdales.com/':
                         // $event.preventDefault();
                         view = 'hp_shop-online';
-                        Coremetrics.tag('Element', pageID, prefix + view);
+                        Coremetrics.tag('Element', prefix + pageID, prefix + view);
                         break;                        
                     case 'http://www1.bloomingdales.com/shop/fashion-lookbooks-videos-style-guide?id=13668':
                         view = 'hp-shop-whats-new';
-                        Coremetrics.tag('Element', pageID, prefix + view);
+                        Coremetrics.tag('Element', prefix + pageID, prefix + view);
                         break;
                 }
             } else if (view.indexOf('/') === 0) {
@@ -66,7 +66,7 @@
                     view = 'hp_category_' + view;
                 }
 
-                Coremetrics.tag('Element', pageID, prefix + view);
+                Coremetrics.tag('Element', prefix + pageID, prefix + view);
             } else {
                 var url = null;
                 var device = (windowWidth < 641) ? 'mobileLinks' : 'desktopLinks';
@@ -77,7 +77,7 @@
 
                 //Coremetrics tag
                 view = 'hp_shop_' + view;
-                Coremetrics.tag('Element', pageID, prefix + view);
+                Coremetrics.tag('Element', prefix + pageID, prefix + view);
             }
         };
 
@@ -92,7 +92,7 @@
                 prefix = (windowWidth < 641) ? 'MBL:' : '',            
                 tag = prefix + 'socialshare_show-overlay';
 
-            Coremetrics.tag('Element', pageID, tag);
+            Coremetrics.tag('Element', prefix + pageID, tag);
         };
 
         $scope.shareOnMob = function(service, lang) {
@@ -110,7 +110,7 @@
                 windowWidth = $window.innerWidth,
                 prefix = (windowWidth < 641) ? 'MBL:' : '',              
                 tag = prefix + 'socialshare-' + service;
-            Coremetrics.tag('Element', pageID, tag);
+            Coremetrics.tag('Element', prefix + pageID, tag);
         };
 
         $scope.langOnClick = function($event) {
@@ -177,7 +177,7 @@
             //Coremetrics tag
             var windowWidth = $window.innerWidth,
                 prefix = (windowWidth < 641) ? 'MBL:' : '',             
-                tag = prefix + globalLang + '_show-overlay';
+                tag = prefix + pageID;
             Coremetrics.tag('Element', prefix + $scope.globalLangSwitch(globalLang), tag);
         };
 
@@ -188,7 +188,13 @@
                 $scope.socialModal = true;
             }
             $scope.flagModal = false;
-            $scope.weixinOn = false;
+            $scope.weixinOn = false;  
+
+            //Coremetrics tag          
+            var windowWidth = $window.innerWidth,
+                prefix = (windowWidth < 641) ? 'MBL:' : '',            
+                tag = prefix + 'socialshare_show-overlay';                   
+            Coremetrics.tag('Element', prefix + $scope.globalLangSwitch($scope.lang), tag);  
         };
 
         $scope.share = function(service, lang) {
@@ -203,7 +209,7 @@
                 windowWidth = $window.innerWidth,
                 prefix = (windowWidth < 641) ? 'MBL:' : '',            
                 tag = prefix + 'socialshare-';                   
-            Coremetrics.tag('Element', pageID, tag + service);               
+            Coremetrics.tag('Element', prefix + pageID, tag + service);               
         };
 
         $scope.footerCM = function() {
@@ -216,7 +222,7 @@
                 prefix = (windowWidth < 641) ? 'MBL:' : '',            
                 tag = prefix + 'footer_email-signup';
 
-            Coremetrics.tag('Element', pageID, tag);
+            Coremetrics.tag('Element', prefix + pageID, tag);
         };
 
         $rootScope.$on('lang:change', function(ev, args) {

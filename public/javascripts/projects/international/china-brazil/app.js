@@ -239,7 +239,7 @@
     
                     //Coremetrics tag          
                     tag = prefix + 'settings-menu_close';
-                    Coremetrics.tag('Element', pageID, tag);                
+                    Coremetrics.tag('Element', prefix + pageID, tag);                
                 } else {
                     jQuery('.left-off-canvas-toggle').addClass('open');
                     var height = document.body.clientHeight;
