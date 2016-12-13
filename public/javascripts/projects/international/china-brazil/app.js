@@ -209,10 +209,11 @@
                     case '/visit-our-stores':
                         catID = pageID + '--visit';
                         break;
-                }                      
+                }  
+                catID = prefix + catID;                    
                 pageID = prefix + pageID;
 
-                Coremetrics.tag('Pageview', pageID, catID);
+                Coremetrics.tag('Pageview', catID, pageID);
             }
         }
 
@@ -251,7 +252,7 @@
 
                     //Coremetrics tag          
                     tag = prefix + 'settings-menu_open';
-                    Coremetrics.tag('Element', pageID, tag);                
+                    Coremetrics.tag('Element', prefix + pageID, tag);                
                 }
             });
         });

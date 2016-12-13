@@ -133,7 +133,7 @@
             var windowWidth = $window.innerWidth,
                 prefix = (windowWidth < 641) ? 'MBL:' : '',             
                 tag = prefix + 'language-btn_' + globalLang;
-            Coremetrics.tag('Element', $scope.globalLangSwitch(globalLang), tag);
+            Coremetrics.tag('Element', prefix + $scope.globalLangSwitch(globalLang), tag);
         };
 
         $scope.langModal = function ($event) {
@@ -178,7 +178,7 @@
             var windowWidth = $window.innerWidth,
                 prefix = (windowWidth < 641) ? 'MBL:' : '',             
                 tag = prefix + globalLang + '_show-overlay';
-            Coremetrics.tag('Element', $scope.globalLangSwitch(globalLang), tag);
+            Coremetrics.tag('Element', prefix + $scope.globalLangSwitch(globalLang), tag);
         };
 
         $scope.shareModal = function () {
@@ -234,7 +234,7 @@
             var windowWidth = $window.innerWidth,
                 prefix = (windowWidth < 641) ? 'MBL:' : '',             
                 tag = prefix + 'download-pdf';
-            Coremetrics.tag('Element', $scope.globalLangSwitch(globalLang), tag);
+            Coremetrics.tag('Element', prefix + $scope.globalLangSwitch(globalLang), tag);
         };
 
         $scope.globalLangSwitch = function (globalLang) {
