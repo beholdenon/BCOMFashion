@@ -122,25 +122,7 @@
             AppGlobals.setAttr('lang', globalLang);
             localStorageService.set('lang', globalLang);
 
-            //set CM pageID global attr
-            var pageID = null;
-            switch(globalLang) {
-                case 'POR':
-                    pageID = 'fall15_brazilmicrosite';
-                    break;
-                case 'CN':
-                    pageID = 'fall15_chinamicrosite';
-                    break;
-                case 'ESP':
-                    pageID = 'fall15_spanishmicrosite';
-                    break;
-                case 'JP':
-                    pageID = 'fall15_japanmicrosite';
-                    break;
-                default:
-                    pageID = 'fall15_englishmicrosite';
-            }
-            AppGlobals.setAttr('cm_pageID', pageID);
+            AppGlobals.setAttr('cm_pageID', $scope.globalLangSwitch(globalLang));
 
             $rootScope.$broadcast('lang:change', {
                 lang: globalLang
@@ -151,10 +133,13 @@
             var windowWidth = $window.innerWidth,
                 prefix = (windowWidth < 641) ? 'MBL:' : '',             
                 tag = prefix + 'language-btn_' + globalLang;
-            Coremetrics.tag('Element', pageID, tag);
+            Coremetrics.tag('Element', $scope.globalLangSwitch(globalLang), tag);
         };
 
-        $scope.langModal = function () {
+        $scope.langModal = function ($event) {
+            var globalLang,
+                el = jQuery($event.target);
+
             if ( $scope.flagModal === true ) {
                 $scope.flagModal = false;
             } else {
@@ -162,6 +147,38 @@
             }
             $scope.socialModal = false;
             $scope.weixinOn = false;
+
+            globalLang = el.attr('data-lang') || el.parent().attr('data-lang'); 
+
+            AppGlobals.setAttr('lang', globalLang);
+            localStorageService.set('lang', globalLang);     
+            
+            //set CM pageID global attr
+            var pageID = null;
+
+            switch(globalLang) {
+                case 'POR':
+                    pageID = 'brazil_show-overlay ';
+                    break;
+                case 'CN':
+                    pageID = 'china_show-overlay ';
+                    break;
+                case 'ESP':
+                    pageID = 'spanish_show-overlay ';
+                    break;
+                case 'JP':
+                    pageID = 'japan_show-overlay ';
+                    break;
+                default:
+                    pageID = 'english_show-overlay ';
+            }
+            AppGlobals.setAttr('cm_pageID', pageID);
+
+            //Coremetrics tag
+            var windowWidth = $window.innerWidth,
+                prefix = (windowWidth < 641) ? 'MBL:' : '',             
+                tag = prefix + globalLang + '_show-overlay';
+            Coremetrics.tag('Element', $scope.globalLangSwitch(globalLang), tag);
         };
 
         $scope.shareModal = function () {
@@ -205,5 +222,42 @@
         $rootScope.$on('lang:change', function(ev, args) {
             $scope.lang = args.lang;
         });
+
+        $scope.pdfDownloadCM = function (lang) {
+            var globalLang = lang;
+
+            AppGlobals.setAttr('lang', globalLang);
+            localStorageService.set('lang', globalLang);           
+
+            AppGlobals.setAttr('cm_pageID', $scope.globalLangSwitch(globalLang));
+
+            var windowWidth = $window.innerWidth,
+                prefix = (windowWidth < 641) ? 'MBL:' : '',             
+                tag = prefix + 'download-pdf';
+            Coremetrics.tag('Element', $scope.globalLangSwitch(globalLang), tag);
+        };
+
+        $scope.globalLangSwitch = function (globalLang) {
+            var pageID = null;
+
+            switch(globalLang) {
+                case 'POR':
+                    pageID = 'fall15_brazilmicrosite';
+                    break;
+                case 'CN':
+                    pageID = 'fall15_chinamicrosite';
+                    break;
+                case 'ESP':
+                    pageID = 'fall15_spanishmicrosite';
+                    break;
+                case 'JP':
+                    pageID = 'fall15_japanmicrosite';
+                    break;
+                default:
+                    pageID = 'fall15_englishmicrosite';
+            }
+
+            return pageID;
+        };
     }
 })();
