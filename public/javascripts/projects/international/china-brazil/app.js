@@ -236,6 +236,7 @@
                         'overflow': 'initial'
                     });
                     jQuery('.left-off-canvas-toggle').removeClass('open');
+                    jQuery('.arriving-input, .departing-input').show();
     
                     //Coremetrics tag          
                     tag = prefix + 'settings-menu_close';

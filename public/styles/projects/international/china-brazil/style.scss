@@ -153,8 +153,11 @@ html {
               &.lang {
               position: relative;
               height: 46px;  
-              border-bottom: solid 1px #cdccd2;   
-              border-right: solid 1px #cdccd2;    
+              border-right: solid 1px #cdccd2;
+              border-bottom: solid 1px #cdccd2; 
+              @media #{$small-only} {
+                border-bottom: solid 0px #cdccd2;  
+              }   
                 ul {
                   margin: 0;
                   li {
@@ -187,7 +190,11 @@ html {
                 line-height: 20.3vmin;
                 height: 76px;
                 height: 20.3vmin;
-                border-bottom: solid 1px #cdccd2; 
+                border-top: solid 1px #cdccd2;
+                clear: both;
+                &.last{
+                  border-bottom: solid 1px #cdccd2;;
+                  }
                 a {
                   text-decoration: none;
                   text-transform: uppercase;
