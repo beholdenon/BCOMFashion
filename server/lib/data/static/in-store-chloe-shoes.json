@@ -1,0 +1,162 @@
+{
+  "designerName": "Chlo&eacute; Shoes",
+  "machineReadableDesignerName": "chloe_clothing",
+  "title2Prefix": "Chlo&eacute; Shoes",
+  "title2Suffix": "ARE ONLY AVAILABLE AT SELECT BLOOMINGDALE&rsquo;S STORES.",
+  "pageUrlDesignerAlias": "chloe-clothing",
+  "designerDescription": "",
+  "addressColumns": [
+    [
+      {
+        "name": "59TH STREET",
+        "streetAddress": "1000 Third Avenue",
+        "cityStateZip": "59th Street and Lexington Avenue<br />New York, NY 10022",
+        "phoneNumber": "212-705-2000",
+        "phoneNumberHrefSuffix": "+1-212-705-2000",
+        "urlArgs": {
+          "addressAlias": "59th-street",
+          "designerAlias": "celine_sunglasses",
+          "addressFullDetail": "59TH-STREET-LEXINGTON-AVENUE"
+        }
+      },
+      {
+        "name": "Aventura",
+        "streetAddress": "19555 Biscayne Boulevard",
+        "cityStateZip": "The Aventura Mall<br />Aventura, FL 33180",
+        "phoneNumber": "305-792-1000",
+        "phoneNumberHrefSuffix": "+1-305-792-1000",
+        "urlArgs": {
+          "addressAlias": "aventura",
+           "designerAlias": "gucci_handbags_belts",
+          "addressFullDetail": "AVENTURA-MALL"
+        }
+      },
+      {
+        "name": "SHORT HILLS",
+        "streetAddress": "1200 Morris Turnpike",
+        "cityStateZip": "The Mall at Short Hills<br />Short Hills, NJ 07078",
+        "phoneNumber": "973-548-2200",
+        "phoneNumberHrefSuffix": "+1-973-548-2200",
+        "urlArgs": {
+          "addressAlias": "short-hills",
+          "designerAlias": "celine_sunglasses",
+          "addressFullDetail": "THE-MALL-AT-SHORT-HILLS"
+        }
+      }
+    ],
+    [
+      {
+        "name": "North Michigan Avenue",
+        "streetAddress": "900 North Michigan Avenue",
+        "cityStateZip": "Chicago, IL 60611",
+        "phoneNumber": "312-440-4460",
+        "phoneNumberHrefSuffix": "+1-312-440-4460",
+        "urlArgs": {
+          "addressAlias": "north-michigan-avenue",
+           "designerAlias": "gucci_handbags_belts",
+          "addressFullDetail": "NORTH-MICHIGAN-AVENUE"
+        }
+      },
+      {
+        "name": "Chestnut Hill",
+        "streetAddress": "225 Boylston Street",
+        "cityStateZip": "Chestnut Hill Mall<br />Chestnut Hill, MA 02467",
+        "phoneNumber": "617-630-6000",
+        "phoneNumberHrefSuffix": "+1-617-630-6000",
+        "urlArgs": {
+          "addressAlias": "chestnut-hill",
+           "designerAlias": "gucci_handbags_belts",
+          "addressFullDetail": "CHESTNUT-HILL-MALL"
+        }
+      },
+      {
+        "name": "Tyson&rsquo;s Corner Center",
+        "streetAddress": "8100 Tyson&rsquo;s Corner Center",
+        "cityStateZip": "McLean, VA 22102",
+        "phoneNumber": "703-556-4600",
+        "phoneNumberHrefSuffix": "+1-703-556-4600",
+        "urlArgs": {
+          "addressAlias": "tysons-corner-center",
+           "designerAlias": "gucci_handbags_belts",
+          "addressFullDetail": "TYSONS-CORNER-CENTER"
+        }
+      }
+    ],
+    [
+      {
+        "name": "San Francisco Centre",
+        "streetAddress": "845 Market Street",
+        "cityStateZip": "San Francisco, CA 94103",
+        "phoneNumber": "415-856-5300",
+        "phoneNumberHrefSuffix": "+1-415-856-5300",
+        "urlArgs": {
+          "addressAlias": "san-francisco-centre",
+           "designerAlias": "gucci_handbags_belts",
+          "addressFullDetail": "SAN-FRANCISCO-CENTRE"
+        }
+      },
+      {
+        "name": "Century City",
+        "streetAddress": "10250 Santa Monica Boulevard",
+        "cityStateZip": "Los Angeles, CA 90067",
+        "phoneNumber": "310-772-2100",
+        "phoneNumberHrefSuffix": "+1-310-772-2100",
+        "urlArgs": {
+          "addressAlias": "century-city",
+           "designerAlias": "gucci_handbags_belts",
+          "addressFullDetail": "CENTURY-CITY"
+        }
+      },
+      {
+        "name": "SHERMAN OAKS FASHION SQUARE",
+        "streetAddress": "14060 Riverside Drive",
+        "cityStateZip": "Sherman Oaks, CA 91423",
+        "phoneNumber": "818-325-2200",
+        "phoneNumberHrefSuffix": "+1-818-325-2200",
+        "urlArgs": {
+          "addressAlias": "sherman-oaks-fashion-square",
+          "designerAlias": "oliver_peoples",
+          "addressFullDetail": "SHERMAN-OAKS-FASHION-SQUARE"
+        }
+      }
+    ],
+    [
+      {
+        "name": "ALA MOANA CENTER",
+        "streetAddress": "1450 Ala Moana Blvd.",
+        "cityStateZip": "Honolulu, HI 96814",
+        "phoneNumber": "808-664-7511",
+        "phoneNumberHrefSuffix": "+1-808-664-7511",
+        "urlArgs": {
+          "addressAlias": "ala-moana-center",
+          "designerAlias": "oliver_peoples",
+          "addressFullDetail": "ALA-MOANA-CENTER"
+        }
+      },
+      {
+        "name": "Glendale Galleria",
+        "streetAddress": "103 South Brand Blvd.",
+        "cityStateZip": "Glendale Galleria<br />Glendale, CA 91210",
+        "phoneNumber": "818-638-4100",
+        "phoneNumberHrefSuffix": "+1-818-638-4100",
+        "urlArgs": {
+          "addressAlias": "glendale-galleria",
+           "designerAlias": "gucci_handbags_belts",
+          "addressFullDetail": "GLENDALE-GALLERIA"
+        }
+      },
+      {
+        "name": "SOUTH COAST PLAZA",
+        "streetAddress": "3333 South Bristol Street",
+        "cityStateZip": "Costa Mesa, CA 92626",
+        "phoneNumber": "714-824-4600",
+        "phoneNumberHrefSuffix": "+1-714-824-4600",
+        "urlArgs": {
+          "addressAlias": "south-coast-plaza",
+          "designerAlias": "oliver_peoples",
+          "addressFullDetail": "SOUTH-COAST-PLAZA"
+        }
+      }
+    ]
+  ]
+}
