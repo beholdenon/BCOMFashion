@@ -1810,10 +1810,10 @@ html {
                 }             
             }             
             }
-            article {
-              max-width: 962px;
+            article {  
+              max-width: 962px;             
               &.dropdown-cnbr {
-                margin: 20px auto;                
+                margin: 20px auto;        
                 select {
                   margin: 0;
                   background-size: 40px;
@@ -1865,6 +1865,11 @@ html {
               &.lang-japanese {
                 p, a, span, li {
                   font-size: 13px !important;
+                }
+              }
+              .storeSelected {
+                @media only screen and (min-width:641px) and (max-device-width: 1024px) and (orientation: portrait)  {
+                  margin-right: 0px;
                 }
               }
               .cnbr-header-store {
@@ -2274,8 +2279,16 @@ html {
                     padding-left: 5%;
                     padding-right: 5%;
                     width: auto;
-                  }                               
+                  }                              
                 }
+
+                h2.store-header {
+                  &:after {
+                    @media #{$medium-only} and (orientation: portrait) {
+                        top: 117px;
+                    }
+                  }
+                } 
 
                 div.wrapper {
                   padding: 0 110px;
@@ -2418,6 +2431,11 @@ html {
           }
         }
 
+        select[name = "partysize"] {
+          width: 62px;
+          float: right;
+        }        
+
         label[for="arrivingdate"] {
           @media #{$small-only} {
             font-size: 12px;
@@ -2426,13 +2444,14 @@ html {
 
         label[for="store"] {
             margin: 0;
-            padding: 0.31818rem 0 0 0;
+            padding: 0.31818rem 0 0.31818rem 0;
             line-height: 1;
         }
 
         label[for="dates-input"] {
             line-height: 1;
-            padding-bottom: .5rem;
+            padding-bottom: 0.2rem;
+            margin-bottom: 0.2rem;
         }
 
         .error.store {

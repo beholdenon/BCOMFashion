@@ -26,7 +26,7 @@
         </div>
     </div>    
     <article class="dropdown-cnbr width-962 row" ng-show="storeSelection !== null" sticky offset="84" use-placeholder="false">
-        <div class="small-cnbr-20 small-cnbr-centered medium-cnbr-6 medium-cnbr-centered large-cnbr-12 large-cnbr-centered columns">
+        <div class="small-cnbr-20 small-cnbr-centered medium-cnbr-6 medium-cnbr-centered large-cnbr-12 large-cnbr-centered columns storeSelected">
             <select name="store" ng-model="storeSelection" ng-model-options="{ debounce: 250 }" ng-change="onChange()">
                 <option ng-repeat="option in storeList" value="//option.id//" ng-disabled="//option.disabled//">//option.name//</option>
             </select>
