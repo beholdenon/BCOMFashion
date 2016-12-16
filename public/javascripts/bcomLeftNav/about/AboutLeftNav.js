@@ -7,8 +7,7 @@ define( [ "LeftNav" ], function ( LeftNav ) {
                     type: 'header',
                     text: 'ABOUT US',
                     label: 'About Us',
-                    href: 'http://www1.bloomingdales.com/media/about/index.jsp?cm_sp=FOOTER-_-BOTTOM_NAV-_-ABOUT_US',
-                    //href: '/media/about/directory/',
+                    href: '/about-us/directory/',
                     id: 'about_aboutUs',
                     secure: false
                 }
@@ -50,8 +49,7 @@ define( [ "LeftNav" ], function ( LeftNav ) {
                     type:'header',
                     text: 'SHOPPING SERVICES',
                     label: 'Shopping Services',
-                    href: 'http://www1.bloomingdales.com/about/shopping/index.jsp',
-                    //href: '/about-us/shopping/shopping-services/',
+                    href: '/about-us/shopping/shopping-services/',
                     id: 'about_shoppingServices',
                     secure: false
                 },
@@ -134,8 +132,7 @@ define( [ "LeftNav" ], function ( LeftNav ) {
                 },
                 {
                     text: 'Visitor Services',
-                    //href: '/about/shopping/',
-                    href: 'https://www.bloomingdales.com/about/shopping/international.jsp',
+                    href: '/about-us/shopping/international-visitor-services/',
                     id: 'about_visitorServices',
                     secure: true
                 },
