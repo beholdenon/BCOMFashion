@@ -153,8 +153,11 @@ html {
               &.lang {
               position: relative;
               height: 46px;  
-              border-bottom: solid 1px #cdccd2;   
-              border-right: solid 1px #cdccd2;    
+              border-right: solid 1px #cdccd2;
+              border-bottom: solid 1px #cdccd2; 
+              @media #{$small-only} {
+                border-bottom: solid 0px #cdccd2;  
+              }   
                 ul {
                   margin: 0;
                   li {
@@ -187,7 +190,11 @@ html {
                 line-height: 20.3vmin;
                 height: 76px;
                 height: 20.3vmin;
-                border-bottom: solid 1px #cdccd2; 
+                border-top: solid 1px #cdccd2;
+                clear: both;
+                &.last{
+                  border-bottom: solid 1px #cdccd2;;
+                  }
                 a {
                   text-decoration: none;
                   text-transform: uppercase;
@@ -1803,10 +1810,10 @@ html {
                 }             
             }             
             }
-            article {
-              max-width: 962px;
+            article {  
+              max-width: 962px;             
               &.dropdown-cnbr {
-                margin: 20px auto;                
+                margin: 20px auto;        
                 select {
                   margin: 0;
                   background-size: 40px;
@@ -1858,6 +1865,11 @@ html {
               &.lang-japanese {
                 p, a, span, li {
                   font-size: 13px !important;
+                }
+              }
+              .storeSelected {
+                @media only screen and (min-width:641px) and (max-device-width: 1024px) and (orientation: portrait)  {
+                  margin-right: 0px;
                 }
               }
               .cnbr-header-store {
@@ -1912,6 +1924,18 @@ html {
                 @media only screen and (max-width: 933px) {
                   margin-top: 30px;
                 }
+                &.hide-pdf {
+                  .right {
+                    display: none;
+                  }
+
+                  .left {
+                    border-right: none;
+                    width: 100%;
+                  }
+
+                }
+
                 .left {
                   padding-right: 55px;
                   border-right: solid 1px #cccccc;
@@ -2038,8 +2062,11 @@ html {
                   padding: 52px 0 32px;
                   @media #{$small-only} {
                     padding-left: 5%;
-                    padding-right: 5%;
+                    padding-right: 5%; 
                   }
+                  @media only screen and (max-device-width: 767px) and (orientation: landscape) {
+                    padding-left: 0.9375rem;
+                  }  
                   h4 {
                 display: block;
                 font-size: 21px;
@@ -2100,6 +2127,9 @@ html {
                 top: 72px;
                 left: 50%;
                 margin-left: -83px;
+                @media only screen and (max-device-width: 767px) and (orientation: landscape) {
+                  border-bottom: 0px;
+                } 
               }
               @media #{$small-only} {
               border-top: 1px solid #000;
@@ -2249,8 +2279,16 @@ html {
                     padding-left: 5%;
                     padding-right: 5%;
                     width: auto;
-                  }                               
+                  }                              
                 }
+
+                h2.store-header {
+                  &:after {
+                    @media #{$medium-only} and (orientation: portrait) {
+                        top: 117px;
+                    }
+                  }
+                } 
 
                 div.wrapper {
                   padding: 0 110px;
@@ -2393,6 +2431,11 @@ html {
           }
         }
 
+        select[name = "partysize"] {
+          width: 62px;
+          float: right;
+        }        
+
         label[for="arrivingdate"] {
           @media #{$small-only} {
             font-size: 12px;
@@ -2401,13 +2444,14 @@ html {
 
         label[for="store"] {
             margin: 0;
-            padding: 0.31818rem 0 0 0;
+            padding: 0.31818rem 0 0.31818rem 0;
             line-height: 1;
         }
 
         label[for="dates-input"] {
             line-height: 1;
-            padding-bottom: .5rem;
+            padding-bottom: 0.2rem;
+            margin-bottom: 0.2rem;
         }
 
         .error.store {
@@ -8843,8 +8887,6 @@ a.bold:link, a.bold:active, a.bold:visited {
 }
 #bl_main_container {
   width: 962px;
-  min-height: 180px;
-  min-height: 25vh;
   text-align: left;
   margin: 0 auto;
 }

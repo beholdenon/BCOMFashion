@@ -26,16 +26,16 @@
                     case 'http://www1.bloomingdales.com/#':
                         // $event.preventDefault();
                         view = 'top-nav_shop';
-                        Coremetrics.tag('Element', pageID, prefix + view);
+                        Coremetrics.tag('Element', prefix + pageID, prefix + view);
                         break;
                     case 'http://www1.bloomingdales.com/':
                         // $event.preventDefault();
                         view = 'hp_shop-online';
-                        Coremetrics.tag('Element', pageID, prefix + view);
+                        Coremetrics.tag('Element', prefix + pageID, prefix + view);
                         break;                        
                     case 'http://www1.bloomingdales.com/shop/fashion-lookbooks-videos-style-guide?id=13668':
                         view = 'hp-shop-whats-new';
-                        Coremetrics.tag('Element', pageID, prefix + view);
+                        Coremetrics.tag('Element', prefix + pageID, prefix + view);
                         break;
                 }
             } else if (view.indexOf('/') === 0) {
@@ -66,7 +66,7 @@
                     view = 'hp_category_' + view;
                 }
 
-                Coremetrics.tag('Element', pageID, prefix + view);
+                Coremetrics.tag('Element', prefix + pageID, prefix + view);
             } else {
                 var url = null;
                 var device = (windowWidth < 641) ? 'mobileLinks' : 'desktopLinks';
@@ -77,7 +77,7 @@
 
                 //Coremetrics tag
                 view = 'hp_shop_' + view;
-                Coremetrics.tag('Element', pageID, prefix + view);
+                Coremetrics.tag('Element', prefix + pageID, prefix + view);
             }
         };
 
@@ -92,7 +92,7 @@
                 prefix = (windowWidth < 641) ? 'MBL:' : '',            
                 tag = prefix + 'socialshare_show-overlay';
 
-            Coremetrics.tag('Element', pageID, tag);
+            Coremetrics.tag('Element', prefix + pageID, tag);
         };
 
         $scope.shareOnMob = function(service, lang) {
@@ -110,7 +110,7 @@
                 windowWidth = $window.innerWidth,
                 prefix = (windowWidth < 641) ? 'MBL:' : '',              
                 tag = prefix + 'socialshare-' + service;
-            Coremetrics.tag('Element', pageID, tag);
+            Coremetrics.tag('Element', prefix + pageID, tag);
         };
 
         $scope.langOnClick = function($event) {
@@ -122,8 +122,130 @@
             AppGlobals.setAttr('lang', globalLang);
             localStorageService.set('lang', globalLang);
 
+            AppGlobals.setAttr('cm_pageID', $scope.globalLangSwitch(globalLang));
+
+            $rootScope.$broadcast('lang:change', {
+                lang: globalLang
+            });
+            jQuery('.top-bar-section .flags').toggleClass('active');
+
+            //Coremetrics tag
+            var windowWidth = $window.innerWidth,
+                prefix = (windowWidth < 641) ? 'MBL:' : '',             
+                tag = prefix + 'language-btn_' + globalLang;
+            Coremetrics.tag('Element', prefix + $scope.globalLangSwitch(globalLang), tag);
+        };
+
+        $scope.langModal = function ($event) {
+            var globalLang,
+                el = jQuery($event.target);
+
+            if ( $scope.flagModal === true ) {
+                $scope.flagModal = false;
+            } else {
+                $scope.flagModal = true;
+            }
+            $scope.socialModal = false;
+            $scope.weixinOn = false;
+
+            globalLang = el.attr('data-lang') || el.parent().attr('data-lang'); 
+
+            AppGlobals.setAttr('lang', globalLang);
+            localStorageService.set('lang', globalLang);     
+            
             //set CM pageID global attr
             var pageID = null;
+
+            switch(globalLang) {
+                case 'POR':
+                    pageID = 'brazil_show-overlay ';
+                    break;
+                case 'CN':
+                    pageID = 'china_show-overlay ';
+                    break;
+                case 'ESP':
+                    pageID = 'spanish_show-overlay ';
+                    break;
+                case 'JP':
+                    pageID = 'japan_show-overlay ';
+                    break;
+                default:
+                    pageID = 'english_show-overlay ';
+            }
+            AppGlobals.setAttr('cm_pageID', pageID);
+
+            //Coremetrics tag
+            var windowWidth = $window.innerWidth,
+                prefix = (windowWidth < 641) ? 'MBL:' : '',             
+                tag = prefix + pageID;
+            Coremetrics.tag('Element', prefix + $scope.globalLangSwitch(globalLang), tag);
+        };
+
+        $scope.shareModal = function () {
+            if ( $scope.socialModal === true ) {
+                $scope.socialModal = false;
+            } else {
+                $scope.socialModal = true;
+            }
+            $scope.flagModal = false;
+            $scope.weixinOn = false;  
+
+            //Coremetrics tag          
+            var windowWidth = $window.innerWidth,
+                prefix = (windowWidth < 641) ? 'MBL:' : '',            
+                tag = prefix + 'socialshare_show-overlay';                   
+            Coremetrics.tag('Element', prefix + $scope.globalLangSwitch($scope.lang), tag);  
+        };
+
+        $scope.share = function(service, lang) {
+            if (service !== 'weixin'){
+                $window.open(SocialShare[service](lang), '_blank', 'width=608,height=342');
+            } else {
+                $scope.weixinOn = true;
+            }
+
+            //Coremetrics tag          
+            var pageID = AppGlobals.getAttr('cm_pageID'),
+                windowWidth = $window.innerWidth,
+                prefix = (windowWidth < 641) ? 'MBL:' : '',            
+                tag = prefix + 'socialshare-';                   
+            Coremetrics.tag('Element', prefix + pageID, tag + service);               
+        };
+
+        $scope.footerCM = function() {
+            var href = 'http://ebm.cheetahmail.com/r/regf2?aid=2083023216&a=0&n=2';
+            $window.open(href, '_blank');
+
+            //Coremetrics tag          
+            var pageID = AppGlobals.getAttr('cm_pageID'),
+                windowWidth = $window.innerWidth,
+                prefix = (windowWidth < 641) ? 'MBL:' : '',            
+                tag = prefix + 'footer_email-signup';
+
+            Coremetrics.tag('Element', prefix + pageID, tag);
+        };
+
+        $rootScope.$on('lang:change', function(ev, args) {
+            $scope.lang = args.lang;
+        });
+
+        $scope.pdfDownloadCM = function (lang) {
+            var globalLang = lang;
+
+            AppGlobals.setAttr('lang', globalLang);
+            localStorageService.set('lang', globalLang);           
+
+            AppGlobals.setAttr('cm_pageID', $scope.globalLangSwitch(globalLang));
+
+            var windowWidth = $window.innerWidth,
+                prefix = (windowWidth < 641) ? 'MBL:' : '',             
+                tag = prefix + 'download-pdf';
+            Coremetrics.tag('Element', prefix + $scope.globalLangSwitch(globalLang), tag);
+        };
+
+        $scope.globalLangSwitch = function (globalLang) {
+            var pageID = null;
+
             switch(globalLang) {
                 case 'POR':
                     pageID = 'fall15_brazilmicrosite';
@@ -140,70 +262,8 @@
                 default:
                     pageID = 'fall15_englishmicrosite';
             }
-            AppGlobals.setAttr('cm_pageID', pageID);
 
-            $rootScope.$broadcast('lang:change', {
-                lang: globalLang
-            });
-            jQuery('.top-bar-section .flags').toggleClass('active');
-
-            //Coremetrics tag
-            var windowWidth = $window.innerWidth,
-                prefix = (windowWidth < 641) ? 'MBL:' : '',             
-                tag = prefix + 'language-btn_' + globalLang;
-            Coremetrics.tag('Element', pageID, tag);
+            return pageID;
         };
-
-        $scope.langModal = function () {
-            if ( $scope.flagModal === true ) {
-                $scope.flagModal = false;
-            } else {
-                $scope.flagModal = true;
-            }
-            $scope.socialModal = false;
-            $scope.weixinOn = false;
-        };
-
-        $scope.shareModal = function () {
-            if ( $scope.socialModal === true ) {
-                $scope.socialModal = false;
-            } else {
-                $scope.socialModal = true;
-            }
-            $scope.flagModal = false;
-            $scope.weixinOn = false;
-        };
-
-        $scope.share = function(service, lang) {
-            if (service !== 'weixin'){
-                $window.open(SocialShare[service](lang), '_blank', 'width=608,height=342');
-            } else {
-                $scope.weixinOn = true;
-            }
-
-            //Coremetrics tag          
-            var pageID = AppGlobals.getAttr('cm_pageID'),
-                windowWidth = $window.innerWidth,
-                prefix = (windowWidth < 641) ? 'MBL:' : '',            
-                tag = prefix + 'socialshare-';                   
-            Coremetrics.tag('Element', pageID, tag + service);               
-        };
-
-        $scope.footerCM = function() {
-            var href = 'http://ebm.cheetahmail.com/r/regf2?aid=2083023216&a=0&n=2';
-            $window.open(href, '_blank');
-
-            //Coremetrics tag          
-            var pageID = AppGlobals.getAttr('cm_pageID'),
-                windowWidth = $window.innerWidth,
-                prefix = (windowWidth < 641) ? 'MBL:' : '',            
-                tag = prefix + 'footer_email-signup';
-
-            Coremetrics.tag('Element', pageID, tag);
-        };
-
-        $rootScope.$on('lang:change', function(ev, args) {
-            $scope.lang = args.lang;
-        });
     }
 })();

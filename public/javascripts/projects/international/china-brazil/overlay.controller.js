@@ -30,7 +30,7 @@
                 windowWidth = $window.innerWidth,
                 prefix = (windowWidth < 641) ? 'MBL:' : '',             
                 tag = prefix + 'overlay_close';                   
-            Coremetrics.tag('Element', pageID, tag);                
+            Coremetrics.tag('Element', prefix + pageID, tag);                
         };
 
         $scope.selLang = function($event) {
@@ -77,7 +77,7 @@
             var windowWidth = $window.innerWidth,
                 prefix = (windowWidth < 641) ? 'MBL:' : '',
                 tag = prefix + 'select-language-overlay';                              
-            Coremetrics.tag('Element', pageID, tag);              
+            Coremetrics.tag('Element', prefix + pageID, tag);              
         };
 
         $rootScope.$on('overlay:show', function(ev, args) {

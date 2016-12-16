@@ -209,10 +209,11 @@
                     case '/visit-our-stores':
                         catID = pageID + '--visit';
                         break;
-                }                      
+                }  
+                catID = prefix + catID;                    
                 pageID = prefix + pageID;
 
-                Coremetrics.tag('Pageview', pageID, catID);
+                Coremetrics.tag('Pageview', catID, pageID);
             }
         }
 
@@ -235,10 +236,11 @@
                         'overflow': 'initial'
                     });
                     jQuery('.left-off-canvas-toggle').removeClass('open');
+                    jQuery('.arriving-input, .departing-input').show();
     
                     //Coremetrics tag          
                     tag = prefix + 'settings-menu_close';
-                    Coremetrics.tag('Element', pageID, tag);                
+                    Coremetrics.tag('Element', prefix + pageID, tag);                
                 } else {
                     jQuery('.left-off-canvas-toggle').addClass('open');
                     var height = document.body.clientHeight;
@@ -251,7 +253,7 @@
 
                     //Coremetrics tag          
                     tag = prefix + 'settings-menu_open';
-                    Coremetrics.tag('Element', pageID, tag);                
+                    Coremetrics.tag('Element', prefix + pageID, tag);                
                 }
             });
         });

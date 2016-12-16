@@ -17,7 +17,7 @@
                 <div class="small-cnbr-24 medium-cnbr-20 large-cnbr-20 large-cnbr-offset-1 columns">
                     <div class="row">
                         <div class="small-cnbr-5 medium-cnbr-3 large-cnbr-5 columns">
-                            <label for="name" class="right inline"><b>//copy[lang].contactUs.right.name//</b></label>
+                            <label for="name" class="left inline"><b>//copy[lang].contactUs.right.name//</b></label>
                         </div>
                         <div class="small-cnbr-19 medium-cnbr-9 large-cnbr-18 columns left">
                             <input type="text" ng-model="cu.name" name="name" required/>
@@ -32,7 +32,7 @@
                 <div class="small-cnbr-24 medium-cnbr-20 large-cnbr-20 large-cnbr-offset-1 columns">
                     <div class="row">
                         <div class="small-cnbr-5 medium-cnbr-3 large-cnbr-5 columns">
-                            <label for="email" class="right inline"><b>//copy[lang].contactUs.right.email//</b></label>
+                            <label for="email" class="left inline"><b>//copy[lang].contactUs.right.email//</b></label>
                         </div>
                         <div class="small-cnbr-19 medium-cnbr-9 large-cnbr-18 columns left">
                             <input type="email" ng-model="cu.email" name="email" required/>
@@ -48,7 +48,7 @@
                 <div class="small-cnbr-24 medium-cnbr-20 large-cnbr-20 large-cnbr-offset-1 columns">
                     <div class="row">
                         <div class="medium-cnbr-6 large-cnbr-11 columns" ng:class="{true:'small-cnbr-14', false:'small-cnbr-12'}[lang === 'POR']">
-                            <label for="phone" class="right inline"><b>//copy[lang].contactUs.right.phone//</b></label>
+                            <label for="phone" class="left inline"><b>//copy[lang].contactUs.right.phone//</b></label>
                         </div>
                         <div class="medium-cnbr-6 large-cnbr-12 columns left" ng:class="{true:'small-cnbr-10', false:'small-cnbr-12'}[lang === 'POR']">
                             <input type="text" ng-model="cu.phone" name="phone" ng-pattern="phoneNumberPattern" ng-model-options="{ updateOn: 'blur' }" />
@@ -80,12 +80,12 @@
                 <div class="small-cnbr-24 medium-cnbr-20 large-cnbr-20 large-cnbr-offset-1 columns">
                     <div class="row">
                         <div class="small-cnbr-24 columns">
-                            <label for="dates-input" class="right inline"><b>//copy[lang].contactUs.right.dates//</b></label>
+                            <label for="dates-input" class="left inline"><b>//copy[lang].contactUs.right.dates//</b></label>
                         </div>
                         <div class="small-cnbr-12 medium-cnbr-6 large-cnbr-11 columns">
                             <div class="row collapse">
                                 <div class="small-cnbr-8 medium-cnbr-4 large-cnbr-9 columns">
-                                    <label for="arrivingdate" class="right inline">//copy[lang].contactUs.right.arriving//</label>
+                                    <label for="arrivingdate" class="left inline">//copy[lang].contactUs.right.arriving//</label>
                                 </div>
                                 <div class="small-cnbr-15 medium-cnbr-8 large-cnbr-15 columns left">
                                     <input type="text" name="arrivingdate" ng-model="cu.arrivingdate" class="arriving-input span2" value="" pick-date required/>
@@ -98,7 +98,7 @@
                         <div class="small-cnbr-12 medium-cnbr-6 large-cnbr-12 columns left">
                             <div class="row collapse">
                                 <div class="small-cnbr-9 medium-cnbr-4 large-cnbr-10 columns">
-                                    <label for="departingdate" class="right inline">//copy[lang].contactUs.right.departing//</label>
+                                    <label for="departingdate" class="left inline">//copy[lang].contactUs.right.departing//</label>
                                 </div>
                                 <div class="small-cnbr-15 medium-cnbr-8 large-cnbr-14 columns left">
                                     <input type="text" name="departingdate" ng-model="cu.departingdate" class="departing-input span2" value="" pick-date required/>
@@ -115,7 +115,7 @@
                 <div class="small-cnbr-24 medium-cnbr-20 large-cnbr-20 large-cnbr-offset-1 columns">
                     <div class="row">
                         <div class="small-cnbr-19 columns">
-                            <label for="store" class="right inline"><b>//copy[lang].contactUs.right.storesH//</b></label>
+                            <label for="store" class="left inline"><b>//copy[lang].contactUs.right.storesH//</b></label>
                         </div>
                         <div class="small-cnbr-24 large-cnbr-23 columns left">
 							<select name="store" ng-model="cu.store" ng-model-options="{ debounce: 250 }" required>
