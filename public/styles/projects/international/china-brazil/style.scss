@@ -1868,8 +1868,15 @@ html {
                 }
               }
               .storeSelected {
-                @media only screen and (min-width:641px) and (max-device-width: 1024px) and (orientation: portrait)  {
+                @media only screen and (max-device-width : 981px) and (orientation: landscape) {
+                  margin-right: 145px;
+                  width: 400px;
+                }
+                @media #{$medium-up} and (orientation: portrait)  {
                   margin-right: 0px;
+                }
+                @media #{$large-up} and (orientation: landscape)  {
+                  margin-right: auto;
                 }
               }
               .cnbr-header-store {
@@ -1899,17 +1906,24 @@ html {
               }
               .dropdown-cnbr {
                 position: relative;
-                top: -71px;
+                top: 80px !important;
                 margin-bottom: -30px;  
-                @media only screen and (max-width: 933px) {
+                @media only screen and (max-width: 933px) and (orientation: portrait) {
                   margin-top: 0 !important;
                     position: absolute !important;
-                    top: 98px !important;
+                    top: 93px !important;
                     width: 100% !important;
                     left: initial !important;
                     margin-left: initial !important;                  
-                  z-index: 9 !important;              
+                  z-index: 9 !important;            
                 }  
+                @media only screen and (max-width: 933px) and (orientation: landscape) {
+                  top: -122px !important;
+                  position: relative !important;;
+                }  
+                @media #{$medium-only} and (orientation: portrait)  {
+                  top: 97px !important;
+                }
                 .sticky-placeholder {
                   height: 0 !important;
                 }                       
