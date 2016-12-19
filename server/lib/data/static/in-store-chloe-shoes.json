@@ -1,9 +1,9 @@
 {
   "designerName": "Chlo&eacute; Shoes",
-  "machineReadableDesignerName": "chloe_clothing",
+  "machineReadableDesignerName": "chloe_shoes",
   "title2Prefix": "Chlo&eacute; Shoes",
   "title2Suffix": "ARE ONLY AVAILABLE AT SELECT BLOOMINGDALE&rsquo;S STORES.",
-  "pageUrlDesignerAlias": "chloe-clothing",
+  "pageUrlDesignerAlias": "chloe-shoes",
   "designerDescription": "",
   "addressColumns": [
     [
@@ -15,7 +15,7 @@
         "phoneNumberHrefSuffix": "+1-212-705-2000",
         "urlArgs": {
           "addressAlias": "59th-street",
-          "designerAlias": "celine_sunglasses",
+          "designerAlias": "chloe_shoes",
           "addressFullDetail": "59TH-STREET-LEXINGTON-AVENUE"
         }
       },
@@ -27,7 +27,7 @@
         "phoneNumberHrefSuffix": "+1-305-792-1000",
         "urlArgs": {
           "addressAlias": "aventura",
-           "designerAlias": "gucci_handbags_belts",
+           "designerAlias": "chloe_shoes",
           "addressFullDetail": "AVENTURA-MALL"
         }
       },
@@ -39,7 +39,7 @@
         "phoneNumberHrefSuffix": "+1-973-548-2200",
         "urlArgs": {
           "addressAlias": "short-hills",
-          "designerAlias": "celine_sunglasses",
+          "designerAlias": "chloe_shoes",
           "addressFullDetail": "THE-MALL-AT-SHORT-HILLS"
         }
       }
@@ -53,7 +53,7 @@
         "phoneNumberHrefSuffix": "+1-312-440-4460",
         "urlArgs": {
           "addressAlias": "north-michigan-avenue",
-           "designerAlias": "gucci_handbags_belts",
+           "designerAlias": "chloe_shoes",
           "addressFullDetail": "NORTH-MICHIGAN-AVENUE"
         }
       },
@@ -65,7 +65,7 @@
         "phoneNumberHrefSuffix": "+1-617-630-6000",
         "urlArgs": {
           "addressAlias": "chestnut-hill",
-           "designerAlias": "gucci_handbags_belts",
+           "designerAlias": "chloe_shoes",
           "addressFullDetail": "CHESTNUT-HILL-MALL"
         }
       },
@@ -77,7 +77,7 @@
         "phoneNumberHrefSuffix": "+1-703-556-4600",
         "urlArgs": {
           "addressAlias": "tysons-corner-center",
-           "designerAlias": "gucci_handbags_belts",
+           "designerAlias": "chloe_shoes",
           "addressFullDetail": "TYSONS-CORNER-CENTER"
         }
       }
@@ -91,7 +91,7 @@
         "phoneNumberHrefSuffix": "+1-415-856-5300",
         "urlArgs": {
           "addressAlias": "san-francisco-centre",
-           "designerAlias": "gucci_handbags_belts",
+           "designerAlias": "chloe_shoes",
           "addressFullDetail": "SAN-FRANCISCO-CENTRE"
         }
       },
@@ -103,7 +103,7 @@
         "phoneNumberHrefSuffix": "+1-310-772-2100",
         "urlArgs": {
           "addressAlias": "century-city",
-           "designerAlias": "gucci_handbags_belts",
+           "designerAlias": "chloe_shoes",
           "addressFullDetail": "CENTURY-CITY"
         }
       },
@@ -115,7 +115,7 @@
         "phoneNumberHrefSuffix": "+1-818-325-2200",
         "urlArgs": {
           "addressAlias": "sherman-oaks-fashion-square",
-          "designerAlias": "oliver_peoples",
+          "designerAlias": "chloe_shoes",
           "addressFullDetail": "SHERMAN-OAKS-FASHION-SQUARE"
         }
       }
@@ -129,7 +129,7 @@
         "phoneNumberHrefSuffix": "+1-808-664-7511",
         "urlArgs": {
           "addressAlias": "ala-moana-center",
-          "designerAlias": "oliver_peoples",
+          "designerAlias": "chloe_shoes",
           "addressFullDetail": "ALA-MOANA-CENTER"
         }
       },
@@ -141,7 +141,7 @@
         "phoneNumberHrefSuffix": "+1-818-638-4100",
         "urlArgs": {
           "addressAlias": "glendale-galleria",
-           "designerAlias": "gucci_handbags_belts",
+           "designerAlias": "chloe_shoes",
           "addressFullDetail": "GLENDALE-GALLERIA"
         }
       },
@@ -153,7 +153,7 @@
         "phoneNumberHrefSuffix": "+1-714-824-4600",
         "urlArgs": {
           "addressAlias": "south-coast-plaza",
-          "designerAlias": "oliver_peoples",
+          "designerAlias": "chloe_shoes",
           "addressFullDetail": "SOUTH-COAST-PLAZA"
         }
       }

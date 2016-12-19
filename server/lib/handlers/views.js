@@ -102,7 +102,11 @@ let fs = require('fs'),
     },
 
     // Adaptive standard layout handler that allows json data to be injected from a reference file
-    adaptiveWithStaticData = require('./adaptiveWithStaticData');
+    adaptiveWithStaticData = require('./adaptiveWithStaticData'),
+
+    // Adaptive standard layout handler factory (method/function) that allows json data to be injected
+    // and view to be passed in (for routes that have many pages that use the same view)
+    adaptiveWithStaticDataFactory = require('./adaptiveWithStaticDataFactory');
 
 module.exports = { 
     adaptive: {
@@ -130,6 +134,7 @@ module.exports = {
         }
     },
     adaptiveWithStaticData: adaptiveWithStaticData,
+    adaptiveWithStaticDataFactory: adaptiveWithStaticDataFactory,
     responsiveCustomHF: {
         description: 'Responsive pages that use a custom Header&Footer',
         notes: 'Serve common html view for both desktop and mobile; exclude standard H&F',
