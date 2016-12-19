@@ -230,7 +230,14 @@
         });
 
         $scope.pdfDownloadCM = function (lang) {
-            var globalLang = lang;
+            var globalLang = lang,
+                linkType = ($window.innerWidth < 641) ? 'mobileLink' : 'desktopLink';
+
+            if (linkType === 'mobileLink') {
+                $("#pdf-download-link").removeAttr( "target" );
+            } else {
+                $("#pdf-download-link").attr("target","_blank");
+            }
 
             AppGlobals.setAttr('lang', globalLang);
             localStorageService.set('lang', globalLang);           
