@@ -1,9 +1,12 @@
 'use strict';
+
 var Hapi = require('hapi'),
     Handlebars = require('handlebars'),
     Path = require('path'),
     server = new Hapi.Server(),
     cluster = require('cluster');
+
+let viewHandlers = require('./lib/handlers/views');
 
 require('./lib/helpers/handlebarsHelpers');    
 
@@ -80,7 +83,7 @@ var routes = [
     { method: 'GET',  path: '/fashion-tips/mattress-buying-guide/',                                         config: require('./lib/handlers/views').adaptive },
     { method: 'GET',  path: '/in-store/diane-von-furstenberg/',                                             config: require('./lib/handlers/views').adaptive },
     { method: 'GET',  path: '/in-store/louis-vuitton/',                                                     config: require('./lib/handlers/views').adaptive },
-    { method: 'GET',  path: '/in-store/{action}/',                                                          config: require('./lib/handlers/views').adaptiveWithStaticData },
+    { method: 'GET',  path: '/in-store/{action}/',                                                          config: viewHandlers.adaptiveWithStaticDataFactory('in-store/index') },
     { method: 'GET',  path: '/lookbooks/burberry-pre-fall-trend-report-2016/',                              config: require('./lib/handlers/views').adaptive },
     { method: 'GET',  path: '/lookbooks/cookware-sets-guide/',                                              config: require('./lib/handlers/views').adaptive },
     { method: 'GET',  path: '/lookbooks/corporate-gift-ideas/',                                             config: require('./lib/handlers/views').adaptive },
