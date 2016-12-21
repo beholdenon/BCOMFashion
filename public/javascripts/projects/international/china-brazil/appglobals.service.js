@@ -90,7 +90,9 @@
                         }
                     },
                     pdf: {
-                        span: 'Learn how to shop our site and get answers to frequently asked questions.',
+                        span1: 'Learn ',
+                        span2: 'how to shop ',
+                        span3: 'our site and get answers to frequently asked questions.',
                         a: 'download now',
                         link: '/fashion/assets/projects/international/china-brazil/guides/Tourism_Microsite_International_Shopping_Guide_English.pdf'
                     }
