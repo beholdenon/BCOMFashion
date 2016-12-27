@@ -1296,7 +1296,7 @@ html {
             left: 0;
             vertical-align: middle;
             font-weight: bold;
-            padding: 11.5px 0;
+            padding: 12px 0;
             text-transform: uppercase;
             font-family: $sansSerifFonts;
             z-index: 2;
@@ -1328,7 +1328,7 @@ html {
             }
             @media #{$medium-only} {
               font-size: 1.4vw;
-              padding: 1.25vw 0;
+              padding: 9px 0;
               &:after {
                 bottom: 4.4vw;
                 margin-left: -1.5vw;
@@ -1336,6 +1336,21 @@ html {
                 border-right: 1.5vw solid transparent;
                 border-bottom: 1.5vw solid #fff;
               }           
+            }
+            @media only screen and (min-width:962px) and (max-width:1024px) {
+              padding: 12px 0;
+            }
+            @media only screen and (orientation: portrait) {
+              padding: 10.5px 0;
+              &:after {
+                bottom: 4.7vw;
+              }
+            }
+            @media only screen and (min-device-width : 375px) and (max-device-width : 667px) {
+              padding: 9px 0;
+            }
+            @media only screen and (min-device-width : 414px) and (max-device-width : 736px) {
+              padding: 10px 0;
             }
           } 
         }
