@@ -1244,6 +1244,7 @@ html {
               margin-bottom: 60px;
               border-bottom: solid #000 1px;
               border-top: solid #000 1px;
+              padding: .4em 0 .4em 0;
             @media #{$small-only} {
               margin-right: 0;
               margin-left: 0;
@@ -1358,6 +1359,7 @@ html {
         .pdf-download {
           background-color: #000000;
           text-align: center;
+          margin-bottom: 30px;
 
             p {
               color: #ffffff;
@@ -2291,6 +2293,7 @@ html {
                 h5 {
                   font-size: 15px;
                   margin-bottom: 20px;
+                  font-weight: normal;
                 @media #{$small-only} {
                   font-size: 13px;
                   margin-bottom: 10px;
@@ -2423,9 +2426,12 @@ html {
             max-width: 962px;
             .columns {
               @media #{$small-only} {
-            padding-left: 0;
-            padding-right: 0;               
+                padding-left: 0;
+                padding-right: 0;               
               }
+            }
+            h2 {
+              padding: .5em 0 .5em 0;
             }
 
         .row {
@@ -2600,9 +2606,12 @@ html {
 
             .message {
               @media #{$small-only} {
-            padding-left: 5%;
-            padding-right: 5%;  
-          }
+                padding-left: 5%;
+                padding-right: 5%;  
+              }
+            h3 {
+              margin-bottom: 20px;
+            }    
         }
 
             .form {
