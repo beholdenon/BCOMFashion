@@ -1,0 +1,42 @@
+<div class="press-release-index">
+    <div id="contact-info">
+        <h4>Contacts:</h4>
+        <div class="contact-person">
+            <p>Anne Keating</p>
+            <p>Senior Vice President Public Relations, Special Events, Corporate Philanthropy</p>
+            <p>anne.keating@bloomingdales.com</p>
+        </div>
+        <div class="contact-person">
+            <p>Julia Austin</p>
+            <p>OVP, National Media Relations</p>
+            <p>julia.austin@bloomingdales.com</p>
+        </div>
+        <div class="contact-person">
+            <p>Suzy Nager</p>
+            <p>Manager, National Media Relations</p>
+            <p>suzy.nager@bloomingdales.com</p>
+        </div>
+    </div>
+    
+    <div id="press-release-section">
+        {{#if pressRelease}}
+        <div class="header-text">
+            <p class="text">In The News</p>
+            <div class="clearBoth"></div>
+        </div>
+        <div id="press-release-list">
+            <ul>           
+            {{#each pressRelease}}
+                <li>
+                    <p>{{newsDate}}</p>
+                    <a href="/about-us/company/press/background-history/?newsID={{newsId}}">{{newsTitle}}</a>
+                </li>
+            {{/each}}
+            </ul>
+        </div>
+        {{/if}}
+        {{#unless pressRelease}}
+        <h4>Sorry, we were not able to fetch our press releases.</h4>
+        {{/unless}}
+    </div>
+</div>

@@ -1,0 +1,101 @@
+.press-release-index {
+    #contact-info {
+        h4 {
+            margin-bottom: rem-calc(10);
+        }
+        .contact-person {
+            p {
+                margin-bottom: 0;
+            }
+            margin-bottom: 10px;
+        }
+    }
+    #press-release-section {
+        .header-text {
+            margin-top: 30px;
+            margin-bottom: 10px;
+        }
+        #press-release-list {
+            ul {
+                list-style-type: none;
+                margin-left: 0;
+                li {
+                    margin-bottom: 12px;
+                    p {
+                        margin-bottom: 2px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.press-release-details {
+    #back-button {
+        float: right;
+    }
+    
+    p {
+        margin-top: 7px;
+    }
+    
+    .pull-left {
+        right: 33.3333%;
+        left: auto;
+    }
+    
+    .pull-right {
+        left: 66.6666%;
+        right: auto;
+    }
+    
+    .columns {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+.bl_header_pg_img {
+    margin-bottom: 20px;
+}
+
+.header-text {
+    p {
+        font-size: 16px;
+        font-weight: lighter;
+        border-bottom: 1px solid #000000;
+        border-bottom-style: dotted;
+        border-right: 1px solid #ffffff;
+        margin-bottom: auto;
+    }
+    .text {
+        float: left;
+    }
+}
+
+.bl_mobile {
+    .press-release-details {        
+        .columns {
+            padding-left: 5px;
+        }
+    }
+}
+
+/* 600px is when medium size columns stop taking affect */
+@media screen and (max-width: 599px) {
+    .press-release-details {
+        h4 {
+            font-size: 16px;
+        }
+        
+        #back-button {
+            float: left;
+            margin-top: 0px;
+        }
+        
+        .pull-right, .pull-left {
+            left: auto;
+            right: auto;
+        }
+    }
+}
