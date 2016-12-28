@@ -262,6 +262,13 @@ module.exports = function(grunt) {
                     dest: '<%= node.destination %>/'
                 }, {
                     expand: true,
+                    cwd: '<%= node.source %>/public/templates/',
+                    src: [
+                        '**/*.hbs'
+                    ],
+                    dest: '<%= node.destination %>/public/templates/'
+                },{
+                    expand: true,
                     cwd: '<%= node.source %>/public/javascripts/',
                     src: [
                         '**/*.{js,json}',
@@ -329,6 +336,16 @@ module.exports = function(grunt) {
                         '**/*.{js,json}'
                     ],
                     dest: '<%= node.destination %>/public/javascripts/'
+                }]
+            },
+            templatesClient: {
+                files: [{
+                    expand: true,
+                    cwd: '<%= node.source %>/public/templates/',
+                    src: [
+                        '**/*.hbs'
+                    ],
+                    dest: '<%= node.destination %>/public/templates/'
                 }]
             },
             jsServer: {
@@ -428,7 +445,7 @@ module.exports = function(grunt) {
                 partialRegex: /.*/,
                 partialsPathRegex: /\/partials\//
             },
-
+            
             all: {
                 files: [{
                     src: [
@@ -706,6 +723,15 @@ module.exports = function(grunt) {
                     'jshint', 
                     // 'concat:generated',
                     'copy:jsClient'
+                ]
+            },
+            templatesClient: {
+                files: [
+                    '<%= node.source %>/public/templates/**/*.hbs'
+                ],
+                tasks: [
+                    // handlebars
+                    'copy:templatesClient'
                 ]
             },
             jsServer: {

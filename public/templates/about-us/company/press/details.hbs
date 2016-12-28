@@ -1,0 +1,18 @@
+<div class="press-release-details">
+    <div class="header-text row">
+        <div class="large-8 medium-8 small-24 columns pull-right">
+            <button id="back-button" type="button" class="small">back to press release list</button>
+        </div>
+        <div class="large-16 medium-16 small-24 columns pull-left">
+            {{#if newsTitle}}
+            <h4 class="text">{{newsTitle}}</h4>
+            {{/if}}
+            
+            {{#unless newsTitle}}
+            <h4 class="text">Sorry, we could not find that press release.</h4>
+            {{/unless}}
+        </div>
+    </div>
+    
+    <p>{{{newsStory}}}</p>
+</div>

@@ -7,7 +7,9 @@
             'lodash' : '/fashion/javascripts/libs/lodash.4',
             'nav' : '/fashion/javascripts/includes/nav',
             'propsConfig': '/fashion/javascripts/includes/propsConfig',
-            'partialDataHF': '/fashion/javascripts/includes/partialDataHF'
+            'partialDataHF': '/fashion/javascripts/includes/partialDataHF',
+            'pressReleases': '/fashion/javascripts/projects/about-us/company/press',
+            'templates': '/fashion/templates'
         }
     });  
 })();
