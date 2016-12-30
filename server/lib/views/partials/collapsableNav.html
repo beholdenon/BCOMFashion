@@ -1,0 +1,22 @@
+{{#if args.pages}}
+    {{#if headerLabel}}
+
+    {{/if}}
+    <ul {{#if args.className}}class="{{args.className}}"{{/if}}>
+        {{#each args.pages as |page|}}
+            <li>
+                {{#if type}}
+                    {{#if_eq page.type "uri"}}
+                        {{> uriPageLink }}
+                    {{/if_eq}}
+                    {{#if_eq page.type "mvc"}}
+                        {{> mvcPageLink }}
+                    {{/if_eq}}
+                {{else}}
+                    {{> uriPageLink }}
+                {{/if}}
+                {{> collapsableNav args=page}}
+            </li>
+        {{/each}}
+    </ul>
+{{/if}}

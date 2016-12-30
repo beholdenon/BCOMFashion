@@ -60,7 +60,7 @@ let sjl = require('sjljs'),
  * Returns a Hapi.js handler that allows you to have static data for pages that hit your route and also allows you to pass
  * a `dataProducer` function that recieves the `req` object and returns some data object.
  * @param viewAlias {String} - View alias to use in returned handler entry.
- * @param [dataProducer {Function|undefined}] - Optional data producer (function that returns some data (an Object or JSON Object) for the view to use).
+ * @param [dataProducer {Function<req>|undefined}] - Optional data producer (function that returns some data (an Object or JSON Object) for the view to use).
  * @returns {{description: string, tags: [string,string,string,string,string], handler: handler}}
  */
 module.exports = function (viewAlias, dataProducer) {

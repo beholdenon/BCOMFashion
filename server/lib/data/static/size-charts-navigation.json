@@ -1,0 +1,24 @@
+{
+  "pages": [
+    {
+      "label": "Women",
+      "href": "/about-us/shopping/sizecharts/womens-petite-plus/",
+      "id": "about_women"
+    },
+    {
+      "label": "Men",
+      "href": "/about-us/shopping/sizecharts/mens-shirt-suit-clothing/",
+      "id": "about_men"
+    },
+    {
+      "label": "Kids",
+      "href": "/about-us/shopping/sizecharts/kids-boys-girls-clothing/",
+      "id": "about_kids"
+    },
+    {
+      "label": "Shoes",
+      "href": "/about-us/shopping/sizecharts/mens-womens-kids-shoes/",
+      "id": "about_shoes"
+    }
+  ]
+}
