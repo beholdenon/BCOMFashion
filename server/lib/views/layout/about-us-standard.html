@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {{> head}}
+
+    <!--============[ JS: Require Modules ]============-->
+</head>
+
+    <body id="bcomFashion"
+    {{#if args.isTablet}}
+          class="bl_tablet responsive"
+    {{else if args.isMobile}}
+          class="bl_mobile responsive bl_trulyResponsive {{#if args.isMobile}}has-about-us-sub-nav{{/if}}"
+    {{else}}
+          class="responsive"
+    {{/if}}
+    >
+
+        <header class="responsive"></header>
+
+        {{!-- Mobile About Us Pages specific --}}
+        {{#if args.isMobile}}
+            <link rel="stylesheet" href="/fashion/styles/projects/about-us/about-us-navigation.css" />
+
+        {{!--  Desktop Specific --}}
+        {{else}}
+            <div class="row collapse mod_row">
+        {{/if}}
+
+            {{!-- Main container --}}
+            <div id="bl_main_container">
+
+                {{!-- Mobile About Us Pages specific --}}
+                {{#if args.isMobile}}
+                <div class="about-us-nav">{{> bcomCollapsableNav navContainer=args.aboutUsNavContainer}}</div>
+                {{/if}}
+
+                {{!-- Every view gets inserted here --}}
+                {{{content}}}
+
+                {{!-- Timestamp --}}
+                <input type="hidden" name="timeStamp" value="{{{args.timeStamp}}}">
+
+            </div>
+            {{!-- /End of Main container --}}
+
+        {{!-- Mobile About Us Pages specific --}}
+        {{#if args.isMobile}}
+            <script src="/fashion/javascripts/components/jquery.bcomCollapsibleNav.js"></script>
+            <script src="/fashion/javascripts/projects/about-us/about-us-navigation.js"></script>
+
+        {{!-- Desktop specific --}}
+        {{else}}
+            </div>
+        {{/if}}
+
+        <footer class="responsive"></footer>
+
+        <!-- inject -->
+
+    </body>
+
+</html>
