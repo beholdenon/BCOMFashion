@@ -1,165 +1,169 @@
 {
+  "className": "collapsible-nav",
   "pages": [
     {
       "label": "About Us",
       "href": "http://www1.bloomingdales.com/media/about/index.jsp?cm_sp=FOOTER-_-BOTTOM_NAV-_-ABOUT_US",
-      "id": "about_aboutUs"
-    },
-    {
-      "label": "Ways To Shop",
-      "href": "http://www1.bloomingdales.com/ways-to-shop/index.jsp",
-      "id": "about_waysToShop",
+      "id": "about_aboutUs",
+      "active": true,
       "pages": [
         {
-          "label": "Bloomingdale's App",
-          "href": "//www1.bloomingdales.com/media/about/mobile.jsp",
-          "id": "about_onlineMobile"
-        },
-        {
-          "label": "Store Locations & Events",
-          "href": "//locations.bloomingdales.com/store-locator?cm_sp=NAVIGATION-_-TOP_NAV-_-STORES_EVENTS-n-n&EFCKEY=%7B%22EXPERIMENT%22%3A%5B1536%2C1926%5D%7D&SEED=-1958664720940199450",
-          "id": "about_storeLocationsEvents"
-        },
-        {
-          "label": "Pick Up In Store",
-          "href": "/about-us/buy-online-pickup-in-store/?cm_sp=ways_to_shop-_-bops",
-          "id": "about_pickUpInStore"
-        }
-      ]
-    },
-    {
-      "label": "Shopping Services",
-      "href": "http://www1.bloomingdales.com/about/shopping/index.jsp",
-      "id": "about_shoppingServices",
-      "pages": [
-        {
-          "label": "Size Charts",
-          "href": "/about-us/shopping/sizecharts/womens-petite-plus/",
-          "id": "about_sizeCharts",
+          "label": "Ways To Shop",
+          "href": "http://www1.bloomingdales.com/ways-to-shop/index.jsp",
+          "id": "about_waysToShop",
           "pages": [
             {
-              "label": "Women",
-              "href": "/about-us/shopping/sizecharts/womens-petite-plus/",
-              "id": "about_women"
+              "label": "Bloomingdale's App",
+              "href": "//www1.bloomingdales.com/media/about/mobile.jsp",
+              "id": "about_onlineMobile"
             },
             {
-              "label": "Men",
-              "href": "/about-us/shopping/sizecharts/mens-shirt-suit-clothing/",
-              "id": "about_men"
+              "label": "Store Locations & Events",
+              "href": "//locations.bloomingdales.com/store-locator?cm_sp=NAVIGATION-_-TOP_NAV-_-STORES_EVENTS-n-n&EFCKEY=%7B%22EXPERIMENT%22%3A%5B1536%2C1926%5D%7D&SEED=-1958664720940199450",
+              "id": "about_storeLocationsEvents"
             },
             {
-              "label": "Kids",
-              "href": "/about-us/shopping/sizecharts/kids-boys-girls-clothing/",
-              "id": "about_kids"
-            },
-            {
-              "label": "Shoes",
-              "href": "/about-us/shopping/sizecharts/mens-womens-kids-shoes/",
-              "id": "about_shoes"
+              "label": "Pick Up In Store",
+              "href": "/about-us/buy-online-pickup-in-store/?cm_sp=ways_to_shop-_-bops",
+              "id": "about_pickUpInStore"
             }
           ]
         },
         {
-          "label": "Check Gift Card Balance",
-          "href": "https://www.bloomingdales.com/account/giftcardbalance",
-          "id": "about_checkGiftCardBalance"
+          "label": "Shopping Services",
+          "href": "http://www1.bloomingdales.com/about/shopping/index.jsp",
+          "id": "about_shoppingServices",
+          "pages": [
+            {
+              "label": "Size Charts",
+              "href": "/about-us/shopping/sizecharts/womens-petite-plus/",
+              "id": "about_sizeCharts",
+              "pages": [
+                {
+                  "label": "Women",
+                  "href": "/about-us/shopping/sizecharts/womens-petite-plus/",
+                  "id": "about_women"
+                },
+                {
+                  "label": "Men",
+                  "href": "/about-us/shopping/sizecharts/mens-shirt-suit-clothing/",
+                  "id": "about_men"
+                },
+                {
+                  "label": "Kids",
+                  "href": "/about-us/shopping/sizecharts/kids-boys-girls-clothing/",
+                  "id": "about_kids"
+                },
+                {
+                  "label": "Shoes",
+                  "href": "/about-us/shopping/sizecharts/mens-womens-kids-shoes/",
+                  "id": "about_shoes"
+                }
+              ]
+            },
+            {
+              "label": "Check Gift Card Balance",
+              "href": "https://www.bloomingdales.com/account/giftcardbalance",
+              "id": "about_checkGiftCardBalance"
+            },
+            {
+              "label": "Business Gifts",
+              "href": "/about-us/shopping/corporate-business-gifts/",
+              "id": "about_businessGifts"
+            },
+            {
+              "label": "Personal Shoppers",
+              "href": "/about-us/shopping/personal-shopper-complimentary-service/",
+              "id": "about_personalShoppers"
+            },
+            {
+              "label": "Studio Services",
+              "href": "/about-us/shopping/fashion-studio-styling-services/",
+              "id": "about_studioServices"
+            },
+            {
+              "label": "Find A Wish List",
+              "href": "//www.bloomingdales.com/wishlist/find",
+              "id": "about_findAWishList"
+            },
+            {
+              "label": "Visitor Services",
+              "href": "https://www.bloomingdales.com/about/shopping/international.jsp",
+              "id": "about_visitorServices",
+              "secure": true
+            },
+            {
+              "label": "Safety Recall Notice",
+              "href": "//www.customerservice-bloomingdales.com/app/answers/detail/a_id/355",
+              "id": "about_safetyRecallNotice"
+            }
+          ]
         },
         {
-          "label": "Business Gifts",
-          "href": "/about-us/shopping/corporate-business-gifts/",
-          "id": "about_businessGifts"
+          "label": "b.cause",
+          "href": "/about-us/philanthropy/",
+          "id": "about_bCause",
+          "pages": [
+            {
+              "label": "amfAR",
+              "href": "/about-us/amfar-b-cause-philanthropy/",
+              "id": "about_amfAr"
+            },
+            {
+              "label": "BCRF",
+              "href": "/about-us/breast-cancer-research-foundation-b-cause-philanthropy/",
+              "id": "about_bcrf"
+            },
+            {
+              "label": "Child Mind Institute",
+              "href": "/about-us/child-mind-institute-b-cause-philanthropy/",
+              "id": "about_childMindInstitute"
+            },
+            {
+              "label": "Help USA",
+              "href": "/about-us/help-usa-b-cause-philanthropy/",
+              "id": "about_helpUsa"
+            },
+            {
+              "label": "JDRF",
+              "href": "/about-us/jdrf-b-cause-philanthropy/",
+              "id": "about_jdrf"
+            }
+          ]
         },
         {
-          "label": "Personal Shoppers",
-          "href": "/about-us/shopping/personal-shopper-complimentary-service/",
-          "id": "about_personalShoppers"
+          "label": "New Stores",
+          "href": "/about-us/new-store-openings/",
+          "id": "about_newStores"
         },
         {
-          "label": "Studio Services",
-          "href": "/about-us/shopping/fashion-studio-styling-services/",
-          "id": "about_studioServices"
+          "label": "Our History",
+          "href": "/media/about/history/",
+          "id": "about_ourHistory"
         },
         {
-          "label": "Find A Wish List",
-          "href": "//www.bloomingdales.com/wishlist/find",
-          "id": "about_findAWishList"
+          "label": "Press Releases",
+          "href": "//www1.bloomingdales.com/about/company/press/index.ognc",
+          "id": "about_pressReleases"
         },
         {
-          "label": "Visitor Services",
-          "href": "https://www.bloomingdales.com/about/shopping/international.jsp",
-          "id": "about_visitorServices",
-          "secure": true
+          "label": "Careers",
+          "href": "//www.bloomingdalesjobs.com/",
+          "target": "_blank",
+          "id": "about_careers"
         },
         {
-          "label": "Safety Recall Notice",
-          "href": "//www.customerservice-bloomingdales.com/app/answers/detail/a_id/355",
-          "id": "about_safetyRecallNotice"
+          "label": "Diversity",
+          "href": "http://www.macysdiversityleadership.com/",
+          "id": "about_diversity",
+          "target": "_blank"
+        },
+        {
+          "label": "Affiliate Program",
+          "href": "/about-us/affiliate-program-network-partner/?cm_sp=about_us-_-left_nav-_-affiliate",
+          "id": "about_affiliateProgram"
         }
       ]
-    },
-    {
-      "label": "b.cause",
-      "href": "/about-us/philanthropy/",
-      "id": "about_bCause",
-      "pages": [
-        {
-          "label": "amfAR",
-          "href": "/about-us/amfar-b-cause-philanthropy/",
-          "id": "about_amfAr"
-        },
-        {
-          "label": "BCRF",
-          "href": "/about-us/breast-cancer-research-foundation-b-cause-philanthropy/",
-          "id": "about_bcrf"
-        },
-        {
-          "label": "Child Mind Institute",
-          "href": "/about-us/child-mind-institute-b-cause-philanthropy/",
-          "id": "about_childMindInstitute"
-        },
-        {
-          "label": "Help USA",
-          "href": "/about-us/help-usa-b-cause-philanthropy/",
-          "id": "about_helpUsa"
-        },
-        {
-          "label": "JDRF",
-          "href": "/about-us/jdrf-b-cause-philanthropy/",
-          "id": "about_jdrf"
-        }
-      ]
-    },
-    {
-      "label": "New Stores",
-      "href": "/about-us/new-store-openings/",
-      "id": "about_newStores"
-    },
-    {
-      "label": "Our History",
-      "href": "/media/about/history/",
-      "id": "about_ourHistory"
-    },
-    {
-      "label": "Press Releases",
-      "href": "//www1.bloomingdales.com/about/company/press/index.ognc",
-      "id": "about_pressReleases"
-    },
-    {
-      "label": "Careers",
-      "href": "//www.bloomingdalesjobs.com/",
-      "target": "_blank",
-      "id": "about_careers"
-    },
-    {
-      "label": "Diversity",
-      "href": "http://www.macysdiversityleadership.com/",
-      "id": "about_diversity",
-      "target": "_blank"
-    },
-    {
-      "label": "Affiliate Program",
-      "href": "/about-us/affiliate-program-network-partner/?cm_sp=about_us-_-left_nav-_-affiliate",
-      "id": "about_affiliateProgram"
     }
   ]
 }
