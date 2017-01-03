@@ -221,18 +221,6 @@ module.exports = function(grunt) {
             }
         },
 
-        //Produces minified files in the 'target' folder
-        htmlmin: {
-            dist: {
-                files: [{
-                    expand: true,
-                    cwd: '<%= node.source %>/server/lib/views/partials/',
-                    src: ['*.html'],
-                    dest: '<%= node.destination %>/lib/views/partials/'
-                }]
-            }
-        },
-
         //Performs rewrites based on rev and the useminPrepare configuration
         usemin: {
             html: ['<%= node.destination %>/lib/views/partials/{,*/}*.html'],
@@ -762,7 +750,6 @@ module.exports = function(grunt) {
 		    	],
 		        tasks: [
 		        	'useminPrepare',
-		        	'htmlmin',
 		        	'usemin',
                     'notify:views'
 		        ]
@@ -846,7 +833,6 @@ module.exports = function(grunt) {
             'clean:all',
             'useminPrepare',
             'compass:dist',
-            'htmlmin',   
             // 'handlebars',
             // 'concat:generated',
             // 'concat:addHBStemplates',

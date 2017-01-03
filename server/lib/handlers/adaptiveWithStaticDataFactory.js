@@ -9,6 +9,7 @@
 
 let sjl = require('sjljs'),
     path = require('path'),
+    viewsConfig = require('../configs/views-config'),
     staticDataRootPath = path.join(__dirname, '../data/static'),
 
     doesPathExist = require('../helpers/doesPathExist'),
@@ -54,6 +55,20 @@ let sjl = require('sjljs'),
             .catch(() => {
                 return {};
             });
+    },
+    getViewTemplateName = (viewAlias, requestPathPartial, isForMobile) => {
+        let viewAliasPath = path.join(requestPathPartial, 'index');
+        return new Promise((resolve, reject) => {
+            if (!sjl.empty(viewAlias)) {
+                resolve(viewAlias);
+            }
+            else if (isForMobile) {
+                return doesPathExist(path.join(viewsConfig.path, requestPathPartial, 'index-mobile.html'))
+                    .then(() => resolve(viewAliasPath + '-mobile'))
+                    .catch(() => reject(viewAliasPath));
+            }
+            return Promise.resolve(viewAliasPath);
+        });
     };
 
 /**
@@ -61,9 +76,10 @@ let sjl = require('sjljs'),
  * a `dataProducer` function that recieves the `req` object and returns some data object.
  * @param viewAlias {String} - View alias to use in returned handler entry.
  * @param [dataProducer {Function<req>|undefined}] - Optional data producer (function that returns some data (an Object or JSON Object) for the view to use).
+ * @param [layoutObj {undefined|Object<layout>}] - An object with a `layout` property specifying the layout to use.  Optional.
  * @returns {{description: string, tags: [string,string,string,string,string], handler: handler}}
  */
-module.exports = function (viewAlias, dataProducer) {
+module.exports = function (viewAlias, dataProducer, layoutObj) {
     return {
         description: `
             This handler allows you to inject data from JSON files into your view.  The default layout used for this 
@@ -91,31 +107,37 @@ module.exports = function (viewAlias, dataProducer) {
                 requestPathPartial = stripInitialForwardSlash(requestPath),
                 dataProducerData = typeof dataProducer === 'function' ? dataProducer(req) : null,
                 argsForView = argsWithDeviceMetaData(req, argsFactory()),
-                getMergedArgs = otherData => sjl.extend(true, argsForView, dataProducerData, otherData);
+                getMergedArgs = otherData => sjl.extend(true, argsForView, dataProducerData, otherData),
+                resolveRequest = viewTemplateName => {
+
+                    return new Promise((resolve) => {
+
+                        // Resolve view template whether we have args for it or not
+                        let resolveRequest = fetchedStaticData => {
+                            resolve(res.view(viewTemplateName, {
+                                args: getMergedArgs(fetchedStaticData),
+                                assetsHost: process.env.BASE_ASSETS,
+                                slashMinSuffix: slashMinSuffix
+                            }, layoutObj));
+                        };
+
+                        // Resolve request
+                        getPathStaticData(requestPathPartial)
+
+                        // Merge any returned static data and resolve request and view with data
+                            .then(resolveRequest)
+
+                            // Resolve view with out data
+                            .catch(resolveRequest);
+                    });
+                };
+
 
             // Check if we have any static args to merge to `args` before rendering view
             // then render it and return the promise
-            return (new Promise(resolve => {
-
-                // Resolve view template whether we have args for it or not
-                let resolveRequest = fetchedStaticData => {
-                        resolve(res.view(viewAlias, {
-                            args: getMergedArgs(fetchedStaticData),
-                            assetsHost: process.env.BASE_ASSETS,
-                            slashMinSuffix: slashMinSuffix
-                        }));
-                    };
-
-                // Resolve request
-                getPathStaticData(requestPathPartial)
-
-                    // Merge any returned static data and resolve request and view with data
-                    .then(resolveRequest)
-
-                    // Resolve view with out data
-                    .catch(resolveRequest);
-            }));
-
+            return getViewTemplateName(viewAlias, requestPathPartial, argsForView.isMobile)
+                .then(resolveRequest)
+                .catch(resolveRequest);
         }
     };
 };

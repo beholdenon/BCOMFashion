@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {{> head}}
+
+    <!--============[ JS: Require Modules ]============-->
+</head>
+
+    <body id="bcomFashion"
+    {{#if args.isTablet}}
+          class="bl_tablet responsive"
+    {{else if args.isMobile}}
+          class="bl_mobile responsive bl_trulyResponsive"
+    {{else}}
+          class="responsive"
+    {{/if}}
+    >
+
+        <header class="responsive"></header>
+
+        {{!-- Mobile specific --}}
+        {{#if args.isMobile}}
+            <nav>{{> collapsableNav }}</nav>
+            <div class="row collapse mod_row">
+        {{/if}}
+
+            <div id="bl_main_container">
+                {{! Every view gets inserted here }}
+                {{{content}}}
+                <input type="hidden" name="timeStamp" value="{{{args.timeStamp}}}">
+            </div>
+
+        {{!-- Mobile specific --}}
+        {{#if args.isMobile}}
+            </div>
+            {{!-- /End of '.row' --}}
+        {{/if}}
+
+        <footer class="responsive"></footer>
+
+        <!-- inject -->
+
+    </body>
+
+</html>

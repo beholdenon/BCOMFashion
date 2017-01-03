@@ -4,11 +4,12 @@
 
 'use strict';
 
-let adaptiveHandler = require('./adaptiveWithStaticDataFactory'),
+let navJson = require('../data/static/about-us-navigation.json'),
+    adaptiveHandler = require('./adaptiveWithStaticDataFactory'),
     sjl = require('sjljs');
 
 function aboutUsDataProvider (req) {
-    return {};
+    return sjl.extend(navJson, {controller: 'about-us', action: req.hostname});
 }
 
 module.exports = sjl.curry(adaptiveHandler, sjl._, aboutUsDataProvider);
