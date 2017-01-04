@@ -272,5 +272,9 @@
 
             return pageID;
         };
+            
+        $scope.closeThis = function () {
+            $scope.flagModal = false;
+        };
     }
 })();
