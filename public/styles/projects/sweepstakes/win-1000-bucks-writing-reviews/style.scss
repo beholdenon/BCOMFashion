@@ -203,6 +203,23 @@
 	}
 }
 
+@media screen and (orientation: landscape) {
+	.swpkes {
+
+		&:before {
+			width: 58%;
+		}
+
+		.swpkes__info {
+			width: 59%;
+		}
+
+		.swpkes__form {
+			width: 40%;
+		}
+	}
+}
+
 .swpkes__form {
 	position: relative;
 	text-align: center;
