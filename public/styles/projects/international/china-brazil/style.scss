@@ -490,6 +490,16 @@ html {
               z-index: 15;          
                 }
               }
+
+              .top-bar-section.lang_JP-CN {
+                li {
+                  a {
+                    font-family: "Avenir Roman",Arial,Helvetica,Verdana,sans-serif !important;
+                    font-weight: bold !important;
+                  }
+                }
+              }
+
               .top-bar-section {
                 ul.left {
                   margin-left: 14px;
@@ -522,9 +532,6 @@ html {
                     margin-left: 6vw;
                     li {
                       padding: 0 26px;
-                      a {
-                        font-weight: normal;
-                      }
                     }
                   }
                 } 

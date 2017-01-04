@@ -45,7 +45,7 @@
             </li>
         </ul>
 
-        <section class="top-bar-section">
+        <section class="top-bar-section" ng:class="{true:'lang_JP-CN', false:''}[lang === 'CN' || lang === 'JP']">
             <ul class="left" ng:class="{true:'nav-cn', false:''}[lang === 'CN']">
                 <li class="nav-section"><a ng-click="goto($event, '/our-heritage')" href="/our-heritage" ng-cloak>//copy[lang].nav[0]//</a></li>
                 <li class="nav-section"><a ng-click="goto($event, '/designer-destination')" href="/designer-destination" ng-cloak>//copy[lang].nav[1]//</a></li>
