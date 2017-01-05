@@ -1,6 +1,6 @@
-{{#if args.pages}}
-    <ul class="clearfix{{#if args.className}} {{args.className}}{{/if}}">
-        {{#each args.pages as |page|}}
+{{#if navContainer.pages}}
+    <ul class="clearfix{{#if navContainer.className}} {{navContainer.className}}{{/if}}">
+        {{#each navContainer.pages as |page|}}
             <li class="clearfix{{#if active}} active{{/if}}">
                 {{#if page.pages}}
                 <div>
@@ -19,7 +19,7 @@
                 {{> uriPageLink className="toggle-btn" label="" href="javascript:void(0)"}}
                 </div>
                 {{/if}}
-                {{> bcomCollapsableNav args=page}}
+                {{> bcomCollapsableNav navContainer=page}}
             </li>
         {{/each}}
     </ul>

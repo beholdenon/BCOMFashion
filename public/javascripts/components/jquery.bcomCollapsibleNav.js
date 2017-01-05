@@ -27,7 +27,7 @@ define('/fashion/javascripts/components/jquery.bcomCollapsibleNav', ['jquery', '
             scrollTopSpeed: 1000,
             defaultOwnClassName: 'bcom-collapsible-nav',
             defaultOwnSelector: '.bcom-collapsible-nav',
-            togglableListItemSelector: '.togglable',
+            togglableListItemSelector: 'li.togglable',
             togglableListItemClassName: 'togglable',
             toggleBtnSelector: 'a + a',
             activeSelector: '.active',
@@ -121,7 +121,7 @@ define('/fashion/javascripts/components/jquery.bcomCollapsibleNav', ['jquery', '
         },
 
         _updateParentHeights: function ($li, ops) {
-            if ($li.parent().hasClass(ops.defaultOwnSelector)) {
+            if ($li.parent().hasClass(ops.defaultOwnClassName)) {
                 return;
             }
             var $parentLi = $li.parent().closest(ops.togglableListItemSelector);
@@ -160,3 +160,4 @@ define('/fashion/javascripts/components/jquery.bcomCollapsibleNav', ['jquery', '
     });
 
 });
+
