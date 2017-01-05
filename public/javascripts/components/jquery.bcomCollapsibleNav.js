@@ -11,25 +11,29 @@ define('/fashion/javascripts/components/jquery.bcomCollapsibleNav', ['jquery', '
 
     'use strict';
 
-    var noop = function () {};
+    var noop = function () {},
+        reduceRight = function (arrayLike, callback, aggregator) {
+            return Array.prototype.reduceRight.call(arrayLike, callback, aggregator);
+        };
 
     $.widget('bcom.bcomCollapsibleNav', {
 
         options: {
-            ownClassName: 'collapsible-nav',
-            ownSelector: '.collapsible-nav',
+            highestListItemZIndex: 998,
+            scrollTopSpeed: 1000,
             togglableListItemSelector: '.togglable',
+            togglableListItemClassName: 'togglable',
             toggleBtnSelector: 'a + a',
             activeSelector: '.active',
             activeClassName: 'active',
             eventToToggleOn: 'touchend',
-            touchend: noop,
             afterToggleCallback: noop
         },
 
         refresh: function () {
             var ops = this.options;
             this._removeEventListeners(ops)
+                ._doCssModifications(this.element, ops.highestListItemZIndex)
                 ._addEventListeners(ops);
         },
 
@@ -40,10 +44,30 @@ define('/fashion/javascripts/components/jquery.bcomCollapsibleNav', ['jquery', '
         _create: function () {
             var self = this,
                 ops = self.options;
+
+            // Toggle listener
             self._onToggleBtnListener = function (e) {
-                var $elm = $(this).closest(ops.togglableListItemSelector).toggleClass(ops.activeClassName);
-                self._closeSiblingTogglables($elm, ops);
-                ops.touchend(e);
+                var $this = $(this),
+                    $elm = $this.closest(ops.togglableListItemSelector),
+                    expandedHeight = $elm.attr('data-expanded-height'),
+                    collapsedHeight = $elm.attr('data-collapsed-height'),
+                    activeClassName = ops.activeClassName;
+                if ($elm.hasClass(activeClassName)) {
+                    if (collapsedHeight) {
+                        $elm.height(collapsedHeight)
+                    }
+                    $elm.removeClass(activeClassName);
+                }
+                else if (!$elm.hasClass(ops.activeClassName)) {
+                    if (expandedHeight) {
+                        $elm.height(reduceRight($elm.find(ops.togglableListItemSelector + ops.activeSelector ), function (agg, _elm) {
+                            return agg + $(_elm).height();
+                        }, expandedHeight));
+                    }
+                    $elm.addClass(activeClassName);
+                }
+                self._closeSiblingTogglables($elm, collapsedHeight, ops);
+                // $('body, html').animate({scrollTop: $this.offset().top}, ops.scrollTopSpeed);
                 ops.afterToggleCallback(e);
             };
         },
@@ -52,8 +76,44 @@ define('/fashion/javascripts/components/jquery.bcomCollapsibleNav', ['jquery', '
             this.refresh();
         },
 
-        _closeSiblingTogglables: function ($togglableLi, ops) {
-            $togglableLi.siblings().removeClass(ops.activeClassName);
+        _doCssModifications: function ($startingUl, startZIndex) {
+            var self = this;
+
+            if ($startingUl.length === 0) {
+                return self;
+            }
+
+            $startingUl.each(function (ind, elm) {
+                var $elm = $(elm);
+                $elm.css({'z-index': startZIndex--});
+            });
+
+            $startingUl.find('> li').each(function (index, elm) {
+                var $elm = $(elm),
+                    $ul = $elm.find('> ul, > div');
+
+                    self._doCssModifications($ul, startZIndex);
+
+                $elm.css({'z-index': --startZIndex});
+
+                if ($ul.length > 0) {
+                    $elm.attr('data-expanded-height', $elm.height());
+                    $elm.addClass(self.options.togglableListItemClassName);
+                    $elm.attr('data-collapsed-height', $elm.height());
+                }
+            });
+            return self;
+        },
+
+        _closeSiblingTogglables: function ($togglableLi, collapsedHeight, ops) {
+            $togglableLi.siblings().each(function (ind, elm) {
+                var $elm = $(elm);
+                if ($elm.hasClass(ops.activeClassName) && collapsedHeight) {
+                    $elm.height(collapsedHeight)
+                        .removeClass(ops.activeClassName);
+                }
+                $elm.removeClass(ops.activeClassName);
+            });
         },
 
         _addEventListeners: function (ops) {

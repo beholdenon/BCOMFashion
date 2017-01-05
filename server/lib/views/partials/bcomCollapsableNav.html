@@ -1,7 +1,7 @@
 {{#if args.pages}}
-    <ul {{#if args.className}}class="{{args.className}}"{{/if}}>
+    <ul class="clearfix{{#if args.className}} {{args.className}}{{/if}}">
         {{#each args.pages as |page|}}
-            <li {{#if page.pages}}class="togglable{{#if active}} active{{/if}}"{{/if}}>
+            <li class="clearfix{{#if active}} active{{/if}}">
                 {{#if page.pages}}
                 <div>
                 {{/if}}

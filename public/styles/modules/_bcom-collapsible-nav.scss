@@ -1,5 +1,10 @@
+// @todo add the border to the a tag on the non-togglable li's and remove the borders from all the li's and either add them to the inner div or in atag)
+@import '../variables';
+@import '../mixins';
 
 $light-gray: #cdcdcd;
+$li-bg: #fff;
+$aniSpeed: $ani-speed-3;
 
 .bcom-collapsible-nav {
   width: 100%;
@@ -12,10 +17,13 @@ $light-gray: #cdcdcd;
 
   &,
   ul,
-  li {
+  li,
+  li > div {
+    position: relative; // to allow layering
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    background: $li-bg;
   }
 
   &,
@@ -24,27 +32,28 @@ $light-gray: #cdcdcd;
     display: block;
   }
 
-  ul {
-    display: none;
-  }
-
   ul,
   li {
     clear: both;
   }
 
-  a {
-    border-radius: 0;
+  ul {
+    transition: transform $aniSpeed;
+    transform: translateY(-100%);
   }
 
   li {
+    overflow-y: hidden;
     border-bottom: 1px solid $light-gray;
+    transition: height $aniSpeed;
   }
 
   li a {
+    border-radius: 0;
     text-transform: uppercase;
     text-decoration: none;
     padding: 19px 14px;
+    background: $li-bg;
   }
 
   li a span {
@@ -52,13 +61,18 @@ $light-gray: #cdcdcd;
   }
 
   li.togglable {
-    > div > a {
+    height: 56px;
+
+    > div {
+      clear: both;
+    }
+    > div a {
       display: inline-block;
     }
-    > div > a:first-child {
+    > div a:first-child {
       width: 80%;
     }
-    > div > a:first-child + a {
+    > div a:first-child + a {
       float: right;
       font-size: 14px;
       line-height: 16px;
@@ -68,7 +82,8 @@ $light-gray: #cdcdcd;
       max-width: 50px;
       width: 20%;
     }
-    > div > a:first-child + a::after {
+
+    > div a:first-child + a::after {
       content: "+";
     }
     &.active > div > a:first-child + a::after {
@@ -76,18 +91,22 @@ $light-gray: #cdcdcd;
     }
   }
 
+  li ul li {
+    transition: height $aniSpeed, border-bottom $aniSpeed;
+  }
+
   li.togglable.active {
     > div + ul {
-      display: block;
+      transform: translateY(0);
 
       > li ul li {
-        border-bottom: 1px solid transparent;
+        border-bottom-color: transparent;
       }
     }
   }
 
   > li.togglable.active:last-child {
-    border-bottom: 1px solid transparent;
+    border-bottom-color: transparent;
   }
 
 }

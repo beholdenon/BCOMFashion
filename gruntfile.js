@@ -703,6 +703,7 @@ module.exports = function(grunt) {
             jsClient: {
 		        files: [
                     '<%= node.source %>/public/javascripts/main.js',
+                    '<%= node.source %>/public/javascripts/components/{,**/}*.{js,json}',
                     '<%= node.source %>/public/javascripts/includes/{,**/}*.{js,json}',
                     '<%= node.source %>/public/javascripts/projects/{,**/}*.{js,json}',
                     '<%= node.source %>/public/javascripts/services/{,**/}*.{js,json}'

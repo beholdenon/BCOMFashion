@@ -9,7 +9,7 @@ let navJson = require('../data/static/about-us-navigation.json'),
     sjl = require('sjljs');
 
 function aboutUsDataProvider (req) {
-    return sjl.extend(navJson, {controller: 'about-us', action: req.hostname});
+    return Object.assign(navJson, {controller: 'about-us', action: req.hostname});
 }
 
 module.exports = sjl.curry(adaptiveHandler, sjl._, aboutUsDataProvider);
