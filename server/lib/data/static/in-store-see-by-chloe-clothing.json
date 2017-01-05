@@ -1,8 +1,8 @@
 {
-  "designerName": "See by Chloé",
-  "machineReadableDesignerName": "chloe_clothing",
+  "designerName": "See by Chloé Women's Clothing",
+  "machineReadableDesignerName": "see_by_chloe_clothing",
   "title2Prefix": "See by Chloé Women's Clothing",
-  "pageUrlDesignerAlias": "chloe-clothing",
+  "pageUrlDesignerAlias": "see-by-chloe-clothing",
   "designerDescription": "",
   "addressColumns": [
     [
@@ -14,7 +14,7 @@
         "phoneNumberHrefSuffix": "+1-310-772-2100",
         "urlArgs": {
           "addressAlias": "century-city",
-          "designerAlias": "chloe_clothing",
+          "designerAlias": "see_by_chloe_clothing",
           "addressFullDetail": "CENTURY-CITY"
         }
       }
@@ -28,7 +28,7 @@
         "phoneNumberHrefSuffix": "+1-973-548-2200",
         "urlArgs": {
           "addressAlias": "short-hills",
-          "designerAlias": "chloe_clothing",
+          "designerAlias": "see_by_chloe_clothing",
           "addressFullDetail": "THE-MALL-AT-SHORT-HILLS"
         }
       }
@@ -42,7 +42,7 @@
         "phoneNumberHrefSuffix": "+1-312-440-4460",
         "urlArgs": {
           "addressAlias": "north-michigan-avenue",
-          "designerAlias": "chloe_clothing",
+          "designerAlias": "see_by_chloe_clothing",
           "addressFullDetail": "NORTH-MICHIGAN-AVENUE"
         }
       }
