@@ -2,25 +2,5 @@
 @import '../../mixins';
 @import "../../includes/clearfix";
 @import "../../fonts";
-@import "../../modules/collapsable-nav/collapsible-nav";
+@import "../../modules/bcom-collapsible-nav";
 
-/** Font Families **/
-$avenir-roman: 'Avenir LT W01 55 Roman';
-$avenir-heavy: 'Avenir LT W01 85 Heavy';
-$medium-font-size: 16px;
-
-/** Colors **/
-$about-us-fg-color: #FFF;
-$about-us-bg-color: #000;
-
-/** Margins and Padding **/
-$extra-large-margin: 55px;
-$medium-margin: 21px;
-$large-margin: 34px;
-$small-margin: 13px;
-
-@media (min-device-width: 320px) and (max-device-width: 767px) {
-  .about-us-nav .collapsible-nav {
-
-  }
-}

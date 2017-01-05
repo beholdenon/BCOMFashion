@@ -16,10 +16,10 @@
                     {{> uriPageLink }}
                 {{/if}}
                 {{#if page.pages}}
-                {{> uriPageLink label="+" href="javascript:void(0)"}}
+                {{> uriPageLink className="toggle-btn" label="" href="javascript:void(0)"}}
                 </div>
                 {{/if}}
-                {{> collapsableNav args=page}}
+                {{> bcomCollapsableNav args=page}}
             </li>
         {{/each}}
     </ul>

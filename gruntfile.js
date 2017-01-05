@@ -811,7 +811,6 @@ module.exports = function(grunt) {
             dev: [
                 'nodemon',
                 'watch',
-                //'node-inspector',
                 'notify:build'
             ],
             options: {
@@ -825,7 +824,7 @@ module.exports = function(grunt) {
     grunt.registerTask('createMobile', 'copy:createMobile');
     grunt.registerTask('default', 'build');
     grunt.registerTask('test', 'checkPages:development');
-    grunt.registerTask('build', 'Build based on the NODE_ENV value.', function() {   
+    grunt.registerTask('build', 'Build based on the NODE_ENV value.', function() {
         grunt.task.run([
 
             'babel',
@@ -840,8 +839,7 @@ module.exports = function(grunt) {
             'execute', // create the nav data used in the compile-handlebars step
             'compile-handlebars', // this processes files in the views folder and overwrites files in target
             'copy:titleImages', // handlebars optionally creates titles images, need to copy those after handlebars run
-            // 'cssmin',
-            // 'uglify',  
+            // 'uglify',
             // 'rev:dist',     
             'usemin',
             'string-replace'

@@ -1,11 +1,10 @@
 {
-  "className": "collapsible-nav",
+  "className": "bcom-collapsible-nav",
   "pages": [
     {
       "label": "About Us",
       "href": "http://www1.bloomingdales.com/media/about/index.jsp?cm_sp=FOOTER-_-BOTTOM_NAV-_-ABOUT_US",
       "id": "about_aboutUs",
-      "active": true,
       "pages": [
         {
           "label": "Ways To Shop",

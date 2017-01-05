@@ -1,12 +1,28 @@
 
 $light-gray: #cdcdcd;
 
-.collapsible-nav {
+.bcom-collapsible-nav {
   width: 100%;
-  box-sizing: border-box;
-  display: block;
-  margin: 0;
-  padding: 0;
+
+  // Direct children should keep their borders
+  & > li > div,
+  & > li.active > div {
+    border-bottom: 1px solid $light-gray;
+  }
+
+  &,
+  ul,
+  li {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  &,
+  li,
+  li a {
+    display: block;
+  }
 
   ul {
     display: none;
@@ -15,13 +31,6 @@ $light-gray: #cdcdcd;
   ul,
   li {
     clear: both;
-    margin: 0;
-    padding: 0;
-  }
-
-  li,
-  li a {
-    display: block;
   }
 
   a {
@@ -30,7 +39,6 @@ $light-gray: #cdcdcd;
 
   li {
     border-bottom: 1px solid $light-gray;
-    box-sizing: border-box;
   }
 
   li a {
@@ -46,7 +54,6 @@ $light-gray: #cdcdcd;
   li.togglable {
     > div > a {
       display: inline-block;
-      border-bottom: 1px solid transparent;
     }
     > div > a:first-child {
       width: 80%;
@@ -61,12 +68,15 @@ $light-gray: #cdcdcd;
       max-width: 50px;
       width: 20%;
     }
+    > div > a:first-child + a::after {
+      content: "+";
+    }
+    &.active > div > a:first-child + a::after {
+      content: "\2013"; // unicode decimal for em dash (same as &mdash;)
+    }
   }
 
   li.togglable.active {
-    > div {
-      border-bottom: 1px solid $light-gray;
-    }
     > div + ul {
       display: block;
 
@@ -74,6 +84,10 @@ $light-gray: #cdcdcd;
         border-bottom: 1px solid transparent;
       }
     }
+  }
+
+  > li.togglable.active:last-child {
+    border-bottom: 1px solid transparent;
   }
 
 }
