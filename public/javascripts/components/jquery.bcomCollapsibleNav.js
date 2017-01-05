@@ -12,15 +12,21 @@ define('/fashion/javascripts/components/jquery.bcomCollapsibleNav', ['jquery', '
     'use strict';
 
     var noop = function () {},
-        reduceRight = function (arrayLike, callback, aggregator) {
-            return Array.prototype.reduceRight.call(arrayLike, callback, aggregator);
+        reduce = function (arrayLike, callback, aggregator, context) {
+            return Array.prototype.reduce.call(arrayLike, callback, aggregator, context);
         };
+
+    function collapsedHeight ($elm) {
+        return parseInt($elm.attr('data-collapsed-height'), 10);
+    }
 
     $.widget('bcom.bcomCollapsibleNav', {
 
         options: {
             highestListItemZIndex: 998,
             scrollTopSpeed: 1000,
+            defaultOwnClassName: 'bcom-collapsible-nav',
+            defaultOwnSelector: '.bcom-collapsible-nav',
             togglableListItemSelector: '.togglable',
             togglableListItemClassName: 'togglable',
             toggleBtnSelector: 'a + a',
@@ -33,7 +39,7 @@ define('/fashion/javascripts/components/jquery.bcomCollapsibleNav', ['jquery', '
         refresh: function () {
             var ops = this.options;
             this._removeEventListeners(ops)
-                ._doCssModifications(this.element, ops.highestListItemZIndex)
+                ._addZIndices(this.element, ops.highestListItemZIndex)
                 ._addEventListeners(ops);
         },
 
@@ -49,7 +55,6 @@ define('/fashion/javascripts/components/jquery.bcomCollapsibleNav', ['jquery', '
             self._onToggleBtnListener = function (e) {
                 var $this = $(this),
                     $elm = $this.closest(ops.togglableListItemSelector),
-                    expandedHeight = $elm.attr('data-expanded-height'),
                     collapsedHeight = $elm.attr('data-collapsed-height'),
                     activeClassName = ops.activeClassName;
                 if ($elm.hasClass(activeClassName)) {
@@ -59,16 +64,14 @@ define('/fashion/javascripts/components/jquery.bcomCollapsibleNav', ['jquery', '
                     $elm.removeClass(activeClassName);
                 }
                 else if (!$elm.hasClass(ops.activeClassName)) {
-                    if (expandedHeight) {
-                        $elm.height(reduceRight($elm.find(ops.togglableListItemSelector + ops.activeSelector ), function (agg, _elm) {
-                            return agg + $(_elm).height();
-                        }, expandedHeight));
-                    }
+                    var expandedHeight = self._getExpandHeight($elm, ops);
+                    $elm.height(expandedHeight);
                     $elm.addClass(activeClassName);
+
                 }
                 self._closeSiblingTogglables($elm, collapsedHeight, ops);
-                // $('body, html').animate({scrollTop: $this.offset().top}, ops.scrollTopSpeed);
-                ops.afterToggleCallback(e);
+                self._updateParentHeights($elm, ops);
+                ops.afterToggleCallback.call(this, e);
             };
         },
 
@@ -76,7 +79,7 @@ define('/fashion/javascripts/components/jquery.bcomCollapsibleNav', ['jquery', '
             this.refresh();
         },
 
-        _doCssModifications: function ($startingUl, startZIndex) {
+        _addZIndices: function ($startingUl, startZIndex) {
             var self = this;
 
             if ($startingUl.length === 0) {
@@ -92,17 +95,38 @@ define('/fashion/javascripts/components/jquery.bcomCollapsibleNav', ['jquery', '
                 var $elm = $(elm),
                     $ul = $elm.find('> ul, > div');
 
-                    self._doCssModifications($ul, startZIndex);
+                    self._addZIndices($ul, startZIndex);
 
                 $elm.css({'z-index': --startZIndex});
 
                 if ($ul.length > 0) {
-                    $elm.attr('data-expanded-height', $elm.height());
                     $elm.addClass(self.options.togglableListItemClassName);
-                    $elm.attr('data-collapsed-height', $elm.height());
                 }
+
+                $elm.attr('data-collapsed-height', $elm.height());
             });
+
             return self;
+        },
+
+        _getExpandHeight: function ($li, ops) {
+            var self = this;
+            return collapsedHeight($li) +
+                reduce($li.find('> ul').find('> li'), function (agg, elm) {
+                    var $elm = $(elm);
+                    return agg + ($elm.hasClass(ops.activeClassName) ?
+                            self._getExpandHeight($elm, ops) :
+                            collapsedHeight($elm));
+                }, 0, this);
+        },
+
+        _updateParentHeights: function ($li, ops) {
+            if ($li.parent().hasClass(ops.defaultOwnSelector)) {
+                return;
+            }
+            var $parentLi = $li.parent().closest(ops.togglableListItemSelector);
+                $parentLi.height(this._getExpandHeight($parentLi, ops));
+                this._updateParentHeights($parentLi, ops);
         },
 
         _closeSiblingTogglables: function ($togglableLi, collapsedHeight, ops) {
