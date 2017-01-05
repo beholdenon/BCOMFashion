@@ -342,8 +342,8 @@ html {
 
           .nav-wrapper {
             background-color: #fff;
-            @media only screen and (min-width: 933px) {
-              border-bottom: solid 1px #ababab;
+            @media only screen and (max-device-width: 933px) {
+              display: none;
             }
           }
           
