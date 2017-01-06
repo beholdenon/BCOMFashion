@@ -784,7 +784,7 @@
                             {
                                 name: 'AVENTURA',
                                 addr: '19555 Biscayne Boulevard  Aventura, FL 33180<br/>+1 305-792-1246',
-                                hours: 'Monday–Wednesday: 10AM–9:30PM <span>|</span> Thusday-Saturday: 10AM-10PM <span>|</span> Sunday: 12PM–8:30PM',
+                                hours: 'Monday–Wednesday: 10AM–9:30PM <span>|</span> Thursday-Saturday: 10AM-10PM <span>|</span> Sunday: 12PM–8:30PM',
                                 descr: 'Planning your vacation itinerary? Start with a trip to Florida\'s Aventura store. Explore our extensive selection of designer fashions, beauty brands, luxurious accessories and more. Get shopping with a store directory in your chosen language and be sure to make the most of your experience with our in-store amenities listed below.',
                                 dTile: 'VISITING AVENTURA?',
                                 dInfo: 'Download our welcome booklet before you arrive.',
