@@ -314,7 +314,7 @@ html {
                     font-size: 24px;
                     font-size: 2.3vmin;
                     padding: 0 0 0 4rem;
-                    padding: 0 0 0 8.5vmin;
+                    padding: 0 0 0 7.5vmin;
                   }
                 }
                 &.social {
@@ -342,7 +342,7 @@ html {
 
           .nav-wrapper {
             background-color: #fff;
-            @media only screen and (max-device-width: 933px) {
+            @media only screen and (max-device-width: 767px) {
               display: none;
             }
           }
@@ -1861,6 +1861,10 @@ html {
                 select {
                   margin: 0;
                   background-size: 40px;
+                  backface-visibility: hidden;
+                  perspective: 1000;
+                  -webkit-backface-visibility: hidden;
+                  -webkit-perspective: 1000;   
                   option[disabled="disabled"] {
                     background-color: #d8d8d8;
                     color: #000;
@@ -1912,8 +1916,7 @@ html {
                 }
               }
               .storeSelected {
-                @media only screen and (max-device-width : 981px) and (orientation: landscape) {
-                  margin-right: 145px;
+                @media only screen and (max-device-width : 767px) and (orientation: landscape) {
                   width: 400px;
                 }
                 @media #{$medium-up} and (orientation: portrait)  {
@@ -1962,7 +1965,7 @@ html {
                   z-index: 9 !important;            
                 }  
                 @media only screen and (max-width: 933px) and (orientation: landscape) {
-                  top: -122px !important;
+                  top: -56px !important;
                   position: relative !important;;
                 }  
                 @media #{$medium-only} and (orientation: portrait)  {
@@ -2344,7 +2347,7 @@ html {
                 h2.store-header {
                   &:after {
                     @media #{$medium-only} and (orientation: portrait) {
-                        top: 117px;
+                        top: 55px;
                     }
                   }
                 } 
