@@ -779,6 +779,7 @@ angular
 
                         // check if our element already hidden and abort if so
                         if (angular.element(elem).hasClass("ng-hide")) {
+                            //$document.off('click', eventHandler);
                             return;
                         }
 

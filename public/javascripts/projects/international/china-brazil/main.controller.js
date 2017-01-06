@@ -275,6 +275,7 @@
             
         $scope.closeThis = function () {
             $scope.flagModal = false;
+            $scope.socialModal = false;
         };
     }
 })();

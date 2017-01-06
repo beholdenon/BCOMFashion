@@ -45,7 +45,7 @@
             </li>
         </ul>
 
-        <section class="top-bar-section" ng:class="{true:'lang_JP-CN', false:''}[lang === 'CN' || lang === 'JP']">
+        <section class="top-bar-section" ng:class="{true:'lang_JP-CN', false:''}[lang === 'CN' || lang === 'JP']" click-outside="closeThis()">
             <ul class="left" ng:class="{true:'nav-cn', false:''}[lang === 'CN']">
                 <li class="nav-section"><a ng-click="goto($event, '/our-heritage')" href="/our-heritage" ng-cloak>//copy[lang].nav[0]//</a></li>
                 <li class="nav-section"><a ng-click="goto($event, '/designer-destination')" href="/designer-destination" ng-cloak>//copy[lang].nav[1]//</a></li>
@@ -58,9 +58,9 @@
                 <li class="flag-button" ng:class="{true:'show', false:''}[lang === 'CN']"><a href="#" data-lang="CN" ng-click="langModal($event)"><img src="/fashion/images/projects/international/china-brazil/flags/ChineseFlag.png"/></a></li>
                 <li class="flag-button" ng:class="{true:'show', false:''}[lang === 'JP']"><a href="#" data-lang="JP" ng-click="langModal($event)"><img src="/fashion/images/projects/international/china-brazil/flags/JapFlag.png"/></a></li>
                 <li class="flag-button" ng:class="{true:'show', false:''}[lang === 'ESP']"><a href="#" data-lang="ESP" ng-click="langModal($event)"><img src="/fashion/images/projects/international/china-brazil/flags/EspFlag.png"/></a></li>
-                <li><a href="#" ng-click="shareModal($event)"><i class="fa fa-share-alt"></i></a></li>
+                <li class="share-button"><a href="#" ng-click="shareModal($event)"><i class="fa fa-share-alt"></i></a></li>
             </ul>
-            <ul class="right flags" ng-class="{true:'active', false:''}[flagModal]" ng-show="flagModal" click-outside="closeThis()" outside-if-not="flag-button">
+            <ul class="right flags" ng-class="{true:'active', false:''}[flagModal]" ng-show="flagModal">
                 <li class="lang-opt" ng:class="{true:'active', false:''}[lang === 'ENG']">
                     <a href="#" class="lang-opt-link" ng:class="{'lang-opt-hover': ENG}" ng-mouseenter="ENG = true" ng-mouseleave="ENG = false" data-lang="ENG" ng-click="langOnClick($event)"><p>ENG</p><img src="/fashion/images/projects/international/china-brazil/flags/EngFlag.png"/></a>
                 </li>
