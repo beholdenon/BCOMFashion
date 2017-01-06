@@ -82,6 +82,11 @@ $small-margin: 13px;
       line-height: 46px;
       margin-bottom: $extra-large-margin;
     }
+
+    .in-store-sub-title {
+      font-size: $medium-font-size;
+      margin-bottom: $extra-large-margin;
+    }
   }
 
   // > header > section > header {
@@ -158,10 +163,16 @@ $small-margin: 13px;
       }
     }
 
-    > .in-store-main-header .in-store-title {
-      margin-bottom: $medium-margin;
-      font-size: 21px;
-      line-height: 34px;
+    > .in-store-main-header {
+      .in-store-title {
+        margin-bottom: $medium-margin;
+        font-size: 21px;
+        line-height: 34px;
+      }
+
+      .in-store-sub-title {
+        margin-bottom: $medium-margin;
+      }
     }
 
     > .in-store-body .in-store-body-header {
