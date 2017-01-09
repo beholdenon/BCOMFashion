@@ -1,38 +1,47 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        {{> head}} 
+<head>
+    {{> head}}
 
-        <!--============[ JS: Require Modules ]============-->
-    </head>
+    <!--============[ JS: Require Modules ]============-->
+</head>
 
+    <body id="bcomFashion"
     {{#if args.isTablet}}
-        <body id="bcomFashion" class="bl_tablet responsive">
+          class="bl_tablet responsive"
     {{else if args.isMobile}}
-        <body id="bcomFashion" class="bl_mobile responsive bl_trulyResponsive">
+          class="bl_mobile responsive bl_trulyResponsive"
     {{else}}
-        <body id="bcomFashion" class="responsive">
+          class="responsive"
     {{/if}}
+    >
 
-            <header class="responsive"></header>
-            {{#unless args.isMobile}}
-                {{! Desktop and Tablet Views should have a row wrapping the bl_main_container div }}
-                <div class="row collapse mod_row">
-            {{/unless}}
+        <header class="responsive"></header>
+
+        {{!-- Mobile specific --}}
+        {{#if args.isMobile}}
+            <link rel="stylesheet" href="/fashion/styles/projects/about-us/about-us-navigation.css" />
+            <nav class="about-us-nav">{{> bcomCollapsableNav navContainer=args.aboutUsNavContainer}}</nav>
+            <div class="row collapse mod_row">
+        {{/if}}
 
             <div id="bl_main_container">
                 {{! Every view gets inserted here }}
                 {{{content}}}
                 <input type="hidden" name="timeStamp" value="{{{args.timeStamp}}}">
             </div>
-            {{#unless args.isMobile}}
-                </div>
-            {{/unless}}
 
-            <footer class="responsive"></footer>
+        {{!-- Mobile specific --}}
+        {{#if args.isMobile}}
+            </div>
+            <script src="/fashion/javascripts/components/jquery.bcomCollapsibleNav.js"></script>
+            <script src="/fashion/javascripts/projects/about-us/about-us-navigation.js"></script>
+        {{/if}}
+
+        <footer class="responsive"></footer>
 
         <!-- inject -->
 
-        </body>
+    </body>
 
 </html>

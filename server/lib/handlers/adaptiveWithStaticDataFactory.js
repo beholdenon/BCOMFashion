@@ -11,6 +11,7 @@ let sjl = require('sjljs'),
     path = require('path'),
     viewsConfig = require('../configs/views-config'),
     staticDataRootPath = path.join(__dirname, '../data/static'),
+    aboutUsNavJson = require('../data/static/about-us-navigation.json'),
 
     doesPathExist = require('../helpers/doesPathExist'),
     deviceDetectionHelper = require('./../helpers/deviceDetection'),
@@ -25,7 +26,8 @@ let sjl = require('sjljs'),
             isTablet: false,
             headTitle: '',
             headMeta: '',
-            headCanonical: ''
+            headCanonical: '',
+            aboutUsNavContainer: aboutUsNavJson
         };
     },
 

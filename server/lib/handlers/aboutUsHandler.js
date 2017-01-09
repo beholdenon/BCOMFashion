@@ -7,7 +7,7 @@
 let navJson = require('../data/static/about-us-navigation.json'),
     sizeChartsJson = require('../data/static/size-charts-navigation.json'),
     adaptiveHandler = require('./adaptiveWithStaticDataFactory'),
-    sjl = require('sjljs'),
+    jsonClone = obj => JSON.parse(JSON.stringify(obj)),
     getPageItemByUri = (uri, pageItemsContainer) => {
         let foundItems = pageItemsContainer.pages.filter(item => {
             return item.href === uri;
@@ -16,7 +16,7 @@ let navJson = require('../data/static/about-us-navigation.json'),
     };
 
 function aboutUsDataProvider(req) {
-    var sizeChartsObj = sjl.jsonClone(sizeChartsJson),
+    var sizeChartsObj = jsonClone(sizeChartsJson),
         out = {
             aboutUsNavContainer: navJson
         };
@@ -29,4 +29,4 @@ function aboutUsDataProvider(req) {
     return out;
 }
 
-module.exports = sjl.curry(adaptiveHandler, sjl._, aboutUsDataProvider);
+module.exports = adaptiveHandler(0, aboutUsDataProvider);

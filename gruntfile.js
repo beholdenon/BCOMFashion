@@ -53,7 +53,7 @@ module.exports = function(grunt) {
                 files: [{
                     expand:true,
                     cwd: './server/',
-                    src: ['lib/views/**/index.hbs', 'lib/views/**/index-mobile.hbs'],
+                    src: ['lib/views/**/index.hbs'],
                     dest: './target/',
                     ext: '.html'
                 }],
@@ -387,35 +387,6 @@ module.exports = function(grunt) {
                     steps: 'test/features/step_definitions',
                     format: 'pretty'
                 }
-            },
-            // create index-mobile.hbs version of hbs files if not already exist
-            createMobile: {
-                files: [
-                    {
-                        expand: true,
-                        src: [
-                            './server/lib/views/about-us/**/*.hbs',
-                            './server/lib/views/media/about/**/*.hbs',
-                            './server/lib/views/fashion-tips/**/*.hbs',
-                            './server/lib/views/fashion-index/**/*.hbs',
-                            './server/lib/views/landing-page/**/*.hbs'
-
-
-                        ],
-                        rename: function(dest, src) {
-                            var name =  src.replace(/(\.*)\.hbs$/, "$1-mobile.hbs");
-                            return name;
-                        },
-                        ext: '.hbs',
-                        filter: function (filepath) {
-                            if (/-mobile/.test(filepath)){return false;}
-                            // Return false if the mobile version of the file exists.
-                            filepath = filepath.replace(/(\.*)\.hbs$/, "$1-mobile.hbs");
-                            if (grunt.file.exists(filepath)) {return false;}
-                            return true;
-                        }
-                    }
-                ]
             }
         },
 
@@ -822,7 +793,6 @@ module.exports = function(grunt) {
     grunt.registerTask('projectSprites', 'Create sprite files for projects', function() {
         grunt.task.run(['clean:projectSprites','sprite']);
     });
-    grunt.registerTask('createMobile', 'copy:createMobile');
     grunt.registerTask('default', 'build');
     grunt.registerTask('test', 'checkPages:development');
     grunt.registerTask('build', 'Build based on the NODE_ENV value.', function() {
