@@ -7,26 +7,11 @@
     </head>
 
     <body class="responsive bl_trulyResponsive">
-
-        {{!-- Mobile specific --}}
-        {{#if args.isMobile}}
-            <link rel="stylesheet" href="/fashion/styles/projects/about-us/about-us-navigation.css" />
-            <nav class="about-us-nav">{{> bcomCollapsableNav navContainer=args.aboutUsNavContainer}}</nav>
-        {{/if}}
-
         <div id="bl_main_container" >
             {{{content}}}
             <input type="hidden" name="timeStamp" value="{{{args.timeStamp}}}">
         </div>
 
-
-        {{!-- Mobile specific --}}
-        {{#if args.isMobile}}
-            <script src="/fashion/javascripts/components/jquery.bcomCollapsibleNav.js"></script>
-            <script src="/fashion/javascripts/projects/about-us/about-us-navigation.js"></script>
-        {{/if}}
-
-
-    <!-- inject -->
+        <!-- inject -->
     </body>
 </html>

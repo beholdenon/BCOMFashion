@@ -49,6 +49,7 @@ $aniSpeed: $ani-speed-3;
     overflow-y: hidden;
     border-bottom: 1px solid $light-gray;
     transition: height $aniSpeed;
+    background: $li-bg;
   }
 
   li a {
@@ -56,7 +57,6 @@ $aniSpeed: $ani-speed-3;
     text-transform: uppercase;
     text-decoration: none;
     padding: 19px 14px;
-    background: $li-bg;
   }
 
   li a span {
