@@ -7,36 +7,23 @@
 let navJson = require('../data/static/about-us-navigation.json'),
     sizeChartsJson = require('../data/static/size-charts-navigation.json'),
     adaptiveHandler = require('./adaptiveWithStaticDataFactory'),
-    _ = require('lodash'),
-    sjl = require('sjljs');
+    sjl = require('sjljs'),
+    getPageItemByUri = (uri, pageItemsContainer) => {
+        let foundItems = pageItemsContainer.pages.filter(item => {
+            return item.href === uri;
+        });
+        return foundItems.length > 0 ? foundItems[0] : null;
+    };
 
 function aboutUsDataProvider(req) {
-    var sizeChartsHttpPath = '/about-us/shopping/sizecharts/',
-        sizeChartsObj = sjl.jsonClone(sizeChartsJson),
+    var sizeChartsObj = sjl.jsonClone(sizeChartsJson),
         out = {
-            controller: 'about-us',
-            action: req.pathname,
-            navContainerObj: navJson
+            aboutUsNavContainer: navJson
         };
 
-    switch (req.pathname) {
-        case 'kids-boys-girls-clothing':
-            _.find(sizeChartsObj, item => item.id === 'about_kids').active = true;
-            break;
-        case sizeChartsHttpPath + 'mens-shirt-suit-clothing':
-            _.find(sizeChartsObj, item => item.id === 'about_men').active = true;
-            break;
-        case sizeChartsHttpPath + 'mens-womens-kids-shoes':
-            _.find(sizeChartsObj, item => item.id === 'about_shoes').active = true;
-            break;
-        case sizeChartsHttpPath + 'womens-petite-plus':
-        default:
-            _.find(sizeChartsObj, item => item.id === 'about_women').active = true;
-            break;
-    }
-
-    if (req.pathname.indexOf('\/sizecharts')) {
-        out.sizeChartsNav = sizeChartsJson;
+    if (req.url.pathname && req.url.pathname.indexOf('/sizecharts/') > -1) {
+        getPageItemByUri(req.url.pathname, sizeChartsObj).active = true;
+        out.sizeChartNavContainer = sizeChartsObj;
     }
 
     return out;

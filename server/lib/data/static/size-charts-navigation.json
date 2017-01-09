@@ -1,9 +1,35 @@
 {
+  "className": "size-charts-sub-nav",
+  "wrapLinksInner": true,
   "pages": [
     {
       "label": "Women",
       "href": "/about-us/shopping/sizecharts/womens-petite-plus/",
-      "id": "about_women"
+      "id": "about_women",
+      "coremetricsData": {
+        "pageid": "Women Size Charts - Shopping Services - About Us | Bloomingdale&rsquo;s (ab-sh-si-xx.women)",
+        "categoryid": "ab-sh-si-xx.women"
+      },
+      "metaTags": [
+        {
+          "name": "description",
+          "content": "The Perfect Fit: WOMEN. Use the size charts below to help you determine the perfect fit for many Bloomingdale's styles. If your measurements fall between, order the next larger size."
+        }
+      ],
+      "linkTags": [
+        {
+          "rel": "canonical",
+          "href": "/about-us/shopping/sizecharts/womens-petite-plus"
+        },
+        {
+          "rel": "stylesheet",
+          "href": "/fashion/styles/projects/about-us/aboutus.css"
+        },
+        {
+          "rel": "stylesheet",
+          "href": "/fashion/styles/projects/about-us/size-charts/size-chart-page.css"
+        }
+      ]
     },
     {
       "label": "Men",

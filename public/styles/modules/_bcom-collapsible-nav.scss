@@ -10,9 +10,12 @@ $aniSpeed: $ani-speed-3;
   width: 100%;
 
   // Direct children should keep their borders
-  & > li > div,
-  & > li.active > div {
+  > li > div,
+  > li.active > div {
     border-bottom: 1px solid $light-gray;
+  }
+  > li.active > div > a:first-child {
+    font-weight: bold;
   }
 
   &,
