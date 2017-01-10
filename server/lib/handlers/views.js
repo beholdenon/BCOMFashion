@@ -4,6 +4,7 @@ let fs = require('fs'),
     path = require('path'),
     deviceDetectionHelper = require('./../helpers/deviceDetection'),
     aboutUsNavJson = require('../data/static/about-us-navigation.json'),
+    transformForMobile = require('../utils/aboutUsNavFactoryForMobile'),
 
     headMetaRegEx = /<!--headMeta=(.*)-->/,
     headTitleRegEx = /<!--headTitle=(.*)-->/,
@@ -16,7 +17,7 @@ let fs = require('fs'),
         headTitle: '',
         headMeta: '',
         headCanonical: '',
-        aboutUsNavContainer: aboutUsNavJson
+        aboutUsNavContainer: transformForMobile(aboutUsNavJson)
     },
 
     detectMobileDeviceView = function detectMobileDeviceView(requestPath, req) {
