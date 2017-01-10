@@ -11,9 +11,9 @@ require(['jquery', '/fashion/javascripts/components/jquery.bcomCollapsibleNav'],
     'use strict';
 
     $(function () {
-
-        $('.about-us-nav .bcom-collapsible-nav').bcomCollapsibleNav();
-
+        $('.about-us-nav .bcom-collapsible-nav')
+            .bcomCollapsibleNav()
+            .removeClass('hidden');
     });
 
 });

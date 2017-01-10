@@ -3,3 +3,19 @@
 @import "../../includes/clearfix";
 @import "../../fonts";
 @import "../../modules/bcom-collapsible-nav";
+
+.bl_mobile {
+
+  .about-us-nav {
+    .bcom-collapsible-nav {
+      transition: transform $ani-speed-3, opacity $ani-speed-3;
+      opacity: 1;
+      transform: translateY(0);
+      &.hidden {
+        opacity: 0;
+        transform: translateY(-100%);
+      }
+    }
+  }
+
+}

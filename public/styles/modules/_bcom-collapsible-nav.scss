@@ -1,6 +1,7 @@
 // @todo add the border to the a tag on the non-togglable li's and remove the borders from all the li's and either add them to the inner div or in atag)
 @import '../variables';
 @import '../mixins';
+@import '../functions/functions';
 
 $light-gray: #cdcdcd;
 $li-bg: #fff;
@@ -41,14 +42,20 @@ $aniSpeed: $ani-speed-3;
   }
 
   ul {
-    transition: transform $aniSpeed;
-    transform: translateY(-100%);
+    @include with-browser-prefixes(transition, (
+            transform $aniSpeed,
+            -o-transform $aniSpeed,
+            -ms-transform $aniSpeed,
+            -webkit-transform $aniSpeed,
+            -moz-transform $aniSpeed)
+    );
+    @include with-browser-prefixes(transform, translateY(-100%));
   }
 
   li {
     overflow-y: hidden;
     border-bottom: 1px solid $light-gray;
-    transition: height $aniSpeed;
+    @include with-browser-prefixes(transition, (height $aniSpeed));
     background: $li-bg;
   }
 
@@ -71,6 +78,7 @@ $aniSpeed: $ani-speed-3;
     }
     > div a {
       display: inline-block;
+      @include with-browser-prefixes(transition, font-weight $ani-speed-3);
     }
     > div a:first-child {
       width: 80%;
@@ -95,21 +103,17 @@ $aniSpeed: $ani-speed-3;
   }
 
   li ul li {
-    transition: height $aniSpeed, border-bottom $aniSpeed;
+    @include with-browser-prefixes(transition, (height $aniSpeed, border-bottom $aniSpeed));
   }
 
   li.togglable.active {
     > div + ul {
-      transform: translateY(0);
+      @include with-browser-prefixes(transform, translateY(0));
 
       > li ul li {
         border-bottom-color: transparent;
       }
     }
   }
-
-  //> li.togglable.active:last-child {
-  //  border-bottom-color: transparent;
-  //}
 
 }
