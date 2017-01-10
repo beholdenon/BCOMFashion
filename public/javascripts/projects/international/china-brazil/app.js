@@ -43,42 +43,45 @@
             .when('/visit-our-stores', {
                 templateUrl: 'components/visit-our-stores.html'
             })
-            .otherwise(
-                function ( $rootScope, $location, localStorageService  ) {
-                    // check for a language, eg: /#/chinese
-                    // if language is found, switch, then go to homepage
+            .otherwise({
+                resolve: {
+                    langSwitch : function ( $rootScope, $location, localStorageService  ) {
 
-                    var path = $location.path().toLowerCase(),
-                        globalLang = null;
-                    
-                    switch ( path ) {
-                        case '/english':
-                            globalLang = 'ENG';
-                            break;
-                        case '/portuguese':
-                            globalLang = 'POR';
-                            break;
-                        case '/chinese':
-                            globalLang = 'CN';
-                            break;
-                        case '/spanish':
-                            globalLang = 'ESP';
-                            break;
-                        case '/japanese':
-                            globalLang = 'JP';
-                            break;
-                        default:
-                            globalLang = localStorageService.get('lang') || 'ENG';
+                        // check for a language, eg: /#/chinese
+                        // if language is found, switch, then go to homepage
+
+                        var path = $location.path().toLowerCase(),
+                            globalLang = null;
+                        
+                        switch ( path ) {
+                            case '/english':
+                                globalLang = 'ENG';
+                                break;
+                            case '/portuguese':
+                                globalLang = 'POR';
+                                break;
+                            case '/chinese':
+                                globalLang = 'CN';
+                                break;
+                            case '/spanish':
+                                globalLang = 'ESP';
+                                break;
+                            case '/japanese':
+                                globalLang = 'JP';
+                                break;
+                            default:
+                                globalLang = localStorageService.get('lang') || 'ENG';
+                        }
+
+                        $rootScope.$broadcast('lang:change', {
+                            lang: globalLang
+                        });
+                        
+                        localStorageService.set('lang', globalLang);
+                        $location.path('/');
                     }
-
-                    $rootScope.$broadcast('lang:change', {
-                        lang: globalLang
-                    });
-                    
-                    localStorageService.set('lang', globalLang);
-                    $location.path('/');
                 }
-            );   
+            });   
 
         //Google maps config
         // uiGmapGoogleMapApiProvider.configure({
