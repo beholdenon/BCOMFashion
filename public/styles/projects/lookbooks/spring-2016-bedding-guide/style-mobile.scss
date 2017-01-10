@@ -458,3 +458,9 @@ body {
 	    color: #ff1d8d !important;
 	    font-weight: bold;    
 	}
+
+body.has-about-us-sub-nav {
+	.mobile_topNav {
+		top: 60px;
+	}
+}

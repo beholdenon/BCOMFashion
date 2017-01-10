@@ -9,10 +9,8 @@
 
 let sjl = require('sjljs'),
     path = require('path'),
-    viewsConfig = require('../configs/views-config'),
+    viewsPath = path.join(__dirname, '../views'),
     staticDataRootPath = path.join(__dirname, '../data/static'),
-    aboutUsNavJson = require('../data/static/about-us-navigation.json'),
-    transformForMobile = require('../utils/aboutUsNavFactoryForMobile'),
 
     doesPathExist = require('../helpers/doesPathExist'),
     deviceDetectionHelper = require('./../helpers/deviceDetection'),
@@ -27,8 +25,7 @@ let sjl = require('sjljs'),
             isTablet: false,
             headTitle: '',
             headMeta: '',
-            headCanonical: '',
-            aboutUsNavContainer: transformForMobile(aboutUsNavJson)
+            headCanonical: ''
         };
     },
 
@@ -66,11 +63,13 @@ let sjl = require('sjljs'),
                 resolve(viewAlias);
             }
             else if (isForMobile) {
-                return doesPathExist(path.join(viewsConfig.path, requestPathPartial, 'index-mobile.html'))
+                doesPathExist(path.join(viewsPath, requestPathPartial, 'index-mobile.html'))
                     .then(() => resolve(viewAliasPath + '-mobile'))
                     .catch(() => reject(viewAliasPath));
             }
-            return Promise.resolve(viewAliasPath);
+            else {
+                resolve(viewAliasPath);
+            }
         });
     };
 

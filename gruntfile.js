@@ -716,9 +716,11 @@ module.exports = function(grunt) {
 		    },
 		    views: {
 		        files: [
-                    '<%= node.source %>/server/lib/views/partials/{,**/}*.html',
-                    '<%= node.source %>/server/lib/views/layout/{,**/}*.html',
-		    		'<%= node.source %>/server/lib/views/errors/{,**/}*.html'
+                    // '<%= node.source %>/server/lib/views/partials/{,**/}*.html',
+                    // '<%= node.source %>/server/lib/views/layout/{,**/}*.html',
+		    		// '<%= node.source %>/server/lib/views/errors/{,**/}*.html',
+		    		// '<%= node.source %>/server/lib/views/errors/{,**/}*.html'
+		    		'<%= node.source %>/server/lib/views/**/*.html'
 		    	],
 		        tasks: [
 		        	'useminPrepare',
@@ -728,9 +730,10 @@ module.exports = function(grunt) {
 		    },
             viewsProjects: {
                 files: [
-                    '<%= node.source %>/server/lib/views/lookbooks/{,**/}*.html',
-                    '<%= node.source %>/server/lib/views/service/{,**/}*.html',
-                    '<%= node.source %>/server/lib/views/international/{,**/}*.html'
+                    // '<%= node.source %>/server/lib/views/lookbooks/{,**/}*.html',
+                    // '<%= node.source %>/server/lib/views/service/{,**/}*.html',
+                    // '<%= node.source %>/server/lib/views/international/{,**/}*.html',
+                    '<%= node.source %>/server/lib/views/**/*.html'
                 ],
                 tasks: [
                     'copy:viewsProjects'

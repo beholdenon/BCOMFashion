@@ -7,8 +7,6 @@
 let sjl = require('sjljs'),
     path = require('path'),
     staticDataRootPath = path.join(__dirname, '../data/static'),
-    aboutUsNavJson = require('../data/static/about-us-navigation.json'),
-    transformForMobile = require('../utils/aboutUsNavFactoryForMobile'),
 
     doesPathExist = require('../helpers/doesPathExist'),
     deviceDetectionHelper = require('./../helpers/deviceDetection'),
@@ -23,8 +21,7 @@ let sjl = require('sjljs'),
             isTablet: false,
             headTitle: '',
             headMeta: '',
-            headCanonical: '',
-            aboutUsNavContainer: transformForMobile(aboutUsNavJson)
+            headCanonical: ''
         };
     },
 

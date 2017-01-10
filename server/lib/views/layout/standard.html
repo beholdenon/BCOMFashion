@@ -1,63 +1,38 @@
 <!DOCTYPE html>
 <html>
-<head>
-    {{> head}}
+    <head>
+        {{> head}} 
 
-    <!--============[ JS: Require Modules ]============-->
-</head>
+        <!--============[ JS: Require Modules ]============-->
+    </head>
 
-    <body id="bcomFashion"
     {{#if args.isTablet}}
-          class="bl_tablet responsive"
+        <body id="bcomFashion" class="bl_tablet responsive">
     {{else if args.isMobile}}
-          class="bl_mobile responsive bl_trulyResponsive"
+        <body id="bcomFashion" class="bl_mobile responsive bl_trulyResponsive">
     {{else}}
-          class="responsive"
-    {{/if}}
-    >
+        <body id="bcomFashion" class="responsive">
+    {{/if}} 
 
-        <header class="responsive"></header>
+            <header class="responsive"></header>
+            {{#unless args.isMobile}}
+                {{! Desktop and Tablet Views should have a row wrapping the bl_main_container div }}
+                <div class="row collapse mod_row">
+            {{/unless}}
 
-        {{!-- Mobile specific --}}
-        {{#if args.isMobile}}
-            <link rel="stylesheet" href="/fashion/styles/projects/about-us/about-us-navigation.css" />
-
-        {{!--  Desktop Specific --}}
-        {{else}}
-            <div class="row collapse mod_row">
-        {{/if}}
-
-            {{!-- Main container --}}
             <div id="bl_main_container">
-
-                {{!-- Mobile specific --}}
-                {{#if args.isMobile}}
-                <div class="about-us-nav">{{> bcomCollapsableNav navContainer=args.aboutUsNavContainer}}</div>
-                {{/if}}
-
-                {{!-- Every view gets inserted here --}}
+                {{! Every view gets inserted here }}
                 {{{content}}}
-
-                {{!-- Timestamp --}}
                 <input type="hidden" name="timeStamp" value="{{{args.timeStamp}}}">
-
             </div>
-            {{!-- /End of Main container --}}
+            {{#unless args.isMobile}}
+                </div>
+            {{/unless}}
 
-        {{!-- Mobile specific --}}
-        {{#if args.isMobile}}
-            <script src="/fashion/javascripts/components/jquery.bcomCollapsibleNav.js"></script>
-            <script src="/fashion/javascripts/projects/about-us/about-us-navigation.js"></script>
-
-        {{!-- Desktop specific --}}
-        {{else}}
-            </div>
-        {{/if}}
-
-        <footer class="responsive"></footer>
+            <footer class="responsive"></footer>
 
         <!-- inject -->
 
-    </body>
+        </body>
 
 </html>
