@@ -7,6 +7,7 @@
       "attributes": {
         "data-cm-element-category-id": "About_us_dropdown",
         "data-cm-element-id-open": "Dropdown_open",
+        "data-cm-element-id-close": "Dropdown_open",
         "data-cm": "about_aboutUs"
       },
       "pages": [

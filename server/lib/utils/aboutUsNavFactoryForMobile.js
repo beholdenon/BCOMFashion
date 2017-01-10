@@ -27,7 +27,7 @@ let navContainer = require('../data/static/about-us-navigation.json'),
                     normalizedPageLabel = tertiaryLinkPrefix + normalizeLabel(page.label),
                     queryString = prefix + attribSeparator + normalizedPageLabel;
                 page.href = page.href + queryString;
-                if (page.pages && Array.isArray(page.pages)) {
+                if (page.pages) {
                     return this.addCMQueryStringToLinks(page, queryString);
                 }
                 return page;
