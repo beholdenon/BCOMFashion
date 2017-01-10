@@ -90,7 +90,9 @@
                         }
                     },
                     pdf: {
-                        span: 'Learn how to shop our site and get answers to frequently asked questions.',
+                        span1: 'Learn ',
+                        span2: 'how to shop ',
+                        span3: 'our site and get answers to frequently asked questions.',
                         a: 'download now',
                         link: '/fashion/assets/projects/international/china-brazil/guides/Tourism_Microsite_International_Shopping_Guide_English.pdf'
                     }
@@ -782,7 +784,7 @@
                             {
                                 name: 'AVENTURA',
                                 addr: '19555 Biscayne Boulevard  Aventura, FL 33180<br/>+1 305-792-1246',
-                                hours: 'Monday–Wednesday: 10AM–9:30PM <span>|</span> Thusday-Saturday: 10AM-10PM <span>|</span> Sunday: 12PM–8:30PM',
+                                hours: 'Monday–Wednesday: 10AM–9:30PM <span>|</span> Thursday-Saturday: 10AM-10PM <span>|</span> Sunday: 12PM–8:30PM',
                                 descr: 'Planning your vacation itinerary? Start with a trip to Florida\'s Aventura store. Explore our extensive selection of designer fashions, beauty brands, luxurious accessories and more. Get shopping with a store directory in your chosen language and be sure to make the most of your experience with our in-store amenities listed below.',
                                 dTile: 'VISITING AVENTURA?',
                                 dInfo: 'Download our welcome booklet before you arrive.',

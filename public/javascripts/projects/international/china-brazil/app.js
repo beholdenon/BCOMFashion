@@ -45,7 +45,7 @@
             })
             .otherwise({
                 resolve: {
-                    function ( $rootScope, $location, localStorageService  ) {
+                    langSwitch : function ( $rootScope, $location, localStorageService  ) {
 
                         // check for a language, eg: /#/chinese
                         // if language is found, switch, then go to homepage
@@ -264,5 +264,21 @@
                 jQuery('.off-canvas-wrap').removeClass('touch');
             }
         });
+
+        //Close language and social overlays when clicked outside
+        jQuery($document).mouseup(function (e) {
+            var flagsOverlay = jQuery('.flags'),
+                socialOverlay = jQuery('.social');
+
+            // if the target of the click isn't the container or a descendant of the container
+            if ((!flagsOverlay.is(e.target) && flagsOverlay.has(e.target).length === 0)) {
+                flagsOverlay.removeClass('active');
+            }
+
+            if ((!socialOverlay.is(e.target) && socialOverlay.has(e.target).length === 0)) {
+                socialOverlay.removeClass('active');
+            }
+        });
+
     }    
 })();
