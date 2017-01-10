@@ -265,6 +265,7 @@
             }
         });
 
+        //Close language and social overlays when clicked outside
         jQuery($document).mouseup(function (e) {
             var flagsOverlay = jQuery('.flags'),
                 socialOverlay = jQuery('.social');
