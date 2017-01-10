@@ -271,8 +271,11 @@
                 socialOverlay = jQuery('.social');
 
             // if the target of the click isn't the container or a descendant of the container
-            if ((!flagsOverlay.is(e.target) && flagsOverlay.has(e.target).length === 0) || (!socialOverlay.is(e.target) && socialOverlay.has(e.target).length === 0)) {
+            if ((!flagsOverlay.is(e.target) && flagsOverlay.has(e.target).length === 0)) {
                 flagsOverlay.removeClass('active');
+            }
+
+            if ((!socialOverlay.is(e.target) && socialOverlay.has(e.target).length === 0)) {
                 socialOverlay.removeClass('active');
             }
         });
