@@ -53,37 +53,7 @@
               "href": "/about-us/shopping/sizecharts/womens-petite-plus/",
               "attributes": {
                 "data-cm": "about_sizeCharts"
-              },
-              "pages": [
-                {
-                  "label": "Women",
-                  "href": "/about-us/shopping/sizecharts/womens-petite-plus/",
-                  "attributes": {
-                    "data-cm": "about_women"
-                  }
-                },
-                {
-                  "label": "Men",
-                  "href": "/about-us/shopping/sizecharts/mens-shirt-suit-clothing/",
-                  "attributes": {
-                    "data-cm": "about_men"
-                  }
-                },
-                {
-                  "label": "Kids",
-                  "href": "/about-us/shopping/sizecharts/kids-boys-girls-clothing/",
-                  "attributes": {
-                    "data-cm": "about_kids"
-                  }
-                },
-                {
-                  "label": "Shoes",
-                  "href": "/about-us/shopping/sizecharts/mens-womens-kids-shoes/",
-                  "attributes": {
-                    "data-cm": "about_shoes"
-                  }
-                }
-              ]
+              }
             },
             {
               "label": "Check Gift Card Balance",
