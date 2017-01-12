@@ -17,7 +17,7 @@ require([
 
     $(function () {
 
-        var $aboutUsNavUl = $('.about-us-nav .bcom-collapsible-nav')
+        var $aboutUsNavUl = $('#bl_main_container > .about-us-nav .bcom-collapsible-nav')
                 .bcomCollapsibleNav()
                 .removeClass('hidden'),
             $aboutUsLink = $aboutUsNavUl.find('a[data-cm-element-id-open]'),

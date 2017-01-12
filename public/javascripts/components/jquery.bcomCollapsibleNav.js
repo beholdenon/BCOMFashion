@@ -103,7 +103,7 @@ define('/fashion/javascripts/components/jquery.bcomCollapsibleNav', ['jquery', '
                     $elm.addClass(self.options.togglableListItemClassName);
                 }
 
-                $elm.attr('data-collapsed-height', $elm.height());
+                $elm.attr('data-collapsed-height', $elm.get(0).offsetHeight);
             });
 
             return self;
