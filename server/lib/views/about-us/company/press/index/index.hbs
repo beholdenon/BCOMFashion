@@ -1,0 +1,40 @@
+<!-- {pageTitle: "Press Releases"} -->
+{{{coremetrics 'Press Releases ab-co-pr-xx.index' 'ab-co-pr-xx'}}}
+<div class="about_us">
+    <link rel="stylesheet" href="/fashion/styles/projects/about-us/company/press/styles.css">
+    {{>title}}
+    <!--headTitle={"title":"Press Releases – About Us | Bloomingdale's"} -->
+    <!--headMeta={"name":"description", "content":"Bloomingdale's in the news! Check out our latest press releases."}-->
+    <!--headCanonical={"href":"/about-us/company/press/index"}-->
+    <div id="bl_main_wrapper" class='newLayout'>
+        <div class="bl_main">
+            <div id="bl_hp_main" class="row">
+                <div class="large-6 columns bl_nav_side">
+                    <!--BEGIN LOCAL NAVIGATION-->
+                    <div class="gn_left_nav_container">
+                        <div id="bl_leftNavContainer">
+                            {{>leftnav}}
+                        </div>
+                    </div>
+                    <!--END LOCAL NAVIGATION-->
+                </div>
+                <div id="press-release-content" class="small-24 large-18 columns bl_cu_mainContent">
+                    <div class="bl_header_pg_img">
+                        <img src="/fashion/images/projects/about-us/company/press/index/pressReleases.png" 
+                        alt="Press Releases">
+                    </div>
+                    <div id="press-releases">
+                        <img src="/fashion/images/ajax-loader.gif" id="loader-image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    require(['jquery', 'backbone', 'pressReleases/main'], function($, Backbone, PressReleases) {
+        $(document).ready(function() {
+            Backbone.history.start({pushState: true });
+        });
+    });
+</script>
