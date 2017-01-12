@@ -3,26 +3,25 @@
   "pages": [
     {
       "label": "About Us",
-      "href": "http://www1.bloomingdales.com/media/about/index.jsp",
+      "href": "/about-us/directory/",
       "attributes": {
         "data-cm-element-category-id": "About_us_dropdown",
         "data-cm-element-id-open": "Dropdown_open",
-        "data-cm-element-id-close": "Dropdown_open",
         "data-cm": "about_aboutUs"
       },
       "pages": [
         {
           "label": "Ways To Shop",
-          "href": "http://www1.bloomingdales.com/ways-to-shop/index.jsp",
+          "href": "/about-us/store-events-ways-to-shop/",
           "attributes": {
             "data-cm": "about_waysToShop"
           },
           "pages": [
             {
               "label": "Bloomingdale's App",
-              "href": "//www1.bloomingdales.com/media/about/mobile.jsp",
+              "href": "/about-us/mobile-shopping-online/",
               "attributes": {
-                "data-cm": "about_onlineMobile"
+                "data-cm": "about_bloomingdalesApp"
               }
             },
             {
@@ -43,7 +42,7 @@
         },
         {
           "label": "Shopping Services",
-          "href": "http://www1.bloomingdales.com/about/shopping/index.jsp",
+          "href": "/about-us/shopping/shopping-services/",
           "attributes": {
             "data-cm": "about_shoppingServices"
           },
@@ -92,7 +91,7 @@
             },
             {
               "label": "Visitor Services",
-              "href": "https://www.bloomingdales.com/about/shopping/international.jsp",
+              "href": "/about-us/shopping/international-visitor-services/",
               "attributes": {
                 "data-cm": "about_visitorServices"
               },
@@ -122,10 +121,10 @@
               }
             },
             {
-              "label": "BCRF",
-              "href": "/about-us/breast-cancer-research-foundation-b-cause-philanthropy/",
+              "label": "Pink Campaign",
+              "href": "/about-us/pink-campaign-b-cause-philanthropy/",
               "attributes": {
-                "data-cm": "about_bcrf"
+                "data-cm": "about_pinkCampaign"
               }
             },
             {
@@ -136,7 +135,7 @@
               }
             },
             {
-              "label": "Help USA",
+              "label": "HELP USA & Mentoring USA",
               "href": "/about-us/help-usa-b-cause-philanthropy/",
               "attributes": {
                 "data-cm": "about_helpUsa"
@@ -150,6 +149,20 @@
               }
             }
           ]
+        },
+        {
+          "label": "Employee Giving & Volunteerism",
+          "href": "/about-us/giving-back-to-community/",
+          "attributes": {
+            "data-cm": "about_employeeGiving"
+          }
+        },
+        {
+          "label": "Diversity & Inclusion",
+          "href": "/about-us/diversity-inclusion/",
+          "attributes": {
+            "data-cm": "about_diversityInclusion"
+          }
         },
         {
           "label": "New Stores",
@@ -175,18 +188,10 @@
         {
           "label": "Careers",
           "href": "//www.bloomingdalesjobs.com/",
-          "target": "_blank",
           "attributes": {
-            "data-cm": "about_careers"
+            "data-cm": "about_careers",
+            "target": "_blank"
           }
-        },
-        {
-          "label": "Diversity",
-          "href": "http://www.macysdiversityleadership.com/",
-          "attributes": {
-            "data-cm": "about_diversity"
-          },
-          "target": "_blank"
         },
         {
           "label": "Affiliate Program",
