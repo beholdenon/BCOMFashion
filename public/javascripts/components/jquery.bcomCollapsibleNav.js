@@ -7,7 +7,7 @@
  * @requires jquery-ui.Widget - JQuery Ui Widget prototype.
  * @requires require.js
  */
-define('/fashion/javascripts/components/jquery.bcomCollapsibleNav', ['jquery', 'jqueryui'], function ($) {
+define('/fashion/javascripts/components/jquery.bcomCollapsibleNav', ['jquery', 'jqueryui-amd/widget'], function ($) {
 
     'use strict';
 

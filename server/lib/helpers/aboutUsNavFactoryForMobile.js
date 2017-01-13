@@ -1,5 +1,6 @@
 /**
  * Created by u067265 on 1/10/17.
+ * A module for injecting the '?cm_sp=...' query string required for the mobile about-us navigation.
  */
 
 'use strict';

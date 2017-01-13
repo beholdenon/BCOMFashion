@@ -13,6 +13,7 @@ let sjl = require('sjljs'),
     staticDataRootPath = path.join(__dirname, '../data/static'),
 
     doesPathExist = require('../helpers/doesPathExist'),
+    getViewTemplateName = require('../helpers/getViewTemplateName'),
     deviceDetectionHelper = require('./../helpers/deviceDetection'),
 
     isMobile = deviceType => deviceType.toLowerCase() === 'mobile',
@@ -55,22 +56,6 @@ let sjl = require('sjljs'),
             .catch(() => {
                 return {};
             });
-    },
-    getViewTemplateName = (viewAlias, requestPathPartial, isForMobile) => {
-        let viewAliasPath = path.join(requestPathPartial, 'index');
-        return new Promise((resolve, reject) => {
-            if (!sjl.empty(viewAlias)) {
-                resolve(viewAlias);
-            }
-            else if (isForMobile) {
-                doesPathExist(path.join(viewsPath, requestPathPartial, 'index-mobile.html'))
-                    .then(() => resolve(viewAliasPath + '-mobile'))
-                    .catch(() => reject(viewAliasPath));
-            }
-            else {
-                resolve(viewAliasPath);
-            }
-        });
     };
 
 /**
@@ -134,12 +119,15 @@ module.exports = function (viewAlias, dataProducer, layoutObj) {
                     });
                 };
 
-
             // Check if we have any static args to merge to `args` before rendering view
             // then render it and return the promise
-            return getViewTemplateName(viewAlias, requestPathPartial, argsForView.isMobile)
-                .then(resolveRequest)
-                .catch(resolveRequest);
+            return getViewTemplateName(
+                viewAlias,
+                requestPathPartial,
+                viewsPath,
+                argsForView.isMobile,
+                resolveRequest
+            );
         }
     };
 };
