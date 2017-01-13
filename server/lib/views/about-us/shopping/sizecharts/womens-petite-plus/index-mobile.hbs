@@ -1,19 +1,9 @@
-<title data-title="Women Size Charts - Shopping Services - About Us - Bloomingdale&rsquo;s"
-       data-menu="bcomLeftNav/about/ShoppingServicesLeftNav">
-    Women Size Charts - Shopping Services - About Us - Bloomingdale&rsquo;s
-</title>
-<meta name="description" content="The Perfect Fit: WOMEN. Use the size charts below to help you determine the perfect fit for many Bloomingdale's styles. If your measurements fall between, order the next larger size."/>
-<link rel="canonical" href="/about-us/shopping/sizecharts/womens-petite-plus" />
-<link rel="stylesheet" href="/fashion/styles/projects/about-us/aboutus.css">
-<link rel="stylesheet" href="/fashion/styles/projects/about-us/shopping/size-charts/size-chart-page.css">
-
-{{!-- Core Metrics Data --}}
-<input id="cmdata" type="hidden"
-       data-pageid="Women Size Charts - Shopping Services - About Us | Bloomingdale&rsquo;s (ab-sh-si-xx.women)"
-       data-categoryid="ab-sh-si-xx.women" />
-
-<div class="about_us" data-page-alias="size-chart-page">
-    <nav>{{> bcomUlNav args=args.sizeChartNavContainer }}</nav>
+<!-- {pageTitle: 'Women', pageLabel:'Womens Size Charts'} -->
+{{{coremetrics 'Women Size Charts - Shopping Services - About Us | Bloomingdales (ab-sh-si-xx.women)' 'ab-sh-si-xx.women'}}}
+<!--headMeta={"name":"description", "content":"The Perfect Fit: WOMEN. Use the size charts below to help you determine the perfect fit for many Bloomingdale's styles. If your measurements fall between, order the next larger size."}-->
+<!--headCanonical={"href":"/about-us/shopping/sizecharts/womens-petite-plus"}-->
+<div class="about_us">
+    {{>title}}
     <div id="bl_main_wrapper" class='newLayout'>
         <div class="bl_main">
             <div id="bl_hp_main">
@@ -24,7 +14,7 @@
                                 <!--BEGIN LOCAL NAVIGATION-->
                                 <div class="gn_left_nav_container">
                                     <div class="gn_left_nav_top_cs">
-                                        <div id="bl_leftNavContainer">{{!>leftnav}}</div>
+                                        <div id="bl_leftNavContainer">{{>leftnav}}</div>
                                     </div>
                                 </div>
                                 <!--END LOCAL NAVIGATION-->
@@ -112,3 +102,8 @@
     </div>
 
 </div>
+
+
+
+
+

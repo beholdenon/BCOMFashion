@@ -26,12 +26,12 @@
 }
 @font-face {
   font-family: "Avenir LT W01 95 Black";
-  src: local("Avenir Black"), local("Avenir LT W01 95 Black"), url("/fashion/styles/fonts/avenir/a24b3f55-c8c8-41a1-a77e-7cdf417d82f6.eot?#iefix");
+  src: local("Avenir Black"), local("Avenir LT W01 95 Black"), url("./fonts/avenir/a24b3f55-c8c8-41a1-a77e-7cdf417d82f6.eot?#iefix");
   src: local("Avenir Black"), local("Avenir LT W01 95 Black"),
-  url("/fashion/styles/fonts/avenir/a24b3f55-c8c8-41a1-a77e-7cdf417d82f6.eot?#iefix") format("eot"),
-  url("/fashion/styles/fonts/avenir/5a05cf7f-f332-456f-ae67-d8c26e0d35b3.woff") format("woff"),
-  url("/fashion/styles/fonts/avenir/c33278bc-988e-440b-b4be-6acc095e6044.ttf") format("truetype"),
-  url("/fashion/styles/fonts/avenir/7bdad4a5-289b-42f9-b6fa-c5883b9e9f23.svg#7bdad4a5-289b-42f9-b6fa-c5883b9e9f23") format("svg");
+  url("./fonts/avenir/a24b3f55-c8c8-41a1-a77e-7cdf417d82f6.eot?#iefix") format("eot"),
+  url("./fonts/avenir/5a05cf7f-f332-456f-ae67-d8c26e0d35b3.woff") format("woff"),
+  url("./fonts/avenir/c33278bc-988e-440b-b4be-6acc095e6044.ttf") format("truetype"),
+  url("./fonts/avenir/7bdad4a5-289b-42f9-b6fa-c5883b9e9f23.svg#7bdad4a5-289b-42f9-b6fa-c5883b9e9f23") format("svg");
 }
 
 @import url(https://fonts.googleapis.com/css?family=Muli:400,700|Montserrat:400,700|Hammersmith+One|Nunito:400,700|Cuprum:400,700|Raleway:100,200|Source+Code+Pro:200);
@@ -41,29 +41,29 @@
 
 @font-face {
   font-family: Avenir;
-  src: local("Avenir Roman"),local("Avenir LT W01 55 Roman"),url("/fashion/styles/fonts/avenir/2f5a6074-badc-4e08-83f1-ed67fe5c3d7c.eot?#iefix");
-  src: local("Avenir Roman"),local("Avenir LT W01 55 Roman"),url("/fashion/styles/fonts/avenir/2f5a6074-badc-4e08-83f1-ed67fe5c3d7c.eot?#iefix") format("eot"),url("/fashion/styles/fonts/avenir/b9ebb19d-88c1-4cbd-9baf-cf51972422ec.woff") format("woff"),url("/fashion/styles/fonts/avenir/5ed4f98e-9044-4810-88ff-74d412c1351f.ttf") format("truetype"),url("/fashion/styles/fonts/avenir/4cb16859-16ca-4342-b89c-292dc83266af.svg#4cb16859-16ca-4342-b89c-292dc83266af") format("svg");
+  src: local("Avenir Roman"),local("Avenir LT W01 55 Roman"),url("./fonts/avenir/2f5a6074-badc-4e08-83f1-ed67fe5c3d7c.eot?#iefix");
+  src: local("Avenir Roman"),local("Avenir LT W01 55 Roman"),url("./fonts/avenir/2f5a6074-badc-4e08-83f1-ed67fe5c3d7c.eot?#iefix") format("eot"),url("./fonts/avenir/b9ebb19d-88c1-4cbd-9baf-cf51972422ec.woff") format("woff"),url("./fonts/avenir/5ed4f98e-9044-4810-88ff-74d412c1351f.ttf") format("truetype"),url("./fonts/avenir/4cb16859-16ca-4342-b89c-292dc83266af.svg#4cb16859-16ca-4342-b89c-292dc83266af") format("svg");
   font-style: normal;
   font-weight: normal;
 }
 @font-face {
   font-family: Avenir;
-  src: local("Avenir Oblique"),local("AvenirLTW01-55Oblique"),url("/fashion/styles/fonts/avenir/8f21e618-9282-4df1-b556-73ee82bdd673.eot?#iefix");
-  src: local("Avenir Oblique"),local("AvenirLTW01-55Oblique"),url("/fashion/styles/fonts/avenir/8f21e618-9282-4df1-b556-73ee82bdd673.eot?#iefix") format("eot"),url("/fashion/styles/fonts/avenir/3695342c-b5e2-4010-b0d4-56f563465922.woff") format("woff"),url("/fashion/styles/fonts/avenir/2ba9f875-66d9-414d-a426-5a012b443475.ttf") format("truetype"),url("/fashion/styles/fonts/avenir/0a88351a-e628-4b1f-99eb-3a729518af0a.svg#0a88351a-e628-4b1f-99eb-3a729518af0a") format("svg");
+  src: local("Avenir Oblique"),local("AvenirLTW01-55Oblique"),url("./fonts/avenir/8f21e618-9282-4df1-b556-73ee82bdd673.eot?#iefix");
+  src: local("Avenir Oblique"),local("AvenirLTW01-55Oblique"),url("./fonts/avenir/8f21e618-9282-4df1-b556-73ee82bdd673.eot?#iefix") format("eot"),url("./fonts/avenir/3695342c-b5e2-4010-b0d4-56f563465922.woff") format("woff"),url("./fonts/avenir/2ba9f875-66d9-414d-a426-5a012b443475.ttf") format("truetype"),url("./fonts/avenir/0a88351a-e628-4b1f-99eb-3a729518af0a.svg#0a88351a-e628-4b1f-99eb-3a729518af0a") format("svg");
   font-style: italic;
   font-weight: normal;
 }
 @font-face {
   font-family: Avenir;
-  src: local("Avenir Heavy"),local("Avenir LT W01 85 Heavy"),url("/fashion/styles/fonts/avenir/f61bf0f6-c193-4100-b940-12a1a01dcee5.eot?#iefix");
-  src: local("Avenir Heavy"),local("Avenir LT W01 85 Heavy"),url("/fashion/styles/fonts/avenir/f61bf0f6-c193-4100-b940-12a1a01dcee5.eot?#iefix") format("eot"),url("/fashion/styles/fonts/avenir/7147ec3a-8ff8-4ec9-8c5c-bd1571dc6ae6.woff") format("woff"),url("/fashion/styles/fonts/avenir/d1dc54b2-878d-4693-8d6e-b442e99fef68.ttf") format("truetype"),url("/fashion/styles/fonts/avenir/731dd4d3-64da-427d-ba61-01575b3cf3f7.svg#731dd4d3-64da-427d-ba61-01575b3cf3f7") format("svg");
+  src: local("Avenir Heavy"),local("Avenir LT W01 85 Heavy"),url("./fonts/avenir/f61bf0f6-c193-4100-b940-12a1a01dcee5.eot?#iefix");
+  src: local("Avenir Heavy"),local("Avenir LT W01 85 Heavy"),url("./fonts/avenir/f61bf0f6-c193-4100-b940-12a1a01dcee5.eot?#iefix") format("eot"),url("./fonts/avenir/7147ec3a-8ff8-4ec9-8c5c-bd1571dc6ae6.woff") format("woff"),url("./fonts/avenir/d1dc54b2-878d-4693-8d6e-b442e99fef68.ttf") format("truetype"),url("./fonts/avenir/731dd4d3-64da-427d-ba61-01575b3cf3f7.svg#731dd4d3-64da-427d-ba61-01575b3cf3f7") format("svg");
   font-style: normal;
   font-weight: bold;
 }
 @font-face {
   font-family: Avenir;
-  src: local("Avenir Heavy Oblique"),local("AvenirLTW01-85HeavyObli"),url("/fashion/styles/fonts/avenir/7be0fdec-384a-42b5-ab27-c60a322cde7d.eot?#iefix");
-  src: local("Avenir Heavy Oblique"),local("AvenirLTW01-85HeavyObli"),url("/fashion/styles/fonts/avenir/7be0fdec-384a-42b5-ab27-c60a322cde7d.eot?#iefix") format("eot"),url("/fashion/styles/fonts/avenir/53554f6f-4b01-4815-87fe-82c49b8ba5a9.woff") format("woff"),url("/fashion/styles/fonts/avenir/28dfedaf-6372-45a1-8833-b3078dc56a21.ttf") format("truetype"),url("/fashion/styles/fonts/avenir/f747b6ee-4d13-4e45-815d-f33ac1b71d63.svg#f747b6ee-4d13-4e45-815d-f33ac1b71d63") format("svg");
+  src: local("Avenir Heavy Oblique"),local("AvenirLTW01-85HeavyObli"),url("./fonts/avenir/7be0fdec-384a-42b5-ab27-c60a322cde7d.eot?#iefix");
+  src: local("Avenir Heavy Oblique"),local("AvenirLTW01-85HeavyObli"),url("./fonts/avenir/7be0fdec-384a-42b5-ab27-c60a322cde7d.eot?#iefix") format("eot"),url("./fonts/avenir/53554f6f-4b01-4815-87fe-82c49b8ba5a9.woff") format("woff"),url("./fonts/avenir/28dfedaf-6372-45a1-8833-b3078dc56a21.ttf") format("truetype"),url("./fonts/avenir/f747b6ee-4d13-4e45-815d-f33ac1b71d63.svg#f747b6ee-4d13-4e45-815d-f33ac1b71d63") format("svg");
   font-style: italic;
   font-weight: bold;
 }
@@ -72,14 +72,14 @@
     font-family: "Avenir W01";
     font-style: normal;
     font-weight: 200;
-    src: url("/fashion/styles/fonts/avenir/c4352a95-7a41-48c1-83ce-d8ffd2a3b118.woff") format("woff");
+    src: url("./fonts/avenir/c4352a95-7a41-48c1-83ce-d8ffd2a3b118.woff") format("woff");
 }
 
 @font-face {
     font-family: "Avenir W01";
     font-style: normal;
     font-weight: 300;
-    src: url("/fashion/styles/fonts/avenir/939cba03-5b40-4d01-9bc5-7589eca863db.woff") format("woff");
+    src: url("./fonts/avenir/939cba03-5b40-4d01-9bc5-7589eca863db.woff") format("woff");
 }
 
 @font-face {
@@ -87,7 +87,7 @@
     font-style: normal;
     font-weight: 400;
     src: url("http://fast.fonts.net/dv2/3/b9ebb19d-88c1-4cbd-9baf-cf51972422ec.woff?d44f19a684109620e484157fa790e818d6a0dc7138d0a76dcc0c1fe83ad1d594119e1e62143e61da83837e1de7e89243f469542067988d81ec557bf5669a2b5d7c687c8a44a885f3a93ce17fb0e67031f423effcee120747d724b26a704c79f089960e139fa44983f1c002b3bf9466eaa7fbbf2fcfaef345392cad6d666d196f1224ec9cd88b44424bdce665920c1dc3c256c9b721f6b2cd3ab19e73916202ed&projectId=aefa21ce-6bba-4e09-b164-6f62aa32380c") format("woff");
-    src: url("/fashion/styles/fonts/avenir/b9ebb19d-88c1-4cbd-9baf-cf51972422ec.woff") format("woff");
+    src: url("./fonts/avenir/b9ebb19d-88c1-4cbd-9baf-cf51972422ec.woff") format("woff");
 }
 
 @font-face {
@@ -95,7 +95,7 @@
     font-style: normal;
     font-weight: 500;
     src: url("http://fast.fonts.net/dv2/3/2cac77ec-9bc0-4ee7-87e4-27650190744f.woff?d44f19a684109620e484157fa790e818d6a0dc7138d0a76dcc0c1fe83ad1d594119e1e62143e61da83837e1de7e89243f469542067988d81ec557bf5669a2b5d7c687c8a44a885f3a93ce17fb0e67031f423effcee120747d724b26a704c79f089960e139fa44983f1c002b3bf9466eaa7fbbf2fcfaef345392cad6d666d196f1224ec9cd88b44424bdce665920c1dc3c256c9b721f6b2cd3ab19e73916202ed&projectId=aefa21ce-6bba-4e09-b164-6f62aa32380c") format("woff");
-    src: url("/fashion/styles/fonts/avenir/2cac77ec-9bc0-4ee7-87e4-27650190744f.woff") format("woff");
+    src: url("./fonts/avenir/2cac77ec-9bc0-4ee7-87e4-27650190744f.woff") format("woff");
 }
 
 @font-face {
@@ -103,7 +103,7 @@
     font-style: normal;
     font-weight: 800;
     src: url("http://fast.fonts.net/dv2/3/7147ec3a-8ff8-4ec9-8c5c-bd1571dc6ae6.woff?d44f19a684109620e484157fa790e818d6a0dc7138d0a76dcc0c1fe83ad1d594119e1e62143e61da83837e1de7e89243f469542067988d81ec557bf5669a2b5d7c687c8a44a885f3a93ce17fb0e67031f423effcee120747d724b26a704c79f089960e139fa44983f1c002b3bf9466eaa7fbbf2fcfaef345392cad6d666d196f1224ec9cd88b44424bdce665920c1dc3c256c9b721f6b2cd3ab19e73916202ed&projectId=aefa21ce-6bba-4e09-b164-6f62aa32380c") format("woff");
-    src: url("/fashion/styles/fonts/avenir/7147ec3a-8ff8-4ec9-8c5c-bd1571dc6ae6.woff") format("woff");
+    src: url("./fonts/avenir/7147ec3a-8ff8-4ec9-8c5c-bd1571dc6ae6.woff") format("woff");
 }
 
 @font-face {
@@ -111,7 +111,7 @@
     font-style: normal;
     font-weight: 900;
     src: url("http://fast.fonts.net/dv2/3/5a05cf7f-f332-456f-ae67-d8c26e0d35b3.woff?d44f19a684109620e484157fa790e818d6a0dc7138d0a76dcc0c1fe83ad1d594119e1e62143e61da83837e1de7e89243f469542067988d81ec557bf5669a2b5d7c687c8a44a885f3a93ce17fb0e67031f423effcee120747d724b26a704c79f089960e139fa44983f1c002b3bf9466eaa7fbbf2fcfaef345392cad6d666d196f1224ec9cd88b44424bdce665920c1dc3c256c9b721f6b2cd3ab19e73916202ed&projectId=aefa21ce-6bba-4e09-b164-6f62aa32380c") format("woff");
-    src: url("/fashion/styles/fonts/avenir/5a05cf7f-f332-456f-ae67-d8c26e0d35b3.woff") format("woff");
+    src: url("./fonts/avenir/5a05cf7f-f332-456f-ae67-d8c26e0d35b3.woff") format("woff");
 }
 
 @font-face {
@@ -119,42 +119,42 @@
     font-style: oblique;
     font-weight: 200;
     src: url("http://fast.fonts.net/dv2/3/47fd1045-6e5b-4c87-9235-cfbc2b42cde7.woff?d44f19a684109620e484157fa790e818d6a0dc7138d0a76dcc0c1fe83ad1d594119e1e62143e61da83837e1de7e89243f469542067988d81ec557bf5669a2b5d7c687c8a44a885f3a93ce17fb0e67031f423effcee120747d724b26a704c79f089960e139fa44983f1c002b3bf9466eaa7fbbf2fcfaef345392cad6d666d196f1224ec9cd88b44424bdce665920c1dc3c256c9b721f6b2cd3ab19e73916202ed&projectId=aefa21ce-6bba-4e09-b164-6f62aa32380c") format("woff");
-    src: url("/fashion/styles/fonts/avenir/47fd1045-6e5b-4c87-9235-cfbc2b42cde7.woff") format("woff");
+    src: url("./fonts/avenir/47fd1045-6e5b-4c87-9235-cfbc2b42cde7.woff") format("woff");
 }
 
 @font-face {
     font-family: "Avenir W01";
     font-style: oblique;
     font-weight: 300;
-    src: url("/fashion/styles/fonts/avenir/ca94ed56-18fc-4856-940a-70a072607c7c.woff") format("woff");
+    src: url("./fonts/avenir/ca94ed56-18fc-4856-940a-70a072607c7c.woff") format("woff");
 }
 
 @font-face {
     font-family: "Avenir W01";
     font-style: oblique;
     font-weight: 400;
-    src: url("/fashion/styles/fonts/avenir/3695342c-b5e2-4010-b0d4-56f563465922.woff") format("woff");
+    src: url("./fonts/avenir/3695342c-b5e2-4010-b0d4-56f563465922.woff") format("woff");
 }
 
 @font-face {
     font-family: "Avenir W01";
     font-style: oblique;
     font-weight: 500;
-    src: url("/fashion/styles/fonts/avenir/e0af2f49-a399-482b-a54e-d745e268ec80.woff") format("woff");
+    src: url("./fonts/avenir/e0af2f49-a399-482b-a54e-d745e268ec80.woff") format("woff");
 }
 
 @font-face {
     font-family: "Avenir W01";
     font-style: oblique;
     font-weight: 800;
-    src: url("/fashion/styles/fonts/avenir/53554f6f-4b01-4815-87fe-82c49b8ba5a9.woff") format("woff");
+    src: url("./fonts/avenir/53554f6f-4b01-4815-87fe-82c49b8ba5a9.woff") format("woff");
 }
 
 @font-face {
     font-family: "Avenir W01";
     font-style: oblique;
     font-weight: 900;
-    src: url("/fashion/styles/fonts/avenir/36ec15b9-f8da-447f-8fed-a9cfdfb91fbb.woff?d44f19a684109620e484157fa790e818d6a0dc7138d0a76dcc0c1fe83ad1d594119e1e62143e61da83837e1de7e89243f469542067988d81ec557bf5669a2b5d7c687c8a44a885f3a93ce17fb0e67031f423effcee120747d724b26a704c79f089960e139fa44983f1c002b3bf9466eaa7fbbf2fcfaef345392cad6d666d196f1224ec9cd88b44424bdce665920c1dc3c256c9b721f6b2cd3ab19e73916202ed&projectId=aefa21ce-6bba-4e09-b164-6f62aa32380c") format("woff");
+    src: url("./fonts/avenir/36ec15b9-f8da-447f-8fed-a9cfdfb91fbb.woff?d44f19a684109620e484157fa790e818d6a0dc7138d0a76dcc0c1fe83ad1d594119e1e62143e61da83837e1de7e89243f469542067988d81ec557bf5669a2b5d7c687c8a44a885f3a93ce17fb0e67031f423effcee120747d724b26a704c79f089960e139fa44983f1c002b3bf9466eaa7fbbf2fcfaef345392cad6d666d196f1224ec9cd88b44424bdce665920c1dc3c256c9b721f6b2cd3ab19e73916202ed&projectId=aefa21ce-6bba-4e09-b164-6f62aa32380c") format("woff");
 }
 
 @font-face {
@@ -172,11 +172,11 @@
 
 @font-face{
     font-family:"Avenir LT W01 55 Roman";
-    src:url("/fashion/styles/fonts/avenir/Avenir-LT-W01-55-Roman.eot");
-    src:url("/fashion/styles/fonts/avenir/Avenir-LT-W01-55-Roman.eot") format("eot"),url("/fashion/styles/fonts/avenir/Avenir-LT-W01-55-Roman.woff") format("woff"),url("/fashion/styles/fonts/avenir/Avenir-LT-W01-55-Roman.ttf") format("truetype"),url("/fashion/styles/fonts/avenir/Avenir-LT-W01-55-Roman.svg") format("svg");
+    src:url("./fonts/avenir/Avenir-LT-W01-55-Roman.eot");
+    src:url("./fonts/avenir/Avenir-LT-W01-55-Roman.eot") format("eot"),url("./fonts/avenir/Avenir-LT-W01-55-Roman.woff") format("woff"),url("./fonts/avenir/Avenir-LT-W01-55-Roman.ttf") format("truetype"),url("./fonts/avenir/Avenir-LT-W01-55-Roman.svg") format("svg");
 }
 
 @font-face{
     font-family:"Avenir LT W01 85 Heavy";
-    src:url("/fashion/styles/fonts/avenir/Avenir LT W01 85 Heavy.eot") format("eot"),url("/fashion/styles/fonts/avenir/Avenir LT W01 85 Heavy.woff") format("woff"),url("/fashion/styles/fonts/avenir/Avenir LT W01 85 Heavy.ttf") format("truetype"),url("/fashion/styles/fonts/avenir/Avenir LT W01 85 Heavy.svg") format("svg");
+    src:url("./fonts/avenir/Avenir LT W01 85 Heavy.eot") format("eot"),url("./fonts/avenir/Avenir LT W01 85 Heavy.woff") format("woff"),url("./fonts/avenir/Avenir LT W01 85 Heavy.ttf") format("truetype"),url("./fonts/avenir/Avenir LT W01 85 Heavy.svg") format("svg");
 }

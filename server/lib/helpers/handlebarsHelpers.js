@@ -1286,14 +1286,4 @@ Handlebars.registerHelper('toLowerCase', function(str) {
     return str.toLowerCase();
 });
 
-/**
- * Allows you to loop from within template on an object.
- * @param obj {Object}
- * @returns {Array<{key: {String}, value: {String}}>}
- */
-Handlebars.registerHelper('outputHtmlAttributes', function(obj) {
-    let objKeys = Object.keys(obj);
-    return objKeys.length === 0 ? '' : objKeys.reduce((agg, key) => agg + ' ' + (key + '="' + obj[key] + '"'), '');
-});
-
 /* jshint ignore:end */

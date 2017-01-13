@@ -9,11 +9,9 @@
 
 let sjl = require('sjljs'),
     path = require('path'),
-    viewsPath = path.join(__dirname, '../views'),
     staticDataRootPath = path.join(__dirname, '../data/static'),
 
     doesPathExist = require('../helpers/doesPathExist'),
-    getViewTemplateName = require('../helpers/getViewTemplateName'),
     deviceDetectionHelper = require('./../helpers/deviceDetection'),
 
     isMobile = deviceType => deviceType.toLowerCase() === 'mobile',
@@ -62,11 +60,10 @@ let sjl = require('sjljs'),
  * Returns a Hapi.js handler that allows you to have static data for pages that hit your route and also allows you to pass
  * a `dataProducer` function that recieves the `req` object and returns some data object.
  * @param viewAlias {String} - View alias to use in returned handler entry.
- * @param [dataProducer {Function<req>|undefined}] - Optional data producer (function that returns some data (an Object or JSON Object) for the view to use).
- * @param [layoutObj {undefined|Object<layout>}] - An object with a `layout` property specifying the layout to use.  Optional.
+ * @param [dataProducer {Function|undefined}] - Optional data producer (function that returns some data (an Object or JSON Object) for the view to use).
  * @returns {{description: string, tags: [string,string,string,string,string], handler: handler}}
  */
-module.exports = function (viewAlias, dataProducer, layoutObj) {
+module.exports = function (viewAlias, dataProducer) {
     return {
         description: `
             This handler allows you to inject data from JSON files into your view.  The default layout used for this 
@@ -94,40 +91,31 @@ module.exports = function (viewAlias, dataProducer, layoutObj) {
                 requestPathPartial = stripInitialForwardSlash(requestPath),
                 dataProducerData = typeof dataProducer === 'function' ? dataProducer(req) : null,
                 argsForView = argsWithDeviceMetaData(req, argsFactory()),
-                getMergedArgs = otherData => sjl.extend(true, argsForView, dataProducerData, otherData),
-                resolveRequest = viewTemplateName => {
-
-                    return new Promise((resolve) => {
-
-                        // Resolve view template whether we have args for it or not
-                        let resolveRequest = fetchedStaticData => {
-                            resolve(res.view(viewTemplateName, {
-                                args: getMergedArgs(fetchedStaticData),
-                                assetsHost: process.env.BASE_ASSETS,
-                                slashMinSuffix: slashMinSuffix
-                            }, layoutObj));
-                        };
-
-                        // Resolve request
-                        getPathStaticData(requestPathPartial)
-
-                        // Merge any returned static data and resolve request and view with data
-                            .then(resolveRequest)
-
-                            // Resolve view with out data
-                            .catch(resolveRequest);
-                    });
-                };
+                getMergedArgs = otherData => sjl.extend(true, argsForView, dataProducerData, otherData);
 
             // Check if we have any static args to merge to `args` before rendering view
             // then render it and return the promise
-            return getViewTemplateName(
-                viewAlias,
-                requestPathPartial,
-                viewsPath,
-                argsForView.isMobile,
-                resolveRequest
-            );
+            return (new Promise(resolve => {
+
+                // Resolve view template whether we have args for it or not
+                let resolveRequest = fetchedStaticData => {
+                        resolve(res.view(viewAlias, {
+                            args: getMergedArgs(fetchedStaticData),
+                            assetsHost: process.env.BASE_ASSETS,
+                            slashMinSuffix: slashMinSuffix
+                        }));
+                    };
+
+                // Resolve request
+                getPathStaticData(requestPathPartial)
+
+                    // Merge any returned static data and resolve request and view with data
+                    .then(resolveRequest)
+
+                    // Resolve view with out data
+                    .catch(resolveRequest);
+            }));
+
         }
     };
 };
