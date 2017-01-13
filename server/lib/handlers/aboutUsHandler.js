@@ -7,7 +7,7 @@
 let navJson = require('../data/static/about-us-navigation.json'),
     sizeChartsJson = require('../data/static/size-charts-navigation.json'),
     adaptiveHandler = require('./adaptiveWithStaticDataFactory'),
-    // transformForMobile = require('../utils/aboutUsNavFactoryForMobile'),
+    transformForMobile = require('../helpers/aboutUsNavFactoryForMobile'),
     jsonClone = obj => JSON.parse(JSON.stringify(obj)),
     getPageItemByUri = (uri, pageItemsContainer) => {
         let foundItems = pageItemsContainer.pages.filter(item => {
@@ -19,12 +19,12 @@ let navJson = require('../data/static/about-us-navigation.json'),
 function aboutUsDataProvider(req) {
     var sizeChartsObj = jsonClone(sizeChartsJson),
         out = {
-            aboutUsNavContainer: /*transformForMobile(*/ navJson //)
+            aboutUsNavContainer: transformForMobile(navJson)
         };
 
     if (req.url.pathname && req.url.pathname.indexOf('/sizecharts/') > -1) {
         getPageItemByUri(req.url.pathname, sizeChartsObj).active = true;
-        out.sizeChartNavContainer = /*transformForMobile(*/ sizeChartsObj; //);
+        out.sizeChartNavContainer = transformForMobile(sizeChartsObj);
     }
 
     return out;
