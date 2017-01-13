@@ -53,7 +53,7 @@ module.exports = function(grunt) {
                 files: [{
                     expand:true,
                     cwd: './server/',
-                    src: ['lib/views/**/index.hbs'],
+                    src: ['lib/views/**/index.hbs', 'lib/views/**/index-mobile.hbs'],
                     dest: './target/',
                     ext: '.html'
                 }],
@@ -218,6 +218,18 @@ module.exports = function(grunt) {
             ],
             options: {
                 dest: '<%= node.destination %>/lib/views/partials/'
+            }
+        },
+
+        //Produces minified files in the 'target' folder
+        htmlmin: {
+            dist: {
+                files: [{
+                    expand: true,
+                    cwd: '<%= node.source %>/server/lib/views/partials/',
+                    src: ['*.html'],
+                    dest: '<%= node.destination %>/lib/views/partials/'
+                }]
             }
         },
 
@@ -387,6 +399,35 @@ module.exports = function(grunt) {
                     steps: 'test/features/step_definitions',
                     format: 'pretty'
                 }
+            },
+            // create index-mobile.hbs version of hbs files if not already exist
+            createMobile: {
+                files: [
+                    {
+                        expand: true,
+                        src: [
+                            './server/lib/views/about-us/**/*.hbs',
+                            './server/lib/views/media/about/**/*.hbs',
+                            './server/lib/views/fashion-tips/**/*.hbs',
+                            './server/lib/views/fashion-index/**/*.hbs',
+                            './server/lib/views/landing-page/**/*.hbs'
+
+
+                        ],
+                        rename: function(dest, src) {
+                            var name =  src.replace(/(\.*)\.hbs$/, "$1-mobile.hbs");
+                            return name;
+                        },
+                        ext: '.hbs',
+                        filter: function (filepath) {
+                            if (/-mobile/.test(filepath)){return false;}
+                            // Return false if the mobile version of the file exists.
+                            filepath = filepath.replace(/(\.*)\.hbs$/, "$1-mobile.hbs");
+                            if (grunt.file.exists(filepath)) {return false;}
+                            return true;
+                        }
+                    }
+                ]
             }
         },
 
@@ -674,7 +715,6 @@ module.exports = function(grunt) {
             jsClient: {
 		        files: [
                     '<%= node.source %>/public/javascripts/main.js',
-                    '<%= node.source %>/public/javascripts/components/{,**/}*.{js,json}',
                     '<%= node.source %>/public/javascripts/includes/{,**/}*.{js,json}',
                     '<%= node.source %>/public/javascripts/projects/{,**/}*.{js,json}',
                     '<%= node.source %>/public/javascripts/services/{,**/}*.{js,json}'
@@ -716,24 +756,22 @@ module.exports = function(grunt) {
 		    },
 		    views: {
 		        files: [
-                    // '<%= node.source %>/server/lib/views/partials/{,**/}*.html',
-                    // '<%= node.source %>/server/lib/views/layout/{,**/}*.html',
-		    		// '<%= node.source %>/server/lib/views/errors/{,**/}*.html',
-		    		// '<%= node.source %>/server/lib/views/errors/{,**/}*.html'
-		    		'<%= node.source %>/server/lib/views/**/*.html'
+                    '<%= node.source %>/server/lib/views/partials/{,**/}*.html',
+                    '<%= node.source %>/server/lib/views/layout/{,**/}*.html',
+		    		'<%= node.source %>/server/lib/views/errors/{,**/}*.html'
 		    	],
 		        tasks: [
 		        	'useminPrepare',
+		        	'htmlmin',
 		        	'usemin',
                     'notify:views'
 		        ]
 		    },
             viewsProjects: {
                 files: [
-                    // '<%= node.source %>/server/lib/views/lookbooks/{,**/}*.html',
-                    // '<%= node.source %>/server/lib/views/service/{,**/}*.html',
-                    // '<%= node.source %>/server/lib/views/international/{,**/}*.html',
-                    '<%= node.source %>/server/lib/views/**/*.html'
+                    '<%= node.source %>/server/lib/views/lookbooks/{,**/}*.html',
+                    '<%= node.source %>/server/lib/views/service/{,**/}*.html',
+                    '<%= node.source %>/server/lib/views/international/{,**/}*.html'
                 ],
                 tasks: [
                     'copy:viewsProjects'
@@ -786,6 +824,7 @@ module.exports = function(grunt) {
             dev: [
                 'nodemon',
                 'watch',
+                //'node-inspector',
                 'notify:build'
             ],
             options: {
@@ -796,9 +835,10 @@ module.exports = function(grunt) {
     grunt.registerTask('projectSprites', 'Create sprite files for projects', function() {
         grunt.task.run(['clean:projectSprites','sprite']);
     });
+    grunt.registerTask('createMobile', 'copy:createMobile');
     grunt.registerTask('default', 'build');
     grunt.registerTask('test', 'checkPages:development');
-    grunt.registerTask('build', 'Build based on the NODE_ENV value.', function() {
+    grunt.registerTask('build', 'Build based on the NODE_ENV value.', function() {   
         grunt.task.run([
 
             'babel',
@@ -806,6 +846,7 @@ module.exports = function(grunt) {
             'clean:all',
             'useminPrepare',
             'compass:dist',
+            'htmlmin',   
             // 'handlebars',
             // 'concat:generated',
             // 'concat:addHBStemplates',
@@ -813,7 +854,8 @@ module.exports = function(grunt) {
             'execute', // create the nav data used in the compile-handlebars step
             'compile-handlebars', // this processes files in the views folder and overwrites files in target
             'copy:titleImages', // handlebars optionally creates titles images, need to copy those after handlebars run
-            // 'uglify',
+            // 'cssmin',
+            // 'uglify',  
             // 'rev:dist',     
             'usemin',
             'string-replace'
