@@ -1,0 +1,274 @@
+
+
+//=================================================================//
+//MAIN
+//=================================================================//
+
+
+//FIX FOR NEW MAIN
+/*
+@media only screen and (max-width: 850px){
+    .small-24 {
+        left: 0;
+        right: 0;
+    }
+}
+*/
+//FIX FOR NEW MAIN
+
+
+body{
+    min-width: initial !important;
+}
+
+body #bl_main_container{
+    width:100%;
+    max-width: none;
+
+    font-family: Avenir,sans-serif;
+    line-height: 0;
+
+    box-sizing: border-box;
+    position: relative;
+    width: auto;
+    min-height: 100%;
+    text-align: center;
+    
+    overflow-x:hidden;
+}
+
+//=================================================================//
+//MAIN
+//=================================================================//
+
+#coming-soon-desktop{
+    width:100%;
+    display:none;
+
+    img{
+        width:100%;
+    }
+
+
+}
+.coming-soon-desktop-text1{
+    position: absolute;
+    left: 10.6vw;
+    top: 33.4vw;
+    color: black;
+    font-family: "Avenir W01",sans-serif;
+    font-weight: 300;
+    font-size: 1.1vw;
+    line-height: 1.9vw;
+    letter-spacing: .005vw;
+}
+.coming-soon-desktop-text2{
+    position: absolute;
+    left: 6.2vw;
+    top: 37.3vw;
+    color: black;
+    font-family: "Avenir W01",sans-serif;
+    font-weight: 900;
+    font-size: 1.1vw;
+    line-height: 1.9vw;
+    text-transform: uppercase;
+    letter-spacing: .12vw;
+}
+.coming-soon-desktop-text3{
+    position: absolute;
+    left: 11.6vw;
+    top: 41.3vw;
+    color: black;
+    font-family: "Avenir W01",sans-serif;
+    font-weight: 300;
+    font-size: 1.1vw;
+    line-height: 1.9vw;
+    padding: 1.18vw 4.5vw;
+    border: 1px solid #000;
+    text-transform: uppercase;
+    letter-spacing: 0.05vw;
+}
+.coming-soon-desktop-text4{
+    position: absolute;
+    left: 2.9vw;
+    top: 60.8vw;
+    color: black;
+    font-family: "Avenir W01",sans-serif;
+    font-weight: 300;
+    font-size: 1.1vw;
+    line-height: 1.9vw;
+    letter-spacing: .05vw;
+}
+
+.coming-soon-desktop-text5link{
+    position: absolute;
+    top: 60.8vw;
+    color: black;
+    font-family: "Avenir W01",sans-serif;
+    font-weight: 600;
+    font-size: 1.1vw;
+    line-height: 1.9vw;
+    letter-spacing: .05vw;
+    text-decoration: underline;
+}
+.coming-soon-desktop-women{
+    left: 33.9vw;
+}
+.coming-soon-desktop-shoes{
+    left: 41.4vw;
+}
+.coming-soon-desktop-handbags{
+    left: 48.1vw;
+}
+.coming-soon-desktop-jewelry{
+    left: 57.6vw;
+}
+.coming-soon-desktop-beauty{
+    left: 75.3vw;
+}
+.coming-soon-desktop-men{
+    left: 82.6vw;
+}
+.coming-soon-desktop-kids{
+    left: 88vw;
+}
+.coming-soon-desktop-home{
+    left: 93.5vw;
+}
+
+
+
+#coming-soon-mobile{
+    width:100%;
+    display:none;
+    img{
+        width:100%;
+    }    
+}
+
+.coming-soon-mobile-text1{
+    position: absolute;
+    left: 23vw;
+    top: 71vw;
+    color: black;
+    font-family: "Avenir W01",sans-serif;
+    font-weight: 300;
+    font-size: 4.1vw;
+    line-height: 6.3vw;
+    letter-spacing: -0.1vw;
+}
+.coming-soon-mobile-text2{
+    position: absolute;
+    left: 14vw;
+    top: 92vw;
+    color: black;
+    font-family: "Avenir W01",sans-serif;
+    font-weight: 900;
+    font-size: 6.1vw;
+    line-height: 8vw;
+    letter-spacing: -0.1vw;
+    text-transform: uppercase;
+}
+.coming-soon-mobile-text3{
+    position: absolute;
+    left: 18.3vw;
+    top: 114.3vw;
+    color: black;
+    font-family: "Avenir W01",sans-serif;
+    font-weight: 300;
+    font-size: 4.5vw;
+    line-height: 1.9vw;
+    padding: 5.18vw 8.5vw;
+    border: 1px solid #000;
+    text-transform: uppercase;
+    letter-spacing: 0.05vw;
+}
+.coming-soon-mobile-text4{
+    position: absolute;
+    left: 33.3vw;
+    top: 136.3vw;
+    color: black;
+    font-family: "Avenir W01",sans-serif;
+    font-weight: 900;
+    font-size: 4.7vw;
+    line-height: 1.9vw;
+    letter-spacing: .2vw;
+}
+.coming-soon-mobile-text5{
+    position: absolute;
+    left: 22.9vw;
+    top: 142vw;
+    color: black;
+    font-family: "Avenir W01",sans-serif;
+    font-weight: 300;
+    font-size: 3.8vw;
+    line-height: 1.9vw;
+    letter-spacing: .05vw;
+}
+.coming-soon-mobile-text6link{
+    position: absolute;
+    padding: 4vw 40vw;
+    color: white;
+    font-family: "Avenir W01",sans-serif;
+    font-weight: 300;
+    font-size: 4.1vw;
+    line-height: 1.9vw;
+    letter-spacing: .05vw;
+}
+.coming-soon-mobile-women{
+    top: 156.5vw;
+    left: 1.5vw;
+}
+.coming-soon-mobile-shoes{
+    top: 167vw;
+    left: 3vw;
+}
+.coming-soon-mobile-handbags{
+    top: 177vw;
+    left: 3vw;
+    padding: 4vw 35vw;
+}
+.coming-soon-mobile-jewelry{
+    top: 186.5vw;
+    left: 5vw;
+    padding: 4vw 20vw;
+}
+.coming-soon-mobile-beauty{
+    top: 197vw;
+    left: 2vw;
+}
+.coming-soon-mobile-men{
+    top: 207vw;
+    left: 5vw;
+}
+.coming-soon-mobile-kids{
+    top: 217vw;
+    left: 5vw;
+}
+.coming-soon-mobile-home{
+    top: 227vw;
+    left: 4vw;
+}
+
+//=================================================================//
+//LAZYLOAD
+//=================================================================//
+.lazyload,
+.lazyloading {
+    opacity: 0;
+}
+.lazyloaded {
+    opacity: 1;
+    transition: opacity 300ms;
+}
+//=================================================================//
+//LAZYLOAD
+//=================================================================//
+
+
+
+
+
+
+
+
