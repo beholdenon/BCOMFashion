@@ -129,5 +129,33 @@ module.exports = {
                 uri: uri
             });
         }
+    },
+
+    press: {
+        description: 'press temporary call',
+        notes: 'v3 key and call',
+        tags: ['developer.bloomingdales.com', 'api', 'v3'],
+        handler: {
+            proxy: {
+                timeout: serviceProxy.timeout,
+                passThrough: true,
+                acceptEncoding: false,
+                mapUri: function(req, res) {
+
+                    var headers = serviceProxy.getHeaders(req, process.env.API_STAGING_KEY);
+                    req.url.host = serviceProxy.getHost(req, process.env.CATEGORYINDEXV3_HOST || process.env.TEST_HOST);
+                    req.url.path = req.url.path.replace('/press','');
+                    req.url.pathname = req.url.pathname.replace('/press','');
+
+                    req.app.parser = require('./../parsers/category');
+
+                    res(null, req.url.format(req.url), headers);
+
+                },
+
+                onResponse: serviceProxy.defaultOnResponse
+
+            }
+        }
     }
 };
