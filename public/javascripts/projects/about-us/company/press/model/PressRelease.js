@@ -13,7 +13,7 @@ define(['jquery','underscore', 'backbone'], function($, _, Backbone){
     // });
 
     var Model = Backbone.Model.extend({
-        url: 'http://api.qa13codebloomingdales.fds.com/customer/v1/pressrelease/notes',
+        url: '/press/customer/v1/pressrelease/notes',
         sync: function( method, model, options ) {
             options = options || {};
             options.headers = options.headers || {};
@@ -26,9 +26,9 @@ define(['jquery','underscore', 'backbone'], function($, _, Backbone){
             });
 
             // Inject session data
-            _.extend( options.headers, {
-                'x-macys-webservice-client-id' : 'ubrz33mdh4w5tccfzt7enn78'
-            });
+            // _.extend( options.headers, {
+            //     'x-macys-webservice-client-id' : 'ubrz33mdh4w5tccfzt7enn78'
+            // });
 
             // Accounts for empty response strings that would cause a parsing error in jQuery
             options.dataFilter = function( data ) {
