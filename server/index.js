@@ -15,7 +15,7 @@ server.connection({
     routes: {
         files: { relativeTo: Path.join(__dirname, 'public') },
         state: { failAction: 'ignore' },
-        cors: true    
+        cors: true,
     },
     state: { ignoreErrors: false, strictHeader: false } 
 });
@@ -53,7 +53,7 @@ var routes = [
     { method: 'GET',  path: '/shop/{path*}',                                                                config: require('./lib/handlers/assets').commonAssets },
     { method: 'GET',  path: '/international/china-brazil/components/{path*}',                               config: require('./lib/handlers/assets').ngViews },
     { method: 'GET',  path: '/landing-page/hawaii-ala-moana/{deeplinks?}',                                  config: require('./lib/handlers/views').adaptive },
-    { method: 'GET',  path: '/about-us/{action*}',                                                          config: require('./lib/handlers/aboutUsHandler') },
+    { method: 'GET',  path: '/about-us/{action*}',                                                          config: require('./lib/handlers/aboutUsHandler')},
     { method: 'GET',  path: '/campaign/give-pink-get-more/{path*}',                                         config: require('./lib/handlers/views').adaptive },
     { method: 'GET',  path: '/catalogs/',                                                                   config: require('./lib/handlers/views').adaptive },
     { method: 'GET',  path: '/bwallet/',                                                                    config: require('./lib/handlers/views').adaptive },

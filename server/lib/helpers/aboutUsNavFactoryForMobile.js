@@ -19,7 +19,9 @@ let navContainer = require('../data/static/about-us-navigation.json'),
         },
 
         addCMQueryStringToLinks: function (container, prefix) {
-            let {attribSeparator, tertiaryAttribPrefix, normalizeLabel} = this;
+            let attribSeparator = this.attribSeparator,
+                tertiaryAttribPrefix = this.tertiaryAttribPrefix,
+                normalizeLabel = this.normalizeLabel;
             if (!container.hasOwnProperty('pages')) {
                 return container;
             }

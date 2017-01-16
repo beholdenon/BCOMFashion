@@ -93,7 +93,7 @@ module.exports = {
         const args = responseArgsFactory(req);
 
         let resolveRequest = viewName => {
-            headHelpers(viewName + '.html', args)
+            return headHelpers(viewName + '.html', args)
                 .then(aggregatedArgs => {
                     return res.view(viewName, {
                         args: aggregatedArgs, assetsHost: process.env.BASE_ASSETS, slashMinSuffix: slashMinSuffix
@@ -107,6 +107,6 @@ module.exports = {
         };
 
         // Gets '...index' or '...index-mobile' depending on it's parameters
-        getViewTemplateName(null, detectDeepLinks(req, requestPath), viewsPath, args.isMobile, resolveRequest);
+        return getViewTemplateName(null, detectDeepLinks(req, requestPath), viewsPath, args.isMobile, resolveRequest);
     }
 };
