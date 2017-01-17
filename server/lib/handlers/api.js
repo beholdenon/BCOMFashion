@@ -142,8 +142,8 @@ module.exports = {
                 acceptEncoding: false,
                 mapUri: function(req, res) {
 
-                    var headers = serviceProxy.getHeaders(req, process.env.API_STAGING_KEY);
-                    req.url.host = serviceProxy.getHost(req, process.env.CATEGORYINDEXV3_HOST || process.env.TEST_HOST);
+                    var headers = serviceProxy.getHeaders(req, process.env.CATALOGCATEGORYV3_KEY);
+                    req.url.host = serviceProxy.getHost(req, process.env.CATEGORYINDEXV3_HOST || process.env.API_HOST);
                     req.url.path = req.url.path.replace('/press','');
                     req.url.pathname = req.url.pathname.replace('/press',''); 
 
