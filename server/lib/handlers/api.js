@@ -145,7 +145,7 @@ module.exports = {
                     var headers = serviceProxy.getHeaders(req, process.env.API_STAGING_KEY);
                     req.url.host = serviceProxy.getHost(req, process.env.CATEGORYINDEXV3_HOST || process.env.TEST_HOST);
                     req.url.path = req.url.path.replace('/press','');
-                    req.url.pathname = req.url.pathname.replace('/press','');
+                    req.url.pathname = req.url.pathname.replace('/press',''); 
 
                     req.app.parser = require('./../parsers/category');
 
