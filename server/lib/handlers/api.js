@@ -44,13 +44,6 @@ module.exports = {
 
                     req.app.parser = require('./../parsers/category');
 
-                    console.log("---------REQUEST--------");
-                    console.log(req.url);
-                    console.log(headers);
-                    console.log("------------------------");
-
-                    console.log(res);
-
                     res(null, req.url.format(req.url), headers);
 
                 },
@@ -118,22 +111,6 @@ module.exports = {
         }
     },
 
-    addMultiToBag: {
-        description: 'bag service calls',
-        notes: 'reqs for bag service calls require the specialized bag services key',
-        tags: ['developer.bloomingdales.com', 'api', 'bag'],
-        payload: {
-            output: 'data',
-            parse: false
-        },
-        handler: function(req, res) {
-            //var route = req.route.path.substring(1).replace(/{.*?}/,'');
-            //var deviceDetectProc = deviceDetectParams(route, req);
-            //return res.view(deviceDetectProc.view, { args: deviceDetectProc.args, assetsHost: process.env.BASE_ASSETS }, { layout: 'responsive' });
-            res({result: "ok"});
-        }
-    },
-
     proxy: {
         description: 'proxy, sends any request over to bloomingdales.com',
         handler: function (req, res) {
@@ -151,6 +128,34 @@ module.exports = {
                 redirects: 2,
                 uri: uri
             });
+        }
+    },
+
+    press: {
+        description: 'press temporary call',
+        notes: 'v3 key and call',
+        tags: ['developer.bloomingdales.com', 'api', 'v3'],
+        handler: {
+            proxy: {
+                timeout: serviceProxy.timeout,
+                passThrough: true,
+                acceptEncoding: false,
+                mapUri: function(req, res) {
+
+                    var headers = serviceProxy.getHeaders(req, process.env.CATALOGCATEGORYV3_KEY);
+                    req.url.host = serviceProxy.getHost(req, process.env.CATEGORYINDEXV3_HOST || process.env.API_HOST);
+                    req.url.path = req.url.path.replace('/press','');
+                    req.url.pathname = req.url.pathname.replace('/press',''); 
+
+                    req.app.parser = require('./../parsers/category');
+
+                    res(null, req.url.format(req.url), headers);
+
+                },
+
+                onResponse: serviceProxy.defaultOnResponse
+
+            }
         }
     }
 };

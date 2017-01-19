@@ -47,7 +47,7 @@ serviceProxy.getHost = function(request, proxyHost) {
     //  - we are in production mode, but on a staging server (herokuapp), or
     //  - we are in dev mode, but using a host that does not contain a valid qa server (e.g., localhost)
     if ((process.env.NODE_ENV === 'production' && extractedHost === 'herokuapp.com') ||
-        (process.env.NODE_ENV === 'dev' && !/qa\d+code(bloomingdales)/.test(extractedHost))) {
+        ((process.env.NODE_ENV === 'dev' || /^fashion-test\./.test(request.headers.host)) && !/qa\d+code(bloomingdales)/.test(extractedHost))) {
         useDynamicBinding = false;
     }
 

@@ -33,6 +33,7 @@ server.views({
 var routes = [
     { method: 'GET',  path: '/v3/{path*}',                                                                  config: require('./lib/handlers/api').v3 },
     { method: 'GET',  path: '/v4/{path*}',                                                                  config: require('./lib/handlers/api').v4 },
+    { method: 'GET',  path: '/press/{path*}',                                                               config: require('./lib/handlers/api').press },
     { method: 'GET',  path: '/p/{path*}',                                                                   config: require('./lib/handlers/api').proxy },
     { method: 'GET',  path: '/getBag/{path*}',                                                              config: require('./lib/handlers/api').getbag },
     { method: 'POST', path: '/addToBag/{path*}',                                                            config: require('./lib/handlers/api').addbag },
@@ -77,7 +78,6 @@ var routes = [
     { method: 'GET',  path: '/charlotte-tilbury-makeup/',                                                   config: require('./lib/handlers/views').adaptive },
     { method: 'GET',  path: '/fashion-index/top-fashion-outlet-store/',                                     config: require('./lib/handlers/views').adaptive },
     { method: 'GET',  path: '/fashion-tips/baby-essentials-must-haves-checklist/',                          config: require('./lib/handlers/views').adaptive },
-    { method: 'GET',  path: '/fashion-tips/bedding-utility-guide/',                                         config: require('./lib/handlers/views').adaptive },
     { method: 'GET',  path: '/fashion-tips/good-sleep-guide/',                                              config: require('./lib/handlers/views').adaptive },
     { method: 'GET',  path: '/fashion-tips/buying-rug-guide-2016/',                                         config: require('./lib/handlers/views').adaptive },
     { method: 'GET',  path: '/fashion-tips/customize-michele-watch/',                                       config: require('./lib/handlers/views').adaptive },
@@ -104,9 +104,10 @@ var routes = [
     { method: 'GET',  path: '/makeup-date/{path*}',                                                         config: require('./lib/handlers/views').adaptive },
     { method: 'GET',  path: '/media/about/history/',                                                        config: require('./lib/handlers/views').adaptive },
     { method: 'GET',  path: '/sweepstakes/win-1000-bucks-writing-reviews/',                                 config: require('./lib/handlers/views').adaptive },
-    { method: 'GET',  path: '/international/china-brazil/',                                                 config: require('./lib/handlers/views').responsiveCustomHF },
+    { method: 'GET',  path: '/international/{path*}',                                                       config: require('./lib/handlers/views').responsiveCustomHF },
     { method: 'GET',  path: '/100-percent-2016/{path*}',                                                    config: require('./lib/handlers/views').responsiveCustomHF },
     { method: 'GET',  path: '/2016-fall-campaign-100-percent-exclusive/{path*}',                            config: require('./lib/handlers/views').responsiveCustomHF },
+    { method: 'GET',  path: '/2017-spring-campaign-100-percent-exclusive/{path*}',                          config: require('./lib/handlers/views').responsiveCustomHF },
     { method: 'GET',  path: '/outlet-touch-screen/',                                                        config: require('./lib/handlers/views').responsiveCustomHF },
     { method: 'GET',  path: '/{path*}',                                                                     config: require('./lib/handlers/views').fallback }
 ];
