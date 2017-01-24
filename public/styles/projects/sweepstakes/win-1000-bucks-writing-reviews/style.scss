@@ -344,3 +344,22 @@
 		}
 	}
 }
+
+
+@media all and (orientation: landscape) and (max-width: 768px) {
+	.swpkes {
+
+		&:before {
+			max-width: 55%;
+		}
+
+		.swpkes__info {
+			width: 60%;
+		}
+
+		.swpkes__form {
+			width: 39%;
+		}
+
+	}
+}
