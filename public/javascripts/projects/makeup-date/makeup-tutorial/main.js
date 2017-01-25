@@ -4,25 +4,34 @@
 var APP = {
 	
 	cm: {
-		category: "fall16_makeupdate"
+		category: "spring17_makupdate"
 	},
 	isTablet: $('body').hasClass('bl_tablet') ? true : false,
 	currentPage: 0,
-	currentHero: 1,
+	// currentHero: 1,
 	markup: [],
 	pageview: "",
+	productCodes: {
+		catEye: 'catEye',
+		hashtag: 'hashtag',
+		pinkLip: 'pinkPlump',
+		topknot: 'topknot'
+	},
 
 	stickyNav: function () {
 		var tabletHeaderOffset = (APP.isTablet ? $('header').height() - $('#zeroNav').height() : 0 );
-		if ( $(document).scrollTop() + tabletHeaderOffset > APP.navStart ) {
-			$('#navigation').css('top', $(document).scrollTop() + tabletHeaderOffset - $('header').height() + 'px');
-		} else if ( $(document).scrollTop() <= APP.navStart ) {
-			$('#navigation').css('top', APP.navStart - $('header').height() - 1 + 'px');
+		if ( $(document).scrollTop() + tabletHeaderOffset + document.documentElement.clientHeight > $('#footerPlaceHolder').offset().top + $('#footerPlaceHolder').height() ) {
+			$('#book-footer').css('bottom', 0 );
+			$('#book-footer').css('position', 'absolute' );
+		} else {
+			$('#book-footer').css('bottom', 0 );
+			$('#book-footer').css('position', 'fixed' );
 		}
 	},
 
 	scrollTo: function (tar) {
-		tar = $('#'+tar).offset().top  - $('#navigation').height() + 1 ;
+		//tar = $('#'+tar).offset().top  - $('#navigation').height() + 1 ;
+		tar = 0;
 		$("html, body").animate({scrollTop: tar}, 500);
 	},
 
@@ -68,68 +77,79 @@ var APP = {
 	},
 
 	// updates the dynamicPROs
-	updateShop: function( data ) {
-		var products,
-			html = "<ul class='shopContainer'>",
-			baseImgURL = "http://images.bloomingdales.com/is/image/BLM/products/4/optimized/",
-			classes = '';
-		
-		APP.markup = [];
-		APP.currentPage = 0;
+	updateShop: function( data, carouselId ) {
 
 		// get product data from WSSG
 		SERVICES.product.upcGet(function(res){
 			if ( res === 'error') {
-				$('#dynamicPROs').hide();
+				$('.dynamicPROs').hide();
 				$('#evening-essentials').css({
 					'border-top': '1px solid #fff'
 				});
 			} else {
+				var products,
+					html = "<ul class='shopContainer'>",
+					baseImgURL = "http://images.bloomingdales.com/is/image/BLM/products/4/optimized/",
+					li = '';
+
 				products = res.product;
 
 				// build HTML in SHOP THE LOOK section
 				$.each( products, function(i, value) {
-					if ( APP.markup[Math.floor(i/5)] === undefined ) APP.markup[Math.floor(i/5)] = [];
-					var li = "<li class='prod-"+i+"'><a target='_blank' href='"+value.productDetails.summary.productURL+"'><img alt='"+value.productDetails.summary.name+"' src='"+baseImgURL+value.productDetails.primaryImage.imagename+"'><p class='brand'>"+value.productDetails.summary.brand+"</p><p class='name'>"+value.productDetails.summary.name.replace(value.productDetails.summary.brand, '')+"</p></li>";
-					APP.markup[Math.floor(i/5)].push(li);
+					li += '<li class="prod-'+i+'"><a target="_blank" href="'+value.productDetails.summary.productURL+'"><img alt="'+value.productDetails.summary.name+'" src="'+baseImgURL+value.productDetails.primaryImage.imagename+'"><p class="brand">'+value.productDetails.summary.brand+'</p><p class="name">'+value.productDetails.summary.name.replace(value.productDetails.summary.brand, '')+'</p></li>';
 				});
 
-				$.each(APP.markup[APP.currentPage], function(i, value) {
-					html += value;
-				});
-
-				html+="</ul>";
-				$('#prodShell').html(html);
-				$('#dotShell').html('');
-				for (var i = Math.ceil( products.length/5 ); i>0; i--) {
-					if ( i === Math.ceil( products.length/5 ) ) {classes = 'active';} else { classes = '';} 
-					$('#dotShell').append('<li class="dots '+ classes + '"></li>');
-				}
+				html+= li + "</ul>";
+				$( carouselId + ' .prodShell').html(html);
 			}
 			
-
 		}, data.join(","));
 	},
 
-	heroRotation: function() {
-		setTimeout(function(){
-			var fade = APP.currentHero;
-			if ( APP.currentHero >= 3 ) {
-				APP.currentHero = 1;
+	updateUPCSingleLink: function( data, element ) {
+		// get product data from WSSG
+		SERVICES.product.upcGet(function(res){
+			if ( res === 'error') {
+				$(element).remove();
+				console.log('Error');
 			} else {
-				APP.currentHero++;	
-			} 
-
-			$('#hero-'+fade).css('z-index',4);
-			$('#hero-'+APP.currentHero).css('z-index',5).animate({
-				'opacity': 1},
-				1700, function() {
-				$('#hero-'+fade).css({"opacity":0});
-			});
-
-			APP.heroRotation();
-		}, 2200);
+				var product;
+				product = res.product[0];
+				
+				var	linkHTML = "<strong>"+product.productDetails.summary.brand+"</strong> "+product.productDetails.summary.name.replace(product.productDetails.summary.brand, ''),
+					prodURL = product.productDetails.summary.productURL,
+					cutStart = 'product/',
+					cutEnd = '?',
+					elId = prodURL.substring( prodURL.lastIndexOf( cutStart ) + cutStart.length, prodURL.indexOf( cutEnd )).substring(0,45).replace(/-/g,'_');
+				
+				$( element ).attr( "href", prodURL );
+				$( element ).attr( "data-element", elId );
+				$( element ).html( linkHTML );
+			
+			}
+			
+		}, data );
 	},
+
+	// heroRotation: function() {
+	// 	setTimeout(function(){
+	// 		var fade = APP.currentHero;
+	// 		if ( APP.currentHero >= 3 ) {
+	// 			APP.currentHero = 1;
+	// 		} else {
+	// 			APP.currentHero++;	
+	// 		} 
+
+	// 		$('#hero-'+fade).css('z-index',4);
+	// 		$('#hero-'+APP.currentHero).css('z-index',5).animate({
+	// 			'opacity': 1},
+	// 			1700, function() {
+	// 			$('#hero-'+fade).css({"opacity":0});
+	// 		});
+
+	// 		APP.heroRotation();
+	// 	}, 2200);
+	// },
 
 	resizeVideoThumbnails: function () {
 		return Math.ceil( $('#makeupVideo').height()/3.01 );
@@ -176,7 +196,7 @@ $(document).ready(function() {
 	}, 3000);
 	
 	// Init the image swapping for the hero image
-	APP.heroRotation();
+	// APP.heroRotation();
 
 	$(".vidBox").each(function() {
 		var tar = $(this),
@@ -185,6 +205,13 @@ $(document).ready(function() {
 		SERVICES.brightCove.getURL( function(res) {
 			tar.attr('data-source', res);
 		}, id);
+	});
+
+	$(".upcLink").each(function() {
+		var el = $(this),
+			upc = el.data('upc');
+		
+		APP.updateUPCSingleLink(  upc, el );
 	});
 
 	SERVICES.brightCove.getURL( function(res) {
@@ -216,7 +243,16 @@ $(document).ready(function() {
 		// console.log('data call complete');
 	}).done( function () {
 		// console.log('starting build');
-		APP.updateShop( APP.products[ $("#videoBox .active").attr("data-upc") ].upc );
+
+		// Update Caroussels
+
+		APP.updateShop( APP.products[ APP.productCodes.catEye ].upc, '#tips_tricks_2' );
+		APP.updateShop( APP.products[ APP.productCodes.hashtag ].upc, '#tips_tricks_7' );
+		APP.updateShop( APP.products[ APP.productCodes.pinkLip ].upc, '#tips_tricks_11' );
+
+
+		// APP.updateShop( APP.products[ APP.productCodes.topknot ].upc, '#tips_tricks_13' );
+
 	});
 
 	$(document).scroll( function() {
@@ -231,16 +267,16 @@ $(document).ready(function() {
 	});
 
 	// VIDEO SWITCH
-	$("#videoBox .vidBox").on("click", function () {
-		$(this).addClass('active').siblings().removeClass('active');
-		APP.srcSwitcher( "#makeupVideo", $(this).attr("data-source") );
-		$('#makeupVideo').show().attr("data-name", $(this).attr("data-element"));
-		$('#prodShell').html("<img class='loader' src='/fashion/images/ajax-loader.gif'/>");
+	// $("#videoBox .vidBox").on("click", function () {
+	// 	$(this).addClass('active').siblings().removeClass('active');
+	// 	APP.srcSwitcher( "#makeupVideo", $(this).attr("data-source") );
+	// 	$('#makeupVideo').show().attr("data-name", $(this).attr("data-element"));
+	// 	$('.prodShell').html("<img class='loader' src='/fashion/images/ajax-loader.gif'/>");
 		
-		APP.updateShop( APP.products[ $(this).attr("data-upc") ].upc );
-	});
+	// 	APP.updateShop( APP.products[ $(this).attr("data-upc") ].upc );
+	// });
 
-	$("#prosLeft").on("click", function () {
+	$(".prosLeft").on("click", function () {
 		APP.currentPage --;
 		if (APP.currentPage < 0) APP.currentPage = APP.markup.length-1;
 
@@ -250,12 +286,12 @@ $(document).ready(function() {
 		});
 
 		html+="</ul>";
-		$('#prodShell').html(html);
-		$('#dotShell .dots.active').removeClass('active');
-		$('#dotShell .dots').eq( APP.currentPage ).addClass('active');
+		$('.prodShell').html(html);
+		$('.dotShell .dots.active').removeClass('active');
+		$('.dotShell .dots').eq( APP.currentPage ).addClass('active');
 	});
 
-	$("#prosRight").on("click", function () {
+	$(".prosRight").on("click", function () {
 		APP.currentPage ++;
 		if (APP.currentPage >= APP.markup.length) APP.currentPage = 0;
 
@@ -265,9 +301,9 @@ $(document).ready(function() {
 		});
 
 		html+="</ul>";
-		$('#prodShell').html(html);
-		$('#dotShell .dots.active').removeClass('active');
-		$('#dotShell .dots').eq( APP.currentPage ).addClass('active');
+		$('.prodShell').html(html);
+		$('.dotShell .dots.active').removeClass('active');
+		$('.dotShell .dots').eq( APP.currentPage ).addClass('active');
 	});
 
 	// COREMETRICS ELEMENT TAGS
@@ -316,8 +352,8 @@ $(document).ready(function() {
 	});
 
 	// dynamic Coremetrics tags for the dynamic video products
-	$("#dynamicPROs").on("click", "li", function() {
-		var prodName = $(this).parents("#dynamicPROs").find(".pagn .cur").text() + $(this).find(".name").text().replace(/\&|\+/g, '').replace(/\s+/g, '-');
+	$(".dynamicPROs").on("click", "li", function() {
+		var prodName = $(this).parents(".dynamicPROs").find(".pagn .cur").text() + $(this).find(".name").text().replace(/\&|\+/g, '').replace(/\s+/g, '-');
 		APP.coremetrics('Element', APP.cm.category, "videos_products-".concat( removeDiacritics( prodName ) ).slice(0, 50) );
 	});
 
