@@ -67,7 +67,6 @@ var APP = {
 		APP.markup = [];
 		APP.currentPage = 0;
 
-
 		// get product data from WSSG
 		SERVICES.product.upcGet(function(res){
 			if ( res === 'error') {
@@ -86,7 +85,11 @@ var APP = {
 				});
 
 				html+="</ul>";
-				$(target).html(html);
+				$(target + " .dynamicPROs .prodShell " ).html(html);
+				if ( products.length <= 3) {
+					$(target + " .arrowBox").hide();
+				}
+
 			}
 		}, data.join(","));
 	},
@@ -150,6 +153,21 @@ $(document).ready(function() {
 
 	APP.stickyNav();
 	APP.heroRotation();
+
+	$.getJSON('/fashion/javascripts/projects/makeup-date/makeup-tutorial/shop.json', function(json) {
+		APP.products = json.products;
+		// console.log('data call complete');
+	}).done( function () {
+		// console.log('starting build');
+
+		// Update Caroussels
+
+		APP.updateShop( APP.products.catEye.upc, '#tips_tricks_2' );
+		APP.updateShop( APP.products.hashtag.upc, '#tips_tricks_7' );
+		APP.updateShop( APP.products.pinkPlump.upc, '#tips_tricks_11' );
+		APP.updateShop( APP.products.topknot.upc, '#tips_tricks_13' );
+
+	});
 
 	$(window).resize( function(){
 		APP.navStart = $("#makeup_hero").height();
