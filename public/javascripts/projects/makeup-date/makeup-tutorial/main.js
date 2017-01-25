@@ -4,7 +4,7 @@
 var APP = {
 	
 	cm: {
-		category: "fall16_makeupdate"
+		category: "spring17_makupdate"
 	},
 	isTablet: $('body').hasClass('bl_tablet') ? true : false,
 	currentPage: 0,
@@ -30,7 +30,8 @@ var APP = {
 	},
 
 	scrollTo: function (tar) {
-		tar = $('#'+tar).offset().top  - $('#navigation').height() + 1 ;
+		//tar = $('#'+tar).offset().top  - $('#navigation').height() + 1 ;
+		tar = 0;
 		$("html, body").animate({scrollTop: tar}, 500);
 	},
 
@@ -77,13 +78,6 @@ var APP = {
 
 	// updates the dynamicPROs
 	updateShop: function( data, carouselId ) {
-		var products,
-			html = "<ul class='shopContainer'>",
-			baseImgURL = "http://images.bloomingdales.com/is/image/BLM/products/4/optimized/",
-			classes = '';
-		
-		APP.markup = [];
-		APP.currentPage = 0;
 
 		// get product data from WSSG
 		SERVICES.product.upcGet(function(res){
@@ -93,29 +87,48 @@ var APP = {
 					'border-top': '1px solid #fff'
 				});
 			} else {
+				var products,
+					html = "<ul class='shopContainer'>",
+					baseImgURL = "http://images.bloomingdales.com/is/image/BLM/products/4/optimized/",
+					li = '';
+
 				products = res.product;
 
 				// build HTML in SHOP THE LOOK section
 				$.each( products, function(i, value) {
-					if ( APP.markup[Math.floor(i/5)] === undefined ) APP.markup[Math.floor(i/5)] = [];
-					var li = "<li class='prod-"+i+"'><a target='_blank' href='"+value.productDetails.summary.productURL+"'><img alt='"+value.productDetails.summary.name+"' src='"+baseImgURL+value.productDetails.primaryImage.imagename+"'><p class='brand'>"+value.productDetails.summary.brand+"</p><p class='name'>"+value.productDetails.summary.name.replace(value.productDetails.summary.brand, '')+"</p></li>";
-					APP.markup[Math.floor(i/5)].push(li);
+					li += '<li class="prod-'+i+'"><a target="_blank" href="'+value.productDetails.summary.productURL+'"><img alt="'+value.productDetails.summary.name+'" src="'+baseImgURL+value.productDetails.primaryImage.imagename+'"><p class="brand">'+value.productDetails.summary.brand+'</p><p class="name">'+value.productDetails.summary.name.replace(value.productDetails.summary.brand, '')+'</p></li>';
 				});
 
-				$.each(APP.markup[APP.currentPage], function(i, value) {
-					html += value;
-				});
-
-				html+="</ul>";
+				html+= li + "</ul>";
 				$( carouselId + ' .prodShell').html(html);
-				$( carouselId + ' .dotShell').html('');
-				for (var i = Math.ceil( products.length/5 ); i>0; i--) {
-					if ( i === Math.ceil( products.length/5 ) ) {classes = 'active';} else { classes = '';} 
-					$( carouselId +  ' .dotShell').append('<li class="dots '+ classes + '"></li>');
-				}
 			}
 			
 		}, data.join(","));
+	},
+
+	updateUPCSingleLink: function( data, element ) {
+		// get product data from WSSG
+		SERVICES.product.upcGet(function(res){
+			if ( res === 'error') {
+				$(element).remove();
+				console.log('Error');
+			} else {
+				var product;
+				product = res.product[0];
+				
+				var	linkHTML = "<strong>"+product.productDetails.summary.brand+"</strong> "+product.productDetails.summary.name.replace(product.productDetails.summary.brand, ''),
+					prodURL = product.productDetails.summary.productURL,
+					cutStart = 'product/',
+					cutEnd = '?',
+					elId = prodURL.substring( prodURL.lastIndexOf( cutStart ) + cutStart.length, prodURL.indexOf( cutEnd )).substring(0,45).replace(/-/g,'_');
+				
+				$( element ).attr( "href", prodURL );
+				$( element ).attr( "data-element", elId );
+				$( element ).html( linkHTML );
+			
+			}
+			
+		}, data );
 	},
 
 	// heroRotation: function() {
@@ -194,6 +207,13 @@ $(document).ready(function() {
 		}, id);
 	});
 
+	$(".upcLink").each(function() {
+		var el = $(this),
+			upc = el.data('upc');
+		
+		APP.updateUPCSingleLink(  upc, el );
+	});
+
 	SERVICES.brightCove.getURL( function(res) {
 		
 		$("#makeupVideo").attr('src', res);
@@ -224,13 +244,15 @@ $(document).ready(function() {
 	}).done( function () {
 		// console.log('starting build');
 
-		console.log('here I am');
-		console.log(APP.products[ APP.productCodes.catEye ].upc);
+		// Update Caroussels
 
 		APP.updateShop( APP.products[ APP.productCodes.catEye ].upc, '#tips_tricks_2' );
 		APP.updateShop( APP.products[ APP.productCodes.hashtag ].upc, '#tips_tricks_7' );
 		APP.updateShop( APP.products[ APP.productCodes.pinkLip ].upc, '#tips_tricks_11' );
-		APP.updateShop( APP.products[ APP.productCodes.topknot ].upc, '#tips_tricks_13' );
+
+
+		// APP.updateShop( APP.products[ APP.productCodes.topknot ].upc, '#tips_tricks_13' );
+
 	});
 
 	$(document).scroll( function() {
