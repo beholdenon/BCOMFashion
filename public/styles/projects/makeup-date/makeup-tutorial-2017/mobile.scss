@@ -191,13 +191,13 @@ section a:active {
 	position: relative;
 	overflow: hidden;
 	transition: 1s;
-	min-height: 32em;
+	// min-height: 32em;
+
 	h3,
 	p {
 		text-align: center;
 		margin: 0;
 		padding: 0;
-		text-transform: uppercase;
 	}
 	h3 {
 		margin-top: 1.5em;
@@ -230,11 +230,42 @@ section a:active {
 .prodShell {
 	min-height: 100px;
 	list-style-type: none;
-	width: 70%;
+	width: 90%;
 	max-width: 1200px;
 	overflow: hidden;
 	margin: 2em auto 1.5em;
 	text-align: center;
+	padding-left: 6%;
+
+.shopContainer {
+	list-style-type: none;
+
+	li {
+		font-size: 3vw;
+		display: inline-block;
+		width: 32%;
+		margin: 0;
+		padding: 0 2.5vw 2.5vw;
+		vertical-align: top;
+
+		.brand,
+		.name {
+			font-family: "Raleway", Arial;
+			font-size: 1em;
+			line-height: 1.25em;
+			margin: 0;
+			padding: 0;
+		}
+
+		.brand {
+			font-weight: bold;
+			text-decoration: underline;
+			margin-bottom: 0.5em;
+		}
+	}
+
+}
+
 }
 
 .prosLeft,
@@ -259,43 +290,47 @@ section a:active {
 	                              not supported by any browser */
 }
 .prosLeft	{ 
-	transform: rotate(45deg);
-	background-color: #000;
-	width: 5vw;
-	height: 5vw;
 	position: absolute;
 	top: 25%;
 	left: 9%;
 	z-index: 10;
 
+	width: 0; 
+	height: 0;
+	border-top: 5vw solid transparent;
+	border-bottom: 5vw solid transparent;
+	border-right: 5vw solid #000;
+
 	.prosLCover {
-		background-color: #e3e9f0;
-	    width: 5vw;
-	    height: 5vw;
-	    position: absolute;
-	    top: -4%;
-	    left: 4%;
-	    z-index: 11;
+		// background-color: #e3e9f0;
+	 //    width: 5vw;
+	 //    height: 5vw;
+	 //    position: absolute;
+	 //    top: -4%;
+	 //    left: 4%;
+	 //    z-index: 11;
 	}
 }
 .prosRight	{ 
-	transform: rotate(45deg);
-	background-color: #000;
-	width: 5vw;
-	height: 5vw;
 	position: absolute;
 	top: 25%;
-	left: 85%;
+	left: 92%;
 	z-index: 10;
 
+	width: 0; 
+	height: 0;
+	border-top: 5vw solid transparent;
+	border-bottom: 5vw solid transparent;
+	border-left: 5vw solid #000;
+
 	.prosRCover {
-		background-color: #e3e9f0;
-		width: 5vw;
-		height: 5vw;
-		position: absolute;
-		top: 4%;
-		left: -4%;
-		z-index: 11;
+		// background-color: #e3e9f0;
+		// width: 5vw;
+		// height: 5vw;
+		// position: absolute;
+		// top: 4%;
+		// left: -4%;
+		// z-index: 11;
 	}
 }
 
@@ -509,6 +544,7 @@ section a:active {
 	padding-top: 1em;
 	min-height: 40em;
 	left: -6%;
+
 	.numberedNoBox {
 		top: 1%;
 		left: 8%;
@@ -523,10 +559,42 @@ section a:active {
 			font-size: 2em;
 		}
 	}
+
+	.videoBox {
+		margin-left: 12%;
+	}
+}
+
+#tips_tricks_7,
+#tips_tricks_11,
+#tips_tricks_13 {
+	background-color: #e3e9f0;
+	padding-top: 1em;
+	min-height: 40em;
+	left: 0;
+
+	.numberedNoBox {
+		top: 1%;
+		left: 0;
+		width: 100%;
+		h1 {
+			font-size: 4.7em;
+		}
+		h2 {
+			font-size: 2.5em;
+		}
+		p {
+			font-size: 2em;
+		}
+	}
+	
+}
+
+.makeupSection {
 	.videoBox {
 		position: relative;
 		width: 91%;
-		margin-left: 12%;
+		margin-left: 6%;
 		margin-top: 24%;
 		padding-bottom: 0;
 		video {
