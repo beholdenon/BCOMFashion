@@ -105,6 +105,7 @@ section a:active {
 	p {
 		span { 
 			font-weight: 800;
+  			font-size: 1.2em;
 		}
 
 		.pinkBg {
@@ -120,7 +121,6 @@ section a:active {
 
 		a {
 			text-decoration: underline;
-			font-weight: 800;
 		}
 	}
 
@@ -330,6 +330,7 @@ section a:active {
 			    a {
 			    	text-decoration: none;
 			    	font-size: 1em;
+			    	font-weight: 800;
 			    }
 			}
 
@@ -360,7 +361,7 @@ section a:active {
 			text-align: center;
 			font-size: 1.25vw;
 			color: #000;
-			padding: 3em 2em;
+			padding: 3em 1.8em;
 
 			span {
 		        display: block;
@@ -469,12 +470,12 @@ section a:active {
 		    .whiteDiagonalBg {
 		        height: 3em;
 			    position: absolute;
-			    width: 115%;
+			    width: 120%;
 			    background-color: white;
 			    transform: rotate(49deg);
 			    z-index: 0;
 			    top: 90px;
-			    left: -3.7em;
+			    left: -5em;
 		    }
 		}
 
@@ -487,8 +488,11 @@ section a:active {
 			font-size: 0.8em;
 
 			a {
-				font-weight: 800;
-				text-decoration: underline;
+
+				strong {
+					font-weight: 800;
+					text-decoration: underline;
+				}
 			}
 		}
 	}
@@ -547,7 +551,7 @@ section a:active {
 	.bottomText {
 		top: 92%;
 	    text-align: right;
-	    left: 66.5%;
+	    left: 58.7%;
 	    p {
 	    	font-size: 0.95em;
 	    }
@@ -575,7 +579,7 @@ section a:active {
 		top: 6%;
     	left: 5.5%;
     	color: #fff;
-    	width: 53%;
+    	width: 54%;
 
     	h1 {
     		font-size: 4.5em;
@@ -596,7 +600,7 @@ section a:active {
 
 	.bottomText {
 		top: 96%;
-    	left: 43.859%;
+    	left: 30.859%;
 
     	p {
     		font-size: 0.78em;
@@ -637,7 +641,7 @@ section a:active {
 
 	.bottomText {
 		top: 96%;
-    	left: 80%;
+    	left: 76.5%;
 	}
 }
 
@@ -693,8 +697,9 @@ section a:active {
 	}
 
 	.bottomText {
-		top: 96%;
-    	left: 6.5%;
+		top: 93.2%;
+	    left: 6.5%;
+	    text-align: left;
 	}
 }
 
@@ -743,7 +748,7 @@ section a:active {
 
 	.bottomText {
 		top: 90%;
-    	left: 68.5%;
+    	left: 60.5%;
     	text-align: right;
 	}
 }
@@ -761,7 +766,7 @@ section a:active {
 		}
 
 		top: 8.5%;
-		width: 57%;
+		width: 58%;
 
 
 		h1 {
@@ -817,15 +822,17 @@ section a:active {
 	}
 
 	.bottomText {
-		top: 93%;
-    	left: 6.5%;
-    	text-align: left;
+		top: 93.8%;
+	    left: 6.5%;
+	    text-align: left;
+	    width: 48%;
 	}
 }
 
 #tips_tricks_12 {
 	.bottomText {
-		left: 61.2%;
+		left: 58.5%;
+    	width: 36%;
 	}
 }
 
@@ -837,7 +844,13 @@ section a:active {
 	}
 
 	.bottomText {
-		left: 54.5%;
+		left: 46.5%;
+	}
+}
+
+#tips_tricks_15 {
+	.bottomText {
+		left: 67.2%;
 	}
 }
 
@@ -966,7 +979,7 @@ section a:active {
 	position: relative;
 	overflow: hidden;
 	transition: 1s;
-	min-height: 32em;
+	min-height: 25em;
 
 	h3,
 	p {
@@ -1016,7 +1029,7 @@ section a:active {
 	width: 70%;
 	max-width: 1200px;
 	overflow: hidden;
-	margin: 2em auto 1.5em;
+	margin: 0 auto 1.5em;
 	text-align: center;
 	
 	.shopContainer {
@@ -1030,7 +1043,7 @@ section a:active {
 		width: 18%;
 		display: inline-block;
 		vertical-align: top;
-		margin: 0 0.55em;
+		margin: 0 1.65em;
 
 		img {
 			max-height: 200px;
@@ -1568,7 +1581,7 @@ section a:active {
 
 #footerPlaceHolder {
 	line-height: 4.5em;
-	height: 7.5em;
+    height: 4.5em;
 }
 
 #book-footer {
@@ -1586,7 +1599,7 @@ section a:active {
 	    font-weight: 800;
 	    color: #000;
 	    font-size: 1.25em;
-	    line-height: 4.5em;
+	    line-height: 2.5em;
 	    margin: 0 1.5em;
 	    text-transform: lowercase;
 	}
@@ -1594,21 +1607,22 @@ section a:active {
 	.backToTop {
 	    position: absolute;
 	    float: right;
-	    line-height: 5.70em;
 	    font-size: 1em;
-	    width: 10em;
+	    width: 9em;
 	    right: 0;
-	    top: 0;
-	    border-left: 1px solid #000;
+	    top: 0px;
+	    border-left: 1px solid gray;
 	    cursor: pointer;
+	    line-height: 3em;
+	    height: 100%;
 
 		span {
-			border-left: 1px solid #000;
-		    border-top: 1px solid #000;
-		    width: 4vw;
-		    height: 4vw;
+		    border-left: 1px solid gray;
+		    border-top: 1px solid gray;
+		    width: 3vw;
+		    height: 3vw;
 		    transform: rotate(45deg);
-		    margin: -1.8em auto;
+		    margin: -1.4em auto;
 		}
 	}
 
