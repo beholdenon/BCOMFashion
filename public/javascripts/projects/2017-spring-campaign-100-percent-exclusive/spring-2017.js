@@ -6,11 +6,11 @@ $(document).ready( function($) {
 
 	var social = {
 		facebookTitle: '100% Bloomingdale\'s | bloomingdales.com',
-		facebookDescription: 'The fall collections are here! Don\'t miss any of these utterly unique, extremely exclusive designer collaborations.',
-		facebookImageFileName: 'F16_100Percent_Facebook.jpg',
-		twitterTitle: 'The 100% Bloomingdale\'s fall collections are here! Don\'t miss any of these exclusive designer collaborations! http://fashion.bloomingdales.com/2016-fall-campaign-100-percent-exclusive/',
-		pinterestTitle: '100% Bloomingdale\'s',
-		pinterestImageFileName: 'F16_100Percent_Pinterest.jpg',
+		facebookDescription: 'Exclusive Pieces Created Just for Us (and You)',
+		facebookImageFileName: 'S17_Spring-Facebook.jpg',
+		twitterTitle: 'The new 100% @bloomingdales collection is here—and it\'s full of standout pieces from their exclusive designer collaborations!  http://fashion.bloomingdales.com/2017-spring-campaign-100-percent-exclusive/',
+		pinterestTitle: '100% Bloomingdale\'s | bloomingdales.com',
+		pinterestImageFileName: 'S17_Spring-Pinterest.jpg',
 		facebookURL: null,
 		twitterURL: null,
 		pinterestURL: null    
@@ -18,7 +18,7 @@ $(document).ready( function($) {
 	
 	function socialSetup () {
         var baseURL = 'http://' + window.location.host + window.location.pathname,
-            baseURLAssets = 'http://' + window.location.host + '/fashion/images/projects/2016-fall-campaign-100-percent-exclusive/';
+            baseURLAssets = 'http://' + window.location.host + '/fashion/images/projects/2017-spring-campaign-100-percent-exclusive/';
 
         var facebookURL = 'https://www.facebook.com/dialog/feed';
         facebookURL += '?app_id=145634995501895';
@@ -36,10 +36,10 @@ $(document).ready( function($) {
         pinterestURL += '&media=' + encodeURIComponent(baseURLAssets + social.pinterestImageFileName);
         pinterestURL += '&description=' + encodeURIComponent(social.pinterestTitle);
 
-        $('#facebookLink').attr('href', facebookURL);
-        $('#instagramLink').attr('href', "https://www.instagram.com/bloomingdales/");
-        $('#pinterestLink').attr('href', pinterestURL);
-        $('#twitterLink').attr('href', twitterURL);
+        $('.facebookLink').attr('href', facebookURL);
+        $('.instagramLink').attr('href', "https://www.instagram.com/bloomingdales/");
+        $('.pinterestLink').attr('href', pinterestURL);
+        $('.twitterLink').attr('href', twitterURL);
 
     }
 
@@ -69,28 +69,47 @@ $(document).ready( function($) {
 //===============================================================================================================//
 //===============================================================================================================//
 
-    $( window ).on( "scroll resize", function( ) {
-        checkPlayOnceVideos();
+    $('.backToTop').on('click', function(event){
+        event.preventDefault();
+        $('body,html').animate({
+            scrollTop: 0 ,
+            }, 700
+        );
     });
 
-    function checkPlayOnceVideos() {
-        $( ".play_once_videos" ).each( function() {
-            if( !$(this).hasClass("played") ){
-                if( $(this).isVisible() === true){
-                    $(this)[0].play();
-                    $(this).addClass("played");
-                }else{
-                    $(this)[0].pause();
-                }
-            }
-        });
-    }
 
+
+    // $( window ).on( "scroll resize", function( ) {
+    //     checkPlayOnceVideos();
+    // });
+
+    // function checkPlayOnceVideos() {
+    //     $( ".play_once_videos" ).each( function() {
+    //         if( !$(this).hasClass("played") ){
+    //             if( $(this).isVisible() === true){
+    //                 $(this)[0].play();
+    //                 $(this).addClass("played");
+    //             }else{
+    //                 $(this)[0].pause();
+    //             }
+    //         }
+    //     });
+    // }
+
+/*
+        $(document).click(function(event) {
+            $.fn.trace("whahah"+event.target+"   asdfasdf");
+
+            // if (e.target.id !== 'spring17_topnav_women' && e.target.id !== 'spring17_topnav_men' && e.target.id !== 'spring17_topnav_home' && !$('#info').find(e.target).length  ) {
+            //     $(".spring17_topnav_menucontent").children('ul').removeClass( "submenu_open" );
+            // }
+        });
+*/
+    
     $( window ).on( "load resize", function( ) {
         if( !isDevice() )$('#spring17_topnav').find('.spring17_topnav_active').find('.spring17_topnav_underline').addClass('spring17_topnav_underline_drawn');
         else $('#spring17_topnav').find('.spring17_topnav_active').find('.spring17_topnav_underline').removeClass('spring17_topnav_underline_drawn');
     });
-
 
 	$( window ).load(function() {
         
@@ -106,15 +125,7 @@ $(document).ready( function($) {
             $(this).parent().children('ul').toggleClass( 'mobile_menu_opened' );
             $(this).parent().find('.spring17_topnav_animated').removeClass( 'submenu_open' );       
         });
-/*
-        $(document).click(function(event) {
-            $.fn.trace("whahah"+event.target+"   asdfasdf");
 
-            // if (e.target.id !== 'spring17_topnav_women' && e.target.id !== 'spring17_topnav_men' && e.target.id !== 'spring17_topnav_home' && !$('#info').find(e.target).length  ) {
-            //     $(".spring17_topnav_menucontent").children('ul').removeClass( "submenu_open" );
-            // }
-        });
-*/
 	    socialSetup();
 
 	    $('[coremetricTag]').click(function() {
