@@ -17,13 +17,13 @@ var APP = {
 	],
 
 	stickyNav: function () {
-		// below starting position of nav
-		if ( $(document).scrollTop() > APP.navStart + $("header").height() ) {
-			$('#stickyNav').css('top', $(document).scrollTop() - $("header").height() - 5 + 'px');
 		
-		// above starting position of nav
-		} else if ( $(document).scrollTop() <= APP.navStart ) {
-			$('#stickyNav').css('top', APP.navStart + 'px');
+		if ( $(document).scrollTop() + document.documentElement.clientHeight > $('#footerPlaceHolder').offset().top + $('#footerPlaceHolder').height() ) {
+			$('#book-footer').css('bottom', $('footer').height() );
+			$('#book-footer').css('position', 'absolute' );
+		} else {
+			$('#book-footer').css('bottom', 0 );
+			$('#book-footer').css('position', 'fixed' );
 		}
 	},
 
@@ -67,7 +67,6 @@ var APP = {
 		APP.markup = [];
 		APP.currentPage = 0;
 
-
 		// get product data from WSSG
 		SERVICES.product.upcGet(function(res){
 			if ( res === 'error') {
@@ -86,7 +85,11 @@ var APP = {
 				});
 
 				html+="</ul>";
-				$(target).html(html);
+				$(target + " .dynamicPROs .prodShell " ).html(html);
+				if ( products.length <= 3) {
+					$(target + " .arrowBox").hide();
+				}
+
 			}
 		}, data.join(","));
 	},
@@ -150,6 +153,24 @@ $(document).ready(function() {
 
 	APP.stickyNav();
 	APP.heroRotation();
+
+	var navFooter = $('#book-footer');
+	$('body').append( navFooter );
+
+	$.getJSON('/fashion/javascripts/projects/makeup-date/makeup-tutorial/shop.json', function(json) {
+		APP.products = json.products;
+		// console.log('data call complete');d
+	}).done( function () {
+		// console.log('starting build');
+
+		// Update Caroussels
+
+		APP.updateShop( APP.products.catEye.upc, '#tips_tricks_2' );
+		APP.updateShop( APP.products.hashtag.upc, '#tips_tricks_7' );
+		APP.updateShop( APP.products.pinkPlump.upc, '#tips_tricks_11' );
+		APP.updateShop( APP.products.topknot.upc, '#tips_tricks_13' );
+
+	});
 
 	$(window).resize( function(){
 		APP.navStart = $("#makeup_hero").height();
