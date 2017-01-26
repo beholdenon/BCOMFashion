@@ -17,13 +17,13 @@ var APP = {
 	],
 
 	stickyNav: function () {
-		// below starting position of nav
-		if ( $(document).scrollTop() > APP.navStart + $("header").height() ) {
-			$('#stickyNav').css('top', $(document).scrollTop() - $("header").height() - 5 + 'px');
 		
-		// above starting position of nav
-		} else if ( $(document).scrollTop() <= APP.navStart ) {
-			$('#stickyNav').css('top', APP.navStart + 'px');
+		if ( $(document).scrollTop() + document.documentElement.clientHeight > $('#footerPlaceHolder').offset().top + $('#footerPlaceHolder').height() ) {
+			$('#book-footer').css('bottom', $('footer').height() );
+			$('#book-footer').css('position', 'absolute' );
+		} else {
+			$('#book-footer').css('bottom', 0 );
+			$('#book-footer').css('position', 'fixed' );
 		}
 	},
 
@@ -154,9 +154,12 @@ $(document).ready(function() {
 	APP.stickyNav();
 	APP.heroRotation();
 
+	var navFooter = $('#book-footer');
+	$('body').append( navFooter );
+
 	$.getJSON('/fashion/javascripts/projects/makeup-date/makeup-tutorial/shop.json', function(json) {
 		APP.products = json.products;
-		// console.log('data call complete');
+		// console.log('data call complete');d
 	}).done( function () {
 		// console.log('starting build');
 
