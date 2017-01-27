@@ -76,7 +76,7 @@ var APP = {
 				APP.markup = [];
 				// build HTML in SHOP THE LOOK section
 				$.each( products, function(i, value) {
-					var li = "<li class='prod-"+i+"' data-attribute='29:"+value.id+"' ><a href='"+value.productDetails.summary.productURL+"' ><img alt='"+value.productDetails.summary.name+"' src='"+baseImgURL+value.productDetails.primaryImage.imagename+"'><p class='brand'>"+value.productDetails.summary.brand+"</p><p class='name'>"+value.productDetails.summary.name.replace(value.productDetails.summary.brand, '')+"</p></li>";
+					var li = '<li class="prod-'+i+'"><a target="_blank" href="'+value.productDetails.summary.productURL+'"><img alt="'+value.productDetails.summary.name+'" src="'+baseImgURL+value.productDetails.primaryImage.imagename+'"><p class="brand">'+value.productDetails.summary.brand+'</p><p class="name">'+value.productDetails.summary.name.replace(value.productDetails.summary.brand, '')+'</p></li>';
 					APP.markup.push(li);
 				});
 

@@ -194,6 +194,10 @@ $(document).ready(function() {
 		APP.navStart = $("header").height() + $("#makeup_hero").height() + 1;
 		APP.stickyNav();
 	}, 3000);
+
+	$(window).one( 'scroll', function () {
+		$('#book-footer').show();
+	} );
 	
 	// Init the image swapping for the hero image
 	// APP.heroRotation();
@@ -214,17 +218,17 @@ $(document).ready(function() {
 		APP.updateUPCSingleLink(  upc, el );
 	});
 
-	SERVICES.brightCove.getURL( function(res) {
+	// SERVICES.brightCove.getURL( function(res) {
 		
-		$("#makeupVideo").attr('src', res);
+	// 	$("#makeupVideo").attr('src', res);
 		
-		setTimeout(function () {
-			$('.playlist .vidBox').css({
-				'height': APP.resizeVideoThumbnails() + 'px'
-			});
-		}, 100);
+	// 	setTimeout(function () {
+	// 		$('.playlist .vidBox').css({
+	// 			'height': APP.resizeVideoThumbnails() + 'px'
+	// 		});
+	// 	}, 100);
 
-	}, $("#makeupVideo").attr('data-id') );
+	// }, $("#makeupVideo").attr('data-id') );
 
 	// $('.playlist .vidBox').css('height', APP.resizeVideoThumbnails() + 'px');
 
@@ -249,9 +253,7 @@ $(document).ready(function() {
 		APP.updateShop( APP.products[ APP.productCodes.catEye ].upc, '#tips_tricks_2' );
 		APP.updateShop( APP.products[ APP.productCodes.hashtag ].upc, '#tips_tricks_7' );
 		APP.updateShop( APP.products[ APP.productCodes.pinkLip ].upc, '#tips_tricks_11' );
-
-
-		// APP.updateShop( APP.products[ APP.productCodes.topknot ].upc, '#tips_tricks_13' );
+		APP.updateShop( APP.products[ APP.productCodes.topknot ].upc, '#tips_tricks_13' );
 
 	});
 
