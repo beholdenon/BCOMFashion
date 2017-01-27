@@ -1,4 +1,90 @@
 //=================================================================//
+//WOMEN
+//=================================================================//
+.spring17_maxwidth_1680{
+    .row{
+        position:relative;
+    }
+
+}
+.women1_text1{
+    letter-spacing: 5px;
+    font-size: 16px;
+    padding-top: 70px;
+    margin-bottom: 0;
+}
+
+.women1_text2{
+    font-size: 45px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    margin: 0;
+}
+
+.women1_text3{
+    font-size: 15px;
+    line-height: 26px;
+    padding-top: 4px;
+}
+
+.women1_text4{
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+    width: 37vw;
+    max-width: 630px;
+
+    margin: 0 auto;
+    padding-top: 13px;
+    padding-bottom: 60px;
+
+    a{
+        color:black;
+    }
+}
+.whitespace_nowrap{
+    white-space:nowrap;
+}
+
+
+
+.women1_painttext1{
+    position: absolute;
+    top: 8vw;
+    left: 27.5vw;
+    color: white;
+    font-size: 2.3vw;
+    text-align: left;
+}
+.women1_painttext2{
+    position: absolute;
+    top: 11vw;
+    left: 27.5vw;
+    color: white;
+    font-size: 1.3vw;
+    text-align: left;
+}
+.women1_painttext3{
+    position: absolute;
+    top: 13.4vw;
+    left: 27.5vw;
+    color: white;
+    font-size: 1.4vw;
+    text-align: left;
+    max-width: 34vw;
+}
+
+
+
+
+@media screen and (max-width:600px) {
+    .women1_text4{
+        width: inherit;
+    }
+}
+
+//=================================================================//
 //LANDING
 //=================================================================//
 .spring17_maxwidth_1680{

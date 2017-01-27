@@ -2,8 +2,6 @@ $(document).ready( function($) {
 
 	'use strict';
 
-    //$('body').removeClass('bl_trulyResponsive');
-
 	var social = {
 		facebookTitle: '100% Bloomingdale\'s | bloomingdales.com',
 		facebookDescription: 'Exclusive Pieces Created Just for Us (and You)',
@@ -111,9 +109,23 @@ $(document).ready( function($) {
         else $('#spring17_topnav').find('.spring17_topnav_active').find('.spring17_topnav_underline').removeClass('spring17_topnav_underline_drawn');
     });
 
+    var pageDict = {
+        "2017-spring-campaign-100-percent-exclusive" : "spring17_100percent--hp",
+        "womens-designer-clothing" : "spring17_100percent--womens",
+        "mens-designer-clothing" : "spring17_100percent--mens",
+        "home-decor-dinnerware" : "spring17_100percent--home"
+    };    
+
+    $.fn.currentPageName = function() {
+        var pathname = window.location.pathname;
+        var res = pathname.split("/");
+        if( res[res.length-1] === "" ) return res[res.length-2];
+        else return res[res.length-1];
+    };
+
 	$( window ).load(function() {
-        
-        //$.fn.coreTag('Pageview', 'spring17_100percent-coming_soon' );
+        $.fn.trace($.fn.currentPageName());
+        $.fn.coreTag('Pageview', pageDict[$.fn.currentPageName()] );
 
         $('#spring17_topnav_women, #spring17_topnav_men, #spring17_topnav_home').click(function() {
             $(this).siblings().find('ul').removeClass( "submenu_open" );
