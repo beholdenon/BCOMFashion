@@ -277,13 +277,14 @@ section a:active {
 
 .shopContainer {
 	list-style-type: none;
+	margin-bottom: 0.25em;
 
 	li {
 	    font-size: 3vw;
 	    display: inline-block;
 	    width: 20%;
 	    margin: 0;
-	    padding: 0 0.15em 2.5vw;
+	    padding: 0 0.15em 2vw;
 	    vertical-align: top;
 
 		.brand,
@@ -430,7 +431,7 @@ section a:active {
 		color: #ffffff;
 		z-index: 10;
 		h1 {
-			font-size: 6.5em;
+			font-size: 6.1em;
 			color: inherit;
 			letter-spacing: 0.2em;
 			font-weight: 900;
@@ -662,7 +663,7 @@ section a:active {
     	h1 {
     		padding: 0;
     		font-weight: 800;
-    		font-size: 4.5em;
+    		font-size: 4em;
 		    letter-spacing: 0.265em;
 		    margin: 0.09em auto 0;
 		    line-height: 1.2em;

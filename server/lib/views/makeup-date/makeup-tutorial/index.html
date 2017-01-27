@@ -77,7 +77,7 @@
         <span>2</span>
         <h2>Quick &amp; Flirty How-To</h2>
         <h1>The Easiest<br>Cat-Eye Ever</h1>
-        <p>Really&mdash;it&rsquo;s only three steps.</p>
+        <p>Really&mdash;it&rsquo;s only four steps.</p>
         <div class="whiteDiagonalBg"></div>
     </div>
 
@@ -115,7 +115,7 @@
     </div>
 
     <div class="bottomText">
-        <p><a href="" class="upcLink" data-upc="3700431400536" data-element=""></a></p>
+        <p><a href="" class="upcLink" data-upc="3700431400536" data-element=""></a>, <a href="" class="upcLink" data-upc="3700431400475" data-element=""></a></p>
     </div>
     
 </section>
@@ -331,7 +331,7 @@
     <img class="blockImage" src="/fashion/images/projects/makeup-date/makeup-tutorial/2017_makeup_tips15.jpg" alt="How to Apply Makeup Using Fingertips - Bloomingdale's"/>
     <div class="numberedBox">
         <span>15</span>
-        <h2>Try the<br>Two-Finger<br>Blush Rule</h2>
+        <h2>Try the Two-Finger<br>Blush Rule</h2>
         <p>Place two fingertips next to the base of your nose to create a guide for applying blush. This way, you don&rsquo;t put the color too low or too close to your mouth.</p>
         <a href="http://www1.bloomingdales.com/shop/beauty/all-makeup/Makeup_type/Blushes?id=14720" data-element="shop_blushes">shop blushes</a>
     </div>
@@ -402,29 +402,14 @@
 
 <script type="application/javascript" src="/fashion/javascripts/libs/jquery-1.11.2.min.js"></script>
 <script type="text/javascript">
-    // (function() {
-    //     var currentDate = new Date(),
-    //         endPromotion = new Date( 2016, 11, 17 ); // post event #1, after December 17, 2016
-    //         endEvents = new Date( 2017, 0, 28 ); // post event #2, after January 28th, 2017
+    (function() {
+        var currentDate = new Date(),
+            endPromotion = new Date( 2017, 01, 15 ); 
+        if ( currentDate >= endPromotion ) {
+            $("#makeup_offer, #makeup_gwp, #sweepstakes").remove();            
+        }
 
-    //     if ( currentDate >= endPromotion ) {
-    //         $("#makeup_hero .subHeader, #makeup_hero .smallHeader, #gift-with-purchase, #samples, #sweepstakes, .backToTop .upArrow, .backToTop .upCover, #makeup_hero .pinkBg, #makeup_hero .points, #makeup_hero .legal").remove();
-    //         $("[data-element='nav_sweepstakes'], [data-element='nav_exclusive-gift']").remove();
-    //         $("#book-footer").css('background-color', '#ffffff');
-    //         $("#book-footer span, #book-footer a").css('color',"#000000");
-            
-
-    //         $(".backToTop").css({
-    //             'color': "#ffffff",
-    //             'background-color': '#000000'
-    //         });
-    //     }
-
-    //     if ( currentDate >= endEvents ) {
-    //         $("#celebrate-in-store .events").remove();
-    //         $('#celebrate-in-store .post-event').show();
-    //     }
-    // })();
+    })();
 </script>
 
 <script type="application/javascript" src="/fashion/javascripts/includes/wssg.js"></script>
