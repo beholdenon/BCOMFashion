@@ -1,5 +1,5 @@
 // 2017 Makeup Date - Mobile
-$lightPink: #e3999b;
+$lightPink: #E8D1D6;
 $loyallist: #453894;
 
 body {
@@ -57,12 +57,12 @@ section a:active {
 			display: block;
 		    border: 2px solid #fff;
 		    border-radius: 100%;
-		    width: 1.5em;
+		    width: 1.8em;
 		    font-size: 2.55em;
 		    font-weight: 600;
 		    text-align: center;
-		    line-height: 1.1em;
-		    height: 1.5em;
+		    line-height: 1.3em;
+		    height: 1.8em;
 		    color: #fff;
 		}
 
@@ -89,123 +89,128 @@ section a:active {
 
     }
 	.numberedBox {
-			border: 2px solid #000;
-			position: absolute;
-			text-align: center;
-			font-size: 1.25vw;
-			color: #000;
-			padding: 3em 2em;
-			span {
-				display: block;
-				background-color: #fff;
-				border: 2px solid #000;
-				border-radius: 100%;
-				width: 1.5em;
-				margin: -2.025em auto 0.25em;
-				font-size: 2.45em;
-				font-weight: 600;
-				text-align: center;
-				line-height: 1.15em;
-				height: 1.5em;
-			}
-			h2 {
-				font-size: 3em;
-				letter-spacing: 0.1em;
-				font-weight: 800;
-				color: inherit;
-			}
-			p {
-			    font-size: 2.01em;
-			    margin: 0.35em auto 0.75em;
-			    line-height: 1.35;
-			    font-weight: 400;
-			    letter-spacing: 0.05em;
-			    word-spacing: 0.05em;
-			    width: 94.15%;
-			}
-			a {
-				text-decoration: underline;
-				font-size: 2em;
-				font-weight: 800;
-				display: block;
-				margin-top: 1.1em;
-			}
+		border: 2px solid #000;
+		position: absolute;
+		text-align: center;
+		font-size: 1.25vw;
+		color: #000;
+		padding: 3em 2em;
+		span {
+			    display: block;
+			    background-color: #fff;
+			    border: 2px solid #000;
+			    border-radius: 100%;
+			    width: 1.8em;
+			    margin: -2.225em auto 0.25em;
+			    font-size: 2.45em;
+			    font-weight: 600;
+			    text-align: center;
+			    line-height: 1.35em;
+			    height: 1.8em;
 		}
-		.numberedNoBox {
-			position: absolute;
-			text-align: center;
-			font-size: 1.25vw;
-			color: #000;
-			overflow: hidden;
-			padding: 1em 0 1.5em;
-
-			span {
-				display: block;
-				background-color: #fff;
-				border: 2px solid #000;
-				border-radius: 100%;
-				width: 1.5em;
-				font-size: 2.45em;
-				font-weight: 600;
-				text-align: center;
-				line-height: 1.15em;
-				height: 1.5em;
-				margin: auto;
-			}
-
-			h1 {
-				font-size: 2.65375em;
-				letter-spacing: 0.15em;
-				font-weight: 900;
-				color: inherit;
-				position: relative;
-				z-index: 1;
-				line-height: 1.1;
-			}
-
-			h2 {
-				font-size: 1.6em;
-				font-weight: 800;
-				color: inherit;
-				position: relative;
-				z-index: 1;
-				margin: 0.25em;
-				letter-spacing: 0.04em;
-				border-bottom: 1px solid #000;
-				display: inline-block;
-			}
-
-			p {
-				font-size: 1.125em;
-				margin: 0.35em auto 0.75em;
-				line-height: 1.3;
-				font-weight: 400;
-				letter-spacing: 0.05em;
-				word-spacing: 0.05em;
-				width: 93%;
-				position: relative;
-				z-index: 1;
-			}
-
-			a {
-				text-decoration: underline;
-				font-size: 1.4em;
-				font-weight: 800;
-				display: block;
-				margin-top: 1.1em;
-			}
-
-			.whiteDiagonalBg {
-				height: 5em;
-				position: absolute;
-				width: 115%;
-				background-color: white;
-				transform: rotate(49deg);
-				z-index: 0;
-				top: 90px;
-				left: -3.7em;
-			}
+		h2 {
+			font-size: 3em;
+			letter-spacing: 0.1em;
+			font-weight: 800;
+			color: inherit;
 		}
+		p {
+		    font-size: 2.01em;
+		    margin: 0.35em auto 0.75em;
+		    line-height: 1.35;
+		    font-weight: 400;
+		    letter-spacing: 0.05em;
+		    word-spacing: 0.05em;
+		    width: 94.15%;
+		}
+		a {
+			text-decoration: underline;
+			font-size: 2em;
+			font-weight: 800;
+			display: block;
+			margin-top: 1.1em;
+		}
+	}
+	.numberedNoBox {
+		position: absolute;
+		text-align: center;
+		font-size: 1.25vw;
+		color: #000;
+		overflow: hidden;
+		padding: 1em 0 1.5em;
+
+		span {
+			display: block;
+		    background-color: #fff;
+		    border: 2px solid #000;
+		    border-radius: 100%;
+		    width: 1.8em;
+		    font-size: 2.45em;
+		    font-weight: 600;
+		    text-align: center;
+		    line-height: 1.35em;
+		    height: 1.8em;
+		    margin: auto;
+		}
+
+		h1 {
+			font-size: 2.65375em;
+			letter-spacing: 0.15em;
+			font-weight: 900;
+			color: inherit;
+			position: relative;
+			z-index: 1;
+			line-height: 1.1;
+		}
+
+		h2 {
+			font-size: 1.6em;
+			font-weight: 800;
+			color: inherit;
+			position: relative;
+			z-index: 1;
+			margin: 0.25em;
+			letter-spacing: 0.04em;
+			border-bottom: 1px solid #000;
+			display: inline-block;
+		}
+
+		p {
+			font-size: 1.125em;
+			margin: 0.35em auto 0.75em;
+			line-height: 1.3;
+			font-weight: 400;
+			letter-spacing: 0.05em;
+			word-spacing: 0.05em;
+			width: 93%;
+			position: relative;
+			z-index: 1;
+		}
+
+		a {
+			text-decoration: underline;
+			font-size: 1.4em;
+			font-weight: 800;
+			display: block;
+			margin-top: 1.1em;
+		}
+
+		.whiteDiagonalBg {
+			height: 5em;
+			position: absolute;
+			width: 115%;
+			background-color: white;
+			transform: rotate(49deg);
+			z-index: 0;
+			top: 90px;
+			left: -3.7em;
+		}
+	}
+
+	.imageryLink {
+		position: absolute;
+		content: " ";
+	}
 }
 
 .videoBox {
@@ -244,7 +249,7 @@ section a:active {
 	}
 	.dotShell {
 		display: block;
-		margin: 0 auto 2vw;
+		margin: 0 auto 0vw;
 		text-align: center;
 		.dots {
 			background-color: #fff;
@@ -264,22 +269,22 @@ section a:active {
 .prodShell {
 	min-height: 100px;
 	list-style-type: none;
-	width: 90%;
+	width: 100%;
 	max-width: 1200px;
 	overflow: hidden;
-	margin: 2em auto 1.5em;
+	margin: 2em auto 0em;
 	text-align: center;
 
 .shopContainer {
 	list-style-type: none;
 
 	li {
-		font-size: 3vw;
-		display: inline-block;
-		width: 32%;
-		margin: 0;
-		padding: 0 2.5vw 2.5vw;
-		vertical-align: top;
+	    font-size: 3vw;
+	    display: inline-block;
+	    width: 20%;
+	    margin: 0;
+	    padding: 0 0.15em 2.5vw;
+	    vertical-align: top;
 
 		.brand,
 		.name {
@@ -450,10 +455,10 @@ section a:active {
 			}
 		}
 		p {
-		    width: 96%;
+		    width: 100%;
 		    line-height: 1.6em;
 		    letter-spacing: 0.075em;
-		    font-size: 1.65em;
+		    font-size: 2.1em;
 			&.legal {
 				font-family: "Open Sans", sans-serif;
 				font-size: 0.85em;
@@ -473,13 +478,14 @@ section a:active {
         width: 100%;
 		.title {
 			// Using 5em since font-size of parent is small
-			font-size: 5em;
+			font-size: 4.5em;
+			font-weight: 700;
 			a {
 				text-decoration: none;
 			}
 		}
         .titleSubText {
-            font-size: 2.5em;
+            font-size: 2.25em;
             margin-bottom: 0.5em;
         }
         #gwpLinks {
@@ -562,6 +568,12 @@ section a:active {
 	    top: 80%;
 	    left: 51.73333%;
 	}
+	.imageryLink {
+		width: 45.333333333%;
+	    top: 80%;
+	    left: 51.73333%;
+	    height: 30%;	
+	}
 }
 
 #tips_tricks_1 {
@@ -573,7 +585,7 @@ section a:active {
 #tips_tricks_2 {
 	background-color: #e3e9f0;
 	padding-top: 1em;
-	min-height: 40em;
+	min-height: 25em;
 
 	.numberedNoBox {
 		top: 1%;
@@ -595,7 +607,7 @@ section a:active {
 #tips_tricks_13 {
 	background-color: #e3e9f0;
 	padding-top: 1em;
-	min-height: 40em;
+	min-height: 25em;
 	left: 0;
 
 	.numberedNoBox {
@@ -634,6 +646,13 @@ section a:active {
 	
 	margin-top: 10vw;
 
+	.imageryLink {
+		width: 100%;
+	    top: 0%;
+	    left: 0%;
+	    height: 100%;	
+	}
+
 	.copy {
 		top: 6%;
     	left: 5.5%;
@@ -651,15 +670,22 @@ section a:active {
     	}
 
     	p {
-    		margin: 0.2em 0.15em;
-		    font-size: 1.6em;
-		    width: 70%;
-		    font-weight: 600;
+    	    margin: 0.2em 0.15em;
+		    font-size: 2em;
+		    width: 90%;
+		    font-weight: normal;
 		    letter-spacing: 0.07em;
-		    line-height: 1.28;
+		    line-height: 1.2;
     	}
 	}
 
+}
+#tips_tricks_3 {
+	.copy{
+		a.makeupButton {
+			margin-top: 0.5em;
+		}
+	} 
 }
 
 #tips_tricks_4 {
@@ -670,6 +696,13 @@ section a:active {
 		width: 53.33333333%;
 		margin-left: 42%;
 		margin-top: 10%;
+	}
+
+	.imageryLink {
+		width: 53.33333333%;
+	    top: 12%;
+	    left: 42%;
+	    height: 88%;
 	}
 
 	.numberedBox {
@@ -724,6 +757,13 @@ section a:active {
 		margin-left: 6%;
 	}
 
+	.imageryLink {
+	    width: 54%;
+	    top: 0%;
+	    left: 6%;
+	    height: 100%;
+	}
+
 	.numberedBox {
 		left: 56.833333333%;
 		top: 6.25%;
@@ -731,8 +771,7 @@ section a:active {
 		
 
 		span {
-			line-height: 1.3em;
-    		padding-right: 0.05em;
+			line-height: 1.5em;
 		}
 			
 
@@ -756,6 +795,13 @@ section a:active {
 	.blockImage {
 		width: 60%;
 		margin-left: 0%;
+	}
+
+	.imageryLink {
+	    width: 60%;
+	    top: 9%;
+	    left: 0%;
+	    height: 75%;
 	}
 
 	.numberedBox {
@@ -837,7 +883,7 @@ section a:active {
 		padding: 3em 1.5em;
 
 		span {
-			line-height: 1.2em;
+			padding-left: 0.1em;
 		}
 
 		p {
@@ -867,6 +913,9 @@ section a:active {
 }
 
 #tips_tricks_12 {
+	.imageryLink {
+		height: 34.5%;
+	}
 	.numberedBox {
 		p {
 			width: 95.15%;
@@ -900,10 +949,15 @@ section a:active {
 	    margin-top: 15%;
 	    margin-left: 40%;
 	}
-
+	
 	.floatImage {
 		left: 5.5%;
 		top: 77%;
+	}
+	.imageryLink {
+	    top: 77%;
+	    left: 5.5%;
+	    height: 32%;
 	}
 }
 
@@ -953,7 +1007,7 @@ section a:active {
 
 #footerPlaceHolder {
 	line-height: 2.5em;
-    height: 2.5em;
+    height: 2.15em;
 }
 
 #book-footer {
@@ -965,6 +1019,7 @@ section a:active {
     bottom: 0;
     z-index: 99;
     padding-left: 2.5%;
+    display: none;
 
 	span, a {
 	    display: inline-block;
@@ -972,7 +1027,7 @@ section a:active {
 	    font-weight: 800;
 	    color: #000;
 	    font-size: 2.25em;
-	    line-height: 2.5em;
+	    line-height: 3.5em;
 	    margin: 0 1.5em;
 	    text-transform: lowercase;
 	}
@@ -981,7 +1036,7 @@ section a:active {
 	    position: absolute;
 	    float: right;
 	    font-size: 1em;
-	    width: 10em;
+	    width: 11em;
 	    right: 0;
 	    top: 0px;
 	    border-left: 1px solid gray;
@@ -996,7 +1051,7 @@ section a:active {
 		    width: 3vw;
 		    height: 3vw;
 		    transform: rotate(45deg);
-		    margin: -1.4em auto;
+		    margin: -1.8em auto;
 		}
 	}
 
