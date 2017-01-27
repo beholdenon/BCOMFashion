@@ -27,9 +27,9 @@ var APP = {
 		}
 	},
 
-	scrollTo: function (tar) {
-		tar = $('#'+tar).offset().top - $('#stickyNav').height() + 5 ;
-		$("html, body").animate({scrollTop: tar}, 500);
+	scrollTo: function () {
+		
+		$("html, body").animate({scrollTop: 0}, 500);
 	},
 
 	srcSwitcher: function (target, source) {
@@ -86,8 +86,10 @@ var APP = {
 
 				html+="</ul>";
 				$(target + " .dynamicPROs .prodShell " ).html(html);
-				if ( products.length <= 3) {
+				if ( products.length <= 5) {
 					$(target + " .arrowBox").hide();
+					$(target + " .dotShell").hide();
+					
 				}
 
 			}
@@ -157,6 +159,10 @@ $(document).ready(function() {
 	var navFooter = $('#book-footer');
 	$('body').append( navFooter );
 
+	$(window).one( 'scroll', function () {
+		$('#book-footer').show();
+	} );	
+
 	$.getJSON('/fashion/javascripts/projects/makeup-date/makeup-tutorial/shop.json', function(json) {
 		APP.products = json.products;
 		// console.log('data call complete');d
@@ -175,15 +181,6 @@ $(document).ready(function() {
 	$(window).resize( function(){
 		APP.navStart = $("#makeup_hero").height();
 		APP.stickyNav();
-	});
-
-	$("video").each(function() {
-		var tar = $(this),
-			id = tar.attr('data-id');
-		
-		SERVICES.brightCove.getURL( function(res) {
-			tar.attr('src', res);
-		}, id);
 	});
 
 	$.getJSON('/fashion/javascripts/projects/makeup-date/makeup-tutorial/shop.json', function( json ) {
@@ -245,7 +242,7 @@ $(document).ready(function() {
 
 	// interaction for clicking a nav link and scrolling to target
 	$(".point").on("click", function () {
-		APP.scrollTo( $(this).attr("data-scroll") );
+		APP.scrollTo( );
 	});
 
 	// coremetrics events
@@ -267,19 +264,19 @@ $(document).ready(function() {
 
 	});
 
-	$(".videoShop").on("click", ".shopContainer li", function () {
-		var product = removeDiacritics( $(this).find(".name").text() ).trim().replace(/\&|\+/g, '').replace(/\s+/g, '-'),
-			parent = $(this).parents("section"),
-			attr = $(this).attr('data-attribute'),
-			attrNum = attr.substring(0, attr.indexOf(':')),
-			attrVal = attr.substring(attr.indexOf(':')+1);
+	// $(".videoShop").on("click", ".shopContainer li", function () {
+	// 	var product = removeDiacritics( $(this).find(".name").text() ).trim().replace(/\&|\+/g, '').replace(/\s+/g, '-'),
+	// 		parent = $(this).parents("section"),
+	// 		attr = $(this).attr('data-attribute'),
+	// 		attrNum = attr.substring(0, attr.indexOf(':')),
+	// 		attrVal = attr.substring(attr.indexOf(':')+1);
 
-		for ( var i= parseInt(attrNum); i > 1; i-- ) {
-			attrVal = '-_-' + attrVal;
-		}
+	// 	for ( var i= parseInt(attrNum); i > 1; i-- ) {
+	// 		attrVal = '-_-' + attrVal;
+	// 	}
 
-		APP.coremetrics('Element', APP.cm.category, (parent.attr("data-pageView") + "_products-" + product ).slice(0, 50), attrVal);
-	});
+	// 	APP.coremetrics('Element', APP.cm.category, (parent.attr("data-pageView") + "_products-" + product ).slice(0, 50), attrVal);
+	// });
 
 
 
