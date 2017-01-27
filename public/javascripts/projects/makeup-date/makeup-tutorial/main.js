@@ -4,7 +4,7 @@
 var APP = {
 	
 	cm: {
-		category: "spring17_makupdate"
+		category: "spring17_makeupdate"
 	},
 	isTablet: $('body').hasClass('bl_tablet') ? true : false,
 	currentPage: 0,
@@ -359,18 +359,18 @@ $(document).ready(function() {
 		APP.coremetrics('Element', APP.cm.category, "videos_products-".concat( removeDiacritics( prodName ) ).slice(0, 50) );
 	});
 
-	$("#makeupVideo").on('ended',function() {
+	$(".videoBox video").on('ended',function() {
 		var vid = "-_--_--_--_--_--_--_--_--_--_--_--_--_--_--_-3-_-"+Math.round($(this)[0].duration);
         APP.coremetrics('Element', APP.cm.category, $(this).attr("data-name"), vid);
     });
 
-    $("#makeupVideo").on("play", function () {
+    $(".videoBox video").on("play", function () {
     	var vid = "-_--_--_--_--_--_--_--_--_--_--_--_--_--_--_-1-_-"+Math.round($(this)[0].duration);
     	APP.coremetrics('Element', APP.cm.category, $(this).attr("data-name"), vid);
     });
 
-    $("#makeupVideo").on("pause", function () {
-    	if ( $("#makeupVideo").get(0).ended !== true ) {
+    $(".videoBox video").on("pause", function () {
+    	if ( $(this)[0].ended !== true ) {
     		var vid = "-_--_--_--_--_--_--_--_--_--_--_--_--_--_--_-2-_-"+Math.round($(this)[0].duration);
     		APP.coremetrics('Element', APP.cm.category, $(this).attr("data-name"), vid);
     	}

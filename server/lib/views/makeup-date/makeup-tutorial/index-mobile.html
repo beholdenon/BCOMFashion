@@ -57,7 +57,7 @@
         <span>2</span>
         <h2>Quick &amp; Flirty How-To</h2>
         <h1>The Easiest Cat-Eye Ever</h1>
-        <p>Really&mdash;it&rsquo;s only three steps.</p>
+        <p>Really&mdash;it&rsquo;s only four steps.</p>
         <div class="whiteDiagonalBg"></div>
     </div>
     <div class="videoBox" >
@@ -328,14 +328,14 @@
 
 <script type="application/javascript" src="/fashion/javascripts/libs/jquery-1.11.2.min.js"></script>
 <script type="text/javascript">
-    // var currentDate = new Date(),
-    //     checkDate = new Date( 2016, 11, 17 );
+    (function() {
+        var currentDate = new Date(),
+            endPromotion = new Date( 2017, 01, 15 ); 
+        if ( currentDate >= endPromotion ) {
+            $("#makeup_offer, #makeup_gwp, #sweepstakes").remove();            
+        }
 
-    // if ( currentDate >= checkDate ) {
-    //     $("#makeup_hero .subHeader, #makeup_hero .smallHeader, #gift-with-purchase, #samples, #sweepstakes, #loyallist-bar").remove();
-    //     $("[data-scroll='gift-with-purchase'], [data-scroll='sweepstakes']").remove();
-    //     $("#makeup_hero .pinkBg, #makeup_hero .points, #makeup_hero .legal").remove();
-    // }
+    })();
 </script>
 <script type="application/javascript" src="/fashion/javascripts/includes/wssg.js"></script>
 <script type="application/javascript" src="/fashion/javascripts/projects/makeup-date/makeup-tutorial/mobile.js"></script>
