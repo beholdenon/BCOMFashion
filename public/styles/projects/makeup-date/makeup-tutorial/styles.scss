@@ -264,7 +264,7 @@ section a:active {
 		}
 
 		h1 {
-			font-size: 3.5em;
+			font-size: 2.75em;
 			letter-spacing: 0.125em;
 			font-weight: 900;
 			margin: 0.4em auto 0;
@@ -353,6 +353,11 @@ section a:active {
 
 	.floatImage {
 		position: absolute;
+	}
+
+	.imageryLink {
+		position: absolute;
+		content: " ";
 	}
 
 	.numberedBox {
@@ -477,6 +482,7 @@ section a:active {
 			    top: 90px;
 			    left: -5em;
 		    }
+
 		}
 
 	.bottomText {
@@ -516,7 +522,7 @@ section a:active {
 #makeup_gwp {
 	.copy {
 	    left: 65%;
-	    top: 6%;
+	    top: 10%;
 	    text-align: center;
 	}
 
@@ -548,8 +554,15 @@ section a:active {
 	    left: 57%;
 	}
 
+	.imageryLink {
+		width: 37.70833333%;
+	    top: 58%;
+	    left: 57%;
+	    height: 34.75%;	
+	}
+
 	.bottomText {
-		top: 92%;
+		top: 93.5%;
 	    text-align: right;
 	    left: 58.7%;
 	    p {
@@ -574,6 +587,13 @@ section a:active {
 #tips_tricks_3, #tips_tricks_5, #tips_tricks_9, #tips_tricks_14 {
 	
 	margin-top: 7.5em;
+
+	.imageryLink {
+		width: 100%;
+	    top: 0%;
+	    left: 0%;
+	    height: 100%;	
+	}
 
 	.copy {
 		top: 6%;
@@ -616,6 +636,13 @@ section a:active {
 	.blockImage {
 		width: 59.270833333%;
 		margin-left: 35.260416667%;
+	}
+
+	.imageryLink {
+	    width: 53.283333%;
+	    top: 0%;
+	    left: 41.25%;
+	    height: 95%;
 	}
 
 	.numberedBox {
@@ -674,6 +701,13 @@ section a:active {
 		margin-left: 5.5%;
 	}
 
+	.imageryLink {
+	    width: 54%;
+	    top: 0%;
+	    left: 6%;
+	    height: 91%;
+	}
+
 	.numberedBox {
 		left: 56.770833333%;
 		top: 9%;
@@ -713,6 +747,13 @@ section a:active {
 	.blockImage {
 		width: 59.270833333%;
 		margin-left: 35.260416667%;
+	}
+
+	.imageryLink {
+	    width: 52%;
+	    top: 9%;
+	    left: 41%;
+	    height: 79%;
 	}
 
 	.numberedBox {
@@ -834,6 +875,9 @@ section a:active {
 		left: 58.5%;
     	width: 36%;
 	}
+	.imageryLink {
+		height: 34.5%;
+	}
 }
 
 #tips_tricks_14 {
@@ -849,8 +893,12 @@ section a:active {
 }
 
 #tips_tricks_15 {
+	.imageryLink {
+	   height: 33%;
+	}
 	.bottomText {
 		left: 67.2%;
+		top: 92%;
 	}
 }
 
@@ -1026,7 +1074,7 @@ section a:active {
 .prodShell {
 	min-height: 100px;
 	list-style-type: none;
-	width: 70%;
+	width: 100%;
 	max-width: 1200px;
 	overflow: hidden;
 	margin: 0 auto 1.5em;
@@ -1043,7 +1091,7 @@ section a:active {
 		width: 18%;
 		display: inline-block;
 		vertical-align: top;
-		margin: 0 1.65em;
+		margin: 0 0em;
 
 		img {
 			max-height: 200px;
@@ -1443,11 +1491,13 @@ section a:active {
 #celebrate-in-store {
 	width: 100%;
 	text-align: center;
-	font-size: 1.25vw;
+	font-size: 1vw;
 	position: relative;
+	background-color: #e8d1d6;
+	min-height: 29.6875em;
 
 	img {
-		width: 100vw;
+		width: 100%;
 	}
 
 	.absolute {
@@ -1474,9 +1524,9 @@ section a:active {
 
 	.details {
 		font-size: 1.37em;
-	    width: 90%;
+	    width: 91%;
 	    margin: 0 auto;
-	    font-weight: 600;
+	    font-weight: 400;
 	}
 
 	h4, p {
@@ -1505,7 +1555,6 @@ section a:active {
 		    margin-bottom: 0.1em;
 		    font-size: 1.125em;
 		    text-transform: capitalize;
-		    font-weight: 600;
 		    letter-spacing: 0.05em;
 		}
 
@@ -1537,7 +1586,8 @@ section a:active {
 
 #sweepstakes {
 	position: relative;
-	font-size: 1.25vw;
+	font-size: 1vw;
+	min-height: 29.6875em;
 
 	img {
 		width: 100%;
@@ -1592,6 +1642,7 @@ section a:active {
     width: 100%;
     bottom: 0;
     z-index: 99;
+    display: none;
 
 	span, a {
 	    display: inline-block;

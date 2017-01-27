@@ -4,7 +4,7 @@
 var APP = {
 	
 	cm: {
-		category: "mbl:fall16_makeupdate",
+		category: "mbl:spring17_makupdate",
 	},
 	currentPage: 0,
 	currentHero: 1,
@@ -17,19 +17,19 @@ var APP = {
 	],
 
 	stickyNav: function () {
-		// below starting position of nav
-		if ( $(document).scrollTop() > APP.navStart + $("header").height() ) {
-			$('#stickyNav').css('top', $(document).scrollTop() - $("header").height() - 5 + 'px');
 		
-		// above starting position of nav
-		} else if ( $(document).scrollTop() <= APP.navStart ) {
-			$('#stickyNav').css('top', APP.navStart + 'px');
+		if ( $(document).scrollTop() + document.documentElement.clientHeight > $('#footerPlaceHolder').offset().top + $('#footerPlaceHolder').height() ) {
+			$('#book-footer').css('bottom', $('footer').height() );
+			$('#book-footer').css('position', 'absolute' );
+		} else {
+			$('#book-footer').css('bottom', 0 );
+			$('#book-footer').css('position', 'fixed' );
 		}
 	},
 
-	scrollTo: function (tar) {
-		tar = $('#'+tar).offset().top - $('#stickyNav').height() + 5 ;
-		$("html, body").animate({scrollTop: tar}, 500);
+	scrollTo: function () {
+		
+		$("html, body").animate({scrollTop: 0}, 500);
 	},
 
 	srcSwitcher: function (target, source) {
@@ -67,7 +67,6 @@ var APP = {
 		APP.markup = [];
 		APP.currentPage = 0;
 
-
 		// get product data from WSSG
 		SERVICES.product.upcGet(function(res){
 			if ( res === 'error') {
@@ -77,7 +76,7 @@ var APP = {
 				APP.markup = [];
 				// build HTML in SHOP THE LOOK section
 				$.each( products, function(i, value) {
-					var li = "<li class='prod-"+i+"' data-attribute='29:"+value.id+"' ><a href='"+value.productDetails.summary.productURL+"' ><img alt='"+value.productDetails.summary.name+"' src='"+baseImgURL+value.productDetails.primaryImage.imagename+"'><p class='brand'>"+value.productDetails.summary.brand+"</p><p class='name'>"+value.productDetails.summary.name.replace(value.productDetails.summary.brand, '')+"</p></li>";
+					var li = '<li class="prod-'+i+'"><a target="_blank" href="'+value.productDetails.summary.productURL+'"><img alt="'+value.productDetails.summary.name+'" src="'+baseImgURL+value.productDetails.primaryImage.imagename+'"><p class="brand">'+value.productDetails.summary.brand+'</p><p class="name">'+value.productDetails.summary.name.replace(value.productDetails.summary.brand, '')+'</p></li>';
 					APP.markup.push(li);
 				});
 
@@ -86,7 +85,13 @@ var APP = {
 				});
 
 				html+="</ul>";
-				$(target).html(html);
+				$(target + " .dynamicPROs .prodShell " ).html(html);
+				if ( products.length <= 5) {
+					$(target + " .arrowBox").hide();
+					$(target + " .dotShell").hide();
+					
+				}
+
 			}
 		}, data.join(","));
 	},
@@ -151,18 +156,31 @@ $(document).ready(function() {
 	APP.stickyNav();
 	APP.heroRotation();
 
+	var navFooter = $('#book-footer');
+	$('body').append( navFooter );
+
+	$(window).one( 'scroll', function () {
+		$('#book-footer').show();
+	} );	
+
+	$.getJSON('/fashion/javascripts/projects/makeup-date/makeup-tutorial/shop.json', function(json) {
+		APP.products = json.products;
+		// console.log('data call complete');d
+	}).done( function () {
+		// console.log('starting build');
+
+		// Update Caroussels
+
+		APP.updateShop( APP.products.catEye.upc, '#tips_tricks_2' );
+		APP.updateShop( APP.products.hashtag.upc, '#tips_tricks_7' );
+		APP.updateShop( APP.products.pinkPlump.upc, '#tips_tricks_11' );
+		APP.updateShop( APP.products.topknot.upc, '#tips_tricks_13' );
+
+	});
+
 	$(window).resize( function(){
 		APP.navStart = $("#makeup_hero").height();
 		APP.stickyNav();
-	});
-
-	$("video").each(function() {
-		var tar = $(this),
-			id = tar.attr('data-id');
-		
-		SERVICES.brightCove.getURL( function(res) {
-			tar.attr('src', res);
-		}, id);
 	});
 
 	$.getJSON('/fashion/javascripts/projects/makeup-date/makeup-tutorial/shop.json', function( json ) {
@@ -224,7 +242,7 @@ $(document).ready(function() {
 
 	// interaction for clicking a nav link and scrolling to target
 	$(".point").on("click", function () {
-		APP.scrollTo( $(this).attr("data-scroll") );
+		APP.scrollTo( );
 	});
 
 	// coremetrics events
@@ -246,19 +264,19 @@ $(document).ready(function() {
 
 	});
 
-	$(".videoShop").on("click", ".shopContainer li", function () {
-		var product = removeDiacritics( $(this).find(".name").text() ).trim().replace(/\&|\+/g, '').replace(/\s+/g, '-'),
-			parent = $(this).parents("section"),
-			attr = $(this).attr('data-attribute'),
-			attrNum = attr.substring(0, attr.indexOf(':')),
-			attrVal = attr.substring(attr.indexOf(':')+1);
+	// $(".videoShop").on("click", ".shopContainer li", function () {
+	// 	var product = removeDiacritics( $(this).find(".name").text() ).trim().replace(/\&|\+/g, '').replace(/\s+/g, '-'),
+	// 		parent = $(this).parents("section"),
+	// 		attr = $(this).attr('data-attribute'),
+	// 		attrNum = attr.substring(0, attr.indexOf(':')),
+	// 		attrVal = attr.substring(attr.indexOf(':')+1);
 
-		for ( var i= parseInt(attrNum); i > 1; i-- ) {
-			attrVal = '-_-' + attrVal;
-		}
+	// 	for ( var i= parseInt(attrNum); i > 1; i-- ) {
+	// 		attrVal = '-_-' + attrVal;
+	// 	}
 
-		APP.coremetrics('Element', APP.cm.category, (parent.attr("data-pageView") + "_products-" + product ).slice(0, 50), attrVal);
-	});
+	// 	APP.coremetrics('Element', APP.cm.category, (parent.attr("data-pageView") + "_products-" + product ).slice(0, 50), attrVal);
+	// });
 
 
 
