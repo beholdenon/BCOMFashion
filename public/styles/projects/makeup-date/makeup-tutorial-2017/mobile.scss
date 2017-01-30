@@ -1,0 +1,1059 @@
+// 2017 Makeup Date - Mobile
+$lightPink: #E8D1D6;
+$loyallist: #453894;
+
+body {
+	position: relative;
+}
+
+#bl_main_container {
+	min-width: auto;
+	max-width: 100%;
+	width: 100%;
+	position: relative;
+	font-size: 12px;
+	font-family: "Raleway", Arial, sans-serif;
+}
+
+.caps {
+	text-transform: uppercase;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: "Raleway", Arial;
+}
+
+section a:link,
+section a:visited,
+section a:active {
+	font-size: inherit;
+	color: inherit;
+	text-decoration: inherit;
+	font-family: inherit;
+}
+
+.point {
+	cursor: pointer;
+}
+
+.makeupSection {
+	position: relative;
+	padding: 0;
+	margin: 0;
+	background-color: #fff;
+	.title {
+		font-weight: 800;
+		a {
+			text-decoration: none;
+		}
+	}
+    .copy {
+        position: absolute;
+        font-size: 1.25vw;
+        z-index: 10;
+        color: #000;
+
+		span.numberedCircle {
+			display: block;
+		    border: 2px solid #fff;
+		    border-radius: 100%;
+		    width: 1.8em;
+		    font-size: 2.55em;
+		    font-weight: 600;
+		    text-align: center;
+		    line-height: 1.3em;
+		    height: 1.8em;
+		    color: #fff;
+		}
+
+        a {
+            text-decoration: underline;
+            display: block;
+        }
+
+
+
+		a.makeupButton {
+			background-color: #fff;
+		    color: #edd2c3;
+		    padding: 0.3em;
+		    margin: 1.1em 0.075em;
+		    display: block;
+		    width: 38.205%;
+		    text-align: center;
+		    font-size: 1.55em;
+		    font-weight: 800;
+		    letter-spacing: 0.07em;
+		    text-decoration: none;
+		}
+
+    }
+	.numberedBox {
+		border: 2px solid #000;
+		position: absolute;
+		text-align: center;
+		font-size: 1.25vw;
+		color: #000;
+		padding: 3em 2em;
+		span {
+			    display: block;
+			    background-color: #fff;
+			    border: 2px solid #000;
+			    border-radius: 100%;
+			    width: 1.8em;
+			    margin: -2.225em auto 0.25em;
+			    font-size: 2.45em;
+			    font-weight: 600;
+			    text-align: center;
+			    line-height: 1.35em;
+			    height: 1.8em;
+		}
+		h2 {
+			font-size: 3em;
+			letter-spacing: 0.1em;
+			font-weight: 800;
+			color: inherit;
+		}
+		p {
+		    font-size: 2.01em;
+		    margin: 0.35em auto 0.75em;
+		    line-height: 1.35;
+		    font-weight: 400;
+		    letter-spacing: 0.05em;
+		    word-spacing: 0.05em;
+		    width: 94.15%;
+		}
+		a {
+			text-decoration: underline;
+			font-size: 2em;
+			font-weight: 800;
+			display: block;
+			margin-top: 1.1em;
+		}
+	}
+	.numberedNoBox {
+		position: absolute;
+		text-align: center;
+		font-size: 1.25vw;
+		color: #000;
+		overflow: hidden;
+		padding: 1em 0 1.5em;
+
+		span {
+			display: block;
+		    background-color: #fff;
+		    border: 2px solid #000;
+		    border-radius: 100%;
+		    width: 1.8em;
+		    font-size: 2.45em;
+		    font-weight: 600;
+		    text-align: center;
+		    line-height: 1.35em;
+		    height: 1.8em;
+		    margin: auto;
+		}
+
+		h1 {
+			font-size: 2.65375em;
+			letter-spacing: 0.15em;
+			font-weight: 900;
+			color: inherit;
+			position: relative;
+			z-index: 1;
+			line-height: 1.1;
+		}
+
+		h2 {
+			font-size: 1.6em;
+			font-weight: 800;
+			color: inherit;
+			position: relative;
+			z-index: 1;
+			margin: 0.25em;
+			letter-spacing: 0.04em;
+			border-bottom: 1px solid #000;
+			display: inline-block;
+		}
+
+		p {
+			font-size: 1.125em;
+			margin: 0.35em auto 0.75em;
+			line-height: 1.3;
+			font-weight: 400;
+			letter-spacing: 0.05em;
+			word-spacing: 0.05em;
+			width: 93%;
+			position: relative;
+			z-index: 1;
+		}
+
+		a {
+			text-decoration: underline;
+			font-size: 1.4em;
+			font-weight: 800;
+			display: block;
+			margin-top: 1.1em;
+		}
+
+		.whiteDiagonalBg {
+			height: 5em;
+			position: absolute;
+			width: 115%;
+			background-color: white;
+			transform: rotate(49deg);
+			z-index: 0;
+			top: 90px;
+			left: -3.7em;
+		}
+	}
+
+	.imageryLink {
+		position: absolute;
+		content: " ";
+	}
+}
+
+.videoBox {
+	position: relative;
+
+	#videoLoading, .videoLoading {
+		display: none;
+		position: absolute;
+		top: 30%;
+		left: 30%;
+	}
+
+	padding-bottom: 4em;
+}
+
+.dynamicPROs {
+	font-size: 14px;
+	position: relative;
+	overflow: hidden;
+	transition: 1s;
+
+	h3,
+	p {
+		text-align: center;
+		margin: 0;
+		padding: 0;
+	}
+	h3 {
+		margin-top: 1.5em;
+	}
+	.loader {
+		position: relative;
+		display: block;
+		padding: 7vw 0 8vw;
+		left: 48%;
+	}
+	.dotShell {
+		display: block;
+		margin: 0 auto 0vw;
+		text-align: center;
+		.dots {
+			background-color: #fff;
+			width: 0.75vw;
+			height: 0.75vw;
+			border-radius: 100%;
+			display: inline-block;
+			margin: 0 0.25vw;
+
+			&.active {
+				background-color: #000;
+			}
+		}
+	}
+}
+
+.prodShell {
+	min-height: 100px;
+	list-style-type: none;
+	width: 100%;
+	max-width: 1200px;
+	overflow: hidden;
+	margin: 2em auto 0em;
+	text-align: center;
+
+.shopContainer {
+	list-style-type: none;
+	margin-bottom: 1.5em;
+
+	li {
+	    font-size: 3vw;
+	    display: inline-block;
+	    width: 25%;
+	    margin: 0 1em;
+	    padding: 0 0.15em 2vw;
+	    vertical-align: top;
+
+		.brand,
+		.name {
+			font-family: "Raleway", Arial;
+			font-size: 1em;
+			line-height: 1.25em;
+			margin: 0;
+			padding: 0;
+		}
+
+		.brand {
+			font-weight: bold;
+			text-decoration: underline;
+			margin-bottom: 0.5em;
+		}
+	}
+
+}
+
+}
+
+.prosLeft,
+.prosRight {
+    position: absolute;
+    vertical-align: top;
+    display: inline-block;
+    z-index: 49;
+    top: 8%;
+    font-size: 160px;
+    font-weight: 300;
+    font-family: "Open Sans", Arial;
+    line-height: 1.5em;
+    cursor: pointer;
+
+	-webkit-touch-callout: none; /* iOS Safari */
+	-webkit-user-select: none;   /* Chrome/Safari/Opera */
+	-khtml-user-select: none;    /* Konqueror */
+	-moz-user-select: none;      /* Firefox */
+	-ms-user-select: none;       /* Internet Explorer/Edge */
+	user-select: none;           /* Non-prefixed version, currently
+	                              not supported by any browser */
+}
+.prosLeft	{ 
+	position: absolute;
+	top: 25%;
+	left: 9%;
+	z-index: 10;
+
+	width: 0; 
+	height: 0;
+	border-top: 5vw solid transparent;
+	border-bottom: 5vw solid transparent;
+	border-right: 5vw solid #000;
+
+	.prosLCover {
+		// background-color: #e3e9f0;
+	 //    width: 5vw;
+	 //    height: 5vw;
+	 //    position: absolute;
+	 //    top: -4%;
+	 //    left: 4%;
+	 //    z-index: 11;
+	}
+}
+.prosRight	{ 
+	position: absolute;
+	top: 25%;
+	left: 92%;
+	z-index: 10;
+
+	width: 0; 
+	height: 0;
+	border-top: 5vw solid transparent;
+	border-bottom: 5vw solid transparent;
+	border-left: 5vw solid #000;
+
+	.prosRCover {
+		// background-color: #e3e9f0;
+		// width: 5vw;
+		// height: 5vw;
+		// position: absolute;
+		// top: 4%;
+		// left: -4%;
+		// z-index: 11;
+	}
+}
+
+
+#makeup_offer {
+	text-align: center;
+	margin: 1.5em 0;
+	font-family: "Open Sans", sans-serif;
+	font-size: 1.25vw;
+	font-weight: 800;
+	p {
+		font-size: 2em;
+		margin-bottom: 0;
+		span { 
+			font-weight: 800;
+		}
+		.pinkBg {
+			background-color: $lightPink;
+			color: #000;
+			margin: 0.75em auto 0.25em;
+			line-height: 1.5em;
+			letter-spacing: 0.1em;
+			text-transform: uppercase;
+			width: 50%;
+			padding: 0.2em 0.4em;
+		}
+		a {
+			text-decoration: underline;
+		}
+	}
+}
+
+#makeup_hero {
+	position: relative;
+	padding: 0;
+	margin: 0;
+	background-color: #000000;
+	
+	.heroPlaceholder {
+		display: block;
+		width: 100%;
+	}
+	.heroImage {
+		width: 100%;
+		max-width: 2000px;
+		margin: 0 auto;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		z-index: 5;
+	}
+	.copy {
+		position: absolute;
+		top: 3%;
+		left: 5%;
+		width: 60%;
+		font-size: 1.25vw;
+		color: #ffffff;
+		z-index: 10;
+		h1 {
+			font-size: 6.1em;
+			color: inherit;
+			letter-spacing: 0.2em;
+			font-weight: 900;
+			margin: 0.2em auto 0;
+			padding: 0;
+			line-height: 1.15em;
+			text-transform: lowercase;	
+			span {
+				margin-left: 1.4em;
+			}
+		}
+		h2 {
+			color: #ffffff;
+			font-weight: 800;
+			font-size: 2.5em;
+			letter-spacing: 0.1em;
+			font-family: "Open Sans", sans-serif;
+			&.subTitle {
+				margin: 0.75em 0;
+				line-height: 1.25em;
+				letter-spacing: 0.125em;
+			}
+		}
+		p {
+		    width: 100%;
+		    line-height: 1.6em;
+		    letter-spacing: 0.075em;
+		    font-size: 2.1em;
+			&.legal {
+				font-family: "Open Sans", sans-serif;
+				font-size: 0.85em;
+			}
+		}
+		a {
+			text-decoration: underline;
+		}
+	}
+}
+
+#makeup_gwp {
+	.copy {
+	    left: 0;
+	    top: 2%;
+	    text-align: center;
+        width: 100%;
+		.title {
+			// Using 5em since font-size of parent is small
+			font-size: 4.5em;
+			font-weight: 700;
+			a {
+				text-decoration: none;
+			}
+		}
+        .titleSubText {
+            font-size: 2.25em;
+            margin-bottom: 0.5em;
+        }
+        #gwpLinks {
+            width: 60%;
+            margin: 0 auto;
+            .gwpLink {
+				font-size: 2.0em;
+				font-weight: 900;
+				letter-spacing: 0.075em;
+				word-spacing: 0.05em;
+				line-height: 1.6;
+                &.left {
+                    float: left;
+                }
+                &.right {
+                    float: right;
+                }
+            }
+        }
+	}
+	.purpleBox {
+		position: absolute;
+		bottom: 0;
+		margin-bottom: 0;
+		background-color: #453894;
+		color: #fff;
+		padding: 0.8em;
+		width: 100%;
+		font-size: 2vw;
+		font-weight: 800;
+		line-height: 1.3em;
+		letter-spacing: 0.1em;
+		text-align: center;
+		span {
+			display: block;
+			background-color: #453894;
+			border-radius: 100%;
+			width: 0.9em;
+			margin: -0.78em auto 0;
+			font-size: 3em;
+			font-weight: 600;
+			text-align: center;
+			line-height: 0.9em;
+			padding-left: 0.05em;
+		}
+		a {
+			text-decoration: none;
+			font-size: 1.25em;
+		}
+	}
+}
+
+#tips_tricks_1, #tips_tricks_12, #tips_tricks_15 {
+	font-size: 1.25vw;
+	margin-bottom: 15em;
+	.title {
+		font-size: 4em;
+		text-align: center;
+		letter-spacing: 0.1em;
+		word-spacing: 0.1em;
+		margin-top: 0.75em;
+	}
+	.blockImage {
+		width: 56%;
+	    margin-top: 11%;
+	    margin-left: 5%;
+	}
+	.numberedBox {
+		left: 58%;
+	    top: 15%;
+	    width: 39%;
+		h2 {
+			padding-top: 4px;
+		}
+	}
+	.floatImage {
+		display: block;
+		position: absolute;
+		width: 45.333333333%;
+	    top: 80%;
+	    left: 51.73333%;
+	}
+	.imageryLink {
+		width: 45.333333333%;
+	    top: 80%;
+	    left: 51.73333%;
+	    height: 30%;	
+	}
+}
+
+#tips_tricks_1 {
+	.numberedBox {
+		top: 9%;
+	}
+}
+
+#tips_tricks_2 {
+	background-color: #e3e9f0;
+	padding-top: 1em;
+	min-height: 25em;
+
+	.numberedNoBox {
+		top: 1%;
+		width: 100%;
+		h1 {
+			font-size: 4.7em;
+		}
+		h2 {
+			font-size: 2.5em;
+		}
+		p {
+			font-size: 2em;
+		}
+	}
+}
+
+#tips_tricks_7,
+#tips_tricks_11,
+#tips_tricks_13 {
+	background-color: #e3e9f0;
+	padding-top: 1em;
+	min-height: 25em;
+	left: 0;
+
+	.numberedNoBox {
+		top: 1%;
+		left: 0;
+		width: 100%;
+		h1 {
+			font-size: 4.7em;
+		}
+		h2 {
+			font-size: 2.5em;
+		}
+		p {
+			font-size: 2em;
+		}
+	}
+	
+}
+
+.makeupSection {
+	.videoBox {
+		position: relative;
+		width: 91%;
+		margin: 24% auto 0;
+		padding-bottom: 0;
+		video {
+			width: 100%;
+			max-width: 1200px;
+			display: inline-block;
+			cursor: pointer;
+		}
+	}
+}
+
+#tips_tricks_3, #tips_tricks_5, #tips_tricks_9, #tips_tricks_14 {
+	
+	margin-top: 10vw;
+
+	.imageryLink {
+		width: 100%;
+	    top: 0%;
+	    left: 0%;
+	    height: 100%;	
+	}
+
+	.copy {
+		top: 6%;
+    	left: 5.5%;
+    	color: #fff;
+    	width: 54%;
+
+    	h1 {
+    		padding: 0;
+    		font-weight: 800;
+    		font-size: 4em;
+		    letter-spacing: 0.265em;
+		    margin: 0.09em auto 0;
+		    line-height: 1.2em;
+		    color: #fff;
+    	}
+
+    	p {
+    	    margin: 0.2em 0.15em;
+		    font-size: 2em;
+		    width: 90%;
+		    font-weight: normal;
+		    letter-spacing: 0.07em;
+		    line-height: 1.2;
+    	}
+	}
+
+}
+#tips_tricks_3 {
+	.copy{
+		a.makeupButton {
+			margin-top: 0.5em;
+		}
+	} 
+}
+
+#tips_tricks_4 {
+	
+	margin-top: 0.5em;
+
+	.blockImage {
+		width: 53.33333333%;
+		margin-left: 42%;
+		margin-top: 10%;
+	}
+
+	.imageryLink {
+		width: 53.33333333%;
+	    top: 12%;
+	    left: 42%;
+	    height: 88%;
+	}
+
+	.numberedBox {
+		left: 5.5%;
+		top: 9%;
+		width: 38%;
+		
+
+		span {
+			line-height: 1.05em;
+		}
+			
+
+		h2 {
+			line-height: 1.2;
+		    margin: 0.7em;
+		    font-weight: 900;
+		    letter-spacing: 0.2em;
+		    font-size: 2em;
+		}
+		
+	}
+
+}
+
+#tips_tricks_5 {
+	a.makeupButton {
+		color: #ead4d9;
+		width: 44%;
+	}
+
+	.copy {
+
+		top: 8.5%;
+
+		h1 {
+			line-height: 1.3
+		}
+
+		p {
+			width: 84%;
+		}
+	}
+}
+
+#tips_tricks_6 {
+	
+	margin: 2.5em 0;
+
+	.blockImage {
+		width: 53.866666667%;
+		margin-left: 6%;
+	}
+
+	.imageryLink {
+	    width: 54%;
+	    top: 0%;
+	    left: 6%;
+	    height: 100%;
+	}
+
+	.numberedBox {
+		left: 56.833333333%;
+		top: 6.25%;
+		width: 38.5%;
+		
+
+		span {
+			line-height: 1.5em;
+		}
+			
+
+		h2 {
+			line-height: 1.3;
+		    margin: 0.7em;
+		    font-weight: 900;
+		    letter-spacing: 0.2em;
+		    font-size: 2.25em;
+		}
+		
+	}
+}
+
+#tips_tricks_8 {
+	
+	margin-top: 2.5em;
+	padding-top: 2em;
+	min-height: 22em;
+
+	.blockImage {
+		width: 60%;
+		margin-left: 0%;
+	}
+
+	.imageryLink {
+	    width: 60%;
+	    top: 9%;
+	    left: 0%;
+	    height: 75%;
+	}
+
+	.numberedBox {
+		left: 50%;
+		top: 1.5%;
+		width: 46.666666667%;
+		
+		span {
+			line-height: 1.3em;
+		}
+			
+		p {
+
+			width: 96%;
+			strong {
+				font-size: 1em;
+			}
+		}
+
+		h2 {
+			line-height: 1.2;
+		    margin: 0.7em;
+		    font-weight: 900;
+		    letter-spacing: 0.2em;
+		    font-size: 2.5em;
+		}
+
+		a {
+			font-size: 2.2em;
+		    letter-spacing: 0.05em;
+		    margin-top: 0.5em;
+		}
+		
+	}
+}
+
+#tips_tricks_9 {
+	a.makeupButton {
+		color: #ead4d9;
+		width: 35%;
+	}
+
+	.copy {
+
+		span {
+			line-height: 1.1em;
+		}
+
+		top: 8.5%;
+		width: 58%;
+
+
+		h1 {
+			line-height: 1.3
+		}
+
+		p {
+			width: 84%;
+		}
+	}
+}
+
+
+#tips_tricks_10 {
+	
+	margin: 2.5em 0;
+	padding-top: 2em;
+	padding-bottom: 2.5em;
+
+	.blockImage {
+		width: 58.133333333%;
+		margin-left: 41.866666667%;
+	}
+
+	.numberedBox {
+		left: 5.5%;
+		top: 0%;
+		width: 46.666666667%;
+		padding: 3em 1.5em;
+
+		span {
+			padding-left: 0.1em;
+		}
+
+		p {
+			margin: 0.35em auto 0.25em;
+			line-height: 1.3;
+
+			strong {
+				font-size: 1em;
+			}
+		}		
+
+		h2 {
+			line-height: 1.2;
+		    margin: 0.9em 2em 0.5em;
+		    font-weight: 900;
+		    letter-spacing: 0.2em;
+		    font-size: 2.6em;
+		}
+
+		a {
+		    font-size: 2.175em;
+		    margin: 0.85em 1em 0;
+		    display: inline-block;
+		}
+		
+	}
+}
+
+#tips_tricks_12 {
+	.imageryLink {
+		height: 34.5%;
+	}
+	.numberedBox {
+		p {
+			width: 95.15%;
+			margin: 0.75em auto;
+		}
+		a {
+			font-size: 2.2em;
+		}
+	}
+}
+
+#tips_tricks_14 {
+	.copy {
+		a.makeupButton {
+			width: 49%;
+		}
+	}
+}
+
+#tips_tricks_15 {
+	.numberedBox {
+		left: 5.5%;
+		top: 10%;
+
+		a {
+			font-size: 2.25em;
+		}
+	}
+	.blockImage {
+	    width: 56%;
+	    margin-top: 15%;
+	    margin-left: 40%;
+	}
+	
+	.floatImage {
+		left: 5.5%;
+		top: 77%;
+	}
+	.imageryLink {
+	    top: 77%;
+	    left: 5.5%;
+	    height: 32%;
+	}
+}
+
+#sweepstakes {
+	position: relative;
+	font-size: 1.25vw;
+
+	img {
+		width: 100%;
+	}
+
+	.absolute{
+		position: absolute;
+		text-align: center;
+		top: 12%;
+		left: 15%;
+		width: 70%;
+
+		h2 {
+		    font-size: 5.25em;
+		    font-weight: 900;
+		    letter-spacing: 0.15em;
+		    padding: 0;
+		    margin: 0;
+		    line-height: 1.2em;
+		    color: #000;
+		}
+
+		.copy {
+		    font-size: 1.8em;
+		    padding: 0;
+		    margin: 1em auto 1.5em;
+		    width: 55%;
+		    letter-spacing: 0.005em;
+		}
+
+		.legal a {
+		    text-transform: lowercase;
+		    margin: 1em 1.25em 0;
+		    font-weight: 800;
+		    font-size: 2.25em;
+		    display: inline-block;
+		    text-decoration: underline;
+		}
+	}
+}
+
+#footerPlaceHolder {
+	line-height: 2.5em;
+    height: 2.15em;
+}
+
+#book-footer {
+	background-color: #efd7cf;
+	text-align: left;
+	font-size: 1.25vw;
+	position: fixed;
+    width: 100%;
+    bottom: 0;
+    z-index: 99;
+    padding-left: 2.5%;
+    display: none;
+
+	span, a {
+	    display: inline-block;
+	    font-family: inherit;
+	    font-weight: 800;
+	    color: #000;
+	    font-size: 2.25em;
+	    line-height: 3.5em;
+	    margin: 0 1.5em;
+	    text-transform: lowercase;
+	}
+
+	.backToTop {
+	    position: absolute;
+	    float: right;
+	    font-size: 1em;
+	    width: 11em;
+	    right: 0;
+	    top: 0px;
+	    border-left: 1px solid gray;
+	    cursor: pointer;
+	    line-height: 3em;
+	    height: 100%;
+	    text-align: center;
+
+		span {
+		    border-left: 1px solid gray;
+		    border-top: 1px solid gray;
+		    width: 3vw;
+		    height: 3vw;
+		    transform: rotate(45deg);
+		    margin: -1.8em auto;
+		}
+	}
+
+}
