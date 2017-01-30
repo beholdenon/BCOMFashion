@@ -93,7 +93,7 @@ var APP = {
 				}
 
 			}
-		}, data.join(","));
+		}, data.slice(0,3).join(",") );
 	},
 
 	heroRotation: function() {
