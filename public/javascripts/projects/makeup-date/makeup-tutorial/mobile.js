@@ -4,7 +4,7 @@
 var APP = {
 	
 	cm: {
-		category: "mbl:spring17_makupdate",
+		category: "mbl:spring17_makeupdate",
 	},
 	currentPage: 0,
 	currentHero: 1,
@@ -93,7 +93,7 @@ var APP = {
 				}
 
 			}
-		}, data.join(","));
+		}, data.slice(0,3).join(",") );
 	},
 
 	heroRotation: function() {
@@ -278,7 +278,27 @@ $(document).ready(function() {
 	// 	APP.coremetrics('Element', APP.cm.category, (parent.attr("data-pageView") + "_products-" + product ).slice(0, 50), attrVal);
 	// });
 
+	$(".dynamicPROs").on("click", "li", function() {
+		var prodName = $(this).parents(".dynamicPROs").find(".pagn .cur").text() + $(this).find(".name").text().replace(/\&|\+/g, '').replace(/\s+/g, '-');
+		APP.coremetrics('Element', APP.cm.category, "videos_products-".concat( removeDiacritics( prodName ) ).slice(0, 50) );
+	});
 
+	$(".videoBox video").on('ended',function() {
+		var vid = "-_--_--_--_--_--_--_--_--_--_--_--_--_--_--_-3-_-"+Math.round($(this)[0].duration);
+        APP.coremetrics('Element', APP.cm.category, $(this).attr("data-name"), vid);
+    });
+
+    $(".videoBox video").on("play", function () {
+    	var vid = "-_--_--_--_--_--_--_--_--_--_--_--_--_--_--_-1-_-"+Math.round($(this)[0].duration);
+    	APP.coremetrics('Element', APP.cm.category, $(this).attr("data-name"), vid);
+    });
+
+    $(".videoBox video").on("pause", function () {
+    	if ( $(this)[0].ended !== true ) {
+    		var vid = "-_--_--_--_--_--_--_--_--_--_--_--_--_--_--_-2-_-"+Math.round($(this)[0].duration);
+    		APP.coremetrics('Element', APP.cm.category, $(this).attr("data-name"), vid);
+    	}
+    });
 
 	$("#samples .sample").on("click", function () {
 		var target = $(this),
