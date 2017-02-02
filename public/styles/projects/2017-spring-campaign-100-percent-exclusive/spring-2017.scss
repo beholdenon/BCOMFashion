@@ -105,9 +105,8 @@
     position: absolute;
     top: 8vw;
     left: 27.5vw;
-    color: white;
     font-size: 2.3vw;
-    text-align: left;
+    color: white;
 }
 .women1_painttext2{
     position: absolute;
@@ -115,7 +114,6 @@
     left: 27.5vw;
     color: white;
     font-size: 1.3vw;
-    text-align: left;
 }
 .women1_painttext3{
     position: absolute;
@@ -181,10 +179,65 @@
         font-size: 3vw;
     }
     .women1_text7{
-        font-size: 3vw;
+        font-size: 4.5vw;
+        padding-bottom: 30px;
     }
+    .women_shoplookbtn{
+        margin-bottom: 15vw;
+        padding: 16px;
+    }
+    .women2_painttext3{
+        top: 8vw;
+        font-size: 5vw;
+    }
+    
 }
 
+
+
+
+@media screen and (min-width:1680px) {
+
+    .women1_painttext1{
+        top: 127px;
+        left: 470px;
+        font-size: 40px;
+    }
+    .women1_painttext2{
+        left: 470px;
+        top: 185px;
+        font-size: 26px;
+    }
+    .women1_painttext3{
+        top: 240px;
+        left: 470px;
+        font-size: 25px;
+        max-width: 620px;
+    }
+    .women2_painttext1 {
+        top: 160px;
+        font-size: 40px;
+        letter-spacing: 2px;
+    }
+    .women2_painttext2 {
+        top: 230px;
+        font-size: 17px;
+    }
+    .women2_painttext3 {
+        top: 170px;
+        font-size: 42px;
+        letter-spacing: 2px;
+    }
+    
+    .women1_text6 {
+        font-size: 23px;
+    }
+    .women1_text7 {
+        font-size: 20px;
+        max-width: 560px;
+    }
+
+}
 //=================================================================//
 //LANDING
 //=================================================================//
@@ -334,6 +387,12 @@
       width:20%;
     }
 
+    .landing_backtotop{
+        p{
+            font-size: 4vw;
+        }
+    }
+
 }
 
 
@@ -389,8 +448,14 @@
     background-color:white;
 }
 
-.imageContainerRatio1 {
-    @include preventReflowForScaledContent(1500px, 965px);
+.womenImageRatio1 {
+    @include preventReflowForScaledContent(700px, 770px);
+}
+.womenImageRatio2 {
+    @include preventReflowForScaledContent(1680px, 625px);
+}
+.womenImageRatio3 {
+    @include preventReflowForScaledContent(350px, 350px);
 }
 
 .reflowProofImage{
@@ -475,10 +540,15 @@ img{
     -webkit-user-select: none;
     -o-user-select: none;    
 }
-
+#spring17_topnav_placeholder{
+    position: relative;
+    height: 57px;
+}
 #spring17_topnav {
 
-    position: relative;
+    position: fixed;
+    width: 100%;
+    top: 0;
     background-color:black;
     margin: 0 auto;
     z-index: 10;
@@ -577,6 +647,9 @@ img{
 }
 
 @media screen and (max-width:800px) {
+    #spring17_topnav_placeholder{
+        height: 45px;
+    }
     #spring17_topnav {
 
         .logo {
