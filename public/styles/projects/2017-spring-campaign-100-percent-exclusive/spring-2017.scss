@@ -1,6 +1,11 @@
 //=================================================================//
 //WOMEN
 //=================================================================//
+
+.hasMobileReplacement_image{
+    display: none;
+}
+
 .spring17_maxwidth_1680{
     .row{
         position:relative;
@@ -451,12 +456,23 @@
 .womenImageRatio1 {
     @include preventReflowForScaledContent(700px, 770px);
 }
+
 .womenImageRatio2 {
     @include preventReflowForScaledContent(1680px, 625px);
 }
+
 .womenImageRatio3 {
     @include preventReflowForScaledContent(350px, 350px);
 }
+
+.womenImageRatio4 {
+    @include preventReflowForScaledContent(1680px, 400px);
+}
+
+.womenImageRatio5 {
+    @include preventReflowForScaledContent(650px, 491px);
+}
+
 
 .reflowProofImage{
     position: absolute;

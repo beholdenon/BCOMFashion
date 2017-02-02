@@ -77,22 +77,22 @@ $(document).ready( function($) {
 
 
 
-    // $( window ).on( "scroll resize", function( ) {
-    //     checkPlayOnceVideos();
-    // });
+    $( window ).on( "scroll resize", function( ) {
+        checkPlayOnceVideos();
+    });
 
-    // function checkPlayOnceVideos() {
-    //     $( ".play_once_videos" ).each( function() {
-    //         if( !$(this).hasClass("played") ){
-    //             if( $(this).isVisible() === true){
-    //                 $(this)[0].play();
-    //                 $(this).addClass("played");
-    //             }else{
-    //                 $(this)[0].pause();
-    //             }
-    //         }
-    //     });
-    // }
+    function checkPlayOnceVideos() {
+        $( ".play_once_videos" ).each( function() {
+            if( !$(this).hasClass("played") ){
+                if( $(this).isVisible() === true){
+                    $(this)[0].play();
+                    $(this).addClass("played");
+                }else{
+                    $(this)[0].pause();
+                }
+            }
+        });
+    }
 
 /*
         $(document).click(function(event) {
@@ -105,8 +105,25 @@ $(document).ready( function($) {
 */
     
     $( window ).on( "load resize", function( ) {
-        if( !isDevice() )$('#spring17_topnav').find('.spring17_topnav_active').find('.spring17_topnav_underline').addClass('spring17_topnav_underline_drawn');
-        else $('#spring17_topnav').find('.spring17_topnav_active').find('.spring17_topnav_underline').removeClass('spring17_topnav_underline_drawn');
+        if( !isDevice() ){
+            
+            $('#spring17_topnav').find('.spring17_topnav_active').find('.spring17_topnav_underline').addClass('spring17_topnav_underline_drawn');
+            
+            $( ".hasMobileReplacement" ).find( ".hasMobileReplacement_video" ).css( "display", "block" );
+            $( ".hasMobileReplacement" ).find( "video" ).css( "display", "block" );
+            $( ".hasMobileReplacement" ).find( ".hasMobileReplacement_image" ).css( "display", "none" );
+            $( ".hasMobileReplacement" ).find( "img" ).css( "display", "none" );
+
+        }else{
+            
+            $('#spring17_topnav').find('.spring17_topnav_active').find('.spring17_topnav_underline').removeClass('spring17_topnav_underline_drawn');
+            
+            $( ".hasMobileReplacement" ).find( ".hasMobileReplacement_video" ).css( "display", "none" );
+            $( ".hasMobileReplacement" ).find( "video" ).css( "display", "none" );
+            $( ".hasMobileReplacement" ).find( ".hasMobileReplacement_image" ).css( "display", "block" );
+            $( ".hasMobileReplacement" ).find( "img" ).css( "display", "block" );
+
+        }
     });
 
     var pageDict = {
