@@ -149,6 +149,13 @@ $(document).ready( function($) {
             $(this).find('ul').toggleClass( "submenu_open" );
         });
 
+        $('#spring17_topnav_women li a, #spring17_topnav_men li a, #spring17_topnav_home li a').click(function() {
+            $.fn.trace( $(this)  );
+            $(".nav_hamburger").removeClass('nav_hamburger_open');
+            $(".nav_hamburger").parent().children('ul').removeClass( 'mobile_menu_opened' );
+        });
+
+
         $(".nav_hamburger").on('click', function(){
             $(this).toggleClass('nav_hamburger_open');
             $(this).parent().children('ul').toggleClass( 'mobile_menu_opened' );
