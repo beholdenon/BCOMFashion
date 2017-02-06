@@ -103,7 +103,36 @@ $(document).ready( function($) {
             // }
         });
 */
-    
+    var fashionformulasOnScreen=false;
+    var fashionformulasOnScreenFlag=false;
+    $( window ).on( "load resize scroll", function( ) {
+        var hT, hH, wH, wS;
+
+        try {
+            hT = $('#fashionformulas').offset().top;
+            hH = $('#fashionformulas').outerHeight();
+            wH = $(window).height()/2;
+            wS = $(this).scrollTop();
+        }catch(err) {
+            // $.fn.trace("error");
+        }
+
+        if(  ($.fn.currentPageName()==="womens-designer-clothing") &&  (wS >= (hT+hH-wH))    ){
+            fashionformulasOnScreen=true;
+        }else{
+            fashionformulasOnScreen=false;
+        }
+
+        if(fashionformulasOnScreenFlag!==fashionformulasOnScreen){
+            fashionformulasOnScreenFlag=fashionformulasOnScreen;
+            if ( fashionformulasOnScreenFlag===true  ) $.fn.coreTag('Pageview', "spring17_100percent--women-fashion-formulas" );
+        }
+
+
+    });
+
+   
+
     $( window ).on( "load resize", function( ) {
         if( !isDevice() ){
             
