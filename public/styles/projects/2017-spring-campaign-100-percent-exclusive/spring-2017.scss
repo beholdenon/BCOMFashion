@@ -128,6 +128,7 @@
     font-weight: 900;
     letter-spacing: 2px;
     margin: 0;
+    line-height: 49px;
 }
 
 .women1_text3{
@@ -284,7 +285,10 @@
         width: inherit;
     }
     .women1_text6{
-        font-size: 3vw;
+        font-size: 5vw;
+        a {
+            font-size: 5vw;
+        }
     }
     .women1_text7{
         font-size: 4.5vw;
@@ -385,7 +389,7 @@
 //LANDING
 //=================================================================//
 .spring17_maxwidth_1680{
-    max-width: 1670px;
+    max-width: 1680px;
     margin: 0 auto;
 }
 .landing_text1{
@@ -475,13 +479,18 @@
     text-decoration:none;
     p{
         color: black;
-        font-size: 1.8vw;
-        letter-spacing: 0.1vw;
+        font-size: 1.15vw;
+        font-weight: 100;
+        letter-spacing: 0.15vw;
         margin: 0 auto;
         display: inline-block;
         vertical-align: middle;
     }
 }
+
+
+
+
 
 .img_display_inline_block{
     display:inline-block;
@@ -541,6 +550,7 @@
 
 
 @media screen and (min-width:1680px) {
+
     .landing_text1{
         font-size: 27px;
     }
@@ -567,15 +577,16 @@
     }
 
     .landing_backtotop p {
-        font-size: 24px;
+        font-size: 19px;
         letter-spacing: 3px;
     }
-
-
 }
 
-
-
+@media screen and (min-width:1695px) {
+    .custom_width1{
+        width: auto;
+    }
+}
 
 
 
@@ -592,9 +603,14 @@
 }
 
 .landingImageRatio1{
+    @include preventReflowForScaledContent(700px, 770px);    
+}
+.landingImageRatio2{
     @include preventReflowForScaledContent(700px, 490px);    
 }
-
+.landingImageRatio3{
+    @include preventReflowForScaledContent(770px, 490px);    
+}
 
 .womenImageRatio1 {
     @include preventReflowForScaledContent(700px, 770px);
@@ -685,7 +701,7 @@
 
 body{
 
-    min-width: initial !important;
+    // min-width: initial !important;
 
     #bl_main_container{
         width:100%;
