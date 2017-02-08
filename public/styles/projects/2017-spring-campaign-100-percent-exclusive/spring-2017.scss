@@ -109,6 +109,7 @@
     display: none;
 }
 
+
 .spring17_maxwidth_1680{
     .row{
         position:relative;
@@ -202,7 +203,6 @@
 
 
 
-
 .whitespace_nowrap{
     white-space:nowrap;
 }
@@ -211,26 +211,26 @@
 
 .women1_painttext1{
     position: absolute;
-    top: 8vw;
-    left: 27.5vw;
+    top: 16vw;
+    left: 17.5vw;
     font-size: 2.3vw;
     color: white;
 }
 .women1_painttext2{
     position: absolute;
-    top: 11vw;
-    left: 27.5vw;
+    top: 19.5vw;
+    left: 17.5vw;
     color: white;
     font-size: 1.3vw;
 }
 .women1_painttext3{
     position: absolute;
-    top: 13.4vw;
-    left: 27.5vw;
+    top: 22vw;
+    left: 17.5vw;
     color: white;
     font-size: 1.4vw;
     text-align: left;
-    max-width: 34vw;
+    max-width: 40vw;
 }
 
 .women2_painttext1{
@@ -302,21 +302,21 @@
 
 
     .women1_painttext1 {
-        top: 16vw;
-        left: 13.5vw;
+        top: 6vw;
+        left: 8.5vw;
         font-size: 6.3vw;
     }
     .women1_painttext2 {
-        top: 24vw;
-        left: 13.5vw;
+        top: 14vw;
+        left: 8.5vw;
         font-size: 3.8vw;
         font-weight: 100;
     }
     .women1_painttext3 {
-        top: 30.4vw;
-        left: 13.5vw;
+        top: 20.4vw;
+        left: 8.5vw;
         font-size: 3.4vw;
-        max-width: 80vw;
+        max-width: 85vw;
     }
 
 
@@ -342,20 +342,20 @@
 @media screen and (min-width:1680px) {
 
     .women1_painttext1{
-        top: 127px;
-        left: 470px;
+        top: 266px;
+        left: 320px;
         font-size: 40px;
     }
     .women1_painttext2{
-        left: 470px;
-        top: 185px;
+        left: 320px;
+        top: 325px;
         font-size: 26px;
     }
     .women1_painttext3{
-        top: 240px;
-        left: 470px;
+        top: 370px;
+        left: 320px;
         font-size: 25px;
-        max-width: 620px;
+        max-width: 750px;
     }
     .women2_painttext1 {
         top: 160px;
@@ -385,7 +385,7 @@
 //LANDING
 //=================================================================//
 .spring17_maxwidth_1680{
-    max-width: 1679px;
+    max-width: 1670px;
     margin: 0 auto;
 }
 .landing_text1{
@@ -591,6 +591,11 @@
     background-color:white;
 }
 
+.landingImageRatio1{
+    @include preventReflowForScaledContent(700px, 490px);    
+}
+
+
 .womenImageRatio1 {
     @include preventReflowForScaledContent(700px, 770px);
 }
@@ -609,6 +614,9 @@
 
 .womenImageRatio5 {
     @include preventReflowForScaledContent(650px, 491px);
+}
+.womenImageRatio6 {
+    @include preventReflowForScaledContent(1400px, 840px);
 }
 
 
