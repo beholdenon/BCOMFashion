@@ -216,12 +216,12 @@
                         services: 'Services',
                         servicesSubHead: 'Our associates will show you why Bloomingdale\'s is like no other store in the world. Look for us wearing flag pins from your country. We can help you find the fashion you love and assist with a range of personalized services.',
                         loyalty: 'Join the International Loyalty Club',
-                        loyaltySubHead: 'Our special rewards program was created for international shoppers.* For every dollar you spend, you\'ll earn one point toward gift cards, services and exceptional experiences. Right now, you can enroll in the program at Bloomingdale \'  s Ala Moana, but points can be earned and redeemed at any full-line Bloomingdale \'  s location in the United States.**',
+                        loyaltySubHead: 'Our special rewards program was created for international shoppers.* For every dollar you spend, you\'ll earn one point toward gift cards, services and exceptional experiences. Right now, you can enroll in the program at Bloomingdale\'  s Ala Moana, but points can be earned and redeemed at any full-line Bloomingdale\'  s location in the United States.**',
                         id: [
                             {
                                 name: '59th Street Flagship',
                                 addr: '1000 Third Avenue  New York, NY 10022<br/>+1 212-705-2000',
-                                hours: 'Monday–Saturday: Store Opens 10AM <span>|</span> Sunday: Store Opens 11AM',
+                                hours: 'Monday–Saturday: 10AM–8:30PM <span>|</span> Sunday: 10AM–7PM',
                                 descr: 'Discover Bloomingdale\'s iconic heritage and award-winning hospitality. Begin your day at our flagship store with a stop at our first floor balcony Visitor\'s Center. Our multilingual directory will provide a road map to your shopping trip. Looking for a more personal experience? Learn about our in-store services, from stylist appointments to alterations to restaurant reservations. We\'ll help you arrange all that and more.',
                                 dTile: 'VISITING NEW YORK?',
                                 dInfo: 'Download our welcome booklet before you arrive.',
@@ -311,7 +311,7 @@
                             {
                                 name: 'SoHo',
                                 addr: '504 Broadway  New York, NY 10012<br/>+1 212-729-5900',
-                                hours: 'Monday–Saturday: Store Opens 10AM <span>|</span> Sunday: Opens 12PM',
+                                hours: 'Monday–Saturday: 10AM–9PM <span>|</span> Sunday: 12PM–8PM',
                                 descr: 'Explore our downtown store in SoHo, the city\'s most fashionable neighborhood. You\'ll find all the stylish energy of our uptown flagship but with the feel of a fashion boutique. Check out our bustling beauty floor, then peruse our latest designer arrivals. As always, multilingual associates are available to help make your visit a memorable one.',
                                 dTile: 'VISITING NEW YORK?',
                                 dInfo: 'Download our welcome booklet before you arrive.',
@@ -322,7 +322,6 @@
                                     'BVLGARI',
                                     'Burberry',
                                     'Canali',
-                                    'CHANEL', 
                                     'COACH',
                                     'Dior',
                                     'Donna Karan',
@@ -332,12 +331,9 @@
                                     'Jimmy Choo',
                                     'La Mer',
                                     'Longchamp', 
-                                    'Louis Vuitton', 
                                     'MARC JACOBS',
-                                    'Michael Kors', 
-                                    'Montblanc', 
+                                    'Michael Kors',  
                                     'Movado', 
-                                    'Prada', 
                                     'Ralph Lauren', 
                                     'Salvatore Ferragamo', 
                                     'Sandro',
@@ -375,7 +371,7 @@
                             },
                             {
                                 name: 'Ala Moana',
-                                addr: '1450 Ala Moana Blvd  Honolulu, HI 96814<br/>+1 808-644-7511',
+                                addr: '1450 Ala Moana Blvd  Honolulu, HI 96814<br/>+1 808-664-7511',
                                 hours: 'Monday–Saturday: 9:30AM–9PM | Sunday: 10AM–7PM',
                                 descr: 'Say aloha to our newest outpost in tropical Honolulu. Located in the Ala Moana Center, Hawaii\'s premier shopping destination, this three-story store boasts a range of amenities tailored to the overseas shopper. Stop by our International Welcome Center and speak with one of our multilingual associates. We offer international style advisor appointments, on-site alterations, restaurant reservations and much more.</p><p style="margin-top: 10px;">Planning a return visit? Sign up for our International Loyalty Club and earn points toward gift cards, special services and authentic Hawaiian adventures.',
                                 dTile: 'VISITING HAWAII?',
@@ -405,7 +401,7 @@
                                 restaurants: [
                                     {
                                         name: '<b>FORTY CARROTS</b> <span>|</span>   3rd floor  ',
-                                        sched: 'Open Daily 11:00AM',
+                                        sched: 'Monday–Saturday 11AM–8PM <span>|</span> Sunday 11AM–7PM',
                                         description: 'A visit isn\'t complete without our famous frozen yogurt.',
                                         imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_01.jpg'
                                     }
@@ -439,15 +435,11 @@
                                     },
                                     {
                                         title: 'ENJOY STORE SERVICES',
-                                        description: 'Your points can earn you complimentary package delivery back to your hotel, lunch or a car service to your next destination. For more information, see an associate at the Welcome Center on the first floor.'
-                                    },
-                                    {
-                                        title: 'INDULGE IN AN EXPERIENCE YOU\'LL NEVER FORGET',
-                                        description: 'Redeem your points for authentic Hawaiian adventures! For more information, see an associate at the Welcome Center on the first floor.'
+                                        description: 'For more information, see an associate at the Welcome Center on the first floor.'
                                     },
                                     {
                                         title: '',
-                                        description: '*Proof of international address required.<br/>**Points cannot be redeemed at Bloomingdale\'s outlet stores or on bloomingdales.com. Points can only be redeemed for services or experiences at Bloomingdale\'s Ala Moana.'
+                                        description: '*Proof of international address required.<br/>**Points cannot be redeemed at Bloomingdale\'s outlet stores or on bloomingdales.com.'
                                     }                                      
                                 ]                                    
                             },
@@ -474,7 +466,6 @@
                                     'MARC JACOBS',
                                     'MCM',
                                     'Michael Kors',
-                                    'Moncler',
                                     'Ralph Lauren',
                                     'Ray-Ban',
                                     'Salvatore Ferragamo',
@@ -525,7 +516,7 @@
                             {
                                 name: 'Medinah Home',
                                 addr: '600 North Wabash Avenue  Chicago, IL 60611<br/>+1 312-324-7500',
-                                hours: 'Monday–Saturday: Store Opens 10AM <span>|</span> Sunday: Opens 12PM',
+                                hours: 'Monday–Saturday: 10AM–7PM <span>|</span> Sunday: 12PM–6PM',
                                 descr: 'Deck out your home with a trip to Chicago\'s Medinah Home store. Here you\'ll find luxurious bedding, designer kitchen appliances, plush bathroom accessories and more. Experience our award-winning hospitality first hand with a full range of in-store services.',
                                 dTile: 'VISITING CHICAGO?',
                                 dInfo: 'Download our welcome booklet before you arrive.',
@@ -562,8 +553,8 @@
                             },
                             {
                                 name: 'San Francisco Centre',
-                                addr: '845 Market Street  San Francisco, CA<br/>+1 415-856-5402',
-                                hours: 'Monday–Saturday: 10AM–9PM | Sunday: 11AM–8PM',
+                                addr: '845 Market Street  San Francisco, CA<br/>+1 415-856-5475',
+                                hours: 'Monday–Saturday: 10AM–8:30PM | Sunday: 11AM–7PM',
                                 descr: 'Discover the best of San Francisco shopping. First stop, Bloomingdale\'s. Head to our Visitor\'s Center for a multilingual directory, or speak to our multilingual associates to tailor your experience to your needs. Learn more about our in-store amenities below.',
                                 dTile: 'VISITING SAN FRANCISCO?',
                                 dInfo: 'Download our welcome booklet before you arrive.',
@@ -1167,7 +1158,7 @@
                             {
                                 name: 'Loja matriz na 59th Street',
                                 addr: '1000 Third Avenue  New York, NY 10022<br/>+1 212-705-2000',
-                                hours: 'Segunda-feira - Sábado: Abertura da loja 10:00h <span>|</span>  Domingo: Abertura da loja 11:00h',
+                                hours: 'Segunda-feira - Sábado: 10:00h-20:30h <span>|</span>  Domingo: 10:00h-19:00h',
                                 descr: 'Venha conhecer o icônico patrimônio e a premiada hospitalidade da Bloomingdale\'s. Comece seu dia em nossa loja matriz sendo recebido no balcão do nosso Centro do Visitante, no primeiro andar. Nosso catálogo multilíngue vai oferecer um mapa para sua viagem de compras. Quer uma experiência mais personalizada? Conheça os serviços internos de nossas lojas, desde consultoria em estilo até alterações em reservas de restaurante. Nós o ajudaremos a providenciar tudo isso e muito mais.',
                                 dTile: 'VISITANDO NOVA YORK?',
                                 dInfo: 'Baixe o nosso guia de boas-vindas antes de chegar.',
@@ -1255,7 +1246,7 @@
                             {
                                 name: 'SoHo',
                                 addr: '504 Broadway  New York, NY 10012<br/>+1 212-729-5900',
-                                hours: 'Segunda-feira - Sábado: Abre às 10:00h <span>|</span> Domingo: Abre às 12:00h',
+                                hours: 'Segunda-feira - Sábado: 10:00h-21:00h <span>|</span> Domingo: 10:00h-20:00h',
                                 descr: 'Conheça nossa loja do centro, no SoHo, o bairro mais elegante da cidade. Você encontrará toda a elegante energia de nossa matriz da Upper Manhattan, mas com a sensação de uma boutique de moda. Confira nosso movimentado andar de beleza e depois conheça nossas últimas novidades de grifes. Como sempre, os atendentes multilíngues estão disponíveis para ajudar a tornar sua visita inesquecível.',
                                 dTile: 'VISITANDO NOVA YORK?',
                                 dInfo: 'Baixe o nosso guia de boas-vindas antes de chegar.',
@@ -1264,7 +1255,6 @@
                                     'BVLGARI',
                                     'Burberry',
                                     'Canali',
-                                    'CHANEL', 
                                     'COACH',
                                     'Dior',
                                     'Donna Karan',
@@ -1273,13 +1263,10 @@
                                     'Giorgio Armani',
                                     'Jimmy Choo',
                                     'La Mer',
-                                    'Longchamp', 
-                                    'Louis Vuitton', 
+                                    'Longchamp',  
                                     'MARC JACOBS',
                                     'Michael Kors', 
-                                    'Montblanc', 
                                     'Movado', 
-                                    'Prada', 
                                     'Ralph Lauren', 
                                     'Salvatore Ferragamo', 
                                     'Sandro',
@@ -1317,7 +1304,7 @@
                             },
                             {
                                 name: 'Ala Moana',
-                                addr: '1450 Ala Moana Blvd  Honolulu, HI 96814<br/>+1 808-644-7511',
+                                addr: '1450 Ala Moana Blvd  Honolulu, HI 96814<br/>+1 808-664-7511',
                                 hours: 'Segunda-feira - Sábado: 9:30h-21:00h <span>|</span> Domingo: 10:00h-19:00h',                                
                                 descr: 'Diga "Aloha" para nossa mais nova filial na tropical Honolulu. Localizada no Ala Moana Center, atração e principal local de compras no Havaí, esta loja de três andares oferece uma variedade de comodidades sob medida para o cliente no além-mar. Passe em nosso Centro Internacional de Visitantes e fale com um dos nossos atendentes multilíngues. Nós oferecemos consultoria com personal stylist, ajustes no próprio local, reservas em restaurantes e muito mais.</p><p style="margin-top: 10px;">Está pensando em nos visitar de novo? Inscreva-se em nosso International Loyalty Club e ganhe pontos em cartões de presente, serviços especiais e em aventuras havaianas autênticas.',
                                 dTile: 'VISITANDO O HAVAÍ?',
@@ -1345,7 +1332,7 @@
                                 restaurants: [
                                     {
                                         name: '<b>FORTY CARROTS</b> <span>|</span>   3º. andar ',
-                                        sched: 'Aberto todos os dias <span>|</span>  11:00h',
+                                        sched: 'Segunda-feira – Sábado 11:00h – 20:00h <span>|</span> Domingo 11:00h – 19:00h',
                                         description: 'Sua visita só estará completa após experimentar nosso famoso iogurte frozen.',
                                         imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_01.jpg'
                                     }
@@ -1379,15 +1366,11 @@
                                     },
                                     {
                                         title: 'APROVEITE OS SERVIÇOS DA LOJA',
-                                        description: 'Você pode usar seus pontos para ganhar a entrega de suas compras como cortesia em seu hotel, um almoço ou um táxi para o seu próximo destino. Para mais informações, consulte um atendente no Centro do Visitante no primeiro piso.'
-                                    },
-                                    {
-                                        title: 'DELEITE-SE EM UMA EXPERIÊNCIA QUE VOCÊ NUNCA VAI ESQUECER',
-                                        description: 'Resgate seus pontos para conhecer as autênticas aventuras do Havaí! Para mais informações, consulte um atendente no Centro do Visitante no primeiro piso.'
+                                        description: 'Para mais informações, consulte um atendente no Centro do Visitante no primeiro piso.'
                                     },
                                     {
                                         title: '',
-                                        description: '*Necessário comprovante do endereço internacional.<br/>**Pontos não podem ser resgatados nas lojas de Outlet da Bloomingdale\'s ou pelo site bloomingdales.com. Pontos podem somente ser resgatados por serviços ou experiências em Bloomingdale\'s Ala Moana.'
+                                        description: '*Necessário comprovante do endereço internacional.<br/>**Pontos não podem ser resgatados nas lojas de Outlet da Bloomingdale\'s ou pelo site bloomingdales.com.'
                                     }                                      
                                 ]                                    
                             },
@@ -1412,7 +1395,6 @@
                                     'MARC JACOBS',
                                     'MCM',
                                     'Michael Kors',
-                                    'Moncler',
                                     'Ralph Lauren',
                                     'Ray-Ban',
                                     'Salvatore Ferragamo',
@@ -1458,7 +1440,7 @@
                             {
                                 name: 'Medinah Home',
                                 addr: '600 North Wabash Avenue  Chicago, IL 60611<br/>+1 312-324-7500',
-                                hours: 'Segunda-feira - Sábado: Abertura da loja 10:00h  <span>|</span>  Domingo: Abre às 12:00h',                                         
+                                hours: 'Segunda-feira - Sábado: 10:00h-19:00h  <span>|</span>  Domingo: 12:00h-18:00h',                                         
                                 descr: 'Decore sua casa com uma viagem à loja Medinah Home em Chicago. Aqui você vai encontrar roupas de cama de luxo, utensílios de cozinha feitos por designers, finos acessórios de casa e banho e muito mais. Experimente em primeira mão nossa premiada hospitalidade com uma infinidade de serviços no interior da loja.',
                                 dTile: 'VISITANDO CHICAGO?',
                                 dInfo: 'Baixe o nosso guia de boas-vindas antes de chegar.',
@@ -1490,8 +1472,8 @@
                             },
                             {
                                 name: 'San Francisco Centre',
-                                addr: '845 Market Street  San Francisco, CA<br/>+1 415-856-5402',
-                                hours: 'Segunda-feira - Sábado: 10:00h-21:00h <span>|</span> Domingo: 11:00h-20:00h',                                   
+                                addr: '845 Market Street  San Francisco, CA<br/>+1 415-856-5475',
+                                hours: 'Segunda-feira - Sábado: 10:00h-20:30h <span>|</span> Domingo: 11:00h-19:00h',                                   
                                 descr: 'Descubra o melhor das compras em São Francisco. Primeira parada, Bloomingdale\'s. Dirija-se ao Centro do Visitante para um catálogo multilíngue ou fale com nossos atendentes multilíngues para personalizar a sua experiência de acordo com suas necessidades. Saiba mais sobre nossos serviços e comodidades internos da loja abaixo.',
                                 dTile: 'VISITANDO SÃO FRANCISCO?',
                                 dInfo: 'Baixe o nosso guia de boas-vindas antes de chegar.',
@@ -2100,7 +2082,7 @@
                             {
                                 name: '第 59 街旗舰店',
                                 addr: '1000 Third Avenue  New York, NY 10022 <br/>+1 212-705-2000',
-                                hours: '周一 – 周六： 上午 10:00 开始营业 <span>|</span> 周日： 上午 11:00 开始营业',
+                                hours: '周一到周六：上午10点到晚上8：30点 <span>|</span> 周日：上午11点到晚上7点',
                                 descr: '感受 Bloomingdale\'s 的悠久历史和备受赞誉的热情服务。在我们旗舰店开始您的一天，首先前往一楼楼厅处的顾客服务中心。我们的多语种指南将为您的购物之旅提供路线图。需要更加个性化的体验？了解我们的店内服务，包括预约形象设计师、改衣和预订餐厅等。我们会帮您安排一切。',
                                 dTile: '来纽约观光？',
                                 dInfo: '在到达之前下载我们的欢迎手册。',
@@ -2188,7 +2170,7 @@
                             {
                                 name: 'SoHo 店',
                                 addr: '504 Broadway  New York, NY 10012<br/>+1 212-729-5900',
-                                hours: '周一 – 周六： 上午 10:00 开始营业 <span>|</span> 周日： 上午 12:00 开始营业',
+                                hours: '周一到周六：上午10点到晚上9点 <span>|</span> 周日：中午12点到晚上 8点',
                                 descr: '参观我们位于 SoHo 的市中心门店，这里也是本市的时尚社区。在这里您不仅感受到我们上城区旗舰店的时尚活力，同时又具備了时尚精品店的氛围。到访我们热闹繁忙的美容商品楼层，然后细细品味我们的名牌新品。我们的多语种工作人员将一如既往地帮助您体验一次难忘的购物消闲之旅。',
                                 dTile: '来纽约观光？',
                                 dInfo: '在到达之前下载我们的欢迎手册。',
@@ -2197,7 +2179,6 @@
                                     'BVLGARI',
                                     'Burberry',
                                     'Canali',
-                                    'CHANEL', 
                                     'COACH',
                                     'Dior',
                                     'Donna Karan',
@@ -2207,12 +2188,9 @@
                                     'Jimmy Choo',
                                     'La Mer',
                                     'Longchamp', 
-                                    'Louis Vuitton', 
                                     'MARC JACOBS',
                                     'Michael Kors', 
-                                    'Montblanc', 
                                     'Movado', 
-                                    'Prada', 
                                     'Ralph Lauren', 
                                     'Salvatore Ferragamo', 
                                     'Sandro',
@@ -2250,7 +2228,7 @@
                             },
                             {
                                 name: '阿拉莫阿那购物中心店',
-                                addr: '1450 Ala Moana Blvd  Honolulu, HI 96814<br/>+1 808-644-7511',
+                                addr: '1450 Ala Moana Blvd  Honolulu, HI 96814<br/>+1 808-664-7511',
                                 hours: '周一 – 周六： 上午 9:30－晚上 9:00 <span>|</span> 周日： 上午 10:00－晚上 7:00',                                
                                 descr: '跟我们在热带檀香山设立的最新商店打个招呼。这座三层楼高的商店位于夏威夷黄金购物地带阿拉莫阿那购物中心店，内部配备有各种便利设施，专为海外购物者量身打造。我们提供个人形象设计师会面、现场改衣、餐厅订位等等。',
                                 dTile: '正在前往夏威夷的途中？',
@@ -2278,7 +2256,7 @@
                                 restaurants: [
                                     {
                                         name: '<b>FORTY CARROTS</b> <span>|</span>   3 层',
-                                        sched: '营业时间 上午 11:00',
+                                        sched: '周一 - 周六上午11:00 - 晚上8:00 <span>|</span> 周日上午11:00 - 晚上7:00',
                                         description: '只有品尝了我们著名的冷冻酸奶，才算不虚此行。',
                                         imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_01.jpg'
                                     }                                    
@@ -2312,15 +2290,11 @@
                                     },
                                     {
                                         title: '享受商店的服务',
-                                        description: '您的积分还可为您赢取商品免费打包送货服务，以及为您的下一站旅途提供餐饮或汽车服务。 要了解更多信息，请在一楼顾客服务中心咨询工作人员。'
-                                    },
-                                    {
-                                        title: '享受一次难忘的旅程',
-                                        description: '您可兑换积分，享受纯正的夏威夷风情游！ 要了解更多信息，请在一楼顾客服务中心咨询工作人员。'
+                                        description: '要了解更多信息，请在一楼顾客服务中心咨询工作人员。'
                                     },
                                     {
                                         title: '',
-                                        description: '*需提供国际地址证明。<br/>**点数不可在 Bloomingdale\'s 的直销店或网站上获得。点数只可在Bloomingdale\'s Ala Moana 店内的消费及服务获得。'
+                                        description: '*需提供国际地址证明。<br/>**积分不可用于在Bloomingdale’s奥特莱斯店或网站消费。'
                                     }                                      
                                 ]                                    
                             },
@@ -2345,7 +2319,6 @@
                                     'MARC JACOBS',
                                     'MCM',
                                     'Michael Kors',
-                                    'Moncler',
                                     'Ralph Lauren',
                                     'Ray-Ban',
                                     'Salvatore Ferragamo',
@@ -2396,7 +2369,7 @@
                             {
                                 name: '麦地那之家',
                                 addr: '600 North Wabash Avenue  Chicago, IL 60611<br/>+1 312-324-7500',
-                                hours: '周一–周六：上午 10:00 开始营业 <span>|</span> 周日：中午 12:00 开始营业',
+                                hours: '周一到周六：上午10点到晚上 7点 <span>|</span> 周日：中午12点到晚上 6点',
                                 descr: '前往芝加哥的麦地那之家，将您的房子装饰一新。在这里，您可以选购高档床上用品、名牌厨具、豪华浴室配件等。亲自体验我们备受赞誉的热情服务和全方位的店内服务。',
                                 dTile: '来密歇根观光？',
                                 dInfo: '在到达之前下载我们的欢迎手册。',
@@ -2431,8 +2404,8 @@
                             },
                             {
                                 name: '旧金山中心店',
-                                addr: '845 Market Street  San Francisco, CA<br/>+1 415-856-5402',
-                                hours: '周一 － 周六： 上午 10:00 － 晚上 9:00 <span>|</span> 周日： 上午 11:00 － 晚上 8:00',                                
+                                addr: '845 Market Street  San Francisco, CA<br/>+1 415-856-5475',
+                                hours: '周一到周六：上午10点到晚上8：30点 <span>|</span> 周日：上午10点到晚上7点',                                
                                 descr: '享受旧金山最佳的购物体验。第一站，Bloomingdale\'s。前往我们的顾客服务中心获取多语种指南，或咨询我们的多语种工作人员，他们将为您量身定制满足您需求的体验。在下方了解更多关于我们店内设施的信息。',
                                 dTile: '来旧金山观光？',
                                 dInfo: '在到达之前下载我们的欢迎手册。',
@@ -3047,7 +3020,7 @@
                             {
                                 name: '59th Street Flagship',
                                 addr: '1000 Third Avenue Nueva York, NY 10022<br/>+1 212-705-2000',
-                                hours: 'De lunes a sábados: la tienda abre a las 10:00 a.m.<span>|</span> Domingos: la tienda abre a las 11:00 a.m.',
+                                hours: 'De lunes a sábados: de 10:00 a.m. a 8:30 p.m.<span>|</span> Domingos: de 10:00 a.m. a 7:00 p.m.',
                                 descr: 'Descubra el legado emblemático y la galardonada hospitalidad de Bloomingdale\'s. Inicie su día en nuestra tienda insignia visitando nuestro Centro de Visitantes, ubicado en el balcón del primer piso. Nuestro directorio en varios idiomas le permitirá armar el recorrido de su excursión de compras. ¿Está buscando una experiencia más personalizada? Conozca los servicios brindados en nuestra tienda, que van desde citas con estilistas y alteraciones de ropa hasta reservas en restaurantes. Le ayudaremos a organizar todo esto y mucho más.',
                                 dTile: '¿DE VISITA EN NUEVA YORK?',
                                 dInfo: 'Descargue nuestro folleto de bienvenida antes de llegar.',
@@ -3136,7 +3109,7 @@
                             {
                                 name: 'SoHo',
                                 addr: '504 Broadway  Nueva York, NY 10012<br/>+1 212-729-5900',
-                                hours: 'De lunes a sábados: la tienda abre a las 10:00 a.m. <span>|</span> Domingos: la tienda abre a las 12:00 p.m.',
+                                hours: 'De lunes a sábados: de 10:00 a.m. a 9:00 p.m. <span>|</span> Domingos: de 12:00 p.m. a 8:00 p.m.',
                                 descr: 'Explore nuestra tienda del centro en SoHo, la zona que está más a la moda de la ciudad. Encontrará toda la energía y el estilo de nuestra tienda insignia de la parte alta de la ciudad, pero con el aspecto de una boutique de alta costura. Visite nuestro animado piso de belleza y explore las últimas novedades de los diseñadores. Como siempre, nuestros asociados políglotos están disponibles para ayudarle a que su visita sea memorable.',
                                 dTile: '¿DE VISITA EN NUEVA YORK?',
                                 dInfo: 'Descargue nuestro folleto de bienvenida antes de llegar.',
@@ -3146,7 +3119,6 @@
                                     'BVLGARI',
                                     'Burberry',
                                     'Canali',
-                                    'CHANEL', 
                                     'COACH',
                                     'Dior',
                                     'Donna Karan',
@@ -3156,12 +3128,9 @@
                                     'Jimmy Choo',
                                     'La Mer',
                                     'Longchamp', 
-                                    'Louis Vuitton', 
                                     'MARC JACOBS',
-                                    'Michael Kors', 
-                                    'Montblanc', 
+                                    'Michael Kors',  
                                     'Movado', 
-                                    'Prada', 
                                     'Ralph Lauren', 
                                     'Salvatore Ferragamo', 
                                     'Sandro',
@@ -3199,7 +3168,7 @@
                             },
                             {
                                 name: 'Ala Moana',
-                                addr: '1450 Ala Moana Blvd  Honolulu, HI 96814<br/>+1 808-644-7511',
+                                addr: '1450 Ala Moana Blvd  Honolulu, HI 96814<br/>+1 808-664-7511',
                                 hours: 'De lunes a sábados: de 9:30 a.m. a 9:00 p.m. | Domingos: de 10:00 a.m. a 7:00 p.m.',
                                 descr: 'Dígale aloha a nuestra nueva tienda en la tropical Honolulu. Ubicada en el centro comercial Ala Moana Center, el principal destino de compras de Hawái, esta tienda de tres pisos cuenta con una gama de servicios adecuados para el comprador extranjero. Visite nuestro Centro de Visitantes Internacionales y hable con uno de nuestros asociados políglotos. Ofrecemos citas con un asesor estilístico internacional, alteraciones de ropa, reservas en restaurantes y mucho más.</p><p style="margin-top: 10px;">¿Tiene previsto regresar? Inscríbase en nuestro Club de Fidelidad para Clientes Internacionales y junte puntos para obtener tarjetas de regalo, servicios especiales y auténticas aventuras hawaianas.</p>',
                                 dTile: '¿DE VISITA EN HAWÁI?',
@@ -3228,7 +3197,7 @@
                                 restaurants: [
                                     {
                                         name: '<b>FORTY CARROTS</b> <span>|</span>   3.° piso ',
-                                        sched: 'Abierto todos los días Desde las 11:00 a. m.',
+                                        sched: 'De lunes a sábados, de 11:00 a.m. a 8:00 p.m. <span>|</span> Domingos, de 11:00 a.m. a 7:00 p.m.',
                                         description: 'Su visita no estará completa sin nuestro famoso yogur helado.',
                                         imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_01.jpg'
                                     }
@@ -3262,15 +3231,11 @@
                                     },
                                     {
                                         title: 'DISFRUTE DE LOS SERVICIOS DE LA TIENDA',
-                                        description: 'Con sus puntos, podrá obtener servicios de envío gratuito de paquetes a su hotel, almuerzos o servicios de transporte a su siguiente destino. Para obtener más información, hable con un asociado en el Centro de Visitantes, ubicado en el primer piso.'
-                                    },
-                                    {
-                                        title: 'DESE EL GUSTO DE VIVIR UNA EXPERIENCIA QUE NUNCA OLVIDARÁ',
-                                        description: '¡Puede canjear sus puntos por auténticas aventuras hawaianas! Para obtener más información, hable con un asociado en el Centro de Visitantes, ubicado en el primer piso.'
+                                        description: 'Para obtener más información, hable con un asociado en el Centro de Visitantes, ubicado en el primer piso.'
                                     },
                                     {
                                         title: '',
-                                        description: '*Es necesario demostrar un domicilio internacional.<br/>**No es posible canjear los puntos en tiendas de descuento de Bloomingdale\'s o en bloomingdales.com. Los puntos solo pueden ser canjeados por servicios o experiencias en Bloomingdale\'s de Ala Moana.'
+                                        description: '*Es necesario demostrar un domicilio internacional.<br/>**No es posible canjear los puntos en tiendas de descuento de Bloomingdale\'s o en bloomingdales.com.'
                                     }                                      
                                 ]                                    
                             },
@@ -3296,7 +3261,6 @@
                                     'MARC JACOBS',
                                     'MCM',
                                     'Michael Kors',
-                                    'Moncler',
                                     'Ralph Lauren',
                                     'Ray-Ban',
                                     'Salvatore Ferragamo',
@@ -3347,7 +3311,7 @@
                             {
                                 name: 'Medinah Home',
                                 addr: '600 North Wabash Avenue  Chicago, IL 60611<br/>+1 312-324-7500',
-                                hours: 'De lunes a sábados:  la tienda abre a las 10:00 a.m. <span>|</span> Domingos: la tienda abre a las 12:00 p.m.',
+                                hours: 'De lunes a sábados: de 10:00 a.m. a 7:00 p.m. <span>|</span> Domingos: de 12:00 p.m. a 6:00 p.m.',
                                 descr: 'Engalane su hogar con una visita a la tienda Medinah Home de Chicago. Aquí encontrará lujosa ropa de cama, aparatos electrodomésticos de diseñador, accesorios para baño y más. Experimente personalmente nuestra galardonada hospitalidad con un rango completo de servicios en la tienda.',
                                 dTile: '¿DE VISITA EN CHICAGO?',
                                 dInfo: 'Descargue nuestro folleto de bienvenida antes de llegar.',
@@ -3383,8 +3347,8 @@
                             },
                             {
                                 name: 'San Francisco Centre',
-                                addr: '845 Market Street  San Francisco, CA<br/>+1 415-856-5402',
-                                hours: 'De lunes a sábados: de 10:00 a.m. a 9:00 p.m. | Domingos: de 11:00 a.m. a 8:00 p.m.',
+                                addr: '845 Market Street  San Francisco, CA<br/>+1 415-856-5475',
+                                hours: 'De lunes a sábados: de 10:00 a.m. a 8:30 p.m. | Domingos: de 11:00 a.m. a 7:00 p.m.',
                                 descr: 'Descubra la mejor forma de hacer compras en San Francisco. Su primera parada: Bloomingdale\'s. En nuestro Centro de Visitantes podrá obtener un directorio en varios idiomas o hablar con nuestros asociados políglotos para adecuar su experiencia a la medida de sus necesidades. A continuación, podrá conocer más sobre los servicios brindados en nuestra tienda.',
                                 dTile: '¿DE VISITA EN SAN FRANCISCO?',
                                 dInfo: 'Descargue nuestro folleto de bienvenida antes de llegar.',
@@ -4003,7 +3967,7 @@
                             {
                                 name: '59丁目本店（ニューヨーク）',
                                 addr: '1000 Third Avenue  New York, NY 10022<br/>電話：212-705-2000',
-                                hours: '月曜日～土曜日: 午前10:00開店 <span>|</span> 日曜日: 午前11:00開店',
+                                hours: '月曜日〜土曜日: 午前10:00〜午後8:30 <span>|</span> 日曜日: 午前11:00〜午後7:00',
                                 descr: 'Bloomingdale\'s を象徴する伝統と受賞歴を誇るおもてなしをご体験ください。Flagship店へのご来店の日は、まず１階バルコニーのビジターセンターへお立ち寄りいただけば、各言語でのフロア案内ガイドが用意されておりますので、ショッピングのお役に立つでしょう。また、個人のご希望に叶いますよう、様々な店内サービス（お買い物をサポートするスタイリスト、サイズ直し、レストランの予約など）が用意されておりますので、どうぞご利用ください。',
                                 dTile: 'ニューヨークへご旅行ですか？',
                                 dInfo: 'いらっしゃる前に当店のウェルカム・ブックレットをダウンロードください。',
@@ -4092,7 +4056,7 @@
                             {
                                 name: 'ソーホー店（ニューヨーク）',
                                 addr: '504 Broadway  New York, NY 10012<br/>電話：212-729-5900',
-                                hours: '月曜日～土曜日: 午前10:00開店 <span>|</span> 日曜日：正午開店',
+                                hours: '月曜日〜日曜日: 午前10:00〜午後9:00 <span>|</span> 日曜日: 正午〜午後8:00',
                                 descr: 'ニューヨークのダウンタウンで最もオシャレな地区SoHoに位置する当店へどうぞお越しください。アップタウンにあるFlagship店と全く同じスタイリッシュな雰囲気を持ちますが、ファッション・ブティックの趣も感じていただけるでしょう。活気にあふれるビューティ用品フロアをチェックした後は、デザイナーズ・ブランドの最新作をじっくり品定めしてください。当店でももちろん、思い出に残るお買い物体験をしていただくため、多言語スタッフがお手伝いいたします。',
                                 dTile: 'ニューヨークへご旅行ですか？',
                                 dInfo: 'いらっしゃる前に当店のウェルカム・ブックレットをダウンロードください。',
@@ -4102,7 +4066,6 @@
                                     'BVLGARI',
                                     'Burberry',
                                     'Canali',
-                                    'CHANEL', 
                                     'COACH',
                                     'Dior',
                                     'Donna Karan',
@@ -4112,12 +4075,9 @@
                                     'Jimmy Choo',
                                     'La Mer',
                                     'Longchamp', 
-                                    'Louis Vuitton', 
                                     'MARC JACOBS',
                                     'Michael Kors', 
-                                    'Montblanc', 
                                     'Movado', 
-                                    'Prada', 
                                     'Ralph Lauren', 
                                     'Salvatore Ferragamo', 
                                     'Sandro',
@@ -4155,7 +4115,7 @@
                             },
                             {
                                 name: 'アラモアナ店（ホノルル）',
-                                addr: '1450 Ala Moana Blvd  Honolulu, HI 96814<br/>電話：808-644-7511',
+                                addr: '1450 Ala Moana Blvd  Honolulu, HI 96814<br/>電話：808-664-7511',
                                 hours: '月曜日～土曜日：午前9:30～午後9:00 | 日曜日：午前10:00～午後7:00',
                                 descr: 'トロピカルなホノルルに登場にしたアメリカ本土外のBloomingdale\'s最新店舗にどうぞお越しください。ハワイ一番のショッピングセンターAla Moana Center内に位置するこの３階建ての店舗には、海外からのお客様への特別な設備・サービスが幅広く取り揃えられています。インターナショナル・ウェルカムセンターへお立ち寄りいただけば、多言語スタッフがご相談にのります。インターナショナル・スタイル・アドバイザーのご予約、店内サイズ直し、レストランの予約などをはじめとする多くのサービスがご利用いただけます。 <br/><br/> 再度お越しになる予定ですか？Bloomingdale\'sのインターナショナル・ロイヤルティ・クラブにご入会いただけば、ギフトカード、特別サービス、本物のハワイアドベンチャー体験と引き換えられるポイントを貯めることができます。',
                                 dTile: 'ハワイへご旅行ですか？',
@@ -4184,7 +4144,7 @@
                                 restaurants: [
                                     {
                                         name: '<b>FORTY CARROTS</b> <span>|</span> 3階',
-                                        sched: '毎日営業 午前11:00より',
+                                        sched: '月曜日〜土曜日午前11:00〜午後8:00、日曜日午前11:00〜午後7:00',
                                         description: 'ご来店の際は、ご好評をいただいているフローズン・ヨーグルトをぜひお試しください。',
                                         imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_01.jpg'
                                     }
@@ -4218,15 +4178,11 @@
                                     },
                                     {
                                         title: 'ストアサービスに利用',
-                                        description: 'ご購入品のホテルへの配送、ランチ、次の目的地までの車での送迎サービスとポイントを引き換えることができます。詳しくは、１階のウェルカムセンターでスタッフにお尋ねください。'
-                                    },
-                                    {
-                                        title: '思い出に残る楽しい体験！',
-                                        description: 'ポイントを本物のハワイアドベンチャー体験と引き換えましょう！詳しくは、１階のウェルカムセンターでスタッフにお尋ねください。'
+                                        description: '詳しくは、１階のウェルカムセンターでスタッフにお尋ねください。'
                                     },
                                     {
                                         title: '',
-                                        description: '*米国外住所の証明が必要です。<br/>**Bloomingdale\'sのアウトレットストア各店およびbloomingdales.comでは、ポイント引き換えはご利用いただけません。サービスおよび体験はBloomingdale\'s Ala Moanaのみでのお引き換えとなります。'
+                                        description: '*米国外住所の証明が必要です。<br/>**Bloomingdale\'sのアウトレットストア各店およびbloomingdales.comでは、ポイント引き換えはご利用いただけません。'
                                     }                                      
                                 ]                                    
                             },
@@ -4252,7 +4208,6 @@
                                     'MARC JACOBS',
                                     'MCM',
                                     'Michael Kors',
-                                    'Moncler',
                                     'Ralph Lauren',
                                     'Ray-Ban',
                                     'Salvatore Ferragamo',
@@ -4303,7 +4258,7 @@
                             {
                                 name: 'メダイナ・ホーム店（シカゴ）',
                                 addr: '600 North Wabash Avenue  Chicago, IL 60611<br/>電話：312-324-7500',
-                                hours: '月曜日～土曜日: 午前10:00開店 <span>|</span> 日曜日：正午開店',
+                                hours: '月曜日〜土曜日: 午前10:00〜午後7:00 <span>|</span> 日曜日: 正午〜午後6:00',
                                 descr: 'ご家庭のステキな飾り付けのためには、シカゴのメダイナ・ホーム店へお越しください。豪華寝具、ブランドのキッチン用品、オシャレなバス用品をはじめとする多くのものが揃っています。幅広い店内サービスをご利用になり、受賞歴を誇る当店のおもてなしを、どうぞご自身でご体験ください。',
                                 dTile: 'ミシガンへご旅行ですか？',
                                 dInfo: 'いらっしゃる前に当店のウェルカム・ブックレットをダウンロードください。',
@@ -4339,8 +4294,8 @@
                             },
                             { 
                                 name: 'サンフランシスコ・センター店（サンフランシスコ）',
-                                addr: '845 Market Street  San Francisco, CA<br/>電話：415-856-5402',
-                                hours: '月曜日～土曜日: 午前10:00～午後9:00 | 日曜日: 午前11:00～午後8:00',
+                                addr: '845 Market Street  San Francisco, CA<br/>電話：415-856-5475',
+                                hours: '月曜日〜土曜日: 午前10:00〜午後8:30 | 日曜日: 午前10:00〜午後7:00',
                                 descr: 'サンフランシスコで一番のショッピングスポットを見つけましょう。まず最初に行くべき所はBloomingdale\'sです。店内のビジターセンターへまずお寄りいただけば、フロア案内ガイドは各言語揃っており、また、ご希望通りにショッピングをお楽しみいただけるよう多言語スタッフがご相談にのりますこの下で店内の設備・サービスについて詳しくご説明いたします。',
                                 dTile: 'サンフランシスコへご旅行ですか？',
                                 dInfo: 'いらっしゃる前に当店のウェルカム・ブックレットをダウンロードください。',
