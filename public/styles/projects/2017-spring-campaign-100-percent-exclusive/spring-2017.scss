@@ -19,14 +19,25 @@
     line-height: 25px;
 }
 
-.men_paint1{
+.men_paint1 {
     position: absolute;
-    top: -200px;
-    left: -40px;
-    width: 100%;
-    max-width: 850px;
+    top: -20vw;
+    left: 0vw;
+    width: 50vw;
+    max-width: 680px;
     z-index: -1;
 }
+
+@media screen and (min-width:1680px) {
+
+    .men_paint1{
+        top: -290px;
+        left: 60px;
+        width: 100%;
+    }
+
+}
+
 
 //=================================================================//
 //HOME
@@ -410,13 +421,18 @@
 }
 .landing_text3{
     text-align: left;
-    font-size: 1.3vw;
-    font-weight: 300;
-    line-height: 2.7vw;
     left: 0;
     right: 0;
     margin: 0 auto;
     width: 26vw;
+
+    a{
+        font-size: 1.3vw;
+        font-weight: 300;
+        line-height: 2.7vw;
+        text-decoration: none;
+        color:black;
+    }
 }
 
 .landing_text4_title{
@@ -466,9 +482,15 @@
   width:16%;
 }
 
-#social_parent2 li {
-  display: inline-block;
-  width:30%;
+#social_parent2 {
+    height: 70px;
+    line-height: 70px;
+    margin-bottom: 0;
+    text-align: left;
+    li {
+        display: inline-block;
+        max-width:30%;
+    }
 }
 
 .footer_row{
@@ -503,11 +525,15 @@
 
     .landing_text3 {
         text-align: center;
-        font-size: 2.5vw;
-        width: 81vw;
-        line-height: 5vw;
         padding-top: 3vw;
-        padding-bottom:7vw;
+        padding-bottom: 9vw;
+        padding-left: 6vw;
+        padding-right: 6vw;
+        width: 100%;
+        a{
+            font-size: 2.6vw;
+            line-height: 5vw;
+        }
     }
     .landing_text4_title{
         font-size: 6vw;
@@ -535,8 +561,12 @@
         left: 23.5vw;
     }
 
-    #social_parent2 li {
-      width:20%;
+    #social_parent2 {
+        text-align: center;
+        padding-top: 2vw;
+        li {
+            max-width:20%;
+        }
     }
 
     .landing_backtotop{
@@ -555,9 +585,11 @@
         font-size: 27px;
     }
     .landing_text3{
-        font-size: 21px;
-        line-height: 50px;
         width:420px;
+        a{ 
+            font-size: 21px;
+            line-height: 50px;
+        }
     }
     .landing_text4_title {
         font-size: 42px;
@@ -650,7 +682,7 @@
     @include preventReflowForScaledContent(490px, 700px);
 }
 .menImageRatio2 {
-    @include preventReflowForScaledContent(814px, 1015px);    
+    @include preventReflowForScaledContent(704px, 1200px);    
 }
 
 .reflowProofImage{
