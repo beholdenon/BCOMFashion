@@ -13,7 +13,7 @@ module.exports = {
             let urlHost = req.headers.host;
             let urlPath = req.url.path;
 
-            if ( urlHost.indexOf('fashion.') >= 0 || urlHost.indexOf('localhost') >= 0 ) {
+            if ( urlHost.indexOf('fashion') >= 0 || urlHost.indexOf('localhost') >= 0 ) {
                 urlPath = urlPath.replace('/b','');
             }
 
