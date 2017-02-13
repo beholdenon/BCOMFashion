@@ -123,9 +123,6 @@ serviceProxy.parseHandler = function(parser, request, res, payload, reply) {
 
 serviceProxy.defaultOnResponse = function(err, res, request, reply) {
     // See recommendations, reviews, or bopsUpc if status codes require custom handling
-    console.log("---------RESPONSE--------");
-    console.log(res);
-    console.log("-------------------------");
 
     if (err) {
         console.log("----------ERROR---------");
