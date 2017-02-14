@@ -11,7 +11,30 @@
 	.horizontal-divider-thin {
 		border-bottom: 2px solid #c5a6e2;
 		margin: 5px 20px 13px 0px;
-	}	
+	}
+
+	.bl_breadcrumb_object {
+        padding: 0 0 25px 0;
+        color: #666666;
+        line-height:1.3;
+    }
+
+    span {
+        &.bl_breadcrumb_link {
+            line-height: 1;
+        }
+
+        &.bl_breadcrumb_link a {
+            font-size: .9rem;
+            font-weight: normal;
+            text-decoration: none;
+        }
+
+        &.bl_breadcrumb_bold {
+            font-size: .9rem;
+            font-weight: bold;
+        }
+    }
 
 	#my-perks-header {
 		position: relative;

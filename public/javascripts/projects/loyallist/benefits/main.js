@@ -1,8 +1,8 @@
 'use strict';
 
 require( [ 'jquery', 'bcomLeftNav/account/AccountLeftNav' ], function ( $, accountLeftNav ) {
-    accountLeftNav.render( '#bl_leftNavContainer', "" );
-    
+    accountLeftNav.render( '#bl_leftNavContainer', "ln_loyallist" );
+
 	$(document).ready( function() {
 		$('#learn-more-link').on('click', function () {
 			if ($('.bl_mobile').length) {
