@@ -10,13 +10,7 @@ module.exports = {
         tags: ['static'],
         handler: function(req, res) {
 
-            let urlHost = req.headers.host;
-            let urlPath = req.url.path;
-
-            if ( urlHost.indexOf('fashion') >= 0 || urlHost.indexOf('localhost') >= 0 ) {
-                urlPath = urlPath.replace('/b','');
-            }
-
+            let urlPath = req.url.path.replace(/^\/b\//g, "/");
             let env = process.env.NODE_ENV;
             let filePath = '/' + urlPath.split('/').splice(2).join('/').replace(/\?.*/,'');
 
