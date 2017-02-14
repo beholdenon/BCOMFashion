@@ -1,7 +1,7 @@
 'use strict';
 
-let serviceProxy = require('./../helpers/serviceProxy');
-let Path = require('path');
+let serviceProxy = require('./../helpers/serviceProxy'),
+    Path = require('path');
 
 module.exports = {
     netstorage: {
@@ -9,8 +9,16 @@ module.exports = {
         notes: 'All requests that begin with /fashion are assumed to be static assets in /public',
         tags: ['static'],
         handler: function(req, res) {
+
+            let urlHost = req.headers.host;
+            let urlPath = req.url.path;
+
+            if ( urlHost.indexOf('fashion') >= 0 || urlHost.indexOf('localhost') >= 0 ) {
+                urlPath = urlPath.replace('/b','');
+            }
+
             let env = process.env.NODE_ENV;
-            let filePath = '/' + req.url.path.split('/').splice(2).join('/').replace(/\?.*/,'');
+            let filePath = '/' + urlPath.split('/').splice(2).join('/').replace(/\?.*/,'');
 
             if (env === 'dev') {
                 filePath = '.' + filePath;
