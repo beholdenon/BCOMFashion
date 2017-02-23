@@ -5,7 +5,8 @@ window.SYNDECA.vertical = (function(window, document, $) {
     var isTablet = $('body').hasClass('bl_tablet') ? true : false;
 
     //back to top listener
-    $('.desktop_back_to_top, #syndeca_mobile_back_to_top_button').on('click', function() {
+    $('.desktop_back_to_top, #syndeca_mobile_back_to_top_button').on('click', function(event) {
+        event.preventDefault();
         $('html, body').animate({
             scrollTop: 0
         }, 'slow' );
