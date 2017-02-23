@@ -6,7 +6,7 @@ var CHARLOTTE = {
 	cm: {
 		category: "mbl:fall16_CharlotteTilbury"
 	},
-	baseHeader: '/fashion/images/projects/lookbooks/charlotte-tilbury/hero-',
+	baseHeader: '/b/fashion/images/projects/lookbooks/charlotte-tilbury/hero-',
 	currentHeader: 1,
 
 	// changes header image 

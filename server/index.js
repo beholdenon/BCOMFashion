@@ -40,7 +40,7 @@ var routes = [
     { method: 'POST', path: '/bag/add/{path*}',                                                             config: require('./lib/handlers/api').addbag },
     { method: 'GET',  path: '/akamai/{path*}',                                                              config: require('./lib/handlers/akamai') },
     { method: 'GET',  path: '/fashion/{path*}',                                                             config: require('./lib/handlers/assets').netstorage },
-    { method: 'GET',  path: '/b/fashion/{path*}',                                                             config: require('./lib/handlers/assets').netstorage },
+    { method: 'GET',  path: '/b/fashion/{path*}',                                                           config: require('./lib/handlers/assets').netstorage },
     { method: 'GET',  path: '/img/{path*}',                                                                 config: require('./lib/handlers/assets').commonAssets },
     { method: 'GET',  path: '/web20/assets/{path*}',                                                        config: require('./lib/handlers/assets').commonAssets },
     { method: 'GET',  path: '/shop/flyout/{path*}',                                                         config: require('./lib/handlers/assets').commonAssets },

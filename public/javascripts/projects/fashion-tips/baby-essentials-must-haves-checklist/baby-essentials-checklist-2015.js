@@ -280,7 +280,7 @@
                   '&display=popup&redirect_uri=' + encodeURIComponent('https://www.facebook.com/'),
 
                 // Compose pinterest url
-                pinterestMedia = escape(assetsHost + "/fashion/images/projects/fashion-tips/baby-essentials-must-haves-checklist/icon_pinterest.jpg"),
+                pinterestMedia = escape(assetsHost + "/b/fashion/images/projects/fashion-tips/baby-essentials-must-haves-checklist/icon_pinterest.jpg"),
                 pinterestDescription = escape(fbTitle);
 
           // Forward link urls to requester

@@ -452,7 +452,7 @@ var atb = {
 
 			}
 			if ( p >= additionalThumbnails ) {
-				$('.atb.master .thumbnails').append("<img class='thumbArrow' data-direction='down' id='thumbBottomArrow' src='/fashion/images/atb/thumbnail_arrow.png'>").prepend("<img class='inactive thumbArrow' data-direction='up' id='thumbTopArrow' src='/fashion/images/atb/thumbnail_arrow.png'>");
+				$('.atb.master .thumbnails').append("<img class='thumbArrow' data-direction='down' id='thumbBottomArrow' src='/b/fashion/images/atb/thumbnail_arrow.png'>").prepend("<img class='inactive thumbArrow' data-direction='up' id='thumbTopArrow' src='/b/fashion/images/atb/thumbnail_arrow.png'>");
 			}
 		}
 

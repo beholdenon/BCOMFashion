@@ -266,7 +266,7 @@ window.TEMPLATE.vertical = (function(window, document, $) {
     APP.socialshare = function() {
         var self = this,
             baseURL = 'http://' + window.location.host + window.location.pathname,
-            baseURLAssets = 'http://' + window.location.host + '/fashion/images/projects/lookbooks/spring-2016-pierre-henri-mattout/';
+            baseURLAssets = 'http://' + window.location.host + '/b/fashion/images/projects/lookbooks/spring-2016-pierre-henri-mattout/';
 
         self.social.facebookURL = 'https://www.facebook.com/dialog/feed';
         self.social.facebookURL += '?app_id=145634995501895';

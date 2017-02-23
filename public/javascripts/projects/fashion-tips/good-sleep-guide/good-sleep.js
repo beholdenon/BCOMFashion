@@ -3,9 +3,9 @@ require( [ 'jquery', window.BLOOMIES.coremetrics ], function ( $, Coremetrics ) 
 
 	var isDebugMode = window.location.search && window.location.search.indexOf('debug=true'),
 		$ = jQuery,
-		baseUrlAssets = '/fashion/images/projects/fashion-tips/good-sleep-guide/',
-  		baseUrlScriptAssets = '/fashion/javascripts/projects/fashion-tips/good-sleep-guide/',
-  		baseUrlStyleAssets = '/fashion/styles/projects/fashion-tips/good-sleep-guide/',
+		baseUrlAssets = '/b/fashion/images/projects/fashion-tips/good-sleep-guide/',
+  		baseUrlScriptAssets = '/b/fashion/javascripts/projects/fashion-tips/good-sleep-guide/',
+  		baseUrlStyleAssets = '/b/fashion/styles/projects/fashion-tips/good-sleep-guide/',
 		CHOICE_LINK_MAP = {
 			'on-my-side:down':                '/shop/home/designer-down-pillows-comforters/Bed_type,Fill_type,Pillow_density,Productsperpage/Pillow,Duck%20Down%7CAllergy%20Free%20Down%7CFeather%2FDown,Firm,180?id=1004679',
 			'on-my-side:down-alternative':    '/shop/home/designer-down-pillows-comforters/Bed_type,Fill_type_site,Pillow_density_site/Pillow,Down Alternative,Firm?id=1004679',
@@ -733,7 +733,7 @@ require( [ 'jquery', window.BLOOMIES.coremetrics ], function ( $, Coremetrics ) 
 		};
 
 		module.loadExternalModules = function () {
-			window.require( [ '/fashion/javascripts/projects/fashion-tips/good-sleep-guide/mobile-pages.js' ], function ( pagesModule ) {
+			window.require( [ '/b/fashion/javascripts/projects/fashion-tips/good-sleep-guide/mobile-pages.js' ], function ( pagesModule ) {
 				module.rootNode.find( 'section[data-page-type]' ).each( function ( index, element ) {
 					var page = pagesModule.pageWithSubpages( element, $( element ).attr( 'data-page-type' ) );
 					if ( page !== null ) {
