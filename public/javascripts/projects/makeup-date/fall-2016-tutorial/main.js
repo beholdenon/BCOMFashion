@@ -185,7 +185,7 @@ $(document).ready(function() {
 		}
 	});
 
-	$.getJSON('/fashion/javascripts/projects/makeup-date/fall-2016-tutorial/shop.json', function(json) {
+	$.getJSON('/b/fashion/javascripts/projects/makeup-date/fall-2016-tutorial/shop.json', function(json) {
 		APP.products = json.products;
 		console.log('data call complete');
 	}).done( function () {
@@ -211,7 +211,7 @@ $(document).ready(function() {
 		$('#makeupVideo').show().attr("data-name", $(this).attr("data-element"));
 		$("#video-placeholder").hide();
 
-		$('#prodShell').html("<img class='loader' src='/fashion/images/ajax-loader.gif'/>");
+		$('#prodShell').html("<img class='loader' src='/b/fashion/images/ajax-loader.gif'/>");
 		APP.updateShop( APP.products[ $(this).attr("data-upc") ].upc );
 	});
 

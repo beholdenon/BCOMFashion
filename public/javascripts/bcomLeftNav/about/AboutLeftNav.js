@@ -7,7 +7,7 @@ define( [ "LeftNav" ], function ( LeftNav ) {
                     type: 'header',
                     text: 'ABOUT US',
                     label: 'About Us',
-                    href: '/about-us/directory/',
+                    href: '/b/about-us/directory/',
                     id: 'about_aboutUs',
                     secure: false
                 }
@@ -18,13 +18,13 @@ define( [ "LeftNav" ], function ( LeftNav ) {
                     text: 'WAYS TO SHOP',
                     label: 'Ways To Shop',
                     //href: 'http://www1.bloomingdales.com/ways-to-shop/index.jsp',
-                    href: '/about-us/store-events-ways-to-shop/',
+                    href: '/b/about-us/store-events-ways-to-shop/',
                     id: 'about_waysToShop',
                     secure: false
                 },
                 {
                     text: 'Bloomingdale\'s App',
-                    href: '/about-us/mobile-shopping-online',
+                    href: '/b/about-us/mobile-shopping-online',
                     //href: '//www1.bloomingdales.com/media/about/mobile.jsp',
                     id: 'about_bloomingdalesApp',
                     secure: false
@@ -39,7 +39,7 @@ define( [ "LeftNav" ], function ( LeftNav ) {
                 {
                     text: 'Pick Up In Store',
                     //href: '/about/newstores/',
-                    href: '/about-us/buy-online-pickup-in-store/?cm_sp=ways_to_shop-_-bops',
+                    href: '/b/about-us/buy-online-pickup-in-store/?cm_sp=ways_to_shop-_-bops',
                     id: 'about_pickUpInStore',
                     secure: false
                 }
@@ -49,13 +49,13 @@ define( [ "LeftNav" ], function ( LeftNav ) {
                     type:'header',
                     text: 'SHOPPING SERVICES',
                     label: 'Shopping Services',
-                    href: '/about-us/shopping/shopping-services/',
+                    href: '/b/about-us/shopping/shopping-services/',
                     id: 'about_shoppingServices',
                     secure: false
                 },
                 {
                     text: 'Size Charts',
-                    href: '/about-us/shopping/sizecharts/womens-petite-plus/',
+                    href: '/b/about-us/shopping/sizecharts/womens-petite-plus/',
                     id: 'about_sizeCharts',
                     secure: false
                 },
@@ -68,7 +68,7 @@ define( [ "LeftNav" ], function ( LeftNav ) {
                     {
                         text: 'Women',
                         //href: '/about/shopping/',
-                        href: '/about-us/shopping/sizecharts/womens-petite-plus/',
+                        href: '/b/about-us/shopping/sizecharts/womens-petite-plus/',
                         //href: '//www1.bloomingdales.com/about/shopping/sizecharts/women.jsp',
                         id: 'about_women',
                         secure: false
@@ -77,7 +77,7 @@ define( [ "LeftNav" ], function ( LeftNav ) {
                         text: 'Men',
                         //href: '/about/shopping/',
                         //href: '//www1.bloomingdales.com/about/shopping/sizecharts/women.jsp',
-                        href: '/about-us/shopping/sizecharts/mens-shirt-suit-clothing/',
+                        href: '/b/about-us/shopping/sizecharts/mens-shirt-suit-clothing/',
                         id: 'about_men',
                         secure: false
                     },
@@ -85,7 +85,7 @@ define( [ "LeftNav" ], function ( LeftNav ) {
                         text: 'Kids',
                         //href: '/about/shopping/',
                         //href: '//www1.bloomingdales.com/about/shopping/sizecharts/women.jsp',
-                        href: '/about-us/shopping/sizecharts/kids-boys-girls-clothing/',
+                        href: '/b/about-us/shopping/sizecharts/kids-boys-girls-clothing/',
                         id: 'about_kids',
                         secure: false
                     },
@@ -93,7 +93,7 @@ define( [ "LeftNav" ], function ( LeftNav ) {
                         text: 'Shoes',
                         //href: '/about/shopping/',
                         //href: '//www1.bloomingdales.com/about/shopping/sizecharts/women.jsp',
-                        href: '/about-us/shopping/sizecharts/mens-womens-kids-shoes/',
+                        href: '/b/about-us/shopping/sizecharts/mens-womens-kids-shoes/',
                         id: 'about_shoes',
                         secure: false
                     }
@@ -107,19 +107,19 @@ define( [ "LeftNav" ], function ( LeftNav ) {
                 },
                 {
                     text: 'Business Gifts',
-                    href: '/about-us/shopping/corporate-business-gifts/',
+                    href: '/b/about-us/shopping/corporate-business-gifts/',
                     id: 'about_businessGifts',
                     secure: false
                 },
                 {
                     text: 'Personal Shoppers',
-                    href: '/about-us/shopping/personal-shopper-complimentary-service/',
+                    href: '/b/about-us/shopping/personal-shopper-complimentary-service/',
                     id: 'about_personalShoppers',
                     secure: false
                 },
                 {
                     text: 'Studio Services',
-                    href: '/about-us/shopping/fashion-studio-styling-services/',
+                    href: '/b/about-us/shopping/fashion-studio-styling-services/',
                     id: 'about_studioServices',
                     secure: false
                 },
@@ -132,7 +132,7 @@ define( [ "LeftNav" ], function ( LeftNav ) {
                 },
                 {
                     text: 'Visitor Services',
-                    href: '/about-us/shopping/international-visitor-services/',
+                    href: '/b/about-us/shopping/international-visitor-services/',
                     id: 'about_visitorServices',
                     secure: true
                 },
@@ -149,32 +149,32 @@ define( [ "LeftNav" ], function ( LeftNav ) {
                     type:'header',
                     text: 'B.CAUSE',
                     label: 'b.cause',
-                    href: '/about-us/philanthropy/',
+                    href: '/b/about-us/philanthropy/',
                     id: 'about_bCause'
                 },
                 {
                     text: 'amfAR',
-                    href: '/about-us/amfar-b-cause-philanthropy/',
+                    href: '/b/about-us/amfar-b-cause-philanthropy/',
                     id: 'about_amfAr'
                 },
                 {
                     text: 'Pink Campaign',
-                    href: '/about-us/pink-campaign-b-cause-philanthropy/',
+                    href: '/b/about-us/pink-campaign-b-cause-philanthropy/',
                     id: 'about_pinkCampaign'
                 },
                 {
                     text: 'Child Mind Institute',
-                    href: '/about-us/child-mind-institute-b-cause-philanthropy/',
+                    href: '/b/about-us/child-mind-institute-b-cause-philanthropy/',
                     id: 'about_childMindInstitute'
                 },
                 {
                     text: 'HELP USA & Mentoring USA',
-                    href: '/about-us/help-usa-b-cause-philanthropy/',
+                    href: '/b/about-us/help-usa-b-cause-philanthropy/',
                     id: 'about_helpUsa'
                 },
                 {
                     text: 'JDRF',
-                    href: '/about-us/jdrf-b-cause-philanthropy/',
+                    href: '/b/about-us/jdrf-b-cause-philanthropy/',
                     id: 'about_jdrf'
                 }
 
@@ -184,7 +184,7 @@ define( [ "LeftNav" ], function ( LeftNav ) {
                     type:'header',
                     text: 'EMPLOYEE GIVING & VOLUNTEERISM',
                     label: 'Employee Giving & Volunteerism',
-                    href: '/about-us/giving-back-to-community/',
+                    href: '/b/about-us/giving-back-to-community/',
                     id: 'about_employeeGiving',
                     secure: false
                 }
@@ -194,7 +194,7 @@ define( [ "LeftNav" ], function ( LeftNav ) {
                     type:'header',
                     text: 'DIVERSITY & INCLUSION',
                     label: 'Diversity & Inclusion',
-                    href: '/about-us/diversity-inclusion/',
+                    href: '/b/about-us/diversity-inclusion/',
                     id: 'about_diversityInclusion',
                     secure: false
                 }
@@ -204,7 +204,7 @@ define( [ "LeftNav" ], function ( LeftNav ) {
                     type:'header',
                     text: 'NEW STORES',
                     label: 'New Stores',
-                    href: '/about-us/new-store-openings/',
+                    href: '/b/about-us/new-store-openings/',
                     //href: '//www1.bloomingdales.com/about/newstores.jsp',
                     id: 'about_newStores',
                     secure: false
@@ -250,7 +250,7 @@ define( [ "LeftNav" ], function ( LeftNav ) {
                     text: 'AFFILIATE PROGRAM',
                     label: 'Affiliate Program',
                     //href: '/about/newstores/',
-                    href: '/about-us/affiliate-program-network-partner/?cm_sp=about_us-_-left_nav-_-affiliate',
+                    href: '/b/about-us/affiliate-program-network-partner/?cm_sp=about_us-_-left_nav-_-affiliate',
                     id: 'about_affiliateProgram',
                     secure: false
                 }

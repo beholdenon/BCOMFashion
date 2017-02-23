@@ -62,7 +62,7 @@ $(document).ready( function($) {
 
     function socialSetup () {
         var baseURL = 'http://' + window.location.host + window.location.pathname,
-            baseURLAssets = 'http://' + window.location.host + '/fashion/images/projects/100-percent/';
+            baseURLAssets = 'http://' + window.location.host + '/b/fashion/images/projects/100-percent/';
 
         var facebookURL = 'https://www.facebook.com/dialog/feed';
         facebookURL += '?app_id=145634995501895';

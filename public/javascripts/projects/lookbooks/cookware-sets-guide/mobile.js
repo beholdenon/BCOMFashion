@@ -60,7 +60,7 @@ var APP = {
 
     socialshare: function() {
         var baseURL = 'http://' + window.location.host + window.location.pathname,
-            baseURLAssets = 'http://' + window.location.host + '/fashion/images/projects' + window.location.pathname;
+            baseURLAssets = 'http://' + window.location.host + '/b/fashion/images/projects' + window.location.pathname;
 
         APP.social.facebookURL = 'https://www.facebook.com/dialog/feed';
         APP.social.facebookURL += '?app_id=145634995501895';

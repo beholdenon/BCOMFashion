@@ -20,7 +20,7 @@ $(document).ready( function($) {
     
     function socialSetup () {
         var baseURL = 'http://' + window.location.host + window.location.pathname,
-            baseURLAssets = 'http://' + window.location.host + '/fashion/images/projects/spring-fashion-trends/2017/';
+            baseURLAssets = 'http://' + window.location.host + '/b/fashion/images/projects/spring-fashion-trends/2017/';
 
         var facebookURL = 'https://www.facebook.com/dialog/feed';
         facebookURL += '?app_id=145634995501895';

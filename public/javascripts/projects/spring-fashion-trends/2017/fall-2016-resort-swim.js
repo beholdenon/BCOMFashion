@@ -38,62 +38,62 @@ $( window ).load(function() {
 
 
 	var queue = new createjs.LoadQueue(true);
-	queue.loadFile("/fashion/images/projects/spring-fashion-trends/2017/swim_canvas1.jpg");
-	queue.loadFile("/fashion/images/projects/spring-fashion-trends/2017/swim_canvas2.jpg");
-	queue.loadFile("/fashion/images/projects/spring-fashion-trends/2017/swim_canvas3.jpg");
-	queue.loadFile("/fashion/images/projects/spring-fashion-trends/2017/swim_canvas4.jpg");
-	queue.loadFile("/fashion/images/projects/spring-fashion-trends/2017/swim_canvas5.jpg");
-	queue.loadFile("/fashion/images/projects/spring-fashion-trends/2017/swim_canvas6.jpg");
-	queue.loadFile("/fashion/images/projects/spring-fashion-trends/2017/swim_canvas7.png");
-	queue.loadFile("/fashion/images/projects/spring-fashion-trends/2017/swim_canvas8.png");
+	queue.loadFile("/b/fashion/images/projects/spring-fashion-trends/2017/swim_canvas1.jpg");
+	queue.loadFile("/b/fashion/images/projects/spring-fashion-trends/2017/swim_canvas2.jpg");
+	queue.loadFile("/b/fashion/images/projects/spring-fashion-trends/2017/swim_canvas3.jpg");
+	queue.loadFile("/b/fashion/images/projects/spring-fashion-trends/2017/swim_canvas4.jpg");
+	queue.loadFile("/b/fashion/images/projects/spring-fashion-trends/2017/swim_canvas5.jpg");
+	queue.loadFile("/b/fashion/images/projects/spring-fashion-trends/2017/swim_canvas6.jpg");
+	queue.loadFile("/b/fashion/images/projects/spring-fashion-trends/2017/swim_canvas7.png");
+	queue.loadFile("/b/fashion/images/projects/spring-fashion-trends/2017/swim_canvas8.png");
 	queue.on("complete", handleComplete, this);
 
 	function handleComplete(){
 
 		var swimCanvas1 = new Image();
-		swimCanvas1.src = '/fashion/images/projects/spring-fashion-trends/2017/swim_canvas1.jpg';
+		swimCanvas1.src = '/b/fashion/images/projects/spring-fashion-trends/2017/swim_canvas1.jpg';
 		swimCanvas1.xpos = -128;
 		swimCanvas1.ypos = 119;
 		swimCanvas1.onload = handleImageLoad;
 
 		var swimCanvas3 = new Image();
-		swimCanvas3.src = '/fashion/images/projects/spring-fashion-trends/2017/swim_canvas3.jpg';
+		swimCanvas3.src = '/b/fashion/images/projects/spring-fashion-trends/2017/swim_canvas3.jpg';
 		swimCanvas3.xpos = 222;
 		swimCanvas3.ypos = 347;
 		swimCanvas3.onload = handleImageLoad;
 
 		var swimCanvas4 = new Image();
-		swimCanvas4.src = '/fashion/images/projects/spring-fashion-trends/2017/swim_canvas4.jpg';
+		swimCanvas4.src = '/b/fashion/images/projects/spring-fashion-trends/2017/swim_canvas4.jpg';
 		swimCanvas4.xpos = 806;
 		swimCanvas4.ypos = 395;
 		swimCanvas4.onload = handleImageLoad;
 
 		var swimCanvas5 = new Image();
-		swimCanvas5.src = '/fashion/images/projects/spring-fashion-trends/2017/swim_canvas5.jpg';
+		swimCanvas5.src = '/b/fashion/images/projects/spring-fashion-trends/2017/swim_canvas5.jpg';
 		swimCanvas5.xpos = 858;
 		swimCanvas5.ypos = 26;
 		swimCanvas5.onload = handleImageLoad;
 
 		var swimCanvas7 = new Image();
-		swimCanvas7.src = '/fashion/images/projects/spring-fashion-trends/2017/swim_canvas7.png';
+		swimCanvas7.src = '/b/fashion/images/projects/spring-fashion-trends/2017/swim_canvas7.png';
 		swimCanvas7.xpos = -1;
 		swimCanvas7.ypos = 95;
 		swimCanvas7.onload = handleImageLoad;
 
 		var swimCanvas8 = new Image();
-		swimCanvas8.src = '/fashion/images/projects/spring-fashion-trends/2017/swim_canvas8.png';
+		swimCanvas8.src = '/b/fashion/images/projects/spring-fashion-trends/2017/swim_canvas8.png';
 		swimCanvas8.xpos = 1114;
 		swimCanvas8.ypos = 447;
 		swimCanvas8.onload = handleImageLoad;	
 
 		var swimCanvas2 = new Image();
-		swimCanvas2.src = '/fashion/images/projects/spring-fashion-trends/2017/swim_canvas2.jpg';
+		swimCanvas2.src = '/b/fashion/images/projects/spring-fashion-trends/2017/swim_canvas2.jpg';
 		swimCanvas2.xpos = 156;
 		swimCanvas2.ypos = 210;
 		swimCanvas2.onload = handleImageLoad;
 
 		var swimCanvas6 = new Image();
-		swimCanvas6.src = '/fashion/images/projects/spring-fashion-trends/2017/swim_canvas6.jpg';
+		swimCanvas6.src = '/b/fashion/images/projects/spring-fashion-trends/2017/swim_canvas6.jpg';
 		swimCanvas6.xpos = 1351;
 		swimCanvas6.ypos = 240;
 		swimCanvas6.onload = handleImageLoad;
