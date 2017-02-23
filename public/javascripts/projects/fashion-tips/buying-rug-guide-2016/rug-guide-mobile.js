@@ -12,11 +12,11 @@ $(document).ready(function() {
 
 	var lookbookUrl = "http://www.bloomingdales.com/fashion-index/rug-finder-2015.jsp",
 		lookbookUrlBitly = "http://bit.ly/1AoboF4",
-		lookbookUrlPinImage = '/fashion/images/projects/fashion-tips/buying-rug-guide-2016/RUG_GUIDE_PINTEREST_VS2.jpg',
-		lookbookUrlFbImage = '/fashion/images/projects/fashion-tips/buying-rug-guide-2016/RUG_GUIDE_FB_ICON_VS2.jpg';
+		lookbookUrlPinImage = '/b/fashion/images/projects/fashion-tips/buying-rug-guide-2016/RUG_GUIDE_PINTEREST_VS2.jpg',
+		lookbookUrlFbImage = '/b/fashion/images/projects/fashion-tips/buying-rug-guide-2016/RUG_GUIDE_FB_ICON_VS2.jpg';
 
-	var uparrow="/fashion/images/projects/fashion-tips/buying-rug-guide-2016/mobile-arrow.jpg", 
-		downarrow="/fashion/images/projects/fashion-tips/buying-rug-guide-2016/mobile-down-arrow.jpg";
+	var uparrow="/b/fashion/images/projects/fashion-tips/buying-rug-guide-2016/mobile-arrow.jpg", 
+		downarrow="/b/fashion/images/projects/fashion-tips/buying-rug-guide-2016/mobile-down-arrow.jpg";
 
 	$("#mobile_arrow").on("click tap", function() {
 		$("#mobile-menu").slideToggle(function(){
