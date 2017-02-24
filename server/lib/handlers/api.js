@@ -71,7 +71,7 @@ module.exports = {
 
                     req.app.parser = require('./../parsers/category');
 
-                    req.url.pathname = req.url.pathname.replace(/^\/getBag\//, '');
+                    req.url.pathname = req.url.pathname.replace(/^\/b\//g, "/").replace(/^\/getBag\//, '');
                     
                     res(null, req.url.format(req.url), headers);
 
@@ -121,7 +121,7 @@ module.exports = {
                 host = baseAssets + (/\/$/.test(baseAssets) === false ? '\/' : ''),
 
                 // Get uri
-                uri = (host.indexOf('http') === 0 ? host : 'http://' + host) + req.url.path.replace(/^\/p\//,'');
+                uri = (host.indexOf('http') === 0 ? host : 'http://' + host) + req.url.path.replace(/^\/b\//g, "/").replace(/^\/p\//,'');
 
             // Return proxy
             return res.proxy({
@@ -144,8 +144,8 @@ module.exports = {
 
                     var headers = serviceProxy.getHeaders(req, process.env.CATALOGCATEGORYV3_KEY);
                     req.url.host = serviceProxy.getHost(req, process.env.CATEGORYINDEXV3_HOST || process.env.API_HOST);
-                    req.url.path = req.url.path.replace('/press','');
-                    req.url.pathname = req.url.pathname.replace('/press',''); 
+                    req.url.path = req.url.path.replace(/^\/b\//g, "/").replace('/press','');
+                    req.url.pathname = req.url.pathname.replace(/^\/b\//g, "/").replace('/press',''); 
 
                     req.app.parser = require('./../parsers/category');
 

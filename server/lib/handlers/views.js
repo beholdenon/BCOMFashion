@@ -114,7 +114,7 @@ module.exports = {
         notes: 'Reading Akamai headers, and based on device type (phone, tablet, desktop), serve either index.html or index-mobile.html layout',
         tags: ['non-responsive'],
         handler: function(req, res) {
-            var requestPath = (req.url.pathname).substring(1),
+            var requestPath = (req.url.pathname).replace(/^\/b\//g, "/").substring(1),
                 deviceDetectProc,
                 slashMinSuffix = ( req.query.debug === '1' ? '' : '/min' ),
                 file;
@@ -140,7 +140,7 @@ module.exports = {
         notes: 'Serve common html view for both desktop and mobile; exclude standard H&F',
         tags: ['custom header & footer', 'static'],
         handler: function(req, res) {
-            var requestPath = (req.url.pathname).substring(1),
+            var requestPath = (req.url.pathname).replace(/^\/b\//g, "/").substring(1),
                 slashMinSuffix = ( req.query.debug === '1' ? '' : '/min' ),
                 file = requestPath + '/index.html';
                                                 
@@ -157,9 +157,10 @@ module.exports = {
         notes: 'This is the default fallback route if not explicitly captured',
         tags: ['fallback', 'static'],
         handler: function(req, res) {
-            var slashMinSuffix = ( req.query.debug === '1' ? '' : '/min' ),
-                requestPath = req.params.path,
-                file;
+            var slashMinSuffix = ( req.query.debug === '1' ? '' : '/min' );
+            var requestPath = req.url.pathname.replace(/^\/b\//g, "/");
+                requestPath = requestPath.substring(1);
+            var file;
 
             // (for dev only) override the user agent by passing in a query
             if (req.query.UA){

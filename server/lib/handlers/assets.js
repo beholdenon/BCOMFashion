@@ -44,7 +44,7 @@ module.exports = {
                 timeout: serviceProxy.timeout,
                 passThrough: true,
                 mapUri: function(req, callback) {
-                    let uri = process.env.BASE_ASSETS + req.url.path;
+                    let uri = process.env.BASE_ASSETS + req.url.path.replace(/^\/b\//g, "/");
                     callback(null, uri, headers);
                 },
                 onResponse: serviceProxy.onResponseRedirect
@@ -63,7 +63,7 @@ module.exports = {
                 timeout: serviceProxy.timeout,
                 passThrough: true,
                 mapUri: function(req, callback) {
-                    let uri = process.env.BASE_ASSETS + req.url.path;
+                    let uri = process.env.BASE_ASSETS + req.url.path.replace(/^\/b\//g, "/");
                     callback(null, uri, headers);
                 },
                 onResponse: serviceProxy.onResponseRedirect
@@ -78,7 +78,7 @@ module.exports = {
                 timeout: serviceProxy.timeout,
                 passThrough: true,
                 mapUri: function(req, callback) {
-                    let uri = process.env.BASE_HOST  + req.url.path;
+                    let uri = process.env.BASE_HOST  + req.url.path.replace(/^\/b\//g, "/");
                     callback(null, uri);
                 }
             });
@@ -94,7 +94,7 @@ module.exports = {
         notes: 'Requests made by Angular to load template components',
         tags: ['angular views'],
         handler: function(req, res) {
-            let ngView = Path.join(__dirname, '../views', req.url.path);
+            let ngView = Path.join(__dirname, '../views', req.url.path.replace(/^\/b\//g, "/") );
             res.file(ngView);
         }
     }
