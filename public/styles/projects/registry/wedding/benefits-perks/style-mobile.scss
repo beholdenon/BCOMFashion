@@ -1,3 +1,66 @@
+#registry-bp-videoModal {
+    position: fixed;
+    z-index: 9999;
+    top: 50%;
+    left: 50%;
+
+    opacity: 1;
+
+    width: 100%;
+
+    -webkit-transition: 1ms opacity ease;
+       -moz-transition: 1ms opacity ease;
+        -ms-transition: 1ms opacity ease;
+         -o-transition: 1ms opacity ease;
+            transition: 1ms opacity ease;
+
+    -webkit-transform: translate(-50%, -50%);
+       -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+         -o-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+
+    border-radius: 2px;
+    background-color: #fff;
+
+    text-align: center;
+	
+	#registry-bp-video {
+    	width: 100%;
+    }
+
+	#registry-bp-closeModal {
+		position: absolute;
+	    right: 1%;
+	    top: 1.75%;
+	    font-size: 1.25em;
+	    text-decoration: none;
+	    background-color: rgba(255, 255, 255, 0.5);
+	    z-index: 100;
+	    padding: 0 5px;
+	}
+}
+
+#registry-bp-maskLayout {
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+
+    opacity: 1;
+
+    width: 100%;
+    height: 100%;
+
+    -webkit-transition: 1ms opacity ease;
+       -moz-transition: 1ms opacity ease;
+        -ms-transition: 1ms opacity ease;
+         -o-transition: 1ms opacity ease;
+            transition: 1ms opacity ease;
+
+    background: rgba(0,0,0,.6);
+}
+
 .mbl-registry-benefits-perks {
 
 	a:hover, a:focus, a:active, a:visited {
@@ -13,6 +76,7 @@
 		    font-size: 4.40625vw;
 		    padding: 3% 3% 0;
 		    line-height: 1.4;
+		    position: relative;
 		}
 
 		.bp-text-line {
@@ -62,7 +126,6 @@
 
 		.registry-bp-section-item {
 			position: relative;
-			z-index: -1;
 
 			img {
 				width: 100%;
@@ -72,6 +135,20 @@
 				position: absolute;
 				width: 100%;
 				text-align: center;
+			}
+
+			a.registry-bp-play-btn {
+			    position: absolute;
+			    text-align: center;
+			    width: 100%;
+			    height: 100%;
+			    top: 0;
+			    left: 0;
+			    line-height: 31;
+
+			    img {
+			    	width: initial;
+			    }
 			}
 
 			.bp-hero-title-line1 {
@@ -96,6 +173,12 @@
 			    top: 3vw;
 			}
 
+		}
+
+		.registry-bp-hero {
+			a.registry-bp-play-btn {
+				line-height: 47;
+			}
 		}
 
 		&#completion-offers {
