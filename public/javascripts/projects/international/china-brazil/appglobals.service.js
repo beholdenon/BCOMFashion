@@ -4627,7 +4627,7 @@
                                 services: [
                                     {
                                         title: 'プレゼントを揃えるお手伝いを致します',
-                                        description: 'Bloomingdale\’sでは予めご希望のプレゼントの商品リストをお送り頂ければ、多言語スペシャリストがお客様に代わって商品を取り揃え、ご来店時にご確認頂けます<br /> 電話： 305-792-1175 <br/>Eメール： <a class="fucsia" href="mailto:international_visitors@bloomingdales.com">international_visitors@bloomingdales.com</a>'
+                                        description: 'Bloomingdale\’sでは予めご希望のプレゼントの商品リストをお送り頂ければ、多言語スペシャリストがお客様に代わって商品を取り揃え、ご来店時にご確認頂けます。<br /> 電話： 305-792-1175 <br/>Eメール： <a class="fucsia" href="mailto:international_visitors@bloomingdales.com">international_visitors@bloomingdales.com</a>'
                                     },
                                     {
                                         title: 'お支払いは簡単です',
