@@ -6,7 +6,7 @@
 
 require([
     'jquery',
-    'coremetrics',
+    'bcomCoremetrics',
 ], function($, Coremetrics) {
 
 	var APP = {
@@ -28,8 +28,6 @@ require([
 		$( 'body ').append( videoOverlay );
 
 		self.listeners();
-
-
 
 		Coremetrics.pageViewTag( 'mbl:BWEDD_Why_Register', self.cm );
 	};
@@ -55,15 +53,16 @@ require([
 
 		$('.registry-bp-play-btn').on('click', function ( event ) {
 			event.preventDefault();
-			
-			var vid = '';
 
 			APP.videoPlayer[0].src = APP.projectAssets + $(this).data('video-src');
 			APP.videoPlayer[0].dataset.name =  $(this).data('video-name');
 
 			$('#registry-bp-videoModal, #registry-bp-maskLayout').show();
 
-			vid = "-_--_--_--_--_--_--_--_--_--_--_--_--_--_--_-0-_-"+Math.round($(this)[0].duration);
+			var vid = Coremetrics.attributes({ 
+				16: '0',
+				17: Math.round($(this)[0].duration)
+			});
 	     
 	     	Coremetrics.elementTag( {
 	     		elementID: APP.videoPlayer[0].dataset.name,
@@ -97,7 +96,10 @@ require([
 		});
 
 		$( APP.videoPlayer ).on('ended',function() {
-			var vid = "-_--_--_--_--_--_--_--_--_--_--_--_--_--_--_-3-_-"+Math.round($(this)[0].duration);
+			var vid = Coremetrics.attributes({ 
+				16: '3',
+				17: Math.round($(this)[0].duration)
+			});
 	        
 	     	Coremetrics.elementTag( {
 	     		elementID: APP.videoPlayer[0].dataset.name,
@@ -117,7 +119,10 @@ require([
 	    });
 
 	    $( APP.videoPlayer ).on("play", function () {
-	    	var vid = "-_--_--_--_--_--_--_--_--_--_--_--_--_--_--_-1-_-"+Math.round($(this)[0].duration);
+	    	var vid = Coremetrics.attributes({ 
+				16: '1',
+				17: Math.round($(this)[0].duration)
+			});
 	    	
 	     	Coremetrics.elementTag( {
 	     		elementID: APP.videoPlayer[0].dataset.name,
@@ -129,7 +134,10 @@ require([
 
 	    $( APP.videoPlayer ).on("pause", function () {
 	    	if ( $(this)[0].ended !== true && $(this)[0].currentTime > 0 ) {
-	    		var vid = "-_--_--_--_--_--_--_--_--_--_--_--_--_--_--_-2-_-"+Math.round($(this)[0].duration);
+	    		var vid = Coremetrics.attributes({ 
+				16: '2',
+				17: Math.round($(this)[0].duration)
+			});
 	    		
 		     	Coremetrics.elementTag( {
 		     		elementID: APP.videoPlayer[0].dataset.name,
