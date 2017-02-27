@@ -3872,7 +3872,7 @@
                         }],
                         y1960: [{
                             h3: '最新のファッション',
-                            p: '人類の月面着陸。マスタング。モッズ・ショップ。その他いろいろ。Bloomingdale\'sは、ショップとして初めてYves Saint LaurentやCourrègesなどのヨーロッパの先進的デザイナーを紹介し、アメリカの人々を魅了しました。'
+                            p: '人類の月面着陸、マスタング、モッズショップなど色々なムーブメントが起こった時代。Bloomingdale’sはストアとして初めてイブサンローラン、クレージュなどのヨーロッパの先進デザイナーをアメリカに紹介しました。'
                         }, {
                             h3: 'Be cool!',
                             p: '1963年ストアとして初めてその時代で一番のアーティストにショッピングバッグのデザイン依頼を始めました。Jonah KinigsteinやMichael Vollbachtなどのアーティストによって革命的に変わったBloomingdale’sのバッグは、瞬く間にコレクターズアイテムとなりました。'
@@ -4271,8 +4271,8 @@
                                 ],
                                 services: [
                                     {
-                                        title: 'プレゼントの品を揃えるのはお任せください',
-                                        description: 'Bloomingdale\'s では、プレゼントのお買い物はとても簡単です。いらっしゃる前に、当店の多言語スペシャリストにご希望の品のリストを送っていただければ、ご来店時にはそれらの品はすべて揃っています。 <br /> 電話： 312-440-4596 <br/>Eメール： <a class="fucsia" href="mailto:international_visitors@bloomingdales.com">international_visitors@bloomingdales.com</a>'
+                                        title: 'プレゼントを揃えるお手伝いを致します',
+                                        description: 'Bloomingdale\’sでは予めご希望のプレゼントの商品リストをお送り頂ければ、多言語スペシャリストがお客様に代わって商品を取り揃え、ご来店時にご確認頂けます。 <br /> 電話： 312-440-4596 <br/>Eメール： <a class="fucsia" href="mailto:international_visitors@bloomingdales.com">international_visitors@bloomingdales.com</a>'
                                     },
                                     {
                                         title: 'パーソナルスタイリストがお待ちしております',
@@ -4349,8 +4349,8 @@
 
                                     },
                                     {
-                                        title: 'ご購入品をホテルまでお届けします',
-                                        description: '250米ドルお買い上げいただくと、ご宿泊のダウンタウンのホテルまで無料でお届けいたします。１階バルコニーのビジターセンターにてお申しつけください。'
+                                        title: 'ご購入頂いた商品をホテルまでお届けします',
+                                        description: '＄250以上お買い上げいただくと、ご宿泊のダウンタウンのホテルまで無料でお届けいたします。１階バルコニーのビジターセンターにてお申しつけください。'
 
                                     },
                                     {
@@ -4419,7 +4419,7 @@
                                         description: '店内にてスペシャリストによる仕立て及びサイズ直しを承っております。フィッティング時に料金をお伝えいたします。'
                                     },
                                     {
-                                        title: 'お直しクイックサービスをご利用頂けます',
+                                        title: 'ラッピングサービスがございます',
                                         description: 'ります。あるいは、お好きなメッセージカード、ボックス、ラッピングペーパー、リボンをお持ち帰りいただけます。'
                                     },
                                     {
@@ -4626,8 +4626,8 @@
                                 ],
                                 services: [
                                     {
-                                        title: 'プレゼントの品を揃えるのはお任せください',
-                                        description: 'Bloomingdale\'s では、プレゼントのお買い物はとても簡単です。いらっしゃる前に、当店の多言語スペシャリストにご希望の品のリストを送っていただければ、ご来店時にはそれらの品はすべて揃っています。 <br /> 電話： 305-792-1175 <br/>Eメール： <a class="fucsia" href="mailto:international_visitors@bloomingdales.com">international_visitors@bloomingdales.com</a>'
+                                        title: 'プレゼントを揃えるお手伝いを致します',
+                                        description: 'Bloomingdale\’sでは予めご希望のプレゼントの商品リストをお送り頂ければ、多言語スペシャリストがお客様に代わって商品を取り揃え、ご来店時にご確認頂けます。<br /> 電話： 305-792-1175 <br/>Eメール： <a class="fucsia" href="mailto:international_visitors@bloomingdales.com">international_visitors@bloomingdales.com</a>'
                                     },
                                     {
                                         title: 'お支払いは簡単です',
@@ -4635,8 +4635,8 @@
 
                                     },
                                     {
-                                        title: 'お直しクイックサービスがあります',
-                                        description: '店内にて、専門家による仕立ておよびサイズ直しを承っております。料金はご依頼内容により異なり、フィッティング時にお知らせいたします。'
+                                        title: 'お直しクイックサービスをご利用頂けます',
+                                        description: '店内にてスペシャリストによる仕立て及びサイズ直しを承っております。フィッティング時に料金をお伝えいたします。'
                                     }
                                 ]       
                             }                                
