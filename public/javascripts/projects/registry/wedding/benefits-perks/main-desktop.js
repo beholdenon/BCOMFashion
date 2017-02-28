@@ -12,8 +12,29 @@ require([
 	var APP = {
 		cm: 'BWEDD_Registry_Home',
 		cmElementCat: 'BWEDD_WHY_REGISTER',
-		videoPlayer: $('#registry-bp-video'),
-		projectAssets: '/b/fashion/images/projects/registry/wedding/benefits-perks/'
+		videoPlayer: '',
+		projectAssets: '/b/fashion/images/projects/registry/wedding/benefits-perks/',
+
+		fetchVideoData: function ( videoURL, videoPlayer ) {
+			var req = new XMLHttpRequest();
+			req.open('GET', videoURL, true);
+			req.responseType = 'blob';
+
+			req.onload = function() {
+			   if (this.status === 200) {
+			      var videoBlob = this.response;
+			      var vid = URL.createObjectURL(videoBlob); 
+			      // Video is now downloaded
+			      videoPlayer.src = vid;
+			   }
+			};
+			req.onerror = function(e) {
+			   // Error
+			   console.log('Something went wrong', e);
+			};
+
+			req.send();
+		}
 	};
 
 	APP.init = function () {
@@ -42,10 +63,11 @@ require([
 		});
 
 		$('.registry-bp-play-btn').on('click', function ( event ) {
-			event.preventDefault();			
+			event.preventDefault();	
 
-			APP.videoPlayer[0].src = APP.projectAssets + $(this).data('video-src');
-			APP.videoPlayer[0].dataset.name =  $(this).data('video-name');
+			APP.videoPlayer = $( '#registry-bp-video' + $(this).data('video-player') );
+
+			APP.videoPlayer.show();
 
 			$('#registry-bp-videoModal, #registry-bp-maskLayout').show();
 
@@ -66,6 +88,7 @@ require([
 		$('#registry-bp-closeModal').on('click', function ( event ) {
 			event.preventDefault();
 
+			APP.videoPlayer.hide();
 			$('#registry-bp-videoModal, #registry-bp-maskLayout').hide();
 			
 			APP.videoPlayer[0].currentTime = 0;
@@ -77,7 +100,7 @@ require([
 			} );
 		});
 
-		$( APP.videoPlayer ).on('ended',function() {
+		$( '#registry-bp-videoModal video' ).on('ended',function() {
 			var vid = Coremetrics.attributes({ 
 				16: '3',
 				17: Math.round($(this)[0].duration)
@@ -88,11 +111,11 @@ require([
 				elementCategory: APP.cm,
 				attributes: vid
 		} );
-
+	     	APP.videoPlayer.hide();
 	        $('#registry-bp-videoModal, #registry-bp-maskLayout').hide();
 	    });
 
-	    $( APP.videoPlayer ).on("play", function () {
+	    $( '#registry-bp-videoModal video' ).on("play", function () {
 	    	var vid = Coremetrics.attributes({ 
 				16: '1',
 				17: Math.round($(this)[0].duration)
@@ -106,7 +129,7 @@ require([
 
 	    });
 
-	    $( APP.videoPlayer ).on("pause", function () {
+	    $( '#registry-bp-videoModal video' ).on("pause", function () {
 	    	if ( $(this)[0].ended !== true && $(this)[0].currentTime > 0 ) {
 	    		var vid = Coremetrics.attributes({ 
 				16: '2',
@@ -123,7 +146,16 @@ require([
 	    });
 	};
 
+	$(document).ready(function () {
+
+		$('#registry-bp-videoModal video').each( function(){
+			APP.fetchVideoData( APP.projectAssets + this.dataset.videoSrc, this );
+		});
+
+	});
+
 	$(window).load(function() {
+
 		APP.init();
 	});
 
