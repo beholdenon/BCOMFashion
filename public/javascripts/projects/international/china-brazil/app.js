@@ -44,7 +44,43 @@
                 templateUrl: 'components/visit-our-stores.html'
             })
             .otherwise({
-                redirectTo: '/'
+                resolve: {
+                    langSwitch : function ( $rootScope, $location, localStorageService  ) {
+
+                        // check for a language, eg: /#/chinese
+                        // if language is found, switch, then go to homepage
+
+                        var path = $location.path().toLowerCase(),
+                            globalLang = null;
+                        
+                        switch ( path ) {
+                            case '/english':
+                                globalLang = 'ENG';
+                                break;
+                            case '/portuguese':
+                                globalLang = 'POR';
+                                break;
+                            case '/chinese':
+                                globalLang = 'CN';
+                                break;
+                            case '/spanish':
+                                globalLang = 'ESP';
+                                break;
+                            case '/japanese':
+                                globalLang = 'JP';
+                                break;
+                            default:
+                                globalLang = localStorageService.get('lang') || 'ENG';
+                        }
+
+                        $rootScope.$broadcast('lang:change', {
+                            lang: globalLang
+                        });
+                        
+                        localStorageService.set('lang', globalLang);
+                        $location.path('/');
+                    }
+                }
             });   
 
         //Google maps config
@@ -80,6 +116,12 @@
                     break;
                 case 'CN':
                     pageID = 'fall15_chinamicrosite';
+                    break;
+                case 'ESP':
+                    pageID = 'fall15_spanishmicrosite';
+                    break;
+                case 'JP':
+                    pageID = 'fall15_japanesemicrosite';
                     break;
                 default:
                     pageID = 'fall15_englishmicrosite';
@@ -167,10 +209,11 @@
                     case '/visit-our-stores':
                         catID = pageID + '--visit';
                         break;
-                }                      
+                }  
+                catID = prefix + catID;                    
                 pageID = prefix + pageID;
 
-                Coremetrics.tag('Pageview', pageID, catID);
+                Coremetrics.tag('Pageview', catID, pageID);
             }
         }
 
@@ -193,10 +236,11 @@
                         'overflow': 'initial'
                     });
                     jQuery('.left-off-canvas-toggle').removeClass('open');
+                    jQuery('.arriving-input, .departing-input').show();
     
                     //Coremetrics tag          
                     tag = prefix + 'settings-menu_close';
-                    Coremetrics.tag('Element', pageID, tag);                
+                    Coremetrics.tag('Element', prefix + pageID, tag);                
                 } else {
                     jQuery('.left-off-canvas-toggle').addClass('open');
                     var height = document.body.clientHeight;
@@ -209,7 +253,7 @@
 
                     //Coremetrics tag          
                     tag = prefix + 'settings-menu_open';
-                    Coremetrics.tag('Element', pageID, tag);                
+                    Coremetrics.tag('Element', prefix + pageID, tag);                
                 }
             });
         });
@@ -220,5 +264,21 @@
                 jQuery('.off-canvas-wrap').removeClass('touch');
             }
         });
+
+        //Close language and social overlays when clicked outside
+        jQuery($document).mouseup(function (e) {
+            var flagsOverlay = jQuery('.flags'),
+                socialOverlay = jQuery('.social');
+
+            // if the target of the click isn't the container or a descendant of the container
+            if ((!flagsOverlay.is(e.target) && flagsOverlay.has(e.target).length === 0)) {
+                flagsOverlay.removeClass('active');
+            }
+
+            if ((!socialOverlay.is(e.target) && socialOverlay.has(e.target).length === 0)) {
+                socialOverlay.removeClass('active');
+            }
+        });
+
     }    
 })();

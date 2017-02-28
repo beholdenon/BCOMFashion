@@ -1,0 +1,48 @@
+<title>Bloomingdale's Multilingual Services: Chinese, Spanish & More</title>
+<meta name="description" content="Bloomingdale’s International provides translation services for our multilingual costumers. Languages include: Chinese, Portuguese, Spanish and Japanese." />
+
+<link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:300,400,400italic,700" rel="stylesheet" type="text/css">
+<link href="/b/fashion/styles/projects/international/china-brazil/style.css" rel="stylesheet" type="text/css" >
+
+<div ng-app="CNBRapp" ng-controller="MainCtrl">
+	<div class="off-canvas-wrap" data-offcanvas="">
+	    <div class="inner-wrap">       
+			<global-nav ng-cloak></global-nav>
+	        	<div ng-view ng-cloak></div>
+	        <contact-us ng-cloak></contact-us>
+
+	        <div ng-include="'./components/overlay.html'" ng-cloak></div>
+	    </div>
+	</div>
+	<footer ng-include="'./components/footer.html'" ng-cloak></footer>
+</div>
+
+<!-- SCRIPTS -->
+<script type="text/javascript" src="/b/fashion/javascripts/libs/angular/angular.min.js"></script>
+<script type="text/javascript" src="/b/fashion/javascripts/libs/angular/angular-route.min.js"></script>
+<script type="text/javascript" src="/b/fashion/javascripts/libs/angular/angular-messages.min.js"></script>
+<script type="text/javascript" src="/b/fashion/javascripts/libs/angular/angular-animate.min.js"></script>
+<script type="text/javascript" src="/b/fashion/javascripts/libs/angular/angular-local-storage.js"></script>
+<!-- <script type="text/javascript" src="/b/fashion/javascripts/libs/angular/angular-google-maps.js"></script>
+<script type="text/javascript" src="/b/fashion/javascripts/libs/angular/angular-simple-logger.js"></script>
+<script type="text/javascript" src="/b/fashion/javascripts/libs/lodash.min.js"></script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script> -->
+<script type="text/javascript" src="/b/fashion/javascripts/libs/fastclick.js"></script>
+<script type="text/javascript" src="/b/fashion/javascripts/libs/noBounce.js"></script>
+
+<script type="text/javascript" src="/b/fashion/javascripts/projects/international/china-brazil/app.js"></script>
+<script type="text/javascript" src="/b/fashion/javascripts/projects/international/china-brazil/main.controller.js"></script>
+<script type="text/javascript" src="/b/fashion/javascripts/projects/international/china-brazil/overlay.controller.js"></script>
+<script type="text/javascript" src="/b/fashion/javascripts/projects/international/china-brazil/stores.controller.js"></script>
+<script type="text/javascript" src="/b/fashion/javascripts/projects/international/china-brazil/contact-us.controller.js"></script>
+<script type="text/javascript" src="/b/fashion/javascripts/projects/international/china-brazil/cache.service.js"></script>
+<script type="text/javascript" src="/b/fashion/javascripts/projects/international/china-brazil/appglobals.service.js"></script>
+<script type="text/javascript" src="/b/fashion/javascripts/projects/international/china-brazil/coremetrics.service.js"></script>
+<script type="text/javascript" src="/b/fashion/javascripts/projects/international/china-brazil/socialshare.service.js"></script>
+<script type="text/javascript" src="/b/fashion/javascripts/projects/international/china-brazil/main.directive.js"></script>
+
+<script type="text/javascript" src="/b/fashion/javascripts/libs/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="/b/fashion/javascripts/libs/foundation/foundation.js"></script>
+<script type="text/javascript" src="/b/fashion/javascripts/libs/foundation/foundation.offcanvas.js"></script>
+<script type="text/javascript" src="/b/fashion/javascripts/libs/foundation/foundation.topbar.js"></script>
+<script type="text/javascript" src="/b/fashion/javascripts/libs/foundation/foundation.datepicker.min.js"></script>

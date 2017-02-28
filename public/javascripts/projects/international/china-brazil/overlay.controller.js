@@ -30,7 +30,7 @@
                 windowWidth = $window.innerWidth,
                 prefix = (windowWidth < 641) ? 'MBL:' : '',             
                 tag = prefix + 'overlay_close';                   
-            Coremetrics.tag('Element', pageID, tag);                
+            Coremetrics.tag('Element', prefix + pageID, tag);                
         };
 
         $scope.selLang = function($event) {
@@ -52,6 +52,12 @@
                 case 'CN':
                     pageID = 'fall15_chinamicrosite';
                     break;
+                case 'ESP':
+                    pageID = 'fall15_spanishmicrosite';
+                    break;
+                case 'JP':
+                    pageID = 'fall15_japanmicrosite';
+                    break;
                 default:
                     pageID = 'fall15_englishmicrosite';
             }
@@ -71,22 +77,7 @@
             var windowWidth = $window.innerWidth,
                 prefix = (windowWidth < 641) ? 'MBL:' : '',
                 tag = prefix + 'select-language-overlay';                              
-            Coremetrics.tag('Element', pageID, tag);              
-        };
-
-        $scope.share = function(service, lang) {
-            if (service !== 'weixin'){
-                $window.open(SocialShare[service](lang), '_blank', 'width=608,height=342');
-            } else {
-                $scope.overlay.weixinOn = true;
-            }
-
-            //Coremetrics tag          
-            var pageID = AppGlobals.getAttr('cm_pageID'),
-                windowWidth = $window.innerWidth,
-                prefix = (windowWidth < 641) ? 'MBL:' : '',            
-                tag = prefix + 'socialshare-';                   
-            Coremetrics.tag('Element', pageID, tag + service);               
+            Coremetrics.tag('Element', prefix + pageID, tag);              
         };
 
         $rootScope.$on('overlay:show', function(ev, args) {
