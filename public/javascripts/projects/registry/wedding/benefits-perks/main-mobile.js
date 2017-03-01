@@ -144,7 +144,7 @@ require([
 
 	    $( APP.videoPlayer ).on("play", function () {
 	    	var vid = Coremetrics.attributes({ 
-				16: '1',
+				16: '2',
 				17: Math.round($(this)[0].duration)
 			});
 	    	
@@ -159,7 +159,7 @@ require([
 	    $( APP.videoPlayer ).on("pause", function () {
 	    	if ( $(this)[0].ended !== true && $(this)[0].currentTime > 0 ) {
 	    		var vid = Coremetrics.attributes({ 
-				16: '2',
+				16: '1',
 				17: Math.round($(this)[0].duration)
 			});
 	    		
