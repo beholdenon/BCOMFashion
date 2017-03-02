@@ -80,9 +80,6 @@ require([
 				16: '0',
 				17: Math.round(APP.videoPlayer[0].duration)
 			});
-	     	
-			console.log(APP.videoPlayer[0].dataset.name);
-			console.log(APP.cm);
 
 	     	Coremetrics.elementTag( {
 	     		elementId: APP.videoPlayer[0].dataset.name,
@@ -100,9 +97,6 @@ require([
 			APP.videoPlayer[0].currentTime = 0;
 			APP.videoPlayer[0].pause();
 
-			console.log(APP.videoPlayer[0].dataset.name.replace('play', 'close'));
-			console.log(APP.cm);
-
 			Coremetrics.elementTag( {
 				elementId: APP.videoPlayer[0].dataset.name.replace('play', 'close'),
 				categoryId: APP.cm
@@ -115,9 +109,6 @@ require([
 				17: Math.round($(this)[0].duration)
 			});
 
-			console.log(APP.videoPlayer[0].dataset.name);
-			console.log(APP.cm);
-	        
 	     	Coremetrics.elementTag( {
 		     	elementId: APP.videoPlayer[0].dataset.name,
 				categoryId: APP.cm,
@@ -132,9 +123,6 @@ require([
 				16: '2',
 				17: Math.round($(this)[0].duration)
 			});
-
-			console.log(APP.videoPlayer[0].dataset.name);
-			console.log(APP.cm);
 	    	
 	     	Coremetrics.elementTag( {
 	     		elementId: APP.videoPlayer[0].dataset.name,
@@ -150,9 +138,6 @@ require([
 					16: '1',
 					17: Math.round($(this)[0].duration)
 				});
-
-	    		console.log(APP.videoPlayer[0].dataset.name);
-				console.log(APP.cm);
 	    		
 		     	Coremetrics.elementTag( {
 		     		elementId: APP.videoPlayer[0].dataset.name,
