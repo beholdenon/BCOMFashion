@@ -42,7 +42,10 @@ require([
 
 		self.listeners();
 
-		Coremetrics.pageViewTag( 'BWEDD_Why_Register', self.cm );
+		Coremetrics.pageViewTag( {
+			pageId: 'BWEDD_Why_Register', 
+			categoryId: self.cm 
+		} );
 	};
 
 	APP.listeners = function () {
@@ -57,8 +60,8 @@ require([
 	        }, 'slow' );
 
 	        Coremetrics.elementTag({
-	        	elementID: target.substring(1),
-				elementCategory: APP.cmElementCat
+	        	elementId: target.substring(1),
+				categoryId: APP.cmElementCat
 	        });
 		});
 
@@ -71,18 +74,21 @@ require([
 
 			$('#registry-bp-videoModal, #registry-bp-maskLayout').show();
 
+			APP.videoPlayer[0].play();
+
 			var vid = Coremetrics.attributes({ 
 				16: '0',
-				17: Math.round($(this)[0].duration)
+				17: Math.round(APP.videoPlayer[0].duration)
 			});
-	     
+	     	
+			console.log(APP.videoPlayer[0].dataset.name);
+			console.log(APP.cm);
+
 	     	Coremetrics.elementTag( {
-	     		elementID: APP.videoPlayer[0].dataset.name,
-				elementCategory: APP.cm,
+	     		elementId: APP.videoPlayer[0].dataset.name,
+				categoryId: APP.cm,
 				attributes: vid
 	     	} );
-
-			APP.videoPlayer[0].play();
 
 		});
 		$('#registry-bp-closeModal').on('click', function ( event ) {
@@ -94,9 +100,12 @@ require([
 			APP.videoPlayer[0].currentTime = 0;
 			APP.videoPlayer[0].pause();
 
+			console.log(APP.videoPlayer[0].dataset.name.replace('play', 'close'));
+			console.log(APP.cm);
+
 			Coremetrics.elementTag( {
-				elementID: APP.videoPlayer[0].dataset.name.replace('play', 'close'),
-				elementCategory: APP.cm
+				elementId: APP.videoPlayer[0].dataset.name.replace('play', 'close'),
+				categoryId: APP.cm
 			} );
 		});
 
@@ -105,10 +114,13 @@ require([
 				16: '3',
 				17: Math.round($(this)[0].duration)
 			});
+
+			console.log(APP.videoPlayer[0].dataset.name);
+			console.log(APP.cm);
 	        
 	     	Coremetrics.elementTag( {
-		     	elementID: APP.videoPlayer[0].dataset.name,
-				elementCategory: APP.cm,
+		     	elementId: APP.videoPlayer[0].dataset.name,
+				categoryId: APP.cm,
 				attributes: vid
 		} );
 	     	APP.videoPlayer.hide();
@@ -120,10 +132,13 @@ require([
 				16: '2',
 				17: Math.round($(this)[0].duration)
 			});
+
+			console.log(APP.videoPlayer[0].dataset.name);
+			console.log(APP.cm);
 	    	
 	     	Coremetrics.elementTag( {
-	     		elementID: APP.videoPlayer[0].dataset.name,
-				elementCategory: APP.cm,
+	     		elementId: APP.videoPlayer[0].dataset.name,
+				categoryId: APP.cm,
 				attributes: vid
 	     	} );
 
@@ -132,13 +147,16 @@ require([
 	    $( '#registry-bp-videoModal video' ).on("pause", function () {
 	    	if ( $(this)[0].ended !== true && $(this)[0].currentTime > 0 ) {
 	    		var vid = Coremetrics.attributes({ 
-				16: '1',
-				17: Math.round($(this)[0].duration)
-			});
+					16: '1',
+					17: Math.round($(this)[0].duration)
+				});
+
+	    		console.log(APP.videoPlayer[0].dataset.name);
+				console.log(APP.cm);
 	    		
 		     	Coremetrics.elementTag( {
-		     		elementID: APP.videoPlayer[0].dataset.name,
-					elementCategory: APP.cm,
+		     		elementId: APP.videoPlayer[0].dataset.name,
+					categoryId: APP.cm,
 					attributes: vid
 		     	} );
 
