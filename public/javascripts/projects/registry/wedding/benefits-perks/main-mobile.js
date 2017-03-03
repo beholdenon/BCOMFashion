@@ -50,7 +50,10 @@ require([
 
 		self.listeners();
 
-		Coremetrics.pageViewTag( 'mbl:BWEDD_Why_Register', self.cm );
+		Coremetrics.pageViewTag( {
+			pageId: 'mbl:BWEDD_Why_Register', 
+			categoryId: self.cm 
+		} );
 	};
 
 	APP.listeners = function () {
@@ -60,8 +63,8 @@ require([
 			event.stopPropagation();
 
 			var elementCM = {
-				elementID: 'mbl: back-to-top',
-				elementCategory: APP.cm
+				elementId: 'mbl: back-to-top',
+				categoryId: APP.cm
 			};
 
 			$('html, body').animate({
@@ -81,18 +84,18 @@ require([
 
 			$('#registry-bp-videoModal, #registry-bp-maskLayout').show();
 
+			APP.videoPlayer[0].play();
+
 			var vid = Coremetrics.attributes({ 
 				16: '0',
 				17: Math.round($(this)[0].duration)
 			});
 	     
 	     	Coremetrics.elementTag( {
-	     		elementID: APP.videoPlayer[0].dataset.name,
-				elementCategory: APP.cm,
+	     		elementId: APP.videoPlayer[0].dataset.name,
+				categoryId: APP.cm,
 				attributes: vid
 	     	} );
-
-			APP.videoPlayer[0].play();
 
 			if (APP.videoPlayer[0].requestFullscreen) {
 		      APP.videoPlayer[0].requestFullscreen();
@@ -113,8 +116,8 @@ require([
 			APP.videoPlayer[0].pause();
 
 			Coremetrics.elementTag( {
-				elementID: APP.videoPlayer[0].dataset.name.replace('play', 'close'),
-				elementCategory: APP.cm
+				elementId: APP.videoPlayer[0].dataset.name.replace('play', 'close'),
+				categoryId: APP.cm
 			} );
 		});
 
@@ -125,8 +128,8 @@ require([
 			});
 	        
 	     	Coremetrics.elementTag( {
-	     		elementID: APP.videoPlayer[0].dataset.name,
-				elementCategory: APP.cm,
+	     		elementId: APP.videoPlayer[0].dataset.name,
+				categoryId: APP.cm,
 				attributes: vid
 	     	} );
 
@@ -144,13 +147,13 @@ require([
 
 	    $( APP.videoPlayer ).on("play", function () {
 	    	var vid = Coremetrics.attributes({ 
-				16: '1',
+				16: '2',
 				17: Math.round($(this)[0].duration)
 			});
 	    	
 	     	Coremetrics.elementTag( {
-	     		elementID: APP.videoPlayer[0].dataset.name,
-				elementCategory: APP.cm,
+	     		elementId: APP.videoPlayer[0].dataset.name,
+				categoryId: APP.cm,
 				attributes: vid
 	     	} );
 
@@ -159,13 +162,13 @@ require([
 	    $( APP.videoPlayer ).on("pause", function () {
 	    	if ( $(this)[0].ended !== true && $(this)[0].currentTime > 0 ) {
 	    		var vid = Coremetrics.attributes({ 
-				16: '2',
+				16: '1',
 				17: Math.round($(this)[0].duration)
 			});
 	    		
 		     	Coremetrics.elementTag( {
-		     		elementID: APP.videoPlayer[0].dataset.name,
-					elementCategory: APP.cm,
+		     		elementId: APP.videoPlayer[0].dataset.name,
+					categoryId: APP.cm,
 					attributes: vid
 		     	} );
 
