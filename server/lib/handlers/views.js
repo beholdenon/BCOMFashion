@@ -140,9 +140,13 @@ module.exports = {
         notes: 'Serve common html view for both desktop and mobile; exclude standard H&F',
         tags: ['custom header & footer', 'static'],
         handler: function(req, res) {
-            var requestPath = (req.url.pathname).replace(/^\/b\//g, "/").substring(1),
-                slashMinSuffix = ( req.query.debug === '1' ? '' : '/min' ),
-                file = requestPath + '/index.html';
+            var requestPath = (req.url.pathname).replace(/^\/b\//g, "/").substring(1);
+            var slashMinSuffix = ( req.query.debug === '1' ? '' : '/min' );
+            var file = requestPath.replace(/\\/g,"/");
+
+            if ( requestPath.lastIndexOf('.') < 0 ) {
+              file = file + '/index.html';
+            }
                                                 
             // Check if any head* helpers are used
             // Use of a head* helper is done using HTML comments <!-- headHelper= -->
