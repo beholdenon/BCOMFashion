@@ -1,0 +1,197 @@
+{
+  "designerName": "NESPRESSO Pods",
+  "machineReadableDesignerName": "jimmychoo_shoes",
+  "title2Prefix": "NESPRESSO Pods",
+  "title2Suffix": "ARE ONLY AVAILABLE AT SELECT BLOOMINGDALE&rsquo;S STORES.",
+  "pageUrlDesignerAlias": "jimmychoo-shoes",
+  "addressColumns": [
+    [
+      {
+        "name": "59TH STREET",
+        "streetAddress": "1000 Third Avenue",
+        "cityStateZip": "59th Street and Lexington Avenue<br />New York, NY 10022",
+        "phoneNumber": "212-705-2000",
+        "phoneNumberHrefSuffix": "+1-212-705-2000",
+        "urlArgs": {
+          "addressAlias": "59th-street",
+          "designerAlias": "jimmychoo_shoes",
+          "addressFullDetail": "59TH-STREET-LEXINGTON-AVENUE"
+        }
+      },
+      {
+        "name": "MEDINAH HOME, CHICAGO",
+        "streetAddress": "600 North Wabash Avenue",
+        "cityStateZip": "Chicago, IL 60611",
+        "phoneNumber": "312-324-7500",
+        "phoneNumberHrefSuffix": "+1-312-324-7500",
+        "urlArgs": {
+          "addressAlias": "medinah-home--chicago",
+          "designerAlias": "jimmychoo_shoes",
+          "addressFullDetail": "MEDINAH-HOME-CHICAGO"
+        }
+      },
+      {
+        "name": "SAN FRANCISCO CENTRE",
+        "streetAddress": "845 Market Street",
+        "cityStateZip": "San Francisco, CA 94103",
+        "phoneNumber": "415-856-5300",
+        "phoneNumberHrefSuffix": "+1-415-856-5300",
+        "urlArgs": {
+          "addressAlias": "san-francisco-centre",
+          "designerAlias": "jimmychoo_shoes",
+          "addressFullDetail": "SAN-FRANCISCO-CENTRE"
+        }
+      },
+      {
+        "name": "WISCONSIN PLACE, CHEVY CHASE",
+        "streetAddress": "5300 Western Avenue",
+        "cityStateZip": "Chevy Chase, MD 20815",
+        "phoneNumber": "240-744-3700",
+        "phoneNumberHrefSuffix": "+1-240-744-3700",
+        "urlArgs": {
+          "addressAlias": "wisconsin-place--chevy-chase",
+          "designerAlias": "jimmychoo_shoes",
+          "addressFullDetail": "WISCONSIN-PLACE-CHEVY-CHASE"
+        }
+      }
+    ],
+    [
+      {
+        "name": "BOCA RATON TOWN CENTER",
+        "streetAddress": "5840 Glades Road",
+        "cityStateZip": "Boca Raton, FL 33431",
+        "phoneNumber": "561-394-2000",
+        "phoneNumberHrefSuffix": "+1-561-394-2000",
+        "urlArgs": {
+          "addressAlias": "boca-raton-town-center",
+          "designerAlias": "jimmychoo_shoes",
+          "addressFullDetail": "BOCA-RATON-TOWN-CENTER"
+        }
+      },
+      {
+        "name": "CHESTNUT HILL",
+        "streetAddress": "225 Boylston Street",
+        "cityStateZip": "Chestnut Hill Mall<br />Chestnut Hill, MA 02467",
+        "phoneNumber": "617-630-6000",
+        "phoneNumberHrefSuffix": "+1-617-630-6000",
+        "urlArgs": {
+          "addressAlias": "chestnut-hill",
+          "designerAlias": "jimmychoo_shoes",
+          "addressFullDetail": "CHESTNUT-HILL-MALL"
+        }
+      },
+      {
+        "name": "ROOSEVELT FIELD",
+        "streetAddress": "630 Old Country Rd.",
+        "cityStateZip": "#27<br />Garden City, NY 11530",
+        "phoneNumber": "516-873-2700",
+        "phoneNumberHrefSuffix": "+1-516-873-2700",
+        "urlArgs": {
+          "addressAlias": "roosevelt-field",
+          "designerAlias": "jimmychoo_shoes",
+          "addressFullDetail": "#27"
+        }
+      },
+      {
+        "name": "FASHION VALLEY, SAN DIEGO",
+        "streetAddress": "7057 Friars Road",
+        "cityStateZip": "San Diego, CA 92108",
+        "phoneNumber": "619-610-6400",
+        "phoneNumberHrefSuffix": "+1-619-610-6400",
+        "urlArgs": {
+          "addressAlias": "fashion-valley--san-diego",
+          "designerAlias": "jimmychoo_shoes",
+          "addressFullDetail": "FASHION-VALLEY-SAN-DIEGO"
+        }
+      }
+    ],
+    [
+      {
+        "name": "SHORT HILLS",
+        "streetAddress": "1200 Morris Turnpike",
+        "cityStateZip": "The Mall at Short Hills<br />Short Hills, NJ 07078",
+        "phoneNumber": "973-548-2200",
+        "phoneNumberHrefSuffix": "+1-973-548-2200",
+        "urlArgs": {
+          "addressAlias": "short-hills",
+          "designerAlias": "jimmychoo_shoes",
+          "addressFullDetail": "THE-MALL-AT-SHORT-HILLS"
+        }
+      },
+      {
+        "name": "WHITE PLAINS",
+        "streetAddress": "175 Bloomingdale Road",
+        "cityStateZip": "White Plains, NY 10605",
+        "phoneNumber": "914-684-6300",
+        "phoneNumberHrefSuffix": "+1-914-684-6300",
+        "urlArgs": {
+          "addressAlias": "white-plains",
+          "designerAlias": "jimmychoo_shoes",
+          "addressFullDetail": "WHITE-PLAINS"
+        }
+      },
+      {
+        "name": "CENTURY CITY",
+        "streetAddress": "10250 Santa Monica Boulevard",
+        "cityStateZip": "Los Angeles, CA 90067",
+        "phoneNumber": "310-772-2100",
+        "phoneNumberHrefSuffix": "+1-310-772-2100",
+        "urlArgs": {
+          "addressAlias": "century-city",
+          "designerAlias": "jimmychoo_shoes",
+          "addressFullDetail": "CENTURY-CITY"
+        }
+      },
+      {
+        "name": "SOUTH COAST PLAZA",
+        "streetAddress": "3333 South Bristol Street",
+        "cityStateZip": "Costa Mesa, CA 92626",
+        "phoneNumber": "714-824-4600",
+        "phoneNumberHrefSuffix": "+1-714-824-4600",
+        "urlArgs": {
+          "addressAlias": "south-coast-plaza",
+          "designerAlias": "jimmychoo_shoes",
+          "addressFullDetail": "SOUTH-COAST-PLAZA"
+        }
+      }
+    ],
+    [
+      {
+        "name": "PALM BEACH GARDENS",
+        "streetAddress": "3105 PGA Boulevard",
+        "cityStateZip": "Gardens Mall <br />Palm Beach Gardens, FL 33410",
+        "phoneNumber": "561-625-2000",
+        "phoneNumberHrefSuffix": "+1-561-625-2000",
+        "urlArgs": {
+          "addressAlias": "palm-beach-gardens",
+          "designerAlias": "jimmychoo_shoes",
+          "addressFullDetail": "PALM-BEACH-GARDENS-MALL"
+        }
+      },
+      {
+        "name": "KING OF PRUSSIA (THE COURT)",
+        "streetAddress": "2 Rt. 202 North 660 West DeKalb Pike",
+        "cityStateZip": "The Court at King of Prussia<br />King of Prussia, PA 19406",
+        "phoneNumber": "610-337-6300",
+        "phoneNumberHrefSuffix": "+1-610-337-6300",
+        "urlArgs": {
+          "addressAlias": "king-of-prussia--the-court-",
+          "designerAlias": "jimmychoo_shoes",
+          "addressFullDetail": "THE-COURT-AT-KING-OF-PRUSSIA"
+        }
+      },
+      {
+        "name": "SHERMAN OAKS FASHION SQUARE",
+        "streetAddress": "14060 Riverside Drive",
+        "cityStateZip": "Sherman Oaks, CA 91423",
+        "phoneNumber": "818-325-2200",
+        "phoneNumberHrefSuffix": "+1-818-325-2200",
+        "urlArgs": {
+          "addressAlias": "sherman-oaks-fashion-square",
+          "designerAlias": "jimmychoo_shoes",
+          "addressFullDetail": "SHERMAN-OAKS-FASHION-SQUARE"
+        }
+      }
+    ]
+  ]
+}
