@@ -102,13 +102,16 @@ $small-margin: 13px;
     margin: 0;
     padding: 0;
     list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 
     .in-store-addresses-column { // only 4 columns at a time (desktop and tablet view)
       display: inline-block;
       list-style: none;
       margin: 0 2.659% 2.659% 0;
       padding: 0;
-      float: left;
+      flex: 0 0 23%;
       width: 23%;
 
       &:last-child {
@@ -194,7 +197,7 @@ $small-margin: 13px;
   #in-store {
     > .in-store-body .in-store-body-body {
       .in-store-addresses .in-store-addresses-column {
-        float: none;
+        flex: 0 0 100%;
         width: 100%;
         margin-right: 0;
 
@@ -223,12 +226,17 @@ $small-margin: 13px;
     padding: 5.3%; // 34px 34px 55px converted to percents
 
     > .in-store-body .in-store-body-body {
-      .in-store-addresses .in-store-addresses-column {
-        margin-right: 3%;
-        width: 31.3%;
+      .in-store-addresses {
+        justify-content: flex-start;
 
-        &:nth-child(3) {
-          margin-right: 0;
+        .in-store-addresses-column {
+          margin-right: 3%;
+          flex: 0 0 31.3%;
+          width: 31.3%;
+
+          &:nth-child(3) {
+            margin-right: 0;
+          }
         }
       }
     }
