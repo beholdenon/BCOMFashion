@@ -1,0 +1,97 @@
+<aside class="left-off-canvas-menu show-for-small-only">
+    <ul class="off-canvas-list">
+        <li class="lang">
+            <ul>
+                <li class="lang-opt" ng:class="{true:'active', false:''}[lang === 'ENG']"><a href="#" data-lang="ENG" ng-click="langOnClick($event)">ENG</a></li>
+                <li class="lang-opt" ng:class="{true:'active', false:''}[lang === 'POR']"><a href="#" data-lang="POR" ng-click="langOnClick($event)">POR</a></li>
+                <li class="lang-opt" ng:class="{true:'active', false:''}[lang === 'CN']"><a href="#" data-lang="CN" ng-click="langOnClick($event)">中文</a></li>
+                <li class="lang-opt" ng:class="{true:'active', false:''}[lang === 'JP']"><a href="#" data-lang="JP" ng-click="langOnClick($event)">日本語</a></li>
+                <li class="lang-opt" ng:class="{true:'active', false:''}[lang === 'ESP']"><a href="#" data-lang="ESP" ng-click="langOnClick($event)">ESP</a></li>
+            </ul>
+        </li>
+        <li class="nav-section"><a ng-click="goto($event, '/our-heritage')" href="/our-heritage" ng-cloak>//copy[lang].nav[0]//</a></li>
+        <li class="nav-section"><a ng-click="goto($event, '/designer-destination')" href="/designer-destination" ng-cloak>//copy[lang].nav[1]//</a></li>
+        <li class="nav-section"><a ng-click="goto($event, '/visit-our-stores')" href="/visit-our-stores" ng-cloak>//copy[lang].nav[2]//</a></li>
+        <li class="nav-section last"><a ng-click="$event.preventDefault(); goto($event, 'http://www1.bloomingdales.com/#')" ng-cloak>//copy[lang].nav[3]//</a></li>
+        <li class="social">
+            <ul>
+                <li ng:class="{true:'por', false:''}[lang === 'POR']"><a href="#" ng-click="shareOnMob('fb', lang)"><i class="fa fa-facebook"></i></a></li>
+                <li ng:class="{true:'por', false:''}[lang === 'POR']"><a href="#" ng-click="shareOnMob('twitter', lang)"><i class="fa fa-twitter"></i></a></li>
+                <li ng:class="{true:'por', false:''}[lang === 'POR']"><a href="#" ng-click="shareOnMob('pinterest', lang)"><i class="fa fa-pinterest"></i></a></li>
+                <li ng-hide="lang === 'POR'"><a href="#" ng-click="shareOnMob('weibo', lang)"><i class="fa fa-weibo"></i></a></li>
+                <li ng-hide="lang === 'POR'"><a href="#" ng-click="shareOnMob('weixin', lang)"><i class="fa fa-weixin"></i></a></li>
+            </ul>
+        </li>
+    </ul>
+</aside>
+
+<nav class="tab-bar top-bar medium-down show-for-small-only">
+    <div class="left-small">
+        <a class="left-off-canvas-toggle menu-icon" href="#off-canvas-navigation"><span></span><span></span><span></span><span></span></a>
+    </div>
+    <div class="middle tab-bar-section">
+        <a class="title-area-logo" href="" ng-click="goto($event, '/')"></a>
+    </div>
+
+    <div class="sub-banner">//copy[lang].mobileSubHeader//</div>
+</nav>
+
+<div class="nav-wrapper" sticky>
+    <nav class="top-bar desktop show-for-medium-up" data-topbar="">
+        <ul class="title-area">
+            <li class="title-area-logo">
+                <a href="" ng-click="goto($event, '/')"></a>
+                <div class="cn-addon" ng-show="lang === 'CN'"></div>
+            </li>
+        </ul>
+
+        <section class="top-bar-section" ng:class="{true:'lang_JP-CN', false:''}[lang === 'CN' || lang === 'JP']">
+            <ul class="left" ng:class="{true:'nav-cn', false:''}[lang === 'CN']">
+                <li class="nav-section"><a ng-click="goto($event, '/our-heritage')" href="/our-heritage" ng-cloak>//copy[lang].nav[0]//</a></li>
+                <li class="nav-section"><a ng-click="goto($event, '/designer-destination')" href="/designer-destination" ng-cloak>//copy[lang].nav[1]//</a></li>
+                <li class="nav-section"><a ng-click="goto($event, '/visit-our-stores')" href="/visit-our-stores" ng-cloak>//copy[lang].nav[2]//</a></li>
+                <li class="nav-section"><a ng-click="$event.preventDefault(); goto($event, 'http://www1.bloomingdales.com/#')" ng-cloak>//copy[lang].nav[3]//</a></li>
+            </ul>
+            <ul class="right selection">
+                <li class="flag-button" ng:class="{true:'show', false:''}[lang === 'ENG']"><a href="#" data-lang="ENG" ng-click="langModal($event)"><img src="/b/fashion/images/projects/international/china-brazil/flags/EngFlag.png"/></a></li>
+                <li class="flag-button" ng:class="{true:'show', false:''}[lang === 'POR']"><a href="#" data-lang="POR" ng-click="langModal($event)"><img src="/b/fashion/images/projects/international/china-brazil/flags/BrazilFlag.png"/></a></li>
+                <li class="flag-button" ng:class="{true:'show', false:''}[lang === 'CN']"><a href="#" data-lang="CN" ng-click="langModal($event)"><img src="/b/fashion/images/projects/international/china-brazil/flags/ChineseFlag.png"/></a></li>
+                <li class="flag-button" ng:class="{true:'show', false:''}[lang === 'JP']"><a href="#" data-lang="JP" ng-click="langModal($event)"><img src="/b/fashion/images/projects/international/china-brazil/flags/JapFlag.png"/></a></li>
+                <li class="flag-button" ng:class="{true:'show', false:''}[lang === 'ESP']"><a href="#" data-lang="ESP" ng-click="langModal($event)"><img src="/b/fashion/images/projects/international/china-brazil/flags/EspFlag.png"/></a></li>
+                <li class="share-button"><a href="#" ng-click="shareModal($event)"><i class="fa fa-share-alt"></i></a></li>
+            </ul>
+            <ul class="right flags" ng-class="{true:'active', false:''}[flagModal]" ng-show="flagModal">
+                <li class="lang-opt" ng:class="{true:'active', false:''}[lang === 'ENG']">
+                    <a href="#" class="lang-opt-link" ng:class="{'lang-opt-hover': ENG}" ng-mouseenter="ENG = true" ng-mouseleave="ENG = false" data-lang="ENG" ng-click="langOnClick($event)"><p>ENG</p><img src="/b/fashion/images/projects/international/china-brazil/flags/EngFlag.png"/></a>
+                </li>
+                <li class="lang-opt" ng:class="{true:'active', false:''}[lang === 'POR']">
+                    <a href="#" class="lang-opt-link" ng:class="{'lang-opt-hover': POR}" ng-mouseenter="POR = true" ng-mouseleave="POR = false" data-lang="POR" ng-click="langOnClick($event)"><p>POR</p><img src="/b/fashion/images/projects/international/china-brazil/flags/BrazilFlag.png"/></a>
+                </li>
+                <li class="lang-opt" ng:class="{true:'active', false:''}[lang === 'CN']">
+                    <a href="#" class="lang-opt-link" ng:class="{'lang-opt-hover': CN}" ng-mouseenter="CN = true" ng-mouseleave="CN = false" data-lang="CN" ng-click="langOnClick($event)"><p>中文</p><img src="/b/fashion/images/projects/international/china-brazil/flags/ChineseFlag.png"/></a>
+                </li>
+                <li class="lang-opt" ng:class="{true:'active', false:''}[lang === 'ESP']">
+                    <a href="#" class="lang-opt-link" ng:class="{'lang-opt-hover': ESP}" ng-mouseenter="ESP = true" ng-mouseleave="ESP = false" data-lang="ESP" ng-click="langOnClick($event)"><p>ESP</p><img src="/b/fashion/images/projects/international/china-brazil/flags/EspFlag.png"/></a>
+                </li>
+                <li class="lang-opt" ng:class="{true:'active', false:''}[lang === 'JP']">
+                    <a href="#" class="lang-opt-link" ng:class="{'lang-opt-hover': JP}" ng-mouseenter="JP = true" ng-mouseleave="JP = false" data-lang="JP" ng-click="langOnClick($event)"><p>日本語</p><img src="/b/fashion/images/projects/international/china-brazil/flags/JapFlag.png"/></a>
+                </li>
+            </ul>
+            <div class="right social" ng-class="{'active':socialModal === true, 'weixin':weixinOn === true}">
+                <div class="row icons">
+                    <div class="icon small-centered columns"><a href="#" ng-click="share('fb', lang)"><i class="fa fa-facebook"></i></a></div>
+                    <div class="icon small-centered columns"><a href="#" ng-click="share('twitter', lang)"><i class="fa fa-twitter"></i></a></div>
+                    <div class="icon small-centered columns"><a href="#" ng-click="share('pinterest', lang)"><i class="fa fa-pinterest"></i></a></div>
+                    <div ng-show="lang === 'ENG' || lang === 'CN' " class="icon small-4 small-centered columns"><a href="#" ng-click="share('weibo', lang)"><i class="fa fa-weibo"></i></a></div>
+                    <div ng-show="lang === 'ENG' || lang === 'CN' " class="icon small-4 small-centered columns"><a href="#" ng-click="share('weixin', lang)"><i class="fa fa-weixin"></i></a></div>   
+                </div>
+                <div class="row QR">
+                    <div class="copy small-24 small-centered columns" ng-cloak>//copy[lang].socialshare.weixin.text//</div> 
+                    <div class="img small-20 small-centered columns"><img src="/b/fashion/images/projects/international/china-brazil/Bloomingdales_QR_Code.jpg" /></div> 
+                </div>              
+            </div>
+        </section>
+    </nav>
+</div>
+
+<a class="exit-off-canvas"></a>

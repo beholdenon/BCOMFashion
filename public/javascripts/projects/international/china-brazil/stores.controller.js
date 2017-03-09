@@ -20,7 +20,9 @@
                 storeID = $scope.storeSelection,
                 stores = $scope.copy.ENG.stores.dropdown.list,
                 store = null,
-                tag = pageID + '--visit_';
+                windowWidth = $window.innerWidth,
+                prefix = (windowWidth < 641) ? 'MBL:' : '', 
+                tag = prefix + pageID + '--visit_';
 
             for (var i = 0; i < stores.length; i++) {
                 if (stores[i] !== null && stores[i].id === storeID) {
@@ -30,7 +32,7 @@
             }
 
             tag += store;
-            Coremetrics.tag('Pageview', pageID, tag);
+            Coremetrics.tag('Pageview', prefix + pageID, tag);
         };
 
         $scope.bookletHoverOn = function($event) {

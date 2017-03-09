@@ -16,7 +16,7 @@ $(document).ready(function() {
         var target = $(this),
             catID = target.attr("data-id");
 
-        target.parent().find(".result").html("<img src='/fashion/images/loading-bar.gif'/>");
+        target.parent().find(".result").html("<img src='/b/fashion/images/loading-bar.gif'/>");
 
         SERVICES.category.index(function(output) { // services call with ID of category. Output variable is the resulting object from WSSG.
 
@@ -37,7 +37,7 @@ $(document).ready(function() {
             resultsPerPage = 32,
             sortby = 'bestseller';
 
-        target.parent().find(".result").html("<img src='/fashion/images/loading-bar.gif'/>");
+        target.parent().find(".result").html("<img src='/b/fashion/images/loading-bar.gif'/>");
 
         SERVICES.category.browseProduct(function(output) { // services call with ID of category. Output variable is the resulting object from WSSG.
             target.parent().find(".result").html("");
@@ -64,7 +64,7 @@ $(document).ready(function() {
         var target = $(this),
             print = target.parent().find(".result");
 
-        print.html("<img src='/fashion/images/loading-bar.gif'/>");
+        print.html("<img src='/b/fashion/images/loading-bar.gif'/>");
 
         SERVICES.bag.get(function(output) {
             var bag = output.bag;

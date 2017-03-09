@@ -163,7 +163,7 @@ $(document).ready(function() {
 		$('#book-footer').show();
 	} );	
 
-	$.getJSON('/fashion/javascripts/projects/makeup-date/makeup-tutorial/shop.json', function(json) {
+	$.getJSON('/b/fashion/javascripts/projects/makeup-date/makeup-tutorial/shop.json', function(json) {
 		APP.products = json.products;
 		// console.log('data call complete');d
 	}).done( function () {
@@ -183,7 +183,7 @@ $(document).ready(function() {
 		APP.stickyNav();
 	});
 
-	$.getJSON('/fashion/javascripts/projects/makeup-date/makeup-tutorial/shop.json', function( json ) {
+	$.getJSON('/b/fashion/javascripts/projects/makeup-date/makeup-tutorial/shop.json', function( json ) {
 		APP.products = json.products;
 		// console.log('data call complete');
 	}).done( function () {

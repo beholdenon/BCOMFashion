@@ -4,8 +4,8 @@ $(document).ready( function($) {
 
     if($.fn.postContest()){
     	//desktop
-        $('.postcontest_dt_change0').attr("src", "/fashion/images/projects/2016-fall-campaign-100-percent-exclusive/contest_desktoptext_postcontest.png");
-        $('.postcontest_dt_change1').attr("src", "/fashion/images/projects/2016-fall-campaign-100-percent-exclusive/contestiphone_postcontest.png");
+        $('.postcontest_dt_change0').attr("src", "/b/fashion/images/projects/2016-fall-campaign-100-percent-exclusive/contest_desktoptext_postcontest.png");
+        $('.postcontest_dt_change1').attr("src", "/b/fashion/images/projects/2016-fall-campaign-100-percent-exclusive/contestiphone_postcontest.png");
         $('.contest_dt_entertowin').remove();
         $('.postcontest_dt_change2').remove();
         $('.contest_dt_button').remove();
@@ -16,7 +16,7 @@ $(document).ready( function($) {
 		$('.postcontest_dt_change01').addClass('small-7').removeClass('small-9');
 
     	//mobile
-        $('.postcontest_change0').attr("src", "/fashion/images/projects/2016-fall-campaign-100-percent-exclusive/mc_page0top_postcontest.jpg");
+        $('.postcontest_change0').attr("src", "/b/fashion/images/projects/2016-fall-campaign-100-percent-exclusive/mc_page0top_postcontest.jpg");
         $('.contest_m_page0title').remove();
         $('.contest_m_page0description p').text("Design your own exclusive word, post it to Instagram with hashtag #100percentbloomies.");
         $('.postcontest_change1 p').text("Finally, post the image to Instagram with hashtag #100percentbloomies");
@@ -41,7 +41,7 @@ $(document).ready( function($) {
 		//preload svgs
 		// var characters=['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','1','2','3','4','5','6','7','8','9','0','special1','special2','special3','special4'];
 		// for(var k=0;k<characters.length;k++){
-		// 	$.fn.preload('/fashion/images/projects/2016-fall-campaign-100-percent-exclusive/svg/'+characters[k]+'.svg');
+		// 	$.fn.preload('/b/fashion/images/projects/2016-fall-campaign-100-percent-exclusive/svg/'+characters[k]+'.svg');
 		// }
 
 		if( $("#contest_step1").height() < $(window).height() )	$("#contest_step1").height($(window).height());
@@ -174,7 +174,7 @@ $(document).ready( function($) {
 
 		function createChar(inputChar,positionIndex){
 			var imageb = new Image();
-			imageb.src = '/fashion/images/projects/2016-fall-campaign-100-percent-exclusive/svg/'+inputChar+'.svg';
+			imageb.src = '/b/fashion/images/projects/2016-fall-campaign-100-percent-exclusive/svg/'+inputChar+'.svg';
 			imageb.index=positionIndex;
 			imageb.onload = handleImageLoad;
 		}
