@@ -1,0 +1,51 @@
+{
+  "designerName": "JIMMY CHOO Shoes",
+  "machineReadableDesignerName": "jimmychoo_shoes",
+  "title2Prefix": "JIMMY CHOO Shoes",
+  "title2Suffix": "ARE ONLY AVAILABLE AT SELECT BLOOMINGDALE&rsquo;S STORES.",
+  "pageUrlDesignerAlias": "jimmychoo-shoes",
+  "addressColumns": [
+    [
+      {
+        "name": "AVENTURA",
+        "streetAddress": "19555 Biscayne Boulevard",
+        "cityStateZip": "The Aventura Mall<br />Aventura, FL 33180",
+        "phoneNumber": "305-792-1000",
+        "phoneNumberHrefSuffix": "+1-305-792-1000",
+        "urlArgs": {
+          "addressAlias": "aventura",
+          "designerAlias": "jimmychoo_shoes",
+          "addressFullDetail": "THE-AVENTURA-MALL"
+        }
+      }
+    ],
+    [
+      {
+        "name": "Century City",
+        "streetAddress": "10250 Santa Monica Boulevard",
+        "cityStateZip": "Los Angeles, CA 90067",
+        "phoneNumber": "310-772-2100",
+        "phoneNumberHrefSuffix": "+1-310-772-2100",
+        "urlArgs": {
+          "addressAlias": "century-city",
+           "designerAlias": "jimmychoo_shoes",
+          "addressFullDetail": "CENTURY-CITY"
+        }
+      }
+    ],
+    [
+      {
+        "name": "SHERMAN OAKS FASHION SQUARE",
+        "streetAddress": "14060 Riverside Drive",
+        "cityStateZip": "Sherman Oaks, CA 1423",
+        "phoneNumber": "818-325-2200",
+        "phoneNumberHrefSuffix": "+1-818-325-2200",
+        "urlArgs": {
+          "addressAlias": "sherman-oaks-fashion-square",
+          "designerAlias": "jimmychoo_shoes",
+          "addressFullDetail": "SHERMAN-OAKS-FASHION-SQUARE"
+        }
+      }
+    ]
+  ]
+}
