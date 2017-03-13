@@ -206,7 +206,7 @@
                             {id: '8',    name: 'Aventura',                              disabled: 'false'},
                             {id: '9',    name: 'Orlando',                               disabled: 'false'}
                         ],
-                        copy: 'Bloomingdale\'s has stores all over the U.S. Our Visitor\'s Centers in <b>New York</b>, <b>Hawaii</b>, <b>Chicago</b>, <b>Miami</b> and <b>San Francisco</b> offer a full range of amenities for international customers. Multilingual associates can help you plan the ultimate shopping experience. They\'ll give you a store directory in your chosen language and special events information, as well as arrange complimentary personal stylist appointments, package delivery to your hotel, restaurant reservations (including those located within our stores) and much more. Beach bound? Our many outposts in Southern California—including South Coast Plaza in Ocean County, San Diego and Los Angeles—plus Honolulu, mean you\'ll never be far from the top fashions.'
+                        copy: 'Bloomingdale\'s has stores all over the U.S. Our Visitor\'s Centers in <b>New York</b>, <b>Hawaii</b>, <b>Chicago</b>, <b>Miami</b> and <b>San Francisco</b> offer a full range of amenities for international customers. Multilingual associates can help you plan the ultimate shopping experience. They\'ll give you a store directory in your chosen language and special events information, as well as arrange complimentary personal stylist appointments, package delivery to your hotel, restaurant reservations (including those located within our stores) and much more. Beach bound? Our many outposts in Southern California—including South Coast Plaza in Orange County, San Diego and Los Angeles—plus Honolulu, mean you\'ll never be far from the top fashions.'
                     },
                     storeData: {
                         storeHours: 'Store Hours',
@@ -611,7 +611,7 @@
                                     },
                                     {
                                         title: 'DELIVERY TO YOUR HOTEL ',
-                                        description: 'We will gladly deliver your purchases of $250 USD or more to your downtown hotel—for free. Just drop them off at our first floor balcony Visitor\'s Center.'
+                                        description: 'We will gladly deliver your purchases of $250 USD or more to your downtown hotel—for free. Just drop them off at our first floor Visitor\'s Center.'
 
                                     },
                                     {
@@ -2082,7 +2082,7 @@
                             {
                                 name: '第 59 街旗舰店',
                                 addr: '1000 Third Avenue  New York, NY 10022 <br/>+1 212-705-2000',
-                                hours: '周一到周六：上午10点到晚上8：30点 <span>|</span> 周日：上午11点到晚上7点',
+                                hours: '周一到周六：上午10点到晚上8：30点 <span>|</span> 周日：上午10点到晚上7“_',
                                 descr: '感受 Bloomingdale\'s 的悠久历史和备受赞誉的热情服务。在我们旗舰店开始您的一天，首先前往一楼楼厅处的顾客服务中心。我们的多语种指南将为您的购物之旅提供路线图。需要更加个性化的体验？了解我们的店内服务，包括预约形象设计师、改衣和预订餐厅等。我们会帮您安排一切。',
                                 dTile: '来纽约观光？',
                                 dInfo: '在到达之前下载我们的欢迎手册。',
@@ -2405,7 +2405,7 @@
                             {
                                 name: '旧金山中心店',
                                 addr: '845 Market Street  San Francisco, CA<br/>+1 415-856-5475',
-                                hours: '周一到周六：上午10点到晚上8：30点 <span>|</span> 周日：上午10点到晚上7点',                                
+                                hours: '周一到周六：上午10点到晚上8：30点 <span>|</span> 周日：上午11点到晚上7“_',                                
                                 descr: '享受旧金山最佳的购物体验。第一站，Bloomingdale\'s。前往我们的顾客服务中心获取多语种指南，或咨询我们的多语种工作人员，他们将为您量身定制满足您需求的体验。在下方了解更多关于我们店内设施的信息。',
                                 dTile: '来旧金山观光？',
                                 dInfo: '在到达之前下载我们的欢迎手册。',
@@ -3102,7 +3102,7 @@
                                     },
                                     {
                                         title: 'TARJETAS Y MOÑOS PARA LLEVAR ',
-                                        description: 'Envolveremos sus compras para regalo, o puede elegir sus tarjetas, cajas, papel de regalo y moños para llevarse a casa, en nuestro puesto de envoltura de regalos, ubicado en el sexto piso.'
+                                        description: 'Envolveremos sus compras para regalo, o puede elegir sus tarjetas, cajas, papel de regalo y moños para llevarse a casa, en nuestro puesto de envoltura de regalos, en el piso ocho.'
                                     }
                                 ]
                             },
@@ -3786,12 +3786,12 @@
                     header: {
                         mobile: {
                             h1: 'ようこそ',
-                            h2: '世界のトレンドをチェックするなら是非ブルーミングデールズにお越し下さい。',
+                            h2: '世界のトレンドをチェックするなら是非<br/>ブルーミングデールズにお越し下さい。',
                             p: '1872年以来ブルーミングデールズはファッションの発信地で、世界中で人気のブランドのファッションアイテム 靴、ハンドバッグ、化粧品、ハイジュエリー、ギフトアイテムが揃っています。多言語スタッフ、スペシャルコンシェルジュサービスなど、当店独自の心のこもったおもてなしでお客様をお迎え致しますので、寛いでお買い物をお楽しみ頂けます。他にも当店ならではのサービスで皆様をお迎え致します。'
                         },
                         desktop: {
                             h1: 'ようこそ',
-                            h2: '世界のトレンドをチェックするなら是非ブルーミングデールズにお越し下さい。',
+                            h2: '世界のトレンドをチェックするなら是非<br/>ブルーミングデールズにお越し下さい。',
                             p: '1872年以来ブルーミングデールズはファッションの発信地で、世界中で人気のブランドのファッションアイテム 靴、ハンドバッグ、化粧品、ハイジュエリー、ギフトアイテムが揃っています。多言語スタッフ、スペシャルコンシェルジュサービスなど、当店独自の心のこもったおもてなしでお客様をお迎え致しますので、寛いでお買い物をお楽しみ頂けます。他にも当店ならではのサービスで皆様をお迎え致します。'
                         }
                     },
@@ -3801,8 +3801,7 @@
                         '各店舗のご案内'
                     ],
                     shop: {
-                        title: 'オンライン・ショッピング' +
-                               '当サイトでのお買い物の仕方および「よくある質問」をご参照いただけます。今すぐダウンロード',
+                        title: 'オンラインショッピング',
                         subtitle: 'もご利用いただけます',
                         ctas: [
                             '婦人用品',
@@ -3920,7 +3919,7 @@
                 designer: {
                     header: {
                         h1: '1つの店舗に膨大な数のブランド',
-                        h2: '当店はファッション、ビューティをはじめとする最高のデザイナーズ・ブランドを選び抜きます'
+                        h2: 'ファッションやコスメなどの最高のブランドを厳選しました'
                     },
                     article: [
                         'CHANEL、Dior、Michael Kors、MCM、Tory Burch、MARC JACOBS、Armani、Ralph Laurenなど、デザイナーズ・ブランドがBloomingdale\'sほど揃っているところは他にありません。',
@@ -3951,7 +3950,7 @@
                             {id: '8',    name: 'アヴェントゥーラ店',                          disabled: 'false'},
                             {id: '9',    name: 'オーランド店',                             disabled: 'false'}
                         ],
-                        copy: 'Bloomingdale\'sは、アメリカ全体に店舗を展開しています。ニューヨーク、ハワイ、シカゴ、マイアミ、サンフランシスコの店舗のビジターセンターでは、 海外からのお客様のための設備・サービスが幅広く取り揃えられており、多言語スタッフがお客様のショッピング体験を最高のものとするためのお手伝いをいたします。スタッフはお国の言語のフロア案内ガイドの提供、スペシャル・イベント情報のお知らせに加え、無料でご利用いただけるスタイリストの予約、ホテルへの荷物配送、当店内のものを含むレストランの予約など、様々な手配も承ります。ご旅行先はビーチですか？ご旅行先はビーチですか？当店はオレンジ・カウンティ のサウス・コースト・プラザ、サンディエゴ、ロサンゼルスなど、南カリフォルニアに多くの支店を持ち、さらにホノルルにもありますので、お近くでトップ・ファッションもお楽しみいただけます。'
+                        copy: 'Bloomingdale\'sは、アメリカ全体に店舗を展開しています。ニューヨーク、ハワイ、シカゴ、マイアミ、サンフランシスコの店舗のビジターセンターでは、 海外からのお客様のための設備・サービスが幅広く取り揃えられており、多言語スタッフがお客様のショッピング体験を最高のものとするためのお手伝いをいたします。スタッフはお国の言語のフロア案内ガイドの提供、スペシャル・イベント情報のお知らせに加え、無料でご利用いただけるスタイリストの予約、ホテルへの荷物配送、当店内のものを含むレストランの予約など、様々な手配も承ります。ご旅行先はビーチですか？当店はオレンジ・カウンティ のサウス・コースト・プラザ、サンディエゴ、ロサンゼルスなど、南カリフォルニアに多くの支店を持ち、さらにホノルルにもありますので、お近くでトップ・ファッションもお楽しみいただけます。'
                     },
                     storeData: {
                         storeHours: '営業時間',
@@ -3966,7 +3965,7 @@
                             {
                                 name: '59丁目本店（ニューヨーク）',
                                 addr: '1000 Third Avenue  New York, NY 10022<br/>電話：212-705-2000',
-                                hours: '月曜日〜土曜日: 午前10:00〜午後8:30 <span>|</span> 日曜日: 午前11:00〜午後7:00',
+                                hours: '月曜日〜土曜日: 午前10:00〜午後8:30 <span>|</span> 日曜日: 午前10:00〜午後7:00',
                                 descr: 'Bloomingdale’sを象徴する伝統と受賞歴を誇るおもてなしをご体験下さい。Flagship店へご来店の際は、まず一階バルコニーのビジターセンターにお立ち寄り下さい。各言語でのフロアガイドをご用意しております。又お客様それぞれのご要望に添えます様、様々なサービス（お買い物をサポートするスタイリスト、サイズ直し、レストランの予約など）を承りますのでどうぞご利用下さいませ。<br/><br/>ニューヨークへご旅行ですか？<br/><br/>ご到着前に当店のウェルカム・ブックレットをダウンロードなさって下さい。',
                                 dTile: 'ニューヨークへご旅行ですか？',
                                 dInfo: 'いらっしゃる前に当店のウェルカム・ブックレットをダウンロードください。',
@@ -4155,7 +4154,7 @@
                                     },
                                     {
                                         title: 'パーソナル・スタイリストとビューティ・アドバイザーがご用命に応じます',
-                                        description: 'お買い物にご一緒し、お好みに合うファッションを選ぶお手伝いをするスタイリストをご利用いただけます（無料）。メイクに関する相談をご希望ですか？当店の経験豊富なアドバイザーが、今一番人気のあるブランドの製品からお客様にぴったりのものを見つけます。'
+                                        description: 'お買い物にご一緒し、お好みに合うファッションを選ぶお手伝いをするスタイリストをご利用いただけます（無料）。メイクに関する相談をご希望ですか？当店の経験豊富なアドバイザーが、今一番人気のあるブランドの商品からお客様にぴったりのものを見つけます。'
                                     },
                                     {
                                         title: 'お直しクイックサービスをご利用頂けます',
@@ -4176,7 +4175,7 @@
                                         description: '500ポイントごとに25ドルのギフトカードに引き換えられ、Bloomingdale\'s Ala Moanaのどの商品にもご利用いただけます'
                                     },
                                     {
-                                        title: 'ストアサービスに利用',
+                                        title: 'ストアサービスのご利用',
                                         description: '詳しくは、１階のウェルカムセンターでスタッフにお尋ねください。'
                                     },
                                     {
@@ -4294,7 +4293,7 @@
                             { 
                                 name: 'サンフランシスコ・センター店（サンフランシスコ）',
                                 addr: '845 Market Street  San Francisco, CA<br/>電話：415-856-5475',
-                                hours: '月曜日〜土曜日: 午前10:00〜午後8:30 | 日曜日: 午前10:00〜午後7:00',
+                                hours: '月曜日〜土曜日: 午前10:00〜午後8:30 | 日曜日: 午前11:00〜午後7:00',
                                 descr: 'サンフランシスコで一番のショッピングスポットを見つけましょう。まず最初に行くべき所はBloomingdale’sです。店内のビジターセンターへまずお寄りいただけば、フロア案内ガイドは各言語揃っており、また、ご希望通りにショッピングをお楽しみいただけるよう多言語スタッフがご相談にのります。店内の設備・サービスについて詳しくご説明いたします。',
                                 dTile: 'サンフランシスコへご旅行ですか？',
                                 dInfo: 'いらっしゃる前に当店のウェルカム・ブックレットをダウンロードください。',
@@ -4420,7 +4419,7 @@
                                     },
                                     {
                                         title: 'ラッピングサービスがございます',
-                                        description: 'ります。あるいは、お好きなメッセージカード、ボックス、ラッピングペーパー、リボンをお持ち帰りいただけます。'
+                                        description: '1 階にて、ご購入品のギフトラッピングを承 ります。あるいは、お好きなメッセージカード、ボックス、ラッピングペーパー、リボンをお持ち帰りいただけます。'
                                     },
                                     {
                                         title: 'お支払いは簡単です',
@@ -4497,7 +4496,7 @@
                                 services: [
                                     {
                                         title: 'お直しクイックサービスがあります',
-                                        description: '店内にて、専門家による仕立ておよびサイズ直しを承っております。料金はご依頼内容により異なり、フィッティング時にお知らせいたします。 Available at select locations.'
+                                        description: '店内にて、専門家による仕立ておよびサイズ直しを承っております。料金はご依頼内容により異なり、フィッティング時にお知らせいたします。 店舗によりご利用いただけない場合もあります。'
                                     },
                                     {
                                         title: 'カードとリボンをお持ち帰りいただけます',
