@@ -11,5 +11,8 @@ require( [ 'jquery', 'bcomLeftNav/account/AccountLeftNav' ], function ( $, accou
 				window.BLOOMIES.coremetrics.cmCreatePageElementTag('member_benefits-learn_more', 'Loyallist');
 			}
 		});
+		$('#learn-more-and-apply-link').on('click', function() {
+			window.cmCreateManualLinkClickTag($(this).data('cm_sp'));
+		});
 	});    
 });
