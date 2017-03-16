@@ -8,7 +8,7 @@ let DEV_MODE = process.env && typeof process.env.NODE_ENV === 'string' && proces
     navJson = require('../data/static/about-us-navigation.json'),
     sizeChartsJson = require('../data/static/size-charts-navigation.json'),
     adaptiveHandler = require('./adaptiveWithStaticDataFactory'),
-    // transformForMobile = require('../utils/aboutUsNavFactoryForMobile'),
+    transformForMobile = require('../helpers/aboutUsNavFactoryForMobile'),
     jsonClone = obj => JSON.parse(JSON.stringify(obj)),
     getPageItemByUri = (uri, pageItemsContainer) => {
         let foundItems = pageItemsContainer.pages.filter(item => {
