@@ -101,6 +101,9 @@ let fs = require('fs'),
         return requestPath;
     },
 
+    // Adaptive handler
+    adaptiveHandler = require('./adaptiveHandler'),
+
     // Adaptive standard layout handler that allows json data to be injected from a reference file
     adaptiveWithStaticData = require('./adaptiveWithStaticData'),
 
@@ -109,30 +112,7 @@ let fs = require('fs'),
     adaptiveWithStaticDataFactory = require('./adaptiveWithStaticDataFactory');
 
 module.exports = { 
-    adaptive: {
-        description: 'Non-responsive layout',
-        notes: 'Reading Akamai headers, and based on device type (phone, tablet, desktop), serve either index.html or index-mobile.html layout',
-        tags: ['non-responsive'],
-        handler: function(req, res) {
-            var requestPath = (req.url.pathname).replace(/^\/b\//g, "/").substring(1),
-                deviceDetectProc,
-                slashMinSuffix = ( req.query.debug === '1' ? '' : '/min' ),
-                file;
-
-            requestPath = detectDeepLinks(req, requestPath);
-
-            deviceDetectProc = detectMobileDeviceView(requestPath, req);
-
-
-            // Check if any head* helpers are used
-            // Use of a head* helper is done using HTML comments <!-- headHelper= -->
-            // If so, add them to args
-            file = deviceDetectProc + ".html";
-            args = headHelpers(file);
-
-            return res.view(deviceDetectProc, { args: args, assetsHost: process.env.BASE_ASSETS, slashMinSuffix: slashMinSuffix });
-        }
-    },
+    adaptive: adaptiveHandler,
     adaptiveWithStaticData: adaptiveWithStaticData,
     adaptiveWithStaticDataFactory: adaptiveWithStaticDataFactory,
     responsiveCustomHF: {
