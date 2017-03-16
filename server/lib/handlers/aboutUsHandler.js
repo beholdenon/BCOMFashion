@@ -4,7 +4,8 @@
 
 'use strict';
 
-let navJson = require('../data/static/about-us-navigation.json'),
+let DEV_MODE = process.env && typeof process.env.NODE_ENV === 'string' && process.env.NODE_ENV.toLowerCase() === 'dev',
+    navJson = require('../data/static/about-us-navigation.json'),
     sizeChartsJson = require('../data/static/size-charts-navigation.json'),
     adaptiveHandler = require('./adaptiveWithStaticDataFactory'),
     // transformForMobile = require('../utils/aboutUsNavFactoryForMobile'),
@@ -19,12 +20,15 @@ let navJson = require('../data/static/about-us-navigation.json'),
 function aboutUsDataProvider(req) {
     var sizeChartsObj = jsonClone(sizeChartsJson),
         out = {
-            aboutUsNavContainer: /*transformForMobile(*/ navJson //)
+            aboutUsNavContainer: DEV_MODE ? navJson : transformForMobile(navJson)
         };
 
     if (req.url.pathname && req.url.pathname.indexOf('/sizecharts/') > -1) {
-        getPageItemByUri(req.url.pathname, sizeChartsObj).active = true;
-        out.sizeChartNavContainer = /*transformForMobile(*/ sizeChartsObj; //);
+        let foundSizeChartPageObj = getPageItemByUri(req.url.pathname, sizeChartsObj);
+        if (foundSizeChartPageObj) {
+            foundSizeChartPageObj.active = true;
+        }
+        out.sizeChartNavContainer = DEV_MODE ? sizeChartsObj : transformForMobile(sizeChartsObj);
     }
 
     return out;
