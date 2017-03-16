@@ -227,7 +227,12 @@ module.exports = function(grunt) {
                 files: [{
                     expand: true,
                     cwd: '<%= node.source %>/server/lib/views/partials/',
-                    src: ['*.html'],
+                    src: [
+                        '*.html',
+                        '!bcomUlNav.html',
+                        '!bcomCollapsableNav.html',
+                        '!uriPageLink.html'
+                    ],
                     dest: '<%= node.destination %>/lib/views/partials/'
                 }]
             }
@@ -763,7 +768,7 @@ module.exports = function(grunt) {
 		    	],
 		        tasks: [
 		        	'useminPrepare',
-		        	// 'htmlmin',
+		        	'htmlmin',
 		        	'usemin',
                     'notify:views'
 		        ]
@@ -825,6 +830,7 @@ module.exports = function(grunt) {
             dev: [
                 'nodemon',
                 'watch',
+                //'node-inspector',
                 'notify:build'
             ],
             options: {
@@ -845,7 +851,7 @@ module.exports = function(grunt) {
             'clean:all',
             'useminPrepare',
             'compass:dist',
-            // 'htmlmin',
+            'htmlmin',
             // 'handlebars',
             // 'concat:generated',
             // 'concat:addHBStemplates',
