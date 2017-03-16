@@ -95,8 +95,9 @@ define([
             if (cmDataEl) {
                 var categoryId = prependMobilePrefix(cmDataEl.dataset.categoryid);
                 var pageId = prependMobilePrefix(cmDataEl.dataset.pageid);
+                var searchstring = window.getQueryValue('cm_kws') || '';
                 
-                window.BLOOMIES.coremetrics.cmCreatePageviewTag(pageId, categoryId);
+                window.BLOOMIES.coremetrics.cmCreatePageviewTag(pageId, categoryId, searchstring);
                 
                 // also check if elements have been marked with cm data, is so
                 $("a[data-cm]").on('click', function () {

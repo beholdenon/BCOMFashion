@@ -162,6 +162,7 @@ module.exports = {
         tags: ['fallback', 'static'],
         handler: function(req, res) {
             var slashMinSuffix = ( req.query.debug === '1' ? '' : '/min' );
+            var querystring = req.url.search || '';
             var requestPath = req.url.pathname.replace(/^\/b\//g, "/");
                 requestPath = requestPath.substring(1);
             var file;
@@ -175,16 +176,17 @@ module.exports = {
             
             // Need this call in order to change args    
             detectMobileDeviceView(requestPath, req);
-            
+
             // if route not captured, redirect to the main site
             if (requestPath === '' || requestPath === undefined) {
                 return res.redirect('http://www.bloomingdales.com');
             }
-            
+
             // get rid of trailing spaces, add a trailing slash if missing, then redirect
             if (requestPath.indexOf('#') < 0 && requestPath.indexOf('?') < 0 && requestPath.indexOf('.') < 0 && ! /\/$/.test(requestPath)) {
                 requestPath = requestPath.replace(/\/?\s?$/, '/');
-                var url = '/' + requestPath;
+                var url = '/' + requestPath + querystring;
+
                 return res.redirect(url);
             }
 

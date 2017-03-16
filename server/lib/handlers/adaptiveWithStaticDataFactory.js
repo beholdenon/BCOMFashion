@@ -87,7 +87,7 @@ module.exports = function (viewAlias, dataProducer) {
 
         handler: function (req, res) {
             let slashMinSuffix = req.query.debug ? '' : '/min',
-                requestPath = req.url.path || req.url.pathname,
+                requestPath = req.url.pathname,
                 requestPathPartial = stripInitialForwardSlash(requestPath),
                 dataProducerData = typeof dataProducer === 'function' ? dataProducer(req) : null,
                 argsForView = argsWithDeviceMetaData(req, argsFactory()),
