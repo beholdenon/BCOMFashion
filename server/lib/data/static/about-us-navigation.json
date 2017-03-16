@@ -180,7 +180,7 @@
         },
         {
           "label": "Press Releases",
-          "href": "//www1.bloomingdales.com/about/company/press/index.ognc",
+          "href": "/about-us/company/press/index/",
           "attributes": {
             "data-cm": "about_pressReleases"
           }
