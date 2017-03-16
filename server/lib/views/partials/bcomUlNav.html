@@ -3,10 +3,10 @@
         {{#each args.pages as |page|}}
             <li {{#if active}}class="active"{{/if}}>
                 {{#if type}}
-                    {{#if_eq page.type "uri"}}
+                    {{#if_eq page.type 'uri'}}
                         {{> uriPageLink }}
                     {{/if_eq}}
-                    {{#if_eq page.type "mvc"}}
+                    {{#if_eq page.type 'mvc'}}
                         {{> mvcPageLink }}
                     {{/if_eq}}
                 {{else}}
