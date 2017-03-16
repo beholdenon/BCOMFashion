@@ -841,6 +841,7 @@ module.exports = function(grunt) {
     grunt.registerTask('projectSprites', 'Create sprite files for projects', function() {
         grunt.task.run(['clean:projectSprites','sprite']);
     });
+    grunt.registerTask('createMobile', 'copy:createMobile');
     grunt.registerTask('default', 'build');
     grunt.registerTask('test', 'checkPages:development');
     grunt.registerTask('build', 'Build based on the NODE_ENV value.', function() {
