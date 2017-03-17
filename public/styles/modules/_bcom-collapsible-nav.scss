@@ -1,0 +1,121 @@
+// @todo add the border to the a tag on the non-togglable li's and remove the borders from all the li's and either add them to the inner div or in atag)
+@import '../variables';
+@import '../mixins';
+@import '../functions/functions';
+
+$light-gray: #cdcdcd;
+$li-bg: #fff;
+$aniSpeed: $ani-speed-3;
+
+.bcom-collapsible-nav {
+  width: 100%;
+
+  // Direct children should keep their borders
+  > li > div,
+  > li.active > div {
+    border-bottom: 1px solid $light-gray;
+  }
+  > li.active > div > a:first-child {
+    font-weight: bold;
+  }
+
+  &,
+  ul,
+  li,
+  li > div {
+    position: relative; // to allow layering
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background: $li-bg;
+  }
+
+  &,
+  li,
+  li a {
+    display: block;
+    text-align: left;
+  }
+
+  ul,
+  li {
+    clear: both;
+  }
+
+  ul {
+    @include with-browser-prefixes(transition, (
+            transform $aniSpeed,
+            -o-transform $aniSpeed,
+            -ms-transform $aniSpeed,
+            -webkit-transform $aniSpeed,
+            -moz-transform $aniSpeed)
+    );
+    @include with-browser-prefixes(transform, translateY(-100%));
+  }
+
+  li {
+    overflow-y: hidden;
+    border-bottom: 1px solid $light-gray;
+    @include with-browser-prefixes(transition, (height $aniSpeed));
+    background: $li-bg;
+  }
+
+  li a {
+    border-radius: 0;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 19px 14px;
+    font-size: 12px;
+  }
+
+  li a span {
+    display: inline-block;
+  }
+
+  li.togglable {
+    height: 56px;
+
+    > div {
+      clear: both;
+    }
+    > div a {
+      display: inline-block;
+      @include with-browser-prefixes(transition, font-weight $ani-speed-3);
+    }
+    > div a:first-child {
+      width: 80%;
+    }
+    > div a:first-child + a {
+      float: right;
+      font-size: 14px;
+      line-height: 16px;
+      text-align: center;
+      font-weight: bold;
+      padding: 20px 14px;
+      max-width: 50px;
+      width: 20%;
+    }
+
+    > div a:first-child + a::after {
+      content: "+";
+    }
+    &.active > div > a:first-child + a::after {
+      content: "\2013"; // unicode decimal for em dash (same as &mdash;)
+    }
+  }
+
+  li ul li {
+    @include with-browser-prefixes(transition, (height $aniSpeed, border-bottom $aniSpeed));
+  }
+
+  li.togglable.active {
+    > div + ul {
+      @include with-browser-prefixes(transform, translateY(0));
+
+      > li ul li {
+        border-bottom-color: transparent;
+      }
+    }
+  }
+
+}

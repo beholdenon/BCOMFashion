@@ -227,7 +227,12 @@ module.exports = function(grunt) {
                 files: [{
                     expand: true,
                     cwd: '<%= node.source %>/server/lib/views/partials/',
-                    src: ['*.html'],
+                    src: [
+                        '*.html',
+                        '!bcomUlNav.html',
+                        '!bcomCollapsableNav.html',
+                        '!uriPageLink.html'
+                    ],
                     dest: '<%= node.destination %>/lib/views/partials/'
                 }]
             }
@@ -407,9 +412,12 @@ module.exports = function(grunt) {
                         expand: true,
                         src: [
                             './server/lib/views/about-us/**/*.hbs',
-                            './server/lib/views/landing-page/**/*.hbs',
+                            './server/lib/views/media/about/**/*.hbs',
+                            './server/lib/views/fashion-tips/**/*.hbs',
                             './server/lib/views/fashion-index/**/*.hbs',
-                            './server/lib/views/media/**/*.hbs'
+                            './server/lib/views/landing-page/**/*.hbs'
+
+
                         ],
                         rename: function(dest, src) {
                             var name =  src.replace(/(\.*)\.hbs$/, "$1-mobile.hbs");
@@ -712,6 +720,7 @@ module.exports = function(grunt) {
             jsClient: {
 		        files: [
                     '<%= node.source %>/public/javascripts/main.js',
+                    '<%= node.source %>/public/javascripts/components/{,**/}*.{js,json}',
                     '<%= node.source %>/public/javascripts/includes/{,**/}*.{js,json}',
                     '<%= node.source %>/public/javascripts/projects/{,**/}*.{js,json}',
                     '<%= node.source %>/public/javascripts/services/{,**/}*.{js,json}'
@@ -835,7 +844,7 @@ module.exports = function(grunt) {
     grunt.registerTask('createMobile', 'copy:createMobile');
     grunt.registerTask('default', 'build');
     grunt.registerTask('test', 'checkPages:development');
-    grunt.registerTask('build', 'Build based on the NODE_ENV value.', function() {   
+    grunt.registerTask('build', 'Build based on the NODE_ENV value.', function() {
         grunt.task.run([
 
             'babel',
@@ -843,7 +852,7 @@ module.exports = function(grunt) {
             'clean:all',
             'useminPrepare',
             'compass:dist',
-            'htmlmin',   
+            'htmlmin',
             // 'handlebars',
             // 'concat:generated',
             // 'concat:addHBStemplates',
@@ -852,7 +861,7 @@ module.exports = function(grunt) {
             'compile-handlebars', // this processes files in the views folder and overwrites files in target
             'copy:titleImages', // handlebars optionally creates titles images, need to copy those after handlebars run
             // 'cssmin',
-            // 'uglify',  
+            // 'uglify',
             // 'rev:dist',     
             'usemin',
             'string-replace'

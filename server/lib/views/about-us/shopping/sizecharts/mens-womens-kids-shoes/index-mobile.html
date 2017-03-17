@@ -1,9 +1,19 @@
-<!-- {pageTitle: 'Shoes', pageLabel: 'Shoes Size Charts - Shopping Services - About Us | Bloomingdale\'s'} -->
-{{{coremetrics 'Shoes Size Charts - Shopping Services - About Us | Bloomingdales (ab-sh-si-xx.shoes)' 'ab-sh-si-xx.shoes'}}}
-<!--headMeta={"name":"description", "content":"The Perfect Fit: Shoes. Use the size charts below to help you determine the perfect fit for many Bloomingdale's Shoes styles."}-->
-<!--headCanonical={"href":"/about-us/shopping/sizecharts/mens-womens-kids-shoes"}-->
-<div class="about_us">
-    {{>title}}
+<title data-title="Shoes Size Charts - Shopping Services - About Us - Bloomingdale&rsquo;s"
+       data-menu="bcomLeftNav/about/ShoppingServicesLeftNav">
+    Shoes Size Charts - Shopping Services - About Us - Bloomingdale&rsquo;s
+</title>
+<meta name="description" content="The Perfect Fit: Shoes. Use the size charts below to help you determine the perfect fit for many Bloomingdale's Shoes styles."/>
+<link rel="canonical" href="/about-us/shopping/sizecharts/mens-womens-kids-shoes" />
+<link rel="stylesheet" href="/fashion/styles/projects/about-us/aboutus.css">
+<link rel="stylesheet" href="/fashion/styles/projects/about-us/shopping/size-charts/size-chart-page.css">
+
+{{!-- Core Metrics Data --}}
+<input id="cmdata" type="hidden"
+       data-pageid="Shoes Size Charts - Shopping Services - About Us | Bloomingdales (ab-sh-si-xx.shoes)"
+       data-categoryid="ab-sh-si-xx.shoes" />
+
+<div class="about_us" data-page-alias="size-chart-page">
+    <nav>{{> bcomUlNav args=args.sizeChartNavContainer wrapLinksInner=true }}</nav>
     <div id="bl_main_wrapper" class='newLayout'>
         <div class="bl_main">
             <div id="bl_hp_main">
@@ -14,7 +24,7 @@
                                 <!--BEGIN LOCAL NAVIGATION-->
                                 <div class="gn_left_nav_container">
                                     <div class="gn_left_nav_top_cs">
-                                        <div id="bl_leftNavContainer">{{>leftnav}}</div>
+                                        <div id="bl_leftNavContainer">{{!>leftnav}}</div>
                                     </div>
                                 </div>
                                 <!--END LOCAL NAVIGATION-->

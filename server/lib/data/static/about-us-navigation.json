@@ -1,0 +1,206 @@
+{
+  "className": "bcom-collapsible-nav",
+  "pages": [
+    {
+      "label": "About Us",
+      "href": "/about-us/directory/",
+      "attributes": {
+        "data-cm-element-category-id": "About_us_dropdown",
+        "data-cm-element-id-open": "Dropdown_open",
+        "data-cm": "about_aboutUs"
+      },
+      "pages": [
+        {
+          "label": "Ways To Shop",
+          "href": "/about-us/store-events-ways-to-shop/",
+          "attributes": {
+            "data-cm": "about_waysToShop"
+          },
+          "pages": [
+            {
+              "label": "Bloomingdale's App",
+              "href": "/about-us/mobile-shopping-online/",
+              "attributes": {
+                "data-cm": "about_bloomingdalesApp"
+              }
+            },
+            {
+              "label": "Store Locations & Events",
+              "href": "//locations.bloomingdales.com/store-locator",
+              "attributes": {
+                "data-cm": "about_storeLocationsEvents"
+              }
+            },
+            {
+              "label": "Pick Up In Store",
+              "href": "/about-us/buy-online-pickup-in-store/",
+              "attributes": {
+                "data-cm": "about_pickUpInStore"
+              }
+            }
+          ]
+        },
+        {
+          "label": "Shopping Services",
+          "href": "/about-us/shopping/shopping-services/",
+          "attributes": {
+            "data-cm": "about_shoppingServices"
+          },
+          "pages": [
+            {
+              "label": "Size Charts",
+              "href": "/about-us/shopping/sizecharts/womens-petite-plus/",
+              "attributes": {
+                "data-cm": "about_sizeCharts"
+              }
+            },
+            {
+              "label": "Check Gift Card Balance",
+              "href": "https://www.bloomingdales.com/account/giftcardbalance",
+              "attributes": {
+                "data-cm": "about_checkGiftCardBalance"
+              }
+            },
+            {
+              "label": "Business Gifts",
+              "href": "/about-us/shopping/corporate-business-gifts/",
+              "attributes": {
+                "data-cm": "about_businessGifts"
+              }
+            },
+            {
+              "label": "Personal Shoppers",
+              "href": "/about-us/shopping/personal-shopper-complimentary-service/",
+              "attributes": {
+                "data-cm": "about_personalShoppers"
+              }
+            },
+            {
+              "label": "Studio Services",
+              "href": "/about-us/shopping/fashion-studio-styling-services/",
+              "attributes": {
+                "data-cm": "about_studioServices"
+              }
+            },
+            {
+              "label": "Find A Wish List",
+              "href": "//www.bloomingdales.com/wishlist/find",
+              "attributes": {
+                "data-cm": "about_findAWishList"
+              }
+            },
+            {
+              "label": "Visitor Services",
+              "href": "/about-us/shopping/international-visitor-services/",
+              "attributes": {
+                "data-cm": "about_visitorServices"
+              },
+              "secure": true
+            },
+            {
+              "label": "Safety Recall Notice",
+              "href": "//www.customerservice-bloomingdales.com/app/answers/detail/a_id/355",
+              "attributes": {
+                "data-cm": "about_safetyRecallNotice"
+              }
+            }
+          ]
+        },
+        {
+          "label": "b.cause",
+          "href": "/about-us/philanthropy/",
+          "attributes": {
+            "data-cm": "about_bCause"
+          },
+          "pages": [
+            {
+              "label": "amfAR",
+              "href": "/about-us/amfar-b-cause-philanthropy/",
+              "attributes": {
+                "data-cm": "about_amfAr"
+              }
+            },
+            {
+              "label": "Pink Campaign",
+              "href": "/about-us/pink-campaign-b-cause-philanthropy/",
+              "attributes": {
+                "data-cm": "about_pinkCampaign"
+              }
+            },
+            {
+              "label": "Child Mind Institute",
+              "href": "/about-us/child-mind-institute-b-cause-philanthropy/",
+              "attributes": {
+                "data-cm": "about_childMindInstitute"
+              }
+            },
+            {
+              "label": "HELP USA & Mentoring USA",
+              "href": "/about-us/help-usa-b-cause-philanthropy/",
+              "attributes": {
+                "data-cm": "about_helpUsa"
+              }
+            },
+            {
+              "label": "JDRF",
+              "href": "/about-us/jdrf-b-cause-philanthropy/",
+              "attributes": {
+                "data-cm": "about_jdrf"
+              }
+            }
+          ]
+        },
+        {
+          "label": "Employee Giving & Volunteerism",
+          "href": "/about-us/giving-back-to-community/",
+          "attributes": {
+            "data-cm": "about_employeeGiving"
+          }
+        },
+        {
+          "label": "Diversity & Inclusion",
+          "href": "/about-us/diversity-inclusion/",
+          "attributes": {
+            "data-cm": "about_diversityInclusion"
+          }
+        },
+        {
+          "label": "New Stores",
+          "href": "/about-us/new-store-openings/",
+          "attributes": {
+            "data-cm": "about_newStores"
+          }
+        },
+        {
+          "label": "Our History",
+          "href": "/media/about/history/",
+          "attributes": {
+            "data-cm": "about_ourHistory"
+          }
+        },
+        {
+          "label": "Press Releases",
+          "href": "/about-us/company/press/index/",
+          "attributes": {
+            "data-cm": "about_pressReleases"
+          }
+        },
+        {
+          "label": "Careers",
+          "href": "//www.bloomingdalesjobs.com/",
+          "attributes": {
+            "data-cm": "about_careers",
+            "target": "_blank"
+          }
+        },
+        {
+          "label": "Affiliate Program",
+          "href": "/about-us/affiliate-program-network-partner/",
+          "attributes": {
+            "data-cm": "about_affiliateProgram"
+          }
+        }
+      ]
+    }
+  ]
+}
