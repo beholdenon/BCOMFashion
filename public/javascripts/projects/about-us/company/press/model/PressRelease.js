@@ -13,7 +13,7 @@ define(['jquery','underscore', 'backbone'], function($, _, Backbone){
     // });
 
     var Model = Backbone.Model.extend({
-        url: '/press/customer/v1/pressrelease/notes',
+        url: '/b/press/customer/v1/pressrelease/notes',
         sync: function( method, model, options ) {
             options = options || {};
             options.headers = options.headers || {};
