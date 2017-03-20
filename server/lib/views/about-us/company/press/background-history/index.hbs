@@ -34,6 +34,7 @@
 <script type="text/javascript">
     require(['jquery', 'backbone', 'pressReleases/main'], function($, Backbone, PressReleases) {
         $(document).ready(function() {
+            // Monitor and dispatch routes found in /about-us/company/press/main.js
             Backbone.history.start({pushState: true });
         });
     });

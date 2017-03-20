@@ -18,6 +18,7 @@ define(['jquery',
             this.routes = options.routes;
         },
         
+        //Clear container div and render json object passed from /main.js "_render" funtion
         render: function(obj) {
             this.$el.html(
                 this.template(obj)
