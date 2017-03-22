@@ -84,6 +84,7 @@ var routes = [
     { method: 'GET',  path: '/lookbooks/spring-2016-womens-festival/',                                      config: require('./lib/handlers/views').adaptive },
     { method: 'GET',  path: '/lookbooks/summer-party-dining-guide-2016/',                                   config: require('./lib/handlers/views').adaptive },
     { method: 'GET',  path: '/lookbooks/{action*}',                                                         config: require('./lib/handlers/views').adaptive },
+    { method: 'GET',  path: '/loyallist/benefits/',                                                         config: require('./lib/handlers/views').adaptive },
     { method: 'GET',  path: '/makeup-date/{path*}',                                                         config: require('./lib/handlers/views').adaptive },
     { method: 'GET',  path: '/media/about/history/',                                                        config: require('./lib/handlers/views').adaptive },
     { method: 'GET',  path: '/sweepstakes/win-1000-bucks-writing-reviews/',                                 config: require('./lib/handlers/views').adaptive },
