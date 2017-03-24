@@ -1,5 +1,15 @@
 "use strict";
 
+// Leaving mock data here as a reference so we know what the expected data looks like
+// mockJson = {
+//     pressReleases: {
+//         pressRelease: [
+//             {newsDate: '12/25/2016', newsId: "174", newsTitle: "Sample PressRelease", newsStory: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."},
+//             {newsDate: '12/26/2016', newsId: "175", newsTitle: "One Sample PressRelease", newsStory: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."}
+//         ]
+//     }
+// },
+
 define(['jquery', 
         'underscore', 
         'backbone',
@@ -7,15 +17,7 @@ define(['jquery',
     
     var pressReleaseModel,
         pressReleaseView,
-        // Leaving mock data here as a reference so we know what the expected data looks like
-        // mockJson = {
-        //     pressReleases: {
-        //         pressRelease: [
-        //             {newsDate: '12/25/2016', newsId: "174", newsTitle: "Sample PressRelease", newsStory: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."},
-        //             {newsDate: '12/26/2016', newsId: "175", newsTitle: "One Sample PressRelease", newsStory: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."}
-        //         ]
-        //     }
-        // },
+
         Routes = Backbone.Router.extend({
             routes: {
                 'about-us/company/press/index/' : 'index',
@@ -32,6 +34,8 @@ define(['jquery',
         }),
         appRoutes = new Routes();
     
+    // Called when model data is available.
+    // Renders filtered data or error response.
     function _render(id) {
         // var json = mockJson;
         var json = pressReleaseModel.toJSON();
@@ -45,9 +49,11 @@ define(['jquery',
             }
         }
         
+        //json object passed to /views/Index.js or /views/Details.js for page rendering
         pressReleaseView.render(json);
     }
     
+    // Fetches model data on page load
     function render(id) {
         var view = id ? 'pressReleases/views/Details' : 'pressReleases/views/Index';
 
