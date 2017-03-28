@@ -215,7 +215,7 @@ define( [ "LeftNav" ], function ( LeftNav ) {
                     type:'header',
                     text: 'OUR HISTORY',
                     label: 'Our History',
-                    href: '/media/about/history/',
+                    href: '/b/media/about/history/',
                     id: 'about_ourHistory',
                     secure: false
                 }
