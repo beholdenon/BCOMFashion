@@ -173,7 +173,7 @@
         },
         {
           "label": "Our History",
-          "href": "/media/about/history/",
+          "href": "/about-us/history/",
           "attributes": {
             "data-cm": "about_ourHistory"
           }
