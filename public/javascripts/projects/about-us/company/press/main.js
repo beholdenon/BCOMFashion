@@ -21,7 +21,9 @@ define(['jquery',
         Routes = Backbone.Router.extend({
             routes: {
                 'about-us/company/press/index/' : 'index',
+                'b/about-us/company/press/index/' : 'index',
                 'about-us/company/press/background-history/?newsID=:id' : 'details',
+                'b/about-us/company/press/background-history/?newsID=:id' : 'details',
             },
             
             index: function() {
