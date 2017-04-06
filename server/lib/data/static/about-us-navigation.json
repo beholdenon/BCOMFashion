@@ -12,14 +12,14 @@
       "pages": [
         {
           "label": "Ways To Shop",
-          "href": "/about-us/store-events-ways-to-shop/",
+          "href": "/b/about-us/store-events-ways-to-shop/",
           "attributes": {
             "data-cm": "about_waysToShop"
           },
           "pages": [
             {
               "label": "Bloomingdale's App",
-              "href": "/about-us/mobile-shopping-online/",
+              "href": "/b/about-us/mobile-shopping-online/",
               "attributes": {
                 "data-cm": "about_bloomingdalesApp"
               }
@@ -33,7 +33,7 @@
             },
             {
               "label": "Pick Up In Store",
-              "href": "/about-us/buy-online-pickup-in-store/",
+              "href": "/b/about-us/buy-online-pickup-in-store/",
               "attributes": {
                 "data-cm": "about_pickUpInStore"
               }
@@ -42,14 +42,14 @@
         },
         {
           "label": "Shopping Services",
-          "href": "/about-us/shopping/shopping-services/",
+          "href": "/b/about-us/shopping/shopping-services/",
           "attributes": {
             "data-cm": "about_shoppingServices"
           },
           "pages": [
             {
               "label": "Size Charts",
-              "href": "/about-us/shopping/sizecharts/womens-petite-plus/",
+              "href": "/b/about-us/shopping/sizecharts/womens-petite-plus/",
               "attributes": {
                 "data-cm": "about_sizeCharts"
               }
@@ -63,21 +63,21 @@
             },
             {
               "label": "Business Gifts",
-              "href": "/about-us/shopping/corporate-business-gifts/",
+              "href": "/b/about-us/shopping/corporate-business-gifts/",
               "attributes": {
                 "data-cm": "about_businessGifts"
               }
             },
             {
               "label": "Personal Shoppers",
-              "href": "/about-us/shopping/personal-shopper-complimentary-service/",
+              "href": "/b/about-us/shopping/personal-shopper-complimentary-service/",
               "attributes": {
                 "data-cm": "about_personalShoppers"
               }
             },
             {
               "label": "Studio Services",
-              "href": "/about-us/shopping/fashion-studio-styling-services/",
+              "href": "/b/about-us/shopping/fashion-studio-styling-services/",
               "attributes": {
                 "data-cm": "about_studioServices"
               }
@@ -91,7 +91,7 @@
             },
             {
               "label": "Visitor Services",
-              "href": "/about-us/shopping/international-visitor-services/",
+              "href": "/b/about-us/shopping/international-visitor-services/",
               "attributes": {
                 "data-cm": "about_visitorServices"
               },
@@ -108,42 +108,42 @@
         },
         {
           "label": "b.cause",
-          "href": "/about-us/philanthropy/",
+          "href": "/b/about-us/philanthropy/",
           "attributes": {
             "data-cm": "about_bCause"
           },
           "pages": [
             {
               "label": "amfAR",
-              "href": "/about-us/amfar-b-cause-philanthropy/",
+              "href": "/b/about-us/amfar-b-cause-philanthropy/",
               "attributes": {
                 "data-cm": "about_amfAr"
               }
             },
             {
               "label": "Pink Campaign",
-              "href": "/about-us/pink-campaign-b-cause-philanthropy/",
+              "href": "/b/about-us/pink-campaign-b-cause-philanthropy/",
               "attributes": {
                 "data-cm": "about_pinkCampaign"
               }
             },
             {
               "label": "Child Mind Institute",
-              "href": "/about-us/child-mind-institute-b-cause-philanthropy/",
+              "href": "/b/about-us/child-mind-institute-b-cause-philanthropy/",
               "attributes": {
                 "data-cm": "about_childMindInstitute"
               }
             },
             {
               "label": "HELP USA & Mentoring USA",
-              "href": "/about-us/help-usa-b-cause-philanthropy/",
+              "href": "/b/about-us/help-usa-b-cause-philanthropy/",
               "attributes": {
                 "data-cm": "about_helpUsa"
               }
             },
             {
               "label": "JDRF",
-              "href": "/about-us/jdrf-b-cause-philanthropy/",
+              "href": "/b/about-us/jdrf-b-cause-philanthropy/",
               "attributes": {
                 "data-cm": "about_jdrf"
               }
@@ -152,35 +152,35 @@
         },
         {
           "label": "Employee Giving & Volunteerism",
-          "href": "/about-us/giving-back-to-community/",
+          "href": "/b/about-us/giving-back-to-community/",
           "attributes": {
             "data-cm": "about_employeeGiving"
           }
         },
         {
           "label": "Diversity & Inclusion",
-          "href": "/about-us/diversity-inclusion/",
+          "href": "/b/about-us/diversity-inclusion/",
           "attributes": {
             "data-cm": "about_diversityInclusion"
           }
         },
         {
           "label": "New Stores",
-          "href": "/about-us/new-store-openings/",
+          "href": "/b/about-us/new-store-openings/",
           "attributes": {
             "data-cm": "about_newStores"
           }
         },
         {
           "label": "Our History",
-          "href": "/about-us/history/",
+          "href": "/b/about-us/history/",
           "attributes": {
             "data-cm": "about_ourHistory"
           }
         },
         {
           "label": "Press Releases",
-          "href": "/about-us/company/press/index/",
+          "href": "/b/about-us/company/press/index/",
           "attributes": {
             "data-cm": "about_pressReleases"
           }
@@ -195,7 +195,7 @@
         },
         {
           "label": "Affiliate Program",
-          "href": "/about-us/affiliate-program-network-partner/",
+          "href": "/b/about-us/affiliate-program-network-partner/",
           "attributes": {
             "data-cm": "about_affiliateProgram"
           }
