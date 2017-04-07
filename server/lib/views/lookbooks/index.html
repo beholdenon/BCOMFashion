@@ -5,13 +5,15 @@
 
 <div class="desktop_main_container">
     <div id="syndeca" style="height: 711px;"></div>
-    <script src="//5.syndeca.com/bloomingdales/scripts/syndeca-embed.js" type="text/javascript"
-            data-id				          = "syndeca"
-            data-guide-key 				  = "419BBAE7-28FD-5E12-F297-A6135CDB21BD"
+    <script id="syndeca-embed-script" 
+            src                      = "//5.syndeca.com/bloomingdales/scripts/syndeca-embed.js" 
+            type                     = "text/javascript"
+            data-id				           = "syndeca"
+            data-guide-key 				   = "419BBAE7-28FD-5E12-F297-A6135CDB21BD"
             data-post-message-domain = "fashion.bloomingdales.com"
             data-brand-quick-view-enabled = "true"
     ></script>
-    
+    <script>document.getElementById('syndeca-embed-script').setAttribute('data-post-message-domain', window.location.hostname);</script>
 </div>
 
 <script type="application/javascript" src="/b/fashion/javascripts/libs/jquery-1.11.2.min.js"></script>

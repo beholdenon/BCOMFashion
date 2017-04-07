@@ -28,7 +28,7 @@ define(['jquery',
         },
         
         navigateBackToList: function() {
-            this.routes.navigate('b/about-us/company/press/index/', { trigger: true });
+            this.routes.navigate('/b/about-us/company/press/index/', { trigger: true });
         }
         
     });
