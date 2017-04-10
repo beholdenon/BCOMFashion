@@ -226,7 +226,7 @@ define( [ "LeftNav" ], function ( LeftNav ) {
                     text: 'PRESS RELEASES',
                     label: 'Press Releases',
                     //href: '/about/newstores/',
-                    href: '//www1.bloomingdales.com/about/company/press/index.ognc',
+                    href: '/b/about-us/company/press/index/',
                     id: 'about_pressReleases',
                     secure: false
                 }
