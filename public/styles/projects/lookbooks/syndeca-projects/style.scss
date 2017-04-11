@@ -1,0 +1,37 @@
+.desktop_main_container {
+	position: relative;
+}
+
+.desktop_back_to_top{
+	display: none;
+	position: absolute;
+	right: -72px; /* right = -(graphic_width) */
+	bottom: 93px;
+	width: 72px;
+	height: 72px;
+	padding: 0;
+	margin: 0;
+	outline: 0;
+	border: none;
+	cursor: pointer;
+	overflow: hidden;
+	transition: all 0.9s ease 0s;
+}
+
+.desktop_back_to_top > img{
+	left: 0;
+	top: 0;
+	position: absolute;
+	max-width: none;
+}
+
+.desktop_back_to_top > img:hover{
+	left: -72px;
+	position: absolute;
+}
+
+@media only screen and (min-width: 1130px) {
+	.desktop_back_to_top{
+		display: none;
+	}
+}
