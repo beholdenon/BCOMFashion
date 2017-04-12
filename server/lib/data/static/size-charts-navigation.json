@@ -3,7 +3,7 @@
   "pages": [
     {
       "label": "Women",
-      "href": "/about-us/shopping/sizecharts/womens-petite-plus/",
+      "href": "/b/about-us/shopping/sizecharts/womens-petite-plus/?CM_SP=MEW_ABOUT_US_NAV-_-SHOPPING_SERVICES-_-LINK_WOMEN",
       "id": "about_women",
       "coremetricsData": {
         "pageid": "Women Size Charts - Shopping Services - About Us | Bloomingdale&rsquo;s (ab-sh-si-xx.women)",
@@ -18,7 +18,7 @@
       "linkTags": [
         {
           "rel": "canonical",
-          "href": "/about-us/shopping/sizecharts/womens-petite-plus/"
+          "href": "/b/about-us/shopping/sizecharts/womens-petite-plus/"
         },
         {
           "rel": "stylesheet",
@@ -32,17 +32,17 @@
     },
     {
       "label": "Men",
-      "href": "/about-us/shopping/sizecharts/mens-shirt-suit-clothing/",
+      "href": "/b/about-us/shopping/sizecharts/mens-shirt-suit-clothing/?CM_SP=MEW_ABOUT_US_NAV-_-SHOPPING_SERVICES-_-LINK_MEN",
       "id": "about_men"
     },
     {
       "label": "Kids",
-      "href": "/about-us/shopping/sizecharts/kids-boys-girls-clothing/",
+      "href": "/b/about-us/shopping/sizecharts/kids-boys-girls-clothing/?CM_SP=MEW_ABOUT_US_NAV-_-SHOPPING_SERVICES-_-LINK_KIDS",
       "id": "about_kids"
     },
     {
       "label": "Shoes",
-      "href": "/about-us/shopping/sizecharts/mens-womens-kids-shoes/",
+      "href": "/b/about-us/shopping/sizecharts/mens-womens-kids-shoes/?CM_SP=MEW_ABOUT_US_NAV-_-SHOPPING_SERVICES-_-LINK_SHOES",
       "id": "about_shoes"
     }
   ]

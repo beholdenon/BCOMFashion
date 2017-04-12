@@ -23,13 +23,15 @@ require([
             $aboutUsLink = $aboutUsNavUl.find('a[data-cm-element-id-open]'),
             $aboutUsExpandLink = $aboutUsLink.next(),
             aboutUsElementIdForOpen = $aboutUsLink.data('cm-element-id-open'),
-            aboutUsElementCatIdForOpen = $aboutUsLink.data('cm-element-category-id');
-
+            aboutUsElementCatIdForOpen = $aboutUsLink.data('cm-element-category-id'),
+            aboutUsExploreAttributes = new window.BLOOMIES.coremetrics.exploreAttributes({2: $('#cmdata').attr('data-pageid')});
+            
             [$aboutUsLink, $aboutUsExpandLink].forEach(function ($elm) {
                 $elm.on('click', function () {
                     coremetrics.elementTag({
                         elementID: aboutUsElementIdForOpen,
-                        elementCategory: aboutUsElementCatIdForOpen
+                        elementCategory: aboutUsElementCatIdForOpen,
+                        attributes: aboutUsExploreAttributes.toString()
                     });
                 });
             });

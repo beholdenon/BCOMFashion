@@ -91,7 +91,8 @@ module.exports = function (viewAlias, dataProducer, layoutObj) {
         handler: function (req, res) {
             let slashMinSuffix = req.query.debug ? '' : '/min',
                 requestPath = req.url.pathname,
-                requestPathPartial = stripInitialForwardSlash(requestPath),
+                requestPathUpdated = (req.url.pathname && req.url.pathname.indexOf('/b/') > -1)  ? requestPath.replace(/^\/b\//g, "/") : requestPath,
+                requestPathPartial = stripInitialForwardSlash(requestPathUpdated),
                 dataProducerData = typeof dataProducer === 'function' ? dataProducer(req) : null,
                 argsForView = argsWithDeviceMetaData(req, argsFactory()),
                 getMergedArgs = otherData => sjl.extend(true, argsForView, dataProducerData, otherData),
