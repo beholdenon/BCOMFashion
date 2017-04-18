@@ -671,10 +671,15 @@ DIV {
 
 }
 
-/* Overwrite main-mobile.css */
+/* Overwrite main-mobile.css start */
 header.responsive #header-top-section #nav-container {
     left: -20.08333rem;
 }
+
+a:hover, a:focus {
+    color: #000000;
+}
+/* Overwrite main-mobile.css end */
 
 @media screen and (max-width: 768px){
     .about_us {
