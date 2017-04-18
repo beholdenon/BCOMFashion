@@ -671,6 +671,11 @@ DIV {
 
 }
 
+/* Overwrite main-mobile.css */
+header.responsive #header-top-section #nav-container {
+    left: -20.08333rem;
+}
+
 @media screen and (max-width: 768px){
     .about_us {
         DIV.bl_nav_side {
