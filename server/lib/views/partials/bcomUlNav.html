@@ -1,7 +1,7 @@
 {{#if args.pages}}
     <ul {{#if args.className}}class="{{args.className}}"{{/if}}>
         {{#each args.pages as |page|}}
-            <li {{#if active}}class="active"{{/if}}>
+            <li {{#if page.id}}id="{{page.id}}"{{/if}}{{#if active}}class="active"{{/if}}>
                 {{#if type}}
                     {{#if_eq page.type "uri"}}
                         {{> uriPageLink }}
