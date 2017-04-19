@@ -88,11 +88,15 @@ var routes = [
     { method: 'GET',  path: '/loyallist/benefits/',                                                         config: require('./lib/handlers/views').adaptive },
     { method: 'GET',  path: '/makeup-date/{path*}',                                                         config: require('./lib/handlers/views').adaptive },
     { method: 'GET',  path: '/sweepstakes/win-1000-bucks-writing-reviews/',                                 config: require('./lib/handlers/views').adaptive },
+    
     { method: 'GET',  path: '/international/{path*}',                                                       config: require('./lib/handlers/views').responsiveCustomHF },
+    { method: 'GET',  path: '/b/international/{path*}',                                                     config: require('./lib/handlers/views').responsiveCustomHF },
     { method: 'GET',  path: '/100-percent-2016/{path*}',                                                    config: require('./lib/handlers/views').responsiveCustomHF },
     { method: 'GET',  path: '/2016-fall-campaign-100-percent-exclusive/{path*}',                            config: require('./lib/handlers/views').responsiveCustomHF },
+    { method: 'GET',  path: '/b/2017-spring-campaign-100-percent-exclusive/{path*}',                        config: require('./lib/handlers/views').responsiveCustomHF },
     { method: 'GET',  path: '/2017-spring-campaign-100-percent-exclusive/{path*}',                          config: require('./lib/handlers/views').responsiveCustomHF },
     { method: 'GET',  path: '/outlet-touch-screen/',                                                        config: require('./lib/handlers/views').responsiveCustomHF },
+    
     { method: 'GET',  path: '/{path*}',                                                                     config: require('./lib/handlers/views').fallback }
 ];
 
