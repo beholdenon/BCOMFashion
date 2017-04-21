@@ -19,7 +19,9 @@ var APP = {
 
     director: function( ) {
 
-		var section = window.location.search.substring( window.location.search.indexOf('?section=') + 9 );
+		var preString = "?section=";
+        var paramSplitter = "&";
+        var section = window.location.search.split(preString)[1].split(paramSplitter)[0];
 
 		if ( $('article#'+section).length <= 0 ) {
 			section = 'customize-your-cookware';
