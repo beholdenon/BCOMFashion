@@ -47,9 +47,14 @@ var routes = [
     { method: 'GET',  path: '/dyn_img/cat_splash/{path*}',                                                  config: require('./lib/handlers/assets').commonAssets },
     { method: 'GET',  path: '/popup.ognc',                                                                  config: require('./lib/handlers/assets').commonAssets },
     { method: 'GET',  path: '/catalog/{path*}',                                                             config: require('./lib/handlers/assets').commonAssets },
+    
     { method: 'GET',  path: '/registry/wedding/benefits-perks/',                                            config: require('./lib/handlers/views').adaptive },
     { method: 'GET',  path: '/registry/wedding/checklist/',                                                 config: require('./lib/handlers/views').adaptive },
     { method: 'GET',  path: '/registry/wedding/{path*}',                                                    config: require('./lib/handlers/assets').commonAssets },
+    { method: 'GET',  path: '/b/registry/wedding/benefits-perks/',                                            config: require('./lib/handlers/views').adaptive },
+    { method: 'GET',  path: '/b/registry/wedding/checklist/',                                                 config: require('./lib/handlers/views').adaptive },
+    { method: 'GET',  path: '/b/registry/wedding/{path*}',                                                    config: require('./lib/handlers/assets').commonAssets },
+    
     { method: 'POST', path: '/bag/view',                                                                    config: require('./lib/handlers/assets').bagHandler },
     { method: 'GET',  path: '/shop/topnav',                                                                 config: require('./lib/handlers/assets').topNav },
     { method: 'GET',  path: '/shop/{path*}',                                                                config: require('./lib/handlers/assets').commonAssets },
@@ -69,7 +74,10 @@ var routes = [
     { method: 'GET',  path: '/fashion-tips/mattress-buying-guide/',                                         config: require('./lib/handlers/views').adaptive },
     { method: 'GET',  path: '/in-store/diane-von-furstenberg/',                                             config: require('./lib/handlers/views').adaptive },
     { method: 'GET',  path: '/in-store/louis-vuitton/',                                                     config: require('./lib/handlers/views').adaptive },
+    
     { method: 'GET',  path: '/in-store/{action*}',                                                          config: viewHandlers.adaptiveWithStaticDataFactory('in-store/index') },
+    { method: 'GET',  path: '/b/in-store/{action*}',                                                          config: viewHandlers.adaptiveWithStaticDataFactory('in-store/index') },
+    
     { method: 'GET',  path: '/lookbooks/burberry-pre-fall-trend-report-2016/',                              config: require('./lib/handlers/views').adaptive },
     { method: 'GET',  path: '/lookbooks/cookware-sets-guide/',                                              config: require('./lib/handlers/views').adaptive },
     { method: 'GET',  path: '/lookbooks/corporate-gift-ideas/',                                             config: require('./lib/handlers/views').adaptive },
@@ -85,6 +93,8 @@ var routes = [
     { method: 'GET',  path: '/lookbooks/spring-2016-womens-festival/',                                      config: require('./lib/handlers/views').adaptive },
     { method: 'GET',  path: '/lookbooks/summer-party-dining-guide-2016/',                                   config: require('./lib/handlers/views').adaptive },
     { method: 'GET',  path: '/lookbooks/{action*}',                                                         config: require('./lib/handlers/views').adaptive },
+    { method: 'GET',  path: '/lookbooks/',                                                                  config: require('./lib/handlers/views').adaptive },
+    { method: 'GET',  path: '/b/lookbooks/',                                                                config: require('./lib/handlers/views').adaptive },
     { method: 'GET',  path: '/loyallist/benefits/',                                                         config: require('./lib/handlers/views').adaptive },
     { method: 'GET',  path: '/makeup-date/{path*}',                                                         config: require('./lib/handlers/views').adaptive },
     { method: 'GET',  path: '/sweepstakes/win-1000-bucks-writing-reviews/',                                 config: require('./lib/handlers/views').adaptive },
