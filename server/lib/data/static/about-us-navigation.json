@@ -9,6 +9,7 @@
         "data-cm-element-id-open": "Dropdown_open",
         "data-cm": "about_aboutUs"
       },
+      "root": true,
       "pages": [
         {
           "label": "Ways To Shop",
@@ -46,6 +47,7 @@
           "attributes": {
             "data-cm": "about_shoppingServices"
           },
+          "id": "sizeChart",
           "pages": [
             {
               "label": "Size Charts",
