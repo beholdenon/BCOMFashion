@@ -64,10 +64,15 @@ define('/fashion/javascripts/components/jquery.bcomCollapsibleNav', ['jquery', '
                     $elm.removeClass(activeClassName);
                 }
                 else if (!$elm.hasClass(ops.activeClassName)) {
-                    var expandedHeight = self._getExpandHeight($elm, ops);
+                    var expandedHeight = self._getExpandHeight($elm, ops),
+                        activeChild = $elm.children('ul.clearfix').children("li.active"),
+                        expandedSubNavHeight;
                     $elm.height(expandedHeight);
                     $elm.addClass(activeClassName);
-
+                    if ($elm.parent().children().hasClass(ops.activeClassName)) {
+                        expandedSubNavHeight = self._getExpandHeight(activeChild, ops);
+                        activeChild.height(expandedSubNavHeight);
+                    }
                 }
                 self._closeSiblingTogglables($elm, collapsedHeight, ops);
                 self._updateParentHeights($elm, ops);

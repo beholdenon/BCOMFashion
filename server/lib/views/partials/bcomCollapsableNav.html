@@ -1,7 +1,11 @@
 {{#if navContainer.pages}}
     <ul class="clearfix{{#if navContainer.className}} {{navContainer.className}}{{/if}}">
         {{#each navContainer.pages as |page|}}
-            <li class="clearfix{{#if active}} active{{/if}}">
+            {{#if root}}
+                <li class="clearfix root">
+            {{else}}
+                <li id="{{#if page.id}}{{page.id}}{{/if}}" class="clearfix{{#if active}} active{{/if}}">
+            {{/if}}
                 {{#if page.pages}}
                 <div>
                 {{/if}}

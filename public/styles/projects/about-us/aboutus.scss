@@ -105,6 +105,15 @@ DIV {
     }
 }
 
+#about_us_men #about_men,
+#about_us_women #about_women,
+#about_us_kids #about_kids,
+#about_us_shoes #about_shoes {
+    span {
+        border-bottom: 1px solid #000;
+    }
+}
+
 /* Tiles Based Left Navigation Starts */
 #bl_leftNavContainer {
     float: left;
@@ -661,6 +670,16 @@ DIV {
     }
 
 }
+
+/* Overwrite main-mobile.css start */
+header.responsive #header-top-section #nav-container {
+    left: -20.08333rem;
+}
+
+a:hover, a:focus {
+    color: #000000;
+}
+/* Overwrite main-mobile.css end */
 
 @media screen and (max-width: 768px){
     .about_us {
