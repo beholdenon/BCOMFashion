@@ -22,11 +22,11 @@
         },
         {
           "rel": "stylesheet",
-          "href": "/fashion/styles/projects/about-us/aboutus.css"
+          "href": "/b/fashion/styles/projects/about-us/aboutus.css"
         },
         {
           "rel": "stylesheet",
-          "href": "/fashion/styles/projects/about-us/size-charts/size-chart-page.css"
+          "href": "/b/fashion/styles/projects/about-us/size-charts/size-chart-page.css"
         }
       ]
     },
