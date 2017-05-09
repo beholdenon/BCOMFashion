@@ -13,7 +13,7 @@ module.exports = function (container, uri) {
 };
 
 function setActive (container, uri) {
-    if (container.href && container.href.split('?')[0] === uri) {
+    if (container.href && container.href.split('?')[0].split('/about-us')[1] === uri.split('/about-us')[1]) {
         container.active = true;
         return container;
     }
