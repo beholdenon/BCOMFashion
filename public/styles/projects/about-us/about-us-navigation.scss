@@ -18,4 +18,14 @@ body.bl_mobile {
     }
   }
 
+  /* Overwrite main-mobile.css start */
+  header.responsive #header-top-section #nav-container {
+      left: -19.18333rem;
+  }
+
+  a:hover, a:focus {
+      color: #000000;
+  }
+  /* Overwrite main-mobile.css end */
+
 }
