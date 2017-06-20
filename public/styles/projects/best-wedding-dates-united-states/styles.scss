@@ -1,0 +1,1742 @@
+html {
+    width: 100%;
+    height: 100%;
+    -webkit-text-size-adjust: none
+}
+body,
+html {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: #fff
+}
+.best_day {
+    color: #000;
+    -webkit-text-size-adjust: none;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    -ms-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+    min-width: 320px
+}
+.best_day * {
+    outline: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box
+}
+.best_day *:focus {
+    outline: thin dotted
+}
+.best_day .clearfix:after {
+    content: "";
+    visibility: hidden;
+    display: block;
+    height: 0;
+    clear: both
+}
+.best_day.content {
+    width: 100%;
+    max-width: 962px;
+    margin: 0 auto 0;
+    opacity: 1;
+    -webkit-transition: opacity 1s ease-in-out;
+    -moz-transition: opacity 1s ease-in-out;
+    -ms-transition: opacity 1s ease-in-out;
+    -o-transition: opacity 1s ease-in-out;
+    transition: opacity 1s ease-in-out
+}
+.best_day.loading {
+    opacity: 0
+}
+.best_day .block {
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0)
+}
+.best_day .block .block_inner {
+    margin-bottom: 30px;
+    text-align: center;
+    padding: 0px 10px 20px
+}
+.best_day .block h2 {
+    position: relative;
+    top: -18px;
+    color: #333333;
+    background-color: white;
+    padding: 10px 30px;
+    display: block;
+    margin: 0 -10px
+}
+.best_day .block.coloured_block .block_inner {
+    background-color: #efefed
+}
+.best_day .block.social_block p {
+    margin-bottom: 20px;
+    font-size: 14px
+}
+.best_day .loading_block {
+    height: 0;
+    opacity: 0;
+    visibility: hidden
+}
+.best_day .loading_block .block_inner {
+    padding: 60px 0;
+    text-align: center;
+    margin: 0;
+    text-transform: uppercase
+}
+.best_day .loading_block .block_inner:before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 4px;
+    background-color: #efefed
+}
+.best_day .loading_block h2 {
+    display: inline-block;
+    background-color: white
+}
+@media (min-width: 550px) {
+    .best_day .block .block_inner {
+        margin-bottom: 60px
+    }
+    .best_day .block h2 {
+        display: inline-block;
+        margin: 0
+    }
+}
+@media (min-width: 768px) {
+    .best_day .block .block_inner {
+        padding: 0px 20px 20px
+    }
+}
+.best_day {
+    font-family: "Gotham", "BestDayGotham", Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px
+}
+.best_day .header_block {
+    font-family: "Avenir", "BestDayAvenir", Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 26px
+}
+.best_day h1,
+.best_day h2,
+.best_day h3,
+.best_day h4,
+.best_day p.perfect_day {
+    font-family: "Georgia", Times, serif;
+    font-weight: normal;
+    line-height: 1em
+}
+.best_day h2 {
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 1.4em
+}
+.best_day h3,
+.best_day h4,
+.best_day p.perfect_day {
+    font-style: italic
+}
+.best_day h5 {
+    font-family: "Avenir", "BestDayAvenir", Helvetica, Arial, sans-serif;
+    font-weight: 900
+}
+.best_day h6 {
+    font-family: "Gotham", "BestDayGotham", Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    text-transform: uppercase
+}
+.best_day h1 {
+    font-size: 36px
+}
+.best_day h2 {
+    font-size: 16px
+}
+.best_day h3 {
+    font-size: 32px
+}
+.best_day h4,
+.best_day p.perfect_day {
+    font-size: 17px
+}
+.best_day h5 {
+    font-size: 12px
+}
+.best_day h6 {
+    font-size: 12px
+}
+.best_day button,
+.best_day .btn {
+    font-family: "Avenir", "BestDayAvenir", Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    font-size: 14px
+}
+.best_day .small {
+    font-family: "Gotham", "BestDayGotham", Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    font-size: 9px
+}
+@media (min-width: 768px) {
+    .best_day .header_block {
+        font-size: 17px;
+        line-height: 22px
+    }
+    .best_day h1 {
+        font-size: 52px
+    }
+    .best_day h2 {
+        font-size: 18px
+    }
+    .best_day h3 {
+        font-size: 45px
+    }
+    .best_day h4,
+    .best_day p.perfect_day {
+        font-size: 32px
+    }
+    .best_day h5 {
+        font-size: 12px
+    }
+    .best_day h6 {
+        font-size: 12px
+    }
+}
+.social-likes {
+    font-size: 0;
+    line-height: 0
+}
+.social-likes.social-likes_vertical {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000
+}
+.social-likes .social_btn {
+    position: relative;
+    display: block;
+    width: 33.3333333333%;
+    height: 35px;
+    height: 25px;
+    background-size: 15px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: white;
+    outline: 0;
+    float: left;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    border-radius: 0
+}
+.social-likes .social_btn .social-likes__button {
+    display: none
+}
+.social-likes .icon-facebook {
+    background-image: url(/b/fashion/images/projects/best-wedding-dates-united-states/social_icon_facebook.svg);
+    background-color: #3b5998
+}
+.social-likes .icon-twitter {
+    background-image: url(/b/fashion/images/projects/best-wedding-dates-united-states/social_icon_twitter.svg);
+    background-color: #00aced
+}
+.social-likes .icon-code {
+    background-image: url(/b/fashion/images/projects/best-wedding-dates-united-states/social_icon_embed.svg);
+    background-color: #676767
+}
+.social-button {
+    text-align: center;
+    display: inline-block;
+    color: white;
+    padding: 10px 30px 10px 20px;
+    margin: 0 5px;
+    cursor: pointer
+}
+.social-button.icon-twitter,
+.social-button.icon-facebook {
+    background-image: none
+}
+.social-likes__button {
+    font-size: 14px;
+    line-height: 1em
+}
+.social-likes__icon {
+    display: inline-block;
+    vertical-align: middle;
+    width: 20px;
+    height: 20px;
+    background-size: contain;
+    margin-right: 10px
+}
+.social-likes__icon.social-likes__icon_twitter {
+    background-image: url(/b/fashion/images/projects/best-wedding-dates-united-states/social_icon_twitter.svg)
+}
+.social-likes__icon.social-likes__icon_facebook {
+    background-image: url(/b/fashion/images/projects/best-wedding-dates-united-states/social_icon_facebook.svg)
+}
+.social-likes__widget {
+    text-align: center;
+    display: inline-block;
+    color: white;
+    width: 150px;
+    padding: 10px 30px 10px 20px;
+    margin: 5px;
+    cursor: pointer
+}
+.social-likes__widget.social-likes__widget_facebook {
+    background-color: #3b5998
+}
+.social-likes__widget.social-likes__widget_twitter {
+    background-color: #00aced
+}
+.social-likes_vertical .social-likes__widget {
+    padding: 0;
+    margin: 0
+}
+.closeEmbed {
+    position: absolute;
+    display: block;
+    top: 10px;
+    right: 10px;
+    line-height: 20px;
+    width: 20px;
+    height: 20px;
+    outline: none;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: "Gotham", "BestDayGotham", Helvetica, Arial, sans-serif;
+    font-weight: 100;
+    line-height: 1;
+    color: white;
+    background: #20231e url(/b/fashion/images/projects/best-wedding-dates-united-states/icon_close.svg) center center no-repeat;
+    background-size: 50%;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    -ms-border-radius: 100%;
+    border-radius: 100%;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0)
+}
+.closeEmbed i:before {
+    margin: 0
+}
+@media (hover) {
+    .closeEmbed:hover,
+    .closeEmbed:focus {
+        color: #000
+    }
+}
+.closeEmbed:active {
+    color: #000
+}
+#embed {
+    left: 10px;
+    right: 10px;
+    max-width: 600px;
+    bottom: -200px;
+    background: rgba(228, 228, 228, 0.95);
+    padding-bottom: 10px;
+    position: fixed;
+    text-align: center;
+    z-index: 999999;
+    margin: auto;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    border-radius: 5px
+}
+#embed p {
+    color: black;
+    font-family: "Gotham", "BestDayGotham", Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    margin: 12px 0 16px;
+    text-transform: uppercase
+}
+#embed p a {
+    color: black;
+    text-decoration: underline
+}
+@media (min-width: 900px) {
+    #embed {
+        left: 50%;
+        margin-left: -300px
+    }
+}
+#embed h5 {
+    font-family: "Gotham", "BestDayGotham", Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin: 15px 40px 10px;
+    color: #333
+}
+#embed textarea {
+    width: 90%;
+    border: 0px;
+    color: #111;
+    font-size: 11px;
+    font-family: monospace;
+    border-radius: 3px;
+    padding: 5px;
+    height: 120px
+}
+.ie8 .social-likes {
+    display: none !important
+}
+@media (min-width: 768px) and (min-height: 300px) {
+    .social-likes.social-likes_vertical {
+        position: fixed;
+        top: 50%;
+        left: 0;
+        bottom: inherit;
+        right: inherit;
+        -webkit-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%)
+    }
+    .social-likes .social_btn {
+        position: relative;
+        display: block;
+        width: 48px;
+        height: 48px;
+        background-size: 20px;
+        float: none;
+        -webkit-transition: width 0.15s ease-in-out;
+        -moz-transition: width 0.15s ease-in-out;
+        -ms-transition: width 0.15s ease-in-out;
+        -o-transition: width 0.15s ease-in-out;
+        transition: width 0.15s ease-in-out
+    }
+}
+@media (min-width: 768px) and (min-height: 300px) and (hover) {
+    .social-likes .social_btn:hover,
+    .social-likes .social_btn:focus {
+        width: 68px
+    }
+}
+@media (orientation: portrait) and (min-height: 550px) {
+    .social-likes .social_btn {
+        height: 30px;
+        background-size: 20px
+    }
+}
+@media (min-width: 768px) and (orientation: portrait) and (min-height: 550px) {
+    .social-likes .social_btn {
+        height: 48px;
+        background-size: 20px
+    }
+}
+.best_day a {
+    color: #000;
+    text-decoration: underline
+}
+.best_day button {
+    background: black;
+    border: 0;
+    color: white;
+    cursor: pointer;
+    line-height: 1em;
+    overflow: visible;
+    padding: 10px 30px;
+    -webkit-appearance: button;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none
+}
+.best_day button.submit_btn {
+    text-transform: uppercase
+}
+.best_day input {
+    border: 1px solid #8f8f8f;
+    font-family: "Gotham", "BestDayGotham", Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    font-size: 11px;
+    padding: 15px 50px 13px 12px;
+    width: 200px
+}
+.best_day .button-container {
+    width: 100%;
+    text-align: center
+}
+.best_day .header_block {
+    width: 100%;
+    background: url("/b/fashion/images/projects/best-wedding-dates-united-states/header_img.jpg") center center no-repeat;
+    background-size: cover;
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 100
+}
+.best_day .header_block h1 {
+    display: inline-block;
+    margin: 25px auto 0
+}
+.best_day .header_block h1:after {
+    content: "";
+    display: block;
+    width: 90%;
+    height: 1px;
+    background-color: black;
+    margin: 20px auto 0px
+}
+.best_day .header_block p {
+    max-width: 440px;
+    margin: 20px auto 10px;
+    line-height: 1.6em
+}
+.best_day .header_block .city_select_container {
+    font-size: 0
+}
+.best_day .header_block .city_autocomplete_container {
+    width: 193px
+}
+.best_day .header_block .submit_btn {
+    padding: 16px 20px 12px
+}
+@media (min-width: 400px) {
+    .best_day .header_block .city_autocomplete_container {
+        width: 200px
+    }
+    .best_day .header_block .submit_btn {
+        padding: 16px 30px 14px
+    }
+}
+@media (min-width: 550px) {
+    .best_day .header_block {
+        height: 482px;
+        margin-bottom: 60px
+    }
+    .best_day .header_block h1 {
+        margin-top: 50px
+    }
+    .best_day .header_block h1:after {
+        margin-top: 40px
+    }
+    .best_day .header_block p {
+        margin: 40px auto 10px
+    }
+    .best_day .header_block .city_autocomplete_container {
+        width: 230px
+    }
+}
+@media (min-width: 768px) {
+    .best_day .header_block .city_autocomplete_container {
+        width: 260px
+    }
+}
+.best_day .calendar_block {
+    display: none;
+    opacity: 0
+}
+.best_day .calendar_block h3 {
+    display: inline-block;
+    margin: 10px 0 22px;
+    padding-right: 16px
+}
+.best_day .calendar_block h3.icon {
+    padding-left: 45px;
+    position: relative
+}
+.best_day .calendar_block h3.icon:after {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto
+}
+.best_day .calendar_block.summer h3.icon:after {
+    background: url("/b/fashion/images/projects/best-wedding-dates-united-states/icon_summer.svg") center center no-repeat;
+    background-size: contain
+}
+.best_day .calendar_block.spring h3.icon:after {
+    background: url("/b/fashion/images/projects/best-wedding-dates-united-states/icon_spring.svg") center center no-repeat;
+    background-size: contain
+}
+.best_day .calendar_block.fall h3.icon:after {
+    background: url("/b/fashion/images/projects/best-wedding-dates-united-states/icon_fall.svg") center center no-repeat;
+    background-size: contain
+}
+.best_day .calendar_block.winter h3.icon:after {
+    background: url("/b/fashion/images/projects/best-wedding-dates-united-states/icon_winter.svg") center center no-repeat;
+    background-size: contain
+}
+.best_day .calendar_block .calendar_container {
+    position: relative;
+    min-height: 300px
+}
+.best_day .calendar_block .calendar_tooltip {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 240px;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #c2c2c2;
+    pointer-events: none;
+    text-align: left;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%)
+}
+.best_day .calendar_block .calendar_tooltip .tooltip_arrow {
+    position: absolute;
+    bottom: 100%;
+    left: 50%
+}
+.best_day .calendar_block .calendar_tooltip .tooltip_arrow:before,
+.best_day .calendar_block .calendar_tooltip .tooltip_arrow:after {
+    bottom: 100%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none
+}
+.best_day .calendar_block .calendar_tooltip .tooltip_arrow:before {
+    border-color: rgba(194, 194, 194, 0);
+    border-bottom-color: #c2c2c2;
+    border-width: 11px;
+    margin-left: -11px
+}
+.best_day .calendar_block .calendar_tooltip .tooltip_arrow:after {
+    border-color: rgba(255, 255, 255, 0);
+    border-bottom-color: #ffffff;
+    border-width: 10px;
+    margin-left: -10px
+}
+.best_day .calendar_block .calendar_tooltip h4,
+.best_day .calendar_block .calendar_tooltip p {
+    white-space: nowrap
+}
+.best_day .calendar_block .calendar_tooltip h4 {
+    font-size: 20px;
+    margin: 0 0 10px
+}
+.best_day .calendar_block .calendar_tooltip p {
+    margin: 5px 0 0
+}
+.best_day .calendar_block .calendar_tooltip p .value {
+    font-weight: bold
+}
+.best_day .calendar_block .calendar_tooltip .tooltip_close_btn {
+    display: none;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    background: url("/b/fashion/images/projects/best-wedding-dates-united-states/input_close.svg") center center no-repeat;
+    background-size: 10px
+}
+.best_day .calendar_block .look_ahead .look_ahead_btn {
+    display: inline-block;
+    padding-bottom: 20px
+}
+.best_day .calendar_block .key {
+    float: right;
+    font-size: 8px;
+    line-height: 1em
+}
+.best_day .calendar_block .key .colour_key {
+    float: left;
+    text-align: left
+}
+.best_day .calendar_block .key .colour_key .colours {
+    margin: 2px 0
+}
+.best_day .calendar_block .key .colour_key .colours .colour {
+    display: block;
+    width: 17px;
+    height: 17px;
+    float: left;
+    margin-right: 2px
+}
+.best_day .calendar_block .key .colour_key .colours .colour:last-child {
+    margin-right: 0
+}
+.best_day .calendar_block .key .colour_key p {
+    display: inline-block;
+    margin-top: 8px;
+    padding-right: 24px;
+    position: relative
+}
+.best_day .calendar_block .key .colour_key p:after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 2px;
+    margin: auto;
+    content: "";
+    display: block;
+    width: 12px;
+    height: 100%;
+    background: url("/b/fashion/images/projects/best-wedding-dates-united-states/icon_right_arrow.svg") center center no-repeat;
+    background-size: contain
+}
+.best_day .calendar_block .key .selection_key {
+    margin-left: 10px;
+    float: left;
+    text-align: center
+}
+.best_day .calendar_block .key .selection_key .selection_icon {
+    width: 22px;
+    height: 22px;
+    display: inline-block;
+    background: url("/b/fashion/images/projects/best-wedding-dates-united-states/icon_selection.svg") center center no-repeat;
+    background-size: contain;
+    margin-bottom: 5px
+}
+.best_day .calendar_block .key .selection_key p {
+    margin: 0
+}
+.best_day .calendar_block .colour.colour_0 {
+    background-color: #b9e5cf
+}
+.best_day .calendar_block .colour.colour_1 {
+    background-color: #8dd5ab
+}
+.best_day .calendar_block .colour.colour_2 {
+    background-color: #5fc088
+}
+.best_day .calendar_block .colour.colour_3 {
+    background-color: #2fad72
+}
+.best_day .calendar_block .colour.colour_4 {
+    background-color: #018a63
+}
+.best_day .calendar_block .smallprint {
+    text-align: left
+}
+.best_day .calendar_block .instructions {
+    margin-bottom: 10px
+}
+.best_day .calendar_block .calendar_container {
+    margin-bottom: 20px
+}
+.best_day .calendar_block .calendar_container .month-container {
+    float: left;
+    text-align: center;
+    height: 114px;
+    padding: 0;
+    width: 33.3333333333%;
+    margin-bottom: 10px
+}
+.best_day .calendar_block .calendar_container .month {
+    margin: auto
+}
+.best_day .calendar_block .calendar_container .month-title {
+    font-family: "Gotham", "BestDayGotham", Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    font-size: 10px;
+    text-transform: uppercase;
+    padding: 0;
+    text-align: left;
+    line-height: 14px
+}
+.best_day .calendar_block .calendar_container .day-header {
+    visibility: hidden;
+    font-size: 9px;
+    line-height: 10px;
+    font-family: "Avenir", "BestDayAvenir", Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    text-transform: uppercase
+}
+.best_day .calendar_block .calendar_container .month-container:first-of-type .day-header {
+    visibility: visible
+}
+.best_day .calendar_block .calendar_container .days {
+    margin: -1px
+}
+.best_day .calendar_block .calendar_container .day {
+    width: 11px;
+    height: 11px;
+    line-height: 11px;
+    padding: 0;
+    font-size: 7px;
+    background-color: white;
+    cursor: pointer
+}
+.best_day .calendar_block .calendar_container .day.old,
+.best_day .calendar_block .calendar_container .day.new {
+    background-color: white;
+    opacity: 0.3;
+    color: #999999;
+    cursor: auto
+}
+.best_day .calendar_block .calendar_container .day .day-content {
+    font-family: "Avenir", "BestDayAvenir", Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    width: 100%;
+    height: 100%;
+    padding-top: 1px
+}
+.best_day .month-container .day.highlight_1 {
+    background-color: #b9e5cf
+}
+.best_day .month-container .day.highlight_2 {
+    background-color: #8dd5ab
+}
+.best_day .month-container .day.highlight_3 {
+    background-color: #5fc088
+}
+.best_day .month-container .day.highlight_4 {
+    background-color: #2fad72
+}
+.best_day .month-container .day.highlight_5 {
+    background-color: #018a63
+}
+.best_day .month-container .day.perfect_day {
+    position: relative;
+    z-index: 100
+}
+.best_day .month-container .day.perfect_day:after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    content: "";
+    display: block;
+    width: 120%;
+    height: 120%;
+    min-width: 30px;
+    min-height: 30px;
+    background: url("/b/fashion/images/projects/best-wedding-dates-united-states/icon_selection.svg") center center no-repeat;
+    background-size: contain;
+    pointer-events: none;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%)
+}
+.best_day #calendar_02 {
+    display: none;
+    opacity: 0
+}
+.best_day .asterisk {
+    font-size: 0.5em;
+    position: absolute;
+    margin-left: 6px
+}
+@media (min-width: 400px) {
+    .best_day .calendar_block .calendar_container .month-container {
+        width: 33.3333333333%;
+        height: 132px
+    }
+    .best_day .calendar_block .calendar_container .day {
+        width: 15px;
+        height: 15px;
+        font-size: 8px;
+        line-height: 14px
+    }
+}
+@media (min-width: 450px) {
+    .best_day .calendar_block .calendar_container .month-container {
+        height: 138px
+    }
+    .best_day .calendar_block .calendar_container .day {
+        width: 16px;
+        height: 16px;
+        font-size: 8px;
+        line-height: 14px
+    }
+}
+@media (min-width: 550px) {
+    .best_day .calendar_block .instructions {
+        margin-bottom: 30px
+    }
+    .best_day .calendar_block .calendar_container .month-container {
+        width: 25%;
+        height: 140px;
+        margin-bottom: 20px
+    }
+    .best_day .calendar_block .calendar_container .month-title {
+        font-size: 12px
+    }
+    .best_day .calendar_block .calendar_container .day {
+        width: 16px;
+        height: 16px;
+        font-size: 8px;
+        line-height: 14px
+    }
+}
+@media (min-width: 630px) {
+    .best_day .calendar_block .calendar_container .month-container {
+        height: 145px
+    }
+    .best_day .calendar_block .calendar_container .day {
+        width: 17px;
+        height: 17px;
+        font-size: 10px;
+        line-height: 16px
+    }
+}
+@media (min-width: 800px) {
+    .best_day .calendar_block .calendar_container .month-container {
+        width: 16.6666666667%;
+        height: 133px
+    }
+    .best_day .calendar_block .calendar_container .day {
+        width: 15px;
+        height: 15px;
+        font-size: 10px;
+        line-height: 14px
+    }
+}
+@media (min-width: 900px) {
+    .best_day .calendar_block .calendar_container .month-container {
+        height: 145px
+    }
+    .best_day .calendar_block .calendar_container .day {
+        width: 17px;
+        height: 17px;
+        font-size: 10px;
+        line-height: 16px
+    }
+}
+html.touch .best_day .calendar_block .calendar_tooltip {
+    pointer-events: auto
+}
+html.touch .best_day .calendar_block .calendar_tooltip .tooltip_close_btn {
+    display: block
+}
+.best_day .mobile_calendar_block {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 900;
+    background-color: white;
+    min-width: 320px;
+    visibility: hidden;
+    opacity: 0
+}
+.best_day .mobile_calendar_block .block_inner {
+    height: 100%;
+    background-color: #efefed
+}
+.best_day .mobile_calendar_block .block_header {
+    position: relative;
+    z-index: 100;
+    width: 100%;
+    background-color: white
+}
+.best_day .mobile_calendar_block .block_header button {
+    position: relative;
+    width: 100%;
+    padding: 12px 20px 12px 30px;
+    font-family: "Avenir", "BestDayAvenir", Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    text-align: left;
+    text-decoration: underline;
+    background-color: white;
+    color: black
+}
+.best_day .mobile_calendar_block .block_header button:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30px;
+    height: 100%;
+    content: "";
+    display: block;
+    background: url("/b/fashion/images/projects/best-wedding-dates-united-states/icon_arrow_big_left.svg") center center no-repeat;
+    background-size: 8px
+}
+.best_day .mobile_calendar_block .month-container {
+    outline: 0;
+    width: 100%
+}
+.best_day .mobile_calendar_block .month-container .month {
+    width: 100%;
+    max-width: 240px;
+    margin: auto;
+    padding: 0 10px 10px
+}
+.best_day .mobile_calendar_block .month-container .month-title {
+    font-family: "Avenir", "BestDayAvenir", Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    text-transform: uppercase;
+    padding: 30px 0
+}
+.best_day .mobile_calendar_block .month-container .month-title .year {
+    margin-left: 0.8em
+}
+.best_day .mobile_calendar_block .month-container .day-header {
+    font-family: "Avenir", "BestDayAvenir", Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    padding-bottom: 10px
+}
+.best_day .mobile_calendar_block .month-container .day {
+    position: relative;
+    padding: 0;
+    width: 14.2857142857%;
+    cursor: pointer
+}
+.best_day .mobile_calendar_block .month-container .day.old,
+.best_day .mobile_calendar_block .month-container .day.new {
+    background-color: white;
+    opacity: 0.3
+}
+.best_day .mobile_calendar_block .month-container .day:after {
+    content: "";
+    display: block;
+    padding-bottom: 100%
+}
+.best_day .mobile_calendar_block .month-container .day .day-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%)
+}
+.best_day .mobile_calendar_block .mobole_instructions {
+    width: 100%;
+    max-width: 260px;
+    padding: 0 14px;
+    margin: 10px auto 0;
+    font-family: "Georgia", Times, serif;
+    font-weight: normal;
+    font-style: italic;
+    font-size: 14px;
+    line-height: 1.3em
+}
+.best_day .mobile_calendar_block .slick-disabled {
+    opacity: 0.15
+}
+.best_day .mobile_calendar_block .slick-arrow {
+    position: absolute;
+    top: 0;
+    z-index: 10000;
+    background-color: transparent;
+    height: 76px
+}
+.best_day .mobile_calendar_block .slick-prev {
+    left: 0;
+    background: url("/b/fashion/images/projects/best-wedding-dates-united-states/icon_arrow_big_left.svg") center center no-repeat;
+    background-size: 12px
+}
+.best_day .mobile_calendar_block .slick-next {
+    right: 0;
+    background: url("/b/fashion/images/projects/best-wedding-dates-united-states/icon_arrow_big_right.svg") center center no-repeat;
+    background-size: 12px
+}
+@media (min-height: 520px) {
+    .best_day .mobile_calendar_block .month-container .month {
+        max-width: 400px
+    }
+    .best_day .mobile_calendar_block .mobole_instructions {
+        max-width: 400px;
+        margin-top: 20px
+    }
+}
+@media (orientation: landscape) {
+    .best_day .mobile_calendar_block .block_header {
+        width: 100%
+    }
+    .best_day .mobile_calendar_block .block_header button {
+        padding: 6px 20px 6px 30px;
+        width: 100%;
+        height: 30px
+    }
+    .best_day .mobile_calendar_block .mobile_calendar_container {
+        position: absolute;
+        top: 0;
+        width: 50%;
+        height: 100%
+    }
+    .best_day .mobile_calendar_block .months-container {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        width: 100%;
+        margin: auto;
+        -webkit-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%)
+    }
+    .best_day .mobile_calendar_block .month-container .month-title {
+        padding: 12px 0 10px;
+        font-size: 14px
+    }
+    .best_day .mobile_calendar_block .month-container .day-header {
+        display: none;
+        font-size: 10px;
+        padding-bottom: 5px
+    }
+    .best_day .mobile_calendar_block .month-container .month {
+        max-width: 170px
+    }
+    .best_day .mobile_calendar_block .month-container .month .day {
+        font-size: 9px
+    }
+    .best_day .mobile_calendar_block .mobole_instructions {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        width: 50%;
+        padding: 0 20px 0 20px;
+        font-size: 16px;
+        line-height: 1.3em;
+        margin: 0;
+        -webkit-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%)
+    }
+    .best_day .mobile_calendar_block .slick-arrow {
+        height: 38px
+    }
+}
+@media (orientation: landscape) and (min-height: 260px) {
+    .best_day .mobile_calendar_block .month-container .day-header {
+        display: table-cell;
+        font-size: 10px;
+        padding-bottom: 5px
+    }
+}
+@media (orientation: landscape) and (min-height: 280px) {
+    .best_day .mobile_calendar_block .month-container .month {
+        max-width: 196px
+    }
+    .best_day .mobile_calendar_block .month-container .month .day {
+        font-size: 10px
+    }
+}
+@media (orientation: landscape) and (min-height: 300px) {
+    .best_day .mobile_calendar_block .month-container .month-title {
+        padding: 15px 0 11px;
+        font-size: 14px
+    }
+    .best_day .mobile_calendar_block .month-container .month {
+        max-width: 214px
+    }
+    .best_day .mobile_calendar_block .month-container .month .day {
+        font-size: 10px
+    }
+    .best_day .mobile_calendar_block .slick-arrow {
+        height: 45px
+    }
+}
+@media (orientation: landscape) and (min-height: 320px) {
+    .best_day .mobile_calendar_block .month-container .month {
+        max-width: 238px
+    }
+    .best_day .mobile_calendar_block .month-container .month .day {
+        font-size: 12px
+    }
+}
+@media (orientation: landscape) and (min-height: 380px) {
+    .best_day .mobile_calendar_block .block_header {
+        width: 100%
+    }
+    .best_day .mobile_calendar_block .block_header button {
+        padding: 14px 20px 12px 30px;
+        height: 45px
+    }
+    .best_day .mobile_calendar_block .month-container .month {
+        max-width: 260px
+    }
+}
+@media (orientation: landscape) and (min-height: 440px) {
+    .best_day .mobile_calendar_block .month-container .month {
+        max-width: 320px
+    }
+}
+@media (orientation: landscape) and (min-height: 500px) {
+    .best_day .mobile_calendar_block .month-container .month {
+        max-width: 400px
+    }
+    .best_day .mobile_calendar_block .mobile_calendar_container {
+        position: absolute;
+        top: 0
+    }
+    .best_day .mobile_calendar_block .mobole_instructions {
+        width: 40%
+    }
+}
+@media (orientation: landscape) and (min-height: 600px) {
+    .best_day .mobile_calendar_block .month-container .month {
+        max-width: 500px
+    }
+    .best_day .mobile_calendar_block .months-container {
+        max-width: 500px
+    }
+}
+@media (orientation: landscape) and (min-width: 600px) {
+    .best_day .mobile_calendar_block .mobile_calendar_container {
+        width: 60%
+    }
+}
+@media (orientation: landscape) and (min-width: 1000px) {
+    .best_day .mobile_calendar_block .mobile_calendar_container {
+        width: 70%
+    }
+    .best_day .mobile_calendar_block .mobole_instructions {
+        width: 30%
+    }
+}
+.best_day .mobile_calendar_tooltip {
+    position: fixed;
+    bottom: 0px;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
+    visibility: hidden;
+    opacity: 0;
+    display: none;
+    background: white;
+    border-top: 1px solid #c2c2c2;
+    padding: 30px 20px 60px;
+    -webkit-transition: transform 0.15s ease-in-out;
+    -moz-transition: transform 0.15s ease-in-out;
+    -ms-transition: transform 0.15s ease-in-out;
+    -o-transition: transform 0.15s ease-in-out;
+    transition: transform 0.15s ease-in-out;
+    -webkit-transform: translateY(110%);
+    -moz-transform: translateY(110%);
+    -ms-transform: translateY(110%);
+    transform: translateY(110%)
+}
+.best_day .mobile_calendar_tooltip.show {
+    -webkit-transform: translateY(0%);
+    -moz-transform: translateY(0%);
+    -ms-transform: translateY(0%);
+    transform: translateY(0%)
+}
+.best_day .mobile_calendar_tooltip .tooltip_inner {
+    max-width: 380px;
+    margin: auto;
+    background-color: white
+}
+.best_day .mobile_calendar_tooltip .tooltip_inner h4 {
+    font-size: 20px;
+    margin: 0 0 10px
+}
+.best_day .mobile_calendar_tooltip .tooltip_inner p {
+    margin: 5px 0 0
+}
+.best_day .mobile_calendar_tooltip .tooltip_inner p .value {
+    font-weight: bold
+}
+.best_day .mobile_calendar_tooltip .tooltip_close_btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    background: url("/b/fashion/images/projects/best-wedding-dates-united-states/input_close.svg") center center no-repeat;
+    background-size: 16px
+}
+@media (orientation: landscape) {
+    .best_day .mobile_calendar_tooltip {
+        display: block !important;
+        width: 50%;
+        height: 100%;
+        top: 0;
+        left: auto !important;
+        right: 0;
+        padding: 46px 10px 30px;
+        border-top: 0px;
+        border-left: 1px solid #c2c2c2;
+        -webkit-transform: translateX(110%);
+        -moz-transform: translateX(110%);
+        -ms-transform: translateX(110%);
+        transform: translateX(110%)
+    }
+    .best_day .mobile_calendar_tooltip.show {
+        -webkit-transform: translateX(0%);
+        -moz-transform: translateX(0%);
+        -ms-transform: translateX(0%);
+        transform: translateX(0%)
+    }
+    .best_day .mobile_calendar_tooltip .tooltip_inner {
+        position: absolute;
+        top: 50%;
+        display: block;
+        -webkit-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%)
+    }
+}
+@media (orientation: landscape) and (min-width: 480px) {
+    .best_day .mobile_calendar_tooltip {
+        padding: 46px 20px 30px
+    }
+}
+@media (orientation: landscape) and (min-width: 600px) {
+    .best_day .mobile_calendar_tooltip {
+        width: 40%;
+        padding: 46px 30px 30px
+    }
+}
+@media (orientation: landscape) and (min-width: 1000px) {
+    .best_day .mobile_calendar_tooltip {
+        width: 30%
+    }
+}
+.best_day .dates_block {
+    display: none;
+    opacity: 0
+}
+.best_day .dates_block.block .block_inner {
+    padding-left: 10px;
+    padding-right: 10px
+}
+.best_day .dates_block .season {
+    display: block;
+    width: 33.3333333333%;
+    float: left;
+    padding: 0 5px;
+    margin-top: 20px
+}
+.best_day .dates_block .season .icon_spring,
+.best_day .dates_block .season .icon_fall,
+.best_day .dates_block .season .icon_winter,
+.best_day .dates_block .season .icon_summer {
+    width: 100%;
+    height: 40px;
+    display: block;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain
+}
+.best_day .dates_block .season .icon_spring {
+    background-image: url("/b/fashion/images/projects/best-wedding-dates-united-states/icon_spring.svg")
+}
+.best_day .dates_block .season .icon_fall {
+    background-image: url("/b/fashion/images/projects/best-wedding-dates-united-states/icon_fall.svg")
+}
+.best_day .dates_block .season .icon_winter {
+    background-image: url("/b/fashion/images/projects/best-wedding-dates-united-states/icon_winter.svg")
+}
+.best_day .dates_block .season .icon_summer {
+    background-image: url("/b/fashion/images/projects/best-wedding-dates-united-states/icon_summer.svg")
+}
+.best_day .dates_block .season h5 {
+    margin: 6px 0 0;
+    text-transform: uppercase
+}
+.best_day .dates_block .season p {
+    margin: 10px 0 20px
+}
+.best_day .dates_block .season .year {
+    display: block
+}
+.best_day .dates_block h2 {
+    display: none
+}
+.best_day .dates_block.spring .season_spring {
+    display: inline-block
+}
+.best_day .dates_block.summer .season_summer {
+    display: inline-block
+}
+.best_day .dates_block.fall .season_fall {
+    display: inline-block
+}
+.best_day .dates_block.winter .season_winter {
+    display: inline-block
+}
+.best_day .dates_block.not_spring .season_spring {
+    display: none
+}
+.best_day .dates_block.not_spring .header_spring {
+    display: inline-block
+}
+.best_day .dates_block.not_summer .season_summer {
+    display: none
+}
+.best_day .dates_block.not_summer .header_summer {
+    display: inline-block
+}
+.best_day .dates_block.not_fall .season_fall {
+    display: none
+}
+.best_day .dates_block.not_fall .header_fall {
+    display: inline-block
+}
+.best_day .dates_block.not_winter .season_winter {
+    display: none
+}
+.best_day .dates_block.not_winter .header_winter {
+    display: inline-block
+}
+@media (min-width: 400px) {
+    .best_day .dates_block .season {
+        padding: 0 10px
+    }
+}
+@media (min-width: 768px) {
+    .best_day .dates_block .season h5 {
+        margin-top: 10px;
+        text-transform: uppercase
+    }
+    .best_day .dates_block .season p {
+        margin: 30px 0 40px
+    }
+}
+.best_day .autocomplete__value .autocomplete__clear,
+.best_day_banner .autocomplete__value .autocomplete__clear {
+    display: block
+}
+.best_day .autocomplete__value .autocomplete__combo,
+.best_day_banner .autocomplete__value .autocomplete__combo {
+    display: none
+}
+.best_day .autocomplete__combo,
+.best_day .autocomplete__clear,
+.best_day_banner .autocomplete__combo,
+.best_day_banner .autocomplete__clear {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 46px;
+    height: 100%;
+    background-color: red;
+    border: 0;
+    cursor: pointer;
+    padding: 0
+}
+.best_day .autocomplete__clear,
+.best_day_banner .autocomplete__clear {
+    display: none;
+    background: url("/b/fashion/images/projects/best-wedding-dates-united-states/input_close.svg") center center no-repeat;
+    background-size: 10px
+}
+.best_day .autocomplete__clear_label,
+.best_day_banner .autocomplete__clear_label {
+    opacity: 0;
+    white-space: nowrap;
+    width: 0;
+    overflow: hidden
+}
+.best_day .autocomplete__combo,
+.best_day_banner .autocomplete__combo {
+    pointer-events: none;
+    background: url("/b/fashion/images/projects/best-wedding-dates-united-states/input_arrow.svg") center center no-repeat
+}
+.best_day .city_autocomplete_container,
+.best_day_banner .city_autocomplete_container {
+    position: relative;
+    display: inline-block;
+    width: 160px;
+    margin-right: 10px
+}
+.best_day .autocomplete__wrapper,
+.best_day_banner .autocomplete__wrapper {
+    border: 1px solid #8f8f8f;
+    background-color: white
+}
+.best_day .autocomplete__hint,
+.best_day .autocomplete__input,
+.best_day_banner .autocomplete__hint,
+.best_day_banner .autocomplete__input {
+    -webkit-appearance: none;
+    border: 1px solid;
+    border-radius: 0;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    margin-bottom: 0;
+    width: 100%
+}
+.best_day .autocomplete__input,
+.best_day_banner .autocomplete__input {
+    background-color: transparent;
+    position: relative;
+    border: 0
+}
+.best_day .autocomplete__input:focus,
+.best_day_banner .autocomplete__input:focus {
+    outline: 0
+}
+.best_day .autocomplete__hint,
+.best_day_banner .autocomplete__hint {
+    color: #BFC1C3;
+    position: absolute;
+    top: 0;
+    left: 0
+}
+.best_day .autocomplete__input--focused,
+.best_day_banner .autocomplete__input--focused {
+    outline-offset: 0;
+    outline: 0
+}
+.best_day .autocomplete__menu,
+.best_day_banner .autocomplete__menu {
+    background-color: #fff;
+    border: 1px solid #8f8f8f;
+    margin: 0;
+    max-height: 200px;
+    overflow-x: hidden;
+    padding: 0;
+    width: 100%
+}
+.best_day .autocomplete__menu--visible,
+.best_day_banner .autocomplete__menu--visible {
+    display: block
+}
+.best_day .autocomplete__menu--hidden,
+.best_day_banner .autocomplete__menu--hidden {
+    display: none
+}
+.best_day .autocomplete__menu--overlay,
+.best_day_banner .autocomplete__menu--overlay {
+    left: 0;
+    position: absolute;
+    top: 100%;
+    z-index: 100;
+    text-align: left;
+    margin-top: 5px
+}
+.best_day .autocomplete__menu--inline,
+.best_day_banner .autocomplete__menu--inline {
+    position: relative
+}
+.best_day .autocomplete__option,
+.best_day_banner .autocomplete__option {
+    border-bottom: solid #BFC1C3;
+    border-width: 1px 0;
+    cursor: pointer;
+    display: block;
+    position: relative
+}
+.best_day .autocomplete__option>*,
+.best_day_banner .autocomplete__option>* {
+    pointer-events: none
+}
+.best_day .autocomplete__option:first-of-type,
+.best_day_banner .autocomplete__option:first-of-type {
+    border-top-width: 0
+}
+.best_day .autocomplete__option:last-of-type,
+.best_day_banner .autocomplete__option:last-of-type {
+    border-bottom-width: 0
+}
+.best_day .autocomplete__option--odd,
+.best_day_banner .autocomplete__option--odd {
+    background-color: #FAFAFA
+}
+.best_day .autocomplete__option--focused,
+.best_day .autocomplete__option:hover,
+.best_day_banner .autocomplete__option--focused,
+.best_day_banner .autocomplete__option:hover {
+    background-color: #EEEEEE;
+    outline: none
+}
+.best_day .autocomplete__option--no-results,
+.best_day_banner .autocomplete__option--no-results {
+    background-color: #FAFAFA;
+    color: #646b6f;
+    cursor: not-allowed
+}
+.best_day .autocomplete__hint,
+.best_day .autocomplete__input,
+.best_day .autocomplete__option,
+.best_day_banner .autocomplete__hint,
+.best_day_banner .autocomplete__input,
+.best_day_banner .autocomplete__option {
+    font-family: "Gotham", "BestDayGotham", Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1em
+}
+.best_day .autocomplete__option,
+.best_day_banner .autocomplete__option {
+    padding: 10px 8px
+}
+.slick-slider {
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -ms-touch-action: pan-y;
+    touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent
+}
+.slick-list {
+    position: relative;
+    overflow: hidden;
+    display: block;
+    margin: 0;
+    padding: 0
+}
+.slick-list:focus {
+    outline: none
+}
+.slick-list.dragging {
+    cursor: pointer;
+    cursor: hand
+}
+.slick-slider .slick-track,
+.slick-slider .slick-list {
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0)
+}
+.slick-track {
+    position: relative;
+    left: 0;
+    top: 0;
+    display: block
+}
+.slick-track:before,
+.slick-track:after {
+    content: "";
+    display: table
+}
+.slick-track:after {
+    clear: both
+}
+.slick-loading .slick-track {
+    visibility: hidden
+}
+.slick-slide {
+    float: left;
+    height: 100%;
+    min-height: 1px;
+    display: none
+}
+[dir="rtl"] .slick-slide {
+    float: right
+}
+.slick-slide img {
+    display: block
+}
+.slick-slide.slick-loading img {
+    display: none
+}
+.slick-slide.dragging img {
+    pointer-events: none
+}
+.slick-initialized .slick-slide {
+    display: block
+}
+.slick-loading .slick-slide {
+    visibility: hidden
+}
+.slick-vertical .slick-slide {
+    display: block;
+    height: auto;
+    border: 1px solid transparent
+}
+.slick-arrow.slick-hidden {
+    display: none
+}
+.best_day .methodology_open_btn {
+    display: inline-block;
+    background: transparent;
+    color: black;
+    text-decoration: underline;
+    font-size: 14px;
+    margin-bottom: 25px
+}
+.best_day .methodology_open_btn .info_icon {
+    background: url("/b/fashion/images/projects/best-wedding-dates-united-states/icon_info.svg") center center no-repeat;
+    background-size: contain;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 6px
+}
+.best_day .methodology_container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 950;
+    width: 100%;
+    height: 100%;
+    display: none;
+    background-color: rgba(255, 255, 255, 0.95);
+    visibility: hidden;
+    opacity: 0
+}
+.best_day .methodology_container .methodology_inner {
+    display: table-cell;
+    vertical-align: middle
+}
+.best_day .methodology_container .methodology_inner .methodology_content {
+    position: relative;
+    max-width: 500px;
+    margin: auto;
+    padding: 0 20px 20px
+}
+.best_day .methodology_container .methodology_inner .methodology_content h3 {
+    font-size: 18px;
+    margin-top: 0
+}
+.best_day .methodology_container .methodology_inner .methodology_content p {
+    font-size: 14px;
+    line-height: 1.5em
+}
+.best_day .methodology_container .methodology_inner .methodology_content .methodology_close_btn {
+    background-color: transparent;
+    color: black;
+    padding: 10px 20px;
+    height: auto;
+    background: url("/b/fashion/images/projects/best-wedding-dates-united-states/input_close.svg") left center no-repeat;
+    background-size: 12px
+}
+.temp_header {
+    display: block;
+    width: 100%;
+    height: 44px;
+    border-bottom: 1px solid #cccccc;
+    background: url("/b/fashion/images/projects/best-wedding-dates-united-states/_temp/bloomingdales_header.jpg") top center no-repeat;
+    background-size: auto 44px
+}
+.temp_footer {
+    display: block;
+    width: 100%;
+    height: 230px;
+    background: url("/b/fashion/images/projects/best-wedding-dates-united-states/_temp/bloomingdales_footer.jpg") top center no-repeat;
+    background-size: auto 235px;
+    border-top: 5px solid black
+}
