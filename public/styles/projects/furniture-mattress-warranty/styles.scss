@@ -1,0 +1,184 @@
+body, html {
+  padding: 0;
+  margin: 0;
+}
+
+h1, h2, h3, h4, p, table, ul {
+  margin-left: 5vw;
+  margin-right: 5vw;
+}
+
+h1 {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  font-weight: 700;
+  font-size: 2em;
+}
+
+h2 {
+  margin-top: 2em;
+  margin-bottom: 0.5em;
+  font-weight: 700;
+  font-size: 1.4em;
+}
+
+p {
+  font-size: 1.4em;
+}
+
+ul {
+  padding-left: 1.5em;
+  font-size: 1.4em;
+
+  li {
+    list-style-type: disc;
+    padding-left: 10px;
+  }
+
+}
+
+.greyDivider {
+  background-color: #f0f0f0;
+  color: #000;
+  text-align: center;
+  margin-left: 0;
+  margin-right: 0;
+  padding-top: 2em;
+  padding-bottom: 2em;
+  padding-left: 5%;
+
+  a {
+    font-size: 1.4em;
+  }
+
+}
+
+p.greyDivider {
+  font-size: 2em;
+  font-weight: 700;
+}
+
+.disclaimer {
+  margin-top: 3em;
+  margin-bottom: 4em;
+
+  p {
+    font-size: 1em;
+    color: #6a6a6a;
+    margin-bottom: 1.25em;
+  }
+
+}
+
+hr.thickLine {
+  height: 4px;
+  border: none;
+  background-color: #000;
+  color: #000;
+}
+
+table.plan {
+  width: 90%;
+
+  th,
+  td {
+    width: 12.5%;
+    text-align: center;
+    padding: 0.25em 0;
+
+    &.check {
+      font-size: 1.5em;
+      font-weight: 700;
+    }
+  }
+
+  th {
+    font-weight: 700;
+    font-size: 1.15em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+  }
+
+  th:first-child,
+  td:first-child {
+    width: 45%;
+    padding-right: 5%;
+    text-align: left;
+    padding-left: 0.5em;
+  }
+
+  th,
+  tr:nth-child(2n-1) td {
+    background-color: #f0f0f0;
+  }
+}
+
+div.two-columns {
+  width: 49%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+@media ( max-width: 768px ) {
+
+  .greyDivider {
+    text-align: left;
+
+    &.center {
+      text-align: center;
+    }
+
+    a {
+      font-size: 1.1em;
+    }
+  }
+
+  .responsive-large {
+    display: none;
+  }
+
+  div.two-columns {
+    width: 100%;
+    display: inline-block;
+    vertical-align: top;
+  }
+}
+
+
+.desktop_main_container {
+  position: relative;
+}
+
+.desktop_back_to_top{
+  display: none;
+  position: fixed;
+  right: 0; /* right = -(graphic_width) */
+  bottom: 8vh;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  margin: 0;
+  outline: 0;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.desktop_back_to_top > img{
+  left: 0;
+  top: 0;
+  position: absolute;
+  max-width: 80px;
+}
+
+.desktop_back_to_top > img:hover,
+.desktop_back_to_top > img:focus {
+  left: -40px;
+  position: absolute;
+}
+
+@media only screen and (min-width: 1130px) {
+  .desktop_back_to_top{
+    display: none;
+  }
+}
