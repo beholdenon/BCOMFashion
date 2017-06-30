@@ -1,0 +1,485 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700');
+
+#bcomFashion .row,
+#bcomFashion #bl_main_container {
+	// max-width: 1440px;
+	max-width: none;
+	width: auto;
+}
+
+main {
+	font-family: 'Roboto Mono', monospace;
+	width: 100%;
+	max-width: 1440px;
+	margin: 0 auto;
+}
+
+#mast-nav {
+	font-family: 'Roboto Mono', monospace;
+	position: relative;
+	display: block;
+	width: 100%;
+	border-top: 1px solid #000;
+	border-bottom: 1px solid #000;
+	margin: 0 auto;
+	line-height: 3em;
+
+	a {
+		text-decoration: none;
+
+		&:hover,
+		&:focus {
+			color: #D90EAC;
+		}
+	}
+
+	.inner {
+		width: 98%;
+		padding: 0 1%;
+		max-width: 1440px;
+		margin: 0 auto;
+		display: table;
+	}
+
+	.page-id {
+		display: table-cell;
+		width: 20%;
+	}
+	
+	.nav {
+		position: relative;
+		margin: 0;
+	}
+
+	.rightAlign {
+		display: table-cell;
+		text-align: right;
+	}
+
+	ul {
+		display: inline-block;
+		text-align: left;
+
+		li {
+			display: inline-block;
+			list-style-type: none;
+			margin: 0 0.25em;
+
+			&.active {
+				text-decoration: line-through;
+			}
+		}
+	}
+}
+
+#main-heading,
+#blog-heading {
+	width: 100%;
+
+	h1 {
+		font-family: 'Roboto Mono', monospace;
+		font-weight: 500;
+		display: inline-block;
+		width: 50%;
+		line-height: 1.1em;
+		position: relative;
+		right: 0.075em;
+		
+		span {
+			width: 100%;
+			display: inline-block;
+			margin: 0;
+		}
+
+		.rs {
+			text-align: right;
+		}
+
+	}
+
+	p {
+		font-weight: 400;
+		display: inline-block;
+		width: 49%;
+		font-size: 1.45em;
+		padding-left: 8%;
+		vertical-align: top;
+		margin-top: 5em;
+	}
+}
+
+#main-heading h1 {
+	font-size: 8.5em;
+	text-transform: uppercase;
+}
+
+#blog-heading h1 {
+	line-height: 4.5em;
+	font-size: 4em;
+}
+
+#linking {
+
+	a {
+		width: 50%;
+		margin: 0;
+		display: inline-block;
+		position: relative;
+	}
+
+	img {
+		width: 100%;
+	}
+
+	h2 {
+		font-family: 'Roboto Mono', monospace;
+		position: absolute;
+		display: block;
+		text-align: center;
+		margin: 0 auto;
+		left: 0;
+		right: 0;
+		top: 45%;
+		background-color: #000;
+		color: #fff;
+		padding: 0.35em 0;
+		line-height: 1.2em;
+		font-size: 4em;
+		font-weight: 500;
+		letter-spacing: 0.1em;
+	}
+
+	#trend h2 { width: 75%;}
+	#style h2 { width: 85%;}
+}
+
+#bcomFashion {
+	footer {
+		#bloomiesMainFooter.row,
+		.row.footerDivider,
+		#footerBottom.row {
+			max-width: 80.16667rem;
+		}
+	}
+}
+
+.two-col {
+
+	.col {
+		padding: 0 1%;
+		width: 48%;
+		display: inline-block;
+	}
+
+}
+
+.three-col {
+
+	margin-bottom: 3em;
+
+	.col {
+		width: 31%;
+		padding: 0 1%;
+		display: inline-block;
+
+	}
+
+}
+
+
+// EDITORIAL PAGE
+
+#sub-nav {
+	display: block;
+	width: 100%;
+	background-color: #000;
+	text-align: center;
+	margin: 0;
+
+	a {
+		display: inline-block;
+		margin: 0 1em;
+		line-height: 3.5em;
+		color: #fff;
+		text-decoration: none;
+
+		&:hover,
+		&:focus {
+			text-decoration: underline;
+		}
+	}
+}
+
+#denim-dictionary {
+
+	.more,
+	.less {
+		text-decoration: underline;
+		margin: 0.25em 0;
+	}
+
+}
+
+#denim-dilemmas {
+	background-color: #efdfda;
+	padding: 4em 2em;
+	text-align: center;
+
+	h2 {
+		font-size: 4.5em;
+		font-weight: 500;
+	}
+
+	.col {
+		text-align: left;
+		vertical-align: top;
+		margin-top: 1em;
+
+		p {
+			line-height: 2.25em;
+		}
+	}
+
+	img {
+		margin-bottom: 1em;
+	}
+
+	a {
+		text-transform: uppercase;
+		font-weight: 700;
+		font-size: 1.4em;
+	}
+}
+
+#dos-and-donts {
+	text-align: center;
+	overflow: hidden;
+
+	h2 {
+		word-spacing: 0.65em;
+		letter-spacing: 0.125em;
+		font-size: 9.5em;
+		position: relative;
+		top: -0.425em;
+		font-weight: 700;
+		margin-bottom: 0;
+	}
+
+	.sub-heading {
+		position: relative;
+		top: -2em;
+	}
+
+	.details {
+		display: block;
+		margin: 2em auto;
+		width: 70%;
+
+		.copy {
+			display: inline-block;
+			width: 50%;
+			text-align: left;
+			padding-left: 5%;
+			padding-top: 4vw;
+
+			h3 {
+				font-size: 3.5em;
+			}
+
+			hr {
+				border: 3px solid #000;
+				width: 10%;
+			}
+
+			p {
+				line-height: 2.25em;
+
+				strong {
+					text-transform: uppercase;
+				}
+			}
+
+			a {
+				display: block;
+				word-spacing: 0.4em;
+				font-size: 1.4em;
+				font-weight: 700;
+				text-transform: uppercase;
+				line-height: 3em;
+			}
+		}
+
+		.image {
+			display: inline-block;
+			width: 48.5%;
+			vertical-align: top;
+		}
+	}
+}
+
+#match-game {
+  padding: 4em 2em;
+  width: 100%;
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  position: relative;
+
+  h2 {
+    color: inherit;
+    font-size: 4.25em;
+  }
+
+  a {
+    color: inherit;
+    text-transform: uppercase;
+    font-size: 1.25em;
+  }
+
+  .carousel {
+    margin: 2em 0;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+
+    img {
+      max-width: 80%;
+    }
+
+    #placeholder {
+      margin: 0 0 4em;
+
+    }
+
+    p {
+      color: #fff;
+      line-height: 5em;
+    }
+
+    .slide {
+      left: 0;
+      top: 0;
+      position: absolute;
+      display: inline-block;
+      text-align: center;
+      width: 100%;
+      z-index: 10;
+
+      &.ls {
+        left: -110%;
+      }
+
+      &.rs {
+        left: 110%;
+      }
+
+    }
+
+  }
+
+}
+
+#carousel-dots {
+  display: block;
+  text-align: center;
+  margin-bottom: 3em;
+
+  li {
+    display: inline-block;
+    list-style-type: none;
+    background-color: #fff;
+    border: 2px solid #fff;
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+
+    &.active {
+      background-color: transparent;
+    }
+  }
+
+}
+
+#carouselLeft,
+#carouselRight {
+  width: 3em;
+  height: 3em;
+  border-left: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  position: absolute;
+  top: 45%;
+  cursor: pointer;
+  z-index: 20;
+}
+
+#carouselLeft {
+  transform: rotate(45deg);
+  left: 3%;
+}
+
+#carouselRight {
+  transform: rotate(-135deg);
+  right: 3%;
+}
+
+#denim-dares {
+	margin: 3em 2em;
+	padding: 4em 6em;
+	border: 2px solid #000;
+
+	h2 {
+    margin-top: 0.5em;
+		margin-bottom: 0.25em;
+		line-height: 1.2em;
+		font-weight: 700;
+		font-size: 4.5em;
+		letter-spacing: 0.1em;
+	}
+
+	.col {
+		vertical-align: top;
+	}
+
+	.col:first-child {
+		width: 30%;
+		margin-left: 10%;
+	}
+
+  .col:last-child {
+    width: 45%;
+    margin-left: 5%;
+  }
+
+	.checklist {
+		line-height: 5em;
+    margin-left: 1.5em;
+    position: relative;
+
+		.box {
+			width: 2.25em;
+			height: 2.25em;
+			border: 1px solid #000;
+			display: inline-block;
+      cursor: pointer;
+      vertical-align: middle;
+      margin-right: 1.5em;
+		}
+
+    .check {
+      position: absolute;
+      left: 0em;
+      font-size: 4em;
+      bottom: 0.15em;
+      cursor: pointer;
+    }
+
+		label {
+			 font-size: 1.5em;
+      margin-left: 1.5em;
+      vertical-align: middle;
+      font-family: 'Roboto Mono', monospace;
+		}
+
+	}
+
+}
