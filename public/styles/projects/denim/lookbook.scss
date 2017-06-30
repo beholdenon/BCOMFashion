@@ -1,0 +1,74 @@
+#lookbook {
+
+	h1,
+	h2, 
+	h3,
+	p,
+	a,
+	span {
+		font-family: 'Roboto Mono', monospace;	
+	}
+
+
+	#hero {
+		position: relative;
+	}
+
+	#hero-text {
+		position: absolute;
+		top: 25%;
+		left: 5%;
+		width: 42%;
+
+		h1 {
+			color: #fff;
+			font-size: 6.5em;
+			font-weight: 700;
+			margin-bottom: 0.25em;
+			line-height: 1em;
+		}
+
+		p {
+			margin-left: 50%;
+			display: inline-block;
+			font-size: 1.35em;
+			line-height: 2.25em;
+		}
+	}
+	
+	.heading {
+		h2.col {
+			text-align: right;
+			padding-right: 5%;
+			font-weight: 700;
+			font-size: 3.5em;
+		}
+
+		.circle {
+			position: relative;
+			padding: 0 15% 0 10%;
+			line-height: 2.25em;
+			vertical-align: top;
+		}
+
+		.circle::before {
+			content: "";
+			display: inline-block;
+			width: 1em;
+			height: 1em;
+			position: absolute;
+			border: 1px solid #000;
+			border-radius: 100%;
+			left: -1em;
+			top: 0.6em;
+			margin-left: 18%;
+		}
+	}
+
+	section {
+		display: block;
+		margin-top: 6em;
+	}
+
+
+}
