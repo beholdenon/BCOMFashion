@@ -68,6 +68,27 @@
 	section {
 		display: block;
 		margin-top: 6em;
+
+		.sub {
+			display: block;
+			margin-top: 0.5em;
+
+			.product {
+				display: inline-block;
+			}
+
+			#paige {
+				width: 35%;
+				vertical-align: middle;
+			}
+
+			#mankind {
+				width: 60%;
+				margin-left: 5%;
+				vertical-align: top;
+			}
+		}
+
 	}
 
 
