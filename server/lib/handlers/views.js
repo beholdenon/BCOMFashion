@@ -7,6 +7,7 @@ let fs = require('fs'),
     headMetaRegEx = /<!--headMeta=(.*)-->/,
     headTitleRegEx = /<!--headTitle=(.*)-->/,
     headCanonicalRegEx=/<!--headCanonical=(.*)-->/,
+    preLoadScriptsRegEx=/<!--preLoadScripts=(.*)-->/,
 
     args = {
         timeStamp: new Date(),
@@ -15,6 +16,7 @@ let fs = require('fs'),
         headTitle: '',
         headMeta: '',
         headCanonical: '',
+        preLoadScripts: '',
     },
 
     detectMobileDeviceView = function detectMobileDeviceView(requestPath, req) {
@@ -47,6 +49,7 @@ let fs = require('fs'),
             args.headTitle = '';
             args.headMeta = '';
             args.headCanonical = '';
+            args.preLoadScripts = '';
 
             // If the file doesn't exist, readFileSync will throw an error
             dir = path.join(__dirname, '..', 'views');
@@ -58,7 +61,8 @@ let fs = require('fs'),
             for (var i = 0; i < 20; i++) {
                 var headMetaMatches = headMetaRegEx.exec(lines[i]),
                     headTitleMatches = headTitleRegEx.exec(lines[i]),
-                    headCanonicalMatches = headCanonicalRegEx.exec(lines[i]);
+                    headCanonicalMatches = headCanonicalRegEx.exec(lines[i]),
+                    preLoadScriptsMatches = preLoadScriptsRegEx.exec(lines[i]);
 
                 if (headMetaMatches) {
                     args.headMeta = JSON.parse(headMetaMatches[1]);
@@ -71,6 +75,9 @@ let fs = require('fs'),
                     if (args.headCanonical.href && args.headCanonical.href.indexOf('http') === -1) {
                         args.headCanonical.href = process.env.PROD_HOST + args.headCanonical.href;
                     }
+                }
+                if (preLoadScriptsMatches) {
+                    args.preLoadScripts = JSON.parse(preLoadScriptsMatches[1]);
                 }
             }
 
