@@ -22,14 +22,12 @@ html {
     min-width: 320px
 }
 .best_day * {
-    outline: 0;
+    
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box
 }
-.best_day *:focus {
-    outline: thin dotted
-}
+
 .best_day .clearfix:after {
     content: "";
     visibility: hidden;
@@ -234,7 +232,7 @@ html {
     background-repeat: no-repeat;
     background-position: center center;
     background-color: white;
-    outline: 0;
+    
     float: left;
     -webkit-border-radius: 0;
     -moz-border-radius: 0;
@@ -313,7 +311,7 @@ html {
     line-height: 20px;
     width: 20px;
     height: 20px;
-    outline: none;
+    
     cursor: pointer;
     text-decoration: none;
     font-size: 20px;
@@ -974,7 +972,7 @@ html.touch .best_day .calendar_block .calendar_tooltip .tooltip_close_btn {
     background-size: 8px
 }
 .best_day .mobile_calendar_block .month-container {
-    outline: 0;
+    
     width: 100%
 }
 .best_day .mobile_calendar_block .month-container .month {
@@ -1487,7 +1485,7 @@ html.touch .best_day .calendar_block .calendar_tooltip .tooltip_close_btn {
 }
 .best_day .autocomplete__input:focus,
 .best_day_banner .autocomplete__input:focus {
-    outline: 0
+    
 }
 .best_day .autocomplete__hint,
 .best_day_banner .autocomplete__hint {
@@ -1499,7 +1497,7 @@ html.touch .best_day .calendar_block .calendar_tooltip .tooltip_close_btn {
 .best_day .autocomplete__input--focused,
 .best_day_banner .autocomplete__input--focused {
     outline-offset: 0;
-    outline: 0
+    
 }
 .best_day .autocomplete__menu,
 .best_day_banner .autocomplete__menu {
@@ -1561,7 +1559,7 @@ html.touch .best_day .calendar_block .calendar_tooltip .tooltip_close_btn {
 .best_day_banner .autocomplete__option--focused,
 .best_day_banner .autocomplete__option:hover {
     background-color: #EEEEEE;
-    outline: none
+    
 }
 .best_day .autocomplete__option--no-results,
 .best_day_banner .autocomplete__option--no-results {
@@ -1606,7 +1604,7 @@ html.touch .best_day .calendar_block .calendar_tooltip .tooltip_close_btn {
     padding: 0
 }
 .slick-list:focus {
-    outline: none
+    
 }
 .slick-list.dragging {
     cursor: pointer;

@@ -15,3 +15,7 @@
         <link rel="canonical" href="{{args.headCanonical.href}}" />
     {{/if}}
 {{/if}}
+
+{{#if args.preLoadScripts}}
+	<script type="text/javascript" src="{{args.preLoadScripts.source}}"></script>
+{{/if}}
