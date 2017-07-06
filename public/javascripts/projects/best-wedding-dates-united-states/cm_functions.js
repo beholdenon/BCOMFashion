@@ -2,6 +2,8 @@
 /* globals BLOOMIES */
 
 (function(){
+
+  window.BLOOMIES.coremetrics.pageViewExploreAttributes = new window.BLOOMIES.coremetrics.exploreAttributes();
 	
   var hasMBL = ( window.BLOOMIES.isMobile === true ? "mbl:" : ""); 
   var cmCat = hasMBL + 'BWEDD_Best_Wedding_Dates_US';
@@ -25,7 +27,7 @@
     window.BLOOMIES.coremetrics.cmCreatePageElementTag(hasMBL + 'BWEDD_Search-{' + locationFormat + '}', cmCat);
   });
 
-  $(window).load(function() {
+  $(document).ready( function() {
     window.BLOOMIES.coremetrics.cmCreatePageviewTag(hasMBL + 'BWEDD_Best_Wedding_Dates_US', cmCat);
   });
 
