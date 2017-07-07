@@ -5,6 +5,8 @@ node_modules/**/*.js
 /public/javascripts/projects/fashion-tips/buying-rug-guide-2016/*
 /public/javascripts/projects/fashion-tips/good-sleep-guide/*
 
+/public/javascripts/projects/best-wedding-dates-united-states/social.js
+
 **/*jquery*
 **/*hammer.min.js
 **/*hawaii_f15_detectDevice.js
