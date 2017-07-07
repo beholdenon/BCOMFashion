@@ -384,7 +384,9 @@ html {
     color: #333
 }
 #embed textarea {
+    position: relative;
     width: 90%;
+    left: 5%;
     border: 0px;
     color: #111;
     font-size: 11px;
