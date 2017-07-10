@@ -64,4 +64,12 @@
 
   }
 
+  $("#back-to-top").on('click tap', function() {
+    event.preventDefault();
+    $('body,html').animate({
+        scrollTop: 0 ,
+        }, 700
+    );
+  });
+
 })();
