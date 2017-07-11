@@ -1740,3 +1740,14 @@ html.touch .best_day .calendar_block .calendar_tooltip .tooltip_close_btn {
     background-size: auto 235px;
     border-top: 5px solid black
 }
+
+
+@media all and ( max-width: 700px ) {
+    .social_block .social-likes {
+        display: none;
+    }
+
+    footer.responsive {
+        margin-top: 80px;
+    }
+}
