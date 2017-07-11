@@ -220,7 +220,7 @@ html {
     bottom: 0;
     left: 0;
     right: 0;
-    z-index: 1000
+    z-index: 11
 }
 .social-likes .social_btn {
     position: relative;
@@ -486,7 +486,7 @@ html {
     padding: 20px;
     margin-bottom: 30px;
     position: relative;
-    z-index: 100
+    z-index: 12;
 }
 .best_day .header_block h1 {
     display: inline-block;
@@ -818,7 +818,7 @@ html {
 }
 .best_day .month-container .day.perfect_day {
     position: relative;
-    z-index: 100
+    z-index: 10
 }
 .best_day .month-container .day.perfect_day:after {
     position: absolute;
@@ -935,7 +935,7 @@ html.touch .best_day .calendar_block .calendar_tooltip .tooltip_close_btn {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 900;
+    z-index: 11;
     background-color: white;
     min-width: 320px;
     visibility: hidden;
@@ -947,7 +947,7 @@ html.touch .best_day .calendar_block .calendar_tooltip .tooltip_close_btn {
 }
 .best_day .mobile_calendar_block .block_header {
     position: relative;
-    z-index: 100;
+    z-index: 10;
     width: 100%;
     background-color: white
 }
@@ -1690,7 +1690,7 @@ html.touch .best_day .calendar_block .calendar_tooltip .tooltip_close_btn {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 950;
+    z-index: 10;
     width: 100%;
     height: 100%;
     display: none;

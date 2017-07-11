@@ -20,11 +20,21 @@
     BLOOMIES.coremetrics.cmCreatePageElementTag(hasMBL +  'BWEDD_Share-{' + $(this).find('.social-likes__button').text() + '}' , cmCat);
   });
 
+  $('.social-likes__widget_facebook').on('click', function() {
+    BLOOMIES.coremetrics.cmCreatePageElementTag(hasMBL +  'BWEDD_Share-{ Facebook }' , cmCat);
+  });
+
+  $('.social-likes__widget_twitter').on('click', function() {
+    BLOOMIES.coremetrics.cmCreatePageElementTag(hasMBL +  'BWEDD_Share-{ Twitter }' , cmCat);
+  });
+
 	$(window).on('calendarLoad', function() {
     var locationFormat = $('#city_autocomplete').val();
     locationFormat = locationFormat.replace(/,\s/g,'_').replace(/\s/g,'-');
 
-    window.BLOOMIES.coremetrics.cmCreatePageElementTag(hasMBL + 'BWEDD_Search-{' + locationFormat + '}', cmCat);
+    if ( locationFormat !== '' ) {
+      window.BLOOMIES.coremetrics.cmCreatePageElementTag(hasMBL + 'BWEDD_Search-{' + locationFormat + '}', cmCat);
+    }
   });
 
   $(document).ready( function() {
