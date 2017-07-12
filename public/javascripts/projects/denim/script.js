@@ -2,6 +2,24 @@
 
 (function () {
 
+  function menuAction () {
+
+    $('#mobile-header .menu').slideToggle('open');
+
+  }
+
+  $('.burger').on('click', function(){
+    $(this).toggleClass('open');
+
+    menuAction();
+
+  });
+
+  $('#mobile-header .menu a').on('click', function () {
+    $('#mobile-header .menu').slideToggle('open');
+    $('.burger').toggleClass('open');
+  });
+
   $('.checklist .box').on('click', function() {
 
     if ( $(this).siblings('.check').hasClass('hidden') ) {
@@ -63,6 +81,13 @@
     $('#carousel-dots .dot-' + next).addClass('active').siblings().removeClass('active');
 
   }
+
+  $('#denim-dictionary .more, #denim-dictionary .less').on('click', function(e) {
+    e.preventDefault();
+    $(this).parent().find('.more').toggleClass('hidden');
+    $(this).parent().find('.less').toggleClass('hidden');
+    $(this).parent().find('.details').slideToggle();
+  });
 
   $("#back-to-top").on('click tap', function() {
     event.preventDefault();
