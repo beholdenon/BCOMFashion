@@ -544,6 +544,10 @@
 
 	#lookbook {
 
+		.circle:before {
+			display: none;
+		}
+
 		.desktop {
 			display: none !important;
 		}
@@ -579,7 +583,8 @@
 			}
 		}
 
-		#throwback-silhouette {
+		#throwback-silhouette,
+		#statement-hems {
 
 			.heading {
 				h2,
@@ -599,12 +604,12 @@
 					padding: 0 5%;
 				}
 
-				.circle:before {
-					display: none;
-				}
 			}
+		}
 
+		#throwback-silhouette {
 			.sub {
+				
 				#paige.product,
 				#mankind.product {
 					width: 100%;
@@ -612,11 +617,82 @@
 					text-align: center;
 					margin-bottom: 1.5em; 
 				}
-			}
 
+				#hudson {
+					width: 100%;
+					display: block;
+					text-align: center;
+
+					.sub-links {
+						text-align: center;
+
+						div {
+							width: 100%;
+							text-align: center;
+
+							a {
+								margin: 0;
+								line-height: 5em;
+							}
+						}
+
+						hr {
+							display: none;
+						}
+					}
+				}
+
+				#three-jeans {
+					width: 80%;
+					top: 1em;
+				}
+			}
+		}
+
+		#statement-hems {
+			.two-col,
+			.big-col {
+				width: 100%;
+				margin-top: 2em;
+
+				&:first-child .brand:first-child {
+					width: 100%;
+					padding: 0;
+				}
+
+				.brand {
+					display: block;
+					width: 100%;
+					padding: 0 5%;
+					text-align: center;
+
+					span {
+						line-height: 2.25em;
+					}
+				}
+
+				.sub-links {
+					text-align: center;
+
+					div {
+						width: 100%;
+						text-align: center;
+
+						a {
+							margin: 0;
+							line-height: 5em;
+						}
+					}
+
+					hr {
+						display: none;
+					}
+				}
+			}
 		}
 		
 		#velvet {
+			margin-top: 3em;
 
 			.header {
 				margin-bottom: 2em;
@@ -698,7 +774,7 @@
 				}
 
 				a {
-					line-height: 2.5em;
+					line-height: 1.5em;
 					margin-right: 0;
 					margin-left: 0;
 				}
@@ -706,11 +782,147 @@
 		}
 
 		#jackets {
+			margin-top: 3em;
+
+			.header {
+				margin-bottom: 2em;
+
+				.brand {
+					text-align: center;
+
+					img {
+						width: 100%;
+						left: 0;
+					}
+
+					span {
+						left: initial;
+						top: -1em;
+					}
+				}
+			}
+
+			.heading {
+				text-align: center;
+
+				h2 {
+					font-size: 3.25em;
+					line-height: 1em;
+					margin-bottom: 0.75em;
+					padding: 0 10%;
+				}
+
+				p {
+					padding: 0 5%;
+					line-height: 1.25em;
+					margin-bottom: 2em;
+				}
+			}
+
+			.middle {
+				div.one,
+				div.two {
+					position: initial;
+					top: initial;
+				}
+			}
+
+			.middle > div {
+
+				display: block;
+				width: 100%;
+				text-align: center;
+				margin-bottom: 1em;
+
+				img {
+					padding: 0 10%;
+				}
+
+				.rightAlign	 {
+					text-align: center;
+				}
+
+			}
+
+			.bottom {
+				width: 100%;
+				text-align: center;
+
+				.laydown {
+					display: block;
+					width: 100%;
+				}
+
+			}
+
+			.sub-links {
+				margin: 2em 0;
+				width: 100%;
+				text-align: center;
+
+				hr {
+					display: none;
+				}
+
+				a {
+					line-height: 3.5em;
+					margin-right: 0;
+					margin-left: 0;
+				}
+			}
+		}
+		
+		#favorites {
+			margin-top: 2em;
+			padding: 3em 5%;
+
+			h2 {
+				display: block;
+				width: 100%;
+				text-align: center;
+				line-height: 1.5em;
+				font-size: 3.5em;
+				margin-bottom: 0.5em;
+			}
+
+			.circle {
+				display: block;
+				width: 100%;
+				text-align: center;
+			}
 
 		}
 		
-		#favorites {}
-		
-		#best-sellers {}
+		#best-sellers {
+
+			display: block;
+
+			.split {
+				display: flex;
+				justify-content: space-around;
+			}
+
+		}
+
+		#shop-best-sellers {
+			display: block;
+			margin: 2em 0 3em;
+
+			.link {
+				display: block;
+				width: 100%;
+				font-size: 1.45em;
+				line-height: 3.5em;
+				
+				&:first-child,
+				&:last-child {
+					text-align: center;
+				}
+				
+				hr {
+					display: none;
+				}
+			}
+		}
 	}
 }
