@@ -7,6 +7,11 @@
   width: auto;
 }
 
+#nav .row {
+  max-width: 80.16667rem;
+  width: 100%;
+}
+
 main {
   font-family: 'Roboto Mono', monospace;
   width: 100%;
@@ -529,14 +534,9 @@ main {
 // ======================== MOBILE
 
 
-
-
-
-
-
-
-
-
+.mobile {
+  display: none !important;
+}
 
 
 @media all and ( max-width: 768px ) {

@@ -3,7 +3,9 @@
 <!--headCanonical={"href":"fashion.bloomingdales.com/denim/denim-styles/"}-->
 
 <script>
-	$('header.responsive').remove();
+	if ( BLOOMIES.isMobile === true ) {
+		$('header.responsive').remove();
+	}
 </script>
 
 <link rel="stylesheet" href="/b/fashion/styles/projects/denim/styles.css">
@@ -94,7 +96,7 @@
 				<a class="shop" href="">shop all jeans</a>
 			</div>
 			<div class="placeholder"></div>
-			<ul class="dots">
+			<ul class="dots mobile">
 				<li class="active"></li>
 				<li></li>
 				<li></li>
