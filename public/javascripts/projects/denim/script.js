@@ -8,11 +8,19 @@
 
   }
 
+  var space = $('#denim-dictionary .col').width();
+  $('#denim-dictionary .placeholder').css({'height': space * 1.55 + 'px' });
+  // $('#denim-dictionary .placeholder').css({'height': space * 1.2 + 'px' });
+
+  $(window).resize(function() {
+    space = $('#denim-dictionary .col').width();
+    $('#denim-dictionary .placeholder').css({'height': space * 1.2 + 'px' });
+  });
+
   $('.burger').on('click', function(){
     $(this).toggleClass('open');
 
     menuAction();
-
   });
 
   $('#mobile-header .menu a').on('click', function () {

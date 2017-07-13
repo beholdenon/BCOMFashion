@@ -526,3 +526,191 @@
 	}
 
 }
+
+.mobile {
+	display: none;
+}
+
+
+
+// ======================== MOBILE
+
+
+
+
+
+
+@media all and ( max-width: 768px ) {
+
+	#lookbook {
+
+		.desktop {
+			display: none !important;
+		}
+
+		.mobile {
+			display: inline-block;
+		}
+
+		#hero {
+			width: 100%;
+			overflow: hidden;
+			padding-bottom: 12em;
+		}
+
+		#heroImg {
+			max-width: 200vw;
+		}
+
+		#hero-text {
+			width: 100%;
+			padding: 0 5%;
+			text-align: center;
+			left: 0;
+
+			h1 {
+				font-size: 3.75em;
+				font-weight: 400;
+			}
+
+			p {
+				margin: 15em 0 0;
+				font-size: 1.1em;
+			}
+		}
+
+		#throwback-silhouette {
+
+			.heading {
+				h2,
+				p {
+					display: block;
+					width: 100%;
+					text-align: center;
+				}
+
+				h2 {
+					font-size: 3em;
+					margin-bottom: 0.5em;
+				}
+
+				p {
+					font-size: 1.1em;
+					padding: 0 5%;
+				}
+
+				.circle:before {
+					display: none;
+				}
+			}
+
+			.sub {
+				#paige.product,
+				#mankind.product {
+					width: 100%;
+					padding: 0 5%;
+					text-align: center;
+					margin-bottom: 1.5em; 
+				}
+			}
+
+		}
+		
+		#velvet {
+
+			.header {
+				margin-bottom: 2em;
+
+				.brand {
+					text-align: center;
+
+					img {
+						width: 100%;
+						left: 0;
+					}
+
+					span {
+						left: initial;
+						top: -1em;
+					}
+				}
+			}
+
+			.heading {
+				text-align: center;
+
+				h2 {
+					font-size: 3.25em;
+					line-height: 1em;
+					margin-bottom: 0.75em;
+				}
+
+				p {
+					padding: 0 5%;
+					line-height: 1.25em;
+					margin-bottom: 2em;
+				}
+			}
+
+			.middle {
+				div.one,
+				div.two {
+					position: initial;
+					top: initial;
+				}
+			}
+
+			.middle > div {
+
+				display: block;
+				width: 100%;
+				text-align: center;
+				margin-bottom: 1em;
+
+				img {
+					padding: 0 10%;
+				}
+
+				.rightAlign	 {
+					text-align: center;
+				}
+
+			}
+
+			.bottom {
+				width: 100%;
+				text-align: center;
+
+				.laydown {
+					display: block;
+					width: 100%;
+				}
+
+			}
+
+			.sub-links {
+				margin: 2em 0;
+				width: 100%;
+				text-align: center;
+
+				hr {
+					display: none;
+				}
+
+				a {
+					line-height: 2.5em;
+					margin-right: 0;
+					margin-left: 0;
+				}
+			}
+		}
+
+		#jackets {
+
+		}
+		
+		#favorites {}
+		
+		#best-sellers {}
+	}
+}
