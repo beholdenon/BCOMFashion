@@ -445,6 +445,8 @@
 		color: #fff;
 		padding: 5em 10%;
 		margin-top: 8em;
+		text-decoration: none;
+		display: block;
 
 		h2, span {
 			color: #fff;
@@ -454,6 +456,10 @@
 			font-size: 3.5em;
 			width: 40%;
 			display: inline-block;
+			
+			a {
+				color: #fff;
+			}
 		}
 
 		span {
@@ -553,7 +559,7 @@
 		}
 
 		.mobile {
-			display: inline-block;
+			display: inline-block !important; 
 		}
 
 		#hero {
@@ -652,7 +658,7 @@
 		#statement-hems {
 			.two-col,
 			.big-col {
-				width: 100%;
+				text-align: center;
 				margin-top: 2em;
 
 				&:first-child .brand:first-child {
@@ -875,6 +881,8 @@
 		#favorites {
 			margin-top: 2em;
 			padding: 3em 5%;
+			color: #fff;
+			text-decoration: none;
 
 			h2 {
 				display: block;
@@ -883,6 +891,8 @@
 				line-height: 1.5em;
 				font-size: 3.5em;
 				margin-bottom: 0.5em;
+
+
 			}
 
 			.circle {

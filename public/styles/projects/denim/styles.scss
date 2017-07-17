@@ -238,6 +238,12 @@ main {
     display: none;
   }
 
+  a.shop {
+    text-transform: uppercase;
+    font-size: 1.5em;
+    font-weight: 500;
+  }
+
 }
 
 #denim-dilemmas {
@@ -654,7 +660,7 @@ main {
             padding: 0 10%;
           }
 
-          .shop {
+          a.shop {
             font-weight: 700;
             font-size: 1.6em;
             text-transform: uppercase;
