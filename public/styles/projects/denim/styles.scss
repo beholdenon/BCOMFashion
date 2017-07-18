@@ -512,7 +512,6 @@ main {
 
 
 #lookbook-footer {
-  text-align: right;
   line-height: 3em;
   font-size: 1.25em;
   border-top: 1px solid #000;
@@ -522,11 +521,54 @@ main {
   .housing {
     max-width: 1440px;
     margin: 0 auto;
+    position: relative;
+    vertical-align: top;
+  }
+
+  .btt {
+    position: absolute;
+    right: 2%;
+    display: inline-block;
   }
 
   .arrow {
     font-size: 1.65em;
   }
+
+  .social {
+    display: inline-block;
+    position: relative;
+    left: 2%;
+
+    .icon {
+      font-size: 0;
+      width: 32px;
+      height: 28px;
+      display: inline-block;
+      line-height: 36px;
+      background-image: url('/b/fashion/images/projects/denim/social.png');
+      background-repeat: no-repeat;
+      margin-right: 20px;
+    }
+
+    .instagram {
+      background-position: 0 0;
+    }
+
+    .facebook {
+      background-position: -60px 0;
+    }
+
+    .pinterest {
+      background-position: -116px 0;
+    }
+
+    .twitter {
+      background-position: -176px 0;
+    }
+
+  }
+
 }
 
 
@@ -934,6 +976,19 @@ main {
 
     span.arrow {
       font-size: 2.2em;
+    }
+
+    .btt,
+    .social {
+      display: block;
+      text-align: center;
+      position: relative;
+      right: 0;
+      left: 0;
+    }
+
+    .btt {
+      margin-top: 1.5em;
     }
   }
 

@@ -2,14 +2,52 @@
 
 (function () {
 
-  var isMobile = window.BLOOMIES.isMobile;
-  var mobileTag = "";
+  var APP = {
 
-  if ( isMobile === true ) {
-    mobileTag = "MBL:";
+    isMobile: window.BLOOMIES.isMobile,
+    mobileTag: "",
+    social: {
+      facebookTitle: "The Denim Trend Report: Fall 2017 | Bloomingdale's",
+      facebookDescription: "Our roundup of all the trends that are having a moment, a new take on denim jackets, plus the best-selling pairs people can't stop raving about.",
+      facebookImageFileName: 'F17_Denim-HQ_Facebook.jpg',
+      twitterTitle: 'Our fall denim report + styling inspo = your first (and last) stop for everything new and noteworthy on the denim scene @bloomingdales',
+      pinterestTitle: 'THE DENIM TREND REPORT: FALL 2017 | Bloomingdales.com',
+      pinterestImageFileName: 'F17_Denim-HQ_Pinterest.jpg',
+      facebookURL: null,
+      twitterURL: null,
+      pinterestURL: null    
+    },
+
+    socialshare: function () {
+          var baseURL = 'http://' + window.location.host + window.location.pathname,
+              baseURLAssets = 'http://' + window.location.host + '/b/fashion/images/projects/denim/';
+
+          APP.social.facebookURL = 'https://www.facebook.com/dialog/feed';
+          APP.social.facebookURL += '?app_id=145634995501895';
+          APP.social.facebookURL += '&name=' + encodeURIComponent(APP.social.facebookTitle);
+          APP.social.facebookURL += '&description=' + encodeURIComponent(APP.social.facebookDescription);
+          APP.social.facebookURL += '&link=' + encodeURIComponent(baseURL);
+          APP.social.facebookURL += '&picture=' + encodeURIComponent(baseURLAssets + APP.social.facebookImageFileName);
+          APP.social.facebookURL += '&display=popup&redirect_uri=' + encodeURIComponent('https://www.facebook.com/');
+
+          APP.social.twitterURL = 'http://twitter.com/intent/tweet?source=webclient&text=';
+          APP.social.twitterURL += encodeURIComponent(APP.social.twitterTitle);
+
+          APP.social.pinterestURL = 'http://pinterest.com/pin/create/button/?';
+          APP.social.pinterestURL += 'url=' + encodeURIComponent(baseURL);
+          APP.social.pinterestURL += '&media=' + encodeURIComponent(baseURLAssets + APP.social.pinterestImageFileName);
+          APP.social.pinterestURL += '&description=' + encodeURIComponent(APP.social.pinterestTitle);
+    },
+
+  };
+  
+  APP.socialshare();
+
+  if ( APP.isMobile === true ) {
+    APP.mobileTag = "MBL:";
   }
 
-  var cmCategory = mobileTag + "fall17_denim";
+  var cmCategory = APP.mobileTag + "fall17_denim";
 
 
 // ========= COREMETRICS =========
@@ -33,26 +71,46 @@
   window.BLOOMIES.coremetrics.pageViewExploreAttributes = new window.BLOOMIES.coremetrics.exploreAttributes();
   
   // pageview
-  window.BLOOMIES.coremetrics.cmCreatePageviewTag( mobileTag + page, cmCategory);
+  window.BLOOMIES.coremetrics.cmCreatePageviewTag( APP.mobileTag + page, cmCategory);
 
   $("#bl_main_container main a, #bl_main_container nav a, #bl_main_container footer a").on("click tap", function () {
     
     if ( $(this).attr('data-cm') !== undefined && $(this).attr('data-cm') !== "" ) {
-      window.BLOOMIES.coremetrics.cmCreatePageElementTag( mobileTag + partial + $(this).attr('data-cm'), cmCategory);  
+      window.BLOOMIES.coremetrics.cmCreatePageElementTag( APP.mobileTag + partial + $(this).attr('data-cm'), cmCategory);  
     } else {
       var str = removeDiacritics( $(this).text() );
       str = str.replace(/[^\w\s]/gi, '').replace(/\s+/g,"-").toLowerCase() + '-' + $('#bl_main_container main a').index( $(this) );
-      window.BLOOMIES.coremetrics.cmCreatePageElementTag( mobileTag + partial + str, cmCategory); 
+      window.BLOOMIES.coremetrics.cmCreatePageElementTag( APP.mobileTag + partial + str, cmCategory); 
     }
 
   });
 
   $('#back-to-top').on('click tap', function() {
-    window.BLOOMIES.coremetrics.cmCreatePageElementTag( mobileTag + partial + "back-to-top", cmCategory);
+    window.BLOOMIES.coremetrics.cmCreatePageElementTag( APP.mobileTag + partial + "back-to-top", cmCategory);
   });
 
 // ========= END COREMETRICS =========
 
+
+// ======= SOCIAL =======
+  
+  $('#lookbook-footer .social .facebook').on("click tap", function(e) {
+    e.preventDefault();
+    window.open(APP.social.facebookURL, '_blank', 'width=608,height=342');
+  });
+
+  $('#lookbook-footer .social .pinterest').on("click tap", function(e) {
+    e.preventDefault();
+    window.open(APP.social.pinterestURL, '_blank', 'width=770,height=380');
+  });
+
+  $('#lookbook-footer .social .twitter').on('click tap', function(e) {
+      e.preventDefault();
+      window.open(APP.social.twitterURL, '_blank', 'width=740,height=340');
+  });
+    
+
+// ===== END SOCIAL =====
   
   // Mobile hamburger menu open/close function and actions
   function menuAction () {
@@ -63,9 +121,9 @@
     $(this).toggleClass('open');
 
     if ( $(this).hasClass('open') ) {
-      window.BLOOMIES.coremetrics.cmCreatePageElementTag( mobileTag + partial + "nav-open", cmCategory);
+      window.BLOOMIES.coremetrics.cmCreatePageElementTag( APP.mobileTag + partial + "nav-open", cmCategory);
     } else {
-      window.BLOOMIES.coremetrics.cmCreatePageElementTag( mobileTag + partial + "nav-close", cmCategory);
+      window.BLOOMIES.coremetrics.cmCreatePageElementTag( APP.mobileTag + partial + "nav-close", cmCategory);
     }
 
     menuAction();
