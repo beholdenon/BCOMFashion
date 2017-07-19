@@ -1,0 +1,45 @@
+
+aside#floating-nav {
+
+}
+
+
+#bcomFashion .row,
+#bcomFashion #bl_main_container {
+  // max-width: 1440px;
+  max-width: none;
+  width: auto;
+}
+
+#nav .row {
+  max-width: 80.16667rem;
+  width: 100%;
+}
+
+#makeup-date {
+	max-width: 1200px;
+	width: 100%;
+	margin: 0 auto;
+
+	#top-banner {
+		background-color: #ad6f88;
+		text-align: center;
+		color: #e7bf1a;
+		font-size: 2.5rem;
+		display: block;
+		width: 100%;
+		padding: 1em 0;
+		font-weight: 700;
+	}
+
+}
+
+#bcomFashion {
+  footer {
+    #bloomiesMainFooter.row,
+    .row.footerDivider,
+    #footerBottom.row {
+      max-width: 80.16667rem;
+    }
+  }
+}
