@@ -2,7 +2,8 @@
 /* globals BLOOMIES */
 
 (function(){
-
+  window.BLOOMIES.coremetrics.pageViewExploreAttributes = new window.BLOOMIES.coremetrics.exploreAttributes();
+  
   window.BLOOMIES.coremetrics.pageViewExploreAttributes = new window.BLOOMIES.coremetrics.exploreAttributes();
 	
   var hasMBL = ( window.BLOOMIES.isMobile === true ? "mbl:" : ""); 
