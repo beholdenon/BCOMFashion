@@ -625,7 +625,52 @@ main {
 
 
 
+// ======================== TABLET
 
+@media all and ( min-width: 767px ) and ( max-width: 1024px ) {
+
+  #lookbook {
+
+    #hero-text {
+      p {
+        margin-left: 0;
+        width: 47%;
+      }
+    }
+
+    hr {
+      display: none !important;
+    }
+
+  }
+
+  #blog-heading {
+    padding: 0 2em;
+  }
+
+  #dos-and-donts h2 {
+    font-size: 6em;
+  }
+
+  #match-game {
+    padding: 1em 2em;
+
+    .carousel {
+      margin: 1em 0;
+
+      img {
+        width: 60%;
+      }
+
+      h3 {
+        font-size: 2em;
+        bottom: 30%;
+      }
+    }
+
+  }
+
+}
 
 
 

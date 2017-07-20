@@ -73,7 +73,7 @@
   // pageview
   window.BLOOMIES.coremetrics.cmCreatePageviewTag( APP.mobileTag + page, cmCategory);
 
-  $("#bl_main_container main a, #bl_main_container nav a, #bl_main_container footer a").on("click tap", function () {
+  $("#bl_main_container main a, #bl_main_container nav a, #bl_main_container footer a, #bl_main_container #lookbook-footer a").on("click tap", function () {
     
     if ( $(this).attr('data-cm') !== undefined && $(this).attr('data-cm') !== "" ) {
       window.BLOOMIES.coremetrics.cmCreatePageElementTag( APP.mobileTag + partial + $(this).attr('data-cm'), cmCategory);  
