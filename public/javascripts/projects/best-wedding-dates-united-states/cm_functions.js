@@ -21,21 +21,23 @@
     BLOOMIES.coremetrics.cmCreatePageElementTag(hasMBL +  'BWEDD_Share-{' + $(this).find('.social-likes__button').text() + '}' , cmCat);
   });
 
-  $('.social-likes__widget_facebook').on('click', function() {
+  $('.social-likes__widget_facebook, .social-likes__widget_facebook').on('click', function() {
     BLOOMIES.coremetrics.cmCreatePageElementTag(hasMBL +  'BWEDD_Share-{ Facebook }' , cmCat);
   });
 
-  $('.social-likes__widget_twitter').on('click', function() {
+  $('.social-likes__widget_twitter, .social-likes__widget_twitter').on('click', function() {
     BLOOMIES.coremetrics.cmCreatePageElementTag(hasMBL +  'BWEDD_Share-{ Twitter }' , cmCat);
   });
 
 	$(window).on('calendarLoad', function() {
-    var locationFormat = $('#city_autocomplete').val();
-    locationFormat = locationFormat.replace(/,\s/g,'_').replace(/\s/g,'-');
+    setTimeout( function(){
+      var locationFormat = $('#city_autocomplete').val();
+      locationFormat = locationFormat.replace(/,\s/g,'_').replace(/\s/g,'-');
 
-    if ( locationFormat !== '' ) {
-      window.BLOOMIES.coremetrics.cmCreatePageElementTag(hasMBL + 'BWEDD_Search-{' + locationFormat + '}', cmCat);
-    }
+      if ( locationFormat !== '' ) {
+        window.BLOOMIES.coremetrics.cmCreatePageElementTag(hasMBL + 'BWEDD_Search-{' + locationFormat + '}', cmCat);
+      }
+    }, 250);
   });
 
   $(document).ready( function() {
