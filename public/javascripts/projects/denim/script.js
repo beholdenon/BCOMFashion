@@ -111,6 +111,35 @@
     
 
 // ===== END SOCIAL =====
+
+
+  
+  // sticky nav
+
+  if ( $('body').hasClass('bl_tablet') ) {
+    $("#mast-nav").addClass('tablet');
+  }
+  
+  $(window).scroll( function() {
+    var fromTop = $(document).scrollTop();
+    var headerHeight = $('header.responsive').height();
+
+    if ( fromTop > headerHeight ) {
+
+      if ( !$("#mast-nav").hasClass('fixed') ) {
+        $("#mast-nav").addClass('fixed').css({'top': ($('header.responsive').height() - 23) + 'px'});
+      }
+
+    } else {
+
+      if ( $("#mast-nav").hasClass('fixed') ) {
+        $("#mast-nav").removeClass('fixed').removeAttr('style');
+      }
+
+    }
+
+  });
+
   
   // Mobile hamburger menu open/close function and actions
   function menuAction () {
