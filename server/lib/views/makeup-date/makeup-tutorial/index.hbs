@@ -7,7 +7,7 @@
 
 <main id="makeup-date">
 
-	<aside id="floating-nav">
+{{!-- 	<aside id="floating-nav">
 		<ul>
 			<li class="link"><a href="">Gift with Purchase</a></li>
 			<li class="link"><a href="">Week 1</a></li>
@@ -17,7 +17,7 @@
 			<li class="link"><a href="">In-Store Events</a></li>
 			<li class="link"><a href="">Sweepstakes</a></li>
 		</ul>
-	</aside>
+	</aside> --}}
 
 	<div id="top-banner" class='limited-promo'>
 		<p><span class='caps AvenirBlack'>2 days only!</span> 16-piece gift and Triple Points for Loyallists. Ends 8/29. <a href="" class='caps'>see info</a></p>
@@ -29,10 +29,8 @@
 		<div class="copy">
 			<p class="tagline AvenirBO">a guide to your most gorgeous month ever</p>
 			<p class="sub AvenirBook">We’ve laid out four weeks of cool makeup looks, new product finds and wellness tips to help you look and feel your best. Follow along to get inspired, refresh your routine and keep your beauty game on point all month long.</p>
-			<div class="container">
-				<div class="triangle"></div>
-			</div>
 		</div>
+		<a id="arrow-link">scroll down</a>
 	</div>
 
 	<div id="gift-with-purchase" class='limited-promo'>
@@ -77,7 +75,83 @@
 			</ul>
 		</div>
 	</div>
+
+	<div id="week-one" class="week">
+		{{!-- <div class="bar caps">week 1</div> --}}
+		<table class="makeup-table">
+			<tbody>
+				<tr>
+					<th></th>
+					<th class="bar caps" colspan="2">Week 1</th>
+					<th></th>
+				</tr>
+				<tr>
+					<td id="masks">
+						<div class="day caps">mon</div>
+						<h3 class="gold">mask on mondays</h3>
+						<p>to kick off the week<br/>with glowing skin.</p>
+						<a href="fix">shop face masks</a>
+					</td>
+					<td id="foundation" colspan="2" >
+						<div class="day caps">tues</div>
+						<!-- <img class="background" src="/b/fashion/images/projects/makeup-date/fall-makeup-tutorial-2017/foundation.jpg"/> -->
+						<!-- <div class="content"> -->
+							<h3  class="purple">customize your perfect foundation</h3>
+							<p>Your complexion isn’t the exact same color year-round. Transition between seasons by mixing two shades of foundation (one lighter, one darker) to create a custom color.</p>
+							<a href="fix">shop foundation</a>
+						<!-- </div> -->
+					</td>
+					<td id="mascaras" rowspan="2">
+						<div class="day caps">wed</div>
+						<!-- <img class="background" src="/b/fashion/images/projects/makeup-date/fall-makeup-tutorial-2017/mascara.jpg"/> -->
+						<!-- <div class="content"> -->
+							<h3 class="purple">toss out old tubes</h3>
+							<p>Replace your mascara every two to three months before it dries out and forms bacteria.</p>
+							<a href="">shop mascaras</a>
+						<!-- </div> -->
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" rowspan="2">
+						<div class="day caps">thurs</div>
+						<h3 class="purple">Get the Vampy Lip X Glossy eye look</h3>
+					</td>
+					<td>
+						<div class="day caps">fri</div>
+						<h3 class="gold">take a new workout class</h3>
+						<p>for a no-blush flush.</p>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+					<div class="day caps">sat</div>
+					<h3 class="purple">upgrade your blowout</h3>
+					<p>High-tech dryers and luxe hair oils fight frizz and give you salon-worthy results at home.</p>
+					<a href="">shop hair care</a>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">7</td>
+					<td colspan="2">
+					<div class="day caps">sun</div>
+					<h3 class="purple">go for bold</h3>
+					<p>Looking to update your go-to graphic liner? Swap basic black for a bight new hue, like blue or green.</p>
+					<a href="">shop eyeliners</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div id="week-two" class="week">
+		<div class="bar caps">week 2</div>
+	</div>
+	<div id="week-three" class="week">
+		<div class="bar caps">week 3</div>
+	</div>
+	<div id="week-four" class="week">
+		<div class="bar caps">week 4</div>
+	</div>
 </main>
 
 <script src="/b/fashion/javascripts/libs/jquery-1.9.1.min.js"></script>
-<!-- <script src="/b/fashion/javascripts/projects/fall-makeup-date-2017/script.js"></script> -->
+<script src="/b/fashion/javascripts/projects/makeup-date/fall-makeup-tutorial-2017/script.js"></script>
