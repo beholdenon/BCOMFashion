@@ -5,6 +5,8 @@
   // max-width: 1440px;
   max-width: none;
   width: auto;
+  transform: none;
+  -webkit-transition: none;
 }
 
 #bl_main_container h1,
@@ -23,7 +25,7 @@ main {
   font-family: 'Roboto Mono', monospace;
   width: 100%;
   max-width: 1440px;
-  margin: 0 auto;
+  margin: 30px auto 0;
 }
 
 #mobile-header {
@@ -52,12 +54,20 @@ main {
     }
   }
 
+  &.fixed {
+    position: fixed;
+    top: 0;
+    z-index: 50;
+
+  }
+
   .inner {
-    width: 98%;
-    padding: 0 1%;
+    width: 100%;
+    padding: 0;
     max-width: 1440px;
     margin: 0 auto;
     display: table;
+    background-color: #fff;
   }
 
   .page-id {
@@ -581,6 +591,7 @@ main {
     position: absolute;
     right: 2%;
     display: inline-block;
+    font-family: 'Roboto Mono', monospace;
   }
 
   .arrow {
@@ -631,7 +642,7 @@ main {
 
   #lookbook {
 
-    #hero-text {
+    #hero #hero-text {
       p {
         margin-left: 0;
         width: 47%;
@@ -921,12 +932,16 @@ main {
 
   #mobile-header {
     display: block;
-    position: relative;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    width: 100%;
     font-family: 'Roboto Mono', monospace;
 
     .prime {
       padding: 1em 2em;
       border-bottom: 1px solid #000;
+      background-color: #fff;
 
       .logo {
         position: absolute;

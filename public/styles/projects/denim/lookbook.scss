@@ -642,7 +642,7 @@
 				
 				#paige.product,
 				#mankind.product {
-					width: 100%;
+					width: 90%;
 					padding: 0 5%;
 					text-align: center;
 					margin-bottom: 1.5em; 
@@ -679,7 +679,8 @@
 			}
 		}
 
-		#statement-hems {
+		#statement-hems {		
+
 			.two-col,
 			.big-col {
 				text-align: center;
@@ -718,6 +719,11 @@
 						display: none;
 					}
 				}
+			}
+
+			.two-col.first a:last-child,
+			.two-col.first a:first-child {
+				width: 90%;
 			}
 		}
 		
@@ -804,7 +810,6 @@
 				}
 
 				a {
-					line-height: 1.5em;
 					margin-right: 0;
 					margin-left: 0;
 				}
