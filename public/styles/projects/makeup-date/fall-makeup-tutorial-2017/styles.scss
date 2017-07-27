@@ -282,29 +282,37 @@ table.makeup-table {
   }
 
   td {
-    width: 25%;
+    width: 300px;
+    height: 300px;
     text-align: center;
     position: relative;
     vertical-align: middle;
+    // padding: 2em 1em;
+    border-right: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    background-position: center;
+    background-repeat: no-repeat;
 
     h3 {
       font-family: $AvenirBO;
       font-size: 3.4em;
       line-height: 1.15em;
-      width: 70%;
+      width: 75%;
       margin: 0 auto 0.5em;
     }
 
     p {
-      font-size: 1.4em;
+      font-size: 1.5em;
       font-family: $AvenirBook;
       margin: 0 auto 0.75em;
+      width: 85%;
     }
 
     a {
       font-family: $AvenirBlack;
       font-size: 1.5em;
       font-weight: 400;
+      letter-spacing: 2px;
       text-transform: uppercase;
     }
 
@@ -343,20 +351,167 @@ table.makeup-table {
 
   }
 
-  td#mascaras {
+  td {
+
+  }
+
+  td#foundation {
     background-image: url('/b/fashion/images/projects/makeup-date/fall-makeup-tutorial-2017/foundation.jpg');
-    background-repeat: no-repeat;
-    background-position: center center;
   }
 
   td#mascaras {
     background-image: url('/b/fashion/images/projects/makeup-date/fall-makeup-tutorial-2017/mascara.jpg');
-    background-repeat: no-repeat;
-    background-position: center center;
   }
 
   td#workout {
     background-color: $loyallist;
+    color: #fff;
+  }
+
+  td#blowdryer {
+    background-image: url('/b/fashion/images/projects/makeup-date/fall-makeup-tutorial-2017/hairdryer.jpg');
+  }
+
+  td#eyeliners {
+    background-image: url('/b/fashion/images/projects/makeup-date/fall-makeup-tutorial-2017/eyeliners.jpg');
+  }
+
+  td#palette {
+    background-color: $strawberry;
+
+    p,
+    a {
+      color: #fff;
+    }
+  }
+
+  td#serums {
+    background-image: url('/b/fashion/images/projects/makeup-date/fall-makeup-tutorial-2017/regimen.jpg');
+    height: 600px;
+
+    p,
+    a {
+      color: #fff;
+    }
+  }
+
+  td#moisturizer {
+    background-image: url('/b/fashion/images/projects/makeup-date/fall-makeup-tutorial-2017/moisturizer.jpg');
+  }
+
+  td#brushes {
+    background-color: $loyallist;
+    
+    p,
+    a {
+      color: #fff;
+    }
+  }
+
+  td#sunCare {
+    background-color: $strawberry;
+    
+    p,
+    a {
+      color: #fff;
+    }
+  }
+
+  td#scent {
+    background-image: url('/b/fashion/images/projects/makeup-date/fall-makeup-tutorial-2017/scent.jpg');
+  }
+
+
+  td#cleanser {
+    background-image: url('/b/fashion/images/projects/makeup-date/fall-makeup-tutorial-2017/cleanser.jpg');
+    vertical-align: top;
+    padding: 2.5% 2.5% 0;
+  }
+
+
+  td#brows {
+    background-image: url('/b/fashion/images/projects/makeup-date/fall-makeup-tutorial-2017/brows.jpg');
+
+    p,
+    a {
+      color: #fff;
+    }
+  }
+
+
+  td#spa-night {
+    background-image: url('/b/fashion/images/projects/makeup-date/fall-makeup-tutorial-2017/spa-night.jpg');
+    padding-right: 22%;
+  }
+
+  td#mists {
+    background-color: $loyallist;
+
+    p,
+    a {
+      color: #fff;
+    }
+  }
+
+  td#water {
+    background-color: $strawberry;
+
+    p,
+    a {
+      color: #fff;
+    }
+  }
+
+  td#candles {
+    background-color: $loyallist;
+
+    p,
+    a {
+      color: #fff;
+    }
+  }
+
+  td#gloss {
+    background-image: url('/b/fashion/images/projects/makeup-date/fall-makeup-tutorial-2017/gloss.jpg');
+  }
+
+  td#wipes {
+    background-color: $loyallist;
+
+    p,
+    a {
+      color: #fff;
+    }
+  }
+
+  td#shampoo {
+    background-image: url('/b/fashion/images/projects/makeup-date/fall-makeup-tutorial-2017/shampoo.jpg');
+  }
+
+  td#exfoliate {
+    background-image: url('/b/fashion/images/projects/makeup-date/fall-makeup-tutorial-2017/exfoliate.jpg');
+  }
+
+  td#wine-eye {
+
+  }
+
+  td#greens {
+    background-color: $loyallist;
+
+    p,
+    a {
+      color: #fff;
+    }
+  }
+
+  td#treat {
+    background-color: $strawberry;
+
+    p,
+    a {
+      color: #fff;
+    }
   }
 
 }
