@@ -96,6 +96,8 @@ var routes = [
     { method: 'GET',  path: '/lookbooks/',                                                                  config: require('./lib/handlers/views').adaptive },
     { method: 'GET',  path: '/b/lookbooks/',                                                                config: require('./lib/handlers/views').adaptive },
     { method: 'GET',  path: '/loyallist/benefits/',                                                         config: require('./lib/handlers/views').adaptive },
+    { method: 'GET',  path: '/loyallist/top-of-the-list/',                                                  config: require('./lib/handlers/views').adaptive },
+    { method: 'GET',  path: '/b/loyallist/top-of-the-list/',                                                config: require('./lib/handlers/views').adaptive },
     { method: 'GET',  path: '/makeup-date/{path*}',                                                         config: require('./lib/handlers/views').adaptive },
     { method: 'GET',  path: '/sweepstakes/win-1000-bucks-writing-reviews/',                                 config: require('./lib/handlers/views').adaptive },
     
