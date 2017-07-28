@@ -9,7 +9,7 @@
 		content: '';
 		width: 500px;
 		height: 600px;
-		background-color: #e23fbc;
+		background-color: #fae6e8;
 		position: absolute;
 		right: -80px;
 		top: -50px;
@@ -19,43 +19,78 @@
 		transform: rotate(6deg);
 
 		@include media-query-max(small) {
-			width: 600px;
-			height: 200px;
-			right: 0;
-			top: -157px;
-			-webkit-transform: rotate(-4deg);
-			-moz-transform: rotate(-4deg);
-			-o-transform: rotate(-4deg);
-			transform: rotate(-4deg);
+            width: 800px;
+            height: 400px;
+            right: -40px;
+            top: -150px;
+			-webkit-transform: rotate(-20deg);
+			-moz-transform: rotate(-20deg);
+			-o-transform: rotate(-20deg);
+			transform: rotate(-20deg);
+			z-index: -2;
 		}
 	}
 
-	&:after {
-		@include media-query-max(small) {
-			content: '';
-			background-color: #e23fbc;
-			position: absolute;
-			width: 600px;
-			height: 400px;
-			right: -23px;
-			bottom: 140px;
-			-webkit-transform: rotate(2deg);
-			-moz-transform: rotate(2deg);
-			-o-transform: rotate(2deg);
-			transform: rotate(2deg);
+	a:hover {
+	    color: #fc1c66;
+	}
+
+	ol {
+		padding: 0 0 0 20px;
+		margin: 0;
+	}
+
+	.step {
+	    color: #000;
+		margin-top: 15px;
+		font-weight: 900;
+		font-size: 15px;
+		padding-left: 5px;
+
+		&:first-child {
+			margin-top: 0;
+		}
+
+		.title {
+		    color: #000;
+			font-size: 19px;
+			line-height: 19px;
+			font-weight: 900;
+			letter-spacing: 2px;
+			font-family: 'Avenir W01';
+			margin: 5px 0;
+			padding: 0;
+
+			@include media-query-max(small) {
+				font-size: 16px;
+				line-height: 16px;
+			}
+		}
+
+		p {
+			margin: 0;
+			font-weight: 100;
+			font-size: 14px;
+			line-height: 18px;
+			font-family: 'Avenir W01';
+			letter-spacing: 1px;
+
+			@include media-query-max(small) {
+				font-weight: 500;
+			}
 		}
 	}
 }
 
 .swpkes__info {
-	padding: 50px 0;
+	padding: 35px 40px;
 
 	@include media-query-max(medium) {
-		padding: 50px 0 0 20px;
+		padding: 30px 0 0 30px;
 	}
 
 	@include media-query-max(small) {
-		padding: 50px 0 20px 0;
+		padding: 20px 0 20px 0;
 	}
 
 	.title {
@@ -64,43 +99,131 @@
 	}
 
 	.header {
-		margin: 0 0 20px 0;
+		margin: 0 0 200px 0;
+		position: relative;
+
+		@include media-query-max(medium) {
+		    margin: 0 0 170px 0;
+		}
 
 		@include media-query-max(small) {
-			margin: 10px 0 20px 0;
+			margin: 10px 0 70px 0;
 		}
 
 		.title {
-			font-size: 60px;
-			line-height: 70px;
-			font-weight: 900;
-			letter-spacing: 8px;
+		    color: #000;
+			font-size: 80px;
+			line-height: 90px;
+			letter-spacing: 2px;
 			font-family: 'Avenir W01';
+			font-weight: 100;
+			position: absolute;
 
 			@include media-query-max(medium) {
-				font-size: 30px;
-				line-height: 42px;
+				font-size: 60px;
+				line-height: 70px;
 			}
 
 			@include media-query-max(small) {
-				font-size: 40px;
-				line-height: 50px;
+                font-size: 12.5vw;
+                line-height: 13vw;
 				letter-spacing: 3px;
 				text-align: center;
+				width: 100%;
+
+				span {
+				    margin-right: 2vw;
+				}
 			}
 		}
-		
-		.heart {
-			display: inline-block;
-			background: url("/fashion/images/projects/sweepstakes/win-1000-bucks-writing-reviews/heart.jpg") no-repeat center;
-			width: 56px;
-			height: 50px;
-		}
+
+		.heart-wrapper {
+		    position: absolute;
+            top: 81px;
+            left: -25px;
+
+            @include media-query-max(medium) {
+                top: 58px;
+                left: -21px;
+            }
+
+            @include media-query-max(small) {
+                top: -1.8vw;
+                left: 50.7vw;
+            }
+
+            .heart {
+                background-color: #fc1c66;
+                display: inline-block;
+                height: 40px;
+                margin: 20px 20px 10px 10px;
+                position: relative;
+                top: 0;
+                transform: rotate(-45deg);
+                width: 40px;
+
+                @include media-query-max(medium) {
+                    height: 30px;
+                    width: 30px;
+                }
+
+                @include media-query-max(small) {
+                    height: 6.2vw;
+                    width: 6.2vw;
+                }
+
+                &:before,
+                &:after {
+                    content: "";
+                    background-color: #fc1c66;
+                    border-radius: 50%;
+                    height: 40px;
+                    position: absolute;
+                    width: 40px;
+
+                    @include media-query-max(medium) {
+                        height: 30px;
+                        width: 30px;
+                    }
+
+                    @include media-query-max(small) {
+                        height: 6.2vw;
+                        width: 6.2vw;
+                    }
+                }
+
+                &:before {
+                  top: -20px;
+                  left: 0;
+
+                  @include media-query-max(medium) {
+                      top: -15px;
+                  }
+
+                  @include media-query-max(small) {
+                      top: -3.2vw;
+                  }
+                }
+
+                &:after {
+                  left: 20px;
+                  top: 0;
+
+                  @include media-query-max(medium) {
+                      left: 15px;
+                  }
+
+                  @include media-query-max(small) {
+                      left: 3.2vw;
+                  }
+                }
+            }
+        }
 	}
 
 	.content-feedback,
 	.content-review {
-		max-width: 70%;
+		max-width: 85%;
 
 		@include media-query-max(medium) {
 			max-width: 80%;
@@ -108,123 +231,138 @@
 
 		@include media-query-max(small) {
 			max-width: 100%;
-			text-align: center;
 		}
 
 		.title {
-			color: #e23fbc;
+			color: #fc1c66;
 			letter-spacing: 3px;
 			font-weight: 900;
 			font-size: 20px;
 			line-height: 25px;
 			font-family: 'Avenir W01';
-
-			@include media-query-max(small) {
-				font-size: 16px;
-				line-height: 20px;
-			}
+			margin-bottom: 5px;
 		}
 
 		p, a {
 			font-weight: 300;
 			font-size: 15px;
-			line-height: 18px;
+			line-height: 24px;
 			font-family: 'Avenir W01';
 
 			@include media-query-max(small) {
-				font-size: 13px;
-				line-height: 16px;
+				font-size: 3.2vw;
+				line-height: 5vw;
 			}
 		}
 	}
 
 	.content-feedback {
-		margin: 0 0 25px 0;
+		margin: 0 0 40px 0;
+
+		p {
+		    letter-spacing: 1px;
+		    margin-bottom: 25px;
+		}
+
+        @include media-query-max(small) {
+            p {
+                margin: 0 7vw;
+            }
+        }
 	}
 
 	.content-review {
 		position: relative;
 
-		&:before {
-			content: '';
-			width: 110px;
-			height: 20px;
-			background: url("/fashion/images/projects/sweepstakes/win-1000-bucks-writing-reviews/hearts-review.jpg") no-repeat center;
-			margin-bottom: 5px;
-			display: block;
+        p {
+            font-weight: 600;
+        }
 
-			@include media-query-max(small) {
-				width: 100%;
-			}
-		}
+        @include media-query-max(small) {
+            border: 2px solid #000;
+            margin: 0 7vw 0 8vw;
 
-		.advice {
-			position: absolute;
-			top: -40px;
-			right: 0;
-			width: 90px;
-			height: 90px;
-			border-radius: 50%;
-			background-color: #e23fbc;
-			text-align: center;
+            &:before {
+                box-shadow: 0px 0px 0px 2px #fc1c66;
+                content: '';
+                height: 100%;
+                left: -3vw;
+                position: absolute;
+                top: 3vw;
+                z-index: -1;
+                width: 100%;
+            }
 
-			@include media-query-max(medium) {
-				top: -15px;
-				right: -15px;
-			}
+            .content-review-head {
+                background-color: #000;
+                color: #fff;
+                padding: 4vw 7vw 6vw;
 
-			@include media-query-max(small) {
-				display: none;
-			}
+                .title {
+                    color: #fff;
+                    font-size: 4vw;
+                    font-weight: 600;
+                    letter-spacing: 1px;
+                    line-height: 4vw;
+                }
 
-			&:before {
-				content: '';
-				width: 15px;
-				height: 15px;
-				background-color: #e23fbc;
-				position: absolute;
-				bottom: 15px;
-				left: 1px;
-				transform: rotate(9deg);
-			}
+                p {
+                    font-weight: 100;
+                    letter-spacing: 1px;
+                    margin-bottom: 0;
 
-			.title {
-				color: #fff;
-				letter-spacing: 1px;
-				font-weight: 900;
-				font-size: 12px;
-				font-family: 'Avenir W01';
-				text-align: center;
-				display: inline-block;
-				line-height: 18px;
-				margin: 19px 0 0 4px;
-			}
-		}
+                    strong {
+                        border-bottom: 2px solid #fc1c66;
+                        padding-bottom: 3px;
+                    }
+                }
+            }
+
+            .content-review-body {
+                padding: 6vw 8vw;
+
+                h3.title {
+                    font-size: 4vw;
+                    letter-spacing: 1px;
+                }
+
+                h4.title {
+                    color: #000;
+                    font-size: 3.5vw;
+                    letter-spacing: 1px;
+                    margin-bottom: 0;
+                }
+
+                p {
+                    font-weight: 100;
+                    font-size: 3.4vw;
+                }
+            }
+        }
 	}
 }
 
 .swpkes__form {
 	position: relative;
-	text-align: center;
-	padding: 30px 0;
+	padding: 50px 0 0 60px;
 	z-index: 1;
 	
 	@include media-query-max(medium) {
-		padding: 30px 15px 30px 0;
+		padding: 30px 15px 10px 40px;
 	}
 
 	@include media-query-max(small) {
-		padding: 20px 0 0 0;
+		padding: 7vw 0 0 0;
 	}
 
 	> .title {
-		font-size: 25px;
-		line-height: 25px;
+		font-size: 27px;
+		line-height: 27px;
 		font-weight: 900;
-		letter-spacing: 6px;
+		letter-spacing: 4px;
 		font-family: 'Avenir W01';
-		color: #fff;
-		margin-bottom: 15px;
+		color: #fc1c66;
+		margin-bottom: 25px;
 		
 		@include media-query-max(small) {
 			font-size: 20px;
@@ -232,69 +370,12 @@
 			letter-spacing: 3px;
 		}
 	}
-
-	ul {
-		list-style: none;
-		padding: 0;
-		margin: 0;
-	}
-
-	.step {
-		margin-top: 15px;
-
-		&:first-child {
-			margin-top: 0;
-		}
-
-		.number {
-			width: 25px;
-			height: 25px;
-			border-radius: 50%;
-			background-color: #000;
-			color: #fff;
-			display: inline-block;
-			font-family: 'Avenir W01';
-			font-weight: 900;
-			font-size: 12px;
-			padding-top: 2px;
-		}
-
-		.title {
-			font-size: 18px;
-			line-height: 18px;
-			font-weight: 900;
-			letter-spacing: 4px;
-			font-family: 'Avenir W01';
-			margin: 5px 0;
-			padding: 0;
-
-			@include media-query-max(small) {
-				font-size: 16px;
-				line-height: 16px;
-				letter-spacing: 3px;
-			}
-		}
-
-		p {
-			margin: 0;
-			font-weight: 300;
-			font-size: 15px;
-			line-height: 18px;
-			font-family: 'Avenir W01';
-			color: #fff;
-
-			@include media-query-max(small) {
-				font-weight: 500;
-			}
-		}
-	}
 	
 	.links-list {
-		text-align: center;
 		
 		li {
 			display: inline-block;
-			margin: 0 10px;
+			margin: 0 10px 0 0;
 			
 			@include media-query-max(medium) {
 				margin: 0 4px;
@@ -303,6 +384,7 @@
 			@include media-query-max(small) {
 				display: block;
 				margin-top: 15px;
+				text-align: center;
 				
 				&:first-child {
 					margin-top: 0;
@@ -311,37 +393,45 @@
 		}
 		
 		a {
-			font-size: 13px;
-			line-height: 15px;
+			font-size: 12px;
+			line-height: 12px;
 			font-family: 'Avenir W01';
-			color: #fff;
-			font-weight: 900;
+			font-weight: 100;
+			letter-spacing: 1px;
 			
 			@include media-query-max(small) {
 				color: #000;
-				font-size: 16px;
-				line-height: 18px;
+                font-size: 3vw;
+                font-weight: 900;
+                line-height: 4vw;
 			}
 		}
 	}
 	
 	.action {
-		background-color: #000;
+		background-color: transparent;
+		border: 3px solid #000;
 		padding: 10px 20px;
 		text-align: center;
-		color: #fff;
 		font-size: 18px;
 		line-height: 20px;
 		font-family: 'Avenir W01';
 		font-weight: 900;
 		text-decoration: none;
-		margin: 15px 0;
+		margin: 25px 0;
 		display: inline-block;
+		letter-spacing: 1px;
 
 		@include media-query-max(small) {
+		    background-color: #000;
+		    border: 0;
+		    color: #fff;
+		    font-size: 3.7vw;
+		    font-weight: 600;
+            letter-spacing: 1px;
+			margin: 0 0 6vw;
+			padding: 3.3vw 4vw;
 			width: 100%;
-			padding: 15px 20px;
-			margin: 40px 0 20px 0;
 		}
 	}
 }
