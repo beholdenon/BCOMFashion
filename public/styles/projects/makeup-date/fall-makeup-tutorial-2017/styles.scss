@@ -490,6 +490,7 @@ table.makeup-table {
 
   td#exfoliate {
     background-image: url('/b/fashion/images/projects/makeup-date/fall-makeup-tutorial-2017/exfoliate.jpg');
+    padding-top: 22%;
   }
 
   td#wine-eye {
@@ -514,6 +515,130 @@ table.makeup-table {
     }
   }
 
+}
+
+#in-store {
+  background-color: #000;
+  color: #fff;
+  padding: 6em 15%;
+  text-align: center;
+
+  h2 {
+    color: $strawberry;
+    font-size: 4em;
+  }
+
+  .copy {
+    color: #fff;
+    font-size: 1.8em;
+    font-family: $AvenirBook;
+  }
+
+  .dates {
+    .col {
+      display: inline-block;
+      width: 32%;
+      vertical-align: top;
+
+      .date {
+        color: $strawberry;
+        font-family: $AvenirBlack;
+        text-transform: uppercase;
+        font-weight: 700;
+      }
+
+      p {
+        font-family: $AvenirBook;
+      }
+
+      .date,
+      p {
+        font-size: 1.65em;
+        line-height: 1.25em;
+        padding: 0;
+        margin: 0;
+      }
+
+    }
+
+  }
+
+}
+
+#sweepstakes {
+  background-color: $strawberry;
+  text-align: center;
+  padding: 3em 15%;
+
+  h2 {
+    font-size: 3.5em;
+  }
+
+  p {
+    color: #fff;
+    font-size: 1.45em;
+    margin: 0.25em auto;
+    width: 50%;
+
+    a {
+      text-transform: uppercase;
+      color: #fff;
+      font-size: 0.8em;
+    }
+  }
+
+  .enter {
+    display: inline-block;
+    margin: 1.25em 0;
+    font-size: 1.65em;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+}
+
+#footer {
+  padding: 2em 0;
+  background-color: #909aa9;
+  color: #fff;
+  text-align: center;
+  position: relative;
+
+  ul {
+    display: inline-block;
+    list-style-type: none;
+    width: 50%;
+    margin: 0 auto;
+  }
+
+  li {
+    display: inline-block;
+    font-family: $AvenirBO;
+    margin: 0 1em;
+
+    h2 {
+      font-size: 2.5em;
+      color: inherit;
+      font-family: inherit;
+    }
+
+    a {
+      font-size: 2.4em;
+      color: inherit;
+    }
+  }
+
+  .btt {
+    display: block;
+    position: absolute;
+    line-height: 7.5em;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 10%;
+    border-left: 3px solid #fff;
+  }
 }
 
 #bcomFashion {
