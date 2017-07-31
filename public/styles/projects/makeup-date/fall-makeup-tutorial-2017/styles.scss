@@ -641,6 +641,45 @@ table.makeup-table {
   }
 }
 
+.carousel-shell {
+
+  &> div {
+    opacity: 0;
+    transition: 1s;
+  }
+
+  .group {
+    border: 1px solid red;
+    display: inline-block;
+    width: 100%;
+
+    &.active {
+      opacity: 1;
+    }
+
+    .product {
+      display: inline-block;
+      width: 33%
+
+      img {
+        height: 180px;
+        width: 100px;
+      }
+
+      h4 {
+
+      }
+
+      p {
+        font-size: 1.0rem;
+      }
+
+    }
+
+  }
+
+}
+
 #bcomFashion {
   footer {
     #bloomiesMainFooter.row,
