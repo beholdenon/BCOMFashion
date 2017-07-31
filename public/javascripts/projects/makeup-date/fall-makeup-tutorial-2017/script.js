@@ -16,4 +16,29 @@
     250);
   });
 
+
+  var carousel = {
+
+    totalCarousels: 0,
+
+    init: function () {
+      $(".carousel-shell").each(function(index, el) {
+        carousel.setupCarousel(el);
+      });
+    },
+
+    setupCarousel: function (e) {
+      carousel.totalCarousels = carousel.totalCarousels++;
+
+      for( var i = $(e).length; i >= 0; i-- ) {
+
+        console.log(carousel.totalCarousels + " | " + $(e)[i].attr("class") );
+
+      }
+    },
+
+  };
+
+  carousel.init();
+
 })(jQuery);
