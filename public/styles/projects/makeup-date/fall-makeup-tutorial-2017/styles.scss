@@ -2,6 +2,7 @@ $loyallist: #3e1493;
 $white: #ffffff;
 $strawberry: #ad6f88;
 $gold: #e8bf19;
+$pink: #D90EAC;
 
 $AvenirBlack: "Avenir LT W01 95 Black", sans-serif;
 $AvenirBO: "AvenirLTW01-95BlackObli", sans-serif;
@@ -370,10 +371,24 @@ table.makeup-table {
 
   td#blowdryer {
     background-image: url('/b/fashion/images/projects/makeup-date/fall-makeup-tutorial-2017/hairdryer.jpg');
+
+    h3,
+    p,
+    a {
+      width: 50%;
+      margin-right: 50%;
+    }
   }
 
   td#eyeliners {
     background-image: url('/b/fashion/images/projects/makeup-date/fall-makeup-tutorial-2017/eyeliners.jpg');
+
+    h3,
+    p,
+    a {
+      width: 50%;
+      margin-left: 50%;
+    }
   }
 
   td#palette {
@@ -419,6 +434,14 @@ table.makeup-table {
 
   td#scent {
     background-image: url('/b/fashion/images/projects/makeup-date/fall-makeup-tutorial-2017/scent.jpg');
+
+    h3,
+    p,
+    a {
+      width: 50%;
+      margin-right: 40%;
+      margin-left: 10%;
+    }
   }
 
 
@@ -642,40 +665,99 @@ table.makeup-table {
 }
 
 .carousel-shell {
-
-  &> div {
-    opacity: 0;
-    transition: 1s;
-  }
+  overflow: hidden;
 
   .group {
-    border: 1px solid red;
-    display: inline-block;
-    width: 100%;
+    position: relative;
+    display: inline-flex;
+    justify-content: space-around;
+    width: 90%;
+    margin: 0 auto;
+    position: absolute;
+    bottom: 10%;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    transition: 1s;
+    z-index: 0;
+    vertical-align: top;
 
     &.active {
       opacity: 1;
+      z-index: 10;
     }
+
+    &.one .product { width: 100%; }
+    &.two .product { width: 50%; }
+    &.three .product { width: 33%; }
+    &.four .product { width: 25%; }
+    &.five .product { width: 20%; }
 
     .product {
       display: inline-block;
-      width: 33%
+      text-decoration: none;
+      vertical-align: top;
+      z-index: 10;
+
+      &:hover,
+      &:focus {
+
+        h4, p {
+          color: $pink;
+        }
+
+      }
 
       img {
-        height: 180px;
-        width: 100px;
+        height: 150px;
+        margin-bottom: 10px;
       }
 
       h4 {
-
+        font-size: 1.25rem;
+        text-decoration: inherit;
       }
 
       p {
         font-size: 1.0rem;
+        text-transform: none;
+        text-decoration: inherit;
+        letter-spacing: 0.05em;
       }
 
     }
+  }
 
+  .arrow {
+    position: absolute;
+    border-left: 2px solid #000;
+    border-bottom: 2px solid #000;
+    width: 30px;
+    height: 30px;
+    display: block;
+    z-index: 20;
+    top: 45%;
+    cursor: pointer;
+
+    &:focus,
+    &:active,
+    &:hover {
+      border-left: 2px solid $pink;
+      border-bottom: 2px solid $pink;
+    }
+
+    &:focus {
+      outline: 1px dotted #222;
+    }
+  }
+
+  .leftArrow { 
+    transform: rotate(45deg); 
+    left: 1.5em;
+  }
+  .rightArrow { 
+    transform: rotate(-135deg); 
+    right: 1.5em;
   }
 
 }
