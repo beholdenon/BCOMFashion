@@ -3,17 +3,34 @@
 
 (function($) {
 
-  // REMOVE BEFORE TEST
-  $("#floating-nav").remove();
-  // REMOVE
 
+  $(window).scroll(function() {
+    // var asideLocation = $('#floating-nav').offset().top + $('#floating-nav').height();
+
+    $.each( $('#makeup-date .section'), function() {
+      var box = $(this)[0].getBoundingClientRect();
+      if ( box.top <= ( 0 + $(window).height() / 2.5) && box.bottom >= ( 0 + $(window).height() / 2.5) ) {
+        var activeElem = $(this);
+        $.each( $('#floating-nav .link a'), function () {
+          if ( '#' + activeElem.attr("id") === $(this).attr("href") ) {
+            $(this).addClass('current');
+          } else {
+            $(this).removeClass('current');
+          }
+        });
+      }
+    });
+
+  });
+
+  // hero image arrow slide-down
   $('#arrow-link').on('click tap', function() {
     var ele;
 
-    if ( $('#gift-with-purchase').is(':visible') ) {
-        ele = $('#gift-with-purchase');
+    if ( $('#Gift-with-Purchase').is(':visible') ) {
+        ele = $('#Gift-with-Purchase');
     } else {
-      ele = $('#week-one');
+      ele = $('#Week1');
     }
 
     $('html, body').animate({
@@ -22,6 +39,7 @@
   });
 
 
+  // Carousel functionality module
   var carousel = {
 
     init: function () {
@@ -103,23 +121,21 @@
 
     rotate: function (ele, dir) {
       var groupLength = ele.find('.group').length;
-      var active = ele.find('.group.active').index();
+      var active = ele.find('.group.active').index( '#' + ele.attr('id') +' .group');
 
-      console.log( active );
-
-      ele.find('.active').removeClass('active').prop('tabindex', "-1");
+      ele.find('.group.active').removeClass('active');
 
       if ( dir === 'left' ) {
         if ( active - 1 < 0 ) {
-          ele.find('.group').eq( groupLength - 1 ).addClass('active').prop('tabindex', 0);
+          ele.find('.group').eq( groupLength - 1 ).addClass('active');
         } else {
-          ele.find('.group').eq( active - 1 ).addClass('active').prop('tabindex', 0);
+          ele.find('.group').eq( active - 1 ).addClass('active');
         }
       } else if ( dir === 'right' ) {
         if ( active + 1 >= groupLength ) {
-          ele.find('.group').eq( 0 ).addClass('active').prop('tabindex', 0);
+          ele.find('.group').eq( 0 ).addClass('active');
         } else {
-          ele.find('.group').eq( active + 1 ).addClass('active').prop('tabindex', 0);
+          ele.find('.group').eq( active + 1 ).addClass('active');
         }
       }
 
@@ -127,10 +143,7 @@
 
   };
 
-  carousel.init();
-
   $('.carousel-shell').on('click tap', '.arrow', function() {
-
     if ( $(this).hasClass('leftArrow') ) {
       carousel.rotate( $(this).parents('.carousel-shell'), 'left' );
     } else {
@@ -144,5 +157,31 @@
       $(this).click();
     }
   });
+
+  $(".makeup-video").each(function() {
+    var tar = $(this),
+      id = tar.attr('data-id');
+    
+    SERVICES.brightCove.getURL( function(res) {
+      tar.attr('src', res).prop('controls', 'true');
+    }, id);
+  });
+
+  // back-to-top click action
+  $("#footer .btt").on('click tap', function() {
+    event.preventDefault();
+    $('body,html').animate({
+        scrollTop: 0 ,
+        }, 700
+    );
+  });
+
+  $('#footer .btt').keypress( function(ev) {
+    if ( ev.keyCode === 13 ) {
+      $(this).click();
+    }
+  });
+
+  carousel.init();
 
 })(jQuery);

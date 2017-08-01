@@ -53,6 +53,7 @@ aside#floating-nav {
       padding: 0 0.25em;
     }
 
+    a.current,
     a:hover,
     a:focus,
     a:active {
@@ -147,7 +148,7 @@ aside#floating-nav {
     }
   }
 
-  #gift-with-purchase {
+  #Gift-with-Purchase {
     position: relative;
 
     .left-block {
@@ -283,7 +284,7 @@ table.makeup-table {
   }
 
   td {
-    width: 300px;
+    width: 25%;
     height: 300px;
     text-align: center;
     position: relative;
@@ -293,6 +294,7 @@ table.makeup-table {
     border-bottom: 1px solid #fff;
     background-position: center;
     background-repeat: no-repeat;
+    background-size: cover;
 
     h3 {
       font-family: $AvenirBO;
@@ -338,6 +340,19 @@ table.makeup-table {
       margin: 0 auto;
       padding: 0 2rem;
     }
+
+    &.videoTd {
+      vertical-align: top;
+    }
+  }
+
+  video {
+    max-width: 600px;
+    width: 100%;
+  }
+  
+  .hiddenRow td {
+    height: 0;
   }
 
   td#masks {
@@ -352,8 +367,16 @@ table.makeup-table {
 
   }
 
-  td {
+  td.whiteFont {
 
+    a:hover, a:focus {
+      color: $pink;
+    }
+
+    p,
+    a {
+      color: #fff;
+    }
   }
 
   td#foundation {
@@ -394,20 +417,12 @@ table.makeup-table {
   td#palette {
     background-color: $strawberry;
 
-    p,
-    a {
-      color: #fff;
-    }
+    
   }
 
   td#serums {
     background-image: url('/b/fashion/images/projects/makeup-date/fall-makeup-tutorial-2017/regimen.jpg');
     height: 600px;
-
-    p,
-    a {
-      color: #fff;
-    }
   }
 
   td#moisturizer {
@@ -416,20 +431,11 @@ table.makeup-table {
 
   td#brushes {
     background-color: $loyallist;
-    
-    p,
-    a {
-      color: #fff;
-    }
+  
   }
 
   td#sunCare {
     background-color: $strawberry;
-    
-    p,
-    a {
-      color: #fff;
-    }
   }
 
   td#scent {
@@ -454,11 +460,6 @@ table.makeup-table {
 
   td#brows {
     background-image: url('/b/fashion/images/projects/makeup-date/fall-makeup-tutorial-2017/brows.jpg');
-
-    p,
-    a {
-      color: #fff;
-    }
   }
 
 
@@ -469,29 +470,14 @@ table.makeup-table {
 
   td#mists {
     background-color: $loyallist;
-
-    p,
-    a {
-      color: #fff;
-    }
   }
 
   td#water {
     background-color: $strawberry;
-
-    p,
-    a {
-      color: #fff;
-    }
   }
 
   td#candles {
     background-color: $loyallist;
-
-    p,
-    a {
-      color: #fff;
-    }
   }
 
   td#gloss {
@@ -500,11 +486,6 @@ table.makeup-table {
 
   td#wipes {
     background-color: $loyallist;
-
-    p,
-    a {
-      color: #fff;
-    }
   }
 
   td#shampoo {
@@ -522,25 +503,15 @@ table.makeup-table {
 
   td#greens {
     background-color: $loyallist;
-
-    p,
-    a {
-      color: #fff;
-    }
   }
 
   td#treat {
     background-color: $strawberry;
-
-    p,
-    a {
-      color: #fff;
-    }
   }
 
 }
 
-#in-store {
+#In-Store-Events {
   background-color: #000;
   color: #fff;
   padding: 6em 15%;
@@ -588,7 +559,7 @@ table.makeup-table {
 
 }
 
-#sweepstakes {
+#Sweepstakes {
   background-color: $strawberry;
   text-align: center;
   padding: 3em 15%;
@@ -631,7 +602,7 @@ table.makeup-table {
   ul {
     display: inline-block;
     list-style-type: none;
-    width: 50%;
+    width: 70%;
     margin: 0 auto;
   }
 
@@ -661,8 +632,16 @@ table.makeup-table {
     height: 100%;
     width: 10%;
     border-left: 3px solid #fff;
+
+    img {
+      display: block;
+      cursor: pointer;
+      position: relative;
+      top: 5%;
+    }
   }
 }
+
 
 .carousel-shell {
   overflow: hidden;
@@ -770,4 +749,109 @@ table.makeup-table {
       max-width: 80.16667rem;
     }
   }
+}
+
+
+// TABLET STYLES
+@media all and (min-width: 768px) and ( max-width: 1200px ) {
+
+  #makeup-date {
+
+    #makeup-header {
+      .copy {
+        .tagline{
+          font-size: 2.65em;
+        }
+
+        .sub {
+          font-size: 1.45em;
+        }
+      }
+    }
+
+    #Gift-with-Purchase {
+      .left-block {
+        h2 {
+          font-size: 2.75em;
+        }
+
+        &> a {
+          font-size: 1.2em;
+        }
+
+        .triple-points p {
+          font-size: 1.25em;
+        }
+      }
+
+      #gwp-items {
+        .item-list {
+          .item{
+            font-size: 0.66666em;
+          }
+        }
+      }
+    }
+
+    table.makeup-table {
+
+      .hiddenRow td {
+        height: 0;
+      }
+
+      td {
+        height: 200px;
+      }
+
+      h3 {
+        font-size: 2.25em;
+      }
+
+      p {
+        font-size: 1em;
+      }
+
+      a {
+        font-size: 1em;
+      }
+
+    }
+
+  }
+
+  .carousel-shell {
+
+    .group {
+      padding: 0 2em;
+      bottom: 0;
+
+      .product {
+
+        img {
+          height: 90px;
+        }
+
+        h4 {
+          font-size: 1em;
+        }
+
+        p {
+          font-size: 0.85em;
+        }
+
+      }
+
+    }
+
+  }
+
+  aside#floating-nav {
+    ul {
+      a {
+        font-size: 0.85em;
+        padding: 0.25em 0;
+      }
+    }
+  }
+
 }
