@@ -24,6 +24,17 @@
          url('./fonts/7f604f39-0277-4222-9b21-cce46dc1a18e.ttf') format('truetype'),
          url('./fonts/836329ae-a7e9-4192-9b9c-433c0d254f0e.svg#836329ae-a7e9-4192-9b9c-433c0d254f0e') format('svg');
 }
+
+@font-face {
+  font-family: "Gotham Book";
+  src: local("Gotham-Book"), url("/b/fashion/styles/fonts/Gotham-Book.eot?#iefix");
+  src: local("Gotham-Book"),
+  url("/b/fashion/styles/fonts/Gotham-Book.eot?#iefix") format("eot"),
+  url("/b/fashion/styles/fonts/Gotham-Book.woff") format("woff"),
+  url("/b/fashion/styles/fonts/Gotham-Book.ttf") format("truetype"),
+  url("/b/fashion/styles/fonts/Gotham-Book.svg") format("svg");
+}
+
 @font-face {
   font-family: "Avenir LT W01 95 Black";
   src: local("Avenir Black"), local("Avenir LT W01 95 Black"), url("/b/fashion/styles/fonts/avenir/a24b3f55-c8c8-41a1-a77e-7cdf417d82f6.eot?#iefix");
@@ -61,7 +72,7 @@
   font-weight: bold;
 }
 @font-face {
-  font-family: Avenir;
+  font-family: "Avenir Heavy Oblique";
   src: local("Avenir Heavy Oblique"),local("AvenirLTW01-85HeavyObli"),url("/b/fashion/styles/fonts/avenir/7be0fdec-384a-42b5-ab27-c60a322cde7d.eot?#iefix");
   src: local("Avenir Heavy Oblique"),local("AvenirLTW01-85HeavyObli"),url("/b/fashion/styles/fonts/avenir/7be0fdec-384a-42b5-ab27-c60a322cde7d.eot?#iefix") format("eot"),url("/b/fashion/styles/fonts/avenir/53554f6f-4b01-4815-87fe-82c49b8ba5a9.woff") format("woff"),url("/b/fashion/styles/fonts/avenir/28dfedaf-6372-45a1-8833-b3078dc56a21.ttf") format("truetype"),url("/b/fashion/styles/fonts/avenir/f747b6ee-4d13-4e45-815d-f33ac1b71d63.svg#f747b6ee-4d13-4e45-815d-f33ac1b71d63") format("svg");
   font-style: italic;
@@ -179,4 +190,27 @@
 @font-face{
     font-family:"Avenir LT W01 85 Heavy";
     src:url("/b/fashion/styles/fonts/avenir/Avenir LT W01 85 Heavy.eot") format("eot"),url("/b/fashion/styles/fonts/avenir/Avenir LT W01 85 Heavy.woff") format("woff"),url("/b/fashion/styles/fonts/avenir/Avenir LT W01 85 Heavy.ttf") format("truetype"),url("/b/fashion/styles/fonts/avenir/Avenir LT W01 85 Heavy.svg") format("svg");
+}
+
+@font-face{
+font-family:"Avenir LT W01 45 Book";
+src:local("Avenir Book"),local("Avenir LT W01 45 Book"),url("/b/fashion/styles/fonts/avenir/4f32268f-fd86-4960-b72c-4bb1ba75ec6f.eot?#iefix");
+src:local("Avenir Book"),local("Avenir LT W01 45 Book"),url("/b/fashion/styles/fonts/avenir/4f32268f-fd86-4960-b72c-4bb1ba75ec6f.eot?#iefix") format("eot"),url("/b/fashion/styles/fonts/avenir/939cba03-5b40-4d01-9bc5-7589eca863db.woff") format("woff"),url("/b/fashion/styles/fonts/avenir/849bc5b9-a2ff-4343-977b-26ba8bd24a60.ttf") format("truetype"),url("/b/fashion/styles/fonts/avenir/f67fa3b5-c1d1-488f-8e60-a828b9ad56a4.svg#f67fa3b5-c1d1-488f-8e60-a828b9ad56a4") format("svg");
+}
+@font-face{
+font-family:"AvenirLTW01-45BookObliq";
+src:local("Avenir Book Oblique"),local("AvenirLTW01-45BookObliq"),url("/b/fashion/styles/fonts/avenir/acc13cdc-338a-43e6-a156-e54a4c87582d.eot?#iefix");
+src:local("Avenir Book Oblique"),local("AvenirLTW01-45BookObliq"),url("/b/fashion/styles/fonts/avenir/acc13cdc-338a-43e6-a156-e54a4c87582d.eot?#iefix") format("eot"),url("/b/fashion/styles/fonts/avenir/ca94ed56-18fc-4856-940a-70a072607c7c.woff") format("woff"),url("/b/fashion/styles/fonts/avenir/dd6da407-70fe-4aa3-a1c7-64f0cb086f01.ttf") format("truetype"),url("/b/fashion/styles/fonts/avenir/c7f424be-90e1-45b8-b617-ee3589a859bd.svg#c7f424be-90e1-45b8-b617-ee3589a859bd") format("svg");
+}
+
+@font-face{
+font-family:"Avenir LT W01 95 Black";
+src:local("Avenir Black"),local("Avenir LT W01 95 Black"),url("/b/fashion/styles/fonts/avenir/a24b3f55-c8c8-41a1-a77e-7cdf417d82f6.eot?#iefix");
+src:local("Avenir Black"),local("Avenir LT W01 95 Black"),url("/b/fashion/styles/fonts/avenir/a24b3f55-c8c8-41a1-a77e-7cdf417d82f6.eot?#iefix") format("eot"),url("/b/fashion/styles/fonts/avenir/5a05cf7f-f332-456f-ae67-d8c26e0d35b3.woff") format("woff"),url("/b/fashion/styles/fonts/avenir/c33278bc-988e-440b-b4be-6acc095e6044.ttf") format("truetype"),url("/b/fashion/styles/fonts/avenir/7bdad4a5-289b-42f9-b6fa-c5883b9e9f23.svg#7bdad4a5-289b-42f9-b6fa-c5883b9e9f23") format("svg");
+}
+
+@font-face{
+font-family:"AvenirLTW01-95BlackObli";
+src:local("Avenir Black Oblique"),local("AvenirLTW01-95BlackObli"),url("/b/fashion/styles/fonts/avenir/fbf3e69b-73b2-406d-84bc-feda30a0a563.eot?#iefix");
+src:local("Avenir Black Oblique"),local("AvenirLTW01-95BlackObli"),url("/b/fashion/styles/fonts/avenir/fbf3e69b-73b2-406d-84bc-feda30a0a563.eot?#iefix") format("eot"),url("/b/fashion/styles/fonts/avenir/36ec15b9-f8da-447f-8fed-a9cfdfb91fbb.woff") format("woff"),url("/b/fashion/styles/fonts/avenir/230d6b14-6d44-4dd5-a6ae-a4287936e51e.ttf") format("truetype"),url("/b/fashion/styles/fonts/avenir/9bce4920-94e2-4e4d-bd34-818801dd3eb3.svg#9bce4920-94e2-4e4d-bd34-818801dd3eb3") format("svg");
 }

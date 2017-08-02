@@ -99,6 +99,7 @@ var routes = [
     { method: 'GET',  path: '/loyallist/top-of-the-list/',                                                  config: require('./lib/handlers/views').adaptive },
     { method: 'GET',  path: '/b/loyallist/top-of-the-list/',                                                config: require('./lib/handlers/views').adaptive },
     { method: 'GET',  path: '/makeup-date/{path*}',                                                         config: require('./lib/handlers/views').adaptive },
+    { method: 'GET',  path: '/b/makeup-date/{path*}',                                                       config: require('./lib/handlers/views').adaptive },
     { method: 'GET',  path: '/sweepstakes/win-1000-bucks-writing-reviews/',                                 config: require('./lib/handlers/views').adaptive },
     
     { method: 'GET',  path: '/furniture-mattress-warranty/',                                                       config: require('./lib/handlers/views').responsiveCustomHF },

@@ -1,0 +1,857 @@
+$loyallist: #3e1493;
+$white: #ffffff;
+$strawberry: #ad6f88;
+$gold: #e8bf19;
+$pink: #D90EAC;
+
+$AvenirBlack: "Avenir LT W01 95 Black", sans-serif;
+$AvenirBO: "AvenirLTW01-95BlackObli", sans-serif;
+$AvenirBook: "Avenir LT W01 45 Book", sans-serif;
+$AvenirRoman: "Avenir Roman", sans-serif;
+
+.AvenirBlack { font-family: $AvenirBlack; }
+.AvenirBO { font-family: $AvenirBO; }
+.AvenirBook { font-family: $AvenirBook; }
+.AvenirRoman { font-family: $AvenirRoman; }
+
+.gold {color: $gold;}
+.strawberry {color: $strawberry;}
+.purple { color: $loyallist; }
+
+@font-face {
+  font-family: "Avenir Black";
+  src: local("Avenir Heavy"),local("Avenir LT W01 85 Heavy"),url("/b/fashion/styles/fonts/avenir/f61bf0f6-c193-4100-b940-12a1a01dcee5.eot?#iefix") format("eot"),url("/b/fashion/styles/fonts/avenir/7147ec3a-8ff8-4ec9-8c5c-bd1571dc6ae6.woff") format("woff"),url("/b/fashion/styles/fonts/avenir/d1dc54b2-878d-4693-8d6e-b442e99fef68.ttf") format("truetype"),url("/b/fashion/styles/fonts/avenir/731dd4d3-64da-427d-ba61-01575b3cf3f7.svg#731dd4d3-64da-427d-ba61-01575b3cf3f7") format("svg");
+  font-style: normal;
+  font-weight: bold;
+}
+
+aside#floating-nav {
+  position: fixed;
+  top: 45%;
+  background-color: #efeae7;
+  padding: 0 0.75rem;
+  z-index: 100;
+  border-top: 1px solid #fff;
+  border-right: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+
+    li {
+      padding: 0;
+      margin: 0.75rem 0;
+    }
+
+    a {
+      font-family: "AvenirLTW01-95BlackObli", sans-serif;
+      font-size: 1.166666em;
+      text-decoration: none;
+      line-height: 1.13333em;
+      padding: 0 0.25em;
+    }
+
+    a.current,
+    a:hover,
+    a:focus,
+    a:active {
+      color: #000;
+      background-color: #e8bf19;
+    }
+
+  }
+
+}
+
+
+#bcomFashion .row,
+#bcomFashion #bl_main_container {
+  // max-width: 1440px;
+  max-width: none;
+  width: auto;
+}
+
+#nav .row {
+  max-width: 80.16667rem;
+  width: 100%;
+}
+
+#makeup-date {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+
+  #makeup-header {
+    position: relative;
+
+    p {
+      margin: 0;
+    }
+
+    .copy {
+      position: absolute;
+      top: 46%;
+      left: 0; 
+      right: 0;
+      margin: 0 auto;
+      width: 80%;
+      text-align: center;
+
+      .tagline {
+        color: $loyallist;
+        font-size: 3.5em;
+      }
+
+      .sub {
+        font-size: 1.66666em;
+        color: $white;
+        padding: 0 10%;
+      }
+
+    }
+
+    #arrow-link {
+      display: block;
+      position: absolute;
+      width: 75px;
+      height: 40px;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      bottom: 40px;
+      font-size: 0;
+    }
+
+  }
+
+  #top-banner {
+    
+    background-color: #ad6f88;
+    text-align: center;
+    color: #e7bf1a;
+    font-size: 1.83333em;
+    display: block;
+    width: 100%;
+    padding: 1em 0;
+    font-weight: 700;
+
+    p {
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    a {
+      color: #e7bf1a;
+    }
+  }
+
+  #Gift-with-Purchase {
+    position: relative;
+
+    .left-block {
+      position: absolute;
+      top: 7%;
+      text-align: center;
+      width: 45%;
+
+      h2 {
+        color: #ad6f88;
+        width: 60%;
+        margin: 0 auto 0.25em;
+        font-size: 3.75em;
+        line-height: 1.25em;
+      }
+
+      p {
+        font-size: 1.6666666em;
+        line-height: 1.5em;
+        margin: 0;
+        padding: 0;
+      }
+
+      &> a {
+        font-size: 1.5em;
+        margin: 0.5em 0;
+        letter-spacing: 0.1em;
+        display: block;
+      }
+
+      .triple-points {
+        background-color: #fff;
+        color: $loyallist;
+        padding: 0.5em 1em;
+        text-align: center;
+        
+        position: relative;
+        top: 23px;
+        left: 12.5%;
+        max-width: 75%;
+
+        .plus {
+          position: absolute;
+          top: -16px;
+          left: 0;
+          right: 0;
+          margin: 0 auto;
+          
+          width: 32px;
+          height: 32px;
+
+          border-radius: 100%;
+          background-color: #fff;
+          z-index: 2;
+
+          font-family: inherit;
+          font-size: 2em;
+        }
+
+        p {
+          font-family: inherit;
+          position: relative;
+          z-index: 3;
+          font-size: 1.6em;
+        }
+
+        a {
+          display: inline;
+          color: $loyallist;
+          font-family: inherit;
+          font-size: 0.8em;
+        }
+      }
+
+    }
+
+    #gwp-items{
+      position: absolute;
+      bottom: 1em;
+      width: 100%;
+
+      .item-list {
+        padding: 0;
+        margin: 0;
+        text-align: center;
+        list-style-type: none;
+
+        .item {
+          display: inline-block;
+          font-size: 0.8666em;
+          font-family: "Avenir Roman", sans-serif;
+
+          &::after {
+            content: "|";
+            display: inline-block;
+            margin: 0 0.5em;
+          }
+
+          &:last-child:after {
+            display: none;
+          }
+        }
+
+      }
+    }
+    
+
+  }
+
+}
+
+.week {
+  width: 100%;
+  display: block;
+
+  .bar {
+    background-color: #000;
+    color: #fff;
+    font-size: 2.25em;
+    text-align: center;
+    line-height: 4em;
+  }
+
+}
+
+table.makeup-table {
+  width: 100%;
+  background-color: #fff;
+  color: #000;
+
+  th {
+    background-color: #000;
+  }
+
+  td {
+    width: 25%;
+    height: 300px;
+    text-align: center;
+    position: relative;
+    vertical-align: middle;
+    // padding: 2em 1em;
+    border-right: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    h3 {
+      font-family: $AvenirBO;
+      font-size: 3.4em;
+      line-height: 1.15em;
+      width: 75%;
+      margin: 0 auto 0.5em;
+    }
+
+    p {
+      font-size: 1.5em;
+      font-family: $AvenirBook;
+      margin: 0 auto 0.75em;
+      width: 85%;
+    }
+
+    a {
+      font-family: $AvenirBlack;
+      font-size: 1.5em;
+      font-weight: 400;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .day {
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: #fff;
+      color: #000;
+      padding: 0.25em 0.6em;
+      font-size: 1.4em;
+      font-family: $AvenirBlack;
+      font-weight: 700;
+      z-index: 6;
+    }
+
+    .content {
+      position: absolute;
+      top: 2rem;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    &.videoTd {
+      vertical-align: top;
+    }
+  }
+
+  video {
+    max-width: 600px;
+    width: 100%;
+  }
+  
+  .hiddenRow td {
+    height: 0;
+  }
+
+  td#masks {
+    // background-image: url('/b/fashion/images/projects/makeup-date/fall-makeup-tutorial-2017/');
+    // background-repeat: no-repeat;
+    background-color: $strawberry;
+    
+    p,
+    a {
+      color: #fff;
+    }
+
+  }
+
+  td.whiteFont {
+
+    a:hover, a:focus {
+      color: $pink;
+    }
+
+    p,
+    a {
+      color: #fff;
+    }
+  }
+
+  td#foundation {
+    background-image: url('/b/fashion/images/projects/makeup-date/fall-makeup-tutorial-2017/foundation.jpg');
+  }
+
+  td#mascaras {
+    background-image: url('/b/fashion/images/projects/makeup-date/fall-makeup-tutorial-2017/mascara.jpg');
+  }
+
+  td#workout {
+    background-color: $loyallist;
+    color: #fff;
+  }
+
+  td#blowdryer {
+    background-image: url('/b/fashion/images/projects/makeup-date/fall-makeup-tutorial-2017/hairdryer.jpg');
+
+    h3,
+    p,
+    a {
+      width: 50%;
+      margin-right: 50%;
+    }
+  }
+
+  td#eyeliners {
+    background-image: url('/b/fashion/images/projects/makeup-date/fall-makeup-tutorial-2017/eyeliners.jpg');
+
+    h3,
+    p,
+    a {
+      width: 50%;
+      margin-left: 50%;
+    }
+  }
+
+  td#palette {
+    background-color: $strawberry;
+
+    
+  }
+
+  td#serums {
+    background-image: url('/b/fashion/images/projects/makeup-date/fall-makeup-tutorial-2017/regimen.jpg');
+    height: 600px;
+  }
+
+  td#moisturizer {
+    background-image: url('/b/fashion/images/projects/makeup-date/fall-makeup-tutorial-2017/moisturizer.jpg');
+  }
+
+  td#brushes {
+    background-color: $loyallist;
+  
+  }
+
+  td#sunCare {
+    background-color: $strawberry;
+  }
+
+  td#scent {
+    background-image: url('/b/fashion/images/projects/makeup-date/fall-makeup-tutorial-2017/scent.jpg');
+
+    h3,
+    p,
+    a {
+      width: 50%;
+      margin-right: 40%;
+      margin-left: 10%;
+    }
+  }
+
+
+  td#cleanser {
+    background-image: url('/b/fashion/images/projects/makeup-date/fall-makeup-tutorial-2017/cleanser.jpg');
+    vertical-align: top;
+    padding: 2.5% 2.5% 0;
+  }
+
+
+  td#brows {
+    background-image: url('/b/fashion/images/projects/makeup-date/fall-makeup-tutorial-2017/brows.jpg');
+  }
+
+
+  td#spa-night {
+    background-image: url('/b/fashion/images/projects/makeup-date/fall-makeup-tutorial-2017/spa-night.jpg');
+    padding-right: 22%;
+  }
+
+  td#mists {
+    background-color: $loyallist;
+  }
+
+  td#water {
+    background-color: $strawberry;
+  }
+
+  td#candles {
+    background-color: $loyallist;
+  }
+
+  td#gloss {
+    background-image: url('/b/fashion/images/projects/makeup-date/fall-makeup-tutorial-2017/gloss.jpg');
+  }
+
+  td#wipes {
+    background-color: $loyallist;
+  }
+
+  td#shampoo {
+    background-image: url('/b/fashion/images/projects/makeup-date/fall-makeup-tutorial-2017/shampoo.jpg');
+  }
+
+  td#exfoliate {
+    background-image: url('/b/fashion/images/projects/makeup-date/fall-makeup-tutorial-2017/exfoliate.jpg');
+    padding-top: 22%;
+  }
+
+  td#wine-eye {
+
+  }
+
+  td#greens {
+    background-color: $loyallist;
+  }
+
+  td#treat {
+    background-color: $strawberry;
+  }
+
+}
+
+#In-Store-Events {
+  background-color: #000;
+  color: #fff;
+  padding: 6em 15%;
+  text-align: center;
+
+  h2 {
+    color: $strawberry;
+    font-size: 4em;
+  }
+
+  .copy {
+    color: #fff;
+    font-size: 1.8em;
+    font-family: $AvenirBook;
+  }
+
+  .dates {
+    .col {
+      display: inline-block;
+      width: 32%;
+      vertical-align: top;
+
+      .date {
+        color: $strawberry;
+        font-family: $AvenirBlack;
+        text-transform: uppercase;
+        font-weight: 700;
+      }
+
+      p {
+        font-family: $AvenirBook;
+      }
+
+      .date,
+      p {
+        font-size: 1.65em;
+        line-height: 1.25em;
+        padding: 0;
+        margin: 0;
+      }
+
+    }
+
+  }
+
+}
+
+#Sweepstakes {
+  background-color: $strawberry;
+  text-align: center;
+  padding: 3em 15%;
+
+  h2 {
+    font-size: 3.5em;
+  }
+
+  p {
+    color: #fff;
+    font-size: 1.45em;
+    margin: 0.25em auto;
+    width: 50%;
+
+    a {
+      text-transform: uppercase;
+      color: #fff;
+      font-size: 0.8em;
+    }
+  }
+
+  .enter {
+    display: inline-block;
+    margin: 1.25em 0;
+    font-size: 1.65em;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+}
+
+#footer {
+  padding: 2em 0;
+  background-color: #909aa9;
+  color: #fff;
+  text-align: center;
+  position: relative;
+
+  ul {
+    display: inline-block;
+    list-style-type: none;
+    width: 70%;
+    margin: 0 auto;
+  }
+
+  li {
+    display: inline-block;
+    font-family: $AvenirBO;
+    margin: 0 1em;
+
+    h2 {
+      font-size: 2.5em;
+      color: inherit;
+      font-family: inherit;
+    }
+
+    a {
+      font-size: 2.4em;
+      color: inherit;
+    }
+  }
+
+  .btt {
+    display: block;
+    position: absolute;
+    line-height: 7.5em;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 10%;
+    border-left: 3px solid #fff;
+
+    img {
+      display: block;
+      cursor: pointer;
+      position: relative;
+      top: 5%;
+    }
+  }
+}
+
+
+.carousel-shell {
+  overflow: hidden;
+
+  .group {
+    position: relative;
+    display: inline-flex;
+    justify-content: space-around;
+    width: 90%;
+    margin: 0 auto;
+    position: absolute;
+    bottom: 10%;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    transition: 1s;
+    z-index: 0;
+    vertical-align: top;
+
+    &.active {
+      opacity: 1;
+      z-index: 10;
+    }
+
+    &.one .product { width: 100%; }
+    &.two .product { width: 50%; }
+    &.three .product { width: 33%; }
+    &.four .product { width: 25%; }
+    &.five .product { width: 20%; }
+
+    .product {
+      display: inline-block;
+      text-decoration: none;
+      vertical-align: top;
+      z-index: 10;
+
+      &:hover,
+      &:focus {
+
+        h4, p {
+          color: $pink;
+        }
+
+      }
+
+      img {
+        height: 150px;
+        margin-bottom: 10px;
+      }
+
+      h4 {
+        font-size: 1.25rem;
+        text-decoration: inherit;
+      }
+
+      p {
+        font-size: 1.0rem;
+        text-transform: none;
+        text-decoration: inherit;
+        letter-spacing: 0.05em;
+      }
+
+    }
+  }
+
+  .arrow {
+    position: absolute;
+    border-left: 2px solid #000;
+    border-bottom: 2px solid #000;
+    width: 30px;
+    height: 30px;
+    display: block;
+    z-index: 20;
+    top: 45%;
+    cursor: pointer;
+
+    &:focus,
+    &:active,
+    &:hover {
+      border-left: 2px solid $pink;
+      border-bottom: 2px solid $pink;
+    }
+
+    &:focus {
+      outline: 1px dotted #222;
+    }
+  }
+
+  .leftArrow { 
+    transform: rotate(45deg); 
+    left: 1.5em;
+  }
+  .rightArrow { 
+    transform: rotate(-135deg); 
+    right: 1.5em;
+  }
+
+}
+
+#bcomFashion {
+  footer {
+    #bloomiesMainFooter.row,
+    .row.footerDivider,
+    #footerBottom.row {
+      max-width: 80.16667rem;
+    }
+  }
+}
+
+
+// TABLET STYLES
+@media all and (min-width: 768px) and ( max-width: 1200px ) {
+
+  #makeup-date {
+
+    #makeup-header {
+      .copy {
+        .tagline{
+          font-size: 2.65em;
+        }
+
+        .sub {
+          font-size: 1.45em;
+        }
+      }
+    }
+
+    #Gift-with-Purchase {
+      .left-block {
+        h2 {
+          font-size: 2.75em;
+        }
+
+        &> a {
+          font-size: 1.2em;
+        }
+
+        .triple-points p {
+          font-size: 1.25em;
+        }
+      }
+
+      #gwp-items {
+        .item-list {
+          .item{
+            font-size: 0.66666em;
+          }
+        }
+      }
+    }
+
+    table.makeup-table {
+
+      .hiddenRow td {
+        height: 0;
+      }
+
+      td {
+        height: 200px;
+      }
+
+      h3 {
+        font-size: 2.25em;
+      }
+
+      p {
+        font-size: 1em;
+      }
+
+      a {
+        font-size: 1em;
+      }
+
+    }
+
+  }
+
+  .carousel-shell {
+
+    .group {
+      padding: 0 2em;
+      bottom: 0;
+
+      .product {
+
+        img {
+          height: 90px;
+        }
+
+        h4 {
+          font-size: 1em;
+        }
+
+        p {
+          font-size: 0.85em;
+        }
+
+      }
+
+    }
+
+  }
+
+  aside#floating-nav {
+    ul {
+      a {
+        font-size: 0.85em;
+        padding: 0.25em 0;
+      }
+    }
+  }
+
+}
