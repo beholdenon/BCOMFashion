@@ -54,14 +54,16 @@ var routes = [
     { method: 'GET',  path: '/b/registry/wedding/benefits-perks/',                                            config: require('./lib/handlers/views').adaptive },
     { method: 'GET',  path: '/b/registry/wedding/checklist/',                                                 config: require('./lib/handlers/views').adaptive },
     { method: 'GET',  path: '/b/registry/wedding/{path*}',                                                    config: require('./lib/handlers/assets').commonAssets },
+
+    { method: 'GET',  path: '/about-us/{action*}',                                                          config: require('./lib/handlers/aboutUsHandler')},
+    { method: 'GET',  path: '/b/about-us/{action*}',                                                        config: require('./lib/handlers/aboutUsHandler')},
     
     { method: 'POST', path: '/bag/view',                                                                    config: require('./lib/handlers/assets').bagHandler },
     { method: 'GET',  path: '/shop/topnav',                                                                 config: require('./lib/handlers/assets').topNav },
     { method: 'GET',  path: '/shop/{path*}',                                                                config: require('./lib/handlers/assets').commonAssets },
     { method: 'GET',  path: '/international/china-brazil/components/{path*}',                               config: require('./lib/handlers/assets').ngViews },
     { method: 'GET',  path: '/landing-page/hawaii-ala-moana/{deeplinks?}',                                  config: require('./lib/handlers/views').adaptive },
-    { method: 'GET',  path: '/about-us/{action*}',                                                          config: require('./lib/handlers/aboutUsHandler')},
-    { method: 'GET',  path: '/b/about-us/{action*}',                                                        config: require('./lib/handlers/aboutUsHandler')},
+
     { method: 'GET',  path: '/campaign/give-pink-get-more/{path*}',                                         config: require('./lib/handlers/views').adaptive },
     { method: 'GET',  path: '/catalogs/',                                                                   config: require('./lib/handlers/views').adaptive },
     { method: 'GET',  path: '/bwallet/',                                                                    config: require('./lib/handlers/views').adaptive },
