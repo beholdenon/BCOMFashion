@@ -26,8 +26,8 @@ $AvenirRoman: "Avenir Roman", sans-serif;
 }
 
 aside#floating-nav {
-  position: fixed;
-  top: 15%;
+  position: absolute;
+  top: 2%;
   background-color: #efeae7;
   padding: 0 0.75rem;
   z-index: 100;

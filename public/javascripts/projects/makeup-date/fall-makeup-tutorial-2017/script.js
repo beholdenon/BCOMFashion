@@ -3,14 +3,14 @@
 
 (function($) {
 
+  var asideStartingLocation = $('#floating-nav').offset().top;
 
   $(window).scroll(function() {
-    // var asideLocation = $('#floating-nav').offset().top + $('#floating-nav').height();
 
-    if ( $('#floating-nav').offset().top <= $('#makeup-header').offset().top + $('#makeup-header').height() ) {
+    if ( $(document).scrollTop() >= asideStartingLocation ) {
       $('#floating-nav').css({
-        'position': 'absolute',
-        'top': $('#makeup-header').offset().top + $('#makeup-header').height() - $('#floating-nav').height()
+        'position': 'fixed',
+        'top': '8%'
       });
     } else {
       $('#floating-nav').removeAttr('style');
@@ -18,7 +18,7 @@
 
     $.each( $('#makeup-date .section'), function() {
       var box = $(this)[0].getBoundingClientRect();
-      if ( box.top <= ( 0 + $(window).height() / 2.5) && box.bottom >= ( 0 + $(window).height() / 2.5) ) {
+      if ( box.top <= ( 0 + $(window).height() / 4) && box.bottom >= ( 0 + $(window).height() / 4) ) {
         var activeElem = $(this);
         $.each( $('#floating-nav .link a'), function () {
           if ( '#' + activeElem.attr("id") === $(this).attr("href") ) {
@@ -27,6 +27,7 @@
             $(this).removeClass('current');
           }
         });
+
       }
     });
 
