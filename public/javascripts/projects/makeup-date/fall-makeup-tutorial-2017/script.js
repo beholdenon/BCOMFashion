@@ -7,6 +7,15 @@
   $(window).scroll(function() {
     // var asideLocation = $('#floating-nav').offset().top + $('#floating-nav').height();
 
+    if ( $('#floating-nav').offset().top <= $('#makeup-header').offset().top + $('#makeup-header').height() ) {
+      $('#floating-nav').css({
+        'position': 'absolute',
+        'top': $('#makeup-header').offset().top + $('#makeup-header').height() - $('#floating-nav').height()
+      });
+    } else {
+      $('#floating-nav').removeAttr('style');
+    }
+
     $.each( $('#makeup-date .section'), function() {
       var box = $(this)[0].getBoundingClientRect();
       if ( box.top <= ( 0 + $(window).height() / 2.5) && box.bottom >= ( 0 + $(window).height() / 2.5) ) {

@@ -27,7 +27,7 @@ $AvenirRoman: "Avenir Roman", sans-serif;
 
 aside#floating-nav {
   position: fixed;
-  top: 45%;
+  top: 15%;
   background-color: #efeae7;
   padding: 0 0.75rem;
   z-index: 100;
@@ -270,6 +270,7 @@ aside#floating-nav {
     font-size: 2.25em;
     text-align: center;
     line-height: 4em;
+    font-weight: 400;
   }
 
 }
@@ -380,7 +381,7 @@ table.makeup-table {
   }
 
   td#foundation {
-    background-image: url('/b/fashion/images/projects/makeup-date/fall-makeup-tutorial-2017/foundation.jpg');
+    background-image: url('/b/fashion/images/projects/makeup-date/fall-makeup-tutorial-2017/FOUNDATION_GIF_DESKTOP.gif');
   }
 
   td#mascaras {
@@ -399,7 +400,8 @@ table.makeup-table {
     p,
     a {
       width: 50%;
-      margin-right: 50%;
+      margin-right: 45%;
+      margin-left: 5%;
     }
   }
 
@@ -410,7 +412,8 @@ table.makeup-table {
     p,
     a {
       width: 50%;
-      margin-left: 50%;
+      margin-left: 47.5%;
+      margin-right: 2.5%;
     }
   }
 
@@ -489,7 +492,7 @@ table.makeup-table {
   }
 
   td#shampoo {
-    background-image: url('/b/fashion/images/projects/makeup-date/fall-makeup-tutorial-2017/shampoo.jpg');
+    background-image: url('/b/fashion/images/projects/makeup-date/fall-makeup-tutorial-2017/DRY_SHAMPOO_DESKTOP.gif');
   }
 
   td#exfoliate {
