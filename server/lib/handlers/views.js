@@ -17,6 +17,8 @@ let fs = require('fs'),
         headMeta: '',
         headCanonical: '',
         preLoadScripts: '',
+        tealiumScriptEnabled: process.env.tealiumScriptEnabled === "true",
+        tealiumType: process.env.ENV_TYPE === "prod" ? "prod" : "qa"
     },
 
     detectMobileDeviceView = function detectMobileDeviceView(requestPath, req) {

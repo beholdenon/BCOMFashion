@@ -26,6 +26,11 @@
 <script src="{{assetsHost}}/javascript/cmcustom.js"></script>
 <script src="{{assetsHost}}/web20/assets/script/bloomies/base/cmFunctions.js"></script>
 
+<!--============[ JS: TealiumTag ]============-->
+{{#if args.tealiumScriptEnabled}}
+	{{> tealiumTag_sync}}
+{{/if}}
+
 <!--============[ JS: BrightTag ]============-->
 <script src="//s.btstatic.com/tag.js">
 	   { site: "nl6o4FJ" }
