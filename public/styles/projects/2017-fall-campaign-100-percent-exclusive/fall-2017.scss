@@ -417,6 +417,11 @@
         top: -6vw;
         width: 35vw;
     }
+    .homepatch3{
+        top: -7vw;
+        width: 26vw;
+    }
+
 
 
 }
@@ -427,6 +432,316 @@
 //=================================================================//
 //WOMEN
 //=================================================================//
+
+.womentext1{
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+
+    font-size: 4.5vw;
+    letter-spacing: .25vw;
+    line-height: 1;
+    font-family: 'Alfa Slab One', cursive !important;
+    text-transform: uppercase;
+    color: white;
+
+    max-width: 580px;
+    padding-top: 16vw;  
+}
+
+.womentext2{
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    font-size: 1.3vw;
+    letter-spacing: 0.03vw;
+    line-height: 2;
+    color: white;
+    max-width: 700px;
+    padding-top: 22vw;
+    font-weight: 100;
+}
+
+.womentext7{
+    font-size: 2vw;
+    line-height: 2.8vw;
+    padding-top: 1vw;
+    font-weight: 100;
+    color: black;
+    text-decoration: underline;
+    letter-spacing: 0.1vw;
+}
+
+.womentext8{
+    font-size: 4.5vw;
+    letter-spacing: .25vw;
+    margin-bottom: 0;
+    line-height: 1;
+    font-family: 'Alfa Slab One', cursive !important;
+    text-transform: uppercase;
+    color: black;
+}
+
+
+
+.womenpatch1 {
+    position: absolute;
+    left: -4vw;
+    top: -3vw;
+    width: 21vw;
+    z-index: 1;
+}
+
+.womenpatch2 {
+    position: absolute;
+    right: -4vw;
+    top: -2vw;
+    width: 11vw;
+    z-index: 1;
+}
+
+.womenpatch3 {
+    position: absolute;
+    left: -4vw;
+    top: -2vw;
+    width: 19vw;
+    z-index: 1;
+}
+
+.womenpatch4 {
+    position: absolute;
+    right: -1.5vw;
+    top: -2vw;
+    width: 10vw;
+    z-index: 1;
+}
+
+.womenpatch5 {
+    position: absolute;
+    left: -3vw;
+    top: -2vw;
+    width: 11vw;
+    z-index: 1;
+}
+
+.womenpatch6 {
+    position: absolute;
+    left: -4vw;
+    top: 18vw;
+    width: 15vw;
+    z-index: 1;
+}
+
+.womenpatch7 {
+    position: absolute;
+    right: -4vw;
+    top: -3vw;
+    width: 15vw;
+    z-index: 1;
+}
+
+.womenpatch8{
+    position: absolute;
+    right: 6vw;
+    top: -7vw;
+    width: 24vw;
+    z-index: 1;
+}
+
+.womenpatch9{
+    position: absolute;
+    left: 0;
+    top: -4vw;
+    width: 14vw;
+    z-index: 1;
+}
+
+
+
+@media screen and (min-width:1680px) {
+
+    .womentext1{
+        font-size: 77px;
+        letter-spacing: 4px;
+        padding-top: 272px;  
+    }
+
+    .womentext2{
+        font-size: 22px;
+        letter-spacing: 0.5px;
+        padding-top: 374px;
+    }
+
+
+
+    .womentext7{
+        font-size: 34px;
+        line-height: 48px;
+        padding-top: 17px;
+        letter-spacing: 1.7px;
+    }
+    .womentext8{
+        font-size: 77px;
+        letter-spacing: 5px;
+    }
+
+
+
+
+
+    .womenpatch1{
+        top: -51px;
+        width: 356px;
+        left: -67px;
+    }
+
+    .womenpatch2{
+        top: -34px;
+        width: 185px;
+        right: -67px;
+    }
+
+    .womenpatch3{
+        top: -34px;
+        width: 319px;
+        left: -67px;
+    }
+
+    .womenpatch4{
+        top: -34px;
+        width: 168px;
+        right: -26px;
+    }
+
+    .womenpatch5{
+        top: -34px;
+        width: 185px;
+        right: -67px;
+    }
+
+    .womenpatch6{
+        top: 303px;
+        width: 252px;
+        left: -67px;
+    }
+
+    .womenpatch7{
+        top: -51px;
+        width: 252px;
+        right: -67px;
+    }
+
+    .womenpatch8{
+        top: -118px;
+        width: 403px;
+    }
+
+    .womenpatch9{
+        top: -67px;
+        width: 236px;
+    }
+
+}
+
+
+
+@media screen and (max-width:600px) {
+
+
+    .womentext1 {
+        font-size: 9.5vw;
+        padding-top: 13vw;
+        width: 90%;
+    }
+
+    .womentext2 {
+        font-size: 4vw;
+        line-height: 5.8vw;
+        padding-top: 24vw;
+        width: 90%;
+    }
+
+    .womentext7 {
+        font-size: 6vw;
+        padding-top: 4vw;
+    }
+    
+    .womentext8 {
+        font-size: 10.5vw;
+        padding-top: 5vw;
+        margin: 0 auto;
+        width: 90%;
+    }
+
+
+
+
+
+    .womenpatch1{
+        top: -8vw;
+        width: 46vw;
+        left: -3vw;
+    }
+    
+    .womenpatch2{
+        top: -6vw;
+        width: 33vw;
+        right: 0;
+    }
+
+    .womenpatch3{
+        top: -2vw;
+        width: 63vw;
+        left: -6vw;
+    }
+
+    .womenpatch4{
+        top: -4vw;
+        width: 33vw;
+        right: 1vw;
+    }
+
+    .womenpatch5{
+        top: -4vw;
+        width: 36vw;
+        right: 0;
+    }
+
+    .womenpatch6{
+        top: 84vw;
+        width: 45vw;
+    }
+
+    .womenpatch7{
+        top: -7vw;
+        width: 40vw;
+        right: -3vw;
+    }
+
+    .womenpatch8 {
+        top: -6vw;
+        width: 32vw;
+        right: -3vw;
+    }
+
+    .womenpatch9{
+        top: -7vw;
+        width: 23vw;
+    }
+
+
+
+}
+
+
+
+
+
+
+
+
 
 .hasMobileReplacement_image{
     display: none;
@@ -1104,9 +1419,15 @@
     @include preventReflowForScaledContent(770px, 960px);    
 }
 
+
+
+
 .womenImageRatio1 {
-    @include preventReflowForScaledContent(700px, 770px);
+    @include preventReflowForScaledContent(1680px, 660px);
 }
+
+
+
 
 .womenImageRatio2 {
     @include preventReflowForScaledContent(1680px, 625px);
@@ -1202,6 +1523,11 @@
 .backgroundRed{
     background-color: #c41616;
 }
+
+.backgroundYellow{
+    background-color: #ffbc26;
+}
+
 
 
 .textAlignLeft{
