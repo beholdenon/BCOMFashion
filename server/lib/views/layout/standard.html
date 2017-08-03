@@ -13,7 +13,9 @@
     {{else}}
         <body id="bcomFashion" class="responsive">
     {{/if}} 
-
+            {{#if args.tealiumScriptEnabled}}
+                {{> tealiumTag_async}}
+            {{/if}} 
             <header class="responsive"></header>
             {{#unless args.isMobile}}
                 {{! Desktop and Tablet Views should have a row wrapping the bl_main_container div }}

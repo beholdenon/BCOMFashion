@@ -21,7 +21,9 @@ let sjl = require('sjljs'),
             isTablet: false,
             headTitle: '',
             headMeta: '',
-            headCanonical: ''
+            headCanonical: '',
+            tealiumScriptEnabled: process.env.tealiumScriptEnabled === "true",
+            tealiumType: process.env.ENV_TYPE === "prod" ? "prod" : "qa"
         };
     },
 

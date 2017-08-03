@@ -16,6 +16,10 @@
     {{/if}}
     >
 
+        {{#if args.tealiumScriptEnabled}}
+            {{> tealiumTag_async}}
+        {{/if}} 
+
         <header class="responsive"></header>
 
         {{!-- Mobile About Us Pages specific --}}
