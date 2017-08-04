@@ -76,6 +76,11 @@
 <script src="{{assetsHost}}/javascript/cmcustom.js" type="text/javascript"></script>
 <script src="{{assetsHost}}/web20/assets/script/bloomies/base/cmFunctions.js" type="text/javascript"></script>
 
+<!--============[ JS: TealiumTag ]============-->
+{{#if args.tealiumScriptEnabled}}
+	{{> tealiumTag_sync}}
+{{/if}}
+
 <!--============[ JS: BrightTag ]============-->
 <script src="//s.btstatic.com/tag.js" type="text/javascript">
 	   { site: "nl6o4FJ" }
@@ -83,3 +88,4 @@
 <noscript>
 	<iframe src="//s.thebrighttag.com/iframe?c=nl6o4FJ" width="1" height="1" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
 </noscript>
+

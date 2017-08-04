@@ -7,6 +7,9 @@
     </head>
 
     <body class="responsive bl_trulyResponsive">
+        {{#if args.tealiumScriptEnabled}}
+            {{> tealiumTag_async}}
+        {{/if}} 
         <div id="bl_main_container" >
             {{{content}}}
             <input type="hidden" name="timeStamp" value="{{{args.timeStamp}}}">

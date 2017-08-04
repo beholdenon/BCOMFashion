@@ -1,0 +1,286 @@
+$loyallist: #3e1493;
+$white: #ffffff;
+$strawberry: #ad6f88;
+$gold: #e8bf19;
+$pink: #D90EAC;
+
+$AvenirBlack: "Avenir LT W01 95 Black", sans-serif;
+$AvenirBO: "AvenirLTW01-95BlackObli", sans-serif;
+$AvenirBook: "Avenir LT W01 45 Book", sans-serif;
+$AvenirRoman: "Avenir Roman", sans-serif;
+
+#makeup-date.mobile {
+
+  #top-banner {
+    font-size: 1.35em;
+  }
+
+  #makeup-header {
+    
+    .copy {
+      top: 40%;
+      width: 90%;
+      
+      .tagline {
+        font-size: 2em;
+        line-height: 1em;
+        width: 90%;
+        margin: 0 auto;
+      }
+
+      .sub {
+        font-size: 1.15em;
+        margin-top: 0.5em;
+        padding: 0;
+      }
+    }
+
+    #arrow-link {
+      bottom: 7%;
+      width: 12%;
+      height: 10%;
+    }
+  }
+
+  table.makeup-table {
+    font-size: 9px;
+
+    tr {
+
+      &.hiddenRow td {
+        height: 0;
+        padding: 0;
+      }
+
+      td {
+        height: auto;
+        padding: 5% 0;
+
+        h3 {
+          width: 90%;
+          font-size: 3em;
+        }
+      }
+
+      .videoTd {
+        padding: 0;
+      }
+
+      td#foundation {
+        padding: 15% 0;
+        background-image: url('/b/fashion/images/projects/makeup-date/fall-makeup-tutorial-2017/FOUNDATION_GIF_MOBILE.gif');
+      }
+
+      td#mascaras {
+        padding-top: 30%;
+        padding-bottom: 20%;
+      }
+
+      td#blowdryer {
+        padding: 10% 0;
+
+        h3 {
+          width: 50%;
+        }
+      }
+
+      td#eyeliners {
+        padding: 10% 0;
+      }
+
+      td#moisturizer {
+        padding: 10% 0;
+      }
+
+      td#palette {
+        background-color: $loyallist;
+      }
+
+      td#serums {
+        background-image: url('/b/fashion/images/projects/makeup-date/fall-makeup-tutorial-2017/mobile/regimen.jpg');
+        padding-top: 50%;
+        padding-bottom: 20%;
+      }
+
+      td#eyeliners {
+
+        h3, 
+        p {
+          line-height: 1.85em;
+        }
+
+        h3,
+        p, 
+        a {
+          margin: 0;
+          width: 98%;
+          padding-left: 45%;
+        }
+      }
+
+      td#scent {
+        h3 {
+          width: 50%;
+        }
+      }
+
+      td#brushes {
+        padding: 10% 0;
+      }
+
+      td#treat {
+        background-color: $loyallist;
+      }
+
+      td#cleansers {
+        padding-bottom: 70%;
+      }
+
+      td#brows {
+        padding: 10% 0;
+      }
+
+      td#mists {
+        background-color: $strawberry;
+      }
+
+      td#wipes {
+        background-color: $strawberry;
+      }
+
+      td#shampoo {
+        background-image: url('/b/fashion/images/projects/makeup-date/fall-makeup-tutorial-2017/DRY_SHAMPOO_MOBILE.gif');
+
+        h3 {
+          padding-top: 20%;
+        }
+
+        a {
+          display: block;
+          margin-bottom: 20%;
+        }
+      }
+
+      td#gloss {
+        background-image: url('/b/fashion/images/projects/makeup-date/fall-makeup-tutorial-2017/mobile/gloss.jpg');
+
+        h3 {
+          padding-top: 30%;
+        }
+
+        a {
+          display: block;
+          margin-bottom: 40%;
+        }
+      }
+
+      td#exfoliate {
+        background-image: url('/b/fashion/images/projects/makeup-date/fall-makeup-tutorial-2017/mobile/exfoliate.jpg');
+        padding-bottom: 50%;
+        padding-top: 10%;
+      }
+
+      td#spa-night {
+        background-image: url('/b/fashion/images/projects/makeup-date/fall-makeup-tutorial-2017/mobile/spa-night.jpg');
+        padding-top: 40%;
+      }
+
+    }
+
+    .carousel-shell {
+      height: 40vh;
+
+      .group{
+        width: 80%;
+
+        .product {
+
+          img {
+            height: auto;
+            width: 50%;
+          }
+
+          h4 {
+            font-size: 0.9em;
+          }
+
+          p {
+            font-size: 0.9em;
+          }
+        }
+      }
+    }
+  }
+
+
+  #Week1 {
+
+  }
+
+
+  #Gift-with-Purchase {
+    display: none;
+  }
+
+
+
+  #In-Store-Events {
+    padding: 3em 2.5%;
+
+    h2 {
+      font-size: 2.5em;
+    }
+
+    .copy {
+      font-size: 1em;
+      width: 90%;
+      margin: 1em auto 2em;
+    }
+
+    .dates .col {
+      .date, p {
+        font-size: 1em;
+      }
+
+      p {
+        line-height: 1.75em;
+      }
+    }
+  }
+
+  #Sweepstakes {
+    padding: 8% 5%;
+
+    h2 {
+      font-size: 3em;
+    }
+
+    p {
+      width: 90%;
+      margin: 1.5em auto 0;
+      font-size: 1.4em;
+    }
+
+    .enter {
+      font-size: 1.35em;
+    }
+  }
+
+  #footer {
+    padding: 0;
+
+    .btt {
+      border: 0;
+      font-size: 1.5em;
+      width: 100%;
+      position: relative;
+      line-height: 1em;
+
+      img {
+        display: inline-block;
+        width: 20%;
+      }
+    }
+  }
+
+}
