@@ -1,20 +1,19 @@
+$loyallist: #3e1493;
+$white: #ffffff;
+$strawberry: #ad6f88;
+$gold: #e8bf19;
+$pink: #D90EAC;
 
+$AvenirBlack: "Avenir LT W01 95 Black", sans-serif;
+$AvenirBO: "AvenirLTW01-95BlackObli", sans-serif;
+$AvenirBook: "Avenir LT W01 45 Book", sans-serif;
+$AvenirRoman: "Avenir Roman", sans-serif;
 
 #makeup-date.mobile {
-
-  .section.week {
-    display: none;
-  }
-
-  #Week1 {
-    display: block;
-  }
-
 
   #top-banner {
     font-size: 1.35em;
   }
-
 
   #makeup-header {
     
@@ -48,13 +47,23 @@
 
     tr {
 
+      &.hiddenRow td {
+        height: 0;
+        padding: 0;
+      }
+
       td {
         height: auto;
         padding: 5% 0;
 
         h3 {
           width: 90%;
+          font-size: 3em;
         }
+      }
+
+      .videoTd {
+        padding: 0;
       }
 
       td#foundation {
@@ -63,13 +72,34 @@
       }
 
       td#mascaras {
-        padding: 22% 0;
+        padding-top: 30%;
+        padding-bottom: 20%;
       }
 
       td#blowdryer {
+        padding: 10% 0;
+
         h3 {
           width: 50%;
         }
+      }
+
+      td#eyeliners {
+        padding: 10% 0;
+      }
+
+      td#moisturizer {
+        padding: 10% 0;
+      }
+
+      td#palette {
+        background-color: $loyallist;
+      }
+
+      td#serums {
+        background-image: url('/b/fashion/images/projects/makeup-date/fall-makeup-tutorial-2017/mobile/regimen.jpg');
+        padding-top: 50%;
+        padding-bottom: 20%;
       }
 
       td#eyeliners {
@@ -87,6 +117,74 @@
           padding-left: 45%;
         }
       }
+
+      td#scent {
+        h3 {
+          width: 50%;
+        }
+      }
+
+      td#brushes {
+        padding: 10% 0;
+      }
+
+      td#treat {
+        background-color: $loyallist;
+      }
+
+      td#cleansers {
+        padding-bottom: 70%;
+      }
+
+      td#brows {
+        padding: 10% 0;
+      }
+
+      td#mists {
+        background-color: $strawberry;
+      }
+
+      td#wipes {
+        background-color: $strawberry;
+      }
+
+      td#shampoo {
+        background-image: url('/b/fashion/images/projects/makeup-date/fall-makeup-tutorial-2017/DRY_SHAMPOO_MOBILE.gif');
+
+        h3 {
+          padding-top: 20%;
+        }
+
+        a {
+          display: block;
+          margin-bottom: 20%;
+        }
+      }
+
+      td#gloss {
+        background-image: url('/b/fashion/images/projects/makeup-date/fall-makeup-tutorial-2017/mobile/gloss.jpg');
+
+        h3 {
+          padding-top: 30%;
+        }
+
+        a {
+          display: block;
+          margin-bottom: 40%;
+        }
+      }
+
+      td#exfoliate {
+        background-image: url('/b/fashion/images/projects/makeup-date/fall-makeup-tutorial-2017/mobile/exfoliate.jpg');
+        padding-bottom: 50%;
+        padding-top: 10%;
+      }
+
+      td#spa-night {
+        background-image: url('/b/fashion/images/projects/makeup-date/fall-makeup-tutorial-2017/mobile/spa-night.jpg');
+        padding-top: 40%;
+      }
+
     }
 
     .carousel-shell {
