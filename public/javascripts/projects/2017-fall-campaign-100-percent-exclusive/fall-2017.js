@@ -171,6 +171,69 @@ $(document).ready( function($) {
     bxSliderObjects.menSlider4=menSlider4;
 
 
+//========//========//========//========//========//========//========
+//========//========//========//========//========//========//========
+//========//========//========//========//========//========//========
+
+    var womenffSlider1 = $('#womenffSlider1').bxSlider({ 
+        infiniteLoop: true,
+        auto: true,
+        autoDelay: 1000,
+        pause: 3000,
+        speed: 1000,
+    });
+    bxSliderObjects.womenffSlider1=womenffSlider1;
+
+    var womenffSlider2 = $('#womenffSlider2').bxSlider({ 
+        infiniteLoop: true,
+        auto: true,
+        autoDelay: 1000,
+        pause: 3000,
+        speed: 1000,
+    });
+    bxSliderObjects.womenffSlider2=womenffSlider2;
+
+    var womenffSlider3 = $('#womenffSlider3').bxSlider({ 
+        infiniteLoop: true,
+        auto: true,
+        autoDelay: 1000,
+        pause: 3000,
+        speed: 1000,
+    });
+    bxSliderObjects.womenffSlider3=womenffSlider3;
+
+    var womenffSlider4 = $('#womenffSlider4').bxSlider({ 
+        infiniteLoop: true,
+        auto: true,
+        autoDelay: 1000,
+        pause: 3000,
+        speed: 1000,
+    });
+    bxSliderObjects.womenffSlider4=womenffSlider4;    
+
+    var womenffSlider5 = $('#womenffSlider5').bxSlider({ 
+        infiniteLoop: true,
+        auto: true,
+        autoDelay: 1000,
+        pause: 3000,
+        speed: 1000,
+    });
+    bxSliderObjects.womenffSlider5=womenffSlider5;
+
+    var womenffSlider6 = $('#womenffSlider6').bxSlider({ 
+        infiniteLoop: true,
+        auto: true,
+        autoDelay: 1000,
+        pause: 3000,
+        speed: 1000,
+    });
+    bxSliderObjects.womenffSlider6=womenffSlider6;
+
+    $(".bx-wrapper").on('keydown', function(e){
+        if ((e.which === 13) || (e.which === 32)) {
+            bxSliderObjects[''+$(this).find('.bxslider').attr('id')].stopAuto();// jshint ignore:line
+        }
+    });
 
     $( ".bx-wrapper").on('mousedown', function(){
         bxSliderObjects[''+$(this).find('.bxslider').attr('id')].stopAuto();// jshint ignore:line
