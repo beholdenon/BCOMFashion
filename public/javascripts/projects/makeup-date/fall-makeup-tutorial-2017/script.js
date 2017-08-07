@@ -67,6 +67,12 @@
     mobileNav(this);
   });
 
+  $('.mobile .week .bar').keypress( '.arrow', function(ev) {
+    if ( ev.keyCode === 13 || ev.keyCode === 32 ) {
+      mobileNav(this);
+    }
+  });
+
 
   // Carousel functionality module
   var carousel = {
@@ -135,7 +141,7 @@
 
           var markup = '<a href="'+resArray[p].productDetails.summary.productURL+'"class="product" data-id=' + resArray[p].id + '>';
           markup += '<img src="https://images.bloomingdales.com/is/image/BLM/products/4/optimized/'+resArray[p].productDetails.summary.primaryPortraitSource+'" alt="" />';
-          markup += '<h4>'+ brand +'</h4>';
+          markup += '<p class="heading">'+ brand +'</p>';
           markup += '<p>'+ name +'</p>';
           markup += '</a>';
 

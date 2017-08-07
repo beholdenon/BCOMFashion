@@ -684,7 +684,7 @@ table.makeup-table {
       &:hover,
       &:focus {
 
-        h4, p {
+        p {
           color: $pink;
         }
 
@@ -695,10 +695,11 @@ table.makeup-table {
         margin-bottom: 10px;
       }
 
-      h4 {
+      p.heading {
         font-size: 1.25rem;
         text-decoration: inherit;
         font-family: $AvenirBlack;
+        margin-bottom: 0;
       }
 
       p {
@@ -706,6 +707,7 @@ table.makeup-table {
         text-transform: none;
         text-decoration: inherit;
         letter-spacing: 0.05em;
+
       }
 
     }
