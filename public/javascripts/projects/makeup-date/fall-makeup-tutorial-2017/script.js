@@ -51,6 +51,23 @@
   });
 
 
+
+  // MOBILE actions
+
+  function mobileNav(ele) {
+    var table = $(ele).parents('.week');
+    if ( table.hasClass('active') ) {
+      table.removeClass('active');
+    } else {
+      table.addClass('active');
+    }
+  }
+
+  $('.mobile .week .bar').on('click tap', function() {
+    mobileNav(this);
+  });
+
+
   // Carousel functionality module
   var carousel = {
 
