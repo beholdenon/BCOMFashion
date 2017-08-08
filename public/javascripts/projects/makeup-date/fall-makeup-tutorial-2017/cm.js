@@ -44,7 +44,7 @@
   });
 
 
-  $('#makeup-date').on('click tap', 'a', function(e) {
+  $('#makeup-date').on('click tap', 'a', function() {
     
     var id;
     if ( $(this).attr('href').indexOf('/shop/product/') >= 0 ) {
