@@ -3,6 +3,15 @@
 
 (function($) {
 
+  // promotional date check. Promotion ends 08/30/17 @ 12:01am
+  var promoEnd = new Date("August 30, 2017 00:00:01");
+  var now = new Date();
+
+  if ( promoEnd - now < 0 ) {
+    $('.limited-promo').remove();
+  }
+
+  // floating left nav check and active assignment functionality
   if ( $('#floating-nav')[0] !== undefined ) {
     var asideStartingLocation = $('#floating-nav').offset().top;
 
