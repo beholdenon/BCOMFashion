@@ -175,6 +175,45 @@ $(document).ready( function($) {
 //========//========//========//========//========//========//========
 //========//========//========//========//========//========//========
 
+
+    var menffSlider1 = $('#menffSlider1').bxSlider({ 
+        infiniteLoop: true,
+        auto: true,
+        autoDelay: 1000,
+        pause: 3000,
+        speed: 1000,
+    });
+    bxSliderObjects.menffSlider1=menffSlider1;
+
+    var menffSlider2 = $('#menffSlider2').bxSlider({ 
+        infiniteLoop: true,
+        auto: true,
+        autoDelay: 1000,
+        pause: 3000,
+        speed: 1000,
+    });
+    bxSliderObjects.menffSlider2=menffSlider2;
+
+    var menffSlider3 = $('#menffSlider3').bxSlider({ 
+        infiniteLoop: true,
+        auto: true,
+        autoDelay: 1000,
+        pause: 3000,
+        speed: 1000,
+    });
+    bxSliderObjects.menffSlider3=menffSlider3;
+
+    var menffSlider4 = $('#menffSlider4').bxSlider({ 
+        infiniteLoop: true,
+        auto: true,
+        autoDelay: 1000,
+        pause: 3000,
+        speed: 1000,
+    });
+    bxSliderObjects.menffSlider4=menffSlider4;
+
+
+
     var womenffSlider1 = $('#womenffSlider1').bxSlider({ 
         infiniteLoop: true,
         auto: true,

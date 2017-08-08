@@ -717,13 +717,13 @@
     .womenpatch7{
         top: -7vw;
         width: 40vw;
-        right: -3vw;
+        right: 0;
     }
 
     .womenpatch8 {
         top: -6vw;
         width: 32vw;
-        right: -3vw;
+        right: 0;
     }
 
     .womenpatch9{
@@ -734,6 +734,136 @@
 
 
 }
+
+
+
+
+
+
+//=================================================================//
+//MEN
+//=================================================================//
+.mentext1{
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    font-size: 1.3vw;
+    letter-spacing: 0.03vw;
+    line-height: 2;
+    color: white;
+    max-width: 1000px;
+    padding-top: 26vw;
+    font-weight: 100;
+}
+
+.menpatch1 {
+    position: absolute;
+    left: -3vw;
+    top: -3vw;
+    width: 12.5vw;
+    z-index: 1;
+}
+.menpatch2 {
+    position: absolute;
+    left: -3.5vw;
+    top: 27vw;
+    width: 21vw;
+    z-index: 1;
+}
+.menpatch3 {
+    position: absolute;
+    right: -2.1vw;
+    top: 26.4vw;
+    width: 13vw;
+    z-index: 1;
+}
+.menpatch4 {
+    position: absolute;
+    right: 0;
+    top: -5vw;
+    width: 26vw;
+    z-index: 1;
+}
+.menpatch5 {
+    position: absolute;
+    left: 2vw;
+    top: -9vw;
+    width: 18vw;
+    z-index: 1;
+}
+
+@media screen and (min-width:1680px) {
+    .menpatch1 {
+        top: -51px;
+        width: 210px;
+        left: -50px;
+    }
+    .menpatch2 {
+        top: 454px;
+        width: 353px;
+        left: -59px;
+    }
+    .menpatch3 {
+        top: 443px;
+        width: 216px;
+        right: -40px;
+    }
+    .menpatch4 {
+        top: -152px;
+        width: 303px;
+        left: 34px;
+    }
+    .menpatch5 {
+        top: -152px;
+        width: 303px;
+        left: 34px;
+    }
+
+
+}
+@media screen and (max-width:600px) {
+
+    .menpatch1 {
+        left: -8vw;
+        top: -8vw;
+        width: 44.5vw;
+    }
+    .menpatch2 {
+        left: -7.5vw;
+        top: 111vw;
+        width: 81vw;
+    }
+    .menpatch3 {
+        right: -4.1vw;
+        top: 109.4vw;
+        width: 49vw;
+    }
+    .menpatch4 {
+        right: 0;
+        top: -10vw;
+        width: 37vw;
+    }
+    .menpatch5 {
+        left: -3vw;
+        top: -6vw;
+        width: 26vw;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1084,7 +1214,12 @@
     @include preventReflowForScaledContent(420px, 630px);    
 }
 .homeImageRatio2 {
-    @include preventReflowForScaledContent(700px, 1007px);
+
+    position: relative; 
+    height: 0;
+    padding-bottom: 143%;
+    overflow: hidden;
+    // @include preventReflowForScaledContent(700px, 1007px);
 }
 .homeImageRatio3 {
     @include preventReflowForScaledContent(420px, 411px);
@@ -1159,6 +1294,10 @@
 
 .backgroundYellow{
     background-color: #ffbc26;
+}
+
+.backgroundOrange{
+    background-color: #ef4023;
 }
 
 
