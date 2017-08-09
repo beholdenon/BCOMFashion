@@ -4,6 +4,10 @@ $strawberry: #ad6f88;
 $gold: #e8bf19;
 $pink: #D90EAC;
 
+// accessible colors
+// $strawberry: #7b475c;
+// $gold: #efd56b;
+
 $AvenirBlack: "Avenir LT W01 95 Black", sans-serif;
 $AvenirBO: "AvenirLTW01-95BlackObli", sans-serif;
 $AvenirBook: "Avenir LT W01 45 Book", sans-serif;
@@ -129,9 +133,9 @@ aside#floating-nav {
 
   #top-banner {
     
-    background-color: #ad6f88;
+    background-color: $strawberry;
     text-align: center;
-    color: #e7bf1a;
+    color: $gold;
     font-size: 1.83333em;
     display: block;
     width: 100%;
@@ -318,6 +322,11 @@ table.makeup-table {
       font-weight: 400;
       letter-spacing: 2px;
       text-transform: uppercase;
+
+      &:hover,
+      &:focus {
+        color: #000;
+      }
     }
 
     .day {
@@ -371,7 +380,7 @@ table.makeup-table {
   td.whiteFont {
 
     a:hover, a:focus {
-      color: $pink;
+      color: #fff;
     }
 
     p,
@@ -715,6 +724,9 @@ table.makeup-table {
 
   .arrow {
     position: absolute;
+    padding: 0;
+    background-color: transparent;
+    border: 0;
     border-left: 2px solid #000;
     border-bottom: 2px solid #000;
     width: 30px;

@@ -134,8 +134,8 @@
         }
       }
 
-      $( '<div class="arrow leftArrow" tabindex="0"></div>' ).prependTo( $(e) );
-      $( '<div class="arrow rightArrow" tabindex="0"></div>' ).appendTo( $(e) );
+      $( '<button class="arrow leftArrow" tabindex="0"></button>' ).prependTo( $(e) );
+      $( '<button class="arrow rightArrow" tabindex="0"></button>' ).appendTo( $(e) );
 
       // get Data based on UPC list
       SERVICES.product.upcGet( function (res) {
@@ -214,10 +214,7 @@
   // back-to-top click action
   $("#footer .btt").on('click tap', function() {
     event.preventDefault();
-    $('body,html').animate({
-        scrollTop: 0 ,
-        }, 700
-    );
+    $('#href_StoresEvents').focus();
   });
 
   $('#footer .btt').keypress( function(ev) {

@@ -10,6 +10,7 @@ $AvenirBook: "Avenir LT W01 45 Book", sans-serif;
 $AvenirRoman: "Avenir Roman", sans-serif;
 
 #makeup-date.mobile {
+  font-size: 3.3333vw;
 
   #top-banner {
     font-size: 1.35em;
@@ -29,7 +30,7 @@ $AvenirRoman: "Avenir Roman", sans-serif;
       }
 
       .sub {
-        font-size: 1.15em;
+        font-size: 1em;
         margin-top: 0.5em;
         padding: 0;
       }
@@ -91,6 +92,11 @@ $AvenirRoman: "Avenir Roman", sans-serif;
         height: auto;
         display: none;
         padding: 5% 0;
+
+        a {
+          font-size: 1.25em;
+          font-weight: 700;
+        }
 
         h3 {
           width: 90%;
@@ -249,7 +255,80 @@ $AvenirRoman: "Avenir Roman", sans-serif;
   }
 
   #Gift-with-Purchase {
-    display: none;
+    overflow: hidden;
+
+    .block {
+      position: absolute;
+      top: 2.5%;
+      text-align: center;
+      margin: 0 auto;
+      left: 0;
+      right: 0;
+      width: 94%;
+
+      h2 {
+        color: #ad6f88;
+        margin: 0 auto 0.25em;
+        font-size: 2em;
+        line-height: 1em;
+      }
+
+      p {
+        font-size: 0.75em;
+        line-height: 1em;
+        margin: 0;
+        padding: 0;
+      }
+
+      &> a {
+        font-size: 1.1em;
+        margin: 1em 0;
+        letter-spacing: 0.1em;
+        display: block;
+      }
+    }
+
+    .triple-points {
+        background-color: #fff;
+        color: $loyallist;
+        text-align: center;
+        font-family: $AvenirBlack;
+        
+        position: absolute;
+        bottom: 3%;
+        left: 2.5%;
+        width: 95%;
+
+        font-weight: 700;
+
+        .plus {
+          position: absolute;
+          top: -0.65em;
+          left: 0;
+          right: 0;
+          margin: 0 auto;
+          
+          width: 1.5em;
+          height: 1.5em;
+
+          border-radius: 100%;
+          background-color: #fff;
+          z-index: 2;
+
+          font-family: inherit;
+          font-size: 1.25em;
+        }
+
+        p {
+          font-family: inherit;
+          position: relative;
+          z-index: 3;
+          font-size: 0.875em;
+          padding: 0.8em 0.25em;
+          margin: 0;
+        }
+      }
+
   }
 
 
