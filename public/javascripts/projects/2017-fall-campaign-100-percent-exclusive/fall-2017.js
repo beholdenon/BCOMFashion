@@ -69,106 +69,116 @@ $(document).ready( function($) {
 //===============================================================================================================//
 //===============================================================================================================//
 
-    var menSliderContent=[
-        { number : "01 / 08", brandname : "Brand Name 1", productname : "Product Name 1", description : "Lorem ipsum dolor sit amet, nec lucilius tractatos ea, pro agam ullum posidonium et. No quo ferri recteque pericula, mei te cetero repudiare. Et euismod voluptua senserit duo, esse habeo ad sed. Modo mutat mei an. Id eos nisl ipsum debitis, usu dicam."},
-        { number : "02 / 08", brandname : "Brand Name 2", productname : "Product Name 2", description : "Lorem ipsum dolor sit amet, nec lucilius tractatos ea, pro agam ullum posidonium et. No quo ferri recteque pericula, mei te cetero repudiare. Et euismod voluptua senserit duo, esse habeo ad sed. Modo mutat mei an. Id eos nisl ipsum debitis, usu dicam."},
-        { number : "03 / 08", brandname : "Brand Name 3", productname : "Product Name 3", description : "Lorem ipsum dolor sit amet, nec lucilius tractatos ea, pro agam ullum posidonium et. No quo ferri recteque pericula, mei te cetero repudiare. Et euismod voluptua senserit duo, esse habeo ad sed. Modo mutat mei an. Id eos nisl ipsum debitis, usu dicam."},
-        { number : "04 / 08", brandname : "Brand Name 4", productname : "Product Name 4", description : "Lorem ipsum dolor sit amet, nec lucilius tractatos ea, pro agam ullum posidonium et. No quo ferri recteque pericula, mei te cetero repudiare. Et euismod voluptua senserit duo, esse habeo ad sed. Modo mutat mei an. Id eos nisl ipsum debitis, usu dicam."},
-        { number : "05 / 08", brandname : "Brand Name 5", productname : "Product Name 5", description : "Lorem ipsum dolor sit amet, nec lucilius tractatos ea, pro agam ullum posidonium et. No quo ferri recteque pericula, mei te cetero repudiare. Et euismod voluptua senserit duo, esse habeo ad sed. Modo mutat mei an. Id eos nisl ipsum debitis, usu dicam."},
-        { number : "06 / 08", brandname : "Brand Name 6", productname : "Product Name 6", description : "Lorem ipsum dolor sit amet, nec lucilius tractatos ea, pro agam ullum posidonium et. No quo ferri recteque pericula, mei te cetero repudiare. Et euismod voluptua senserit duo, esse habeo ad sed. Modo mutat mei an. Id eos nisl ipsum debitis, usu dicam."}
-    ];
 
-
-    var menSliderCurrent = 1;
-    var menSliderPause=false;
     var bxSliderObjects={};
+
+    var menSlider1Current = 0;
     var menSlider1 = $('#menSlider1').bxSlider({
         infiniteLoop: true,
-        auto: true,
+        auto: false,
         autoDelay: 1000,
         pause: 3000,
         speed: 1000,
         onSlideBefore: function(){
-            menSliderCurrent = menSlider1.getCurrentSlide();
-            $(".menSlideText1").fadeOut(function() {
-                $(this).text(menSliderContent[menSliderCurrent].number).fadeIn();
-            });
-            $(".menSlideText2").fadeOut(function() {
-                $(this).text(menSliderContent[menSliderCurrent].brandname).fadeIn();
-            });
-            $(".menSlideText3").fadeOut(function() {
-                $(this).text(menSliderContent[menSliderCurrent].productname).fadeIn();
-            });
-            $(".menSlideText4").fadeOut(function() {
-                $(this).text(menSliderContent[menSliderCurrent].description).fadeIn();
-            });
+            $('#menSlider1').parent().parent().parent().parent().find('.bxsliderPageContent > ul > li').eq(menSlider1Current).fadeOut();
+            menSlider1Current = menSlider1.getCurrentSlide();
+            $('#menSlider1').parent().parent().parent().parent().find('.bxsliderPageContent > ul > li').eq(menSlider1Current).fadeIn();
+            $('#menSlider1').parent().parent().find('.bx-pager-item > a').css({"background":"transparent"});
         },
         onSlideAfter: function(){
-            menSliderPause=false;
+            $('#menSlider1').parent().parent().find('.bx-pager-item > a.active').css({"background":"#fff"});
         }
     });
     bxSliderObjects.menSlider1=menSlider1;
-
-
-    $(".slide_left_btn").keyup(function (e) {
-        if (e.which === 13) {
-            $('.slide_left_btn')[0].click();
-        }
-    });
-
-    $(".slide_right_btn").keyup(function (e) {
-        if (e.which === 13) {
-            $('.slide_right_btn')[0].click();
-        }
-    });
-
-
-    $('.slide_left_btn').on('click', function(){
-        if(!menSliderPause){
-            menSliderPause=true;
-            menSlider1.goToPrevSlide();
-            menSlider1.stopAuto();
-        }
-    });
-    $('.slide_right_btn').on('click', function(){
-        if(!menSliderPause){
-            menSliderPause=true;
-            menSlider1.goToNextSlide();
-            menSlider1.stopAuto();
-        }
-    });
+    $('#menSlider1').parent().parent().find('.bx-next').hide();
+    $('#menSlider1').parent().parent().find('.bx-pager-item > a').css({"border":"2px solid #fff"});
+    $('#menSlider1').parent().parent().find('.bx-pager-item > a.active').css({"background":"#fff"});
 
 
 
-
-
-
-    var menSlider2 = $('#menSlider2').bxSlider({ 
+    var menSlider2Current = 0;
+    var menSlider2 = $('#menSlider2').bxSlider({
         infiniteLoop: true,
-        auto: true,
+        auto: false,
         autoDelay: 1000,
         pause: 3000,
         speed: 1000,
+        onSlideBefore: function(){
+            $('#menSlider2').parent().parent().parent().parent().find('.bxsliderPageContent > ul > li').eq(menSlider2Current).fadeOut();
+            menSlider2Current = menSlider2.getCurrentSlide();
+            $('#menSlider2').parent().parent().parent().parent().find('.bxsliderPageContent > ul > li').eq(menSlider2Current).fadeIn();
+            $('#menSlider2').parent().parent().find('.bx-pager-item > a').css({"background":"transparent"});
+        },
+        onSlideAfter: function(){
+            $('#menSlider2').parent().parent().find('.bx-pager-item > a.active').css({"background":"#fff"});
+        }
     });
     bxSliderObjects.menSlider2=menSlider2;
+    $('#menSlider2').parent().parent().find('.bx-next').hide();
+    $('#menSlider2').parent().parent().find('.bx-pager-item > a').css({"border":"2px solid #fff"});
+    $('#menSlider2').parent().parent().find('.bx-pager-item > a.active').css({"background":"#fff"});
+  
 
-    var menSlider3 = $('#menSlider3').bxSlider({ 
+
+
+    var menSlider3Current = 0;
+    var menSlider3 = $('#menSlider3').bxSlider({
         infiniteLoop: true,
-        auto: true,
+        auto: false,
         autoDelay: 1000,
         pause: 3000,
         speed: 1000,
+        onSlideBefore: function(){
+            $('#menSlider3').parent().parent().parent().parent().find('.bxsliderPageContent > ul > li').eq(menSlider3Current).fadeOut();
+            menSlider3Current = menSlider3.getCurrentSlide();
+            $('#menSlider3').parent().parent().parent().parent().find('.bxsliderPageContent > ul > li').eq(menSlider3Current).fadeIn();
+            $('#menSlider3').parent().parent().find('.bx-pager-item > a').css({"background":"transparent"});
+        },
+        onSlideAfter: function(){
+            $('#menSlider3').parent().parent().find('.bx-pager-item > a.active').css({"background":"#fff"});
+        }
     });
     bxSliderObjects.menSlider3=menSlider3;
+    $('#menSlider3').parent().parent().find('.bx-next').hide();
+    $('#menSlider3').parent().parent().find('.bx-pager-item > a').css({"border":"2px solid #fff"});
+    $('#menSlider3').parent().parent().find('.bx-pager-item > a.active').css({"background":"#fff"});
 
-    var menSlider4 = $('#menSlider4').bxSlider({
-        infiniteLoop: true,
-        auto: true,
-        autoDelay: 1000,
-        pause: 3000,
-        speed: 1000,
+
+
+    $(".slide_left_btn").on('keydown', function(e){
+        if ((e.which === 13) || (e.which === 32)) {
+            bxSliderObjects[''+$(this).parent().find('.bxslider').attr('id')].goToPrevSlide();// jshint ignore:line
+            bxSliderObjects[''+$(this).parent().find('.bxslider').attr('id')].stopAuto();// jshint ignore:line
+        }
     });
-    bxSliderObjects.menSlider4=menSlider4;
+
+    $( ".slide_left_btn").on('mousedown', function(){
+            bxSliderObjects[''+$(this).parent().find('.bxslider').attr('id')].goToPrevSlide();// jshint ignore:line
+            bxSliderObjects[''+$(this).parent().find('.bxslider').attr('id')].stopAuto();// jshint ignore:line
+    });
+
+    $( ".slide_left_btn").on('touchstart', function(){
+            bxSliderObjects[''+$(this).parent().find('.bxslider').attr('id')].goToPrevSlide();// jshint ignore:line
+            bxSliderObjects[''+$(this).parent().find('.bxslider').attr('id')].stopAuto();// jshint ignore:line
+    });
+
+    $(".slide_right_btn").on('keydown', function(e){
+        if ((e.which === 13) || (e.which === 32)) {
+            bxSliderObjects[''+$(this).parent().find('.bxslider').attr('id')].goToNextSlide();// jshint ignore:line
+            bxSliderObjects[''+$(this).parent().find('.bxslider').attr('id')].stopAuto();// jshint ignore:line
+        }
+    });
+
+    $( ".slide_right_btn").on('mousedown', function(){
+            bxSliderObjects[''+$(this).parent().find('.bxslider').attr('id')].goToNextSlide();// jshint ignore:line
+            bxSliderObjects[''+$(this).parent().find('.bxslider').attr('id')].stopAuto();// jshint ignore:line
+    });
+    
+    $( ".slide_right_btn").on('touchstart', function(){
+            bxSliderObjects[''+$(this).parent().find('.bxslider').attr('id')].goToNextSlide();// jshint ignore:line
+            bxSliderObjects[''+$(this).parent().find('.bxslider').attr('id')].stopAuto();// jshint ignore:line
+    });
+
 
 
 //========//========//========//========//========//========//========
@@ -282,6 +292,16 @@ $(document).ready( function($) {
     });
 
 
+
+
+
+    $('.men_viewmorebtn').on('click', function(event){
+        event.preventDefault();
+        $(this).parent().parent().nextAll('.displaynone').first().removeClass( "displaynone" );
+        $(this).addClass( "displaynone" );
+    });
+
+    $('.hiddenelement').addClass( "displaynone" );
 
 //===============================================================================================================//
 //===============================================================================================================//
