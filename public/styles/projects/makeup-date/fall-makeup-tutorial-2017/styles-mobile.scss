@@ -72,6 +72,8 @@ $AvenirRoman: "Avenir Roman", sans-serif;
 
         td {
           display: table-cell;
+          height: 225px;
+          width: 50%;
         }
 
       }
@@ -140,8 +142,8 @@ $AvenirRoman: "Avenir Roman", sans-serif;
 
       td#serums {
         background-image: url('/b/fashion/images/projects/makeup-date/fall-makeup-tutorial-2017/mobile/regimen.jpg');
-        padding-top: 50%;
-        padding-bottom: 20%;
+        padding-top: 35%;
+        padding-bottom: 35%;
       }
 
       td#eyeliners {
@@ -161,6 +163,16 @@ $AvenirRoman: "Avenir Roman", sans-serif;
       }
 
       td#scent {
+        background-position: right;
+
+        h3,
+        p,
+        a {
+          margin-left: 5%;
+          margin-right: 55%;
+          width: 55%;
+        }
+
         h3 {
           width: 50%;
         }
@@ -214,6 +226,10 @@ $AvenirRoman: "Avenir Roman", sans-serif;
           display: block;
           margin-bottom: 40%;
         }
+      }
+      
+      td#sunCare {
+        height: 450px;
       }
 
       td#exfoliate {
