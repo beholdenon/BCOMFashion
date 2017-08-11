@@ -544,9 +544,11 @@
     margin: 0 auto;
     margin-top: 4vw;
     font-weight: 100;
-    a{
+    a,  a:focus, a:hover{
         color:white;
     }
+
+
 }
 
 
@@ -1377,24 +1379,6 @@
 //NAV
 //=================================================================//
 
-// a, a:active, img {
-// }
-a{
-    text-decoration: none;
-}
-
-a:focus, .focusable:focus {
-    outline: 1px solid #78aeda;
-    box-shadow: 0 0 2px 3px #78aeda, 0 0 2px #78aeda inset; border-radius: 2px;
-}
-
-img{
-    user-select: none;
-    -moz-user-select: none;
-    -khtml-user-select: none;
-    -webkit-user-select: none;
-    -o-user-select: none;    
-}
 #fall17_topnav_placeholder{
     position: relative;
     height: 57px;
@@ -1728,6 +1712,28 @@ img{
 //MAIN
 //=================================================================//
 
+
+// a, a:active, img {
+// }
+a{
+    text-decoration: none;
+}
+a:hover{
+    color: inherit;
+}
+
+a:focus, .focusable:focus {
+    outline: 1px solid #78aeda;
+    box-shadow: 0 0 2px 3px #78aeda, 0 0 2px #78aeda inset; border-radius: 2px;
+}
+
+img{
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;    
+}
 
 
 .fall17_maxwidth_1680{
