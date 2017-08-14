@@ -134,8 +134,8 @@
         }
       }
 
-      $( '<button class="arrow leftArrow" tabindex="0"></button>' ).prependTo( $(e) );
-      $( '<button class="arrow rightArrow" tabindex="0"></button>' ).appendTo( $(e) );
+      $( '<button class="arrow leftArrow" tabindex="0" arial-label="carousel left"></button>' ).prependTo( $(e) );
+      $( '<button class="arrow rightArrow" tabindex="0" arial-label="carousel right"></button>' ).appendTo( $(e) );
 
       // get Data based on UPC list
       SERVICES.product.upcGet( function (res) {
@@ -148,7 +148,12 @@
           var name = resArray[p].productDetails.summary.name.replace( brand, '');
           // if ( name.length > 44 ) name = name.substring(0,41) + '...';
 
-          var markup = '<a href="'+resArray[p].productDetails.summary.productURL+'"class="product" data-id=' + resArray[p].id + '>';
+          var startingItems = 'tabindex="-1"';
+          if ( Math.floor( p/groupSize ) === 0 ) {
+            startingItems = 'tabindex="0"';
+          }
+
+          var markup = '<a href="'+resArray[p].productDetails.summary.productURL+'" class="product" data-id=' + resArray[p].id +  ' ' + startingItems + '>';
           markup += '<img src="https://images.bloomingdales.com/is/image/BLM/products/4/optimized/'+resArray[p].productDetails.summary.primaryPortraitSource+'" alt="" />';
           markup += '<p class="heading">'+ brand +'</p>';
           markup += '<p>'+ name +'</p>';
@@ -167,19 +172,19 @@
       var groupLength = ele.find('.group').length;
       var active = ele.find('.group.active').index( '#' + ele.attr('id') +' .group');
 
-      ele.find('.group.active').removeClass('active');
+      ele.find('.group.active').removeClass('active').find('a').attr('tabindex', -1);
 
       if ( dir === 'left' ) {
         if ( active - 1 < 0 ) {
-          ele.find('.group').eq( groupLength - 1 ).addClass('active');
+          ele.find('.group').eq( groupLength - 1 ).addClass('active').find('a').attr('tabindex', 0);
         } else {
-          ele.find('.group').eq( active - 1 ).addClass('active');
+          ele.find('.group').eq( active - 1 ).addClass('active').find('a').attr('tabindex', 0);
         }
       } else if ( dir === 'right' ) {
         if ( active + 1 >= groupLength ) {
-          ele.find('.group').eq( 0 ).addClass('active');
+          ele.find('.group').eq( 0 ).addClass('active').find('a').attr('tabindex', 0);
         } else {
-          ele.find('.group').eq( active + 1 ).addClass('active');
+          ele.find('.group').eq( active + 1 ).addClass('active').find('a').attr('tabindex', 0);
         }
       }
 
