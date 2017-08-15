@@ -134,11 +134,8 @@
         }
       }
 
-      $( '<button class="arrow leftArrow" tabindex="0" arial-label="carousel left"></button>' ).prependTo( $(e) );
-      $( '<button class="arrow rightArrow" tabindex="0" arial-label="carousel right"></button>' ).appendTo( $(e) );
-
       // get Data based on UPC list
-      SERVICES.product.upcGet( function (res) {
+      SERVICES.product.get( function (res) {
         var resArray = res.product;
 
         // create products append to appropriate group after AJAX data request
@@ -164,13 +161,19 @@
 
       }, products );
 
-      
+      if ( $(e).find('.group').length >= 2 ) {
+        $( '<button class="arrow leftArrow" tabindex="0" arial-label="carousel left"></button>' ).prependTo( $(e) );
+        $( '<button class="arrow rightArrow" tabindex="0" arial-label="carousel right"></button>' ).appendTo( $(e) );  
+      }
 
     },
 
     rotate: function (ele, dir) {
       var groupLength = ele.find('.group').length;
       var active = ele.find('.group.active').index( '#' + ele.attr('id') +' .group');
+
+      console.log(active);
+      console.log(groupLength);
 
       ele.find('.group.active').removeClass('active').find('a').attr('tabindex', -1);
 
