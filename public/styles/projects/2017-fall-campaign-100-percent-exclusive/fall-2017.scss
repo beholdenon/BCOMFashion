@@ -1142,7 +1142,7 @@
     color: white;
     top: -13vw;  
 }
-.landing_btn:focus{
+.landing_btn:focus, .landing_btn:hover {
     color: white;
 }
 
@@ -1422,7 +1422,8 @@
 
 #fall17_topnav_placeholder{
     position: relative;
-    height: 57px;
+    height: 100px;
+    background-color: black;
 }
 
 .fall17_topnav_animated{
@@ -1435,6 +1436,7 @@
 #fall17_topnav {
 
     position: fixed;
+    background-color:black;
     width: 100%;
     max-width: 1680px;
     top: 0;
@@ -1591,7 +1593,7 @@
 
 @media screen and (max-width:800px) {
     #fall17_topnav_placeholder{
-        height: 45px;
+        height: 11vw;
     }
 
     .mobile_menu_opened_bg{
