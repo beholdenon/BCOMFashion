@@ -132,6 +132,13 @@ module.exports = {
 
             deviceDetectProc = detectMobileDeviceView(requestPath, req);
 
+            // get rid of trailing spaces, add a trailing slash if missing, then redirect
+            if (requestPath.indexOf('#') < 0 && requestPath.indexOf('?') < 0 && requestPath.indexOf('.') < 0 && ! /\/$/.test(requestPath)) {
+                requestPath = requestPath.replace(/\/?\s?$/, '/');
+                var url = '/' + requestPath + querystring;
+
+                return res.redirect(url);
+            }
 
             // Check if any head* helpers are used
             // Use of a head* helper is done using HTML comments <!-- headHelper= -->
