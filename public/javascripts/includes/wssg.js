@@ -168,21 +168,21 @@ var SERVICES = {
         index: function(callback, catID) {
             // Index is a call for basic information about a category by its ID.
             // catID can be a single ID or multiple, comma-separated IDs
-            var path = '/v3/catalog/category/index?category=' + catID + '&depth=1';
+            var path = '/b/v3/catalog/category/index?category=' + catID + '&depth=1';
             getRequest(path, function(result) {
                 callback(result);
             });
         },
 
         browse: function(callback, catID) {
-            var path = '/v3/catalog/category/' + catID;
+            var path = '/b/v3/catalog/category/' + catID;
             getRequest(path, function(result) {
                 callback(result);
             });
         },
 
         brandIndex: function(callback, catID, referenceID) {
-            var path = '/v4/catalog/category/brandindex/' + catID + '?refcatid=' + referenceID;
+            var path = '/b/v4/catalog/category/brandindex/' + catID + '?refcatid=' + referenceID;
             getRequest(path, function(result) {
                 callback(result);
             });
@@ -200,7 +200,7 @@ var SERVICES = {
                 sortby = "&sortby=" + sortby;
             }
 
-            var path = '/v3/catalog/category/' + catID + '/browseproducts?resultsperpage=' + resultsPerPage + '&currentpage=' + currentPage + sortby;
+            var path = '/b/v3/catalog/category/' + catID + '/browseproducts?resultsperpage=' + resultsPerPage + '&currentpage=' + currentPage + sortby;
             getRequest(path, function(result) {
                 callback(result);
             });
@@ -210,14 +210,14 @@ var SERVICES = {
 
     product: {
         get: function(callback, prodID ) {
-            var path = '/v4/catalog/product/' + prodID + '(productdetails,upcs(upcdetails),productcategory,reviews,rebates,promotions,categoryids)?retrieveallupcs=true';
+            var path = '/b/v4/catalog/product/' + prodID + '(productdetails,upcs(upcdetails),productcategory,reviews,rebates,promotions,categoryids)?retrieveallupcs=true';
             getRequest(path, function(result) {
                 callback(result);
             });
         },
 
         upcGet: function(callback, upcID ) {
-            var path = '/v4/catalog/product/upc/' + upcID + '(productdetails,upcs(upcdetails),productcategory,reviews,rebates,promotions,categoryids)?retrieveallupcs=true';
+            var path = '/b/v4/catalog/product/upc/' + upcID + '(productdetails,upcs(upcdetails),productcategory,reviews,rebates,promotions,categoryids)?retrieveallupcs=true';
             getRequest(path, function(result) {
                 callback(result);
             });
@@ -229,7 +229,7 @@ var SERVICES = {
             $.ajax({
                 method: 'GET',
                 dataType: 'json',
-                url: '/v2/user',
+                url: '/b/v2/user',
                 data: {
                     'show': 'summary',
                 },
@@ -286,7 +286,7 @@ var SERVICES = {
         },
 
         add: function(callback, upcId, quantity, userId) {
-            var path = "/addToBag/";
+            var path = "/b/addToBag/";
             var body = {};
 
             if (userId != undefined && userId != '') path += "?userid="+userId;
@@ -326,7 +326,7 @@ var SERVICES = {
             $.ajax({
                 method: 'GET',
                 dataType: 'json',
-                url: '/v2/shoppingbag/bagItemCount',
+                url: '/b/v2/shoppingbag/bagItemCount',
                 data: {
                     // 'bagid'	: ,
                     'userid': '64354129',
