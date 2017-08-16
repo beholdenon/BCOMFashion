@@ -123,8 +123,9 @@ module.exports = {
         notes: 'Reading Akamai headers, and based on device type (phone, tablet, desktop), serve either index.html or index-mobile.html layout',
         tags: ['non-responsive'],
         handler: function(req, res) {
-            var requestPath = (req.url.pathname).replace(/^\/b\//g, "/").substring(1),
-                deviceDetectProc,
+            var requestPath = (req.url.pathname).replace(/^\/b\//g, "/").substring(1);
+            var querystring = req.url.search || '';
+            var deviceDetectProc,
                 slashMinSuffix = ( req.query.debug === '1' ? '' : '/min' ),
                 file;
 
