@@ -64,7 +64,10 @@ let fs = require('fs'),
                 var headMetaMatches = headMetaRegEx.exec(lines[i]),
                     headTitleMatches = headTitleRegEx.exec(lines[i]),
                     headCanonicalMatches = headCanonicalRegEx.exec(lines[i]),
-                    preLoadScriptsMatches = preLoadScriptsRegEx.exec(lines[i]);
+                    preLoadScriptsMatches = preLoadScriptsRegEx.exec(lines[i]),
+                    headCanonicalDotComIdx,
+                    headCanonicalSlashBIdx,
+                    canonicalHost = args.isMobile ? process.env.PROD_MOBILE_HOST : process.env.PROD_HOST;
 
                 if (headMetaMatches) {
                     args.headMeta = JSON.parse(headMetaMatches[1]);
@@ -74,8 +77,24 @@ let fs = require('fs'),
                 }
                 if (headCanonicalMatches) {
                     args.headCanonical = JSON.parse(headCanonicalMatches[1]);
-                    if (args.headCanonical.href && args.headCanonical.href.indexOf('http') === -1) {
-                        args.headCanonical.href = process.env.PROD_HOST + args.headCanonical.href;
+                    headCanonicalDotComIdx = args.headCanonical.href.indexOf('.com');
+                    headCanonicalSlashBIdx = args.headCanonical.href.indexOf('/b/');
+
+                    //when on the headCanonical tag there are only a url path. Ex.: "/loyallist/top-of-the-list"
+                    if (args.headCanonical.href && args.headCanonical.href.indexOf('http') === -1 && headCanonicalDotComIdx === -1 && headCanonicalSlashBIdx === -1) {
+                        args.headCanonical.href = canonicalHost + args.headCanonical.href;
+                    } 
+                    //when on the headCanonical tag there are only the host, and there aren't /b/ context. Ex.: "fashion.bloomingdales.com/loyallist/top-of-the-list"
+                    else if (headCanonicalDotComIdx !== -1 && headCanonicalSlashBIdx === -1) {
+                        args.headCanonical.href = canonicalHost + args.headCanonical.href.substring(headCanonicalDotComIdx+4, args.headCanonical.href.length);
+                    }
+                    //when on the headCanonical tag there are the host and /b/ context. Ex.: "fashion.bloomingdales.com/b/loyallist/top-of-the-list"
+                    else if (headCanonicalDotComIdx !== -1 && headCanonicalSlashBIdx !== -1) {
+                        args.headCanonical.href = canonicalHost + args.headCanonical.href.substring(headCanonicalDotComIdx+6, args.headCanonical.href.length);
+                    }
+                    //when on the headCanonical tag there aren't the host but there are /b/ context. Ex.: "/b/loyallist/top-of-the-list"
+                    else if (headCanonicalSlashBIdx !== -1) {
+                        args.headCanonical.href = canonicalHost + args.headCanonical.href.replace('/b/', '/');
                     }
                 }
                 if (preLoadScriptsMatches) {

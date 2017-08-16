@@ -32,11 +32,15 @@ let sjl = require('sjljs'),
         };
     },
 
-    argsWithDeviceMetaData = (req, argsToUse) => {
+    argsWithDeviceMetaData = (req, argsToUse, path) => {
         const _args = argsToUse || argsFactory(),
-            detectedDeviceType = deviceDetectionHelper.detectDevice(req);
-        _args.isMobile = isMobile(detectedDeviceType);
+            detectedDeviceType = deviceDetectionHelper.detectDevice(req),
+            _isMobile = isMobile(detectedDeviceType),
+            _canonicalHost = _isMobile ? process.env.PROD_MOBILE_HOST : process.env.PROD_HOST,
+            _canonicalHref = _canonicalHost + '/' + path;
+        _args.isMobile = _isMobile;
         _args.isTablet = isTablet(detectedDeviceType);
+        _args.headCanonical = {href: _canonicalHref};
         return _args;
     },
 
@@ -95,7 +99,7 @@ module.exports = function (viewAlias, dataProducer, layoutObj) {
                 requestPath = req.url.pathname.replace(/^\/b\//g, "/"),
                 requestPathPartial = stripInitialForwardSlash(requestPath),
                 dataProducerData = typeof dataProducer === 'function' ? dataProducer(req) : null,
-                argsForView = argsWithDeviceMetaData(req, argsFactory()),
+                argsForView = argsWithDeviceMetaData(req, argsFactory(), requestPathPartial),
                 getMergedArgs = otherData => sjl.extend(true, argsForView, dataProducerData, otherData),
                 resolveRequest = viewTemplateName => {
 
