@@ -278,7 +278,7 @@ var SERVICES = {
                 params.push(bagOptions);
             }
 
-            var path = '/getBag/order/v1/bags?' + params.join("&");
+            var path = '/b/getBag/order/v1/bags?' + params.join("&");
             getRequest(path, function(result) {
                 callback(result);
             });

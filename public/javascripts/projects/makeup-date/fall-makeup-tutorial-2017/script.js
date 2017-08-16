@@ -1,4 +1,4 @@
-/* globals SERVICES*/
+/* globals SERVICES,BLOOMIES */
 'use strict';
 
 (function($) {
@@ -210,19 +210,25 @@
     }
   });
 
-  $(".makeup-video").each(function() {
-    var tar = $(this),
-      id = tar.attr('data-id');
+  // $(".makeup-video").each(function() {
+  //   var tar = $(this),
+  //     id = tar.attr('data-id');
     
-    SERVICES.brightCove.getURL( function(res) {
-      tar.attr('src', res).prop('controls', 'true');
-    }, id);
-  });
+  //   SERVICES.brightCove.getURL( function(res) {
+  //     tar.attr('src', res).prop('controls', 'true');
+  //   }, id);
+  // });
 
   // back-to-top click action
   $("#footer .btt").on('click tap', function() {
     event.preventDefault();
-    $('#href_StoresEvents').focus();
+
+    if ( BLOOMIES.isMobile ) {
+      $("html, body").animate({scrollTop: 0}, 500);
+    } else {
+      $('#href_StoresEvents').focus();
+    }
+
   });
 
   $('#footer .btt').keypress( function(ev) {
