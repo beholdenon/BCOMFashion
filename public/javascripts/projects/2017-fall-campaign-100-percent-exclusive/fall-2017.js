@@ -6,10 +6,10 @@ $(document).ready( function($) {
 	var social = {
 		facebookTitle: '100% Bloomingdale\'s | bloomingdales.com',
 		facebookDescription: 'Exclusive pieces you won’t find anywhere else.',
-		facebookImageFileName: 'S17_Spring-Facebook.jpg',
+		facebookImageFileName: 'F17_Facebook.jpg',
 		twitterTitle: ' Go Team Bloomie’s! The new 100% @bloomingdales collection of exclusive designer collaborations feature styles the whole squad will cheer for. http://fashion.bloomingdales.com/2017-fall-campaign-100-percent-exclusive/',
 		pinterestTitle: '100% Bloomingdale\'s | bloomingdales.com',
-		pinterestImageFileName: 'S17_Spring-Pinterest.jpg',
+		pinterestImageFileName: 'F17_Pinterest.jpg',
 		facebookURL: null,
 		twitterURL: null,
 		pinterestURL: null    
@@ -17,15 +17,24 @@ $(document).ready( function($) {
 	
 	function socialSetup () {
         var baseURL = 'http://' + window.location.host + window.location.pathname,
-            baseURLAssets = 'http://' + window.location.host + '/b/fashion/images/projects/2017-spring-campaign-100-percent-exclusive/';
+            baseURLAssets = 'http://' + window.location.host + '/b/fashion/images/projects/2017-fall-campaign-100-percent-exclusive/';
 
-        var facebookURL = 'https://www.facebook.com/dialog/feed';
-        facebookURL += '?app_id=145634995501895';
-        facebookURL += '&name=' + encodeURIComponent(social.facebookTitle);
-        facebookURL += '&description=' + encodeURIComponent(social.facebookDescription);
-        facebookURL += '&link=' + encodeURIComponent(baseURL);
-        facebookURL += '&picture=' + encodeURIComponent(baseURLAssets + social.facebookImageFileName);
-        facebookURL += '&display=popup&redirect_uri=' + encodeURIComponent('https://www.facebook.com/');
+        // var facebookURL = 'https://www.facebook.com/dialog/feed';
+        // facebookURL += '?app_id=145634995501895';
+        // facebookURL += '&name=' + encodeURIComponent(social.facebookTitle);
+        // facebookURL += '&description=' + encodeURIComponent(social.facebookDescription);
+        // facebookURL += '&link=' + encodeURIComponent(baseURL);
+        // facebookURL += '&picture=' + encodeURIComponent(baseURLAssets + social.facebookImageFileName);
+        // facebookURL += '&display=popup&redirect_uri=' + encodeURIComponent('https://www.facebook.com/');
+
+        var facebookURL = 'https://www.facebook.com/sharer/sharer.php';
+        facebookURL += '?u=' + encodeURIComponent(baseURL);
+        // facebookURL += '&title=' + encodeURIComponent(social.facebookTitle);
+        // facebookURL += '&description=' + encodeURIComponent(social.facebookDescription);
+        // facebookURL += '&picture=' + encodeURIComponent(baseURLAssets + social.facebookImageFileName);
+        facebookURL += '&quote=' + encodeURIComponent(social.facebookTitle + " " + social.facebookDescription);
+
+
 
         var twitterURL = 'http://twitter.com/intent/tweet?source=webclient&text=';
         twitterURL += encodeURIComponent(social.twitterTitle);
@@ -73,6 +82,103 @@ $(document).ready( function($) {
         lang: "en"
     });    
 
+
+
+    $('#menSlider1_atag').attr({
+        href:"https://www.bloomingdales.com/shop/product/boss-hugo-boss-tonal-plaid-stretch-regular-fit-suit?ID=2583381", 
+        coremetricTag:"menslide11",
+        title:"BOSS Shadow Plaid Suit"
+    });
+    var menSlider1atags = [
+        {
+            href:"https://www.bloomingdales.com/shop/product/boss-hugo-boss-tonal-plaid-stretch-regular-fit-suit?ID=2583381", 
+            coremetricTag:"menslide11",
+            title:"BOSS Shadow Plaid Suit1"    
+        },
+        {
+            href:"http://www1.bloomingdales.com/shop/product/?ID=2704504", 
+            coremetricTag:"menslide12",
+            title:"GRAMMY Weekend"    
+        },
+        {
+            href:"https://www.bloomingdales.com/shop/product/canada-goose-emory-down-parka-100-exclusive?ID=2633688", 
+            coremetricTag:"menslide13",
+            title:"Canada Goose Parka"    
+        },
+        {
+            href:"http://www1.bloomingdales.com/shop/product/?ID=2671085", 
+            coremetricTag:"menslide14",
+            title:"L.L. Bean Camo Tote Bag"    
+        },
+        {
+            href:"http://www1.bloomingdales.com/shop/product/?ID=2702490", 
+            coremetricTag:"menslide15",
+            title:"Michael Bastian Capsule Collection"    
+        }
+    ];
+
+    $('#menSlider2_atag').attr({
+        href:"http://www1.bloomingdales.com/shop/product/?ID=2633959", 
+        coremetricTag:"menslide21",
+        title:"FRAME L’Homme Slim-Fit Jeans"
+    });
+    var menSlider2atags = [
+        {
+            href:"http://www1.bloomingdales.com/shop/product/?ID=2633959", 
+            coremetricTag:"menslide21",
+            title:"FRAME L’Homme Slim-Fit Jeans"    
+        },
+        {
+            href:"http://www1.bloomingdales.com/shop/product/?ID=2462784", 
+            coremetricTag:"menslide22",
+            title:"Salvatore Ferragamo Chelsea Boots"    
+        },
+        {
+            href:"http://www1.bloomingdales.com/shop/product/?ID=2633805", 
+            coremetricTag:"menslide23",
+            title:"Carrera 1001/s Sunglasses"    
+        },
+        {
+            href:"http://www1.bloomingdales.com/shop/product/?ID=2704507", 
+            coremetricTag:"menslide24",
+            title:"A VIP Party With GQ at The Gent"    
+        },
+        {
+            href:"http://www1.bloomingdales.com/shop/product/?ID=2659780", 
+            coremetricTag:"menslide25",
+            title:"Stampd Reversible Bomber"    
+        }
+    ];
+
+    $('#menSlider3_atag').attr({
+        href:"http://www1.bloomingdales.com/shop/product/?ID=2668233", 
+        coremetricTag:"menslide31",
+        title:"Anderson’s Leather Duffel Bag"    
+    });
+    var menSlider3atags = [
+        {
+            href:"http://www1.bloomingdales.com/shop/product/?ID=2668233", 
+            coremetricTag:"menslide31",
+            title:"Anderson’s Leather Duffel Bag"    
+        },
+        {
+            href:"http://www1.bloomingdales.com/shop/product/?ID=2631361", 
+            coremetricTag:"menslide32",
+            title:"VOID Watches V03B Watch Set"    
+        },
+        {
+            href:"http://www1.bloomingdales.com/shop/product/?ID=2704451", 
+            coremetricTag:"menslide33",
+            title:"Givenchy Gentleman Set"    
+        },
+        {
+            href:"http://www1.bloomingdales.com/shop/product/?ID=2692292", 
+            coremetricTag:"menslide34",
+            title:"Master & Dynamic MW60 Headphones"    
+        }
+    ];    
+
+
     var bxSliderObjects={};
 
     var menSlider1Current = 0;
@@ -83,10 +189,17 @@ $(document).ready( function($) {
         pause: 3000,
         speed: 1000,
         onSlideBefore: function(){
-            $('#menSlider1').parent().parent().parent().parent().find('.bxsliderPageContent > ul > li').eq(menSlider1Current).fadeOut();
+
+            $('#menSlider1').parent().parent().parent().parent().parent().find('.bxsliderPageContent > ul > li').eq(menSlider1Current).fadeOut();
             menSlider1Current = menSlider1.getCurrentSlide();
-            $('#menSlider1').parent().parent().parent().parent().find('.bxsliderPageContent > ul > li').eq(menSlider1Current).fadeIn();
+            $('#menSlider1').parent().parent().parent().parent().parent().find('.bxsliderPageContent > ul > li').eq(menSlider1Current).fadeIn();
             $('#menSlider1').parent().parent().find('.bx-pager-item > a').css({"background":"transparent"});
+
+            $('#menSlider1_atag').attr({
+                href:menSlider1atags[menSlider1Current].href, 
+                coremetricTag:menSlider1atags[menSlider1Current].coremetricTag,
+                title:menSlider1atags[menSlider1Current].title
+            });
         },
         onSlideAfter: function(){
             $('#menSlider1').parent().parent().find('.bx-pager-item > a.active').css({"background":"#fff"});
@@ -107,10 +220,17 @@ $(document).ready( function($) {
         pause: 3000,
         speed: 1000,
         onSlideBefore: function(){
-            $('#menSlider2').parent().parent().parent().parent().find('.bxsliderPageContent > ul > li').eq(menSlider2Current).fadeOut();
+            $('#menSlider2').parent().parent().parent().parent().parent().find('.bxsliderPageContent > ul > li').eq(menSlider2Current).fadeOut();
             menSlider2Current = menSlider2.getCurrentSlide();
-            $('#menSlider2').parent().parent().parent().parent().find('.bxsliderPageContent > ul > li').eq(menSlider2Current).fadeIn();
+            $('#menSlider2').parent().parent().parent().parent().parent().find('.bxsliderPageContent > ul > li').eq(menSlider2Current).fadeIn();
             $('#menSlider2').parent().parent().find('.bx-pager-item > a').css({"background":"transparent"});
+
+            $('#menSlider2_atag').attr({
+                href:menSlider2atags[menSlider2Current].href, 
+                coremetricTag:menSlider2atags[menSlider2Current].coremetricTag,
+                title:menSlider2atags[menSlider2Current].title
+            });
+
         },
         onSlideAfter: function(){
             $('#menSlider2').parent().parent().find('.bx-pager-item > a.active').css({"background":"#fff"});
@@ -132,10 +252,16 @@ $(document).ready( function($) {
         pause: 3000,
         speed: 1000,
         onSlideBefore: function(){
-            $('#menSlider3').parent().parent().parent().parent().find('.bxsliderPageContent > ul > li').eq(menSlider3Current).fadeOut();
+            $('#menSlider3').parent().parent().parent().parent().parent().find('.bxsliderPageContent > ul > li').eq(menSlider3Current).fadeOut();
             menSlider3Current = menSlider3.getCurrentSlide();
-            $('#menSlider3').parent().parent().parent().parent().find('.bxsliderPageContent > ul > li').eq(menSlider3Current).fadeIn();
+            $('#menSlider3').parent().parent().parent().parent().parent().find('.bxsliderPageContent > ul > li').eq(menSlider3Current).fadeIn();
             $('#menSlider3').parent().parent().find('.bx-pager-item > a').css({"background":"transparent"});
+
+            $('#menSlider3_atag').attr({
+                href:menSlider3atags[menSlider3Current].href, 
+                coremetricTag:menSlider3atags[menSlider3Current].coremetricTag,
+                title:menSlider3atags[menSlider3Current].title
+            });            
         },
         onSlideAfter: function(){
             $('#menSlider3').parent().parent().find('.bx-pager-item > a.active').css({"background":"#fff"});
@@ -199,7 +325,7 @@ $(document).ready( function($) {
 
     var menffSlider1 = $('#menffSlider1').bxSlider({ 
         infiniteLoop: true,
-        auto: true,
+        auto: false,
         autoDelay: 1000,
         pause: 3000,
         speed: 1000,
@@ -208,7 +334,7 @@ $(document).ready( function($) {
 
     var menffSlider2 = $('#menffSlider2').bxSlider({ 
         infiniteLoop: true,
-        auto: true,
+        auto: false,
         autoDelay: 1000,
         pause: 3000,
         speed: 1000,
@@ -217,7 +343,7 @@ $(document).ready( function($) {
 
     var menffSlider3 = $('#menffSlider3').bxSlider({ 
         infiniteLoop: true,
-        auto: true,
+        auto: false,
         autoDelay: 1000,
         pause: 3000,
         speed: 1000,
@@ -226,7 +352,7 @@ $(document).ready( function($) {
 
     var menffSlider4 = $('#menffSlider4').bxSlider({ 
         infiniteLoop: true,
-        auto: true,
+        auto: false,
         autoDelay: 1000,
         pause: 3000,
         speed: 1000,
@@ -237,7 +363,7 @@ $(document).ready( function($) {
 
     var womenffSlider1 = $('#womenffSlider1').bxSlider({ 
         infiniteLoop: true,
-        auto: true,
+        auto: false,
         autoDelay: 1000,
         pause: 3000,
         speed: 1000,
@@ -246,7 +372,7 @@ $(document).ready( function($) {
 
     var womenffSlider2 = $('#womenffSlider2').bxSlider({ 
         infiniteLoop: true,
-        auto: true,
+        auto: false,
         autoDelay: 1000,
         pause: 3000,
         speed: 1000,
@@ -255,7 +381,7 @@ $(document).ready( function($) {
 
     var womenffSlider3 = $('#womenffSlider3').bxSlider({ 
         infiniteLoop: true,
-        auto: true,
+        auto: false,
         autoDelay: 1000,
         pause: 3000,
         speed: 1000,
@@ -264,7 +390,7 @@ $(document).ready( function($) {
 
     var womenffSlider4 = $('#womenffSlider4').bxSlider({ 
         infiniteLoop: true,
-        auto: true,
+        auto: false,
         autoDelay: 1000,
         pause: 3000,
         speed: 1000,
@@ -273,7 +399,7 @@ $(document).ready( function($) {
 
     var womenffSlider5 = $('#womenffSlider5').bxSlider({ 
         infiniteLoop: true,
-        auto: true,
+        auto: false,
         autoDelay: 1000,
         pause: 3000,
         speed: 1000,
@@ -282,7 +408,7 @@ $(document).ready( function($) {
 
     var womenffSlider6 = $('#womenffSlider6').bxSlider({ 
         infiniteLoop: true,
-        auto: true,
+        auto: false,
         autoDelay: 1000,
         pause: 3000,
         speed: 1000,
@@ -304,6 +430,8 @@ $(document).ready( function($) {
             bxSliderObjects[''+$(this).find('.bxslider').attr('id')].stopAuto();// jshint ignore:line
         });
     }
+
+
 
 
 
@@ -447,6 +575,34 @@ $(document).ready( function($) {
                     $(this).parent().toggleClass( 'mobile_menu_opened_bg' );            
             });    
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
