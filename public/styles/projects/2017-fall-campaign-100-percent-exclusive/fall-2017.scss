@@ -1142,7 +1142,7 @@
     color: white;
     top: -13vw;  
 }
-.landing_btn:focus{
+.landing_btn:focus, .landing_btn:hover {
     color: white;
 }
 
@@ -1165,6 +1165,21 @@
     }
 }
 
+.landingpatch1{
+    position: absolute;
+    left: -5vw;
+    top: 34vw;
+    width: 15vw;
+    z-index: 1;
+}
+
+.landingpatch2{
+    position: absolute;
+    left: -7vw;
+    top: -8vw;
+    width: 21vw;
+    z-index: 1;
+}
 
 
 
@@ -1223,6 +1238,22 @@
         font-size: 34px;
         letter-spacing: 0;
     }
+
+    .landingpatch1{
+        left: -85px;
+        top: 578px;
+        width: 255px;
+    }
+
+    .landingpatch2{
+        left: -119px;
+        top: -136px;
+        width: 357px;
+    }
+
+
+
+
 }
 
 
@@ -1291,6 +1322,18 @@
         }
     }
 
+    .landingpatch1 {
+        left: 66vw;
+        top: 108vw;
+        width: 30vw;
+    }
+
+    .landingpatch2 {
+        left: -10vw;
+        top: -8vw;
+        width: 51vw;
+    }
+
 }
 
 
@@ -1313,13 +1356,11 @@
     @include preventReflowForScaledContent(700px, 770px);    
 }
 .landingImageRatio2{
-    @include preventReflowForScaledContent(700px, 910px);    
+    @include preventReflowForScaledContent(630px, 910px);    
 }
 .landingImageRatio3{
-    @include preventReflowForScaledContent(770px, 960px);    
+    @include preventReflowForScaledContent(1680px, 490px);    
 }
-
-
 
 
 .womenImageRatio1 {
@@ -1381,7 +1422,8 @@
 
 #fall17_topnav_placeholder{
     position: relative;
-    height: 57px;
+    height: 100px;
+    background-color: black;
 }
 
 .fall17_topnav_animated{
@@ -1394,6 +1436,7 @@
 #fall17_topnav {
 
     position: fixed;
+    background-color:black;
     width: 100%;
     max-width: 1680px;
     top: 0;
@@ -1550,7 +1593,7 @@
 
 @media screen and (max-width:800px) {
     #fall17_topnav_placeholder{
-        height: 45px;
+        height: 11vw;
     }
 
     .mobile_menu_opened_bg{
@@ -1712,6 +1755,9 @@
 //MAIN
 //=================================================================//
 
+.nowrap {
+    white-space: nowrap;
+}
 
 // a, a:active, img {
 // }
