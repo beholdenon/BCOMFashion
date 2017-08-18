@@ -41,7 +41,7 @@ let fs = require('fs'),
 
     // Reads the file passed in and checks if any of the head* helpers are used
     // Use of a head* helper is done using HTML comments <!-- -->
-    headHelpers = function headHelpers(file) {
+    headHelpers = function headHelpers(file, req) {
         var contents,
             lines,
             dir;
@@ -67,7 +67,7 @@ let fs = require('fs'),
                     preLoadScriptsMatches = preLoadScriptsRegEx.exec(lines[i]),
                     headCanonicalDotComIdx,
                     headCanonicalSlashBIdx,
-                    canonicalHost = args.isMobile ? process.env.PROD_MOBILE_HOST : process.env.PROD_HOST;
+                    canonicalHost;
 
                 if (headMetaMatches) {
                     args.headMeta = JSON.parse(headMetaMatches[1]);
@@ -76,6 +76,7 @@ let fs = require('fs'),
                     args.headTitle = JSON.parse(headTitleMatches[1]);
                 }
                 if (headCanonicalMatches) {
+                    canonicalHost = 'https://' + req.info.hostname + '/b';
                     args.headCanonical = JSON.parse(headCanonicalMatches[1]);
                     headCanonicalDotComIdx = args.headCanonical.href.indexOf('.com');
                     headCanonicalSlashBIdx = args.headCanonical.href.indexOf('/b/');
@@ -164,7 +165,7 @@ module.exports = {
             // Use of a head* helper is done using HTML comments <!-- headHelper= -->
             // If so, add them to args
             file = deviceDetectProc + ".html";
-            args = headHelpers(file);
+            args = headHelpers(file, req);
 
             return res.view(deviceDetectProc, { args: args, assetsHost: process.env.BASE_ASSETS, slashMinSuffix: slashMinSuffix });
         }
@@ -187,7 +188,7 @@ module.exports = {
             // Check if any head* helpers are used
             // Use of a head* helper is done using HTML comments <!-- headHelper= -->
             // If so, add them to deviceDetectProc.args
-            args = headHelpers(file);
+            args = headHelpers(file, req);
 
             return res.view(file, { args: args, assetsHost: process.env.BASE_ASSETS, slashMinSuffix: slashMinSuffix }, { layout: 'responsiveCustomHF' });
         }
@@ -230,7 +231,7 @@ module.exports = {
             // Use of a head* helper is done using HTML comments <!-- headHelper= -->
             // If so, add them to args
             file = requestPath + "index.html";
-            args = headHelpers(file);
+            args = headHelpers(file, req);
             
             return res.view(requestPath + "index", { args: args, assetsHost: process.env.BASE_ASSETS, slashMinSuffix: slashMinSuffix});
         }
