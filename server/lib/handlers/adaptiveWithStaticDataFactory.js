@@ -35,12 +35,10 @@ let sjl = require('sjljs'),
     argsWithDeviceMetaData = (req, argsToUse, path) => {
         const _args = argsToUse || argsFactory(),
             detectedDeviceType = deviceDetectionHelper.detectDevice(req),
-            _isMobile = isMobile(detectedDeviceType),
-            _canonicalHost = _isMobile ? process.env.PROD_MOBILE_HOST : process.env.PROD_HOST,
-            _canonicalHref = _canonicalHost + '/' + path;
-        _args.isMobile = _isMobile;
+            _canonicalHost = 'https://' + req.info.hostname + '/b/' + path;
+        _args.isMobile = isMobile(detectedDeviceType);
         _args.isTablet = isTablet(detectedDeviceType);
-        _args.headCanonical = {href: _canonicalHref};
+        _args.headCanonical = {href: _canonicalHost};
         return _args;
     },
 
