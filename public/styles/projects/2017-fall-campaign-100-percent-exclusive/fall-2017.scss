@@ -20,10 +20,10 @@
 //=================================================================//
 .mentext1{
     position: absolute;
-    top: 25.8vw;
+    top: 23.8vw;
     font-size: 1.3vw;
     letter-spacing: 0.03vw;
-    line-height: 2;
+    line-height: 1.8vw;
     color: white;
     max-width: 1000px;
     font-weight: 100;
@@ -214,7 +214,8 @@
     .mentext1{
         font-size: 22px;
         letter-spacing: 0.5px;
-        top: 438px;
+        top: 404px;
+        line-height: 30px;
     }
 
 
@@ -309,9 +310,9 @@
         right: -40px;
     }
     .menpatch4 {
-        top: -152px;
-        width: 303px;
-        left: 34px;
+        top: -113px;
+        width: 343px;
+        right: 0;
     }
     .menpatch5 {
         top: -152px;
@@ -330,9 +331,9 @@
     .mentext1 {
         position: relative;
         top: -13vw;
-        font-size: 4.3vw;
+        font-size: 4vw;
         letter-spacing: 0.03vw;
-        line-height: 7vw;
+        line-height: 5vw;
         padding-left: 6vw;
         padding-right: 6vw;
     }
@@ -476,7 +477,7 @@
 
 .homeText2{
     font-size: 1.3vw;
-    line-height: 2.8vw;
+    line-height: 1.8vw;
     padding-top: 1vw;
     font-weight: 100;
     color: white;
@@ -532,7 +533,7 @@
     font-weight: 100;
     color: white;
     text-decoration: underline;
-    letter-spacing: 0.1vw;
+    letter-spacing: 0.03vw;
 }
 
 
@@ -583,7 +584,7 @@
 
     .homeText2{
         font-size: 22px;
-        line-height: 47px;
+        line-height: 30px;
         padding-top: 17px;
     }
 
@@ -608,7 +609,7 @@
         font-size: 34px;
         line-height: 48px;
         padding-top: 17px;
-        letter-spacing: 1.7px;
+        letter-spacing: 0.5px;
     }
 
     .homeBTN{
@@ -648,7 +649,7 @@
 
     .homeText2 {
         font-size: 4vw;
-        line-height: 7.8vw;
+        line-height: 5vw;
         padding-top: 5vw;
         width: 80%;
     }
@@ -665,6 +666,7 @@
         font-size: 9.3vw;
         line-height: 9vw;
         width: 90%;
+        text-align: center;
     }
     
     .homeText6 {
@@ -672,11 +674,13 @@
         line-height: 7vw;
         padding-top: 5vw;
         width: 90%;
+        text-align: center;
     }
 
     .hometext7 {
         font-size: 6vw;
         padding-top: 4vw;
+        line-height: 6vw;
     }
 
     .homeBTN {
@@ -739,7 +743,7 @@
     color: white;
 
     max-width: 580px;
-    padding-top: 16vw;  
+    padding-top: 14vw;  
 }
 
 .womentext2{
@@ -752,8 +756,9 @@
     line-height: 2;
     color: white;
     max-width: 700px;
-    padding-top: 22vw;
+    padding-top: 20vw;
     font-weight: 100;
+    line-height: 1.8vw;
 }
 
 .womentext7{
@@ -763,7 +768,7 @@
     font-weight: 100;
     color: black;
     text-decoration: underline;
-    letter-spacing: 0.1vw;
+    letter-spacing: 0.03vw;
 }
 
 .womentext8{
@@ -780,8 +785,8 @@
 
 .womenpatch1 {
     position: absolute;
-    left: -4vw;
-    top: -3vw;
+    left: -7vw;
+    top: -5vw;
     width: 21vw;
     z-index: 1;
 }
@@ -821,8 +826,8 @@
 .womenpatch6 {
     position: absolute;
     left: -4vw;
-    top: 18vw;
-    width: 15vw;
+    top: 8vw;
+    width: 12vw;
     z-index: 1;
 }
 
@@ -864,6 +869,7 @@
         font-size: 22px;
         letter-spacing: 0.5px;
         padding-top: 374px;
+        line-height: 30px;
     }
 
 
@@ -872,7 +878,7 @@
         font-size: 34px;
         line-height: 48px;
         padding-top: 17px;
-        letter-spacing: 1.7px;
+        letter-spacing: 0.5px;
     }
     .womentext8{
         font-size: 77px;
@@ -884,9 +890,9 @@
 
 
     .womenpatch1{
-        top: -51px;
+        top: -85px;
         width: 356px;
-        left: -67px;
+        left: -119px;
     }
 
     .womenpatch2{
@@ -914,8 +920,8 @@
     }
 
     .womenpatch6{
-        top: 303px;
-        width: 252px;
+        top: 163px;
+        width: 204px;
         left: -67px;
     }
 
@@ -950,7 +956,7 @@
 
     .womentext2 {
         font-size: 3.5vw;
-        line-height: 5.8vw;
+        line-height: 4vw;
         padding-top: 24vw;
         width: 90%;
     }
@@ -958,6 +964,7 @@
     .womentext7 {
         font-size: 6vw;
         padding-top: 4vw;
+        line-height: 6vw;
     }
     
     .womentext8 {
@@ -1154,14 +1161,20 @@
 
 .footer_row{
     background-color:black;
+    img{
+        width:80%;
+    }
 }
 
 .landing_backtotop{
     text-decoration:none;
+    margin-bottom: 0;
     p{
         color: white;
-        font-size: 2vw;
-        font-weight: 100;
+        font-size: 1.4vw;
+        font-weight: 500;
+        margin-bottom: 0;
+        padding-top: .9vw;
     }
 }
 
@@ -1235,8 +1248,8 @@
     }
 
     .landing_backtotop p {
-        font-size: 34px;
-        letter-spacing: 0;
+        font-size: 23px;
+        padding-top: 15px;
     }
 
     .landingpatch1{
@@ -1256,7 +1269,27 @@
 
 }
 
+@media screen and (min-width:1061px) and (max-width:1300px) {
 
+    .landing_backtotop p {
+        font-size: 20px;
+        padding-top: 5px;
+    }
+}
+
+@media screen and (min-width:951px) and (max-width:1060px) {
+    .landing_backtotop p {
+        font-size: 17px;
+        padding-top: 7px;
+    }
+}
+
+@media screen and (min-width:601px) and (max-width:950px) {
+    .landing_backtotop p {
+        font-size: 16px;
+        padding-top: 7px;
+    }
+}
 
 
 @media screen and (max-width:600px) {
@@ -1309,6 +1342,7 @@
         font-size: 7vw;
         letter-spacing: 2px;
         top: -0.1vw;
+        margin-top: 8vw;
     }
 
 
@@ -1333,6 +1367,15 @@
         top: -8vw;
         width: 51vw;
     }
+
+
+    .footer_row{
+        img{
+            width:50%;
+        }
+    }
+
+
 
 }
 
@@ -1424,6 +1467,9 @@
     position: relative;
     height: 100px;
     background-color: black;
+}
+#fall17_topnav_mobile_background{
+    display:none;
 }
 
 .fall17_topnav_animated{
@@ -1521,7 +1567,7 @@
             font-family: "Avenir W01",sans-serif;
             padding: 8px 27px;
             font-size: 20px;
-            letter-spacing: 1px;
+            letter-spacing: .5px;
             text-decoration: none;
             color: white;
             font-weight: 100;
@@ -1595,6 +1641,15 @@
     #fall17_topnav_placeholder{
         height: 11vw;
     }
+    #fall17_topnav_mobile_background{
+        position: fixed;
+        z-index:2;
+        width: 100%;
+        height: 11vw;
+        display: block;
+        background-color: black;
+        top:0;
+    }
 
     .mobile_menu_opened_bg{
         background-color:black;
@@ -1649,6 +1704,7 @@
             position: absolute;
             left: 50%;
             top: 50%;
+            width:80%;
             transform: translate(-50%, -50%);            
 
             .fall17_topnav_active >a{
@@ -1678,8 +1734,8 @@
                 }
             }
             a {
-                font-size: 16px;
-                padding: 9px;
+                font-size: 20px;
+                padding: 10px 0 0 0;
             }
         }
 
