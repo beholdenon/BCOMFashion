@@ -67,7 +67,8 @@ let fs = require('fs'),
                     preLoadScriptsMatches = preLoadScriptsRegEx.exec(lines[i]),
                     headCanonicalDotComIdx,
                     headCanonicalSlashBIdx,
-                    canonicalHost;
+                    canonicalHost,
+                    protocol;
 
                 if (headMetaMatches) {
                     args.headMeta = JSON.parse(headMetaMatches[1]);
@@ -76,10 +77,17 @@ let fs = require('fs'),
                     args.headTitle = JSON.parse(headTitleMatches[1]);
                 }
                 if (headCanonicalMatches) {
-                    canonicalHost = 'https://' + req.info.hostname + '/b';
                     args.headCanonical = JSON.parse(headCanonicalMatches[1]);
                     headCanonicalDotComIdx = args.headCanonical.href.indexOf('.com');
                     headCanonicalSlashBIdx = args.headCanonical.href.indexOf('/b/');
+
+                    if (req.server !== undefined && req.server.info !== undefined && req.server.info.protocol !== undefined) {
+                        protocol = req.server.info.protocol + '://';
+                    } else {
+                        protocol = 'https://';
+                    }
+
+                    canonicalHost = protocol + req.info.hostname + '/b';
 
                     //when on the headCanonical tag there are only a url path. Ex.: "/loyallist/top-of-the-list"
                     if (args.headCanonical.href && args.headCanonical.href.indexOf('http') === -1 && headCanonicalDotComIdx === -1 && headCanonicalSlashBIdx === -1) {
