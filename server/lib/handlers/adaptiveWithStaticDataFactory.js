@@ -34,11 +34,21 @@ let sjl = require('sjljs'),
 
     argsWithDeviceMetaData = (req, argsToUse, path) => {
         const _args = argsToUse || argsFactory(),
-            detectedDeviceType = deviceDetectionHelper.detectDevice(req),
-            _canonicalHost = 'https://' + req.info.hostname + '/b/' + path;
+            detectedDeviceType = deviceDetectionHelper.detectDevice(req);
+        let canonicalHost,
+            protocol;
+
+        if ( req.server !== undefined && req.server.info !== undefined && req.server.info.protocol !== undefined) {
+            protocol = req.server.info.protocol + '://';
+        } else {
+            protocol = 'https://';
+        }
+
+         canonicalHost = protocol + req.info.hostname + '/b/' + path;
+
         _args.isMobile = isMobile(detectedDeviceType);
         _args.isTablet = isTablet(detectedDeviceType);
-        _args.headCanonical = {href: _canonicalHost};
+        _args.headCanonical = {href: canonicalHost};
         return _args;
     },
 
