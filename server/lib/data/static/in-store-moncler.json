@@ -1,0 +1,114 @@
+{
+  "designerName": "MONCLER",
+  "machineReadableDesignerName": "moncler",
+  "title2Prefix": "MONCLER",
+  "title2Suffix": "ARE ONLY AVAILABLE AT SELECT BLOOMINGDALE&rsquo;S STORES.",
+  "pageUrlDesignerAlias": "moncler",
+  "designerDescription": "Moncler is founded on heritage, uniqueness, quality and consistency<br />The roots of Moncler lie in Monestier-de-Clermont, a French mountain village near Grenoble, for which it is named. In 1952, inspired entrepreneurs René Ramillon and Andrè Vincent founded the company where they went on to produce Moncler’s renowned down jacket. Aesthetic and technological changes have evolved over the years, but the label has always remained loyal to its rich heritage.",
+  "addressColumns": [
+    [
+      {
+        "name": "59TH STREET",
+        "streetAddress": "1000 Third Avenue",
+        "cityStateZip": "59th Street and Lexington Avenue<br />New York, NY 10022",
+        "phoneNumber": "212-705-2000",
+        "phoneNumberHrefSuffix": "+1-212-705-2000",
+        "urlArgs": {
+          "addressAlias": "59th-street",
+          "designerAlias": "moncler",
+          "addressFullDetail": "59TH-STREET-LEXINGTON-AVENUE"
+        }
+      },
+      {
+        "name": "CHESTNUT HILL",
+        "streetAddress": "225 Boylston Street",
+        "cityStateZip": "Chestnut Hill Mall<br />Chestnut Hill, MA 02467",
+        "phoneNumber": "617-630-6000",
+        "phoneNumberHrefSuffix": "+1-617-630-6000",
+        "urlArgs": {
+          "addressAlias": "chestnut-hill",
+          "designerAlias": "moncler",
+          "addressFullDetail": "CHESTNUT-HILL-MALL"
+        }
+      }
+    ], 
+    [
+      {
+        "name": "THE SHOPS AT RIVERSIDE",
+        "streetAddress": "400 Hackensack Avenue",
+        "cityStateZip": "Hackensack, NJ 07601",
+        "phoneNumber": "201-457-2000",
+        "phoneNumberHrefSuffix": "+1-201-457-2000",
+        "urlArgs": {
+          "addressAlias": "bergen-shops-at-riverside",
+          "designerAlias": "moncler",
+          "addressFullDetail": "THE-SHOPS-AT-RIVERSIDE"
+        }
+      },
+      {
+        "name": "WHITE PLAINS",
+        "streetAddress": "175 Bloomingdale Road",
+        "cityStateZip": "White Plains, NY 10605",
+        "phoneNumber": "914-684-6300",
+        "phoneNumberHrefSuffix": "+1-914-684-6300",
+        "urlArgs": {
+          "addressAlias": "white-plains",
+          "designerAlias": "moncler",
+          "addressFullDetail": "WHITE-PLAINS"
+        }
+      }
+    ],
+    [
+      {
+        "name": "CENTURY CITY",
+        "streetAddress": "10250 Santa Monica Boulevard",
+        "cityStateZip": "Westfield Century City<br />Los Angeles, CA 90067",
+        "phoneNumber": "310-772-2100",
+        "phoneNumberHrefSuffix": "+1-310-772-2100",
+        "urlArgs": {
+          "addressAlias": "century-city",
+          "designerAlias": "moncler",
+          "addressFullDetail": "CENTURY-CITY"
+        }
+      },
+      {
+        "name": "OLD ORCHARD (Women's Only)",
+        "streetAddress": "4963 Old Orchard Center",
+        "cityStateZip": "Skokie, IL 60077",
+        "phoneNumber": "847-675-5200",
+        "phoneNumberHrefSuffix": "+1-847-675-5200",
+        "urlArgs": {
+          "addressAlias": "old-orchard",
+          "designerAlias": "moncler",
+          "addressFullDetail": "OLD-ORCHARD"
+        }
+      }
+    ],
+    [
+      {
+        "name": "AVENTURA (Men's Only)",
+        "streetAddress": "19555 Biscayne Boulevard",
+        "cityStateZip": "The Aventura Mall<br />Aventura, FL 33180",
+        "phoneNumber": "305-792-1000",
+        "phoneNumberHrefSuffix": "+1-305-792-1000",
+        "urlArgs": {
+          "addressAlias": "aventura",
+          "designerAlias": "moncler",
+          "addressFullDetail": "THE-AVENTURA-MALL"
+        }
+      },
+      {
+        "name": "SAN FRANCISCO",
+        "streetAddress": "845 Market Street",
+        "cityStateZip": "San Francisco Centre<br />San Francisco, CA 94103",
+        "phoneNumber": "415-856-5300",
+        "phoneNumberHrefSuffix": "+1-415-856-5300",
+        "urlArgs": {
+          "addressAlias": "san-francisco-centre",
+          "designerAlias": "moncler",
+          "addressFullDetail": "SAN-FRANCISCO-CENTRE"
+        }
+      }
+    ]
+  ]
+}
