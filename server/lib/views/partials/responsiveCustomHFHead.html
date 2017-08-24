@@ -32,9 +32,11 @@
 {{/if}}
 
 <!--============[ JS: BrightTag ]============-->
-<script src="//s.btstatic.com/tag.js">
-	   { site: "nl6o4FJ" }
-</script>
-<noscript>
-	<iframe src="//s.thebrighttag.com/iframe?c=nl6o4FJ" width="1" height="1" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
-</noscript>
+{{#if args.brightTagEnabled}}
+	<script src="//s.btstatic.com/tag.js">
+		   { site: "nl6o4FJ" }
+	</script>
+	<noscript>
+		<iframe src="//s.thebrighttag.com/iframe?c=nl6o4FJ" width="1" height="1" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+	</noscript>
+{{/if}}
