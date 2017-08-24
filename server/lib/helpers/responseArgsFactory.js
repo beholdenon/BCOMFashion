@@ -21,7 +21,8 @@ let deviceDetectionHelper = require('./deviceDetection'),
             headMeta: '',
             headCanonical: '',
             tealiumScriptEnabled: process.env.tealiumScriptEnabled === "true",
-            tealiumType: process.env.ENV_TYPE === "prod" ? "prod" : "qa"
+            tealiumType: process.env.ENV_TYPE === "prod" ? "prod" : "qa",
+            brightTagEnabled: process.env.brightTagEnabled !== "false"
         };
     },
 
