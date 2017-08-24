@@ -17,6 +17,18 @@
           "designerAlias": "jimmychoo_shoes",
           "addressFullDetail": "THE-AVENTURA-MALL"
         }
+      },
+      {
+        "name": "59th Street",
+        "streetAddress": "1000 Third Avenue",
+        "cityStateZip": "59th Street and Lexington Avenue<br />New York, NY 10022",
+        "phoneNumber": "212-705-2000",
+        "phoneNumberHrefSuffix": "+1-212-705-2000",
+        "urlArgs": {
+          "addressAlias": "59th-street",
+          "designerAlias": "jimmychoo_shoes",
+          "addressFullDetail": "59TH-STREET-LEXINGTON-AVENUE"
+        }
       }
     ],
     [
@@ -30,6 +42,18 @@
           "addressAlias": "century-city",
            "designerAlias": "jimmychoo_shoes",
           "addressFullDetail": "CENTURY-CITY"
+        }
+      },
+      {
+        "name": "Short Hills",
+        "streetAddress": "1200 Morris Turnpike",
+        "cityStateZip": "The Mall at Short Hills<br />Short Hills, NJ 07078",
+        "phoneNumber": "973-548-2200",
+        "phoneNumberHrefSuffix": "+1-973-548-2200",
+        "urlArgs": {
+          "addressAlias": "short-hills",
+          "designerAlias": "jimmychoo_shoes",
+          "addressFullDetail": "THE-MALL-AT-SHORT-HILLS"
         }
       }
     ],
