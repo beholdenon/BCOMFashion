@@ -34,15 +34,15 @@
     ], 
     [
       {
-        "name": "THE SHOPS AT RIVERSIDE",
-        "streetAddress": "400 Hackensack Avenue",
-        "cityStateZip": "Hackensack, NJ 07601",
-        "phoneNumber": "201-457-2000",
-        "phoneNumberHrefSuffix": "+1-201-457-2000",
+        "name": "SAN FRANCISCO",
+        "streetAddress": "845 Market Street",
+        "cityStateZip": "San Francisco Centre<br />San Francisco, CA 94103",
+        "phoneNumber": "415-856-5300",
+        "phoneNumberHrefSuffix": "+1-415-856-5300",
         "urlArgs": {
-          "addressAlias": "bergen-shops-at-riverside",
+          "addressAlias": "san-francisco-centre",
           "designerAlias": "moncler",
-          "addressFullDetail": "THE-SHOPS-AT-RIVERSIDE"
+          "addressFullDetail": "SAN-FRANCISCO-CENTRE"
         }
       },
       {
@@ -98,15 +98,15 @@
         }
       },
       {
-        "name": "SAN FRANCISCO",
-        "streetAddress": "845 Market Street",
-        "cityStateZip": "San Francisco Centre<br />San Francisco, CA 94103",
-        "phoneNumber": "415-856-5300",
-        "phoneNumberHrefSuffix": "+1-415-856-5300",
+        "name": "THE SHOPS AT RIVERSIDE",
+        "streetAddress": "400 Hackensack Avenue",
+        "cityStateZip": "Hackensack, NJ 07601",
+        "phoneNumber": "201-457-2000",
+        "phoneNumberHrefSuffix": "+1-201-457-2000",
         "urlArgs": {
-          "addressAlias": "san-francisco-centre",
+          "addressAlias": "bergen-shops-at-riverside",
           "designerAlias": "moncler",
-          "addressFullDetail": "SAN-FRANCISCO-CENTRE"
+          "addressFullDetail": "THE-SHOPS-AT-RIVERSIDE"
         }
       }
     ]
