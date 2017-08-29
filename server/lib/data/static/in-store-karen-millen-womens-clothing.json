@@ -1,0 +1,343 @@
+{
+  "designerName": "Karen Millen Women's Clothing",
+  "machineReadableDesignerName": "karen_millen_women_clothing",
+  "title2Prefix": "Karen Millen Women's Clothing",
+  "pageUrlDesignerAlias": "karen-millen-womens-clothing",
+  "designerDescription": "",
+  "addressColumns": [
+    [{
+      "name": "59th Street",
+      "streetAddress": "1000 Third Avenue",
+      "cityStateZip": "59th Street and Lexington Avenue<br />New York, NY 10022",
+      "phoneNumber": "212-705-2000",
+      "phoneNumberHrefSuffix": "+1-212-705-2000",
+      "urlArgs": {
+        "addressAlias": "59th-street",
+        "designerAlias": "karen_millen_women_clothing",
+        "addressFullDetail": "59TH-STREET-LEXINGTON-AVENUE"
+      }
+    }, {
+      "name": "NORTH MICHIGAN",
+      "streetAddress": "900 North Michigan Avenue",
+      "cityStateZip": "Chicago, IL 60611",
+      "phoneNumber": "312-440-4460",
+      "phoneNumberHrefSuffix": "+1-312-440-4460",
+      "urlArgs": {
+        "addressAlias": "north-michigan-avenue",
+        "designerAlias": "karen_millen_women_clothing",
+        "addressFullDetail": "NORTH-MICHIGAN-AVENUE"
+      }
+    }, {
+      "name": "FASHION VALLEY",
+      "streetAddress": "7057 Friars Road",
+      "cityStateZip": "San Diego, CA 92108",
+      "phoneNumber": "619-610-6400",
+      "phoneNumberHrefSuffix": "+1-619-610-6400",
+      "urlArgs": {
+        "addressAlias": "fashion-valley--san-diego",
+        "designerAlias": "karen_millen_women_clothing",
+        "addressFullDetail": "FASHION-VALLEY-SAN-DIEGO"
+      }
+    }, {
+      "name": "KING OF PRUSSIA",
+      "streetAddress": "2 Rt. 202 North 660 West DeKalb Pike",
+      "cityStateZip": "The Court at King of Prussia<br />King of Prussia, PA 19406",
+      "phoneNumber": "610-337-6300",
+      "phoneNumberHrefSuffix": "+1-610-337-6300",
+      "urlArgs": {
+        "addressAlias": "king-of-prussia--the-court-",
+        "designerAlias": "karen_millen_women_clothing",
+        "addressFullDetail": "THE-COURT-AT-KING-OF-PRUSSIA"
+      }
+    }, {
+      "name": "TYSON&rsquo;S CORNER",
+      "streetAddress": "8100 Tysons Corner Center",
+      "cityStateZip": "McLean, VA 22102",
+      "phoneNumber": "703-556-4600",
+      "phoneNumberHrefSuffix": "+1-703-556-4600",
+      "urlArgs": {
+        "addressAlias": "tysons-corner-center",
+        "designerAlias": "karen_millen_women_clothing",
+        "addressFullDetail": "TYSONS-CORNER-CENTER"
+      }
+    }, {
+      "name": "HUNTINGTON",
+      "streetAddress": "270 Walt Whitman Road",
+      "cityStateZip": "Huntington Station, NY 11746",
+      "phoneNumber": "631-425-6700",
+      "phoneNumberHrefSuffix": "+1-631-425-6700",
+      "urlArgs": {
+        "addressAlias": "huntington-walt-whitman",
+        "designerAlias": "karen_millen_women_clothing",
+        "addressFullDetail": "HUNTINGTON-WALT-WHITMAN"
+      }
+    }, {
+      "name": "OLD ORCHARD",
+      "streetAddress": "4963 Old Orchard Center",
+      "cityStateZip": "Skokie, IL 60077",
+      "phoneNumber": "847-675-5200",
+      "phoneNumberHrefSuffix": "+1-847-675-5200",
+      "urlArgs": {
+        "addressAlias": "old-orchard",
+        "designerAlias": "karen_millen_women_clothing",
+        "addressFullDetail": "OLD-ORCHARD"
+      }
+    }, {
+      "name": "SOUTH COAST PLAZA",
+      "streetAddress": "3333 South Bristol Street",
+      "cityStateZip": "Costa Mesa, CA 92626",
+      "phoneNumber": "714-824-4600",
+      "phoneNumberHrefSuffix": "+1-714-824-4600",
+      "urlArgs": {
+        "addressAlias": "south-coast-plaza",
+        "designerAlias": "karen_millen_women_clothing",
+        "addressFullDetail": "SOUTH-COAST-PLAZA"
+      }
+    }],
+    [{
+      "name": "BRIDGEWATER",
+      "streetAddress": "410 Commons Way",
+      "cityStateZip": "Bridgewater, NJ 08807",
+      "phoneNumber": "908-762-2400",
+      "phoneNumberHrefSuffix": "+1-908-762-2400",
+      "urlArgs": {
+        "addressAlias": "bridgewater-commons",
+        "designerAlias": "karen_millen_women_clothing",
+        "addressFullDetail": "BRIDGE-WATER-COMMONS"
+      }
+    }, {
+      "name": "LENOX",
+      "streetAddress": "3393 Peachtree Road NE",
+      "cityStateZip": "Atlanta, GA 30326",
+      "phoneNumber": "404-495-2800",
+      "phoneNumberHrefSuffix": "+1-404-495-2800",
+      "urlArgs": {
+        "addressAlias": "lenox-square",
+        "designerAlias": "karen_millen_women_clothing",
+        "addressFullDetail": "LENOX-SQUARE"
+      }
+    }, {
+      "name": "Chestnut Hill",
+      "streetAddress": "225 Boylston Street",
+      "cityStateZip": "Chestnut Hill Mall</br >Chestnut Hill, MA 02467",
+      "phoneNumber": "617-630-6000",
+      "phoneNumberHrefSuffix": "+1-617-630-6000",
+      "urlArgs": {
+        "addressAlias": "chestnut-hill",
+        "designerAlias": "karen_millen_women_clothing",
+        "addressFullDetail": "CHESTNUT-HILL-MALL"
+      }
+    }, {
+      "name": "San Francisco",
+      "streetAddress": "845 Market Street",
+      "cityStateZip": "San Francisco, CA 94103",
+      "phoneNumber": "415-856-5300",
+      "phoneNumberHrefSuffix": "+1-415-856-5300",
+      "urlArgs": {
+        "addressAlias": "san-francisco-centre",
+        "designerAlias": "karen_millen_women_clothing",
+        "addressFullDetail": "SAN-FRANCISCO-CENTRE"
+      }
+    }, {
+      "name": "BOCA RATON",
+      "streetAddress": "5840 Glades Road",
+      "cityStateZip": "Boca Raton, FL 33431",
+      "phoneNumber": "561-394-2000",
+      "phoneNumberHrefSuffix": "+1-561-394-2000",
+      "urlArgs": {
+        "addressAlias": "boca-raton-town-center",
+        "designerAlias": "karen_millen_women_clothing",
+        "addressFullDetail": "BOCA-RATON-TOWN-CENTER"
+      }
+    }, {
+      "name": "Aventura",
+      "streetAddress": "19555 Biscayne Boulevard",
+      "cityStateZip": "The Aventura Mall<br />Aventura, FL 33180",
+      "phoneNumber": "305-792-1000",
+      "phoneNumberHrefSuffix": "+1-305-792-1000",
+      "urlArgs": {
+        "addressAlias": "aventura",
+        "designerAlias": "karen_millen_women_clothing",
+        "addressFullDetail": "AVENTURA-MALL"
+      }
+    }, {
+      "name": "WHITE PLAINS",
+      "streetAddress": "175 Bloomingdale Road",
+      "cityStateZip": "White Plains, NY 10605",
+      "phoneNumber": "914-684-6300",
+      "phoneNumberHrefSuffix": "+1-914-684-6300",
+      "urlArgs": {
+        "addressAlias": "white-plains",
+        "designerAlias": "karen_millen_women_clothing",
+        "addressFullDetail": "WHITE-PLAINS"
+      }
+    }, {
+      "name": "SOHO",
+      "streetAddress": "504 Broadway",
+      "cityStateZip": "New York, NY 10012",
+      "phoneNumber": "212-729-5900",
+      "phoneNumberHrefSuffix": "+1-212-729-5900",
+      "urlArgs": {
+        "addressAlias": "soho",
+        "designerAlias": "karen_millen_women_clothing",
+        "addressFullDetail": "SOHO"
+      }
+    }],
+    [{
+      "name": "PALM BEACH",
+      "streetAddress": "3105 PGA Boulevard",
+      "cityStateZip": "Gardens Mall <br />Palm Beach Gardens, FL 33410",
+      "phoneNumber": "561-625-2000",
+      "phoneNumberHrefSuffix": "+1-561-625-2000",
+      "urlArgs": {
+        "addressAlias": "palm-beach-gardens",
+        "designerAlias": "karen_millen_women_clothing",
+        "addressFullDetail": "PALM-BEACH-GARDENS-MALL"
+      }
+    }, {
+      "name": "STANFORD",
+      "streetAddress": "1 Stanford Shopping Center",
+      "cityStateZip": "Palo Alto, CA 94304",
+      "phoneNumber": "650-463-2000",
+      "phoneNumberHrefSuffix": "+1-650-463-2000",
+      "urlArgs": {
+        "addressAlias": "stanford",
+        "designerAlias": "karen_millen_women_clothing",
+        "addressFullDetail": "STANFORD"
+      }
+    }, {
+      "name": "ROOSEVELT FIELD",
+      "streetAddress": "630 Old Country Rd.",
+      "cityStateZip": "#27<br />Garden City, NY 11530",
+      "phoneNumber": "516-873-2700",
+      "phoneNumberHrefSuffix": "+1-516-873-2700",
+      "urlArgs": {
+        "addressAlias": "roosevelt-field",
+        "designerAlias": "karen_millen_women_clothing",
+        "addressFullDetail": "ROOSEVELT-FIELD"
+      }
+    }, {
+      "name": "SANTA MONICA",
+      "streetAddress": "315 Colorado Avenue",
+      "cityStateZip": "Santa Monica, CA 90401",
+      "phoneNumber": "310-985-6400",
+      "phoneNumberHrefSuffix": "+1-310-985-6400",
+      "urlArgs": {
+        "addressAlias": "santa-monica-place",
+        "designerAlias": "karen_millen_women_clothing",
+        "addressFullDetail": "SANTA-MONICA-PLACE"
+      }
+    }, {
+      "name": "ORLANDO",
+      "streetAddress": "4152 Conroy Road",
+      "cityStateZip": "The Mall at Millenia<br />Orlando, FL 32839",
+      "phoneNumber": "407-264-2400",
+      "phoneNumberHrefSuffix": "+1-407-264-2400",
+      "urlArgs": {
+        "addressAlias": "orlando--the-mall-at-millenia",
+        "designerAlias": "karen_millen_women_clothing",
+        "addressFullDetail": "THE-MALL-AT-MILLENIA"
+      }
+    }, {
+      "name": "Century City",
+      "streetAddress": "10250 Santa Monica Boulevard",
+      "cityStateZip": "Los Angeles, CA 90067",
+      "phoneNumber": "310-772-2100",
+      "phoneNumberHrefSuffix": "+1-310-772-2100",
+      "urlArgs": {
+        "addressAlias": "century-city",
+        "designerAlias": "karen_millen_women_clothing",
+        "addressFullDetail": "CENTURY-CITY"
+      }
+    }, {
+      "name": "BERGEN COUNTY",
+      "streetAddress": "400 Hackensack Avenue",
+      "cityStateZip": "The Shops at Riverside<br />Hackensack, NJ 07601",
+      "phoneNumber": "201-457-2000",
+      "phoneNumberHrefSuffix": "+1-201-457-2000",
+      "urlArgs": {
+        "addressAlias": "bergen-shops-at-riverside",
+        "designerAlias": "karen_millen_women_clothing",
+        "addressFullDetail": "THE-SHOPS-AT-RIVERSIDE"
+      }
+    }, {
+      "name": "GLENDALE",
+      "streetAddress": "103 South Brand Blvd.",
+      "cityStateZip": "Glendale Galleria<br />Glendale, CA 91210",
+      "phoneNumber": "818-638-4100",
+      "phoneNumberHrefSuffix": "+1-818-638-4100",
+      "urlArgs": {
+        "addressAlias": "glendale-galleria",
+        "designerAlias": "karen_millen_women_clothing",
+        "addressFullDetail": "GLENDALE-GALLERIA"
+      }
+    }],
+    [{
+      "name": "CHEVY CHASE",
+      "streetAddress": "5300 Western Avenue",
+      "cityStateZip": "Chevy Chase, MD 20815",
+      "phoneNumber": "240-744-3700",
+      "phoneNumberHrefSuffix": "+1-240-744-3700",
+      "urlArgs": {
+        "addressAlias": "wisconsin-place--chevy-chase",
+        "designerAlias": "karen_millen_women_clothing",
+        "addressFullDetail": "WISCONSIN-PLACE-CHEVY-CHASE"
+      }
+    }, {
+      "name": "SHERMAN OAKS",
+      "streetAddress": "14060 Riverside Drive",
+      "cityStateZip": "Sherman Oaks, CA 91423",
+      "phoneNumber": "818-325-2200",
+      "phoneNumberHrefSuffix": "+1-818-325-2200",
+      "urlArgs": {
+        "addressAlias": "sherman-oaks-fashion-square",
+        "designerAlias": "karen_millen_women_clothing",
+        "addressFullDetail": "SHERMAN-OAKS-FASHION-SQUARE"
+      }
+    }, {
+      "name": "SHORT HILLS",
+      "streetAddress": "1200 Morris Turnpike",
+      "cityStateZip": "The Mall at Short Hills<br />Short Hills, NJ 07078",
+      "phoneNumber": "973-548-2200",
+      "phoneNumberHrefSuffix": "+1-973-548-2200",
+      "urlArgs": {
+        "addressAlias": "short-hills",
+        "designerAlias": "karen_millen_women_clothing",
+        "addressFullDetail": "THE-MALL-AT-SHORT-HILLS"
+      }
+    }, {
+      "name": "NEWPORT BEACH",
+      "streetAddress": "701 Newport Center Drive",
+      "cityStateZip": "Fashion Island<br />Newport Beach, CA 92660",
+      "phoneNumber": "949-729-6600",
+      "phoneNumberHrefSuffix": "+1-949-729-6600",
+      "urlArgs": {
+        "addressAlias": "newport-fashion-island",
+        "designerAlias": "karen_millen_women_clothing",
+        "addressFullDetail": "FASHION-ISLAND"
+      }
+    }, {
+      "name": "WILLOWBROOK",
+      "streetAddress": "3 Willowbrook Blvd",
+      "cityStateZip": "Wayne, NJ 07470",
+      "phoneNumber": "973-582-2400",
+      "phoneNumberHrefSuffix": "+1-973-582-2400",
+      "urlArgs": {
+        "addressAlias": "willowbrook",
+        "designerAlias": "karen_millen_women_clothing",
+        "addressFullDetail": "WILLOWBROOK"
+      }
+    }, {
+      "name": "BEVERLY CENTER",
+      "streetAddress": "8500 Beverly Boulevard",
+      "cityStateZip": "Los Angeles, CA 90048",
+      "phoneNumber": "310-360-2700",
+      "phoneNumberHrefSuffix": "+1-310-360-2700",
+      "urlArgs": {
+        "addressAlias": "beverly-center",
+        "designerAlias": "karen_millen_women_clothing",
+        "addressFullDetail": "BEVERLY-CENTER"
+      }
+    }]
+  ]
+}
