@@ -1,0 +1,211 @@
+{
+  "designerName": "HOBBS LONDON Women's Clothing",
+  "machineReadableDesignerName": "hobbs_london_women_clothing",
+  "title2Prefix": "HOBBS LONDON Women's Clothing",
+  "pageUrlDesignerAlias": "hobbs-london-womens-clothing",
+  "designerDescription": "",
+  "addressColumns": [
+    [{
+      "name": "59th Street",
+      "streetAddress": "1000 Third Avenue",
+      "cityStateZip": "59th Street and Lexington Avenue<br />New York, NY 10022",
+      "phoneNumber": "212-705-2000",
+      "phoneNumberHrefSuffix": "+1-212-705-2000",
+      "urlArgs": {
+        "addressAlias": "59th-street",
+        "designerAlias": "hobbs_london_women_clothing",
+        "addressFullDetail": "59TH-STREET-LEXINGTON-AVENUE"
+      }
+    }, {
+      "name": "NORTH MICHIGAN",
+      "streetAddress": "900 North Michigan Avenue",
+      "cityStateZip": "Chicago, IL 60611",
+      "phoneNumber": "312-440-4460",
+      "phoneNumberHrefSuffix": "+1-312-440-4460",
+      "urlArgs": {
+        "addressAlias": "north-michigan-avenue",
+        "designerAlias": "hobbs_london_women_clothing",
+        "addressFullDetail": "NORTH-MICHIGAN-AVENUE"
+      }
+    }, {
+      "name": "KING OF PRUSSIA",
+      "streetAddress": "2 Rt. 202 North 660 West DeKalb Pike",
+      "cityStateZip": "The Court at King of Prussia<br />King of Prussia, PA 19406",
+      "phoneNumber": "610-337-6300",
+      "phoneNumberHrefSuffix": "+1-610-337-6300",
+      "urlArgs": {
+        "addressAlias": "king-of-prussia--the-court-",
+        "designerAlias": "hobbs_london_women_clothing",
+        "addressFullDetail": "THE-COURT-AT-KING-OF-PRUSSIA"
+      }
+    }, {
+      "name": "TYSON&rsquo;S CORNER",
+      "streetAddress": "8100 Tysons Corner Center",
+      "cityStateZip": "McLean, VA 22102",
+      "phoneNumber": "703-556-4600",
+      "phoneNumberHrefSuffix": "+1-703-556-4600",
+      "urlArgs": {
+        "addressAlias": "tysons-corner-center",
+        "designerAlias": "hobbs_london_women_clothing",
+        "addressFullDetail": "TYSONS-CORNER-CENTER"
+      }
+    }, {
+      "name": "HUNTINGTON",
+      "streetAddress": "270 Walt Whitman Road",
+      "cityStateZip": "Huntington Station, NY 11746",
+      "phoneNumber": "631-425-6700",
+      "phoneNumberHrefSuffix": "+1-631-425-6700",
+      "urlArgs": {
+        "addressAlias": "huntington-walt-whitman",
+        "designerAlias": "hobbs_london_women_clothing",
+        "addressFullDetail": "HUNTINGTON-WALT-WHITMAN"
+      }
+    }],
+    [{
+      "name": "OLD ORCHARD",
+      "streetAddress": "4963 Old Orchard Center",
+      "cityStateZip": "Skokie, IL 60077",
+      "phoneNumber": "847-675-5200",
+      "phoneNumberHrefSuffix": "+1-847-675-5200",
+      "urlArgs": {
+        "addressAlias": "old-orchard",
+        "designerAlias": "hobbs_london_women_clothing",
+        "addressFullDetail": "OLD-ORCHARD"
+      }
+    }, {
+      "name": "BRIDGEWATER",
+      "streetAddress": "410 Commons Way",
+      "cityStateZip": "Bridgewater, NJ 08807",
+      "phoneNumber": "908-762-2400",
+      "phoneNumberHrefSuffix": "+1-908-762-2400",
+      "urlArgs": {
+        "addressAlias": "bridgewater-commons",
+        "designerAlias": "hobbs_london_women_clothing",
+        "addressFullDetail": "BRIDGE-WATER-COMMONS"
+      }
+    }, {
+      "name": "LENOX",
+      "streetAddress": "3393 Peachtree Road NE",
+      "cityStateZip": "Atlanta, GA 30326",
+      "phoneNumber": "404-495-2800",
+      "phoneNumberHrefSuffix": "+1-404-495-2800",
+      "urlArgs": {
+        "addressAlias": "lenox-square",
+        "designerAlias": "hobbs_london_women_clothing",
+        "addressFullDetail": "LENOX-SQUARE"
+      }
+    }, {
+      "name": "Chestnut Hill",
+      "streetAddress": "225 Boylston Street",
+      "cityStateZip": "Chestnut Hill Mall</br >Chestnut Hill, MA 02467",
+      "phoneNumber": "617-630-6000",
+      "phoneNumberHrefSuffix": "+1-617-630-6000",
+      "urlArgs": {
+        "addressAlias": "chestnut-hill",
+        "designerAlias": "hobbs_london_women_clothing",
+        "addressFullDetail": "CHESTNUT-HILL-MALL"
+      }
+    }, {
+      "name": "San Francisco",
+      "streetAddress": "845 Market Street",
+      "cityStateZip": "San Francisco, CA 94103",
+      "phoneNumber": "415-856-5300",
+      "phoneNumberHrefSuffix": "+1-415-856-5300",
+      "urlArgs": {
+        "addressAlias": "san-francisco-centre",
+        "designerAlias": "hobbs_london_women_clothing",
+        "addressFullDetail": "SAN-FRANCISCO-CENTRE"
+      }
+    }],
+    [{
+      "name": "BOCA RATON",
+      "streetAddress": "5840 Glades Road",
+      "cityStateZip": "Boca Raton, FL 33431",
+      "phoneNumber": "561-394-2000",
+      "phoneNumberHrefSuffix": "+1-561-394-2000",
+      "urlArgs": {
+        "addressAlias": "boca-raton-town-center",
+        "designerAlias": "hobbs_london_women_clothing",
+        "addressFullDetail": "BOCA-RATON-TOWN-CENTER"
+      }
+    }, {
+      "name": "WHITE PLAINS",
+      "streetAddress": "175 Bloomingdale Road",
+      "cityStateZip": "White Plains, NY 10605",
+      "phoneNumber": "914-684-6300",
+      "phoneNumberHrefSuffix": "+1-914-684-6300",
+      "urlArgs": {
+        "addressAlias": "white-plains",
+        "designerAlias": "hobbs_london_women_clothing",
+        "addressFullDetail": "WHITE-PLAINS"
+      }
+    }, {
+      "name": "PALM BEACH",
+      "streetAddress": "3105 PGA Boulevard",
+      "cityStateZip": "Gardens Mall <br />Palm Beach Gardens, FL 33410",
+      "phoneNumber": "561-625-2000",
+      "phoneNumberHrefSuffix": "+1-561-625-2000",
+      "urlArgs": {
+        "addressAlias": "palm-beach-gardens",
+        "designerAlias": "hobbs_london_women_clothing",
+        "addressFullDetail": "PALM-BEACH-GARDENS-MALL"
+      }
+    }, {
+      "name": "ROOSEVELT FIELD",
+      "streetAddress": "630 Old Country Rd.",
+      "cityStateZip": "#27<br />Garden City, NY 11530",
+      "phoneNumber": "516-873-2700",
+      "phoneNumberHrefSuffix": "+1-516-873-2700",
+      "urlArgs": {
+        "addressAlias": "roosevelt-field",
+        "designerAlias": "hobbs_london_women_clothing",
+        "addressFullDetail": "ROOSEVELT-FIELD"
+      }
+    }, {
+      "name": "ORLANDO",
+      "streetAddress": "4152 Conroy Road",
+      "cityStateZip": "The Mall at Millenia<br />Orlando, FL 32839",
+      "phoneNumber": "407-264-2400",
+      "phoneNumberHrefSuffix": "+1-407-264-2400",
+      "urlArgs": {
+        "addressAlias": "orlando--the-mall-at-millenia",
+        "designerAlias": "hobbs_london_women_clothing",
+        "addressFullDetail": "THE-MALL-AT-MILLENIA"
+      }
+    }],
+    [{
+      "name": "BERGEN COUNTY",
+      "streetAddress": "400 Hackensack Avenue",
+      "cityStateZip": "The Shops at Riverside<br />Hackensack, NJ 07601",
+      "phoneNumber": "201-457-2000",
+      "phoneNumberHrefSuffix": "+1-201-457-2000",
+      "urlArgs": {
+        "addressAlias": "bergen-shops-at-riverside",
+        "designerAlias": "hobbs_london_women_clothing",
+        "addressFullDetail": "THE-SHOPS-AT-RIVERSIDE"
+      }
+    }, {
+      "name": "CHEVY CHASE",
+      "streetAddress": "5300 Western Avenue",
+      "cityStateZip": "Chevy Chase, MD 20815",
+      "phoneNumber": "240-744-3700",
+      "phoneNumberHrefSuffix": "+1-240-744-3700",
+      "urlArgs": {
+        "addressAlias": "wisconsin-place--chevy-chase",
+        "designerAlias": "hobbs_london_women_clothing",
+        "addressFullDetail": "WISCONSIN-PLACE-CHEVY-CHASE"
+      }
+    }, {
+      "name": "SHORT HILLS",
+      "streetAddress": "1200 Morris Turnpike",
+      "cityStateZip": "The Mall at Short Hills<br />Short Hills, NJ 07078",
+      "phoneNumber": "973-548-2200",
+      "phoneNumberHrefSuffix": "+1-973-548-2200",
+      "urlArgs": {
+        "addressAlias": "short-hills",
+        "designerAlias": "hobbs_london_women_clothing",
+        "addressFullDetail": "THE-MALL-AT-SHORT-HILLS"
+      }
+    }]
+  ]
+}
