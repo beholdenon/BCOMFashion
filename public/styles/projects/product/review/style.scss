@@ -1,0 +1,18 @@
+#BVSubmissionContainer {
+    padding: 50px 0;
+    position: relative;
+
+    &.BVSubmissionInProgress.BVBrowserWebkit {
+        padding: 0;
+    }
+
+    .BVPageSubmittedReview {
+        padding: 0 10px;
+    }
+}
+
+.BVSubmissionLoading {
+    background-position: center;
+    padding: 0;
+    width: 100%;
+}

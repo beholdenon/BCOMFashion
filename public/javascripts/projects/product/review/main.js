@@ -29,19 +29,23 @@ APP.bvLoadRRSubmission = function() {
             displayCode: self.bvClientId,
             submissionUnavailableMessage: self.bvErrorMsg
         },
-        bvLib = $BV ? $BV : {};
+        bvLib = $BV ? $BV : {},
+        bvAuthenticateUser = self.getUrlParameter('bvauthenticateuser') === 'true' ? true : false ;
 
-    if (bvUserToken) {
-        bvConfig.userToken = bvUserToken;
-        bvLib.ui("submission_container", bvConfig);
-    } else {
-        Cookie.set('FORWARDPAGE_KEY', currentUrl, undefined, {
-            expires: new Date( new Date().getTime() + ( 86400000 ) ),
-            domain: '.bloomingdales.com'
-        });
+    if ( bvAuthenticateUser ) {
+        if (bvUserToken) {
+            bvConfig.userToken = bvUserToken;
+        } else {
+            Cookie.set('FORWARDPAGE_KEY', currentUrl, undefined, {
+                expires: new Date( new Date().getTime() + ( 86400000 ) ),
+                domain: '.bloomingdales.com'
+            });
 
-        window.location.href = Globals.getValue('props.secureHost') + '/account/signin';
+            window.location.href = Globals.getValue('props.secureHost') + '/account/signin';
+        }
     }
+
+    bvLib.ui("submission_container", bvConfig);
 };
 
 APP.showBVUnavailableErrorMsg = function( bvErrorMsg ) {
@@ -87,6 +91,13 @@ APP.configDomain = function() {
     } else if ( qePattern.test( document.domain ) ) {
         document.domain = "fds.com";
     }
+};
+
+APP.getUrlParameter = function(name) {
+    name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+    var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+    var results = regex.exec(window.location.search);
+    return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
 };
 
 $(window).load(function() {
