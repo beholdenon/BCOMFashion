@@ -1,8 +1,9 @@
 {
   "designerName": "Karen Millen Women's Clothing",
   "machineReadableDesignerName": "karen_millen_women_clothing",
-  "title2Prefix": " ",
-  "title2Suffix": " ",
+  "title2Prefix": "Karen Millen Women's Clothing",
+  "title2Suffix": "",
+  "omitTitle" : true,
   "pageUrlDesignerAlias": "karen-millen-womens-clothing",
   "designerDescription": "",
   "addressColumns": [

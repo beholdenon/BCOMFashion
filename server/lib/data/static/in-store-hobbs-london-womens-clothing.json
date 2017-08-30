@@ -1,8 +1,9 @@
 {
   "designerName": "HOBBS LONDON Women's Clothing",
   "machineReadableDesignerName": "hobbs_london_women_clothing",
-  "title2Prefix": " ",
-  "title2Suffix": " ",
+  "title2Prefix": "HOBBS LONDON Women's Clothing",
+  "title2Suffix": "",
+  "omitTitle" : true,
   "pageUrlDesignerAlias": "hobbs-london-womens-clothing",
   "designerDescription": "",
   "addressColumns": [
