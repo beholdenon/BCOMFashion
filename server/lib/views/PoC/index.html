@@ -1,0 +1,43 @@
+<!--headMeta={"name":"description", "content":"debug"}-->
+<!--headTitle={"title":"BrightCove video debug"}-->
+
+
+<style type="text/css">
+	h1 {
+		font-family: "AvenirLTW01-95BlackObli", sans-serif;
+		margin: 1em 0;
+	}
+
+	#brightCove-test {
+		width: 100%;
+	}	
+</style>
+
+<section>
+
+	<h1>BrightCove Video Debug</h1>
+
+	<video id="brightCove-test" data-id="5541007783001" controls autoplay></video>
+
+</section>
+
+<script type="text/javascript" src="/b/fashion/javascripts/libs/jquery.js"></script>
+<script type="text/javascript" src="/b/fashion/javascripts/includes/wssg.js"></script>
+<script type="text/javascript">
+	
+	/* globals SERVICES */
+	'use strict';
+
+	(function(){
+
+	  SERVICES.brightCove.getURL( function(res) {
+	    var error = 'Your browser does not support HTML 5 video.';
+	    var source = '<source src="'+res+'" type="video/mp4">';
+
+	    $("#brightCove-test").append(source).append(error).attr('controls autoplay');
+
+	  }, $("#brightCove-test").attr('data-id') );
+
+	})();
+
+</script>
