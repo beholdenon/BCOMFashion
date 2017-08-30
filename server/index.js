@@ -65,6 +65,7 @@ var routes = [
     { method: 'GET',  path: '/landing-page/hawaii-ala-moana/{deeplinks?}',                                  config: require('./lib/handlers/views').adaptive },
 
     { method: 'GET',  path: '/campaign/give-pink-get-more/{path*}',                                         config: require('./lib/handlers/views').adaptive },
+    { method: 'GET',  path: '/b/campaign/give-pink-get-more/{path*}',                                         config: require('./lib/handlers/views').adaptive },
     { method: 'GET',  path: '/catalogs/',                                                                   config: require('./lib/handlers/views').adaptive },
     { method: 'GET',  path: '/bwallet/',                                                                    config: require('./lib/handlers/views').adaptive },
     { method: 'GET',  path: '/charlotte-tilbury-makeup/',                                                   config: require('./lib/handlers/views').adaptive },
