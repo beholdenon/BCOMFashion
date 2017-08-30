@@ -22,6 +22,7 @@ APP.bvLoadRRSubmission = function() {
     var self = this,
         Cookie = require('cookie'),
         Globals = require('globals'),
+        Base = require('bcomBase'),
         currentUrl = window.location.href,
         bvUserToken = Cookie.get("BazaarVoiceToken", "GCs"),
         bvConfig = {
@@ -29,19 +30,23 @@ APP.bvLoadRRSubmission = function() {
             displayCode: self.bvClientId,
             submissionUnavailableMessage: self.bvErrorMsg
         },
-        bvLib = $BV ? $BV : {};
+        bvLib = $BV ? $BV : {},
+        bvAuthenticateUser = Base.getQueryParameter('bvauthenticateuser') === 'true' ? true : false ;
 
-    if (bvUserToken) {
-        bvConfig.userToken = bvUserToken;
-        bvLib.ui("submission_container", bvConfig);
-    } else {
-        Cookie.set('FORWARDPAGE_KEY', currentUrl, undefined, {
-            expires: new Date( new Date().getTime() + ( 86400000 ) ),
-            domain: '.bloomingdales.com'
-        });
+    if ( bvAuthenticateUser ) {
+        if (bvUserToken) {
+            bvConfig.userToken = bvUserToken;
+        } else {
+            Cookie.set('FORWARDPAGE_KEY', currentUrl, undefined, {
+                expires: new Date( new Date().getTime() + ( 86400000 ) ),
+                domain: '.bloomingdales.com'
+            });
 
-        window.location.href = Globals.getValue('props.secureHost') + '/account/signin';
+            window.location.href = Globals.getValue('props.secureHost') + '/account/signin';
+        }
     }
+
+    bvLib.ui("submission_container", bvConfig);
 };
 
 APP.showBVUnavailableErrorMsg = function( bvErrorMsg ) {
