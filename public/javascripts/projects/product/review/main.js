@@ -22,6 +22,7 @@ APP.bvLoadRRSubmission = function() {
     var self = this,
         Cookie = require('cookie'),
         Globals = require('globals'),
+        Base = require('bcomBase'),
         currentUrl = window.location.href,
         bvUserToken = Cookie.get("BazaarVoiceToken", "GCs"),
         bvConfig = {
@@ -30,7 +31,7 @@ APP.bvLoadRRSubmission = function() {
             submissionUnavailableMessage: self.bvErrorMsg
         },
         bvLib = $BV ? $BV : {},
-        bvAuthenticateUser = self.getUrlParameter('bvauthenticateuser') === 'true' ? true : false ;
+        bvAuthenticateUser = Base.getQueryParameter('bvauthenticateuser') === 'true' ? true : false ;
 
     if ( bvAuthenticateUser ) {
         if (bvUserToken) {
@@ -91,13 +92,6 @@ APP.configDomain = function() {
     } else if ( qePattern.test( document.domain ) ) {
         document.domain = "fds.com";
     }
-};
-
-APP.getUrlParameter = function(name) {
-    name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
-    var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
-    var results = regex.exec(window.location.search);
-    return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
 };
 
 $(window).load(function() {
