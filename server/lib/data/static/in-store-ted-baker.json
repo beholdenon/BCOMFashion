@@ -1,8 +1,9 @@
 {
   "designerName": "Ted Baker",
   "machineReadableDesignerName": "ted_baker",
-  "title2Prefix": " ",
-  "title2Suffix": " ",
+  "title2Prefix": "Ted Baker",
+  "title2Suffix": "",
+  "omitTitle" : true,
   "pageUrlDesignerAlias": "ted-baker",
   "designerDescription": "",
   "addressColumns": [

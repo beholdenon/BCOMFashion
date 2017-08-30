@@ -21,10 +21,14 @@
     </div>
     <section class="in-store-body">
         <div class="in-store-body-header in-store-header">
+        
+        {{#unless args.omitTitle}}
             <h2 class="in-store-title">
                 {{#if args.title2Prefix}}{{&args.title2Prefix}}{{else}}{{&args.designerName}}{{/if}}
                 {{#if args.title2Suffix}}{{&args.title2Suffix}}{{else}} IS ONLY AVAILABLE AT SELECT BLOOMINGDALE&rsquo;S STORES.{{/if}}
             </h2>
+        {{/unless}}
+
             <p class="in-store-sub-title">Please call or visit one of the following
                 locations for assistance.</p>
         </div>

@@ -1,8 +1,9 @@
 {
   "designerName": "Sandro Women’s Clothing",
   "machineReadableDesignerName": "sandro_women_clothing",
-  "title2Prefix": " ",
-  "title2Suffix": " ",
+  "title2Prefix": "Sandro Women’s Clothing",
+  "title2Suffix": "",
+  "omitTitle" : true,
   "pageUrlDesignerAlias": "sandro-womens-clothing",
   "designerDescription": "",
   "addressColumns": [

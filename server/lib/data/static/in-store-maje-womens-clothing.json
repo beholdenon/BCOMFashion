@@ -1,8 +1,9 @@
 {
   "designerName": "Maje Women's Clothing",
   "machineReadableDesignerName": "maje_women_clothing",
-  "title2Prefix": " ",
-  "title2Suffix": " ",
+  "title2Prefix": "Maje Women's Clothing",
+  "title2Suffix": "",
+  "omitTitle" : true,
   "pageUrlDesignerAlias": "maje-womens-clothing",
   "designerDescription": "",
   "addressColumns": [
