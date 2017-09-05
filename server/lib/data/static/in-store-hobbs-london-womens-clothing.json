@@ -208,6 +208,28 @@
         "designerAlias": "hobbs_london_women_clothing",
         "addressFullDetail": "THE-MALL-AT-SHORT-HILLS"
       }
+    }, {
+      "name": "WILLOWBROOK",
+      "streetAddress": "3 Willowbrook Blvd",
+      "cityStateZip": "Wayne, NJ 07470",
+      "phoneNumber": "973-582-2400",
+      "phoneNumberHrefSuffix": "+1-973-582-2400",
+      "urlArgs": {
+        "addressAlias": "willowbrook",
+        "designerAlias": "hobbs_london_women_clothing",
+        "addressFullDetail": "WILLOWBROOK"
+      }
+    }, {
+      "name": "WILLOW GROVE",
+      "streetAddress": "2400 West Moreland Park Road",
+      "cityStateZip": "Willow Grove Park Mall<br />Willow Grove, PA 19090",
+      "phoneNumber": "215-706-3300",
+      "phoneNumberHrefSuffix": "+1-215-706-3300",
+      "urlArgs": {
+        "addressAlias": "willow-grove-park",
+        "designerAlias": "hobbs_london_women_clothing",
+        "addressFullDetail": "WILLOW-GROVE-PARK-MALL"
+      }
     }]
   ]
 }
