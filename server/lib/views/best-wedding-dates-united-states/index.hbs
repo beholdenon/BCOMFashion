@@ -1,7 +1,7 @@
 	<!--headMeta={"name":"description", "content":"Want to take down the stress of picking the perfect wedding date? Bloomingdale's can help! Check out our new interactive WEDDING WEATHER PLANNER!"}-->
 	<!--headTitle={"title":"Best Wedding Dates in 2017 & 2018 by State (US) - Bloomingdale's"}-->
 	<!--headCanonical={"href":"http://fashion.bloomingdales.com/b/best-wedding-dates-united-states/"}-->
-	<!--preLoadScripts={"source":"/b/fashion/javascripts/vendor/best-wedding-dates-united-states/app.js"} -->
+	{{!-- <!--preLoadScripts={"source":"/b/fashion/javascripts/vendor/best-wedding-dates-united-states/app.js"} --> --}}
 
 	<link rel="stylesheet" href="/b/fashion/styles/projects/best-wedding-dates-united-states/fonts.css">
 	<link rel="stylesheet" href="/b/fashion/styles/projects/best-wedding-dates-united-states/styles.css">
@@ -137,8 +137,8 @@
 				<p tabindex="0">Did you find this useful? Share with your friends!</p>
 				
 				<div class="social-likes" data-counters="no" data-url="https://www.bloomingdales.com/b/best-wedding-dates-united-states/">
-					<div class="facebook" tabindex="0" title="Share link on Facebook">Share</div>
-					<div class="twitter" tabindex="0" data-via="Bloomingdales" data-title="Find out the sunniest, clearest, most beautiful day to get married your city:" title="Share link on Twitter">Tweet</div>
+					<div class="facebook" tabindex="0" title="Share link on Facebook" id="facebookBottomButton">Share</div>
+					<div class="twitter" tabindex="0" data-via="Bloomingdales" data-title="Find out the sunniest, clearest, most beautiful day to get married in your city:" title="Share link on Twitter" id="twitterBottomButton">Tweet</div>
 				</div>
 					
 			</div>
@@ -158,10 +158,17 @@
 		<!-- SOCIAL LIKES BUTTONS -->
 		<div class="social social-likes social-likes_vertical social-likes_notext" data-url="https://www.bloomingdales.com/b/best-wedding-dates-united-states/" data-title="">
 			<a tabindex="0" class="social_btn facebook icon-facebook" href="#" title="Share link on Facebook">Facebook</a>
-			<a tabindex="0" class="social_btn twitter icon-twitter" href="#" data-via="Bloomingdales" data-title="Find out the sunniest, clearest, most beautiful day to get married your city:" title="Share link on Twitter">Twitter</a>
+			<a tabindex="0" class="social_btn twitter icon-twitter" href="#" data-via="Bloomingdales" data-title="Find out the sunniest, clearest, most beautiful day to get married in your city:" title="Share link on Twitter">Twitter</a>
 		</div>
 
 	</div>
+
+	<script type="text/javascript">
+		(function(){
+			require(['/b/fashion/javascripts/vendor/best-wedding-dates-united-states/app.js']);
+		})();
+	</script>
+
 
 	<script type="text/javascript" src="/b/fashion/javascripts/projects/best-wedding-dates-united-states/cm_functions.js"></script>
 	<script type="text/javascript" src="/b/fashion/javascripts/projects/best-wedding-dates-united-states/social.js"></script>
