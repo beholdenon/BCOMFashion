@@ -1,16 +1,21 @@
 'use strict';
 
-require( [ "jquery", "bcomCoremetrics", "propsConfig" ], function ( $, Coremetrics, props ) {
+require( [ "jquery", "bcomCoremetrics" ], function ( $, Coremetrics ) {
 
 	$(document).ready(function(){
 
 		var givePinkCoremetrics = 'fall17_give_pink',
 			pushAttrs,
-			breastCancerAwarenessCampaignEnabled = props.breastCancerAwarenessCampaignEnabled;
+			serverDate = new Date( $('input[name="timeStamp"]').val() ),
+            onContentDateStart = new Date(2017,8,27,0,0,1),
+            onContentDateEnd = new Date(2017,9,31,23,59,59);
 
-		if ( breastCancerAwarenessCampaignEnabled ) {
+        //OFF by default, ON between 9/27 - 10/31
+		if ( serverDate >= onContentDateStart && serverDate <= onContentDateEnd ) {
+			//Hide OFF Content. Show ON Content
 			$('#campaignOFF').addClass('hide');
 		} else {
+			//Hide ON Content. Show OFF Content
 			$('#campaignON').addClass('hide');
 		}
 
