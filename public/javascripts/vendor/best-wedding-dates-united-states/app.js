@@ -4587,9 +4587,9 @@ dateFormat.masks = {
                 this._reset();
                 var t = window.location.origin;
                 window.location.origin || (t = window.location.protocol + "//" + window.location.hostname + (window.location.port ? ":" + window.location.port : ""));
-                // var n = t + "/b/fashion/assets/projects/best-wedding-dates-united-states/" + e + ".json",
+                var n = t + "/b/fashion/assets/projects/best-wedding-dates-united-states/" + e + ".json",
                 // var n = t + window.location.pathname + "data/"+ e +".json",
-                var n = "data/"+ e +".json",
+                //var n = "data/"+ e +".json",
                     i = this;
                 $.ajax({
                     dataType: "json",
