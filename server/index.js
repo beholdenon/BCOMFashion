@@ -51,9 +51,9 @@ var routes = [
     { method: 'GET',  path: '/registry/wedding/benefits-perks/',                                            config: require('./lib/handlers/views').adaptive },
     { method: 'GET',  path: '/registry/wedding/checklist/',                                                 config: require('./lib/handlers/views').adaptive },
     { method: 'GET',  path: '/registry/wedding/{path*}',                                                    config: require('./lib/handlers/assets').commonAssets },
-    { method: 'GET',  path: '/b/registry/wedding/benefits-perks/',                                            config: require('./lib/handlers/views').adaptive },
-    { method: 'GET',  path: '/b/registry/wedding/checklist/',                                                 config: require('./lib/handlers/views').adaptive },
-    { method: 'GET',  path: '/b/registry/wedding/{path*}',                                                    config: require('./lib/handlers/assets').commonAssets },
+    { method: 'GET',  path: '/b/registry/wedding/benefits-perks/',                                          config: require('./lib/handlers/views').adaptive },
+    { method: 'GET',  path: '/b/registry/wedding/checklist/',                                               config: require('./lib/handlers/views').adaptive },
+    { method: 'GET',  path: '/b/registry/wedding/{path*}',                                                  config: require('./lib/handlers/assets').commonAssets },
 
     { method: 'GET',  path: '/about-us/{action*}',                                                          config: require('./lib/handlers/aboutUsHandler')},
     { method: 'GET',  path: '/b/about-us/{action*}',                                                        config: require('./lib/handlers/aboutUsHandler')},
@@ -79,7 +79,7 @@ var routes = [
     { method: 'GET',  path: '/in-store/louis-vuitton/',                                                     config: require('./lib/handlers/views').adaptive },
     
     { method: 'GET',  path: '/in-store/{action*}',                                                          config: viewHandlers.adaptiveWithStaticDataFactory('in-store/index') },
-    { method: 'GET',  path: '/b/in-store/{action*}',                                                          config: viewHandlers.adaptiveWithStaticDataFactory('in-store/index') },
+    { method: 'GET',  path: '/b/in-store/{action*}',                                                        config: viewHandlers.adaptiveWithStaticDataFactory('in-store/index') },
     
     { method: 'GET',  path: '/lookbooks/burberry-pre-fall-trend-report-2016/',                              config: require('./lib/handlers/views').adaptive },
     { method: 'GET',  path: '/lookbooks/cookware-sets-guide/',                                              config: require('./lib/handlers/views').adaptive },
@@ -106,8 +106,8 @@ var routes = [
     { method: 'GET',  path: '/sweepstakes/win-1000-bucks-writing-reviews/',                                 config: require('./lib/handlers/views').adaptive },
     { method: 'GET',  path: '/product/review/',                                                             config: require('./lib/handlers/views').adaptive },
     
-    { method: 'GET',  path: '/furniture-mattress-warranty/',                                                       config: require('./lib/handlers/views').responsiveCustomHF },
-    { method: 'GET',  path: '/b/furniture-mattress-warranty/',                                                       config: require('./lib/handlers/views').responsiveCustomHF },
+    { method: 'GET',  path: '/furniture-mattress-warranty/',                                                config: require('./lib/handlers/views').responsiveCustomHF },
+    { method: 'GET',  path: '/b/furniture-mattress-warranty/',                                              config: require('./lib/handlers/views').responsiveCustomHF },
 
     { method: 'GET',  path: '/international/{path*}',                                                       config: require('./lib/handlers/views').responsiveCustomHF },
     { method: 'GET',  path: '/b/international/{path*}',                                                     config: require('./lib/handlers/views').responsiveCustomHF },
@@ -117,8 +117,8 @@ var routes = [
     
     { method: 'GET',  path: '/b/2017-spring-campaign-100-percent-exclusive/{path*}',                        config: require('./lib/handlers/views').responsiveCustomHF },
     { method: 'GET',  path: '/2017-spring-campaign-100-percent-exclusive/{path*}',                          config: require('./lib/handlers/views').responsiveCustomHF },
-    { method: 'GET',  path: '/b/2017-fall-campaign-100-percent-exclusive/{path*}',                        config: require('./lib/handlers/views').responsiveCustomHF },
-    { method: 'GET',  path: '/2017-fall-campaign-100-percent-exclusive/{path*}',                          config: require('./lib/handlers/views').responsiveCustomHF },
+    { method: 'GET',  path: '/b/2017-fall-campaign-100-percent-exclusive/{path*}',                          config: require('./lib/handlers/views').responsiveCustomHF },
+    { method: 'GET',  path: '/2017-fall-campaign-100-percent-exclusive/{path*}',                            config: require('./lib/handlers/views').responsiveCustomHF },
     
     { method: 'GET',  path: '/{path*}',                                                                     config: require('./lib/handlers/views').fallback }
 ];
