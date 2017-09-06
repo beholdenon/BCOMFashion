@@ -19,7 +19,8 @@ let fs = require('fs'),
         preLoadScripts: '',
         tealiumScriptEnabled: process.env.tealiumScriptEnabled === "true",
         tealiumType: process.env.ENV_TYPE === "prod" ? "prod" : "qa",
-        brightTagEnabled: process.env.brightTagEnabled !== "false"
+        brightTagEnabled: process.env.brightTagEnabled !== "false",
+        polarisHeaderFooter: process.env.polarisHeaderFooter === "true"
     },
 
     detectMobileDeviceView = function detectMobileDeviceView(requestPath, req) {

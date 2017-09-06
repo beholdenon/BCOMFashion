@@ -16,7 +16,15 @@
             {{#if args.tealiumScriptEnabled}}
                 {{> tealiumTag_async}}
             {{/if}} 
-            <header class="responsive"></header>
+
+            {{#if args.polarisHeaderFooter}}
+                <!-- Polaris header -->
+                <header id="wglHeader" data-context="{&quot;shoppingMode&quot;:&quot;SITE&quot;,&quot;regionCode&quot;:&quot;US&quot;,&quot;application&quot;:&quot;SITE&quot;,&quot;deviceType&quot;:&quot;DESKTOP&quot;,&quot;navigationType&quot;:&quot;BROWSE&quot;,&quot;viewType&quot;:&quot;Default&quot;,&quot;domestic&quot;:true,&quot;currencyCode&quot;:&quot;USD&quot;}" data-hostlink="//www.bloomingdales.com" data-uri="/xapi/navigate/v1/header/" data-bagserviceproxy="/api/shopping-bag/v1/bags/" data-assethost="//assets.bloomingdales.com/wgl"></header>
+            {{else}}
+                <!-- NavApp header -->
+                <header class="responsive"></header>
+            {{/if}} 
+
             {{#unless args.isMobile}}
                 {{! Desktop and Tablet Views should have a row wrapping the bl_main_container div }}
                 <div class="row collapse mod_row">
@@ -31,7 +39,15 @@
             {{#unless args.isMobile}}
                 </div>
             {{/unless}}
-            <footer class="responsive"></footer>
+
+            {{#if args.polarisHeaderFooter}}
+                <!-- Polaris footer -->
+                <footer id="wglFooter" data-context="{&quot;shoppingMode&quot;:&quot;SITE&quot;,&quot;regionCode&quot;:&quot;US&quot;,&quot;application&quot;:&quot;SITE&quot;,&quot;deviceType&quot;:&quot;DESKTOP&quot;,&quot;navigationType&quot;:&quot;BROWSE&quot;,&quot;viewType&quot;:&quot;Default&quot;,&quot;domestic&quot;:true,&quot;currencyCode&quot;:&quot;USD&quot;}" data-hostlink="//www.bloomingdales.com" data-uri="/xapi/navigate/v1/footer" data-assethost="//assets.bloomingdales.com/wgl"></footer>
+            {{else}}
+                <!-- NavApp footer -->
+                <footer class="responsive"></footer>
+            {{/if}} 
+            
 
         <!-- inject -->
 
