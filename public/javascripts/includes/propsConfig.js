@@ -64,8 +64,7 @@ define('propsConfig', [], function() {
 	    updatedBonusOffersLinkTestEnabled: true,
 	    credit32016Enabled: false,
 	    tabletPersistentSearchBarEnabled: true,
-	    spoHFDesktopExperienceEnabled: false,
-	    breastCancerAwarenessCampaignEnabled: true
+	    spoHFDesktopExperienceEnabled: false
 	};
 
 	return props;

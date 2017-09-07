@@ -1,24 +1,11 @@
 'use strict';
 
-require( [ "jquery", "bcomCoremetrics", "propsConfig" ], function ( $, Coremetrics, props ) {
+require( [ "jquery", "bcomCoremetrics" ], function ( $, Coremetrics ) {
 
 	$(document).ready(function(){
 
 		var givePinkCoremetrics = 'fall17_give_pink',
-			pushAttrs,
-			breastCancerAwarenessCampaignEnabled = props.breastCancerAwarenessCampaignEnabled;
-
-        //OFF by default, ON between 9/27 - 10/31
-		if ( breastCancerAwarenessCampaignEnabled ) {
-			//Hide OFF Content. Show ON Content
-			$('#campaignOFF').addClass('hide');
-		} else {
-			//Hide ON Content. Show OFF Content
-			$('#campaignON').addClass('hide');
-		}
-
-		$('#content').removeClass('hide');
-		$('#loader-image').addClass('hide');
+			pushAttrs;
 
 	    Coremetrics.pageViewTag( {
 			pageId: givePinkCoremetrics,
@@ -40,7 +27,7 @@ require( [ "jquery", "bcomCoremetrics", "propsConfig" ], function ( $, Coremetri
 			createCoremetrics('TOC');
 		});
 
-		$("#enrollNow").click(function(e) {
+			$("#enrollNow").click(function(e) {
 			e.preventDefault();
 			createCoremetrics('enroll_now');
 			window.location.href = '//www.bloomingdales.com/loyallist/gpgmEnroll';
@@ -49,7 +36,7 @@ require( [ "jquery", "bcomCoremetrics", "propsConfig" ], function ( $, Coremetri
 		$("#applyNow").click(function(e) {
 			e.preventDefault();
 			createCoremetrics('apply_now');
-			window.open('//www.bloomingdales.com/service/credit/applynow/creditapp.ognc');
+			window.open('//www.bloomingdales.com/creditservice/marketing/main?cm_sp=hp-_-monetate-_-credit_applynow0821');
 		});
 
 	});
