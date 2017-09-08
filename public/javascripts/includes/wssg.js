@@ -141,19 +141,54 @@ function postRequest(path, callback, body) {
 var SERVICES = {
 
     brightCove: {
-        getURL: function (callback, video_id) {
-            var path = "//api.brightcove.com/services/library?command=find_video_by_id&video_id="+video_id+"&video_fields=FLVURL&media_delivery=http&token=2uKb24EVrCM2ytEfXsGX91YC2eB41If1K6i82P-j9GATvAlc5o-kKg..";
-            
+
+        best_available_source: function ( api_obj ) {
+            var sources = api_obj.sources;
+            var i = sources.length;
+
+            // remove non-mp4 files
+            while( i-- ) {
+                if ( sources[i].container !== "MP4" || sources[i].src === undefined ) {
+                    sources.splice(i, 1);
+                } else if ( sources[i].src.indexOf('https') < 0 ) {
+                    sources.splice(i, 1);
+                }
+            }
+
+            sources = sources.sort(this.size);
+
+            if ( BLOOMIES !== undefined && BLOOMIES.isMobile ) {
+                // mobile bitrate source
+                return (sources[0].src);
+            } else {
+                // desktop bitrate source
+                return (sources[ sources.length-1 ].src);
+            }
+        },
+
+        sortBySize: function (a, b) {
+            return a.size - b.size;
+        },
+
+        video_data: function (callback, video_id) {
+            // var path = "//api.brightcove.com/services/library?command=find_video_by_id&video_id="+video_id+"&video_fields=FLVURL&media_delivery=http&token=2uKb24EVrCM2ytEfXsGX91YC2eB41If1K6i82P-j9GATvAlc5o-kKg..";
+            var account_id = 75934411001;
+            var policy_key = 'BCpkADawqM0NvUfP8kau23tpJMWdg09UoT0lqv-Aoqc98Q-ug4rTtp17hA99TA9yLT4-SJm-oIpkYExCvnGqb1fpbxMZM1Y8Yy1Hol4HdRpWGuJHGskT_7155ak';
+            var path = 'https://edge.api.brightcove.com/playback/v1/accounts/'+account_id+'/videos/'+video_id;
+
             $.ajax({
                 type: "GET",
                 url: path,
-                dataType: "jsonp",
                 cache: false,
+                contentType: 'application/json',
                 crossDomain: true,
                 processData: true,
-
-                success: function (jsondata) {
-                    callback(jsondata.FLVURL);
+                headers: {          
+                  Accept: 'application/json;pk='+policy_key,  
+                },
+                
+                success: function (res) {
+                    callback(res);
                 },
                 error: function (xhr, status, errorThrown) {
                     console.log(errorThrown + '\n' + status + '\n' + xhr.statusText);

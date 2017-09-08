@@ -17,7 +17,7 @@
 
 	<h1>BrightCove Video Debug</h1>
 
-	<video id="brightCove-test" data-id="5541007783001" controls autoplay></video>
+	<video id="brightCove-test" data-id="5527065213001" controls autoplay></video>
 
 </section>
 
@@ -30,13 +30,15 @@
 
 	(function(){
 
-	  SERVICES.brightCove.getURL( function(res) {
+	  SERVICES.brightCove.video_data( function(res) {
+	  	var path = SERVICES.brightCove.best_available_source(res);
+
 	    var error = 'Your browser does not support HTML 5 video.';
-	    var source = '<source src="'+res+'" type="video/mp4">';
+	    var source = '<source src="'+path+'" type="video/mp4">';
 
 	    $("#brightCove-test").append(source).append(error).attr('controls autoplay');
 
-	  }, $("#brightCove-test").attr('data-id') );
+	  }, $("#brightCove-test").attr('data-id'));
 
 	})();
 
