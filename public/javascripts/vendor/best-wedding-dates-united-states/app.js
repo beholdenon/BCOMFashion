@@ -3,7 +3,7 @@ function bestDayOnReady(e) {
     console.log( "BEST DAY READY" );
     window.removeEventListener("load",bestDayOnReady,!1)
     if ( Distilled.core ) return;
-    window.$ = jQuery || $b;
+    // window.$ = jQuery || $b;
     if ( window.require !== undefined ) { require(["BestDayCore", "BestDayView"], bestDayInit)}
     else { bestDayInit(); }
 }
@@ -2036,7 +2036,7 @@ var _gsScope = "undefined" != typeof module && module.exports && "undefined" != 
     }),
     function(e) {
         "function" == typeof define && define.amd ? define("BestDayEmbed",["jquery", "BestDaySocialLikes"], e) : e(jQuery)
-    }(function($, e) {
+    }(function($x, e) {
         "use strict";
         var i = $("#embed");
         $(".embedLink").on("click", function(e) {
@@ -2053,7 +2053,7 @@ var _gsScope = "undefined" != typeof module && module.exports && "undefined" != 
     }),
     function(e) {
         "function" == typeof define && define.amd ? define("BestDaySocialLikes",["jquery"], e) : e(jQuery)
-    }(function($, e) {
+    }(function($x, e) {
         "use strict";
 
         function t(e, t) {
@@ -2419,7 +2419,7 @@ var _gsScope = "undefined" != typeof module && module.exports && "undefined" != 
     }),
     function(e) {
         "function" == typeof define && define.amd ? define("BestDayCalendar",["jquery"], e) : e(jQuery)
-    }(function($) {
+    }(function() {
         var e = function(e, t) {
             this.element = e, this.element.addClass("calendar"), this._initializeEvents(t), this._initializeOptions(t), this._render()
         };
@@ -2919,7 +2919,7 @@ var _gsScope = "undefined" != typeof module && module.exports && "undefined" != 
     function(e) {
         "use strict";
         "function" == typeof define && define.amd ? define("BestDaySlick",["jquery"], e) : "undefined" != typeof exports ? module.exports = e(require("jquery")) : e(jQuery)
-    }(function($) {
+    }(function() {
         "use strict";
         var e = window.Slick || {};
         e = function() {
@@ -4152,9 +4152,10 @@ dateFormat.masks = {
                             n = t.query,
                             a = t.selected,
                             s = void 0;
-                        this.props.confirmOnBlur ? (s = e.query || n, this.props.onConfirm(i[a])) : s = n, this.setState({
+                        this.props.confirmOnBlur ? (s = e.query || n, this.props.onConfirm(i[a])) : s = n, 
+                        this.setState({
                             focused: null,
-                            menuOpen: e.menuOpen || !1,
+                            menuOpen: false,//e.menuOpen || !1,
                             query: s,
                             selected: null
                         })
@@ -4175,15 +4176,18 @@ dateFormat.masks = {
                             })
                         }
                     }, t.prototype.handleInputBlur = function(e) {
+
                         var t = this.state,
                             i = t.focused,
                             n = t.menuOpen,
                             a = t.options,
                             s = t.query,
                             r = t.selected;
+                            // console.log( "HANDLE INPUT BLUR", i, n, a, s, r );
                         if (-1 === i) {
                             var l = n && o(),
                                 d = o() ? s : this.templateInputValue(a[r]);
+                                // console.log( "HANDLE INPUT BLUR", l, d );
                             this.handleComponentBlur({
                                 menuOpen: l,
                                 query: d
@@ -4533,7 +4537,10 @@ dateFormat.masks = {
                     l = "highlight_" + r.colour;
                 1 == r.isPerfectDay && s == r.year && (l += " perfect_day");
                 var u = n.parent();
-                u.data("day", r), u.addClass(l)
+                // console.log( "JQUERY VERSION:", $.fn.jquery );
+                u.data("day", r),
+                u.attr("data-day", JSON.stringify(r)), 
+                u.addClass(l)
             },
             getLocationTitle: function() {
                 return this.mData.name
@@ -4589,7 +4596,7 @@ dateFormat.masks = {
                 window.location.origin || (t = window.location.protocol + "//" + window.location.hostname + (window.location.port ? ":" + window.location.port : ""));
                 var n = t + "/b/fashion/assets/projects/best-wedding-dates-united-states/" + e + ".json",
                 // var n = t + window.location.pathname + "data/"+ e +".json",
-                //var n = "data/"+ e +".json",
+                // var n = "data/"+ e +".json",
                     i = this;
                 $.ajax({
                     dataType: "json",
@@ -4620,7 +4627,7 @@ dateFormat.masks = {
         else {
             factory(jQuery, TweenLite);
         }
-    }(function($, TweenLite) {
+    }(function($x, TweenLite) {
         
         this.Distilled = this.Distilled || {};
         var e = function() {
@@ -8666,7 +8673,7 @@ dateFormat.masks = {
         else {
             factory(jQuery, TweenLite, accessibleAutocomplete);
         }
-    }(function($, TweenLite, accessibleAutocomplete, socialLikes) {
+    }(function($x, TweenLite, accessibleAutocomplete, socialLikes) {
         
         this.Distilled = this.Distilled || {};
         var e = function() {
@@ -8689,11 +8696,27 @@ dateFormat.masks = {
                 this._checkSize(), this.mLocations = new Distilled.Locations, this.mLocation = new Distilled.Location(this._onLocationLoadComplete, this._onLocationLoadError, this), this._setupInput(), this._setupCalendar(), this._addEventListeners()
             },
             _checkSize: function() {
-                var e = window.innerHeight,
-                    t = window.innerWidth,
-                    n = Math.min(e, t);
-                Math.max(e, t);
-                this.mMobileView = null, n < 768 && Distilled.core.HAS_TOUCH && (this.mMobileView = !0, $("html").addClass("mobile_view"))
+                var height = window.innerHeight,
+                    width = window.innerWidth,
+                    min = Math.min( height, width ),
+                    max = Math.max( height, width );
+
+                this.mMobileView = null;
+
+                if ( min < 768 && Distilled.core.HAS_TOUCH || $( "body" ).is( ".bl_mobile" ))
+                {
+                    this.mMobileView = true;
+
+                    $( "html" ).addClass( "mobile_view" );
+                
+                    var fixedDiv = $("<div id='best_day_fixed_div' class='best_day'></div>");
+
+                    $( "#methodology" ).appendTo( fixedDiv );
+                    $( "#mobile_calendar_block" ).appendTo( fixedDiv );
+                    $( "div.social.social-likes" ).appendTo( fixedDiv );
+
+                    $( "body" ).append( fixedDiv );
+                }
             },
             _setupInput: function() {
                 var e, t = this,
@@ -8734,7 +8757,7 @@ dateFormat.masks = {
                 });
 
                 r()
-
+                
                 $(window).on("keyup", function(e) {
                     16 != e.keyCode && (o = e.keyCode)
                 }), $("#city_autocomplete").on("input", function(e) {
@@ -8978,10 +9001,13 @@ dateFormat.masks = {
                     i = e.outerWidth(),
                     a = e.outerHeight();
                 n.top += a, n.left += .5 * i, n.top += 10, n.left = n.left >> 0, n.top = n.top >> 0;
+                // console.log( "JQUERY VERSION:", $.fn.jquery );
                 var o = $("#calendar_tooltip"),
+                    z = e.attr( "data-day" ),
                     s = e.data("day"),
-                    r = t.format("mmmm dS, yyyy"),
-                    l = this._getTooltipContent(s, r),
+                    r = t.format("mmmm dS, yyyy");
+                if ( !s ) s=JSON.parse(z);
+                var l = this._getTooltipContent(s, r),
                     u = this._getTooltipText(s, t);
                 this._updateCalendarStatus(u), o.find(".tooltip_inner").html(l);
                 var d = Math.min(window.innerWidth, 962),
@@ -9198,7 +9224,7 @@ dateFormat.masks = {
         else {
             factory(jQuery, TweenLite);
         }
-    }(function($, TweenLite) {
+    }(function($x, TweenLite) {
         
         this.Distilled = this.Distilled || {};
         var e = function() {
