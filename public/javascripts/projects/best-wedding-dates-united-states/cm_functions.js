@@ -24,12 +24,16 @@ require( [ "jquery" ], function ( $ ) {
 
   $('#twitterBottomButton').on('click', function() {
     BLOOMIES.coremetrics.cmCreatePageElementTag(hasMBL +  'BWEDD_Share-{Twitter}' , cmCat);
-  });
+  }); 
 
-  document.addEventListener('calendarLoad', function(e) {
-    var locationFormat = e.detail.location;
-    locationFormat = locationFormat.replace(/,\s/g,'_').replace(/\s/g,'-');
-    window.BLOOMIES.coremetrics.cmCreatePageElementTag(hasMBL + 'BWEDD_Search-{' + locationFormat + '}', cmCat);
+  window.addEventListener('calendarLoad', function() {
+    var locationFormat = $('#city_autocomplete').val();
+      locationFormat = locationFormat.replace(/,\s/g,'_').replace(/\s/g,'-');
+
+      if ( locationFormat !== '' ) {
+        window.BLOOMIES.coremetrics.cmCreatePageElementTag(hasMBL + 'BWEDD_Search-{' + locationFormat + '}', cmCat);
+      }
+
   });
 
   $(window).load(function() {

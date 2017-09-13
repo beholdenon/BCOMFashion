@@ -597,11 +597,13 @@ html {
 }
 
 .best_day .header_block .city_autocomplete_container {
-    width: 193px
+    width: 193px;
+    vertical-align: top;
 }
 
 .best_day .header_block .submit_btn {
-    padding: 16px 20px 12px
+    padding: 16px 20px 12px;
+    vertical-align: top;
 }
 
 @media (min-width: 400px) {
