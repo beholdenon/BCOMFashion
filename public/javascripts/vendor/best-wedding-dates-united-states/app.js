@@ -14,6 +14,22 @@ function bestDayInit() {
     Distilled.core.loaded()
 }
 
+(function () {
+
+  if ( typeof window.CustomEvent === "function" ) return false;
+
+  function CustomEvent ( event, params ) {
+    params = params || { bubbles: false, cancelable: false, detail: undefined };
+    var evt = document.createEvent( 'CustomEvent' );
+    evt.initCustomEvent( event, params.bubbles, params.cancelable, params.detail );
+    return evt;
+   }
+
+  CustomEvent.prototype = window.Event.prototype;
+
+  window.CustomEvent = CustomEvent;
+})();
+
 
 
 
@@ -8725,7 +8741,7 @@ dateFormat.masks = {
                     var i = this.mLocations.find(Distilled.core.HASH);
                     i && (e = i.name)
                 }
-                var calendarUpdate = new Event('calendar-update');
+                var calendarUpdate = new CustomEvent('calendar-update');
                 var a = null,
                     o = null,
                     s = function() {
@@ -8813,8 +8829,8 @@ dateFormat.masks = {
                 if (t && this.mCurrentLocation != t.slug) {
                     if (1 == this.mShowingCalendar) return this._hideDates(), this._hideCalendar(), this._hideLookAhead(), void TweenLite.delayedCall(.5, this._locationSelected, [e], this);
                     this.mCurrentLocation = t.slug, this._showLoading(), this.mLoadingComplete = null, Distilled.core.setHash(t.slug), this.mLocation.load(t.slug);
-                    var event = new CustomEvent('calendarLoad', {'detail': {'location':e}});
-                    document.dispatchEvent(event);
+                    var event = new CustomEvent('calendarLoad');
+                    window.dispatchEvent(event);
                 }
             },
             _setData: function() {
