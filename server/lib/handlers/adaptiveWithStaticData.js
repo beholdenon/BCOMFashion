@@ -15,7 +15,6 @@ let sjl = require('sjljs'),
     isTablet = deviceType => deviceType.toLowerCase() === 'tablet',
 
     argsFactory = () => {
-        console.log(process.env.polarisHeaderFooterEnabled);
         return {
             timeStamp: new Date(),
             isMobile: false,
