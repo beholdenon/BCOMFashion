@@ -30,7 +30,7 @@ let sjl = require('sjljs'),
             tealiumScriptEnabled: process.env.tealiumScriptEnabled === "true",
             tealiumType: process.env.ENV_TYPE === "prod" ? "prod" : "qa",
             brightTagEnabled: process.env.brightTagEnabled !== "false",
-            polarisHeaderFooter: process.env.polarisHeaderFooter === "true",
+            polarisHeaderFooterEnabled: process.env.polarisHeaderFooterEnabled === "true",
             breastCancerAwarenessCampaignEnabled: process.env.breastCancerAwarenessCampaignEnabled === "true"
         };
     },

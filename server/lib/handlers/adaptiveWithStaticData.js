@@ -15,7 +15,7 @@ let sjl = require('sjljs'),
     isTablet = deviceType => deviceType.toLowerCase() === 'tablet',
 
     argsFactory = () => {
-        console.log(process.env.polarisHeaderFooter);
+        console.log(process.env.polarisHeaderFooterEnabled);
         return {
             timeStamp: new Date(),
             isMobile: false,
@@ -26,7 +26,7 @@ let sjl = require('sjljs'),
             tealiumScriptEnabled: process.env.tealiumScriptEnabled === "true",
             tealiumType: process.env.ENV_TYPE === "prod" ? "prod" : "qa",
             brightTagEnabled: process.env.brightTagEnabled !== "false",
-            polarisHeaderFooter: process.env.polarisHeaderFooter === "true",
+            polarisHeaderFooterEnabled: process.env.polarisHeaderFooterEnabled === "true",
             breastCancerAwarenessCampaignEnabled: process.env.breastCancerAwarenessCampaignEnabled === "true"
         };
     },
