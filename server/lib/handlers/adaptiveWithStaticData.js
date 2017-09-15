@@ -24,7 +24,9 @@ let sjl = require('sjljs'),
             headCanonical: '',
             tealiumScriptEnabled: process.env.tealiumScriptEnabled === "true",
             tealiumType: process.env.ENV_TYPE === "prod" ? "prod" : "qa",
-            brightTagEnabled: process.env.brightTagEnabled !== "false"
+            brightTagEnabled: process.env.brightTagEnabled !== "false",
+            polarisHeaderFooterEnabled: process.env.polarisHeaderFooterEnabled === "true",
+            breastCancerAwarenessCampaignEnabled: process.env.breastCancerAwarenessCampaignEnabled === "true"
         };
     },
 
