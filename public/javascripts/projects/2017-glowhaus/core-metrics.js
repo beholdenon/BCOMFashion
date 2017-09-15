@@ -26,10 +26,10 @@ $(document).ready( function($) {
     };
 
     var pageDict = {
-                   "2017-glowhaus": "fall17_glowhaus--hp",
-                           "about": "fall17_glowhaus--about",
-                          "brands": "fall17_glowhaus--brands",
-                           "video": "fall17_glowhaus--video"
+                            "2017-glowhaus": "fall17_glowhaus--hp",
+                                    "about": "fall17_glowhaus--about",
+     "discover-new-makeup-skin-care-brands": "fall17_glowhaus--brands",
+                   "makeup-looks-tutorials": "fall17_glowhaus--video"
                   };
 
     $.fn.currentPageName = function() {
