@@ -10,6 +10,7 @@ let sjl = require('sjljs'),
 
     doesPathExist = require('../helpers/doesPathExist'),
     deviceDetectionHelper = require('./../helpers/deviceDetection'),
+    tagDataHelper = require('./../helpers/tagDataPreparation'),
 
     isMobile = deviceType => deviceType.toLowerCase() === 'mobile',
     isTablet = deviceType => deviceType.toLowerCase() === 'tablet',
@@ -79,6 +80,7 @@ module.exports = {
             requestPathPartial = stripInitialForwardSlash(requestPath),
             viewAlias = ensureTrailingForwardSlash(requestPathPartial) + 'index',
             argsForView = argsWithDeviceMetaData(req, argsFactory());
+        	argsForView.utagData = tagDataHelper.getPageType(req);
 
         // Check if we have any static data to merge to `args` before rendering view
         // then render it and return the promise
