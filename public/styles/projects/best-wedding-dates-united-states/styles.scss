@@ -1759,6 +1759,10 @@ html.touch .best_day .calendar_block .calendar_tooltip .tooltip_close_btn {
     outline-offset: 0
 }
 
+.autocomplete__input--focused::-ms-clear {
+    display: none;
+}
+
 .best_day .autocomplete__menu,
 .best_day_banner .autocomplete__menu {
     background-color: #fff;

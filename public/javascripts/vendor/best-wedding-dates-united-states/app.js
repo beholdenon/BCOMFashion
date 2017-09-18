@@ -16,6 +16,9 @@ function bestDayInit() {
 
 (function () {
 
+  var ua = window.navigator.userAgent
+    isIE = ua.indexOf('MSIE ') > 0 || ua.indexOf('Trident/') > 0 || ua.indexOf('Edge/') > 0;
+
   if ( typeof window.CustomEvent === "function" ) return false;
 
   function CustomEvent ( event, params ) {
@@ -28,10 +31,8 @@ function bestDayInit() {
   CustomEvent.prototype = window.Event.prototype;
 
   window.CustomEvent = CustomEvent;
+
 })();
-
-
-
 
 var _gsScope = "undefined" != typeof module && module.exports && "undefined" != typeof global ? global : this || window;
 (_gsScope._gsQueue || (_gsScope._gsQueue = [])).push(function() {
@@ -3811,6 +3812,12 @@ dateFormat.masks = {
                 }
 
                 function m(e) {
+                    if(isIE && e.type === 'blur' && document.activeElement.id === 'city_autocomplete_container') {
+                        e.preventDefault();
+                        e.stopImmediatePropagation();
+                        e.target.focus();
+                        return;
+                    }
                     return this.__l[e.type](P.event && P.event(e) || e)
                 }
 
