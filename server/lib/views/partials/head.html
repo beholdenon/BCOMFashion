@@ -28,13 +28,14 @@
 <!--============[ CSS: Polaris Header/Footer ]============-->
 <link href="{{assetsHost}}/styles/min/bcom/components/custom/customFonts.css" type="text/css" rel="stylesheet">
 <link href="{{assetsHost}}/wgl/page/header-footer-wgl/latest/css/header-footer-wgl.bcom-header-footer.css" rel="stylesheet">
+<script src="{{assetsHost}}/wgl/page/header-footer-wgl/latest/js/common.bundle.js"></script>
+<script src="{{assetsHost}}/wgl/page/header-footer-wgl/latest/js/header-footer-wgl.bcom-header-footer.js"></script>
 {{/if}}
 
 <!--============[ JS: Common (MacysUI) ]============-->
 <script src="{{assetsHost}}/js{{slashMinSuffix}}/bcom/base/Common.js" type="text/javascript"></script>
 <script src="/b/fashion/javascripts/require_config.js" type="text/javascript"></script>
 
-{{#unless args.polarisHeaderFooterEnabled}}
 <!--============[ JS: Global Header and Footer Assets and Properties  ]============-->
 <script src="/b/fashion/javascripts/includes/propsConfig.js"></script>
 <script src="{{assetsHost}}/js{{slashMinSuffix}}/vendor/script/requirejs/require-inline.js" data-require="globals,propsConfig,cookie" type="text/javascript"></script>
@@ -66,7 +67,6 @@
 	})();
 </script>
 <script src="{{assetsHost}}/web20/assets/script/modernizr/modernizr-2.6.2-min.js" type="text/javascript"></script>
-{{/unless}}
 
 <!--============[ JS: Utils ]============-->
 
