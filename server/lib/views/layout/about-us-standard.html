@@ -19,12 +19,22 @@
             {{> tealiumTag_async}}
         {{/if}} 
 
-        {{#if args.polarisHeaderFooterEnabled}}
-            <!-- Polaris Header -->
-            <header id="wglHeader" data-context="{&quot;shoppingMode&quot;:&quot;SITE&quot;,&quot;regionCode&quot;:&quot;US&quot;,&quot;application&quot;:&quot;SITE&quot;,&quot;deviceType&quot;:&quot;DESKTOP&quot;,&quot;navigationType&quot;:&quot;BROWSE&quot;,&quot;viewType&quot;:&quot;Default&quot;,&quot;domestic&quot;:true,&quot;currencyCode&quot;:&quot;USD&quot;}" data-hostlink="//www.bloomingdales.com" data-uri="/xapi/navigate/v1/header/" data-bagserviceproxy="/api/shopping-bag/v1/bags/" data-assethost="//assets.bloomingdales.com/wgl"></header>
+        {{#if args.isMobile}}
+            {{#if args.polarisHeaderFooterEnabled}}
+                <!-- Mobile Polaris Header -->
+                <header id="wglHeader" class="mobile" data-hostlink="//m.bloomingdales.com" data-assethost="//assets.bloomingdales.com/wgl" data-uri="/xapi/navigate/v1/header" data-context='{"shoppingMode":"SITE","regionCode":"US","application":"SITE","deviceType":"PHONE","navigationType":"BROWSE","viewType":"Compact","domestic":true,"currencyCode":"USD"}'></header>
+            {{else}}
+                <!-- Mobile about-us MacysUI header -->
+                <header class="responsive"></header>
+            {{/if}}
         {{else}}
-            <!-- About-us NavApp header -->
-            <header class="responsive"></header>
+            {{#if args.polarisHeaderFooterEnabled}}
+                <!-- Desktop Polaris Header -->
+                <header id="wglHeader" data-context='{"shoppingMode":"SITE","regionCode":"US","application":"SITE","deviceType":"DESKTOP","navigationType":"BROWSE","viewType":"Default","domestic":true,"currencyCode":"USD"}' data-hostlink="//www.bloomingdales.com" data-uri="/xapi/navigate/v1/header/" data-bagserviceproxy="/api/shopping-bag/v1/bags/" data-assethost="//assets.bloomingdales.com/wgl"></header>
+            {{else}}
+                <!-- Desktop about-us MacysUI header -->
+                <header class="responsive"></header>
+            {{/if}}
         {{/if}}
 
         {{!-- Mobile About Us Pages specific --}}
@@ -63,13 +73,37 @@
             </div>
         {{/if}}
 
-        {{#if args.polarisHeaderFooterEnabled}}
-            <!-- polaris footer -->
-            <footer id="wglFooter" data-context="{&quot;shoppingMode&quot;:&quot;SITE&quot;,&quot;regionCode&quot;:&quot;US&quot;,&quot;application&quot;:&quot;SITE&quot;,&quot;deviceType&quot;:&quot;DESKTOP&quot;,&quot;navigationType&quot;:&quot;BROWSE&quot;,&quot;viewType&quot;:&quot;Default&quot;,&quot;domestic&quot;:true,&quot;currencyCode&quot;:&quot;USD&quot;}" data-hostlink="//www.bloomingdales.com" data-uri="/xapi/navigate/v1/footer" data-assethost="//assets.bloomingdales.com/wgl"></footer>
+        {{#if args.isMobile}}
+            {{#if args.polarisHeaderFooterEnabled}}
+                <!-- Mobile Polaris Footer -->
+                <footer id="wglFooter" 
+                    class="mobile"
+                    data-hostlink="//www.bloomingdales.com" 
+                    data-uri="/xapi/navigate/v1/footer" 
+                    data-assethost="//assets.bloomingdales.com/wgl" 
+                    data-context='{"shoppingMode":"SITE","regionCode":"US","application":"SITE","deviceType":"PHONE","navigationType":"BROWSE","viewType":"Compact","domestic":true,"currencyCode":"USD"}'
+                ></footer>
+            {{else}}
+                <!-- Mobile about-us MacysUI header -->
+                <header class="responsive"></header>
+            {{/if}}
         {{else}}
-            <!-- About Us NavApp Footer -->
-            <footer class="responsive"></footer>
+            {{#if args.polarisHeaderFooterEnabled}}
+                <!-- polaris footer -->
+                <footer id="wglFooter" 
+
+                    data-hostlink="//www.bloomingdales.com" 
+                    data-uri="/xapi/navigate/v1/footer" 
+                    data-assethost="//assets.bloomingdales.com/wgl" 
+                    data-context='{"shoppingMode":"SITE","regionCode":"US","application":"SITE","deviceType":"DESKTOP","navigationType":"BROWSE","viewType":"Default","domestic":true,"currencyCode":"USD"}'
+
+                ></footer>
+            {{else}}
+                <!-- About Us MacysUI Footer -->
+                <footer class="responsive"></footer>
+            {{/if}}
         {{/if}}
+
 
         <!-- inject -->
 
