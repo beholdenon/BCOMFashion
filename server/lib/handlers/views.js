@@ -156,15 +156,12 @@ module.exports = {
         notes: 'Reading Akamai headers, and based on device type (phone, tablet, desktop), serve either index.html or index-mobile.html layout',
         tags: ['non-responsive'],
         handler: function(req, res) {
-            var requestPath = (req.url.pathname).replace(/^\/b\//g, "/").substring(1);
+            var requestPath = req.url.pathname;
+                requestPath = requestPath.substring(1);
             var querystring = req.url.search || '';
             var deviceDetectProc,
                 slashMinSuffix = ( req.query.debug === '1' ? '' : '/min' ),
                 file;
-
-            requestPath = detectDeepLinks(req, requestPath);
-
-            deviceDetectProc = detectMobileDeviceView(requestPath, req);
 
             // get rid of trailing spaces, add a trailing slash if missing, then redirect
             if (requestPath.indexOf('#') < 0 && requestPath.indexOf('?') < 0 && requestPath.indexOf('.') < 0 && ! /\/$/.test(requestPath)) {
@@ -173,6 +170,10 @@ module.exports = {
 
                 return res.redirect(url);
             }
+
+            requestPath = requestPath.replace(/^b\//, "");
+            requestPath = detectDeepLinks(req, requestPath);
+            deviceDetectProc = detectMobileDeviceView(requestPath, req);
 
             // Check if any head* helpers are used
             // Use of a head* helper is done using HTML comments <!-- headHelper= -->
@@ -213,23 +214,13 @@ module.exports = {
         handler: function(req, res) {
             var slashMinSuffix = ( req.query.debug === '1' ? '' : '/min' );
             var querystring = req.url.search || '';
-            var requestPath = req.url.pathname.replace(/^\/b\//g, "/");
+            var requestPath = req.url.pathname;
                 requestPath = requestPath.substring(1);
             var file;
 
             // (for dev only) override the user agent by passing in a query
             if (req.query.UA){
                 req.headers['user-agent'] = req.query.UA;
-            }
-            
-            requestPath = detectDeepLinks(req, requestPath);
-            
-            // Need this call in order to change args    
-            detectMobileDeviceView(requestPath, req);
-
-            // if route not captured, redirect to the main site
-            if (requestPath === '' || requestPath === undefined) {
-                return res.redirect('http://www.bloomingdales.com');
             }
 
             // get rid of trailing spaces, add a trailing slash if missing, then redirect
@@ -238,6 +229,17 @@ module.exports = {
                 var url = '/' + requestPath + querystring;
 
                 return res.redirect(url);
+            }
+            
+            requestPath = requestPath.replace(/^b\//, "");
+            requestPath = detectDeepLinks(req, requestPath);
+            
+            // Need this call in order to change args    
+            detectMobileDeviceView(requestPath, req);
+
+            // if route not captured, redirect to the main site
+            if (requestPath === '' || requestPath === undefined) {
+                return res.redirect('http://www.bloomingdales.com');
             }
 
             // Check if any head* helpers are used
