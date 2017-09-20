@@ -2,7 +2,7 @@
 
 var prepareTagData = {};
 prepareTagData.getPageType = function(req) {
-    var tagUrls = require('../data/static/category-urls.json').tagUrls,
+    var tagUrls = require('../data/static/categoryurls.json').tagUrls,
         urlsLength = tagUrls.length,
         pageType = "";
     for(var i=0; i<urlsLength; i++){
