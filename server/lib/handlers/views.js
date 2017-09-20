@@ -158,13 +158,14 @@ module.exports = {
         handler: function(req, res) {
             var requestPath = req.url.pathname;
                 requestPath = requestPath.substring(1);
+
             var querystring = req.url.search || '';
-            var deviceDetectProc,
-                slashMinSuffix = ( req.query.debug === '1' ? '' : '/min' ),
-                file;
+            var deviceDetectProc;
+            var slashMinSuffix = ( req.query.debug === '1' ? '' : '/min' );
+            var file;
 
             // get rid of trailing spaces, add a trailing slash if missing, then redirect
-            if (requestPath.indexOf('#') < 0 && requestPath.indexOf('?') < 0 && requestPath.indexOf('.') < 0 && ! /\/$/.test(requestPath)) {
+            if ( ! /\/$/.test(requestPath) ) {
                 requestPath = requestPath.replace(/\/?\s?$/, '/');
                 var url = '/' + requestPath + querystring;
 
@@ -224,7 +225,7 @@ module.exports = {
             }
 
             // get rid of trailing spaces, add a trailing slash if missing, then redirect
-            if (requestPath.indexOf('#') < 0 && requestPath.indexOf('?') < 0 && requestPath.indexOf('.') < 0 && ! /\/$/.test(requestPath)) {
+            if ( ! /\/$/.test(requestPath) ) {
                 requestPath = requestPath.replace(/\/?\s?$/, '/');
                 var url = '/' + requestPath + querystring;
 
