@@ -1,5 +1,7 @@
 <!-- Loading script asynchronously -->
 <script type="text/javascript">
+var utag_data = utag_data || {},
+utag_data = Object.assign(utag_data,{'page_type': '{{args.utagData}}'});
     (function(a,b,c,d){
 	    a='//tags.tiqcdn.com/utag/bcom/main/{{args.tealiumType}}/utag.js';
 	    b=document;c='script';d=b.createElement(c);d.src=a;d.type='text/java'+c;d.async=true;

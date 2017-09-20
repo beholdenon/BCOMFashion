@@ -3,6 +3,7 @@
 let fs = require('fs'),
     path = require('path'),
     deviceDetectionHelper = require('./../helpers/deviceDetection'),
+    tagDataHelper = require('./../helpers/tagDataPreparation'),
 
     headMetaRegEx = /<!--headMeta=(.*)-->/,
     headTitleRegEx = /<!--headTitle=(.*)-->/,
@@ -120,7 +121,8 @@ let fs = require('fs'),
                 console.log("Error using head* helper in " + file);
                 console.log("Argument must be an object");
             }
-
+            	args.utagData = tagDataHelper.getPageType(req);
+            
         } catch (e) {
             console.log("Error reading file name " + file + " in headHelpers function");
             console.log(e.message);

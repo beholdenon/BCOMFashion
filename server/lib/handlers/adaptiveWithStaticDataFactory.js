@@ -15,6 +15,7 @@ let sjl = require('sjljs'),
     doesPathExist = require('../helpers/doesPathExist'),
     getViewTemplateName = require('../helpers/getViewTemplateName'),
     deviceDetectionHelper = require('./../helpers/deviceDetection'),
+    tagDataHelper = require('./../helpers/tagDataPreparation'),
 
     isMobile = deviceType => deviceType.toLowerCase() === 'mobile',
     isTablet = deviceType => deviceType.toLowerCase() === 'tablet',
@@ -111,7 +112,8 @@ module.exports = function (viewAlias, dataProducer, layoutObj) {
                 requestPathPartial = stripInitialForwardSlash(requestPath),
                 dataProducerData = typeof dataProducer === 'function' ? dataProducer(req) : null,
                 argsForView = argsWithDeviceMetaData(req, argsFactory(), requestPathPartial),
-                getMergedArgs = otherData => sjl.extend(true, argsForView, dataProducerData, otherData),
+                utagData = tagDataHelper.getPageType(req),
+                getMergedArgs = otherData => sjl.extend(true, argsForView, dataProducerData, otherData, {utagData:utagData}),
                 resolveRequest = viewTemplateName => {
 
                     return new Promise((resolve) => {
