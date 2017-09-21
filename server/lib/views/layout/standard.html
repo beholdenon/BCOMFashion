@@ -17,23 +17,26 @@
             {{> tealiumTag_async}}
         {{/if}} 
 
-        {{#if args.isMobile}}
-            {{#if args.polarisHeaderFooterEnabled}}
-                <!-- Mobile Polaris Header -->
-                <header id="wglHeader" class="mobile" data-hostlink="//www.bloomingdales.com" data-assethost="//assets.bloomingdales.com/wgl" data-uri="/xapi/navigate/v1/header" data-context='{"shoppingMode":"SITE","regionCode":"US","application":"SITE","deviceType":"PHONE","navigationType":"BROWSE","viewType":"Compact","domestic":true,"currencyCode":"USD"}'></header>
+
+        {{#unless isApp}}
+            {{#if args.isMobile}}
+                {{#if args.polarisMobileHeaderFooterEnabled}}
+                    <!-- Mobile Polaris Header -->
+                    <header id="wglHeader" class="mobile" data-hostlink="{{baseHost}}" data-assethost="{{assetsHost}}" data-uri="/xapi/navigate/v1/header" data-context='{"shoppingMode":"SITE","regionCode":"US","application":"SITE","deviceType":"PHONE","navigationType":"BROWSE","viewType":"Compact","domestic":true,"currencyCode":"USD"}'></header>
+                {{else}}
+                    <!-- Mobile about-us MacysUI header -->
+                    <header class="responsive"></header>
+                {{/if}}
             {{else}}
-                <!-- Mobile about-us MacysUI header -->
-                <header class="responsive"></header>
+                {{#if args.polarisHeaderFooterEnabled}}
+                    <!-- Desktop Polaris Header -->
+                    <header id="wglHeader" data-context='{"shoppingMode":"SITE","regionCode":"US","application":"SITE","deviceType":"DESKTOP","navigationType":"BROWSE","viewType":"Default","domestic":true,"currencyCode":"USD"}' data-hostlink="{{baseHost}}" data-uri="/xapi/navigate/v1/header/" data-bagserviceproxy="/api/shopping-bag/v1/bags/" data-assethost="{{assetsHost}}"></header>
+                {{else}}
+                    <!-- Desktop about-us MacysUI header -->
+                    <header class="responsive"></header>
+                {{/if}}
             {{/if}}
-        {{else}}
-            {{#if args.polarisHeaderFooterEnabled}}
-                <!-- Desktop Polaris Header -->
-                <header id="wglHeader" data-context='{"shoppingMode":"SITE","regionCode":"US","application":"SITE","deviceType":"DESKTOP","navigationType":"BROWSE","viewType":"Default","domestic":true,"currencyCode":"USD"}' data-hostlink="//www.bloomingdales.com" data-uri="/xapi/navigate/v1/header/" data-bagserviceproxy="/api/shopping-bag/v1/bags/" data-assethost="//assets.bloomingdales.com/wgl"></header>
-            {{else}}
-                <!-- Desktop about-us MacysUI header -->
-                <header class="responsive"></header>
-            {{/if}}
-        {{/if}}
+        {{/unless}}
 
         {{#unless args.isMobile}}
             {{! Desktop and Tablet Views should have a row wrapping the bl_main_container div }}
@@ -50,37 +53,80 @@
             </div>
         {{/unless}}
 
-        {{#if args.isMobile}}
-            {{#if args.polarisHeaderFooterEnabled}}
-                <!-- Mobile Polaris Footer -->
-                <footer id="wglFooter" 
-                    class="mobile"
-                    data-hostlink="//www.bloomingdales.com" 
-                    data-uri="/xapi/navigate/v1/footer" 
-                    data-assethost="//assets.bloomingdales.com/wgl" 
-                    data-context='{"shoppingMode":"SITE","regionCode":"US","application":"SITE","deviceType":"PHONE","navigationType":"BROWSE","viewType":"Compact","domestic":true,"currencyCode":"USD"}'
-                ></footer>
+        {{#unless isApp}}
+            {{#if args.isMobile}}
+                {{#if args.polarisMobileHeaderFooterEnabled}}
+                    <!-- Mobile Polaris Footer -->
+                    <footer id="wglFooter" 
+                        class="mobile"
+                        data-hostlink="{{baseHost}}" 
+                        data-uri="/xapi/navigate/v1/footer" 
+                        data-assethost="{{assetsHost}}" 
+                        data-context='{"shoppingMode":"SITE","regionCode":"US","application":"SITE","deviceType":"PHONE","navigationType":"BROWSE","viewType":"Compact","domestic":true,"currencyCode":"USD"}'
+                    ></footer>
+                {{else}}
+                    <!-- Mobile about-us MacysUI header -->
+                    <header class="responsive"></header>
+                {{/if}}
             {{else}}
-                <!-- Mobile about-us MacysUI header -->
-                <header class="responsive"></header>
-            {{/if}}
-        {{else}}
-            {{#if args.polarisHeaderFooterEnabled}}
-                <!-- polaris footer -->
-                <footer id="wglFooter" 
+                {{#if args.polarisHeaderFooterEnabled}}
+                    <!-- polaris footer -->
+                    <footer id="wglFooter" 
 
-                    data-hostlink="//www.bloomingdales.com" 
-                    data-uri="/xapi/navigate/v1/footer" 
-                    data-assethost="//assets.bloomingdales.com/wgl" 
-                    data-context='{"shoppingMode":"SITE","regionCode":"US","application":"SITE","deviceType":"DESKTOP","navigationType":"BROWSE","viewType":"Default","domestic":true,"currencyCode":"USD"}'
+                        data-hostlink="{{baseHost}}" 
+                        data-uri="/xapi/navigate/v1/footer" 
+                        data-assethost="{{assetsHost}}" 
+                        data-context='{"shoppingMode":"SITE","regionCode":"US","application":"SITE","deviceType":"DESKTOP","navigationType":"BROWSE","viewType":"Default","domestic":true,"currencyCode":"USD"}'
 
-                ></footer>
-            {{else}}
-                <!-- About Us MacysUI Footer -->
-                <footer class="responsive"></footer>
+                    ></footer>
+                {{else}}
+                    <!-- About Us MacysUI Footer -->
+                    <footer class="responsive"></footer>
+                {{/if}}
             {{/if}}
-        {{/if}}
+        {{/unless}}
         
+        {{#unless isApp}}
+            {{#if args.isMobile}}
+                {{#if args.polarisMobileHeaderFooterEnabled}}
+                    <script src="{{assetsHost}}/wgl/page/header-footer-wgl/latest/js/common.bundle.js"></script>
+                    <script src="{{assetsHost}}/wgl/page/header-footer-wgl/latest/js/header-footer-wgl.bcom-header-footer.js"></script>
+                {{else}}
+                    <script type="text/javascript">
+                       require([
+                            'globalHeaderFooter',
+                            'cookie'    
+                        ], function(GlobalHF, Cookie) {
+                            // Load Global header and footer if ishop_app cookie is not defined,
+                            // meaning we are not loading this page from the Bloomingdale's app
+                            // If page is being loaded from the app, do not show the Global header footer
+                            if ( !Cookie.get('ishop_app') ) {
+                                GlobalHF();
+                            }
+                        });
+                    </script>
+                {{/if}}
+            {{else}}
+                {{#if args.polarisHeaderFooterEnabled}}
+                    <script src="{{assetsHost}}/wgl/page/header-footer-wgl/latest/js/common.bundle.js"></script>
+                    <script src="{{assetsHost}}/wgl/page/header-footer-wgl/latest/js/header-footer-wgl.bcom-header-footer.js"></script>
+                {{else}}
+                    <script type="text/javascript">
+                       require([
+                            'globalHeaderFooter',
+                            'cookie'    
+                        ], function(GlobalHF, Cookie) {
+                            // Load Global header and footer if ishop_app cookie is not defined,
+                            // meaning we are not loading this page from the Bloomingdale's app
+                            // If page is being loaded from the app, do not show the Global header footer
+                            if ( !Cookie.get('ishop_app') ) {
+                                GlobalHF();
+                            }
+                        });
+                    </script>
+                {{/if}}
+            {{/if}}
+        {{/unless}}
 
     <!-- inject -->
 

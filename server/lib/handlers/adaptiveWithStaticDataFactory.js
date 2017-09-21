@@ -32,6 +32,7 @@ let sjl = require('sjljs'),
             tealiumType: process.env.ENV_TYPE === "prod" ? "prod" : "qa",
             brightTagEnabled: process.env.brightTagEnabled !== "false",
             polarisHeaderFooterEnabled: process.env.polarisHeaderFooterEnabled === "true",
+            polarisMobileHeaderFooterEnabled: process.env.polarisMobileHeaderFooterEnabled === "true",
             breastCancerAwarenessCampaignEnabled: process.env.breastCancerAwarenessCampaignEnabled === "true"
         };
     },
@@ -121,8 +122,11 @@ module.exports = function (viewAlias, dataProducer, layoutObj) {
                         // Resolve view template whether we have args for it or not
                         let resolveRequest = fetchedStaticData => {
                             resolve(res.view(viewTemplateName, {
-                                args: getMergedArgs(fetchedStaticData),
+                                args: getMergedArgs(fetchedStaticData), 
+                                isApp: req.state.ishop_app, 
                                 assetsHost: process.env.BASE_ASSETS,
+                                baseHost: process.env.BASE_HOST,
+                                mobileHost: process.env.MOBILE_HOST,
                                 slashMinSuffix: slashMinSuffix
                             }, layoutObj));
                         };

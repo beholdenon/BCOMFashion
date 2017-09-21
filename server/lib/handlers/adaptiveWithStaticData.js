@@ -27,6 +27,7 @@ let sjl = require('sjljs'),
             tealiumType: process.env.ENV_TYPE === "prod" ? "prod" : "qa",
             brightTagEnabled: process.env.brightTagEnabled !== "false",
             polarisHeaderFooterEnabled: process.env.polarisHeaderFooterEnabled === "true",
+            polarisMobileHeaderFooterEnabled: process.env.polarisMobileHeaderFooterEnabled === "true",
             breastCancerAwarenessCampaignEnabled: process.env.breastCancerAwarenessCampaignEnabled === "true"
         };
     },
@@ -89,8 +90,11 @@ module.exports = {
             // Resolve view template whether we have data for it or not
             var resolveRequest = mergedArgs => {
                     resolve( res.view( viewAlias, {
-                        args: mergedArgs,
+                        args: mergedArgs, 
+                        isApp: req.state.ishop_app, 
                         assetsHost: process.env.BASE_ASSETS,
+                        baseHost: process.env.BASE_HOST,
+                        mobileHost: process.env.MOBILE_HOST,
                         slashMinSuffix: slashMinSuffix
                     } ));
                 },
