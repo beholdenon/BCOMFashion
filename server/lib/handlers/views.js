@@ -22,6 +22,7 @@ let fs = require('fs'),
         tealiumType: process.env.ENV_TYPE === "prod" ? "prod" : "qa",
         brightTagEnabled: process.env.brightTagEnabled !== "false",
         polarisHeaderFooterEnabled: process.env.polarisHeaderFooterEnabled === "true",
+        polarisMobileHeaderFooterEnabled: process.env.polarisMobileHeaderFooterEnabled === "true",
         breastCancerAwarenessCampaignEnabled: process.env.breastCancerAwarenessCampaignEnabled === "true"
     },
 
@@ -182,7 +183,14 @@ module.exports = {
             file = deviceDetectProc + ".html";
             args = headHelpers(file, req);
 
-            return res.view(deviceDetectProc, { args: args, assetsHost: process.env.BASE_ASSETS, slashMinSuffix: slashMinSuffix });
+            return res.view(deviceDetectProc, { 
+                args: args, 
+                isApp: req.state.ishop_app, 
+                assetsHost: process.env.BASE_ASSETS, 
+                baseHost: process.env.BASE_HOST,
+                mobileHost: process.env.MOBILE_HOST,
+                slashMinSuffix: slashMinSuffix 
+            });
         }
     },
     adaptiveWithStaticData: adaptiveWithStaticData,
@@ -205,7 +213,14 @@ module.exports = {
             // If so, add them to deviceDetectProc.args
             args = headHelpers(file, req);
 
-            return res.view(file, { args: args, assetsHost: process.env.BASE_ASSETS, slashMinSuffix: slashMinSuffix }, { layout: 'responsiveCustomHF' });
+            return res.view(file, { 
+                args: args,
+                isApp: req.state.ishop_app, 
+                assetsHost: process.env.BASE_ASSETS, 
+                baseHost: process.env.BASE_HOST,
+                mobileHost: process.env.MOBILE_HOST,
+                slashMinSuffix: slashMinSuffix 
+            }, { layout: 'responsiveCustomHF' });
         }
     },
     fallback: {
@@ -249,7 +264,14 @@ module.exports = {
             file = requestPath + "index.html";
             args = headHelpers(file, req);
             
-            return res.view(requestPath + "index", { args: args, assetsHost: process.env.BASE_ASSETS, slashMinSuffix: slashMinSuffix});
+            return res.view(requestPath + "index", { 
+                args: args, 
+                isApp: req.state.ishop_app,
+                assetsHost: process.env.BASE_ASSETS, 
+                baseHost: process.env.BASE_HOST,
+                mobileHost: process.env.MOBILE_HOST,
+                slashMinSuffix: slashMinSuffix
+            });
         }
     }
 };
