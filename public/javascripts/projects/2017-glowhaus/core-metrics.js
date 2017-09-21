@@ -51,7 +51,8 @@ $(document).ready( function($) {
 
     $.fn.coreTag = function(tagType, pageID) {
 
-        var thisCategoryID = "fall17_100percent";
+        //var thisCategoryID = "fall17_100percent";
+        var thisCategoryID = "fall17_glowhaus";
 
         if (tagType === 'Pageview') {
             try {
