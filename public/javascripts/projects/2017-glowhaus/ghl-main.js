@@ -25,7 +25,6 @@ $(function() {
     'use strict';
 
     // ----------- Mobile nav switcher
-
     var mainContainer = $('.glh');
     var viewportWidth = $(window).width();
     $('#m-nav-switcher').on('click', function () {
@@ -36,12 +35,7 @@ $(function() {
             mainContainer.removeClass('glh-m-nav-is-open');
         }
     });
-
-
-    var explorerAttributes = new BLOOMIES.coremetrics.exploreAttributes;
-    console.log('{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{');
-    console.log(explorerAttributes);
-
+    
     
     // ----------- Landing page tile
     
@@ -635,9 +629,9 @@ $(function() {
 
     var popupPageTemplateUrl = '/b/fashion/images/projects/2017-glowhaus/html-popups/popup.html';
     
-
     var landingPageTileList  = $('ul#glh-images-tile');
     var defaultThumbWidth    = 280;
+    var videoSelector = '.glh-video';
 
     // remove/clear all list elements
     landingPageTileList.empty();
@@ -768,7 +762,7 @@ $(function() {
             },
             close: function() {
                 if(!popupCloseBtnEvent) {
-                    $.fn.coreTag('Element', 'close-on-background-click_IMAGE-POPUP');
+                    $.fn.coreTag('Element', 'closed-on-background-click__IMAGE-POPUP');
                 }
             }
         }
@@ -782,8 +776,69 @@ $(function() {
     var videoPageIndexPicsDir = '/b/fashion/images/projects/2017-glowhaus/videos/index-thumbs/';
     var brandsPageIndexPicsDir = '/b/fashion/images/projects/2017-glowhaus/learn/featured-brands/';
     var productPageToOpen = '';
+    var productPageToOpenCleanName = '';
+    var currentVideoCompleted = false;
+    var currentVideoLaunched = false;
+
+    var currentVideoPosition = 0;
     
     videoPageTileList.empty();
+
+    var videoPlayerOptions = {
+        iconUrl: '/b/fashion/images/projects/2017-glowhaus/assets/plyr.svg',
+        tooltips: {controls: true},
+        captions: {defaultActive: true}
+    };
+    
+    var getVideoPosterAndSrc = function(data) {
+        var videos = data.sources;
+        var removeVideosIndex = [];
+        videos.forEach(function (element, index) {
+            if (element.src == undefined || element.container.toLowerCase() !== 'mp4') {
+                removeVideosIndex.push(index);
+            } else {
+                if (element.src.includes('http://')) {
+                    removeVideosIndex.push(index);
+                }
+            }
+        });
+        var finalVideosData = $.grep(videos, function (n, i) {
+            return $.inArray(i, removeVideosIndex) == -1;
+        });
+        function videoWidthComparator(a, b) {
+            return parseInt(a.width, 10) - parseInt(b.width, 10);
+        }
+        finalVideosData.sort(videoWidthComparator).reverse();
+        
+        return {'videoPosterSrc': data.poster, 'videoSrc': finalVideosData[0].src}
+    };
+
+    var setUpVideoEvents = function (_container) {
+        _container.find('video').on('pause', function (e) {
+                coreMetricsForVideo(productPageToOpenCleanName + '__video', 'video_Pause', e.target.currentTime);
+            })
+            .on('play', function (e) {
+                currentVideoLaunched = true;
+                coreMetricsForVideo(productPageToOpenCleanName + '__video', 'video_Play', e.target.currentTime);
+            })
+            .on('timeupdate', function (e) {
+                //console.log(e.target.currentTime);
+                currentVideoPosition = e.target.currentTime;
+            })
+            .on('ended', function (e) {
+                currentVideoCompleted = true;
+                coreMetricsForVideo(productPageToOpenCleanName + '__video', 'video_Completed', e.target.currentTime);
+            });  
+    };
+
+    var videoMarkup = function (_data) {
+        var videoPosterSrc = getVideoPosterAndSrc(_data).videoPosterSrc;
+        var videoSrc = getVideoPosterAndSrc(_data).videoSrc;
+        return '<video class="glh-video" poster="' + videoPosterSrc + '" controls crossorigin>' +
+        '<source src="' + videoSrc + '" type="video/mp4">' +
+        //'<!-- Text track file -->' + trackTag +
+        '<a href="' + videoSrc + '" download>Download</a></video>';
+    };
 
     $.each(videoPagePics, function (i) {
       $('<li><a class="glh-videos-tutorial-item play-video-btn" data-name="' + videoPagePics[i].name + '" href="' + popupPageTemplateUrl +
@@ -799,11 +854,28 @@ $(function() {
         callbacks: {
             beforeOpen: function() {
                 productPageToOpen  = this.st.el.attr('data-name');
+                productPageToOpenCleanName = productPageToOpen.toUpperCase().replace(/[^A-Z0-9]/ig, '-');
+            },
+            open: function() {
+                popupCloseBtnEvent = false;
+                // init coremetrics for close btn
+                popupCloseBtnMetrics (productPageToOpenCleanName);
+            },
+            close: function() {
+                if(!popupCloseBtnEvent) {
+                    $.fn.coreTag('Element', 'closed-on-background-click__VIDEO-POPUP');
+                }
+                // !!!!!! Cormetrics for video on close - video is stopped / aborted
+                if (!currentVideoCompleted && currentVideoLaunched) {
+                    coreMetricsForVideo(productPageToOpenCleanName + '_video', 'video_Aborted', currentVideoPosition);
+                }
+                currentVideoCompleted = false;
+                currentVideoLaunched = false;
+                currentVideoPosition = 0;
             },
             ajaxContentAdded: function () {
-
-                var cormetricsValue = productPageToOpen.toUpperCase().replace(/[^A-Z0-9]/ig, '-');
-                popupCloseBtnMetrics ('close-btn_VIDEO-POPUP_' + cormetricsValue);
+                //var cormetricsValue = ;
+                popupCloseBtnMetrics ('close-btn_VIDEO-POPUP_' + productPageToOpenCleanName);
                 
                 //Video page – heading
                 $('.glh-popup__brand-heading').html(videoPagePopupsData[productPageToOpen].heading);
@@ -825,67 +897,18 @@ $(function() {
                 $('.ghl-thumbs-links-list a').on('click', function () {
                     $.fn.coreTag('Element', $( this ).attr( "coremetrictag" ));
                 });
-                //Video page – video markup
+
+
                 var thisVideoID = videoPagePopupsData[productPageToOpen].videoID;
-                //setUpVideo(thisVideoID, popupVideoContainer);
-                
+
                 SERVICES.brightCove.video_data(function (data) {
-
-                    var videos = data.sources;
-                    var videoPosterSrc = data.poster;
-                    var removeVideosIndex = [];
-                    videos.forEach(function (element, index) {
-                        if (element.src == undefined || element.container.toLowerCase() !== 'mp4') {
-                            removeVideosIndex.push(index);
-                        } else {
-                            if (element.src.includes('http://')) {
-                                removeVideosIndex.push(index);
-                            }
-                        }
-                    });
-                    var finalVideosData = $.grep(videos, function (n, i) {
-                        return $.inArray(i, removeVideosIndex) == -1;
-                    });
-
-                    function videoWidthComparator(a, b) {
-                        return parseInt(a.width, 10) - parseInt(b.width, 10);
-                    }
-
-                    finalVideosData.sort(videoWidthComparator).reverse();
-
-                    var videoMarkup = '<video class="glh-video" poster="' + videoPosterSrc + '" controls crossorigin>' +
-                        '<!-- Video files -->' +
-                        '<source src="' + finalVideosData[0].src + '" type="video/mp4">' +
-                        //'<!-- Text track file -->' + trackTag +
-                        '<!-- Fallback for browsers that dont support the <video> element --> ' +
-                        '<a href="' + finalVideosData[0].src + '" download>Download</a></video>';
-
-                    $('.glh-popup__video-container').append(videoMarkup);
-
-                    $('.glh-popup__video-container').find('video').on('pause', function (e) {
-                        console.log('Video ' + cormetricsValue + ' paused. Current time of videoplay: ' + e.target.currentTime );
-                    });
-                    $('.glh-popup__video-container').find('video').on('play', function (e) {
-                        console.log('Video ' + cormetricsValue + ' is started.');
-                    });
-
-                    var instances = plyr.setup(document.querySelector('.glh-video'), {
-                        //debug: true,
-                        //title:              'Video demo',
-                        iconUrl: '/b/fashion/images/projects/2017-glowhaus/assets/plyr.svg',
-                        tooltips: {
-                            controls: true
-                        },
-                        captions: {
-                            defaultActive: true
-                        }
-                    });
-
                     
-
-                    //EXPECTED: Attribute 16 = Video Action ("0”=Launch; “1”=Pause; “2”=Play;“3”=Completion)
-                    // Attribute 17= Video Length (Total length played in seconds)
-
+                    var popupVideoContainer = $('.glh-popup__video-container');
+                    popupVideoContainer.append(videoMarkup(data));
+                    setUpVideoEvents(popupVideoContainer);
+                    
+                    plyr.setup(document.querySelector(videoSelector), videoPlayerOptions);
+                    
                 }, thisVideoID); 
 
             }
@@ -897,22 +920,40 @@ $(function() {
         removalDelay: 300,
         mainClass: 'mfp-fade',
         callbacks: {
-            beforeOpen: function() {
-                productPageToOpen  = this.st.el.attr('data-name');
+            beforeOpen: function () {
+                productPageToOpen = this.st.el.attr('data-name');
+                productPageToOpenCleanName = productPageToOpen.toUpperCase().replace(/[^A-Z0-9]/ig, '-');
             },
+            open: function () {
+                popupCloseBtnEvent = false;
+                // init coremetrics for close btn
+                popupCloseBtnMetrics(productPageToOpenCleanName);
+            },
+            close: function () {
+                if (!popupCloseBtnEvent) {
+                    $.fn.coreTag('Element', 'closed-on-background-click__VIDEO-POPUP');
+                }
+                // !!!!!! Cormetrics for video on close - video is stopped / aborted
+                if (!currentVideoCompleted && currentVideoLaunched) {
+                    coreMetricsForVideo(productPageToOpenCleanName + '_video', 'video_Aborted', currentVideoPosition);
+                }
+                currentVideoCompleted = false;
+                currentVideoLaunched = false;
+                currentVideoPosition = 0;
+            },
+
             ajaxContentAdded: function () {
 
                 var cormetricsValue = productPageToOpen.toUpperCase().replace(/[^A-Z0-9]/ig, '-');
 
-                popupCloseBtnMetrics ('close-btn_BRAND-POPUP_' + cormetricsValue);
+                popupCloseBtnMetrics('close-btn_BRAND-POPUP_' + cormetricsValue);
 
                 $('.ghl-thumbs-links-list').empty();
-                
+
                 var brandsPageItem = brandsPagePopupsData[productPageToOpen];
 
-                // coremetricTag="link_' + _item.title.toUpperCase().replace(/[^A-Z0-9]/ig, '-') + '" '+
                 //Brand page – heading
-                
+
                 if (brandsPageItem.heading == undefined) {
                     var brandLogoUrl = brandsPageIndexPicsDir + productPageToOpen.toLowerCase().replace(/\s/g, '') + '-logo.jpg';
                     $('.glh-popup__brand-heading').html('<img src="' + brandLogoUrl + '">');
@@ -920,78 +961,39 @@ $(function() {
                     var theGlowDownDescription = '<h3 class="glh-popup__subheading">The Glow-Down:</h3><p class="glh-popup__description-copy">' + brandsPageItem.theGlowDownCopy + '</p>';
                     $('.glh-popup__theglowdown-description').html(theGlowDownDescription);
 
-                    $('.glh-popup__shop-link-holder').html('<a coremetricTag="text-link_' + cormetricsValue + '" '+
+                    $('.glh-popup__shop-link-holder').html('<a coremetricTag="text-link_' + cormetricsValue + '" ' +
                         'class="glh-popup__shop-link" href="' + brandsPageItem.shopLinkUrl + '">Shop ' + productPageToOpen + '</a>');
-
                 } else {
                     $('.glh-popup__brand-heading').html(brandsPageItem.heading);
 
-                    $('.glh-popup__shop-link-holder').html('<a coremetricTag="text-link_' + cormetricsValue + '" '+
+                    $('.glh-popup__shop-link-holder').html('<a coremetricTag="text-link_' + cormetricsValue + '" ' +
                         'class="glh-popup__shop-link" href="' + brandsPageItem.shopLinkUrl + '">Shop Now</a>');
                 }
-                
-                
+
+
                 var bestsellerImgUrl = brandsPageIndexPicsDir + productPageToOpen.toLowerCase().replace(/\s/g, '') + '-product.jpg';
-                $('.glh-popup__bestseller-img-holder').html('<a coremetricTag="image-link_' + cormetricsValue + '" '+
-                                                            'href="' + brandsPageItem.bestsellerImgLink + '">' +
-                                                            '<img src="' + bestsellerImgUrl + '"></a>');
+                $('.glh-popup__bestseller-img-holder').html('<a coremetricTag="image-link_' + cormetricsValue + '" ' +
+                    'href="' + brandsPageItem.bestsellerImgLink + '">' +
+                    '<img src="' + bestsellerImgUrl + '"></a>');
 
                 $('.glh-popup__bestseller-description').html('<h3 class="glh-popup__subheading">' + brandsPageItem.bestsellerHeading + '</h3>' +
-                                                             '<p class="glh-popup__description-copy">' + brandsPageItem.bestsellerCopy + '</p>');
+                    '<p class="glh-popup__description-copy">' + brandsPageItem.bestsellerCopy + '</p>');
 
                 $('.glh-popup__bestseller-img-holder a, .glh-popup__shop-link-holder a').on('click', function () {
-                    $.fn.coreTag('Element', $( this ).attr( "coremetrictag" ));
+                    $.fn.coreTag('Element', $(this).attr("coremetrictag"));
                 });
 
                 var thisVideoID = brandsPageItem.videoID;
                 if (thisVideoID != undefined) {
-                    //setUpVideo(thisVideoID, popupVideoContainer); :-( not working cause of plyr.js issue
-                   SERVICES.brightCove.video_data(function (data) {
+                    SERVICES.brightCove.video_data(function (data) {
 
-                        var videos = data.sources;
-                        var videoPosterSrc = data.poster;
-                        var removeVideosIndex = [];
-                        videos.forEach(function (element, index) {
-                            if (element.src == undefined || element.container.toLowerCase() !== 'mp4') {
-                                removeVideosIndex.push(index);
-                            } else {
-                                if (element.src.includes('http://')) {
-                                    removeVideosIndex.push(index);
-                                }
-                            }
-                        });
-                        var finalVideosData = $.grep(videos, function (n, i) {
-                            return $.inArray(i, removeVideosIndex) == -1;
-                        });
+                        var popupVideoContainer = $('.glh-popup__video-container');
+                        popupVideoContainer.append(videoMarkup(data));
+                        setUpVideoEvents(popupVideoContainer);
 
-                        function videoWidthComparator(a, b) {
-                            return parseInt(a.width, 10) - parseInt(b.width, 10);
-                        }
+                        plyr.setup(document.querySelector(videoSelector), videoPlayerOptions);
 
-                        finalVideosData.sort(videoWidthComparator).reverse();
-
-                        var videoMarkup = '<video class="glh-video" poster="' + videoPosterSrc + '" controls crossorigin>' +
-                            '<!-- Video files -->' +
-                            '<source src="' + finalVideosData[0].src + '" type="video/mp4">' +
-                            //'<!-- Text track file -->' + trackTag +
-                            '<!-- Fallback for browsers that dont support the <video> element --> ' +
-                            '<a href="' + finalVideosData[0].src + '" download>Download</a></video>';
-
-                        $('.glh-popup__video-container').append(videoMarkup);
-
-                        var instances = plyr.setup(document.querySelector('.glh-video'), {
-                            //debug: true,
-                            //title:              'Video demo',
-                            iconUrl: '/b/fashion/images/projects/2017-glowhaus/assets/plyr.svg',
-                            tooltips: {
-                                controls: true
-                            },
-                            captions: {
-                                defaultActive: true
-                            }
-                        });
-
-                    }, thisVideoID); 
+                    }, thisVideoID);
                 }
             }
         }
@@ -1014,30 +1016,29 @@ $(function() {
     });
 
     
-    
-    // Load coremetrics.js script on demand because of dynamically created elements which should be monitored too
-    
-    
-    
     // ----------- Utils
 
-    /*
-    function CoreMetrics4Video(category_name, tag_value, attribute16_value, attribute17_value) {
+
+    //EXPECTED: Attribute 16 = Video Action ("0”=Launch; “1”=Pause; “2”=Play; “3”=Completion)
+    // Attribute 17= Video Length (Total length played in seconds)
+
+    function coreMetricsForVideo(tag_value, attribute16_value, attribute17_value) {
+        var categoryID = "fall17_glowhaus";
         try {
             var explorerAttributes = new BLOOMIES.coremetrics.exploreAttributes;
             //16: evt.type,
             explorerAttributes.add({16: attribute16_value});
             //17: evt.position
             explorerAttributes.add({17: attribute17_value});
-            BLOOMIES.coremetrics.cmCreatePageElementTag(tag_value, category_name, explorerAttributes.toString());
+            BLOOMIES.coremetrics.cmCreatePageElementTag(tag_value, categoryID, explorerAttributes.toString());
             //BLOOMIES.coremetrics.cmCreatePageElementTag( tag_value, category_name );
         } catch (e) {
             console.log("Coremetrics Library Not Found... " + e);
         }
-        console.log("{{{{{{{{ Element- category_name: " + category_name + " tag_value: " + tag_value + " attribute16_value (event Type) = " + attribute16_value + " attribute17_value: (event_Position) = " + attribute17_value + " }}}}}}}}");
+        console.log("{{{{{{{{ Element- category_name: " + categoryID + " tag_value: " + tag_value + " attribute16_value (event Type) = " + attribute16_value + " attribute17_value: (event_Position) = " + attribute17_value + " }}}}}}}}");
 
     }
-    */
+
 
     function popupCloseBtnMetrics (coremetricsTagValue) {
         $('.mfp-close').attr('coremetricTag', coremetricsTagValue)

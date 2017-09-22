@@ -26,7 +26,7 @@ $(document).ready( function($) {
     };
 
     var pageDict = {
-                            "2017-glowhaus": "fall17_glowhaus--hp",
+                            "2017-glowhaus": "fall17_glowhaus--landing",
                                     "about": "fall17_glowhaus--about",
      "discover-new-makeup-skin-care-brands": "fall17_glowhaus--brands",
                    "makeup-looks-tutorials": "fall17_glowhaus--video"
