@@ -133,8 +133,22 @@ video {
 .plyr__play-large {
   margin-bottom: 0 !important;
   height: auto;
+  padding:35px;
+  border: 5px solid #fff;
+  background: transparent !important;
+  &:hover {
+    border-color: $active-hover-color;
+    background: transparent !important;
+    svg {
+      color: $active-hover-color;;
+    }
+  }
 }
-
+.plyr__play-large svg {
+  width: 40px;
+  height: 40px;
+  left: 4px;
+}
 .plyr__video-wrapper {
   margin-bottom: 2px;
   background: transparent !important;
@@ -146,10 +160,11 @@ video {
 }
 
 .plyr--video .plyr__controls {
-  background: transparent;
+  background: rgba(0, 0, 0, 0.5);
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
   bottom: 2px;
+  padding: 10px;
 }
 
 
@@ -275,12 +290,31 @@ video {
   }
 }
 
+.html-video-popup {
+  position: relative;
+  .plyr__play-large {
+    display: inline-block !important;
+  }
+  &:hover, &:active, &:focus {
+    .plyr__play-large {
+      border-color: $active-hover-color;
+      svg {
+        color: $active-hover-color;;
+      }
+    }
+  }
+}
+
 .glh-videos-list-item, .glh-videos-tutorial-item {
   position: relative;
   &.play-video-btn {
     .videos-list-item__img-wrapper {
       display: block;
       position: relative;
+      .plyr__play-large {
+        display: inline-block !important;
+      }
+      /*
       &:before {
         position: absolute;
         width: 120px;
@@ -308,22 +342,35 @@ video {
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-50%, -50%);
+        transform: translate(-7px, -50%);
         z-index: 3;
-        //-webkit-transition: all .4s;
-        //transition: all .4s;
-      }
+      } */
     }
   }
   &:hover, &:active, &:focus {
     //outline: 0 none;
     .videos-list-item__img-wrapper {
+
+      .plyr__play-large {
+        border-color: $active-hover-color;
+        svg {
+          color: $active-hover-color;;
+        }
+      }
+
       &:before {
-        background-color: $active-hover-color;
+        //background-color: $active-hover-color;
+      }
+      &:before {
+        //background-color: rgba(238, 39, 55, 0.8);
+        //border-color: $active-hover-color;
+      }
+      &:after {
+        //border-left-color: $active-hover-color;
       }
     }
     .glh-videos-list-item__label, .glh-videos-tutorial-item__label {
-      color: $active-hover-color !important;
+      //color: $active-hover-color !important;
     }
   }
 }
@@ -359,7 +406,6 @@ video {
   font-weight: normal;
   color: $theme-black;
   line-height: 1.25;
-  opacity: 0.7;
   font-size: 14px;
   margin: 0.8em 0 1em 0;
   .second-line {
@@ -441,24 +487,6 @@ video {
     display: inline-block;
     right: -2px;
   }
-  /*
-  &.arrow-top {
-    &:after {
-      bottom: 100%;
-      left: 50%;
-      border: solid transparent;
-      content: " ";
-      height: 0;
-      width: 0;
-      position: absolute;
-      pointer-events: none;
-      border-color: rgba(35, 35, 35, 0);
-      border-bottom-color: #232323;
-      border-width: 12px;
-      margin-left: -12px;
-    }
-  }
-  */
 }
 .glh-brand-popup__brand-description {
   width: 80%;
@@ -640,6 +668,7 @@ video {
 .html-video-popup {
   position: relative;
   &:not(.no-play-btn) {
+    /*
     &:before {
       position: absolute;
       width: 120px;
@@ -669,10 +698,15 @@ video {
       transform: translate(-7px, -50%);
       z-index: 3;
     }
+    */
   }
   &:hover, &:focus {
     &:before {
-      background-color: rgba(238, 39, 55, 0.8);
+      //background-color: rgba(238, 39, 55, 0.8);
+     // border-color: $active-hover-color;
+    }
+    &:after {
+     // border-left-color: $active-hover-color;
     }
   }
 }
@@ -735,4 +769,28 @@ video {
     margin: 0;
     padding: 0;
   }
+}
+
+@-webkit-keyframes fade-out {
+  100% {-webkit-transform: scale(0.4); opacity: 0;}
+}
+
+.fade-out {
+  -webkit-animation: fade-out .5s ease-in;
+  -webkit-animation-fill-mode: forwards;
+  //background-color: #ccc;
+  //width: 100px;
+  //height: 100px;
+  opacity: 1;
+}
+
+.fade-out.one {-webkit-animation-delay: 1s;}
+
+.plyr--video .plyr__controls button {
+  background: transparent;
+  color: rgba(255, 255, 255, 0.69);
+}
+.plyr--video .plyr__controls button.tab-focus:focus, .plyr--video .plyr__controls button:hover {
+  background: transparent;
+  color: #fff;
 }
