@@ -41,7 +41,26 @@
 
 .glh-masonry {
   @include column-count(2);
-  @include column-gap($masonry-gap-sm);
+ // @include column-gap($masonry-gap-sm);
+  @include column-gap(0);
+
+  @media screen and (min-width: $bp-sm) {
+    margin-left: -($masonry-gap-md);
+  }
+  @media screen and (min-width: $bp-md) {
+    margin-left: -($masonry-gap-md);
+  }
+  @media screen and (min-width: $bp-lg) {
+    margin-left: -($masonry-gap-lg);
+  }
+  @media screen and (min-width: $bp-xl) {
+    margin-left: -($masonry-gap-lg);
+  }
+  @media screen and (min-width: $bp-xxl) {
+    margin-left: -($masonry-gap-xxl);
+  }
+
+
   a, .glh-masonry-item__deco-item, .glh-masonry-item__video-thumb {
     margin-bottom: $masonry-gap-sm;
   }
@@ -49,11 +68,29 @@
     font-size: 0;
     line-height: 1;
     position: relative;
+    padding-left: $masonry-gap-sm;
+    @media screen and (min-width: $bp-sm) {
+      padding-left: $masonry-gap-md;
+    }
+    @media screen and (min-width: $bp-md) {
+      padding-left: $masonry-gap-md;
+    }
+    @media screen and (min-width: $bp-lg) {
+      padding-left: $masonry-gap-lg;
+    }
+    @media screen and (min-width: $bp-xl) {
+      padding-left: $masonry-gap-lg;
+    }
+    @media screen and (min-width: $bp-xxl) {
+      padding-left: $masonry-gap-xxl;
+    }
+    z-index: 1;
     a {
       display: block;
       line-height: 1;
-      overflow: hidden;
+      //overflow: hidden;
       position: relative;
+      z-index: 1;
       video {
         position: relative;
         z-index: 1;
@@ -223,7 +260,7 @@ video {
     text-decoration: none;
     display: block;
     width: 100%;
-    overflow: hidden;
+    //overflow: hidden;
     position: relative;
     //transition: top .3s;
     &:active, &:focus {
@@ -256,7 +293,8 @@ video {
   li {
     text-align: center;
     padding: 0 1em;
-
+    position: relative;
+    z-index: 1;
     @include flex-basis(100%);
 
     @media screen and (min-width: $bp-md) {
@@ -272,8 +310,10 @@ video {
     text-decoration: none;
     display: block;
     width: 100%;
-    overflow: hidden;
+    //overflow: hidden;
     padding-top: 2px;
+    position: relative;
+    z-index: 1;
     &:focus {
       //border: 3px solid $active-hover-color;
       img {
@@ -793,4 +833,19 @@ video {
 .plyr--video .plyr__controls button.tab-focus:focus, .plyr--video .plyr__controls button:hover {
   background: transparent;
   color: #fff;
+}
+
+.img-tile-patch {
+  display: block;
+  position: absolute;
+  left: -30px;
+  width: 70px !important;
+  height: auto;
+  z-index: 999999;
+  &.top {
+    top: -35px;
+  }
+  &.bottom {
+    bottom: -30px;
+  }
 }
