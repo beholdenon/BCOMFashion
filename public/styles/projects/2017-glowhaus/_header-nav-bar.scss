@@ -84,7 +84,8 @@ $bp-xxl: 1679px;
 
     border-bottom: 2px solid $theme-black;
     padding:0 16px 0 44px;
-    width: 100%;
+    //width: 100%;
+    width: 590px !important;
     @media screen and (min-width: $bp-sm) {
 
     }

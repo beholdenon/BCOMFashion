@@ -126,6 +126,19 @@ $(function() {
         {'type': 'img',  'action': 'html-brand-popup',   'name': 'Lash Star Beauty',   'thumb': 'brand-14.jpg',  'height': 66},
         {'type': 'img',  'action': 'html-brand-popup',   'name': 'kaprielle',          'thumb': 'brand-15.jpg',  'height': 117},
 
+        {'type': 'img',  'action': 'html-brand-popup',   'name': 'The Better Skin Co', 'thumb': 'landingthumb_brand1.jpg',  'height': 141},
+        {'type': 'img',  'action': 'html-brand-popup',   'name': 'The BrowGal',        'thumb': 'landingthumb_brand2.jpg',  'height': 117},
+        {'type': 'img',  'action': 'html-brand-popup',   'name': 'CONTEXT',            'thumb': 'landingthumb_brand3.jpg',  'height': 146},
+        {'type': 'img',  'action': 'html-brand-popup',   'name': 'COVER FX',           'thumb': 'landingthumb_brand4.jpg',  'height': 133},
+        {'type': 'img',  'action': 'html-brand-popup',   'name': 'GLAMGLOW',           'thumb': 'landingthumb_brand7.jpg',  'height': 165},
+        {'type': 'img',  'action': 'html-brand-popup',   'name': 'Kosas',              'thumb': 'landingthumb_brand9.jpg',  'height': 64},
+        {'type': 'img',  'action': 'html-brand-popup',   'name': 'Lime Crime',         'thumb': 'landingthumb_brand12.jpg', 'height': 98},
+        {'type': 'img',  'action': 'html-brand-popup',   'name': 'Rouge Bunny Rouge',  'thumb': 'landingthumb_brand17.jpg', 'height': 177},
+        {'type': 'img',  'action': 'html-brand-popup',   'name': 'Saturday Skin',      'thumb': 'landingthumb_brand18.jpg', 'height': 141},
+        {'type': 'img',  'action': 'html-brand-popup',   'name': 'Supergoop',          'thumb': 'landingthumb_brand19.jpg', 'height': 83},
+        {'type': 'img',  'action': 'html-brand-popup',   'name': 'makeuperaser',       'thumb': 'landingthumb_brand25.jpg', 'height': 98},
+        {'type': 'img',  'action': 'html-brand-popup',   'name': 'makeupdrop',         'thumb': 'landingthumb_brand26.jpg', 'height': 153},
+
 
         {'type':  'deco',  'thumb': 'deco-01.jpg',   'height': 146},
         {'type':  'deco',  'thumb': 'deco-02.jpg',   'height': 211},
@@ -139,7 +152,7 @@ $(function() {
         {'type':  'deco',  'thumb': 'deco-10.jpg',   'height': 211},
         {'type':  'deco',  'thumb': 'deco-11.jpg',   'height': 80},
         {'type':  'deco',  'thumb': 'deco-12.jpg',   'height': 125},
-        {'type':  'deco',  'thumb': 'deco-13.jpg',   'height': 168},
+        {'type':  'deco',  'thumb': 'deco-13.jpg',   'height': 68},
         {'type':  'deco',  'thumb': 'deco-14.jpg',   'height': 55},
         {'type':  'deco',  'thumb': 'deco-15.jpg',   'height': 183},
         {'type':  'deco',  'thumb': 'deco-16.jpg',   'height': 92},
@@ -286,7 +299,7 @@ $(function() {
             'productslist': [
                 {
                     'thumb': 'thumb1.jpg',
-                    'title': 'Context',
+                    'title': 'CONTEXT',
                     'description': 'White Charcoal Detox Mask',
                     'link': 'https://www.bloomingdales.com/shop/product/context-white-charcoal-detox-mask?ID=2607002'
                 },
@@ -411,14 +424,14 @@ $(function() {
             'theGlowDownCopy': 'Natalya Rachkova brought her secret face cream recipe to the U.S. from her home country of Uzbekistan—and word started spreading quickly. What began as &quot;magic&quot; cream made in her kitchen is now a carefully edited collection of skin care essentials (think: a multitasking moisturizer, cleanser-mask hybrid and pimple potion). The paraben&dash;free, vegan formulas are handcrafted and work for all skin types.',
             'bestsellerImgLink': 'https://www.bloomingdales.com/shop/product/the-better-skin-co.-mirakle-cream?ID=2624033',
             'bestsellerHeading': 'Mirakle Cream',
-            'bestsellerCopy': 'It seriously does it all: hydrates, balances, brightens and addresses just about any skin concern you have',
+            'bestsellerCopy': 'It seriously does it all: hydrates, balances, brightens and addresses just about any skin concern you have.',
             'shopLinkUrl': 'https://www.bloomingdales.com/shop/makeup-perfume-beauty/glowhaus-makeup-skin-care/Brand/The%20Better%20Skin%20Co.?id=1035059'
         },
         'The BrowGal': {
-            'theGlowDownCopy': 'When it comes to brows, we put all our trust in celebrity makeup artist and &quot;brow whisperer&quot; Tonya Crooks. Her L.A.-based line includes everything you need to find and maintain your natural brow shape (spoiler: one size does not fit all). The collection of innovative pencils, highlighters and tools lets you customize your look for fuller, thicker brows that break the cookie cutter mold.',
+            'theGlowDownCopy': 'When it comes to brows, we put all our trust in celebrity makeup artist and &quot;brow whisperer&quot; Tonya Crooks. Her L.A.-based line includes everything you need to find and maintain your natural brow shape (spoiler: one size does not fit all). The collection of innovative pencils, highlighters and tools lets you customize your look for fuller, thicker brows that break the cookie&dash;cutter mold.',
             'bestsellerImgLink': 'https://www.bloomingdales.com/shop/product/the-browgal-convertible-brow-powder-pomade-duo?ID=2692371',
             'bestsellerHeading': 'The Convertible Brow Powder &amp; Pomade Duo',
-            'bestsellerCopy': 'Use it dry for a natural finish, wet for more definition or both to create a full-on glam look.',
+            'bestsellerCopy': 'Use it dry for a natural finish, wet for more definition or both to create a full&dash;on glam look.',
             'shopLinkUrl': 'https://www.bloomingdales.com/shop/makeup-perfume-beauty/glowhaus-makeup-skin-care/Brand/The%20BrowGal?id=1035059',
             'videoID': '5573561604001'
         },
@@ -437,10 +450,10 @@ $(function() {
             'shopLinkUrl': 'https://www.bloomingdales.com/shop/makeup-perfume-beauty/glowhaus-makeup-skin-care/Brand/COVER%20FX?id=1035059'
         },
         'FLiRT Cosmetics': {
-            'theGlowDownCopy': 'Born on the &#39;gram, this social media&dash;savvy brand is a collaboration between Est&#233;e Lauder and illustrator Donald Robertson. The playful collection includes dot liner pens to create artsy eye designs, temporary tattoos for festival looks and a false&dash;lash applicator that will blow your mind. Not to mention, everything is decorated with Robertson’s punchy illustrations, making the products themselves works of art.',
+            'theGlowDownCopy': 'Born on the &#39;gram, this social media&#8211;savvy brand is a collaboration between Est&#233;e Lauder and illustrator Donald Robertson. The playful collection includes dot liner pens to create artsy eye designs, temporary tattoos for festival looks and a false&dash;lash applicator that will blow your mind. Not to mention, everything is decorated with Robertson’s punchy illustrations, making the products themselves works of art.',
             'bestsellerImgLink': 'https://www.bloomingdales.com/shop/product/flirt-cosmetics-flashes-false-lash-applicator?ID=2695132',
-            'bestsellerHeading': 'Flashes False Lash Applicator',
-            'bestsellerCopy': 'This game&dash;changing tool dispenses false-lash &qout;buds&quot; for a hassle&dash;free application and custom look.',
+            'bestsellerHeading': 'Flashes False&dash;Lash Applicator',
+            'bestsellerCopy': 'This game&dash;changing tool dispenses false&dash;lash &quot;buds&quot; for a hassle&dash;free application and custom look.',
             'shopLinkUrl': 'https://www.bloomingdales.com/shop/makeup-perfume-beauty/glowhaus-makeup-skin-care/Brand/FLiRT%20Cosmetics?id=1035059'
         },
         'Frank Body': {
@@ -452,7 +465,7 @@ $(function() {
             'videoID': '5573558771001'
         },
         'GLAMGLOW': {
-            'theGlowDownCopy': 'Husband&dash;wife duo Glenn and Shannon Dellimore created their first mud mask for their actor friends who were looking to get camera&dash;ready. The glow&dash;getting product became so popular backstage in Hollywood, the Dellimores ended up launching their own line. Now there’s a mud mask for every one of your skin concerns: SUPERMUD&reg; to clear, YOUTHMUD&reg; to exfoliate, THIRSTYMUD&#8482; to hydrate and FLASHMUD&#8482; to brighten. Plus, the brand recently added cleansers and moisturizers to its lineup of must-haves.',
+            'theGlowDownCopy': 'Husband&dash;wife duo Glenn and Shannon Dellimore created their first mud mask for their actor friends who were looking to get camera&dash;ready. The glow&dash;getting product became so popular backstage in Hollywood, the Dellimores ended up launching their own line. Now there’s a mud mask for every one of your skin concerns: SUPERMUD<sup>&reg;</sup> to clear, YOUTHMUD<sup>&reg;</sup> to exfoliate, THIRSTYMUD&#8482; to hydrate and FLASHMUD&#8482; to brighten. Plus, the brand recently added cleansers and moisturizers to its lineup of must-haves.',
             'bestsellerImgLink': 'https://www.bloomingdales.com/shop/product/glamglow-gravitymud-firming-treatment?ID=2670172',
             'bestsellerHeading': 'GRAVITYMUD&#8482; Firming Treatment',
             'bestsellerCopy': 'This lifting, peel-off mask transforms from white to chrome as you wear it, giving you plenty of selfie ops.',
@@ -466,7 +479,7 @@ $(function() {
             'shopLinkUrl': 'https://www.bloomingdales.com/shop/makeup-perfume-beauty/glowhaus-makeup-skin-care/Brand/Grown%20Alchemist?id=1035059'
         },
         'Kosas': {
-            'theGlowDownCopy': 'Because this L.A.&dash;based brand makes only lipsticks, it&#39;s focused on perfecting the art and science of lip color. Every shade in its natural collection is handmade with green tea, shea butter and sweet orange oil&mdash;plus, free of parabens, sulfates and phthalates. The sheer, buildable colors range from nudes to brights and feature a non$dash;drying matte finish. Trust us, you&#39;ll want one of each. ',
+            'theGlowDownCopy': 'Because this L.A.&dash;based brand makes only lipsticks, it&#39;s focused on perfecting the art and science of lip color. Every shade in its natural collection is handmade with green tea, shea butter and sweet orange oil&mdash;plus, free of parabens, sulfates and phthalates. The sheer, buildable colors range from nudes to brights and feature a non&dash;drying matte finish. Trust us, you&#39;ll want one of each. ',
         'bestsellerImgLink': 'https://www.bloomingdales.com/shop/product/kosas-weightless-lipstick?ID=2679460',
         'bestsellerHeading': 'Weightless Lip Color in Rosewater',
         'bestsellerCopy': 'The perfect dusty pink shade that looks like your lips (but better)—and it’s super hydrating and plumping.',
@@ -480,14 +493,14 @@ $(function() {
             'shopLinkUrl': 'https://www.bloomingdales.com/shop/makeup-perfume-beauty/glowhaus-makeup-skin-care/Brand/Lano?id=1035059'
         },
         'Lash Star Beauty': {
-            'theGlowDownCopy': 'Lashes are having a big moment, which is why we&#39;re obsessed (in a big way) with this beauty line dedicated solely to eyelashes. Whether you want to make a subtle statement or go all&dash;out extra, these products and tools&dash;from heated curlers to multitasking mascaras&dash;will be the stars of your makeup bag. Plus, the brand is cruelty free and everything is formulated with high&dash;quality ingredients.',
+            'theGlowDownCopy': 'Lashes are having a big moment, which is why we&#39;re obsessed (in a big way) with this beauty line dedicated solely to eyelashes. Whether you want to make a subtle statement or go all&dash;out extra, these products and tools&mdash;from heated curlers to a multitasking mascara&mdash;will be the stars of your makeup bag. Plus, the brand is cruelty&dash;free and everything is formulated with high&dash;quality ingredients.',
             'bestsellerImgLink': 'https://www.bloomingdales.com/shop/product/lash-star-beauty-full-control-lash-sculpting-mascara?ID=2632934',
             'bestsellerHeading': 'Full Control Lash Sculpting Mascara',
             'bestsellerCopy': 'Two wands are better than one for defined, volumized and totally transformed lashes.',
             'shopLinkUrl': 'https://www.bloomingdales.com/shop/makeup-perfume-beauty/glowhaus-makeup-skin-care/Brand/Lash%20Star%20Beauty?id=1035059'
         },
         'Lime Crime': {
-            'theGlowDownCopy': 'Known for its insanely pigmented lipsticks, this Insta&dash;famous brand offers a range of double&dash;tap&dash;worthy formulas—from velvety mattes to wild metallics. Founder Doe Deere set out to create &quot;makeup for unicorns&quot;, which is the perfect way to describe her line of rainbow brights and glitters. Plus, every single product is vegan and cruelty&dash;free.',
+            'theGlowDownCopy': 'Known for its insanely pigmented lipsticks, this Insta&dash;famous brand offers a range of double&dash;tap&dash;worthy formulas—from velvety mattes to wild metallics. Founder Doe Deere set out to create &quot;makeup for unicorns,&quot; which is the perfect way to describe her line of rainbow brights and glitters. Plus, every single product is vegan and cruelty&dash;free.',
             'bestsellerImgLink': 'https://www.bloomingdales.com/shop/product/lime-crime-velvetines-matte-lipstick?ID=2669787',
             'bestsellerHeading': 'Matte Velvetines Lipstick in Red Rose',
             'bestsellerCopy': 'This OG liquid matte lipstick lasts all day and won’t dry out lips.',
@@ -505,7 +518,7 @@ $(function() {
             'theGlowDownCopy': 'Few names are as synonymous with a clear, glowing complexion as Mario Badescu. For more than 50 years he&#39;s created custom treatments with the most effective—and high-end—ingredients. Whether you&#39;re looking for powerful acne remedies or potent anti-aging treatments, his products offer tailor-made solutions to tackle any and all skin concerns.',
             'bestsellerImgLink': 'https://www.bloomingdales.com/shop/product/mario-badescu-drying-lotion?ID=2679461',
             'bestsellerHeading': 'Drying Lotion',
-            'bestsellerCopy': 'Powerful salicylic acid and soothing calamine make stubborn breakouts disappear virtually overnight.',
+            'bestsellerCopy': 'Powerful salicylic acid and soothing calamine make stubborn breakouts virtually disappear overnight.',
             'shopLinkUrl': 'https://www.bloomingdales.com/shop/makeup-perfume-beauty/glowhaus-makeup-skin-care/Brand/Grown%20Alchemist?id=1035059'
         },
         'NUDESTIX': {
@@ -588,7 +601,7 @@ $(function() {
             'heading': 'Makeup Eraser',
             'bestsellerImgLink': 'https://www.bloomingdales.com/shop/product/makeup-eraser-the-original-makeup-eraser-makeup-remover-cloth?ID=2629898',
             'bestsellerHeading': 'The Original MakeUp Eraser Makeup Remover Cloth',
-            'bestsellerCopy': 'Just add water and this super-soft cloth will remove waterproof makeup and mascara instantly. Plus, it’s perfect for travel and lasts up to a thousand washes.',
+            'bestsellerCopy': 'Just add water and this supersoft cloth will remove waterproof makeup and mascara instantly. Plus, it’s perfect for travel and lasts up to a thousand washes.',
             'shopLinkUrl': 'https://www.bloomingdales.com/shop/product/makeup-eraser-the-original-makeup-eraser-makeup-remover-cloth?ID=2629898'
         },
         'winkylux': {
@@ -655,43 +668,36 @@ $(function() {
             item.find('img').css('height', value);
             item.find('video').css('height', value);
         };
+        
+        var createImg = function() {
+            return '<img data-width="' + defaultThumbWidth +
+            '" data-height="' + originalHeight +
+            '" data-tmp-src="' + thumbImg +
+            '" src="' + imagePlaceHolder + '">';
+        };
 
         var imgItem, videoItem = '';
         if (media === 'img') {
             if (typeOfAction === 'img-popup') {
                 if (imgPopupsCounter < 36) {
                     imgItem = $('<li><a class="image-popup-link" data-name="POPUP-IMAGE" ' +
-                        'href="' + fullSizeImg +
-                        '"><img data-width="' + defaultThumbWidth +
-                        '" data-height="' + originalHeight +
-                        '" data-tmp-src="' + thumbImg +
-                        '" src="' + imagePlaceHolder + '">'+
-                        //imgPopupsCounter +
-                        '</a></li>')
+                        'href="' + fullSizeImg + '">' + createImg() + '</a></li>')
                         .appendTo(landingPageTileList);
                     setImgHeight(imgItem);
                     imgPopupsCounter++;
                 }
             } else if (typeOfAction === 'html-video-popup') {
                 imgItem = $('<li><a class="html-video-popup" data-name="' + tileItem.name + '" ' +
-                    'href="' + popupPageTemplateUrl +
-                    '"><img data-width="' + defaultThumbWidth +
-                    '" data-height="' + originalHeight +
-                    '" data-tmp-src="' + thumbImg +
-                    '" src="' + imagePlaceHolder + '"></a></li>')
+                    'href="' + popupPageTemplateUrl + '">' + createImg() + 
+                    '<span class="plyr__play-large"><svg id="plyr-play" viewBox="0 0 18 18" width="100%" height="100%"><path d="M15.562 8.1L3.87.225C3.052-.337 2 .225 2 1.125v15.75c0 .9 1.052 1.462 1.87.9L15.563 9.9c.584-.45.584-1.35 0-1.8z"></path></svg><span class="plyr__sr-only">Play</span>' +
+                    '</a></li>')
                     .appendTo(landingPageTileList);
                 setImgHeight(imgItem);
-                
             }else if (typeOfAction === 'html-brand-popup') {
                 imgItem = $('<li><a class="html-brand-popup no-play-btn" data-name="' + tileItem.name + '" ' +
-                    'href="' + popupPageTemplateUrl +
-                    '"><img data-width="' + defaultThumbWidth +
-                    '" data-height="' + originalHeight +
-                    '" data-tmp-src="' + thumbImg +
-                    '" src="' + imagePlaceHolder + '"></a></li>')
+                    'href="' + popupPageTemplateUrl + '">' + createImg() + '</a></li>')
                     .appendTo(landingPageTileList);
                 setImgHeight(imgItem);
-               
             }
         } else if (media === 'video') {
             videoItem = $('<li class="glh-masonry-item__video-thumb"><video preload autoplay playsinline loop data-width="' + defaultThumbWidth +
@@ -702,13 +708,9 @@ $(function() {
             setImgHeight(videoItem);
            
         } else if (media === 'deco') {
-            imgItem = $('<li class="glh-masonry-item__deco-item"><img data-width="' + defaultThumbWidth +
-                '" data-height="' + originalHeight +
-                '" data-tmp-src="' + thumbImg +
-                '" src="' + imagePlaceHolder + '"></li>')
+            imgItem = $('<li class="glh-masonry-item__deco-item">' + createImg() + '</li>')
                 .appendTo(landingPageTileList);
             setImgHeight(imgItem);
-          
         }
     });
 
@@ -771,8 +773,6 @@ $(function() {
     /* ------------------------------------- HTML POPUP -------------------------------------- */
     
     var videoPageTileList = $('.glh-videos-list');
-    //var popupVideoContainer = $('.glh-popup__video-container');
-    //var glhVideo = document.querySelector('.glh-video');
     var videoPageIndexPicsDir = '/b/fashion/images/projects/2017-glowhaus/videos/index-thumbs/';
     var brandsPageIndexPicsDir = '/b/fashion/images/projects/2017-glowhaus/learn/featured-brands/';
     var productPageToOpen = '';
@@ -781,8 +781,6 @@ $(function() {
     var currentVideoLaunched = false;
 
     var currentVideoPosition = 0;
-    
-    videoPageTileList.empty();
 
     var videoPlayerOptions = {
         iconUrl: '/b/fashion/images/projects/2017-glowhaus/assets/plyr.svg',
@@ -815,11 +813,11 @@ $(function() {
 
     var setUpVideoEvents = function (_container) {
         _container.find('video').on('pause', function (e) {
-                coreMetricsForVideo(productPageToOpenCleanName + '__video', 'video_Pause', e.target.currentTime);
+                coreMetricsForVideo('video-' + productPageToOpenCleanName, 'video_Pause', e.target.currentTime);
             })
             .on('play', function (e) {
                 currentVideoLaunched = true;
-                coreMetricsForVideo(productPageToOpenCleanName + '__video', 'video_Play', e.target.currentTime);
+                coreMetricsForVideo('video-' + productPageToOpenCleanName, 'video_Play', e.target.currentTime);
             })
             .on('timeupdate', function (e) {
                 //console.log(e.target.currentTime);
@@ -827,7 +825,7 @@ $(function() {
             })
             .on('ended', function (e) {
                 currentVideoCompleted = true;
-                coreMetricsForVideo(productPageToOpenCleanName + '__video', 'video_Completed', e.target.currentTime);
+                coreMetricsForVideo('video-' + productPageToOpenCleanName, 'video_Completed', e.target.currentTime);
             });  
     };
 
@@ -839,10 +837,21 @@ $(function() {
         //'<!-- Text track file -->' + trackTag +
         '<a href="' + videoSrc + '" download>Download</a></video>';
     };
+    
+    var videoSetupWrapper = function (_data) {
+        var popupVideoContainer = $('.glh-popup__video-container');
+        popupVideoContainer.append(videoMarkup(_data));
+        setUpVideoEvents(popupVideoContainer);
+        plyr.setup(document.querySelector(videoSelector), videoPlayerOptions);
+    };
 
+    videoPageTileList.empty();
+    
     $.each(videoPagePics, function (i) {
       $('<li><a class="glh-videos-tutorial-item play-video-btn" data-name="' + videoPagePics[i].name + '" href="' + popupPageTemplateUrl +
-            '"><span class="videos-list-item__img-wrapper"><img src="' + videoPageIndexPicsDir + videoPagePics[i].thumb + '"></span>' +
+            '"><span class="videos-list-item__img-wrapper"><img src="' + videoPageIndexPicsDir + videoPagePics[i].thumb + '">' +
+          '<span class="plyr__play-large"><svg id="plyr-play" viewBox="0 0 18 18" width="100%" height="100%"><path d="M15.562 8.1L3.87.225C3.052-.337 2 .225 2 1.125v15.75c0 .9 1.052 1.462 1.87.9L15.563 9.9c.584-.45.584-1.35 0-1.8z"></path></svg><span class="plyr__sr-only">Play</span></span>' +
+          '</span>' +
           '<h5 class="glh-videos-tutorial-item__label">' + videoPagePics[i].heading  + '</h5></a>' +
           '</li>').appendTo(videoPageTileList);
     });
@@ -867,7 +876,7 @@ $(function() {
                 }
                 // !!!!!! Cormetrics for video on close - video is stopped / aborted
                 if (!currentVideoCompleted && currentVideoLaunched) {
-                    coreMetricsForVideo(productPageToOpenCleanName + '_video', 'video_Aborted', currentVideoPosition);
+                    coreMetricsForVideo('video-' + productPageToOpenCleanName, 'video_Aborted', currentVideoPosition);
                 }
                 currentVideoCompleted = false;
                 currentVideoLaunched = false;
@@ -887,10 +896,14 @@ $(function() {
                 $('.ghl-thumbs-links-list').empty();
                 $.each(prodList, function (item) {
                     var _item = prodList[item];
-                    $('.ghl-thumbs-links-list').append('<li><a coremetricTag="link_' + _item.title.toUpperCase().replace(/[^A-Z0-9]/ig, '-') + '" '+
+                    var itemTitle = _item.title;
+                    if(_item.title === 'The Better Skin Co') {
+                        itemTitle = itemTitle + '.';
+                    }
+                    $('.ghl-thumbs-links-list').append('<li><a coremetricTag="shop-product_' + _item.title.toUpperCase().replace(/[^A-Z0-9]/ig, '-') + '" '+
                         'href="' + _item.link + '">' +
                         '<img src="' + thisProductPath + _item.thumb + '">' +
-                        '<h5>' + _item.title + '</h5>' +
+                        '<h5>' + itemTitle + '</h5>' +
                         '<p>' + _item.description + '</p></a></li>');
                 });
 
@@ -900,15 +913,8 @@ $(function() {
 
 
                 var thisVideoID = videoPagePopupsData[productPageToOpen].videoID;
-
                 SERVICES.brightCove.video_data(function (data) {
-                    
-                    var popupVideoContainer = $('.glh-popup__video-container');
-                    popupVideoContainer.append(videoMarkup(data));
-                    setUpVideoEvents(popupVideoContainer);
-                    
-                    plyr.setup(document.querySelector(videoSelector), videoPlayerOptions);
-                    
+                    videoSetupWrapper(data);
                 }, thisVideoID); 
 
             }
@@ -954,6 +960,7 @@ $(function() {
 
                 //Brand page – heading
 
+
                 if (brandsPageItem.heading == undefined) {
                     var brandLogoUrl = brandsPageIndexPicsDir + productPageToOpen.toLowerCase().replace(/\s/g, '') + '-logo.jpg';
                     $('.glh-popup__brand-heading').html('<img src="' + brandLogoUrl + '">');
@@ -961,18 +968,27 @@ $(function() {
                     var theGlowDownDescription = '<h3 class="glh-popup__subheading">The Glow-Down:</h3><p class="glh-popup__description-copy">' + brandsPageItem.theGlowDownCopy + '</p>';
                     $('.glh-popup__theglowdown-description').html(theGlowDownDescription);
 
-                    $('.glh-popup__shop-link-holder').html('<a coremetricTag="text-link_' + cormetricsValue + '" ' +
-                        'class="glh-popup__shop-link" href="' + brandsPageItem.shopLinkUrl + '">Shop ' + productPageToOpen + '</a>');
+                    // resolve '.' and '!' issue in product's name
+                    if (productPageToOpen === 'The Better Skin Co') {
+                        $('.glh-popup__shop-link-holder').html('<a coremetricTag="shop-now-' + cormetricsValue + '" ' +
+                            'class="glh-popup__shop-link" href="' + brandsPageItem.shopLinkUrl + '">Shop ' + productPageToOpen + '.</a>');
+                    } else if (productPageToOpen === 'Supergoop') {
+                        $('.glh-popup__shop-link-holder').html('<a coremetricTag="shop-now-' + cormetricsValue + '" ' +
+                            'class="glh-popup__shop-link" href="' + brandsPageItem.shopLinkUrl + '">Shop ' + productPageToOpen + '!</a>');
+                    } else {
+                        $('.glh-popup__shop-link-holder').html('<a coremetricTag="shop-now-' + cormetricsValue + '" ' +
+                            'class="glh-popup__shop-link" href="' + brandsPageItem.shopLinkUrl + '">Shop ' + productPageToOpen + '</a>');
+                    }
                 } else {
                     $('.glh-popup__brand-heading').html(brandsPageItem.heading);
 
-                    $('.glh-popup__shop-link-holder').html('<a coremetricTag="text-link_' + cormetricsValue + '" ' +
+                    $('.glh-popup__shop-link-holder').html('<a coremetricTag="shop-now-' + cormetricsValue + '" ' +
                         'class="glh-popup__shop-link" href="' + brandsPageItem.shopLinkUrl + '">Shop Now</a>');
                 }
 
 
                 var bestsellerImgUrl = brandsPageIndexPicsDir + productPageToOpen.toLowerCase().replace(/\s/g, '') + '-product.jpg';
-                $('.glh-popup__bestseller-img-holder').html('<a coremetricTag="image-link_' + cormetricsValue + '" ' +
+                $('.glh-popup__bestseller-img-holder').html('<a coremetricTag="shop-product_image-link_' + cormetricsValue + '" ' +
                     'href="' + brandsPageItem.bestsellerImgLink + '">' +
                     '<img src="' + bestsellerImgUrl + '"></a>');
 
@@ -986,13 +1002,7 @@ $(function() {
                 var thisVideoID = brandsPageItem.videoID;
                 if (thisVideoID != undefined) {
                     SERVICES.brightCove.video_data(function (data) {
-
-                        var popupVideoContainer = $('.glh-popup__video-container');
-                        popupVideoContainer.append(videoMarkup(data));
-                        setUpVideoEvents(popupVideoContainer);
-
-                        plyr.setup(document.querySelector(videoSelector), videoPlayerOptions);
-
+                        videoSetupWrapper(data);
                     }, thisVideoID);
                 }
             }
@@ -1035,7 +1045,7 @@ $(function() {
         } catch (e) {
             console.log("Coremetrics Library Not Found... " + e);
         }
-        console.log("{{{{{{{{ Element- category_name: " + categoryID + " tag_value: " + tag_value + " attribute16_value (event Type) = " + attribute16_value + " attribute17_value: (event_Position) = " + attribute17_value + " }}}}}}}}");
+        console.log("*** Element- category_name: " + categoryID + " tag_value: " + tag_value + " attribute16_value (event Type) = " + attribute16_value + " attribute17_value: (event_Position) = " + attribute17_value + "***");
 
     }
 
@@ -1130,5 +1140,16 @@ $(function() {
         if (!results[2]) return '';
         return decodeURIComponent(results[2].replace(/\+/g, " "));
     }
+    */
+/*
+    $('.bye-bye').on('click', function (e) {
+        e.preventDefault();                   
+        var goTo = $(this).attr('href');
+        $('.glh-main-wrapper').fadeOut('slow', function () {
+            setTimeout(function(){
+                window.location = goTo;
+            },500);
+        });
+    });
     */
 });

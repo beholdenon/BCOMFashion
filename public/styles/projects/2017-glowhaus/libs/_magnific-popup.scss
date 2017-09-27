@@ -141,13 +141,13 @@ button::-moz-focus-inner {
   .mfp-close:hover,
   .mfp-close:focus {
     opacity: 1;
-    background-color: $active-hover-color !important;
-    color: #fff !important;
+    background-color: transparent !important;
+    color: $active-hover-color !important;
   }
   .mfp-close:active {
     //top: 1px;
-    background-color: $active-hover-color !important;
-    color: #fff !important;
+    background-color: transparent!important;
+    color: $active-hover-color !important;
   }
 
 .mfp-close-btn-in .mfp-close {
