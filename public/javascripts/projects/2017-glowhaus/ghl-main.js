@@ -653,6 +653,8 @@ $(function() {
 
     var imgPopupsCounter = 0;
     //var itemsCounter = 0;
+
+    var plyrPlayBtn = '<span class="plyr__play-large"><svg id="plyr-play" viewBox="0 0 18 18" width="100%" height="100%"><path d="M15.562 8.1L3.87.225C3.052-.337 2 .225 2 1.125v15.75c0 .9 1.052 1.462 1.87.9L15.563 9.9c.584-.45.584-1.35 0-1.8z"></path></svg><span class="plyr__sr-only">Play</span></span>';
     
     // create landing page image tile
     $.each(landingPagePics, function (i) {
@@ -670,33 +672,30 @@ $(function() {
             item.find('video').css('height', value);
         };
         
-        var createImg = function() {
-            return '<img data-width="' + defaultThumbWidth +
+        var imgMarkup = '<img data-width="' + defaultThumbWidth +
             '" data-height="' + originalHeight +
             '" data-tmp-src="' + thumbImg +
             '" src="' + imagePlaceHolder + '">';
-        };
 
         var imgItem, videoItem = '';
         if (media === 'img') {
             if (typeOfAction === 'img-popup') {
                 if (imgPopupsCounter < 36) {
                     imgItem = $('<li><a class="image-popup-link" data-name="POPUP-IMAGE" ' +
-                        'href="' + fullSizeImg + '">' + createImg() + '</a></li>')
+                        'href="' + fullSizeImg + '">' +  imgMarkup + '</a></li>')
                         .appendTo(landingPageTileList);
                     setImgHeight(imgItem);
                     imgPopupsCounter++;
                 }
             } else if (typeOfAction === 'html-video-popup') {
                 imgItem = $('<li><a class="html-video-popup" data-name="' + tileItem.name + '" ' +
-                    'href="' + popupPageTemplateUrl + '">' + createImg() + 
-                    '<span class="plyr__play-large"><svg id="plyr-play" viewBox="0 0 18 18" width="100%" height="100%"><path d="M15.562 8.1L3.87.225C3.052-.337 2 .225 2 1.125v15.75c0 .9 1.052 1.462 1.87.9L15.563 9.9c.584-.45.584-1.35 0-1.8z"></path></svg><span class="plyr__sr-only">Play</span>' +
+                    'href="' + popupPageTemplateUrl + '">' +  imgMarkup + plyrPlayBtn +
                     '</a></li>')
                     .appendTo(landingPageTileList);
                 setImgHeight(imgItem);
             }else if (typeOfAction === 'html-brand-popup') {
                 imgItem = $('<li><a class="html-brand-popup no-play-btn" data-name="' + tileItem.name + '" ' +
-                    'href="' + popupPageTemplateUrl + '">' + createImg() + '</a></li>')
+                    'href="' + popupPageTemplateUrl + '">' +  imgMarkup + '</a></li>')
                     .appendTo(landingPageTileList);
                 setImgHeight(imgItem);
             }
@@ -709,7 +708,7 @@ $(function() {
             setImgHeight(videoItem);
            
         } else if (media === 'deco') {
-            imgItem = $('<li class="glh-masonry-item__deco-item">' + createImg() + '</li>')
+            imgItem = $('<li class="glh-masonry-item__deco-item">' +  imgMarkup + '</li>')
                 .appendTo(landingPageTileList);
             setImgHeight(imgItem);
         }
@@ -879,7 +878,7 @@ $(function() {
     $.each(videoPagePics, function (i) {
         $('<li><a class="glh-videos-tutorial-item play-video-btn" data-name="' + videoPagePics[i].name + '" href="' + popupPageTemplateUrl +
             '"><span class="videos-list-item__img-wrapper"><img src="' + videoPageIndexPicsDir + videoPagePics[i].thumb + '">' +
-            '<span class="plyr__play-large"><svg id="plyr-play" viewBox="0 0 18 18" width="100%" height="100%"><path d="M15.562 8.1L3.87.225C3.052-.337 2 .225 2 1.125v15.75c0 .9 1.052 1.462 1.87.9L15.563 9.9c.584-.45.584-1.35 0-1.8z"></path></svg><span class="plyr__sr-only">Play</span></span>' +
+            plyrPlayBtn +
             '</span>' +
             '<h5 class="glh-videos-tutorial-item__label">' + videoPagePics[i].heading + '</h5></a>' +
             '</li>').appendTo(videoPageTileList);
@@ -1058,23 +1057,23 @@ $(function() {
 
     //*  ----------- Landing page "go to url" transition 
     $('.bye-bye').on('click', function (e) {
-        e.preventDefault();
-        var goTo = $(this).attr('href');
+        if ($(window).width() >= 767) {
+            e.preventDefault();
+            var goTo = $(this).attr('href');
 
-        $('ul#glh-images-tile li').children().each(function () {
-            var _delay = randomNumberFromRangeExt(50, 150) * 10;
-           var self = $(this);
+            $('ul#glh-images-tile li').children().each(function () {
+                var _delay = randomNumberFromRangeExt(50, 150) * 10;
+                var self = $(this);
+                setTimeout(function () {
+                    self.removeClass('fadeInUp').addClass('animated fadeOutDown');
+                }, _delay);
+            });
+
+            // max delay 1500 plus 'animated fadeOutDown' default duration 1000
             setTimeout(function () {
-                self.removeClass('fadeInUp').addClass('animated fadeOutDown');
-            }, _delay);
-        });
-
-        // max delay 1500 plus 'animated fadeOutDown' default duration 1000
-        setTimeout(function(){
-            window.location = goTo;
-        },2500);
-     
-        
+                window.location = goTo;
+            }, 2500);
+        }
     });
     
     // ----------- Utils
@@ -1114,56 +1113,6 @@ $(function() {
                 $.fn.coreTag('Element', $( this ).attr( "coremetrictag" ));
             });
     }
-    /*
-    function setUpVideo(_videoid, _container) {
-        SERVICES.brightCove.video_data(function (data) {
-
-            var videos = data.sources;
-            var videoPosterSrc = data.poster;
-            var removeVideosIndex = [];
-            videos.forEach(function (element, index) {
-                if (element.src == undefined || element.container.toLowerCase() !== 'mp4') {
-                    removeVideosIndex.push(index);
-                } else {
-                    if (element.src.includes('http://')) {
-                        removeVideosIndex.push(index);
-                    }
-                }
-            });
-            var finalVideosData = $.grep(videos, function (n, i) {
-                return $.inArray(i, removeVideosIndex) == -1;
-            });
-
-            function videoWidthComparator(a, b) {
-                return parseInt(a.width, 10) - parseInt(b.width, 10);
-            }
-
-            finalVideosData.sort(videoWidthComparator).reverse();
-
-            var videoMarkup = '<video class="glh-video" poster="' + videoPosterSrc + '" controls crossorigin>' +
-                '<!-- Video files -->' +
-                '<source src="' + finalVideosData[0].src + '" type="video/mp4">' +
-                //'<!-- Text track file -->' + trackTag +
-                '<!-- Fallback for browsers that dont support the <video> element --> ' +
-                '<a href="' + finalVideosData[0].src + '" download>Download</a></video>';
-
-            _container.append(videoMarkup);
-
-            var instances = plyr.setup(document.querySelector('.glh-video'), {
-                //debug: true,
-                //title:              'Video demo',
-                iconUrl: '/b/fashion/images/projects/2017-glowhaus/assets/plyr.svg',
-                tooltips: {
-                    controls: true
-                },
-                captions: {
-                    defaultActive: true
-                }
-            });
-
-        }, _videoid);
-    }
-    */
     
     function randomNumberFromRangeExt(min, max) {
         return Math.floor(Math.random() * (max - min + 10) + min);
@@ -1188,18 +1137,6 @@ $(function() {
 
         return array;
     }
-    /*
-    function getParameterByName(paramName, url) {
-        //if (!url) url = window.location.href;
-        paramName = paramName.replace(/[\[\]]/g, "\\$&");
-        var regex = new RegExp("[?&]" + paramName + "(=([^&#]*)|&|#|$)"),
-            results = regex.exec(url);
-        if (!results) return null;
-        if (!results[2]) return '';
-        return decodeURIComponent(results[2].replace(/\+/g, " "));
-    }
-    */
-
-
+    
     
 });
