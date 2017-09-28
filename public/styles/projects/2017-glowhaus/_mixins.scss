@@ -1,9 +1,17 @@
 @mixin masonry-layout($bp, $col-count, $gap) {
   @media screen and (min-width: $bp) {
     @include column-count($col-count);
-    @include column-gap($gap);
+    //@include column-gap($gap);
+    @include column-gap(0);
     a, .glh-masonry-item__deco-item, .glh-masonry-item__video-thumb {
       margin-bottom: $gap;
+    }
+    .glh-masonry {
+      //margin-left: -($gap);
+      //margin-right: -($gap);
+      li {
+        //padding-left: $gap;
+      }
     }
   }
 }

@@ -148,12 +148,12 @@ $(function() {
         {'type':  'deco',  'thumb': 'deco-06.jpg',   'height': 168},
         {'type':  'deco',  'thumb': 'deco-07.jpg',   'height': 94},
         {'type':  'deco',  'thumb': 'deco-08.jpg',   'height': 94},
-        {'type':  'deco',  'thumb': 'deco-09.jpg',   'height': 177},
+        {'type':  'deco',  'thumb': 'deco-09.jpg',   'height': 143},
         {'type':  'deco',  'thumb': 'deco-10.jpg',   'height': 211},
         {'type':  'deco',  'thumb': 'deco-11.jpg',   'height': 80},
-        {'type':  'deco',  'thumb': 'deco-12.jpg',   'height': 125},
+        {'type':  'deco',  'thumb': 'deco-12.jpg',   'height': 91},
         {'type':  'deco',  'thumb': 'deco-13.jpg',   'height': 68},
-        {'type':  'deco',  'thumb': 'deco-14.jpg',   'height': 55},
+
         {'type':  'deco',  'thumb': 'deco-15.jpg',   'height': 183},
         {'type':  'deco',  'thumb': 'deco-16.jpg',   'height': 92},
         {'type':  'deco',  'thumb': 'deco-17.jpg',   'height': 60},
@@ -621,7 +621,6 @@ $(function() {
         }
     };
 
-    
     // video page content
     var videoPagePics = [
         {'name': 'MetallicLips',        'thumb': 'Metallic-Lips.jpg',         'heading': 'Metallic Lips'},
@@ -632,19 +631,21 @@ $(function() {
         {'name': 'CoolLinerLooks',      'thumb': 'Cool-Liner-Looks.jpg',      'heading': 'Cool Liner Looks'}
     ];
 
-    
-    var imagePlaceHolder     = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7'; // transparent
-    var imgThumbsDir         = '/b/fashion/images/projects/2017-glowhaus/landing/thumbs/';
-    var imgFullSizeDir       = '/b/fashion/images/projects/2017-glowhaus/landing/fullsize-img/';
-    //var landingHTMLPopupsDir = '/b/fashion/images/projects/2017-glowhaus/html-popups/';
+
+    var imagePlaceHolder       = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7'; // transparent
+
+    var imgThumbsDir           = '/b/fashion/images/projects/2017-glowhaus/landing/thumbs/';
+    var imgFullSizeDir         = '/b/fashion/images/projects/2017-glowhaus/landing/fullsize-img/';
 
     var videoProductsThumbsDir = '/b/fashion/images/projects/2017-glowhaus/videos/products-thumbs/';
 
-    var popupPageTemplateUrl = '/b/fashion/images/projects/2017-glowhaus/html-popups/popup.html';
+    var popupPageTemplateUrl   = '/b/fashion/images/projects/2017-glowhaus/html-popups/popup.html';
     
     var landingPageTileList  = $('ul#glh-images-tile');
     var defaultThumbWidth    = 280;
     var videoSelector = '.glh-video';
+
+    //var imgPopupLink = $('.image-popup-link');
 
     // remove/clear all list elements
     landingPageTileList.empty();
@@ -720,34 +721,57 @@ $(function() {
         });
     });
     
-    //Landing image-tile lazyload and appearance 
+
+    //Images - Landing image-tile lazyload and appearance 
     $('ul#glh-images-tile li img').each(function () {
         var img = $(this);
-        var rand = randomNumberFromRange(100, 600);
+        var _delay = randomNumberFromRangeExt(100, 600) * 10;
         setTimeout(function () {
             img.renameAttr('data-tmp-src', 'data-src');
             img.on('lazyload', function () {
                 $(this).addClass('animated fadeInUp');
+
+                $(this).parent().find('.img-tile-patch').fadeIn(1000);
+
             }).lazyLoadXT();
-        }, rand * 10);
+        }, _delay);
     });
-    //Landing image-tile lazyload and appearance 
+
+    //Videos - Landing image-tile lazyload and appearance 
     $('ul#glh-images-tile li video').each(function () {
         var video = $(this);
-        var rand = randomNumberFromRange(100, 600);
+        var _delay = randomNumberFromRangeExt(100, 600) * 10;
         setTimeout(function () {
             video.renameAttr('data-tmp-src', 'data-src');
             video.lazyLoadXT();
             video.addClass('animated fadeInUp');
-        }, rand * 10);
+        }, _delay);
     });
 
-
+    // ---------------------- Stick the patches
+    var imgPopupLink = $('.image-popup-link');
+    var patchesDir        = '/b/fashion/images/projects/2017-glowhaus/landing/patches/';
+    var patchesNumber     = 4;
+    var imgPopupLinkCount =  imgPopupLink.length;
+    for (var q = 1; q <= patchesNumber; q++) {
+        var index = getRandomInt(1, imgPopupLinkCount);
+        var patch = '';
+        if (isOdd(q) === 1) {
+            patch = '<img style="display:none;z-index:996" class="img-tile-patch top" src="' + patchesDir + 'patch' + q + '.svg">';
+        } else {
+            patch = '<img style="display:none;z-index:996" class="img-tile-patch bottom" src="' + patchesDir + 'patch' + q + '.svg">';
+        }
+        if(index > imgPopupLinkCount - 4) {
+            index = index + getRandomInt(1, 3);
+        }
+        imgPopupLink.eq(index).append(patch).css('z-index','996').parent().css('z-index','996');
+    }
+    
     //* ------------------------------------ IMAGE POPUP ------------------------------------- */
     
     var popupCloseBtnEvent = false;
 
-    $('.image-popup-link').magnificPopup({
+    imgPopupLink.magnificPopup({
         type: 'image',
         mainClass: 'mfp-with-zoom',
         closeOnContentClick: true,
@@ -813,7 +837,12 @@ $(function() {
 
     var setUpVideoEvents = function (_container) {
         _container.find('video').on('pause', function (e) {
-                coreMetricsForVideo('video-' + productPageToOpenCleanName, 'video_Pause', e.target.currentTime);
+                var vd = e.target.duration;
+                var ct = e.target.currentTime;
+                //to avoid firing pause and ended events in the same time
+                if (ct < vd) {
+                    coreMetricsForVideo('video-' + productPageToOpenCleanName, 'video_Pause', ct);
+                }
             })
             .on('play', function (e) {
                 currentVideoLaunched = true;
@@ -846,14 +875,15 @@ $(function() {
     };
 
     videoPageTileList.empty();
-    
+
     $.each(videoPagePics, function (i) {
-      $('<li><a class="glh-videos-tutorial-item play-video-btn" data-name="' + videoPagePics[i].name + '" href="' + popupPageTemplateUrl +
+        $('<li><a class="glh-videos-tutorial-item play-video-btn" data-name="' + videoPagePics[i].name + '" href="' + popupPageTemplateUrl +
             '"><span class="videos-list-item__img-wrapper"><img src="' + videoPageIndexPicsDir + videoPagePics[i].thumb + '">' +
-          '<span class="plyr__play-large"><svg id="plyr-play" viewBox="0 0 18 18" width="100%" height="100%"><path d="M15.562 8.1L3.87.225C3.052-.337 2 .225 2 1.125v15.75c0 .9 1.052 1.462 1.87.9L15.563 9.9c.584-.45.584-1.35 0-1.8z"></path></svg><span class="plyr__sr-only">Play</span></span>' +
-          '</span>' +
-          '<h5 class="glh-videos-tutorial-item__label">' + videoPagePics[i].heading  + '</h5></a>' +
-          '</li>').appendTo(videoPageTileList);
+            '<span class="plyr__play-large"><svg id="plyr-play" viewBox="0 0 18 18" width="100%" height="100%"><path d="M15.562 8.1L3.87.225C3.052-.337 2 .225 2 1.125v15.75c0 .9 1.052 1.462 1.87.9L15.563 9.9c.584-.45.584-1.35 0-1.8z"></path></svg><span class="plyr__sr-only">Play</span></span>' +
+            '</span>' +
+            '<h5 class="glh-videos-tutorial-item__label">' + videoPagePics[i].heading + '</h5></a>' +
+            '</li>').appendTo(videoPageTileList);
+
     });
     
     $('.html-video-popup, .glh-videos-tutorial-item').magnificPopup({
@@ -1025,9 +1055,36 @@ $(function() {
         _link.attr('coremetricTag', coremetricsTagValue);
     });
 
+
+    //*  ----------- Landing page "go to url" transition 
+    $('.bye-bye').on('click', function (e) {
+        e.preventDefault();
+        var goTo = $(this).attr('href');
+
+        $('ul#glh-images-tile li').children().each(function () {
+            var _delay = randomNumberFromRangeExt(50, 150) * 10;
+           var self = $(this);
+            setTimeout(function () {
+                self.removeClass('fadeInUp').addClass('animated fadeOutDown');
+            }, _delay);
+        });
+
+        // max delay 1500 plus 'animated fadeOutDown' default duration 1000
+        setTimeout(function(){
+            window.location = goTo;
+        },2500);
+     
+        
+    });
     
     // ----------- Utils
 
+    function isOdd(num) { return num % 2;}
+
+    //Returns a random integer between min (inclusive) and max (inclusive)
+    function getRandomInt(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
 
     //EXPECTED: Attribute 16 = Video Action ("0”=Launch; “1”=Pause; “2”=Play; “3”=Completion)
     // Attribute 17= Video Length (Total length played in seconds)
@@ -1107,7 +1164,8 @@ $(function() {
         }, _videoid);
     }
     */
-    function randomNumberFromRange(min, max) {
+    
+    function randomNumberFromRangeExt(min, max) {
         return Math.floor(Math.random() * (max - min + 10) + min);
     }
 
@@ -1141,15 +1199,7 @@ $(function() {
         return decodeURIComponent(results[2].replace(/\+/g, " "));
     }
     */
-/*
-    $('.bye-bye').on('click', function (e) {
-        e.preventDefault();                   
-        var goTo = $(this).attr('href');
-        $('.glh-main-wrapper').fadeOut('slow', function () {
-            setTimeout(function(){
-                window.location = goTo;
-            },500);
-        });
-    });
-    */
+
+
+    
 });

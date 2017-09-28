@@ -10,6 +10,7 @@
 @import "libs/plyr";
 
 @import "header-nav-bar";
+@import "about-page";
 
 .glh-unstyled-list {
   list-style: none;
@@ -41,7 +42,26 @@
 
 .glh-masonry {
   @include column-count(2);
-  @include column-gap($masonry-gap-sm);
+ // @include column-gap($masonry-gap-sm);
+  @include column-gap(0);
+
+  @media screen and (min-width: $bp-sm) {
+    margin-left: -($masonry-gap-md);
+  }
+  @media screen and (min-width: $bp-md) {
+    margin-left: -($masonry-gap-md);
+  }
+  @media screen and (min-width: $bp-lg) {
+    margin-left: -($masonry-gap-lg);
+  }
+  @media screen and (min-width: $bp-xl) {
+    margin-left: -($masonry-gap-lg);
+  }
+  @media screen and (min-width: $bp-xxl) {
+    margin-left: -($masonry-gap-xxl);
+  }
+
+
   a, .glh-masonry-item__deco-item, .glh-masonry-item__video-thumb {
     margin-bottom: $masonry-gap-sm;
   }
@@ -49,11 +69,29 @@
     font-size: 0;
     line-height: 1;
     position: relative;
+    padding-left: $masonry-gap-sm;
+    @media screen and (min-width: $bp-sm) {
+      padding-left: $masonry-gap-md;
+    }
+    @media screen and (min-width: $bp-md) {
+      padding-left: $masonry-gap-md;
+    }
+    @media screen and (min-width: $bp-lg) {
+      padding-left: $masonry-gap-lg;
+    }
+    @media screen and (min-width: $bp-xl) {
+      padding-left: $masonry-gap-lg;
+    }
+    @media screen and (min-width: $bp-xxl) {
+      padding-left: $masonry-gap-xxl;
+    }
+    z-index: 1;
     a {
       display: block;
       line-height: 1;
-      overflow: hidden;
+      //overflow: hidden;
       position: relative;
+      z-index: 1;
       video {
         position: relative;
         z-index: 1;
@@ -74,23 +112,6 @@
   @include masonry-layout($bp-xxl, 8, $masonry-gap-xxl);
 
 }
-
-/*
-@keyframes ripple {
-  0% {
-    transform: scale(0, 0);
-    opacity: 1;
-  }
-  20% {
-    transform: scale(25, 25);
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    transform: scale(40, 40);
-  }
-}
-*/
 
 video {
   &.lazy-hidden {
@@ -223,7 +244,7 @@ video {
     text-decoration: none;
     display: block;
     width: 100%;
-    overflow: hidden;
+    //overflow: hidden;
     position: relative;
     //transition: top .3s;
     &:active, &:focus {
@@ -256,7 +277,8 @@ video {
   li {
     text-align: center;
     padding: 0 1em;
-
+    position: relative;
+    z-index: 1;
     @include flex-basis(100%);
 
     @media screen and (min-width: $bp-md) {
@@ -272,21 +294,14 @@ video {
     text-decoration: none;
     display: block;
     width: 100%;
-    overflow: hidden;
+    //overflow: hidden;
     padding-top: 2px;
-    &:focus {
-      //border: 3px solid $active-hover-color;
-      img {
-        //outline: 1px solid #d8d8d8;
-        //box-shadow: 0 0 2px 3px #d8d8d8, 0 0 2px #d8d8d8 inset;
-        //border-radius: 2px;
-      }
-    }
+    position: relative;
+    z-index: 1;
   }
   img {
     display: block;
     margin: 0 auto;
-    //visibility: hidden;
   }
 }
 
@@ -314,37 +329,6 @@ video {
       .plyr__play-large {
         display: inline-block !important;
       }
-      /*
-      &:before {
-        position: absolute;
-        width: 120px;
-        height: 120px;
-        background-color: rgba(255, 255, 255, 0.29);
-        border: 5px solid #fff;
-        border-radius: 50%;
-        content: "";
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        -webkit-transition: all .4s;
-        transition: all .4s;
-        z-index: 2;
-      }
-      &:after {
-        content: "";
-        width: 0;
-        height: 0;
-        border: 0 solid transparent;
-        border-bottom-width: 24px;
-        border-top-width: 24px;
-        border-left: 28px solid #fff;
-        margin-top: 0;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-7px, -50%);
-        z-index: 3;
-      } */
     }
   }
   &:hover, &:active, &:focus {
@@ -357,20 +341,6 @@ video {
           color: $active-hover-color;;
         }
       }
-
-      &:before {
-        //background-color: $active-hover-color;
-      }
-      &:before {
-        //background-color: rgba(238, 39, 55, 0.8);
-        //border-color: $active-hover-color;
-      }
-      &:after {
-        //border-left-color: $active-hover-color;
-      }
-    }
-    .glh-videos-list-item__label, .glh-videos-tutorial-item__label {
-      //color: $active-hover-color !important;
     }
   }
 }
@@ -527,67 +497,6 @@ video {
   }
 }
 
-.glh-about {
-  width: 100%;
-  max-width: 1680px;
-  height: auto;
-  padding-bottom: 120px;
-  background-image: url("/b/fashion/images/projects/2017-glowhaus/about/about-bg.jpg");
-  background-repeat: no-repeat;
-
-  background-position: right 60px bottom -40px;
-  //background-size: 85%;
-  @media screen and (min-width: $bp-sm) {
-    //background-size: auto;
-    padding-bottom: 140px;
-  }
-  @media screen and (min-width: $bp-xl) {
-    //background-size: 100%;
-    padding-bottom: 160px;
-  }
-}
-
-
-.glh-about__content-wrapper {
-  width: 100%;
-  max-width: 1170px;
-  margin: 100px auto 0 auto;
-  padding: 0 20px;
-  text-align: center;
-  font-size: 18px;
-  @media screen and (min-width: $bp-lg) {
-    font-size: 24px;
-    margin-top: 140px
-  }
-  @media screen and (min-width: $bp-xl) {
-    font-size: 34px;
-    margin-top: 180px
-  }
-  font-weight: bold;
-  font-weight: 900;
-  line-height: 1.8;
-
-}
-
-
-.glh-about__logo-img {
-  width: 100%;
-  height: auto;
-  max-width: 420px;
-  @media screen and (min-width: $bp-lg) {
-    max-width: 512px;
-  }
-  @media screen and (min-width: $bp-xl) {
-    max-width: 680px;
-  }
-
-}
-.glh-about__heading-divider {
-  width: 104px;
-  height: 18px;
-  background-color: $active-hover-color;
-  margin: 60px auto;
-}
 
 
 .glh-popup__brand-heading {
@@ -793,4 +702,19 @@ video {
 .plyr--video .plyr__controls button.tab-focus:focus, .plyr--video .plyr__controls button:hover {
   background: transparent;
   color: #fff;
+}
+
+.img-tile-patch {
+  display: block;
+  position: absolute;
+  left: -30px;
+  width: 70px !important;
+  height: auto;
+  z-index: 999999;
+  &.top {
+    top: -35px;
+  }
+  &.bottom {
+    bottom: -30px;
+  }
 }
