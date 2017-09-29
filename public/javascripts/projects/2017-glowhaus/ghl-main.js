@@ -710,7 +710,7 @@ $(function() {
                 setImgHeight(imgItem);
             }
         } else if (media === 'video') {
-            videoItem = $('<li class="glh-masonry-item__video-thumb"><video preload autoplay playsinline loop data-width="' + defaultThumbWidth +
+            videoItem = $('<li class="glh-masonry-item__video-thumb"><video class="glh-video-thumb" autoplay playsinline loop data-width="' + defaultThumbWidth +
                 '" data-height="' + originalHeight +
                 '" data-tmp-src="' + thumbImg +
                 '" src="' + imagePlaceHolder + '"></video></li>')
@@ -871,7 +871,7 @@ $(function() {
     var videoMarkup = function (_data) {
         var videoPosterSrc = getVideoPosterAndSrc(_data).videoPosterSrc;
         var videoSrc = getVideoPosterAndSrc(_data).videoSrc;
-        return '<video class="glh-video" poster="' + videoPosterSrc + '" controls crossorigin>' +
+        return '<video class="glh-video" poster="' + videoPosterSrc + '" controls>' +
         '<source src="' + videoSrc + '" type="video/mp4">' +
         //'<!-- Text track file -->' + trackTag +
         '<a href="' + videoSrc + '" download>Download</a></video>';
