@@ -166,6 +166,16 @@ video {
     height: auto;
   }
 }
+.plyr-play-btn__holder {
+  display: inline-block;
+  opacity: 0;
+  -webkit-transition: opacity 1s;
+  transition: opacity 1s;
+  &.show {
+    opacity: 1;
+  }
+}
+
 .plyr__play-large {
   margin-bottom: 0 !important;
   height: auto;
