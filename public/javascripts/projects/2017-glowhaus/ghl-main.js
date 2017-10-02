@@ -159,6 +159,13 @@ $(function() {
         {'type':  'deco',  'thumb': 'deco-17.jpg',   'height': 60},
         {'type':  'deco',  'thumb': 'deco-18.jpg',   'height': 171},
 
+        {'type':  'deco',  'thumb': 'deco-19.jpg',   'height': 151},
+        {'type':  'deco',  'thumb': 'deco-20.jpg',   'height': 151},
+        {'type':  'deco',  'thumb': 'deco-21.jpg',   'height': 151},
+        {'type':  'deco',  'thumb': 'deco-22.jpg',   'height': 128},
+        {'type':  'deco',  'thumb': 'deco-23.jpg',   'height': 108},
+
+
         {'type':  'video',  'thumb': 'Glowhaus_gif1.mp4',   'height': 162},
         {'type':  'video',  'thumb': 'Glowhaus_gif2.mp4',   'height': 280},
         {'type':  'video',  'thumb': 'Glowhaus_gif3.mp4',   'height': 280},
@@ -650,6 +657,7 @@ $(function() {
     // remove/clear all list elements
     landingPageTileList.empty();
     shuffleArray(landingPagePics);
+    shuffleArray(landingPagePics);
 
     var imgPopupsCounter = 0;
     //var itemsCounter = 0;
@@ -689,7 +697,9 @@ $(function() {
                 }
             } else if (typeOfAction === 'html-video-popup') {
                 imgItem = $('<li><a class="html-video-popup" data-name="' + tileItem.name + '" ' +
-                    'href="' + popupPageTemplateUrl + '">' +  imgMarkup + plyrPlayBtn +
+                    'href="' + popupPageTemplateUrl + '">' +  imgMarkup + 
+                    
+                    '<span class="plyr-play-btn__holder">' + plyrPlayBtn + '</span>' +
                     '</a></li>')
                     .appendTo(landingPageTileList);
                 setImgHeight(imgItem);
@@ -700,7 +710,7 @@ $(function() {
                 setImgHeight(imgItem);
             }
         } else if (media === 'video') {
-            videoItem = $('<li class="glh-masonry-item__video-thumb"><video preload autoplay playsinline loop data-width="' + defaultThumbWidth +
+            videoItem = $('<li class="glh-masonry-item__video-thumb"><video class="glh-video-thumb" autoplay playsinline loop data-width="' + defaultThumbWidth +
                 '" data-height="' + originalHeight +
                 '" data-tmp-src="' + thumbImg +
                 '" src="' + imagePlaceHolder + '"></video></li>')
@@ -729,9 +739,10 @@ $(function() {
             img.renameAttr('data-tmp-src', 'data-src');
             img.on('lazyload', function () {
                 $(this).addClass('animated fadeInUp');
-
-                $(this).parent().find('.img-tile-patch').fadeIn(1000);
-
+                setTimeout(function () {
+                    img.parent().find('.img-tile-patch').fadeIn(1000);
+                    img.parent().find('.plyr-play-btn__holder').addClass('show');
+                }, 1000);
             }).lazyLoadXT();
         }, _delay);
     });
@@ -860,7 +871,7 @@ $(function() {
     var videoMarkup = function (_data) {
         var videoPosterSrc = getVideoPosterAndSrc(_data).videoPosterSrc;
         var videoSrc = getVideoPosterAndSrc(_data).videoSrc;
-        return '<video class="glh-video" poster="' + videoPosterSrc + '" controls crossorigin>' +
+        return '<video class="glh-video" poster="' + videoPosterSrc + '" controls>' +
         '<source src="' + videoSrc + '" type="video/mp4">' +
         //'<!-- Text track file -->' + trackTag +
         '<a href="' + videoSrc + '" download>Download</a></video>';
