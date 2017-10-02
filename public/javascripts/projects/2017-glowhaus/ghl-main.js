@@ -24,6 +24,8 @@
 $(function() {
     'use strict';
 
+    //100220171617
+    
     // ----------- Mobile nav switcher
     var mainContainer = $('.glh');
     var viewportWidth = $(window).width();
@@ -1145,7 +1147,6 @@ $(function() {
             array[counter] = array[index];
             array[index] = temp;
         }
-
         return array;
     }
     
