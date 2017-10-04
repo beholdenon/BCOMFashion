@@ -1,0 +1,42 @@
+.bl_header_pg_img {
+    border-style: solid;
+    border-color: #000000;
+    border-width: 0 0 1px 0;
+    padding: 0 0 5px 0;
+    width:100%;
+    margin-top:15px;
+}
+
+.bl_cs_banner {
+    padding: 10px 0 10px 0;
+    text-align: center;
+}
+
+p {
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.link-section {
+    padding-bottom: 60px;
+    .column {
+    	padding-left: 0;
+    	padding-right: 10px;
+    }
+    a {
+    	font-size: 1.33em;
+    }
+}
+
+.shopping-services-mobile {
+
+	p {
+		padding-top: 0;
+		padding-bottom: 0;
+	}
+
+	.link-section {
+		padding-bottom: 30px;
+	}
+
+}
