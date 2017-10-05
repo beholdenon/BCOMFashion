@@ -11,6 +11,12 @@
 {{!-- Content Element --}}
 <section id="in-store" class="clearfix">
     <!-- @todo @note Can't use header here due to bloomies header scripts running some javascript on the first occurring header tags -->
+    {{#if args.mainImage}}
+    <div class="in-store-main-image">
+        <img src="{{args.mainImage}}" />
+    </div>
+    {{/if}}
+
     <div class="in-store-main-header in-store-header">
         <h1 class="in-store-title">{{&args.designerName}}</h1>
         {{#if args.designerDescription}}
