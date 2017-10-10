@@ -54,9 +54,61 @@ define( [ "LeftNav" ], function ( LeftNav ) {
                     secure: false
                 },
                 {
-                    text: 'Book an Appointment',
-                    href: '/b/about-us/appointment-scheduling-in-store-services/',
-                    id: 'about_bookAnAppointment',
+                    text: 'Size Charts',
+                    href: '/b/about-us/shopping/sizecharts/womens-petite-plus/',
+                    id: 'about_sizeCharts',
+                    secure: false
+                },
+                [
+                    {
+                        text: 'Size Charts',
+                        id: null,
+                        display:'hidden'
+                    },
+                    {
+                        text: 'Women',
+                        //href: '/about/shopping/',
+                        href: '/b/about-us/shopping/sizecharts/womens-petite-plus/',
+                        //href: '//www1.bloomingdales.com/about/shopping/sizecharts/women.jsp',
+                        id: 'about_women',
+                        secure: false
+                    },
+                    {
+                        text: 'Men',
+                        //href: '/about/shopping/',
+                        //href: '//www1.bloomingdales.com/about/shopping/sizecharts/women.jsp',
+                        href: '/b/about-us/shopping/sizecharts/mens-shirt-suit-clothing/',
+                        id: 'about_men',
+                        secure: false
+                    },
+                    {
+                        text: 'Kids',
+                        //href: '/about/shopping/',
+                        //href: '//www1.bloomingdales.com/about/shopping/sizecharts/women.jsp',
+                        href: '/b/about-us/shopping/sizecharts/kids-boys-girls-clothing/',
+                        id: 'about_kids',
+                        secure: false
+                    },
+                    {
+                        text: 'Shoes',
+                        //href: '/about/shopping/',
+                        //href: '//www1.bloomingdales.com/about/shopping/sizecharts/women.jsp',
+                        href: '/b/about-us/shopping/sizecharts/mens-womens-kids-shoes/',
+                        id: 'about_shoes',
+                        secure: false
+                    }
+                ],
+                {
+                    text: 'Check Gift Card Balance',
+                    //href: '/about/shopping/',
+                    href: 'https://www.bloomingdales.com/account/giftcardbalance',
+                    id: 'about_checkGiftCardBalance',
+                    secure: false
+                },
+                {
+                    text: 'Business Gifts',
+                    href: '/b/about-us/shopping/corporate-business-gifts/',
+                    id: 'about_businessGifts',
                     secure: false
                 },
                 {
@@ -66,29 +118,23 @@ define( [ "LeftNav" ], function ( LeftNav ) {
                     secure: false
                 },
                 {
-                    text: 'Visitor Services',
-                    href: '/b/about-us/shopping/international-visitor-services/',
-                    id: 'about_visitorServices',
-                    secure: true
-                },
-                {
-                    text: 'Business Gifts',
-                    href: '/b/about-us/shopping/corporate-business-gifts/',
-                    id: 'about_businessGifts',
-                    secure: false
-                },
-                {
                     text: 'Studio Services',
                     href: '/b/about-us/shopping/fashion-studio-styling-services/',
                     id: 'about_studioServices',
                     secure: false
                 },
                 {
-                    text: 'Check Gift Card Balance',
+                    text: 'Find A Wish List',
                     //href: '/about/shopping/',
-                    href: 'https://www.bloomingdales.com/account/giftcardbalance',
-                    id: 'about_checkGiftCardBalance',
+                    href: '//www.bloomingdales.com/wishlist/find',
+                    id: 'about_findAWishList',
                     secure: false
+                },
+                {
+                    text: 'Visitor Services',
+                    href: '/b/about-us/shopping/international-visitor-services/',
+                    id: 'about_visitorServices',
+                    secure: true
                 },
                 {
                     text: 'Safety Recall Notice',
