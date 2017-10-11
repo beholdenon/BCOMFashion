@@ -690,7 +690,7 @@ $(function() {
             item.find('video').css('height', value);
         };
         
-        var imgMarkup = '<img data-width="' + defaultThumbWidth +
+        var imgMarkup = '<img alt="" data-width="' + defaultThumbWidth +
             '" data-height="' + originalHeight +
             '" data-tmp-src="' + thumbImg +
             '" src="' + imagePlaceHolder + '">';
@@ -729,7 +729,7 @@ $(function() {
             } else {
                 var videoThumb = thumbImg.substr(0, thumbImg.lastIndexOf('.')) + '.jpg';
                 imgItem = $('<li class="glh-masonry-item__deco-item">' +
-                    '<img data-width="' + defaultThumbWidth +
+                    '<img alt="" data-width="' + defaultThumbWidth +
                     '" data-height="' + originalHeight +
                     '" data-tmp-src="' + videoThumb +
                     '" src="' + imagePlaceHolder + '"></li>')
@@ -786,9 +786,9 @@ $(function() {
         var index = getRandomInt(1, imgPopupLinkCount);
         var patch = '';
         if (isOdd(q) === 1) {
-            patch = '<img style="display:none;z-index:996" class="img-tile-patch top" src="' + patchesDir + 'patch' + q + '.svg">';
+            patch = '<img alt="" style="display:none;z-index:996" class="img-tile-patch top" src="' + patchesDir + 'patch' + q + '.svg">';
         } else {
-            patch = '<img style="display:none;z-index:996" class="img-tile-patch bottom" src="' + patchesDir + 'patch' + q + '.svg">';
+            patch = '<img alt="" style="display:none;z-index:996" class="img-tile-patch bottom" src="' + patchesDir + 'patch' + q + '.svg">';
         }
         if(index > imgPopupLinkCount - 4) {
             index = index + getRandomInt(1, 3);
@@ -907,7 +907,7 @@ $(function() {
 
     $.each(videoPagePics, function (i) {
         $('<li><a class="glh-videos-tutorial-item play-video-btn" data-name="' + videoPagePics[i].name + '" href="' + popupPageTemplateUrl +
-            '"><span class="videos-list-item__img-wrapper"><img src="' + videoPageIndexPicsDir + videoPagePics[i].thumb + '">' +
+            '"><span class="videos-list-item__img-wrapper"><img alt="" src="' + videoPageIndexPicsDir + videoPagePics[i].thumb + '">' +
             plyrPlayBtn +
             '</span>' +
             '<h5 class="glh-videos-tutorial-item__label">' + videoPagePics[i].heading + '</h5></a>' +
@@ -961,7 +961,7 @@ $(function() {
                     }
                     $('.ghl-thumbs-links-list').append('<li><a coremetricTag="shop-product_' + _item.title.toUpperCase().replace(/[^A-Z0-9]/ig, '-') + '" '+
                         'href="' + _item.link + '">' +
-                        '<img src="' + thisProductPath + _item.thumb + '">' +
+                        '<img alt="" src="' + thisProductPath + _item.thumb + '">' +
                         '<h5>' + itemTitle + '</h5>' +
                         '<p>' + _item.description + '</p></a></li>');
                 });
@@ -1022,7 +1022,7 @@ $(function() {
 
                 if (brandsPageItem.heading == undefined) {
                     var brandLogoUrl = brandsPageIndexPicsDir + productPageToOpen.toLowerCase().replace(/\s/g, '') + '-logo.jpg';
-                    $('.glh-popup__brand-heading').html('<img src="' + brandLogoUrl + '">');
+                    $('.glh-popup__brand-heading').html('<img alt="" src="' + brandLogoUrl + '">');
 
                     var theGlowDownDescription = '<h3 class="glh-popup__subheading">The Glow-Down:</h3><p class="glh-popup__description-copy">' + brandsPageItem.theGlowDownCopy + '</p>';
                     $('.glh-popup__theglowdown-description').html(theGlowDownDescription);
@@ -1049,7 +1049,7 @@ $(function() {
                 var bestsellerImgUrl = brandsPageIndexPicsDir + productPageToOpen.toLowerCase().replace(/\s/g, '') + '-product.jpg';
                 $('.glh-popup__bestseller-img-holder').html('<a coremetricTag="shop-product_image-link_' + cormetricsValue + '" ' +
                     'href="' + brandsPageItem.bestsellerImgLink + '">' +
-                    '<img src="' + bestsellerImgUrl + '"></a>');
+                    '<img alt="" src="' + bestsellerImgUrl + '"></a>');
 
                 $('.glh-popup__bestseller-description').html('<h3 class="glh-popup__subheading">' + brandsPageItem.bestsellerHeading + '</h3>' +
                     '<p class="glh-popup__description-copy">' + brandsPageItem.bestsellerCopy + '</p>');
