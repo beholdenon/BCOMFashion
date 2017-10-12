@@ -50,10 +50,24 @@
           "id": "sizeChart",
           "pages": [
             {
-              "label": "Book An Appointment",
-              "href": "/b/about-us/appointment-scheduling-in-store-services/",
+              "label": "Size Charts",
+              "href": "/b/about-us/shopping/sizecharts/womens-petite-plus/?CM_SP=MEW_ABOUT_US_NAV-_-SHOPPING_SERVICES-_-LINK_SIZE_CHARTS",
               "attributes": {
-                "data-cm": "about_bookAnAppointment"
+                "data-cm": "about_sizeCharts"
+              }
+            },
+            {
+              "label": "Check Gift Card Balance",
+              "href": "https://www.bloomingdales.com/account/giftcardbalance",
+              "attributes": {
+                "data-cm": "about_checkGiftCardBalance"
+              }
+            },
+            {
+              "label": "Business Gifts",
+              "href": "/b/about-us/shopping/corporate-business-gifts/?CM_SP=MEW_ABOUT_US_NAV-_-SHOPPING_SERVICES-_-LINK_BUSINESS_GIFTS",
+              "attributes": {
+                "data-cm": "about_businessGifts"
               }
             },
             {
@@ -64,21 +78,6 @@
               }
             },
             {
-              "label": "Visitor Services",
-              "href": "/b/about-us/shopping/international-visitor-services/?CM_SP=MEW_ABOUT_US_NAV-_-SHOPPING_SERVICES-_-LINK_VISITOR_SERVICES",
-              "attributes": {
-                "data-cm": "about_visitorServices"
-              },
-              "secure": true
-            },
-            {
-              "label": "Business Gifts",
-              "href": "/b/about-us/shopping/corporate-business-gifts/?CM_SP=MEW_ABOUT_US_NAV-_-SHOPPING_SERVICES-_-LINK_BUSINESS_GIFTS",
-              "attributes": {
-                "data-cm": "about_businessGifts"
-              }
-            },
-            {
               "label": "Studio Services",
               "href": "/b/about-us/shopping/fashion-studio-styling-services/?CM_SP=MEW_ABOUT_US_NAV-_-SHOPPING_SERVICES-_-LINK_STUDIO_SERVICES",
               "attributes": {
@@ -86,11 +85,19 @@
               }
             },
             {
-              "label": "Check Gift Card Balance",
-              "href": "https://www.bloomingdales.com/account/giftcardbalance",
+              "label": "Find A Wish List",
+              "href": "//www.bloomingdales.com/wishlist/find",
               "attributes": {
-                "data-cm": "about_checkGiftCardBalance"
+                "data-cm": "about_findAWishList"
               }
+            },
+            {
+              "label": "Visitor Services",
+              "href": "/b/about-us/shopping/international-visitor-services/?CM_SP=MEW_ABOUT_US_NAV-_-SHOPPING_SERVICES-_-LINK_VISITOR_SERVICES",
+              "attributes": {
+                "data-cm": "about_visitorServices"
+              },
+              "secure": true
             },
             {
               "label": "Safety Recall Notice",
