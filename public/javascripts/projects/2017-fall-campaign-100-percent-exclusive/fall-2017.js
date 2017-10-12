@@ -671,7 +671,7 @@ $(document).ready( function($) {
     };
 
     $.fn.trace = function(log) {
-        if (window.location.href.indexOf('fashion.bloomingdales.com') < 0) {
+        if (window.location.href.indexOf('www.bloomingdales.com') < 0) {
             window.console.info(log);
         }
     };
@@ -704,7 +704,7 @@ $(document).ready( function($) {
         if (window.Globals.env === 'dev') {
             return cmSetTest(); // jshint ignore:line
         } else if (window.Globals.env === 'production') {
-            if (window.location.host === 'fashion.bloomingdales.com'){
+            if (window.location.host === 'www.bloomingdales.com'){
                 return cmSetProduction(); // jshint ignore:line
             } else {
                 return cmSetTest(); // jshint ignore:line
