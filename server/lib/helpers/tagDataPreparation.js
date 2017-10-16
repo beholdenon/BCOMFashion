@@ -9,7 +9,9 @@ prepareTagData.getPageType = function(req) {
         var obj = tagUrls[i];
 
         if(obj.url.indexOf(req.path) !== -1){
-            pageType = obj.pageType;
+            if (pageType === "") {
+                pageType = obj.pageType;
+            }
         }
 
     }
