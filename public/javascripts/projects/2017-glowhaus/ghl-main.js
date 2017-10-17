@@ -145,7 +145,7 @@ $(function() {
         {'type': 'img',  'action': 'html-brand-popup',   'name': 'makeupdrop',         'thumb': 'landingthumb_brand26.jpg', 'height': 153},
 
 
-        {'type':  'deco',  'thumb': 'deco-01.jpg',   'height': 146},
+        // {'type':  'deco',  'thumb': 'deco-01.jpg',   'height': 146},
         {'type':  'deco',  'thumb': 'deco-02.jpg',   'height': 211},
         {'type':  'deco',  'thumb': 'deco-03.jpg',   'height': 90},
         {'type':  'deco',  'thumb': 'deco-04.jpg',   'height': 85},
@@ -462,7 +462,7 @@ $(function() {
             'shopLinkUrl': 'https://www.bloomingdales.com/shop/makeup-perfume-beauty/glowhaus-makeup-skin-care/Brand/COVER%20FX?id=1035059'
         },
         'FLiRT Cosmetics': {
-            'theGlowDownCopy': 'Born on the &#39;gram, this social media&#8211;savvy brand is a collaboration between Est&#233;e Lauder and illustrator Donald Robertson. The playful collection includes dot liner pens to create artsy eye designs, temporary tattoos for festival looks and a false&dash;lash applicator that will blow your mind. Not to mention, everything is decorated with Robertson’s punchy illustrations, making the products themselves works of art.',
+            'theGlowDownCopy': 'Born on the &#39;gram, this social media&#8211;savvy beauty brand was created in collaboration with illustrator Donald Robertson. The playful collection includes dot liner pens to create artsy eye designs, temporary tattoos for festival looks and a false&dash;lash applicator that will blow your mind. Not to mention, everything is decorated with Robertson’s punchy illustrations, making the products themselves works of art.',
             'bestsellerImgLink': 'https://www.bloomingdales.com/shop/product/flirt-cosmetics-flashes-false-lash-applicator?ID=2695132',
             'bestsellerHeading': 'Flashes False&dash;Lash Applicator',
             'bestsellerCopy': 'This game&dash;changing tool dispenses false&dash;lash &quot;buds&quot; for a hassle&dash;free application and custom look.',
