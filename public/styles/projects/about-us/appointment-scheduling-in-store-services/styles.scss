@@ -74,7 +74,7 @@ hr {
 				padding-top: 3px;
 				padding-bottom: 8px
 			}
-			input {
+			a {
 				font-size: 18px;
 			}
 		}
@@ -154,9 +154,16 @@ hr {
 				padding-left: 3.25vw;
 				padding-right: 3.25vw;
 			}
-			input {
+
+			a {
 				font-size: 5.625vw;
 				height: 16.875vw;
+				padding-top: 1.6vw;
+				line-height: 13.5vw;
+			}
+
+			a:hover, a:focus, a:visited {
+				color: $white;
 			}
 		}
 	}
