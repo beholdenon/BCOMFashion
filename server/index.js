@@ -132,6 +132,8 @@ var routes = [
     { method: 'GET',  path: '/{path*}',                                                                     config: require('./lib/handlers/views').fallback }
 ];
 
+var campaigns = require('../campaigns/routes');
+routes = routes.concat(campaigns);
 server.route(routes);
 
 server.ext('onPreHandler', function(request, reply) {
