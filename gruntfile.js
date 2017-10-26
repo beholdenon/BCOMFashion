@@ -461,13 +461,6 @@ module.exports = function(grunt) {
                         '**/*.html',
                     ],
                     dest: '<%= node.destination %>/lib/views/campaigns'
-                // }, {
-                //     expand: true,
-                //     cwd: '.tmp',
-                //     src: [
-                //         'styles/**',
-                //     ],
-                //     dest: '<%= node.destination %>/public'
                 }],
             },
         },
@@ -557,9 +550,6 @@ module.exports = function(grunt) {
 
             },
             dist: {
-                // files: {
-                //     'main.css': 'main.scss'
-                // }
                 files: [{
                   expand: true,
                   cwd: '<%= node.source %>/campaigns/assets/styles/',
