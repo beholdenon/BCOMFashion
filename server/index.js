@@ -129,9 +129,13 @@ var routes = [
     { method: 'GET',  path: '/2017-glowhaus/{path*}',                                                       config: require('./lib/handlers/views').responsiveCustomHF },
 
     
-    { method: 'GET',  path: '/{path*}',                                                                     config: require('./lib/handlers/views').fallback }
+    { method: 'GET',  path: '/{path*}',                                                                     config: require('./lib/handlers/views').fallback },
 ];
 
+var campaigns = require('../campaigns/routes');
+validate_routes(campaigns, /^\/b\/campaigns\//, 'All campaigns must start with /b/campaigns/' );
+
+routes = routes.concat(campaigns);
 server.route(routes);
 
 server.ext('onPreHandler', function(request, reply) {
@@ -231,3 +235,27 @@ if (process.env.NODE_ENV === 'production') { // Heroku sets this in their enviro
     });
 }
 
+
+function validate_routes ( route, validation, validation_string ) {
+    var invalid = '';
+
+    for ( var i = 0; i < route.length; i++ ) {
+
+        if ( ! validation.test(route[i].path) ) {
+            invalid += "\n (" + i + ")   " + route[i].path;   
+        }
+    }
+
+    if ( invalid.length > 0 ) {
+        console.error("\x1b[31m",
+            "\n------------------------------------------------------\n",
+            "                Invalid Routes(s)", 
+            invalid,
+            "\n------------------------------------------------------",
+            "\n    "+validation_string,
+            "\n------------------------------------------------------\n",
+            "\x1b[0m");
+
+        process.exit(1);
+    }
+}

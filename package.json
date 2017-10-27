@@ -20,7 +20,7 @@
     "lodash": "~3.9.3",
     "lodash.merge": "^4.5.1",
     "lodash.toarray": "^4.4.0",
-    "requirejs": "^2.1.17",
+    "requirejs": "^2.3.5",
     "sjljs": "^6.4.2",
     "squirejs": "^0.2.1",
     "wreck": "^5.5.1"
@@ -51,6 +51,7 @@
     "grunt-open": "^0.2.3",
     "grunt-requirejs-config": "0.1.0",
     "grunt-rev": "^0.1.0",
+    "grunt-sass": "^2.0.0",
     "grunt-spritesmith": "^6.3.1",
     "grunt-string-replace": "^1.2.0",
     "grunt-usemin": "^3.0.0",
