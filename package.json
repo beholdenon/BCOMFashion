@@ -20,7 +20,7 @@
     "lodash": "~3.9.3",
     "lodash.merge": "^4.5.1",
     "lodash.toarray": "^4.4.0",
-    "requirejs": "^2.1.17",
+    "requirejs": "^2.3.5",
     "sjljs": "^6.4.2",
     "squirejs": "^0.2.1",
     "wreck": "^5.5.1"
