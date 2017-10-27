@@ -133,7 +133,8 @@ var routes = [
 ];
 
 var campaigns = require('../campaigns/routes');
-validate_routes(campaigns);
+validate_routes(campaigns, /^\/b\/campaigns\//, 'All campaigns must start with /b/campaigns/' );
+
 routes = routes.concat(campaigns);
 server.route(routes);
 
@@ -235,24 +236,24 @@ if (process.env.NODE_ENV === 'production') { // Heroku sets this in their enviro
 }
 
 
-function validate_routes ( route ) {
+function validate_routes ( route, validation, validation_string ) {
     var invalid = '';
 
     for ( var i = 0; i < route.length; i++ ) {
 
-        if ( !/^\/b\/campaigns\//.test(route[i].path) ) {
+        if ( ! validation.test(route[i].path) ) {
             invalid += "\n (" + i + ")   " + route[i].path;   
         }
     }
 
     if ( invalid.length > 0 ) {
         console.error("\x1b[31m",
-            "\n--------------------------------------------------------\n",
+            "\n------------------------------------------------------\n",
             "                Invalid Routes(s)", 
             invalid,
-            "\n--------------------------------------------------------",
-            "\n|  All campaigns routes must start with /b/campaigns/  |",
-            "\n--------------------------------------------------------\n",
+            "\n------------------------------------------------------",
+            "\n    "+validation_string,
+            "\n------------------------------------------------------\n",
             "\x1b[0m");
 
         process.exit(1);
