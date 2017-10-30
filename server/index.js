@@ -58,7 +58,7 @@ var routes = [
     { method: 'GET',  path: '/about-us/{action*}',                                                          config: require('./lib/handlers/aboutUsHandler')},
     { method: 'GET',  path: '/b/about-us/{action*}',                                                        config: require('./lib/handlers/aboutUsHandler')},
     
-    { method: 'POST', path: '/bag/view',                                                                    config: require('./lib/handlers/assets').bagHandler },
+    //{ method: 'POST', path: '/bag/view',                                                                    config: require('./lib/handlers/assets').bagHandler },
     { method: 'GET',  path: '/shop/topnav',                                                                 config: require('./lib/handlers/assets').topNav },
     { method: 'GET',  path: '/shop/{path*}',                                                                config: require('./lib/handlers/assets').commonAssets },
     { method: 'GET',  path: '/international/china-brazil/components/{path*}',                               config: require('./lib/handlers/assets').ngViews },
@@ -114,6 +114,8 @@ var routes = [
     
     { method: 'GET',  path: '/furniture-mattress-warranty/',                                                config: require('./lib/handlers/views').responsiveCustomHF },
     { method: 'GET',  path: '/b/furniture-mattress-warranty/',                                              config: require('./lib/handlers/views').responsiveCustomHF },
+
+    { method: 'GET',  path: '/b/furniture-mattress-locations',                                             config: require('./lib/handlers/views').adaptive },
 
     { method: 'GET',  path: '/international/{path*}',                                                       config: require('./lib/handlers/views').responsiveCustomHF },
     { method: 'GET',  path: '/b/international/{path*}',                                                     config: require('./lib/handlers/views').responsiveCustomHF },
