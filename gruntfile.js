@@ -461,6 +461,13 @@ module.exports = function(grunt) {
                         '**/*.html',
                     ],
                     dest: '<%= node.destination %>/lib/views/campaigns'
+                },{
+                    expand: true,
+                    cwd: '<%= node.source %>/campaigns/',
+                    src: [
+                        '*.js',
+                    ],
+                    dest: '<%= node.destination %>/routes'
                 }],
             },
         },

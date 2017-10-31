@@ -132,7 +132,7 @@ var routes = [
     { method: 'GET',  path: '/{path*}',                                                                     config: require('./lib/handlers/views').fallback },
 ];
 
-var campaigns = require('../campaigns/routes');
+var campaigns = require(__dirname + '/routes/campaign_routes');
 validate_routes(campaigns, /^\/b\/campaigns\//, 'All campaigns must start with /b/campaigns/' );
 
 routes = routes.concat(campaigns);
