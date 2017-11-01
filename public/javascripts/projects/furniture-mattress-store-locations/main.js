@@ -1,7 +1,5 @@
 'use strict';
 
-console.log('Test...');
-
 require( [ "jquery", "bcomCoremetrics" ], function ( $, Coremetrics ) {
 
     $(document).ready(function(){
