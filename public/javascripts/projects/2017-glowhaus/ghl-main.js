@@ -662,7 +662,6 @@ $(function() {
             return result;
         });
     };
-    //var imgPopupLink = $('.image-popup-link');
 
     // remove/clear all list elements
     landingPageTileList.empty();
@@ -673,7 +672,7 @@ $(function() {
     //var itemsCounter = 0;
 
     var plyrPlayBtn = '<span class="plyr__play-large"><svg id="plyr-play" viewBox="0 0 18 18" width="100%" height="100%"><path d="M15.562 8.1L3.87.225C3.052-.337 2 .225 2 1.125v15.75c0 .9 1.052 1.462 1.87.9L15.563 9.9c.584-.45.584-1.35 0-1.8z"></path></svg><span class="plyr__sr-only">Play</span></span>';
-    
+
     // create landing page image tile
     $.each(landingPagePics, function (i) {
 
@@ -690,7 +689,12 @@ $(function() {
             item.find('video').css('height', value);
         };
         
-        var imgMarkup = '<img alt="" data-width="' + defaultThumbWidth +
+        var imgMarkup = '<img alt="glowhaus generic photo ' + i + '" data-width="' + defaultThumbWidth +
+            '" data-height="' + originalHeight +
+            '" data-tmp-src="' + thumbImg +
+            '" src="' + imagePlaceHolder + '">';
+
+        var prodImgMarkup = '<img alt="' + tileItem.name + ' ' + i + '" data-width="' + defaultThumbWidth +
             '" data-height="' + originalHeight +
             '" data-tmp-src="' + thumbImg +
             '" src="' + imagePlaceHolder + '">';
@@ -699,22 +703,22 @@ $(function() {
         if (media === 'img') {
             if (typeOfAction === 'img-popup') {
                 if (imgPopupsCounter < 36) {
-                    imgItem = $('<li><a class="image-popup-link" data-name="POPUP-IMAGE" ' +
+                    imgItem = $('<li><a aria-haspopup="true" role="button" class="image-popup-link" data-name="POPUP-IMAGE" ' +
                         'href="' + fullSizeImg + '">' +  imgMarkup + '</a></li>')
                         .appendTo(landingPageTileList);
                     setImgHeight(imgItem);
                     imgPopupsCounter++;
                 }
             } else if (typeOfAction === 'html-video-popup') {
-                imgItem = $('<li><a class="html-video-popup" data-name="' + tileItem.name + '" ' +
-                    'href="' + popupPageTemplateUrl + '">' +  imgMarkup +
+                imgItem = $('<li><a aria-haspopup="true" role="button" class="html-video-popup" data-name="' + tileItem.name + '" ' +
+                    'href="' + popupPageTemplateUrl + '?v=' + i +'">' +  imgMarkup +
                     '<span class="plyr-play-btn__holder">' + plyrPlayBtn + '</span>' +
                     '</a></li>')
                     .appendTo(landingPageTileList);
                 setImgHeight(imgItem);
             }else if (typeOfAction === 'html-brand-popup') {
-                imgItem = $('<li><a class="html-brand-popup no-play-btn" data-name="' + tileItem.name + '" ' +
-                    'href="' + popupPageTemplateUrl + '">' +  imgMarkup + '</a></li>')
+                imgItem = $('<li><a aria-haspopup="true" role="button" class="html-brand-popup no-play-btn" data-name="' + tileItem.name + '" ' +
+                    'href="' + popupPageTemplateUrl + '?v=' + i +'">' +  prodImgMarkup + '</a></li>')
                     .appendTo(landingPageTileList);
                 setImgHeight(imgItem);
             }
@@ -726,10 +730,13 @@ $(function() {
                     '" src="' + imagePlaceHolder + '"></video></li>')
                     .appendTo(landingPageTileList);
                 setImgHeight(videoItem);
+
+
+               
             } else {
                 var videoThumb = thumbImg.substr(0, thumbImg.lastIndexOf('.')) + '.jpg';
                 imgItem = $('<li class="glh-masonry-item__deco-item">' +
-                    '<img alt="" data-width="' + defaultThumbWidth +
+                    '<img alt="glowhaus generic photo" data-width="' + defaultThumbWidth +
                     '" data-height="' + originalHeight +
                     '" data-tmp-src="' + videoThumb +
                     '" src="' + imagePlaceHolder + '"></li>')
@@ -774,6 +781,14 @@ $(function() {
             video.renameAttr('data-tmp-src', 'data-src');
             video.lazyLoadXT();
             video.addClass('animated fadeInUp');
+            /*
+            video.on('click', function(){
+                $('.glh-video-thumb').each(function() {
+                    $(this).removeAttr('loop').get(0).pause();
+                    //$(this).get(0).pause();
+                });
+            });
+            */
         }, _delay);
     });
 
@@ -786,9 +801,9 @@ $(function() {
         var index = getRandomInt(1, imgPopupLinkCount);
         var patch = '';
         if (isOdd(q) === 1) {
-            patch = '<img alt="" style="display:none;z-index:996" class="img-tile-patch top" src="' + patchesDir + 'patch' + q + '.svg">';
+            patch = '<img  alt="glowhaus generic photo' + q + '" style="display:none;z-index:996" class="img-tile-patch top" src="' + patchesDir + 'patch' + q + '.svg">';
         } else {
-            patch = '<img alt="" style="display:none;z-index:996" class="img-tile-patch bottom" src="' + patchesDir + 'patch' + q + '.svg">';
+            patch = '<img  alt="glowhaus generic photo' + q + '" style="display:none;z-index:996" class="img-tile-patch bottom" src="' + patchesDir + 'patch' + q + '.svg">';
         }
         if(index > imgPopupLinkCount - 4) {
             index = index + getRandomInt(1, 3);
@@ -814,6 +829,13 @@ $(function() {
                 popupCloseBtnEvent = false;
                 // init coremetrics for close btn
                 popupCloseBtnMetrics ('close-btn_IMAGE-POPUP');
+
+                //$('.mfp-figure').attr('id','mfp-figure').attr('tabindex','0');
+                $('.mfp-figure').find('img')
+                .load(function(){
+                    $(this).attr('tabindex','1').focus();
+                });
+                $('.mfp-close').attr('tabindex','0');
             },
             close: function() {
                 if(!popupCloseBtnEvent) {
@@ -906,11 +928,12 @@ $(function() {
     videoPageTileList.empty();
 
     $.each(videoPagePics, function (i) {
-        $('<li><a class="glh-videos-tutorial-item play-video-btn" data-name="' + videoPagePics[i].name + '" href="' + popupPageTemplateUrl +
-            '"><span class="videos-list-item__img-wrapper"><img alt="" src="' + videoPageIndexPicsDir + videoPagePics[i].thumb + '">' +
+        var picHeading = videoPagePics[i].heading;
+        $('<li><a aria-haspopup="true" role="button" class="glh-videos-tutorial-item play-video-btn" data-name="' + videoPagePics[i].name + '" href="' + popupPageTemplateUrl +
+            '"><span class="videos-list-item__img-wrapper"><img alt="' + picHeading + '" src="' + videoPageIndexPicsDir + videoPagePics[i].thumb + '">' +
             plyrPlayBtn +
             '</span>' +
-            '<h5 class="glh-videos-tutorial-item__label">' + videoPagePics[i].heading + '</h5></a>' +
+            '<h5 class="glh-videos-tutorial-item__label">' + picHeading + '</h5></a>' +
             '</li>').appendTo(videoPageTileList);
 
     });
@@ -942,11 +965,17 @@ $(function() {
                 currentVideoPosition = 0;
             },
             ajaxContentAdded: function () {
-                //var cormetricsValue = ;
+
+                var prodName = videoPagePopupsData[productPageToOpen].heading;
+                var ajaxPopup = $('#ajax-popup-div');
+                ajaxPopup.focus();
+
+                ajaxPopup.attr('aria-labelledby', prodName);
+                
                 popupCloseBtnMetrics ('close-btn_VIDEO-POPUP_' + productPageToOpenCleanName);
                 
                 //Video page – heading
-                $('.glh-popup__brand-heading').html(videoPagePopupsData[productPageToOpen].heading);
+                $('.glh-popup__brand-heading').html(prodName);
 
                 //Video page – product's list
                 var thisProductName = productPageToOpen.toLowerCase();
@@ -961,7 +990,7 @@ $(function() {
                     }
                     $('.ghl-thumbs-links-list').append('<li><a coremetricTag="shop-product_' + _item.title.toUpperCase().replace(/[^A-Z0-9]/ig, '-') + '" '+
                         'href="' + _item.link + '">' +
-                        '<img alt="" src="' + thisProductPath + _item.thumb + '">' +
+                        '<img alt="' + itemTitle + '" src="' + thisProductPath + _item.thumb + '">' +
                         '<h5>' + itemTitle + '</h5>' +
                         '<p>' + _item.description + '</p></a></li>');
                 });
@@ -988,11 +1017,13 @@ $(function() {
             beforeOpen: function () {
                 productPageToOpen = this.st.el.attr('data-name');
                 productPageToOpenCleanName = productPageToOpen.toUpperCase().replace(/[^A-Z0-9]/ig, '-');
+                
             },
             open: function () {
                 popupCloseBtnEvent = false;
                 // init coremetrics for close btn
                 popupCloseBtnMetrics(productPageToOpenCleanName);
+                
             },
             close: function () {
                 if (!popupCloseBtnEvent) {
@@ -1008,6 +1039,9 @@ $(function() {
             },
 
             ajaxContentAdded: function () {
+                
+                var ajaxPopup = $('#ajax-popup-div');
+                ajaxPopup.focus();
 
                 var cormetricsValue = productPageToOpen.toUpperCase().replace(/[^A-Z0-9]/ig, '-');
 
@@ -1019,12 +1053,19 @@ $(function() {
 
                 //Brand page – heading
 
-
-                if (brandsPageItem.heading == undefined) {
+                var brandsPageItemHeading = brandsPageItem.heading;
+                var popupBrandHeading = $('.glh-popup__brand-heading');
+                popupBrandHeading.attr('aria-label', productPageToOpen);
+                
+                if (brandsPageItemHeading == undefined) {
+                    
+                    ajaxPopup.attr('aria-labelledby', productPageToOpen);
+                    
                     var brandLogoUrl = brandsPageIndexPicsDir + productPageToOpen.toLowerCase().replace(/\s/g, '') + '-logo.jpg';
-                    $('.glh-popup__brand-heading').html('<img alt="" src="' + brandLogoUrl + '">');
-
-                    var theGlowDownDescription = '<h3 class="glh-popup__subheading">The Glow-Down:</h3><p class="glh-popup__description-copy">' + brandsPageItem.theGlowDownCopy + '</p>';
+                    
+                    popupBrandHeading.html('<img alt="' + productPageToOpen + ' logo" src="' + brandLogoUrl + '">');
+                    
+                    var theGlowDownDescription = '<h2 class="glh-popup__subheading">The Glow-Down:</h2><p class="glh-popup__description-copy">' + brandsPageItem.theGlowDownCopy + '</p>';
                     $('.glh-popup__theglowdown-description').html(theGlowDownDescription);
 
                     // resolve '.' and '!' issue in product's name
@@ -1039,7 +1080,9 @@ $(function() {
                             'class="glh-popup__shop-link" href="' + brandsPageItem.shopLinkUrl + '">Shop ' + productPageToOpen + '</a>');
                     }
                 } else {
-                    $('.glh-popup__brand-heading').html(brandsPageItem.heading);
+                    popupBrandHeading.html(brandsPageItemHeading);
+
+                    ajaxPopup.attr('aria-labelledby', brandsPageItemHeading);
 
                     $('.glh-popup__shop-link-holder').html('<a coremetricTag="shop-now-' + cormetricsValue + '" ' +
                         'class="glh-popup__shop-link" href="' + brandsPageItem.shopLinkUrl + '">Shop Now</a>');
@@ -1049,7 +1092,7 @@ $(function() {
                 var bestsellerImgUrl = brandsPageIndexPicsDir + productPageToOpen.toLowerCase().replace(/\s/g, '') + '-product.jpg';
                 $('.glh-popup__bestseller-img-holder').html('<a coremetricTag="shop-product_image-link_' + cormetricsValue + '" ' +
                     'href="' + brandsPageItem.bestsellerImgLink + '">' +
-                    '<img alt="" src="' + bestsellerImgUrl + '"></a>');
+                    '<img src="' + bestsellerImgUrl + '"></a>');
 
                 $('.glh-popup__bestseller-description').html('<h3 class="glh-popup__subheading">' + brandsPageItem.bestsellerHeading + '</h3>' +
                     '<p class="glh-popup__description-copy">' + brandsPageItem.bestsellerCopy + '</p>');
@@ -1105,6 +1148,21 @@ $(function() {
             }, 2500);
         }
     });
+
+
+    /* */
+    if($('#glh-images-tile').length) {
+        var stopAnimationDialog = '<div class="glh-stop-animation-btn-container">' +
+            '<button tabindex="0" id="stop-animation-btn" class="glh-stop-animation-btn" role="button" aria-label="Stop animation on the page" aria-controls="animation">Stop all animation</button></div>';
+        $('body').prepend(stopAnimationDialog);
+        $('#stop-animation-btn').on('click', function () {
+            $('.glh-video-thumb').each(function() {
+                $(this).removeAttr('loop autoplay playsinline').get(0).pause();
+            }); 
+            $(this).parent().remove();
+        });
+       
+    }
     
     // ----------- Utils
 
@@ -1137,11 +1195,14 @@ $(function() {
 
 
     function popupCloseBtnMetrics (coremetricsTagValue) {
-        $('.mfp-close').attr('coremetricTag', coremetricsTagValue)
+        var closeBtn = $('.mfp-close');
+        closeBtn.attr('aria-label', 'Close dialog');
+        closeBtn.attr('coremetricTag', coremetricsTagValue)
             .on('click', function () {
                 popupCloseBtnEvent = true;
                 $.fn.coreTag('Element', $( this ).attr( "coremetrictag" ));
             });
+        closeBtn.html('&#215;');
     }
     
     function randomNumberFromRangeExt(min, max) {

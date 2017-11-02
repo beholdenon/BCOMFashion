@@ -691,3 +691,22 @@ video {
   color: #fff;
 }
 
+.glh-stop-animation-btn-container {
+  position: fixed;
+  width: 280px;
+  height: 64px;
+  background: red;
+  bottom: 16px;
+  right: 16px;
+  z-index: 9999999;
+  border-radius: 4px;
+  text-align: center
+}
+.glh-stop-animation-btn {
+  background: transparent !important;
+  border: 0 none !important;
+  font-size: 18px !important;
+  font-weight: bold;
+  width: 280px;
+  height: 64px;
+}
