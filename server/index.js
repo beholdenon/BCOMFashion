@@ -115,6 +115,9 @@ var routes = [
     { method: 'GET',  path: '/furniture-mattress-warranty/',                                                config: require('./lib/handlers/views').responsiveCustomHF },
     { method: 'GET',  path: '/b/furniture-mattress-warranty/',                                              config: require('./lib/handlers/views').responsiveCustomHF },
 
+    { method: 'GET',  path: '/b/furniture-mattress-store-locations',                                        config: require('./lib/handlers/views').adaptive },
+    { method: 'GET',  path: '/furniture-mattress-store-locations',                                          config: require('./lib/handlers/views').adaptive },
+
     { method: 'GET',  path: '/international/{path*}',                                                       config: require('./lib/handlers/views').responsiveCustomHF },
     { method: 'GET',  path: '/b/international/{path*}',                                                     config: require('./lib/handlers/views').responsiveCustomHF },
     

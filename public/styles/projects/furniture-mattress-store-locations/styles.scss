@@ -1,0 +1,26 @@
+article{
+  margin-top: 20px;
+}
+table{
+  font-family: Avenir,Helvetica,Arial,sans-serif;
+  width: 100%;
+}
+tbody tr:nth-child(even) {
+  background-color: #e6e6e6;
+}
+table tr td{
+  padding: 10px;
+  BORDER-TOP: #f0f0f0;
+  BORDER-RIGHT: #f0f0f0;
+  BORDER-BOTTOM: #f0f0f0;
+  BORDER-LEFT: #f0f0f0;
+  BACKGROUND-COLOR: transparent
+}
+.table-header td{
+  BORDER-TOP: windowtext 0.5pt solid;
+  HEIGHT: 11.25pt;
+  BORDER-RIGHT: #f0f0f0;
+  BORDER-BOTTOM: windowtext 0.5pt solid;
+  BORDER-LEFT: #f0f0f0;
+  BACKGROUND-COLOR: transparent
+}
