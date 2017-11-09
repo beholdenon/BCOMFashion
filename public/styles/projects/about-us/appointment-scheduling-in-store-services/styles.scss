@@ -14,7 +14,7 @@ hr {
 
 	h1 {
 		color: $black;
-		letter-spacing: 2px;
+		letter-spacing: 0.5px;
 		font-weight: bold;
 	}
 
@@ -23,7 +23,7 @@ hr {
 	}
 
 	.schedule {
-		height: 120px;
+		height: 80px;
 		position: relative;
 		background-color: $black;
 
@@ -31,7 +31,7 @@ hr {
 			img {
 				width: 46%;
 				position: absolute;
-				padding-top: 34px;
+				padding-top: 15px;
 				padding-left: 58px;
 			}
 		}
@@ -107,7 +107,7 @@ hr {
 
 	.schedule {
 		background-color: $black;
-		height: 87.5vw;
+		height: 63vw;
 		padding-top: 9vw;
 
 		img {
