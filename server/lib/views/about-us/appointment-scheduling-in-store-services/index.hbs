@@ -59,7 +59,15 @@
                             Learn how to recreate the latest looks, get glam for a special event or discover the perfect products for your complexion.
                         </p>
 
-                        <a class="button" data-cm-link="Beauty" href="https://ui-stage.timetradesystems.com/app/bloomingdales/workflows/bloomingdales005/schedule/?&appointmentTypeGroupId=beauty" onclick="return tt.launchWorkflow(this);">BOOK AN APPOINTMENT</a>
+                        {{#isEnvironment 'production'}}
+
+                            <a class="button" data-cm-link="Beauty" href="https://timetrade.com/app/bloomingdales/workflows/bloomingdales005/schedule/?&appointmentTypeGroupId=beauty&ch=BCOM_ASLP" onclick="return tt.launchWorkflow(this);">BOOK AN APPOINTMENT</a>
+
+                        {{else}}
+
+                            <a class="button" data-cm-link="Beauty" href="https://ui-stage.timetradesystems.com/app/bloomingdales/workflows/bloomingdales005/schedule/?&appointmentTypeGroupId=beauty" onclick="return tt.launchWorkflow(this);">BOOK AN APPOINTMENT</a>
+
+                        {{/isEnvironment}}
 
                     </div>
 
@@ -76,7 +84,15 @@
                             In addition to helping you choose an exquisite piece of jewelry, our expert consultants can assist you in ordering additional sizes, jewelry and watch repair, or learning about the 4Cs.
                         </p>
 
-                        <a class="button" data-cm-link="Fine_Jewelry" href="https://ui-stage.timetradesystems.com/app/bloomingdales/workflows/bloomingdales005/schedule/?&appointmentTypeGroupId=fine_jewelry" onclick="return tt.launchWorkflow(this);">BOOK AN APPOINTMENT</a>
+                        {{#isEnvironment 'production'}}
+
+                            <a class="button" data-cm-link="Fine_Jewelry" href="https://timetrade.com/app/bloomingdales/workflows/bloomingdales005/schedule/?&appointmentTypeGroupId=fine_jewelry&ch=BCOM_ASLP" onclick="return tt.launchWorkflow(this);">BOOK AN APPOINTMENT</a>
+
+                        {{else}}
+
+                            <a class="button" data-cm-link="Fine_Jewelry" href="https://ui-stage.timetradesystems.com/app/bloomingdales/workflows/bloomingdales005/schedule/?&appointmentTypeGroupId=fine_jewelry" onclick="return tt.launchWorkflow(this);">BOOK AN APPOINTMENT</a>
+
+                        {{/isEnvironment}}
 
                     </div>
 
@@ -93,7 +109,15 @@
                             Let our Personal Shoppers and Style Advisors help you with all of your shopping needs—from full wardrobe refreshes to the perfect special occasion look.
                         </p>
 
-                        <a class="button" data-cm-link="Shopping_Services" href="https://ui-stage.timetradesystems.com/app/bloomingdales/workflows/bloomingdales005/schedule/?&appointmentTypeGroupId=shopping_services" onclick="return tt.launchWorkflow(this);">BOOK AN APPOINTMENT</a>
+                        {{#isEnvironment 'production'}}
+
+                            <a class="button" data-cm-link="Shopping_Services" href="https://timetrade.com/app/bloomingdales/workflows/bloomingdales005/schedule/?&appointmentTypeGroupId=shopping_services&ch=BCOM_ASLP" onclick="return tt.launchWorkflow(this);">BOOK AN APPOINTMENT</a>
+
+                        {{else}}
+
+                            <a class="button" data-cm-link="Shopping_Services" href="https://ui-stage.timetradesystems.com/app/bloomingdales/workflows/bloomingdales005/schedule/?&appointmentTypeGroupId=shopping_services" onclick="return tt.launchWorkflow(this);">BOOK AN APPOINTMENT</a>
+
+                        {{/isEnvironment}}
 
                     </div>
 
@@ -110,7 +134,15 @@
                             Whether you're starting a new registry or need help with a return or exchange, our Registry Consultants can help you with everything you need for the big day and beyond.
                         </p>
 
-                        <a class="button" data-cm-link="The_Registry" href="https://ui-stage.timetradesystems.com/app/bloomingdales/workflows/bloomingdales005/schedule/?&appointmentTypeGroupId=gift_registry" onclick="return tt.launchWorkflow(this);">BOOK AN APPOINTMENT</a>
+                        {{#isEnvironment 'production'}}
+
+                            <a class="button" data-cm-link="The_Registry" href="https://timetrade.com/app/bloomingdales/workflows/bloomingdales005/schedule/?&appointmentTypeGroupId=gift_registry&ch=BCOM_ASLP" onclick="return tt.launchWorkflow(this);">BOOK AN APPOINTMENT</a>
+
+                        {{else}}
+
+                            <a class="button" data-cm-link="The_Registry" href="https://ui-stage.timetradesystems.com/app/bloomingdales/workflows/bloomingdales005/schedule/?&appointmentTypeGroupId=gift_registry" onclick="return tt.launchWorkflow(this);">BOOK AN APPOINTMENT</a>
+
+                        {{/isEnvironment}}
 
                     </div>
 
