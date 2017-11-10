@@ -13,30 +13,32 @@
 }
 
 p {
-	padding-top: 20px;
-	padding-bottom: 20px;
+    padding-top: 20px;
 }
 
 .link-section {
-    padding-bottom: 60px;
+    height: 60px;
     .column {
-    	padding-left: 0;
-    	padding-right: 10px;
+        padding-left: 0;
+        padding-right: 10px;
+        padding-bottom: 15px;
     }
     a {
-    	font-size: 1.33em;
+        font-size: 1.33em;
     }
 }
 
 .shopping-services-mobile {
 
-	p {
-		padding-top: 0;
-		padding-bottom: 0;
-	}
+    p {
+        padding-top: 0;
+        padding-bottom: 0;
+        margin-bottom: 15px;
+    }
 
-	.link-section {
-		padding-bottom: 30px;
-	}
+    .link-section {
+        height: 100%;
+        padding-bottom: 15px;
+    }
 
 }
