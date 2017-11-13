@@ -11,12 +11,12 @@
         $scope.QRcopy = SocialShare.weixin;
 
         $scope.closeOverlay = function() {
-            var touch = jQuery('.off-canvas-wrap').hasClass('touch');
+            var touch = $('.off-canvas-wrap').hasClass('touch');
 
             if (touch || !this.$parent.overlay.weixinOn) {
                 $scope.overlay.isShowed = false;
-                jQuery('html, body').removeClass('noscroll');
-                jQuery('.off-canvas-wrap').removeClass('touch');
+                $('html, body').removeClass('noscroll');
+                $('.off-canvas-wrap').removeClass('touch');
                 $window.noBounce.remove({
                     animate: true
                 });
@@ -34,9 +34,9 @@
         };
 
         $scope.selLang = function($event) {
-            var el = jQuery($event.target),
+            var el = $($event.target),
                 globalLang = el.attr('data-lang'),
-                navElSel = jQuery('.lang-opt a[data-lang="' + globalLang + '"]');
+                navElSel = $('.lang-opt a[data-lang="' + globalLang + '"]');
 
             navElSel.parent('li').addClass('active');
 
@@ -68,7 +68,7 @@
                 lang: globalLang
             });
       
-            jQuery('html, body').removeClass('noscroll');
+            $('html, body').removeClass('noscroll');
             $window.noBounce.remove({
                 animate: true
             });
@@ -85,12 +85,12 @@
             $scope.overlay.weixinOn = args.weixin || null;
             $scope.overlay.isShowed = true;
 
-            if (jQuery('.off-canvas-wrap').hasClass('move-right')) {
-                jQuery('.left-off-canvas-toggle').click();
-                jQuery('.off-canvas-wrap').addClass('touch');
+            if ($('.off-canvas-wrap').hasClass('move-right')) {
+                $('.left-off-canvas-toggle').click();
+                $('.off-canvas-wrap').addClass('touch');
             }
             
-            jQuery('html, body').addClass('noscroll');
+            $('html, body').addClass('noscroll');
             $window.noBounce.init({
                 animate: true
             });

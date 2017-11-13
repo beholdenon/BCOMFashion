@@ -64,13 +64,13 @@
 
 			    $window.location.href = link;
 
-			    jQuery('.form-sent-successfully').fadeIn();
+			    $('.form-sent-successfully').fadeIn();
 
 				$timeout(function() {
 					$scope.cu = {};
 					$scope.emailForm.$setPristine();
 					$scope.emailForm.$setUntouched();
-					jQuery('.form-sent-successfully').fadeOut();
+					$('.form-sent-successfully').fadeOut();
 				}, 3500);
 
                 //Coremetrics tag
