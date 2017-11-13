@@ -38,16 +38,16 @@ angular
         return {
             restrict: 'A',
             replace: true,
-            link: function($scope, elem, attrs) {
+            link: $(function($scope, elem, attrs) {
                 $scope.$watch(attrs.textToHtml, function(newValue) {
-                    jQuery(elem).hide();
+                    $(elem).hide();
                     
                     $timeout(function(){
                         elem.html(newValue);
-                        jQuery(elem).show();
+                        $(elem).show();
                     }, 1);
                 });         
-            }
+            })
         };
     })
 
@@ -59,7 +59,7 @@ angular
         return {
             restrict: 'A',
             scope: true,
-            link: function(scope, el) {
+            link: $(function(scope, el) {
                 var options1 = {
                         format: 'mm-dd-yyyy',
                         disableDblClickSelection: true
@@ -70,39 +70,39 @@ angular
 
                 // set up datapicker on load
                 angular.element(document).ready(function() {
-                    scope.$pick1 = jQuery(el).fdatepicker(options1);
-                    scope.$pick2 = jQuery(el).fdatepicker(options2);
+                    scope.$pick1 = $(el).fdatepicker(options1);
+                    scope.$pick2 = $(el).fdatepicker(options2);
                 });
 
                 // // implementation of disabled form fields
                 var nowTemp = new Date();
                 var now = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
-                var checkin = jQuery('.arriving-input').fdatepicker({
+                var checkin = $('.arriving-input').fdatepicker({
                     onRender: function(date) {
                         return date.valueOf() < now.valueOf() ? 'disabled' : '';
                     }
                 }).on('changeDate', function(ev) {
                     if (ev.date.valueOf() > checkout.date.valueOf()) {
                         var newDate = new Date(ev.date);
-                        scope.cu.arrivingdate = jQuery('.arriving-input').val();
+                        scope.cu.arrivingdate = $('.arriving-input').val();
                         newDate.setDate(newDate.getDate() + 1);
                         checkout.update(newDate);
-                        scope.cu.departingdate = jQuery('.departing-input').val();
+                        scope.cu.departingdate = $('.departing-input').val();
                     }
                     checkin.hide();
                     scope.emailForm.arrivingdate.$setDirty();
-                    jQuery('.departing-input')[0].focus();
+                    $('.departing-input')[0].focus();
                 }).data('datepicker');
-                var checkout = jQuery('.departing-input').fdatepicker({
+                var checkout = $('.departing-input').fdatepicker({
                     onRender: function(date) {
                         return date.valueOf() <= checkin.date.valueOf() ? 'disabled' : '';
                     }
                 }).on('changeDate', function() {
-                    scope.cu.departingdate = jQuery('.departing-input').val();
+                    scope.cu.departingdate = $('.departing-input').val();
                     checkout.hide();
                     scope.emailForm.departingdate.$setDirty();
                 }).data('datepicker');
-            }
+            })
         };
     })
 
@@ -382,7 +382,7 @@ angular
                         .css(anchor, (offset + elementsOffsetFromTop(scrollbar)) + 'px')
                         .css('margin-top', 0);
 
-                    if (jQuery($elem).hasClass('nav-wrapper')) $elem.css('z-index', '12');
+                    if ($($elem).hasClass('nav-wrapper')) $elem.css('z-index', '12');
 
                     if ($elem.hasClass('dropdown-cnbr')) {
                         $elem
@@ -714,12 +714,12 @@ angular
             restrict: 'A',
             link: function ($scope, elem) {
                 function eqFunction(elem) {
-                    var el = jQuery(elem),
+                    var el = $(elem),
                         index = el.index(),
                         elHeight = el.height(),
                         elPrev = null,
                         prevHeight = null,
-                        screenWidth = jQuery(window).width(),
+                        screenWidth = $(window).width(),
                         isSmallScreen = (screenWidth < 640) ? true : false;
 
                     if (!isSmallScreen && index%2 !== 0) {

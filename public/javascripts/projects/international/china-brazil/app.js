@@ -99,7 +99,7 @@
         Coremetrics.init();
 
         //attach fastclick to solve the 300ms touch delay 
-        FastClick.attach(document.body); // jshint ignore:line
+        //FastClick.attach(document.body); // jshint ignore:line
 
         var globalLang = null;
         try {
@@ -168,8 +168,8 @@
         });
 
         function activateNavSelection(path) {
-            jQuery('.nav-section a').removeClass('active');
-            jQuery('.nav-section a[href="' + path + '"]').addClass('active');
+            $('.nav-section a').removeClass('active');
+            $('.nav-section a[href="' + path + '"]').addClass('active');
         }
 
         function coremetricsPageViewTag(path) {
@@ -220,36 +220,36 @@
         // -------------------------------------------------------------------------------------- //
         // ----------------------------          jQuery       ----------------------------------- //
         // -------------------------------------------------------------------------------------- //
-        jQuery($document).foundation();
+        $($document).foundation();
 
-        jQuery($window).load(function() {  
-            jQuery('.left-off-canvas-toggle, .exit-off-canvas').on('click', function() {
+        $($window).load(function() {  
+            $('.left-off-canvas-toggle, .exit-off-canvas').on('click', function() {
                 var pageID = AppGlobals.getAttr('cm_pageID'),
                     windowWidth = $window.innerWidth,
                     prefix = (windowWidth < 641) ? 'MBL:' : '',
                     tag = null;            
 
-                if (jQuery('.off-canvas-wrap').hasClass('move-right')) {
-                    jQuery('.off-canvas-wrap').css('height', '100%');
-                    jQuery('body').css({
+                if ($('.off-canvas-wrap').hasClass('move-right')) {
+                    $('.off-canvas-wrap').css('height', '100%');
+                    $('body').css({
                         'height': '100%',
                         'overflow': 'initial'
                     });
-                    jQuery('.left-off-canvas-toggle').removeClass('open');
-                    jQuery('.arriving-input, .departing-input').show();
+                    $('.left-off-canvas-toggle').removeClass('open');
+                    $('.arriving-input, .departing-input').show();
     
                     //Coremetrics tag          
                     tag = prefix + 'settings-menu_close';
                     Coremetrics.tag('Element', prefix + pageID, tag);                
                 } else {
-                    jQuery('.left-off-canvas-toggle').addClass('open');
+                    $('.left-off-canvas-toggle').addClass('open');
                     var height = document.body.clientHeight;
-                    jQuery('.off-canvas-wrap').css('height', height);
-                    jQuery('body').css({
+                    $('.off-canvas-wrap').css('height', height);
+                    $('body').css({
                         'height': height,
                         'overflow': 'hidden'
                     });
-                    jQuery('.arriving-input, .departing-input').hide();
+                    $('.arriving-input, .departing-input').hide();
 
                     //Coremetrics tag          
                     tag = prefix + 'settings-menu_open';
@@ -258,17 +258,17 @@
             });
         });
 
-        jQuery($window).on('orientationchange resize', function() {
-            if (jQuery('.off-canvas-wrap').hasClass('move-right')) {
-                jQuery('.left-off-canvas-toggle').click();
-                jQuery('.off-canvas-wrap').removeClass('touch');
+        $($window).on('orientationchange resize', function() {
+            if ($('.off-canvas-wrap').hasClass('move-right')) {
+                $('.left-off-canvas-toggle').click();
+                $('.off-canvas-wrap').removeClass('touch');
             }
         });
 
         //Close language and social overlays when clicked outside
-        jQuery($document).mouseup(function (e) {
-            var flagsOverlay = jQuery('.flags'),
-                socialOverlay = jQuery('.social');
+        $($document).mouseup(function (e) {
+            var flagsOverlay = $('.flags'),
+                socialOverlay = $('.social');
 
             // if the target of the click isn't the container or a descendant of the container
             if ((!flagsOverlay.is(e.target) && flagsOverlay.has(e.target).length === 0)) {
