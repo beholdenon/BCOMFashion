@@ -45,7 +45,7 @@
                 $window.scrollTo(0, 0);
 
                 //close mobile nav menu 
-                if ($('.off-canvas-wrap').hasClass('move-right')) $('.left-off-canvas-toggle').click();
+                if (jQuery('.off-canvas-wrap').hasClass('move-right')) jQuery('.left-off-canvas-toggle').click();
 
                 //Coremetrics tag
                 switch (view) {
@@ -60,7 +60,7 @@
                         break;
                 }
                 
-                if ($($event.target).parent().attr('class') === 'nav-section') {
+                if (jQuery($event.target).parent().attr('class') === 'nav-section') {
                     view = 'top-nav_' + view;  
                 } else {
                     view = 'hp_category_' + view;
@@ -115,7 +115,7 @@
 
         $scope.langOnClick = function($event) {
             var globalLang,
-                el = $($event.target);
+                el = jQuery($event.target);
 
             globalLang = el.attr('data-lang') || el.parent().attr('data-lang');
 
@@ -127,7 +127,7 @@
             $rootScope.$broadcast('lang:change', {
                 lang: globalLang
             });
-            $('.top-bar-section .flags').toggleClass('active');
+            jQuery('.top-bar-section .flags').toggleClass('active');
 
             //Coremetrics tag
             var windowWidth = $window.innerWidth,
@@ -138,7 +138,7 @@
 
         $scope.langModal = function ($event) {
             var globalLang,
-                el = $($event.target);
+                el = jQuery($event.target);
 
             if ( $scope.flagModal === true ) {
                 $scope.flagModal = false;

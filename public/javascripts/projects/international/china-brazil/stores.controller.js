@@ -36,12 +36,12 @@
         };
 
         $scope.bookletHoverOn = function($event) {
-            var elem = $($event.target).parent().children('img');
+            var elem = jQuery($event.target).parent().children('img');
             elem.addClass('hover');
         };
 
         $scope.bookletHoverOff = function($event) {
-            var elem = $($event.target).parent().children('img');
+            var elem = jQuery($event.target).parent().children('img');
             elem.removeClass('hover');
         };
 
@@ -53,7 +53,7 @@
                 tag = pageID + '--download-booklet_',
                 href = null;
 
-            href = $($event.target).attr('href');
+            href = jQuery($event.target).attr('href');
 
             $window.open(href, '_blank');
             
