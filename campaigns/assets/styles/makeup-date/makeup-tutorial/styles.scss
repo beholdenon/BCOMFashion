@@ -2,7 +2,16 @@
 $scale: 1;
 $font-size-scale: 1;
 
+$loyallist: #3e1493;
+$white: #ffffff;
+$strawberry: #ad6f88;
+$gold: #e8bf19;
+$pink: #D90EAC;
 
+$AvenirBlack: "Avenir LT W01 95 Black", sans-serif;
+$AvenirBO: "AvenirLTW01-95BlackObli", sans-serif;
+$AvenirBook: "Avenir LT W01 45 Book", sans-serif;
+$AvenirRoman: "Avenir Roman", sans-serif;
 
 
 
@@ -194,8 +203,6 @@ body{
 
 
 .carousel {
-  background: #eaeaea;
-  height: $scale * 380px;
   text-align: center;
 }
 
@@ -243,7 +250,7 @@ hr.margin{
 }
 
 .heavy{
-  font-weight: 750 !important;
+  font-weight: 800 !important;
 }
 
 .underlined {
@@ -351,7 +358,6 @@ hr.margin{
     -o-transform: scaleX(-1);
     -webkit-transform: scaleX(-1);
     transform: scaleX(-1);
-    filter: FlipH;
     -ms-filter: "FlipH";
 }
 
@@ -368,6 +374,118 @@ hr.margin{
   font-weight: 800;
 }
 
+
+.carousel-shell {
+  position: relative;
+  min-height: 200px;
+
+  .group {
+    position: relative;
+    display: inline-flex;
+    justify-content: space-around;
+    width: 90%;
+    margin: 0 auto;
+    position: absolute;
+    bottom: 10%;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    transition: 1s;
+    z-index: 0;
+    vertical-align: top;
+
+    &.active {
+      opacity: 1;
+      z-index: 10;
+    }
+
+    &.one .product { width: 100%; }
+    &.two .product { width: 50%; }
+    &.three .product { width: 33%; }
+    &.four .product { width: 25%; }
+    &.five .product { width: 20%; }
+
+    .product {
+
+      width: 25%;
+      background: #efefef;
+      margin: 10px;
+      top: 60px;
+      position: relative;
+      padding: 15px 0;
+      display: inline-block;
+      text-decoration: none;
+      vertical-align: top;
+      z-index: 10;
+
+      &:hover,
+      &:focus {
+
+        p {
+          color: $pink;
+        }
+
+      }
+
+      img {
+        height: 150px;
+        margin-bottom: 10px;
+      }
+
+      p.heading {
+        font-size: 1.25rem;
+        text-decoration: inherit;
+        font-family: $AvenirBlack;
+        margin-bottom: 0;
+      }
+
+      p {
+        font-size: 1.0rem;
+        text-transform: none;
+        text-decoration: inherit;
+        letter-spacing: 0.05em;
+
+      }
+
+    }
+  }
+
+  .arrow {
+    position: absolute;
+    padding: 0;
+    background-color: transparent;
+    border: 0;
+    border-left: 2px solid #000;
+    border-bottom: 2px solid #000;
+    width: 30px;
+    height: 30px;
+    display: block;
+    z-index: 20;
+    top: 45%;
+    cursor: pointer;
+
+    &:focus,
+    &:active,
+    &:hover {
+      border-left: 2px solid $pink;
+      border-bottom: 2px solid $pink;
+    }
+
+    &:focus {
+      outline: 1px dotted #222;
+    }
+  }
+
+  .leftArrow {
+    transform: rotate(45deg);
+    left: 1.5em;
+  }
+  .rightArrow {
+    transform: rotate(-135deg);
+    right: 1.5em;
+  }
+
+}
 
 
 
@@ -474,6 +592,32 @@ hr.margin{
 
   .section-3 .baloon{
     right: 0 !important;
+  }
+
+  .carousel-shell {
+
+    .group {
+      padding: 0 2em;
+      bottom: 0;
+
+      .product {
+
+        img {
+          height: 90px;
+        }
+
+        h4 {
+          font-size: 1em;
+        }
+
+        p {
+          font-size: 0.85em;
+        }
+
+      }
+
+    }
+
   }
 
 }
