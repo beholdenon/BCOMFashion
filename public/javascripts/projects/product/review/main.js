@@ -23,7 +23,7 @@ APP.bvLoadRRSubmission = function() {
 
     require(['cookie', 'globals', 'bcomBase'], function(Cookie, Globals, Base) {
         var currentUrl = window.location.href,
-            bvUserToken = Cookie.get("BazaarVoiceId", "GCs"),
+            bvUserToken = Cookie.get("BazaarVoiceToken", "GCs"),
             bvConfig = {
                 allowSamePageSubmission: true,
                 displayCode: self.bvClientId,
@@ -37,7 +37,7 @@ APP.bvLoadRRSubmission = function() {
                 bvConfig.userToken = bvUserToken;
             } else {
                 Cookie.set('FORWARDPAGE_KEY', currentUrl, undefined, {
-                    expires: new Date( new Date().getTime() + ( 86400000 ) ),
+                   expires: new Date( new Date().getTime() + ( 86400000 ) ),
                     domain: '.bloomingdales.com'
                 });
 

@@ -9,6 +9,11 @@
     </section>
 </div>
 
+<script type="text/javascript">
+   	require(['cookie'], function(Cookie) {
+        Cookie.set( "BazaarVoiceToken", "{{bvUserToken}}", "GCs" );
+    });
+</script>
 <script type="application/javascript" src="/b/fashion/javascripts/libs/jquery-1.11.2.min.js"></script>
 <script type="application/javascript" src="https://bloomingdales.ugc.bazaarvoice.com/bvstaging/static/7130inline/bvapi.js"></script>
 <script type="application/javascript" src="/b/fashion/javascripts/projects/product/review/main.js"></script>
