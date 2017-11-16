@@ -19,34 +19,34 @@ APP.init = function () {
 };
 
 APP.bvLoadRRSubmission = function() {
-    var self = this,
-        Cookie = require('cookie'),
-        Globals = require('globals'),
-        Base = require('bcomBase'),
-        currentUrl = window.location.href,
-        bvUserToken = Cookie.get("BazaarVoiceToken", "GCs"),
-        bvConfig = {
-            allowSamePageSubmission: true,
-            displayCode: self.bvClientId,
-            submissionUnavailableMessage: self.bvErrorMsg
-        },
-        bvLib = $BV ? $BV : {},
-        bvAuthenticateUser = Base.getQueryParameter('bvauthenticateuser') === 'true' ? true : false ;
+    var self = this;
 
-    if ( bvAuthenticateUser ) {
-        if (bvUserToken) {
-            bvConfig.userToken = bvUserToken;
-        } else {
-            Cookie.set('FORWARDPAGE_KEY', currentUrl, undefined, {
-                expires: new Date( new Date().getTime() + ( 86400000 ) ),
-                domain: '.bloomingdales.com'
-            });
+    require(['cookie', 'globals', 'bcomBase'], function(Cookie, Globals, Base) {
+        var currentUrl = window.location.href,
+            bvUserToken = Cookie.get("BazaarVoiceId", "GCs"),
+            bvConfig = {
+                allowSamePageSubmission: true,
+                displayCode: self.bvClientId,
+                submissionUnavailableMessage: self.bvErrorMsg
+            },
+            bvLib = $BV ? $BV : {},
+            bvAuthenticateUser = Base.getQueryParameter('bvauthenticateuser') === 'true' ? true : false ;
 
-            window.location.href = Globals.getValue('props.secureHost') + '/account/signin';
+        if ( bvAuthenticateUser ) {
+            if (bvUserToken) {
+                bvConfig.userToken = bvUserToken;
+            } else {
+                Cookie.set('FORWARDPAGE_KEY', currentUrl, undefined, {
+                    expires: new Date( new Date().getTime() + ( 86400000 ) ),
+                    domain: '.bloomingdales.com'
+                });
+
+                window.location.href = Globals.getValue('props.secureHost') + '/account/signin';
+            }
         }
-    }
 
-    bvLib.ui("submission_container", bvConfig);
+        bvLib.ui("submission_container", bvConfig);
+    });
 };
 
 APP.showBVUnavailableErrorMsg = function( bvErrorMsg ) {
