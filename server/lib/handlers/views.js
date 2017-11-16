@@ -223,6 +223,34 @@ module.exports = {
             }, { layout: 'responsiveCustomHF' });
         }
     },
+    angularCustom: {
+        description: 'Responsive pages that have been built in AngularJS. No HF',
+        notes: 'Serve common html view for both desktop and mobile; exclude standard H&F and jQuery',
+        tags: ['custom header & footer', 'static'],
+        handler: function(req, res) {
+            var requestPath = (req.url.pathname).replace(/^\/b\//g, "/").substring(1);
+            var slashMinSuffix = ( req.query.debug === '1' ? '' : '/min' );
+            var file = requestPath.replace(/\\/g,"/");
+
+            if ( requestPath.lastIndexOf('.') < 0 ) {
+              file = file + '/index.html';
+            }
+                                                
+            // Check if any head* helpers are used
+            // Use of a head* helper is done using HTML comments <!-- headHelper= -->
+            // If so, add them to deviceDetectProc.args
+            args = headHelpers(file, req);
+
+            return res.view(file, { 
+                args: args,
+                isApp: req.state.ishop_app, 
+                assetsHost: process.env.BASE_ASSETS, 
+                baseHost: process.env.BASE_HOST,
+                mobileHost: process.env.MOBILE_HOST,
+                slashMinSuffix: slashMinSuffix 
+            }, { layout: 'angularCustom' });
+        }
+    },
     fallback: {
         description: 'Serve responsive standard layout',
         notes: 'This is the default fallback route if not explicitly captured',

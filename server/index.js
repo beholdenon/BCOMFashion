@@ -118,8 +118,8 @@ var routes = [
     { method: 'GET',  path: '/b/furniture-mattress-store-locations',                                        config: require('./lib/handlers/views').adaptive },
     { method: 'GET',  path: '/furniture-mattress-store-locations',                                          config: require('./lib/handlers/views').adaptive },
 
-    { method: 'GET',  path: '/international/{path*}',                                                       config: require('./lib/handlers/views').responsiveCustomHF },
-    { method: 'GET',  path: '/b/international/{path*}',                                                     config: require('./lib/handlers/views').responsiveCustomHF },
+    { method: 'GET',  path: '/international/{path*}',                                                       config: require('./lib/handlers/views').angularCustom },
+    { method: 'GET',  path: '/b/international/{path*}',                                                     config: require('./lib/handlers/views').angularCustom },
     
     { method: 'GET',  path: '/100-percent-2016/{path*}',                                                    config: require('./lib/handlers/views').responsiveCustomHF },
     { method: 'GET',  path: '/2016-fall-campaign-100-percent-exclusive/{path*}',                            config: require('./lib/handlers/views').responsiveCustomHF },
