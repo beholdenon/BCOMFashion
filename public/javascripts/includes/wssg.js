@@ -159,10 +159,30 @@ var SERVICES = {
 
             if ( BLOOMIES !== undefined && BLOOMIES.isMobile ) {
                 // mobile bitrate source
-                return (sources[0].src);
+                var source_value = 999999999999999;
+                var source_index = 0;
+                for ( var m = 0; m < sources.length; m++ ) {
+                    if ( sources[m].avg_bitrate < source_value ) {
+                        source_value = sources[m].avg_bitrate;
+                        source_index = m;
+                    }
+                }
+                
+                return sources[ source_index ].src;
+
             } else {
                 // desktop bitrate source
-                return (sources[ sources.length-1 ].src);
+
+                var source_value = 0;
+                var source_index = 0;
+                for ( var d = 0; d < sources.length; d++ ) {
+                    if ( sources[d].avg_bitrate > source_value ) {
+                        source_value = sources[d].avg_bitrate;
+                        source_index = d;
+                    }
+                }
+                
+                return sources[ source_index ].src;
             }
         },
 

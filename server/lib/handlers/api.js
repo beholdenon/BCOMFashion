@@ -17,6 +17,7 @@ module.exports = {
                     req.url.host = serviceProxy.getHost(req, process.env.CATEGORYINDEXV3_HOST || process.env.API_HOST);
 
                     req.app.parser = require('./../parsers/category');
+                    req.url.pathname = req.url.pathname.replace(/^\/b\//g, "/");
 
                     res(null, req.url.format(req.url), headers);
 
@@ -43,6 +44,7 @@ module.exports = {
                     req.url.host = serviceProxy.getHost(req, process.env.CATEGORYINDEXV3_HOST || process.env.API_HOST);
 
                     req.app.parser = require('./../parsers/category');
+                    req.url.pathname = req.url.pathname.replace(/^\/b\//g, "/");
 
                     res(null, req.url.format(req.url), headers);
 
