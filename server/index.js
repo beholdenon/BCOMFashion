@@ -116,6 +116,7 @@ var routes = [
     { method: 'GET',  path: '/b/makeup-date/{path*}',                                                       config: require('./lib/handlers/views').adaptive },
     { method: 'GET',  path: '/sweepstakes/win-1000-bucks-writing-reviews/',                                 config: require('./lib/handlers/views').adaptive },
     { method: 'GET',  path: '/product/review/',                                                             config: require('./lib/handlers/views').adaptive },
+    { method: 'GET',  path: '/b/product/review/',                                                           config: require('./lib/handlers/views').adaptive },
     
     { method: 'GET',  path: '/furniture-mattress-warranty/',                                                config: require('./lib/handlers/views').responsiveCustomHF },
     { method: 'GET',  path: '/b/furniture-mattress-warranty/',                                              config: require('./lib/handlers/views').responsiveCustomHF },

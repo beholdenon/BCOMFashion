@@ -144,6 +144,65 @@ let fs = require('fs'),
     // and view to be passed in (for routes that have many pages that use the same view)
     adaptiveWithStaticDataFactory = require('./adaptiveWithStaticDataFactory');
 
+//***added for reviews page***//
+
+let crypto = require('crypto');
+
+function toHex(str) {
+    var hex = '';
+    for(var i=0; i<str.length; i++) {
+        hex += str.charCodeAt(i).toString(16);
+    }
+    return hex;
+}
+
+function formatDate(date) {
+  var mm = date.getMonth() + 1; // getMonth() is zero-based
+  var dd = date.getDate();
+
+  return [date.getFullYear(),
+          (mm>9 ? '' : '0') + mm,
+          (dd>9 ? '' : '0') + dd
+         ].join('');
+}
+
+function setUserToken(req) {
+    var md5,
+        bvUserId,
+        bvUserToken,
+        date,
+        key = "am9q8B",
+        userStr,
+        gcs,
+        startIndex,
+        endIndex;
+
+    if (req && req.state && req.state.GCs) {
+        gcs = req.state.GCs;
+
+        if (gcs.indexOf("BazaarVoiceId1_92_") > -1) {
+            startIndex = gcs.indexOf("BazaarVoiceId1_92_") + 18;
+            bvUserId = gcs.substring(startIndex);
+            endIndex = bvUserId.indexOf("3_87");
+
+            if (endIndex > -1) {
+                //there's other cookies to trim
+                bvUserId = bvUserId.substring(0, endIndex);
+            }
+
+            md5 = crypto.createHash('md5');
+            date = new Date();
+
+            userStr = "date=" + formatDate(date) + "&userid=" + req.state.bloomingdales_online_uid;
+            md5.update( key + userStr );
+            bvUserToken = md5.digest('hex') + toHex(userStr);
+        }
+    }
+    
+    return bvUserToken;
+}
+//***end of addition for reviews page***//
+
 module.exports = { 
     adaptive: {
         description: 'Non-responsive layout',
@@ -182,7 +241,8 @@ module.exports = {
                 assetsHost: process.env.BASE_ASSETS, 
                 baseHost: process.env.BASE_HOST,
                 mobileHost: process.env.MOBILE_HOST,
-                slashMinSuffix: slashMinSuffix 
+                slashMinSuffix: slashMinSuffix,
+                bvUserToken: setUserToken(req)
             });
         }
     },
