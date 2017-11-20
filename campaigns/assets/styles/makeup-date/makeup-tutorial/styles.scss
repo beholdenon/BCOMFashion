@@ -1,0 +1,673 @@
+
+$scale: 1;
+$font-size-scale: 1;
+
+$loyallist: #3e1493;
+$white: #ffffff;
+$strawberry: #ad6f88;
+$gold: #e8bf19;
+$pink: #D90EAC;
+
+$AvenirBlack: "Avenir LT W01 95 Black", sans-serif;
+$AvenirBO: "AvenirLTW01-95BlackObli", sans-serif;
+$AvenirBook: "Avenir LT W01 45 Book", sans-serif;
+$AvenirRoman: "Avenir Roman", sans-serif;
+
+
+
+
+/* Section 0 - Header */
+
+.header-second-text {
+    margin-top: 87%;
+}
+
+.section-0 .image{
+  width: 200%;
+  position: relative;
+  z-index: 9;
+}
+.section-0 .gif {
+  z-index: 1;
+  margin-top: -28%;
+  position: relative;
+  display: inline-block;
+  width: 96%;
+}
+
+.header-gif {
+	width: 100%;
+}
+
+
+.stripe_new-years-eve_container {
+    z-index: 9;
+	font-family: 'Avenir Next';
+	font-size: $font-size-scale * 35px;
+	font-weight: 700;
+	background-color: #d31874;
+	color: #ffffff;
+	padding: $scale * 5px $scale * 64px;
+	width: auto;
+	position: relative;
+	transform: rotate(21deg) skew(-21deg);
+	top: $scale * 340px;
+	left: $scale * 104px;
+	display: inline-block;
+}
+
+.stripe_new-years-eve_content {
+	transform: skew(21deg);
+}
+
+
+
+
+
+/* Section 1 */
+
+.section-1 .baloon{
+  top: $scale * -40px;
+  left: $scale * -60px;
+  z-index: 9;
+}
+
+
+
+/* Section 2 */
+
+.section-2 .baloon {
+  transform: rotate(250deg);
+  left: -70px;
+  margin-top: -155px;
+}
+.section-2 .baloon p{
+  transform: rotate(-250deg);
+  padding-left: $scale * 25px;
+}
+
+
+
+/* Section 3 */
+
+.section-3 .baloon {
+  transform: rotate(150deg);
+  position: relative;
+  float: right;
+  right: -150px;
+  margin-top: -270px;
+}
+.section-3 .baloon p{
+  margin-left: $scale * 15px;
+  margin-top: $scale * -15px;
+  transform: rotate(-150deg);
+}
+
+
+/* Section 4 */
+
+.section-4 .baloon {
+  transform: rotate(250deg);
+  left: $scale * 320px;
+  top: $scale * -20px;
+}
+.section-4 .baloon p{
+  transform: rotate(-250deg);
+}
+
+
+
+
+/* Section 5 */
+
+
+.section-5 .image {
+  background-image: url("/b/fashion/campaigns/images/makeup-date/makeup-tutorial/png17.png");
+  height: 700px;
+  background-repeat: no-repeat;
+  background-size: 700px;
+  background-position: center;
+}
+
+.section-5 .image a{
+  display: block;
+  height: 100%;
+}
+
+.section-5 .image img{
+  width: $scale * 1200px;
+  max-width: none;
+  left: $scale * -400px;
+  position: relative;
+  top: $scale * -360px;
+}
+
+.section-5 button{
+  font-family: Avenir Avenir, "Avenir Next", "Helvetica Neue", "Segoe UI", Helvetica, Arial, sans-serif;
+}
+
+.footer-see-info:hover{
+  color: #ffffff;
+}
+
+/* General */
+
+body .row #bl_main_container{
+  width: auto;
+}
+body{
+  min-width: auto;
+}
+
+.container{
+  max-width: $scale * 1040px;
+  width: 100%;
+  padding: 10px;
+}
+
+
+.section{
+  margin: 10% 0;
+}
+.section .main-image-container{
+  height: $scale * 600px;
+  overflow: hidden;
+}
+
+.get-the-look-container {
+  margin: 50px 0 !important;
+  display: block !important;
+}
+
+.get-the-look {
+  font-family: "Playfair Display";
+  font-size: $font-size-scale *  50px;
+  text-align: center;
+  margin: 10px;
+}
+
+.gif-container{
+  padding: 25px;
+}
+
+.baloon {
+  background-image: url(/b/fashion/campaigns/images/makeup-date/makeup-tutorial/png5.png);
+  background-repeat: no-repeat;
+  width: $scale * 300px;
+  height: $scale * 270px;
+  position: relative;
+  text-align: center;
+  padding: $scale * 70px 0;
+}
+.baloon p{
+  line-height: $scale * 1.3;
+  margin-left: $scale * 12px;
+}
+
+
+.carousel {
+  text-align: center;
+}
+
+.color-pink{
+  color: #d31874;
+}
+.color-purple{
+  color: #453895;
+}
+.color-white{
+  color: #ffffff;
+}
+
+.bg-color-pink{
+  background-color: #d31874;
+}
+
+
+p{
+  font-family: "Avenir Next";
+  color: #1e1e1e;
+  font-size: $font-size-scale * 25px;
+  margin: 0;
+  line-height: $scale * 1.65;
+}
+
+hr {
+  border: 0;
+  height: 0;
+  border-top: 1px solid #d31874;
+  border-bottom: 1px solid #d31874;
+  margin: $scale * 6px 0;
+}
+
+hr.margin{
+  margin: 70px 0;
+}
+
+.bold{
+  font-weight: bold;
+}
+
+.italic{
+  font-style: italic;
+}
+
+.heavy{
+  font-weight: 800 !important;
+}
+
+.underlined {
+  text-decoration: underline #717171;
+}
+
+.text-right{
+  text-align: right;
+}
+.text-center{
+  text-align: center;
+}
+
+
+.row{
+  width: 100% !important;
+}
+
+.flex{
+  display: flex;
+}
+
+
+.col{
+  float: left;
+}
+.col-10{
+  width: 10%;
+}
+.col-25{
+  width: 25%;
+}
+.col-50{
+  width: 50%;
+}
+.col-55{
+  width: 55%;
+}
+.col-40{
+  width: 40%;
+}
+.col-45{
+  width: 45%;
+}
+.col-60{
+  width: 60%;
+}
+.col-75{
+  width: 75%;
+}
+.col-100{
+  width: 100%;
+}
+
+.content-center{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+
+.padding-top-200{
+  padding-top: 200px;
+}
+.padding-left-100{
+  padding-left: 100px;
+}
+.padding-right-100{
+  padding-right: 100px;
+}
+.padding-25{
+  padding: 25px;
+}
+
+.main-row .col.text-align-right{
+  width: 40%;
+  text-align: right;
+  padding: 40px;
+}
+
+.inline-block {
+  display: inline-block;
+  text-align: left;
+}
+
+.step-number-left{
+  position: relative;
+  top: $scale * -64px;
+  right: $scale * -87px;
+}
+
+.step-number-left img, .step-number-right img{
+  width: 120px;
+}
+
+.step-number-right {
+  position: relative;
+  float: right;
+  right: 50px;
+  top: -26px;
+}
+
+.flip{
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    -ms-filter: "FlipH";
+}
+
+
+.footer-box{
+  margin: 50px 0;
+}
+.footer-links{
+  text-align: center;
+}
+.footer-links a{
+  margin: auto $scale * 30px;
+  font-family: "Avenir Next";
+  font-weight: 800;
+}
+
+
+.carousel-shell {
+  position: relative;
+  min-height: 200px;
+
+  .group {
+    position: relative;
+    display: inline-flex;
+    justify-content: space-around;
+    width: 90%;
+    margin: 0 auto;
+    position: absolute;
+    bottom: 10%;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    transition: 1s;
+    z-index: 0;
+    vertical-align: top;
+
+    &.active {
+      opacity: 1;
+      z-index: 10;
+    }
+
+    &.one .product { width: 100%; }
+    &.two .product { width: 50%; }
+    &.three .product { width: 33%; }
+    &.four .product { width: 25%; }
+    &.five .product { width: 20%; }
+
+    .product {
+
+      width: 25%;
+      margin: 10px;
+      top: 60px;
+      position: relative;
+      padding: 15px 0;
+      display: inline-block;
+      text-decoration: none;
+      vertical-align: top;
+      z-index: 10;
+
+      &:hover,
+      &:focus {
+
+        p {
+          color: $pink;
+        }
+
+      }
+
+      img {
+        height: 150px;
+        margin-bottom: 10px;
+      }
+
+      p.heading {
+        font-size: 1.25rem;
+        text-decoration: inherit;
+        font-family: $AvenirBlack;
+        margin-bottom: 0;
+      }
+
+      p {
+        font-size: 1.0rem;
+        text-transform: none;
+        text-decoration: inherit;
+        letter-spacing: 0.05em;
+
+      }
+
+    }
+  }
+
+  .arrow {
+    position: absolute;
+    padding: 0;
+    background-color: transparent;
+    border: 0;
+    border-left: 2px solid #000;
+    border-bottom: 2px solid #000;
+    width: 30px;
+    height: 30px;
+    display: block;
+    z-index: 20;
+    top: 45%;
+    cursor: pointer;
+
+    &:focus,
+    &:active,
+    &:hover {
+      border-left: 2px solid $pink;
+      border-bottom: 2px solid $pink;
+    }
+
+    &:focus {
+      outline: 1px dotted #222;
+    }
+  }
+
+  .leftArrow {
+    transform: rotate(45deg);
+    left: 1.5em;
+  }
+  .rightArrow {
+    transform: rotate(-135deg);
+    right: 1.5em;
+  }
+
+}
+
+
+
+/* Icons */
+
+.icon-plus {
+  font-family: 'Gotham Ultra';
+  color: #d31874;
+  font-size: $font-size-scale * 35px;
+  display: inline-block;
+}
+
+.icon-arrow-down {
+  display: inline-block;
+  margin: auto;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-top: 15px solid #d31874;
+}
+
+
+/* Mobile */
+
+
+@media only screen and (max-width: 768px) {
+
+  .header-second-text {
+    float: right;
+    margin-top: 40%;
+  }
+
+  .section-0 .image {
+    width: 100% !important;
+  }
+
+
+  .section-0 .gif {
+    width: 48% !important;
+    margin-top: -14% !important;
+  }
+
+  .header-second-text {
+    width: 100%;
+    padding: 13px;
+    margin-top: 6rem;
+    margin-top: 0 !important;
+  }
+
+  .section .main-image-container {
+    height: auto;
+    max-height: 600px;
+  }
+
+
+  .col{
+    float: none;
+    padding: 20px;
+    width: 100% !important;
+  }
+
+  .section-4 .baloon {
+    left: 0;
+  }
+
+
+
+  .step-number-left {
+    right: 0 !important;
+    top: -18px;
+  }
+
+  .section-header-even .text {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: auto;
+  }
+
+  .footer-links a {
+    display: block;
+  }
+
+  .main-row .col.text-align-right {
+    padding: 0;
+  }
+
+  img{
+    width: 100%;
+  }
+
+  img.desktop_back_to_top_img{
+    width: auto;
+  }
+
+  .flex{
+    display: block;
+  }
+
+  .text-align-right{
+    text-align: left !important;
+  }
+
+  .section-2 .baloon {
+    left: -58px;
+    margin-top: -55px;
+  }
+
+
+  .section-3 .baloon {
+    right: 0 !important;
+    margin-top: -28px;
+  }
+
+
+
+  .section-5 .image {
+    height: 450px;
+    background-size: 350px;
+  }
+
+  .no-padding-mobile{
+    padding: 0 !important;
+  }
+
+  .carousel-shell {
+
+    .group {
+      padding: 0 2em;
+      bottom: 0;
+
+      .product {
+
+        top: 0;
+
+        img {
+          height: 90px;
+        }
+
+        h4 {
+          font-size: 1em;
+        }
+
+        p {
+          font-size: 0.85em;
+        }
+
+      }
+
+    }
+
+  }
+
+}
+
+
+
+.desktop_back_to_top {
+  display: block;
+  position: fixed;
+  right: 10px;
+  bottom: 2vh;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  margin: 0;
+  outline: 0;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.desktop_back_to_top > img{
+  left: 0;
+  top: 0;
+  position: absolute;
+  max-width: 80px;
+}
+
+.desktop_back_to_top > img:hover,
+.desktop_back_to_top > img:focus {
+  left: -40px;
+  position: absolute;
+}
