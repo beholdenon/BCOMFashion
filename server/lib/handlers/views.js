@@ -168,35 +168,22 @@ function formatDate(date) {
 
 function setUserToken(req) {
     var md5,
-        bvUserId,
         bvUserToken,
         date,
         key = "am9q8B",
-        userStr,
-        gcs,
-        startIndex,
-        endIndex;
+        userStr;
 
-    if (req && req.state && req.state.GCs) {
-        gcs = req.state.GCs;
+    //only continue if it's product review page AND user is signed in AND BazaarVoiceToken is not set
+    if (req && req.route && /product\/review/.test(req.route.path) &&
+        req.state && req.state.bloomingdales_online_uid &&
+        req.state.GCs && req.state.GCs.indexOf("BazaarVoiceToken1_92_") === -1) {
 
-        if (gcs.indexOf("BazaarVoiceId1_92_") > -1) {
-            startIndex = gcs.indexOf("BazaarVoiceId1_92_") + 18;
-            bvUserId = gcs.substring(startIndex);
-            endIndex = bvUserId.indexOf("3_87");
+        md5 = crypto.createHash('md5');
+        date = new Date();
 
-            if (endIndex > -1) {
-                //there's other cookies to trim
-                bvUserId = bvUserId.substring(0, endIndex);
-            }
-
-            md5 = crypto.createHash('md5');
-            date = new Date();
-
-            userStr = "date=" + formatDate(date) + "&userid=" + req.state.bloomingdales_online_uid;
-            md5.update( key + userStr );
-            bvUserToken = md5.digest('hex') + toHex(userStr);
-        }
+        userStr = "date=" + formatDate(date) + "&userid=" + req.state.bloomingdales_online_uid;
+        md5.update( key + userStr );
+        bvUserToken = md5.digest('hex') + toHex(userStr);
     }
     
     return bvUserToken;
