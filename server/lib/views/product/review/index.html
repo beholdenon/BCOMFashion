@@ -11,7 +11,7 @@
 
 <script type="text/javascript">
    	require(['cookie'], function(Cookie) {
-   		if (!Cookie.get("BazaarVoiceToken", "GCs")) {
+   		if (!Cookie.get("BazaarVoiceToken", "GCs") && "{{bvUserToken}}" !== "") {
 	        Cookie.set( "BazaarVoiceToken", "{{bvUserToken}}", "GCs" );
    		}
     });
