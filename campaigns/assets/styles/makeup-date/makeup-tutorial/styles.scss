@@ -89,9 +89,6 @@ $AvenirRoman: "Avenir Roman", sans-serif;
 
 
 /* Section 3 */
-.main-image-container{
-  height: 700px;
-}
 
 .section-3 .baloon {
   transform: rotate(150deg);
@@ -504,14 +501,12 @@ hr.margin{
 }
 
 .icon-arrow-down {
-  font-family: Webdings;
-  font-size: $font-size-scale * 60px;
-  transform: rotate(90deg);
   display: inline-block;
   margin: auto;
-  color: #d31874;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-top: 15px solid #d31874;
 }
-
 
 
 /* Mobile */
@@ -540,6 +535,12 @@ hr.margin{
     margin-top: 6rem;
     margin-top: 0 !important;
   }
+
+  .section .main-image-container {
+    height: auto;
+    max-height: 600px;
+  }
+
 
   .col{
     float: none;
@@ -589,20 +590,26 @@ hr.margin{
     text-align: left !important;
   }
 
-
-  .main-image-container{
-    height: auto;
+  .section-2 .baloon {
+    left: -58px;
+    margin-top: -55px;
   }
 
 
-  .section-3 .baloon{
+  .section-3 .baloon {
     right: 0 !important;
+    margin-top: -28px;
   }
+
 
 
   .section-5 .image {
     height: 450px;
     background-size: 350px;
+  }
+
+  .no-padding-mobile{
+    padding: 0 !important;
   }
 
   .carousel-shell {
