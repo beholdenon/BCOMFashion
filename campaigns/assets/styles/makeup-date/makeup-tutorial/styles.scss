@@ -42,7 +42,7 @@ $AvenirRoman: "Avenir Roman", sans-serif;
 
 .stripe_new-years-eve_container {
     z-index: 9;
-	font-family: 'Avenir Next';
+	font-family: 'Avenir';
 	font-size: $font-size-scale * 35px;
 	font-weight: 700;
 	background-color: #d31874;
@@ -143,7 +143,7 @@ $AvenirRoman: "Avenir Roman", sans-serif;
 }
 
 .section-5 button{
-  font-family: Avenir Avenir, "Avenir Next", "Helvetica Neue", "Segoe UI", Helvetica, Arial, sans-serif;
+  font-family: Avenir Avenir, "Avenir", "Helvetica Neue", "Segoe UI", Helvetica, Arial, sans-serif;
 }
 
 .footer-see-info:hover{
@@ -186,10 +186,6 @@ body{
   margin: 10px;
 }
 
-.gif-container{
-  padding: 25px;
-}
-
 .baloon {
   background-image: url(/b/fashion/campaigns/images/makeup-date/makeup-tutorial/png5.png);
   background-repeat: no-repeat;
@@ -225,7 +221,7 @@ body{
 
 
 p{
-  font-family: "Avenir Next";
+  font-family: "Avenir";
   color: #1e1e1e;
   font-size: $font-size-scale * 25px;
   margin: 0;
@@ -279,6 +275,7 @@ hr.margin{
 
 .col{
   float: left;
+  padding: 10px;
 }
 .col-10{
   width: 10%;
@@ -328,12 +325,6 @@ hr.margin{
   padding: 25px;
 }
 
-.main-row .col.text-align-right{
-  width: 40%;
-  text-align: right;
-  padding: 40px;
-}
-
 .inline-block {
   display: inline-block;
   text-align: left;
@@ -373,7 +364,7 @@ hr.margin{
 }
 .footer-links a{
   margin: auto $scale * 30px;
-  font-family: "Avenir Next";
+  font-family: "Avenir";
   font-weight: 800;
 }
 
@@ -514,9 +505,25 @@ hr.margin{
 
 @media only screen and (max-width: 768px) {
 
+  p {
+    font-size: 17px;
+    line-height: 1.45;
+  }
+
+  .row{
+    margin: 20px 0;
+  }
+
   .header-second-text {
     float: right;
     margin-top: 40%;
+  }
+
+  .baloon {
+    width: 200px;
+    height: 170px;
+    background-size: 200px;
+    padding: 45px 0;
   }
 
   .section-0 .image {
@@ -531,7 +538,6 @@ hr.margin{
 
   .header-second-text {
     width: 100%;
-    padding: 13px;
     margin-top: 6rem;
     margin-top: 0 !important;
   }
@@ -544,10 +550,20 @@ hr.margin{
 
   .col{
     float: none;
-    padding: 20px;
     width: 100% !important;
+    padding: 20px 0;
   }
 
+  .section-1 .baloon {
+    left: 0;
+  }
+  .section-2 .baloon {
+    left: 0;
+  }
+  .section-3 .baloon {
+    right: 0;
+    margin-top: -28px;
+  }
   .section-4 .baloon {
     left: 0;
   }
@@ -570,10 +586,6 @@ hr.margin{
     display: block;
   }
 
-  .main-row .col.text-align-right {
-    padding: 0;
-  }
-
   img{
     width: 100%;
   }
@@ -590,16 +602,6 @@ hr.margin{
     text-align: left !important;
   }
 
-  .section-2 .baloon {
-    left: -58px;
-    margin-top: -55px;
-  }
-
-
-  .section-3 .baloon {
-    right: 0 !important;
-    margin-top: -28px;
-  }
 
 
 
