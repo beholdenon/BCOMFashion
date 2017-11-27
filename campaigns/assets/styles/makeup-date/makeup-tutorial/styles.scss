@@ -122,7 +122,7 @@ $AvenirRoman: "Avenir Roman", sans-serif;
 
 
 .section-5 .image {
-  background-image: url("/b/fashion/campaigns/images/makeup-date/makeup-tutorial/png17.png");
+  background-image: url(/b/fashion/campaigns/images/makeup-date/makeup-tutorial/png17.png);
   height: 700px;
   background-repeat: no-repeat;
   background-size: 700px;
@@ -156,7 +156,7 @@ body .row #bl_main_container{
   width: auto;
 }
 body{
-  min-width: auto;
+  min-width: 0px;
 }
 
 .container{
