@@ -712,3 +712,52 @@ $mobile-header-height: 48px;
 		}
 	}
 }
+
+.resort-2018 {
+	background-color: #fff;
+	position: relative;
+	z-index: 4;
+	margin-bottom: 240px;
+}
+.resort-footer {
+	background-color: $highlighter-color;
+	position: fixed;
+	width: 100%;
+	height: 240px;
+	left: 0;
+	bottom: 0;
+	z-index: 3;
+}
+.resort-footer-content {
+	position: relative;
+	width: 100%;
+	max-width: 1680px;
+	margin: 0 auto;
+	padding: 6em 2.5em;
+	z-index: 99;
+	@media only screen and (min-width: 1679px) {
+		padding: 6em 0 6em 2vw;
+	}
+}
+.resort-footer-heading {
+	font-family: 'Libre Baskerville', serif !important;
+	font-weight: 700 !important;
+	font-size: 1.8em;
+}
+.resort-footer-social-links-list {
+	@include flexbox;
+	margin: 0;
+	padding: 0;
+	> li {
+		padding: 1em 3em 0 0;
+		margin: 0;
+		list-style: none;
+	}
+}
+
+.resort-footer-social-link {
+	text-decoration: underline;
+	display: inline-block;
+	padding: 0.5em 0.5em 0.5em 0;
+	font-size: 1.4em;
+}

@@ -356,7 +356,9 @@ $(function() {
             // the individual lines within the block will be broken into spans and blocks made for these.
 
             //var velocityScale = 0.01; // fudge factor for velocity of the scrolling blocks created by the scroll action
-            var velocityScale = 0.03;
+            //var velocityScale = 0.03;
+
+            var velocityScale = 0.3;
 
             ////////////////
             /*
@@ -447,7 +449,7 @@ $(function() {
 
                 ///console.log(thisScrollTop);
 
-                //engine.world.gravity.x = .025;
+                engine.world.gravity.x = .025;
                 engine.world.gravity.y = .025;
 
                 $('.resort-intro-message').addClass('animated fadeOutUp');
