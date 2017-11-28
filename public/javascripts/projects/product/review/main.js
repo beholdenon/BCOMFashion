@@ -4,8 +4,7 @@
 
 'use strict';
 
-var $BV,
-    APP = {
+var APP = {
         bvClientId: '7130inline',
         bvErrorMsg: 'Review Submission Currently Unavailable.'
     };
@@ -19,22 +18,15 @@ APP.init = function () {
 };
 
 APP.bvLoadRRSubmission = function() {
-    var self = this;
-
     require(['cookie', 'globals', 'bcomBase'], function(Cookie, Globals, Base) {
         var currentUrl = window.location.href,
             bvUserToken = Cookie.get("BazaarVoiceToken", "GCs"),
-            bvConfig = {
-                allowSamePageSubmission: true,
-                displayCode: self.bvClientId,
-                submissionUnavailableMessage: self.bvErrorMsg
-            },
-            bvLib = $BV ? $BV : {},
-            bvAuthenticateUser = Base.getQueryParameter('bvauthenticateuser') === 'true' ? true : false ;
+            bvAuthenticateUser = (Base.getQueryParameter('bvauthenticateuser') === 'true' ? true : false) ,
+            bvProductId = Base.getQueryParameter('bvproductid');
 
         if ( bvAuthenticateUser ) {
             if (bvUserToken) {
-                bvConfig.userToken = bvUserToken;
+                window.location.href = 'http://reviews.bloomingdales.com/'+ APP.bvClientId +'/'+ bvProductId +'/writereview.htm?user='+ bvUserToken;
             } else {
                 Cookie.set('FORWARDPAGE_KEY', currentUrl, undefined, {
                    expires: new Date( new Date().getTime() + ( 86400000 ) ),
@@ -44,8 +36,6 @@ APP.bvLoadRRSubmission = function() {
                 window.location.href = Globals.getValue('props.secureHost') + '/account/signin';
             }
         }
-
-        bvLib.ui("submission_container", bvConfig);
     });
 };
 
