@@ -18,8 +18,16 @@ $AvenirRoman: "Avenir Roman", sans-serif;
 
 /* Section 0 - Header */
 
+.header-section{
+  margin: 4% 0;
+}
+
 .header-second-text {
     margin-top: 87%;
+}
+
+.header-second-text p {
+  line-height: 1.55;
 }
 
 .section-0 .image{
@@ -94,7 +102,7 @@ $AvenirRoman: "Avenir Roman", sans-serif;
   transform: rotate(150deg);
   position: relative;
   float: right;
-  right: -150px;
+  right: -90px;
   margin-top: -270px;
 }
 .section-3 .baloon p{
@@ -125,7 +133,6 @@ $AvenirRoman: "Avenir Roman", sans-serif;
   background-image: url(/b/fashion/campaigns/images/makeup-date/makeup-tutorial/png17.png);
   height: 700px;
   background-repeat: no-repeat;
-  background-size: 700px;
   background-position: center;
 }
 
@@ -146,8 +153,13 @@ $AvenirRoman: "Avenir Roman", sans-serif;
   font-family: Avenir Avenir, "Avenir", "Helvetica Neue", "Segoe UI", Helvetica, Arial, sans-serif;
 }
 
-.footer-see-info:hover{
-  color: #ffffff;
+.footer-see-info {
+  color: #fff;
+  font-size: 0.9em;
+}
+
+.footer-see-info:hover {
+  color: #000;
 }
 
 /* General */
@@ -322,7 +334,7 @@ hr.margin{
   padding-right: 100px;
 }
 .padding-25{
-  padding: 25px;
+  padding: 0 25px !important;
 }
 
 .inline-block {
@@ -366,8 +378,20 @@ hr.margin{
   margin: auto $scale * 30px;
   font-family: "Avenir";
   font-weight: 800;
+  font-size: 2rem;
 }
 
+button.enter-now {
+  padding: 0 4.25rem;
+  font-size: 2rem;
+  line-height: 2.75rem;
+  height: 5rem;
+  background-color: #fff;
+}
+
+.text-align-right {
+  text-align: right;
+}
 
 .carousel-shell {
   position: relative;
@@ -485,10 +509,11 @@ hr.margin{
 /* Icons */
 
 .icon-plus {
-  font-family: 'Gotham Ultra';
+  font-family: arial black;
   color: #d31874;
-  font-size: $font-size-scale * 35px;
+  font-size: 35px;
   display: inline-block;
+  -webkit-text-stroke-width: 2px;
 }
 
 .icon-arrow-down {
@@ -505,9 +530,17 @@ hr.margin{
 
 @media only screen and (max-width: 768px) {
 
+  .container{
+    padding: 20px;
+  }
+
   p {
     font-size: 17px;
     line-height: 1.45;
+  }
+
+  .mobile-text-center{
+    text-align: center !important;
   }
 
   .row{
@@ -561,7 +594,7 @@ hr.margin{
     left: 0;
   }
   .section-3 .baloon {
-    right: 0;
+    right: 30px;
     margin-top: -28px;
   }
   .section-4 .baloon {
@@ -586,6 +619,8 @@ hr.margin{
     display: block;
   }
 
+
+
   img{
     width: 100%;
   }
@@ -598,9 +633,6 @@ hr.margin{
     display: block;
   }
 
-  .text-align-right{
-    text-align: left !important;
-  }
 
 
 
