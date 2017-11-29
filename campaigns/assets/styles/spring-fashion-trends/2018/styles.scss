@@ -31,7 +31,8 @@
 	right: -4px;
 	p {
 		margin: 0;
-		padding: 0;
+		padding: 4px 0 0 0;
+		line-height: 1.65;
 	}
 	span {
 		display: block;
@@ -295,6 +296,14 @@ $mobile-header-height: 48px;
 
 	margin-top: 150vh;
 
+	//-webkit-transition: margin-top 1s;
+	//-moz-transition: margin-top 1s;
+	//-o-transition: margin-top 1s;
+	//transition: margin-top 1s;
+	//&.was-scrolled {
+	//	margin-top: 0;
+	//}
+
 	article {
 		padding-top: 3em;
 	}
@@ -366,7 +375,7 @@ $mobile-header-height: 48px;
 	display: block;
 	position: relative;
 	text-decoration: none !important;
-	overflow: hidden;
+	// overflow: hidden;
 	&:hover {
 		color: inherit;
 	}
@@ -401,8 +410,10 @@ $mobile-header-height: 48px;
 		border: 30px solid $resort-yellow;
 	}
 	.resort-page-prod__label {
-		bottom: 20px;
-		left: 20px;
+		//bottom: 20px;
+		//left: 20px;
+		bottom: -58px;
+		left: -28px;
 	}
 }
 .frame--white {
@@ -411,8 +422,8 @@ $mobile-header-height: 48px;
 		border: 30px solid #fff;
 	}
 	.resort-page-prod__label {
-		bottom: 20px;
-		left: 20px;
+		bottom: -30px;
+		left: 0;
 	}
 }
 
@@ -422,13 +433,15 @@ $mobile-header-height: 48px;
 	border-bottom: 1px solid #000;
 	padding-bottom: 1px;
 	position: relative;
-	bottom: -8px;
-	left: -4px;
+	//bottom: -8px;
+	//left: -4px;
+	bottom: -60px;
+	left: -30px;
 }
 
 .label--white {
-	color: #fff;
-	border-bottom: 1px solid #fff;
+	//color: #fff;
+	//border-bottom: 1px solid #fff;
 }
 
 .resort-page__hero-image {
@@ -596,15 +609,17 @@ $mobile-header-height: 48px;
 }
 
 .resort-page-footer {
+	position: relative;
 	text-align: center;
 
 	margin-top: 2em;
-	padding: 2em 0;
+	//padding: 2em 0;
 
 	@media only screen and (min-width: $mobile-md-bp) {
 		margin-top: 5em;
-		padding: 4.444em 0 3em 0;
+		//padding: 4.444em 0 3em 0;
 	}
+	padding: 4.444em 0 3em 0;
 
 	border-top: 1px solid #000;
 	a {
@@ -727,6 +742,7 @@ $mobile-header-height: 48px;
 	left: 0;
 	bottom: 0;
 	z-index: 3;
+
 }
 .resort-footer-content {
 	position: relative;
@@ -743,16 +759,29 @@ $mobile-header-height: 48px;
 	font-family: 'Libre Baskerville', serif !important;
 	font-weight: 700 !important;
 	font-size: 1.8em;
+	text-align: center;
+	@media only screen and (min-width: $mobile-md-bp) {
+		text-align: left;
+	}
 }
 .resort-footer-social-links-list {
 	@include flexbox;
+	@include flex-wrap(wrap);
 	margin: 0;
 	padding: 0;
 	> li {
-		padding: 1em 3em 0 0;
+		padding: 1em 0 0 0;
 		margin: 0;
 		list-style: none;
+		flex: 1;
+		text-align: center;
+		@media only screen and (min-width: $mobile-md-bp) {
+			padding: 1em 3em 0 0;
+			flex: 0;
+			text-align: left;
+		}
 	}
+
 }
 
 .resort-footer-social-link {
@@ -760,4 +789,145 @@ $mobile-header-height: 48px;
 	display: inline-block;
 	padding: 0.5em 0.5em 0.5em 0;
 	font-size: 1.4em;
+}
+
+.resort-back-to-top-btn-holder {
+	position: fixed;
+	right: 28px;
+	bottom: 56px;
+	transition: bottom 0.3s;
+	@media only screen and (min-width: 1780px) {
+		right: calc(50% - 820px);
+	}
+	&.is-not-fixed {
+		position: absolute !important;
+		right: -6px;
+		@media only screen and (min-width: 1780px) {
+			right: -124px !important;
+		}
+		bottom: 40px !important;
+	}
+}
+
+.resort-back-to-top-btn {
+	background: white;
+	width: 56px;
+	height: 56px;
+	line-height: 56px;
+	text-indent: -9000px;
+	padding: 0;
+	border: 2px solid $highlighter-color;
+	border-radius: 50%;
+	text-align: center;
+	svg {
+		display: block;
+		position: absolute;
+		top: 8px;
+		left: 7px;
+		width: 36px;
+		height: auto;
+	}
+	&:hover {
+		background: $highlighter-color;
+		svg {
+			fill: #fff;
+		}
+	}
+	&:focus, &:active {
+		outline: 0;
+	}
+}
+
+.resort-scroll-down-btn-holder {
+	position: fixed;
+	right: 28px;
+	bottom: 56px;
+	//transition: bottom 0.3s;
+	z-index: 999;
+	@media only screen and (min-width: 1780px) {
+		right: calc(50% - 820px);
+	}
+}
+.resort-scroll-down-btn {
+	background: white;
+	width: 56px;
+	height: 56px;
+	line-height: 56px;
+	text-indent: -9000px;
+	padding: 0;
+	border: 2px solid $highlighter-color;
+	border-radius: 50%;
+	text-align: center;
+	svg {
+		display: block;
+		position: absolute;
+		top: 8px;
+		left: 7px;
+		width: 36px;
+		height: auto;
+	}
+	&:hover {
+		background: $highlighter-color;
+		svg {
+			fill: #fff;
+		}
+	}
+	&:focus, &:active {
+		outline: 0;
+	}
+	-webkit-transform: scaleY(-1);
+	transform: scaleY(-1);
+}
+@-moz-keyframes bounce {
+	0%, 20%, 50%, 80%, 100% {
+		-moz-transform: translateY(0);
+		transform: translateY(0);
+	}
+	40% {
+		-moz-transform: translateY(-30px);
+		transform: translateY(-30px);
+	}
+	60% {
+		-moz-transform: translateY(-15px);
+		transform: translateY(-15px);
+	}
+}
+@-webkit-keyframes bounce {
+	0%, 20%, 50%, 80%, 100% {
+		-webkit-transform: translateY(0);
+		transform: translateY(0);
+	}
+	40% {
+		-webkit-transform: translateY(-30px);
+		transform: translateY(-30px);
+	}
+	60% {
+		-webkit-transform: translateY(-15px);
+		transform: translateY(-15px);
+	}
+}
+@keyframes bounce {
+	0%, 20%, 50%, 80%, 100% {
+		-moz-transform: translateY(0);
+		-ms-transform: translateY(0);
+		-webkit-transform: translateY(0);
+		transform: translateY(0);
+	}
+	40% {
+		-moz-transform: translateY(-30px);
+		-ms-transform: translateY(-30px);
+		-webkit-transform: translateY(-30px);
+		transform: translateY(-30px);
+	}
+	60% {
+		-moz-transform: translateY(-15px);
+		-ms-transform: translateY(-15px);
+		-webkit-transform: translateY(-15px);
+		transform: translateY(-15px);
+	}
+}
+.bounce {
+	-moz-animation: bounce 2s infinite;
+	-webkit-animation: bounce 2s infinite;
+	animation: bounce 2s infinite;
 }

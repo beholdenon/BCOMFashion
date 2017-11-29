@@ -274,6 +274,11 @@ $(function() {
                         picOpacity = 1;
                     }
 
+                    var _density = Math.random() / 10;
+                    var _friction = Math.random() / 10;
+                    console.log(_density);
+                    
+                    //var _frictionAir = Math.random() / 30;
                     blocks.push(
 
                         // Bodies.rectangle(
@@ -315,9 +320,11 @@ $(function() {
                                 // The value is always positive and is in the range (0, 1). 
                                 // A value of 0 means collisions may be perfectly inelastic and no bouncing may occur. 
                                 // A value of 0.8 means the body may bounce back with approximately 80% of its kinetic energy
-                                restitution: .88,
+                                restitution: .5,
                                 // frictionAir – the air friction of the body (air resistance); default: 0.01
-                                frictionAir: 0.02
+                                frictionAir: 0.03,
+                                friction: _friction,
+                                density: _density
                             }
                         )
                     );
@@ -358,7 +365,7 @@ $(function() {
             //var velocityScale = 0.01; // fudge factor for velocity of the scrolling blocks created by the scroll action
             //var velocityScale = 0.03;
 
-            var velocityScale = 0.3;
+            var velocityScale = 0.025;
 
             ////////////////
             /*
@@ -394,7 +401,8 @@ $(function() {
 
             //pagesWrapper.css('margin-top', canvasHeight - $('.resort-intro-message').height()+ 160 );
             pagesWrapper.css('margin-top', canvasHeight);
-
+            //pagesWrapper.addClass('was-scrolled');
+            
             var bb = makeBlockFromElementBBox($('.resort-page'));
             blocks.push(bb);
             World.add(engine.world, blocks);
@@ -440,6 +448,8 @@ $(function() {
                 for(var i = 0; i < blocks.length; i++) {
                     Body.translate(blocks[i], Vector.create(0, -dS));
                     Body.setVelocity(blocks[i], Vector.create(0, -dS * velocityScale));
+                    
+                    Body.setAngularVelocity( blocks[i], Math.PI/36);
                 }
 
                 /////////////var navBBoxScroll = navEl.getBoundingClientRect();
@@ -449,8 +459,8 @@ $(function() {
 
                 ///console.log(thisScrollTop);
 
-                engine.world.gravity.x = .025;
-                engine.world.gravity.y = .025;
+                //engine.world.gravity.x = .025;
+                engine.world.gravity.y = .3;
 
                 $('.resort-intro-message').addClass('animated fadeOutUp');
 
@@ -572,29 +582,6 @@ $(function() {
     
     // ---- use matter.js - end
     
-    $('.resort-nav').pin({
-        containerSelector: '.resort-aside',
-        minWidth: 1024
-    });
-    $('.resort-intro-message').pin({
-        containerSelector: '.resort-main',
-        padding: {top: 576}
-    });
-   // 576px – fixed top position based on image grid rows height
-
-    /*
-    $('.resort-nav').stickySidebar({
-        topSpacing: 0,
-        bottomSpacing: 40,
-        minWidth: 1024
-    });
-
-    var introMessage = $('.resort-intro-message');
-    $('.resort-intro-message-holder').stickySidebar({
-        topSpacing: 0,
-        bottomSpacing: 0
-    });
-*/
 
     //$(window).one('scroll', function(){
        // introMessage.addClass('animated fadeOutUpBig')
@@ -681,12 +668,38 @@ $(function() {
 
         e.preventDefault();
     });
+
+    var backToTopBtnHolder = $('.resort-back-to-top-btn-holder');
+    var scrollDownBtnHolder = $('.resort-scroll-down-btn-holder');
+    var vh = $(window).height() * 1.5;
+
+    //console.log('vh: ' + vh);
+    backToTopBtnHolder.hide();
     
     $(window).scroll(function () {
-        var windowScrollTop = $(this).scrollTop();
+        // var windowScrollTop = $(this).scrollTop();
 
         // Underline nav button according to scroll position.
-        var fromTop = windowScrollTop; //+ navBarHeight;
+        // var fromTop = windowScrollTop; //+ navBarHeight;
+
+        var fromTop = $(this).scrollTop();
+
+        if(fromTop > $(window).height() * 0.8) {
+            scrollDownBtnHolder.hide();
+        } else {
+            scrollDownBtnHolder.show();
+        }
+        if(fromTop > vh) {
+            
+            backToTopBtnHolder.show();
+            backToTopBtnHolder.removeClass('fadeOutDown').addClass('animated fadeInUp');
+        } else {
+            backToTopBtnHolder.removeClass('fadeInUp').addClass('animated fadeOutDown');
+            
+        }
+        
+        //console.log('fromTop: ' + fromTop);
+        
         var currentItem = webPageSections.map(function () {
             if ($(this).offset().top < fromTop) {
                 return this;
@@ -736,8 +749,53 @@ $(function() {
             lastNavItem.parent().addClass("active");
         }
         */
+        
+        
+        
     });
 
+    $('.resort-back-to-top-btn, .resort-scroll-down-btn').on('click', function (e) {
+        e.preventDefault();
+        scrollDownBtnHolder.hide();
+        $('html, body').stop().animate({
+            scrollTop: $('#florals').offset().top - 90
+        }, 300 );
+
+        $('a[coremetricTag="aside-nav-Florals"]').addClass('resort-current-item');
+        
+    });
+
+
+    /*
+     $('.resort-nav').pin({
+     containerSelector: '.resort-aside',
+     minWidth: 1024
+     });
+     $('.resort-intro-message').pin({
+     containerSelector: '.resort-main',
+     padding: {top: 576}
+     });
+     */
+    // 576px – fixed top position based on image grid rows height
+    //
+
+    // $('.resort-back-to-top-btn-holder').stickySidebar({
+    //     topSpacing: 600,
+    //     bottomSpacing: 40
+    //
+    // });
+
+    $('.resort-nav').stickySidebar({
+        topSpacing: 0,
+        bottomSpacing: 40,
+        minWidth: 1024
+    });
+
+    var introMessage = $('.resort-intro-message');
+    $('.resort-intro-message-holder').stickySidebar({
+        topSpacing: 0,
+        bottomSpacing: 0
+    });
 
     // ----------- Mobile nav switcher
     var mainContainer = $('.resort-wrapper');
@@ -751,6 +809,42 @@ $(function() {
         }
     });
 
+    // ------- 
+
+    
+
+    //_btn.hide();
+    
+    var _resortFlorals = $('.resort-florals-1');
+    emergence.init({
+        //container: window,
+        //reset: true,
+        //handheld: true,
+        throttle: 50,
+        elemCushion: .75,
+        //offsetTop: 0,
+        //offsetRight: 0,
+        //offsetBottom: 32,
+        //offsetLeft: 0,
+        callback: function(element, state) {
+            if (state === 'visible') {
+                console.log('Element is visible.');
+                console.log(element.getAttribute('id'));
+                backToTopBtnHolder.addClass('is-not-fixed');
+                if(element.getAttribute('id') === 'btt-visibility-trigger') {
+                   // _btn.hide();
+                }
+            } else if (state === 'reset') {
+                console.log('Element is hidden with reset.');
+                backToTopBtnHolder.removeClass('is-not-fixed');
+                if(element.getAttribute('id') === 'btt-visibility-trigger') {
+                   // _btn.show();
+                }
+            } else if (state === 'noreset') {
+                console.log('Element is hidden with NO reset.');
+            }
+        }
+    });
 
 });
 
