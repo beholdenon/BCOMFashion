@@ -1,6 +1,19 @@
 /* globals SERVICES,BLOOMIES */
 'use strict';
 
+var disableScroll = function() {
+    $('html, body').css({
+        overflow: 'hidden',
+        height: '100%'
+    });
+};
+var enableScroll = function() {
+    $('html, body').css({
+        overflow: 'auto',
+        height: 'auto'
+    });
+};
+
 (function($) {
 
     $('.desktop_back_to_top').on('click', function() {
@@ -20,6 +33,9 @@
         $('.limited-promo').remove();
         $('nav.footer-links').css('margin-top','40px')
     }
+
+
+
 
 
 
@@ -150,6 +166,7 @@
             $(this).click();
         }
     });
+
 
 
     carousel.init();
