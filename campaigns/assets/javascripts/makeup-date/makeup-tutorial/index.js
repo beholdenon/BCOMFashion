@@ -14,6 +14,18 @@ var enableScroll = function() {
     });
 };
 
+var playPauseGif = function(imageId, button) {
+    if($(button).hasClass('active')){
+        $(button).removeClass('active');
+        $('#'+imageId).hide();
+        $('#'+imageId+'-paused').show();
+    }else {
+        $(button).addClass('active');
+        $('#'+imageId).show();
+        $('#'+imageId+'-paused').hide();
+    }
+};
+
 (function($) {
 
     $('.desktop_back_to_top').on('click', function() {
