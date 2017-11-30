@@ -31,8 +31,23 @@
 
         $.fn.coreTag('Pageview', 'holiday17_makeupdate' );
 
-        $('[coremetricTag]').on('click tap',function() {
-            $.fn.coreTag('Element', $( this ).attr( "coremetricTag" ));
+        $('[coremetricTag]').on('click tap', 'a', function(event) {
+
+            var id;
+
+            if ( $(this).attr('data-id') ) {
+                //Coremetrics for product scroll (carousel)
+
+                id = "-_--_--_--_--_--_--_--_--_--_--_--_--_--_--_--_--_--_--_--_--_--_--_--_--_--_--_--_-" + $(this).attr('data-id');
+                $.fn.coreTag('Element', 'product-scroll', id);
+
+
+            } else {
+                // Not product scroll (carousel) links
+                $.fn.coreTag('Element', $( this ).attr( "coremetricTag" ));
+            }
+
+
         });
 
 
@@ -58,7 +73,11 @@
 
     });
 
-    $.fn.coreTag = function(tagType, pageID) {
+    $.fn.coreTag = function(tagType, pageID, id) {
+
+        console.log(tagType);
+        console.log(pageID);
+        console.log(id);
 
         var thisCategoryID = "holiday17_makeupdate";
 
@@ -71,7 +90,7 @@
             $.fn.trace('###### CoreM Pageview; thisCategoryID: ' +hasMBL + thisCategoryID + '; pageID: ' +hasMBL+ pageID);
         } else if (tagType === 'Element') {
             try {
-                window.BLOOMIES.coremetrics.cmCreatePageElementTag(hasMBL + pageID.substring(0, 49), hasMBL+thisCategoryID);
+                window.BLOOMIES.coremetrics.cmCreatePageElementTag(hasMBL + pageID.substring(0, 49), hasMBL+thisCategoryID, id);
             } catch (e) {
                 $.fn.trace('CoreM_err: ' + e);
             }
