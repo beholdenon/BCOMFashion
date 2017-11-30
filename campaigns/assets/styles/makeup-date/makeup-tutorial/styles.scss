@@ -405,7 +405,7 @@ button.enter-now {
     width: 90%;
     margin: 0 auto;
     position: absolute;
-    bottom: 10%;
+    top: -100px;
     left: 0;
     right: 0;
     opacity: 0;
@@ -826,7 +826,7 @@ button.enter-now {
 
     .group {
       padding: 0 2em;
-      bottom: 0;
+      top: 0;
 
       .product {
 
