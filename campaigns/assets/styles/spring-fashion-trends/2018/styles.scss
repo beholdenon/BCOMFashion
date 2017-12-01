@@ -10,7 +10,8 @@
 	position: fixed;
 	width: 100vw;
 	height: 100vh;
-	top: 31px;
+	//top: 31px;
+	top: 0;
 	left: 0;
 	background: transparent;
 	z-index: 2;
@@ -21,17 +22,17 @@
 	z-index: 3;
 }
 .resort-intro-message {
-	background-color: #fff;
+	//background-color: #fff;
 	font-size: 18px;
 	line-height: 1.68;
 	color: #666;
 	letter-spacing: 1px;
 	position: absolute;
-	top: 576px;
-	right: -4px;
+	top: 550px;
+	right: -20px;
 	p {
 		margin: 0;
-		padding: 4px 0 0 0;
+		padding: 0;
 		line-height: 1.65;
 	}
 	span {
@@ -153,6 +154,7 @@ $mobile-header-height: 48px;
 }
 
 .resort-aside-nav-item {
+	background-color: #fff;
 	text-decoration: none !important;
 	display: inline-block;
 	padding: 0 .444em;
@@ -218,6 +220,8 @@ $mobile-header-height: 48px;
 	height: $mobile-header-height;
 	text-align: left;
 	padding: 0 0 0 $mobile-header-height;
+
+	color: #000 !important;
 
 	@media only screen and (min-width: 340px) {
 		padding: 0;
@@ -316,6 +320,10 @@ $mobile-header-height: 48px;
 	max-width: 1048px;
 }
 
+.resort-florals-page {
+	padding-top: 0 !important;
+}
+
 .resort-page-row {
 
 	text-align: center;
@@ -335,7 +343,7 @@ $mobile-header-height: 48px;
 
 .resort-page-row__cell {
 	position: relative;
-	margin: 5vw 0 0 0;
+	margin: 5vw 0 12vw 0;
 
 	@media only screen and (min-width: $mobile-sm-bp) {
 		width: 50%;
@@ -436,7 +444,10 @@ $mobile-header-height: 48px;
 	//bottom: -8px;
 	//left: -4px;
 	bottom: -60px;
-	left: -30px;
+	left: -15px;
+	@media screen and (min-width: $mobile-sm-bp) {
+		left: -30px;
+	}
 }
 
 .label--white {
@@ -446,8 +457,8 @@ $mobile-header-height: 48px;
 
 .resort-page__hero-image {
 	position: relative;
+	margin: 0 0 12vw 0;
 
-	margin: 0;
 	@media screen and (min-width: $mobile-sm-bp) {
 		margin: 90px 0 0 0;
 	}
@@ -729,6 +740,9 @@ $mobile-header-height: 48px;
 }
 
 .resort-2018 {
+	width: 100%;
+	height: auto;
+	overflow: hidden;
 	background-color: #fff;
 	position: relative;
 	z-index: 4;
@@ -930,4 +944,14 @@ $mobile-header-height: 48px;
 	-moz-animation: bounce 2s infinite;
 	-webkit-animation: bounce 2s infinite;
 	animation: bounce 2s infinite;
+}
+
+.resort-key-keeper {
+	width:350%;
+	height: 240px;
+	overflow: hidden;
+	//background-color: red;
+	position: absolute;
+	left: -150%;
+	bottom: -240px;
 }

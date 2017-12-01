@@ -143,7 +143,7 @@ $(function() {
 
 
         // if an element has this class, the script will put a block for it in the physics world
-        var makeBlockClass = 'make-block';
+        var makeBlockClass = 'block-maker';
         // if an element has this class in addition to the above class, the script will wrap each
         // line in spans for a more complex typographic layout (instead of making a container for the whole element)
         var decomposeLinesClass = 'decompose-lines';
@@ -274,10 +274,10 @@ $(function() {
                         picOpacity = 1;
                     }
 
-                    var _density = Math.random() / 10;
-                    var _friction = Math.random() / 10;
-                    console.log(_density);
-                    
+                    // var _density = Math.random() / 10;
+                    // var _friction = Math.random() / 10;
+                    // console.log(_density);
+                    //
                     //var _frictionAir = Math.random() / 30;
                     blocks.push(
 
@@ -301,8 +301,8 @@ $(function() {
                         Bodies.rectangle(
                             //startX + (i+.5) * (140+70),
                             //startY + (j+.5) * (210+70),
-                            startX + (i+.5) * (picOriginalWidth + picGap),
-                            startY + (j+.5) * (picOriginalHeight + picGap),
+                            startX + (i+.5) * (picOriginalWidth + 1 + picGap),
+                            startY + (j+.5) * (picOriginalHeight + 1 + picGap),
                             140,
                             196,
                             {
@@ -320,11 +320,11 @@ $(function() {
                                 // The value is always positive and is in the range (0, 1). 
                                 // A value of 0 means collisions may be perfectly inelastic and no bouncing may occur. 
                                 // A value of 0.8 means the body may bounce back with approximately 80% of its kinetic energy
-                                restitution: .5,
+                                restitution: .2,
                                 // frictionAir – the air friction of the body (air resistance); default: 0.01
-                                frictionAir: 0.03,
-                                friction: _friction,
-                                density: _density
+                                frictionAir: 0.02
+                                //friction: _friction,
+                                //density: _density
                             }
                         )
                     );
@@ -341,15 +341,15 @@ $(function() {
 
             // walls ???
 
-            World.add(engine.world, [
-                // walls
-                // Bodies.rectangle(0, 0, (winW*2), 10*2, { isStatic: true }),
-                // Bodies.rectangle(0, 0, 10*2, (winH*2), { isStatic: true }),
-                // Bodies.rectangle((winW-10*2), 0, 10, (winH*2), { isStatic: true }),
-                //Bodies.rectangle(0, (winH), (winW*2), 10, { isStatic: true })
-
-                //Bodies.rectangle(0, (winH), (winW*2), 10, { isStatic: true })
-            ]);
+            // World.add(engine.world, [
+            //     // walls
+            //     Bodies.rectangle(0, 0, (winW*2), 10*2, { isStatic: true }),
+            //     Bodies.rectangle(0, 0, 10*2, (winH*2), { isStatic: true }),
+            //     Bodies.rectangle((winW-10*2), 0, 10, (winH*2), { isStatic: true }),
+            //     Bodies.rectangle(0, (winH), (winW*2), 10, { isStatic: true }),
+            //
+            //     Bodies.rectangle(0, (winH), (winW*2), 10, { isStatic: true })
+            // ]);
 
         }
 
@@ -368,46 +368,51 @@ $(function() {
             var velocityScale = 0.025;
 
             ////////////////
-            /*
+            
              var blocks = [];
 
-             $scrollerContainer.find('.' + makeBlockClass).each(function() {
-             var $el = $(this);
-             if($el.hasClass(decomposeLinesClass)) {
-             // wrap all <br>-delineated lines by spans
-             var wrappedHtml = '<span class="scroll-block">' + $el.html() + '</span>';
-             wrappedHtml = wrappedHtml.replace(/<br\s*[\/]?>/gi, '</span><br><span class="scroll-block">');
-             $el.html(wrappedHtml);
+            $scrollerContainer.find('.' + makeBlockClass).each(function () {
+                var $el = $(this);
+                if ($el.hasClass(decomposeLinesClass)) {
+                    // wrap all <br>-delineated lines by spans
+                    var wrappedHtml = '<span class="scroll-block">' + $el.html() + '</span>';
+                    wrappedHtml = wrappedHtml.replace(/<br\s*[\/]?>/gi, '</span><br><span class="scroll-block">');
+                    $el.html(wrappedHtml);
 
-             // make blocks from the spans
-             $el.find('span.scroll-block').each(function() {
-             var $spanEl = $(this);
-             var block = makeBlockFromElementBBox($spanEl);
-             blocks.push(block);
-             });
-             } else {
-             $el.addClass('scroll-block');
-             var block = makeBlockFromElementBBox($el);
-             blocks.push(block);
-             }
-             });
+                    // make blocks from the spans
+                    $el.find('span.scroll-block').each(function () {
+                        var $spanEl = $(this);
+                        var block = makeBlockFromElementBBox($spanEl);
+                        blocks.push(block);
+                    });
+                } else {
+                    $el.addClass('scroll-block');
+                    var block = makeBlockFromElementBBox($el);
+                    blocks.push(block);
+                }
+            });
 
-             World.add(engine.world, blocks);
-             */
-
-            // all pages as a single block
-            var blocks = [];
-            var pagesWrapper = $('.resort-pages-wrapper');
-
-            //pagesWrapper.css('margin-top', canvasHeight - $('.resort-intro-message').height()+ 160 );
-            pagesWrapper.css('margin-top', canvasHeight);
-            //pagesWrapper.addClass('was-scrolled');
-            
-            var bb = makeBlockFromElementBBox($('.resort-page'));
-            blocks.push(bb);
             World.add(engine.world, blocks);
+             
+
+            
+            
+            // all pages as a single block
+            // var blocks = [];
+            // var pagesWrapper = $('.resort-pages-wrapper');
+            //
+            // //pagesWrapper.css('margin-top', canvasHeight - $('.resort-intro-message').height()+ 160 );
+            // pagesWrapper.css('margin-top', canvasHeight);
+            // //pagesWrapper.addClass('was-scrolled');
+            //
+            // var bb = makeBlockFromElementBBox($('.resort-page'));
+            // blocks.push(bb);
+            // World.add(engine.world, blocks);
 
 
+            
+            
+            
             // also add the nav block and language block, which will be static normally but scroll on mobile
             // if the window is below the breakpoint, these elements will not collide with the blocks by default
 
@@ -421,7 +426,8 @@ $(function() {
                 navBBox.width, navBBox.height,
                 {
                     isStatic: true,
-                    collisionFilter: { mask: (winW < blockSettings.breakpoint) ? noCollideCategory : defaultCategory },
+                    //collisionFilter: { mask: (winW < blockSettings.breakpoint) ? noCollideCategory : defaultCategory },
+                    collisionFilter: { mask: defaultCategory },
                     render: { fillStyle: 'rgba(255,0,0,0)', strokeStyle: 'rgba(255,0,0,0)' }
                 });
 
@@ -437,8 +443,32 @@ $(function() {
             //World.add(engine.world, [navBlock, langBlock]);
 
 
-            /////// World.add(engine.world, [navBlock]);
+            ///// World.add(engine.world, [navBlock]);
 
+
+            //var navBBox = navContainer[0].getBoundingClientRect();
+
+
+            
+            var vw = $(window).width();
+            var wh = $(window).height();
+            var floorThickness = 50;
+                
+            var floorBlock = Bodies.rectangle(vw / 2, wh + floorThickness,  vw, floorThickness,
+                { isStatic: true, collisionFilter: {mask: defaultCategory}, render: {fillStyle: 'rgba(255,0,0,0.4)', strokeStyle: 'rgba(255,0,0,0)'}});
+            World.add(engine.world, [floorBlock]);
+            
+            var leftWall = Bodies.rectangle(-80, wh /2, 20, wh,
+                { isStatic: true, collisionFilter: {mask: defaultCategory}, render: {fillStyle: 'rgba(255,0,0,0.4)', strokeStyle: 'rgba(255,0,0,0)'}});
+            World.add(engine.world, [leftWall]);
+            
+            var rightWall = Bodies.rectangle(vw + 80, wh / 2, 20, wh,
+                { isStatic: true, collisionFilter: {mask: defaultCategory}, render: {fillStyle: 'rgba(255,0,255,0.4)', strokeStyle: 'rgba(255,0,0,0)'}});
+            
+            World.add(engine.world, [floorBlock, rightWall, leftWall]);
+            
+            
+            
 
             var lastScrollTop = $scrollEventGenerator.scrollTop();
             $scrollEventGenerator.scroll(function() {
@@ -449,7 +479,7 @@ $(function() {
                     Body.translate(blocks[i], Vector.create(0, -dS));
                     Body.setVelocity(blocks[i], Vector.create(0, -dS * velocityScale));
                     
-                    Body.setAngularVelocity( blocks[i], Math.PI/36);
+                    //Body.setAngularVelocity( blocks[i], (Math.PI/300) );
                 }
 
                 /////////////var navBBoxScroll = navEl.getBoundingClientRect();
@@ -460,12 +490,26 @@ $(function() {
                 ///console.log(thisScrollTop);
 
                 //engine.world.gravity.x = .025;
-                engine.world.gravity.y = .3;
+                engine.world.gravity.y = .1;
 
-                $('.resort-intro-message').addClass('animated fadeOutUp');
+                
+                
+                //$('.resort-intro-message').addClass('animated fadeOutUp');
 
 
-
+                //console.log('scroll event generated!');
+                
+                //$('.resort-image-grid-container').fadeOut(4500, function() { $(this).remove(); });
+                
+                //pagesWrapper.css('margin-top', 0);
+                //pagesWrapper.addClass('was-scrolled');
+                
+                var foo = $('.resort-back-to-top-btn-holder');
+                if(foo.hasClass('is-not-fixed') && foo.css('display') === 'block') {
+                    //alert('Oooops')
+                    //var h = $(window).height() - 240;
+                   
+                }
             });
 
             return {
@@ -476,13 +520,15 @@ $(function() {
         }
 
         function makeBlockFromElementBBox($element) {
+            //var offset = 90;
             var bbox = $element.get(0).getBoundingClientRect();
-            //return Bodies.rectangle(bbox.left + bbox.width / 2, bbox.top + bbox.height / 2, bbox.width, bbox.height , {
-            return Bodies.rectangle(bbox.left + 524, bbox.top + 10000 + 128, 1048, 20000 , {
+            return Bodies.rectangle(bbox.left + bbox.width / 2, bbox.top + bbox.height / 2, bbox.width, bbox.height , {
+            //return Bodies.rectangle(bbox.left + 524, bbox.top + 10000 + 128, 1048, 20000 , {
                 isStatic: true,
                 collisionFilter: { mask: defaultCategory },
+                //render: { fillStyle: 'rgba(0,0,0,0)', strokeStyle: 'rgba(0,0,0,0)'}
                 render: { fillStyle: 'rgba(0,0,0,0)', strokeStyle: 'rgba(0,0,0,0)'}
-                //render: { fillStyle: 'rgba(0,0,0,.5)'}
+                
             });
         }
 
@@ -567,18 +613,14 @@ $(function() {
 
 
 
-
-
-
-
-    var matter_js_url = "/b/fashion/campaigns/javascripts/spring-fashion-trends/2018/libs/matter.min.js";
-    var matter_js_cdn = 'https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.12.0/matter.min.js';
-
-    var test = "/b/fashion/campaigns/javascripts/spring-fashion-trends/2018/init-matter.js";
-    
     
 
-
+    // var matter_js_url = "/b/fashion/campaigns/javascripts/spring-fashion-trends/2018/libs/matter.min.js";
+    // var matter_js_cdn = 'https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.12.0/matter.min.js';
+    //
+    // var test = "/b/fashion/campaigns/javascripts/spring-fashion-trends/2018/init-matter.js";
+    
+    
     
     // ---- use matter.js - end
     
@@ -754,17 +796,27 @@ $(function() {
         
     });
 
-    $('.resort-back-to-top-btn, .resort-scroll-down-btn').on('click', function (e) {
+    $('.resort-back-to-top-btn').on('click', function (e) {
         e.preventDefault();
-        scrollDownBtnHolder.hide();
+        //scrollDownBtnHolder.hide();
         $('html, body').stop().animate({
-            scrollTop: $('#florals').offset().top - 90
-        }, 300 );
+            scrollTop: $('#florals').offset().top - 60
+        }, 1000 );
 
         $('a[coremetricTag="aside-nav-Florals"]').addClass('resort-current-item');
         
     });
 
+    $('.resort-scroll-down-btn').on('click', function (e) {
+        e.preventDefault();
+        scrollDownBtnHolder.hide();
+        $('html, body').stop().animate({
+            scrollTop: $('#florals').offset().top - 60
+        }, 1000 );
+
+        $('a[coremetricTag="aside-nav-Florals"]').addClass('resort-current-item');
+
+    });
 
     /*
      $('.resort-nav').pin({
@@ -791,11 +843,11 @@ $(function() {
         minWidth: 1024
     });
 
-    var introMessage = $('.resort-intro-message');
-    $('.resort-intro-message-holder').stickySidebar({
-        topSpacing: 0,
-        bottomSpacing: 0
-    });
+    // var introMessage = $('.resort-intro-message');
+    // $('.resort-intro-message-holder').stickySidebar({
+    //     topSpacing: 0,
+    //     bottomSpacing: 0
+    // });
 
     // ----------- Mobile nav switcher
     var mainContainer = $('.resort-wrapper');
@@ -815,7 +867,7 @@ $(function() {
 
     //_btn.hide();
     
-    var _resortFlorals = $('.resort-florals-1');
+    //var _resortFlorals = $('.resort-florals-1');
     emergence.init({
         //container: window,
         //reset: true,
@@ -829,14 +881,16 @@ $(function() {
         callback: function(element, state) {
             if (state === 'visible') {
                 console.log('Element is visible.');
-                console.log(element.getAttribute('id'));
+                //console.log(element.getAttribute('id'));
                 backToTopBtnHolder.addClass('is-not-fixed');
+                $('.resort-image-grid-container').css({'position':'absolute','bottom': '0', 'top': 'auto'})
                 if(element.getAttribute('id') === 'btt-visibility-trigger') {
                    // _btn.hide();
                 }
             } else if (state === 'reset') {
                 console.log('Element is hidden with reset.');
                 backToTopBtnHolder.removeClass('is-not-fixed');
+                $('.resort-image-grid-container').css({'position':'fixed','bottom': 'auto', 'top':'0'})
                 if(element.getAttribute('id') === 'btt-visibility-trigger') {
                    // _btn.show();
                 }
@@ -845,6 +899,72 @@ $(function() {
             }
         }
     });
+
+
+    var social = {
+        facebookTitle: 'BEST OF PRE-SPRING TRENDS | bloomingdales.com',
+        facebookDescription: 'Some trends are so intertwined with the start of the new season, they actually help signal it. See: bright new florals, cool-girl stripes and go-with-the-flow ruffles (plus, all the swimwear we can’t wait to dive into).',
+        facebookImageFileName: 'F17_Resort_Facebook.jpg',
+
+        twitterTitle: ' Go Team Bloomie’s! The new 100% @bloomingdales collection of exclusive designer collaborations feature styles the whole squad will cheer for. http://fashion.bloomingdales.com/2017-fall-campaign-100-percent-exclusive/',
+
+        pinterestTitle: 'BEST OF PRE-SPRING TRENDS | bloomingdales.com',
+        pinterestImageFileName: 'F17_Resort_Pinterest.jpg',
+
+        facebookURL: null,
+        twitterURL: null,
+        pinterestURL: null
+    };
+
+    function socialSetup () {
+        var baseURL = 'http://' + window.location.host + window.location.pathname,
+            baseURLAssets = 'http://' + window.location.host + '/b/fashion/campaigns/images/spring-fashion-trends/2018/social/';
+
+        // var facebookURL = 'https://www.facebook.com/dialog/feed';
+        // facebookURL += '?app_id=145634995501895';
+        // facebookURL += '&name=' + encodeURIComponent(social.facebookTitle);
+        // facebookURL += '&description=' + encodeURIComponent(social.facebookDescription);
+        // facebookURL += '&link=' + encodeURIComponent(baseURL);
+        // facebookURL += '&picture=' + encodeURIComponent(baseURLAssets + social.facebookImageFileName);
+        // facebookURL += '&display=popup&redirect_uri=' + encodeURIComponent('https://www.facebook.com/');
+
+        var facebookURL = 'https://www.facebook.com/sharer/sharer.php';
+        facebookURL += '?u=' + encodeURIComponent(baseURL);
+        // facebookURL += '&title=' + encodeURIComponent(social.facebookTitle);
+        // facebookURL += '&description=' + encodeURIComponent(social.facebookDescription);
+        // facebookURL += '&picture=' + encodeURIComponent(baseURLAssets + social.facebookImageFileName);
+        facebookURL += '&quote=' + encodeURIComponent(social.facebookTitle + " " + social.facebookDescription);
+
+
+
+        var twitterURL = 'http://twitter.com/intent/tweet?source=webclient&text=';
+        twitterURL += encodeURIComponent(social.twitterTitle);
+
+        var pinterestURL = 'http://pinterest.com/pin/create/button/?';
+        pinterestURL += 'url=' + encodeURIComponent(baseURL);
+        pinterestURL += '&media=' + encodeURIComponent(baseURLAssets + social.pinterestImageFileName);
+        pinterestURL += '&description=' + encodeURIComponent(social.pinterestTitle);
+
+        // $('.facebookLink').attr('href', facebookURL);
+        // $('.instagramLink').attr('href', "https://www.instagram.com/bloomingdales/");
+        // $('.pinterestLink').attr('href', pinterestURL);
+        // $('.twitterLink').attr('href', twitterURL);
+
+        $('a[coremetricTag="footer-Facebook-link"]').attr('href', facebookURL);
+        $('a[coremetricTag="footer-Instagram-link"]').attr('href', "https://www.instagram.com/bloomingdales/");
+        $('a[coremetricTag="footer-Pinterest-link"]').attr('href', pinterestURL);
+        $('a[coremetricTag="footer-Twitter-link"]').attr('href', twitterURL);
+
+    }
+
+    socialSetup();
+
+
+    if(window.location.hash) {
+        // Fragment exists
+    } else {
+       
+    }
 
 });
 
