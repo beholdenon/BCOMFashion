@@ -49,11 +49,14 @@ let sjl = require('sjljs'),
             protocol = 'https://';
         }
 
-         canonicalHost = protocol + req.info.hostname + '/b/' + path;
+        canonicalHost = _args.isMobile ? process.env.PROD_MOBILE_HOST : process.env.PROD_HOST;
+        // canonicalHost = protocol + req.info.hostname + '/b/' + path;
+
+        let canonicalPath = canonicalHost.concat('/', path);
 
         _args.isMobile = isMobile(detectedDeviceType);
         _args.isTablet = isTablet(detectedDeviceType);
-        _args.headCanonical = {href: canonicalHost};
+        _args.headCanonical = {href: canonicalPath};
         return _args;
     },
 

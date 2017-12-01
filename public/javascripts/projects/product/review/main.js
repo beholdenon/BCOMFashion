@@ -30,11 +30,12 @@ APP.bvLoadRRSubmission = function() {
                 submissionUnavailableMessage: self.bvErrorMsg
             },
             bvLib = $BV ? $BV : {},
-            bvAuthenticateUser = Base.getQueryParameter('bvauthenticateuser') === 'true' ? true : false ;
+            bvAuthenticateUser = (Base.getQueryParameter('bvauthenticateuser') === 'true' ? true : false) ,
+            bvProductId = Base.getQueryParameter('bvproductid');
 
         if ( bvAuthenticateUser ) {
             if (bvUserToken) {
-                bvConfig.userToken = bvUserToken;
+                window.location.href = 'http://reviews.bloomingdales.com/bvstaging/'+ APP.bvClientId +'/'+ bvProductId +'/writereview.htm?user='+ bvUserToken;
             } else {
                 Cookie.set('FORWARDPAGE_KEY', currentUrl, undefined, {
                    expires: new Date( new Date().getTime() + ( 86400000 ) ),
