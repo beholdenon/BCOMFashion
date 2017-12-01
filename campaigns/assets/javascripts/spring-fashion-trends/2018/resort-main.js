@@ -320,11 +320,11 @@ $(function() {
                                 // The value is always positive and is in the range (0, 1). 
                                 // A value of 0 means collisions may be perfectly inelastic and no bouncing may occur. 
                                 // A value of 0.8 means the body may bounce back with approximately 80% of its kinetic energy
-                                restitution: .2,
+                                restitution: .1,
                                 // frictionAir – the air friction of the body (air resistance); default: 0.01
-                                frictionAir: 0.02
+                                frictionAir: 0.05,
                                 //friction: _friction,
-                                //density: _density
+                                 density: 1
                             }
                         )
                     );
@@ -365,7 +365,7 @@ $(function() {
             //var velocityScale = 0.01; // fudge factor for velocity of the scrolling blocks created by the scroll action
             //var velocityScale = 0.03;
 
-            var velocityScale = 0.025;
+            var velocityScale = 0.01;
 
             ////////////////
             
@@ -449,22 +449,20 @@ $(function() {
             //var navBBox = navContainer[0].getBoundingClientRect();
 
 
-            
             var vw = $(window).width();
-            var wh = $(window).height();
-            var floorThickness = 50;
-                
-            var floorBlock = Bodies.rectangle(vw / 2, wh + floorThickness,  vw, floorThickness,
-                { isStatic: true, collisionFilter: {mask: defaultCategory}, render: {fillStyle: 'rgba(255,0,0,0.4)', strokeStyle: 'rgba(255,0,0,0)'}});
-            World.add(engine.world, [floorBlock]);
-            
-            var leftWall = Bodies.rectangle(-80, wh /2, 20, wh,
-                { isStatic: true, collisionFilter: {mask: defaultCategory}, render: {fillStyle: 'rgba(255,0,0,0.4)', strokeStyle: 'rgba(255,0,0,0)'}});
-            World.add(engine.world, [leftWall]);
-            
-            var rightWall = Bodies.rectangle(vw + 80, wh / 2, 20, wh,
-                { isStatic: true, collisionFilter: {mask: defaultCategory}, render: {fillStyle: 'rgba(255,0,255,0.4)', strokeStyle: 'rgba(255,0,0,0)'}});
-            
+            var vh = $(window).height();
+            var wallThickness = 50;
+            var renderStyles = {fillStyle: 'rgba(255,0,0,0)', strokeStyle: 'rgba(255,0,0,0)'};
+
+            var floorBlock = Bodies.rectangle(vw / 2, vh + wallThickness/2, vw, wallThickness,
+                {isStatic: true, collisionFilter: {mask: defaultCategory}, render: renderStyles});
+
+            var leftWall = Bodies.rectangle(-80, vh / 2, wallThickness, vh,
+                {isStatic: true, collisionFilter: {mask: defaultCategory}, render: renderStyles});
+
+            var rightWall = Bodies.rectangle(vw + 80, vh / 2, wallThickness, vh,
+                {isStatic: true, collisionFilter: {mask: defaultCategory}, render: renderStyles});
+
             World.add(engine.world, [floorBlock, rightWall, leftWall]);
             
             
@@ -479,7 +477,7 @@ $(function() {
                     Body.translate(blocks[i], Vector.create(0, -dS));
                     Body.setVelocity(blocks[i], Vector.create(0, -dS * velocityScale));
                     
-                    //Body.setAngularVelocity( blocks[i], (Math.PI/300) );
+                    Body.setAngularVelocity( blocks[i], (Math.PI/300) * (Math.random()) );
                 }
 
                 /////////////var navBBoxScroll = navEl.getBoundingClientRect();
@@ -490,7 +488,7 @@ $(function() {
                 ///console.log(thisScrollTop);
 
                 //engine.world.gravity.x = .025;
-                engine.world.gravity.y = .1;
+                engine.world.gravity.y = .3;
 
                 
                 
@@ -504,12 +502,11 @@ $(function() {
                 //pagesWrapper.css('margin-top', 0);
                 //pagesWrapper.addClass('was-scrolled');
                 
-                var foo = $('.resort-back-to-top-btn-holder');
-                if(foo.hasClass('is-not-fixed') && foo.css('display') === 'block') {
-                    //alert('Oooops')
-                    //var h = $(window).height() - 240;
-                   
-                }
+                // var foo = $('.resort-back-to-top-btn-holder');
+                // if(foo.hasClass('is-not-fixed') && foo.css('display') === 'block') {
+                //     //var h = $(window).height() - 240;
+                //   
+                // }
             });
 
             return {
@@ -683,8 +680,11 @@ $(function() {
 
 // All navigation items
 
-    var categoryID = "spring18_resort";
+    // var categoryID = "spring18_resort";
+    var categoryID = "spring18_resort--lp";
+    //var hash = window.location.hash.substr(1);
     
+
     var navItems = $('.resort-nav__menu').find('a').not('.resort-external-link');
 
 // Anchors corresponding to nav items
@@ -880,7 +880,7 @@ $(function() {
         //offsetLeft: 0,
         callback: function(element, state) {
             if (state === 'visible') {
-                console.log('Element is visible.');
+                // console.log('Element is visible.');
                 //console.log(element.getAttribute('id'));
                 backToTopBtnHolder.addClass('is-not-fixed');
                 $('.resort-image-grid-container').css({'position':'absolute','bottom': '0', 'top': 'auto'})
@@ -888,14 +888,14 @@ $(function() {
                    // _btn.hide();
                 }
             } else if (state === 'reset') {
-                console.log('Element is hidden with reset.');
+                // console.log('Element is hidden with reset.');
                 backToTopBtnHolder.removeClass('is-not-fixed');
                 $('.resort-image-grid-container').css({'position':'fixed','bottom': 'auto', 'top':'0'})
                 if(element.getAttribute('id') === 'btt-visibility-trigger') {
                    // _btn.show();
                 }
             } else if (state === 'noreset') {
-                console.log('Element is hidden with NO reset.');
+                // console.log('Element is hidden with NO reset.');
             }
         }
     });
