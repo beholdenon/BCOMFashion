@@ -4,7 +4,7 @@ require(['jquery', 'globals'], function($, Globals) {
     function getBanner() {
         $.ajax({
             type: 'GET',
-            url: '/v3/admedia/global?poolName=SHOPPINGSERVICESBANNER',
+            url: '/b/v3/admedia/global?poolName=SHOPPINGSERVICESBANNER',
             headers: { 'X-Macys-ClientId': 'NavApp' },
             success: function(data) {
                 var imageFileName,
