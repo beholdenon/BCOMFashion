@@ -5,8 +5,13 @@
 @import "flexbox_mixins";
 @import "libs/animate.min";
 
+$mobile-sm-bp: 980px;
+$mobile-md-bp: 1025px; // 1280px;
+$hamburger-icon-color: $highlighter-color;
+$mobile-header-height: 48px;
 
 .resort-image-grid-container{
+	display: none;
 	position: fixed;
 	width: 100vw;
 	height: 100vh;
@@ -15,7 +20,26 @@
 	left: 0;
 	background: transparent;
 	z-index: 2;
+	@media only screen and (min-width: $mobile-md-bp) {
+		display: block;
+	}
 }
+
+
+//
+//.resort-world-right-wall {
+//	position: fixed;
+//	width: 100px;
+//	height: 100%;
+//	top: 0;
+//	right: -98px;
+//	bottom: 0;
+//	display: block;
+//	background-color: rgba(147, 58, 204, 0.85) !important;
+//}
+
+
+
 .resort-intro-message-holder {
 	width: 100%;
 	position: relative;
@@ -24,28 +48,59 @@
 .resort-intro-message {
 	//background-color: #fff;
 	font-size: 18px;
+	@media only screen and (min-width: $mobile-sm-bp) {
+		font-size: 24px;
+	}
+	@media only screen and (min-width: $mobile-md-bp) {
+		font-size: 18px;
+	}
+
 	line-height: 1.68;
-	color: #666;
 	letter-spacing: 1px;
-	position: absolute;
-	top: 550px;
-	right: -20px;
+	position: relative;
+	top: auto;
+	right: auto;
+	text-align: center;
+	@media only screen and (min-width: $mobile-md-bp) {
+		position: absolute;
+		top: 550px;
+		right: -20px;
+		text-align: left;
+	}
 	p {
 		margin: 0;
 		padding: 0;
 		line-height: 1.65;
+		color: #000 !important;
+		font-weight: 300 !important;
 	}
 	span {
-		display: block;
-		white-space: nowrap;
+		display: inline;
+		white-space: inherit;
+		@media only screen and (min-width: $mobile-md-bp) {
+			display: block;
+			white-space: nowrap;
+		}
 	}
 }
 
-
-$mobile-sm-bp: 980px;
-$mobile-md-bp: 1025px; // 1280px;
-$hamburger-icon-color: $highlighter-color;
-$mobile-header-height: 48px;
+.resort-mobile-landing-image-grid {
+	display: block;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	@media only screen and (min-width: $mobile-sm-bp) {
+		margin-top: 0;
+		margin-bottom: 80px;
+	}
+	;
+	@media only screen and (min-width: $mobile-md-bp) {
+		display: none;
+	}
+	img {
+		width: 100% !important;
+		max-width: 100% !important;
+	}
+}
 
 .resort-wrapper {
 	position: relative;
@@ -82,14 +137,14 @@ $mobile-header-height: 48px;
 	background-color: #fff;
 
 	@media only screen and (min-width: $mobile-md-bp) {
-		width: 28%;
+		width: 29%;
 		height: auto;
 		padding: 0 1.5vw 0 2vw;
 		position: relative;
 		z-index: 10;
 		top: auto;
 		left: auto;
-		background-color: transparent;
+		//background-color: transparent;
 	}
 
 }
@@ -199,12 +254,14 @@ $mobile-header-height: 48px;
 	width: 100%;
 	padding: 0 5vw;
 	position: relative;
+	background-color: #fff;
+
 	@media screen and (min-width: $mobile-sm-bp) {
 		padding: 0 3em;
 	}
 	@media only screen and (min-width: $mobile-md-bp) {
-		width: 72%;
-		padding: 0 2em 0 1em;
+		width: 71%;
+		padding: 0 2em 0 0;
 	}
 }
 
@@ -232,7 +289,7 @@ $mobile-header-height: 48px;
 		// Correctly adding unit to number: 1px + (88 - 1)
 		font-size: calc(1px + (88 - 1) * ((100vw - 300px) / (1680 - 300)));
 		text-align: left;
-		padding: 3vw 0 0 0;
+		padding: 70px 0 0 0;
 		line-height: 1;
 		height: auto;
 	}
@@ -297,8 +354,10 @@ $mobile-header-height: 48px;
 .resort-pages-wrapper {
 	position: relative;
 	z-index: 5;
-
-	margin-top: 150vh;
+	margin-top: 0;
+	@media only screen and (min-width: $mobile-md-bp) {
+		margin-top: 150vh;
+	}
 
 	//-webkit-transition: margin-top 1s;
 	//-moz-transition: margin-top 1s;
@@ -321,13 +380,17 @@ $mobile-header-height: 48px;
 }
 
 .resort-florals-page {
-	padding-top: 0 !important;
+	// padding-top: 0 !important;
 }
 
 .resort-page-row {
-
+	background-color: #fff;
 	text-align: center;
 	margin: 0;
+
+	@media only screen and (min-width: 1280px) {
+		margin: 108px 0 0 0;
+	}
 
 	@media only screen and (min-width: $mobile-sm-bp) {
 		///////////////////////////// ------------------ @include display-flex;
@@ -336,14 +399,23 @@ $mobile-header-height: 48px;
 		@include flex-direction(row);
 
 		text-align: left;
-		margin: 4vw 0 0 0;
+		//margin: 5vw 0 0 0;
+		margin: 90px 0 0 0;
 	}
 
 }
 
+div.resort-page__hero-image {
+	margin: 60px 0 0 0;
+	@media only screen and (min-width: $mobile-sm-bp) {
+		margin: 108px 0 0 0;
+	}
+}
+
 .resort-page-row__cell {
 	position: relative;
-	margin: 5vw 0 12vw 0;
+
+	margin: 40px 0 60px 0;
 
 	@media only screen and (min-width: $mobile-sm-bp) {
 		width: 50%;
@@ -383,9 +455,12 @@ $mobile-header-height: 48px;
 	display: block;
 	position: relative;
 	text-decoration: none !important;
-	// overflow: hidden;
 	&:hover {
 		color: inherit;
+	}
+	line-height: .8;
+	@media screen and (min-width: $mobile-md-bp) {
+
 	}
 }
 
@@ -404,7 +479,7 @@ $mobile-header-height: 48px;
 
 
 	width: 100%;
-	height: 100%;
+	height: calc(100% + 2px);
 
 	border: 1em solid transparent;
 
@@ -417,11 +492,19 @@ $mobile-header-height: 48px;
 	@media screen and (min-width: $mobile-sm-bp) {
 		border: 30px solid $resort-yellow;
 	}
-	.resort-page-prod__label {
-		//bottom: 20px;
-		//left: 20px;
-		bottom: -58px;
-		left: -28px;
+	+ .label--adjusted {
+		padding: 0;
+
+		left: 0;
+		top: 24px;
+	}
+	@media screen and (min-width: $mobile-md-bp) {
+		line-height: 1;
+		+ .label--adjusted {
+
+			left: 0;
+			top: 30px;
+		}
 	}
 }
 .frame--white {
@@ -430,36 +513,70 @@ $mobile-header-height: 48px;
 		border: 30px solid #fff;
 	}
 	.resort-page-prod__label {
-		bottom: -30px;
-		left: 0;
+		//bottom: -30px;
+		//left: 0;
+	}
+	+ .label--repositioned {
+		left: 30px;
+		bottom: 0;
 	}
 }
 
 .resort-page-prod__label {
 	font-weight: 300;
 	display: inline-block;
-	border-bottom: 1px solid #000;
-	padding-bottom: 1px;
+	//border-bottom: 1px solid #000;
+	text-decoration: underline;
+	padding: 8px 0 0;
+	//line-height: .8;
+	@media screen and (min-width: $mobile-md-bp) {
+		//padding: 8px 0 0;
+		line-height: 1;
+	}
 	position: relative;
+
 	//bottom: -8px;
 	//left: -4px;
-	bottom: -60px;
-	left: -15px;
+	//bottom: -60px;
+	//left: -15px;
 	@media screen and (min-width: $mobile-sm-bp) {
-		left: -30px;
+		//left: -30px;
 	}
 }
 
-.label--white {
+.label--adjusted {
+	left: 0;
+	@media screen and (min-width: $mobile-sm-bp) {
+		left: 30px;
+	}
 	//color: #fff;
 	//border-bottom: 1px solid #fff;
 }
 
+.label--refitted {
+	position: absolute;
+	bottom: -12px;
+	width: 100%;
+	@media screen and (min-width: $mobile-sm-bp) {
+		bottom: 4px;
+		width: auto;
+	}
+}
+.label--repositioned {
+	position: absolute;
+	bottom: -26px;
+}
+
 .resort-page__hero-image {
 	position: relative;
-	margin: 0 0 12vw 0;
+	margin: 60px 0;
+	text-align: center;
+	@media screen and (min-width: $mobile-md-bp) {
+		margin: 0 0 90px 0;
+	}
 
 	@media screen and (min-width: $mobile-sm-bp) {
+		text-align: left;
 		margin: 90px 0 0 0;
 	}
 
@@ -470,8 +587,14 @@ $mobile-header-height: 48px;
 			color: inherit;
 		}
 	}
+	img {
+		//margin-top: 60px;
+	}
 }
+.resort-florals-hero {
+	// margin-top: 140px;
 
+}
 
 .resort-page-copy {
 	a {
@@ -490,7 +613,7 @@ $mobile-header-height: 48px;
 	}
 }
 .resort-page-copy__heading {
-
+	color: #000 !important;
 	line-height: 1.075;
 	letter-spacing: -1px;
 	margin: 1em 0 0.5em 0;
@@ -512,7 +635,7 @@ $mobile-header-height: 48px;
 	line-height: 1.75;
 	margin: 0;
 	padding: 0;
-	font-size: 1em;
+	font-size: .8em;
 
 	@media screen and (min-width: $mobile-sm-bp) {
 		font-size: .84em;
@@ -623,16 +746,16 @@ $mobile-header-height: 48px;
 	position: relative;
 	text-align: center;
 
-	margin-top: 2em;
-	//padding: 2em 0;
+	margin-top: 5em;
 
 	@media only screen and (min-width: $mobile-md-bp) {
 		margin-top: 5em;
 		//padding: 4.444em 0 3em 0;
 	}
-	padding: 4.444em 0 3em 0;
+	padding: 4.5em 0;
 
 	border-top: 1px solid #000;
+	border-bottom: 1px solid #000;
 	a {
 		font-family: 'Libre Baskerville', serif !important;
 		font-weight: 700 !important;
@@ -650,7 +773,9 @@ $mobile-header-height: 48px;
 		}
 	}
 }
-
+.resort-page-footer__swim-footer {
+	border-bottom: 0 none;
+}
 // https://codepen.io/MadeByMike/pen/bEEGvv
 //https://css-tricks.com/snippets/css/fluid-typography/
 // font-size: calc([minimum size] + ([maximum size] - [minimum size]) * ((100vw - [minimum viewport width]) / ([maximum viewport width] - [minimum viewport width])));
@@ -744,6 +869,7 @@ $mobile-header-height: 48px;
 	height: auto;
 	overflow: hidden;
 	background-color: #fff;
+	color: #000 !important;
 	position: relative;
 	z-index: 4;
 	margin-bottom: 240px;
@@ -773,6 +899,7 @@ $mobile-header-height: 48px;
 	font-family: 'Libre Baskerville', serif !important;
 	font-weight: 700 !important;
 	font-size: 1.8em;
+	color: #000;
 	text-align: center;
 	@media only screen and (min-width: $mobile-md-bp) {
 		text-align: left;
@@ -795,7 +922,6 @@ $mobile-header-height: 48px;
 			text-align: left;
 		}
 	}
-
 }
 
 .resort-footer-social-link {
@@ -803,12 +929,21 @@ $mobile-header-height: 48px;
 	display: inline-block;
 	padding: 0.5em 0.5em 0.5em 0;
 	font-size: 1.4em;
+	font-family: 'Roboto Mono', monospace, sans-serif;
+	font-weight: 300;
+	color: #000;
+	&:hover {
+		color: #000;
+	}
 }
 
 .resort-back-to-top-btn-holder {
 	position: fixed;
 	right: 28px;
-	bottom: 56px;
+	bottom: 24px;
+	@media only screen and (min-width: $mobile-md-bp) {
+		bottom: 56px;
+	}
 	transition: bottom 0.3s;
 	@media only screen and (min-width: 1780px) {
 		right: calc(50% - 820px);
@@ -944,6 +1079,9 @@ $mobile-header-height: 48px;
 	-moz-animation: bounce 2s infinite;
 	-webkit-animation: bounce 2s infinite;
 	animation: bounce 2s infinite;
+
+	-webkit-animation-iteration-count: 2;
+	animation-iteration-count: 2;
 }
 
 .resort-key-keeper {
@@ -961,11 +1099,26 @@ $mobile-header-height: 48px;
 	margin: 1em 0 0;
 	@include flexbox();
 	@include justify-content(center);
+	@include flex-wrap(wrap);
+	@media only screen and (min-width: $mobile-md-bp) {
+		@include flex-wrap(nowrap);
+	}
 	li {
 		list-style: none;
-		margin: 0 2em 0 0;
+		margin: 0 1em;
+		@media only screen and (min-width: $mobile-md-bp) {
+			margin: 0 2em 0 0;
+		}
+
 		padding: 0;
 		font-size: 1em;
+
+		&:first-child {
+			width: 100%;
+			@media only screen and (min-width: $mobile-md-bp) {
+				width: auto;
+			}
+		}
 	}
 	a:link, a:visited, a:hover, a:active {
 		font-family: 'Roboto Mono', monospace, sans-serif !important;
@@ -976,4 +1129,8 @@ $mobile-header-height: 48px;
 		background-color: #fff !important;
 		background-image: none !important;
 	}
+}
+
+.block-maker, .scroll-block {
+	background-color: #fff;
 }

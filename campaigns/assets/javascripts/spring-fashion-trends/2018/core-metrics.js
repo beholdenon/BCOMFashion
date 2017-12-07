@@ -67,14 +67,27 @@ $(document).ready( function($) {
         $('[coremetricTag]').not( '.resort-aside-nav-item' ).click(function() {
 
             var item = $( this );
-            var urlToParse = item.attr('href').toLowerCase();
-            var result = parseQueryString(urlToParse);
-            console.log(JSON.stringify(result));
-            var el = item.attr( "coremetricTag" );
-            
-            var page = item.closest('.resort-page').attr('id').toUpperCase();
-            
-            $.fn.coreTag('Element', page + '__' + el + '__ID-' + result.id);
+
+            // var qwe = item.hasClass('resort-footer-social-link');
+            var el = item.attr("coremetricTag");
+            var page = '';
+            var isSocialLinks = item.hasClass('resort-footer-social-link');
+
+            if (!isSocialLinks) {
+                var urlToParse = item.attr('href').toLowerCase();
+                var result = parseQueryString(urlToParse);
+                console.log(JSON.stringify(result));
+
+                if (item.closest('.resort-page').length) {
+                    page = item.closest('.resort-page').attr('id').toUpperCase();
+                }
+
+                $.fn.coreTag('Element', page + '__' + el + '__ID-' + result.id);
+                
+            } else if (isSocialLinks) {
+                $.fn.coreTag('Element', 'footer-social-link__' + el);
+            }
+
             
         });
         
