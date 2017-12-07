@@ -70,6 +70,7 @@ resources.load([
 resources.onReady(init);
 */
 
+
 (function(){
     // Your base, I'm in it!
     var originalAddClassMethod = jQuery.fn.addClass;
@@ -87,9 +88,56 @@ resources.onReady(init);
 })();
 
 
+(function($,sr){
+    
+    var debounce = function (func, threshold, execAsap) {
+        var timeout;
+
+        return function debounced () {
+            var obj = this, args = arguments;
+            function delayed () {
+                if (!execAsap)
+                    func.apply(obj, args);
+                timeout = null;
+            }
+
+            if (timeout)
+                clearTimeout(timeout);
+            else if (execAsap)
+                func.apply(obj, args);
+
+            timeout = setTimeout(delayed, threshold || 100);
+        };
+    }
+    // smartresize
+    jQuery.fn[sr] = function(fn){  return fn ? this.bind('resize', debounce(fn)) : this.trigger(sr); };
+
+})(jQuery,'smartresize');
+
 
 
 $(function() {
+
+    var isMobile = false;
+    if (/Android|webOS|iPhone|iPad|BlackBerry|Windows Phone|Opera Mini|IEMobile|Mobile/i.test(navigator.userAgent)) {
+        isMobile = true;
+    }
+
+    function debounce(func, wait, immediate) {
+        var timeout;
+        return function() {
+            var context = this, args = arguments;
+            var later = function() {
+                timeout = null;
+                if (!immediate) func.apply(context, args);
+            };
+            var callNow = immediate && !timeout;
+            clearTimeout(timeout);
+            timeout = setTimeout(later, wait);
+            if (callNow) func.apply(context, args);
+        };
+    }
+
 
     /*
     function wheel(event) {
@@ -187,9 +235,14 @@ $(function() {
                 Engine.run(engine);
 
                 Render.run(render);
+                
+                
+                window.onresize = doOnWindowResize.bind(null, scrollBlocks);
 
-                /////////window.onresize = doOnWindowResize.bind(null, scrollBlocks);
+
             }
+
+            
         }
 
         function initEngine() {
@@ -201,8 +254,8 @@ $(function() {
 
         function initRenderer(engine) {
             // make the rendering canvas
-            var canvas = document.createElement('canvas');
-            //var context = canvas.getContext('2d');
+            canvas = document.createElement('canvas');
+            var context = canvas.getContext('2d');
 
             //document.body.appendChild(canvas);
             //var canvasContainer = document.getElementById('resort-image-grid-container');
@@ -313,7 +366,7 @@ $(function() {
                                     opacity: picOpacity,
                                     sprite: {
                                         //texture: '/b/fashion/images/projects/2017-box/box'+ ( j*6+i+1 ) +'.jpg'
-                                        texture: '/b/fashion/campaigns/images/spring-fashion-trends/2018/image-grid/pic'+ picIndex +'.jpg'
+                                        texture: '/b/fashion/campaigns/images/spring-fashion-trends/2018/image-grid/new-pic-'+ picIndex +'.jpg'
                                     }
                                 },
                                 //restitution (elasticity) of the body. 
@@ -352,10 +405,7 @@ $(function() {
             // ]);
 
         }
-
-
-
-
+        
 
         function initScroller(engine) {
             // will search inside the element scrollerContainer for elements with class 'make-block'
@@ -431,6 +481,7 @@ $(function() {
                     render: { fillStyle: 'rgba(255,0,0,0)', strokeStyle: 'rgba(255,0,0,0)' }
                 });
 
+            
             /*
              var langEl = $lang.get(0);
              var langBBox = langEl.getBoundingClientRect();
@@ -449,10 +500,12 @@ $(function() {
             //var navBBox = navContainer[0].getBoundingClientRect();
 
 
+            /*
+            
             var vw = $(window).width();
             var vh = $(window).height();
-            var wallThickness = 50;
-            var renderStyles = {fillStyle: 'rgba(255,0,0,0)', strokeStyle: 'rgba(255,0,0,0)'};
+            var wallThickness = 100;
+            var renderStyles = {fillStyle: 'rgba(255,0,0,0.5)', strokeStyle: 'rgba(255,0,0,0)'};
 
             var floorBlock = Bodies.rectangle(vw / 2, vh + wallThickness/2, vw, wallThickness,
                 {isStatic: true, collisionFilter: {mask: defaultCategory}, render: renderStyles});
@@ -460,11 +513,21 @@ $(function() {
             var leftWall = Bodies.rectangle(-80, vh / 2, wallThickness, vh,
                 {isStatic: true, collisionFilter: {mask: defaultCategory}, render: renderStyles});
 
-            var rightWall = Bodies.rectangle(vw + 80, vh / 2, wallThickness, vh,
+            var rightWall = Bodies.rectangle(vw + 180, vh / 2, wallThickness, vh,
                 {isStatic: true, collisionFilter: {mask: defaultCategory}, render: renderStyles});
 
             World.add(engine.world, [floorBlock, rightWall, leftWall]);
             
+            */
+
+            var vw = $(window).width();
+            var vh = $(window).height();
+            var wallThickness = 100;
+            var renderStyles = {fillStyle: 'rgba(255,0,0,0)', strokeStyle: 'rgba(255,0,0,0)'};
+
+            var floorBlock = Bodies.rectangle(vw / 2, vh + wallThickness/2, vw, wallThickness,
+                {isStatic: true, collisionFilter: {mask: defaultCategory}, render: renderStyles});
+            World.add(engine.world, [floorBlock]);
             
             
 
@@ -477,7 +540,7 @@ $(function() {
                     Body.translate(blocks[i], Vector.create(0, -dS));
                     Body.setVelocity(blocks[i], Vector.create(0, -dS * velocityScale));
                     
-                    Body.setAngularVelocity( blocks[i], (Math.PI/300) * (Math.random()) );
+                    //Body.setAngularVelocity( blocks[i], (Math.PI/300) * (Math.random()) );
                 }
 
                 /////////////var navBBoxScroll = navEl.getBoundingClientRect();
@@ -487,31 +550,18 @@ $(function() {
 
                 ///console.log(thisScrollTop);
 
-                //engine.world.gravity.x = .025;
+                // engine.world.gravity.x = .025;
                 engine.world.gravity.y = .3;
-
                 
-                
-                //$('.resort-intro-message').addClass('animated fadeOutUp');
-
-
-                //console.log('scroll event generated!');
-                
-                //$('.resort-image-grid-container').fadeOut(4500, function() { $(this).remove(); });
-                
-                //pagesWrapper.css('margin-top', 0);
-                //pagesWrapper.addClass('was-scrolled');
-                
-                // var foo = $('.resort-back-to-top-btn-holder');
-                // if(foo.hasClass('is-not-fixed') && foo.css('display') === 'block') {
-                //     //var h = $(window).height() - 240;
-                //   
-                // }
             });
 
             return {
-                ////blocks: blocks,
+                blocks: blocks,
+                floorBlock: floorBlock,
                 navBlock: navBlock
+               
+                // leftWall: leftWall,
+                // rightWall: rightWall
                 //langBlock: langBlock
             };
         }
@@ -530,46 +580,52 @@ $(function() {
         }
 
         //////////
-        /*
-         function updateBlockBounds($el, block) {
-         var bbox = $el.get(0).getBoundingClientRect();
 
-         Body.setVertices(block, Matter.Vertices.create([
-         {x: bbox.left,  y: bbox.top},
-         {x: bbox.right, y: bbox.top},
-         {x: bbox.right, y: bbox.bottom},
-         {x: bbox.left,  y: bbox.bottom}
-         ]));
+        function updateBlockBounds($el, block) {
+            var bbox = $el.get(0).getBoundingClientRect();
 
-         /////Body.setPosition(block, Vector.create(bbox.left + bbox.width / 2, bbox.top + bbox.height / 2));
-         Body.setPosition(block, Vector.create(bbox.left + bbox.width , bbox.top + bbox.height));
-         }
+            Body.setVertices(block, Matter.Vertices.create([
+                {x: bbox.left, y: bbox.top},
+                {x: bbox.right, y: bbox.top},
+                {x: bbox.right, y: bbox.bottom},
+                {x: bbox.left, y: bbox.bottom}
+            ]));
 
-         function doOnWindowResize(scrollBlocks) {
-         winW = window.innerWidth;
-         winH = window.innerHeight;
+            Body.setPosition(block, Vector.create(bbox.left + bbox.width / 2, bbox.top + bbox.height / 2));
+            ///Body.setPosition(block, Vector.create(bbox.left + bbox.width, bbox.top + bbox.height));
+        }
 
-         canvas.width = winW;
-         canvas.height = winH;
+        function doOnWindowResize(scrollBlocks) {
+            winW = window.innerWidth;
+            winH = window.innerHeight;
 
-         // move the blocks in the scrolling element based on the updated positions of their respective DOM elements
-         $scrollerContainer.find('.scroll-block').each(function(i) {
-         updateBlockBounds($(this), scrollBlocks.blocks[i]);
-         });
+            canvas.width = winW;
+            canvas.height = winH;
 
-         // change the collision category of the nav and lang element so that they will not collide when below the breakpoint
-         if(winW < blockSettings.breakpoint) {
-         scrollBlocks.navBlock.collisionFilter.mask = scrollBlocks.navBlock.collisionFilter.mask = noCollideCategory;
-         } else {
-         scrollBlocks.navBlock.collisionFilter.mask = scrollBlocks.navBlock.collisionFilter.mask = defaultCategory;
-         }
+            // move the blocks in the scrolling element based on the updated positions of their respective DOM elements
+            $scrollerContainer.find('.scroll-block').each(function (i) {
+                updateBlockBounds($(this), scrollBlocks.blocks[i]);
+            });
 
-         // do the same for the nav element and lang element since they can scroll in mobile
-         updateBlockBounds(navContainer, scrollBlocks.navBlock);
-         //updateBlockBounds($nav, scrollBlocks.langBlock);
+            //change the collision category of the nav and lang element so that they will not collide when below the breakpoint
+            if (winW < blockSettings.breakpoint) {
+                scrollBlocks.navBlock.collisionFilter.mask = scrollBlocks.navBlock.collisionFilter.mask = noCollideCategory;
+            } else {
+                scrollBlocks.navBlock.collisionFilter.mask = scrollBlocks.navBlock.collisionFilter.mask = defaultCategory;
+            }
 
-         }
-         */
+            // do the same for the nav element and lang element since they can scroll in mobile
+            ///updateBlockBounds(navContainer, scrollBlocks.navBlock, scrollBlocks.floorBlock, scrollBlocks.leftWall, scrollBlocks.rightWall);
+
+            updateBlockBounds(navContainer, scrollBlocks.floorBlock);
+            
+            
+            //updateBlockBounds($nav, scrollBlocks.langBlock);
+            // floorBlock: floorBlock,
+            //     leftWall: leftWall,
+            //     rightWall: rightWall
+        }
+        
 
         return {
             init: init
@@ -602,88 +658,103 @@ $(function() {
     };
 
 
-
+    
+    // var bigBang = function () {
+    //     console.log("resize");
+    //     $('.resort-image-grid-container').find('canvas').remove();
+    //     if (!isMobile) {
+    //         blockAnimation.init(settings);
+    //     }
+    // };
+    //
+    // $(window).smartresize(function(){
+    //     bigBang();
+    // });
+    
     ///////////// 
 
-    blockAnimation.init(settings);
+    var mainContainer = $('.resort-wrapper');
+    var viewportWidth = $(window).width();
 
-
-
-
-    
-
-    // var matter_js_url = "/b/fashion/campaigns/javascripts/spring-fashion-trends/2018/libs/matter.min.js";
-    // var matter_js_cdn = 'https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.12.0/matter.min.js';
-    //
-    // var test = "/b/fashion/campaigns/javascripts/spring-fashion-trends/2018/init-matter.js";
+    if (!isMobile) {
+        blockAnimation.init(settings);
+    }
     
     
-    
-    // ---- use matter.js - end
-    
-
-    //$(window).one('scroll', function(){
-       // introMessage.addClass('animated fadeOutUpBig')
-    //});
-
-    // Scroll to a certain element
-
-    /*
-    $('.resort-aside-nav-item').on('click', function () {
-       $(this).removeClass('resort-current-item');
-    });
-    
-    // Select all links with hashes
-    $('a[href*="#"]')
-    // Remove links that don't actually link to anything
-        .not('[href="#"]')
-        .not('[href="#0"]')
-        .click(function(event) {
-            // On-page links
-            if (
-                location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '')
-                &&
-                location.hostname == this.hostname
-            ) {
-                // Figure out element to scroll to
-                var target = $(this.hash);
-                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-                // Does a scroll target exist?
-                if (target.length) {
-                    // Only prevent default if animation is actually gonna happen
-                    event.preventDefault();
-                    $('html, body').animate({
-                        scrollTop: target.offset().top
-                    }, 1000, function() {
-                        // Callback after animation
-                        // Must change focus!
-                        var $target = $(target);
-                        $target.focus();
-                        if ($target.is(":focus")) { // Checking if the target was focused
-                            return false;
-                        } else {
-                            $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
-                            $target.focus(); // Set focus again
-                        }
-                    });
-                }
-            }
-        });
-*/
-    //--------
-
-    // Cache selectors
-    //var firstHash = "#section-1";
-    //var headerHeight = $('header').outerHeight();
-    //var navBar = $('.nav-bar-wrapper');
+//     // ---- use matter.js - end
+//    
+//
+//     //$(window).one('scroll', function(){
+//        // introMessage.addClass('animated fadeOutUpBig')
+//     //});
+//
+//     // Scroll to a certain element
+//
+//     /*
+//     $('.resort-aside-nav-item').on('click', function () {
+//        $(this).removeClass('resort-current-item');
+//     });
+//    
+//     // Select all links with hashes
+//     $('a[href*="#"]')
+//     // Remove links that don't actually link to anything
+//         .not('[href="#"]')
+//         .not('[href="#0"]')
+//         .click(function(event) {
+//             // On-page links
+//             if (
+//                 location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '')
+//                 &&
+//                 location.hostname == this.hostname
+//             ) {
+//                 // Figure out element to scroll to
+//                 var target = $(this.hash);
+//                 target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+//                 // Does a scroll target exist?
+//                 if (target.length) {
+//                     // Only prevent default if animation is actually gonna happen
+//                     event.preventDefault();
+//                     $('html, body').animate({
+//                         scrollTop: target.offset().top
+//                     }, 1000, function() {
+//                         // Callback after animation
+//                         // Must change focus!
+//                         var $target = $(target);
+//                         $target.focus();
+//                         if ($target.is(":focus")) { // Checking if the target was focused
+//                             return false;
+//                         } else {
+//                             $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
+//                             $target.focus(); // Set focus again
+//                         }
+//                     });
+//                 }
+//             }
+//         });
+// */
+//     //--------
+//
+//     // Cache selectors
+//     //var firstHash = "#section-1";
+//     //var headerHeight = $('header').outerHeight();
+//     //var navBar = $('.nav-bar-wrapper');
     //var navBarHeight = navBar.outerHeight();
-
-// All navigation items
 
     // var categoryID = "spring18_resort";
     var categoryID = "spring18_resort--lp";
-    //var hash = window.location.hash.substr(1);
-    
+
+    // ----------- Mobile nav switcher
+  
+    $('#mobile-nav-switcher').on('click', function () {
+        mainContainer.toggleClass('mobile-nav-is-open');
+    });
+    $(window).resize(function() {
+        if(viewportWidth >= 1024){
+            mainContainer.removeClass('mobile-nav-is-open');
+        }
+    });
+
+    // -------  
 
     var navItems = $('.resort-nav__menu').find('a').not('.resort-external-link');
 
@@ -697,17 +768,32 @@ $(function() {
 
     var ci = "";
     ///var navItemsClicked = false;
-// Click handler to nav items
+    // Click handler to nav items
+    var navOffset = 70;
+    if (viewportWidth < 1025) {
+        navOffset = 20;
+    } else if (viewportWidth < 980) {
+        navOffset = 0;
+    }
+    
     navItems.on('click', function(e){
         var sectionName = $(this).attr('href');
         // ci = sectionName.replace('#','');
         //navItemsClicked = true;
         
-        var offsetTop = sectionName === "#" ? 0 : $(sectionName).offset().top + 60;
-        $('html, body').stop().animate({
-            scrollTop: offsetTop
-        }, 300 );
+        var rv = $('.resort-wrapper');
+        if (rv.hasClass('mobile-nav-is-open')) {
+            rv.removeClass('mobile-nav-is-open');
+        }
 
+        
+        var offsetTop = sectionName === "#" ? 0 : $(sectionName).offset().top + navOffset;
+        $('html, body').stop().animate({
+            scrollTop: offsetTop 
+        }, 300 );
+        
+
+        
         e.preventDefault();
     });
 
@@ -719,28 +805,24 @@ $(function() {
     backToTopBtnHolder.hide();
     
     $(window).scroll(function () {
-        // var windowScrollTop = $(this).scrollTop();
-
-        // Underline nav button according to scroll position.
-        // var fromTop = windowScrollTop; //+ navBarHeight;
 
         var fromTop = $(this).scrollTop();
 
+        //console.log('vh: ' + vh + ' fromTop: ' + fromTop);
         if(fromTop > $(window).height() * 0.8) {
-            scrollDownBtnHolder.hide();
+            scrollDownBtnHolder.stop().fadeOut(400);
+            //scrollDownBtnHolder.hide();
         } else {
-            scrollDownBtnHolder.show();
+            //scrollDownBtnHolder.show();
+            scrollDownBtnHolder.stop().fadeIn(400);
         }
-        if(fromTop > vh) {
-            
+        if(fromTop > vh + 200) {
             backToTopBtnHolder.show();
             backToTopBtnHolder.removeClass('fadeOutDown').addClass('animated fadeInUp');
         } else {
             backToTopBtnHolder.removeClass('fadeInUp').addClass('animated fadeOutDown');
-            
+            //backToTopBtnHolder.hide();
         }
-        
-        //console.log('fromTop: ' + fromTop);
         
         var currentItem = webPageSections.map(function () {
             if ($(this).offset().top < fromTop) {
@@ -800,7 +882,7 @@ $(function() {
         e.preventDefault();
         //scrollDownBtnHolder.hide();
         $('html, body').stop().animate({
-            scrollTop: $('#florals').offset().top - 60
+            scrollTop: $('#florals').offset().top + navOffset
         }, 1000 );
 
         $('a[coremetricTag="aside-nav-Florals"]').addClass('resort-current-item');
@@ -811,7 +893,7 @@ $(function() {
         e.preventDefault();
         scrollDownBtnHolder.hide();
         $('html, body').stop().animate({
-            scrollTop: $('#florals').offset().top - 60
+            scrollTop: $('#florals').offset().top + navOffset
         }, 1000 );
 
         $('a[coremetricTag="aside-nav-Florals"]').addClass('resort-current-item');
@@ -843,25 +925,26 @@ $(function() {
         minWidth: 1024
     });
 
+    // $('.resort-world-left-wall').stickySidebar({
+    //     topSpacing: 0,
+    //     bottomSpacing: 0
+    // });
+    // $('.resort-world-right-wall').stickySidebar({
+    //     topSpacing: 0,
+    //     bottomSpacing: 0
+    // });
+    // $('.resort-world-underground').stickySidebar({
+    //     topSpacing: 0,
+    //     bottomSpacing: 0
+    // });
+    
     // var introMessage = $('.resort-intro-message');
     // $('.resort-intro-message-holder').stickySidebar({
     //     topSpacing: 0,
     //     bottomSpacing: 0
     // });
 
-    // ----------- Mobile nav switcher
-    var mainContainer = $('.resort-wrapper');
-    var viewportWidth = $(window).width();
-    $('#mobile-nav-switcher').on('click', function () {
-        mainContainer.toggleClass('mobile-nav-is-open');
-    });
-    $(window).resize(function() {
-        if(viewportWidth >= 1024){
-            mainContainer.removeClass('mobile-nav-is-open');
-        }
-    });
-
-    // ------- 
+    
 
     
 
@@ -906,7 +989,7 @@ $(function() {
         facebookDescription: 'Some trends are so intertwined with the start of the new season, they actually help signal it. See: bright new florals, cool-girl stripes and go-with-the-flow ruffles (plus, all the swimwear we can’t wait to dive into).',
         facebookImageFileName: 'F17_Resort_Facebook.jpg',
 
-        twitterTitle: ' Go Team Bloomie’s! The new 100% @bloomingdales collection of exclusive designer collaborations feature styles the whole squad will cheer for. http://fashion.bloomingdales.com/2017-fall-campaign-100-percent-exclusive/',
+        twitterTitle: 'Sure signs of spring? The best of @bloomingdales pre-spring trends like florals, stripes—and all the swim we can’t wait to dive into. https://www.bloomingdales.com/b/campaigns/spring-fashion-trends/2018/',
 
         pinterestTitle: 'BEST OF PRE-SPRING TRENDS | bloomingdales.com',
         pinterestImageFileName: 'F17_Resort_Pinterest.jpg',
