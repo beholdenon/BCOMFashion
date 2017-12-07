@@ -1,6 +1,7 @@
 article{
   margin-top: 20px;
 }
+
 table{
   font-family: Avenir,Helvetica,Arial,sans-serif;
   width: 100%;
@@ -23,4 +24,44 @@ table tr td{
   BORDER-BOTTOM: windowtext 0.5pt solid;
   BORDER-LEFT: #f0f0f0;
   BACKGROUND-COLOR: transparent
+}
+
+@media all and (max-width: 768px) {
+
+  .rn_Summary,
+  .subhead {
+
+    padding: 0 1rem;
+
+  }
+  
+  .info_table .table-header {
+
+    font-size: 9px;
+
+  }
+
+  .info_table {
+
+    td {
+      padding: 10px 0.5em;
+    }
+    
+    .state { width: 10% }
+
+    .store { width: auto; }
+
+    .phone { width: 20%; }
+
+    .address { width: auto; }
+
+    .mattress { width: 5% }
+
+    .furniture { width: 5%; }
+  }
+
+  .info_table tr td {
+    font-size: 8px;
+  }
+
 }
