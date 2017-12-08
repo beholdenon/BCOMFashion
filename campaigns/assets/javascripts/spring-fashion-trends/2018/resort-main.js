@@ -1,76 +1,5 @@
 /* jshint ignore:start */
 
-/*
-(function() {
-    var resourceCache = {};
-    var loading = [];
-    var readyCallbacks = [];
-
-    // Load an image url or an array of image urls
-    function load(urlOrArr) {
-        if(urlOrArr instanceof Array) {
-            urlOrArr.forEach(function(url) {
-                _load(url);
-            });
-        }
-        else {
-            _load(urlOrArr);
-        }
-    }
-
-    function _load(url) {
-        if(resourceCache[url]) {
-            return resourceCache[url];
-        }
-        else {
-            var img = new Image();
-            img.onload = function() {
-                resourceCache[url] = img;
-
-                if(isReady()) {
-                    readyCallbacks.forEach(function(func) { func(); });
-                }
-            };
-            resourceCache[url] = false;
-            img.src = url;
-        }
-    }
-
-    function get(url) {
-        return resourceCache[url];
-    }
-
-    function isReady() {
-        var ready = true;
-        for(var k in resourceCache) {
-            if(resourceCache.hasOwnProperty(k) &&
-                !resourceCache[k]) {
-                ready = false;
-            }
-        }
-        return ready;
-    }
-
-    function onReady(func) {
-        readyCallbacks.push(func);
-    }
-
-    window.resources = {
-        load: load,
-        get: get,
-        onReady: onReady,
-        isReady: isReady
-    };
-})();
-
-resources.load([
-    //'img/sprites.png',
-    //'img/terrain.png'
-]);
-resources.onReady(init);
-*/
-
-
 (function(){
     // Your base, I'm in it!
     var originalAddClassMethod = jQuery.fn.addClass;
@@ -86,34 +15,6 @@ resources.onReady(init);
         return result;
     }
 })();
-
-
-(function($,sr){
-    
-    var debounce = function (func, threshold, execAsap) {
-        var timeout;
-
-        return function debounced () {
-            var obj = this, args = arguments;
-            function delayed () {
-                if (!execAsap)
-                    func.apply(obj, args);
-                timeout = null;
-            }
-
-            if (timeout)
-                clearTimeout(timeout);
-            else if (execAsap)
-                func.apply(obj, args);
-
-            timeout = setTimeout(delayed, threshold || 100);
-        };
-    }
-    // smartresize
-    jQuery.fn[sr] = function(fn){  return fn ? this.bind('resize', debounce(fn)) : this.trigger(sr); };
-
-})(jQuery,'smartresize');
-
 
 
 $(function() {
@@ -235,13 +136,10 @@ $(function() {
                 Engine.run(engine);
 
                 Render.run(render);
-                
-                
+
                 window.onresize = doOnWindowResize.bind(null, scrollBlocks);
 
-
             }
-
             
         }
 
@@ -318,6 +216,8 @@ $(function() {
 
                     // we'll use picIndex to get pic's file name
                     var picIndex = j * 6 + i + 1;
+
+
 
                     // make section for "text block"
                     if (picIndex ===16 || picIndex === 17 || picIndex === 18) {
@@ -538,14 +438,14 @@ $(function() {
             
             */
 
-            var vw = $(window).width();
-            var vh = $(window).height();
-            var wallThickness = 100;
-            var renderStyles = {fillStyle: 'rgba(255,0,0,0.7)', strokeStyle: 'rgba(255,0,0,0)'};
+            // var vw = $(window).width();
+            // var vh = $(window).height();
+            // var wallThickness = 100;
+            // var renderStyles = {fillStyle: 'rgba(255,0,0,0.7)', strokeStyle: 'rgba(255,0,0,0)'};
+            //
+            // var floorBlock = Bodies.rectangle(vw / 2, vh + wallThickness/2, vw, wallThickness,
+            //     {isStatic: true, collisionFilter: {mask: defaultCategory}, render: renderStyles});
 
-            var floorBlock = Bodies.rectangle(vw / 2, vh + wallThickness/2, vw, wallThickness,
-                {isStatic: true, collisionFilter: {mask: defaultCategory}, render: renderStyles});
-            
             //World.add(engine.world, [floorBlock]);
             
             
@@ -628,11 +528,11 @@ $(function() {
             });
 
             //change the collision category of the nav and lang element so that they will not collide when below the breakpoint
-            if (winW < blockSettings.breakpoint) {
-                scrollBlocks.navBlock.collisionFilter.mask = scrollBlocks.navBlock.collisionFilter.mask = noCollideCategory;
-            } else {
-                scrollBlocks.navBlock.collisionFilter.mask = scrollBlocks.navBlock.collisionFilter.mask = defaultCategory;
-            }
+            // if (winW < blockSettings.breakpoint) {
+            //     scrollBlocks.navBlock.collisionFilter.mask = scrollBlocks.navBlock.collisionFilter.mask = noCollideCategory;
+            // } else {
+            //     scrollBlocks.navBlock.collisionFilter.mask = scrollBlocks.navBlock.collisionFilter.mask = defaultCategory;
+            // }
 
             // do the same for the nav element and lang element since they can scroll in mobile
             ///updateBlockBounds(navContainer, scrollBlocks.navBlock, scrollBlocks.floorBlock, scrollBlocks.leftWall, scrollBlocks.rightWall);
@@ -677,20 +577,8 @@ $(function() {
     };
 
 
+    // ---- use matter.js - end
     
-    // var bigBang = function () {
-    //     console.log("resize");
-    //     $('.resort-image-grid-container').find('canvas').remove();
-    //     if (!isMobile) {
-    //         blockAnimation.init(settings);
-    //     }
-    // };
-    //
-    // $(window).smartresize(function(){
-    //     bigBang();
-    // });
-    
-    ///////////// 
 
     var mainContainer = $('.resort-wrapper');
     var viewportWidth = $(window).width();
@@ -699,65 +587,6 @@ $(function() {
         blockAnimation.init(settings);
     }
     
-    
-//     // ---- use matter.js - end
-//    
-//
-//     //$(window).one('scroll', function(){
-//        // introMessage.addClass('animated fadeOutUpBig')
-//     //});
-//
-//     // Scroll to a certain element
-//
-//     /*
-//     $('.resort-aside-nav-item').on('click', function () {
-//        $(this).removeClass('resort-current-item');
-//     });
-//    
-//     // Select all links with hashes
-//     $('a[href*="#"]')
-//     // Remove links that don't actually link to anything
-//         .not('[href="#"]')
-//         .not('[href="#0"]')
-//         .click(function(event) {
-//             // On-page links
-//             if (
-//                 location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '')
-//                 &&
-//                 location.hostname == this.hostname
-//             ) {
-//                 // Figure out element to scroll to
-//                 var target = $(this.hash);
-//                 target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-//                 // Does a scroll target exist?
-//                 if (target.length) {
-//                     // Only prevent default if animation is actually gonna happen
-//                     event.preventDefault();
-//                     $('html, body').animate({
-//                         scrollTop: target.offset().top
-//                     }, 1000, function() {
-//                         // Callback after animation
-//                         // Must change focus!
-//                         var $target = $(target);
-//                         $target.focus();
-//                         if ($target.is(":focus")) { // Checking if the target was focused
-//                             return false;
-//                         } else {
-//                             $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
-//                             $target.focus(); // Set focus again
-//                         }
-//                     });
-//                 }
-//             }
-//         });
-// */
-//     //--------
-//
-//     // Cache selectors
-//     //var firstHash = "#section-1";
-//     //var headerHeight = $('header').outerHeight();
-//     //var navBar = $('.nav-bar-wrapper');
-    //var navBarHeight = navBar.outerHeight();
 
     // var categoryID = "spring18_resort";
     var categoryID = "spring18_resort--lp";
@@ -922,58 +751,15 @@ $(function() {
         $('.resort-scroll-down-btn').blur();
 
     });
-
-    /*
-     $('.resort-nav').pin({
-     containerSelector: '.resort-aside',
-     minWidth: 1024
-     });
-     $('.resort-intro-message').pin({
-     containerSelector: '.resort-main',
-     padding: {top: 576}
-     });
-     */
-    // 576px – fixed top position based on image grid rows height
-    //
-
-    // $('.resort-back-to-top-btn-holder').stickySidebar({
-    //     topSpacing: 600,
-    //     bottomSpacing: 40
-    //
-    // });
+    
 
     $('.resort-nav').stickySidebar({
         topSpacing: 0,
         bottomSpacing: 40,
         minWidth: 1024
     });
-
-    // $('.resort-world-left-wall').stickySidebar({
-    //     topSpacing: 0,
-    //     bottomSpacing: 0
-    // });
-    // $('.resort-world-right-wall').stickySidebar({
-    //     topSpacing: 0,
-    //     bottomSpacing: 0
-    // });
-    // $('.resort-world-underground').stickySidebar({
-    //     topSpacing: 0,
-    //     bottomSpacing: 0
-    // });
-    
-    // var introMessage = $('.resort-intro-message');
-    // $('.resort-intro-message-holder').stickySidebar({
-    //     topSpacing: 0,
-    //     bottomSpacing: 0
-    // });
-
     
 
-    
-
-    //_btn.hide();
-    
-    //var _resortFlorals = $('.resort-florals-1');
     emergence.init({
         //container: window,
         //reset: true,
