@@ -186,9 +186,9 @@ $(function() {
         var $scrollEventGenerator = $(window);
         var navContainer = $('.resort-nav'); //document.querySelector(".resort-nav"); //$('#resort-nav-container');
 
-        // var $lang = $('.lang-toggle');
+        var $lang = $('.resort-world-right-wall');
 
-
+        
 
         // if an element has this class, the script will put a block for it in the physics world
         var makeBlockClass = 'block-maker';
@@ -313,6 +313,7 @@ $(function() {
             var cf = { mask: defaultCategory };
             var picOpacity = 1;
             for(var j = 0; j < picRows; j++) {
+                console.log(picOriginalHeight + picGap)
                 for(var i = 0; i < cols; i += 1) {
 
                     // we'll use picIndex to get pic's file name
@@ -354,8 +355,8 @@ $(function() {
                         Bodies.rectangle(
                             //startX + (i+.5) * (140+70),
                             //startY + (j+.5) * (210+70),
-                            startX + (i+.5) * (picOriginalWidth + 1 + picGap),
-                            startY + (j+.5) * (picOriginalHeight + 1 + picGap),
+                            startX + (i+.5) * (picOriginalWidth  + picGap),
+                            startY + (j+.5) * (picOriginalHeight + picGap),
                             140,
                             196,
                             {
@@ -383,6 +384,7 @@ $(function() {
                     );
                     // }
 
+                    
                     //picCount++;
                 }
 
@@ -449,9 +451,16 @@ $(function() {
             
             // all pages as a single block
             // var blocks = [];
-            // var pagesWrapper = $('.resort-pages-wrapper');
+            //var pagesWrapper = $('.resort-pages-wrapper');
             //
-            // //pagesWrapper.css('margin-top', canvasHeight - $('.resort-intro-message').height()+ 160 );
+            //$('.resort-pages-wrapper').css('margin-top', 0);
+            
+            // $('.resort-pages-wrapper').css('margin-top', canvasHeight - $('.resort-intro-message').height()+ 160 );
+            
+            //var _canvasHeight = $('.resort-image-grid-container').find('canvas').height();
+
+
+            
             // pagesWrapper.css('margin-top', canvasHeight);
             // //pagesWrapper.addClass('was-scrolled');
             //
@@ -468,7 +477,7 @@ $(function() {
 
             ////var navEl = navContainer.get(0);
             ////var navBBox = navEl.getBoundingClientRect();
-
+/*
             var navBBox = navContainer[0].getBoundingClientRect();
             var navBlock = Bodies.rectangle(navBBox.left + navBBox.width / 2,
                 navBBox.top + navBBox.height / 2,
@@ -482,16 +491,16 @@ $(function() {
                 });
 
             
-            /*
+            
              var langEl = $lang.get(0);
              var langBBox = langEl.getBoundingClientRect();
              var langBlock = Bodies.rectangle(langBBox.left + langBBox.width / 2, langBBox.top + langBBox.height / 2, langBBox.width, langBBox.height, {
              isStatic: true,
-             collisionFilter: { mask: (winW < blockSettings.breakpoint) ? noCollideCategory : defaultCategory },
-             render: { fillStyle: 'rgba(255,0,0,0)' }
+             collisionFilter: { mask: defaultCategory },
+                 render: { fillStyle: 'rgba(255,0,0,0.3)', strokeStyle: 'rgba(255,0,0,0)' }
              });
-             */
-            //World.add(engine.world, [navBlock, langBlock]);
+*/
+            //World.add(engine.world, [langBlock]);
 
 
             ///// World.add(engine.world, [navBlock]);
@@ -499,7 +508,16 @@ $(function() {
 
             //var navBBox = navContainer[0].getBoundingClientRect();
 
-
+            // var langEl = $lang.get(0);
+            // var langBBox = langEl.getBoundingClientRect();
+            // var langBlock = Bodies.rectangle(langBBox.left + langBBox.width / 2, langBBox.top + langBBox.height / 2, langBBox.width, langBBox.height, {
+            //     isStatic: true,
+            //     collisionFilter: { mask: (winW < blockSettings.breakpoint) ? noCollideCategory : defaultCategory },
+            //     render: { fillStyle: 'rgba(255,0,0,0)' }
+            // });
+            //
+            // World.add(engine.world, [langBlock]);
+            
             /*
             
             var vw = $(window).width();
@@ -523,11 +541,12 @@ $(function() {
             var vw = $(window).width();
             var vh = $(window).height();
             var wallThickness = 100;
-            var renderStyles = {fillStyle: 'rgba(255,0,0,0)', strokeStyle: 'rgba(255,0,0,0)'};
+            var renderStyles = {fillStyle: 'rgba(255,0,0,0.7)', strokeStyle: 'rgba(255,0,0,0)'};
 
             var floorBlock = Bodies.rectangle(vw / 2, vh + wallThickness/2, vw, wallThickness,
                 {isStatic: true, collisionFilter: {mask: defaultCategory}, render: renderStyles});
-            World.add(engine.world, [floorBlock]);
+            
+            //World.add(engine.world, [floorBlock]);
             
             
 
@@ -556,9 +575,10 @@ $(function() {
             });
 
             return {
-                blocks: blocks,
-                floorBlock: floorBlock,
-                navBlock: navBlock
+                blocks: blocks
+                //langBlock: langBlock
+                //floorBlock: floorBlock,
+                //navBlock: navBlock
                
                 // leftWall: leftWall,
                 // rightWall: rightWall
@@ -617,13 +637,12 @@ $(function() {
             // do the same for the nav element and lang element since they can scroll in mobile
             ///updateBlockBounds(navContainer, scrollBlocks.navBlock, scrollBlocks.floorBlock, scrollBlocks.leftWall, scrollBlocks.rightWall);
 
-            updateBlockBounds(navContainer, scrollBlocks.floorBlock);
+            //updateBlockBounds(navContainer, floorBlock );
+
+            ///updateBlockBounds($(window), floorBlock);
             
+            //updateBlockBounds($('.resort-image-grid-container'), scrollBlocks.langBlock);
             
-            //updateBlockBounds($nav, scrollBlocks.langBlock);
-            // floorBlock: floorBlock,
-            //     leftWall: leftWall,
-            //     rightWall: rightWall
         }
         
 
@@ -886,6 +905,8 @@ $(function() {
         }, 1000 );
 
         $('a[coremetricTag="aside-nav-Florals"]').addClass('resort-current-item');
+
+        $('.resort-back-to-top-btn').blur();
         
     });
 
@@ -897,6 +918,8 @@ $(function() {
         }, 1000 );
 
         $('a[coremetricTag="aside-nav-Florals"]').addClass('resort-current-item');
+
+        $('.resort-scroll-down-btn').blur();
 
     });
 
