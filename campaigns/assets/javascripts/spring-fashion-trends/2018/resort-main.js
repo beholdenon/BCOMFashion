@@ -24,22 +24,37 @@ $(function() {
         isMobile = true;
     }
 
-    function debounce(func, wait, immediate) {
-        var timeout;
-        return function() {
-            var context = this, args = arguments;
-            var later = function() {
-                timeout = null;
-                if (!immediate) func.apply(context, args);
-            };
-            var callNow = immediate && !timeout;
-            clearTimeout(timeout);
-            timeout = setTimeout(later, wait);
-            if (callNow) func.apply(context, args);
-        };
-    }
+    // function debounce(func, wait, immediate) {
+    //     var timeout;
+    //     return function() {
+    //         var context = this, args = arguments;
+    //         var later = function() {
+    //             timeout = null;
+    //             if (!immediate) func.apply(context, args);
+    //         };
+    //         var callNow = immediate && !timeout;
+    //         clearTimeout(timeout);
+    //         timeout = setTimeout(later, wait);
+    //         if (callNow) func.apply(context, args);
+    //     };
+    // }
 
 
+    // $('.resort-nav').stickySidebar({
+    //     topSpacing: 0,
+    //     bottomSpacing: 40,
+    //     minWidth: 1024
+    // });
+
+    var sidebar = new StickySidebar('.resort-aside', {
+        topSpacing: 0,
+        bottomSpacing: 0,
+        minWidth: 1024,
+        containerSelector: '.resort-wrapper',
+        innerWrapperSelector: '.sidebar__inner',
+        resizeSensor: true
+    });
+    
     /*
     function wheel(event) {
         var delta = 0;
@@ -63,6 +78,8 @@ $(function() {
     if (window.addEventListener) {window.addEventListener('DOMMouseScroll', wheel, false);}
     window.onmousewheel = document.onmousewheel = wheel;
     */
+
+
     // ---- use matter.js – start
 
 
@@ -617,12 +634,21 @@ $(function() {
     var ci = "";
     ///var navItemsClicked = false;
     // Click handler to nav items
+    
     var navOffset = 70;
     if (viewportWidth < 1025) {
         navOffset = 20;
     } else if (viewportWidth < 980) {
         navOffset = 0;
     }
+    
+    $(window).resize(function() {
+        if (viewportWidth < 1025) {
+            navOffset = 20;
+        } else if (viewportWidth < 980) {
+            navOffset = 0;
+        }
+    });
     
     navItems.on('click', function(e){
         var sectionName = $(this).attr('href');
@@ -753,13 +779,7 @@ $(function() {
     });
     
 
-    $('.resort-nav').stickySidebar({
-        topSpacing: 0,
-        bottomSpacing: 40,
-        minWidth: 1024
-    });
     
-
     emergence.init({
         //container: window,
         //reset: true,

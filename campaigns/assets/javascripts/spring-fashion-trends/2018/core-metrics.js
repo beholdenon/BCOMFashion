@@ -71,9 +71,13 @@ $(document).ready( function($) {
             // var qwe = item.hasClass('resort-footer-social-link');
             var el = item.attr("coremetricTag");
             var page = '';
+            
             var isSocialLinks = item.hasClass('resort-footer-social-link');
-
-            if (!isSocialLinks) {
+            var isBack2topBtn = item.hasClass('resort-back-to-top-btn');
+            var isScrollDownBtn = item.hasClass('resort-scroll-down-btn');
+            
+            
+            if (!isSocialLinks && !isScrollDownBtn && !isBack2topBtn) {
                 var urlToParse = item.attr('href').toLowerCase();
                 var result = parseQueryString(urlToParse);
                 console.log(JSON.stringify(result));
@@ -86,6 +90,8 @@ $(document).ready( function($) {
                 
             } else if (isSocialLinks) {
                 $.fn.coreTag('Element', 'footer-social-link__' + el);
+            } else if (isBack2topBtn || isScrollDownBtn){
+                $.fn.coreTag('Element', 'fast-scroll-link__' + el);
             }
 
             

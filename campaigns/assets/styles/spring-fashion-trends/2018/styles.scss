@@ -129,7 +129,7 @@ $mobile-header-height: 48px;
 
 	width: 100vw;
 	height: $mobile-header-height;//100vh;
-	padding: 1em;
+	padding: 0;
 	z-index: 999;
 	position: fixed;
 	top: 0;
@@ -139,7 +139,7 @@ $mobile-header-height: 48px;
 	@media only screen and (min-width: $mobile-md-bp) {
 		width: 29%;
 		height: auto;
-		padding: 0 1.5vw 0 2vw;
+		padding: 0 1.5vw 0 1em;
 		position: relative;
 		z-index: 10;
 		top: auto;
@@ -201,9 +201,14 @@ $mobile-header-height: 48px;
 }
 
 .resort-nav{
+	padding-left: 28px;
+}
+
+.resort-aside {
 	will-change: min-height;
 }
-.resort-nav__inner{
+.sidebar__inner{
+	transform: translate(0, 0);
 	transform: translate3d(0, 0, 0);
 	will-change: position, transform;
 }
