@@ -28,6 +28,32 @@ var playPauseGif = function(imageId, button) {
 
 (function($) {
 
+    if ( BLOOMIES.isMobile === true ) {
+        $('.carousel-shell').each(function (i,el) {
+            $(el).attr('data-groupSize', 2);
+        });
+
+        $('.desktop').hide();
+        $('.mobile').show();
+
+        //Hide close button for popup iframes and blocks scroll (only on mobile)
+        $('#popup590756').load(function(){
+            $('#popup590756').contents().find('#close-button').hide();
+            $('#popup590756').contents().find('html, body').css({
+                overflow: 'hidden',
+                height: '100%'
+            });
+        });
+        $('#popup563664').load(function(){
+            $('#popup563664').contents().find('#close-button').hide();
+            $('#popup563664').contents().find('html, body').css({
+                overflow: 'hidden',
+                height: '100%'
+            });
+        });
+
+    }
+
     $('.desktop_back_to_top').on('click', function() {
         $('html, body').animate({
             scrollTop: 0
