@@ -1,7 +1,7 @@
 
 function bestDayOnReady(e) {
     
-    console.log( "BEST DAY VERSION: 1.3" );
+    console.log( "BEST DAY VERSION: 1.4" );
 
     window.removeEventListener("load",bestDayOnReady,!1)
     if ( Distilled.core ) return;
@@ -2455,6 +2455,7 @@ var _gsScope = "undefined" != typeof module && module.exports && "undefined" != 
                 null == e && (e = []), this.options = {
                     startYear: isNaN(parseInt(e.startYear)) ? (new Date).getFullYear() : parseInt(e.startYear),
                     startMonth: isNaN(parseInt(e.startMonth)) ? 0 : parseInt(e.startMonth),
+                    length: isNaN( parseInt( e.length )) ? 12 : parseInt(e.length),
                     minDate: e.minDate instanceof Date ? e.minDate : null,
                     maxDate: e.maxDate instanceof Date ? e.maxDate : null,
                     language: null != e.language && null != t[e.language] ? e.language : "en",
@@ -2516,11 +2517,17 @@ var _gsScope = "undefined" != typeof module && module.exports && "undefined" != 
                     n = this.options.startYear,
                     a = new Date;
                 this.options.startMonth && (i = this.options.startMonth);
-                for (var s = 0; s < 12; s++) {
+                for (var s = 0; s < this.options.length; s++) {
                     var o = $(document.createElement("div"));
-                    o.addClass("month-container"), o.data("month-id", i);
+                    o.addClass("month-container"), o.attr( "data-month-id", i);
+
+                    if ( s >= 12 ) o.addClass( "extended-month hide" );
+
                     var r = new Date(n, i, 1),
                         l = $(document.createElement("table"));
+                    o.attr( "data-date", r.getTime())
+                    // o.attr( "data-month-id", s);
+                    o.attr( "data-year", r.getFullYear());
                     l.addClass("month");
                     var d = $(document.createElement("thead")),
                         u = $(document.createElement("tr")),
@@ -2560,7 +2567,8 @@ var _gsScope = "undefined" != typeof module && module.exports && "undefined" != 
                                             b.addClass("disabled");
                                             break
                                         }
-                                b.attr("tabindex", ""), b.addClass("focusable"), b.data("date", new Date(_.getTime()));
+                                b.attr("tabindex", ""), b.addClass("focusable"), b.attr("data-date", _.getTime());
+                                // console.log( "DATE:", _, new Date(_.getTime()) );
                                 var C = $(document.createElement("div"));
                                 C.addClass("day-content"), C.text(_.getDate()), b.append(C), _ < a && b.addClass("old"), this.options.customDayRenderer && this.options.customDayRenderer(C, _)
                             }
@@ -2699,14 +2707,18 @@ var _gsScope = "undefined" != typeof module && module.exports && "undefined" != 
                     }
                 })), t.on("mouseenter", function(t) {
                     if (!e._mouseDown) {
+                        // console.log( "MOUSE ENTER" );
                         var i = e._getDate($(this));
                         e._triggerEvent("mouseOnDay", {
                             element: $(this),
                             date: i,
                             events: e.getEvents(i)
                         })
+                        // console.log( "ELEMENT:", $(this) )
+                        // console.log( "DATE:", i )
                     }
                 }), t.on("mouseleave", function(t) {
+                    // console.log( "MOUSE LEAVE" );
                     var i = e._getDate($(this));
                     e._triggerEvent("mouseOutDay", {
                         element: $(this),
@@ -2716,9 +2728,11 @@ var _gsScope = "undefined" != typeof module && module.exports && "undefined" != 
                 });
                 var i = this.element.find(".month-container");
                 i.on("click", function(t) {
+                    // console.log( "MOUSE CLICK:", t );
                     var i = e._getDate($(this));
                     e._triggerEvent("mouseClickMonth", {
                         element: $(this),
+                        // id: parseInt( $(this).data( "month-id" )),
                         date: i,
                         events: e.getEvents(i)
                     })
@@ -2780,11 +2794,18 @@ var _gsScope = "undefined" != typeof module && module.exports && "undefined" != 
                 t.css("color", e)
             },
             _getDate: function(e) {
-                var t = e.children(".day-content").text(),
-                    i;
-                i = e.hasClass("month-container") ? e.data("month-id") : e.closest(".month-container").data("month-id");
-                var n = this.options.startYear;
-                return i < this.options.startMonth && n++, new Date(n, i, t)
+
+                // console.log( "GET DATE:", e )
+                // console.log( "GET DATE:", e.children('.day-content') )
+                // console.log( "GET DATE:", e.children('.day-content').text() )
+                return new Date( parseInt( e.data( "date" )))
+
+
+                // var t = e.children(".day-content").text(),
+                //     i;
+                // i = e.hasClass("month-container") ? e.data("month-id") : e.closest(".month-container").data("month-id");
+                // var n = this.options.startYear;
+                // return i < this.options.startMonth && n++, new Date(n, i, t)
             },
             _triggerEvent: function(e, t) {
                 var i = $.Event(e);
@@ -3758,7 +3779,7 @@ dateFormat.masks = {
             setDay: function(e, t) {
                 if (!this.mData) return null;
                 var n = $(e),
-                    i = new Date(t),
+                    i = t,//new Date(t),
                     a = i.getMonth(),
                     o = i.getDate() - 1,
                     s = i.getFullYear(),
@@ -3771,15 +3792,18 @@ dateFormat.masks = {
                 // console.log( "[Location] DATE:", i );
                 // console.log( "[Location] DATA:", r );
 
+                // console.log( "[Location] SET DAY:", a, o, t );
+
                 if ( !Date.parse( r.date ))
                 {
                     console.log( "[Location] FOUND INVALID DATE:", this.mMonths[a][o], a, o )
-                    r.date = i;
-
+                    r.date = t;
                 }
 
-                u.data("day", r),
+                // u.data("day", r),
+                // u.data("date", t),
                 u.attr("data-day", JSON.stringify(r)), 
+                // u.attr("data-date", JSON.stringify(t)), 
                 u.addClass(l)
             },
             getLocationTitle: function() {
@@ -3817,7 +3841,7 @@ dateFormat.masks = {
             _calculateScore: function() {
                 for (var e, t, n, i, a, o, s, r = this.mData.months, l = r.length, u = Math.abs, d = null, c = null, h = new Date, p = h.getDate(), f = h.getMonth(), m = h.getFullYear(), g = 0; g < l; g++) {
                     e = r[g], t = parseInt(e.id) - 1, days = e.days, totalDays = days.length;
-                    for (var v = 0; v < totalDays; v++) o = new Date(a, t, v + 1), s = o.getDay(), a = t == f && s <= p ? m + 1 : t < f ? m + 1 : m, n = days[v], i = u(parseFloat(n.perfectFactor)), n.perfectFactor = i, n.isWeekend = !1, n.isPerfectDay = !1, n.date = o, n.id = v, n.month = g, n.year = a, n.humidity = (100 * n.humidity).toFixed(1), n.chanceClear = (100 * n.chanceClear).toFixed(1), n.chanceRain = (100 * n.chanceRain).toFixed(1), 6 != s && 0 != s || (n.isWeekend = !0, t >= 2 && t <= 4 ? (null == this.mPerfectFactorSpring || i < this.mPerfectFactorSpring) && (this.mPerfectFactorSpring = i, this.mPerfectDaySpring = n) : t >= 5 && t <= 7 ? (null == this.mPerfectFactorSummer || i < this.mPerfectFactorSummer) && (this.mPerfectFactorSummer = i, this.mPerfectDaySummer = n) : t >= 8 && t <= 10 ? (null == this.mPerfectFactorAutumn || i < this.mPerfectFactorAutumn) && (this.mPerfectFactorAutumn = i, this.mPerfectDayAutumn = n) : 0 != t && 1 != t && 11 != t || (null == this.mPerfectFactorWinter || i < this.mPerfectFactorWinter) && (this.mPerfectFactorWinter = i, this.mPerfectDayWinter = n), (null == d || i < d) && (d = i), (null == c || i > c) && (c = i))
+                    for (var v = 0; v < totalDays; v++) a = t == f /*&& s <= p */? m + 1 : t < f ? m + 1 : m, o = new Date(a, t, v + 1), s = o.getDay(), n = days[v], i = u(parseFloat(n.perfectFactor)), n.perfectFactor = i, n.isWeekend = !1, n.isPerfectDay = !1, n.date = o, n.id = v, n.month = g, n.year = a, n.humidity = (100 * n.humidity).toFixed(1), n.chanceClear = (100 * n.chanceClear).toFixed(1), n.chanceRain = (100 * n.chanceRain).toFixed(1), 6 != s && 0 != s || (n.isWeekend = !0, t >= 2 && t <= 4 ? (null == this.mPerfectFactorSpring || i < this.mPerfectFactorSpring) && (this.mPerfectFactorSpring = i, this.mPerfectDaySpring = n) : t >= 5 && t <= 7 ? (null == this.mPerfectFactorSummer || i < this.mPerfectFactorSummer) && (this.mPerfectFactorSummer = i, this.mPerfectDaySummer = n) : t >= 8 && t <= 10 ? (null == this.mPerfectFactorAutumn || i < this.mPerfectFactorAutumn) && (this.mPerfectFactorAutumn = i, this.mPerfectDayAutumn = n) : 0 != t && 1 != t && 11 != t || (null == this.mPerfectFactorWinter || i < this.mPerfectFactorWinter) && (this.mPerfectFactorWinter = i, this.mPerfectDayWinter = n), (null == d || i < d) && (d = i), (null == c || i > c) && (c = i))
                 }
                 this.mPerfectDaySummer.season = "summer", this.mPerfectDaySpring.season = "spring", this.mPerfectDayAutumn.season = "fall", this.mPerfectDayWinter.season = "winter";
                 var y = this.mPerfectDaySummer;
@@ -3836,7 +3860,7 @@ dateFormat.masks = {
                 window.location.origin || (t = window.location.protocol + "//" + window.location.hostname + (window.location.port ? ":" + window.location.port : ""));
                 var n = t + "/b/fashion/assets/projects/best-wedding-dates-united-states/" + e + ".json",
                 // var n = t + window.location.pathname + "data/"+ e +".json",
-                //var n = "data/"+ e +".json",
+                // var n = "data/"+ e +".json",
                     i = this;
                 $.ajax({
                     dataType: "json",
@@ -8059,9 +8083,9 @@ dateFormat.masks = {
                     n = e.getFullYear();
                 12 == ++t && (t = 0, n++);
                 var i = {};
-                if (1 == this.mMobileView ? i.mouseClickMonth = this._onMouseClickMonth.bind(this) : (i.mouseOnDay = this._onMouseOverDay.bind(this), i.mouseOutDay = this._onMouseOutDay.bind(this)), this.mCalendars = [], this._createCalendar("#calendar_container", "calendar_01", t, n, i, !0), n++, this._createCalendar("#calendar_container", "calendar_02", t, n, i), 1 == this.mMobileView) {
-                    n = e.getFullYear();
-                    (i = {}).mouseOnDay = this._onMouseOverDayMobile.bind(this), this._createCalendar("#mobile_calendar_container", "mobile_calendar_01", t, n, i, !0)
+                if (1 == this.mMobileView ? i.mouseClickMonth = this._onMouseClickMonth.bind(this) : (i.mouseOnDay = this._onMouseOverDay.bind(this), i.mouseOutDay = this._onMouseOutDay.bind(this)), this.mCalendars = [], this._createCalendar("#calendar_container", "calendar_01", t, n, i, !0), /*n++,*/ this._createCalendar("#calendar_container", "calendar_02", t, n+1, i), 1 == this.mMobileView) {
+                    // n = e.getFullYear();
+                    (i = {}).mouseOnDay = this._onMouseOverDayMobile.bind(this), this._createCalendar("#mobile_calendar_container", "mobile_calendar_01", t, n, i, !0, !0)
                 } else $("#mobile_calendar_container").remove()
             },
             _addEventListeners: function() {
@@ -8071,12 +8095,19 @@ dateFormat.masks = {
                 $(".look_ahead_btn").on("click", e, this._onLookAheadClick), 
                 $("#methodology_open_btn").on("click", e, this._onMethodologyOpenClick), $("#methodology_close_btn").on("click", e, this._onMethodologyCloseClick), $("#tooltip_close_btn").on("click", e, this._onTooltipCloseClick), $(document).on("focusin", e, this._onFocus), $(document).on("keydown", e, this._onDocumentKeyDown)
             },
-            _createCalendar: function(e, t, n, i, a, o) {
+            _createCalendar: function(e, t, n, i, a, o, p) {
                 $(e).append("<div id='" + t + "' class='clearfix'></div>");
+                // console.log( "CREATE CALENDAR:", e, t, n, i, a, o, p );
+                var l = 12;
+                if(p){
+                    l = 24
+                }
+
                 var s = this,
                     r = $("#" + t).calendar({
                         startYear: i,
                         startMonth: n,
+                        length: l,
                         showDays: !0,
                         showYear: o,
                         customDayRenderer: function(e, t) {
@@ -8219,6 +8250,8 @@ dateFormat.masks = {
                 })
             },
             _showLookAhead: function() {
+                if ( this.mSlick )
+                    this.mSlick[0].slick.slickUnfilter();
                 var e = $("#calendar_02");
                 TweenLite.set(e, {
                     display: "inline-block",
@@ -8252,11 +8285,13 @@ dateFormat.masks = {
                 })
             },
             _showMobileCalendar: function(e) {
-                e++;
                 var t = null;
+                var month = e.getMonth();
+                var year = e.getFullYear();
                 $("#mobile_calendar_container .month-container").each(function(n) {
-                    $(this).data("month-id") == e && (t = n)
-                }), this.mSlick[0].slick.goTo(t), TweenLite.set(".mobile_calendar", {
+                    $(this).data("month-id") == month && $(this).data("year") == year && (t = n)
+                }),
+                this.mSlick[0].slick.goTo(t), TweenLite.set(".mobile_calendar", {
                     display: "block",
                     left: 0,
                     autoAlpha: 0
@@ -8334,6 +8369,7 @@ dateFormat.masks = {
                 }, this._onTooltipClearClick), $("#mobile_calendar_container .months-container").on("beforeChange", {
                     self: this
                 }, this._onMobileCarouselMonthChange)
+                this.mSlick[0].slick.slickFilter( ":not(.extended-month.hide)" );
             },
             _getTooltipContent: function(e, t) {
                 var n = "";
@@ -8389,14 +8425,18 @@ dateFormat.masks = {
                 this._hideTooltip()
             },
             _onMouseClickMonth: function(e) {
-                var t = e.date.getMonth();
-                this._showMobileCalendar(t)
+                // var t = e.date.getMonth();
+                // var id = e.id;
+                // console.log( "MOUSE CLICK MONTH:", e );
+                this._showMobileCalendar(e.date)
             },
             _onMouseOverDayMobile: function(e) {
+                // console.log( "MOUSE OVER DAY MOBILE:", e, e.date )
                 var t = e.element.data("day"),
                     n = e.date.format("mmmm dS, yyyy"),
                     i = this._getTooltipContent(t, n),
                     a = $("#mobile_calendar_tooltip");
+                    // console.log( e, e.date );
                 a.find(".tooltip_inner").html(i), a.addClass("show"), TweenLite.to(a, .25, {
                     autoAlpha: 1,
                     ease: Sine.easeInOut
