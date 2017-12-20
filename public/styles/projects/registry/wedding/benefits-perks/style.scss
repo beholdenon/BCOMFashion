@@ -1,3 +1,6 @@
+
+
+
 .registry-benefits-perks {
 
 	#registry-bp-videoModal {
@@ -70,8 +73,23 @@
 	}
 
 	.registry-bp-section {
+		.row{
+			height: 450px;
+			width: 100%;
+		}
+
+		.odd .bg-img{
+			float: right;
+		}
+
 		.registry-bp-section-item {
 			position: relative;
+			background-color: #e5f0fe;
+
+			.bg-img{
+				height: 450px;
+				width: auto;
+			}
 
 			img {
 				width: 100%;
@@ -94,32 +112,32 @@
 			}
 
 			.bp-hero-title-line1 {
-				top: 75px;
-				left: 86px;
-				font-family: georgia, serif;
-				color: #fff;
-				font-size: 40px;
+				top: 185px;
+				left: 25px;
+				font-family: Baskerville, Georgia, serif;
+				color: #000;
+				font-size: 36px;
 			}
 
 			.bp-hero-title-line2 {
-				top: 117px;
-				left: 86px;
-				font-family: georgia, serif;
-				color: #fff;
-				font-size: 64px;	
+				top: 220px;
+				left: 25px;
+				font-family: Baskerville, Georgia, serif;
+				color: #000;
+				font-size: 58px;
 			}
 
 			.bp-hero-copy {
-				top: 211px;
-				left: 87px;
-				color: #fff;
-				font-size: 16px;
+				top: 290px;
+				left: 25px;
+				color: #000;
+				font-size: 17px;
 				font-family: Avenir;
 				width: 360px;
 			}
 
 			.bp-hero-list {
-				color: #fff;
+				color: #000;
 				top: 294px;
 				left: 87px;
 				font-family: Avenir;
@@ -132,7 +150,7 @@
 					a {
 						
 						position: relative;
-						color: #fff;
+						color: #000;
 						font-family: Avenir;
 						font-size: 20px;
 						text-decoration: none;
@@ -149,14 +167,17 @@
 
 			.registry-bp-section-title {
 				font-size: 39px;
-				font-family: georgia, serif;
+				font-family: Baskerville, Georgia, serif;
+			}
 
-			}	
+			.registry-bp-section-number {
+				width: auto;
+				position: relative;
+			}
 
 			.registry-bp-section-copy {
 				font-size: 15px;
 				font-family: Avenir;
-				border-top: 1px solid #000;
 				padding-top: 20px;
 				line-height: 23px;
 				letter-spacing: 0.025em;
@@ -180,6 +201,15 @@
 
 		&#something-for-everyone {
 
+			hr {
+				left: 80px;
+				top: -235px;
+				position: relative;
+				width: 275px;
+				border-color: #000;
+				border-width: 1px 0 0;
+			}
+
 			a.registry-bp-play-btn {
 				top: 31%;
 			    left: 58.25%;
@@ -189,11 +219,15 @@
 			    top: 112px;
 			    left: 161px;
 			}
+			.registry-bp-section-number {
+				top: 96px;
+				left: 80px;
+			}
 
 			.registry-bp-section-copy {
 				top: 215px;
 				left: 79px;
-				width: 320px;
+				width: 325px;
 			}
 
 			.registry-bp-section-link {
@@ -205,6 +239,15 @@
 
 			margin-top: 10px;
 
+			hr {
+				border-width: 1px 0 0;
+				border-color: #000;
+				top: -235px;
+				position: relative;
+				width: 240px;
+				left: 596px;
+			}
+
 			a.registry-bp-play-btn {
 			    top: 28%;
     			left: 17.25%;
@@ -213,6 +256,10 @@
 			.registry-bp-section-title {
 			    top: 127px;
 			    left: 693px;
+			}
+			.registry-bp-section-number {
+				top: -65px;
+				left: 80px;
 			}
 
 			.registry-bp-section-copy {
@@ -234,10 +281,15 @@
 			.registry-bp-section-title {
 			    top: 62px;
 			    left: 79px;
-			    width: 395px;
+			    width: 194px;
 			    padding-left: 95px;
 			    padding-bottom: 12px;
 			    border-bottom: 1px solid #000;
+			}
+
+			.registry-bp-section-number {
+				top: 44px;
+				left: 80px;
 			}
 
 			.registry-bp-section-copy {
@@ -248,7 +300,7 @@
 			}
 
 			#registry-bp-see-more-offers-link {
-				top: 370px;
+				top: 350px;
 				left: 79px;
 			}
 
@@ -261,9 +313,23 @@
 
 			margin-top: 10px;
 
+			hr {
+				border-width: 1px 0 0;
+				border-color: #000;
+				top: -237px;
+				position: relative;
+				width: 175px;
+				left: 596px;
+			}
+
 			.registry-bp-section-title {
 				top: 127px;
 				left: 691px;
+			}
+
+			.registry-bp-section-number {
+				top: -66px;
+				left: 80px;
 			}
 
 			.registry-bp-section-copy {
@@ -277,20 +343,34 @@
 
 			margin-top: 10px;
 			margin-bottom: -1px;
-			
+
+			hr {
+				border-width: 1px 0 0;
+				border-color: #000;
+				top: -245px;
+				position: relative;
+				width: 265px;
+				left: 80px;
+			}
+
 			.registry-bp-section-title {
 				top: 99px;
     			left: 172px;
 			}
 
+			.registry-bp-section-number {
+				top: 84px;
+				left: 80px;
+			}
+
 			.registry-bp-section-copy {
 				top: 200px;
 				left: 79px;
-				width: 310px;
+				width: 335px;
 			}
 
 			.registry-bp-section-link {
-				top: 363px;
+				top: 335px;
 				left: 79px;
 			}
 		}
