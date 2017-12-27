@@ -182,6 +182,8 @@ require([
 			APP.fetchVideoData( APP.projectAssets + this.dataset.videoSrc, this );
 		});
 
+        $('.home-popup').height(screen.height);
+        $('.home-popup .row, #popup-text').height(screen.height-100);
 	});
 
 	$(window).load(function() {
