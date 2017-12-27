@@ -183,7 +183,7 @@ require([
 		});
 
         $('.home-popup').height(screen.height);
-        $('.home-popup .row, .home-popup .row #popup-text').height(screen.height-100);
+        $('.home-popup .row, #popup-text').height(screen.height-100);
 	});
 
 	$(window).load(function() {
