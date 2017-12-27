@@ -114,24 +114,24 @@
 			.bp-hero-title-line1 {
 				top: 185px;
 				left: 25px;
-				font-family: Baskerville, Georgia, serif;
+				font-family: Georgia, serif;
 				color: #000;
-				font-size: 36px;
+				font-size: 31px;
 			}
 
 			.bp-hero-title-line2 {
 				top: 220px;
 				left: 25px;
-				font-family: Baskerville, Georgia, serif;
+				font-family: Georgia, serif;
 				color: #000;
-				font-size: 58px;
+				font-size: 51px;
 			}
 
 			.bp-hero-copy {
 				top: 290px;
 				left: 25px;
 				color: #000;
-				font-size: 17px;
+				font-size: 16.5px;
 				font-family: Avenir;
 				width: 360px;
 			}
@@ -167,7 +167,7 @@
 
 			.registry-bp-section-title {
 				font-size: 39px;
-				font-family: Baskerville, Georgia, serif;
+				font-family: Georgia, serif;
 			}
 
 			.registry-bp-section-number {
@@ -284,7 +284,6 @@
 			    width: 194px;
 			    padding-left: 95px;
 			    padding-bottom: 12px;
-			    border-bottom: 1px solid #000;
 			}
 
 			.registry-bp-section-number {
@@ -375,6 +374,32 @@
 			}
 		}
 	}
+
+	.registry-bp-section-copy:after {
+		content: "";
+		background: black;
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 1px;
+	}
+	.one:after{
+		width: 276px;
+	}
+	.two:after{
+		width: 240px;
+	}
+	.three:after{
+		width: 195px;
+	}
+	.four:after {
+		width: 175px;
+	}
+	.five:after{
+		width: 265px;
+	}
+
+
 	.registry-bp-section-blackbg {
 		color: #fff;
 		background-color: #000;
