@@ -2,12 +2,42 @@
 <meta name="description" content="Bloomingdale's Catalogs"/>
 
 <div id="syndeca" style="height: 711px;"></div>
-<script src="//5.syndeca.com/bloomingdales/scripts/syndeca-embed.js" type="text/javascript"
+<!-- <script src="//5.syndeca.com/bloomingdales/scripts/syndeca-embed.js" type="text/javascript"
         data-id                       = "syndeca"
         data-guide-key                = "93CF60A3-05AE-D72A-B598-A6135CDBADAD"
         data-post-message-domain = "fashion.bloomingdales.com"
         data-brand-quick-view-enabled = "true"
-></script>
+></script> -->
+
+<!-- Dyanmically set syndeca script location based on host -->
+    <script type="text/javascript">
+      var host = hostCheck();
+      var script = "/bloomingdales/scripts/syndeca-embed.js"
+      var path = host + script;
+      
+      var script = document.createElement('script');
+      script.src = path;
+      script.id = "syndeca-embed-script";
+      script.type = "text/javascript";
+      script.setAttribute('async',false);
+      script.setAttribute( "data-id", "syndeca");
+      script.setAttribute( "data-guide-key", "93CF60A3-05AE-D72A-B598-A6135CDBADAD");
+      script.setAttribute( "data-brand-quick-view-enabled", "false");
+      insertAfter(script, document.getElementById('syndeca') );
+
+      function insertAfter(el, referenceNode) {
+        referenceNode.parentNode.insertBefore(el, referenceNode.nextSibling);
+      }
+    
+      function hostCheck() {
+        if (window.location.host === 'fashion.bloomingdales.com' || window.location.host === 'www.bloomingdales.com' || window.location.host === 'm.bloomingdales.com') {
+            return "//5.syndeca.com";
+        } else {
+            return "//stage-5.syndeca.com";
+        }  
+      }
+
+    </script>
 
 <script type="application/javascript" src="/b/fashion/javascripts/libs/jquery-1.11.2.min.js"></script>
 <script type="application/javascript" src="//5.syndeca.com/bloomingdales/scripts/add-to-bag.js"></script>
