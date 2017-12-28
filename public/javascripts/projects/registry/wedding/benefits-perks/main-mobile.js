@@ -182,8 +182,8 @@ require([
 			APP.fetchVideoData( APP.projectAssets + this.dataset.videoSrc, this );
 		});
 
-        $('.home-popup').height(screen.height);
-        $('.home-popup .row, #popup-text').height(screen.height-100);
+        $('.modal, .modal>div, .modal>div .home-popup, .modal>div .home-popup .row').css({overflow: 'hidden', height: screen.height});
+        $('#popup-text').height((screen.height-52)+'px');
 	});
 
 	$(window).load(function() {

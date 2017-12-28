@@ -337,6 +337,14 @@
 	}
 }
 
+.modal{
+	overflow: hidden;
+}
+#popup-header{
+	position: fixed;
+	height: 50px;
+}
 #popup-text{
 	overflow-y: scroll;
+	top:50px;
 }
