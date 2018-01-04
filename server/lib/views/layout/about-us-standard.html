@@ -31,7 +31,7 @@
             {{else}}
                 {{#if args.polarisHeaderFooterEnabled}}
                     <!-- Desktop Polaris Header -->
-                    <header id="wglHeader" data-context='{"shoppingMode":"SITE","regionCode":"","application":"SITE","deviceType":"DESKTOP","navigationType":"BROWSE","viewType":"Default","domestic":true,"currencyCode":"USD"}' data-hostlink="{{baseHost}}" data-uri="/xapi/navigate/v1/header/" data-bagserviceproxy="/api/shopping-bag/v1/bags/" data-assethost="{{assetsHost}}/wgl"></header>
+                    <header id="wglHeader" data-context='{"shoppingMode":"SITE","regionCode":"","application":"SITE","deviceType":"DESKTOP","navigationType":"BROWSE","viewType":"Default","domestic":true,"currencyCode":"USD"}' data-hostlink="{{secureHost}}" data-uri="/xapi/navigate/v1/header/" data-bagserviceproxy="/api/shopping-bag/v1/bags/" data-assethost="{{assetsHost}}/wgl"></header>
                 {{else}}
                     <!-- Desktop about-us MacysUI header -->
                     <header class="responsive"></header>
@@ -95,7 +95,7 @@
                     <!-- polaris footer -->
                     <footer id="wglFooter" 
 
-                        data-hostlink="{{baseHost}}" 
+                        data-hostlink="{{secureHost}}" 
                         data-uri="/xapi/navigate/v1/footer" 
                         data-assethost="{{assetsHost}}/wgl" 
                         data-context='{"shoppingMode":"SITE","regionCode":"","application":"SITE","deviceType":"DESKTOP","navigationType":"BROWSE","viewType":"Default","domestic":true,"currencyCode":"USD"}'
