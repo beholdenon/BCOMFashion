@@ -227,6 +227,7 @@ module.exports = {
                 isApp: req.state.ishop_app, 
                 assetsHost: process.env.BASE_ASSETS, 
                 baseHost: process.env.BASE_HOST,
+                secureHost: process.env.SECURE_HOST,
                 mobileHost: process.env.MOBILE_HOST,
                 slashMinSuffix: slashMinSuffix,
                 bvUserToken: setUserToken(req)
@@ -258,6 +259,7 @@ module.exports = {
                 isApp: req.state.ishop_app, 
                 assetsHost: process.env.BASE_ASSETS, 
                 baseHost: process.env.BASE_HOST,
+                secureHost: process.env.SECURE_HOST,
                 mobileHost: process.env.MOBILE_HOST,
                 slashMinSuffix: slashMinSuffix 
             }, { layout: 'responsiveCustomHF' });
@@ -286,6 +288,7 @@ module.exports = {
                 isApp: req.state.ishop_app, 
                 assetsHost: process.env.BASE_ASSETS, 
                 baseHost: process.env.BASE_HOST,
+                secureHost: process.env.SECURE_HOST,
                 mobileHost: process.env.MOBILE_HOST,
                 slashMinSuffix: slashMinSuffix 
             }, { layout: 'angularCustom' });
@@ -337,6 +340,7 @@ module.exports = {
                 isApp: req.state.ishop_app,
                 assetsHost: process.env.BASE_ASSETS, 
                 baseHost: process.env.BASE_HOST,
+                secureHost: process.env.SECURE_HOST,
                 mobileHost: process.env.MOBILE_HOST,
                 slashMinSuffix: slashMinSuffix
             });
