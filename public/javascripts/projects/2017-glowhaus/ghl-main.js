@@ -584,7 +584,7 @@ $(function() {
             'bestsellerImgLink': 'https://www.bloomingdales.com/shop/product/suva-beauty-8-shade-eyeshadow-palette?ID=2693415',
             'bestsellerHeading': 'Cupcakes &amp; Monsters 8-Shade Eyeshadow Palette',
             'bestsellerCopy': 'A wild, graffiti-inspired collection of vibrant mattes—all in the brand’s signature butter formula.',
-            'shopLinkUrl': 'https://www.bloomingdales.com/shop/makeup-perfume-beauty/glowhaus-makeup-skin-care/Brand/NUDESTIX?id=1035059'
+            'shopLinkUrl': 'https://www.bloomingdales.com/shop/makeup-perfume-beauty/glowhaus-makeup-skin-care/Brand/SUVA%20Beauty?id=1035059'
         },
         'The Vamp Stamp': {
             'theGlowDownCopy': 'Celebrity makeup artist Veronica Lorenz created this ingenious eyeliner tool when a medical condition weakened her grip. She devised a solution that didn’t require steady hands or years of practice: a stamp you coat in pigment and place on your lash line for a perfectly symmetrical cat-eye. Now there’s no more winging it when it comes to achieving the ideal line every time.',
