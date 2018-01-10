@@ -63,13 +63,12 @@
 
         var cmSectionsTriggered = [];
 
-        /*$(window).scroll(function() {
+        $(window).scroll(function() {
             $.each($('.section'), function(){
                 var hT = $(this).offset().top,
                     hH = $(this).outerHeight(),
                     wH = $(window).height(),
                     wS = $(window).scrollTop();
-
 
                 if (wS > ((hT-wH))){
 
@@ -77,11 +76,9 @@
                         $.fn.coreTag('Element', $( this ).attr( "coremetricTag" ));
                         cmSectionsTriggered.push(this);
                     }
-
                 }
             });
-        });*/
-
+        });
     });
 
     $.fn.coreTag = function(tagType, elementID, id) {
