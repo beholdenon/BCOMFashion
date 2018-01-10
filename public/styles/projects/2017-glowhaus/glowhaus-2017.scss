@@ -5,6 +5,7 @@
 
 @import "libs/jquery.lazyloadxt.fadein.min";
 @import "libs/animate.min";
+@import "libs/animate";
 @import "libs/magnific-popup";
 //@import "libs/plyr/scss/plyr";
 @import "libs/plyr";
@@ -204,6 +205,7 @@ video {
   }
 }
 .plyr__play-large svg {
+  position: initial !important;
   width: 24px;
   height: 24px;
   left: 4px;

@@ -39,15 +39,7 @@ $(document).ready( function($) {
         else return res[res.length-1];
     };
 
-    $( window ).load(function() {
 
-        $.fn.coreTag('Pageview', pageDict[$.fn.currentPageName()] );
-
-        $('[coremetricTag]').click(function() {
-            $.fn.coreTag('Element', $( this ).attr( "coremetricTag" ));
-        });
-
-    });
 
     $.fn.coreTag = function(tagType, pageID) {
 
@@ -77,7 +69,6 @@ $(document).ready( function($) {
         }
     };
 
-    initCoreMetrics();
 
     function setEnvironment() {
         if (window.Globals.env === 'dev') {
@@ -121,5 +112,18 @@ $(document).ready( function($) {
             window.Globals.Coremetrics.attr42 = attr;
         }
     }
+    initCoreMetrics();
+
+    $( window ).on('load', function(){
+
+        $.fn.coreTag('Pageview', pageDict[$.fn.currentPageName()] );
+
+        $('[coremetricTag]').click(function() {
+            $.fn.coreTag('Element', $( this ).attr( "coremetricTag" ));
+        });
+
+    });    
 
 });
+
+

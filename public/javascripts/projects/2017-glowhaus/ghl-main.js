@@ -832,7 +832,7 @@ $(function() {
 
                 //$('.mfp-figure').attr('id','mfp-figure').attr('tabindex','0');
                 $('.mfp-figure').find('img')
-                .load(function(){
+                .on('load', function(){
                     $(this).attr('tabindex','1').focus();
                 });
                 $('.mfp-close').attr('tabindex','0');
