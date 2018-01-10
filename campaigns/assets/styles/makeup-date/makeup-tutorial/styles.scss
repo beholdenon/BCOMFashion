@@ -1,178 +1,32 @@
-
 $scale: 1;
 $font-size-scale: 1;
 
-$loyallist: #3e1493;
-$white: #ffffff;
-$strawberry: #ad6f88;
-$gold: #e8bf19;
 $pink: #D90EAC;
+$navy: #22a8a0;
 
 $AvenirBlack: "Avenir LT W01 95 Black", sans-serif;
-$AvenirBO: "AvenirLTW01-95BlackObli", sans-serif;
-$AvenirBook: "Avenir LT W01 45 Book", sans-serif;
-$AvenirRoman: "Avenir Roman", sans-serif;
+
+body .row #bl_main_container {
+  width: 1170px;
+  padding: 0;
+  margin: auto;
+  min-width: 0px;
+}
+.container.row, .row.collapse.mod_row {
+  width: 100%;
+  max-width: 100%;
+}
 
 
 #bl_main_container {
 
-  /* Section 0 - Header */
-
-  .header-section{
-    margin: 4% 0;
-  }
-
-  .header-second-text {
-      margin-top: 87%;
-  }
-
-  .header-second-text p {
-    line-height: 1.55;
-  }
-
-  .section-0 .image{
-    width: 200%;
-    position: relative;
-    z-index: 9;
-  }
-  .section-0 .gif {
-    z-index: 1;
-    margin-top: -28%;
-    position: relative;
-    display: inline-block;
-    width: 96%;
-  }
-
-  .header-gif {
-  	width: 100%;
-  }
 
 
-  .stripe_new-years-eve_container {
-      z-index: 9;
-  	font-family: 'Avenir';
-  	font-size: $font-size-scale * 35px;
-  	font-weight: 700;
-  	background-color: #d31874;
-  	color: #ffffff;
-  	padding: $scale * 5px $scale * 64px;
-  	width: auto;
-  	position: relative;
-  	transform: rotate(21deg) skew(-21deg);
-  	top: $scale * 340px;
-  	left: $scale * 104px;
-  	display: inline-block;
-  }
-
-  .stripe_new-years-eve_content {
-  	transform: skew(21deg);
-  }
-
-
-
-
-
-  /* Section 1 */
-
-  .section-1 .baloon{
-    top: $scale * -40px;
-    left: $scale * -60px;
-    z-index: 9;
-  }
-
-
-
-  /* Section 2 */
-
-  .section-2 .baloon {
-    transform: rotate(250deg);
-    left: -70px;
-    margin-top: -155px;
-  }
-  .section-2 .baloon p{
-    transform: rotate(-250deg);
-    padding-left: $scale * 25px;
-  }
-
-
-
-  /* Section 3 */
-
-  .section-3 .baloon {
-    transform: rotate(150deg);
-    position: relative;
-    float: right;
-    right: -90px;
-    margin-top: -270px;
-  }
-  .section-3 .baloon p{
-    margin-left: $scale * 15px;
-    margin-top: $scale * -15px;
-    transform: rotate(-150deg);
-  }
-
-
-  /* Section 4 */
-
-  .section-4 .baloon {
-    transform: rotate(250deg);
-    left: $scale * 320px;
-    top: $scale * -20px;
-  }
-  .section-4 .baloon p{
-    transform: rotate(-250deg);
-  }
-
-
-
-
-  /* Section 5 */
-
-
-  .section-5 .image {
-    background-image: url(/b/fashion/campaigns/images/makeup-date/makeup-tutorial/png17.png);
-    height: 700px;
-    background-repeat: no-repeat;
-    background-position: center;
-  }
-
-  .section-5 .image a{
-    display: block;
-    height: 100%;
-  }
-
-  .section-5 .image img{
-    width: $scale * 1200px;
-    max-width: none;
-    left: $scale * -400px;
-    position: relative;
-    top: $scale * -360px;
-  }
-
-  .section-5 button{
-    font-family: Avenir Avenir, "Avenir", "Helvetica Neue", "Segoe UI", Helvetica, Arial, sans-serif;
-  }
-
-  .footer-see-info {
-    color: #fff;
-    font-size: 0.9em;
-  }
-
-  .footer-see-info:hover {
-    color: #000;
-  }
 
   /* General */
 
-  body .row #bl_main_container{
-    width: auto;
-  }
-  body{
-    min-width: 0px;
-  }
 
   .container{
-    max-width: $scale * 1040px;
     width: 100%;
     padding: 10px;
     margin: auto;
@@ -182,92 +36,7 @@ $AvenirRoman: "Avenir Roman", sans-serif;
   .section{
     margin: 5% 0;
   }
-  .section .main-image-container{
-    height: $scale * 600px;
-    overflow: hidden;
-  }
 
-  .get-the-look-container {
-    margin: 50px 0 !important;
-    display: block !important;
-  }
-
-  .get-the-look {
-    font-family: "Playfair Display";
-    font-size: $font-size-scale *  50px;
-    text-align: center;
-    margin: 10px;
-  }
-
-  .baloon {
-    background-image: url(/b/fashion/campaigns/images/makeup-date/makeup-tutorial/png5.png);
-    background-repeat: no-repeat;
-    width: $scale * 300px;
-    height: $scale * 270px;
-    position: relative;
-    text-align: center;
-    padding: $scale * 70px 0;
-  }
-  .baloon p{
-    line-height: $scale * 1.3;
-    margin-left: $scale * 12px;
-  }
-
-
-  .carousel {
-    text-align: center;
-  }
-
-  .color-pink{
-    color: #d31874;
-  }
-  .color-purple{
-    color: #453895;
-  }
-  .color-white{
-    color: #ffffff;
-  }
-
-  .bg-color-pink{
-    background-color: #d31874;
-  }
-
-
-  p{
-    font-family: "Avenir";
-    color: #1e1e1e;
-    font-size: $font-size-scale * 25px;
-    margin: 0;
-    line-height: $scale * 1.65;
-  }
-
-  hr {
-    border: 0;
-    height: 0;
-    border-top: 1px solid #d31874;
-    border-bottom: 1px solid #d31874;
-    margin: $scale * 6px 0;
-  }
-
-  hr.margin{
-    margin: 70px 0;
-  }
-
-  .bold{
-    font-weight: bold;
-  }
-
-  .italic{
-    font-style: italic;
-  }
-
-  .heavy{
-    font-weight: 800 !important;
-  }
-
-  .underlined {
-    text-decoration: underline #717171;
-  }
 
   .text-right{
     text-align: right;
@@ -276,13 +45,14 @@ $AvenirRoman: "Avenir Roman", sans-serif;
     text-align: center;
   }
 
-
-  .row{
-    width: 100% !important;
-  }
-
   .flex{
     display: flex;
+  }
+
+  .content-center{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
 
@@ -318,12 +88,6 @@ $AvenirRoman: "Avenir Roman", sans-serif;
     width: 100%;
   }
 
-  .content-center{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-  }
 
   .padding-top-200{
     padding-top: 200px;
@@ -337,28 +101,16 @@ $AvenirRoman: "Avenir Roman", sans-serif;
   .padding-25{
     padding: 0 25px !important;
   }
+  .no-padding{
+    padding: 0 !important;
+  }
+
 
   .inline-block {
     display: inline-block;
     text-align: left;
   }
 
-  .step-number-left{
-    position: relative;
-    top: $scale * -64px;
-    right: $scale * -87px;
-  }
-
-  .step-number-left img, .step-number-right img{
-    width: 120px;
-  }
-
-  .step-number-right {
-    position: relative;
-    float: right;
-    right: 50px;
-    top: -26px;
-  }
 
   .flip{
       -moz-transform: scaleX(-1);
@@ -369,32 +121,21 @@ $AvenirRoman: "Avenir Roman", sans-serif;
   }
 
 
-  .footer-box{
-    margin: 50px 0;
-    padding: 30px 0;
-  }
   .footer-links{
-    text-align: center;
+    margin-left: 122px;
   }
   .footer-links a{
     margin: auto $scale * 30px;
     font-family: "Avenir";
-    font-weight: 800;
-    font-size: 2rem;
+    font-size: 40px;
   }
 
-  button.enter-now {
-    padding: 0 4.25rem;
-    font-size: 2rem;
-    line-height: 2.75rem;
-    height: 5rem;
-    background-color: #fff;
-  }
 
-  .text-align-right {
-    text-align: right;
-  }
 
+  /* Carousel---------------------------- */
+  .carousel {
+    text-align: center;
+  }
   .carousel-shell {
     position: relative;
     min-height: 200px;
@@ -441,7 +182,7 @@ $AvenirRoman: "Avenir Roman", sans-serif;
         &:focus {
 
           p {
-            color: $pink;
+            color: $navy;
           }
 
         }
@@ -474,20 +215,19 @@ $AvenirRoman: "Avenir Roman", sans-serif;
       padding: 0;
       background-color: transparent;
       border: 0;
-      border-left: 2px solid #000;
-      border-bottom: 2px solid #000;
-      width: 30px;
-      height: 30px;
+      width: 27px;
+      height: 37px;
       display: block;
       z-index: 20;
       top: 45%;
       cursor: pointer;
+      background-repeat: no-repeat;
+
 
       &:focus,
       &:active,
       &:hover {
-        border-left: 2px solid $pink;
-        border-bottom: 2px solid $pink;
+        //background-size: 1.3em;
       }
 
       &:focus {
@@ -496,35 +236,17 @@ $AvenirRoman: "Avenir Roman", sans-serif;
     }
 
     .leftArrow {
-      transform: rotate(45deg);
+      background-image: url(/b/fashion/campaigns/images/makeup-date/makeup-tutorial/arrow-left.png);
       left: 1.5em;
     }
     .rightArrow {
-      transform: rotate(-135deg);
+      background-image: url(/b/fashion/campaigns/images/makeup-date/makeup-tutorial/arrow-right.png);
       right: 1.5em;
     }
 
   }
+  /*----------------------------------*/
 
-
-
-  /* Icons */
-
-  .icon-plus {
-    font-family: arial black;
-    color: #d31874;
-    font-size: 35px;
-    display: inline-block;
-    -webkit-text-stroke-width: 2px;
-  }
-
-  .icon-arrow-down {
-    display: inline-block;
-    margin: auto;
-    border-left: 15px solid transparent;
-    border-right: 15px solid transparent;
-    border-top: 15px solid #d31874;
-  }
 
 
 
@@ -560,8 +282,53 @@ $AvenirRoman: "Avenir Roman", sans-serif;
 
 
 
-  /* Modal */
 
+
+
+
+
+  /*Popup style*/
+  .home-popup #popup-header, .home-popup #popup-header1 {
+    padding-left: 0px;
+    padding-right: 0px;
+    min-width: 460px; }
+  .home-popup #popup-header #header-container, .home-popup #popup-header1 #header-container1 {
+    border-bottom: 1px solid #000000;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px; }
+  .home-popup #popup-header #header-container img, .home-popup #popup-header1 #header-container1 img {
+    float: left; }
+  .home-popup #popup-header #header-container button, .home-popup #popup-header1 #header-container1 button {
+    float: right; }
+
+  .home-popup #popup-text, .home-popup #popup-text1 {
+    color: #000;
+    padding: 20px 10px 10px 10px; }
+  .home-popup #popup-text p, .home-popup #popup-text1 p {
+    margin-bottom: 0px; }
+  .home-popup #popup-text .bl_pop_header, .home-popup #popup-text1 .bl_pop_header {
+    color: #D90EAC;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase; }
+  .home-popup #popup-text .bl_pop_subheader, .home-popup #popup-text1 .bl_pop_subheader {
+    color: #D90EAC;
+    font-size: 15px;
+    padding: 10px 0px 20px 0px; }
+  .home-popup #popup-text .bl_pop_bold_text, .home-popup #popup-text1 .bl_pop_bold_text {
+    font-weight: bold;
+    font-size: 14px; }
+  .home-popup #popup-text .bl_pop_plain_text, .home-popup #popup-text1 .bl_pop_plain_text {
+    font-size: 14px;
+    padding: 10px 0px 20px 0px; }
+  .home-popup #popup-text .pop_DisclaimerText, .home-popup #popup-text1 .pop_DisclaimerText {
+    font-size: 9px;
+    padding: 10px 0px 0px 0px; }
+
+
+
+  /* Modal */
   .modaloverlay{
     background:rgba(0,0,0,0.8);
     bottom:0;
@@ -604,7 +371,7 @@ $AvenirRoman: "Avenir Roman", sans-serif;
     }
     .close{
       padding: 14px !important;
-      margin: 10px 0;
+      margin: 3px 0;
       border-right: 10px solid;
       font-size: 14px;
       background-color:#000;
@@ -618,11 +385,9 @@ $AvenirRoman: "Avenir Roman", sans-serif;
     }
   }
 
-  .modal iframe{
-    border: none;
-    width: 100%;
-    height: 100vh;
-  }
+
+
+
 
 
 
@@ -634,7 +399,7 @@ $AvenirRoman: "Avenir Roman", sans-serif;
     height: 0;
     border-top: 6px solid transparent;
     border-bottom: 6px solid transparent;
-    border-left: 9.6px solid #000;
+    border-left: 9.6px solid #fff;
     border-right: none;
     background: transparent;
     padding: 0;
@@ -643,18 +408,18 @@ $AvenirRoman: "Avenir Roman", sans-serif;
     transition: all 0.3s;
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
-    bottom: 40px;
-    left: 30px;
+    bottom: -260px;
+    left: 80px;
   }
   .gif_play_button:before {
     content: '';
     position: absolute;
-    top: -12px;
-    left: -18.4px;
-    bottom: -12px;
-    right: -5.6px;
-    border-radius: 50%;
-    border: 1.6px solid #000;
+    top: -20px;
+    left: -26.4px;
+    bottom: -20px;
+    right: -12.6px;
+    border-radius: 77%;
+    border: 3px solid #fff;
     z-index: 2;
     transition: all 0.3s;
     -webkit-transition: all 0.3s;
@@ -679,192 +444,115 @@ $AvenirRoman: "Avenir Roman", sans-serif;
     content: '';
     opacity: 1;
     width: 10px;
-    height: 10px;
+    height: 15px;
     background: transparent;
     position: absolute;
-    right: 2px;
-    top: -5px;
-    left: -11px;
-    border-left: 3.2px solid #000;
-    border-right: 3.2px solid #000;
-  }
-
-
-  .mobile{
-    display: none;
+    right: 1px;
+    top: -8px;
+    left: -12px;
+    border-left: 3.2px solid #fff;
+    border-right: 3.2px solid #fff;
   }
 
 
 
 
-
-
-
-
-
-  /* Mobile */
-
-
-  @media only screen and (max-width: 768px) {
-
-    .container{
-      padding: 20px;
-    }
-
-    p {
-      font-size: 17px;
-      line-height: 1.45;
-    }
-
-    .mobile-text-center{
-      text-align: center !important;
-    }
-
-    .row{
-      margin: 20px 0;
-    }
-
-    .header-second-text {
-      float: right;
-      margin-top: 40%;
-    }
-
-    .baloon {
-      width: 200px;
-      height: 170px;
-      background-size: 200px;
-      padding: 45px 0;
-    }
-
-    .section-0 .image {
-      width: 100% !important;
-    }
-
-
-    .section-0 .gif {
-      width: 48% !important;
-      margin-top: -14% !important;
-    }
-
-    .header-second-text {
-      width: 100%;
-      margin-top: 6rem;
-      margin-top: 0 !important;
-    }
-
-    .section .main-image-container {
-      height: auto;
-      max-height: 600px;
-    }
-
-
-    .col{
-      float: none;
-      width: 100% !important;
-      padding: 20px 0;
-    }
-
-    .section-1 .baloon {
-      left: 0;
-    }
-    .section-2 .baloon {
-      left: 0;
-    }
-    .section-3 .baloon {
-      right: 30px;
-      margin-top: -28px;
-    }
-    .section-4 .baloon {
-      left: -30px;
-      top: 0;
-      margin-top: -190px;
-    }
-
-
-
-    .step-number-left {
-      right: 0 !important;
-      top: -18px;
-    }
-
-    .section-header-even .text {
-      position: relative;
-      top: 0;
-      left: 0;
-      width: auto;
-    }
-
-    .footer-links a {
-      display: block;
-    }
-
-
-
-    img{
-      width: 100%;
-    }
-
-    img.desktop_back_to_top_img{
-      width: auto;
-    }
-
-    .flex{
-      display: block;
-    }
-
-
-
-    .gif_play_button {
-      bottom: 25px;
-      left: 15px;
-    }
-
-
-
-    .section-5 .image {
-      height: 450px;
-      background-size: 350px;
-    }
-
-    .no-padding-mobile{
-      padding: 0 !important;
-    }
-
-    .no-margin-mobile{
-      margin: 0 !important;
-    }
-
-    .padding-25-mobile{
-      padding: 25px;
-    }
-
-    .carousel-shell {
-
-      .group {
-        padding: 0 2em;
-        top: 0;
-
-        .product {
-
-          top: 0;
-
-          img {
-            height: 90px;
-          }
-
-          h4 {
-            font-size: 1em;
-          }
-
-          p {
-            font-size: 0.85em;
-          }
-
-        }
-
-      }
-
-    }
-
+  /* Makeup Date specific style*/
+  p{
+    font-family: "Avenir";
+    color: #1e1e1e;
+    font-size: $font-size-scale * 40px;
+    margin: 0;
+    line-height: $scale * 1.65;
   }
+  .text-big{
+    font-size: 65px;
+    line-height: 1.2;
+  }
+  .small{
+    font-size: 18px;
+  }
+
+  a:focus{
+    outline: 1px dotted #222;
+  }
+
+
+  #div-link_mosieur-bir {
+    width: 120px;
+    height: 525px;
+    background: #CCC;
+    transform: rotate(-36deg);
+    position: absolute;
+    margin-left: 75px;
+  }
+
+  .p-arrow{
+      margin-top: 5px;
+  }
+
+  .p-arrow-f{
+    position: absolute;
+    margin-left: -70px;
+  }
+
+
+  .section-title {
+    position: relative;
+    top: 3.7%;
+    -webkit-text-stroke: 1px;
+  }
+
+  .section-title-h {
+    transform: rotate(270deg);
+  }
+
+  .navy{
+    color: $navy;
+  }
+
+  .section-1 .products {
+    position: absolute;
+    margin-top: 380px;
+    margin-left: -160px;
+  }
+  .section-5 .products {
+    position: absolute;
+    margin-top: 550px;
+    margin-left: -200px;
+  }
+
+  .section-1 .gif, .section-5 .gif{
+    width: 465px;
+    position: relative;
+    top: 300px;
+    left: 50px;
+  }
+
+  .section-2 .section-title-h {
+    position: relative;
+    display: inline-block;
+    left: -100px;
+    top: -365px;
+  }
+
+  .section-4 .section-title-h {
+    position: absolute;
+    display: inline-block;
+    margin-top: -380px;
+    margin-left: 670px;
+  }
+
+  .section-3 .products {
+    position: absolute;
+    margin-top: -180px;
+    margin-left: -45px;
+  }
+
+  .carousel{
+    margin-top: 80px;
+  }
+
+  /*----------------------------*/
+
 }
