@@ -29,13 +29,9 @@
     $( window ).load(function() {
 
 
-
-
-
         $.fn.coreTag('Pageview', 'spring18_makeupdate' );
 
-        $('[coremetricTag]').on('click tap', function(event) {
-
+        $('[coremetricTag]').on('click tap', 'a', function(event) {
 
 
             var id;

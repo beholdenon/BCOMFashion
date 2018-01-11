@@ -1,0 +1,107 @@
+#bl_main_container {
+
+  p {
+    font-family: "Avenir";
+    color: #1e1e1e;
+    font-size: 14px;
+    margin: 0;
+    line-height: 1.65;
+  }
+
+  .text-big {
+    font-size: 20px;
+    line-height: 1.2;
+  }
+  .small{
+    font-size: 6.8px;
+  }
+
+  .p-arrow {
+    margin-top: 0px;
+    max-width: 100px;
+    width: 20px;
+  }
+  .p-arrow-f {
+    max-width: 100px;
+    width: 20px;
+    margin-left: -25px;
+  }
+
+  .col {
+    float: left;
+    padding: 5px;
+  }
+
+  .no-margin{
+    margin: 0;
+  }
+
+  .carousel {
+    margin-top: 40px;
+  }
+
+  .footer-links {
+    margin-left: auto;
+  }
+  .footer-links a {
+    font-size: 30px;
+    display: block;
+    text-align: center;
+    line-height: 1.5;
+  }
+
+  .gif_play_button:before, .gif_play_button:after {
+    top: -16px;
+    left: -22.4px;
+    bottom: -16px;
+    right: -8.6px;
+  }
+
+
+
+  /*Specific*/
+  .section-1 .products {
+    position: absolute;
+    margin-top: 108px;
+    margin-left: -25px;
+    width: 200px;
+  }
+  .section-3 .products {
+    width: 100%;
+    position: relative;
+    margin-top: -65px;
+    margin-left: -15px;
+  }
+  .section-5 .products {
+    margin-top: 162px;
+    margin-left: -47px;
+    width: 204px;
+    position: absolute;
+  }
+
+
+  .section-2 .section-title-h {
+    left: -40px;
+    top: -153px;
+  }
+  .section-4 .section-title-h {
+    margin-top: -145px;
+    right: -25px;
+    margin-left: auto;
+  }
+
+  .section-1 .gif, .section-5 .gif {
+    width: 465px;
+    position: relative;
+    top: 50px;
+    left: auto;
+  }
+
+  .gif_play_button {
+    bottom: -18px;
+    left: 22px;
+  }
+
+
+}
+
