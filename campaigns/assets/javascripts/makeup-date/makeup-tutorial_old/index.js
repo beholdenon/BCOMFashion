@@ -28,10 +28,6 @@ var playPauseGif = function(imageId, button) {
 
 (function($) {
 
-    $('.modal, .modal>div, .modal>div .home-popup, .modal>div .home-popup .row').css({overflow: 'hidden', height: screen.height});
-    $('#popup-text').height((screen.height-52)+'px');
-
-
     if ( BLOOMIES.isMobile === true ) {
         $('.carousel-shell').each(function (i,el) {
             $(el).attr('data-groupSize', 2);
@@ -39,23 +35,44 @@ var playPauseGif = function(imageId, button) {
 
         $('.desktop').hide();
         $('.mobile').show();
+
+        //Hide close button for popup iframes and blocks scroll (only on mobile)
+        $('#popup590756').load(function(){
+            $('#popup590756').contents().find('#close-button').hide();
+            $('#popup590756').contents().find('html, body').css({
+                overflow: 'hidden',
+                height: '100%'
+            });
+        });
+        $('#popup563664').load(function(){
+            $('#popup563664').contents().find('#close-button').hide();
+            $('#popup563664').contents().find('html, body').css({
+                overflow: 'hidden',
+                height: '100%'
+            });
+        });
+
     }
 
     $('.desktop_back_to_top').on('click', function() {
         $('html, body').animate({
             scrollTop: 0
         }, 'slow' );
+        //window.BLOOMIES.coremetrics.cmCreatePageElementTag(hasMBL + 'Back_to_top', hasMBL + 'Makeup-date_makeup-tutorial');
     });
 
 
     // promotional date check. Promotion ends 12/18/17 @ 12:01am
-    var promoEnd = new Date("February 18, 2018 11:59:00");
+    var promoEnd = new Date("December 18, 2017 00:00:01");
     var now = new Date();
+
 
     if(promoEnd < now){
         $('.limited-promo').remove();
         $('nav.footer-links').css('margin-top','40px')
     }
+
+
 
 
 
@@ -187,6 +204,7 @@ var playPauseGif = function(imageId, button) {
             $(this).click();
         }
     });
+
 
 
     carousel.init();
