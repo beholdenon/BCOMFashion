@@ -7,12 +7,12 @@
     isMobile: window.BLOOMIES.isMobile,
     mobileTag: "",
     social: {
-      facebookTitle: "The Denim Trend Report: Fall 2017 | Bloomingdale's",
-      facebookDescription: "Our roundup of all the trends that are having a moment, a new take on denim jackets, plus the best-selling pairs people can't stop raving about.",
-      facebookImageFileName: 'F17_Denim-HQ_Facebook.jpg',
-      twitterTitle: 'Our fall denim report + styling inspo = your first (and last) stop for everything new and noteworthy on the denim scene @bloomingdales',
-      pinterestTitle: 'THE DENIM TREND REPORT: FALL 2017 | Bloomingdales.com',
-      pinterestImageFileName: 'F17_Denim-HQ_Pinterest.jpg',
+      facebookTitle: "One-Stop Jean Shop: Spring 2018 | Bloomingdale’s",
+      facebookDescription: "A week's worth of wow-worthy denim trends, plus our detailed guide to wearing, styling and caring for the coolest pairs of the season.",
+      facebookImageFileName: 'S18_Denim_Facebook.jpg',
+      twitterTitle: 'A week of on-trend jeans + styling inspo = your first (and last) stop for everything new and noteworthy on the denim scene @bloomingdales',
+      pinterestTitle: 'One-Stop Jean Shop: SPRING 2018 | Bloomingdales.com',
+      pinterestImageFileName: 'S18_Denim_Pinterest.jpg',
       facebookURL: null,
       twitterURL: null,
       pinterestURL: null    
@@ -47,7 +47,7 @@
     APP.mobileTag = "MBL:";
   }
 
-  var cmCategory = APP.mobileTag + "fall17_denim";
+  var cmCategory = APP.mobileTag + "spring18_denim";
 
 
 // ========= COREMETRICS =========
@@ -57,13 +57,13 @@
 
   // set variables for page identification
   if ( window.location.pathname.indexOf("denim-trends") >= 0 ) {
-    page = "fall17_denim-hp";
+    page = "spring18_denim-hp";
     partial = "hp_";
   } else if ( window.location.pathname.indexOf("denim-styles") >= 0 ) {
-    page = "fall17_denim-editorial";
+    page = "spring18_denim-editorial";
     partial = "editorial_";
   } else if ( window.location.pathname.indexOf("popular-fashion-jeans-lookbook") >= 0 ) {
-    page = "fall17_denim-lookbook";
+    page = "spring18_denim-lookbook";
     partial = "lookbook_";
   }
 
@@ -113,6 +113,32 @@
 // ===== END SOCIAL =====
 
   // sticky nav
+
+  $('nav #sub-nav a').click(function(){
+    event.preventDefault();
+    var target = $(this).attr("href"), 
+        isGuidePage = document.location.pathname === "/b/denim/denim-styles/",
+        isMenuFixed = $("#mast-nav").hasClass('fixed'),
+        offset = isGuidePage ? 108 : 70;
+
+    if(["#track-stripes", "#front-seams", "#light-wash", "#shorts"].indexOf(target) !== -1){
+      offset = 45;
+    }
+
+    offset += !isMenuFixed ? 110 : 0;
+
+    $('html, body').animate({
+      scrollTop: $(target).offset().top - offset
+    }, 2000);
+  });
+
+  $('nav .sub a').click(function(){
+    event.preventDefault();
+
+   $('html, body').animate({
+          scrollTop: $($(this).attr("href")).offset().top - 60
+      }, 2000);
+  });
   
   $(window).scroll( function() {
     var fromTop = $(document).scrollTop();
@@ -121,13 +147,7 @@
     if ( fromTop > headerHeight ) {
 
       if ( !$("#mast-nav").hasClass('fixed') ) {
-
-        // add header height in if on a tablet due to sticky nav
-        if ( $('body').hasClass('bl_tablet') ) {
-          $("#mast-nav").addClass('fixed').css({'top': ($('header.responsive').height() - 23) + 'px'});
-        } else {
           $("#mast-nav").addClass('fixed');
-        }
       }
 
     } else {
@@ -137,6 +157,21 @@
       }
 
     }
+
+    $.each( $('main section'), function() {
+      var box = $(this)[0].getBoundingClientRect();
+      if ( box.top <= ( 0 + $(window).height() / 4) && box.bottom >= ( 0 + $(window).height() / 4) ) {
+        var activeElem = $(this);
+        $.each( $('nav #sub-nav a'), function () {
+          if ( '#' + activeElem.attr("id") === $(this).attr("href") ) {
+            $(this).addClass('active');
+          } else {
+            $(this).removeClass('active');
+          }
+        });
+
+      }
+    });
 
   });
 
@@ -177,20 +212,34 @@
 
   // checkbox functionality for blog page
 
-  $('.checklist .box').on('click tap', function() {
-    if ( $(this).siblings('.check').hasClass('hidden') ) {
-      $(this).siblings('.check').removeClass('hidden');
+  function check(val) {
+    if ( $(val).siblings('.check').hasClass('hidden') ) {
+      $(val).siblings('.check').removeClass('hidden');
     } else {
-      $(this).siblings('.check').addClass('hidden');
+      $(val).siblings('.check').addClass('hidden');
+    }
+  }
+
+  function uncheck(val) {
+    if ( $(val).hasClass('hidden') ) {
+      $(val).removeClass('hidden');
+    } else {
+      $(val).addClass('hidden');
+    }
+  }
+
+  $('.checklist .box').keypress(function(e) {
+    if(e.which === 13) {
+      check(e.currentTarget);
     }
   });
 
+  $('.checklist .box').on('click tap', function() {
+    check(this);
+  });
+
   $('.checklist .check').on('click tap', function() {
-    if ( $(this).hasClass('hidden') ) {
-      $(this).removeClass('hidden');
-    } else {
-      $(this).addClass('hidden');
-    }
+    uncheck(this);
   });
 
 
@@ -199,6 +248,14 @@
 
   $('#carouselLeft').on('click tap', function() { carousel('left'); });
   $('#carouselRight').on('click tap', function() { carousel('right'); });
+
+  $('#carousel-dots li').on('click tap', function() {
+    var id = $(this).attr('data-id');
+
+    $('.carousel .active').removeClass('active').addClass( "ls" );
+    $('#slide-' + id).addClass( "active" ).removeClass( "ls" );
+    $('#carousel-dots .dot-' + id).addClass('active').siblings().removeClass('active');
+  });
 
   function carousel(dir) {
     var dirClass = 'rs';

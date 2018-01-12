@@ -1,5 +1,14 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700');
 
+h1,
+h2, 
+h3,
+p,
+a,
+span {
+  font-family: 'Roboto Mono', monospace;  
+}
+
 #bcomFashion .row,
 #bcomFashion #bl_main_container {
   // max-width: 1440px;
@@ -21,11 +30,20 @@
   width: 100%;
 }
 
-main {
+main:not(#denim-styles) {
   font-family: 'Roboto Mono', monospace;
   width: 100%;
   max-width: 1440px;
   margin: 0 auto 0;
+}
+
+main#denim-styles {
+    .main {
+    font-family: 'Roboto Mono', monospace;
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto 0;
+  }
 }
 
 #mobile-header {
@@ -58,6 +76,7 @@ main {
     position: fixed;
     top: 0;
     z-index: 50;
+    background: #fff;
 
   }
 
@@ -101,9 +120,113 @@ main {
   }
 }
 
+
+#frame-wide-leg.normal-brand-footer {
+  top: 88%; 
+  width: 4.5em;
+}
+
+#frame-bright-washes-link.normal-brand-footer {
+  width: 4.5em;
+}
+
+#j-brand-light-wash.normal-brand-footer {
+  top: 82%;
+  width: 6em;
+}
+
+#levis-light-wash.normal-brand-footer {
+  top: 89%;
+  width: 5em;
+}
+
+#ag-high-impact-hues.normal-brand-footer {
+  top: 82%;
+  width: 3em;
+}
+
+#j-brand-high-impact-hues.normal-brand-footer {
+  top: 89%;
+  width: 6em;
+}
+
+.normal-brand-footer {
+  margin-top: 0.5em;
+  margin-left: 0.25em;
+  display: block;
+  position: absolute;
+  top: 93.5%;
+  left: 2%;
+  background: black;
+  color: white;
+  text-decoration: underline;
+  line-height: 2em;
+  width: 11em;
+  text-align: center;
+  font-size: 1.2em;
+  letter-spacing: 0.05em;
+  left: 3%;
+}
+
+#denim-styles {
+
+  .title {
+        height: 27vw;
+        background-color: #f8f1ec;
+        text-align: center;
+        padding-top: 2em;
+        overflow: hidden;
+
+        .container {
+          width: 110%;
+        }
+
+        span {
+          font-size: 10.6vw;
+          left: -4.7%;
+          position: relative;
+          white-space: nowrap;
+        }
+
+        p {
+          font-size: 1.2vw;
+          width: 91%;
+        }
+    }
+
+  #blog-heading {
+    h1 {
+      padding: 1.5em 0;
+    }
+  }
+}
+
+.brand {
+    text-transform: uppercase;
+
+    .brand-footer {
+      margin-top: 0.5em;
+      margin-left: 0.25em;
+      display: block;
+      position: absolute;
+      top: 85.5%;
+      left: 2%;
+      background: black;
+      color: white;
+      text-decoration: underline;
+      line-height: 2em;
+      width: 12em;
+      text-align: center;
+      font-size: 1.2em;
+      letter-spacing: 0.05em;
+    }
+  }
+
 #main-heading,
 #blog-heading {
   width: 100%;
+  padding-left: 1.2em;
+  padding-right: 1.2em;
 
   h1 {
     font-family: 'Roboto Mono', monospace;
@@ -127,7 +250,7 @@ main {
   }
 
   p {
-    font-weight: 500;
+    font-weight: normal;
     display: inline-block;
     width: 49%;
     font-size: 1.45em;
@@ -178,8 +301,31 @@ main {
     letter-spacing: 0.05em;
   }
 
-  #trend h2 { width: 75%;}
-  #style h2 { width: 85%;}
+  h3 {
+    @extend h2;
+    background-color: #fff;
+    color: #000;
+    font-size: 1.5em;
+    width: 40%;
+    top: 61.5%;
+  }
+
+  #trend { 
+    h2 {
+      width: 65%;
+    }
+    h3 {
+      width: 30%;
+    }
+  }
+  #style { 
+    h2 {
+      width: 50%;
+    }
+    h3 {
+      width: 47%;
+    }
+  }
 }
 
 #bcomFashion {
@@ -226,9 +372,13 @@ main {
   text-align: center;
   margin: 0;
 
+  .active {
+    color: #eecaae;
+  }
+
   a {
     display: inline-block;
-    font-weight: 500;
+    font-weight: normal;
     font-size: 1.15em;
     margin: 0 1em;
     line-height: 3.5em;
@@ -244,8 +394,11 @@ main {
 
 #denim-dictionary {
 
+  padding-left: 4em;
+
   h3 {
     margin-top: 0.75em;
+    font-weight: normal;
   }
 
   .more,
@@ -267,7 +420,7 @@ main {
   a.shop {
     text-transform: uppercase;
     font-size: 1.5em;
-    font-weight: 500;
+    font-weight: normal;
     margin-top: 1em;
     display: block;
   }
@@ -275,9 +428,13 @@ main {
 }
 
 #denim-dilemmas {
-  background-color: #efdfda;
+  background-color: #f8dfcb;
   padding: 4em 2em;
   text-align: center;
+
+  p {
+    line-height: 2.3em;
+  }
 
   h2 {
     font-size: 4.5em;
@@ -302,16 +459,28 @@ main {
     p {
       line-height: 2.25em;
     }
+
+    a.link {
+      font-size: 1.4em;
+    }
+
+    .image {
+      position: relative;
+      a:focus {
+        color: #fff;
+      }
+    }
   }
 
   img {
     margin-bottom: 1em;
   }
-
-  a {
-    text-transform: uppercase;
-    font-weight: 700;
-    font-size: 1.4em;
+  .copy {
+    a {
+      text-transform: uppercase;
+      font-weight: normal;
+      font-size: 1.4em;
+    }
   }
 }
 
@@ -348,12 +517,13 @@ main {
       padding-top: 6vw;
 
       h3 {
-        font-size: 3.5em;
+        font-size: 3em;
+        font-weight: normal;
       }
 
       hr {
-        border: 3px solid #000;
-        width: 10%;
+        border: 2px solid #000;
+        width: 15%;
       }
 
       p {
@@ -365,12 +535,17 @@ main {
       }
 
       a {
+        text-decoration: none;
+      }
+
+      a.link {
         display: block;
         word-spacing: 0.4em;
         font-size: 1.4em;
-        font-weight: 700;
+        font-weight: normal;
         text-transform: uppercase;
         line-height: 3em;
+        text-decoration: underline;
       }
     }
 
@@ -378,15 +553,20 @@ main {
       display: inline-block;
       width: 48.5%;
       vertical-align: top;
+      position: relative;
+      a:focus {
+        color: #fff;
+      }
     }
   }
 }
 
+.ls {
+  display: none;
+}
+
 #match-game {
-  padding: 4em 2em;
   width: 100%;
-  background-color: #000;
-  color: #fff;
   text-align: center;
   position: relative;
 
@@ -501,11 +681,12 @@ main {
   margin: 3em 2em;
   padding: 6em 6em;
   border: 2px solid #000;
+  padding-bottom: 8em;
 
   h2 {
     margin-bottom: 0.25em;
     line-height: 1em;
-    font-weight: 700;
+    font-weight: normal;
     font-size: 5.25em;
     letter-spacing: 0.1em;
   }
@@ -570,15 +751,77 @@ main {
 
 }
 
+section#lookbook-footer.footer {
+  padding-top: 5em;
+  border-top: none;
+}
+
+section#lookbook-footer.footer-styles .btt .back-to-top {
+  bottom: 8em;
+}
+
+section#lookbook-footer.footer-styles {
+  margin-top: 6em;
+}
 
 #lookbook-footer {
   line-height: 3em;
   font-size: 1.25em;
-  border-top: 1px solid #000;
   display: block;
   vertical-align: top;
   font-weight: 500;
   font-size: 1.25em;
+  border-bottom: 1px solid black;
+  border-top: 1px solid black;
+
+  .footer-text {
+    height: 13em;
+    background: #000;
+    color: #fff;
+    padding-top: 5em;
+    font-weight: normal;
+    padding-right: 3em;
+    margin-bottom: 3em;
+    position: relative;
+    text-align: center;
+    margin-bottom: 0;
+
+    span, a {
+      color: #fff;
+    }
+
+    span {
+      font-size: 1.5em;
+    }
+
+    a {
+      font-size: 1em;
+    }
+
+    hr {
+        content: "";
+        display: inline-block;
+        width: 100px;
+        height: 5px;
+        background-color: #fff;
+        vertical-align: middle;
+        position: relative;
+        margin-top: 17px;
+    }
+
+    .btt {
+      position: absolute;
+      left: 95%;
+      font-size: 1.3em;
+    }
+
+    .btt#lookbook-btt {
+      top: -10%;
+      position: absolute;
+      left: 92%;
+      font-size: 1.3em;
+    }
+  }
   
   .housing {
     max-width: 1440px;
@@ -588,10 +831,23 @@ main {
   }
 
   .btt {
-    position: absolute;
-    right: 2%;
-    display: inline-block;
-    font-family: 'Roboto Mono', monospace;
+    float: right;
+    padding-right: 4em;
+    .back-to-top {
+      background-image: url('/b/fashion/images/projects/denim/icons/arrows-up-icon.jpg'); 
+      background-repeat: no-repeat;
+      border-radius: 50%;
+      border-style: solid;
+      border-width: 1px;
+      border-color:  #000000;
+      box-sizing: border-box;
+      background-color:  #ffffff;
+      width: 3em;
+      height: 3em;
+      position: absolute;
+      background-position: center;
+      bottom: 3.5em;
+    }
   }
 
   .arrow {
@@ -605,31 +861,30 @@ main {
 
     .icon {
       font-size: 0;
-      width: 32px;
-      height: 28px;
+      width: 35px;
+      height: 40px;
       display: inline-block;
       line-height: 36px;
-      background-image: url('/b/fashion/images/projects/denim/social.png');
       background-repeat: no-repeat;
       margin-right: 20px;
+      background-size: contain;
     }
 
     .instagram {
-      background-position: 0 0;
+      background-image: url('/b/fashion/images/projects/denim/icons/instagram.jpg');
     }
 
     .facebook {
-      background-position: -60px 0;
+      background-image: url('/b/fashion/images/projects/denim/icons/facebook.jpg');
     }
 
     .pinterest {
-      background-position: -116px 0;
+      background-image: url('/b/fashion/images/projects/denim/icons/pinterest.jpg');
     }
 
     .twitter {
-      background-position: -176px 0;
+      background-image: url('/b/fashion/images/projects/denim/icons/twitter.jpg');
     }
-
   }
 
 }
@@ -640,6 +895,14 @@ main {
 
 @media all and ( min-width: 767px ) and ( max-width: 1024px ) {
 
+  #mast-nav.fixed {
+    z-index: 100;
+  }
+
+  #linking h3 {
+    display: none;
+  }
+
   #lookbook {
 
     #hero #hero-text {
@@ -648,37 +911,38 @@ main {
         width: 47%;
       }
     }
-
-    hr {
-      display: none !important;
-    }
-
   }
 
   #blog-heading {
     padding: 0 2em;
-  }
+  }  
 
-  #dos-and-donts h2 {
-    font-size: 6em;
-  }
-
-  #match-game {
-    padding: 1em 2em;
-
-    .carousel {
-      margin: 1em 0;
-
-      img {
-        width: 60%;
-      }
-
-      h3 {
-        font-size: 2em;
-        bottom: 30%;
+  #dos-and-donts {
+    h2 {
+      font-size: 6em;
+    }
+    .details {
+      .copy {
+        padding-top: 0;
+        margin-right: 0;
+        width: 50%;
       }
     }
+  }
 
+  .normal-brand-footer {
+    top: 91%;
+  }
+
+  #frame-wide-leg.normal-brand-footer {
+    top: 84%;
+  }
+
+  #j-brand-light-wash.normal-brand-footer, #ag-high-impact-hues.normal-brand-footer {
+    top: 76%;
+  }
+  #levis-light-wash.normal-brand-footer, #j-brand-high-impact-hues.normal-brand-footer {
+    top: 85%;
   }
 
 }
@@ -695,7 +959,7 @@ main {
 }
 
 
-@media all and ( max-width: 768px ) {
+@media all and ( max-width: 766px ) {
 
   .desktop {
     display: none;
@@ -703,6 +967,123 @@ main {
 
   #mast-nav {
     display: none;
+  }
+
+  #denim-dilemmas {
+    .col {
+      display: inline-block;
+      position: relative;
+      margin-top: 1em;
+    }
+  }
+
+  .brand-footer {
+    top: 74%;
+    left: 3%;
+  }
+
+  .normal-brand-footer {
+    text-transform: none;
+    display: block;
+    position: absolute;
+    background: #000;
+    color: #fff;
+    text-decoration: underline;
+    line-height: 6vw;
+    width: 35vw;
+    text-align: center;
+    font-size: 2.5vw;
+  }
+
+  .second-brand {
+    top: 83%;
+  }
+
+  #levis-light-wash.brand-footer {
+    width: 13%;
+    top: 84%;
+  }
+
+  #j-brand-light-wash.brand-footer {
+    width: 15%;
+    top: 74%;
+  }
+
+  #ag-high-impact-hues.brand-footer {
+    width: 6%;
+    top: 74%;
+  }
+
+  #j-brand-high-impact-hues.brand-footer {
+    width: 15%;
+    top: 83%;
+  }
+
+  #frame-wide-leg.brand-footer {
+    top: 87%;
+    width: 13%;
+    left: 2%;
+  }
+
+  #rag-and-bone-wide-leg.brand-footer {
+    top: 93%;
+    width: 32%;
+    left: 2%;
+  }
+
+  #frame-bright-washes-link.brand-footer {
+    top: 93%;
+    width: 13%;
+    left: 2%;
+  }
+  
+
+  #denim-styles {
+    .title {
+      height: 65vw;
+      background-color: #f8f1ec;
+      text-align: center;
+      padding-top: 25vw;
+      overflow: hidden;
+      font-family: 'Roboto Mono', monospace;
+
+      span {
+        font-size: 10.7vw;
+        position: relative;
+        left: -4.5%;
+      }
+
+      p {
+        font-size: 3vw;
+        line-height: 2.3em;
+        padding-left: 15%;
+        padding-right: 15%;
+        padding-top: 2vw;
+      }
+
+      .container {
+        width: 110%;
+      }
+    }
+
+    #blog-heading {
+      h1 {
+        padding: 1.5em 0;
+      }
+    }
+  }
+
+  #denim-dictionary-carousel {
+    .ls {
+      display: none;
+    }
+    #carousel-dots li {
+      background-color: transparent;
+      border: 1px solid black;
+    }
+    #carousel-dots li.active {
+      background-color: black;
+    }
   }
 
   #trends {
@@ -716,19 +1097,31 @@ main {
       }
 
       h1 {
-        font-size: 5em;
+        font-size: 4.5em;
         width: 100%;
-        margin-top: 1em;
+        margin-top: 1.5em;
+        font-weight: normal;
       }
 
       p {
-        width: 95%;
-        padding: 0 5%;
+        width: 100%;
         margin: 2em 0;
+        font-size: 1.1em;
+        line-height: 2em;
+        padding-left: 0;
       }
     }
 
     #linking {
+
+      #style {
+        h2 {
+          width: 40%;
+        }
+        img {
+          border-bottom: 0.5px solid black;
+        }
+      }
 
       a {
         display: block;
@@ -736,8 +1129,17 @@ main {
 
         h2 {
           font-size: 1.9em;
+          font-weight: normal;
+          width: 55%;
+          padding: 0.2em 0;
+        }
+
+        h3 {
+          display: none;
         }
       }
+
+
 
     }
 
@@ -752,6 +1154,7 @@ main {
 
     #blog-heading {
       text-align: center;
+      font-family: 'Roboto Mono', monospace;
 
       h1 {
         font-size: 3.5em;
@@ -761,16 +1164,18 @@ main {
       }
 
       p {
-        width: 100%;
+        width: 83%;
         padding: 0;
         margin: 2em 0;
-        font-size: 0.9em;
+        font-size: 1em;
+        line-height: 2.3em;
+
       }
     }
 
     h2 {
       font-size: 2.75em;
-      font-weight: 700;
+      font-weight: normal;
       margin-bottom: 0.5em;
     }
 
@@ -779,14 +1184,21 @@ main {
         width: 100%;
         display: block;
         margin: 3em 0;
+        .image {
+          position: relative;
+          display: inline-block;
+        }
       }
     }
 
     #denim-dictionary {
       position: relative;
+      padding-left: 0;
+      font-family: 'Roboto Mono', monospace;
 
       h1 {
         padding: 0.75em 0;
+        padding-bottom: 0;
       }
 
       .more,
@@ -814,14 +1226,16 @@ main {
           h3 {
             margin: 0.5em 0;
             font-size: 2.5em;
+            font-weight: normal;
           }
 
           .details {
             padding: 0 10%;
+            line-height: 2.3em;
           }
 
           a.shop {
-            font-weight: 700;
+            font-weight: normal;
             font-size: 1.6em;
             text-transform: uppercase;
           }
@@ -870,18 +1284,21 @@ main {
 
       .sub-heading {
         padding: 0 12%;
+        line-height: 2.3em;
       }
 
       .details {
         width: 100%;
 
         .image {
-          width: 75%;
+          width: 85%;
+          position: relative;
+          display: inline-block;
         }        
 
         .copy {
-          width: 90%;
-          padding-left: 2.5%;
+          width: 85%;
+          padding-left: 7%;
         }
 
       }
@@ -942,6 +1359,15 @@ main {
       padding: 1em 2em;
       border-bottom: 1px solid #000;
       background-color: #fff;
+
+      .menu-title {
+        padding-left: 2.2em;
+        display: inline-block;
+        font-size: 1.3em;
+        position: absolute;
+        padding-top: 0.1em;
+        text-decoration: none;
+      }
 
       .logo {
         position: absolute;
@@ -1106,10 +1532,45 @@ main {
     font-family: 'Roboto Mono', monospace;
     display: block;
     line-height: 2.5em;
-    border-top: 1px solid #000;
-    border-bottom: 1px solid #000;
+    border-top: none;
+    border-bottom: none;
     text-align: center;
     padding: 1em 0;
+
+    .housing {
+      padding-left: 1.2em;
+    }
+
+    .footer-text {
+      height: 9em;
+      background: #000;
+      color: #fff;
+      padding-top: 3em;
+      font-weight: normal;
+      padding-right: 3em;
+      margin-bottom: 3em;
+      position: relative;
+
+      span, a {
+        color: #fff;
+      }
+
+      span {
+        font-size: 1.2em;
+      }
+
+      a {
+        font-size: 1em;
+        text-decoration: underline;
+      }
+
+      .btt {
+        top: 6.8em;
+        position: absolute;
+        font-size: 1.3em;
+        left: 0;
+      }
+    }
 
     a {
       font-size: 1.4em;
@@ -1130,9 +1591,42 @@ main {
     }
 
     .btt {
-      margin-top: 1.5em;
+      top: 5em;
+      .back-to-top {
+        background-size: 0.8em;
+        bottom: 4.5em;
+        width: 1.8em;
+        height: 1.8em;
+      }
+    }
+
+    #landing-footer {
+      .back-to-top {
+        left: 0;
+      }
     }
   }
 
+  #guide-footer {
+    position: relative;
+    .btt {
+      margin-top: 4.5em;
+      position: absolute;
+      top: 0;
+      left: 80%;
+    }
+    .housing {
+      padding-left: 1em;
+      border-top: 1px solid black;
+      padding-top: 2em;
+    }
+  }
+  #lookbook-footer {
+    .footer-text.mobile-footer {
+      .btt#lookbook-btt {
+        top: 8.3em;
+        left: 78%;
+      }
+    }
+  }
 }
-
