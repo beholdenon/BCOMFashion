@@ -1,146 +1,191 @@
+h1,
+h2, 
+h3,
+p,
+a,
+span {
+	font-family: 'Roboto Mono', monospace;	
+}
+
 #lookbook {
 
-	h1,
-	h2, 
-	h3,
-	p,
-	a,
-	span {
-		font-family: 'Roboto Mono', monospace;	
+	.days-of-week {
+		background-color: black;
+	    color: white;
+	    width: 15%;
+	    text-align: center;
+	    height: 1.8em;
+	    line-height: 1.8em;
+	    font-size: 1.2em;
+	    font-weight: normal;
+        margin-left: 10%;
+    	margin-bottom: 1.5em;
+
+	    .day-active {
+	    	color: #eecaae;
+	    }
 	}
 
-
-	#hero {
+	.hero {
 		position: relative;
-	}
 
-	#hero-text {
-		position: absolute;
-		top: 25%;
-		left: 5%;
+		.hero-text {
+			position: absolute;
+			top: 15%;
+			left: 25%;
 
-		h1 {
-			color: #fff;
-			font-size: 6.5em;
-			font-weight: 700;
-			margin-bottom: 0.25em;
-			line-height: 1em;
-		}
+			h1 {
+				font-size: 6.5em;
+				margin-bottom: 0.25em;
+				line-height: 1em;
+			}
 
-		p {
-			margin-left: 15%;
-			display: inline-block;
-			font-size: 1.35em;
-			line-height: 2.25em;
-			width: 30%;
-		}
-	}
-	
-	.heading {
-		h2.col {
-			text-align: right;
-			padding-right: 5%;
-			font-weight: 500;
-			font-size: 3.5em;
-			line-height: 1.4em;
+			p {
+				margin-left: 10%;
+				display: inline-block;
+				font-size: 1.35em;
+				line-height: 2.25em;
+				width: 16%;
+			}
+
+			h1:nth-child(3) {
+				padding-left: 0.6em;
+			}	
+
+			p:last-child {
+				width: 30%;
+				font-size: 1.2rem;
+			}
 		}
 	}
-
-	.circle {
-		position: relative;
-		padding: 0 5% 0 5%;
-		line-height: 2.25em;
-		vertical-align: top;
-	}
-
-	.circle::before {
-		content: "";
-		display: inline-block;
-		width: 1em;
-		height: 1em;
-		position: absolute;
-		border: 1px solid #000;
-		border-radius: 100%;
-		top: 0.6em;
-		margin-left: 18%;
-	}
-
-
 
 	section {
-		display: block;
+		display: inline-block;
 		margin-top: 4em;
 
 		.brand {
 			text-transform: uppercase;
 
-			span {
+			.brand-footer {
 				margin-top: 0.5em;
 				margin-left: 0.25em;
 				display: block;
+			    position: absolute;
+			    top: 95%;
+			    left: 2%;
+			    background: black;
+			    color: white;
+			    text-decoration: underline;
+			    line-height: 2em;
+			    width: 12em;
+			    text-align: center;
+			    font-size: 1.2em;
+			    letter-spacing: 0.05em;
+			}
+
+			.side-text-brand-footer {
+				@extend .brand-footer;
+			    left: 14%;
+    			width: 10%;
+    			top: 89%;
+			}
+
+			.white-brand-footer {
+				@extend .side-text-brand-footer;
+				width: 12%;
+			}
+
+			.front-seams-brand-footer {
+				@extend .brand-footer;
+				width: 3%;
+			}
+
+			.light-wash-brand-footer {
+				@extend .brand-footer;
+				width: 10rem;
+			}
+
+			.shorts-brand-footer {
+				@extend .brand-footer;
+				width: 7%;
 			}
 		}
 
-		.rightAlign {
-			text-align: right;
+		.head {
+			padding-top: 5em;
+			padding-bottom: 5em;
+
+		    p {
+	    	    font-size: 1.2em;
+			    line-height: 2em;
+			    margin-bottom: 1.5em;
+
+			    span {
+			    	font-weight: bold;
+			    }
+		    }
+
+		    a {
+		    	font-size: 1.7em;
+		    }
+
+			.days-of-week {
+				width: 41%;
+			    margin-bottom: 0.5em;
+			    margin-left: 0;
+			}
+
+			h2 {
+				font-size: 3.7em;
+	    		font-weight: 500;
+			}
 		}
 
-	}
-
-	#throwback-silhouette {
-
-		.circle::before {
-			left: -7em;
-		}
-
-		.sub {
+		.main {
 			display: block;
 			margin-top: 0.5em;
 
-			.product {
-				display: inline-block;
-			}
-
 			a {
 				display: block;
-			}
-
-			#paige {
-				width: 43%;
-				vertical-align: middle;
-				text-align: left;
-
-				span {
-					margin-left: 10%;
-				}
-			}
-
-			#mankind {
-				width: 50%;
-				vertical-align: top;
-				text-align: right;
-				margin-left: 4.75%;	
-			}
-
-			#three-jeans {
 				position: relative;
-				top: -1em;
+			}
+
+			.three-jeans {
+				position: relative;
 				display: inline-block;
 				width: 20%;
 				vertical-align: top;
-				text-align: center;				
+				text-align: center;
+
+				span {
+			    	font-size: 1.2rem;
+			    	display: inline-block;
+			    	text-decoration: underline;
+			    	line-height: 1.3em;
+			    	width: 100%;
+			    	margin-bottom: 3em;
+    				margin-top: 1em;
+			    }
+
+			    #current-elliott-shorts, #joes-jeans-shorts {
+			    	padding-bottom: 7em;
+			    }
 			}
 
-			#hudson {
+			.main-image {
 				display: inline-block;
 				width: 78%;
 				text-align: right;
 				vertical-align: top;
 				margin-top: 3em;
 
-				.sub-links {
-					text-align: left;
+				.main-links {
+					text-align: right;
 					margin-top: 1.5em;
+
+					.footer-link {
+						padding-top: 4em;
+					}
 
 					div {
 						width: 49.5%;
@@ -151,14 +196,14 @@
 						display: inline-block;
 						font-weight: 500;
 						font-size: 1.75em;
-						margin-right: 2.5em;
+						margin-right: 5.5em;
 						vertical-align: middle;
 					}
 
 					hr {
 						content: "";
 						display: inline-block;
-						width: 4vw;
+						width: 6vw;
 						height: 5px;
 						background-color: #000;
 						margin-right: 1em;
@@ -166,802 +211,498 @@
 						position: relative;
 					}
 				}
-
 			}
-
 		}
 
+		.on-top-text {
+
+			.head {
+				.col:nth-child(1) {
+					padding-left: 16%;
+		    		width: 45%;
+		    		padding-top: 0.5em;
+				}
+
+				.col:nth-child(2) {
+				    width: 35%;
+				    padding: 0;
+				}
+			}
+		}
+
+		.on-side-text {
+			.main-image {
+				float: left;
+				width: 50%;
+			}
+
+			.main {
+				.head {
+					float: right;
+					display: inline-block;
+				    width: 50%;
+	    			padding-top: 14%;
+	    			padding-left: 2%;
+
+	    			p {
+	    				width: 65%;
+					    padding-top: 0.6em;
+					    padding-bottom: 0.6em;
+	    			}
+
+	    			.days-of-week {
+	    				width: 24%;
+	    			}
+				}
+
+				.side-head {
+					@extend .head;
+					padding-top: 8%;
+				}
+
+				.three-jeans {
+				    position: relative;
+				    display: inline-block;
+				    width: 100%;
+				    vertical-align: top;
+				    text-align: center;
+
+				    a {
+				    	width: 32%;
+				    	display: inline-block;
+				    }
+
+				    span {
+				    	padding-bottom: 2em;
+				    	float: left;
+				    	width: 65%;
+				    	margin-top: 0;
+					    margin-bottom: 0;
+					    padding-bottom: 0;
+				    }
+
+				    img {
+				    	float: left;
+					    padding-bottom: 2em;
+					    padding-top: 4em;
+				    }
+
+				    .high-impact-hues-products {
+				    	a {
+				    		vertical-align: top;
+				    	}
+				    }
+
+				    .skirts-products {
+				    	span {
+				    		padding-left: 2rem;
+				    	}
+				    }
+
+				    .white {
+				    	padding-top: 4em;
+				    	img {
+				    		padding-top: 0;
+					    	margin-top: 0; 
+				    	}
+				    	a {
+				    		float: left;
+				    	}
+
+				    	.white-products {
+				    		height: 12em;
+				    	}
+
+					    #paige-white {
+				    		width: 23%;
+				    		padding-top: 3em;
+				    		span {
+					    		padding-left: 3em;
+						    }
+					    }
+
+					    #frame-white {
+					    	img {
+					    		padding-left: 2em;
+						    }
+
+						    span {
+						    	padding-left: 6em;
+						    }
+					    }
+
+					    #ag-white {
+					    	padding-top: 3em;
+					    	img {
+					    		padding-left: 1em;
+					    	}
+					    	span {
+					    		padding-left: 4em;
+					    	}
+					    }
+				    }
+				}
+			}
+		}
+	}
+}
+
+// // ======================== MOBILE
+
+#lookbook-mobile {
+
+	.mobile {
+		display: inline-block !important;
 	}
 
-	#velvet {
+	.desktop {
+		display: none !important;
+	}
 
-		margin-top: 12em;
+	.days-of-week {
+		background-color: black;
+	    color: white;
+	    width: 30vw;
+	    text-align: center;
+	    height: 5vw;
+	    line-height: 5vw;
+	    font-size: 3vw;
+	    font-weight: normal;
+        margin-left: 10%;
+    	margin-bottom: 5vw;
 
-		.circle::before {
-			left: -8em;
-		}
+	    .day-active {
+	    	color: #eecaae;
+	    }
+	}
 
-		.header {
-			img {
-				width: 90%;
-				position: relative;
-				left: 4%;	
+	.hero {
+		position: relative;
+
+		.hero-text {
+			position: absolute;
+			top: 20%;
+			left: 25%;
+
+			h1 {
+				font-size: 12vw;
+				margin-bottom: 4vw;
+				line-height: 11vw;
 			}
 
-			span {
-				left: 4%;
-				top: -2em;
-				position: relative;
-				display: inline-block;
-				width: 30%;
-			}			
+			h1:nth-child(3) {
+				padding-left: 5vw;
+			}	
 		}
 
-		.heading {
+		.sub-text {
+		    font-size: 3.5vw;
+		    text-align: center;
+		    padding: 10vw 7vw 10vw 7vw;
+		    line-height: 7vw;
+		    margin-bottom: 0;
+		}
+	}
+
+	section {
+		display: inline-block;
+		padding-left: 5%;
+		padding-right: 5%;
+		padding-bottom: 15%;
+
+		.main-image {
+			display: inline-block;
 			position: relative;
-
-			h2 {
-				line-height: 2em;
-				font-weight: 500;
-				font-size: 5em;
-				margin-bottom: 1em;
-				text-align: center;
-			}
-
-		}
-
-		.middle {
-			position: relative;
-
-			img {
-				display: block;
-			}
-
-			&> div {
-				display: inline-block;
-				width: 45%;
-
-				&:first-child {
-					margin-right: 6%;
-				}
-
-				&.two {
-					position: relative;
-					top: 4em;
-
-					.circle {
-						margin-bottom: 2em;
-					}
-				}
-			}
-
-		}
-
-		.bottom {
-			display: inline-block;
-			width: 50%;
-
-			.laydown {
-				display: inline-block;
-				width: 48%;
-				text-align: center;
-			}
-		}
-
-		.sub-links {
-			margin-top: 12em;
-			display: inline-block;
-			width: 48%;
-			text-align: right;
-			vertical-align: top;
-
-			a {
-				display: inline-block;
-				font-weight: 500;
-				font-size: 1.75em;
-				margin-right: 2.5em;
-				line-height: 4em;
-			}
-
-			hr {
-				content: "";
-				display: inline-block;
-				width: 35%;
-				height: 5px;
-				background-color: #000;
-				margin-right: 1em;
-				vertical-align: middle;
-				position: relative;
-			}
-		}
-
-	}
-
-	#statement-hems {
-		.circle::before {
-			left: -7em;
-		}
-
-		.vert {
-			position: relative;
-			bottom: 2em;
-		}
-
-		.two-col {
-			&.first {
-				a:first-child {
-					margin-top: 3em;
-					width: 44%;
-				}
-
-				a:last-child {
-					width: 50%;
-					margin-left: 4%;
-				}
-			}
-
-			&.second {
-
-			}
-		}
-
-		.small-col {
-			vertical-align: top;
-			display: inline-block;
-			width: 18%;
-			text-align: center;
-			margin-top: 2em;
-			margin-right: 5%;
-
-			a {
-				display: block;
-				margin-bottom: 2em;
-
-				&:last-child {
-					position: relative;
-					top: 3em;
-				}
-			}
-		}
-
-		.big-col {
-			vertical-align: top;
-			display: inline-block;
-			width: 75%;
-			margin-top: 8em;
-		}
-
-		.sub-links {
-			text-align: right;
-			margin-top: 3.5em;
-
-			div {
-				width: 49.5%;
-				display: inline-block;
-			}
-
-			a {
-				display: inline-block;
-				font-weight: 500;
-				font-size: 1.75em;
-				margin-right: 1.75em;
-				vertical-align: middle;
-			}
-
-			hr {
-				content: "";
-				display: inline-block;
-				width: 30%;
-				height: 5px;
-				background-color: #000;
-				margin-right: 1em;
-				vertical-align: middle;
-				position: relative;
-			}
-		}
-	}
-
-	#jackets {
-
-		margin-top: 12em;
-
-		.circle::before {
-			left: -8em;
-		}
-
-		.header {
-			text-align: right;
-			padding: 0 5%;
-
-			img {
-				position: relative;	
-			}
-
-			span {
-				margin-right: 5%;
-			}
-		
-		}
-
-		.heading {
-			position: relative;
-
-			h2 {
-				line-height: 2em;
-				font-weight: 500;
-				font-size: 5em;
-				margin-bottom: 1em;
-				text-align: center;
-			}
-
-		}
-
-		.middle {
-			position: relative;
-
-
-			img {
-				display: block;
-			}
-
-			div {
-				display: inline-block;
-				width: 45%;
-				vertical-align: top;
-
-				&:first-child {
-					margin-right: 6%;
-				}
-
-				&.two {
-					position: relative;
-					top: 4em;
-
-					.circle {
-						margin-bottom: 2em;
-					}
-				}
-			}
-
-		}
-
-		.bottom {
-			display: inline-block;
-			width: 68%;
-
-			.laydown {
-				display: inline-block;
-				width: 32%;
-				text-align: center;
-			}
-		}
-
-		.sub-links {
-			margin-top: 12em;
-			display: inline-block;
-			width: 30%;
-			text-align: right;
-			vertical-align: top;
-
-			a {
-				display: inline-block;
-				font-weight: 500;
-				font-size: 1.75em;
-				margin-right: 2.5em;
-				line-height: 4em;
-			}
-
-			hr {
-				content: "";
-				display: inline-block;
-				width: 20%;
-				height: 5px;
-				background-color: #000;
-				margin-right: 1em;
-				vertical-align: middle;
-				bottom: 0.5em;
-				position: relative;
-			}
-		}
-
-	}
-
-	#favorites {
-		background-color: #000;
-		color: #fff;
-		padding: 5em 10%;
-		margin-top: 8em;
-		text-decoration: none;
-		display: block;
-
-		h2, span {
-			color: #fff;
-		}
-
-		h2 {
-			font-size: 3.5em;
-			width: 40%;
-			display: inline-block;
-			
-			a {
-				color: #fff;
-			}
-		}
-
-		span {
-			width: 58%;
-			display: inline-block;
-		}
-
-		.circle {
-			line-height: 2.5em;
-			padding: 0 3%;
-
-			&:before {
-				border: 1px solid #fff;
-				margin-left: -4%;
-			}
-		}
-	}
-
-	#best-sellers {
-		margin-top: 0;
-		display: flex;
-		align-items: center;
-		justify-content: space-around;
-
-		a {
-			display: inline-block;
-			vertical-align: top;
-			text-align: center;
-
-			p {
-				margin-top: 1em;
-			}
-
-		}
-	}
-
-	#shop-best-sellers{
-		display: flex;
-		margin: 4em 0 6em;
-		justify-content: space-around;
-
-		.link {
-			display: inline-block;
-			width: 35%;
-
-			&:first-child { text-align: right; }
-			&:last-child { text-align: left; }
 
 			.brand {
-				display: inline-block;
-				font-weight: 500;
-				font-size: 1.5em;
-				vertical-align: middle;
 				text-transform: uppercase;
+
+				.brand-footer {
+				    top: 92%;
+				    left: 2%;
+				}
+
+				.normal-brand-footer {
+					display: block;
+				    position: absolute;
+				    background: #000;
+				    color: #fff;
+				    text-decoration: underline;
+				    line-height: 6vw;
+				    width: 35vw;
+				    text-align: center;
+				    font-size: 3vw;
+				}
+
+				.circle-brand-footer {
+					top: 87%;
+			    	left: 13%;
+				}
 			}
 
-			hr {
-				content: "";
-				display: inline-block;
-				width: 30%;
-				height: 5px;
-				background-color: #000;
-				margin-right: 1em;
-				vertical-align: middle;
-				position: relative;
+			#ag-front-seams.brand span {
+				width: 8vw;
+			}
+			#levis-shorts.brand span, #dl1961-skirts.brand span {
+				width: 14vw;
+			}
+			#j-brand-white.brand span {
+				width: 16vw;
+			}
+			#joes-jeans-light-wash span {
+				width: 23vw;
+			}
+			#hudson-high-impact-hues.brand span {
+				width: 15vw;
 			}
 		}
 
+		.head {
+			padding-top: 14vw;
+			padding-bottom: 7vw;
+			text-align: center;
 
+		    p {
+	    	    font-size: 3.5vw;
+			    line-height: 9vw;
+			    margin-bottom: 5vw;
+			    margin-top: 5vw;
+
+			    span {
+			    	font-weight: bold;
+			    }
+		    }
+
+		    h2 {
+				font-size: 9vw;
+	    		font-weight: normal;
+			}
+
+			.days-of-week {
+			    margin-left: 30%;
+			}
+
+			.main-links {
+				margin-top: 5vw;
+				margin-left: 10%;
+
+				.footer-link {
+					text-transform: uppercase;
+					display: inline-block;
+					font-weight: normal;
+					font-size: 5.5vw;
+					margin-right: 10vw;
+					a {
+				    	display: inline-block;
+				    	padding-bottom: 7vw;
+					}
+				}
+			}
+		}
+
+		.main {
+
+			.product {
+			    display: inline-block;
+			    width: 25%;
+			    margin-right: 9vw;
+			    text-align: center;
+			    vertical-align: top;
+
+			    .track-stripes-products {
+			    	height: 54vw;
+			    }
+
+			    .skirts-products {
+			    	height: 27vw;
+			    }
+
+			    .front-seams-products {
+			    	height: 51vw;
+			    }
+
+			    .white-products {
+			    	height: 41vw;
+			    }
+
+			    .light-wash-products {
+			    	height: 62vw;
+			    }
+
+			    .high-impact-hues-products {
+			    	height: 56vw;
+			    }
+
+			    .shorts-products {
+			    	height: 32vw;
+			    }
+
+			    #ag-white, #paige-white {
+			    	img {
+			    		padding-top: 7vw;
+			    	}
+			    }
+
+			    span {
+			    	text-transform: uppercase;
+			    	font-size: 2.8vw;
+			    }
+			}
+
+			.three-jeans div:last-child {
+				margin-right: 0;
+			}
+		}
 	}
-
 }
 
-.mobile {
-	display: none;
-}
+//TABLET
 
-
-
-// ======================== MOBILE
-
-
-
-
-@media all and ( max-width: 768px ) {
+@media all and ( min-width: 767px ) and ( max-width: 1024px ) {
 
 	#lookbook {
 
-		.circle:before {
-			display: none;
-		}
-
-		.desktop {
-			display: none !important;
-		}
-
-		.mobile {
-			display: inline-block !important; 
-		}
-
-		#hero {
-			width: 100%;
-			overflow: hidden;
-			padding-bottom: 12em;
-		}
-
-		#heroImg {
-			max-width: 200vw;
-		}
-
-		#hero-text {
-			width: 100%;
-			padding: 0 5%;
-			text-align: center;
-			left: 0;
-
-			h1 {
-				font-size: 3.75em;
-				font-weight: 500;
+		.hero {
+			.hero-text {
+				top: 5%;
 			}
-
-			p {
-				margin: 15em 0 0;
-				font-size: 1.1em;
+			.hero-text {
+				h1 {
+					font-size: 4.5em;
+				}
 			}
 		}
 
-		#throwback-silhouette,
-		#statement-hems {
-
-			.heading {
-				h2,
-				p {
-					display: block;
-					width: 100%;
-					text-align: center;
-				}
-
-				h2 {
-					font-size: 3em;
-					margin-bottom: 0.5em;
-				}
-
-				p {
-					font-size: 1.1em;
-					padding: 0 5%;
-				}
-
-			}
+		.days-of-week {
+			width: 21%;
 		}
 
-		#throwback-silhouette {
-			.sub {
+		section {
+			.brand {
+				.brand-footer {
+					top: 93%;
+				}
+				.light-wash-brand-footer {
+					width: 16%;
+				}
 				
-				#paige.product,
-				#mankind.product {
-					width: 90%;
-					padding: 0 5%;
-					text-align: center;
-					margin-bottom: 1.5em; 
+				.side-text-brand-footer {
+					top: 87%;
+					width: 14%;
+					left: 17%;
 				}
+				.shorts-brand-footer {
+					width: 9%;
+				}
+			}
 
-				#hudson {
-					width: 100%;
-					display: block;
-					text-align: center;
+			.brand#j-brand-white {
+				.white-brand-footer {
+					top: 87%;
+					width: 18%;
+				}
+			}
 
-					.sub-links {
-						text-align: center;
+			.head {
+				.days-of-week {
+					width: 44%;
+				}
+			}
 
-						div {
+			.on-side-text {
+				.main {
+					.head {
+						.days-of-week {
+							width: 33%;
+						}
+					}
+					#shop-white-jeans {
+						padding-bottom: 2em;
+					}
+					.three-jeans {
+						img {
+							padding-top: 2em;
+						}
+						span {
+							float: none;
 							width: 100%;
-							text-align: center;
-
-							a {
-								margin: 0;
-								line-height: 5em;
+						}
+						.skirts-products {
+							span {
+								padding-left: 0;
 							}
 						}
-
-						hr {
-							display: none;
+						.high-impact-hues-products {
+							a {
+								vertical-align: baseline;
+							}
+						}
+						.white {
+							.white-products {
+								height: 0;
+							}
+							#ag-white {
+								span {
+									padding-left: 2em;
+								}
+								img {
+									padding-bottom: 2.1em;
+								}
+							}
+							#frame-white {
+								span {
+									padding-left: 3em;
+								}
+								img {
+									padding-bottom: 0.7em;
+								}
+							}
+							#paige-white {
+								span {
+									padding-left: 0;
+								}
+								img {
+									padding-bottom: 2.3em;
+								}
+							}
 						}
 					}
 				}
-
-				#three-jeans {
-					width: 80%;
-					top: 1em;
-				}
 			}
-		}
 
-		#statement-hems {		
-
-			.two-col,
-			.big-col {
-				text-align: center;
-				margin-top: 2em;
-
-				&:first-child .brand:first-child {
-					width: 100%;
-					padding: 0;
-				}
-
-				.brand {
-					display: block;
-					width: 100%;
-					padding: 0 5%;
-					text-align: center;
-
-					span {
-						line-height: 2.25em;
-					}
-				}
-
-				.sub-links {
-					text-align: center;
-
-					div {
-						width: 100%;
-						text-align: center;
-
-						a {
-							margin: 0;
-							line-height: 5em;
-						}
-					}
-
-					hr {
-						display: none;
+			.on-top-text {
+				.head {
+					.col:nth-child(1) {
+						width: 51%;
 					}
 				}
 			}
 
-			.two-col.first a:last-child,
-			.two-col.first a:first-child {
-				width: 90%;
-			}
-		}
-		
-		#velvet {
-			margin-top: 3em;
-
-			.header {
-				margin-bottom: 2em;
-
-				.brand {
-					text-align: center;
-
+			.on-side-text {
+				.main-image {
 					img {
-						width: 100%;
-						left: 0;
-					}
-
-					span {
-						left: initial;
-						top: -1em;
-					}
+						width: 38em;
+					} 
 				}
-			}
-
-			.heading {
-				text-align: center;
-
-				h2 {
-					font-size: 3.25em;
-					line-height: 1em;
-					margin-bottom: 0.75em;
-				}
-
-				p {
-					padding: 0 5%;
-					line-height: 1.25em;
-					margin-bottom: 2em;
-				}
-			}
-
-			.middle {
-				div.one,
-				div.two {
-					position: initial;
-					top: initial;
-				}
-			}
-
-			.middle > div {
-
-				display: block;
-				width: 100%;
-				text-align: center;
-				margin-bottom: 1em;
-
-				img {
-					padding: 0 10%;
-				}
-
-				.rightAlign	 {
-					text-align: center;
-				}
-
-			}
-
-			.bottom {
-				width: 100%;
-				text-align: center;
-
-				.laydown {
-					display: block;
-					width: 100%;
-				}
-
-			}
-
-			.sub-links {
-				margin: 2em 0;
-				width: 100%;
-				text-align: center;
-
-				hr {
-					display: none;
-				}
-
-				a {
-					margin-right: 0;
-					margin-left: 0;
-				}
-			}
-		}
-
-		#jackets {
-			margin-top: 3em;
-
-			.header {
-				margin-bottom: 2em;
-
-				.brand {
-					text-align: center;
-
-					img {
-						width: 100%;
-						left: 0;
-					}
-
-					span {
-						left: initial;
-						top: -1em;
+				 #hudson-high-impact-hues.brand {
+				 	span {
+						width: 14%;
 					}
 				}
-			}
-
-			.heading {
-				text-align: center;
-
-				h2 {
-					font-size: 3.25em;
-					line-height: 1em;
-					margin-bottom: 0.75em;
-					padding: 0 10%;
-				}
-
-				p {
-					padding: 0 5%;
-					line-height: 1.25em;
-					margin-bottom: 2em;
-				}
-			}
-
-			.middle {
-				div.one,
-				div.two {
-					position: initial;
-					top: initial;
-				}
-			}
-
-			.middle > div {
-
-				display: block;
-				width: 100%;
-				text-align: center;
-				margin-bottom: 1em;
-
-				img {
-					padding: 0 10%;
-				}
-
-				.rightAlign	 {
-					text-align: center;
-				}
-
-			}
-
-			.bottom {
-				width: 100%;
-				text-align: center;
-
-				.laydown {
-					display: block;
-					width: 100%;
-				}
-
-			}
-
-			.sub-links {
-				margin: 2em 0;
-				width: 100%;
-				text-align: center;
-
-				hr {
-					display: none;
-				}
-
-				a {
-					line-height: 3.5em;
-					margin-right: 0;
-					margin-left: 0;
-				}
-			}
+			} 
 		}
-		
-		#favorites {
-			margin-top: 2em;
-			padding: 3em 5%;
-			color: #fff;
-			text-decoration: none;
+	}
 
-			h2 {
-				display: block;
-				width: 100%;
-				text-align: center;
-				line-height: 1.5em;
-				font-size: 3.5em;
-				margin-bottom: 0.5em;
-
-
-			}
-
-			.circle {
-				display: block;
-				width: 100%;
-				text-align: center;
-			}
-
-		}
-		
-		#best-sellers {
-
-			display: block;
-
-			.split {
-				display: flex;
-				justify-content: space-around;
-			}
-
-		}
-
-		#shop-best-sellers {
-			display: block;
-			margin: 2em 0 3em;
-
-			.link {
-				display: block;
-				width: 100%;
-				font-size: 1.45em;
-				line-height: 3.5em;
-				
-				&:first-child,
-				&:last-child {
-					text-align: center;
-				}
-				
-				hr {
-					display: none;
-				}
+	#lookbook-footer {
+		.footer-text {
+			.btt#lookbook-btt {
+				top: -70%;
 			}
 		}
 	}
+
+	#sub-nav {
+		font-size: 0.9em;
+	}
+
 }
