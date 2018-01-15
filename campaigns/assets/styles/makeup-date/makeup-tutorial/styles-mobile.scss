@@ -59,10 +59,20 @@
 
 
 
+
   /*Specific*/
-  .section-1 .products {
+  .section-title {
     position: absolute;
-    margin-top: 108px;
+    margin-top: -12px;
+    top: auto;
+  }
+  .section-title-2{
+    margin-top: -38px;
+  }
+
+  .section-1 .products {
+    position: relative;
+    margin-top: 0px;
     margin-left: -25px;
     width: 200px;
   }
@@ -73,10 +83,10 @@
     margin-left: -15px;
   }
   .section-5 .products {
-    margin-top: 162px;
+    margin-top: 0;
     margin-left: -47px;
     width: 204px;
-    position: absolute;
+    position: relative;
   }
 
 

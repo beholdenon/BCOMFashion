@@ -143,6 +143,7 @@ body .row #bl_main_container {
   .carousel-shell {
     position: relative;
     min-height: 200px;
+    background: none !important;
 
     .group {
       position: relative;
@@ -158,8 +159,11 @@ body .row #bl_main_container {
       transition: 1s;
       z-index: 0;
       vertical-align: top;
+      background: none !important;
+
 
       &.active {
+        outline: none;
         opacity: 1;
         z-index: 10;
       }
@@ -217,15 +221,17 @@ body .row #bl_main_container {
     .arrow {
       position: absolute;
       padding: 0;
-      background-color: transparent;
       border: 0;
-      width: 27px;
-      height: 37px;
+      width: 60px;
+      height: 80px;
       display: block;
       z-index: 20;
-      top: 45%;
+      top: 20%;
       cursor: pointer;
       background-repeat: no-repeat;
+      background-position: center;
+      background-color: transparent;
+
 
 
       &:focus,
@@ -241,11 +247,11 @@ body .row #bl_main_container {
 
     .leftArrow {
       background-image: url(/b/fashion/campaigns/images/makeup-date/makeup-tutorial/arrow-left.png);
-      left: 1.5em;
+      left: 0;
     }
     .rightArrow {
       background-image: url(/b/fashion/campaigns/images/makeup-date/makeup-tutorial/arrow-right.png);
-      right: 1.5em;
+      right: 0;
     }
 
   }
