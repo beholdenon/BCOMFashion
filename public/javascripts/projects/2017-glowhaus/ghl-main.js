@@ -1177,7 +1177,7 @@ $(function() {
     // Attribute 17= Video Length (Total length played in seconds)
 
     function coreMetricsForVideo(tag_value, attribute16_value, attribute17_value) {
-        var categoryID = "fall17_glowhaus";
+        var categoryID = "spring18_glowhaus";
         try {
             var explorerAttributes = new BLOOMIES.coremetrics.exploreAttributes;
             //16: evt.type,

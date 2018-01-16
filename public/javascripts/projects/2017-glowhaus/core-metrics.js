@@ -26,10 +26,10 @@ $(document).ready( function($) {
     };
 
     var pageDict = {
-                            "2017-glowhaus": "fall17_glowhaus--landing",
-                                    "about": "fall17_glowhaus--about",
-     "discover-new-makeup-skin-care-brands": "fall17_glowhaus--brands",
-                   "makeup-looks-tutorials": "fall17_glowhaus--video"
+                            "2017-glowhaus": "spring18_glowhaus--landing",
+                                    "about": "spring18_glowhaus--about",
+     "discover-new-makeup-skin-care-brands": "spring18_glowhaus--brands",
+                   "makeup-looks-tutorials": "spring18_glowhaus--video"
                   };
 
     $.fn.currentPageName = function() {
@@ -43,8 +43,8 @@ $(document).ready( function($) {
 
     $.fn.coreTag = function(tagType, pageID) {
 
-        //var thisCategoryID = "fall17_100percent";
-        var thisCategoryID = "fall17_glowhaus";
+        //var thisCategoryID = "spring18_100percent";
+        var thisCategoryID = "spring18_glowhaus";
 
         if (tagType === 'Pageview') {
             try {
