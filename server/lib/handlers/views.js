@@ -3,6 +3,7 @@
 let fs = require('fs'),
     path = require('path'),
     deviceDetectionHelper = require('./../helpers/deviceDetection'),
+    tagDataHelper = require('./../helpers/tagDataPreparation'),
 
     headMetaRegEx = /<!--headMeta=(.*)-->/,
     headTitleRegEx = /<!--headTitle=(.*)-->/,
@@ -21,6 +22,7 @@ let fs = require('fs'),
         tealiumType: process.env.ENV_TYPE === "prod" ? "prod" : "qa",
         brightTagEnabled: process.env.brightTagEnabled !== "false",
         polarisHeaderFooterEnabled: process.env.polarisHeaderFooterEnabled === "true",
+        polarisMobileHeaderFooterEnabled: process.env.polarisMobileHeaderFooterEnabled === "true",
         breastCancerAwarenessCampaignEnabled: process.env.breastCancerAwarenessCampaignEnabled === "true"
     },
 
@@ -70,8 +72,7 @@ let fs = require('fs'),
                     preLoadScriptsMatches = preLoadScriptsRegEx.exec(lines[i]),
                     headCanonicalDotComIdx,
                     headCanonicalSlashBIdx,
-                    canonicalHost,
-                    protocol;
+                    canonicalHost;
 
                 if (headMetaMatches) {
                     args.headMeta = JSON.parse(headMetaMatches[1]);
@@ -84,13 +85,7 @@ let fs = require('fs'),
                     headCanonicalDotComIdx = args.headCanonical.href.indexOf('.com');
                     headCanonicalSlashBIdx = args.headCanonical.href.indexOf('/b/');
 
-                    if (req.server !== undefined && req.server.info !== undefined && req.server.info.protocol !== undefined) {
-                        protocol = req.server.info.protocol + '://';
-                    } else {
-                        protocol = 'https://';
-                    }
-
-                    canonicalHost = protocol + req.info.hostname + '/b';
+                    canonicalHost = args.isMobile ? process.env.PROD_MOBILE_HOST : process.env.PROD_HOST;
 
                     //when on the headCanonical tag there are only a url path. Ex.: "/loyallist/top-of-the-list"
                     if (args.headCanonical.href && args.headCanonical.href.indexOf('http') === -1 && headCanonicalDotComIdx === -1 && headCanonicalSlashBIdx === -1) {
@@ -120,7 +115,8 @@ let fs = require('fs'),
                 console.log("Error using head* helper in " + file);
                 console.log("Argument must be an object");
             }
-
+            	args.utagData = tagDataHelper.getPageType(req);
+            
         } catch (e) {
             console.log("Error reading file name " + file + " in headHelpers function");
             console.log(e.message);
@@ -148,29 +144,77 @@ let fs = require('fs'),
     // and view to be passed in (for routes that have many pages that use the same view)
     adaptiveWithStaticDataFactory = require('./adaptiveWithStaticDataFactory');
 
+//***added for reviews page***//
+
+let crypto = require('crypto');
+
+function toHex(str) {
+    var hex = '';
+    for(var i=0; i<str.length; i++) {
+        hex += str.charCodeAt(i).toString(16);
+    }
+    return hex;
+}
+
+function formatDate(date) {
+  var mm = date.getMonth() + 1; // getMonth() is zero-based
+  var dd = date.getDate();
+
+  return [date.getFullYear(),
+          (mm>9 ? '' : '0') + mm,
+          (dd>9 ? '' : '0') + dd
+         ].join('');
+}
+
+function setUserToken(req) {
+    var md5,
+        bvUserToken,
+        date,
+        key = "am9q8B",
+        userStr;
+
+    //only continue if it's product review page AND user is signed in AND BazaarVoiceToken is not set
+    if (req && req.route && /product\/review/.test(req.route.path) &&
+        req.state && req.state.bloomingdales_online_uid &&
+        req.state.GCs && req.state.GCs.indexOf("BazaarVoiceToken1_92_") === -1) {
+
+        md5 = crypto.createHash('md5');
+        date = new Date();
+
+        userStr = "date=" + formatDate(date) + "&userid=" + req.state.bloomingdales_online_uid;
+        md5.update( key + userStr );
+        bvUserToken = md5.digest('hex') + toHex(userStr);
+    }
+    
+    return bvUserToken;
+}
+//***end of addition for reviews page***//
+
 module.exports = { 
     adaptive: {
         description: 'Non-responsive layout',
         notes: 'Reading Akamai headers, and based on device type (phone, tablet, desktop), serve either index.html or index-mobile.html layout',
         tags: ['non-responsive'],
         handler: function(req, res) {
-            var requestPath = (req.url.pathname).replace(/^\/b\//g, "/").substring(1);
+            var requestPath = req.url.pathname;
+                requestPath = requestPath.substring(1);
+
             var querystring = req.url.search || '';
-            var deviceDetectProc,
-                slashMinSuffix = ( req.query.debug === '1' ? '' : '/min' ),
-                file;
-
-            requestPath = detectDeepLinks(req, requestPath);
-
-            deviceDetectProc = detectMobileDeviceView(requestPath, req);
+            var deviceDetectProc;
+            var slashMinSuffix = ( req.query.debug === '1' ? '' : '/min' );
+            var file;
 
             // get rid of trailing spaces, add a trailing slash if missing, then redirect
-            if (requestPath.indexOf('#') < 0 && requestPath.indexOf('?') < 0 && requestPath.indexOf('.') < 0 && ! /\/$/.test(requestPath)) {
+            if ( ! /\/$/.test(requestPath) ) {
                 requestPath = requestPath.replace(/\/?\s?$/, '/');
                 var url = '/' + requestPath + querystring;
 
                 return res.redirect(url);
             }
+
+            requestPath = requestPath.replace(/^b\//, "");
+            requestPath = detectDeepLinks(req, requestPath);
+            deviceDetectProc = detectMobileDeviceView(requestPath, req);
 
             // Check if any head* helpers are used
             // Use of a head* helper is done using HTML comments <!-- headHelper= -->
@@ -178,7 +222,16 @@ module.exports = {
             file = deviceDetectProc + ".html";
             args = headHelpers(file, req);
 
-            return res.view(deviceDetectProc, { args: args, assetsHost: process.env.BASE_ASSETS, slashMinSuffix: slashMinSuffix });
+            return res.view(deviceDetectProc, { 
+                args: args, 
+                isApp: req.state.ishop_app, 
+                assetsHost: process.env.BASE_ASSETS, 
+                baseHost: process.env.BASE_HOST,
+                secureHost: process.env.SECURE_HOST,
+                mobileHost: process.env.MOBILE_HOST,
+                slashMinSuffix: slashMinSuffix,
+                bvUserToken: setUserToken(req)
+            });
         }
     },
     adaptiveWithStaticData: adaptiveWithStaticData,
@@ -201,7 +254,44 @@ module.exports = {
             // If so, add them to deviceDetectProc.args
             args = headHelpers(file, req);
 
-            return res.view(file, { args: args, assetsHost: process.env.BASE_ASSETS, slashMinSuffix: slashMinSuffix }, { layout: 'responsiveCustomHF' });
+            return res.view(file, { 
+                args: args,
+                isApp: req.state.ishop_app, 
+                assetsHost: process.env.BASE_ASSETS, 
+                baseHost: process.env.BASE_HOST,
+                secureHost: process.env.SECURE_HOST,
+                mobileHost: process.env.MOBILE_HOST,
+                slashMinSuffix: slashMinSuffix 
+            }, { layout: 'responsiveCustomHF' });
+        }
+    },
+    angularCustom: {
+        description: 'Responsive pages that have been built in AngularJS. No HF',
+        notes: 'Serve common html view for both desktop and mobile; exclude standard H&F and jQuery',
+        tags: ['custom header & footer', 'static'],
+        handler: function(req, res) {
+            var requestPath = (req.url.pathname).replace(/^\/b\//g, "/").substring(1);
+            var slashMinSuffix = ( req.query.debug === '1' ? '' : '/min' );
+            var file = requestPath.replace(/\\/g,"/");
+
+            if ( requestPath.lastIndexOf('.') < 0 ) {
+              file = file + '/index.html';
+            }
+                                                
+            // Check if any head* helpers are used
+            // Use of a head* helper is done using HTML comments <!-- headHelper= -->
+            // If so, add them to deviceDetectProc.args
+            args = headHelpers(file, req);
+
+            return res.view(file, { 
+                args: args,
+                isApp: req.state.ishop_app, 
+                assetsHost: process.env.BASE_ASSETS, 
+                baseHost: process.env.BASE_HOST,
+                secureHost: process.env.SECURE_HOST,
+                mobileHost: process.env.MOBILE_HOST,
+                slashMinSuffix: slashMinSuffix 
+            }, { layout: 'angularCustom' });
         }
     },
     fallback: {
@@ -211,7 +301,7 @@ module.exports = {
         handler: function(req, res) {
             var slashMinSuffix = ( req.query.debug === '1' ? '' : '/min' );
             var querystring = req.url.search || '';
-            var requestPath = req.url.pathname.replace(/^\/b\//g, "/");
+            var requestPath = req.url.pathname;
                 requestPath = requestPath.substring(1);
             var file;
 
@@ -219,7 +309,16 @@ module.exports = {
             if (req.query.UA){
                 req.headers['user-agent'] = req.query.UA;
             }
+
+            // get rid of trailing spaces, add a trailing slash if missing, then redirect
+            if ( ! /\/$/.test(requestPath) ) {
+                requestPath = requestPath.replace(/\/?\s?$/, '/');
+                var url = '/' + requestPath + querystring;
+
+                return res.redirect(url);
+            }
             
+            requestPath = requestPath.replace(/^b\//, "");
             requestPath = detectDeepLinks(req, requestPath);
             
             // Need this call in order to change args    
@@ -230,21 +329,21 @@ module.exports = {
                 return res.redirect('http://www.bloomingdales.com');
             }
 
-            // get rid of trailing spaces, add a trailing slash if missing, then redirect
-            if (requestPath.indexOf('#') < 0 && requestPath.indexOf('?') < 0 && requestPath.indexOf('.') < 0 && ! /\/$/.test(requestPath)) {
-                requestPath = requestPath.replace(/\/?\s?$/, '/');
-                var url = '/' + requestPath + querystring;
-
-                return res.redirect(url);
-            }
-
             // Check if any head* helpers are used
             // Use of a head* helper is done using HTML comments <!-- headHelper= -->
             // If so, add them to args
             file = requestPath + "index.html";
             args = headHelpers(file, req);
             
-            return res.view(requestPath + "index", { args: args, assetsHost: process.env.BASE_ASSETS, slashMinSuffix: slashMinSuffix});
+            return res.view(requestPath + "index", { 
+                args: args, 
+                isApp: req.state.ishop_app,
+                assetsHost: process.env.BASE_ASSETS, 
+                baseHost: process.env.BASE_HOST,
+                secureHost: process.env.SECURE_HOST,
+                mobileHost: process.env.MOBILE_HOST,
+                slashMinSuffix: slashMinSuffix
+            });
         }
     }
 };

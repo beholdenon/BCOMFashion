@@ -59,7 +59,7 @@ angular
         return {
             restrict: 'A',
             scope: true,
-            link: function(scope, el) {
+            link: $(function(scope, el) {
                 var options1 = {
                         format: 'mm-dd-yyyy',
                         disableDblClickSelection: true
@@ -102,7 +102,7 @@ angular
                     checkout.hide();
                     scope.emailForm.departingdate.$setDirty();
                 }).data('datepicker');
-            }
+            })
         };
     })
 

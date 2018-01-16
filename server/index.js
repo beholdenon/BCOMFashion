@@ -32,12 +32,17 @@ server.views({
 
 var routes = [
     { method: 'GET',  path: '/v3/{path*}',                                                                  config: require('./lib/handlers/api').v3 },
+    { method: 'GET',  path: '/b/v3/{path*}',                                                                config: require('./lib/handlers/api').v3 },
     { method: 'GET',  path: '/v4/{path*}',                                                                  config: require('./lib/handlers/api').v4 },
+    { method: 'GET',  path: '/b/v4/{path*}',                                                                config: require('./lib/handlers/api').v4 },
+    { method: 'GET',  path: '/getBag/{path*}',                                                              config: require('./lib/handlers/api').getbag },
+    { method: 'GET',  path: '/b/getBag/{path*}',                                                            config: require('./lib/handlers/api').getbag },
+    { method: 'POST', path: '/addToBag/{path*}',                                                            config: require('./lib/handlers/api').addbag },
+    { method: 'POST', path: '/b/addToBag/{path*}',                                                          config: require('./lib/handlers/api').addbag },
+    { method: 'POST', path: '/bag/add/{path*}',                                                             config: require('./lib/handlers/api').addbag },
+    { method: 'POST', path: '/b/bag/add/{path*}',                                                           config: require('./lib/handlers/api').addbag },
     { method: 'GET',  path: '/press/{path*}',                                                               config: require('./lib/handlers/api').press },
     { method: 'GET',  path: '/p/{path*}',                                                                   config: require('./lib/handlers/api').proxy },
-    { method: 'GET',  path: '/getBag/{path*}',                                                              config: require('./lib/handlers/api').getbag },
-    { method: 'POST', path: '/addToBag/{path*}',                                                            config: require('./lib/handlers/api').addbag },
-    { method: 'POST', path: '/bag/add/{path*}',                                                             config: require('./lib/handlers/api').addbag },
     { method: 'GET',  path: '/akamai/{path*}',                                                              config: require('./lib/handlers/akamai') },
     { method: 'GET',  path: '/fashion/{path*}',                                                             config: require('./lib/handlers/assets').netstorage },
     { method: 'GET',  path: '/b/fashion/{path*}',                                                           config: require('./lib/handlers/assets').netstorage },
@@ -65,7 +70,10 @@ var routes = [
     { method: 'GET',  path: '/landing-page/hawaii-ala-moana/{deeplinks?}',                                  config: require('./lib/handlers/views').adaptive },
 
     { method: 'GET',  path: '/campaign/give-pink-get-more/{path*}',                                         config: require('./lib/handlers/views').adaptive },
-    { method: 'GET',  path: '/b/campaign/give-pink-get-more/{path*}',                                         config: require('./lib/handlers/views').adaptive },
+    { method: 'GET',  path: '/b/campaign/give-pink-get-more/{path*}',                                       config: require('./lib/handlers/views').adaptive },
+    { method: 'GET',  path: '/campaign/give-pink-get-more/terms-and-conditions/{path*}',                    config: require('./lib/handlers/views').fallback },
+    { method: 'GET',  path: '/b/campaign/give-pink-get-more/terms-and-conditions/',                         config: require('./lib/handlers/views').fallback },
+    
     { method: 'GET',  path: '/catalogs/',                                                                   config: require('./lib/handlers/views').adaptive },
     { method: 'GET',  path: '/bwallet/',                                                                    config: require('./lib/handlers/views').adaptive },
     { method: 'GET',  path: '/charlotte-tilbury-makeup/',                                                   config: require('./lib/handlers/views').adaptive },
@@ -98,19 +106,29 @@ var routes = [
     { method: 'GET',  path: '/lookbooks/{action*}',                                                         config: require('./lib/handlers/views').adaptive },
     { method: 'GET',  path: '/lookbooks/',                                                                  config: require('./lib/handlers/views').adaptive },
     { method: 'GET',  path: '/b/lookbooks/',                                                                config: require('./lib/handlers/views').adaptive },
+   
     { method: 'GET',  path: '/loyallist/benefits/',                                                         config: require('./lib/handlers/views').adaptive },
+    { method: 'GET',  path: '/b/loyallist/benefits/',                                                       config: require('./lib/handlers/views').adaptive },
     { method: 'GET',  path: '/loyallist/top-of-the-list/',                                                  config: require('./lib/handlers/views').adaptive },
     { method: 'GET',  path: '/b/loyallist/top-of-the-list/',                                                config: require('./lib/handlers/views').adaptive },
+    
+    { method: 'GET',  path: '/denim/{path*}',                                                               config: require('./lib/handlers/views').adaptive },
+    { method: 'GET',  path: '/b/denim/{path*}',                                                             config: require('./lib/handlers/views').adaptive },
+
     { method: 'GET',  path: '/makeup-date/{path*}',                                                         config: require('./lib/handlers/views').adaptive },
     { method: 'GET',  path: '/b/makeup-date/{path*}',                                                       config: require('./lib/handlers/views').adaptive },
     { method: 'GET',  path: '/sweepstakes/win-1000-bucks-writing-reviews/',                                 config: require('./lib/handlers/views').adaptive },
     { method: 'GET',  path: '/product/review/',                                                             config: require('./lib/handlers/views').adaptive },
+    { method: 'GET',  path: '/b/product/review/',                                                           config: require('./lib/handlers/views').adaptive },
     
     { method: 'GET',  path: '/furniture-mattress-warranty/',                                                config: require('./lib/handlers/views').responsiveCustomHF },
     { method: 'GET',  path: '/b/furniture-mattress-warranty/',                                              config: require('./lib/handlers/views').responsiveCustomHF },
 
-    { method: 'GET',  path: '/international/{path*}',                                                       config: require('./lib/handlers/views').responsiveCustomHF },
-    { method: 'GET',  path: '/b/international/{path*}',                                                     config: require('./lib/handlers/views').responsiveCustomHF },
+    { method: 'GET',  path: '/b/furniture-mattress-store-locations',                                        config: require('./lib/handlers/views').adaptive },
+    { method: 'GET',  path: '/furniture-mattress-store-locations',                                          config: require('./lib/handlers/views').adaptive },
+
+    { method: 'GET',  path: '/international/{path*}',                                                       config: require('./lib/handlers/views').angularCustom },
+    { method: 'GET',  path: '/b/international/{path*}',                                                     config: require('./lib/handlers/views').angularCustom },
     
     { method: 'GET',  path: '/100-percent-2016/{path*}',                                                    config: require('./lib/handlers/views').responsiveCustomHF },
     { method: 'GET',  path: '/2016-fall-campaign-100-percent-exclusive/{path*}',                            config: require('./lib/handlers/views').responsiveCustomHF },
@@ -123,9 +141,13 @@ var routes = [
     { method: 'GET',  path: '/2017-glowhaus/{path*}',                                                       config: require('./lib/handlers/views').responsiveCustomHF },
 
     
-    { method: 'GET',  path: '/{path*}',                                                                     config: require('./lib/handlers/views').fallback }
+    { method: 'GET',  path: '/{path*}',                                                                     config: require('./lib/handlers/views').fallback },
 ];
 
+var campaigns = require(__dirname + '/routes/campaign_routes');
+validate_routes(campaigns, /^\/b\/campaigns\//, 'All campaigns must start with /b/campaigns/' );
+
+routes = routes.concat(campaigns);
 server.route(routes);
 
 server.ext('onPreHandler', function(request, reply) {
@@ -225,3 +247,27 @@ if (process.env.NODE_ENV === 'production') { // Heroku sets this in their enviro
     });
 }
 
+
+function validate_routes ( route, validation, validation_string ) {
+    var invalid = '';
+
+    for ( var i = 0; i < route.length; i++ ) {
+
+        if ( ! validation.test(route[i].path) ) {
+            invalid += "\n (" + i + ")   " + route[i].path;   
+        }
+    }
+
+    if ( invalid.length > 0 ) {
+        console.error("\x1b[31m",
+            "\n------------------------------------------------------\n",
+            "                Invalid Routes(s)", 
+            invalid,
+            "\n------------------------------------------------------",
+            "\n    "+validation_string,
+            "\n------------------------------------------------------\n",
+            "\x1b[0m");
+
+        process.exit(1);
+    }
+}

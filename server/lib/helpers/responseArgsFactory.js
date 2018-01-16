@@ -24,6 +24,7 @@ let deviceDetectionHelper = require('./deviceDetection'),
             tealiumType: process.env.ENV_TYPE === "prod" ? "prod" : "qa",
             brightTagEnabled: process.env.brightTagEnabled !== "false",
             polarisHeaderFooterEnabled: process.env.polarisHeaderFooterEnabled === "true",
+            polarisMobileHeaderFooterEnabled: process.env.polarisMobileHeaderFooterEnabled === "true",
             breastCancerAwarenessCampaignEnabled: process.env.breastCancerAwarenessCampaignEnabled === "true"
         };
     },

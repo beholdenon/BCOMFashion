@@ -1,0 +1,71 @@
+{
+  "designerName": "Good American",
+  "machineReadableDesignerName": "good_american",
+  "title2Prefix": "Good American",
+  "title2Suffix": "",
+  "omitTitle" : false,
+  "pageUrlDesignerAlias": "good-american",
+  "designerDescription": "GOOD AMERICAN is designed for a curvier, sexier and stronger shape.<br><br>Featuring denim, bodysuits and sweats, the pivotal brand originated from a conversation between co-founders Khlo&eacute; Kardashian and Emma Grede. They recognized that body ideals have shifted from the straight up-and-down frame favored by the fashion establishment to a fuller, more curvaceous figure.<br><br>As leaders in the body positivity movement, the campaign features the GOOD SQUAD&mdash;women of all shapes, sizes and backgrounds who represent the brand and its values. The squad are bold and confident in who they are and what they do.<br><br>Wherever you shop GOOD AMERICAN, you will find every size in one place.<br>No size separation necessary.",
+  "mainImage" : "/b/fashion/images/projects/in-store/good-american/logo.jpg",
+  "addressColumns": [
+    [{
+      "name": "59th Street",
+      "streetAddress": "1000 Third Avenue",
+      "cityStateZip": "59th Street and Lexington Avenue<br />New York, NY 10022",
+      "phoneNumber": "212-705-2000",
+      "phoneNumberHrefSuffix": "+1-212-705-2000",
+      "urlArgs": {
+        "addressAlias": "59th-street",
+        "designerAlias": "good_american",
+        "addressFullDetail": "59TH-STREET-LEXINGTON-AVENUE"
+      }
+    }, {
+      "name": "SOHO",
+      "streetAddress": "504 Broadway",
+      "cityStateZip": "New York, NY 10012",
+      "phoneNumber": "212-729-5900",
+      "phoneNumberHrefSuffix": "+1-212-729-5900",
+      "urlArgs": {
+        "addressAlias": "soho",
+        "designerAlias": "good_american",
+        "addressFullDetail": "SOHO"
+      }
+    }],
+    [{
+      "name": "SHORT HILLS",
+      "streetAddress": "1200 Morris Turnpike",
+      "cityStateZip": "The Mall at Short Hills<br />Short Hills, NJ 07078",
+      "phoneNumber": "973-548-2200",
+      "phoneNumberHrefSuffix": "+1-973-548-2200",
+      "urlArgs": {
+        "addressAlias": "short-hills",
+        "designerAlias": "good_american",
+        "addressFullDetail": "THE-MALL-AT-SHORT-HILLS"
+      }
+    }],
+    [{
+      "name": "Aventura",
+      "streetAddress": "19555 Biscayne Boulevard",
+      "cityStateZip": "The Aventura Mall<br />Aventura, FL 33180",
+      "phoneNumber": "305-792-1000",
+      "phoneNumberHrefSuffix": "+1-305-792-1000",
+      "urlArgs": {
+        "addressAlias": "aventura",
+        "designerAlias": "good_american",
+        "addressFullDetail": "AVENTURA-MALL"
+      }
+    }],
+    [{
+      "name": "SHERMAN OAKS FASHION SQUARE",
+      "streetAddress": "14060 Riverside Drive",
+      "cityStateZip": "Sherman Oaks, CA 91423",
+      "phoneNumber": "818-325-2200",
+      "phoneNumberHrefSuffix": "+1-818-325-2200",
+      "urlArgs": {
+        "addressAlias": "sherman-oaks-fashion-square",
+        "designerAlias": "good_american",
+        "addressFullDetail": "SHERMAN-OAKS-FASHION-SQUARE"
+      }
+    }]
+  ]
+}

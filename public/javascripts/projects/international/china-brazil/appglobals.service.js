@@ -94,7 +94,7 @@
                         span2: 'how to shop ',
                         span3: 'our site and get answers to frequently asked questions.',
                         a: 'download now',
-                        link: '/fashion/assets/projects/international/china-brazil/guides/Tourism_Microsite_International_Shopping_Guide_English.pdf'
+                        link: '/b/fashion/assets/projects/international/china-brazil/guides/Tourism_Microsite_International_Shopping_Guide_English.pdf'
                     }
                 },
                 heritage: {
@@ -225,8 +225,8 @@
                                 descr: 'Discover Bloomingdale\'s iconic heritage and award-winning hospitality. Begin your day at our flagship store with a stop at our first floor balcony Visitor\'s Center. Our multilingual directory will provide a road map to your shopping trip. Looking for a more personal experience? Learn about our in-store services, from stylist appointments to alterations to restaurant reservations. We\'ll help you arrange all that and more.',
                                 dTile: 'VISITING NEW YORK?',
                                 dInfo: 'Download our welcome booklet before you arrive.',
-                                dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_NewYork_EN.pdf',
-                                designersImg: '/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-59ST_02.jpg',
+                                dFile: '/b/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_NewYork_EN.pdf',
+                                designersImg: '/b/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-59ST_02.jpg',
                                 designersAlt: 'Bloomingdale\'s International – Women\'s Designer Shoes',
                                 designers: [
                                     'Burberry',
@@ -260,25 +260,25 @@
                                         name: '<b>FORTY CARROTS</b> <span>|</span>   7th floor <span>|</span>   212-705-3085',
                                         sched: 'Open Daily <span>|</span>   Dine In: 10:30AM–1 hour before store closing <br/>Takeout: 10AM–1/2 hour before store closing',
                                         description: 'A visit isn\'t complete without our famous frozen yogurt. You\'ll also find freshly made salads, sandwiches, soups, a fresh juice bar and selection of Tavalon premium teas. Counter, table service and takeout available.',
-                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_01.jpg'
+                                        imgURL: '/b/fashion/images/projects/international/china-brazil/VisitStores_Dining_01.jpg'
                                     },
                                     {
                                         name: '<b>FL!P</b> <span>|</span>   Mid-Level <span>|</span>   212-705-3085',
                                         sched: 'Open Daily <span>|</span>   Dine In: 11AM–1 hour before store closing ',
                                         description: 'Enjoy the "haute couture" of American hamburgers, as well as salads, microbrew beers, a full bar and a variety of French fries, at this laid-back spot in our Men\'s Store.',
-                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_02.jpg'
+                                        imgURL: '/b/fashion/images/projects/international/china-brazil/VisitStores_Dining_02.jpg'
                                     },
                                     {
                                         name: '<b>DAVID BURKE AT BLOOMINGDALE\'S </b> <span>|</span>   Street Level <br />   212-705-3800',
                                         sched: 'Open Daily <span>|</span>   In the Box (to go) 10AM–9PM <span>|</span>   In the Bar (to stay) 11AM–9 PM ',
                                         description: 'Chef David Burke, one of the leading pioneers of American cooking, brings together delicious fare and top service in a lively atmosphere.',
-                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_04.jpg'
+                                        imgURL: '/b/fashion/images/projects/international/china-brazil/VisitStores_Dining_04.jpg'
                                     },
                                     {
                                         name: '<b>MAGNOLIA BAKERY</b> <span>|</span>   Street Level <span>|</span>   212-265-5320',
                                         sched: 'Monday–Friday 7AM–10PM <br/> Saturday 8AM–10PM <span>|</span>   Sunday 8AM–9PM',
                                         description: 'A classic American bakery cherished for its old-fashioned desserts and vintage décor, Magnolia serves a range of handmade baked goods, including pies, cakes, cheesecakes, banana pudding, cupcakes and muffins. Here early? Magnolia opens even before the store does.',
-                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_03.jpg'
+                                        imgURL: '/b/fashion/images/projects/international/china-brazil/VisitStores_Dining_03.jpg'
                                     }
                                 ],
                                 services: [
@@ -315,8 +315,8 @@
                                 descr: 'Explore our downtown store in SoHo, the city\'s most fashionable neighborhood. You\'ll find all the stylish energy of our uptown flagship but with the feel of a fashion boutique. Check out our bustling beauty floor, then peruse our latest designer arrivals. As always, multilingual associates are available to help make your visit a memorable one.',
                                 dTile: 'VISITING NEW YORK?',
                                 dInfo: 'Download our welcome booklet before you arrive.',
-                                dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_NewYork_EN.pdf',
-                                designersImg: '/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-SOHO.jpg',                                
+                                dFile: '/b/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_NewYork_EN.pdf',
+                                designersImg: '/b/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-SOHO.jpg',                                
                                 designersAlt: 'Bloomingdale\'s International – Women\'s Designer Handbags',                                
                                 designers: [
                                     'BVLGARI',
@@ -347,7 +347,7 @@
                                         name: '<b>FORTY CARROTS</b> <span>|</span>   2nd floor  <span>|</span>   212-729-5900',
                                         sched: 'Monday–Friday 10AM–8PM <span>|</span>   Saturday 10AM–7PM  <span>|</span> Sunday 12PM–7PM',
                                         description: 'A visit isn\'t complete without our famous frozen yogurt. You\'ll also find freshly made salads, sandwiches, soups, a fresh juice bar and selection of Tavalon premium teas. Counter, table service and takeout available.',
-                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_01.jpg'
+                                        imgURL: '/b/fashion/images/projects/international/china-brazil/VisitStores_Dining_01.jpg'
                                     }
                                 ],
                                 services: [
@@ -376,8 +376,8 @@
                                 descr: 'Say aloha to our newest outpost in tropical Honolulu. Located in the Ala Moana Center, Hawaii\'s premier shopping destination, this three-story store boasts a range of amenities tailored to the overseas shopper. Stop by our International Welcome Center and speak with one of our multilingual associates. We offer international style advisor appointments, on-site alterations, restaurant reservations and much more.</p><p style="margin-top: 10px;">Planning a return visit? Sign up for our International Loyalty Club and earn points toward gift cards, special services and authentic Hawaiian adventures.',
                                 dTile: 'VISITING HAWAII?',
                                 dInfo: 'Download our welcome booklet before you arrive.',
-                                dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Hawaii_EN.pdf',
-                                designersImg: '/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-ALA-MOANA.jpg',
+                                dFile: '/b/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Hawaii_EN.pdf',
+                                designersImg: '/b/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-ALA-MOANA.jpg',
                                 designersAlt: 'Bloomingdale\'s International – Women\'s Designer Shoes & Handbags',                                  
                                 designers: [
                                     'Burberry',
@@ -403,7 +403,7 @@
                                         name: '<b>FORTY CARROTS</b> <span>|</span>   3rd floor  ',
                                         sched: 'Monday–Saturday 11AM–8PM <span>|</span> Sunday 11AM–7PM',
                                         description: 'A visit isn\'t complete without our famous frozen yogurt.',
-                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_01.jpg'
+                                        imgURL: '/b/fashion/images/projects/international/china-brazil/VisitStores_Dining_01.jpg'
                                     }
                                 ],
                                 services: [
@@ -450,8 +450,8 @@
                                 descr: 'Planning a trip to the Windy City? Let Bloomingdale\'s be your fashion guide. Fill out your wardrobe with our vast collection of designer names, or stock up on your favorite beauty products. Our multilingual associates can help tailor your shopping trip to your every need.',
                                 dTile: 'VISITING CHICAGO?',
                                 dInfo: 'Download our welcome booklet before you arrive.',
-                                dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Chicago_EN.pdf',
-                                designersImg: '/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-NORTH-MICHIGAN-AVENUE.jpg',
+                                dFile: '/b/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Chicago_EN.pdf',
+                                designersImg: '/b/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-NORTH-MICHIGAN-AVENUE.jpg',
                                 designersAlt: 'Bloomingdale\'s International – Women\'s Designer Jackets',                                                                   
                                 designers: [
                                     'Burberry',
@@ -478,7 +478,7 @@
                                         name: '<b>FORTY CARROTS</b> <span>|</span> 6th floor <span>|</span> 312-440-4861',
                                         sched: 'Monday–Saturday 11AM–6PM',
                                         description: 'A visit isn\'t complete without our famous frozen yogurt.',
-                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_01.jpg'
+                                        imgURL: '/b/fashion/images/projects/international/china-brazil/VisitStores_Dining_01.jpg'
                                     }
                                 ],
                                 services: [
@@ -520,8 +520,8 @@
                                 descr: 'Deck out your home with a trip to Chicago\'s Medinah Home store. Here you\'ll find luxurious bedding, designer kitchen appliances, plush bathroom accessories and more. Experience our award-winning hospitality first hand with a full range of in-store services.',
                                 dTile: 'VISITING CHICAGO?',
                                 dInfo: 'Download our welcome booklet before you arrive.',
-                                dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Chicago_EN.pdf',
-                                designersImg: '/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-MEDINAH-HOME.jpg',
+                                dFile: '/b/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Chicago_EN.pdf',
+                                designersImg: '/b/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-MEDINAH-HOME.jpg',
                                 designersAlt: 'Bloomingdale\'s International – Designer Luggage',                                                                                                   
                                 designers: [
                                     'Nespresso',
@@ -558,8 +558,8 @@
                                 descr: 'Discover the best of San Francisco shopping. First stop, Bloomingdale\'s. Head to our Visitor\'s Center for a multilingual directory, or speak to our multilingual associates to tailor your experience to your needs. Learn more about our in-store amenities below.',
                                 dTile: 'VISITING SAN FRANCISCO?',
                                 dInfo: 'Download our welcome booklet before you arrive.',
-                                dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_SanFran_EN.pdf',
-                                designersImg: '/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-SAN-FRANCISCO-CENTRE.jpg',
+                                dFile: '/b/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_SanFran_EN.pdf',
+                                designersImg: '/b/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-SAN-FRANCISCO-CENTRE.jpg',
                                 designersAlt: 'Bloomingdale\'s International – Women\'s Designer Jackets',
                                 designers: [
                                     'Alice + Olivia',
@@ -628,8 +628,8 @@
                                 descr: 'With the best designer selection, edited specifically for Southern California, South Coast Plaza is a must-go shopping destination. New to the Golden State? Multilingual associates will make your stay that much better. Start with a store directory in your chosen language or add to your shopping trip with our in-store amenities below.',
                                 dTile: 'VISITING COSTA MESA?',
                                 dInfo: 'Download our welcome booklet before you arrive.',
-                                dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_SouthCoastPlaza_EN.pdf',
-                                designersImg: '/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-SOUTH-COAST-PLAZA.jpg',
+                                dFile: '/b/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_SouthCoastPlaza_EN.pdf',
+                                designersImg: '/b/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-SOUTH-COAST-PLAZA.jpg',
                                 designersAlt: 'Bloomingdale\'s International – Women\'s Designer Shoes & Handbags',
                                 designers: [
                                     'Burberry',
@@ -672,7 +672,7 @@
                                         name: '<b>AnQi by Crustacean Gourmet Bistro & Noodle Bar</b> <br/>  Ground Floor <span>|</span> 714-557-5679',
                                         sched: 'Lunch: Open Daily 11:30AM–2:30PM <br/> Noodle Bar: Open Daily 11:30AM–5:30PM <br/> Dinner: Sunday–Thursday 5:30PM–10:30PM <br/>Friday–Saturday 5:30PM–11:00PM <br/> Red Happy Hour: Monday–Friday 4PM–7PM',
                                         description: '',
-                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_08.jpg'
+                                        imgURL: '/b/fashion/images/projects/international/china-brazil/VisitStores_Dining_08.jpg'
                                     }                                  
                                 ],
                                 services: [
@@ -697,7 +697,7 @@
                                 descr: 'With outposts across Los Angeles, Orange County and San Diego, Bloomingdale\'s has left its iconic mark on SoCal. Shop the fashion, accessories, shoes and beauty brands you love in any one of our stores. Learn more about our in-store amenities below.',
                                 dTile: 'VISITING SOUTHERN CALIFORNIA?',
                                 dInfo: 'Download our welcome booklet before you arrive.',
-                                dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_SouthernCalifornia_EN.pdf',
+                                dFile: '/b/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_SouthernCalifornia_EN.pdf',
                                 designersImg: '',
                                 designersAlt: '',
                                 stores: [
@@ -779,8 +779,8 @@
                                 descr: 'Planning your vacation itinerary? Start with a trip to Florida\'s Aventura store. Explore our extensive selection of designer fashions, beauty brands, luxurious accessories and more. Get shopping with a store directory in your chosen language and be sure to make the most of your experience with our in-store amenities listed below.',
                                 dTile: 'VISITING AVENTURA?',
                                 dInfo: 'Download our welcome booklet before you arrive.',
-                                dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Aventura_EN.pdf',
-                                designersImg: '/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-AVENTURA.jpg',
+                                dFile: '/b/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Aventura_EN.pdf',
+                                designersImg: '/b/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-AVENTURA.jpg',
                                 designersAlt: 'Bloomingdale\'s International – Women\'s Designer Shoes & Handbags',
                                 designers: [
                                     'Baccarat',
@@ -829,7 +829,7 @@
                                         name: '<b>59TH & LEX CAFE</b> <span>|</span> 2nd floor <span>|</span> 305-792-1180',
                                         sched: 'Monday–Saturday 10AM–8PM <span>|</span> Sunday 12PM–7PM',
                                         description: '',
-                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_06.jpg'
+                                        imgURL: '/b/fashion/images/projects/international/china-brazil/VisitStores_Dining_06.jpg'
                                     }
                                 ],
                                 services: [
@@ -856,8 +856,8 @@
                                 descr: 'Stocked with the best designers and beauty brands, Bloomingdale\'s Orlando is your ticket to world-class shopping. Stop in on your next trip to the Sunshine State for an experience tailored to you. Pick up a store directory in your chosen language, then take advantage of the many in-store amenities listed below.',
                                 dTile: 'VISITING ORLANDO?',
                                 dInfo: 'Download our welcome booklet before you arrive.',
-                                dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Orlando_EN.pdf',
-                                designersImg: '/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-ORLANDO.jpg',
+                                dFile: '/b/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Orlando_EN.pdf',
+                                designersImg: '/b/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-ORLANDO.jpg',
                                 designersAlt: 'Bloomingdale\'s International – Women\'s Designer Handbags',
                                 designers: [
                                     'Burberry',
@@ -886,7 +886,7 @@
                                         name: '<b>FORTY CARROTS</b> <span>|</span> Level 1 <span>|</span> 407-264-2683',
                                         sched: 'Monday–Saturday 10AM–9PM <span>|</span> Sunday 11AM–7PM',
                                         description: 'A visit isn\'t complete without our famous frozen yogurt.',
-                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_01.jpg'
+                                        imgURL: '/b/fashion/images/projects/international/china-brazil/VisitStores_Dining_01.jpg'
                                     }
                                 ],
                                 services: [
@@ -1041,7 +1041,7 @@
                     pdf: {
                         span: 'Aprenda como comprar em nosso site e obtenha respostas para às perguntas mais frequentes.',
                         a: 'BAIXE AGORA',
-                        link: '/fashion/assets/projects/international/china-brazil/guides/Tourism_Microsite_International_Shopping_Guide_Portuguese.pdf'
+                        link: '/b/fashion/assets/projects/international/china-brazil/guides/Tourism_Microsite_International_Shopping_Guide_Portuguese.pdf'
                     }
                 },
                 heritage: {
@@ -1162,7 +1162,7 @@
                                 descr: 'Venha conhecer o icônico patrimônio e a premiada hospitalidade da Bloomingdale\'s. Comece seu dia em nossa loja matriz sendo recebido no balcão do nosso Centro do Visitante, no primeiro andar. Nosso catálogo multilíngue vai oferecer um mapa para sua viagem de compras. Quer uma experiência mais personalizada? Conheça os serviços internos de nossas lojas, desde consultoria em estilo até alterações em reservas de restaurante. Nós o ajudaremos a providenciar tudo isso e muito mais.',
                                 dTile: 'VISITANDO NOVA YORK?',
                                 dInfo: 'Baixe o nosso guia de boas-vindas antes de chegar.',
-                                dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_NewYork_PT.pdf',
+                                dFile: '/b/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_NewYork_PT.pdf',
                                 designers: [
                                     'Burberry',
                                     'Canali',
@@ -1195,25 +1195,25 @@
                                         name: '<b>FORTY CARROTS</b> <span>|</span>   7º. andar  <span>|</span>   212-705-3085',
                                         sched: 'Aberto todos os dias <span>|</span>   Refeições a partir das: 10:30h-1 hora antes da loja fechar  <br/>Para viagem: 10:00h-30 min antes da loja fechar',
                                         description: 'Sua visita só estará completa após experimentar nosso famoso iogurte frozen. Você também vai se deliciar com saladas feitas na hora, sanduíches, sopas, um bar de sucos de frutas naturais e uma seleção primorosa de chás Tavalon. Atendimento no balcão, na mesa e para viagem.',
-                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_01.jpg'
+                                        imgURL: '/b/fashion/images/projects/international/china-brazil/VisitStores_Dining_01.jpg'
                                     },
                                     {
                                         name: '<b>FL!P</b> <span>|</span>   Mezanino  <span>|</span>   212-705-3085',
                                         sched: 'Aberto todos os dias  <span>|</span>   Refeições a partir das: 11:00h-1 hora antes da loja fechar ',
                                         description: 'Desfrute da "alta costura" dos hambúrgueres americanos, além de saladas, cervejas artesanais, um bar completo e diversos tipos de batatas fritas, em um ambiente descontraído na loja masculina.',
-                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_02.jpg'
+                                        imgURL: '/b/fashion/images/projects/international/china-brazil/VisitStores_Dining_02.jpg'
                                     },
                                     {
                                         name: '<b>MAGNOLIA BAKERY</b> <span>|</span>  Piso Térreo  <span>|</span>   212-265-5320',
                                         sched: 'Segunda-feira – Sexta-feira  7:00h-22:00h  <br/> Sábado  8:00h-22:00h <span>|</span>   Domingo 8:00h-21:00h',
                                         description: 'Uma padaria americana clássica famosa por seus tradicionais doces e sobremesas e decoração vintage, a Magnolia serve uma infinidade de produtos de panificação artesanal, incluindo tortas, bolos, cheesecakes, pudim de banana, cupcakes e muffins. Vai chegar cedo? A Magnolia abre antes mesmo da própria loja.',
-                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_03.jpg'
+                                        imgURL: '/b/fashion/images/projects/international/china-brazil/VisitStores_Dining_03.jpg'
                                     },
                                     {
                                         name: '<b>DAVID BURKE AT BLOOMINGDALE\'S </b> <span>|</span>   Piso Térreo  <br />   212-705-3800',
                                         sched: 'Aberto Diariamente  <span>|</span>   Na caixa (para levar) 10:00h–21:00h <span>|</span>   No bar (para ficar) 11:00h–21:00h ',
                                         description: 'Chef David Burke, um dos maiores pioneiros da culinária americana, reúne pratos deliciosos e serviço top em uma atmosfera animada.',
-                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_04.jpg'
+                                        imgURL: '/b/fashion/images/projects/international/china-brazil/VisitStores_Dining_04.jpg'
                                     }
                                 ],
                                 services: [
@@ -1250,7 +1250,7 @@
                                 descr: 'Conheça nossa loja do centro, no SoHo, o bairro mais elegante da cidade. Você encontrará toda a elegante energia de nossa matriz da Upper Manhattan, mas com a sensação de uma boutique de moda. Confira nosso movimentado andar de beleza e depois conheça nossas últimas novidades de grifes. Como sempre, os atendentes multilíngues estão disponíveis para ajudar a tornar sua visita inesquecível.',
                                 dTile: 'VISITANDO NOVA YORK?',
                                 dInfo: 'Baixe o nosso guia de boas-vindas antes de chegar.',
-                                dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_NewYork_PT.pdf',
+                                dFile: '/b/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_NewYork_PT.pdf',
                                 designers: [
                                     'BVLGARI',
                                     'Burberry',
@@ -1280,7 +1280,7 @@
                                         name: '<b>FORTY CARROTS</b> <span>|</span>   2º. andar  <span>|</span>   +1 212-729-5900',
                                         sched: 'Segunda-feira - Sexta-feira 10:00h-20:00h <br/>Sábado 10:00h–19:00h<br/>Domingo 12:00h–19:00h',
                                         description: 'Sua visita só estará completa após experimentar nosso famoso iogurte frozen. Você também vai se deliciar com saladas feitas na hora, sanduíches, sopas, um bar de sucos de frutas naturais e uma seleção primorosa de chás Tavalon. Atendimento no balcão, na mesa e para viagem.',
-                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_01.jpg'
+                                        imgURL: '/b/fashion/images/projects/international/china-brazil/VisitStores_Dining_01.jpg'
                                     }
                                 ],
                                 services: [
@@ -1309,7 +1309,7 @@
                                 descr: 'Diga "Aloha" para nossa mais nova filial na tropical Honolulu. Localizada no Ala Moana Center, atração e principal local de compras no Havaí, esta loja de três andares oferece uma variedade de comodidades sob medida para o cliente no além-mar. Passe em nosso Centro Internacional de Visitantes e fale com um dos nossos atendentes multilíngues. Nós oferecemos consultoria com personal stylist, ajustes no próprio local, reservas em restaurantes e muito mais.</p><p style="margin-top: 10px;">Está pensando em nos visitar de novo? Inscreva-se em nosso International Loyalty Club e ganhe pontos em cartões de presente, serviços especiais e em aventuras havaianas autênticas.',
                                 dTile: 'VISITANDO O HAVAÍ?',
                                 dInfo: 'Baixe nosso guia de boas-vindas antes de chegar.',
-                                dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Hawaii_EN.pdf',
+                                dFile: '/b/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Hawaii_EN.pdf',
                                 designers: [
                                     'Burberry',
                                     'Chloé',
@@ -1334,7 +1334,7 @@
                                         name: '<b>FORTY CARROTS</b> <span>|</span>   3º. andar ',
                                         sched: 'Segunda-feira – Sábado 11:00h – 20:00h <span>|</span> Domingo 11:00h – 19:00h',
                                         description: 'Sua visita só estará completa após experimentar nosso famoso iogurte frozen.',
-                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_01.jpg'
+                                        imgURL: '/b/fashion/images/projects/international/china-brazil/VisitStores_Dining_01.jpg'
                                     }
                                 ],
                                 services: [
@@ -1381,7 +1381,7 @@
                                 descr: 'Planejando uma viagem à Cidade dos Ventos? Deixe que a Bloomingdale\'s seja seu guia de moda. Preencha o seu guarda-roupa com a nossa ampla coleção de nomes de grife, ou estoque seus produtos de beleza favoritos. Nossos atendentes multilíngues podem ajudá-lo a personalizar sua viagem de compras de acordo com todas as suas necessidades.',
                                 dTile: 'VISITANDO CHICAGO?',
                                 dInfo: 'Baixe o nosso guia de boas-vindas antes de chegar.',
-                                dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Chicago_EN.pdf',
+                                dFile: '/b/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Chicago_EN.pdf',
                                 designers: [
                                     'Burberry',
                                     'Canada Goose',
@@ -1407,7 +1407,7 @@
                                         name: '<b>FORTY CARROTS</b> <span>|</span>   6º. andar <span>|</span> +1 312-440-4861',
                                         sched: 'Segunda-feira – Sábado 11:00h – 18:00h',
                                         description: 'Sua visita só estará completa após experimentar nosso famoso iogurte frozen.',
-                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_01.jpg'
+                                        imgURL: '/b/fashion/images/projects/international/china-brazil/VisitStores_Dining_01.jpg'
                                     }
                                 ],
                                 services: [
@@ -1444,7 +1444,7 @@
                                 descr: 'Decore sua casa com uma viagem à loja Medinah Home em Chicago. Aqui você vai encontrar roupas de cama de luxo, utensílios de cozinha feitos por designers, finos acessórios de casa e banho e muito mais. Experimente em primeira mão nossa premiada hospitalidade com uma infinidade de serviços no interior da loja.',
                                 dTile: 'VISITANDO CHICAGO?',
                                 dInfo: 'Baixe o nosso guia de boas-vindas antes de chegar.',
-                                dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Chicago_EN.pdf',
+                                dFile: '/b/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Chicago_EN.pdf',
                                 designers: [
                                     'Nespresso',
                                     'Rimowa',
@@ -1477,7 +1477,7 @@
                                 descr: 'Descubra o melhor das compras em São Francisco. Primeira parada, Bloomingdale\'s. Dirija-se ao Centro do Visitante para um catálogo multilíngue ou fale com nossos atendentes multilíngues para personalizar a sua experiência de acordo com suas necessidades. Saiba mais sobre nossos serviços e comodidades internos da loja abaixo.',
                                 dTile: 'VISITANDO SÃO FRANCISCO?',
                                 dInfo: 'Baixe o nosso guia de boas-vindas antes de chegar.',
-                                dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_SanFran_EN.pdf',
+                                dFile: '/b/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_SanFran_EN.pdf',
                                 designers: [
                                     'Alice + Olivia',
                                     'BCBGMAXAZRIA',
@@ -1540,7 +1540,7 @@
                                 descr: 'Com a melhor seleção de estilistas, feita especialmente para a Califórnia do Sul, o South Coast Plaza é ponto de parada obrigatório quando o assunto é compras. Novo no "Estado Dourado"? Os atendentes multilíngues vão tornar sua estadia muito melhor. Comece com um catálogo da loja em seu idioma ou torne sua viagem de compras especial com os serviços internos de nossa loja.',
                                 dTile: 'VISITANDO COSTA MESA?',
                                 dInfo: 'Baixe o nosso guia de boas-vindas antes de chegar.',
-                                dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_SouthCoastPlaza_EN.pdf',
+                                dFile: '/b/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_SouthCoastPlaza_EN.pdf',
                                 designers: [
                                     'Burberry',
                                     'Calvin Klein',
@@ -1582,7 +1582,7 @@
                                         name: '<b>AnQi by Crustacean Gourmet Bistro & Noodle Bar</b> <br/>  Piso Térreo <span>|</span> +1 714-557-5679',
                                         sched: 'Piso Térreo Almoço: Aberto todos os dias 11:30h – 14:30h <br/>Noodle Bar: Aberto todos os dias 11:30h – 17:30h <br/>Jantar:   Domingo – Quinta-feira 17:30h – 20:30h <br/>Sexta-feira – Sábado 17:30h – 23:00h <br/>Red Happy Hour: Segunda-feira – Sexta-feira 16:00h – 19:00h',
                                         description: '',
-                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_08.jpg'
+                                        imgURL: '/b/fashion/images/projects/international/china-brazil/VisitStores_Dining_08.jpg'
                                     }                                    
                                 ],
                                 services: [
@@ -1607,7 +1607,7 @@
                                 descr: 'Com filias por toda Los Angeles, Orange County e San Diego, a Bloomingdale\'s deixou sua marca registrada na Califórnia do Sul. Compre as marcas de roupas, acessórios, sapatos e beleza que você ama em qualquer uma de nossas lojas. Saiba mais sobre nossos serviços e comodidades internos da loja abaixo.',
                                 dTile: 'VISITANDO A CALIFÓRNIA DO SUL?',
                                 dInfo: 'Baixe o nosso guia de boas-vindas antes de chegar.',
-                                dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_SouthernCalifornia_EN.pdf',
+                                dFile: '/b/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_SouthernCalifornia_EN.pdf',
                                 stores: [
                                     {
                                         area: 'Orange County',
@@ -1687,7 +1687,7 @@
                                 descr: 'Planejando o roteiro das suas férias? Comece com uma parada na loja de Aventura, na Flórida. Explore a nossa ampla seleção de estilistas, marcas de beleza, acessórios de luxo e muito mais. Comece a comprar com um catálogo da loja no seu idioma escolhido e não se esqueça de aproveitar ao máximo sua experiência com nossos serviços nas lojas listadas abaixo.',
                                 dTile: 'VISITANDO AVENTURA?',
                                 dInfo: 'Baixe o nosso guia de boas-vindas antes de chegar.',
-                                dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Aventura_PT.pdf',
+                                dFile: '/b/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Aventura_PT.pdf',
                                 designers: [
                                     'Baccarat',
                                     'Bernardaud',
@@ -1735,7 +1735,7 @@
                                         name: '<b>59TH & LEX CAFE</b> <span>|</span> 2º. piso <span>|</span>  +1 305-792-1180',
                                         sched: 'Segunda-feira–Sábado 10:00h–20:00h <span>|</span> Domingo 12:00h–19:00h',
                                         description: '',
-                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_06.jpg'
+                                        imgURL: '/b/fashion/images/projects/international/china-brazil/VisitStores_Dining_06.jpg'
                                     }
                                 ],
                                 services: [
@@ -1762,7 +1762,7 @@
                                 descr: 'Abastecido com os melhores estilistas e marcas de beleza, a Bloomingdale\'s de Orlando é seu passaporte para as compras de nível mundial. Faça uma parada em sua próxima viagem ao "Estado Ensolarado" para uma experiência feita sob medida para você. Pegue um catálogo da loja no seu idioma e então tire o máximo proveito dos serviços e comodidades listados abaixo.',
                                 dTile: 'VISITANDO ORLANDO?',
                                 dInfo: 'Baixe o nosso guia de boas-vindas antes de chegar.',
-                                dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Orlando_PT.pdf',
+                                dFile: '/b/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Orlando_PT.pdf',
                                 designers: [
                                     'Burberry',
                                     'Canali ',
@@ -1790,7 +1790,7 @@
                                         name: '<b>FORTY CARROTS</b> <span>|</span> 1º. andar <span>|</span> +1 407-264-2683',
                                         sched: 'Segunda-feira – Sábado 10:00h – 21:00h <span>|</span> Domingo 11:00h – 19:00h',
                                         description: 'Sua visita só estará completa após experimentar nosso famoso iogurte frozen.',
-                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_01.jpg'
+                                        imgURL: '/b/fashion/images/projects/international/china-brazil/VisitStores_Dining_01.jpg'
                                     }
                                 ],
                                 services: [
@@ -1955,7 +1955,7 @@
                     pdf: {
                         span: '了解如何在我们的网站购物，并获得常见问题的答案。',
                         a: '立即下载',
-                        link: '/fashion/assets/projects/international/china-brazil/guides/Tourism_Microsite_International_Shopping_Guide_Chinese.pdf'
+                        link: '/b/fashion/assets/projects/international/china-brazil/guides/Tourism_Microsite_International_Shopping_Guide_Chinese.pdf'
                     }
                 },
                 heritage: {
@@ -2086,7 +2086,7 @@
                                 descr: '感受 Bloomingdale\'s 的悠久历史和备受赞誉的热情服务。在我们旗舰店开始您的一天，首先前往一楼楼厅处的顾客服务中心。我们的多语种指南将为您的购物之旅提供路线图。需要更加个性化的体验？了解我们的店内服务，包括预约形象设计师、改衣和预订餐厅等。我们会帮您安排一切。',
                                 dTile: '来纽约观光？',
                                 dInfo: '在到达之前下载我们的欢迎手册。',
-                                dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_NewYork_CN.pdf',
+                                dFile: '/b/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_NewYork_CN.pdf',
                                 designers: [
                                     'Burberry',
                                     'Canali',
@@ -2119,25 +2119,25 @@
                                         name: '<b>FORTY CARROTS</b> <span>|</span>   7 层 <span>|</span>   212-705-3085',
                                         sched: '营业时间 <span>|</span>   店内用餐： 上午 10:30–关店前 1 小时  <br/>外卖：上午 10:00–关店前半小时',
                                         description: '只有品尝了我们著名的冷冻酸奶，才算不虚此行。在这里，您还能找到各式新鲜制作的沙拉、三明治、汤类、鲜榨果汁吧，以及精选上等 Tavalon 茶。提供柜台服务、餐桌服务和外卖服务。',
-                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_01.jpg'
+                                        imgURL: '/b/fashion/images/projects/international/china-brazil/VisitStores_Dining_01.jpg'
                                     },
                                     {
                                         name: '<b>FL!P</b> <span>|</span> 中层 <span>|</span>   212-705-3085',
                                         sched: '营业时间 <span>|</span> 店内用餐： 上午 11:00–关店前 1 小时',
                                         description: '在男士用品店的这个闲适角落，您可以享用到“臻品”美国汉堡、各式沙拉、微酿啤酒、花样酒饮以及各种法式炸薯条。',
-                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_02.jpg'
+                                        imgURL: '/b/fashion/images/projects/international/china-brazil/VisitStores_Dining_02.jpg'
                                     },
                                     {
                                         name: '<b>DAVID BURKE AT BLOOMINGDALE\'S </b> <span>|</span> 当街楼层 <br />   212-705-3800',
                                         sched: '营业时间 <span>|</span> 外带：上午 10:00–晚上 9:00 <span>|</span> 店内用餐：上午 11:00–晚上 9:00 ',
                                         description: '名厨 David Burke 是美国烹饪界最重要的先驱者之一，他将美味佳肴、一流服务和欢乐氛围融合在一起。',
-                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_04.jpg'
+                                        imgURL: '/b/fashion/images/projects/international/china-brazil/VisitStores_Dining_04.jpg'
                                     },
                                     {
                                         name: '<b>MAGNOLIA BAKERY</b> <span>|</span> 当街楼层 <span>|</span>   212-265-5320',
                                         sched: '周一至周五上午 7:00–晚上 10:00<br/> 周六上午 8:00 <span>|</span>   Sunday 8AM–9PM',
                                         description: 'Magnolia 是一个拥有传统甜点和古老装饰风格的经典美式面包房，这里可供应一系列手工烘培食品，包括馅饼、蛋糕、乳酪蛋糕、香蕉布丁、纸杯蛋糕和松饼。来早了？Magnolia 的营业时间甚至比门店还早。',
-                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_03.jpg'
+                                        imgURL: '/b/fashion/images/projects/international/china-brazil/VisitStores_Dining_03.jpg'
                                     }
                                 ],
                                 services: [
@@ -2174,7 +2174,7 @@
                                 descr: '参观我们位于 SoHo 的市中心门店，这里也是本市的时尚社区。在这里您不仅感受到我们上城区旗舰店的时尚活力，同时又具備了时尚精品店的氛围。到访我们热闹繁忙的美容商品楼层，然后细细品味我们的名牌新品。我们的多语种工作人员将一如既往地帮助您体验一次难忘的购物消闲之旅。',
                                 dTile: '来纽约观光？',
                                 dInfo: '在到达之前下载我们的欢迎手册。',
-                                dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_NewYork_CN.pdf',
+                                dFile: '/b/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_NewYork_CN.pdf',
                                 designers: [
                                     'BVLGARI',
                                     'Burberry',
@@ -2204,7 +2204,7 @@
                                         name: '<b>FORTY CARROTS</b> <span>|</span>   2 层  <span>|</span>   212-729-5900',
                                         sched: '周一至周五上午 10:00–晚上 8:00<span>|</span> 周六上午 10:00–晚上 7:00 <span>|</span> 周日中午 12:00–晚上 7:00',
                                         description: '只有品尝了我们著名的冷冻酸奶，才算不虚此行。在这里，您还能找到各式新鲜制作的沙拉、三明治、汤类、鲜榨果汁吧，以及精选上等 Tavalon 茶。提供柜台服务、餐桌服务和外卖服务。',
-                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_01.jpg'
+                                        imgURL: '/b/fashion/images/projects/international/china-brazil/VisitStores_Dining_01.jpg'
                                     }
                                 ],
                                 services: [
@@ -2233,7 +2233,7 @@
                                 descr: '跟我们在热带檀香山设立的最新商店打个招呼。这座三层楼高的商店位于夏威夷黄金购物地带阿拉莫阿那购物中心店，内部配备有各种便利设施，专为海外购物者量身打造。我们提供个人形象设计师会面、现场改衣、餐厅订位等等。',
                                 dTile: '正在前往夏威夷的途中？',
                                 dInfo: '在您到达之前下载我们的欢迎手册。',
-                                dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Hawaii_CN.pdf',
+                                dFile: '/b/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Hawaii_CN.pdf',
                                 designers: [
                                     'Burberry',
                                     'Chloé',
@@ -2258,7 +2258,7 @@
                                         name: '<b>FORTY CARROTS</b> <span>|</span>   3 层',
                                         sched: '周一 - 周六上午11:00 - 晚上8:00 <span>|</span> 周日上午11:00 - 晚上7:00',
                                         description: '只有品尝了我们著名的冷冻酸奶，才算不虚此行。',
-                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_01.jpg'
+                                        imgURL: '/b/fashion/images/projects/international/china-brazil/VisitStores_Dining_01.jpg'
                                     }                                    
                                 ],
                                 services: [
@@ -2305,7 +2305,7 @@
                                 descr: '计划游览风之城？让 Bloomingdale\'s 做您的时尚导游。选购我们的各种名牌商品来填满您的衣柜，或是囤积您最喜欢的美容产品。我们的多语种工作人员可以帮您专门策划安排购物之旅，以满足您的各种需求。来密歇根观光？在到达之前下载我们的欢迎手册。',
                                 dTile: '来密歇根观光？',
                                 dInfo: '在您到达之前下载我们的欢迎手册。',
-                                dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Chicago_CN.pdf',
+                                dFile: '/b/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Chicago_CN.pdf',
                                 designers: [
                                     'Burberry',
                                     'Canada Goose',
@@ -2331,7 +2331,7 @@
                                         name: '<b>FORTY CARROTS</b> <span>|</span> 6 层 <span>|</span>  312-440-4861',
                                         sched: '周一 – 周六 上午 11:00 – 晚上 6:00',
                                         description: '只有品尝了我们著名的冷冻酸奶，才算不虚此行。',
-                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_01.jpg'
+                                        imgURL: '/b/fashion/images/projects/international/china-brazil/VisitStores_Dining_01.jpg'
                                     }                                        
                                 ],
                                 services: [
@@ -2373,7 +2373,7 @@
                                 descr: '前往芝加哥的麦地那之家，将您的房子装饰一新。在这里，您可以选购高档床上用品、名牌厨具、豪华浴室配件等。亲自体验我们备受赞誉的热情服务和全方位的店内服务。',
                                 dTile: '来密歇根观光？',
                                 dInfo: '在到达之前下载我们的欢迎手册。',
-                                dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Chicago_CN.pdf',
+                                dFile: '/b/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Chicago_CN.pdf',
                                 designers: [
                                     'Nespresso',
                                     'Rimowa',
@@ -2409,7 +2409,7 @@
                                 descr: '享受旧金山最佳的购物体验。第一站，Bloomingdale\'s。前往我们的顾客服务中心获取多语种指南，或咨询我们的多语种工作人员，他们将为您量身定制满足您需求的体验。在下方了解更多关于我们店内设施的信息。',
                                 dTile: '来旧金山观光？',
                                 dInfo: '在到达之前下载我们的欢迎手册。',
-                                dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_SanFran_CN.pdf',
+                                dFile: '/b/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_SanFran_CN.pdf',
                                 designers: [
                                     'Alice + Olivia',
                                     'BCBGMAXAZRIA',
@@ -2477,7 +2477,7 @@
                                 descr: '南海岸广场店拥有顶尖设计师品牌，特为南加利福尼亚州量身打造，是不可错过的购物天堂。第一次来金州？多语种工作人员将帮助您解决诸多难题。您可依据中文门店指南或在您购物时到下方的店内设施处寻求帮助。',
                                 dTile: 'VISITING COSTA MESA?',
                                 dInfo: '在到达之前下载我们的欢迎手册。',
-                                dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_SouthCoastPlaza_CN.pdf',
+                                dFile: '/b/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_SouthCoastPlaza_CN.pdf',
                                 designers: [
                                     'Burberry',
                                     'Calvin Klein',
@@ -2520,7 +2520,7 @@
                                         name: '<b>AnQi by Crustacean Gourmet Bistro & Noodle Bar</b> <br/>  1 层 <span>|</span> 714-557-5679',
                                         sched: '午餐： 营业时间 上午 11:30 － 下午 2:30  Noodle Bar： 营业时间 上午 11:30 － 下午 5:30  晚餐： 周日 － 周四 下午 5:30 － 晚上 10:30  周五 － 周六下午5:30 － 晚上 11:00  红酒优惠时间： 周一 － 周五下午 4:00 － 晚上 7:00',
                                         description: '',
-                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_08.jpg'
+                                        imgURL: '/b/fashion/images/projects/international/china-brazil/VisitStores_Dining_08.jpg'
                                     }                                    
                                 ],
                                 services: [
@@ -2545,7 +2545,7 @@
                                 descr: '继在洛杉矶、橘郡及圣地亚哥开设的店铺后，Bloomingdale\'s 又在南加州留下了自己的足迹。您可在我们任意一家店铺中购买您喜爱的时尚、饰品、鞋类以及美容品牌的商品。在下方了解更多关于我们店内设施的信息。',
                                 dTile: '参观南加州?',
                                 dInfo: '在到达之前下载我们的欢迎手册。',
-                                dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_SouthernCalifornia_CN.pdf',
+                                dFile: '/b/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_SouthernCalifornia_CN.pdf',
                                 stores: [
                                     {
                                         area: '橘郡',
@@ -2625,7 +2625,7 @@
                                 descr: '正在规划您的假日旅程？从佛罗里达州阿文图拉购物中心店启程吧。在此我们提供种类繁多的设计时尚、美容品牌、奢侈饰品及其他商品供您选择。根据中文门店指南进行购物，同时我们邀您尽可能多地进入下方列示的店内设施进行体验。',
                                 dTile: '来阿文图拉购物中心店观光？',
                                 dInfo: '在到达之前下载我们的欢迎手册。',
-                                dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Aventura_EN.pdf',
+                                dFile: '/b/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Aventura_EN.pdf',
                                 designers: [
                                     'Baccarat',
                                     'Bernardaud',
@@ -2673,7 +2673,7 @@
                                         name: '<b>59TH & LEX CAFE</b> <span>|</span>  二楼 <span>|</span> 305-792-1180',
                                         sched: '周一 － 周六 上午  10:00 － 晚上  8:00 <span>|</span> 周日中午 12:00－下午  7:00',
                                         description: '',
-                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_06.jpg'
+                                        imgURL: '/b/fashion/images/projects/international/china-brazil/VisitStores_Dining_06.jpg'
                                     }
                                 ],
                                 services: [
@@ -2700,7 +2700,7 @@
                                 descr: 'Bloomingdale\'s 奥兰多店有着最棒的设计师和美容品牌，您可在此享受世界级的购物体验。在您下一站前往佛罗里达州的旅途中顺道进来商店看看，我们为您量身打造了尊享购物体验。根据您的语言选择一份门店指南，并享受下方列示的诸多店内设施为您带来的便利。',
                                 dTile: 'V来奥兰多观光？',
                                 dInfo: '在到达之前下载我们的欢迎手册。',
-                                dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Orlando_EN.pdf',
+                                dFile: '/b/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Orlando_EN.pdf',
                                 designers: [
                                     'Burberry',
                                     'Canali ',
@@ -2728,7 +2728,7 @@
                                         name: '<b>FORTY CARROTS</b> <span>|</span> 一楼 <span>|</span> +1 407-264-2683',
                                         sched: '周一 － 周六 上午 10:00 － 晚上 9:00 <span>|</span> 周日上午 11:00 － 晚上 7:00',
                                         description: '只有品尝了我们著名的冷冻酸奶，才算不虚此行。在这里，您还能找到各式新鲜制作的沙拉、三明治、汤类、鲜榨果汁吧，以及精选上等 Tavalon 茶。提供柜台服务、餐桌服务和外卖服务。',
-                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_01.jpg'
+                                        imgURL: '/b/fashion/images/projects/international/china-brazil/VisitStores_Dining_01.jpg'
                                     }
                                 ],
                                 services: [
@@ -2893,7 +2893,7 @@
                     pdf: {
                         span: 'Conozca cómo comprar en nuestra tienda y obtenga respuestas a las preguntas frecuentes.',
                         a: 'DESCARGAR AHORA',
-                        link: '/fashion/assets/projects/international/china-brazil/guides/Tourism_Microsite_International_Shopping_Guide_Spanish.pdf'
+                        link: '/b/fashion/assets/projects/international/china-brazil/guides/Tourism_Microsite_International_Shopping_Guide_Spanish.pdf'
                     }
                 },
                 heritage: {
@@ -3024,8 +3024,8 @@
                                 descr: 'Descubra el legado emblemático y la galardonada hospitalidad de Bloomingdale\'s. Inicie su día en nuestra tienda insignia visitando nuestro Centro de Visitantes, ubicado en el balcón del primer piso. Nuestro directorio en varios idiomas le permitirá armar el recorrido de su excursión de compras. ¿Está buscando una experiencia más personalizada? Conozca los servicios brindados en nuestra tienda, que van desde citas con estilistas y alteraciones de ropa hasta reservas en restaurantes. Le ayudaremos a organizar todo esto y mucho más.',
                                 dTile: '¿DE VISITA EN NUEVA YORK?',
                                 dInfo: 'Descargue nuestro folleto de bienvenida antes de llegar.',
-                                dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_NewYork_EN.pdf',
-                                designersImg: '/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-59ST_02.jpg',
+                                dFile: '/b/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_NewYork_EN.pdf',
+                                designersImg: '/b/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-59ST_02.jpg',
                                 designers: [
                                     'Burberry',
                                     'Canali',
@@ -3058,25 +3058,25 @@
                                         name: '<b>FORTY CARROTS</b> <span>|</span>   7.° piso <span>|</span>   212-705-3085',
                                         sched: 'Abierto todos los días <span>|</span>  Para comer en el restaurante: de 10:30 a. m. a una hora antes del cierre de la tienda <br/>Para llevar: de 10:00 a. m. a media hora antes del cierre de la tienda',
                                         description: 'Su visita no estará completa sin nuestro famoso yogur helado. También podrá encontrar ensaladas recién preparadas, sándwiches, sopas, un bar de jugos frescos y una selección de tés Tavalon de la más alta calidad. Servicio disponible en la barra, en mesas y para llevar.',
-                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_01.jpg'
+                                        imgURL: '/b/fashion/images/projects/international/china-brazil/VisitStores_Dining_01.jpg'
                                     },
                                     {
                                         name: '<b>FL!P</b> <span>|</span>   Nivel medio <span>|</span>   212-705-3085',
                                         sched: 'Abierto todos los días <span>|</span>   Para comer en el restaurante: de 11:00 a. m. a una hora antes del cierre de la tienda ',
                                         description: 'En este lugar relajado dentro de nuestra Tienda para Caballeros, disfrute de unas hamburguesas de “alta costura” al estilo estadounidense, ensaladas, cervezas artesanales, servicio de bar completo y una variedad de papas fritas.',
-                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_02.jpg'
+                                        imgURL: '/b/fashion/images/projects/international/china-brazil/VisitStores_Dining_02.jpg'
                                     },
                                     {
                                         name: '<b>DAVID BURKE AT BLOOMINGDALE\'S </b> <span>|</span>   Nivel exterior <br />   212-705-3800',
                                         sched: 'Abierto todos los días <span>|</span> In the Box (para llevar): de 10:00 a.m. a 9:00 p.m. <span>|</span> In the Bar (para comer en el restaurante): de 11:00 a.m. a 9:00 p.m. ',
                                         description: 'El chef David Burke, uno de los principales precursores de la cocina estadounidense, nos trae una comida deliciosa y el mejor servicio en un ambiente alegre.',
-                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_04.jpg'
+                                        imgURL: '/b/fashion/images/projects/international/china-brazil/VisitStores_Dining_04.jpg'
                                     },
                                     {
                                         name: '<b>MAGNOLIA BAKERY</b> <span>|</span>   Nivel exterior <span>|</span>   212-265-5320',
                                         sched: 'De lunes a viernes, de 7:00 a.m. a 10:00 p.m.  <br/> Sábados, de 8:00 a.m. a 10:00 p.m. <span>|</span>   Domingos, de 8:00 a.m. a 9:00 p.m.',
                                         description: 'Una pastelería estadounidense tradicional, apreciada por sus postres de antaño y su decorado de época; Magnolia ofrece una variedad de delicias artesanales, como tartas, pasteles, cheesecakes, budines de banana, cupcakes y muffins. ¿Ha llegado temprano? Magnolia abre sus puertas antes que abra la tienda.',
-                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_03.jpg'
+                                        imgURL: '/b/fashion/images/projects/international/china-brazil/VisitStores_Dining_03.jpg'
                                     }
                                 ],
                                 services: [
@@ -3113,8 +3113,8 @@
                                 descr: 'Explore nuestra tienda del centro en SoHo, la zona que está más a la moda de la ciudad. Encontrará toda la energía y el estilo de nuestra tienda insignia de la parte alta de la ciudad, pero con el aspecto de una boutique de alta costura. Visite nuestro animado piso de belleza y explore las últimas novedades de los diseñadores. Como siempre, nuestros asociados políglotos están disponibles para ayudarle a que su visita sea memorable.',
                                 dTile: '¿DE VISITA EN NUEVA YORK?',
                                 dInfo: 'Descargue nuestro folleto de bienvenida antes de llegar.',
-                                dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_NewYork_EN.pdf',
-                                designersImg: '/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-SOHO.jpg',                                
+                                dFile: '/b/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_NewYork_EN.pdf',
+                                designersImg: '/b/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-SOHO.jpg',                                
                                 designers: [
                                     'BVLGARI',
                                     'Burberry',
@@ -3144,7 +3144,7 @@
                                         name: '<b>FORTY CARROTS</b> <span>|</span>   2.° piso  <span>|</span>   212-729-5900',
                                         sched: 'De lunes a viernes, de 10:00 a.m. a 8:00 p.m. <span>|</span>   Sábados, de 10:00 a.m. a 7:00 p.m.  <span>|</span> Domingos, de 12:00 p.m. a 7:00 p.m.',
                                         description: 'Su visita no estará completa sin nuestro famoso yogur helado.',
-                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_01.jpg'
+                                        imgURL: '/b/fashion/images/projects/international/china-brazil/VisitStores_Dining_01.jpg'
                                     }
                                 ],
                                 services: [
@@ -3173,8 +3173,8 @@
                                 descr: 'Dígale aloha a nuestra nueva tienda en la tropical Honolulu. Ubicada en el centro comercial Ala Moana Center, el principal destino de compras de Hawái, esta tienda de tres pisos cuenta con una gama de servicios adecuados para el comprador extranjero. Visite nuestro Centro de Visitantes Internacionales y hable con uno de nuestros asociados políglotos. Ofrecemos citas con un asesor estilístico internacional, alteraciones de ropa, reservas en restaurantes y mucho más.</p><p style="margin-top: 10px;">¿Tiene previsto regresar? Inscríbase en nuestro Club de Fidelidad para Clientes Internacionales y junte puntos para obtener tarjetas de regalo, servicios especiales y auténticas aventuras hawaianas.</p>',
                                 dTile: '¿DE VISITA EN HAWÁI?',
                                 dInfo: 'Descargue nuestro folleto de bienvenida antes de llegar.',
-                                dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Hawaii_EN.pdf',
-                                designersImg: '/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-ALA-MOANA.jpg',                                  
+                                dFile: '/b/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Hawaii_EN.pdf',
+                                designersImg: '/b/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-ALA-MOANA.jpg',                                  
                                 designers: [
                                     'Burberry',
                                     'Chloé',
@@ -3199,7 +3199,7 @@
                                         name: '<b>FORTY CARROTS</b> <span>|</span>   3.° piso ',
                                         sched: 'De lunes a sábados, de 11:00 a.m. a 8:00 p.m. <span>|</span> Domingos, de 11:00 a.m. a 7:00 p.m.',
                                         description: 'Su visita no estará completa sin nuestro famoso yogur helado.',
-                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_01.jpg'
+                                        imgURL: '/b/fashion/images/projects/international/china-brazil/VisitStores_Dining_01.jpg'
                                     }
                                 ],
                                 services: [
@@ -3246,8 +3246,8 @@
                                 descr: '¿Tiene previsto un viaje a la Ciudad de los Vientos? Permita que Bloomingdale\'s sea su guía de moda. Complete su guardarropa con nuestra amplia colección de marcas de diseño o encuentre sus productos de belleza favoritos. Nuestros asociados políglotos pueden ayudarle a adecuar su excursión de compras para satisfacer todas sus necesidades.',
                                 dTile: '¿DE VISITA EN CHICAGO?',
                                 dInfo: 'Descargue nuestro folleto de bienvenida antes de llegar.',
-                                dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Chicago_EN.pdf',
-                                designersImg: '/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-NORTH-MICHIGAN-AVENUE.jpg',                                                                  
+                                dFile: '/b/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Chicago_EN.pdf',
+                                designersImg: '/b/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-NORTH-MICHIGAN-AVENUE.jpg',                                                                  
                                 designers: [
                                     'Burberry',
                                     'Canada Goose',
@@ -3273,7 +3273,7 @@
                                         name: '<b>FORTY CARROTS</b> <span>|</span> 6.° piso <span>|</span> 312-440-4861',
                                         sched: 'De lunes a sábados, de 11:00 a.m. a 6:00 p.m.',
                                         description: 'Su visita no estará completa sin nuestro famoso yogur helado.',
-                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_01.jpg'
+                                        imgURL: '/b/fashion/images/projects/international/china-brazil/VisitStores_Dining_01.jpg'
                                     }
                                 ],
                                 services: [
@@ -3315,8 +3315,8 @@
                                 descr: 'Engalane su hogar con una visita a la tienda Medinah Home de Chicago. Aquí encontrará lujosa ropa de cama, aparatos electrodomésticos de diseñador, accesorios para baño y más. Experimente personalmente nuestra galardonada hospitalidad con un rango completo de servicios en la tienda.',
                                 dTile: '¿DE VISITA EN CHICAGO?',
                                 dInfo: 'Descargue nuestro folleto de bienvenida antes de llegar.',
-                                dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Chicago_EN.pdf',
-                                designersImg: '/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-MEDINAH-HOME.jpg',                                                                                                  
+                                dFile: '/b/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Chicago_EN.pdf',
+                                designersImg: '/b/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-MEDINAH-HOME.jpg',                                                                                                  
                                 designers: [
                                     'Nespresso',
                                     'Rimowa',
@@ -3352,8 +3352,8 @@
                                 descr: 'Descubra la mejor forma de hacer compras en San Francisco. Su primera parada: Bloomingdale\'s. En nuestro Centro de Visitantes podrá obtener un directorio en varios idiomas o hablar con nuestros asociados políglotos para adecuar su experiencia a la medida de sus necesidades. A continuación, podrá conocer más sobre los servicios brindados en nuestra tienda.',
                                 dTile: '¿DE VISITA EN SAN FRANCISCO?',
                                 dInfo: 'Descargue nuestro folleto de bienvenida antes de llegar.',
-                                dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_SanFran_EN.pdf',
-                                designersImg: '/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-SAN-FRANCISCO-CENTRE.jpg',
+                                dFile: '/b/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_SanFran_EN.pdf',
+                                designersImg: '/b/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-SAN-FRANCISCO-CENTRE.jpg',
                                 designers: [
                                     'Alice + Olivia',
                                     'BCBGMAXAZRIA',
@@ -3421,8 +3421,8 @@
                                 descr: 'Con la mejor selección de diseñadores, adaptados específicamente para el sur de California, South Coast Plaza es un destino de compras imperdible. ¿Primera vez en el Estado Dorado? Nuestros asociados políglotos le ayudarán a que su estadía sea fantástica. Comience por obtener un directorio de la tienda en su idioma y agregue a su excursión de compras los servicios brindados en nuestra tienda, que figuran a continuación.',
                                 dTile: '¿DE VISITA EN COSTA MESA?',
                                 dInfo: 'Descargue nuestro folleto de bienvenida antes de llegar.',
-                                dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_SouthCoastPlaza_EN.pdf',
-                                designersImg: '/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-SOUTH-COAST-PLAZA.jpg',
+                                dFile: '/b/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_SouthCoastPlaza_EN.pdf',
+                                designersImg: '/b/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-SOUTH-COAST-PLAZA.jpg',
                                 designers: [
                                     'Burberry',
                                     'Calvin Klein',
@@ -3464,7 +3464,7 @@
                                         name: '<b>AnQi by Crustacean Bistró Gourmet y Bar de Noodles</b> <br/>  Planta baja <span>|</span> 714-557-5679',
                                         sched: 'Almuerzo: Abierto todos los días, de 11:30 a.m. a 2:30 p.m.<br/> Bar de Noodles: Abierto todos los días, de 11:30 a.m. a 5:30 p.m.<br/> Cena: De domingos a jueves, de 5:30 p.m. a 10:30 p.m. <br/>Viernes y sábados, de 5:30 p.m. a 11:00 p.m. <br/> Red Happy Hour (Hora feliz): De lunes a viernes, de 4:00 p.m. a 7:00 p.m.',
                                         description: '',
-                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_08.jpg'
+                                        imgURL: '/b/fashion/images/projects/international/china-brazil/VisitStores_Dining_08.jpg'
                                     }                                   
                                 ],
                                 services: [
@@ -3489,7 +3489,7 @@
                                 descr: 'Con establecimientos en Los Ángeles, Orange County y San Diego, Bloomingdale\'s ha dejado su icónica marca en el Sur de California. Encuentre la moda, los accesorios, los zapatos y las marcas de belleza de su preferencia en cualquiera de nuestras tiendas. A continuación encontrará más información acerca de las amenidades que se ofrecen en nuestras tiendas.',
                                 dTile: '¿DE VISITA EN EL SUR DE CALIFORNIA?',
                                 dInfo: 'Descargue nuestro folleto de bienvenida antes de llegar.',
-                                dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_SouthernCalifornia_EN.pdf',
+                                dFile: '/b/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_SouthernCalifornia_EN.pdf',
                                 designersImg: '',                                
                                 stores: [
                                     {
@@ -3570,8 +3570,8 @@
                                 descr: '¿Está planificando su itinerario de vacaciones? Comience con una visita a la tienda Aventura de Florida. Explore nuestra amplia selección de vestimenta de diseño, marcas de belleza, accesorios de lujo y más. Comience por obtener un directorio de la tienda en su idioma y complete su experiencia con los servicios brindados en nuestra tienda, que figuran a continuación.',
                                 dTile: '¿DE VISITA EN AVENTURA?',
                                 dInfo: 'Descargue nuestro folleto de bienvenida antes de llegar.',
-                                dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Aventura_EN.pdf',
-                                designersImg: '/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-AVENTURA.jpg',
+                                dFile: '/b/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Aventura_EN.pdf',
+                                designersImg: '/b/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-AVENTURA.jpg',
                                 designers: [
                                     'Baccarat',
                                     'Bernardaud',
@@ -3619,7 +3619,7 @@
                                         name: '<b>59TH & LEX CAFE</b> <span>|</span> 2nd floor <span>|</span> 305-792-1180',
                                         sched: 'De lunes a sábados: de 10:00 a.m. a 8:00 p.m. <span>|</span> Domingos: de 12:00 p.m. a 7:00 p.m.',
                                         description: '',
-                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_06.jpg'
+                                        imgURL: '/b/fashion/images/projects/international/china-brazil/VisitStores_Dining_06.jpg'
                                     }
                                 ],
                                 services: [
@@ -3646,8 +3646,8 @@
                                 descr: 'Con un surtido de los mejores diseñadores y marcas de belleza, la tienda de Bloomingdale\'s de Orlando es su puerta de entrada a las compras de calidad global. Visítenos durante su próximo viaje al Estado del Sol para vivir una experiencia adecuada para usted. Obtenga un directorio de la tienda en su idioma y aproveche los múltiples servicios brindados en la tienda, que figuran a continuación.',
                                 dTile: '¿DE VISITA EN ORLANDO?',
                                 dInfo: 'Descargue nuestro folleto de bienvenida antes de llegar.',
-                                dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Orlando_EN.pdf',
-                                designersImg: '/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-ORLANDO.jpg',
+                                dFile: '/b/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Orlando_EN.pdf',
+                                designersImg: '/b/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-ORLANDO.jpg',
                                 designers: [
                                     'Burberry',
                                     'Canali ',
@@ -3675,7 +3675,7 @@
                                         name: '<b>FORTY CARROTS</b> <span>|</span> Nivel 1 <span>|</span> 407-264-2683',
                                         sched: 'De lunes a sábados, de 10:00 a.m. a 9:00 p.m. <span>|</span> Domingos, de 11:00 a.m. a 7:00 p.m.',
                                         description: 'Su visita no estará completa sin nuestro famoso yogur helado.',
-                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_01.jpg'
+                                        imgURL: '/b/fashion/images/projects/international/china-brazil/VisitStores_Dining_01.jpg'
                                     }
                                 ],
                                 services: [
@@ -3838,7 +3838,7 @@
                     pdf: {
                         span: '当サイトでのお買い物の仕方および「よくある質問」をご参照いただけます。',
                         a: '今すぐダウンロード',
-                        link: '/fashion/assets/projects/international/china-brazil/guides/Tourism_Microsite_International_Shopping_Guide_Japanese.pdf'
+                        link: '/b/fashion/assets/projects/international/china-brazil/guides/Tourism_Microsite_International_Shopping_Guide_Japanese.pdf'
                     }
                 },
                 heritage: {
@@ -3969,8 +3969,8 @@
                                 descr: 'Bloomingdale’sを象徴する伝統と受賞歴を誇るおもてなしをご体験下さい。Flagship店へご来店の際は、まず一階バルコニーのビジターセンターにお立ち寄り下さい。各言語でのフロアガイドをご用意しております。又お客様それぞれのご要望に添えます様、様々なサービス（お買い物をサポートするスタイリスト、サイズ直し、レストランの予約など）を承りますのでどうぞご利用下さいませ。<br/><br/>ニューヨークへご旅行ですか？<br/><br/>ご到着前に当店のウェルカム・ブックレットをダウンロードなさって下さい。',
                                 dTile: 'ニューヨークへご旅行ですか？',
                                 dInfo: 'いらっしゃる前に当店のウェルカム・ブックレットをダウンロードください。',
-                                dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_NewYork_EN.pdf',
-                                designersImg: '/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-59ST_02.jpg',
+                                dFile: '/b/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_NewYork_EN.pdf',
+                                designersImg: '/b/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-59ST_02.jpg',
                                 designers: [
                                     'Burberry',
                                     'Canali',
@@ -4003,25 +4003,25 @@
                                         name: '<b>FORTY CARROTS</b> <span>|</span>   7階 <span>|</span>  電話： 212-705-3085',
                                         sched: '毎日営業 <span>|</span>   店内での飲食: 午前10:30～Bloomingdale\'s 閉店１時間前まで  <br/>テイクアウト：午前10:00～Bloomingdale\'s 閉店30分前まで',
                                         description: 'ご来店の際は、ご好評を頂いているフローズンヨーグルトを是非お試しください。その他フレッシュなサラダ、サンドイッチ、ジュース、Tavalonのプレミアムティがお楽しみ頂け、テイクアウトもご利用頂けます。店内ではカウンター席、テーブル席をご用意しております。',
-                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_01.jpg'
+                                        imgURL: '/b/fashion/images/projects/international/china-brazil/VisitStores_Dining_01.jpg'
                                     },
                                     {
                                         name: '<b>FL!P</b> <span>|</span>   中地下１階 <span>|</span> 電話： 212-705-3085',
                                         sched: '毎日営業 <span>|</span>   店内での飲食: 午前11:00～Bloomingdale\'s 閉店30分前まで',
                                         description: 'Men’s Floor（紳士用品フロア）にあるこのスポットでは、「オートクチュール」のアメリカンハンバーガー、サラダ、地ビールなど各種アルコール、種類豊富なフライドポテトを楽しめます。',
-                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_02.jpg'
+                                        imgURL: '/b/fashion/images/projects/international/china-brazil/VisitStores_Dining_02.jpg'
                                     },
                                     {
                                         name: '<b>DAVID BURKE AT BLOOMINGDALE\'S </b> <span>|</span> １階 <br /> 電話： 212-705-3800',
                                         sched: '毎日営業 <span>|</span> In the Box（テイクアウト）　午前10:00～午後9:00 <span>|</span> In the Bar（店内飲食）　午前11:00～午後9:00  ',
                                         description: 'アメリカ料理を代表するパイオニアシェフの１人デイビッド・バーク氏により、活気ある雰囲気の中で美味しい料理と素晴らしいサービスを提供しております。',
-                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_04.jpg'
+                                        imgURL: '/b/fashion/images/projects/international/china-brazil/VisitStores_Dining_04.jpg'
                                     },
                                     {
                                         name: '<b>MAGNOLIA BAKERY</b> <span>|</span> １階 <span>|</span> 電話： 212-265-5320',
                                         sched: '月曜日～金曜日　午前7:00～午後10:00 <br/> 土曜日　午前8:00～午後10:00 <span>|</span> 日曜日 午前8:00～午後9:00',
                                         description: 'クラシックなアメリカンベーカリー「マグノリア」は昔ながらのデザートと古き良き時代のインテリアで愛されており、パイ、ケーキ、チーズケーキ、バナナプディング、カップケーキ、マフィンなど幅広く取り揃えております。マグノリアは早朝から営業しております。',
-                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_03.jpg'
+                                        imgURL: '/b/fashion/images/projects/international/china-brazil/VisitStores_Dining_03.jpg'
                                     }
                                 ],
                                 services: [
@@ -4058,8 +4058,8 @@
                                 descr: 'ニューヨークのダウンタウンで最もオシャレな地区ソーホーに位置する当店へどうぞお越し下さい。アップタウンにあるフラッグシップ店と同じくスタイリッシュな雰囲気を持ちながら、ファッションブティックの趣も感じて頂けるでしょう。ポップなコスメティックフロアをチェックした後はデザイナーズブランドの最新作をご覧下さい。当店でも勿論多言語スタッフがお手伝い致します<br/>ニューヨークへご旅行ですか？ご到着前に当店のウェルカム・ブックレットをダウンロードなさって下さい。',
                                 dTile: 'ニューヨークへご旅行ですか？',
                                 dInfo: 'いらっしゃる前に当店のウェルカム・ブックレットをダウンロードください。',
-                                dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_NewYork_EN.pdf',
-                                designersImg: '/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-SOHO.jpg',                                
+                                dFile: '/b/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_NewYork_EN.pdf',
+                                designersImg: '/b/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-SOHO.jpg',                                
                                 designers: [
                                     'BVLGARI',
                                     'Burberry',
@@ -4089,7 +4089,7 @@
                                         name: '<b>FORTY CARROTS</b> <span>|</span> 2階 <span>|</span> 電話： 212-729-5900',
                                         sched: '月曜日～金曜日　午前8:00～午後8:00 <span>|</span> 土曜日　午前10:00～午後7:00 <span>|</span> 日曜日　正午～午後7:00',
                                         description: 'ご来店の際は、ご好評を頂いているフローズンヨーグルトを是非お試しください。その他フレッシュなサラダ、サンドイッチ、ジュース、Tavalonのプレミアムティがお楽しみ頂け、テイクアウトもご利用頂けます。店内ではカウンター席、テーブル席をご用意しております。',
-                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_01.jpg'
+                                        imgURL: '/b/fashion/images/projects/international/china-brazil/VisitStores_Dining_01.jpg'
                                     }
                                 ],
                                 services: [
@@ -4118,8 +4118,8 @@
                                 descr: 'トロピカルなホノルルに登場したアメリカ本土外初のBloomingdale\'s店舗にどうぞお越し下さい。ハワイ最大のショッピングセンター“アラモアナセンター”にある3階建ての店舗には海外からのお客様の為の特別なサービスが取り揃えられています。ウェルカムセンターにお立ち寄り頂ければ多言語スタッフがお手伝い致します。プロモーションのご案内、インターナショナルスタイルアドバイザーのご予約、ご購入頂いた商品のサイズ直し、レストラン予約など豊富なサービスをご利用頂けます。',
                                 dTile: 'ハワイへご旅行ですか？',
                                 dInfo: 'いらっしゃる前に当店のウェルカム・ブックレットをダウンロードください。',
-                                dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Hawaii_EN.pdf',
-                                designersImg: '/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-ALA-MOANA.jpg',                                  
+                                dFile: '/b/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Hawaii_EN.pdf',
+                                designersImg: '/b/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-ALA-MOANA.jpg',                                  
                                 designers: [
                                     'Burberry',
                                     'Chloé',
@@ -4144,7 +4144,7 @@
                                         name: '<b>FORTY CARROTS</b> <span>|</span> 3階',
                                         sched: '月曜日〜土曜日午前11:00〜午後8:00、日曜日午前11:00〜午後7:00',
                                         description: 'ご来店の際は、ご好評をいただいているフローズン・ヨーグルトをぜひお試しください。',
-                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_01.jpg'
+                                        imgURL: '/b/fashion/images/projects/international/china-brazil/VisitStores_Dining_01.jpg'
                                     }
                                 ],
                                 services: [
@@ -4191,8 +4191,8 @@
                                 descr: 'Windy City（シカゴの愛称）へいらっしゃる予定ですか？ファッションのガイドはブルーミングデールズにお任せください。当店にずらりと揃っているデザイナーズ・ブランド・コレクションでワードローブを一杯に、またはお気に入りのビューティ用品をストックなさってはいかがでしょう。ご希望通りにショッピングをお楽しみいただけるよう、当店の多言語スタッフがお手伝いをいたします。',
                                 dTile: 'シカゴへご旅行ですか？',
                                 dInfo: 'いらっしゃる前に当店のウェルカム・ブックレットをダウンロードください。',
-                                dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Chicago_EN.pdf',
-                                designersImg: '/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-NORTH-MICHIGAN-AVENUE.jpg',                                                                  
+                                dFile: '/b/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Chicago_EN.pdf',
+                                designersImg: '/b/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-NORTH-MICHIGAN-AVENUE.jpg',                                                                  
                                 designers: [
                                     'Burberry',
                                     'Canada Goose',
@@ -4218,7 +4218,7 @@
                                         name: '<b>FORTY CARROTS</b> <span>|</span> 6階 <span>|</span> 電話：312-440-4861',
                                         sched: '月曜日～土曜日 午前11:00～午後6:00',
                                         description: 'ご来店の際は、ご好評をいただいているフローズン・ヨーグルトをぜひお試しください。',
-                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_01.jpg'
+                                        imgURL: '/b/fashion/images/projects/international/china-brazil/VisitStores_Dining_01.jpg'
                                     }
                                 ],
                                 services: [
@@ -4260,8 +4260,8 @@
                                 descr: 'ご家庭のステキな飾り付けのためには、シカゴのメダイナ・ホーム店へお越しください。豪華寝具、ブランドのキッチン用品、オシャレなバス用品をはじめとする多くのものが揃っています。幅広い店内サービスをご利用になり、受賞歴を誇る当店のおもてなしを、どうぞご自身でご体験ください。',
                                 dTile: 'シカゴへご旅行ですか？',
                                 dInfo: 'いらっしゃる前に当店のウェルカム・ブックレットをダウンロードください。',
-                                dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Chicago_EN.pdf',
-                                designersImg: '/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-MEDINAH-HOME.jpg',                                                                                                  
+                                dFile: '/b/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Chicago_EN.pdf',
+                                designersImg: '/b/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-MEDINAH-HOME.jpg',                                                                                                  
                                 designers: [
                                     'Nespresso',
                                     'Rimowa',
@@ -4297,8 +4297,8 @@
                                 descr: 'サンフランシスコで一番のショッピングスポットを見つけましょう。まず最初に行くべき所はBloomingdale’sです。店内のビジターセンターへまずお寄りいただけば、フロア案内ガイドは各言語揃っており、また、ご希望通りにショッピングをお楽しみいただけるよう多言語スタッフがご相談にのります。店内の設備・サービスについて詳しくご説明いたします。',
                                 dTile: 'サンフランシスコへご旅行ですか？',
                                 dInfo: 'いらっしゃる前に当店のウェルカム・ブックレットをダウンロードください。',
-                                dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_SanFran_EN.pdf',
-                                designersImg: '/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-SAN-FRANCISCO-CENTRE.jpg',
+                                dFile: '/b/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_SanFran_EN.pdf',
+                                designersImg: '/b/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-SAN-FRANCISCO-CENTRE.jpg',
                                 designers: [
                                     'Alice + Olivia',
                                     'BCBGMAXAZRIA',
@@ -4366,8 +4366,8 @@
                                 descr: '南カリフォルニアに合わせて特別に選ばれた最高のデザイナーズ・ブランド・ショップを有するSouth Coast Plaza店は、必ず行くべきショッピングスポットです。Golden State（カリフォルニア州の愛称）は初めてですか？当店の多言語スタッフが、ご滞在をさらに快適なものとするお手伝いをいたします。お国の言葉のフロア案内ガイドのご用意があり、この下でご説明する店内の設備・サービスによって、お客様のショッピング体験はさらに楽しいものとなるでしょう。',
                                 dTile: 'コスタメサへご旅行ですか？',
                                 dInfo: 'いらっしゃる前に当店のウェルカム・ブックレットをダウンロードください。',
-                                dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_SouthCoastPlaza_EN.pdf',
-                                designersImg: '/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-SOUTH-COAST-PLAZA.jpg',
+                                dFile: '/b/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_SouthCoastPlaza_EN.pdf',
+                                designersImg: '/b/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-SOUTH-COAST-PLAZA.jpg',
                                 designers: [
                                     'Burberry',
                                     'Calvin Klein',
@@ -4409,7 +4409,7 @@
                                         name: '<b>AnQi by Crustacean Gourmet Bistro & Noodle Bar</b> <br/>  １階 <span>|</span> 電話：714-557-5679',
                                         sched: 'ランチ: 毎日営業　午前11:30～午後2:30 <br/> ヌードルバー： 毎日営業　午前11:30～午後5:30 <br/> ディナー： 日曜日～木曜日　午後5:30～午後10:30 <br/>金曜日・土曜日　午後5:30～午後11:00 <br/> レッド・ハッピー・アワー： 月曜日～金曜日　午後4:00～午後7:00',
                                         description: '',
-                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_08.jpg'
+                                        imgURL: '/b/fashion/images/projects/international/china-brazil/VisitStores_Dining_08.jpg'
                                     }                                 
                                 ],
                                 services: [
@@ -4434,7 +4434,7 @@
                                 descr: 'Bloomingdale\'sの象徴的な店舗は、ロサンゼルス、オレンジ・カウンティ、サンディエゴと南カリフォルニア全体にも展開されています。どの店舗でも、お気に入りブランドのファッション、アクセサリー、靴、ビューティ用品のショッピングをお楽しみいただけるでしょう。この下で店内の設備・サービスについて詳しくご説明いたします。',
                                 dTile: '南カリフォルニアへご旅行ですか？',
                                 dInfo: 'いらっしゃる前に当店のウェルカム・ブックレットをダウンロードください。',
-                                dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_SouthernCalifornia_EN.pdf',
+                                dFile: '/b/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_SouthernCalifornia_EN.pdf',
                                 designersImg: '',                                
                                 stores: [
                                     {
@@ -4515,8 +4515,8 @@
                                 descr: '休暇旅行の日程を計画中ですか？最初の行き先は、フロリダのAventura店にしましょう。デザイナーズ・ブランドのファッションやビューティ用品、豪華なアクセサリーをはじめとする当店の幅広いセレクションを、じっくりと品定めしてください。ショッピングでは、この下に載っている店内の設備・サービスを最大限にご利用いただけますよう、お国の言語のフロア案内ガイドをご活用ください。',
                                 dTile: 'アヴェントゥーラへご旅行ですか？',
                                 dInfo: 'いらっしゃる前に当店のウェルカム・ブックレットをダウンロードください。',
-                                dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Aventura_EN.pdf',
-                                designersImg: '/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-AVENTURA.jpg',
+                                dFile: '/b/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Aventura_EN.pdf',
+                                designersImg: '/b/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-AVENTURA.jpg',
                                 designers: [
                                     'Baccarat',
                                     'Bernardaud',
@@ -4564,7 +4564,7 @@
                                         name: '<b>59TH & LEX CAFE</b> <span>|</span> 2階 <span>|</span> 電話：305-792-1180',
                                         sched: '月曜日～土曜日：午前10:00～午後8:00 <span>|</span> 日曜日：正午～午後7:00',
                                         description: '',
-                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_06.jpg'
+                                        imgURL: '/b/fashion/images/projects/international/china-brazil/VisitStores_Dining_06.jpg'
                                     }
                                 ],
                                 services: [
@@ -4591,8 +4591,8 @@
                                 descr: '最高ブランドのファッションとビューティの品がずらりと並んだBloomingdale’s Orlando店では、世界トップレベルのショッピング体験が待っています。Sunshine State（フロリダ州の愛称）への次のご旅行では、お客様の希望を叶える当店へお立ち寄りください。お国の言語のフロア案内ガイドを手にし、この下に載っている店内の設備・サービスを存分にご利用ください。',
                                 dTile: 'オーランドへご旅行ですか？',
                                 dInfo: 'いらっしゃる前に当店のウェルカム・ブックレットをダウンロードください。',
-                                dFile: '/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Orlando_EN.pdf',
-                                designersImg: '/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-ORLANDO.jpg',
+                                dFile: '/b/fashion/assets/projects/international/china-brazil/booklets/Bloomingdales_Orlando_EN.pdf',
+                                designersImg: '/b/fashion/images/projects/international/china-brazil/VisitStores_featuredDesigners-ORLANDO.jpg',
                                 designers: [
                                     'Burberry',
                                     'Canali ',
@@ -4620,7 +4620,7 @@
                                         name: '<b>FORTY CARROTS</b> <span>|</span> １階 <span>|</span> 電話：407-264-2683',
                                         sched: '月曜日～土曜日　午前10:00～午後9:00 <span>|</span> 日曜日　午前11:00～午後7:00',
                                         description: 'ご来店の際は、ご好評をいただいているフローズン・ヨーグルトをぜひお試しください。',
-                                        imgURL: '/fashion/images/projects/international/china-brazil/VisitStores_Dining_01.jpg'
+                                        imgURL: '/b/fashion/images/projects/international/china-brazil/VisitStores_Dining_01.jpg'
                                     }
                                 ],
                                 services: [

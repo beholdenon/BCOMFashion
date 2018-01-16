@@ -10,6 +10,7 @@ let sjl = require('sjljs'),
 
     doesPathExist = require('../helpers/doesPathExist'),
     deviceDetectionHelper = require('./../helpers/deviceDetection'),
+    tagDataHelper = require('./../helpers/tagDataPreparation'),
 
     isMobile = deviceType => deviceType.toLowerCase() === 'mobile',
     isTablet = deviceType => deviceType.toLowerCase() === 'tablet',
@@ -26,6 +27,7 @@ let sjl = require('sjljs'),
             tealiumType: process.env.ENV_TYPE === "prod" ? "prod" : "qa",
             brightTagEnabled: process.env.brightTagEnabled !== "false",
             polarisHeaderFooterEnabled: process.env.polarisHeaderFooterEnabled === "true",
+            polarisMobileHeaderFooterEnabled: process.env.polarisMobileHeaderFooterEnabled === "true",
             breastCancerAwarenessCampaignEnabled: process.env.breastCancerAwarenessCampaignEnabled === "true"
         };
     },
@@ -79,6 +81,7 @@ module.exports = {
             requestPathPartial = stripInitialForwardSlash(requestPath),
             viewAlias = ensureTrailingForwardSlash(requestPathPartial) + 'index',
             argsForView = argsWithDeviceMetaData(req, argsFactory());
+        	argsForView.utagData = tagDataHelper.getPageType(req);
 
         // Check if we have any static data to merge to `args` before rendering view
         // then render it and return the promise
@@ -87,8 +90,12 @@ module.exports = {
             // Resolve view template whether we have data for it or not
             var resolveRequest = mergedArgs => {
                     resolve( res.view( viewAlias, {
-                        args: mergedArgs,
+                        args: mergedArgs, 
+                        isApp: req.state.ishop_app, 
                         assetsHost: process.env.BASE_ASSETS,
+                        baseHost: process.env.BASE_HOST,
+                        secureHost: process.env.SECURE_HOST,
+                        mobileHost: process.env.MOBILE_HOST,
                         slashMinSuffix: slashMinSuffix
                     } ));
                 },

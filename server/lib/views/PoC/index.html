@@ -36,7 +36,7 @@
 	    var error = 'Your browser does not support HTML 5 video.';
 	    var source = '<source src="'+path+'" type="video/mp4">';
 
-	    $("#brightCove-test").append(source).append(error).attr('controls autoplay');
+	    $("#brightCove-test").append(source).append(error).attr('controls autoplay muted');
 
 	  }, $("#brightCove-test").attr('data-id'));
 

@@ -1,0 +1,21 @@
+<title>Bloomingdale&rsquo;s - Write Review</title>
+<meta name="description" content="Write Review of Product" />
+
+<link href="/b/fashion/styles/projects/product/review/style.css" rel="stylesheet" type="text/css" />
+
+<div class="mobile_main_container">
+    <section>
+        <div id="BVSubmissionContainer"></div>
+    </section>
+</div>
+
+<script type="text/javascript">
+   	require(['cookie'], function(Cookie) {
+   		if (!Cookie.get("BazaarVoiceToken", "GCs") && "{{bvUserToken}}" !== "") {
+	        Cookie.set( "BazaarVoiceToken", "{{bvUserToken}}", "GCs" );
+   		}
+    });
+</script>
+<script type="application/javascript" src="/b/fashion/javascripts/libs/jquery-1.11.2.min.js"></script>
+<script type="application/javascript" src="https://bloomingdales.ugc.bazaarvoice.com/bvstaging/static/7130inline/bvapi.js"></script>
+<script type="application/javascript" src="/b/fashion/javascripts/projects/product/review/main.js"></script>

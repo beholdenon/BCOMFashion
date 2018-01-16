@@ -1,0 +1,156 @@
+<!-- {pageTitle: "Book an Appointment", pageLabel: "Bloomingdale's In-Store Services - Schedule an Appointment Today"} -->
+
+<script src="//cdn.timetrade.com/scripts/lightbox/latest/lightbox.js"></script>
+<meta name="description" content="Make shopping a breeze with Bloomingdale's in-store services. Book an appointment with our beauty, jewelry and registry experts today!">
+<div class="row collapse">
+
+    {{>title}}
+
+    <link href="/b/fashion/styles/projects/about-us/appointment-scheduling-in-store-services/styles.css" rel="stylesheet" type="text/css" />
+    <script src="/b/fashion/javascripts/projects/about-us/appointment-scheduling-in-store-services/main.js"></script>
+
+    <div class="small-5 large-5 collapse">
+        <div class="about_us bl_nav_side">
+            <!--BEGIN LOCAL NAVIGATION-->
+            <div class="gn_left_nav_container">
+                <div id="bl_leftNavContainer">
+                    {{>leftnav}}
+                </div>
+            </div>
+            <!--END LOCAL NAVIGATION-->
+        </div>
+    </div>
+
+    <div class="bl_main small-19 large-19 columns">
+        <div id="bl_hp_main">
+
+            <div class="book-an-appointment">
+                <section class="row">
+
+                    <h1>BOOK AN APPOINTMENT</h1>
+                    <hr>
+
+                    <div class="row schedule">
+
+                        <div class="column schedule-image small-7">
+
+                            <img src="/b/fashion/images/projects/about-us/appointment-scheduling-in-store-services/schedule.png" alt=""/>
+
+                        </div>
+
+                        <div class="column schedule-text small-20">
+
+                            <span>
+                                You can now schedule in-store appointments online for select Bloomingdale’s locations. Choose from the categories below to get started.
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <section class="row book-section" id="beauty">
+
+                    <div class="row book-section-text">
+
+                        <h2>BEAUTY</h2>
+                        <p>
+                            Learn how to recreate the latest looks, get glam for a special event or discover the perfect products for your complexion.
+                        </p>
+
+                        {{#isEnvironment 'production'}}
+
+                            <a class="button" data-cm-link="Beauty" href="https://timetrade.com/app/bloomingdales/workflows/bloomingdales005/schedule/?&appointmentTypeGroupId=beauty&ch=BCOM_ASLP" onclick="return tt.launchWorkflow(this);">BOOK AN APPOINTMENT</a>
+
+                        {{else}}
+
+                            <a class="button" data-cm-link="Beauty" href="https://ui-stage.timetradesystems.com/app/bloomingdales/workflows/bloomingdales005/schedule/?&appointmentTypeGroupId=beauty" onclick="return tt.launchWorkflow(this);">BOOK AN APPOINTMENT</a>
+
+                        {{/isEnvironment}}
+
+                    </div>
+
+                    <img src="/b/fashion/images/projects/about-us/appointment-scheduling-in-store-services/d_Beauty.jpg" alt=""/>
+                    
+                </section>
+
+                <section class="row book-section" id="fine_jewelry">
+
+                    <div class="row book-section-text">
+
+                        <h2>FINE JEWELRY</h2>
+                        <p>
+                            In addition to helping you choose an exquisite piece of jewelry, our expert consultants can assist you in ordering additional sizes, jewelry and watch repair, or learning about the 4Cs.
+                        </p>
+
+                        {{#isEnvironment 'production'}}
+
+                            <a class="button" data-cm-link="Fine_Jewelry" href="https://timetrade.com/app/bloomingdales/workflows/bloomingdales005/schedule/?&appointmentTypeGroupId=fine_jewelry&ch=BCOM_ASLP" onclick="return tt.launchWorkflow(this);">BOOK AN APPOINTMENT</a>
+
+                        {{else}}
+
+                            <a class="button" data-cm-link="Fine_Jewelry" href="https://ui-stage.timetradesystems.com/app/bloomingdales/workflows/bloomingdales005/schedule/?&appointmentTypeGroupId=fine_jewelry" onclick="return tt.launchWorkflow(this);">BOOK AN APPOINTMENT</a>
+
+                        {{/isEnvironment}}
+
+                    </div>
+
+                    <img src="/b/fashion/images/projects/about-us/appointment-scheduling-in-store-services/d_Fine_Jewelry.jpg" alt=""/>
+                    
+                </section>
+
+                <section class="row book-section" id="shopping_services">
+
+                    <div class="row book-section-text">
+
+                        <h2>SHOPPING SERVICES</h2>
+                        <p>
+                            Let our Personal Shoppers and Style Advisors help you with all of your shopping needs—from full wardrobe refreshes to the perfect special occasion look.
+                        </p>
+
+                        {{#isEnvironment 'production'}}
+
+                            <a class="button" data-cm-link="Shopping_Services" href="https://timetrade.com/app/bloomingdales/workflows/bloomingdales005/schedule/?&appointmentTypeGroupId=shopping_services&ch=BCOM_ASLP" onclick="return tt.launchWorkflow(this);">BOOK AN APPOINTMENT</a>
+
+                        {{else}}
+
+                            <a class="button" data-cm-link="Shopping_Services" href="https://ui-stage.timetradesystems.com/app/bloomingdales/workflows/bloomingdales005/schedule/?&appointmentTypeGroupId=shopping_services" onclick="return tt.launchWorkflow(this);">BOOK AN APPOINTMENT</a>
+
+                        {{/isEnvironment}}
+
+                    </div>
+
+                    <img src="/b/fashion/images/projects/about-us/appointment-scheduling-in-store-services/d_Shopping_Services.jpg" alt=""/>
+                    
+                </section>
+
+                <section class="row book-section" id="the_registry">
+
+                    <div class="row book-section-text">
+
+                        <h2>THE REGISTRY</h2>
+                        <p>
+                            Whether you're starting a new registry or need help with a return or exchange, our Registry Consultants can help you with everything you need for the big day and beyond.
+                        </p>
+
+                        {{#isEnvironment 'production'}}
+
+                            <a class="button" data-cm-link="The_Registry" href="https://timetrade.com/app/bloomingdales/workflows/bloomingdales005/schedule/?&appointmentTypeGroupId=gift_registry&ch=BCOM_ASLP" onclick="return tt.launchWorkflow(this);">BOOK AN APPOINTMENT</a>
+
+                        {{else}}
+
+                            <a class="button" data-cm-link="The_Registry" href="https://ui-stage.timetradesystems.com/app/bloomingdales/workflows/bloomingdales005/schedule/?&appointmentTypeGroupId=gift_registry" onclick="return tt.launchWorkflow(this);">BOOK AN APPOINTMENT</a>
+
+                        {{/isEnvironment}}
+
+                    </div>
+
+                    <img src="/b/fashion/images/projects/about-us/appointment-scheduling-in-store-services/d_The_Registry.jpg" alt=""/>
+                    
+                </section>
+               
+            </div>
+        </div>
+    </div>
+</div>

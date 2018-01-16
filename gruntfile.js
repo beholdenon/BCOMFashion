@@ -62,7 +62,8 @@ module.exports = function(grunt) {
                     './build/titleImageSrcCached.js',
                     './build/selectedClass.js',
                     './build/hideLevel.js',
-                    './build/coremetrics.js'
+                    './build/coremetrics.js',
+                    './build/helper.js'
                 ],
                 templateData: './.tmp/navdata.js',
                 partials: ['./server/lib/views/partials/leftnav.hbs',
@@ -433,7 +434,43 @@ module.exports = function(grunt) {
                         }
                     }
                 ]
-            }
+            },
+            BCOMcampaigns : {
+                files: [{
+                    expand: true,
+                    cwd: '<%= node.source %>/campaigns/assets/',
+                    src: [
+                        'images/**',
+                        'styles/fonts/**',
+                        'styles/projects/**/*.png',
+                        'styles/projects/**/*.jpg',
+                        'data/**/*',
+                    ],
+                    dest: '<%= node.destination %>/public/campaigns'
+                },{
+                    expand: true,
+                    cwd: '<%= node.source %>/campaigns/assets/',
+                    src: [
+                        '**/*.{js,json}',
+                        '**/*.map',
+                    ],
+                    dest: '<%= node.destination %>/public/campaigns'
+                }, {
+                    expand: true,
+                    cwd: '<%= node.source %>/campaigns/views',
+                    src: [
+                        '**/*.html',
+                    ],
+                    dest: '<%= node.destination %>/lib/views/campaigns'
+                },{
+                    expand: true,
+                    cwd: '<%= node.source %>/campaigns/',
+                    src: [
+                        '*.js',
+                    ],
+                    dest: '<%= node.destination %>/routes'
+                }],
+            },
         },
 
         //Handlebars files to compile
@@ -494,6 +531,7 @@ module.exports = function(grunt) {
             dist: {
                 options: {
                     sassDir: '<%= node.source %>/public/styles/',
+                    // sassDir: '<%= node.source %>/public/styles/',
                     cacheDir: '.tmp/.sass-cache',
                     cssDir: '.tmp/styles', //'<%= node.destination %>/public/styles'
                     generatedImagesDir: '.tmp/images/generated',
@@ -512,7 +550,25 @@ module.exports = function(grunt) {
                 }
             }
         },
+        // Compile SASS using Grunt-Sass
+        sass: {
+            options: {
+                sourceMap: true,
+                outputStyle: 'compressed',
 
+            },
+            dist: {
+                files: [{
+                  expand: true,
+                  cwd: '<%= node.source %>/campaigns/assets/styles/',
+                  src: [
+                    '**/*.scss'
+                  ],
+                  dest: '<%= node.destination %>/public/campaigns/styles',
+                  ext: '.css'
+              }]
+            }
+        },
         //Renames files for browser caching purposes
         rev: {
             dist: {
@@ -822,7 +878,28 @@ module.exports = function(grunt) {
                 options: {
                     reload: true
                 }
-            }
+            },
+            campaignsCopy: {
+              files: [
+                    '<%= node.source %>/campaigns/views/**',
+                    '<%= node.source %>/campaigns/assets/data/**',
+                    '<%= node.source %>/campaigns/assets/images/**',
+                    '<%= node.source %>/campaigns/assets/javascripts/**',
+                ],
+                tasks: ['copy:BCOMcampaigns',],
+                options: {
+                    reload: true
+                }
+            },
+            campaigns: {
+              files: [
+                    '<%= node.source %>/campaigns/assets/styles/**',
+                ],
+                tasks: ['sass',],
+                options: {
+                    reload: true
+                }
+            },
 		},
 
         //Run some tasks in parallel to speed up the build process
@@ -857,6 +934,8 @@ module.exports = function(grunt) {
             // 'concat:generated',
             // 'concat:addHBStemplates',
             'copy:all',
+            'copy:BCOMcampaigns',
+            'sass',
             'execute', // create the nav data used in the compile-handlebars step
             'compile-handlebars', // this processes files in the views folder and overwrites files in target
             'copy:titleImages', // handlebars optionally creates titles images, need to copy those after handlebars run

@@ -19,13 +19,25 @@
             {{> tealiumTag_async}}
         {{/if}} 
 
-        {{#if args.polarisHeaderFooterEnabled}}
-            <!-- Polaris Header -->
-            <header id="wglHeader" data-context="{&quot;shoppingMode&quot;:&quot;SITE&quot;,&quot;regionCode&quot;:&quot;US&quot;,&quot;application&quot;:&quot;SITE&quot;,&quot;deviceType&quot;:&quot;DESKTOP&quot;,&quot;navigationType&quot;:&quot;BROWSE&quot;,&quot;viewType&quot;:&quot;Default&quot;,&quot;domestic&quot;:true,&quot;currencyCode&quot;:&quot;USD&quot;}" data-hostlink="//www.bloomingdales.com" data-uri="/xapi/navigate/v1/header/" data-bagserviceproxy="/api/shopping-bag/v1/bags/" data-assethost="//assets.bloomingdales.com/wgl"></header>
-        {{else}}
-            <!-- About-us NavApp header -->
-            <header class="responsive"></header>
-        {{/if}}
+        {{#unless isApp}}
+            {{#if args.isMobile}}
+                {{#if args.polarisMobileHeaderFooterEnabled}}
+                    <!-- Mobile Polaris Header -->
+                    <header id="wglHeader" class="mobile" data-hostlink="{{mobileHost}}" data-assethost="{{assetsHost}}/wgl" data-uri="/xapi/navigate/v1/header" data-context='{"shoppingMode":"SITE","regionCode":"","application":"SITE","deviceType":"PHONE","navigationType":"BROWSE","viewType":"Compact","domestic":true,"currencyCode":"USD"}'></header>
+                {{else}}
+                    <!-- Mobile about-us MacysUI header -->
+                    <header class="responsive"></header>
+                {{/if}}
+            {{else}}
+                {{#if args.polarisHeaderFooterEnabled}}
+                    <!-- Desktop Polaris Header -->
+                    <header id="wglHeader" data-context='{"shoppingMode":"SITE","regionCode":"","application":"SITE","deviceType":"DESKTOP","navigationType":"BROWSE","viewType":"Default","domestic":true,"currencyCode":"USD"}' data-hostlink="{{secureHost}}" data-uri="/xapi/navigate/v1/header/" data-bagserviceproxy="/api/shopping-bag/v1/bags/" data-assethost="{{assetsHost}}/wgl"></header>
+                {{else}}
+                    <!-- Desktop about-us MacysUI header -->
+                    <header class="responsive"></header>
+                {{/if}}
+            {{/if}}
+        {{/unless}}
 
         {{!-- Mobile About Us Pages specific --}}
         {{#if args.isMobile}}
@@ -63,14 +75,80 @@
             </div>
         {{/if}}
 
-        {{#if args.polarisHeaderFooterEnabled}}
-            <!-- polaris footer -->
-            <footer id="wglFooter" data-context="{&quot;shoppingMode&quot;:&quot;SITE&quot;,&quot;regionCode&quot;:&quot;US&quot;,&quot;application&quot;:&quot;SITE&quot;,&quot;deviceType&quot;:&quot;DESKTOP&quot;,&quot;navigationType&quot;:&quot;BROWSE&quot;,&quot;viewType&quot;:&quot;Default&quot;,&quot;domestic&quot;:true,&quot;currencyCode&quot;:&quot;USD&quot;}" data-hostlink="//www.bloomingdales.com" data-uri="/xapi/navigate/v1/footer" data-assethost="//assets.bloomingdales.com/wgl"></footer>
-        {{else}}
-            <!-- About Us NavApp Footer -->
-            <footer class="responsive"></footer>
-        {{/if}}
+        {{#unless isApp}}
+            {{#if args.isMobile}}
+                {{#if args.polarisMobileHeaderFooterEnabled}}
+                    <!-- Mobile Polaris Footer -->
+                    <footer id="wglFooter" 
+                        class="mobile"
+                        data-hostlink="{{baseHost}}" 
+                        data-uri="/xapi/navigate/v1/footer" 
+                        data-assethost="{{assetsHost}}/wgl" 
+                        data-context='{"shoppingMode":"SITE","regionCode":"","application":"SITE","deviceType":"PHONE","navigationType":"BROWSE","viewType":"Compact","domestic":true,"currencyCode":"USD"}'
+                    ></footer>
+                {{else}}
+                    <!-- Mobile about-us MacysUI header -->
+                    <header class="responsive"></header>
+                {{/if}}
+            {{else}}
+                {{#if args.polarisHeaderFooterEnabled}}
+                    <!-- polaris footer -->
+                    <footer id="wglFooter" 
 
+                        data-hostlink="{{secureHost}}" 
+                        data-uri="/xapi/navigate/v1/footer" 
+                        data-assethost="{{assetsHost}}/wgl" 
+                        data-context='{"shoppingMode":"SITE","regionCode":"","application":"SITE","deviceType":"DESKTOP","navigationType":"BROWSE","viewType":"Default","domestic":true,"currencyCode":"USD"}'
+
+                    ></footer>
+                {{else}}
+                    <!-- About Us MacysUI Footer -->
+                    <footer class="responsive"></footer>
+                {{/if}}
+            {{/if}}
+        {{/unless}}
+
+        {{#unless isApp}}
+            {{#if args.isMobile}}
+                {{#if args.polarisMobileHeaderFooterEnabled}}
+                    <script src="{{assetsHost}}/wgl/page/header-footer-wgl/latest/js/common.bundle.js"></script>
+                    <script src="{{assetsHost}}/wgl/page/header-footer-wgl/latest/js/header-footer-wgl.bcom-header-footer.js"></script>
+                {{else}}
+                    <script type="text/javascript">
+                       require([
+                            'globalHeaderFooter',
+                            'cookie'    
+                        ], function(GlobalHF, Cookie) {
+                            // Load Global header and footer if ishop_app cookie is not defined,
+                            // meaning we are not loading this page from the Bloomingdale's app
+                            // If page is being loaded from the app, do not show the Global header footer
+                            if ( !Cookie.get('ishop_app') ) {
+                                GlobalHF();
+                            }
+                        });
+                    </script>
+                {{/if}}
+            {{else}}
+                {{#if args.polarisHeaderFooterEnabled}}
+                    <script src="{{assetsHost}}/wgl/page/header-footer-wgl/latest/js/common.bundle.js"></script>
+                    <script src="{{assetsHost}}/wgl/page/header-footer-wgl/latest/js/header-footer-wgl.bcom-header-footer.js"></script>
+                {{else}}
+                    <script type="text/javascript">
+                       require([
+                            'globalHeaderFooter',
+                            'cookie'    
+                        ], function(GlobalHF, Cookie) {
+                            // Load Global header and footer if ishop_app cookie is not defined,
+                            // meaning we are not loading this page from the Bloomingdale's app
+                            // If page is being loaded from the app, do not show the Global header footer
+                            if ( !Cookie.get('ishop_app') ) {
+                                GlobalHF();
+                            }
+                        });
+                    </script>
+                {{/if}}
+            {{/if}}
+        {{/unless}}
         <!-- inject -->
 
     </body>

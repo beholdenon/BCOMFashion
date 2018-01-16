@@ -59,6 +59,16 @@ $small-margin: 13px;
     font-weight: normal;
   }
 
+  .in-store-main-image {
+    text-align: center;
+    
+    img {
+      @include media-query(medium) {
+        margin-top: -55px;
+      }
+    }
+  }
+
   // > header, // @note can't use header in file due to the fact that someone is manipulating all headers on the page (happening from main header code).
   // > section > header,
   .in-store-header {

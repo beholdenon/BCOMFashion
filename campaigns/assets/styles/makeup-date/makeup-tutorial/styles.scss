@@ -1,0 +1,568 @@
+$scale: 1;
+$font-size-scale: 1;
+
+$pink: #D90EAC;
+$navy: #22a8a0;
+
+$AvenirBlack: "Avenir LT W01 95 Black", sans-serif;
+
+html{
+  width: 100%;
+}
+
+body .row #bl_main_container {
+  width: 1170px;
+  padding: 0;
+  margin: auto;
+  min-width: 0px;
+}
+.container.row, .row.collapse.mod_row {
+  width: 100%;
+  max-width: 100%;
+}
+
+
+#bl_main_container {
+
+
+
+
+  /* General */
+
+
+  .container{
+    width: 100%;
+    padding: 10px;
+    margin: auto;
+  }
+
+
+  .section{
+    margin: 5% 0;
+  }
+
+
+  .text-right{
+    text-align: right;
+  }
+  .text-center{
+    text-align: center;
+  }
+
+  .flex{
+    display: flex;
+  }
+
+  .content-center{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+
+  .col{
+    float: left;
+    padding: 10px;
+  }
+  .col-10{
+    width: 10%;
+  }
+  .col-25{
+    width: 25%;
+  }
+  .col-50{
+    width: 50%;
+  }
+  .col-55{
+    width: 55%;
+  }
+  .col-40{
+    width: 40%;
+  }
+  .col-45{
+    width: 45%;
+  }
+  .col-60{
+    width: 60%;
+  }
+  .col-75{
+    width: 75%;
+  }
+  .col-100{
+    width: 100%;
+  }
+
+
+  .padding-top-200{
+    padding-top: 200px;
+  }
+  .padding-left-100{
+    padding-left: 100px;
+  }
+  .padding-right-100{
+    padding-right: 100px;
+  }
+  .padding-25{
+    padding: 0 25px !important;
+  }
+  .no-padding{
+    padding: 0 !important;
+  }
+
+
+  .inline-block {
+    display: inline-block;
+    text-align: left;
+  }
+
+
+  .flip{
+      -moz-transform: scaleX(-1);
+      -o-transform: scaleX(-1);
+      -webkit-transform: scaleX(-1);
+      transform: scaleX(-1);
+      -ms-filter: "FlipH";
+  }
+
+
+  .footer-links{
+    margin-left: 122px;
+  }
+  .footer-links a{
+    margin: auto $scale * 30px;
+    font-family: "Avenir";
+    font-size: 40px;
+  }
+
+
+
+  /* Carousel---------------------------- */
+  .carousel {
+    text-align: center;
+  }
+  .carousel-shell {
+    position: relative;
+    min-height: 200px;
+    background: none !important;
+
+    .group {
+      position: relative;
+      display: inline-flex;
+      justify-content: space-around;
+      width: 90%;
+      margin: 0 auto;
+      position: absolute;
+      top: -100px;
+      left: 0;
+      right: 0;
+      opacity: 0;
+      transition: 1s;
+      z-index: 0;
+      vertical-align: top;
+      background: none !important;
+
+
+      &.active {
+        outline: none;
+        opacity: 1;
+        z-index: 10;
+      }
+
+      &.one .product { width: 100%; }
+      &.two .product { width: 50%; }
+      &.three .product { width: 33%; }
+      &.four .product { width: 25%; }
+      &.five .product { width: 20%; }
+
+      .product {
+
+        width: 25%;
+        margin: 10px;
+        top: 60px;
+        position: relative;
+        padding: 15px 0;
+        display: inline-block;
+        text-decoration: none;
+        vertical-align: top;
+        z-index: 10;
+
+        &:hover,
+        &:focus {
+
+          p {
+            color: $navy;
+          }
+
+        }
+
+        img {
+          height: 150px;
+          margin-bottom: 10px;
+        }
+
+        p.heading {
+          font-size: 1.25rem;
+          text-decoration: inherit;
+          font-family: $AvenirBlack;
+          margin-bottom: 0;
+        }
+
+        p {
+          font-size: 1.0rem;
+          text-transform: none;
+          text-decoration: inherit;
+          letter-spacing: 0.05em;
+
+        }
+
+      }
+    }
+
+    .arrow {
+      position: absolute;
+      padding: 0;
+      border: 0;
+      width: 60px;
+      height: 80px;
+      display: block;
+      z-index: 20;
+      top: 20%;
+      cursor: pointer;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-color: transparent;
+
+
+
+      &:focus,
+      &:active,
+      &:hover {
+        //background-size: 1.3em;
+      }
+
+      &:focus {
+        outline: 1px dotted #222;
+      }
+    }
+
+    .leftArrow {
+      background-image: url(/b/fashion/campaigns/images/makeup-date/makeup-tutorial/arrow-left.png);
+      left: 0;
+    }
+    .rightArrow {
+      background-image: url(/b/fashion/campaigns/images/makeup-date/makeup-tutorial/arrow-right.png);
+      right: 0;
+    }
+
+  }
+  /*----------------------------------*/
+
+
+
+
+
+
+  .desktop_back_to_top {
+    display: block;
+    position: fixed;
+    right: 10px;
+    bottom: 2vh;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    margin: 0;
+    outline: 0;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+  }
+
+  .desktop_back_to_top > img{
+    left: 0;
+    top: 0;
+    position: absolute;
+    max-width: 80px;
+  }
+
+  .desktop_back_to_top > img:hover,
+  .desktop_back_to_top > img:focus {
+    left: -40px;
+    position: absolute;
+  }
+
+
+
+
+
+
+
+
+  /*Popup style*/
+  .home-popup #popup-header, .home-popup #popup-header1 {
+    padding-left: 0px;
+    padding-right: 0px;
+    min-width: 460px; }
+  .home-popup #popup-header #header-container, .home-popup #popup-header1 #header-container1 {
+    border-bottom: 1px solid #000000;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px; }
+  .home-popup #popup-header #header-container img, .home-popup #popup-header1 #header-container1 img {
+    float: left; }
+  .home-popup #popup-header #header-container button, .home-popup #popup-header1 #header-container1 button {
+    float: right; }
+
+  .home-popup #popup-text, .home-popup #popup-text1 {
+    color: #000;
+    padding: 20px 10px 10px 10px; }
+  .home-popup #popup-text p, .home-popup #popup-text1 p {
+    margin-bottom: 0px; }
+  .home-popup #popup-text .bl_pop_header, .home-popup #popup-text1 .bl_pop_header {
+    color: #D90EAC;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase; }
+  .home-popup #popup-text .bl_pop_subheader, .home-popup #popup-text1 .bl_pop_subheader {
+    color: #D90EAC;
+    font-size: 15px;
+    padding: 10px 0px 20px 0px; }
+  .home-popup #popup-text .bl_pop_bold_text, .home-popup #popup-text1 .bl_pop_bold_text {
+    font-weight: bold;
+    font-size: 14px; }
+  .home-popup #popup-text .bl_pop_plain_text, .home-popup #popup-text1 .bl_pop_plain_text {
+    font-size: 14px;
+    padding: 10px 0px 20px 0px; }
+  .home-popup #popup-text .pop_DisclaimerText, .home-popup #popup-text1 .pop_DisclaimerText {
+    font-size: 9px;
+    padding: 10px 0px 0px 0px; }
+
+
+
+  /* Modal */
+  .modaloverlay{
+    background:rgba(0,0,0,0.8);
+    bottom:0;
+    left:0;
+    opacity:0;
+    pointer-events:none;
+    position:fixed;
+    right:0;
+    top:0;
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
+    z-index:-1;
+    display: none;
+    &:target{
+      display: block;
+      opacity:1;
+      pointer-events:auto;
+      z-index:99999;
+    }
+    .modal{
+      background-color:white;
+      height: 100%;
+      position:relative;
+      margin:0 auto;
+      overflow-y: scroll;
+      -webkit-overflow-scrolling: touch;
+      @media (min-width: 60em) {
+        height:75%;
+        margin:5% auto;
+        max-height: 57em;
+        max-width:66em;
+        width:85%;
+      }
+      > iframe, > div{
+        border:none;
+        width:100%;
+        height:100%;
+      }
+    }
+    .close{
+      padding: 14px !important;
+      margin: 3px 0;
+      border-right: 10px solid;
+      font-size: 14px;
+      background-color:#000;
+      color:white;
+      position:absolute;
+      right:0;
+      text-align:center;
+      text-decoration:none;
+      top:0;
+      z-index: 1;
+    }
+  }
+
+
+
+
+
+
+
+  /*-- Play/Pause Button for Gifs --*/
+  .gif_play_button {
+    display: block;
+    cursor: pointer;
+    width: 0;
+    height: 0;
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+    border-left: 9.6px solid #fff;
+    border-right: none;
+    background: transparent;
+    padding: 0;
+    position: relative;
+    z-index: 1;
+    transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    bottom: -260px;
+    left: 80px;
+  }
+  .gif_play_button:before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: -26.4px;
+    bottom: -20px;
+    right: -12.6px;
+    border-radius: 77%;
+    border: 3px solid #fff;
+    z-index: 2;
+    transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+  }
+  .gif_play_button:after {
+    content: '';
+    opacity: 0;
+    transition: opacity 0.6s;
+    -webkit-transition: opacity 0.6s;
+    z-indexmoz-transition: opacity 0.6s;
+  }
+  .gif_play_button:hover:before, .gif_play_button:focus:before {
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+  }
+  .gif_play_button.active {
+    border-color: transparent;
+  }
+  .gif_play_button.active:after {
+    content: '';
+    opacity: 1;
+    width: 10px;
+    height: 15px;
+    background: transparent;
+    position: absolute;
+    right: 1px;
+    top: -8px;
+    left: -12px;
+    border-left: 3.2px solid #fff;
+    border-right: 3.2px solid #fff;
+  }
+
+
+
+
+  /* Makeup Date specific style*/
+  p{
+    font-family: "Avenir";
+    color: #1e1e1e;
+    font-size: $font-size-scale * 40px;
+    margin: 0;
+    line-height: $scale * 1.65;
+  }
+  .text-big{
+    font-size: 65px;
+    line-height: 1.2;
+  }
+  .small{
+    font-size: 18px;
+  }
+
+  a:focus{
+    outline: 1px dotted #222;
+  }
+
+
+  #div-link_mosieur-bir {
+    width: 120px;
+    height: 525px;
+    background: #CCC;
+    transform: rotate(-36deg);
+    position: absolute;
+    margin-left: 75px;
+  }
+
+  .p-arrow{
+      margin-top: 5px;
+  }
+
+  .p-arrow-f{
+    position: absolute;
+    margin-left: -70px;
+  }
+
+
+  .section-title {
+    position: relative;
+    top: 3.7%;
+    -webkit-text-stroke: 1px;
+  }
+
+  .section-title-h {
+    transform: rotate(270deg);
+  }
+
+  .navy{
+    color: $navy;
+  }
+
+  .section-1 .products {
+    position: absolute;
+    margin-top: 380px;
+    margin-left: -160px;
+  }
+  .section-5 .products {
+    position: absolute;
+    margin-top: 550px;
+    margin-left: -200px;
+  }
+
+  .section-1 .gif, .section-5 .gif{
+    width: 465px;
+    position: relative;
+    top: 300px;
+    left: 50px;
+  }
+
+  .section-2 .section-title-h {
+    position: relative;
+    display: inline-block;
+    left: -100px;
+    top: -365px;
+  }
+
+  .section-4 .section-title-h {
+    position: absolute;
+    display: inline-block;
+    margin-top: -380px;
+    margin-left: 670px;
+  }
+
+  .section-3 .products {
+    position: absolute;
+    margin-top: -180px;
+    margin-left: -45px;
+  }
+
+  .carousel{
+    margin-top: 80px;
+  }
+
+  /*----------------------------*/
+
+}

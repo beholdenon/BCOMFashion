@@ -1,8 +1,14 @@
 
 function bestDayOnReady(e) {
-    console.log( "BEST DAY READY" );
+    
+    console.log( "BEST DAY VERSION: 1.4" );
+
     window.removeEventListener("load",bestDayOnReady,!1)
     if ( Distilled.core ) return;
+
+    var viewport = document.querySelector("meta[name=viewport]");
+    viewport.setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0');
+
     // window.$ = jQuery || $b;
     if ( window.require !== undefined ) { require(["BestDayCore", "BestDayView"], bestDayInit)}
     else { bestDayInit(); }
@@ -14,7 +20,11 @@ function bestDayInit() {
     Distilled.core.loaded()
 }
 
+
 (function () {
+
+  var ua = window.navigator.userAgent
+    isIE = ua.indexOf('MSIE ') > 0 || ua.indexOf('Trident/') > 0 || ua.indexOf('Edge/') > 0;
 
   if ( typeof window.CustomEvent === "function" ) return false;
 
@@ -28,8 +38,8 @@ function bestDayInit() {
   CustomEvent.prototype = window.Event.prototype;
 
   window.CustomEvent = CustomEvent;
-})();
 
+})();
 
 
 
@@ -2445,6 +2455,7 @@ var _gsScope = "undefined" != typeof module && module.exports && "undefined" != 
                 null == e && (e = []), this.options = {
                     startYear: isNaN(parseInt(e.startYear)) ? (new Date).getFullYear() : parseInt(e.startYear),
                     startMonth: isNaN(parseInt(e.startMonth)) ? 0 : parseInt(e.startMonth),
+                    length: isNaN( parseInt( e.length )) ? 12 : parseInt(e.length),
                     minDate: e.minDate instanceof Date ? e.minDate : null,
                     maxDate: e.maxDate instanceof Date ? e.maxDate : null,
                     language: null != e.language && null != t[e.language] ? e.language : "en",
@@ -2506,11 +2517,17 @@ var _gsScope = "undefined" != typeof module && module.exports && "undefined" != 
                     n = this.options.startYear,
                     a = new Date;
                 this.options.startMonth && (i = this.options.startMonth);
-                for (var s = 0; s < 12; s++) {
+                for (var s = 0; s < this.options.length; s++) {
                     var o = $(document.createElement("div"));
-                    o.addClass("month-container"), o.data("month-id", i);
+                    o.addClass("month-container"), o.attr( "data-month-id", i);
+
+                    if ( s >= 12 ) o.addClass( "extended-month hide" );
+
                     var r = new Date(n, i, 1),
                         l = $(document.createElement("table"));
+                    o.attr( "data-date", r.getTime())
+                    // o.attr( "data-month-id", s);
+                    o.attr( "data-year", r.getFullYear());
                     l.addClass("month");
                     var d = $(document.createElement("thead")),
                         u = $(document.createElement("tr")),
@@ -2550,7 +2567,8 @@ var _gsScope = "undefined" != typeof module && module.exports && "undefined" != 
                                             b.addClass("disabled");
                                             break
                                         }
-                                b.attr("tabindex", ""), b.addClass("focusable"), b.data("date", new Date(_.getTime()));
+                                b.attr("tabindex", ""), b.addClass("focusable"), b.attr("data-date", _.getTime());
+                                // console.log( "DATE:", _, new Date(_.getTime()) );
                                 var C = $(document.createElement("div"));
                                 C.addClass("day-content"), C.text(_.getDate()), b.append(C), _ < a && b.addClass("old"), this.options.customDayRenderer && this.options.customDayRenderer(C, _)
                             }
@@ -2689,14 +2707,18 @@ var _gsScope = "undefined" != typeof module && module.exports && "undefined" != 
                     }
                 })), t.on("mouseenter", function(t) {
                     if (!e._mouseDown) {
+                        // console.log( "MOUSE ENTER" );
                         var i = e._getDate($(this));
                         e._triggerEvent("mouseOnDay", {
                             element: $(this),
                             date: i,
                             events: e.getEvents(i)
                         })
+                        // console.log( "ELEMENT:", $(this) )
+                        // console.log( "DATE:", i )
                     }
                 }), t.on("mouseleave", function(t) {
+                    // console.log( "MOUSE LEAVE" );
                     var i = e._getDate($(this));
                     e._triggerEvent("mouseOutDay", {
                         element: $(this),
@@ -2706,9 +2728,11 @@ var _gsScope = "undefined" != typeof module && module.exports && "undefined" != 
                 });
                 var i = this.element.find(".month-container");
                 i.on("click", function(t) {
+                    // console.log( "MOUSE CLICK:", t );
                     var i = e._getDate($(this));
                     e._triggerEvent("mouseClickMonth", {
                         element: $(this),
+                        // id: parseInt( $(this).data( "month-id" )),
                         date: i,
                         events: e.getEvents(i)
                     })
@@ -2770,11 +2794,18 @@ var _gsScope = "undefined" != typeof module && module.exports && "undefined" != 
                 t.css("color", e)
             },
             _getDate: function(e) {
-                var t = e.children(".day-content").text(),
-                    i;
-                i = e.hasClass("month-container") ? e.data("month-id") : e.closest(".month-container").data("month-id");
-                var n = this.options.startYear;
-                return i < this.options.startMonth && n++, new Date(n, i, t)
+
+                // console.log( "GET DATE:", e )
+                // console.log( "GET DATE:", e.children('.day-content') )
+                // console.log( "GET DATE:", e.children('.day-content').text() )
+                return new Date( parseInt( e.data( "date" )))
+
+
+                // var t = e.children(".day-content").text(),
+                //     i;
+                // i = e.hasClass("month-container") ? e.data("month-id") : e.closest(".month-container").data("month-id");
+                // var n = this.options.startYear;
+                // return i < this.options.startMonth && n++, new Date(n, i, t)
             },
             _triggerEvent: function(e, t) {
                 var i = $.Event(e);
@@ -3693,815 +3724,18 @@ dateFormat.masks = {
     }, ! function(e, t) {
         "object" == typeof exports && "object" == typeof module ? module.exports = t() : "function" == typeof define && define.amd ? define("BestDayAccessibleAutocomplete",[], t) : "object" == typeof exports ? exports.accessibleAutocomplete = t() : e.accessibleAutocomplete = t()
     }(this, function() {
-        return function(e) {
-            function t(n) {
-                if (i[n]) return i[n].exports;
-                var a = i[n] = {
-                    i: n,
-                    l: !1,
-                    exports: {}
-                };
-                return e[n].call(a.exports, a, a.exports, t), a.l = !0, a.exports
-            }
-            var i = {};
-            return t.m = e, t.c = i, t.i = function(e) {
-                return e
-            }, t.d = function(e, i, n) {
-                t.o(e, i) || Object.defineProperty(e, i, {
-                    configurable: !1,
-                    enumerable: !0,
-                    get: n
-                })
-            }, t.n = function(e) {
-                var i = e && e.__esModule ? function() {
-                    return e.default
-                } : function() {
-                    return e
-                };
-                return t.d(i, "a", i), i
-            }, t.o = function(e, t) {
-                return Object.prototype.hasOwnProperty.call(e, t)
-            }, t.p = "/", t(t.s = 4)
-        }([function(e, t, i) {
-            ! function() {
-                "use strict";
 
-                function t() {}
 
-                function i(e, i) {
-                    var n, a, s, o, r = I;
-                    for (o = arguments.length; o-- > 2;) L.push(arguments[o]);
-                    for (i && null != i.children && (L.length || L.push(i.children), delete i.children); L.length;)
-                        if ((a = L.pop()) && void 0 !== a.pop)
-                            for (o = a.length; o--;) L.push(a[o]);
-                        else !0 !== a && !1 !== a || (a = null), (s = "function" != typeof e) && (null == a ? a = "" : "number" == typeof a ? a = String(a) : "string" != typeof a && (s = !1)), s && n ? r[r.length - 1] += a : r === I ? r = [a] : r.push(a), n = s;
-                    var l = new t;
-                    return l.nodeName = e, l.children = r, l.attributes = null == i ? void 0 : i, l.key = null == i ? void 0 : i.key, void 0 !== P.vnode && P.vnode(l), l
-                }
+/**********************************************************
+                    AUTOCOMPLETE START
+ **********************************************************/
 
-                function n(e, t) {
-                    for (var i in t) e[i] = t[i];
-                    return e
-                }
+        return function(e){function t(o){if(n[o])return n[o].exports;var r=n[o]={i:o,l:!1,exports:{}};return e[o].call(r.exports,r,r.exports,t),r.l=!0,r.exports}var n={};return t.m=e,t.c=n,t.d=function(e,n,o){t.o(e,n)||Object.defineProperty(e,n,{configurable:!1,enumerable:!0,get:o})},t.n=function(e){var n=e&&e.__esModule?function(){return e.default}:function(){return e};return t.d(n,"a",n),n},t.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},t.p="/",t(t.s=1)}([function(e,t,n){!function(){"use strict";function t(){}function n(e,n){var o,r,l,i,u=L;for(i=arguments.length;i-- >2;)k.push(arguments[i]);for(n&&null!=n.children&&(k.length||k.push(n.children),delete n.children);k.length;)if((r=k.pop())&&void 0!==r.pop)for(i=r.length;i--;)k.push(r[i]);else!0!==r&&!1!==r||(r=null),(l="function"!=typeof e)&&(null==r?r="":"number"==typeof r?r=String(r):"string"!=typeof r&&(l=!1)),l&&o?u[u.length-1]+=r:u===L?u=[r]:u.push(r),o=l;var s=new t;return s.nodeName=e,s.children=u,s.attributes=null==n?void 0:n,s.key=null==n?void 0:n.key,void 0!==M.vnode&&M.vnode(s),s}function o(e,t){for(var n in t)e[n]=t[n];return e}function r(e,t){return n(e.nodeName,o(o({},e.attributes),t),arguments.length>2?[].slice.call(arguments,2):e.children)}function l(e){!e.__d&&(e.__d=!0)&&1==U.push(e)&&(M.debounceRendering||setTimeout)(i)}function i(){var e,t=U;for(U=[];e=t.pop();)e.__d&&x(e)}function u(e,t,n){return"string"==typeof t||"number"==typeof t?void 0!==e.splitText:"string"==typeof t.nodeName?!e._componentConstructor&&s(e,t.nodeName):n||e._componentConstructor===t.nodeName}function s(e,t){return e.__n===t||e.nodeName.toLowerCase()===t.toLowerCase()}function a(e){var t=o({},e.attributes);t.children=e.children;var n=e.nodeName.defaultProps;if(void 0!==n)for(var r in n)void 0===t[r]&&(t[r]=n[r]);return t}function p(e,t){var n=t?document.createElementNS("http://www.w3.org/2000/svg",e):document.createElement(e);return n.__n=e,n}function c(e){e.parentNode&&e.parentNode.removeChild(e)}function d(e,t,n,o,r){if("className"===t&&(t="class"),"key"===t);else if("ref"===t)n&&n(null),o&&o(e);else if("class"!==t||r)if("style"===t){if(o&&"string"!=typeof o&&"string"!=typeof n||(e.style.cssText=o||""),o&&"object"==typeof o){if("string"!=typeof n)for(var l in n)l in o||(e.style[l]="");for(var l in o)e.style[l]="number"==typeof o[l]&&!1===T.test(l)?o[l]+"px":o[l]}}else if("dangerouslySetInnerHTML"===t)o&&(e.innerHTML=o.__html||"");else if("o"==t[0]&&"n"==t[1]){var i=t!==(t=t.replace(/Capture$/,""));t=t.toLowerCase().substring(2),o?n||e.addEventListener(t,h,i):e.removeEventListener(t,h,i),(e.__l||(e.__l={}))[t]=o}else if("list"!==t&&"type"!==t&&!r&&t in e)f(e,t,null==o?"":o),null!=o&&!1!==o||e.removeAttribute(t);else{var u=r&&t!==(t=t.replace(/^xlink\:?/,""));null==o||!1===o?u?e.removeAttributeNS("http://www.w3.org/1999/xlink",t.toLowerCase()):e.removeAttribute(t):"function"!=typeof o&&(u?e.setAttributeNS("http://www.w3.org/1999/xlink",t.toLowerCase(),o):e.setAttribute(t,o))}else e.className=o||""}function f(e,t,n){try{e[t]=n}catch(e){}}function h(e){return this.__l[e.type](M.event&&M.event(e)||e)}function m(){for(var e;e=P.pop();)M.afterMount&&M.afterMount(e),e.componentDidMount&&e.componentDidMount()}function _(e,t,n,o,r,l){R++||(V=null!=r&&void 0!==r.ownerSVGElement,B=null!=e&&!("__preactattr_"in e));var i=v(e,t,n,o,l);return r&&i.parentNode!==r&&r.appendChild(i),--R||(B=!1,l||m()),i}function v(e,t,n,o,r){var l=e,i=V;if(null==t&&(t=""),"string"==typeof t)return e&&void 0!==e.splitText&&e.parentNode&&(!e._component||r)?e.nodeValue!=t&&(e.nodeValue=t):(l=document.createTextNode(t),e&&(e.parentNode&&e.parentNode.replaceChild(l,e),g(e,!0))),l.__preactattr_=!0,l;if("function"==typeof t.nodeName)return I(e,t,n,o);if(V="svg"===t.nodeName||"foreignObject"!==t.nodeName&&V,(!e||!s(e,String(t.nodeName)))&&(l=p(String(t.nodeName),V),e)){for(;e.firstChild;)l.appendChild(e.firstChild);e.parentNode&&e.parentNode.replaceChild(l,e),g(e,!0)}var u=l.firstChild,a=l.__preactattr_||(l.__preactattr_={}),c=t.children;return!B&&c&&1===c.length&&"string"==typeof c[0]&&null!=u&&void 0!==u.splitText&&null==u.nextSibling?u.nodeValue!=c[0]&&(u.nodeValue=c[0]):(c&&c.length||null!=u)&&y(l,c,n,o,B||null!=a.dangerouslySetInnerHTML),O(l,t.attributes,a),V=i,l}function y(e,t,n,o,r){var l,i,s,a,p=e.childNodes,d=[],f={},h=0,m=0,_=p.length,y=0,b=t?t.length:0;if(0!==_)for(var O=0;O<_;O++){var w=p[O],C=w.__preactattr_,N=b&&C?w._component?w._component.__k:C.key:null;null!=N?(h++,f[N]=w):(C||(void 0!==w.splitText?!r||w.nodeValue.trim():r))&&(d[y++]=w)}if(0!==b)for(var O=0;O<b;O++){s=t[O],a=null;var N=s.key;if(null!=N)h&&void 0!==f[N]&&(a=f[N],f[N]=void 0,h--);else if(!a&&m<y)for(l=m;l<y;l++)if(void 0!==d[l]&&u(i=d[l],s,r)){a=i,d[l]=void 0,l===y-1&&y--,l===m&&m++;break}a=v(a,s,n,o),a&&a!==e&&(O>=_?e.appendChild(a):a!==p[O]&&(a===p[O+1]?c(p[O]):e.insertBefore(a,p[O]||null)))}if(h)for(var O in f)void 0!==f[O]&&g(f[O],!1);for(;m<=y;)void 0!==(a=d[y--])&&g(a,!1)}function g(e,t){var n=e._component;n?S(n):(null!=e.__preactattr_&&e.__preactattr_.ref&&e.__preactattr_.ref(null),!1!==t&&null!=e.__preactattr_||c(e),b(e))}function b(e){for(e=e.lastChild;e;){var t=e.previousSibling;g(e,!0),e=t}}function O(e,t,n){var o;for(o in n)t&&null!=t[o]||null==n[o]||d(e,o,n[o],n[o]=void 0,V);for(o in t)"children"===o||"innerHTML"===o||o in n&&t[o]===("value"===o||"checked"===o?e[o]:n[o])||d(e,o,n[o],n[o]=t[o],V)}function w(e){var t=e.constructor.name;(q[t]||(q[t]=[])).push(e)}function C(e,t,n){var o,r=q[e.name];if(e.prototype&&e.prototype.render?(o=new e(t,n),A.call(o,t,n)):(o=new A(t,n),o.constructor=e,o.render=N),r)for(var l=r.length;l--;)if(r[l].constructor===e){o.__b=r[l].__b,r.splice(l,1);break}return o}function N(e,t,n){return this.constructor(e,n)}function E(e,t,n,o,r){e.__x||(e.__x=!0,(e.__r=t.ref)&&delete t.ref,(e.__k=t.key)&&delete t.key,!e.base||r?e.componentWillMount&&e.componentWillMount():e.componentWillReceiveProps&&e.componentWillReceiveProps(t,o),o&&o!==e.context&&(e.__c||(e.__c=e.context),e.context=o),e.__p||(e.__p=e.props),e.props=t,e.__x=!1,0!==n&&(1!==n&&!1===M.syncComponentUpdates&&e.base?l(e):x(e,1,r)),e.__r&&e.__r(e))}function x(e,t,n,r){if(!e.__x){var l,i,u,s=e.props,p=e.state,c=e.context,d=e.__p||s,f=e.__s||p,h=e.__c||c,v=e.base,y=e.__b,b=v||y,O=e._component,w=!1;if(v&&(e.props=d,e.state=f,e.context=h,2!==t&&e.shouldComponentUpdate&&!1===e.shouldComponentUpdate(s,p,c)?w=!0:e.componentWillUpdate&&e.componentWillUpdate(s,p,c),e.props=s,e.state=p,e.context=c),e.__p=e.__s=e.__c=e.__b=null,e.__d=!1,!w){l=e.render(s,p,c),e.getChildContext&&(c=o(o({},c),e.getChildContext()));var N,I,A=l&&l.nodeName;if("function"==typeof A){var D=a(l);i=O,i&&i.constructor===A&&D.key==i.__k?E(i,D,1,c,!1):(N=i,e._component=i=C(A,D,c),i.__b=i.__b||y,i.__u=e,E(i,D,0,c,!1),x(i,1,n,!0)),I=i.base}else u=b,N=O,N&&(u=e._component=null),(b||1===t)&&(u&&(u._component=null),I=_(u,l,c,n||!v,b&&b.parentNode,!0));if(b&&I!==b&&i!==O){var k=b.parentNode;k&&I!==k&&(k.replaceChild(I,b),N||(b._component=null,g(b,!1)))}if(N&&S(N),e.base=I,I&&!r){for(var L=e,T=e;T=T.__u;)(L=T).base=I;I._component=L,I._componentConstructor=L.constructor}}if(!v||n?P.unshift(e):w||(m(),e.componentDidUpdate&&e.componentDidUpdate(d,f,h),M.afterUpdate&&M.afterUpdate(e)),null!=e.__h)for(;e.__h.length;)e.__h.pop().call(e);R||r||m()}}function I(e,t,n,o){for(var r=e&&e._component,l=r,i=e,u=r&&e._componentConstructor===t.nodeName,s=u,p=a(t);r&&!s&&(r=r.__u);)s=r.constructor===t.nodeName;return r&&s&&(!o||r._component)?(E(r,p,3,n,o),e=r.base):(l&&!u&&(S(l),e=i=null),r=C(t.nodeName,p,n),e&&!r.__b&&(r.__b=e,i=null),E(r,p,1,n,o),e=r.base,i&&e!==i&&(i._component=null,g(i,!1))),e}function S(e){M.beforeUnmount&&M.beforeUnmount(e);var t=e.base;e.__x=!0,e.componentWillUnmount&&e.componentWillUnmount(),e.base=null;var n=e._component;n?S(n):t&&(t.__preactattr_&&t.__preactattr_.ref&&t.__preactattr_.ref(null),e.__b=t,c(t),w(e),b(t)),e.__r&&e.__r(null)}function A(e,t){this.__d=!0,this.context=t,this.props=e,this.state=this.state||{}}function D(e,t,n){return _(n,e,{},!1,t,!1)}var M={},k=[],L=[],T=/acit|ex(?:s|g|n|p|$)|rph|ows|mnc|ntw|ine[ch]|zoo|^ord/i,U=[],P=[],R=0,V=!1,B=!1,q={};o(A.prototype,{setState:function(e,t){var n=this.state;this.__s||(this.__s=o({},n)),o(n,"function"==typeof e?e(n,this.props):e),t&&(this.__h=this.__h||[]).push(t),l(this)},forceUpdate:function(e){e&&(this.__h=this.__h||[]).push(e),x(this,2)},render:function(){}});var j={h:n,createElement:n,cloneElement:r,Component:A,render:D,rerender:i,options:M};e.exports=j}()},function(e,t,n){e.exports=n(2)},function(e,t,n){"use strict";function o(e){if(!e.element)throw new Error("element is not defined");if(!e.id)throw new Error("id is not defined");if(!e.source)throw new Error("source is not defined");Array.isArray(e.source)&&(e.source=s(e.source)),(0,l.render)((0,l.createElement)(u.default,e),e.element)}var r=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var o in n)Object.prototype.hasOwnProperty.call(n,o)&&(e[o]=n[o])}return e},l=n(0),i=n(3),u=function(e){return e&&e.__esModule?e:{default:e}}(i),s=function(e){return function(t,n){n(e.filter(function(e){return-1!==e.toLowerCase().indexOf(t.toLowerCase())}))}};o.enhanceSelectElement=function(e){if(!e.selectElement)throw new Error("selectElement is not defined");if(!e.source){var t=[].filter.call(e.selectElement.options,function(t){return t.value||e.preserveNullOptions});e.source=t.map(function(e){return e.textContent||e.innerText})}if(e.onConfirm=e.onConfirm||function(t){var n=[].filter.call(e.selectElement.options,function(e){return(e.textContent||e.innerText)===t})[0];n&&(n.selected=!0)},e.selectElement.value||void 0===e.defaultValue){var n=e.selectElement.options[e.selectElement.options.selectedIndex];e.defaultValue=n.textContent||n.innerText}void 0===e.name&&(e.name=""),void 0===e.id&&(void 0===e.selectElement.id?e.id="":e.id=e.selectElement.id),void 0===e.autoselect&&(e.autoselect=!0);var l=document.createElement("span");e.selectElement.parentNode.insertBefore(l,e.selectElement),o(r({},e,{element:l})),e.selectElement.style.display="none",e.selectElement.id=e.selectElement.id+"-select"},e.exports=o},function(e,t,n){"use strict";function o(e){return e&&e.__esModule?e:{default:e}}function r(e,t){}function l(e,t){if(e)return!t||"object"!=typeof t&&"function"!=typeof t?e:t}function i(e,t){"function"!=typeof t&&null!==t||(e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t))}function u(){return!(!navigator.userAgent.match(/(iPod|iPhone|iPad)/g)||!navigator.userAgent.match(/AppleWebKit/g))}function s(e){return e>47&&e<58||32===e||8===e||e>64&&e<91||e>95&&e<112||e>185&&e<193||e>218&&e<223}function a(e){return y?{onInput:e}:g?{onChange:e}:void 0}t.__esModule=!0,t.default=void 0;var p,c,d=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var o in n)Object.prototype.hasOwnProperty.call(n,o)&&(e[o]=n[o])}return e},f=n(0),h=n(4),m=o(h),_=n(5),v=o(_),y=!0,g=!1,b={13:"enter",27:"escape",32:"space",38:"up",40:"down"},O=function(){var e=document.createElement("x");return e.style.cssText="pointer-events:auto","auto"===e.style.pointerEvents}(),w=(c=p=function(e){function t(n){r(this,t);var o=l(this,e.call(this,n));return o.elementReferences={},o.state={focused:null,hovered:null,menuOpen:!1,options:n.defaultValue?[n.defaultValue]:[],query:n.defaultValue,selected:null},o.handleComponentBlur=o.handleComponentBlur.bind(o),o.handleKeyDown=o.handleKeyDown.bind(o),o.handleUpArrow=o.handleUpArrow.bind(o),o.handleDownArrow=o.handleDownArrow.bind(o),o.handleEnter=o.handleEnter.bind(o),o.handlePrintableKey=o.handlePrintableKey.bind(o),o.handleOptionBlur=o.handleOptionBlur.bind(o),o.handleOptionClick=o.handleOptionClick.bind(o),o.handleOptionFocus=o.handleOptionFocus.bind(o),o.handleOptionMouseDown=o.handleOptionMouseDown.bind(o),o.handleOptionMouseEnter=o.handleOptionMouseEnter.bind(o),o.handleOptionMouseOut=o.handleOptionMouseOut.bind(o),o.handleInputBlur=o.handleInputBlur.bind(o),o.handleInputChange=o.handleInputChange.bind(o),o.handleInputFocus=o.handleInputFocus.bind(o),o.pollInputElement=o.pollInputElement.bind(o),o.getDirectInputChanges=o.getDirectInputChanges.bind(o),o}return i(t,e),t.prototype.componentDidMount=function(){this.pollInputElement()},t.prototype.componentWillUnmount=function(){clearTimeout(this.$pollInput)},t.prototype.pollInputElement=function(){var e=this;this.getDirectInputChanges(),this.$pollInput=setTimeout(function(){e.pollInputElement()},100)},t.prototype.getDirectInputChanges=function(){var e=this.elementReferences[-1];e&&e.value!==this.state.query&&this.handleInputChange({target:{value:e.value}})},t.prototype.componentDidUpdate=function(e,t){var n=this.state.focused,o=null===n,r=t.focused!==n;r&&!o&&this.elementReferences[n].focus();r&&t.focused},t.prototype.hasAutoselect=function(){return!u()&&this.props.autoselect},t.prototype.templateInputValue=function(e){var t=this.props.templates&&this.props.templates.inputValue;return t?t(e):e},t.prototype.templateSuggestion=function(e){var t=this.props.templates&&this.props.templates.suggestion;return t?t(e):e},t.prototype.handleComponentBlur=function(e){var t=this.state,n=t.options,o=t.query,r=t.selected,l=void 0;this.props.confirmOnBlur?(l=e.query||o,this.props.onConfirm(n[r])):l=o,this.setState({focused:null,menuOpen:!1,query:l,selected:null})},t.prototype.handleOptionBlur=function(e,t){var n=this.state,o=n.focused,r=n.menuOpen,l=n.options,i=n.selected,s=null===e.relatedTarget,a=e.relatedTarget===this.elementReferences[-1],p=o!==t&&-1!==o;if(!p&&s||!(p||a)){var c=r&&u();this.handleComponentBlur({menuOpen:c,query:this.templateInputValue(l[i])})}},t.prototype.handleInputBlur=function(e){var t=this.state,n=t.focused,o=t.menuOpen,r=t.options,l=t.query,i=t.selected;if(-1===n){var s=o&&u(),a=u()?l:this.templateInputValue(r[i]);this.handleComponentBlur({menuOpen:s,query:a})}},t.prototype.handleInputChange=function(e){var t=this,n=this.props,o=n.minLength,r=n.source,l=n.showAllValues,i=this.hasAutoselect(),u=e.target.value,s=0===u.length,a=this.state.query.length!==u.length,p=u.length>=o;this.setState({query:u}),l||!s&&a&&p?r(u,function(e){var n=e.length>0;t.setState({menuOpen:n,options:e,selected:i&&n?0:-1})}):!s&&p||this.setState({menuOpen:!1,options:[]})},t.prototype.handleInputClick=function(e){this.handleInputChange(e)},t.prototype.handleInputFocus=function(e){this.setState({focused:-1})},t.prototype.handleOptionFocus=function(e){this.setState({focused:e,hovered:null,selected:e})},t.prototype.handleOptionMouseEnter=function(e,t){this.setState({hovered:t})},t.prototype.handleOptionMouseOut=function(e,t){this.setState({hovered:null})},t.prototype.handleOptionClick=function(e,t){var n=this.state.options[t],o=this.templateInputValue(n);this.props.onConfirm(n),this.setState({focused:-1,menuOpen:!1,query:o,selected:-1}),this.forceUpdate()},t.prototype.handleOptionMouseDown=function(e){e.preventDefault()},t.prototype.handleUpArrow=function(e){e.preventDefault();var t=this.state,n=t.menuOpen,o=t.selected;-1!==o&&n&&this.handleOptionFocus(o-1)},t.prototype.handleDownArrow=function(e){var t=this;if(e.preventDefault(),this.props.showAllValues&&!1===this.state.menuOpen)e.preventDefault(),this.props.source("",function(e){t.setState({menuOpen:!0,options:e,selected:0,focused:0,hovered:null})});else if(!0===this.state.menuOpen){var n=this.state,o=n.menuOpen,r=n.options,l=n.selected,i=l!==r.length-1,u=i&&o;u&&this.handleOptionFocus(l+1)}},t.prototype.handleSpace=function(e){var t=this;this.props.showAllValues&&!1===this.state.menuOpen&&(e.preventDefault(),this.props.source("",function(e){t.setState({menuOpen:!0,options:e})})),-1!==this.state.focused&&(e.preventDefault(),this.handleOptionClick(e,this.state.focused))},t.prototype.handleEnter=function(e){if(this.state.menuOpen){e.preventDefault();this.state.selected>=0&&this.handleOptionClick(e,this.state.selected)}},t.prototype.handlePrintableKey=function(e){var t=this.elementReferences[-1];e.target===t||t.focus()},t.prototype.handleKeyDown=function(e){switch(b[e.keyCode]){case"up":this.handleUpArrow(e);break;case"down":this.handleDownArrow(e);break;case"space":this.handleSpace(e);break;case"enter":this.handleEnter(e);break;case"escape":this.handleComponentBlur({query:this.state.query});break;default:s(e.keyCode)&&this.handlePrintableKey(e)}},t.prototype.render=function(){var e=this,t=this.props,n=t.cssNamespace,o=t.displayMenu,r=t.id,l=t.minLength,i=t.name,u=t.placeholder,s=t.required,p=(t.showAllValues,t.tNoResults),c=t.tStatusQueryTooShort,h=t.tStatusNoResults,_=t.tStatusSelectedOption,v=t.tStatusResults,y=(t.dropdownArrow,this.state),g=y.focused,b=y.hovered,w=y.menuOpen,C=y.options,N=y.query,E=y.selected,x=this.hasAutoselect(),I=-1===g,S=0===C.length,A=0!==N.length,D=N.length>=l,M=this.props.showNoOptionsFound&&I&&S&&A&&D,k=n+"__wrapper",L=n+"__input",T=null!==g,U=T?" "+L+"--focused":"",P=this.props.showAllValues?" "+L+"--show-all-values":" "+L+"--default",R=-1!==g&&null!==g,V=n+"__menu",B=V+"--"+o,q=w||M,j=V+"--"+(q?"visible":"hidden"),F=n+"__option",W=n+"__hint",H=this.templateInputValue(C[E]),K=H&&0===H.toLowerCase().indexOf(N.toLowerCase()),Q=K&&x?N+H.substr(N.length):"",$=O&&Q;return(0,f.createElement)("div",{className:k,onKeyDown:this.handleKeyDown,role:"combobox","aria-expanded":w?"true":"false"},(0,f.createElement)(m.default,{length:C.length,queryLength:N.length,minQueryLength:l,selectedOption:this.templateInputValue(C[E]),tQueryTooShort:c,tNoResults:h,tSelectedOption:_,tResults:v}),$&&(0,f.createElement)("span",null,(0,f.createElement)("input",{className:W,readonly:!0,tabIndex:"-1",value:Q})),(0,f.createElement)("input",d({"aria-activedescendant":!!R&&r+"__option--"+g,"aria-owns":r+"__listbox",autoComplete:"off",className:""+L+U+P,id:r,onClick:function(t){return e.handleInputClick(t)},onBlur:this.handleInputBlur},a(this.handleInputChange),{onFocus:this.handleInputFocus,name:i,placeholder:u,ref:function(t){e.elementReferences[-1]=t},type:"text",role:"textbox",required:s,value:N})),void 0,(0,f.createElement)("ul",{className:V+" "+B+" "+j,id:r+"__listbox",role:"listbox"},C.map(function(t,n){var o=-1===g?E===n:g===n,l=o&&null===b?" "+F+"--focused":"",i=n%2?" "+F+"--odd":"";return(0,f.createElement)("li",{"aria-selected":g===n,className:""+F+l+i,dangerouslySetInnerHTML:{__html:e.templateSuggestion(t)},id:r+"__option--"+n,key:n,onFocusOut:function(t){return e.handleOptionBlur(t,n)},onClick:function(t){return e.handleOptionClick(t,n)},onMouseDown:e.handleOptionMouseDown,onMouseEnter:function(t){return e.handleOptionMouseEnter(t,n)},onMouseOut:function(t){return e.handleOptionMouseOut(t,n)},ref:function(t){e.elementReferences[n]=t},role:"option",tabIndex:"-1"})}),M&&(0,f.createElement)("li",{className:F+" "+F+"--no-results"},p())))},t}(f.Component),p.defaultProps={autoselect:!1,cssNamespace:"autocomplete",defaultValue:"",displayMenu:"inline",minLength:0,name:"input-autocomplete",placeholder:"",onConfirm:function(){},confirmOnBlur:!0,showNoOptionsFound:!0,showAllValues:!1,required:!1,tNoResults:function(){return"No results found"},dropdownArrow:v.default},c);t.default=w},function(e,t,n){"use strict";function o(e,t){}function r(e,t){if(e)return!t||"object"!=typeof t&&"function"!=typeof t?e:t}function l(e,t){"function"!=typeof t&&null!==t||(e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t))}t.__esModule=!0,t.default=void 0;var i,u,s=n(0),a=(u=i=function(e){function t(){var n,l,i;o(this,t);for(var u=arguments.length,s=Array(u),a=0;a<u;a++)s[a]=arguments[a];return n=l=r(this,e.call.apply(e,[this].concat(s))),l.state={bump:!1},i=n,r(l,i)}return l(t,e),t.prototype.componentWillReceiveProps=function(e){e.queryLength!==this.props.queryLength&&this.setState(function(e){return{bump:!e.bump}})},t.prototype.render=function(){var e=this.props,t=e.length,n=e.queryLength,o=e.minQueryLength,r=e.selectedOption,l=e.tQueryTooShort,i=e.tNoResults,u=e.tSelectedOption,a=e.tResults,p=this.state.bump,c=n<o,d=0===t,f=r?u(r,t):"",h=null;return h=c?l(o):d?i():a(t,f),(0,s.createElement)("div",{"aria-atomic":"true","aria-live":"polite",role:"status",style:{border:"0",clip:"rect(0 0 0 0)",height:"1px",marginBottom:"-1px",marginRight:"-1px",overflow:"hidden",padding:"0",position:"absolute",whiteSpace:"nowrap",width:"1px"}},h,(0,s.createElement)("span",null,p?",":",,"))},t}(s.Component),i.defaultProps={tQueryTooShort:function(e){return"Type in "+e+" or more characters for results."},tNoResults:function(){return"No search results."},tSelectedOption:function(e,t){return e+" (1 of "+t+") is selected."},tResults:function(e,t){var n={result:1===e?"result":"results",is:1===e?"is":"are"};return e+" "+n.result+" "+n.is+" available. "+t}},u);t.default=a},function(e,t,n){"use strict";t.__esModule=!0;var o=n(0),r=function(e){var t=e.className;return(0,o.createElement)("svg",{version:"1.1",xmlns:"http://www.w3.org/2000/svg",className:t,focusable:"false"},(0,o.createElement)("g",{stroke:"none",fill:"none","fill-rule":"evenodd"},(0,o.createElement)("polygon",{fill:"#000000",points:"0 0 22 0 11 17"})))};t.default=r}])
 
-                function a(e, t) {
-                    return i(e.nodeName, n(n({}, e.attributes), t), arguments.length > 2 ? [].slice.call(arguments, 2) : e.children)
-                }
+/**********************************************************
+                    AUTOCOMPLETE END
+ **********************************************************/
 
-                function s(e) {
-                    !e.__d && (e.__d = !0) && 1 == E.push(e) && (P.debounceRendering || setTimeout)(o)
-                }
-
-                function o() {
-                    var e, t = E;
-                    for (E = []; e = t.pop();) e.__d && S(e)
-                }
-
-                function r(e, t, i) {
-                    return "string" == typeof t || "number" == typeof t ? void 0 !== e.splitText : "string" == typeof t.nodeName ? !e._componentConstructor && l(e, t.nodeName) : i || e._componentConstructor === t.nodeName
-                }
-
-                function l(e, t) {
-                    return e.__n === t || e.nodeName.toLowerCase() === t.toLowerCase()
-                }
-
-                function d(e) {
-                    var t = n({}, e.attributes);
-                    t.children = e.children;
-                    var i = e.nodeName.defaultProps;
-                    if (void 0 !== i)
-                        for (var a in i) void 0 === t[a] && (t[a] = i[a]);
-                    return t
-                }
-
-                function u(e, t) {
-                    var i = t ? document.createElementNS("http://www.w3.org/2000/svg", e) : document.createElement(e);
-                    return i.__n = e, i
-                }
-
-                function c(e) {
-                    e.parentNode && e.parentNode.removeChild(e)
-                }
-
-                function h(e, t, i, n, a) {
-                    if ("className" === t && (t = "class"), "key" === t);
-                    else if ("ref" === t) i && i(null), n && n(e);
-                    else if ("class" !== t || a)
-                        if ("style" === t) {
-                            if (n && "string" != typeof n && "string" != typeof i || (e.style.cssText = n || ""), n && "object" == typeof n) {
-                                if ("string" != typeof i)
-                                    for (var s in i) s in n || (e.style[s] = "");
-                                for (var s in n) e.style[s] = "number" == typeof n[s] && !1 === N.test(s) ? n[s] + "px" : n[s]
-                            }
-                        } else if ("dangerouslySetInnerHTML" === t) n && (e.innerHTML = n.__html || "");
-                    else if ("o" == t[0] && "n" == t[1]) {
-                        var o = t !== (t = t.replace(/Capture$/, ""));
-                        t = t.toLowerCase().substring(2), n ? i || e.addEventListener(t, m, o) : e.removeEventListener(t, m, o), (e.__l || (e.__l = {}))[t] = n
-                    } else if ("list" !== t && "type" !== t && !a && t in e) p(e, t, null == n ? "" : n), null != n && !1 !== n || e.removeAttribute(t);
-                    else {
-                        var r = a && t !== (t = t.replace(/^xlink\:?/, ""));
-                        null == n || !1 === n ? r ? e.removeAttributeNS("http://www.w3.org/1999/xlink", t.toLowerCase()) : e.removeAttribute(t) : "function" != typeof n && (r ? e.setAttributeNS("http://www.w3.org/1999/xlink", t.toLowerCase(), n) : e.setAttribute(t, n))
-                    } else e.className = n || ""
-                }
-
-                function p(e, t, i) {
-                    try {
-                        e[t] = i
-                    } catch (e) {}
-                }
-
-                function m(e) {
-                    return this.__l[e.type](P.event && P.event(e) || e)
-                }
-
-                function g() {
-                    for (var e; e = F.pop();) P.afterMount && P.afterMount(e), e.componentDidMount && e.componentDidMount()
-                }
-
-                function f(e, t, i, n, a, s) {
-                    R++ || (H = null != a && void 0 !== a.ownerSVGElement, B = null != e && !("__preactattr_" in e));
-                    var o = _(e, t, i, n, s);
-                    return a && o.parentNode !== a && a.appendChild(o), --R || (B = !1, s || g()), o
-                }
-
-                function _(e, t, i, n, a) {
-                    var s = e,
-                        o = H;
-                    if (null == t && (t = ""), "string" == typeof t) return e && void 0 !== e.splitText && e.parentNode && (!e._component || a) ? e.nodeValue != t && (e.nodeValue = t) : (s = document.createTextNode(t), e && (e.parentNode && e.parentNode.replaceChild(s, e), y(e, !0))), s.__preactattr_ = !0, s;
-                    if ("function" == typeof t.nodeName) return A(e, t, i, n);
-                    if (H = "svg" === t.nodeName || "foreignObject" !== t.nodeName && H, (!e || !l(e, String(t.nodeName))) && (s = u(String(t.nodeName), H), e)) {
-                        for (; e.firstChild;) s.appendChild(e.firstChild);
-                        e.parentNode && e.parentNode.replaceChild(s, e), y(e, !0)
-                    }
-                    var r = s.firstChild,
-                        d = s.__preactattr_ || (s.__preactattr_ = {}),
-                        c = t.children;
-                    return !B && c && 1 === c.length && "string" == typeof c[0] && null != r && void 0 !== r.splitText && null == r.nextSibling ? r.nodeValue != c[0] && (r.nodeValue = c[0]) : (c && c.length || null != r) && v(s, c, i, n, B || null != d.dangerouslySetInnerHTML), b(s, t.attributes, d), H = o, s
-                }
-
-                function v(e, t, i, n, a) {
-                    var s, o, l, d, u = e.childNodes,
-                        h = [],
-                        p = {},
-                        m = 0,
-                        g = 0,
-                        f = u.length,
-                        v = 0,
-                        w = t ? t.length : 0;
-                    if (0 !== f)
-                        for (var b = 0; b < f; b++) {
-                            var C = u[b],
-                                T = C.__preactattr_,
-                                k = w && T ? C._component ? C._component.__k : T.key : null;
-                            null != k ? (m++, p[k] = C) : (T || (void 0 !== C.splitText ? !a || C.nodeValue.trim() : a)) && (h[v++] = C)
-                        }
-                    if (0 !== w)
-                        for (var b = 0; b < w; b++) {
-                            l = t[b], d = null;
-                            var k = l.key;
-                            if (null != k) m && void 0 !== p[k] && (d = p[k], p[k] = void 0, m--);
-                            else if (!d && g < v)
-                                for (s = g; s < v; s++)
-                                    if (void 0 !== h[s] && r(o = h[s], l, a)) {
-                                        d = o, h[s] = void 0, s === v - 1 && v--, s === g && g++;
-                                        break
-                                    }(d = _(d, l, i, n)) && d !== e && (b >= f ? e.appendChild(d) : d !== u[b] && (d === u[b + 1] ? c(u[b]) : e.insertBefore(d, u[b] || null)))
-                        }
-                    if (m)
-                        for (var b in p) void 0 !== p[b] && y(p[b], !1);
-                    for (; g <= v;) void 0 !== (d = h[v--]) && y(d, !1)
-                }
-
-                function y(e, t) {
-                    var i = e._component;
-                    i ? M(i) : (null != e.__preactattr_ && e.__preactattr_.ref && e.__preactattr_.ref(null), !1 !== t && null != e.__preactattr_ || c(e), w(e))
-                }
-
-                function w(e) {
-                    for (e = e.lastChild; e;) {
-                        var t = e.previousSibling;
-                        y(e, !0), e = t
-                    }
-                }
-
-                function b(e, t, i) {
-                    var n;
-                    for (n in i) t && null != t[n] || null == i[n] || h(e, n, i[n], i[n] = void 0, H);
-                    for (n in t) "children" === n || "innerHTML" === n || n in i && t[n] === ("value" === n || "checked" === n ? e[n] : i[n]) || h(e, n, i[n], i[n] = t[n], H)
-                }
-
-                function C(e) {
-                    var t = e.constructor.name;
-                    (W[t] || (W[t] = [])).push(e)
-                }
-
-                function T(e, t, i) {
-                    var n, a = W[e.name];
-                    if (e.prototype && e.prototype.render ? (n = new e(t, i), O.call(n, t, i)) : (n = new O(t, i), n.constructor = e, n.render = k), a)
-                        for (var s = a.length; s--;)
-                            if (a[s].constructor === e) {
-                                n.__b = a[s].__b, a.splice(s, 1);
-                                break
-                            }
-                    return n
-                }
-
-                function k(e, t, i) {
-                    return this.constructor(e, i)
-                }
-
-                function x(e, t, i, n, a) {
-                    e.__x || (e.__x = !0, (e.__r = t.ref) && delete t.ref, (e.__k = t.key) && delete t.key, !e.base || a ? e.componentWillMount && e.componentWillMount() : e.componentWillReceiveProps && e.componentWillReceiveProps(t, n), n && n !== e.context && (e.__c || (e.__c = e.context), e.context = n), e.__p || (e.__p = e.props), e.props = t, e.__x = !1, 0 !== i && (1 !== i && !1 === P.syncComponentUpdates && e.base ? s(e) : S(e, 1, a)), e.__r && e.__r(e))
-                }
-
-                function S(e, t, i, a) {
-                    if (!e.__x) {
-                        var s, o, r, l = e.props,
-                            u = e.state,
-                            c = e.context,
-                            h = e.__p || l,
-                            p = e.__s || u,
-                            m = e.__c || c,
-                            _ = e.base,
-                            v = e.__b,
-                            w = _ || v,
-                            b = e._component,
-                            C = !1;
-                        if (_ && (e.props = h, e.state = p, e.context = m, 2 !== t && e.shouldComponentUpdate && !1 === e.shouldComponentUpdate(l, u, c) ? C = !0 : e.componentWillUpdate && e.componentWillUpdate(l, u, c), e.props = l, e.state = u, e.context = c), e.__p = e.__s = e.__c = e.__b = null, e.__d = !1, !C) {
-                            s = e.render(l, u, c), e.getChildContext && (c = n(n({}, c), e.getChildContext()));
-                            var k, A, O = s && s.nodeName;
-                            if ("function" == typeof O) {
-                                var D = d(s);
-                                o = b, o && o.constructor === O && D.key == o.__k ? x(o, D, 1, c, !1) : (k = o, e._component = o = T(O, D, c), o.__b = o.__b || v, o.__u = e, x(o, D, 0, c, !1), S(o, 1, i, !0)), A = o.base
-                            } else r = w, k = b, k && (r = e._component = null), (w || 1 === t) && (r && (r._component = null), A = f(r, s, c, i || !_, w && w.parentNode, !0));
-                            if (w && A !== w && o !== b) {
-                                var L = w.parentNode;
-                                L && A !== L && (L.replaceChild(A, w), k || (w._component = null, y(w, !1)))
-                            }
-                            if (k && M(k), e.base = A, A && !a) {
-                                for (var I = e, N = e; N = N.__u;)(I = N).base = A;
-                                A._component = I, A._componentConstructor = I.constructor
-                            }
-                        }
-                        if (!_ || i ? F.unshift(e) : C || (g(), e.componentDidUpdate && e.componentDidUpdate(h, p, m), P.afterUpdate && P.afterUpdate(e)), null != e.__h)
-                            for (; e.__h.length;) e.__h.pop().call(e);
-                        R || a || g()
-                    }
-                }
-
-                function A(e, t, i, n) {
-                    for (var a = e && e._component, s = a, o = e, r = a && e._componentConstructor === t.nodeName, l = r, u = d(t); a && !l && (a = a.__u);) l = a.constructor === t.nodeName;
-                    return a && l && (!n || a._component) ? (x(a, u, 3, i, n), e = a.base) : (s && !r && (M(s), e = o = null), a = T(t.nodeName, u, i), e && !a.__b && (a.__b = e, o = null), x(a, u, 1, i, n), e = a.base, o && e !== o && (o._component = null, y(o, !1))), e
-                }
-
-                function M(e) {
-                    P.beforeUnmount && P.beforeUnmount(e);
-                    var t = e.base;
-                    e.__x = !0, e.componentWillUnmount && e.componentWillUnmount(), e.base = null;
-                    var i = e._component;
-                    i ? M(i) : t && (t.__preactattr_ && t.__preactattr_.ref && t.__preactattr_.ref(null), e.__b = t, c(t), C(e), w(t)), e.__r && e.__r(null)
-                }
-
-                function O(e, t) {
-                    this.__d = !0, this.context = t, this.props = e, this.state = this.state || {}
-                }
-
-                function D(e, t, i) {
-                    return f(i, e, {}, !1, t, !1)
-                }
-                var P = {},
-                    L = [],
-                    I = [],
-                    N = /acit|ex(?:s|g|n|p|$)|rph|ows|mnc|ntw|ine[ch]|zoo|^ord/i,
-                    E = [],
-                    F = [],
-                    R = 0,
-                    H = !1,
-                    B = !1,
-                    W = {};
-                n(O.prototype, {
-                    setState: function(e, t) {
-                        var i = this.state;
-                        this.__s || (this.__s = n({}, i)), n(i, "function" == typeof e ? e(i, this.props) : e), t && (this.__h = this.__h || []).push(t), s(this)
-                    },
-                    forceUpdate: function(e) {
-                        e && (this.__h = this.__h || []).push(e), S(this, 2)
-                    },
-                    render: function() {}
-                });
-                var z = {
-                    h: i,
-                    createElement: i,
-                    cloneElement: a,
-                    Component: O,
-                    render: D,
-                    rerender: o,
-                    options: P
-                };
-                e.exports = z
-            }()
-        }, function(e, t, i) {
-            "use strict";
-
-            function n(e) {
-                if (!e.element) throw new Error("element is not defined");
-                if (!e.id) throw new Error("id is not defined");
-                if (!e.source) throw new Error("source is not defined");
-                Array.isArray(e.source) && (e.source = l(e.source, e.showAllValues)), (0, s.render)((0, s.createElement)(r.default, e), e.element)
-            }
-            var a = Object.assign || function(e) {
-                    for (var t = 1; t < arguments.length; t++) {
-                        var i = arguments[t];
-                        for (var n in i) Object.prototype.hasOwnProperty.call(i, n) && (e[n] = i[n])
-                    }
-                    return e
-                },
-                s = i(0),
-                o = i(2),
-                r = function(e) {
-                    return e && e.__esModule ? e : {
-                        default: e
-                    }
-                }(o),
-                l = function(e, t) {
-                    return function(i, n) {
-                        var a = [];
-                        (t || "" !== i) && (a = e.filter(function(e) {
-                            return -1 !== e.toLowerCase().indexOf(i.toLowerCase())
-                        })), n(a)
-                    }
-                };
-            n.enhanceSelectElement = function(e) {
-                if (!e.selectElement) throw new Error("selectElement is not defined");
-                if (!e.source) {
-                    var t = [].filter.call(e.selectElement.options, function(t) {
-                        return t.value || e.preserveNullOptions
-                    });
-                    e.source = t.map(function(e) {
-                        return e.innerHTML
-                    })
-                }
-                e.onConfirm = e.onConfirm || function(t) {
-                    var i = [].filter.call(e.selectElement.options, function(e) {
-                        return e.innerHTML === t
-                    })[0];
-                    i && (i.selected = !0)
-                }, (e.selectElement.value || void 0 === e.defaultValue) && (e.defaultValue = e.selectElement.options[e.selectElement.options.selectedIndex].innerHTML), e.name = e.name || "", e.id = e.id || e.selectElement.id || "", e.autoselect = e.autoselect || !0;
-                var i = document.createElement("span");
-                e.selectElement.parentNode.insertBefore(i, e.selectElement), n(a({}, e, {
-                    element: i
-                })), e.selectElement.style.display = "none", e.selectElement.id = e.selectElement.id + "-select"
-            }, e.exports = n
-        }, function(e, t, i) {
-            "use strict";
-
-            function n(e, t) {}
-
-            function a(e, t) {
-                if (e) return !t || "object" != typeof t && "function" != typeof t ? e : t
-            }
-
-            function s(e, t) {
-                "function" != typeof t && null !== t || (e.prototype = Object.create(t && t.prototype, {
-                    constructor: {
-                        value: e,
-                        enumerable: !1,
-                        writable: !0,
-                        configurable: !0
-                    }
-                }), t && (Object.setPrototypeOf ? Object.setPrototypeOf(e, t) : e.__proto__ = t))
-            }
-
-            function o() {
-                return !(!navigator.userAgent.match(/(iPod|iPhone|iPad)/g) || !navigator.userAgent.match(/AppleWebKit/g))
-            }
-
-            function r(e) {
-                return e > 47 && e < 58 || 32 === e || 8 === e || e > 64 && e < 91 || e > 95 && e < 112 || e > 185 && e < 193 || e > 218 && e < 223
-            }
-
-            function l(e) {
-                return g ? {
-                    onInput: e
-                } : f ? {
-                    onChange: e
-                } : void 0
-            }
-            t.__esModule = !0, t.default = void 0;
-            var d, u, c = Object.assign || function(e) {
-                    for (var t = 1; t < arguments.length; t++) {
-                        var i = arguments[t];
-                        for (var n in i) Object.prototype.hasOwnProperty.call(i, n) && (e[n] = i[n])
-                    }
-                    return e
-                },
-                h = i(0),
-                p = i(3),
-                m = function(e) {
-                    return e && e.__esModule ? e : {
-                        default: e
-                    }
-                }(p),
-                g = !0,
-                f = !1,
-                _ = {
-                    13: "enter",
-                    27: "escape",
-                    38: "up",
-                    40: "down"
-                },
-                v = function() {
-                    var e = document.createElement("x");
-                    return e.style.cssText = "pointer-events:auto", "auto" === e.style.pointerEvents
-                }(),
-                y = (u = d = function(e) {
-                    function t(i) {
-                        n(this, t);
-                        var s = a(this, e.call(this, i));
-                        return s.elementRefs = {}, s.state = {
-                            focused: null,
-                            hovered: null,
-                            menuOpen: !1,
-                            options: i.defaultValue ? [i.defaultValue] : [],
-                            query: i.defaultValue,
-                            selected: null
-                        }, s.handleComponentBlur = s.handleComponentBlur.bind(s), s.handleKeyDown = s.handleKeyDown.bind(s), s.handleUpArrow = s.handleUpArrow.bind(s), s.handleDownArrow = s.handleDownArrow.bind(s), s.handleEnter = s.handleEnter.bind(s), s.handlePrintableKey = s.handlePrintableKey.bind(s), s.handleOptionBlur = s.handleOptionBlur.bind(s), s.handleOptionClick = s.handleOptionClick.bind(s), s.handleOptionFocus = s.handleOptionFocus.bind(s), s.handleOptionMouseDown = s.handleOptionMouseDown.bind(s), s.handleOptionMouseEnter = s.handleOptionMouseEnter.bind(s), s.handleOptionMouseOut = s.handleOptionMouseOut.bind(s), s.handleInputBlur = s.handleInputBlur.bind(s), s.handleInputChange = s.handleInputChange.bind(s), s.handleInputFocus = s.handleInputFocus.bind(s), s.pollInputElement = s.pollInputElement.bind(s), s.getDirectInputChanges = s.getDirectInputChanges.bind(s), s
-                    }
-                    return s(t, e), t.prototype.componentDidMount = function() {
-                        this.pollInputElement()
-                    }, t.prototype.componentWillUnmount = function() {
-                        clearTimeout(this.$pollInput)
-                    }, t.prototype.pollInputElement = function() {
-                        var e = this;
-                        this.getDirectInputChanges(), this.$pollInput = setTimeout(function() {
-                            e.pollInputElement()
-                        }, 100)
-                    }, t.prototype.getDirectInputChanges = function() {
-                        var e = this.elementRefs[-1];
-                        e.value !== this.state.query && this.handleInputChange({
-                            target: {
-                                value: e.value
-                            }
-                        })
-                    }, t.prototype.componentDidUpdate = function(e, t) {
-                        var i = this.state.focused,
-                            n = null === i,
-                            a = t.focused !== i;
-                        a && !n && this.elementRefs[i].focus();
-                        var s = -1 === i,
-                            o = a && null === t.focused;
-                        if (s && o) {
-                            var r = this.elementRefs[i];
-                            r.setSelectionRange(0, r.value.length)
-                        }
-                    }, t.prototype.hasAutoselect = function() {
-                        return !o() && this.props.autoselect
-                    }, t.prototype.templateInputValue = function(e) {
-                        var t = this.props.templates && this.props.templates.inputValue;
-                        return t ? t(e) : e
-                    }, t.prototype.templateSuggestion = function(e) {
-                        var t = this.props.templates && this.props.templates.suggestion;
-                        return t ? t(e) : e
-                    }, t.prototype.handleComponentBlur = function(e) {
-                        var t = this.state,
-                            i = t.options,
-                            n = t.query,
-                            a = t.selected,
-                            s = void 0;
-                        this.props.confirmOnBlur ? (s = e.query || n, this.props.onConfirm(i[a])) : s = n, 
-                        this.setState({
-                            focused: null,
-                            menuOpen: false,//e.menuOpen || !1,
-                            query: s,
-                            selected: null
-                        })
-                    }, t.prototype.handleOptionBlur = function(e, t) {
-                        var i = this.state,
-                            n = i.focused,
-                            a = i.menuOpen,
-                            s = i.options,
-                            r = i.selected,
-                            l = null === e.relatedTarget,
-                            d = e.relatedTarget === this.elementRefs[-1],
-                            u = n !== t && -1 !== n;
-                        if (l || !u && !d) {
-                            var c = a && o();
-                            this.handleComponentBlur({
-                                menuOpen: c,
-                                query: this.templateInputValue(s[r])
-                            })
-                        }
-                    }, t.prototype.handleInputBlur = function(e) {
-
-                        var t = this.state,
-                            i = t.focused,
-                            n = t.menuOpen,
-                            a = t.options,
-                            s = t.query,
-                            r = t.selected;
-                            // console.log( "HANDLE INPUT BLUR", i, n, a, s, r );
-                        if (-1 === i) {
-                            var l = n && o(),
-                                d = o() ? s : this.templateInputValue(a[r]);
-                                // console.log( "HANDLE INPUT BLUR", l, d );
-                            this.handleComponentBlur({
-                                menuOpen: l,
-                                query: d
-                            })
-                        }
-                    }, t.prototype.handleInputChange = function(e) {
-                        var t = this,
-                            i = this.props,
-                            n = i.minLength,
-                            a = i.source,
-                            s = i.showAllValues,
-                            o = this.hasAutoselect(),
-                            r = e.target.value,
-                            l = 0 === r.length,
-                            d = this.state.query.length !== r.length,
-                            u = r.length >= n;
-                        this.setState({
-                            query: r
-                        }), s || !l && d && u ? a(r, function(e) {
-                            var i = e.length > 0;
-                            t.setState({
-                                menuOpen: i,
-                                options: e,
-                                selected: o && i ? 0 : -1
-                            })
-                        }) : !l && u || this.setState({
-                            menuOpen: !1,
-                            options: []
-                        })
-                    }, t.prototype.handleInputClick = function(e) {
-                        this.handleInputChange(e)
-                    }, t.prototype.handleInputFocus = function(e) {
-                        this.setState({
-                            menuOpen: !0,
-                            focused: -1
-                        }), this.handleInputChange(e)
-                    }, t.prototype.handleOptionFocus = function(e) {
-                        this.setState({
-                            focused: e,
-                            hovered: null,
-                            selected: e
-                        })
-                    }, t.prototype.handleOptionMouseEnter = function(e, t) {
-                        this.setState({
-                            hovered: t
-                        })
-                    }, t.prototype.handleOptionMouseOut = function(e, t) {
-                        this.setState({
-                            hovered: null
-                        })
-                    }, t.prototype.handleOptionClick = function(e, t) {
-                        var i = this.state.options[t],
-                            n = this.templateInputValue(i);
-                        this.props.onConfirm(i), this.setState({
-                            focused: -1,
-                            menuOpen: !1,
-                            query: n,
-                            selected: -1
-                        })
-                    }, t.prototype.handleOptionMouseDown = function(e) {
-                        e.preventDefault()
-                    }, t.prototype.handleUpArrow = function(e) {
-                        e.preventDefault();
-                        var t = this.state,
-                            i = t.menuOpen,
-                            n = t.selected; - 1 !== n && i && this.handleOptionFocus(n - 1)
-                    }, t.prototype.handleDownArrow = function(e) {
-                        e.preventDefault();
-                        var t = this.state,
-                            i = t.menuOpen,
-                            n = t.options,
-                            a = t.selected;
-                        a !== n.length - 1 && i && this.handleOptionFocus(a + 1)
-                    }, t.prototype.handleEnter = function(e) {
-                        this.state.menuOpen && (e.preventDefault(), this.state.selected >= 0 && this.handleOptionClick(e, this.state.selected))
-                    }, t.prototype.handlePrintableKey = function(e) {
-                        var t = this.elementRefs[-1];
-                        e.target === t || this.handleInputFocus()
-                    }, t.prototype.handleKeyDown = function(e) {
-                        switch (_[e.keyCode]) {
-                            case "up":
-                                this.handleUpArrow(e);
-                                break;
-                            case "down":
-                                this.handleDownArrow(e);
-                                break;
-                            case "enter":
-                                this.handleEnter(e);
-                                break;
-                            case "escape":
-                                this.handleComponentBlur({
-                                    query: this.state.query
-                                });
-                                break;
-                            default:
-                                r(e.keyCode) && this.handlePrintableKey(e)
-                        }
-                    }, t.prototype.render = function() {
-                        var e = this,
-                            t = this.props,
-                            i = t.cssNamespace,
-                            n = t.displayMenu,
-                            a = t.id,
-                            s = t.minLength,
-                            o = t.name,
-                            r = t.placeholder,
-                            d = t.required,
-                            u = this.state,
-                            p = u.focused,
-                            g = u.hovered,
-                            f = u.menuOpen,
-                            _ = u.options,
-                            y = u.query,
-                            w = u.selected,
-                            b = this.hasAutoselect(),
-                            C = -1 === p,
-                            T = 0 === _.length,
-                            k = 0 !== y.length,
-                            x = y.length >= s,
-                            S = this.props.showNoOptionsFound && C && T && k && x,
-                            A = i + "__wrapper",
-                            M = i + "__input",
-                            O = null !== p,
-                            D = O ? " " + M + "--focused" : "",
-                            P = -1 !== p && null !== p,
-                            L = i + "__menu",
-                            I = L + "--" + n,
-                            N = f || S,
-                            E = L + "--" + (N ? "visible" : "hidden"),
-                            F = i + "__option",
-                            R = i + "__hint",
-                            H = this.templateInputValue(_[w]),
-                            B = H && 0 === H.toLowerCase().indexOf(y.toLowerCase()),
-                            W = B && b ? y + H.substr(y.length) : "",
-                            z = v && W;
-                        return (0, h.createElement)("div", {
-                            className: A,
-                            onKeyDown: this.handleKeyDown
-                        }, (0, h.createElement)(m.default, {
-                            length: _.length,
-                            queryLength: y.length,
-                            minQueryLength: s,
-                            selectedOption: this.templateInputValue(_[w])
-                        }), z && (0, h.createElement)("span", null, (0, h.createElement)("input", {
-                            className: R,
-                            readonly: !0,
-                            tabIndex: "-1",
-                            value: W
-                        })), (0, h.createElement)("input", c({
-                            "aria-activedescendant": !!P && a + "__option--" + p,
-                            "aria-expanded": f,
-                            "aria-owns": a + "__listbox",
-                            autoComplete: "off",
-                            className: "" + M + D,
-                            id: a,
-                            onClick: function(t) {
-                                return e.handleInputClick(t)
-                            },
-                            onBlur: this.handleInputBlur
-                        }, l(this.handleInputChange), {
-                            onFocus: this.handleInputFocus,
-                            name: o,
-                            placeholder: r,
-                            ref: function(t) {
-                                e.elementRefs[-1] = t
-                            },
-                            role: "combobox",
-                            type: "text",
-                            required: d,
-                            value: y
-                        })), (0, h.createElement)("ul", {
-                            className: L + " " + I + " " + E,
-                            id: a + "__listbox",
-                            role: "listbox"
-                        }, _.map(function(t, i) {
-                            var n = -1 === p ? w === i : p === i,
-                                s = n && null === g ? " " + F + "--focused" : "",
-                                o = i % 2 ? " " + F + "--odd" : "";
-                            return (0, h.createElement)("li", {
-                                "aria-selected": p === i,
-                                className: "" + F + s + o,
-                                dangerouslySetInnerHTML: {
-                                    __html: e.templateSuggestion(t)
-                                },
-                                id: a + "__option--" + i,
-                                key: i,
-                                onBlur: function(t) {
-                                    return e.handleOptionBlur(t, i)
-                                },
-                                onClick: function(t) {
-                                    return e.handleOptionClick(t, i)
-                                },
-                                onMouseDown: e.handleOptionMouseDown,
-                                onMouseEnter: function(t) {
-                                    return e.handleOptionMouseEnter(t, i)
-                                },
-                                onMouseOut: function(t) {
-                                    return e.handleOptionMouseOut(t, i)
-                                },
-                                ref: function(t) {
-                                    e.elementRefs[i] = t
-                                },
-                                role: "option",
-                                tabIndex: "-1"
-                            })
-                        }), S && (0, h.createElement)("li", {
-                            className: F + " " + F + "--no-results"
-                        }, "No results found")))
-                    }, t
-                }(h.Component), d.defaultProps = {
-                    autoselect: !1,
-                    cssNamespace: "autocomplete",
-                    defaultValue: "",
-                    displayMenu: "inline",
-                    minLength: 0,
-                    name: "input-autocomplete",
-                    placeholder: "",
-                    onConfirm: function() {},
-                    confirmOnBlur: !0,
-                    showNoOptionsFound: !0,
-                    showAllValues: !1,
-                    required: !1
-                }, u);
-            t.default = y
-        }, function(e, t, i) {
-            "use strict";
-
-            function n(e, t) {}
-
-            function a(e, t) {
-                if (e) return !t || "object" != typeof t && "function" != typeof t ? e : t
-            }
-
-            function s(e, t) {
-                "function" != typeof t && null !== t || (e.prototype = Object.create(t && t.prototype, {
-                    constructor: {
-                        value: e,
-                        enumerable: !1,
-                        writable: !0,
-                        configurable: !0
-                    }
-                }), t && (Object.setPrototypeOf ? Object.setPrototypeOf(e, t) : e.__proto__ = t))
-            }
-            t.__esModule = !0, t.default = void 0;
-            var o = i(0),
-                r = function(e) {
-                    function t() {
-                        var i, s, o;
-                        n(this, t);
-                        for (var r = arguments.length, l = Array(r), d = 0; d < r; d++) l[d] = arguments[d];
-                        return i = s = a(this, e.call.apply(e, [this].concat(l))), s.state = {
-                            bump: !1
-                        }, o = i, a(s, o)
-                    }
-                    return s(t, e), t.prototype.componentWillReceiveProps = function(e) {
-                        e.queryLength !== this.props.queryLength && this.setState(function(e) {
-                            return {
-                                bump: !e.bump
-                            }
-                        })
-                    }, t.prototype.render = function() {
-                        var e = this.props,
-                            t = e.length,
-                            i = e.queryLength,
-                            n = e.minQueryLength,
-                            a = e.selectedOption,
-                            s = this.state.bump,
-                            r = {
-                                result: 1 === t ? "result" : "results",
-                                is: 1 === t ? "is" : "are"
-                            },
-                            l = i < n,
-                            d = 0 === t,
-                            u = a ? (0, o.createElement)("span", null, a, " (1 of ", t, ") is selected.") : null,
-                            c = null;
-                        return c = l ? (0, o.createElement)("span", null, "Type in ", n, " or more characters for results.") : d ? (0, o.createElement)("span", null, "No search results.") : (0, o.createElement)("span", null, t, " ", r.result, " ", r.is, " available. ", u), (0, o.createElement)("div", {
-                            "aria-atomic": "true",
-                            "aria-live": "polite",
-                            role: "status",
-                            style: {
-                                border: "0",
-                                clip: "rect(0 0 0 0)",
-                                height: "1px",
-                                marginBottom: "-1px",
-                                marginRight: "-1px",
-                                overflow: "hidden",
-                                padding: "0",
-                                position: "absolute",
-                                whiteSpace: "nowrap",
-                                width: "1px"
-                            }
-                        }, c, (0, o.createElement)("span", null, s ? "," : ",,"))
-                    }, t
-                }(o.Component);
-            t.default = r
-        }, function(e, t, i) {
-            e.exports = i(1)
-        }])
     }),
 
 
@@ -4545,7 +3779,7 @@ dateFormat.masks = {
             setDay: function(e, t) {
                 if (!this.mData) return null;
                 var n = $(e),
-                    i = new Date(t),
+                    i = t,//new Date(t),
                     a = i.getMonth(),
                     o = i.getDate() - 1,
                     s = i.getFullYear(),
@@ -4554,8 +3788,22 @@ dateFormat.masks = {
                 1 == r.isPerfectDay && s == r.year && (l += " perfect_day");
                 var u = n.parent();
                 // console.log( "JQUERY VERSION:", $.fn.jquery );
-                u.data("day", r),
+                // console.log( "[Location] DATE:", t );
+                // console.log( "[Location] DATE:", i );
+                // console.log( "[Location] DATA:", r );
+
+                // console.log( "[Location] SET DAY:", a, o, t );
+
+                if ( !Date.parse( r.date ))
+                {
+                    console.log( "[Location] FOUND INVALID DATE:", this.mMonths[a][o], a, o )
+                    r.date = t;
+                }
+
+                // u.data("day", r),
+                // u.data("date", t),
                 u.attr("data-day", JSON.stringify(r)), 
+                // u.attr("data-date", JSON.stringify(t)), 
                 u.addClass(l)
             },
             getLocationTitle: function() {
@@ -4593,7 +3841,7 @@ dateFormat.masks = {
             _calculateScore: function() {
                 for (var e, t, n, i, a, o, s, r = this.mData.months, l = r.length, u = Math.abs, d = null, c = null, h = new Date, p = h.getDate(), f = h.getMonth(), m = h.getFullYear(), g = 0; g < l; g++) {
                     e = r[g], t = parseInt(e.id) - 1, days = e.days, totalDays = days.length;
-                    for (var v = 0; v < totalDays; v++) o = new Date(a, t, v + 1), s = o.getDay(), a = t == f && s <= p ? m + 1 : t < f ? m + 1 : m, n = days[v], i = u(parseFloat(n.perfectFactor)), n.perfectFactor = i, n.isWeekend = !1, n.isPerfectDay = !1, n.date = o, n.id = v, n.month = g, n.year = a, n.humidity = (100 * n.humidity).toFixed(1), n.chanceClear = (100 * n.chanceClear).toFixed(1), n.chanceRain = (100 * n.chanceRain).toFixed(1), 6 != s && 0 != s || (n.isWeekend = !0, t >= 2 && t <= 4 ? (null == this.mPerfectFactorSpring || i < this.mPerfectFactorSpring) && (this.mPerfectFactorSpring = i, this.mPerfectDaySpring = n) : t >= 5 && t <= 7 ? (null == this.mPerfectFactorSummer || i < this.mPerfectFactorSummer) && (this.mPerfectFactorSummer = i, this.mPerfectDaySummer = n) : t >= 8 && t <= 10 ? (null == this.mPerfectFactorAutumn || i < this.mPerfectFactorAutumn) && (this.mPerfectFactorAutumn = i, this.mPerfectDayAutumn = n) : 0 != t && 1 != t && 11 != t || (null == this.mPerfectFactorWinter || i < this.mPerfectFactorWinter) && (this.mPerfectFactorWinter = i, this.mPerfectDayWinter = n), (null == d || i < d) && (d = i), (null == c || i > c) && (c = i))
+                    for (var v = 0; v < totalDays; v++) a = t == f /*&& s <= p */? m + 1 : t < f ? m + 1 : m, o = new Date(a, t, v + 1), s = o.getDay(), n = days[v], i = u(parseFloat(n.perfectFactor)), n.perfectFactor = i, n.isWeekend = !1, n.isPerfectDay = !1, n.date = o, n.id = v, n.month = g, n.year = a, n.humidity = (100 * n.humidity).toFixed(1), n.chanceClear = (100 * n.chanceClear).toFixed(1), n.chanceRain = (100 * n.chanceRain).toFixed(1), 6 != s && 0 != s || (n.isWeekend = !0, t >= 2 && t <= 4 ? (null == this.mPerfectFactorSpring || i < this.mPerfectFactorSpring) && (this.mPerfectFactorSpring = i, this.mPerfectDaySpring = n) : t >= 5 && t <= 7 ? (null == this.mPerfectFactorSummer || i < this.mPerfectFactorSummer) && (this.mPerfectFactorSummer = i, this.mPerfectDaySummer = n) : t >= 8 && t <= 10 ? (null == this.mPerfectFactorAutumn || i < this.mPerfectFactorAutumn) && (this.mPerfectFactorAutumn = i, this.mPerfectDayAutumn = n) : 0 != t && 1 != t && 11 != t || (null == this.mPerfectFactorWinter || i < this.mPerfectFactorWinter) && (this.mPerfectFactorWinter = i, this.mPerfectDayWinter = n), (null == d || i < d) && (d = i), (null == c || i > c) && (c = i))
                 }
                 this.mPerfectDaySummer.season = "summer", this.mPerfectDaySpring.season = "spring", this.mPerfectDayAutumn.season = "fall", this.mPerfectDayWinter.season = "winter";
                 var y = this.mPerfectDaySummer;
@@ -8728,6 +7976,7 @@ dateFormat.masks = {
                     var fixedDiv = $("<div id='best_day_fixed_div' class='best_day'></div>");
 
                     $( "#methodology" ).appendTo( fixedDiv );
+                    $( "#mobile_calendar_tooltip" ).appendTo( fixedDiv );
                     $( "#mobile_calendar_block" ).appendTo( fixedDiv );
                     $( "div.social.social-likes" ).appendTo( fixedDiv );
 
@@ -8744,6 +7993,7 @@ dateFormat.masks = {
                 var calendarUpdate = new CustomEvent('calendar-update');
                 var a = null,
                     o = null,
+                    confirmed = null,
                     s = function() {
                         var e = $("#city_autocomplete").val();
                         return null !== a && void 0 !== a ? a : e.length > 0 ? e : null
@@ -8762,9 +8012,17 @@ dateFormat.masks = {
                     minLength: 0,
                     displayMenu: "overlay",
                     defaultValue: e,
+                    // dropdownArrow: null,
                     onConfirm: function(e) {
                         a = e, r();
-                        // var n = s();
+                        var n = s();
+
+                        if ( n )
+                            confirmed = true;
+                        else
+                            confirmed = null;
+
+                        // console.log( "[AutoCompelete] ON CONFIRM:", confirmed )
                         
                         // t._locationSelected(n), n && ($("#best_day_submit_btn").focus(), setTimeout(function() {
                         //     $("#best_day_submit_btn").focus()
@@ -8776,18 +8034,48 @@ dateFormat.masks = {
                 
                 $(window).on("keyup", function(e) {
                     16 != e.keyCode && (o = e.keyCode)
-                }), $("#city_autocomplete").on("input", function(e) {
+                }), 
+                $("#city_autocomplete").on("input", function(e) {
+                    confirmed = null;
                     dispatchEvent(calendarUpdate);
                     r()
-                }), $("#best_day_submit_btn").on("click", function() {
+                }), 
+                $("#city_autocomplete").on("keyup", function(e) {
+                    // console.log( "[AutoCompelete] KEY UP:", e.keyCode, " CONFIRMED:", confirmed );
+                    if ( e.keyCode == 13 && confirmed == true )
+                    {
+                        var e = s();
+                        t._locationSelected(e)
+                        dispatchEvent(calendarUpdate);
+
+                        setTimeout(function() {
+                            $("#city_autocomplete").blur()
+                        }, 500)   
+                    }
+                }), 
+                $("#best_day_submit_btn").on("click", function() {
                     var e = s();
                     t._locationSelected(e)
                     dispatchEvent(calendarUpdate);
-                }), $("#city_autocomplete_container .autocomplete__wrapper").append("<button tabindex='0' id='autocomplete__clear' class='autocomplete__clear clear_btn'><span class='autocomplete__clear_label'>Clear</span></button>"), $("#autocomplete__clear").on("click", function(e) {
-                    a = null, o = null, $("#city_autocomplete").val(""), r(), setTimeout(function() {
-                        o = null, $("#city_autocomplete").val(""), $("#city_autocomplete").focus()
-                    }, 100)
-                }), $("#city_autocomplete_container .autocomplete__wrapper").append("<div id='autocomplete__combo' class='autocomplete__combo combo_btn'></div>"), Distilled.core.HASH && this._locationSelected(Distilled.core.HASH)
+                }), 
+                $("#city_autocomplete_container .autocomplete__wrapper").append("<button tabindex='0' id='autocomplete__clear' class='autocomplete__clear clear_btn'><span class='autocomplete__clear_label'>Clear</span></button>"), 
+                $("#autocomplete__clear").on("click", function(e) {
+                    a = null, 
+                    o = null, 
+                    $("#city_autocomplete").val(""), 
+                    r(),
+                    
+                    setTimeout(function() {
+                    //     o = null, 
+                        $("#city_autocomplete").val("") 
+                    //     // $("#city_autocomplete").focus()
+                    }, 25)
+
+                    // setTimeout(function() {
+                        $("#city_autocomplete").focus()
+                    // }, 1000)
+                }), 
+                $("#city_autocomplete_container .autocomplete__wrapper").append("<div id='autocomplete__combo' class='autocomplete__combo combo_btn'></div>"), Distilled.core.HASH && this._locationSelected(Distilled.core.HASH)
             },
             _setupCalendar: function() {
                 var e = new Date,
@@ -8795,9 +8083,9 @@ dateFormat.masks = {
                     n = e.getFullYear();
                 12 == ++t && (t = 0, n++);
                 var i = {};
-                if (1 == this.mMobileView ? i.mouseClickMonth = this._onMouseClickMonth.bind(this) : (i.mouseOnDay = this._onMouseOverDay.bind(this), i.mouseOutDay = this._onMouseOutDay.bind(this)), this.mCalendars = [], this._createCalendar("#calendar_container", "calendar_01", t, n, i, !0), n++, this._createCalendar("#calendar_container", "calendar_02", t, n, i), 1 == this.mMobileView) {
-                    n = e.getFullYear();
-                    (i = {}).mouseOnDay = this._onMouseOverDayMobile.bind(this), this._createCalendar("#mobile_calendar_container", "mobile_calendar_01", t, n, i, !0)
+                if (1 == this.mMobileView ? i.mouseClickMonth = this._onMouseClickMonth.bind(this) : (i.mouseOnDay = this._onMouseOverDay.bind(this), i.mouseOutDay = this._onMouseOutDay.bind(this)), this.mCalendars = [], this._createCalendar("#calendar_container", "calendar_01", t, n, i, !0), /*n++,*/ this._createCalendar("#calendar_container", "calendar_02", t, n+1, i), 1 == this.mMobileView) {
+                    // n = e.getFullYear();
+                    (i = {}).mouseOnDay = this._onMouseOverDayMobile.bind(this), this._createCalendar("#mobile_calendar_container", "mobile_calendar_01", t, n, i, !0, !0)
                 } else $("#mobile_calendar_container").remove()
             },
             _addEventListeners: function() {
@@ -8807,12 +8095,19 @@ dateFormat.masks = {
                 $(".look_ahead_btn").on("click", e, this._onLookAheadClick), 
                 $("#methodology_open_btn").on("click", e, this._onMethodologyOpenClick), $("#methodology_close_btn").on("click", e, this._onMethodologyCloseClick), $("#tooltip_close_btn").on("click", e, this._onTooltipCloseClick), $(document).on("focusin", e, this._onFocus), $(document).on("keydown", e, this._onDocumentKeyDown)
             },
-            _createCalendar: function(e, t, n, i, a, o) {
+            _createCalendar: function(e, t, n, i, a, o, p) {
                 $(e).append("<div id='" + t + "' class='clearfix'></div>");
+                // console.log( "CREATE CALENDAR:", e, t, n, i, a, o, p );
+                var l = 12;
+                if(p){
+                    l = 24
+                }
+
                 var s = this,
                     r = $("#" + t).calendar({
                         startYear: i,
                         startMonth: n,
+                        length: l,
                         showDays: !0,
                         showYear: o,
                         customDayRenderer: function(e, t) {
@@ -8955,6 +8250,8 @@ dateFormat.masks = {
                 })
             },
             _showLookAhead: function() {
+                if ( this.mSlick )
+                    this.mSlick[0].slick.slickUnfilter();
                 var e = $("#calendar_02");
                 TweenLite.set(e, {
                     display: "inline-block",
@@ -8988,11 +8285,13 @@ dateFormat.masks = {
                 })
             },
             _showMobileCalendar: function(e) {
-                e++;
                 var t = null;
+                var month = e.getMonth();
+                var year = e.getFullYear();
                 $("#mobile_calendar_container .month-container").each(function(n) {
-                    $(this).data("month-id") == e && (t = n)
-                }), this.mSlick[0].slick.goTo(t), TweenLite.set(".mobile_calendar", {
+                    $(this).data("month-id") == month && $(this).data("year") == year && (t = n)
+                }),
+                this.mSlick[0].slick.goTo(t), TweenLite.set(".mobile_calendar", {
                     display: "block",
                     left: 0,
                     autoAlpha: 0
@@ -9070,6 +8369,7 @@ dateFormat.masks = {
                 }, this._onTooltipClearClick), $("#mobile_calendar_container .months-container").on("beforeChange", {
                     self: this
                 }, this._onMobileCarouselMonthChange)
+                this.mSlick[0].slick.slickFilter( ":not(.extended-month.hide)" );
             },
             _getTooltipContent: function(e, t) {
                 var n = "";
@@ -9125,14 +8425,18 @@ dateFormat.masks = {
                 this._hideTooltip()
             },
             _onMouseClickMonth: function(e) {
-                var t = e.date.getMonth();
-                this._showMobileCalendar(t)
+                // var t = e.date.getMonth();
+                // var id = e.id;
+                // console.log( "MOUSE CLICK MONTH:", e );
+                this._showMobileCalendar(e.date)
             },
             _onMouseOverDayMobile: function(e) {
+                // console.log( "MOUSE OVER DAY MOBILE:", e, e.date )
                 var t = e.element.data("day"),
                     n = e.date.format("mmmm dS, yyyy"),
                     i = this._getTooltipContent(t, n),
                     a = $("#mobile_calendar_tooltip");
+                    // console.log( e, e.date );
                 a.find(".tooltip_inner").html(i), a.addClass("show"), TweenLite.to(a, .25, {
                     autoAlpha: 1,
                     ease: Sine.easeInOut

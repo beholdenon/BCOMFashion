@@ -9,7 +9,9 @@
             'propsConfig': '/b/fashion/javascripts/includes/propsConfig',
             'partialDataHF': '/b/fashion/javascripts/includes/partialDataHF',
             'pressReleases': '/b/fashion/javascripts/projects/about-us/company/press',
-            'templates': '/b/fashion/templates'
+            'templates': '/b/fashion/templates',
+            '_cookieHelper': '/b/fashion/javascripts/util/_cookieHelper',
+            '_multiValueCookie': '/b/fashion/javascripts/util/_multiValueCookie'
         }
     });  
 })();

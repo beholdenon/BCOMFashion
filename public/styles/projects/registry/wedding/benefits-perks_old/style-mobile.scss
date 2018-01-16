@@ -1,0 +1,234 @@
+#registry-bp-videoModal {
+    position: fixed;
+    z-index: 9999;
+    top: 50%;
+    left: 50%;
+
+    opacity: 1;
+
+    width: 100%;
+
+    -webkit-transition: 1ms opacity ease;
+       -moz-transition: 1ms opacity ease;
+        -ms-transition: 1ms opacity ease;
+         -o-transition: 1ms opacity ease;
+            transition: 1ms opacity ease;
+
+    -webkit-transform: translate(-50%, -50%);
+       -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+         -o-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+
+    border-radius: 2px;
+    background-color: #fff;
+
+    text-align: center;
+	
+	video {
+    	width: 100%;
+    	display: none;
+    }
+
+	#registry-bp-closeModal {
+		position: absolute;
+	    right: 1%;
+	    top: 1.75%;
+	    font-size: 1.25em;
+	    text-decoration: none;
+	    background-color: rgba(255, 255, 255, 0.5);
+	    z-index: 100;
+	    padding: 0 5px;
+	}
+}
+
+#registry-bp-maskLayout {
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+
+    opacity: 1;
+
+    width: 100%;
+    height: 100%;
+
+    -webkit-transition: 1ms opacity ease;
+       -moz-transition: 1ms opacity ease;
+        -ms-transition: 1ms opacity ease;
+         -o-transition: 1ms opacity ease;
+            transition: 1ms opacity ease;
+
+    background: rgba(0,0,0,.6);
+}
+
+.mbl-registry-benefits-perks {
+
+	a:hover, a:focus, a:active, a:visited {
+		color: inherit;
+	}
+
+	.registry-bp-section {
+		
+		.bp-hero-copy, .registry-bp-section-copy {
+			font-family: Avenir;
+		    margin: -7.5% 10% 0;
+		    background-color: #fff;
+		    font-size: 4.40625vw;
+		    padding: 3% 3% 0;
+		    line-height: 1.4;
+		    position: relative;
+		}
+
+		.bp-text-line {
+			font-size: 4.40625vw;
+			font-family: Avenir;
+			margin-top: 5%;
+			font-weight: bold;
+		}
+
+		a.registry-bp-button {
+			font-size: 4.40625vw;
+			font-family: Avenir;
+			font-weight: bold;
+			display: block;
+			margin: 2.5% 13.4375%;
+			border: 2px solid #000;
+			padding: 10px 0;
+			text-decoration: none;
+		}
+
+		.registry-bp-section-number {
+			font-style: italic;
+			font-size: 37.6875vw;
+			font-family: georgia;
+			width: 42.8125%;
+			border-bottom: 1px solid #000;
+			margin: 5% auto;
+		}
+
+		.registry-bp-section-title {
+			font-size: 7.8125vw;
+			font-family: georgia, serif;
+			margin-bottom: 5%;
+		}
+
+		a.registry-bp-link {
+			font-size: 4.00625vw;
+			font-family: Avenir;
+			font-weight: bold;
+			display: block;
+			margin: 10% auto;
+		}
+
+		div, a {
+			text-align: center;
+		}
+
+		.registry-bp-section-item {
+			position: relative;
+
+			img {
+				width: 100%;
+			}
+
+			div {
+				position: absolute;
+				width: 100%;
+				text-align: center;
+			}
+
+			a.registry-bp-play-btn {
+			    position: absolute;
+			    text-align: center;
+			    width: 100%;
+			    height: 100%;
+			    top: 0;
+			    left: 0;
+			    line-height: 31;
+
+			    img {
+			    	width: initial;
+			    }
+			}
+
+			.bp-hero-title-line1 {
+				font-family: georgia, serif;
+				color: #fff;
+				font-size: 7.2125vw;
+				top: 4.9%;
+			}
+
+			.bp-hero-title-line2 {
+				font-family: georgia, serif;
+				color: #fff;
+				font-size: 10vw;
+				top: 11%;	
+			}
+
+			.bp-hero-whiteLine {
+				width: 40%;
+				border-top: 1px solid #fff;
+			    position: relative;
+			    margin: 0 auto;
+			    top: 3vw;
+			}
+
+		}
+
+		.registry-bp-hero {
+			a.registry-bp-play-btn {
+				line-height: 47;
+			}
+		}
+
+		&#completion-offers {
+
+			a.registry-bp-link {
+			    display: inline-block;
+			}
+
+			#registry-bp-see-more-offers-link {
+				margin: 12% 0% 5% 8.59375%;
+			}
+			#registry-bp-info-exclusions-link {
+				margin: 12% 8.59375% 5% 0%;
+				float: right;
+			}
+		}
+		&#special-events {
+			.registry-bp-link {
+				margin-bottom: 20%;
+			}
+		}
+		&#completion-offers,
+		&#thank-you-manager,
+		&#special-events {
+			.registry-bp-section-number {
+				padding-bottom: 25px;
+			}
+		}
+	}
+	.registry-bp-bottom-section {
+
+		margin-top: 10vw;
+
+		.registry-bp-back-top-arrow {
+			text-align: center;
+		    font-size: 10vw;
+		    margin-bottom: -8.33vw;
+		}
+
+		.registry-bp-back-to-top-button {
+		    display: block;
+		    text-align: center;
+		    background-color: #000;
+		    color: #fff;
+		    font-family: Avenir;
+		    text-decoration: none;
+		    padding: 20px;
+		    font-size: 4.60625vw;
+		    letter-spacing: 0.2em; 
+		}
+	}
+}

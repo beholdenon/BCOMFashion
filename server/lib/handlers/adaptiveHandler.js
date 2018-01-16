@@ -96,12 +96,24 @@ module.exports = {
             return headHelpers(viewName + '.html', args)
                 .then(aggregatedArgs => {
                     return res.view(viewName, {
-                        args: aggregatedArgs, assetsHost: process.env.BASE_ASSETS, slashMinSuffix: slashMinSuffix
+                        args: aggregatedArgs, 
+                        isApp: req.state.ishop_app, 
+                        assetsHost: process.env.BASE_ASSETS,
+                        baseHost: process.env.BASE_HOST,
+                        secureHost: process.env.SECURE_HOST,
+                        mobileHost: process.env.MOBILE_HOST,
+                        slashMinSuffix: slashMinSuffix
                     });
                 })
                 .catch(() => {
                     return res.view(viewName, {
-                        args: args, assetsHost: process.env.BASE_ASSETS, slashMinSuffix: slashMinSuffix
+                        args: args, 
+                        isApp: req.state.ishop_app, 
+                        assetsHost: process.env.BASE_ASSETS,
+                        baseHost: process.env.BASE_HOST,
+                        secureHost: process.env.SECURE_HOST,
+                        mobileHost: process.env.MOBILE_HOST,
+                        slashMinSuffix: slashMinSuffix
                     });
                 });
         };

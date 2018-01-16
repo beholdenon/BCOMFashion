@@ -1,0 +1,171 @@
+@import "variables";
+$text-book-color: #3f3d3d;
+
+hr {
+	border-color: $black;
+	margin-top: 1px;
+	margin-bottom: 20px;
+}
+
+.book-an-appointment {
+
+	padding-top: 10px;
+
+	h1 {
+		color: $black;
+		letter-spacing: 0.5px;
+		font-weight: bold;
+	}
+
+	section {
+		padding-bottom: 25px;
+	}
+
+	.schedule {
+		height: 80px;
+		position: relative;
+		background-color: $black;
+
+		.schedule-image {
+			img {
+				width: 46%;
+				position: absolute;
+				padding-top: 15px;
+				padding-left: 58px;
+			}
+		}
+		
+		.schedule-text {
+			padding-top: 20px;
+			padding-left: 18px;
+			h2 {
+				color: $white;
+				font-weight: normal;
+			}
+			span {
+				font-size: 16px;
+				line-height: 20px;
+				color: $white;
+				font-weight: normal;
+			}
+		}
+		
+	}
+
+	.book-section {
+		position: relative;
+
+		.book-section-text {
+			position: absolute;
+			padding-left: 435px;
+			padding-top: 76px;
+			padding-right: 45px;
+
+			h2 {
+				color: $black;
+				font-weight: bold;
+			}
+
+			p {
+				font-size: 16px;
+				line-height: 20px;
+				color: $text-book-color;
+				padding-top: 3px;
+				padding-bottom: 8px
+			}
+			a {
+				font-size: 18px;
+			}
+		}
+	}
+}
+
+.bl_mobile .bl_main {
+	padding: 0;
+}
+
+.book-an-appointment-mobile {
+
+	padding-top: 5.125vw;
+	text-align: center;
+
+	section {
+		padding-bottom: 8vw;
+
+		h1 {
+			text-align: left;
+			padding-left: 5vw;
+			font-weight: bold;
+		}
+
+		hr {
+			width: 90%;
+			margin-left: 5vw;
+		}
+	}
+
+	.schedule {
+		background-color: $black;
+		height: 63vw;
+		padding-top: 8vw;
+
+		img {
+			padding-bottom: 9vw;
+			width: 15vw;
+		}
+
+		h2 {
+			color: $white;
+			font-size: 6.125vw;
+			padding-bottom: 3vw;
+			font-weight: normal;
+			padding-left: 11vw;
+			padding-right: 11vw;
+			line-height: 9vw;
+		}
+		p {
+			font-size: 4vw;
+			line-height: 6.25vw;
+			color: $white;
+			font-weight: normal;
+			padding-left: 6.25vw;
+			padding-right: 6.25vw;
+		}
+
+	}
+
+	.book-section {
+
+		.book-section-text {
+			padding-top: 11vw;
+
+			h2 {
+				color: $black;
+				font-weight: bold;
+				font-size: 6.125vw;
+			}
+
+			p {
+				font-size: 4.6875vw;
+				line-height: 6.25vw;
+				color: $text-book-color;
+				padding-top: 3.125vw;
+				padding-bottom: 2.5vw;
+				padding-left: 3.25vw;
+				padding-right: 3.25vw;
+			}
+
+			a {
+				font-size: 5.625vw;
+				height: 16.875vw;
+				padding-top: 1.6vw;
+				line-height: 13.5vw;
+			}
+
+			a:hover, a:focus, a:visited {
+				color: $white;
+			}
+		}
+	}
+
+}

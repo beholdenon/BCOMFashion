@@ -15,6 +15,7 @@ let sjl = require('sjljs'),
     doesPathExist = require('../helpers/doesPathExist'),
     getViewTemplateName = require('../helpers/getViewTemplateName'),
     deviceDetectionHelper = require('./../helpers/deviceDetection'),
+    tagDataHelper = require('./../helpers/tagDataPreparation'),
 
     isMobile = deviceType => deviceType.toLowerCase() === 'mobile',
     isTablet = deviceType => deviceType.toLowerCase() === 'tablet',
@@ -31,6 +32,7 @@ let sjl = require('sjljs'),
             tealiumType: process.env.ENV_TYPE === "prod" ? "prod" : "qa",
             brightTagEnabled: process.env.brightTagEnabled !== "false",
             polarisHeaderFooterEnabled: process.env.polarisHeaderFooterEnabled === "true",
+            polarisMobileHeaderFooterEnabled: process.env.polarisMobileHeaderFooterEnabled === "true",
             breastCancerAwarenessCampaignEnabled: process.env.breastCancerAwarenessCampaignEnabled === "true"
         };
     },
@@ -47,11 +49,14 @@ let sjl = require('sjljs'),
             protocol = 'https://';
         }
 
-         canonicalHost = protocol + req.info.hostname + '/b/' + path;
+        canonicalHost = _args.isMobile ? process.env.PROD_MOBILE_HOST : process.env.PROD_HOST;
+        // canonicalHost = protocol + req.info.hostname + '/b/' + path;
+
+        let canonicalPath = canonicalHost.concat('/', path);
 
         _args.isMobile = isMobile(detectedDeviceType);
         _args.isTablet = isTablet(detectedDeviceType);
-        _args.headCanonical = {href: canonicalHost};
+        _args.headCanonical = {href: canonicalPath};
         return _args;
     },
 
@@ -111,7 +116,8 @@ module.exports = function (viewAlias, dataProducer, layoutObj) {
                 requestPathPartial = stripInitialForwardSlash(requestPath),
                 dataProducerData = typeof dataProducer === 'function' ? dataProducer(req) : null,
                 argsForView = argsWithDeviceMetaData(req, argsFactory(), requestPathPartial),
-                getMergedArgs = otherData => sjl.extend(true, argsForView, dataProducerData, otherData),
+                utagData = tagDataHelper.getPageType(req),
+                getMergedArgs = otherData => sjl.extend(true, argsForView, dataProducerData, otherData, {utagData:utagData}),
                 resolveRequest = viewTemplateName => {
 
                     return new Promise((resolve) => {
@@ -119,8 +125,12 @@ module.exports = function (viewAlias, dataProducer, layoutObj) {
                         // Resolve view template whether we have args for it or not
                         let resolveRequest = fetchedStaticData => {
                             resolve(res.view(viewTemplateName, {
-                                args: getMergedArgs(fetchedStaticData),
+                                args: getMergedArgs(fetchedStaticData), 
+                                isApp: req.state.ishop_app, 
                                 assetsHost: process.env.BASE_ASSETS,
+                                baseHost: process.env.BASE_HOST,
+                                secureHost: process.env.SECURE_HOST,
+                                mobileHost: process.env.MOBILE_HOST,
                                 slashMinSuffix: slashMinSuffix
                             }, layoutObj));
                         };

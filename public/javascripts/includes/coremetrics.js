@@ -29,7 +29,7 @@ define([
     }
     
     function setEnvironment() {
-        if (window.location.host === 'fashion.bloomingdales.com' || window.location.host === 'bloomingdales.com'){
+        if (window.location.host === 'fashion.bloomingdales.com' || window.location.host === 'www.bloomingdales.com' || window.location.host === 'm.bloomingdales.com') {
             return cmSetProduction(); // jshint ignore:line
         } else {
             return cmSetTest(); // jshint ignore:line

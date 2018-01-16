@@ -1,0 +1,1172 @@
+//@import "libs/compass/css3";
+//@import "libs/compass/**/*";
+@import "vars";
+@import "mixins";
+@import "flexbox_mixins";
+@import "libs/animate.min";
+
+$mobile-sm-bp: 980px;
+$mobile-md-bp: 1025px; // 1280px;
+$hamburger-icon-color: $highlighter-color;
+$mobile-header-height: 48px;
+
+.resort-image-grid-container{
+	display: none;
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	//top: 31px;
+	top: 0;
+	left: 0;
+	background: transparent;
+	z-index: 2;
+	@media only screen and (min-width: $mobile-md-bp) {
+		display: block;
+	}
+}
+
+
+//
+//.resort-world-right-wall {
+//	position: fixed;
+//	width: 100px;
+//	height: 100%;
+//	top: 0;
+//	right: -80px;
+//	bottom: 0;
+//	display: block;
+//	background-color: rgba(147, 58, 204, 0.85) !important;
+//}
+
+
+
+.resort-intro-message-holder {
+	width: 100%;
+	position: relative;
+	z-index: 3;
+}
+.resort-intro-message {
+	//background-color: #fff;
+	font-size: 18px;
+	@media only screen and (min-width: $mobile-sm-bp) {
+		font-size: 24px;
+	}
+	@media only screen and (min-width: $mobile-md-bp) {
+		font-size: 18px;
+	}
+
+	line-height: 1.68;
+	letter-spacing: 1px;
+	position: relative;
+	top: auto;
+	right: auto;
+	text-align: center;
+	@media only screen and (min-width: $mobile-md-bp) {
+		position: absolute;
+		top: 550px;
+		right: -20px;
+		text-align: left;
+	}
+	p {
+		margin: 0;
+		padding: 0;
+		line-height: 1.65;
+		color: #000 !important;
+		font-weight: 300 !important;
+	}
+	span {
+		display: inline;
+		white-space: inherit;
+		@media only screen and (min-width: $mobile-md-bp) {
+			display: block;
+			white-space: nowrap;
+		}
+	}
+}
+
+.resort-mobile-landing-image-grid {
+	display: block;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	@media only screen and (min-width: $mobile-sm-bp) {
+		margin-top: 0;
+		margin-bottom: 80px;
+	}
+	;
+	@media only screen and (min-width: $mobile-md-bp) {
+		display: none;
+	}
+	img {
+		width: 100% !important;
+		max-width: 100% !important;
+	}
+}
+
+.resort-wrapper {
+	position: relative;
+	width: 100%;
+	max-width: 1680px;
+	margin: 0 auto;
+	padding-top: 0;
+	font-family: 'Roboto Mono', monospace, sans-serif;
+	font-weight: 300;
+
+	//----- base font size for desktop
+	font-size: 18px;
+
+	///////////////////////////// ------------------ @include display-flex;
+	@include flexbox;
+	///////////////////////////// ------------------ @include flex-direction(row);
+	@include flex-direction(row);
+
+	h1, h2, h3, h4, h5, h6 {
+		font-family: 'Libre Baskerville', serif !important;
+		font-weight: 700 !important;
+	}
+}
+
+.resort-aside {
+
+	width: 100vw;
+	height: $mobile-header-height;//100vh;
+	padding: 0;
+	z-index: 999;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: #fff;
+
+	@media only screen and (min-width: $mobile-md-bp) {
+		width: 29%;
+		height: auto;
+		padding: 0 1.5vw 0 1em;
+		position: relative;
+		z-index: 10;
+		top: auto;
+		left: auto;
+	}
+
+}
+
+.resort-nav__menu {
+	margin: 0;
+	padding: 0;
+
+	///////////////////////////// ------------------ @include display-flex;
+	@include flexbox;
+	///////////////////////////// ------------------ @include flex-direction(column);
+	@include flex-direction(column);
+	///////////////////////////// ------------------ @include align-items(center);
+	@include align-items(center);
+	///////////////////////////// ------------------
+	@include justify-content(center);
+
+	width: 100%;
+	height: 100%;
+
+	@media only screen and (min-width: $mobile-md-bp) {
+		margin-top: 2.5vw;
+		display: block;
+	}
+
+	li {
+		margin: 0;
+		padding: 0 0 1.8vw 0;
+		list-style: none;
+		line-height: 1.5;
+
+		display: block;
+		width: 100%;
+		text-align: center;
+
+		font-size: 1em;
+
+		@media only screen and (min-width: $mobile-md-bp) {
+			line-height: 1;
+			text-align: left;
+			font-size: calc(16px + (22 - 16) * ((100vw - 320px) / (1680 - 320)));
+		}
+
+		@media screen and (min-width: 1680px) {
+			font-size: 1.22em;
+		}
+
+		&:last-child {
+			a {
+				line-height: 1.3 !important;
+			}
+		}
+	}
+}
+
+.resort-nav{
+	padding-left: 28px;
+}
+
+.resort-aside {
+	will-change: min-height;
+}
+.sidebar__inner{
+	transform: translate(0, 0);
+	transform: translate3d(0, 0, 0);
+	will-change: position, transform;
+}
+
+.resort-aside-nav-item {
+	// background-color: #fff;
+	text-decoration: none !important;
+	display: inline-block;
+	padding: 0 .444em;
+	line-height: 1 !important;
+
+	&:link, &:visited {
+		color: #000 !important;
+		font-weight: 300;
+	}
+
+	background-image: linear-gradient(-180deg, $highlighter-color 60%, rgba(255, 255, 255, 0) 40%);
+	background-position: 0 0;
+	background-repeat: no-repeat;
+	background-size: 0% 100%;
+	transition: all .2s ease-in;
+	&:hover {
+		background-image: linear-gradient(-180deg, $resort-yellow 60%, rgba(255, 255, 255, 0) 40%);
+		background-size: 100% 100%;
+	}
+	&:focus, &:active {
+		outline: 0 !important;
+		//outline: 2px solid $highlighter-color;
+		background-image: linear-gradient(-180deg, $resort-yellow 60%, rgba(255, 255, 255, 0) 40%);
+		background-size: 100% 100%;
+	}
+}
+* {
+	&:focus, &:active {
+		//outline: 2px solid $highlighter-color;
+	}
+}
+.resort-current-item {
+	background-image: linear-gradient(-180deg, $highlighter-color 60%, rgba(255, 255, 255, 0) 40%);
+	background-size: 100% 100% !important;
+	cursor: default !important;
+	&:hover {
+		background-image: linear-gradient(-180deg, $highlighter-color 60%, rgba(255, 255, 255, 0) 40%);
+	}
+}
+
+.resort-main {
+	width: 100%;
+	padding: 0 5vw;
+	position: relative;
+	background-color: #fff;
+
+	@media screen and (min-width: $mobile-sm-bp) {
+		padding: 0 3em;
+	}
+	@media only screen and (min-width: $mobile-md-bp) {
+		width: 71%;
+		padding: 0 2em 0 0;
+	}
+}
+
+.resort-logo {
+	position: relative;
+	line-height: 1 !important;
+	padding: 1.8em 0 0 0;
+}
+
+.resort-nav__logo {
+	font-size: .888em;
+	line-height: $mobile-header-height;
+	height: $mobile-header-height;
+	text-align: left;
+	padding: 0 0 0 $mobile-header-height;
+
+	color: #000 !important;
+
+	@media only screen and (min-width: 340px) {
+		padding: 0;
+		text-align: center;
+	}
+
+	@media only screen and (min-width: $mobile-md-bp) {
+		// Correctly adding unit to number: 1px + (88 - 1)
+		font-size: calc(1px + (88 - 1) * ((100vw - 300px) / (1680 - 300)));
+		text-align: left;
+		padding: 70px 0 0 0;
+		line-height: 1;
+		height: auto;
+	}
+
+	@media screen and (min-width: 1680px) {
+		font-size: 4.9em;
+	}
+
+	span {
+		display: inline;
+		white-space: normal;
+		line-height: 1;
+		@media only screen and (min-width: $mobile-md-bp) {
+			display: block;
+			white-space: nowrap;
+			line-height: 1.175;
+		}
+	}
+
+}
+
+.resort-nav__header {
+	background-color: #fff;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: $mobile-header-height;
+	border-bottom: 1px solid #221010;
+	z-index: 1000;
+
+	@media only screen and (min-width: $mobile-md-bp) {
+		background-color: transparent;
+		position: relative;
+		top: auto;
+		left: auto;
+		height: auto;
+		border-bottom: 0;
+	}
+}
+.resort-nav__container {
+	position: fixed;
+	top: -120vh;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	z-index: 999;
+	background-color: #fff;
+
+	transform: translate3d(0, 0, 0);
+	transition: transform .3s;
+
+	@media only screen and (min-width: $mobile-md-bp) {
+		position: relative;
+		top: auto;
+		left: auto;
+		height: auto;;
+		background-color: transparent;
+	}
+}
+
+.resort-pages-wrapper {
+	position: relative;
+	z-index: 5;
+	margin-top: 0;
+	@media only screen and (min-width: $mobile-md-bp) {
+		margin-top: 2000px;
+	}
+
+	//-webkit-transition: margin-top 1s;
+	//-moz-transition: margin-top 1s;
+	//-o-transition: margin-top 1s;
+	//transition: margin-top 1s;
+	//&.was-scrolled {
+	//	margin-top: 0;
+	//}
+
+	article {
+		padding-top: 3em;
+	}
+}
+
+
+.resort-page {
+	position: relative;
+	width: 100%;
+	max-width: 1048px;
+}
+
+.resort-florals-page {
+	// padding-top: 0 !important;
+}
+
+.resort-page-row {
+	background-color: #fff;
+	text-align: center;
+	margin: 0;
+
+	@media only screen and (min-width: 1280px) {
+		margin: 108px 0 0 0;
+	}
+
+	@media only screen and (min-width: $mobile-sm-bp) {
+		///////////////////////////// ------------------ @include display-flex;
+		@include flexbox;
+		///////////////////////////// ------------------ @include flex-direction(row);
+		@include flex-direction(row);
+
+		text-align: left;
+		//margin: 5vw 0 0 0;
+		margin: 90px 0 0 0;
+	}
+
+}
+
+div.resort-page__hero-image {
+	margin: 60px 0 0 0;
+	@media only screen and (min-width: $mobile-sm-bp) {
+		margin: 108px 0 0 0;
+	}
+}
+
+.resort-page-row__cell {
+	position: relative;
+
+	margin: 40px 0 60px 0;
+
+	@media only screen and (min-width: $mobile-sm-bp) {
+		width: 50%;
+		max-width: 488px;
+		margin: 0;
+	}
+
+	&:first-child {
+		margin-right: auto;
+		padding-right: 0;
+		@media only screen and (min-width: $mobile-sm-bp) {
+			padding-right: 1.3em;
+		}
+		@media screen and (min-width: $mobile-md-bp) {
+			padding-right: calc(12px + (20 - 12) * ((100vw - 1024px) / (1500 - 1024)));
+		}
+		@media screen and (min-width: 1499px) {
+			padding-right: 0;
+		}
+	}
+	&:last-child {
+		margin-left: auto;
+		padding-left: 0;
+		@media only screen and (min-width: $mobile-sm-bp) {
+			padding-left: 1.3em;
+		}
+		@media screen and (min-width: $mobile-md-bp) {
+			padding-left: calc(12px + (20 - 12) * ((100vw - 1024px) / (1500 - 1024)));
+		}
+		@media screen and (min-width: 1499px) {
+			padding-left: 0;
+		}
+	}
+}
+
+.resort-page-prod__link {
+	display: block;
+	position: relative;
+	text-decoration: none !important;
+	&:hover {
+		color: inherit;
+	}
+	line-height: .8;
+	@media screen and (min-width: $mobile-md-bp) {
+
+	}
+}
+
+.resort-page-prod__frame {
+
+	position: absolute;
+	top: 0;
+	left: 0;
+	font-size: 18px;
+	line-height: 1;
+
+	///////////////////////////// ------------------ @include display-flex;
+	@include flexbox;
+	///////////////////////////// ------------------ @include align-items(flex-end);
+	@include align-items(flex-end);
+
+
+	width: 100%;
+	height: calc(100% + 2px);
+
+	border: 1em solid transparent;
+
+	@media screen and (min-width: $mobile-sm-bp) {
+		border: 30px solid transparent;
+	}
+}
+.frame--yellow {
+	border: 1em solid $resort-yellow;
+	@media screen and (min-width: $mobile-sm-bp) {
+		border: 30px solid $resort-yellow;
+	}
+	+ .label--adjusted {
+		padding: 0;
+
+		left: 0;
+		top: 24px;
+	}
+	@media screen and (min-width: $mobile-md-bp) {
+		line-height: 1;
+		+ .label--adjusted {
+
+			left: 0;
+			top: 30px;
+		}
+	}
+}
+.frame--white {
+	border: 1em solid #fff;
+	@media screen and (min-width: $mobile-sm-bp) {
+		border: 30px solid #fff;
+	}
+	.resort-page-prod__label {
+		//bottom: -30px;
+		//left: 0;
+	}
+	+ .label--repositioned {
+		@media screen and (min-width: $mobile-sm-bp) {
+			left: 30px;
+		}
+		bottom: 0;
+	}
+}
+
+.resort-page-prod__label {
+	font-weight: 300;
+	display: inline-block;
+	//border-bottom: 1px solid #000;
+	text-decoration: underline;
+	padding: 8px 0 0;
+	//line-height: .8;
+	@media screen and (min-width: $mobile-md-bp) {
+		//padding: 8px 0 0;
+		line-height: 1;
+	}
+	position: relative;
+
+	//bottom: -8px;
+	//left: -4px;
+	//bottom: -60px;
+	//left: -15px;
+	@media screen and (min-width: $mobile-sm-bp) {
+		//left: -30px;
+	}
+}
+
+.label--adjusted {
+	left: 0;
+	@media screen and (min-width: $mobile-sm-bp) {
+		left: 30px;
+	}
+	//color: #fff;
+	//border-bottom: 1px solid #fff;
+}
+
+.label--refitted {
+	position: absolute;
+	bottom: -12px;
+	width: 100%;
+	@media screen and (min-width: $mobile-sm-bp) {
+		bottom: 4px;
+		width: auto;
+	}
+}
+.label--repositioned {
+	@media screen and (min-width: $mobile-sm-bp) {
+		display: block;
+		position: absolute;
+		bottom: -26px;
+	}
+}
+
+.resort-page__hero-image {
+	position: relative;
+	margin: 60px 0;
+	text-align: center;
+	@media screen and (min-width: $mobile-md-bp) {
+		margin: 0 0 90px 0;
+	}
+
+	@media screen and (min-width: $mobile-sm-bp) {
+		text-align: left;
+		margin: 90px 0 0 0;
+	}
+
+	a {
+		display: block;
+		position: relative;
+		&:hover {
+			color: inherit;
+		}
+	}
+	img {
+		//margin-top: 60px;
+	}
+}
+.resort-florals-hero {
+	// margin-top: 140px;
+
+}
+
+.resort-page-copy {
+	a {
+		text-decoration: none !important;
+		&:hover {
+			text-decoration: none !important;
+			color: inherit !important;
+		}
+	}
+}
+.resort-page-copy__image {
+	width: 100%;
+	max-width: 100%;
+	height: auto;
+	@media screen and (min-width: $mobile-sm-bp) {
+		max-width: 488px; // original width
+	}
+}
+.resort-page-copy__heading {
+	color: #000 !important;
+	line-height: 1.075;
+	letter-spacing: -1px;
+	margin: 1em 0 0.5em 0;
+	@media screen and (min-width: $mobile-sm-bp) {
+		margin: 0 0 0.35em 0;
+	}
+
+	font-size: 2.222em;
+	@media screen and (min-width: $mobile-md-bp) {
+		font-size: calc(30px + (50 - 28) * ((100vw - 1024px) / (1500 - 1024)));
+	}
+	@media screen and (min-width: 1499px) {
+		font-size: 3.222em;
+	}
+
+}
+.resort-page-copy__text {
+	font-weight: 300 !important;
+	line-height: 1.75;
+	margin: 0;
+	padding: 0;
+	font-size: .8em;
+
+	@media screen and (min-width: $mobile-sm-bp) {
+		font-size: .84em;
+	}
+	@media screen and (min-width: $mobile-md-bp) {
+		font-size: calc(12px + (18 - 12) * ((100vw - 1024px) / (1500 - 1024)));
+	}
+	@media screen and (min-width: 1299px) {
+		//font-size: calc(12px + (18 - 12) * ((100vw - 1024px) / (1500 - 1024)));
+	}
+	@media screen and (min-width: 1499px) {
+		font-size: 1em;
+	}
+	span {
+		///white-space: nowrap;
+	}
+}
+.resort-page-copy__link {
+	font-family: 'Libre Baskerville', serif !important;
+	font-weight: 700 !important;
+	font-size: 1.6em;
+	@media screen and (min-width: $mobile-md-bp) {
+		font-size: calc(2px + (34 - 2) * ((100vw - 300px) / (1500 - 300)));
+	}
+
+	@media screen and (min-width: 1499px){
+		font-size: 1.888em;
+	}
+
+	text-decoration: none !important;
+	@include resort-link-bg;
+	line-height: 1;
+	display: inline-block;
+	padding: 0 0.1em;
+	margin-top: 1em;
+	&:hover {
+		text-decoration: none !important;
+		color: inherit !important;
+	}
+	&.damn--special {
+		@media screen and (min-width: $mobile-md-bp) {
+			margin-top: 12px;
+		}
+	}
+}
+//.shop-swimsuits-and-cover-ups--special {
+//	line-height: 2.7;
+//}
+.resort-page-prod__image {
+	width: 100%;
+	max-width: 100%;
+	height: auto;
+
+	@media only screen and (min-width: $mobile-sm-bp) {
+		max-width: 488px; // original width
+	}
+}
+
+.resort-page-prod-grid {
+
+	width: 100%;
+
+	///////////////////////////// ------------------ @include display-flex;
+	@include flexbox;
+	///////////////////////////// ------------------
+	@include flex-direction(row);
+	///////////////////////////// ------------------ @include flex-wrap(wrap);
+	@include flex-wrap(wrap);
+	///////////////////////////// ------------------ @include justify-content(space-between);
+	@include justify-content(space-between);
+
+	a {
+		display: block;
+
+		width: 50%;
+		@media only screen and (min-width: $mobile-sm-bp) {
+			width: 40%;
+		}
+		@media only screen and (min-width: 1499px) {
+			width: 50%;
+		}
+
+		text-align: center;
+		text-decoration: none;
+		line-height: 1;
+		margin-bottom: 2em;
+		&:hover {
+			color: inherit;
+		}
+		span {
+			display: inline-block;
+			//font-size: 1em;
+			//@media only screen and (min-width: $mobile-sm-bp) {
+			font-size: .84em;
+			//}
+			//border-bottom: 1px solid #000;
+			padding-bottom: 2px;
+			line-height: 1.15;
+			text-decoration: underline;
+		}
+	}
+	img {
+		display: block;
+		width: 100%;
+		max-width: 210px; // original width
+		height: auto;
+		margin: 0 auto;
+	}
+}
+
+.resort-page-footer {
+	position: relative;
+	text-align: center;
+
+	margin-top: 5em;
+
+	@media only screen and (min-width: $mobile-md-bp) {
+		margin-top: 5em;
+		//padding: 4.444em 0 3em 0;
+	}
+	padding: 4.5em 0;
+
+	border-top: 1px solid #000;
+	border-bottom: 1px solid #000;
+	a {
+		font-family: 'Libre Baskerville', serif !important;
+		font-weight: 700 !important;
+		font-size: 1.5em;
+		@media only screen and (min-width: $mobile-sm-bp) {
+			font-size: 1.888em;
+		}
+		text-decoration: none !important;
+		@include resort-link-bg;
+		line-height: 1;
+		display: inline-block;
+		padding: 0 4px;
+		&:hover {
+			color: inherit;
+		}
+	}
+}
+.resort-page-footer__swim-footer {
+	border-bottom: 0 none;
+}
+
+
+.nav-hamburger {
+	@media screen and (min-width: $mobile-md-bp) {
+		display: none;
+	}
+	background-color: transparent !important;
+	display: block;
+	position: fixed;
+	top: 6px;
+	left: 4px;
+	z-index: 1000;
+	overflow: hidden;
+	margin: 0;
+	padding: 0;
+	width: 38px;
+	height: 38px;
+	font-size: 0;
+	text-indent: -9999px;
+	appearance: none;
+	box-shadow: none;
+	border-radius: 0;
+	border: none;
+	cursor: pointer;
+	transition: background 0.3s;
+	span {
+		display: block;
+		position: absolute;
+		top: 17px;
+		left: 8px;
+		right: 8px;
+		height: 3px;
+		background: $hamburger-icon-color;
+		transition: background 0s 0.3s;
+		&:before, &:after {
+			position: absolute;
+			display: block;
+			left: 0;
+			width: 100%;
+			height: 3px;
+			background-color: $hamburger-icon-color;
+			content: "";
+			transition-duration: 0.3s, 0.3s;
+			transition-delay: 0.3s, 0s;
+		}
+		&:before {
+			top: -7px;
+			transition-property: top, transform;
+		}
+		&:after {
+			bottom: -7px;
+			transition-property: bottom, transform;
+		}
+	}
+}
+
+.resort-wrapper {
+	&.mobile-nav-is-open {
+		/* active state */
+		.nav-hamburger {
+			background-color: transparent;
+		}
+		.nav-hamburger span {
+			background: none;
+		}
+		.nav-hamburger span::before {
+			top: 0;
+			transform: rotate(45deg);
+		}
+		.nav-hamburger span::after {
+			bottom: 0;
+			transform: rotate(-45deg);
+		}
+		.nav-hamburger span::before,
+		.nav-hamburger span::after {
+			transition-delay: 0s, 0.3s;
+		}
+
+		.resort-nav__container {
+			transform: translate3d(0, 120vh, 0);
+		}
+	}
+}
+
+.resort-2018 {
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+	background-color: #fff;
+	color: #000 !important;
+	position: relative;
+	z-index: 4;
+	margin-bottom: 240px;
+}
+.resort-footer {
+	background-color: $highlighter-color;
+	position: fixed;
+	width: 100%;
+	height: 240px;
+	left: 0;
+	bottom: 0;
+	z-index: 3;
+
+}
+.resort-footer-content {
+	position: relative;
+	width: 100%;
+	max-width: 1680px;
+	margin: 0 auto;
+	padding: 3em 1em 1em 1em;
+	@media only screen and (min-width: $mobile-sm-bp) {
+		padding: 6em 2.5em;
+	}
+	z-index: 99;
+	@media only screen and (min-width: 1679px) {
+		padding: 6em 0 6em 2vw;
+	}
+}
+.resort-footer-heading {
+	font-family: 'Libre Baskerville', serif !important;
+	font-weight: 700 !important;
+	font-size: 1.8em;
+	color: #000;
+	text-align: center;
+	@media only screen and (min-width: $mobile-md-bp) {
+		text-align: left;
+	}
+}
+.resort-footer-social-links-list {
+	@include flexbox;
+	@include flex-wrap(wrap);
+	margin: 0;
+	padding: 0;
+	@include justify-content(center);
+	@media only screen and (min-width: $mobile-md-bp) {
+		@include justify-content(flex-start);
+	}
+}
+.resort-footer-social-links-list_item {
+	padding: 1em 1em 0 1em;
+	margin: 0;
+	list-style: none;
+	//flex: 1;
+	text-align: center;
+	display: inline-block;
+
+	@media only screen and (min-width: $mobile-md-bp) {
+		padding: 1em 3em 0 0;
+		//flex: 0;
+		text-align: left;
+	}
+}
+.resort-footer-social-link {
+	text-decoration: underline;
+	display: inline-block;
+	padding: 0.5em 0 0 0;
+	@media only screen and (min-width: 360px) {
+		padding: 0.5em;
+	}
+	@media only screen and (min-width: $mobile-md-bp) {
+		padding: 0.5em 0.5em 0.5em 0;
+	}
+	font-size: 1.4em;
+	font-family: 'Roboto Mono', monospace, sans-serif;
+	font-weight: 300;
+	color: #000;
+	&:hover {
+		color: #000;
+	}
+}
+
+.resort-back-to-top-btn-holder {
+	position: fixed;
+	right: 28px;
+	bottom: 24px;
+	@media only screen and (min-width: $mobile-md-bp) {
+		bottom: 56px;
+	}
+	transition: bottom 0.3s;
+	@media only screen and (min-width: 1780px) {
+		right: calc(50% - 820px);
+	}
+	&.is-not-fixed {
+		position: absolute !important;
+		right: -6px;
+		@media only screen and (min-width: 1780px) {
+			right: -124px !important;
+		}
+		bottom: 40px !important;
+	}
+}
+
+.resort-back-to-top-btn {
+	background: white;
+	width: 56px;
+	height: 56px;
+	line-height: 56px;
+	text-indent: -9000px;
+	padding: 0;
+	border: 2px solid $highlighter-color;
+	border-radius: 50%;
+	text-align: center;
+	svg {
+		display: block;
+		position: absolute;
+		top: 8px;
+		left: 7px;
+		width: 36px;
+		height: auto;
+	}
+	&:hover {
+
+		@media only screen and (min-width: $mobile-md-bp) {
+			background: $highlighter-color;
+			svg {
+				fill: #fff;
+			}
+		}
+
+	}
+	&:focus, &:active {
+		//outline: 0;
+		background: white;
+		svg {
+			fill: #000;
+		}
+	}
+}
+
+.resort-scroll-down-btn-holder {
+	position: fixed;
+	right: 28px;
+	bottom: 56px;
+	//transition: bottom 0.3s;
+	z-index: 999;
+	@media only screen and (min-width: 1780px) {
+		right: calc(50% - 820px);
+	}
+}
+.resort-scroll-down-btn {
+	background: white;
+	width: 56px;
+	height: 56px;
+	line-height: 56px;
+	text-indent: -9000px;
+	padding: 0;
+	border: 2px solid $highlighter-color;
+	border-radius: 50%;
+	text-align: center;
+	svg {
+		display: block;
+		position: absolute;
+		top: 8px;
+		left: 7px;
+		width: 36px;
+		height: auto;
+	}
+	&:hover {
+		background: $highlighter-color;
+		svg {
+			fill: #fff;
+		}
+	}
+	&:focus, &:active {
+		outline: 0;
+	}
+	-webkit-transform: scaleY(-1);
+	transform: scaleY(-1);
+}
+@-moz-keyframes bounce {
+	0%, 20%, 50%, 80%, 100% {
+		-moz-transform: translateY(0);
+		transform: translateY(0);
+	}
+	40% {
+		-moz-transform: translateY(-30px);
+		transform: translateY(-30px);
+	}
+	60% {
+		-moz-transform: translateY(-15px);
+		transform: translateY(-15px);
+	}
+}
+@-webkit-keyframes bounce {
+	0%, 20%, 50%, 80%, 100% {
+		-webkit-transform: translateY(0);
+		transform: translateY(0);
+	}
+	40% {
+		-webkit-transform: translateY(-30px);
+		transform: translateY(-30px);
+	}
+	60% {
+		-webkit-transform: translateY(-15px);
+		transform: translateY(-15px);
+	}
+}
+@keyframes bounce {
+	0%, 20%, 50%, 80%, 100% {
+		-moz-transform: translateY(0);
+		-ms-transform: translateY(0);
+		-webkit-transform: translateY(0);
+		transform: translateY(0);
+	}
+	40% {
+		-moz-transform: translateY(-30px);
+		-ms-transform: translateY(-30px);
+		-webkit-transform: translateY(-30px);
+		transform: translateY(-30px);
+	}
+	60% {
+		-moz-transform: translateY(-15px);
+		-ms-transform: translateY(-15px);
+		-webkit-transform: translateY(-15px);
+		transform: translateY(-15px);
+	}
+}
+.bounce {
+	-moz-animation: bounce 2s infinite;
+	-webkit-animation: bounce 2s infinite;
+	animation: bounce 2s infinite;
+
+	-webkit-animation-iteration-count: 2;
+	animation-iteration-count: 2;
+}
+
+.resort-key-keeper {
+	width:350%;
+	height: 240px;
+	overflow: hidden;
+	//background-color: red;
+	position: absolute;
+	left: -150%;
+	bottom: -240px;
+}
+
+.resort-page-footer-nav {
+	width: 100%;
+	margin: 1em 0 0;
+	@include flexbox();
+	@include justify-content(center);
+	@include flex-wrap(wrap);
+	@media only screen and (min-width: $mobile-md-bp) {
+		@include flex-wrap(nowrap);
+	}
+	li {
+		list-style: none;
+		margin: 0 1em;
+		@media only screen and (min-width: $mobile-md-bp) {
+			margin: 0 2em 0 0;
+		}
+
+		padding: 0;
+		font-size: 1em;
+
+		&:first-child {
+			width: 100%;
+			@media only screen and (min-width: $mobile-md-bp) {
+				width: auto;
+			}
+		}
+	}
+	a:link, a:visited, a:hover, a:active {
+		font-family: 'Roboto Mono', monospace, sans-serif !important;
+		font-weight: 300 !important;;
+		text-decoration: underline !important;
+		color: #000 !important;
+		font-size: 1em;
+		background-color: #fff !important;
+		background-image: none !important;
+	}
+}
+
+.block-maker, .scroll-block {
+	background-color: #fff;
+}
+
+.resort-2-lines-link {
+	line-height: 2.6;
+}

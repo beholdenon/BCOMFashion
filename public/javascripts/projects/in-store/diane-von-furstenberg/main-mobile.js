@@ -12,7 +12,7 @@ var APP = {
 APP.init = function () {
 	var self = this;
 
-	self.coremetrics('Pageview', self.cm, 'MBL:no_results-store_only_{diane_von_furstenberg}');
+	self.coremetrics('Pageview', self.cm, 'MBL: no_results-store_only_diane_von_furstenberg');
 };
 
 //(req) CM business logic
