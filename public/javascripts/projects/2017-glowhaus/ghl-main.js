@@ -492,10 +492,10 @@ $(function() {
         },
         'Kosas': {
             'theGlowDownCopy': 'Because this L.A.&dash;based brand makes only lipsticks, it&#39;s focused on perfecting the art and science of lip color. Every shade in its natural collection is handmade with green tea, shea butter and sweet orange oil&mdash;plus, free of parabens, sulfates and phthalates. The sheer, buildable colors range from nudes to brights and feature a non&dash;drying matte finish. Trust us, you&#39;ll want one of each. ',
-        'bestsellerImgLink': 'https://www.bloomingdales.com/shop/product/kosas-weightless-lipstick?ID=2679460',
-        'bestsellerHeading': 'Weightless Lip Color in Rosewater',
-        'bestsellerCopy': 'The perfect dusty pink shade that looks like your lips (but better)—and it’s super hydrating and plumping.',
-        'shopLinkUrl': 'https://www.bloomingdales.com/shop/makeup-perfume-beauty/glowhaus-makeup-skin-care/Brand/Kosas?id=1035059'
+            'bestsellerImgLink': 'https://www.bloomingdales.com/shop/product/kosas-weightless-lipstick?ID=2679460',
+            'bestsellerHeading': 'Weightless Lip Color in Rosewater',
+            'bestsellerCopy': 'The perfect dusty pink shade that looks like your lips (but better)—and it’s super hydrating and plumping.',
+            'shopLinkUrl': 'https://www.bloomingdales.com/shop/makeup-perfume-beauty/glowhaus-makeup-skin-care/Brand/Kosas?id=1035059'
         },
         'Lano': {
             'theGlowDownCopy': 'Lanolin&mdash;a natural occurring wax found on sheepswool&mdash;is the star of this skin care brand out of Australia. Not only does it mimic skin lipids (aka it’s super compatible with your skin), but it can hold up to double its weight in water to deliver extreme hydration. The award&dash;winning line of lip, hand and body products is everything you need to stay moisturized year&dash;round. ',
@@ -580,7 +580,7 @@ $(function() {
             'videoID': '5573554980001'
         },
         'SUVA Beauty': {
-        'theGlowDownCopy': 'Taking its name from the vibrant capital of Fiji, this eye makeup line is best known for its range of pop colors and professional-grade palettes. Its shadows are formulated with built-in primers and intense pigments, making them essential for makeup artists and beauty bloggers alike. Whether you’re looking to create a simple smoky eye or something more exotic, this line of shadows and liners has just what you need.',
+            'theGlowDownCopy': 'Taking its name from the vibrant capital of Fiji, this eye makeup line is best known for its range of pop colors and professional-grade palettes. Its shadows are formulated with built-in primers and intense pigments, making them essential for makeup artists and beauty bloggers alike. Whether you’re looking to create a simple smoky eye or something more exotic, this line of shadows and liners has just what you need.',
             'bestsellerImgLink': 'https://www.bloomingdales.com/shop/product/suva-beauty-8-shade-eyeshadow-palette?ID=2693415',
             'bestsellerHeading': 'Cupcakes &amp; Monsters 8-Shade Eyeshadow Palette',
             'bestsellerCopy': 'A wild, graffiti-inspired collection of vibrant mattes—all in the brand’s signature butter formula.',
@@ -595,6 +595,36 @@ $(function() {
             'videoID': '5573561609001'
         },
         
+        'Bon Parfumeur': {
+            'theGlowDownCopy': 'Founder Ludovic Bonneton imagined his French perfume line as a fragrance wardrobe that could be mixed, matched and layered. The bottles are color-coded by category, including floral, fruity and woody, and the labels highlight the three main notes, making it super simple to find your signature scent.',
+            'bestsellerImgLink': 'https://www.bloomingdales.com/shop/product/bon-parfumeur-eau-de-parfum-501?ID=2725818',
+            'bestsellerHeading': 'Eau de Parfum 101',
+            'bestsellerCopy': 'Earthy musk tempers romantic rose for a perfume that is both sweet and sophisticated.',
+            'shopLinkUrl': 'https://www.google.com'
+        },
+        'Drybar': {
+            'theGlowDownCopy': 'As the founder of game-changing blowout chain Drybar, Alli Webb has made good hair her business. The salons’ signature yellow styling tools—like a powerful dryer that’s up to 20 percent faster than other professional tools—and products designed to make DIY styling a breeze are all you need to master any look from stick-straight to spirals—no appointment needed.',
+            'bestsellerImgLink': 'https://www.bloomingdales.com/shop/product/drybar-detox-dry-shampoo-3.5-oz.?ID=173562',
+            'bestsellerHeading': 'Detox Dry Shampoo',
+            'bestsellerCopy': 'Microfine rice powders absorb oil to restore volume and instantly refresh hair—basically, it’s the ultimate blowout extender.',
+            'shopLinkUrl': 'https://www.google.com'
+        },        
+        'Too Cool for School': {
+            'theGlowDownCopy': 'We’re not ashamed to admit that we totally judged a book by its cover—or, in this case, a mascara by its package. This unconventional Korean beauty brand collaborates with artists, so you’ll find whimsical drawings of dinosaurs on the CC creams and quirky cats on the lip balms. But there’s so much more than meets the eye: Egg-infused masks and moisturizers treat everything from acne to signs of aging, lip tints have epic staying power and cleansers deliver results that are beyond skin deep.',
+            'bestsellerImgLink': 'https://www.bloomingdales.com/shop/product/too-cool-for-school-egg-cream-mask-hydration?ID=2788521',
+            'bestsellerHeading': 'Egg Cream Mask Hydration',
+            'bestsellerCopy': 'Egg extracts, coconut water, anti-agers and botanical extracts whip dry, dull skin into shape.',
+            'shopLinkUrl': 'https://www.google.com'
+        },        
+
+
+
+
+
+
+
+
+
         'beautyblender': {
             'heading': 'beautyblender&reg;',
             'bestsellerImgLink': 'https://www.bloomingdales.com/shop/product/beautyblender-the-original-beautyblender?ID=2661588',
@@ -630,7 +660,41 @@ $(function() {
             'bestsellerCopy': 'With its innovative silicone design, you won’t waste a drop of makeup as you apply foundation, blush, highlighter and concealer. Just add your product of choice to the teardrop-shaped tool, dab it on and blend it out.',
             'shopLinkUrl': 'https://www.bloomingdales.com/shop/product/makeupdrop-silicone-makeup-applicator?ID=2621052',
             'videoID': '5573546894001'
-        }
+        },
+        'BioRepublic': {
+            'heading': 'BioRepublic',
+            'bestsellerImgLink': 'https://www.bloomingdales.com/shop/product/biorepublic-lost-baggage-under-eye-emergency-repair-mask?ID=1667902',
+            'bestsellerHeading': 'Lost Baggage Under Eye Emergency Repair Mask',
+            'bestsellerCopy': 'Whether you’re recovering from a late night, facing an early morning or both, a few minutes with this peptide-packed eye treatment will breathe new life into tired eyes, hydrating and firming to send dark circles and bags packing.',
+            'shopLinkUrl': 'https://www.bloomingdales.com/shop/product/biorepublic-lost-baggage-under-eye-emergency-repair-mask?ID=1667902'
+        },
+        'Shhhowercap': {
+            'heading': 'Shhhowercap',
+            'bestsellerImgLink': 'https://www.bloomingdales.com/shop/product/shhhowercap-nanotech-fabric-turban-shower-cap?ID=2423287',
+            'bestsellerHeading': 'Nanotech Fabric Turban Shower Cap',
+            'bestsellerCopy': 'Never before has a shower cap been called “chic!” This 100 percent waterproof upgrade keeps your hair frizz-free during even the steamiest of showers. The fabric repels moisture at a molecular level and the rubber grip protects your hairline so your blowout lives to see another day.',
+            'shopLinkUrl': 'https://www.bloomingdales.com/shop/product/shhhowercap-nanotech-fabric-turban-shower-cap?ID=2423287'
+        },
+        'Patchology': {
+            'heading': 'Patchology',
+            'bestsellerImgLink': 'https://www.bloomingdales.com/shop/product/patchology-wink-a-kiss-flashpatch-5-minute-hydrogels?ID=2716599',
+            'bestsellerHeading': 'Wink & A Kiss FlashPatch 5-Minute Hydrogels',
+            'bestsellerCopy': 'Add this multitasking kit to your night-out prep. The Anytime Perk-Me-Up patches deliver caffeine and collagen to refresh eyes, while The Super Smooth Talker gels plump and soften lips with peptides and green tea extracts.',
+            'shopLinkUrl': 'https://www.bloomingdales.com/shop/product/patchology-wink-a-kiss-flashpatch-5-minute-hydrogels?ID=2716599'
+        },
+        'Preheels': {
+            'heading': 'Preheels',
+            'bestsellerImgLink': 'https://www.bloomingdales.com/shop/product/preheels-blister-prevention-spray?ID=2635210',
+            'bestsellerHeading': 'Women’s Blister Prevention Spray',
+            'bestsellerCopy': 'Three years of scientific research resulted in this flexible, clear film that blocks shoe friction to stop blisters from forming. Just spray and let dry for a genius solution to breaking in new shoes or pesky rubbing.',
+            'shopLinkUrl': 'https://www.bloomingdales.com/shop/product/preheels-blister-prevention-spray?ID=2635210'
+        }         
+
+
+
+
+
+
     };
 
     // video page content
