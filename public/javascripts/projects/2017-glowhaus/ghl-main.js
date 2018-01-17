@@ -194,6 +194,185 @@ $(function() {
 
     var videoPagePopupsData = {
 
+
+
+
+        'BurgundyLip': {
+            'heading': 'Burgundy Lip',
+            'videoID': '5713602540001',
+            'productslist': [
+                {
+                    'thumb': 'thumb1.jpg',
+                    'title': 'COVER FX',
+                    'description': 'Cover FX Custom Enhancing Drops in Candlelight',
+                    'link': 'https://www.bloomingdales.com/shop/product/cover-fx-custom-enhancer-drops?ID=2687217'
+                },
+                {
+                    'thumb': 'thumb2.jpg',
+                    'title': 'RMS',
+                    'description': 'RMS Lipstick in Rapture',
+                    'link': 'https://www.bloomingdales.com/shop/product/?ID=2815451'
+                }
+            ]
+        },
+        'SkinPrep': {
+            'heading': 'Skin Pre',
+            'videoID': '5713602249001',
+            'productslist': [
+                {
+                    'thumb': 'thumb1.jpg',
+                    'title': 'Saturday Skin',
+                    'description': 'Saturday Skin Eye Serum',
+                    'link': 'https://www.bloomingdales.com/shop/product/saturday-skin-wide-awake-brightening-eye-cream?ID=2629817'
+                },
+                {
+                    'thumb': 'thumb2.jpg',
+                    'title': 'Too Cool For School',
+                    'description': 'Too Cool for School Egg Cream Sheet Mask',
+                    'link': 'https://www.bloomingdales.com/shop/product/too-cool-for-school-egg-cream-mask-firming?ID=2788522'
+                },
+                {
+                    'thumb': 'thumb3.jpg',
+                    'title': 'GLAMGLOW',
+                    'description': 'GLAMGLOW Waterburst Moisturizer',
+                    'link': 'https://linkkkkkkkmissingggg'
+                },
+                {
+                    'thumb': 'thumb4.jpg',
+                    'title': 'Supergoop!',
+                    'description': 'Supergoop! Daily Correct CC Cream SPF 35',
+                    'link': 'https://www.bloomingdales.com/shop/product/supergoop-daily-correct-cc-cream-spf-35?ID=2635233'
+                }
+            ]
+        },
+
+        'BlurredLip': {
+            'heading': 'Blurred Lip',
+            'videoID': '5713598139001',
+            'productslist': [
+                {
+                    'thumb': 'thumb1.jpg',
+                    'title': 'Frank Body',
+                    'description': 'Frank Body Lip Scrub',
+                    'link': 'https://www.bloomingdales.com/shop/product/frank-body-lip-scrub?ID=2661754'
+                },
+                {
+                    'thumb': 'thumb2.jpg',
+                    'title': 'RMS',
+                    'description': 'RMS Lipstick in Flight of Fancy',
+                    'link': 'https://www.bloomingdales.com/shop/product/?ID=2815451'
+                },
+                {
+                    'thumb': 'thumb3.jpg',
+                    'title': 'Beauty Blender',
+                    'description': 'Beauty Blender',
+                    'link': 'https://www.bloomingdales.com/shop/product/beautyblender-the-original-beautyblender?ID=2661588'
+                },
+                {
+                    'thumb': 'thumb4.jpg',
+                    'title': 'NUDESTIX',
+                    'description': 'NUDESTIX Nudies All Over Face Color in Bare Back',
+                    'link': 'https://www.bloomingdales.com/shop/product/nudestix-nudies-all-over-face-color?ID=2653151'
+                }
+            ]
+        },
+
+
+
+        'GraphicEye': {
+            'heading': 'Graphic Eye',
+            'videoID': '5713605251001',
+            'productslist': [
+                {
+                    'thumb': 'thumb1.jpg',
+                    'title': 'The Vamp Stamp',
+                    'description': 'Vamp Stamp',
+                    'link': 'https://www.bloomingdales.com/shop/product/the-vamp-stamp-vink-vortex-black-liquid-eyeliner-ink-verge-angle-eyeliner-brush?ID=2648611'
+                },
+                {
+                    'thumb': 'thumb2.jpg',
+                    'title': 'COVER FX',
+                    'description': 'Cover FX Loose Setting Powder',
+                    'link': 'https://www.bloomingdales.com/shop/product/cover-fx-perfect-setting-powder?ID=2687220'
+                },
+                {
+                    'thumb': 'thumb3.jpg',
+                    'title': 'The BrowGal',
+                    'description': 'Brow Gal Pomade Duo',
+                    'link': 'https://www.bloomingdales.com/shop/product/the-browgal-convertible-brow-powder-pomade-duo?ID=2692371'
+                },
+                {
+                    'thumb': 'thumb4.jpg',
+                    'title': 'Lash Star Beauty',
+                    'description': 'Lash Star Mascara',
+                    'link': 'https://www.bloomingdales.com/shop/product/lash-star-beauty-full-control-lash-sculpting-mascara?ID=2632934'
+                },
+                {
+                    'thumb': 'thumb5.jpg',
+                    'title': 'FLiRT Cosmetics',
+                    'description': 'FLiRT Flashes False-Lash Applicator',
+                    'link': 'https://www.bloomingdales.com/shop/product/flirt-cosmetics-flashes-false-lash-applicator?ID=2695132'
+                },
+                {
+                    'thumb': 'thumb6.jpg',
+                    'title': 'Sigma Beauty',
+                    'description': 'Sigma F35 Tapered Highlighter Brush',
+                    'link': 'https://www.bloomingdales.com/shop/product/sigma-beauty-f35-tapered-highlighter-brush?ID=2685183'
+                },
+                {
+                    'thumb': 'thumb7.jpg',
+                    'title': 'NUDESTIX',
+                    'description': 'NUDESTIX Lip + Cheek Pencil in Mystic',
+                    'link': 'https://www.bloomingdales.com/shop/product/nudestix-cream-lip-cheek-pencil?ID=2702737'
+                }
+            ]
+        },
+
+        'PinkAllOver': {
+            'heading': 'Pink All Over',
+            'videoID': '5713599628001',
+            'productslist': [
+                {
+                    'thumb': 'thumb1.jpg',
+                    'title': 'SUVA Beauty',
+                    'description': 'SUVA Beauty Neutral Necessity Palette',
+                    'link': 'https://www.bloomingdales.com/shop/product/suva-beauty-8-shade-eyeshadow-palette?ID=2693415'
+                },
+                {
+                    'thumb': 'thumb2.jpg',
+                    'title': 'Rouge Bunny Rouge',
+                    'description': 'Rouge Bunny Rouge Swell Bliss XXX Lip Plump in 84 Acacia Royal Jelly',
+                    'link': 'https://www.bloomingdales.com/shop/product/rouge-bunny-rouge-swell-bliss-xxx-lip-plump?ID=2652623'
+                },
+                {
+                    'thumb': 'thumb3.jpg',
+                    'title': 'Lime Crime',
+                    'description': 'Lime Crime Hi-Lite Palette',
+                    'link': 'https://www.bloomingdales.com/shop/product/lime-crime-hi-lite-highlighter-palette?ID=2669832'
+                },
+                {
+                    'thumb': 'thumb4.jpg',
+                    'title': 'CONTEXT',
+                    'description': 'CONTEXT Nail Lacquer in Take It Off',
+                    'link': 'https://www.bloomingdales.com/shop/product/context-nail-lacquer?ID=2606986'
+                },
+                {
+                    'thumb': 'thumb5.jpg',
+                    'title': 'Kosas',
+                    'description': 'Kosas Blush in 8th Muse',
+                    'link': 'https://www.bloomingdales.com/shop/product/kosas-color-light-creme?ID=2770476'
+                },
+                {
+                    'thumb': 'thumb6.jpg',
+                    'title': 'Sigma Beauty',
+                    'description': 'Sigma E55 Eye Shading Brush',
+                    'link': 'https://www.bloomingdales.com/shop/product/sigma-beauty-e55-eye-shading-brush?ID=2685170'
+                }
+            ]
+        },
+
+
+
         'MetallicLips': {
             'heading': 'Metallic Lips',
             'videoID': '5579707491001',
@@ -250,110 +429,6 @@ $(function() {
             ]
         },
 
-        'NoMakeupMakeup': {
-            'heading': 'No-Makeup Makeup',
-            'videoID': '5579707899001',
-            'productslist': [
-                {
-                    'thumb': 'thumb1.jpg',
-                    'title': 'COVER FX',
-                    'description': 'Mattifying Primer with Anti-Acne Treatment',
-                    'link': 'https://www.bloomingdales.com/shop/product/cover-fx-mattifying-primer-with-anti-acne-treatment?ID=2696056'
-                },
-                {
-                    'thumb': 'thumb2.jpg',
-                    'title': 'COVER FX',
-                    'description': 'Natural Finish Foundation',
-                    'link': 'https://www.bloomingdales.com/shop/product/cover-fx-natural-finish-foundation?ID=2687218'
-                },
-                {
-                    'thumb': 'thumb3.jpg',
-                    'title': 'Sigma',
-                    'description': 'F80 Flat Kabuki Brush',
-                    'link': 'https://www.bloomingdales.com/shop/product/sigma-beauty-f80-flat-kabuki-brush?ID=2685189'
-                },
-                {
-                    'thumb': 'thumb4.jpg',
-                    'title': 'RMS Beauty',
-                    'description': 'Living Luminizer',
-                    'link': 'https://www.bloomingdales.com/shop/product/rms-beauty-living-luminizer?ID=2653292'
-                },
-                {
-                    'thumb': 'thumb5.jpg',
-                    'title': 'Lash Star Beauty',
-                    'description': 'Supreme Eyelash Curler',
-                    'link': 'https://www.bloomingdales.com/shop/product/lash-star-beauty-supreme-eyelash-curler?ID=2642948'
-                },
-                {
-                    'thumb': 'thumb6.jpg',
-                    'title': 'Rouge Bunny Rouge',
-                    'description': 'Witchery Modeling Mascara',
-                    'link': 'https://www.bloomingdales.com/shop/product/rouge-bunny-rouge-witchery-modeling-mascara?ID=2651871'
-                },
-                {
-                    'thumb': 'thumb7.jpg',
-                    'title': 'Kosas',
-                    'description': 'Weightless Lipstick in Rosewater',
-                    'link': 'https://www.bloomingdales.com/shop/product/kosas-weightless-lipstick?ID=2679460'
-                },
-                {
-                    'thumb': 'thumb8.jpg',
-                    'title': 'NUDESTIX',
-                    'description': 'Eyebrow Stylus Pencil &amp; Gel',
-                    'link': 'https://www.bloomingdales.com/shop/product/nudestix-eyebrow-stylus-pencil-gel?ID=2653141'
-                }
-            ]
-        },
-
-        'UltimateSkinPrep': {
-            'heading': 'Ultimate Skin Prep',
-            'videoID': '5579718241001',
-            'productslist': [
-                {
-                    'thumb': 'thumb1.jpg',
-                    'title': 'CONTEXT',
-                    'description': 'White Charcoal Detox Mask',
-                    'link': 'https://www.bloomingdales.com/shop/product/context-white-charcoal-detox-mask?ID=2607002'
-                },
-                {
-                    'thumb': 'thumb2.jpg',
-                    'title': 'Kaprielle',
-                    'description': 'Roses & Gold Anti-Aging Serum',
-                    'link': 'https://www.bloomingdales.com/shop/product/kaprielle-roses-gold-anti-aging-serum?ID=2662424'
-                },
-                {
-                    'thumb': 'thumb3.jpg',
-                    'title': 'Grown Alchemist',
-                    'description': 'Hydra-Repair Day Cream',
-                    'link': 'https://www.bloomingdales.com/shop/product/grown-alchemist-hydra-repair-day-cream?ID=1425992'
-                },
-                {
-                    'thumb': 'thumb4.jpg',
-                    'title': 'Mario Badescu',
-                    'description': 'Hyaluronic Eye Cream',
-                    'link': 'https://www.bloomingdales.com/shop/product/mario-badescu-hyaluronic-eye-cream?ID=2684994'
-                },
-                {
-                    'thumb': 'thumb5.jpg',
-                    'title': 'Frank Body',
-                    'description': 'Lip Scrub',
-                    'link': 'https://www.bloomingdales.com/shop/product/frank-body-lip-scrub?ID=2661754'
-                },
-                {
-                    'thumb': 'thumb6.jpg',
-                    'title': 'Lano',
-                    'description': 'Lanolips 101 Ointment Multipurpose Superbalm',
-                    'link': 'https://www.bloomingdales.com/shop/product/lano-lanolips-101-ointment-multipurpose-superbalm?ID=2648594'
-                },
-                {
-                    'thumb': 'thumb7.jpg',
-                    'title': 'Supergoop!',
-                    'description': 'Defense Refresh Setting Mist SPF 50',
-                    'link': 'https://www.bloomingdales.com/shop/product/supergoop-defense-refresh-setting-mist-spf-50-3.4-oz.?ID=2648949'
-                }
-            ]
-        },
-
         'UnicornEyes': {
             'heading': 'Unicorn Eyes',
             'videoID': '5579704123001',
@@ -383,51 +458,9 @@ $(function() {
                     'link': 'https://www.bloomingdales.com/shop/product/saturday-skin-daily-dew-hydrating-essence-mist?ID=2629815'
                 }
             ]
-        },
-
-        'CoolLinerLooks': {
-            'heading': 'Cool Liner Looks',
-            'videoID': '5579707489001',
-            'productslist': [
-                {
-                    'thumb': 'thumb1.jpg',
-                    'title': 'Lash Star Beauty',
-                    'description': 'Visionary Lashes 003',
-                    'link': 'https://www.bloomingdales.com/shop/product/lash-star-beauty-visionary-lashes-003?ID=2642967'
-                },
-                {
-                    'thumb': 'thumb2.jpg',
-                    'title': 'The BrowGal',
-                    'description': 'Skinny Eyebrow Pencil in Medium Brown 04',
-                    'link': 'https://www.bloomingdales.com/shop/product/the-browgal-skinny-eyebrow-pencil?ID=2676828'
-                }, {
-                    'thumb': 'thumb3.jpg',
-                    'title': 'Rouge Bunny Rouge',
-                    'description': 'Devotion Ink Quartz Eyeliner in Opalescence Essence',
-                    'link': '#'
-                }, {
-                    'thumb': 'thumb4.jpg',
-                    'title': 'Rouge Bunny Rouge',
-                    'description': 'Devotion Ink Quartz Eyeliner in Tiger Essence',
-                    'link': 'https://www.bloomingdales.com/shop/product/rouge-bunny-rouge-devotion-ink-quartz-eyeliner?ID=2651902'
-                }, {
-                    'thumb': 'thumb5.jpg',
-                    'title': 'FLiRT Cosmetics',
-                    'description': 'Chic Happens Ombré Lip Kit in Slay All Day ',
-                    'link': '#'
-                }, {
-                    'thumb': 'thumb6.jpg',
-                    'title': 'FLiRT Cosmetics',
-                    'description': 'Chic Happens Ombré Lip Kit in No Shame',
-                    'link': 'https://www.bloomingdales.com/shop/product/flirt-cosmetics-chic-happens-ombre-lip-kit?ID=2695139'
-                }, {
-                    'thumb': 'thumb7.jpg',
-                    'title': 'FLiRT Cosmetics',
-                    'description': 'Dot Dot Dot Dual Eyeliner Art',
-                    'link': 'https://www.bloomingdales.com/shop/product/flirt-cosmetics-dot-dot-dot-dual-eyeliner-art?ID=2695136'
-                }
-            ]
         }
+
+
 
     };
 
@@ -701,10 +734,22 @@ $(function() {
     var videoPagePics = [
         {'name': 'MetallicLips',        'thumb': 'Metallic-Lips.jpg',         'heading': 'Metallic Lips'},
         {'name': 'AllOverHighlighter',  'thumb': 'All-Over-Highlighter.jpg',  'heading': 'All-Over Highlighter'},
-        {'name': 'NoMakeupMakeup',      'thumb': 'No-Makeup-Makeup.jpg',      'heading': 'No-Makeup Makeup'},
-        {'name': 'UltimateSkinPrep',    'thumb': 'Ultimate-Skin-Prep.jpg',    'heading': 'Ultimate Skin Prep'},
+        // {'name': 'NoMakeupMakeup',      'thumb': 'No-Makeup-Makeup.jpg',      'heading': 'No-Makeup Makeup'},
+        // {'name': 'UltimateSkinPrep',    'thumb': 'Ultimate-Skin-Prep.jpg',    'heading': 'Ultimate Skin Prep'},
         {'name': 'UnicornEyes',         'thumb': 'Unicorn-Eyes.jpg',          'heading': 'Unicorn Eyes'},
-        {'name': 'CoolLinerLooks',      'thumb': 'Cool-Liner-Looks.jpg',      'heading': 'Cool Liner Looks'}
+        // {'name': 'CoolLinerLooks',      'thumb': 'Cool-Liner-Looks.jpg',      'heading': 'Cool Liner Looks'}
+
+        {'name': 'PinkAllOver',         'thumb': 'Pink-All-Over.jpg',           'heading': 'Pink All Over'},
+        {'name': 'GraphicEye',          'thumb': 'Graphic-Eye.jpg',             'heading': 'Graphic Eye'},
+        {'name': 'BlurredLip',          'thumb': 'Blurred-Lip.jpg',             'heading': 'Blurred Lip'},
+        {'name': 'SkinPrep',            'thumb': 'Skin-Prep.jpg',               'heading': 'Skin Prep'},
+        {'name': 'BurgundyLip',         'thumb': 'Burgundy-Lip.jpg',            'heading': 'Burgundy Lip'}
+
+
+
+
+
+
     ];
 
 
