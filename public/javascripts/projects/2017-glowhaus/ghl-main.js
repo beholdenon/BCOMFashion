@@ -293,7 +293,7 @@ $(function() {
             ]
         },
         'SkinPrep': {
-            'heading': 'Skin Pre',
+            'heading': 'Skin Prep',
             'videoID': '5713602249001',
             'productslist': [
                 {
@@ -357,7 +357,7 @@ $(function() {
 
 
         'GraphicEye': {
-            'heading': 'Graphic Eye',
+            'heading': 'Next Level Cat Eye',
             'videoID': '5713605251001',
             'productslist': [
                 {
@@ -605,13 +605,6 @@ $(function() {
             'bestsellerCopy': 'The perfect dusty pink shade that looks like your lips (but better)—and it’s super hydrating and plumping.',
             'shopLinkUrl': 'https://www.bloomingdales.com/shop/makeup-perfume-beauty/glowhaus-makeup-skin-care/Brand/Kosas?id=1035059'
         },
-        'Lano': {
-            'theGlowDownCopy': 'Lanolin&mdash;a natural occurring wax found on sheepswool&mdash;is the star of this skin care brand out of Australia. Not only does it mimic skin lipids (aka it’s super compatible with your skin), but it can hold up to double its weight in water to deliver extreme hydration. The award&dash;winning line of lip, hand and body products is everything you need to stay moisturized year&dash;round. ',
-            'bestsellerImgLink': 'https://www.bloomingdales.com/shop/product/lano-lanolips-101-ointment-multipurpose-superbalm?ID=2648594',
-            'bestsellerHeading': 'Lanolips 101 Ointment Multipurpose Superbalm',
-            'bestsellerCopy': 'Do you ever dream about an all&dash;in&dash;one balm you can literally put anywhere? This is it—and there are more than 101 ways to use it.',
-            'shopLinkUrl': 'https://www.bloomingdales.com/shop/makeup-perfume-beauty/glowhaus-makeup-skin-care/Brand/Lano?id=1035059'
-        },
         'Lash Star Beauty': {
             'theGlowDownCopy': 'Lashes are having a big moment, which is why we&#39;re obsessed (in a big way) with this beauty line dedicated solely to eyelashes. Whether you want to make a subtle statement or go all&dash;out extra, these products and tools&mdash;from heated curlers to a multitasking mascara&mdash;will be the stars of your makeup bag. Plus, the brand is cruelty&dash;free and everything is formulated with high&dash;quality ingredients.',
             'bestsellerImgLink': 'https://www.bloomingdales.com/shop/product/lash-star-beauty-full-control-lash-sculpting-mascara?ID=2632934',
@@ -732,9 +725,16 @@ $(function() {
 
 
 
-
+        'Lano': {
+            'heading': 'Lano',
+            // 'theGlowDownCopy': 'Lanolin&mdash;a natural occurring wax found on sheepswool&mdash;is the star of this skin care brand out of Australia. Not only does it mimic skin lipids (aka it’s super compatible with your skin), but it can hold up to double its weight in water to deliver extreme hydration. The award&dash;winning line of lip, hand and body products is everything you need to stay moisturized year&dash;round. ',
+            'bestsellerImgLink': 'https://www.bloomingdales.com/shop/product/lano-lanolips-101-ointment-multipurpose-superbalm?ID=2648594',
+            'bestsellerHeading': 'Lanolips 101 Ointment Multipurpose Superbalm',
+            'bestsellerCopy': 'Do you ever dream about an all&dash;in&dash;one balm you can literally put anywhere? This is it—and there are more than 101 ways to use it.',
+            'shopLinkUrl': 'https://www.bloomingdales.com/shop/makeup-perfume-beauty/glowhaus-makeup-skin-care/Brand/Lano?id=1035059'
+        },
         'beautyblender': {
-            'heading': 'beautyblender&reg;',
+            'heading': 'beautyblender',
             'bestsellerImgLink': 'https://www.bloomingdales.com/shop/product/beautyblender-the-original-beautyblender?ID=2661588',
             'bestsellerHeading': 'the original beautyblender&reg;',
             'bestsellerCopy': 'You can find this little pink makeup sponge in just about every makeup artist’s bag—and for good reason. Its edgeless shape and unique material that expands when wet provide a streak-free application for a high-def finish.',
@@ -810,7 +810,7 @@ $(function() {
         // {'name': 'CoolLinerLooks',      'thumb': 'Cool-Liner-Looks.jpg',      'heading': 'Cool Liner Looks'}
 
         {'name': 'PinkAllOver',         'thumb': 'Pink-All-Over.jpg',           'heading': 'Pink All Over'},
-        {'name': 'GraphicEye',          'thumb': 'Graphic-Eye.jpg',             'heading': 'Graphic Eye'},
+        {'name': 'GraphicEye',          'thumb': 'Graphic-Eye.jpg',             'heading': 'Next Level Cat Eye'},
         {'name': 'BlurredLip',          'thumb': 'Blurred-Lip.jpg',             'heading': 'Blurred Lip'},
         {'name': 'SkinPrep',            'thumb': 'Skin-Prep.jpg',               'heading': 'Skin Prep'},
         {'name': 'BurgundyLip',         'thumb': 'Burgundy-Lip.jpg',            'heading': 'Burgundy Lip'}
