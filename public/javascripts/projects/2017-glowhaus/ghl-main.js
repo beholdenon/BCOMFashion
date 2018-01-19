@@ -28,7 +28,6 @@ $(function() {
 
 
 
-
     // ----------- Mobile nav switcher
     var mainContainer = $('.glh');
     var viewportWidth = $(window).width();
@@ -248,6 +247,17 @@ $(function() {
 
 
 
+        {'type':  'video',  'thumb': 'GH1_PinkAllOver1.mp4',    'height': 158},
+        {'type':  'video',  'thumb': 'GH1_PinkAllOver2.mp4',    'height': 158},
+        {'type':  'video',  'thumb': 'GH2_NextLevelCat1.mp4',   'height': 158},
+        {'type':  'video',  'thumb': 'GH2_NextLevelCat2.mp4',   'height': 158},
+        {'type':  'video',  'thumb': 'GH2_NextLevelCat3.mp4',   'height': 158},
+        {'type':  'video',  'thumb': 'GH3_BlurredLip1.mp4',     'height': 158},
+        {'type':  'video',  'thumb': 'GH4_SkinPrep1.mp4',       'height': 158},
+        {'type':  'video',  'thumb': 'GH4_SkinPrep2.mp4',       'height': 158},
+        {'type':  'video',  'thumb': 'GH5_BurgundyLip1.mp4',    'height': 158},
+        {'type':  'video',  'thumb': 'GH5_BurgundyLip2.mp4',    'height': 158},
+
         {'type':  'video',  'thumb': 'Glowhaus_gif1.mp4',   'height': 162},
         {'type':  'video',  'thumb': 'Glowhaus_gif2.mp4',   'height': 280},
         {'type':  'video',  'thumb': 'Glowhaus_gif3.mp4',   'height': 280},
@@ -281,13 +291,13 @@ $(function() {
                 {
                     'thumb': 'thumb1.jpg',
                     'title': 'COVER FX',
-                    'description': 'Cover FX Custom Enhancer Drops in Candlelight',
+                    'description': 'Custom Enhancer Drops in Candlelight',
                     'link': 'https://www.bloomingdales.com/shop/product/cover-fx-custom-enhancer-drops?ID=2687217'
                 },
                 {
                     'thumb': 'thumb2.jpg',
                     'title': 'RMS Beauty',
-                    'description': 'RMS Lipstick in Rapture',
+                    'description': 'Lipstick in Rapture',
                     'link': 'https://www.bloomingdales.com/shop/product/?ID=2815451'
                 }
             ]
@@ -305,7 +315,7 @@ $(function() {
                 {
                     'thumb': 'thumb2.jpg',
                     'title': 'Too Cool For School',
-                    'description': 'Too Cool for School Egg Cream Sheet Mask',
+                    'description': 'Egg Cream Sheet Mask',
                     'link': 'https://www.bloomingdales.com/shop/product/too-cool-for-school-egg-cream-mask-firming?ID=2788522'
                 },
                 {
@@ -317,7 +327,7 @@ $(function() {
                 {
                     'thumb': 'thumb4.jpg',
                     'title': 'Supergoop!',
-                    'description': 'Supergoop! Daily Correct CC Cream SPF 35',
+                    'description': 'Daily Correct CC Cream SPF 35',
                     'link': 'https://www.bloomingdales.com/shop/product/supergoop-daily-correct-cc-cream-spf-35?ID=2635233'
                 }
             ]
@@ -330,25 +340,19 @@ $(function() {
                 {
                     'thumb': 'thumb1.jpg',
                     'title': 'Frank Body',
-                    'description': 'Frank Body Lip Scrub',
+                    'description': 'Lip Scrub',
                     'link': 'https://www.bloomingdales.com/shop/product/frank-body-lip-scrub?ID=2661754'
                 },
                 {
                     'thumb': 'thumb2.jpg',
                     'title': 'RMS Beauty',
-                    'description': 'RMS Lipstick in Flight of Fancy',
+                    'description': 'Lipstick in Flight of Fancy',
                     'link': 'https://www.bloomingdales.com/shop/product/?ID=2815451'
                 },
                 {
                     'thumb': 'thumb3.jpg',
-                    'title': 'Beauty Blender',
-                    'description': 'Beauty Blender',
-                    'link': 'https://www.bloomingdales.com/shop/product/beautyblender-the-original-beautyblender?ID=2661588'
-                },
-                {
-                    'thumb': 'thumb4.jpg',
                     'title': 'NUDESTIX',
-                    'description': 'NUDESTIX Nudies All Over Face Color in Bare Back',
+                    'description': 'Nudies All Over Face Color in Bare Back',
                     'link': 'https://www.bloomingdales.com/shop/product/nudestix-nudies-all-over-face-color?ID=2653151'
                 }
             ]
@@ -393,7 +397,7 @@ $(function() {
                 {
                     'thumb': 'thumb6.jpg',
                     'title': 'Sigma Beauty',
-                    'description': 'Sigma F35 Tapered Highlighter Brush',
+                    'description': 'F35 Tapered Highlighter Brush',
                     'link': 'https://www.bloomingdales.com/shop/product/sigma-beauty-f35-tapered-highlighter-brush?ID=2685183'
                 },
                 {
@@ -412,13 +416,13 @@ $(function() {
                 {
                     'thumb': 'thumb1.jpg',
                     'title': 'SUVA Beauty',
-                    'description': 'SUVA Beauty Neutral Necessity Palette',
+                    'description': 'Neutral Necessity Palette',
                     'link': 'https://www.bloomingdales.com/shop/product/suva-beauty-8-shade-eyeshadow-palette?ID=2693415'
                 },
                 {
                     'thumb': 'thumb2.jpg',
                     'title': 'Rouge Bunny Rouge',
-                    'description': 'Rouge Bunny Rouge Swell Bliss XXX Lip Plump in 84 Acacia Royal Jelly',
+                    'description': 'Swell Bliss XXX Lip Plump in 84 Acacia Royal Jelly',
                     'link': 'https://www.bloomingdales.com/shop/product/rouge-bunny-rouge-swell-bliss-xxx-lip-plump?ID=2652623'
                 },
                 {
@@ -430,7 +434,7 @@ $(function() {
                 {
                     'thumb': 'thumb4.jpg',
                     'title': 'CONTEXT',
-                    'description': 'CONTEXT Nail Lacquer in Take It Off',
+                    'description': 'Nail Lacquer in Take It Off',
                     'link': 'https://www.bloomingdales.com/shop/product/context-nail-lacquer?ID=2606986'
                 },
                 {
@@ -442,7 +446,7 @@ $(function() {
                 {
                     'thumb': 'thumb6.jpg',
                     'title': 'Sigma Beauty',
-                    'description': 'Sigma E55 Eye Shading Brush',
+                    'description': 'E55 Eye Shading Brush',
                     'link': 'https://www.bloomingdales.com/shop/product/sigma-beauty-e55-eye-shading-brush?ID=2685170'
                 }
             ]
@@ -533,7 +537,14 @@ $(function() {
                     'title': 'Saturday Skin',
                     'description': 'Daily Dew Hydrating Essence Mist',
                     'link': 'https://www.bloomingdales.com/shop/product/saturday-skin-daily-dew-hydrating-essence-mist?ID=2629815'
-                }
+                },
+                {
+                    'thumb': 'thumb5.jpg',
+                    'title': 'beautyblender',
+                    'description': 'the original beautyblender&reg;',
+                    'link': 'https://www.bloomingdales.com/shop/product/beautyblender-the-original-beautyblender?ID=2661588'
+                },
+
             ]
         }
 
@@ -1324,8 +1335,9 @@ $(function() {
     });
 
 
-    /* */
+    /* stop all animation button for next round*/
     if($('#glh-images-tile').length) {
+        /*
         var stopAnimationDialog = '<div class="glh-stop-animation-btn-container">' +
             '<button tabindex="0" id="stop-animation-btn" class="glh-stop-animation-btn" role="button" aria-label="Stop animation on the page" aria-controls="animation">Stop all animation</button></div>';
         $('body').prepend(stopAnimationDialog);
@@ -1335,6 +1347,7 @@ $(function() {
             }); 
             $(this).parent().remove();
         });
+        */
        
     }
     
