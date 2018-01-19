@@ -142,18 +142,20 @@
   
   $(window).scroll( function() {
     var fromTop = $(document).scrollTop();
-    var headerHeight = $('header.responsive').height();
+    var headerHeight = $('header.responsive').height() + 40;
 
     if ( fromTop > headerHeight ) {
 
       if ( !$("#mast-nav").hasClass('fixed') ) {
           $("#mast-nav").addClass('fixed');
+          $("#lookbook-btt").show();
       }
 
     } else {
 
       if ( $("#mast-nav").hasClass('fixed') ) {
         $("#mast-nav").removeClass('fixed').removeAttr('style');
+        $("#lookbook-btt").hide();
       }
 
     }
