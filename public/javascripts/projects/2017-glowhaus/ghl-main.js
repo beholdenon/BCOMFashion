@@ -281,12 +281,12 @@ $(function() {
                 {
                     'thumb': 'thumb1.jpg',
                     'title': 'COVER FX',
-                    'description': 'Cover FX Custom Enhancing Drops in Candlelight',
+                    'description': 'Cover FX Custom Enhancer Drops in Candlelight',
                     'link': 'https://www.bloomingdales.com/shop/product/cover-fx-custom-enhancer-drops?ID=2687217'
                 },
                 {
                     'thumb': 'thumb2.jpg',
-                    'title': 'RMS',
+                    'title': 'RMS Beauty',
                     'description': 'RMS Lipstick in Rapture',
                     'link': 'https://www.bloomingdales.com/shop/product/?ID=2815451'
                 }
@@ -299,7 +299,7 @@ $(function() {
                 {
                     'thumb': 'thumb1.jpg',
                     'title': 'Saturday Skin',
-                    'description': 'Saturday Skin Eye Serum',
+                    'description': 'Wide Awake Brightening Eye Serum',
                     'link': 'https://www.bloomingdales.com/shop/product/saturday-skin-wide-awake-brightening-eye-cream?ID=2629817'
                 },
                 {
@@ -311,7 +311,7 @@ $(function() {
                 {
                     'thumb': 'thumb3.jpg',
                     'title': 'GLAMGLOW',
-                    'description': 'GLAMGLOW Waterburst Moisturizer',
+                    'description': 'Waterburst Hydrated Glow Moisturizer',
                     'link': 'https://linkkkkkkkmissingggg'
                 },
                 {
@@ -335,7 +335,7 @@ $(function() {
                 },
                 {
                     'thumb': 'thumb2.jpg',
-                    'title': 'RMS',
+                    'title': 'RMS Beauty',
                     'description': 'RMS Lipstick in Flight of Fancy',
                     'link': 'https://www.bloomingdales.com/shop/product/?ID=2815451'
                 },
@@ -363,31 +363,31 @@ $(function() {
                 {
                     'thumb': 'thumb1.jpg',
                     'title': 'The Vamp Stamp',
-                    'description': 'Vamp Stamp',
+                    'description': 'Vink Vortex Black Liquid Eyeliner Ink & Verge Eyeliner Brush',
                     'link': 'https://www.bloomingdales.com/shop/product/the-vamp-stamp-vink-vortex-black-liquid-eyeliner-ink-verge-angle-eyeliner-brush?ID=2648611'
                 },
                 {
                     'thumb': 'thumb2.jpg',
                     'title': 'COVER FX',
-                    'description': 'Cover FX Loose Setting Powder',
+                    'description': 'Perfect Setting Powder',
                     'link': 'https://www.bloomingdales.com/shop/product/cover-fx-perfect-setting-powder?ID=2687220'
                 },
                 {
                     'thumb': 'thumb3.jpg',
                     'title': 'The BrowGal',
-                    'description': 'Brow Gal Pomade Duo',
+                    'description': 'Convertible Brow Powder & Pomade Duo',
                     'link': 'https://www.bloomingdales.com/shop/product/the-browgal-convertible-brow-powder-pomade-duo?ID=2692371'
                 },
                 {
                     'thumb': 'thumb4.jpg',
                     'title': 'Lash Star Beauty',
-                    'description': 'Lash Star Mascara',
+                    'description': 'Full Control Lash Sculpting Mascara',
                     'link': 'https://www.bloomingdales.com/shop/product/lash-star-beauty-full-control-lash-sculpting-mascara?ID=2632934'
                 },
                 {
                     'thumb': 'thumb5.jpg',
                     'title': 'FLiRT Cosmetics',
-                    'description': 'FLiRT Flashes False-Lash Applicator',
+                    'description': 'Flashes False Lash Applicator',
                     'link': 'https://www.bloomingdales.com/shop/product/flirt-cosmetics-flashes-false-lash-applicator?ID=2695132'
                 },
                 {
@@ -399,7 +399,7 @@ $(function() {
                 {
                     'thumb': 'thumb7.jpg',
                     'title': 'NUDESTIX',
-                    'description': 'NUDESTIX Lip + Cheek Pencil in Mystic',
+                    'description': 'Lip + Cheek Cream Pencil in Mystic',
                     'link': 'https://www.bloomingdales.com/shop/product/nudestix-cream-lip-cheek-pencil?ID=2702737'
                 }
             ]
@@ -424,7 +424,7 @@ $(function() {
                 {
                     'thumb': 'thumb3.jpg',
                     'title': 'Lime Crime',
-                    'description': 'Lime Crime Hi-Lite Palette',
+                    'description': 'Hi-Lite Palette in Blossoms',
                     'link': 'https://www.bloomingdales.com/shop/product/lime-crime-hi-lite-highlighter-palette?ID=2669832'
                 },
                 {
@@ -436,7 +436,7 @@ $(function() {
                 {
                     'thumb': 'thumb5.jpg',
                     'title': 'Kosas',
-                    'description': 'Kosas Blush in 8th Muse',
+                    'description': 'Color & Light Creme in 8th Muse',
                     'link': 'https://www.bloomingdales.com/shop/product/kosas-color-light-creme?ID=2770476'
                 },
                 {
