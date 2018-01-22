@@ -28,7 +28,6 @@ $(function() {
 
 
 
-
     // ----------- Mobile nav switcher
     var mainContainer = $('.glh');
     var viewportWidth = $(window).width();
@@ -45,25 +44,26 @@ $(function() {
     // ----------- Landing page tile
     
     var landingPagePics = [
-        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing1-thumb.jpg',   'height': 377},
-        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing2-thumb.jpg',   'height': 199},
-        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing3-thumb.jpg',   'height': 288},
-        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing4-thumb.jpg',   'height': 250},
-        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing5-thumb.jpg',   'height': 340},
-        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing6-thumb.jpg',   'height': 420},
-        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing7-thumb.jpg',   'height': 250},
-        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing8-thumb.jpg',   'height': 289},
-        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing9-thumb.jpg',   'height': 235},
-        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing10-thumb.jpg',  'height': 420},
-        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing11-thumb.jpg',  'height': 362},
-        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing12-thumb.jpg',  'height': 187},
-        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing13-thumb.jpg',  'height': 182},
-        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing14-thumb.jpg',  'height': 187},
-        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing15-thumb.jpg',  'height': 363},
-        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing16-thumb.jpg',  'height': 161},
-        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing17-thumb.jpg',  'height': 420},
-        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing18-thumb.jpg',  'height': 200},
-        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing19-thumb.jpg',  'height': 246},
+
+        // {'type': 'img',  'action': 'img-popup',   'thumb': 'landing1-thumb.jpg',   'height': 377},
+        // {'type': 'img',  'action': 'img-popup',   'thumb': 'landing2-thumb.jpg',   'height': 199},
+        // {'type': 'img',  'action': 'img-popup',   'thumb': 'landing3-thumb.jpg',   'height': 288},
+        // {'type': 'img',  'action': 'img-popup',   'thumb': 'landing4-thumb.jpg',   'height': 250},
+        // {'type': 'img',  'action': 'img-popup',   'thumb': 'landing5-thumb.jpg',   'height': 340},
+        // {'type': 'img',  'action': 'img-popup',   'thumb': 'landing6-thumb.jpg',   'height': 420},
+        // {'type': 'img',  'action': 'img-popup',   'thumb': 'landing7-thumb.jpg',   'height': 250},
+        // {'type': 'img',  'action': 'img-popup',   'thumb': 'landing8-thumb.jpg',   'height': 289},
+        // {'type': 'img',  'action': 'img-popup',   'thumb': 'landing9-thumb.jpg',   'height': 235},
+        // {'type': 'img',  'action': 'img-popup',   'thumb': 'landing10-thumb.jpg',  'height': 420},
+        // {'type': 'img',  'action': 'img-popup',   'thumb': 'landing11-thumb.jpg',  'height': 362},
+        // {'type': 'img',  'action': 'img-popup',   'thumb': 'landing12-thumb.jpg',  'height': 187},
+        // {'type': 'img',  'action': 'img-popup',   'thumb': 'landing13-thumb.jpg',  'height': 182},
+        // {'type': 'img',  'action': 'img-popup',   'thumb': 'landing14-thumb.jpg',  'height': 187},
+        // {'type': 'img',  'action': 'img-popup',   'thumb': 'landing15-thumb.jpg',  'height': 363},
+        // {'type': 'img',  'action': 'img-popup',   'thumb': 'landing16-thumb.jpg',  'height': 161},
+        // {'type': 'img',  'action': 'img-popup',   'thumb': 'landing17-thumb.jpg',  'height': 420},
+        // {'type': 'img',  'action': 'img-popup',   'thumb': 'landing18-thumb.jpg',  'height': 200},
+        // {'type': 'img',  'action': 'img-popup',   'thumb': 'landing19-thumb.jpg',  'height': 246},
         {'type': 'img',  'action': 'img-popup',   'thumb': 'landing20-thumb.jpg',  'height': 420},
         {'type': 'img',  'action': 'img-popup',   'thumb': 'landing21-thumb.jpg',  'height': 204},
         {'type': 'img',  'action': 'img-popup',   'thumb': 'landing22-thumb.jpg',  'height': 187},
@@ -75,8 +75,8 @@ $(function() {
         {'type': 'img',  'action': 'img-popup',   'thumb': 'landing28-thumb.jpg',  'height': 420},
         {'type': 'img',  'action': 'img-popup',   'thumb': 'landing29-thumb.jpg',  'height': 117},
         {'type': 'img',  'action': 'img-popup',   'thumb': 'landing30-thumb.jpg',  'height': 243},
-        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing31-thumb.jpg',  'height': 250},
-        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing32-thumb.jpg',  'height': 144},
+        // {'type': 'img',  'action': 'img-popup',   'thumb': 'landing31-thumb.jpg',  'height': 250},
+        // {'type': 'img',  'action': 'img-popup',   'thumb': 'landing32-thumb.jpg',  'height': 144},
         {'type': 'img',  'action': 'img-popup',   'thumb': 'landing33-thumb.jpg',  'height': 420},
         {'type': 'img',  'action': 'img-popup',   'thumb': 'landing34-thumb.jpg',  'height': 293},
         {'type': 'img',  'action': 'img-popup',   'thumb': 'landing35-thumb.jpg',  'height': 187},
@@ -85,13 +85,13 @@ $(function() {
         {'type': 'img',  'action': 'img-popup',   'thumb': 'landing38-thumb.jpg',  'height': 288},
         {'type': 'img',  'action': 'img-popup',   'thumb': 'landing39-thumb.jpg',  'height': 231},
         {'type': 'img',  'action': 'img-popup',   'thumb': 'landing40-thumb.jpg',  'height': 124},
-        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing41-thumb.jpg',  'height': 348},
+        // {'type': 'img',  'action': 'img-popup',   'thumb': 'landing41-thumb.jpg',  'height': 348},
         {'type': 'img',  'action': 'img-popup',   'thumb': 'landing42-thumb.jpg',  'height': 149},
         {'type': 'img',  'action': 'img-popup',   'thumb': 'landing43-thumb.jpg',  'height': 280},
         {'type': 'img',  'action': 'img-popup',   'thumb': 'landing44-thumb.jpg',  'height': 187},
         {'type': 'img',  'action': 'img-popup',   'thumb': 'landing45-thumb.jpg',  'height': 310},
         {'type': 'img',  'action': 'img-popup',   'thumb': 'landing46-thumb.jpg',  'height': 334},
-        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing47-thumb.jpg',  'height': 187},
+        // {'type': 'img',  'action': 'img-popup',   'thumb': 'landing47-thumb.jpg',  'height': 187},
         {'type': 'img',  'action': 'img-popup',   'thumb': 'landing48-thumb.jpg',  'height': 187},
         {'type': 'img',  'action': 'img-popup',   'thumb': 'landing49-thumb.jpg',  'height': 270},
         {'type': 'img',  'action': 'img-popup',   'thumb': 'landing50-thumb.jpg',  'height': 208},
@@ -99,20 +99,61 @@ $(function() {
         {'type': 'img',  'action': 'img-popup',   'thumb': 'landing52-thumb.jpg',  'height': 331},
         {'type': 'img',  'action': 'img-popup',   'thumb': 'landing53-thumb.jpg',  'height': 195},
         {'type': 'img',  'action': 'img-popup',   'thumb': 'landing54-thumb.jpg',  'height': 183},
-        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing55-thumb.jpg',  'height': 254},
+        // {'type': 'img',  'action': 'img-popup',   'thumb': 'landing55-thumb.jpg',  'height': 254},
         {'type': 'img',  'action': 'img-popup',   'thumb': 'landing56-thumb.jpg',  'height': 379},
         {'type': 'img',  'action': 'img-popup',   'thumb': 'landing57-thumb.jpg',  'height': 285},
         {'type': 'img',  'action': 'img-popup',   'thumb': 'landing58-thumb.jpg',  'height': 389},
         {'type': 'img',  'action': 'img-popup',   'thumb': 'landing59-thumb.jpg',  'height': 299},
         {'type': 'img',  'action': 'img-popup',   'thumb': 'landing60-thumb.jpg',  'height': 103},
 
+        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing61-thumb.jpg',  'height': 185},
+        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing62-thumb.jpg',  'height': 420},
+        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing63-thumb.jpg',  'height': 300},
+        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing64-thumb.jpg',  'height': 269},
+        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing65-thumb.jpg',  'height': 169},
+        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing66-thumb.jpg',  'height': 218},
+        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing67-thumb.jpg',  'height': 420},
+        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing68-thumb.jpg',  'height': 187},
+        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing69-thumb.jpg',  'height': 187},
+        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing70-thumb.jpg',  'height': 359},
+        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing71-thumb.jpg',  'height': 359},
+        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing72-thumb.jpg',  'height': 251},
+        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing73-thumb.jpg',  'height': 420},
+        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing74-thumb.jpg',  'height': 187},
+        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing75-thumb.jpg',  'height': 149},
+        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing76-thumb.jpg',  'height': 420},
+        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing77-thumb.jpg',  'height': 158},
+        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing78-thumb.jpg',  'height': 319},
+        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing79-thumb.jpg',  'height': 269},
+        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing80-thumb.jpg',  'height': 300},
+
+
+
+
+
+
+
+
+
+
+
 
         {'type': 'img',  'action': 'html-video-popup',   'name': 'MetallicLips',        'thumb': 'video-1.jpg',  'height': 222},
         {'type': 'img',  'action': 'html-video-popup',   'name': 'AllOverHighlighter',  'thumb': 'video-2.jpg',  'height': 222},
-        {'type': 'img',  'action': 'html-video-popup',   'name': 'NoMakeupMakeup',      'thumb': 'video-3.jpg',  'height': 222},
-        {'type': 'img',  'action': 'html-video-popup',   'name': 'UltimateSkinPrep',    'thumb': 'video-4.jpg',  'height': 222},
+        // {'type': 'img',  'action': 'html-video-popup',   'name': 'NoMakeupMakeup',      'thumb': 'video-3.jpg',  'height': 222},
+        // {'type': 'img',  'action': 'html-video-popup',   'name': 'UltimateSkinPrep',    'thumb': 'video-4.jpg',  'height': 222},
         {'type': 'img',  'action': 'html-video-popup',   'name': 'UnicornEyes',         'thumb': 'video-5.jpg',  'height': 222},
-        {'type': 'img',  'action': 'html-video-popup',   'name': 'CoolLinerLooks',      'thumb': 'video-6.jpg',  'height': 222},
+        // {'type': 'img',  'action': 'html-video-popup',   'name': 'CoolLinerLooks',      'thumb': 'video-6.jpg',  'height': 222},
+        {'type': 'img',  'action': 'html-video-popup',   'name': 'PinkAllOver',         'thumb': 'video-7.jpg',  'height': 222},
+        {'type': 'img',  'action': 'html-video-popup',   'name': 'GraphicEye',          'thumb': 'video-8.jpg',  'height': 222},
+        {'type': 'img',  'action': 'html-video-popup',   'name': 'BurgundyLip',         'thumb': 'video-9.jpg',  'height': 222},
+        {'type': 'img',  'action': 'html-video-popup',   'name': 'BlurredLip',          'thumb': 'video-10.jpg',  'height': 222},
+
+
+
+
+
+
 
 
         {'type': 'img',  'action': 'html-brand-popup',   'name': 'FLiRT Cosmetics',    'thumb': 'brand-01.jpg',  'height': 127},
@@ -131,6 +172,26 @@ $(function() {
         {'type': 'img',  'action': 'html-brand-popup',   'name': 'Lash Star Beauty',   'thumb': 'brand-14.jpg',  'height': 66},
         {'type': 'img',  'action': 'html-brand-popup',   'name': 'kaprielle',          'thumb': 'brand-15.jpg',  'height': 117},
 
+        {'type': 'img',  'action': 'html-brand-popup',   'name': 'BioRepublic',         'thumb': 'brand-16.jpg',  'height': 187},
+        {'type': 'img',  'action': 'html-brand-popup',   'name': 'Bon Parfumeur',       'thumb': 'brand-17.jpg',  'height': 214},
+        {'type': 'img',  'action': 'html-brand-popup',   'name': 'Drybar',              'thumb': 'brand-18.jpg',  'height': 242},
+        {'type': 'img',  'action': 'html-brand-popup',   'name': 'Too Cool for School', 'thumb': 'brand-19.jpg',  'height': 192},
+        {'type': 'img',  'action': 'html-brand-popup',   'name': 'Patchology',          'thumb': 'brand-20.jpg',  'height': 192},
+        {'type': 'img',  'action': 'html-brand-popup',   'name': 'Preheels',            'thumb': 'brand-21.jpg',  'height': 202},
+        {'type': 'img',  'action': 'html-brand-popup',   'name': 'Shhhowercap',         'thumb': 'brand-22.jpg',  'height': 202},
+
+
+
+
+
+
+
+
+
+
+
+
+
         {'type': 'img',  'action': 'html-brand-popup',   'name': 'The Better Skin Co', 'thumb': 'landingthumb_brand1.jpg',  'height': 141},
         {'type': 'img',  'action': 'html-brand-popup',   'name': 'The BrowGal',        'thumb': 'landingthumb_brand2.jpg',  'height': 117},
         {'type': 'img',  'action': 'html-brand-popup',   'name': 'CONTEXT',            'thumb': 'landingthumb_brand3.jpg',  'height': 146},
@@ -143,6 +204,13 @@ $(function() {
         {'type': 'img',  'action': 'html-brand-popup',   'name': 'Supergoop',          'thumb': 'landingthumb_brand19.jpg', 'height': 83},
         {'type': 'img',  'action': 'html-brand-popup',   'name': 'makeuperaser',       'thumb': 'landingthumb_brand25.jpg', 'height': 98},
         {'type': 'img',  'action': 'html-brand-popup',   'name': 'makeupdrop',         'thumb': 'landingthumb_brand26.jpg', 'height': 153},
+
+
+
+
+
+
+
 
 
         // {'type':  'deco',  'thumb': 'deco-01.jpg',   'height': 146},
@@ -166,10 +234,29 @@ $(function() {
 
         {'type':  'deco',  'thumb': 'deco-19.jpg',   'height': 151},
         {'type':  'deco',  'thumb': 'deco-20.jpg',   'height': 151},
-        {'type':  'deco',  'thumb': 'deco-21.jpg',   'height': 151},
+        // {'type':  'deco',  'thumb': 'deco-21.jpg',   'height': 151},
         {'type':  'deco',  'thumb': 'deco-22.jpg',   'height': 128},
         {'type':  'deco',  'thumb': 'deco-23.jpg',   'height': 108},
 
+        {'type':  'deco',  'thumb': 'deco-24.jpg',   'height': 64},
+        {'type':  'deco',  'thumb': 'deco-25.jpg',   'height': 112},
+
+
+
+
+
+
+
+        {'type':  'video',  'thumb': 'GH1_PinkAllOver1.mp4',    'height': 158},
+        {'type':  'video',  'thumb': 'GH1_PinkAllOver2.mp4',    'height': 158},
+        {'type':  'video',  'thumb': 'GH2_NextLevelCat1.mp4',   'height': 158},
+        {'type':  'video',  'thumb': 'GH2_NextLevelCat2.mp4',   'height': 158},
+        {'type':  'video',  'thumb': 'GH2_NextLevelCat3.mp4',   'height': 158},
+        {'type':  'video',  'thumb': 'GH3_BlurredLip1.mp4',     'height': 158},
+        {'type':  'video',  'thumb': 'GH4_SkinPrep1.mp4',       'height': 158},
+        {'type':  'video',  'thumb': 'GH4_SkinPrep2.mp4',       'height': 158},
+        {'type':  'video',  'thumb': 'GH5_BurgundyLip1.mp4',    'height': 158},
+        {'type':  'video',  'thumb': 'GH5_BurgundyLip2.mp4',    'height': 158},
 
         {'type':  'video',  'thumb': 'Glowhaus_gif1.mp4',   'height': 162},
         {'type':  'video',  'thumb': 'Glowhaus_gif2.mp4',   'height': 280},
@@ -177,22 +264,195 @@ $(function() {
         {'type':  'video',  'thumb': 'Glowhaus_gif4.mp4',   'height': 280},
         {'type':  'video',  'thumb': 'Glowhaus_gif5.mp4',   'height': 280},
         {'type':  'video',  'thumb': 'Glowhaus_gif6.mp4',   'height': 162},
-        {'type':  'video',  'thumb': 'Glowhaus_gif7.mp4',   'height': 280},
-        {'type':  'video',  'thumb': 'Glowhaus_gif8.mp4',   'height': 280},
-        {'type':  'video',  'thumb': 'Glowhaus_gif9.mp4',   'height': 162},
-        {'type':  'video',  'thumb': 'Glowhaus_gif10.mp4',  'height': 280},
-        {'type':  'video',  'thumb': 'Glowhaus_gif11.mp4',  'height': 162},
-        {'type':  'video',  'thumb': 'Glowhaus_gif12.mp4',  'height': 280},
-        {'type':  'video',  'thumb': 'Glowhaus_gif13.mp4',  'height': 280},
-        {'type':  'video',  'thumb': 'Glowhaus_gif14.mp4',  'height': 280},
+        // {'type':  'video',  'thumb': 'Glowhaus_gif7.mp4',   'height': 280},
+        // {'type':  'video',  'thumb': 'Glowhaus_gif8.mp4',   'height': 280},
+        // {'type':  'video',  'thumb': 'Glowhaus_gif9.mp4',   'height': 162},
+        // {'type':  'video',  'thumb': 'Glowhaus_gif10.mp4',  'height': 280},
+        // {'type':  'video',  'thumb': 'Glowhaus_gif11.mp4',  'height': 162},
+        // {'type':  'video',  'thumb': 'Glowhaus_gif12.mp4',  'height': 280},
+        // {'type':  'video',  'thumb': 'Glowhaus_gif13.mp4',  'height': 280},
+        // {'type':  'video',  'thumb': 'Glowhaus_gif14.mp4',  'height': 280},
         {'type':  'video',  'thumb': 'Glowhaus_gif15.mp4',  'height': 280},
-        {'type':  'video',  'thumb': 'Glowhaus_gif16.mp4',  'height': 280},
+        // {'type':  'video',  'thumb': 'Glowhaus_gif16.mp4',  'height': 280},
         {'type':  'video',  'thumb': 'Glowhaus_gif17.mp4',  'height': 280},
         {'type':  'video',  'thumb': 'Glowhaus_gif18.mp4',  'height': 162}
 
     ];
 
     var videoPagePopupsData = {
+
+
+
+
+        'BurgundyLip': {
+            'heading': 'Burgundy Lip',
+            'videoID': '5713602540001',
+            'productslist': [
+                {
+                    'thumb': 'thumb1.jpg',
+                    'title': 'COVER FX',
+                    'description': 'Custom Enhancer Drops in Candlelight',
+                    'link': 'https://www.bloomingdales.com/shop/product/cover-fx-custom-enhancer-drops?ID=2687217'
+                },
+                {
+                    'thumb': 'thumb2.jpg',
+                    'title': 'RMS Beauty',
+                    'description': 'Lipstick in Rapture',
+                    'link': 'https://www.bloomingdales.com/shop/product/?ID=2815451'
+                }
+            ]
+        },
+        'SkinPrep': {
+            'heading': 'Skin Prep',
+            'videoID': '5713602249001',
+            'productslist': [
+                {
+                    'thumb': 'thumb1.jpg',
+                    'title': 'Saturday Skin',
+                    'description': 'Wide Awake Brightening Eye Serum',
+                    'link': 'https://www.bloomingdales.com/shop/product/saturday-skin-wide-awake-brightening-eye-cream?ID=2629817'
+                },
+                {
+                    'thumb': 'thumb2.jpg',
+                    'title': 'Too Cool For School',
+                    'description': 'Egg Cream Sheet Mask',
+                    'link': 'https://www.bloomingdales.com/shop/product/too-cool-for-school-egg-cream-mask-firming?ID=2788522'
+                },
+                {
+                    'thumb': 'thumb3.jpg',
+                    'title': 'GLAMGLOW',
+                    'description': 'Waterburst Hydrated Glow Moisturizer',
+                    'link': 'https://linkkkkkkkmissingggg'
+                },
+                {
+                    'thumb': 'thumb4.jpg',
+                    'title': 'Supergoop!',
+                    'description': 'Daily Correct CC Cream SPF 35',
+                    'link': 'https://www.bloomingdales.com/shop/product/supergoop-daily-correct-cc-cream-spf-35?ID=2635233'
+                }
+            ]
+        },
+
+        'BlurredLip': {
+            'heading': 'Blurred Lip',
+            'videoID': '5713598139001',
+            'productslist': [
+                {
+                    'thumb': 'thumb1.jpg',
+                    'title': 'Frank Body',
+                    'description': 'Lip Scrub',
+                    'link': 'https://www.bloomingdales.com/shop/product/frank-body-lip-scrub?ID=2661754'
+                },
+                {
+                    'thumb': 'thumb2.jpg',
+                    'title': 'RMS Beauty',
+                    'description': 'Lipstick in Flight of Fancy',
+                    'link': 'https://www.bloomingdales.com/shop/product/?ID=2815451'
+                },
+                {
+                    'thumb': 'thumb3.jpg',
+                    'title': 'NUDESTIX',
+                    'description': 'Nudies All Over Face Color in Bare Back',
+                    'link': 'https://www.bloomingdales.com/shop/product/nudestix-nudies-all-over-face-color?ID=2653151'
+                }
+            ]
+        },
+
+
+
+        'GraphicEye': {
+            'heading': 'Next Level Cat Eye',
+            'videoID': '5713605251001',
+            'productslist': [
+                {
+                    'thumb': 'thumb1.jpg',
+                    'title': 'The Vamp Stamp',
+                    'description': 'Vink Vortex Black Liquid Eyeliner Ink & Verge Eyeliner Brush',
+                    'link': 'https://www.bloomingdales.com/shop/product/the-vamp-stamp-vink-vortex-black-liquid-eyeliner-ink-verge-angle-eyeliner-brush?ID=2648611'
+                },
+                {
+                    'thumb': 'thumb2.jpg',
+                    'title': 'COVER FX',
+                    'description': 'Perfect Setting Powder',
+                    'link': 'https://www.bloomingdales.com/shop/product/cover-fx-perfect-setting-powder?ID=2687220'
+                },
+                {
+                    'thumb': 'thumb3.jpg',
+                    'title': 'The BrowGal',
+                    'description': 'Convertible Brow Powder & Pomade Duo',
+                    'link': 'https://www.bloomingdales.com/shop/product/the-browgal-convertible-brow-powder-pomade-duo?ID=2692371'
+                },
+                {
+                    'thumb': 'thumb4.jpg',
+                    'title': 'Lash Star Beauty',
+                    'description': 'Full Control Lash Sculpting Mascara',
+                    'link': 'https://www.bloomingdales.com/shop/product/lash-star-beauty-full-control-lash-sculpting-mascara?ID=2632934'
+                },
+                {
+                    'thumb': 'thumb5.jpg',
+                    'title': 'FLiRT Cosmetics',
+                    'description': 'Flashes False Lash Applicator',
+                    'link': 'https://www.bloomingdales.com/shop/product/flirt-cosmetics-flashes-false-lash-applicator?ID=2695132'
+                },
+                {
+                    'thumb': 'thumb6.jpg',
+                    'title': 'Sigma Beauty',
+                    'description': 'F35 Tapered Highlighter Brush',
+                    'link': 'https://www.bloomingdales.com/shop/product/sigma-beauty-f35-tapered-highlighter-brush?ID=2685183'
+                },
+                {
+                    'thumb': 'thumb7.jpg',
+                    'title': 'NUDESTIX',
+                    'description': 'Lip + Cheek Cream Pencil in Mystic',
+                    'link': 'https://www.bloomingdales.com/shop/product/nudestix-cream-lip-cheek-pencil?ID=2702737'
+                }
+            ]
+        },
+
+        'PinkAllOver': {
+            'heading': 'Pink All Over',
+            'videoID': '5713599628001',
+            'productslist': [
+                {
+                    'thumb': 'thumb1.jpg',
+                    'title': 'SUVA Beauty',
+                    'description': 'Neutral Necessity Palette',
+                    'link': 'https://www.bloomingdales.com/shop/product/suva-beauty-8-shade-eyeshadow-palette?ID=2693415'
+                },
+                {
+                    'thumb': 'thumb2.jpg',
+                    'title': 'Rouge Bunny Rouge',
+                    'description': 'Swell Bliss XXX Lip Plump in 84 Acacia Royal Jelly',
+                    'link': 'https://www.bloomingdales.com/shop/product/rouge-bunny-rouge-swell-bliss-xxx-lip-plump?ID=2652623'
+                },
+                {
+                    'thumb': 'thumb3.jpg',
+                    'title': 'Lime Crime',
+                    'description': 'Hi-Lite Palette in Blossoms',
+                    'link': 'https://www.bloomingdales.com/shop/product/lime-crime-hi-lite-highlighter-palette?ID=2669832'
+                },
+                {
+                    'thumb': 'thumb4.jpg',
+                    'title': 'CONTEXT',
+                    'description': 'Nail Lacquer in Take It Off',
+                    'link': 'https://www.bloomingdales.com/shop/product/context-nail-lacquer?ID=2606986'
+                },
+                {
+                    'thumb': 'thumb5.jpg',
+                    'title': 'Kosas',
+                    'description': 'Color & Light Creme in 8th Muse',
+                    'link': 'https://www.bloomingdales.com/shop/product/kosas-color-light-creme?ID=2770476'
+                },
+                {
+                    'thumb': 'thumb6.jpg',
+                    'title': 'Sigma Beauty',
+                    'description': 'E55 Eye Shading Brush',
+                    'link': 'https://www.bloomingdales.com/shop/product/sigma-beauty-e55-eye-shading-brush?ID=2685170'
+                }
+            ]
+        },
+
+
 
         'MetallicLips': {
             'heading': 'Metallic Lips',
@@ -250,110 +510,6 @@ $(function() {
             ]
         },
 
-        'NoMakeupMakeup': {
-            'heading': 'No-Makeup Makeup',
-            'videoID': '5579707899001',
-            'productslist': [
-                {
-                    'thumb': 'thumb1.jpg',
-                    'title': 'COVER FX',
-                    'description': 'Mattifying Primer with Anti-Acne Treatment',
-                    'link': 'https://www.bloomingdales.com/shop/product/cover-fx-mattifying-primer-with-anti-acne-treatment?ID=2696056'
-                },
-                {
-                    'thumb': 'thumb2.jpg',
-                    'title': 'COVER FX',
-                    'description': 'Natural Finish Foundation',
-                    'link': 'https://www.bloomingdales.com/shop/product/cover-fx-natural-finish-foundation?ID=2687218'
-                },
-                {
-                    'thumb': 'thumb3.jpg',
-                    'title': 'Sigma',
-                    'description': 'F80 Flat Kabuki Brush',
-                    'link': 'https://www.bloomingdales.com/shop/product/sigma-beauty-f80-flat-kabuki-brush?ID=2685189'
-                },
-                {
-                    'thumb': 'thumb4.jpg',
-                    'title': 'RMS Beauty',
-                    'description': 'Living Luminizer',
-                    'link': 'https://www.bloomingdales.com/shop/product/rms-beauty-living-luminizer?ID=2653292'
-                },
-                {
-                    'thumb': 'thumb5.jpg',
-                    'title': 'Lash Star Beauty',
-                    'description': 'Supreme Eyelash Curler',
-                    'link': 'https://www.bloomingdales.com/shop/product/lash-star-beauty-supreme-eyelash-curler?ID=2642948'
-                },
-                {
-                    'thumb': 'thumb6.jpg',
-                    'title': 'Rouge Bunny Rouge',
-                    'description': 'Witchery Modeling Mascara',
-                    'link': 'https://www.bloomingdales.com/shop/product/rouge-bunny-rouge-witchery-modeling-mascara?ID=2651871'
-                },
-                {
-                    'thumb': 'thumb7.jpg',
-                    'title': 'Kosas',
-                    'description': 'Weightless Lipstick in Rosewater',
-                    'link': 'https://www.bloomingdales.com/shop/product/kosas-weightless-lipstick?ID=2679460'
-                },
-                {
-                    'thumb': 'thumb8.jpg',
-                    'title': 'NUDESTIX',
-                    'description': 'Eyebrow Stylus Pencil &amp; Gel',
-                    'link': 'https://www.bloomingdales.com/shop/product/nudestix-eyebrow-stylus-pencil-gel?ID=2653141'
-                }
-            ]
-        },
-
-        'UltimateSkinPrep': {
-            'heading': 'Ultimate Skin Prep',
-            'videoID': '5579718241001',
-            'productslist': [
-                {
-                    'thumb': 'thumb1.jpg',
-                    'title': 'CONTEXT',
-                    'description': 'White Charcoal Detox Mask',
-                    'link': 'https://www.bloomingdales.com/shop/product/context-white-charcoal-detox-mask?ID=2607002'
-                },
-                {
-                    'thumb': 'thumb2.jpg',
-                    'title': 'Kaprielle',
-                    'description': 'Roses & Gold Anti-Aging Serum',
-                    'link': 'https://www.bloomingdales.com/shop/product/kaprielle-roses-gold-anti-aging-serum?ID=2662424'
-                },
-                {
-                    'thumb': 'thumb3.jpg',
-                    'title': 'Grown Alchemist',
-                    'description': 'Hydra-Repair Day Cream',
-                    'link': 'https://www.bloomingdales.com/shop/product/grown-alchemist-hydra-repair-day-cream?ID=1425992'
-                },
-                {
-                    'thumb': 'thumb4.jpg',
-                    'title': 'Mario Badescu',
-                    'description': 'Hyaluronic Eye Cream',
-                    'link': 'https://www.bloomingdales.com/shop/product/mario-badescu-hyaluronic-eye-cream?ID=2684994'
-                },
-                {
-                    'thumb': 'thumb5.jpg',
-                    'title': 'Frank Body',
-                    'description': 'Lip Scrub',
-                    'link': 'https://www.bloomingdales.com/shop/product/frank-body-lip-scrub?ID=2661754'
-                },
-                {
-                    'thumb': 'thumb6.jpg',
-                    'title': 'Lano',
-                    'description': 'Lanolips 101 Ointment Multipurpose Superbalm',
-                    'link': 'https://www.bloomingdales.com/shop/product/lano-lanolips-101-ointment-multipurpose-superbalm?ID=2648594'
-                },
-                {
-                    'thumb': 'thumb7.jpg',
-                    'title': 'Supergoop!',
-                    'description': 'Defense Refresh Setting Mist SPF 50',
-                    'link': 'https://www.bloomingdales.com/shop/product/supergoop-defense-refresh-setting-mist-spf-50-3.4-oz.?ID=2648949'
-                }
-            ]
-        },
-
         'UnicornEyes': {
             'heading': 'Unicorn Eyes',
             'videoID': '5579704123001',
@@ -381,51 +537,14 @@ $(function() {
                     'title': 'Saturday Skin',
                     'description': 'Daily Dew Hydrating Essence Mist',
                     'link': 'https://www.bloomingdales.com/shop/product/saturday-skin-daily-dew-hydrating-essence-mist?ID=2629815'
-                }
-            ]
-        },
-
-        'CoolLinerLooks': {
-            'heading': 'Cool Liner Looks',
-            'videoID': '5579707489001',
-            'productslist': [
-                {
-                    'thumb': 'thumb1.jpg',
-                    'title': 'Lash Star Beauty',
-                    'description': 'Visionary Lashes 003',
-                    'link': 'https://www.bloomingdales.com/shop/product/lash-star-beauty-visionary-lashes-003?ID=2642967'
                 },
                 {
-                    'thumb': 'thumb2.jpg',
-                    'title': 'The BrowGal',
-                    'description': 'Skinny Eyebrow Pencil in Medium Brown 04',
-                    'link': 'https://www.bloomingdales.com/shop/product/the-browgal-skinny-eyebrow-pencil?ID=2676828'
-                }, {
-                    'thumb': 'thumb3.jpg',
-                    'title': 'Rouge Bunny Rouge',
-                    'description': 'Devotion Ink Quartz Eyeliner in Opalescence Essence',
-                    'link': '#'
-                }, {
-                    'thumb': 'thumb4.jpg',
-                    'title': 'Rouge Bunny Rouge',
-                    'description': 'Devotion Ink Quartz Eyeliner in Tiger Essence',
-                    'link': 'https://www.bloomingdales.com/shop/product/rouge-bunny-rouge-devotion-ink-quartz-eyeliner?ID=2651902'
-                }, {
                     'thumb': 'thumb5.jpg',
-                    'title': 'FLiRT Cosmetics',
-                    'description': 'Chic Happens Ombré Lip Kit in Slay All Day ',
-                    'link': '#'
-                }, {
-                    'thumb': 'thumb6.jpg',
-                    'title': 'FLiRT Cosmetics',
-                    'description': 'Chic Happens Ombré Lip Kit in No Shame',
-                    'link': 'https://www.bloomingdales.com/shop/product/flirt-cosmetics-chic-happens-ombre-lip-kit?ID=2695139'
-                }, {
-                    'thumb': 'thumb7.jpg',
-                    'title': 'FLiRT Cosmetics',
-                    'description': 'Dot Dot Dot Dual Eyeliner Art',
-                    'link': 'https://www.bloomingdales.com/shop/product/flirt-cosmetics-dot-dot-dot-dual-eyeliner-art?ID=2695136'
-                }
+                    'title': 'beautyblender',
+                    'description': 'the original beautyblender&reg;',
+                    'link': 'https://www.bloomingdales.com/shop/product/beautyblender-the-original-beautyblender?ID=2661588'
+                },
+
             ]
         }
 
@@ -492,17 +611,10 @@ $(function() {
         },
         'Kosas': {
             'theGlowDownCopy': 'Because this L.A.&dash;based brand makes only lipsticks, it&#39;s focused on perfecting the art and science of lip color. Every shade in its natural collection is handmade with green tea, shea butter and sweet orange oil&mdash;plus, free of parabens, sulfates and phthalates. The sheer, buildable colors range from nudes to brights and feature a non&dash;drying matte finish. Trust us, you&#39;ll want one of each. ',
-        'bestsellerImgLink': 'https://www.bloomingdales.com/shop/product/kosas-weightless-lipstick?ID=2679460',
-        'bestsellerHeading': 'Weightless Lip Color in Rosewater',
-        'bestsellerCopy': 'The perfect dusty pink shade that looks like your lips (but better)—and it’s super hydrating and plumping.',
-        'shopLinkUrl': 'https://www.bloomingdales.com/shop/makeup-perfume-beauty/glowhaus-makeup-skin-care/Brand/Kosas?id=1035059'
-        },
-        'Lano': {
-            'theGlowDownCopy': 'Lanolin&mdash;a natural occurring wax found on sheepswool&mdash;is the star of this skin care brand out of Australia. Not only does it mimic skin lipids (aka it’s super compatible with your skin), but it can hold up to double its weight in water to deliver extreme hydration. The award&dash;winning line of lip, hand and body products is everything you need to stay moisturized year&dash;round. ',
-            'bestsellerImgLink': 'https://www.bloomingdales.com/shop/product/lano-lanolips-101-ointment-multipurpose-superbalm?ID=2648594',
-            'bestsellerHeading': 'Lanolips 101 Ointment Multipurpose Superbalm',
-            'bestsellerCopy': 'Do you ever dream about an all&dash;in&dash;one balm you can literally put anywhere? This is it—and there are more than 101 ways to use it.',
-            'shopLinkUrl': 'https://www.bloomingdales.com/shop/makeup-perfume-beauty/glowhaus-makeup-skin-care/Brand/Lano?id=1035059'
+            'bestsellerImgLink': 'https://www.bloomingdales.com/shop/product/kosas-weightless-lipstick?ID=2679460',
+            'bestsellerHeading': 'Weightless Lip Color in Rosewater',
+            'bestsellerCopy': 'The perfect dusty pink shade that looks like your lips (but better)—and it’s super hydrating and plumping.',
+            'shopLinkUrl': 'https://www.bloomingdales.com/shop/makeup-perfume-beauty/glowhaus-makeup-skin-care/Brand/Kosas?id=1035059'
         },
         'Lash Star Beauty': {
             'theGlowDownCopy': 'Lashes are having a big moment, which is why we&#39;re obsessed (in a big way) with this beauty line dedicated solely to eyelashes. Whether you want to make a subtle statement or go all&dash;out extra, these products and tools&mdash;from heated curlers to a multitasking mascara&mdash;will be the stars of your makeup bag. Plus, the brand is cruelty&dash;free and everything is formulated with high&dash;quality ingredients.',
@@ -580,11 +692,11 @@ $(function() {
             'videoID': '5573554980001'
         },
         'SUVA Beauty': {
-        'theGlowDownCopy': 'Taking its name from the vibrant capital of Fiji, this eye makeup line is best known for its range of pop colors and professional-grade palettes. Its shadows are formulated with built-in primers and intense pigments, making them essential for makeup artists and beauty bloggers alike. Whether you’re looking to create a simple smoky eye or something more exotic, this line of shadows and liners has just what you need.',
+            'theGlowDownCopy': 'Taking its name from the vibrant capital of Fiji, this eye makeup line is best known for its range of pop colors and professional-grade palettes. Its shadows are formulated with built-in primers and intense pigments, making them essential for makeup artists and beauty bloggers alike. Whether you’re looking to create a simple smoky eye or something more exotic, this line of shadows and liners has just what you need.',
             'bestsellerImgLink': 'https://www.bloomingdales.com/shop/product/suva-beauty-8-shade-eyeshadow-palette?ID=2693415',
             'bestsellerHeading': 'Cupcakes &amp; Monsters 8-Shade Eyeshadow Palette',
             'bestsellerCopy': 'A wild, graffiti-inspired collection of vibrant mattes—all in the brand’s signature butter formula.',
-            'shopLinkUrl': 'https://www.bloomingdales.com/shop/makeup-perfume-beauty/glowhaus-makeup-skin-care/Brand/NUDESTIX?id=1035059'
+            'shopLinkUrl': 'https://www.bloomingdales.com/shop/makeup-perfume-beauty/glowhaus-makeup-skin-care/Brand/SUVA%20Beauty?id=1035059'
         },
         'The Vamp Stamp': {
             'theGlowDownCopy': 'Celebrity makeup artist Veronica Lorenz created this ingenious eyeliner tool when a medical condition weakened her grip. She devised a solution that didn’t require steady hands or years of practice: a stamp you coat in pigment and place on your lash line for a perfectly symmetrical cat-eye. Now there’s no more winging it when it comes to achieving the ideal line every time.',
@@ -595,8 +707,45 @@ $(function() {
             'videoID': '5573561609001'
         },
         
+        'Bon Parfumeur': {
+            'theGlowDownCopy': 'Founder Ludovic Bonneton imagined his French perfume line as a fragrance wardrobe that could be mixed, matched and layered. The bottles are color-coded by category, including floral, fruity and woody, and the labels highlight the three main notes, making it super simple to find your signature scent.',
+            'bestsellerImgLink': 'https://www.bloomingdales.com/shop/product/bon-parfumeur-eau-de-parfum-501?ID=2725818',
+            'bestsellerHeading': 'Eau de Parfum 101',
+            'bestsellerCopy': 'Earthy musk tempers romantic rose for a perfume that is both sweet and sophisticated.',
+            'shopLinkUrl': 'https://www.google.com'
+        },
+        'Drybar': {
+            'theGlowDownCopy': 'As the founder of game-changing blowout chain Drybar, Alli Webb has made good hair her business. The salons’ signature yellow styling tools—like a powerful dryer that’s up to 20 percent faster than other professional tools—and products designed to make DIY styling a breeze are all you need to master any look from stick-straight to spirals—no appointment needed.',
+            'bestsellerImgLink': 'https://www.bloomingdales.com/shop/product/drybar-detox-dry-shampoo-3.5-oz.?ID=173562',
+            'bestsellerHeading': 'Detox Dry Shampoo',
+            'bestsellerCopy': 'Microfine rice powders absorb oil to restore volume and instantly refresh hair—basically, it’s the ultimate blowout extender.',
+            'shopLinkUrl': 'https://www.google.com'
+        },        
+        'Too Cool for School': {
+            'theGlowDownCopy': 'We’re not ashamed to admit that we totally judged a book by its cover—or, in this case, a mascara by its package. This unconventional Korean beauty brand collaborates with artists, so you’ll find whimsical drawings of dinosaurs on the CC creams and quirky cats on the lip balms. But there’s so much more than meets the eye: Egg-infused masks and moisturizers treat everything from acne to signs of aging, lip tints have epic staying power and cleansers deliver results that are beyond skin deep.',
+            'bestsellerImgLink': 'https://www.bloomingdales.com/shop/product/too-cool-for-school-egg-cream-mask-hydration?ID=2788521',
+            'bestsellerHeading': 'Egg Cream Mask Hydration',
+            'bestsellerCopy': 'Egg extracts, coconut water, anti-agers and botanical extracts whip dry, dull skin into shape.',
+            'shopLinkUrl': 'https://www.google.com'
+        },        
+
+
+
+
+
+
+
+
+        'Lano': {
+            'heading': 'Lano',
+            // 'theGlowDownCopy': 'Lanolin&mdash;a natural occurring wax found on sheepswool&mdash;is the star of this skin care brand out of Australia. Not only does it mimic skin lipids (aka it’s super compatible with your skin), but it can hold up to double its weight in water to deliver extreme hydration. The award&dash;winning line of lip, hand and body products is everything you need to stay moisturized year&dash;round. ',
+            'bestsellerImgLink': 'https://www.bloomingdales.com/shop/product/lano-lanolips-101-ointment-multipurpose-superbalm?ID=2648594',
+            'bestsellerHeading': 'Lanolips 101 Ointment Multipurpose Superbalm',
+            'bestsellerCopy': 'Do you ever dream about an all&dash;in&dash;one balm you can literally put anywhere? This is it—and there are more than 101 ways to use it.',
+            'shopLinkUrl': 'https://www.bloomingdales.com/shop/makeup-perfume-beauty/glowhaus-makeup-skin-care/Brand/Lano?id=1035059'
+        },
         'beautyblender': {
-            'heading': 'beautyblender&reg;',
+            'heading': 'beautyblender',
             'bestsellerImgLink': 'https://www.bloomingdales.com/shop/product/beautyblender-the-original-beautyblender?ID=2661588',
             'bestsellerHeading': 'the original beautyblender&reg;',
             'bestsellerCopy': 'You can find this little pink makeup sponge in just about every makeup artist’s bag—and for good reason. Its edgeless shape and unique material that expands when wet provide a streak-free application for a high-def finish.',
@@ -630,17 +779,53 @@ $(function() {
             'bestsellerCopy': 'With its innovative silicone design, you won’t waste a drop of makeup as you apply foundation, blush, highlighter and concealer. Just add your product of choice to the teardrop-shaped tool, dab it on and blend it out.',
             'shopLinkUrl': 'https://www.bloomingdales.com/shop/product/makeupdrop-silicone-makeup-applicator?ID=2621052',
             'videoID': '5573546894001'
-        }
+        },
+        'BioRepublic': {
+            'heading': 'BioRepublic',
+            'bestsellerImgLink': 'https://www.bloomingdales.com/shop/product/biorepublic-lost-baggage-under-eye-emergency-repair-mask?ID=1667902',
+            'bestsellerHeading': 'Lost Baggage Under Eye Emergency Repair Mask',
+            'bestsellerCopy': 'Whether you’re recovering from a late night, facing an early morning or both, a few minutes with this peptide-packed eye treatment will breathe new life into tired eyes, hydrating and firming to send dark circles and bags packing.',
+            'shopLinkUrl': 'https://www.bloomingdales.com/shop/product/biorepublic-lost-baggage-under-eye-emergency-repair-mask?ID=1667902'
+        },
+        'Shhhowercap': {
+            'heading': 'Shhhowercap',
+            'bestsellerImgLink': 'https://www.bloomingdales.com/shop/product/shhhowercap-nanotech-fabric-turban-shower-cap?ID=2423287',
+            'bestsellerHeading': 'Nanotech Fabric Turban Shower Cap',
+            'bestsellerCopy': 'Never before has a shower cap been called “chic!” This 100 percent waterproof upgrade keeps your hair frizz-free during even the steamiest of showers. The fabric repels moisture at a molecular level and the rubber grip protects your hairline so your blowout lives to see another day.',
+            'shopLinkUrl': 'https://www.bloomingdales.com/shop/product/shhhowercap-nanotech-fabric-turban-shower-cap?ID=2423287'
+        },
+        'Patchology': {
+            'heading': 'Patchology',
+            'bestsellerImgLink': 'https://www.bloomingdales.com/shop/product/patchology-wink-a-kiss-flashpatch-5-minute-hydrogels?ID=2716599',
+            'bestsellerHeading': 'Wink & A Kiss FlashPatch 5-Minute Hydrogels',
+            'bestsellerCopy': 'Add this multitasking kit to your night-out prep. The Anytime Perk-Me-Up patches deliver caffeine and collagen to refresh eyes, while The Super Smooth Talker gels plump and soften lips with peptides and green tea extracts.',
+            'shopLinkUrl': 'https://www.bloomingdales.com/shop/product/patchology-wink-a-kiss-flashpatch-5-minute-hydrogels?ID=2716599'
+        },
+        'Preheels': {
+            'heading': 'Preheels',
+            'bestsellerImgLink': 'https://www.bloomingdales.com/shop/product/preheels-blister-prevention-spray?ID=2635210',
+            'bestsellerHeading': 'Women’s Blister Prevention Spray',
+            'bestsellerCopy': 'Three years of scientific research resulted in this flexible, clear film that blocks shoe friction to stop blisters from forming. Just spray and let dry for a genius solution to breaking in new shoes or pesky rubbing.',
+            'shopLinkUrl': 'https://www.bloomingdales.com/shop/product/preheels-blister-prevention-spray?ID=2635210'
+        }         
+
     };
 
     // video page content
     var videoPagePics = [
         {'name': 'MetallicLips',        'thumb': 'Metallic-Lips.jpg',         'heading': 'Metallic Lips'},
         {'name': 'AllOverHighlighter',  'thumb': 'All-Over-Highlighter.jpg',  'heading': 'All-Over Highlighter'},
-        {'name': 'NoMakeupMakeup',      'thumb': 'No-Makeup-Makeup.jpg',      'heading': 'No-Makeup Makeup'},
-        {'name': 'UltimateSkinPrep',    'thumb': 'Ultimate-Skin-Prep.jpg',    'heading': 'Ultimate Skin Prep'},
+        // {'name': 'NoMakeupMakeup',      'thumb': 'No-Makeup-Makeup.jpg',      'heading': 'No-Makeup Makeup'},
+        // {'name': 'UltimateSkinPrep',    'thumb': 'Ultimate-Skin-Prep.jpg',    'heading': 'Ultimate Skin Prep'},
         {'name': 'UnicornEyes',         'thumb': 'Unicorn-Eyes.jpg',          'heading': 'Unicorn Eyes'},
-        {'name': 'CoolLinerLooks',      'thumb': 'Cool-Liner-Looks.jpg',      'heading': 'Cool Liner Looks'}
+        // {'name': 'CoolLinerLooks',      'thumb': 'Cool-Liner-Looks.jpg',      'heading': 'Cool Liner Looks'}
+
+        {'name': 'PinkAllOver',         'thumb': 'Pink-All-Over.jpg',           'heading': 'Pink All Over'},
+        {'name': 'GraphicEye',          'thumb': 'Graphic-Eye.jpg',             'heading': 'Next Level Cat Eye'},
+        {'name': 'BlurredLip',          'thumb': 'Blurred-Lip.jpg',             'heading': 'Blurred Lip'},
+        {'name': 'SkinPrep',            'thumb': 'Skin-Prep.jpg',               'heading': 'Skin Prep'},
+        {'name': 'BurgundyLip',         'thumb': 'Burgundy-Lip.jpg',            'heading': 'Burgundy Lip'}
+
     ];
 
 
@@ -662,7 +847,6 @@ $(function() {
             return result;
         });
     };
-    //var imgPopupLink = $('.image-popup-link');
 
     // remove/clear all list elements
     landingPageTileList.empty();
@@ -673,7 +857,7 @@ $(function() {
     //var itemsCounter = 0;
 
     var plyrPlayBtn = '<span class="plyr__play-large"><svg id="plyr-play" viewBox="0 0 18 18" width="100%" height="100%"><path d="M15.562 8.1L3.87.225C3.052-.337 2 .225 2 1.125v15.75c0 .9 1.052 1.462 1.87.9L15.563 9.9c.584-.45.584-1.35 0-1.8z"></path></svg><span class="plyr__sr-only">Play</span></span>';
-    
+
     // create landing page image tile
     $.each(landingPagePics, function (i) {
 
@@ -690,7 +874,12 @@ $(function() {
             item.find('video').css('height', value);
         };
         
-        var imgMarkup = '<img alt="" data-width="' + defaultThumbWidth +
+        var imgMarkup = '<img alt="glowhaus generic photo ' + i + '" data-width="' + defaultThumbWidth +
+            '" data-height="' + originalHeight +
+            '" data-tmp-src="' + thumbImg +
+            '" src="' + imagePlaceHolder + '">';
+
+        var prodImgMarkup = '<img alt="' + tileItem.name + ' ' + i + '" data-width="' + defaultThumbWidth +
             '" data-height="' + originalHeight +
             '" data-tmp-src="' + thumbImg +
             '" src="' + imagePlaceHolder + '">';
@@ -699,22 +888,22 @@ $(function() {
         if (media === 'img') {
             if (typeOfAction === 'img-popup') {
                 if (imgPopupsCounter < 36) {
-                    imgItem = $('<li><a class="image-popup-link" data-name="POPUP-IMAGE" ' +
+                    imgItem = $('<li><a aria-haspopup="true" role="button" class="image-popup-link" data-name="POPUP-IMAGE" ' +
                         'href="' + fullSizeImg + '">' +  imgMarkup + '</a></li>')
                         .appendTo(landingPageTileList);
                     setImgHeight(imgItem);
                     imgPopupsCounter++;
                 }
             } else if (typeOfAction === 'html-video-popup') {
-                imgItem = $('<li><a class="html-video-popup" data-name="' + tileItem.name + '" ' +
-                    'href="' + popupPageTemplateUrl + '">' +  imgMarkup +
+                imgItem = $('<li><a aria-haspopup="true" role="button" class="html-video-popup" data-name="' + tileItem.name + '" ' +
+                    'href="' + popupPageTemplateUrl + '?v=' + i +'">' +  imgMarkup +
                     '<span class="plyr-play-btn__holder">' + plyrPlayBtn + '</span>' +
                     '</a></li>')
                     .appendTo(landingPageTileList);
                 setImgHeight(imgItem);
             }else if (typeOfAction === 'html-brand-popup') {
-                imgItem = $('<li><a class="html-brand-popup no-play-btn" data-name="' + tileItem.name + '" ' +
-                    'href="' + popupPageTemplateUrl + '">' +  imgMarkup + '</a></li>')
+                imgItem = $('<li><a aria-haspopup="true" role="button" class="html-brand-popup no-play-btn" data-name="' + tileItem.name + '" ' +
+                    'href="' + popupPageTemplateUrl + '?v=' + i +'">' +  prodImgMarkup + '</a></li>')
                     .appendTo(landingPageTileList);
                 setImgHeight(imgItem);
             }
@@ -726,10 +915,13 @@ $(function() {
                     '" src="' + imagePlaceHolder + '"></video></li>')
                     .appendTo(landingPageTileList);
                 setImgHeight(videoItem);
+
+
+               
             } else {
                 var videoThumb = thumbImg.substr(0, thumbImg.lastIndexOf('.')) + '.jpg';
                 imgItem = $('<li class="glh-masonry-item__deco-item">' +
-                    '<img alt="" data-width="' + defaultThumbWidth +
+                    '<img alt="glowhaus generic photo" data-width="' + defaultThumbWidth +
                     '" data-height="' + originalHeight +
                     '" data-tmp-src="' + videoThumb +
                     '" src="' + imagePlaceHolder + '"></li>')
@@ -774,6 +966,14 @@ $(function() {
             video.renameAttr('data-tmp-src', 'data-src');
             video.lazyLoadXT();
             video.addClass('animated fadeInUp');
+            /*
+            video.on('click', function(){
+                $('.glh-video-thumb').each(function() {
+                    $(this).removeAttr('loop').get(0).pause();
+                    //$(this).get(0).pause();
+                });
+            });
+            */
         }, _delay);
     });
 
@@ -786,9 +986,9 @@ $(function() {
         var index = getRandomInt(1, imgPopupLinkCount);
         var patch = '';
         if (isOdd(q) === 1) {
-            patch = '<img alt="" style="display:none;z-index:996" class="img-tile-patch top" src="' + patchesDir + 'patch' + q + '.svg">';
+            patch = '<img  alt="glowhaus generic photo' + q + '" style="display:none;z-index:996" class="img-tile-patch top" src="' + patchesDir + 'patch' + q + '.svg">';
         } else {
-            patch = '<img alt="" style="display:none;z-index:996" class="img-tile-patch bottom" src="' + patchesDir + 'patch' + q + '.svg">';
+            patch = '<img  alt="glowhaus generic photo' + q + '" style="display:none;z-index:996" class="img-tile-patch bottom" src="' + patchesDir + 'patch' + q + '.svg">';
         }
         if(index > imgPopupLinkCount - 4) {
             index = index + getRandomInt(1, 3);
@@ -814,6 +1014,13 @@ $(function() {
                 popupCloseBtnEvent = false;
                 // init coremetrics for close btn
                 popupCloseBtnMetrics ('close-btn_IMAGE-POPUP');
+
+                //$('.mfp-figure').attr('id','mfp-figure').attr('tabindex','0');
+                $('.mfp-figure').find('img')
+                .on('load', function(){
+                    $(this).attr('tabindex','1').focus();
+                });
+                $('.mfp-close').attr('tabindex','0');
             },
             close: function() {
                 if(!popupCloseBtnEvent) {
@@ -906,11 +1113,12 @@ $(function() {
     videoPageTileList.empty();
 
     $.each(videoPagePics, function (i) {
-        $('<li><a class="glh-videos-tutorial-item play-video-btn" data-name="' + videoPagePics[i].name + '" href="' + popupPageTemplateUrl +
-            '"><span class="videos-list-item__img-wrapper"><img alt="" src="' + videoPageIndexPicsDir + videoPagePics[i].thumb + '">' +
+        var picHeading = videoPagePics[i].heading;
+        $('<li><a aria-haspopup="true" role="button" class="glh-videos-tutorial-item play-video-btn" data-name="' + videoPagePics[i].name + '" href="' + popupPageTemplateUrl +
+            '"><span class="videos-list-item__img-wrapper"><img alt="' + picHeading + '" src="' + videoPageIndexPicsDir + videoPagePics[i].thumb + '">' +
             plyrPlayBtn +
             '</span>' +
-            '<h5 class="glh-videos-tutorial-item__label">' + videoPagePics[i].heading + '</h5></a>' +
+            '<h5 class="glh-videos-tutorial-item__label">' + picHeading + '</h5></a>' +
             '</li>').appendTo(videoPageTileList);
 
     });
@@ -942,11 +1150,17 @@ $(function() {
                 currentVideoPosition = 0;
             },
             ajaxContentAdded: function () {
-                //var cormetricsValue = ;
+
+                var prodName = videoPagePopupsData[productPageToOpen].heading;
+                var ajaxPopup = $('#ajax-popup-div');
+                ajaxPopup.focus();
+
+                ajaxPopup.attr('aria-labelledby', prodName);
+                
                 popupCloseBtnMetrics ('close-btn_VIDEO-POPUP_' + productPageToOpenCleanName);
                 
                 //Video page – heading
-                $('.glh-popup__brand-heading').html(videoPagePopupsData[productPageToOpen].heading);
+                $('.glh-popup__brand-heading').html(prodName);
 
                 //Video page – product's list
                 var thisProductName = productPageToOpen.toLowerCase();
@@ -961,7 +1175,7 @@ $(function() {
                     }
                     $('.ghl-thumbs-links-list').append('<li><a coremetricTag="shop-product_' + _item.title.toUpperCase().replace(/[^A-Z0-9]/ig, '-') + '" '+
                         'href="' + _item.link + '">' +
-                        '<img alt="" src="' + thisProductPath + _item.thumb + '">' +
+                        '<img alt="' + itemTitle + '" src="' + thisProductPath + _item.thumb + '">' +
                         '<h5>' + itemTitle + '</h5>' +
                         '<p>' + _item.description + '</p></a></li>');
                 });
@@ -988,11 +1202,13 @@ $(function() {
             beforeOpen: function () {
                 productPageToOpen = this.st.el.attr('data-name');
                 productPageToOpenCleanName = productPageToOpen.toUpperCase().replace(/[^A-Z0-9]/ig, '-');
+                
             },
             open: function () {
                 popupCloseBtnEvent = false;
                 // init coremetrics for close btn
                 popupCloseBtnMetrics(productPageToOpenCleanName);
+                
             },
             close: function () {
                 if (!popupCloseBtnEvent) {
@@ -1008,6 +1224,9 @@ $(function() {
             },
 
             ajaxContentAdded: function () {
+                
+                var ajaxPopup = $('#ajax-popup-div');
+                ajaxPopup.focus();
 
                 var cormetricsValue = productPageToOpen.toUpperCase().replace(/[^A-Z0-9]/ig, '-');
 
@@ -1019,12 +1238,19 @@ $(function() {
 
                 //Brand page – heading
 
-
-                if (brandsPageItem.heading == undefined) {
+                var brandsPageItemHeading = brandsPageItem.heading;
+                var popupBrandHeading = $('.glh-popup__brand-heading');
+                popupBrandHeading.attr('aria-label', productPageToOpen);
+                
+                if (brandsPageItemHeading == undefined) {
+                    
+                    ajaxPopup.attr('aria-labelledby', productPageToOpen);
+                    
                     var brandLogoUrl = brandsPageIndexPicsDir + productPageToOpen.toLowerCase().replace(/\s/g, '') + '-logo.jpg';
-                    $('.glh-popup__brand-heading').html('<img alt="" src="' + brandLogoUrl + '">');
-
-                    var theGlowDownDescription = '<h3 class="glh-popup__subheading">The Glow-Down:</h3><p class="glh-popup__description-copy">' + brandsPageItem.theGlowDownCopy + '</p>';
+                    
+                    popupBrandHeading.html('<img alt="' + productPageToOpen + ' logo" src="' + brandLogoUrl + '">');
+                    
+                    var theGlowDownDescription = '<h2 class="glh-popup__subheading">The Glow-Down:</h2><p class="glh-popup__description-copy">' + brandsPageItem.theGlowDownCopy + '</p>';
                     $('.glh-popup__theglowdown-description').html(theGlowDownDescription);
 
                     // resolve '.' and '!' issue in product's name
@@ -1039,7 +1265,9 @@ $(function() {
                             'class="glh-popup__shop-link" href="' + brandsPageItem.shopLinkUrl + '">Shop ' + productPageToOpen + '</a>');
                     }
                 } else {
-                    $('.glh-popup__brand-heading').html(brandsPageItem.heading);
+                    popupBrandHeading.html(brandsPageItemHeading);
+
+                    ajaxPopup.attr('aria-labelledby', brandsPageItemHeading);
 
                     $('.glh-popup__shop-link-holder').html('<a coremetricTag="shop-now-' + cormetricsValue + '" ' +
                         'class="glh-popup__shop-link" href="' + brandsPageItem.shopLinkUrl + '">Shop Now</a>');
@@ -1049,7 +1277,7 @@ $(function() {
                 var bestsellerImgUrl = brandsPageIndexPicsDir + productPageToOpen.toLowerCase().replace(/\s/g, '') + '-product.jpg';
                 $('.glh-popup__bestseller-img-holder').html('<a coremetricTag="shop-product_image-link_' + cormetricsValue + '" ' +
                     'href="' + brandsPageItem.bestsellerImgLink + '">' +
-                    '<img alt="" src="' + bestsellerImgUrl + '"></a>');
+                    '<img src="' + bestsellerImgUrl + '"></a>');
 
                 $('.glh-popup__bestseller-description').html('<h3 class="glh-popup__subheading">' + brandsPageItem.bestsellerHeading + '</h3>' +
                     '<p class="glh-popup__description-copy">' + brandsPageItem.bestsellerCopy + '</p>');
@@ -1105,6 +1333,23 @@ $(function() {
             }, 2500);
         }
     });
+
+
+    /* stop all animation button for next round*/
+    if($('#glh-images-tile').length) {
+        /*
+        var stopAnimationDialog = '<div class="glh-stop-animation-btn-container">' +
+            '<button tabindex="0" id="stop-animation-btn" class="glh-stop-animation-btn" role="button" aria-label="Stop animation on the page" aria-controls="animation">Stop all animation</button></div>';
+        $('body').prepend(stopAnimationDialog);
+        $('#stop-animation-btn').on('click', function () {
+            $('.glh-video-thumb').each(function() {
+                $(this).removeAttr('loop autoplay playsinline').get(0).pause();
+            }); 
+            $(this).parent().remove();
+        });
+        */
+       
+    }
     
     // ----------- Utils
 
@@ -1119,7 +1364,7 @@ $(function() {
     // Attribute 17= Video Length (Total length played in seconds)
 
     function coreMetricsForVideo(tag_value, attribute16_value, attribute17_value) {
-        var categoryID = "fall17_glowhaus";
+        var categoryID = "spring18_glowhaus";
         try {
             var explorerAttributes = new BLOOMIES.coremetrics.exploreAttributes;
             //16: evt.type,
@@ -1137,11 +1382,14 @@ $(function() {
 
 
     function popupCloseBtnMetrics (coremetricsTagValue) {
-        $('.mfp-close').attr('coremetricTag', coremetricsTagValue)
+        var closeBtn = $('.mfp-close');
+        closeBtn.attr('aria-label', 'Close dialog');
+        closeBtn.attr('coremetricTag', coremetricsTagValue)
             .on('click', function () {
                 popupCloseBtnEvent = true;
                 $.fn.coreTag('Element', $( this ).attr( "coremetrictag" ));
             });
+        closeBtn.html('&#215;');
     }
     
     function randomNumberFromRangeExt(min, max) {
