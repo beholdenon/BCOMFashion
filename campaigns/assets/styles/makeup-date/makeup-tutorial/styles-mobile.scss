@@ -1,15 +1,19 @@
+html, body{
+  overflow-x: hidden;
+}
+
 #bl_main_container {
 
   p {
     font-family: "Avenir";
     color: #1e1e1e;
-    font-size: 14px;
+    font-size: 11px;
     margin: 0;
-    line-height: 1.65;
+    line-height: 1.5;
   }
 
   .text-big {
-    font-size: 20px;
+    font-size: 17px;
     line-height: 1.2;
   }
   .small{
@@ -19,7 +23,7 @@
   .p-arrow {
     margin-top: 0px;
     max-width: 100px;
-    width: 20px;
+    width: 16px;
   }
   .p-arrow-f {
     max-width: 100px;
@@ -63,30 +67,31 @@
   /*Specific*/
   .section-title {
     position: absolute;
-    margin-top: -12px;
+    margin-top: -8px;
     top: auto;
   }
   .section-title-2{
-    margin-top: -38px;
+    margin-top: -32px;
   }
 
   .section-1 .products {
-    position: relative;
-    margin-top: 0px;
-    margin-left: -25px;
-    width: 200px;
+    position: absolute;
+    margin-top: 84px;
+    margin-left: -35px;
+    width: 185px;
+    max-width: none;
   }
   .section-3 .products {
     width: 100%;
     position: relative;
-    margin-top: -65px;
+    top: -57px;
     margin-left: -15px;
   }
   .section-5 .products {
-    margin-top: 0;
-    margin-left: -47px;
-    width: 204px;
-    position: relative;
+    margin-left: -45px;
+    width: 184px;
+    position: absolute;
+    margin-top: 130px;
   }
 
 
@@ -110,6 +115,24 @@
   .gif_play_button {
     bottom: -18px;
     left: 22px;
+  }
+
+  .sec1-bg {
+    height: 70vh;
+    margin-top: 6vh;
+    left: 0;
+  }
+
+  .sec3-bg {
+    height: 60vh;
+    margin-top: 9vh;
+    left: 0;
+  }
+
+  .sec5-bg {
+    height: 60vh;
+    margin-top: 9vh;
+    left: 0;
   }
 
 
