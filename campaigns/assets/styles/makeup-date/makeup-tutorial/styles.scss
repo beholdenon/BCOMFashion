@@ -414,7 +414,7 @@ body .row #bl_main_container {
     background: transparent;
     padding: 0;
     position: relative;
-    z-index: 1;
+    z-index: 9999;
     transition: all 0.3s;
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
@@ -562,6 +562,28 @@ body .row #bl_main_container {
   .carousel{
     margin-top: 80px;
   }
+
+
+  .sec-bg{
+    background: #f7f3f1;
+    width: 1220px;
+    position: absolute;
+    z-index: -1;
+  }
+
+  .sec1-bg {
+    height: 1500px;
+    margin-top: 217px;
+  }
+  .sec3-bg {
+    height: 1410px;
+    margin-top: 227px;
+  }
+  .sec5-bg {
+    height: 1555px;
+    margin-top: 145px;
+  }
+
 
   /*----------------------------*/
 
