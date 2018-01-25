@@ -75,8 +75,8 @@ html, body{
   }
 
   .section-1 .products {
-    position: absolute;
-    margin-top: 84px;
+    position: relative;
+    margin-top: -40px;
     margin-left: -35px;
     width: 185px;
     max-width: none;
@@ -90,8 +90,8 @@ html, body{
   .section-5 .products {
     margin-left: -45px;
     width: 184px;
-    position: absolute;
-    margin-top: 130px;
+    position: relative;
+    margin-top: 75px;
   }
 
 
@@ -118,19 +118,19 @@ html, body{
   }
 
   .sec1-bg {
-    height: 70vh;
-    margin-top: 6vh;
+    height: 75vh;
+    margin-top: 4vh;
     left: 0;
   }
 
   .sec3-bg {
-    height: 60vh;
+    height: 65vh;
     margin-top: 9vh;
     left: 0;
   }
 
   .sec5-bg {
-    height: 60vh;
+    height: 65vh;
     margin-top: 9vh;
     left: 0;
   }

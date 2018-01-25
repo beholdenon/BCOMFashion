@@ -478,6 +478,7 @@ body .row #bl_main_container {
   .text-big{
     font-size: 65px;
     line-height: 1.2;
+    font-weight: 600;
   }
   .small{
     font-size: 18px;
@@ -510,11 +511,12 @@ body .row #bl_main_container {
   .section-title {
     position: relative;
     top: 3.7%;
-    -webkit-text-stroke: 1px;
+    font-weight: bold;
   }
 
   .section-title-h {
     transform: rotate(270deg);
+    font-weight: bold;
   }
 
   .navy{
@@ -572,12 +574,12 @@ body .row #bl_main_container {
   }
 
   .sec1-bg {
-    height: 1500px;
-    margin-top: 217px;
+    height: 1550px;
+    margin-top: 170px;
   }
   .sec3-bg {
-    height: 1410px;
-    margin-top: 227px;
+    height: 1500px;
+    margin-top: 200px;
   }
   .sec5-bg {
     height: 1555px;
