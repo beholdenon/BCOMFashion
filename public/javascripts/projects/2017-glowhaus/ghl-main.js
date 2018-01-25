@@ -822,18 +822,17 @@ $(function() {
 
     // video page content
     var videoPagePics = [
-        {'name': 'MetallicLips',        'thumb': 'Metallic-Lips.jpg',         'heading': 'Metallic Lips'},
-        {'name': 'AllOverHighlighter',  'thumb': 'All-Over-Highlighter.jpg',  'heading': 'All-Over Highlighter'},
-        // {'name': 'NoMakeupMakeup',      'thumb': 'No-Makeup-Makeup.jpg',      'heading': 'No-Makeup Makeup'},
-        // {'name': 'UltimateSkinPrep',    'thumb': 'Ultimate-Skin-Prep.jpg',    'heading': 'Ultimate Skin Prep'},
-        {'name': 'UnicornEyes',         'thumb': 'Unicorn-Eyes.jpg',          'heading': 'Unicorn Eyes'},
-        // {'name': 'CoolLinerLooks',      'thumb': 'Cool-Liner-Looks.jpg',      'heading': 'Cool Liner Looks'}
 
         {'name': 'PinkAllOver',         'thumb': 'Pink-All-Over.jpg',           'heading': 'Pink All Over'},
         {'name': 'GraphicEye',          'thumb': 'Graphic-Eye.jpg',             'heading': 'Next Level Cat Eye'},
         {'name': 'BlurredLip',          'thumb': 'Blurred-Lip.jpg',             'heading': 'Blurred Lip'},
         {'name': 'SkinPrep',            'thumb': 'Skin-Prep.jpg',               'heading': 'Skin Prep'},
-        {'name': 'BurgundyLip',         'thumb': 'Burgundy-Lip.jpg',            'heading': 'Burgundy Lip'}
+        {'name': 'BurgundyLip',         'thumb': 'Burgundy-Lip.jpg',            'heading': 'Burgundy Lip'},
+
+        {'name': 'MetallicLips',        'thumb': 'Metallic-Lips.jpg',         'heading': 'Metallic Lips'},
+        {'name': 'AllOverHighlighter',  'thumb': 'All-Over-Highlighter.jpg',  'heading': 'All-Over Highlighter'},
+        {'name': 'UnicornEyes',         'thumb': 'Unicorn-Eyes.jpg',          'heading': 'Unicorn Eyes'}
+
 
     ];
 
