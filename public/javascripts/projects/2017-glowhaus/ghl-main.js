@@ -107,7 +107,7 @@ $(function() {
         {'type': 'img',  'action': 'img-popup',   'thumb': 'landing60-thumb.jpg',  'height': 103},
 
         {'type': 'img',  'action': 'img-popup',   'thumb': 'landing61-thumb.jpg',  'height': 185},
-        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing62-thumb.jpg',  'height': 420},
+        // {'type': 'img',  'action': 'img-popup',   'thumb': 'landing62-thumb.jpg',  'height': 420},
         {'type': 'img',  'action': 'img-popup',   'thumb': 'landing63-thumb.jpg',  'height': 300},
         {'type': 'img',  'action': 'img-popup',   'thumb': 'landing64-thumb.jpg',  'height': 269},
         {'type': 'img',  'action': 'img-popup',   'thumb': 'landing65-thumb.jpg',  'height': 169},
@@ -115,7 +115,7 @@ $(function() {
         {'type': 'img',  'action': 'img-popup',   'thumb': 'landing67-thumb.jpg',  'height': 420},
         {'type': 'img',  'action': 'img-popup',   'thumb': 'landing68-thumb.jpg',  'height': 187},
         {'type': 'img',  'action': 'img-popup',   'thumb': 'landing69-thumb.jpg',  'height': 187},
-        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing70-thumb.jpg',  'height': 359},
+        // {'type': 'img',  'action': 'img-popup',   'thumb': 'landing70-thumb.jpg',  'height': 359},
         {'type': 'img',  'action': 'img-popup',   'thumb': 'landing71-thumb.jpg',  'height': 359},
         {'type': 'img',  'action': 'img-popup',   'thumb': 'landing72-thumb.jpg',  'height': 251},
         {'type': 'img',  'action': 'img-popup',   'thumb': 'landing73-thumb.jpg',  'height': 420},
@@ -124,8 +124,17 @@ $(function() {
         {'type': 'img',  'action': 'img-popup',   'thumb': 'landing76-thumb.jpg',  'height': 420},
         {'type': 'img',  'action': 'img-popup',   'thumb': 'landing77-thumb.jpg',  'height': 158},
         {'type': 'img',  'action': 'img-popup',   'thumb': 'landing78-thumb.jpg',  'height': 319},
-        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing79-thumb.jpg',  'height': 269},
+        // {'type': 'img',  'action': 'img-popup',   'thumb': 'landing79-thumb.jpg',  'height': 269},
         {'type': 'img',  'action': 'img-popup',   'thumb': 'landing80-thumb.jpg',  'height': 300},
+
+        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing81-thumb.jpg',  'height': 362},
+        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing82-thumb.jpg',  'height': 327},
+        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing83-thumb.jpg',  'height': 177},
+        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing84-thumb.jpg',  'height': 177},
+        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing85-thumb.jpg',  'height': 240},
+        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing86-thumb.jpg',  'height': 222},
+        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing87-thumb.jpg',  'height': 346},
+        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing88-thumb.jpg',  'height': 301},
 
 
 
@@ -322,7 +331,7 @@ $(function() {
                     'thumb': 'thumb3.jpg',
                     'title': 'GLAMGLOW',
                     'description': 'Waterburst Hydrated Glow Moisturizer',
-                    'link': 'https://linkkkkkkkmissingggg'
+                    'link': 'https://www.bloomingdales.com/shop/product/index.ognc?ID=2871691'
                 },
                 {
                     'thumb': 'thumb4.jpg',
@@ -712,21 +721,21 @@ $(function() {
             'bestsellerImgLink': 'https://www.bloomingdales.com/shop/product/bon-parfumeur-eau-de-parfum-501?ID=2725818',
             'bestsellerHeading': 'Eau de Parfum 101',
             'bestsellerCopy': 'Earthy musk tempers romantic rose for a perfume that is both sweet and sophisticated.',
-            'shopLinkUrl': 'https://www.google.com'
+            'shopLinkUrl': 'https://www.bloomingdales.com/buy/bon-parfumeur'
         },
         'Drybar': {
             'theGlowDownCopy': 'As the founder of game-changing blowout chain Drybar, Alli Webb has made good hair her business. The salons’ signature yellow styling tools—like a powerful dryer that’s up to 20 percent faster than other professional tools—and products designed to make DIY styling a breeze are all you need to master any look from stick-straight to spirals—no appointment needed.',
             'bestsellerImgLink': 'https://www.bloomingdales.com/shop/product/drybar-detox-dry-shampoo-3.5-oz.?ID=173562',
             'bestsellerHeading': 'Detox Dry Shampoo',
             'bestsellerCopy': 'Microfine rice powders absorb oil to restore volume and instantly refresh hair—basically, it’s the ultimate blowout extender.',
-            'shopLinkUrl': 'https://www.google.com'
+            'shopLinkUrl': 'https://www.bloomingdales.com/buy/drybar'
         },        
         'Too Cool for School': {
             'theGlowDownCopy': 'We’re not ashamed to admit that we totally judged a book by its cover—or, in this case, a mascara by its package. This unconventional Korean beauty brand collaborates with artists, so you’ll find whimsical drawings of dinosaurs on the CC creams and quirky cats on the lip balms. But there’s so much more than meets the eye: Egg-infused masks and moisturizers treat everything from acne to signs of aging, lip tints have epic staying power and cleansers deliver results that are beyond skin deep.',
             'bestsellerImgLink': 'https://www.bloomingdales.com/shop/product/too-cool-for-school-egg-cream-mask-hydration?ID=2788521',
             'bestsellerHeading': 'Egg Cream Mask Hydration',
             'bestsellerCopy': 'Egg extracts, coconut water, anti-agers and botanical extracts whip dry, dull skin into shape.',
-            'shopLinkUrl': 'https://www.google.com'
+            'shopLinkUrl': 'https://www.bloomingdales.com/buy/too-cool-for-school'
         },        
 
 
@@ -813,18 +822,17 @@ $(function() {
 
     // video page content
     var videoPagePics = [
-        {'name': 'MetallicLips',        'thumb': 'Metallic-Lips.jpg',         'heading': 'Metallic Lips'},
-        {'name': 'AllOverHighlighter',  'thumb': 'All-Over-Highlighter.jpg',  'heading': 'All-Over Highlighter'},
-        // {'name': 'NoMakeupMakeup',      'thumb': 'No-Makeup-Makeup.jpg',      'heading': 'No-Makeup Makeup'},
-        // {'name': 'UltimateSkinPrep',    'thumb': 'Ultimate-Skin-Prep.jpg',    'heading': 'Ultimate Skin Prep'},
-        {'name': 'UnicornEyes',         'thumb': 'Unicorn-Eyes.jpg',          'heading': 'Unicorn Eyes'},
-        // {'name': 'CoolLinerLooks',      'thumb': 'Cool-Liner-Looks.jpg',      'heading': 'Cool Liner Looks'}
 
         {'name': 'PinkAllOver',         'thumb': 'Pink-All-Over.jpg',           'heading': 'Pink All Over'},
         {'name': 'GraphicEye',          'thumb': 'Graphic-Eye.jpg',             'heading': 'Next Level Cat Eye'},
         {'name': 'BlurredLip',          'thumb': 'Blurred-Lip.jpg',             'heading': 'Blurred Lip'},
         {'name': 'SkinPrep',            'thumb': 'Skin-Prep.jpg',               'heading': 'Skin Prep'},
-        {'name': 'BurgundyLip',         'thumb': 'Burgundy-Lip.jpg',            'heading': 'Burgundy Lip'}
+        {'name': 'BurgundyLip',         'thumb': 'Burgundy-Lip.jpg',            'heading': 'Burgundy Lip'},
+
+        {'name': 'MetallicLips',        'thumb': 'Metallic-Lips.jpg',         'heading': 'Metallic Lips'},
+        {'name': 'AllOverHighlighter',  'thumb': 'All-Over-Highlighter.jpg',  'heading': 'All-Over Highlighter'},
+        {'name': 'UnicornEyes',         'thumb': 'Unicorn-Eyes.jpg',          'heading': 'Unicorn Eyes'}
+
 
     ];
 
