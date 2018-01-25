@@ -127,14 +127,14 @@ $(function() {
         // {'type': 'img',  'action': 'img-popup',   'thumb': 'landing79-thumb.jpg',  'height': 269},
         {'type': 'img',  'action': 'img-popup',   'thumb': 'landing80-thumb.jpg',  'height': 300},
 
-        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing81-thumb.jpg',  'height': 300},
-        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing82-thumb.jpg',  'height': 300},
-        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing83-thumb.jpg',  'height': 300},
-        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing84-thumb.jpg',  'height': 300},
-        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing85-thumb.jpg',  'height': 300},
-        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing86-thumb.jpg',  'height': 300},
-        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing87-thumb.jpg',  'height': 300},
-        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing88-thumb.jpg',  'height': 300},
+        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing81-thumb.jpg',  'height': 362},
+        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing82-thumb.jpg',  'height': 327},
+        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing83-thumb.jpg',  'height': 177},
+        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing84-thumb.jpg',  'height': 177},
+        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing85-thumb.jpg',  'height': 240},
+        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing86-thumb.jpg',  'height': 222},
+        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing87-thumb.jpg',  'height': 346},
+        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing88-thumb.jpg',  'height': 301},
 
 
 
