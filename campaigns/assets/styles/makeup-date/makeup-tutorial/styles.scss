@@ -2,9 +2,11 @@ $scale: 1;
 $font-size-scale: 1;
 
 $pink: #D90EAC;
-$navy: #22a8a0;
+$navy: #1F9890;
 
 $AvenirBlack: "Avenir LT W01 95 Black", sans-serif;
+
+* { margin: 0; padding: 0px; }
 
 html{
   width: 100%;
@@ -418,7 +420,7 @@ body .row #bl_main_container {
     transition: all 0.3s;
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
-    bottom: -260px;
+    bottom: -225px;
     left: 80px;
   }
   .gif_play_button:before {
@@ -525,19 +527,31 @@ body .row #bl_main_container {
 
   .section-1 .products {
     position: absolute;
-    margin-top: 380px;
-    margin-left: -160px;
+    margin-top: -160px;
+    margin-left: -114px;
+    width: 608px;
+  }
+  .section-3 .products {
+    position: absolute;
+    margin-top: -180px;
+    margin-left: -45px;
   }
   .section-5 .products {
     position: absolute;
-    margin-top: 550px;
-    margin-left: -200px;
+    margin-top: -30px;
+    margin-left: -143px;
+    width: 608px;
+  }
+
+  .section-3 .gif{
+    width: 455px;
+    margin-top: 545px
   }
 
   .section-1 .gif, .section-5 .gif{
     width: 465px;
     position: relative;
-    top: 300px;
+    top: 265px;
     left: 50px;
   }
 
@@ -555,11 +569,6 @@ body .row #bl_main_container {
     margin-left: 670px;
   }
 
-  .section-3 .products {
-    position: absolute;
-    margin-top: -180px;
-    margin-left: -45px;
-  }
 
   .carousel{
     margin-top: 80px;
@@ -574,15 +583,15 @@ body .row #bl_main_container {
   }
 
   .sec1-bg {
-    height: 1550px;
+    height: 1500px;
     margin-top: 170px;
   }
   .sec3-bg {
-    height: 1500px;
+    height: 1442px;
     margin-top: 200px;
   }
   .sec5-bg {
-    height: 1555px;
+    height: 1490px;
     margin-top: 145px;
   }
 
