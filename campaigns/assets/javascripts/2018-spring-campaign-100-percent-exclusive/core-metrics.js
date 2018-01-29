@@ -118,8 +118,6 @@ $(function () {
         nintendoImgLeftPos = 0
     }
     
-    console.log ('heroImgLeft = ' + heroImgLeft);
-    
     nintendoImg.css({'width': heroImgWidthPx, 'left': nintendoImgLeftPos});
     heroImgOnMobilePart.css({'width': heroImgWidthPx, 'top': heroImgOnMobilePartTopPx});
     
@@ -134,8 +132,6 @@ $(function () {
             nintendoImgLeftPos = 0
         }
         
-        console.log ('heroImgLeft = ' + heroImgLeft);
-
         nintendoImg.css({'width': heroImgWidthPx, 'left': nintendoImgLeftPos});
         heroImgOnMobilePart.css({'width': heroImgWidthPx, 'top': heroImgOnMobilePartTopPx});
 
