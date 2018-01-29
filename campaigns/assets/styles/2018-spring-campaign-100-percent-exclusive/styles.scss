@@ -1,0 +1,394 @@
+
+$site-font-family: 'Avenir W01', Helvetica, Arial, sans-serif;
+$tsr-18-mobile-bp: 998px;
+
+@import "flexbox_mixins";
+
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+
+
+.tsr-18-container {
+  display: block;
+  width: 100%;
+  height: auto;
+  @media screen and (min-width: $tsr-18-mobile-bp) {
+    @include flexbox;
+    //display: flex;
+    width: 100%;
+    height: 100vh;
+  }
+}
+
+// iPad in landscape
+//@media only screen
+//and (min-device-width : 768px)
+//and (max-device-width : 1024px)
+//and (orientation : landscape) { }
+
+.tsr-18-container__section-wrapper {
+  background-color: #f1f1f1;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+
+  @include flexbox;
+  @include flex-direction(column);
+  //display: flex;
+  //flex-direction: column;
+
+  @media screen and (min-width: $tsr-18-mobile-bp) {
+    height: calc(100vh - 88px);
+
+    //flex-direction: row;
+    @include flexbox;
+    @include flex-direction(row);
+  }
+  > div{
+    position: relative;
+  }
+}
+
+.tsr-18-container__section-left {
+  position: relative;
+  width: 100%;
+  height: auto;
+  line-height: 0;
+  padding-bottom: 110%;
+
+  top: -36px;
+
+  @include order(2);
+  //order: 2;
+
+  //overflow: hidden;
+
+  @media screen and (min-width: $tsr-18-mobile-bp) {
+    width: 43%;
+    padding: 0;
+    top: auto;
+
+    @include order(1);
+    //order: 1;
+
+  }
+}
+.tsr-18-hero-img {
+  width: auto;
+  max-width: none !important;
+  height: 100%;
+  position: absolute;
+  bottom: 0;
+  right: 7%;
+  z-index: 1;
+  @media screen and (min-width: $tsr-18-mobile-bp) {
+    bottom: 0;
+    right: 0;
+  }
+}
+.tsr-18-hero-mobile-part-img {
+  width: 100%;
+  max-width: none !important;
+  height: auto;
+  position: absolute;
+  top: 0;
+  right: 7%;
+  display: block;
+  z-index: 3;
+  @media screen and (min-width: $tsr-18-mobile-bp) {
+    display: none;
+  }
+}
+.tsr-18-nintendo-img {
+  width: 100%;
+  max-width: none !important;
+  height: auto;
+  position: absolute;
+  bottom: -35px;
+  left: 30px;
+  z-index: 2;
+  transition: all 0.3s;
+  @media screen and (min-width: $tsr-18-mobile-bp) {
+    bottom: 0;
+    left: 0;
+    display: block;
+  }
+}
+.tsr-18-container__section-center {
+  font-family: $site-font-family;
+  text-align: center;
+  position: relative;
+  width: 100%;
+  padding: 4rem 1rem;
+  overflow: hidden;
+
+  background-image: url("../../images/2018-spring-campaign-100-percent-exclusive/teaser/teaser-mobile-bg-star.png");
+  background-repeat: no-repeat;
+  background-position: right -50% top -30%;
+  background-size: 50%;
+
+  @media screen and (min-width: $tsr-18-mobile-bp) {
+    width: 32%;
+    padding: 0 1rem;
+    background-image: none;
+  }
+
+  @include flexbox;
+  @include align-items(center);
+  @include justify-content(center);
+  @include order(1);
+  //display: flex;
+  //align-items: center;
+  //justify-content: center;
+  //order: 1;
+
+  @media screen and (min-width: $tsr-18-mobile-bp) {
+    @include order(2);
+    // order: 2;
+  }
+}
+
+.tsr-18-container__section-right {
+  display: none;
+  @media screen and (min-width: $tsr-18-mobile-bp) {
+    display: block;
+    @include order(3);
+    //order: 3;
+  }
+  position: relative;
+  width: 25%;
+  overflow: hidden;
+  img {
+    width: auto;
+    max-width: none !important;
+    height: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+}
+.tsr-18-teaser-logo {
+  width: 100%;
+  max-width: 300px;
+  @media screen and (min-width: $tsr-18-mobile-bp) {
+    max-width: 260px;
+  }
+  @media screen and (min-width: 1440px) {
+    max-width: 340px;
+  }
+  @media screen and (min-width: 1680px) {
+    max-width: 440px;
+  }
+  height: auto;
+  display: block;
+  margin: 24px auto;
+}
+
+.tsr-18-sign-up-text {
+  font-family: $site-font-family;
+  font-size: 16px;
+  @media screen and (min-width: 1280px) {
+    font-size: 18px;
+  }
+  @media screen and (min-width: 1680px) {
+    font-size: 24px;
+  }
+  color: #000;
+  line-height: 1.5;
+  width: 100%;
+  max-width: 440px;
+  padding: 0 14px;
+  margin: 0 auto;
+  @media screen and (min-width: $tsr-18-mobile-bp) {
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+  }
+  span {
+    @media screen and (min-width: $tsr-18-mobile-bp) {
+      display: block;
+      white-space: nowrap;
+    }
+  }
+}
+
+.tsr-18-sign-up-block {
+  width: 100%;
+}
+
+.tsr-18-sign-up-heading {
+  font-family: $site-font-family;
+  color: #000;
+  text-transform: uppercase;
+  font-size: 26px;
+  @media screen and (min-width: 1440px) {
+    font-size: 34px;
+  }
+  font-weight: bold;
+  font-weight: 700;
+  margin: 0;
+  padding: 0;
+}
+
+.tsr-18-sign-up-btn {
+  background-color: #f42b1f;
+  font-family: $site-font-family;
+  color: #fff;
+  font-size: 26px;
+  text-decoration: none;
+  text-align: center;
+  position: relative;
+  display: block;
+  width: 100%;
+  max-width: 290px;
+  height: 44px;
+  line-height: 44px;
+  margin: 40px auto 20px auto;
+  z-index: 10;
+  &:before {
+    content: " ";
+    background-color: #f42b1f;
+    width: calc(100% - 16px);
+    height: 60px;
+    position: absolute;
+    left: 8px;
+    top: -8px;
+    z-index: -1;
+  }
+  &:hover, &:focus {
+    color: rgba(255, 255, 255, 0.72);
+  }
+}
+
+.tsr-18-container__nav {
+  width: 100%;
+  height: auto;
+  position: relative;
+  left: auto;
+  bottom: auto;
+  @media screen and (min-width: $tsr-18-mobile-bp) {
+    height: 88px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+  }
+  nav {
+    &.tsr-18-nav {
+      position: relative;
+      height: auto;
+      left: auto;
+      bottom: auto;
+      padding: 2em 1em;
+      //font-size: 16px;
+      @media screen and (min-width: $tsr-18-mobile-bp) {
+        padding: 0;
+        position: absolute;
+        height: 88px;
+        left: 0;
+        bottom: 0;
+      }
+      width: 100%;
+      background-color: #fff;
+
+      @include flexbox;
+      @include align-items(center);
+      @include justify-content(center);
+      //display: flex;
+      //align-items: center;
+      //justify-content: center;
+
+      ul, li {
+        padding: 0;
+        margin: 0;
+      }
+      ul {
+        display: block;
+        text-align: center;
+        width: 100%;
+        @media screen and (min-width: $tsr-18-mobile-bp) {
+          width: auto;
+        }
+
+        @media screen and (min-width: $tsr-18-mobile-bp) {
+          @include flexbox;
+          //display: flex;
+          text-align: left;
+        }
+      }
+      li {
+        list-style: none;
+        font-family: $site-font-family;
+        font-size: 24px;
+        color: #000;
+        padding: 0;
+        line-height: 1;
+        border-top: 1px solid #000;
+        @media screen and (min-width: $tsr-18-mobile-bp) {
+          font-size: 1.49vw;
+          padding: 0 1.5em 0 0;
+          line-height: 1;
+          border: 0 none;
+        }
+        @media screen and (min-width: 1280px) {
+          font-size: 20px;
+          //font-size: 16px;
+          line-height: 1;
+        }
+        @media screen and (min-width: 1680px) {
+          font-size: 26px;
+        }
+        font-weight: 300;
+
+        &:first-child {
+          border: 0 none;
+          margin-bottom: 1em;
+          line-height: 1.3;
+          @media screen and (min-width: $tsr-18-mobile-bp) {
+            margin-bottom: 0;
+            line-height: 1;
+          }
+        }
+        &:last-child {
+          border-bottom: 1px solid #000;
+          @media screen and (min-width: $tsr-18-mobile-bp) {
+            border-bottom: 0 none;
+          }
+        }
+      }
+      a {
+        color: #000;
+        font-family: $site-font-family;
+        display: block;
+        text-decoration: none;
+        line-height: 3;
+        @media screen and (min-width: $tsr-18-mobile-bp) {
+          display: inline-block;
+          text-decoration: underline;
+          line-height: 1;
+        }
+      }
+
+      .spring-18-teaser-accent {
+        display: block;
+        font-size: 1.5em;
+        font-weight: bold !important;
+        text-transform: uppercase;
+        @media screen and (min-width: $tsr-18-mobile-bp) {
+          display: inline;
+          font-size: inherit;
+          font-weight: normal !important;
+          text-transform: none;
+        }
+      }
+    }
+  }
+}
