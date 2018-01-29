@@ -1,0 +1,227 @@
+.spring-18-teaser-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-color: #f1f1f1;
+}
+nav {
+  &.spring-18-teaser-nav {
+    position: relative;
+    height: auto;
+    left: auto;
+    bottom: auto;
+    padding: 2em 1em;
+    @media screen and (min-width: 1024px) {
+      padding: 0;
+      position: absolute;
+      height: 88px;
+      left: 0;
+      bottom: 0;
+    }
+    width: 100%;
+    background-color: #fff;
+    @include flexbox;
+    @include align-items(center);
+    @include justify-content(center);
+    ul,li {
+      padding: 0;
+      margin: 0;
+    }
+    ul {
+      text-align: center;
+      @media screen and (min-width: 1024px) {
+        @include flexbox;
+        text-align: left;
+      }
+    }
+    li {
+      list-style: none;
+      font-family: $site-font-family;
+      font-size: 18px;
+      color: #000;
+      padding: 0;
+      @media screen and (min-width: 1024px) {
+        font-size: 1.49vw;
+        padding: 0 1.5em 0 0;
+      }
+      @media screen and (min-width: 1280px) {
+        font-size: 20px;
+      }
+      font-weight: 300;
+
+      &:first-child {
+        margin-bottom: 1em;
+        @media screen and (min-width: 1024px) {
+          margin-bottom: 0;
+        }
+      }
+    }
+    a {
+      text-decoration: underline;
+      color: #000;
+      display: inline-block;
+      font-family: $site-font-family;
+      line-height: 1.7;
+    }
+
+    .spring-18-teaser-accent {
+      display: block;
+      font-size: 1.5em;
+      font-weight: bold !important;
+      @media screen and (min-width: 1024px) {
+        display: inline;
+        font-size: inherit;
+        font-weight: normal !important;
+      }
+    }
+  }
+}
+main {
+  &.spring-18-teaser-main {
+    position: relative;
+    background-color: #f1f1f1;
+    //background-image: url("../../images/2018-spring-campaign-100-percent-exclusive/teaser/teaser-bg-full-2556x1148.jpg");
+    //background-repeat: no-repeat;
+    ////background-size: auto 100%;
+    //background-size: cover;
+    //background-position: bottom center;
+
+
+    background-image: url(../../images/2018-spring-campaign-100-percent-exclusive/teaser/teaser-bg-left.jpg),
+                      url(../../images/2018-spring-campaign-100-percent-exclusive/teaser/teaser-bg-right.jpg);
+    background-repeat: no-repeat, no-repeat;
+    background-position: 0 0, 100% 0;
+    background-size: auto 100%, auto 100%;
+
+    width: 100%;
+    height: calc(100vh - 88px);
+    padding: 0;
+
+    //display: block;
+
+    //height: auto;
+    //padding: 2em 0 4em 0;
+
+    @include flexbox;
+    @include align-items(center);
+    @include justify-content(center);
+
+    //@media screen and (min-height: 620px) {
+
+
+    //}
+
+    //.spring-18-teaser-women {
+    //  position: absolute;
+    //  width: 46.87%;
+    //  top: 0;
+    //  left: 0;
+    //  bottom: 0;
+    //  overflow: hidden;
+    //  z-index: 1;
+    //
+    //  //background-color: #f1f1f1;
+    //  //background-image: url("../../images/2018-spring-campaign-100-percent-exclusive/teaser/teaser-bg-full.jpg");
+    //  background-repeat: no-repeat;
+    //  background-size: cover;
+    //  background-position: top left;
+    //}
+    //.spring-18-teaser-men {
+    //  position: absolute;
+    //  width: 29.1%;
+    //  top: 0;
+    //  right: 0;
+    //  bottom: 0;
+    //  overflow: hidden;
+    //  z-index: 1;
+    //
+    //  //background-color: #f1f1f1;
+    //  //background-image: url("../../images/2018-spring-campaign-100-percent-exclusive/teaser/teaser-bg-full.jpg");
+    //  background-repeat: no-repeat;
+    //  background-size: cover;
+    //  background-position: top right;
+    //}
+
+    //-------
+    .temp-ratio {
+      width: auto;
+      height: 40px;
+      background: red;
+      color: white;
+      font-size: 24px;
+      line-height: 40px;
+      position: fixed;
+      z-index: 1000000;
+      bottom: 20px;
+      right: 20px;
+    }
+  }
+}
+
+.spring-18-teaser-sign-up-block {
+  width: 100%;
+  max-width: 400px;
+  padding: 0 20px 115px 0;
+  margin: 0;
+  text-align: center;
+  color: #000;
+  font-size: 16px;
+  z-index: 100;
+  position: relative;
+  left: 10%;
+  p {
+    padding: 0;
+    margin: 0;
+    font-family: $site-font-family;
+    font-size: 18px;
+  }
+  .sign-up-accent {
+    display: block;
+    font-weight: bold !important;
+  }
+}
+.spring-18-teaser-sign-up-heading {
+  font-family: $site-font-family;
+  color: #000;
+  text-transform: uppercase;
+  font-size: 26px;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+}
+.spring-18-teaser-logo {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 24px 0;
+}
+.spring-18-teaser-sign-up-btn {
+  background-color: #f42b1f;
+  font-family: $site-font-family;
+  color: #fff;
+  font-size: 24px;
+  text-decoration: none;
+  text-align: center;
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+  height: 44px;
+  display: block;
+  line-height: 44px;
+  margin: 36px auto 0 auto;
+  z-index: 10;
+  &:before {
+    content: " ";
+    background-color: #f42b1f;
+    width: calc(100% - 16px);
+    height: 60px;
+    position: absolute;
+    left: 8px;
+    top: -8px;
+    z-index: -1;
+  }
+  &:hover, &:focus {
+    color: rgba(255, 255, 255, 0.72);
+  }
+}
