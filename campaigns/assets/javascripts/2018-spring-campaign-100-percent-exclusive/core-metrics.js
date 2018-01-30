@@ -104,8 +104,9 @@ $(function () {
     var nintendoImg = $('.tsr-18-nintendo-img');
     var heroImgOnMobilePart = $('.tsr-18-hero-mobile-part-img');
 
-
-    var heroImgWidthPx = heroImg.width() + 'px';
+    // set heroImgWidth before heroImg is loaded
+    // originalHeroWidth/originalHeroHeight = .9504;
+    var heroImgWidthPx = $('.tsr-18-container__section-left').height() * .9504; 
     var heroImgOnMobilePartTopPx = -(heroImgOnMobilePart.height() - 4) + 'px';
     
     var intendoImgLeftGap = 40;
