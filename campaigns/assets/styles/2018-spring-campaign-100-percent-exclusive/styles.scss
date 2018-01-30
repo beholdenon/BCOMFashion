@@ -7,8 +7,6 @@
 @import "footer";
 
 
-@import "teaser";
-
 
 .spring-18-sticky-header {
   background-color: transparent;
@@ -51,6 +49,9 @@
   background-position: center center;
   &.spring-18-women {
     background-color: $site-blue;
+  }
+  &.spring-18-men {
+    background-color: $site-yellow;
   }
 
 }
@@ -211,7 +212,6 @@
   }
 
 }
-
 .spring-18-pipe-bg {
   background: #fff url("../../images/2018-spring-campaign-100-percent-exclusive/common/pipe-bg.png") repeat-x;
   width: 100%;
@@ -221,7 +221,6 @@
   top: 0;
   z-index: 5;
 }
-
 .spring-18-pipe-connector-img {
   width: 65px;
   height: 131px;
@@ -230,7 +229,6 @@
   top: 0;
   z-index: 10;
 }
-
 .spring-18-mr-mario-holder {
   width: 80px;
   height: 131px;
@@ -250,7 +248,6 @@
     transform: scaleX(-1);
   }
 }
-
 .spring-18-pipe-link-holder {
   width: 100%;
   text-align: center;
@@ -311,6 +308,8 @@
   }
 
 }
+// -- Mr. Mario - pipe //
+
 
 .spring-18-page-bottom-jumbotron {
   width: 100%;
@@ -488,13 +487,14 @@
   }
 }
 
+
+// image carousel container
 .spring-18-image-carousel-container {
   width: 100%;
   height: auto;
   overflow: hidden;
   margin: 25px 0 70px 0;
 }
-
 .spring-18-carousel-images {
   > div {
     min-width: 340px;
@@ -518,7 +518,8 @@
     display: inline-block;
     margin-top: 12px;
   }
-}.spring-18-image-carousel {
+}
+.spring-18-image-carousel {
    position: relative;
    width: 100%;
    height: auto;
@@ -528,7 +529,6 @@
   left: 140px;
   top: calc(50% - 36px);
 }
-
 .spring-18-image-carousel-to-right {
   position: absolute !important;
   right: 140px;
