@@ -49,7 +49,6 @@ html {
   @media screen and (min-width: $tsr-18-mobile-bp) {
     height: calc(100vh - 88px);
 
-    //flex-direction: row;
     @include flexbox;
     @include flex-direction(row);
   }
@@ -133,9 +132,11 @@ html {
 
   background-image: url("../../images/2018-spring-campaign-100-percent-exclusive/teaser/teaser-mobile-bg-star.png");
   background-repeat: no-repeat;
-  background-position: right -50% top -30%;
-  background-size: 50%;
-
+  background-position: right -122px top -145px;
+  background-size: 200px;
+  @media screen and (min-width: 480px) {
+    background-position: right -100px top -86px;
+  }
   @media screen and (min-width: $tsr-18-mobile-bp) {
     width: 32%;
     padding: 0 1rem;
@@ -288,7 +289,6 @@ html {
       left: auto;
       bottom: auto;
       padding: 2em 1em;
-      //font-size: 16px;
       @media screen and (min-width: $tsr-18-mobile-bp) {
         padding: 0;
         position: absolute;
@@ -340,7 +340,6 @@ html {
         }
         @media screen and (min-width: 1280px) {
           font-size: 20px;
-          //font-size: 16px;
           line-height: 1;
         }
         @media screen and (min-width: 1680px) {
