@@ -113,12 +113,12 @@ html {
   height: auto;
   position: absolute;
   bottom: -35px;
-  left: 30px;
+  left: -1500px;
   z-index: 2;
   transition: all 0.3s;
   @media screen and (min-width: $tsr-18-mobile-bp) {
     bottom: 0;
-    left: 0;
+    left: -1500px;
     display: block;
   }
 }
