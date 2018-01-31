@@ -6,6 +6,7 @@
 @import "landing";
 @import "footer";
 @import "men";
+@import "home";
 
 
 
@@ -54,7 +55,9 @@
   &.spring-18-men {
     background-color: $site-yellow;
   }
-
+  &.spring-18-home {
+    background-color: $site-green;
+  }
 }
 
 .spring-18-page-heading {
@@ -399,12 +402,6 @@
       background-image: url("../../images/2018-spring-campaign-100-percent-exclusive/women/dresses-link-bg.jpg");
     }
   }
-  .shirts {
-    background-color: $site-blue;
-    .bg-image {
-      background-image: url("../../images/2018-spring-campaign-100-percent-exclusive/men/shirts-link-bg.jpg");
-    }
-  }
   .shoes {
     background-color: $site-green;
     .bg-image {
@@ -447,6 +444,108 @@
       background-image: url("../../images/2018-spring-campaign-100-percent-exclusive/women/pants-link-bg.jpg");
     }
   }
+
+  .shirts {
+    background-color: $site-blue;
+    .bg-image {
+      background-image: url("../../images/2018-spring-campaign-100-percent-exclusive/men/shirts-link-bg.jpg");
+    }
+  }
+  .men-shoes {
+    background-color: $site-green;
+    .bg-image {
+      background-image: url("../../images/2018-spring-campaign-100-percent-exclusive/men/shoes-link-bg.jpg");
+    }
+  }
+  .coats-jackets {
+    background-color: $site-red;
+    .bg-image {
+      background-image: url("../../images/2018-spring-campaign-100-percent-exclusive/men/jackets-link-bg.jpg");
+    }
+  }
+  .men-accessories {
+    background-color: $site-yellow;
+    .bg-image {
+      background-image: url("../../images/2018-spring-campaign-100-percent-exclusive/men/accessories-link-bg.jpg");
+    }
+  }
+  .men-hoodies {
+    background-color: $site-red;
+    .bg-image {
+      background-image: url("../../images/2018-spring-campaign-100-percent-exclusive/men/hoodies-link-bg.jpg");
+    }
+  }
+  .men-jeans {
+    background-color: $site-yellow;
+    .bg-image {
+      background-image: url("../../images/2018-spring-campaign-100-percent-exclusive/men/jeans-link-bg.jpg");
+    }
+  }
+  .men-blazers {
+    background-color: $site-blue;
+    .bg-image {
+      background-image: url("../../images/2018-spring-campaign-100-percent-exclusive/men/blazers-link-bg.jpg");
+    }
+  }
+  .men-all {
+    background-color: $site-green;
+    .bg-image {
+      background-image: url("../../images/2018-spring-campaign-100-percent-exclusive/men/all-men-link-bg.jpg");
+    }
+  }
+
+  // home -----------
+  .dinning {
+    background-color: $site-blue;
+    .bg-image {
+      background-image: url("../../images/2018-spring-campaign-100-percent-exclusive/home/dinning-link-bg.jpg");
+    }
+  }
+  .bedding {
+    background-color: $site-yellow;
+    .bg-image {
+      background-image: url("../../images/2018-spring-campaign-100-percent-exclusive/home/bedding-link-bg.jpg");
+    }
+  }
+  .bath {
+    background-color: $site-green;
+    .bg-image {
+      background-image: url("../../images/2018-spring-campaign-100-percent-exclusive/home/bath-link-bg.jpg");
+    }
+  }
+  .decor {
+    background-color: $site-red;
+    .bg-image {
+      background-image: url("../../images/2018-spring-campaign-100-percent-exclusive/home/decor-link-bg.jpg");
+    }
+  }
+  .furniture {
+    background-color: $site-green;
+    .bg-image {
+      background-image: url("../../images/2018-spring-campaign-100-percent-exclusive/home/furniture-link-bg.jpg");
+    }
+  }
+  .luggage {
+    background-color: $site-red;
+    .bg-image {
+      background-image: url("../../images/2018-spring-campaign-100-percent-exclusive/home/luggage-link-bg.jpg");
+    }
+  }
+  .mattresses {
+    background-color: $site-blue;
+    .bg-image {
+      background-image: url("../../images/2018-spring-campaign-100-percent-exclusive/home/mattresses-link-bg.jpg");
+    }
+  }
+  .all-home {
+    background-color: $site-yellow;
+    .bg-image {
+      background-image: url("../../images/2018-spring-campaign-100-percent-exclusive/home/all-home-bg.jpg");
+    }
+  }
+
+
+
 }
 
 .footer-jumbo-links-wrapper {
