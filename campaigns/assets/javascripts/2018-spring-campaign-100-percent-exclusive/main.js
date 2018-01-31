@@ -99,6 +99,9 @@ $(function () {
         }
     }
 
+
+
+
     // Hero img and nintendo img width sync
     var heroImg = $('.tsr-18-hero-img');
     var nintendoImg = $('.tsr-18-nintendo-img');
@@ -106,35 +109,57 @@ $(function () {
 
     // set heroImgWidth before heroImg is loaded
     // originalHeroWidth/originalHeroHeight = .9504;
-    var heroImgWidthPx = $('.tsr-18-container__section-left').height() * .9504; 
-    var heroImgOnMobilePartTopPx = -(heroImgOnMobilePart.height() - 4) + 'px';
-    
-    var intendoImgLeftGap = 40;
-    var nintendoImgLeftPos = 0;
-    var heroImgLeft = heroImg.offset().left;
+    // var heroImgWidth = $('.tsr-18-container__section-left').height() * .9504;
 
-    if (heroImgLeft > 0) {
-        nintendoImgLeftPos = Math.abs(heroImgLeft) + intendoImgLeftGap;
-    } else {
-        nintendoImgLeftPos = 0
-    }
+    var nintendoImgLeftGap = 40;
+    var nintendoImgLeftPos = 0;
+
+    var heroImgWidth = heroImg.width();
+    var heroImgLeft  = heroImg.offset().left;
+
+    var heroImgOnMobilePartTop = -(heroImgOnMobilePart.height() - 4);
+
+    heroImgOnMobilePart.css({'top': heroImgOnMobilePartTop  + 'px'});
+    heroImg.one("load", function() {
+        //alert('heroImg is loaded!');
+        heroImgWidth = heroImg.width();
+        heroImgLeft  = heroImg.offset().left;
+        
+        if (heroImgLeft > 0) {
+            nintendoImgLeftPos = Math.abs(heroImgLeft) + nintendoImgLeftGap;
+        } else {
+            nintendoImgLeftPos = 0
+        }
+
+        setTimeout(function () {
+            nintendoImg.css({'width': heroImgWidth + 'px', 'left': nintendoImgLeftPos + 'px'});
+            heroImgOnMobilePart.css({'width': heroImgWidth + 'px', 'top': heroImgOnMobilePartTop  + 'px'});
+        }, 400);
+        
+
+    }).each(function () {
+        if (this.complete) {
+            $(this).load();
+        }
+    });
     
-    nintendoImg.css({'width': heroImgWidthPx, 'left': nintendoImgLeftPos});
-    heroImgOnMobilePart.css({'width': heroImgWidthPx, 'top': heroImgOnMobilePartTopPx});
+    
+    
     
     window.addEventListener("resize", function() {
-        heroImgWidthPx = heroImg.width() + 'px';
-        heroImgOnMobilePartTopPx = -(heroImgOnMobilePart.height() - 4) + 'px';
+        heroImgWidth = heroImg.width();
+        heroImgOnMobilePartTop = -(heroImgOnMobilePart.height() - 4);
 
         heroImgLeft = heroImg.offset().left;
+
         if (heroImgLeft > 0) {
-            nintendoImgLeftPos = Math.abs(heroImgLeft) + intendoImgLeftGap;
+            nintendoImgLeftPos = Math.abs(heroImgLeft) + nintendoImgLeftGap;
         } else {
             nintendoImgLeftPos = 0
         }
         
-        nintendoImg.css({'width': heroImgWidthPx, 'left': nintendoImgLeftPos});
-        heroImgOnMobilePart.css({'width': heroImgWidthPx, 'top': heroImgOnMobilePartTopPx});
+        nintendoImg.css({'width': heroImgWidth + 'px', 'left': nintendoImgLeftPos + 'px'});
+        heroImgOnMobilePart.css({'width': heroImgWidth + 'px', 'top': heroImgOnMobilePartTop  + 'px'});
 
     }, false);
 
