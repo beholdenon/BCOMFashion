@@ -5,6 +5,7 @@
 @import "navigation";
 @import "landing";
 @import "footer";
+@import "men";
 
 
 
@@ -396,6 +397,12 @@
     background-color: $site-yellow;
     .bg-image {
       background-image: url("../../images/2018-spring-campaign-100-percent-exclusive/women/dresses-link-bg.jpg");
+    }
+  }
+  .shirts {
+    background-color: $site-blue;
+    .bg-image {
+      background-image: url("../../images/2018-spring-campaign-100-percent-exclusive/men/shirts-link-bg.jpg");
     }
   }
   .shoes {

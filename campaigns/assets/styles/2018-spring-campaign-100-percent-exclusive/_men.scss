@@ -1,0 +1,171 @@
+.spring-18-men-grid-wrapper {
+
+  margin-top: 4vw !important;
+
+  @media screen and (min-width: $container-width) {
+    margin-top: 105px !important;
+  }
+}
+
+.spring-18-jay-ellis-talks-container {
+  background-color: $site-yellow;
+  margin-top: 5vw;
+  padding: 5vw 0;
+  @media screen and (min-width: 1278px) {
+    padding: 120px 0;
+  }
+}
+.spring-18-jay-ellis-talks {
+  width: 100%;
+  max-width: $container-width;
+  margin: 0 auto;
+  padding: 0 2em;
+  font-size: 16px !important;
+  font-family: $site-font-family;
+  color: #222;
+
+  display: block;
+  @media screen and (min-width: 1278px) {
+    @include flexbox;
+    padding: 0 3em;
+  }
+
+  p {
+    margin: 0;
+    padding: 0;
+    font-size: 16px !important;
+    line-height: 1.8;
+    font-family: $site-font-family;
+  }
+  .mr-mario {
+    width: 35px;
+    height: 60px;
+    display: inline-block;
+    margin-top: 16px;
+  }
+}
+.spring-18-jay-ellis-talks-hero {
+  width: 100%;
+  display: block;
+  @media screen and (min-width: 1023px) {
+    @include flexbox;
+    padding: 0 35px 58px 0;
+  }
+  @media screen and (min-width: 1278px) {
+    width: 40%;
+    display: block;
+    padding: 0;
+  }
+
+  img {
+    width: 100%;
+    max-width: 100%;
+    @media screen and (min-width: 1023px) {
+      max-width: 558px;
+    }
+    height: auto;
+    margin-top: 8px;
+  }
+
+  .jay-ellis-talks-hero-img {
+    //@include flex(1);
+    width: 100%;
+    @media screen and (min-width: 1023px) {
+      width: 50%;
+      padding: 0 15px 0 0;
+    }
+    @media screen and (min-width: 1278px) {
+      width: 100%;
+      padding: 0;
+    }
+  }
+  .jay-ellis-talks-preamble {
+    //@include flex(1);
+    width: 100%;
+    padding: 0;
+    margin: 5vw 0;
+    @media screen and (min-width: 1023px) {
+      width: 50%;
+      padding: 0 0 0 35px;
+    }
+    @media screen and (min-width: 1278px) {
+      width: 100%;
+      padding: 0;
+    }
+  }
+}
+
+
+.spring-18-jay-ellis-talks-qa {
+  width: 100%;
+  padding: 0;
+  @media screen and (min-width: 1278px) {
+    width: 60%;
+    padding: 0 0 0 60px;
+  }
+
+  //-moz-column-count: 1;
+  //-webkit-column-count: 2;
+  //column-count: 2;
+  //
+  //-webkit-column-gap: 0;
+  //-moz-column-gap: 0;
+  //column-gap: 0;
+
+  @media screen and (min-width: 680px) {
+    -moz-column-count: 2;
+    -webkit-column-count: 2;
+    column-count: 2;
+
+    -webkit-column-gap: 40px;
+    -moz-column-gap: 40px;
+    column-gap: 40px;
+  }
+
+  @media screen and (min-width: 1278px) {
+    -webkit-column-gap: 70px;
+    -moz-column-gap: 70px;
+    column-gap: 70px;
+  }
+
+}
+
+.jay-ellis-talks-heading {
+  margin: 0.2em 0 0.6em 0;
+  padding: 0;
+  font-family: 'Oswald', sans-serif;
+  font-size: 36px;
+  @media screen and (min-width: 1023px) {
+    font-size: 48px;
+  }
+  @media screen and (min-width: 1180px) {
+    font-size: 60px;
+  }
+  text-transform: uppercase;
+  line-height: 1;
+  color: #000;
+  @media screen and (min-width: 1278px) {
+    margin: 1em 0 0.45em 0;
+  }
+  span {
+    @media screen and (min-width: 1023px) {
+      display: block;
+      white-space: nowrap;
+    }
+  }
+}
+.jay-ellis-talks-q {
+  margin: 0;
+  padding: 0;
+  line-height: 1.8;
+  font-size: 16px;
+  font-weight: bold;
+  font-weight: 900;
+  color: #000;
+}
+.jay-ellis-talks-a {
+  margin: 0 0 2.5em 0 !important;
+  padding: 0;
+  line-height: 1.8;
+  color: #222;
+}
