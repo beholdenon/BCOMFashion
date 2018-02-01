@@ -1,6 +1,7 @@
 'use strict';
 
-let fs = require('fs'),
+let killswitches = require('./../helpers/killswitchesHelper'),
+    fs = require('fs'),
     path = require('path'),
     deviceDetectionHelper = require('./../helpers/deviceDetection'),
     tagDataHelper = require('./../helpers/tagDataPreparation'),
@@ -10,21 +11,7 @@ let fs = require('fs'),
     headCanonicalRegEx=/<!--headCanonical=(.*)-->/,
     preLoadScriptsRegEx=/<!--preLoadScripts=(.*)-->/,
 
-    args = {
-        timeStamp: new Date(),
-        isMobile: false,
-        isTablet: false,
-        headTitle: '',
-        headMeta: '',
-        headCanonical: '',
-        preLoadScripts: '',
-        tealiumScriptEnabled: process.env.tealiumScriptEnabled === "true",
-        tealiumType: process.env.ENV_TYPE === "prod" ? "prod" : "qa",
-        brightTagEnabled: process.env.brightTagEnabled !== "false",
-        polarisHeaderFooterEnabled: process.env.polarisHeaderFooterEnabled === "true",
-        polarisMobileHeaderFooterEnabled: process.env.polarisMobileHeaderFooterEnabled === "true",
-        breastCancerAwarenessCampaignEnabled: process.env.breastCancerAwarenessCampaignEnabled === "true"
-    },
+    args = killswitches.argsFactory(),
 
     detectMobileDeviceView = function detectMobileDeviceView(requestPath, req) {
         var view = requestPath + 'index',

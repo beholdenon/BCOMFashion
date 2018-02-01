@@ -7,7 +7,8 @@
 
 'use strict';
 
-let sjl = require('sjljs'),
+let killswitches = require('./../helpers/killswitchesHelper'),
+    sjl = require('sjljs'),
     path = require('path'),
     viewsPath = path.join(__dirname, '../views'),
     staticDataRootPath = path.join(__dirname, '../data/static'),
@@ -20,25 +21,8 @@ let sjl = require('sjljs'),
     isMobile = deviceType => deviceType.toLowerCase() === 'mobile',
     isTablet = deviceType => deviceType.toLowerCase() === 'tablet',
 
-    argsFactory = () => {
-        return {
-            timeStamp: new Date(),
-            isMobile: false,
-            isTablet: false,
-            headTitle: '',
-            headMeta: '',
-            headCanonical: '',
-            tealiumScriptEnabled: process.env.tealiumScriptEnabled === "true",
-            tealiumType: process.env.ENV_TYPE === "prod" ? "prod" : "qa",
-            brightTagEnabled: process.env.brightTagEnabled !== "false",
-            polarisHeaderFooterEnabled: process.env.polarisHeaderFooterEnabled === "true",
-            polarisMobileHeaderFooterEnabled: process.env.polarisMobileHeaderFooterEnabled === "true",
-            breastCancerAwarenessCampaignEnabled: process.env.breastCancerAwarenessCampaignEnabled === "true"
-        };
-    },
-
     argsWithDeviceMetaData = (req, argsToUse, path) => {
-        const _args = argsToUse || argsFactory(),
+        const _args = argsToUse || killswitches.argsFactory(),
             detectedDeviceType = deviceDetectionHelper.detectDevice(req);
         let canonicalHost,
             protocol;
@@ -115,7 +99,7 @@ module.exports = function (viewAlias, dataProducer, layoutObj) {
                 requestPath = req.url.pathname.replace(/^\/b\//g, "/"),
                 requestPathPartial = stripInitialForwardSlash(requestPath),
                 dataProducerData = typeof dataProducer === 'function' ? dataProducer(req) : null,
-                argsForView = argsWithDeviceMetaData(req, argsFactory(), requestPathPartial),
+                argsForView = argsWithDeviceMetaData(req, killswitches.argsFactory(), requestPathPartial),
                 utagData = tagDataHelper.getPageType(req),
                 getMergedArgs = otherData => sjl.extend(true, argsForView, dataProducerData, otherData, {utagData:utagData}),
                 resolveRequest = viewTemplateName => {
