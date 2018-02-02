@@ -60,8 +60,7 @@ module.exports = {
     tags: ['standard-layout', 'for-mobile', 'for-desktop', 'for-tablet', 'static-data'],
 
     handler: function(req, res) {
-        let slashMinSuffix = req.query.debug ? '' : '/min',
-            requestPath = req.url.path || req.url.pathname,
+        let requestPath = req.url.path || req.url.pathname,
             requestPathPartial = stripInitialForwardSlash(requestPath),
             viewAlias = ensureTrailingForwardSlash(requestPathPartial) + 'index',
             argsForView = argsWithDeviceMetaData(req, killswitches.argsFactory());
@@ -73,15 +72,7 @@ module.exports = {
 
             // Resolve view template whether we have data for it or not
             var resolveRequest = mergedArgs => {
-                    resolve( res.view( viewAlias, {
-                        args: mergedArgs, 
-                        isApp: req.state.ishop_app, 
-                        assetsHost: process.env.BASE_ASSETS,
-                        baseHost: process.env.BASE_HOST,
-                        secureHost: process.env.SECURE_HOST,
-                        mobileHost: process.env.MOBILE_HOST,
-                        slashMinSuffix: slashMinSuffix
-                    } ));
+                    resolve( res.view( viewAlias, killswitches.pageViewArgsFactory(req, mergedArgs) ));
                 },
 
                 // curried `extend` method same signature as $.extend but more accurate

@@ -131,51 +131,7 @@ let killswitches = require('./../helpers/killswitchesHelper'),
     // and view to be passed in (for routes that have many pages that use the same view)
     adaptiveWithStaticDataFactory = require('./adaptiveWithStaticDataFactory');
 
-//***added for reviews page***//
 
-let crypto = require('crypto');
-
-function toHex(str) {
-    var hex = '';
-    for(var i=0; i<str.length; i++) {
-        hex += str.charCodeAt(i).toString(16);
-    }
-    return hex;
-}
-
-function formatDate(date) {
-  var mm = date.getMonth() + 1; // getMonth() is zero-based
-  var dd = date.getDate();
-
-  return [date.getFullYear(),
-          (mm>9 ? '' : '0') + mm,
-          (dd>9 ? '' : '0') + dd
-         ].join('');
-}
-
-function setUserToken(req) {
-    var md5,
-        bvUserToken,
-        date,
-        key = "am9q8B",
-        userStr;
-
-    //only continue if it's product review page AND user is signed in AND BazaarVoiceToken is not set
-    if (req && req.route && /product\/review/.test(req.route.path) &&
-        req.state && req.state.bloomingdales_online_uid &&
-        req.state.GCs && req.state.GCs.indexOf("BazaarVoiceToken1_92_") === -1) {
-
-        md5 = crypto.createHash('md5');
-        date = new Date();
-
-        userStr = "date=" + formatDate(date) + "&userid=" + req.state.bloomingdales_online_uid;
-        md5.update( key + userStr );
-        bvUserToken = md5.digest('hex') + toHex(userStr);
-    }
-    
-    return bvUserToken;
-}
-//***end of addition for reviews page***//
 
 module.exports = { 
     adaptive: {
@@ -188,7 +144,6 @@ module.exports = {
 
             var querystring = req.url.search || '';
             var deviceDetectProc;
-            var slashMinSuffix = ( req.query.debug === '1' ? '' : '/min' );
             var file;
 
             // get rid of trailing spaces, add a trailing slash if missing, then redirect
@@ -209,16 +164,7 @@ module.exports = {
             file = deviceDetectProc + ".html";
             args = headHelpers(file, req);
 
-            return res.view(deviceDetectProc, { 
-                args: args, 
-                isApp: req.state.ishop_app, 
-                assetsHost: process.env.BASE_ASSETS, 
-                baseHost: process.env.BASE_HOST,
-                secureHost: process.env.SECURE_HOST,
-                mobileHost: process.env.MOBILE_HOST,
-                slashMinSuffix: slashMinSuffix,
-                bvUserToken: setUserToken(req)
-            });
+            return res.view(deviceDetectProc, killswitches.pageViewArgsFactory(req, args));
         }
     },
     adaptiveWithStaticData: adaptiveWithStaticData,
@@ -229,7 +175,6 @@ module.exports = {
         tags: ['custom header & footer', 'static'],
         handler: function(req, res) {
             var requestPath = (req.url.pathname).replace(/^\/b\//g, "/").substring(1);
-            var slashMinSuffix = ( req.query.debug === '1' ? '' : '/min' );
             var file = requestPath.replace(/\\/g,"/");
 
             if ( requestPath.lastIndexOf('.') < 0 ) {
@@ -241,15 +186,7 @@ module.exports = {
             // If so, add them to deviceDetectProc.args
             args = headHelpers(file, req);
 
-            return res.view(file, { 
-                args: args,
-                isApp: req.state.ishop_app, 
-                assetsHost: process.env.BASE_ASSETS, 
-                baseHost: process.env.BASE_HOST,
-                secureHost: process.env.SECURE_HOST,
-                mobileHost: process.env.MOBILE_HOST,
-                slashMinSuffix: slashMinSuffix 
-            }, { layout: 'responsiveCustomHF' });
+            return res.view(file, killswitches.pageViewArgsFactory(req, args), { layout: 'responsiveCustomHF' });
         }
     },
     angularCustom: {
@@ -258,7 +195,6 @@ module.exports = {
         tags: ['custom header & footer', 'static'],
         handler: function(req, res) {
             var requestPath = (req.url.pathname).replace(/^\/b\//g, "/").substring(1);
-            var slashMinSuffix = ( req.query.debug === '1' ? '' : '/min' );
             var file = requestPath.replace(/\\/g,"/");
 
             if ( requestPath.lastIndexOf('.') < 0 ) {
@@ -270,15 +206,7 @@ module.exports = {
             // If so, add them to deviceDetectProc.args
             args = headHelpers(file, req);
 
-            return res.view(file, { 
-                args: args,
-                isApp: req.state.ishop_app, 
-                assetsHost: process.env.BASE_ASSETS, 
-                baseHost: process.env.BASE_HOST,
-                secureHost: process.env.SECURE_HOST,
-                mobileHost: process.env.MOBILE_HOST,
-                slashMinSuffix: slashMinSuffix 
-            }, { layout: 'angularCustom' });
+            return res.view(file, killswitches.pageViewArgsFactory(req, args), { layout: 'angularCustom' });
         }
     },
     fallback: {
@@ -286,7 +214,6 @@ module.exports = {
         notes: 'This is the default fallback route if not explicitly captured',
         tags: ['fallback', 'static'],
         handler: function(req, res) {
-            var slashMinSuffix = ( req.query.debug === '1' ? '' : '/min' );
             var querystring = req.url.search || '';
             var requestPath = req.url.pathname;
                 requestPath = requestPath.substring(1);
@@ -322,15 +249,7 @@ module.exports = {
             file = requestPath + "index.html";
             args = headHelpers(file, req);
             
-            return res.view(requestPath + "index", { 
-                args: args, 
-                isApp: req.state.ishop_app,
-                assetsHost: process.env.BASE_ASSETS, 
-                baseHost: process.env.BASE_HOST,
-                secureHost: process.env.SECURE_HOST,
-                mobileHost: process.env.MOBILE_HOST,
-                slashMinSuffix: slashMinSuffix
-            });
+            return res.view(requestPath + "index", killswitches.pageViewArgsFactory(req, args));
         }
     }
 };
