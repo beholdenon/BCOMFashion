@@ -1,5 +1,37 @@
 $(function () {
-    
+
+    $.fn.fitText = function( kompressor, options ) {
+
+        // Setup options
+        var compressor = kompressor || 1,
+            settings = $.extend({
+                'minFontSize' : Number.NEGATIVE_INFINITY,
+                'maxFontSize' : Number.POSITIVE_INFINITY
+            }, options);
+
+        return this.each(function(){
+
+            // Store the object
+            var $this = $(this);
+
+            // Resizer() resizes items based on the object width divided by the compressor * 10
+            var resizer = function () {
+                $this.css('font-size', Math.max(Math.min($this.width() / (compressor*10), parseFloat(settings.maxFontSize)), parseFloat(settings.minFontSize)));
+            };
+
+            // Call once to set.
+            resizer();
+
+            // Call on resize. Opera debounces their resize by default.
+            $(window).on('resize.fittext orientationchange.fittext', resizer);
+
+        });
+
+    };
+    // $("#responsive_headline").fitText(1.2); // Turn the compressor up   (resizes more aggressively)
+    // $("#responsive_headline").fitText(0.8); // Turn the compressor down (resizes less aggressively)
+    // $("#responsive_headline").fitText(1.2, { minFontSize: '20px', maxFontSize: '40px' });
+
     // Prevent tabbing out of the nav items when nav is active
     var navItem = $('.spring-18-nav a'),
         navItemContent = $('.nav-item-content'),
@@ -52,6 +84,7 @@ $(function () {
         //true or false - should the marquee be duplicated to show an effect of continues flow
         duplicated: true
     });
+    // Stop marquee animation
     $('.spring-18-marquee-container').on('click', function () {
        $('.js-marquee-wrapper').css({'transform':'none','animation':'unset'})
     });
@@ -85,8 +118,126 @@ $(function () {
 
     
     // console.log('spring-18-carousel-images: ' + $('.spring-18-carousel-images div').length);
+    
+    
+    // Landing page video
 
+    var playPauseVideoBtn = $('.spring-18-play-pause-video-btn');
+    var videoContainer = $('.spring-18-landing-video-container');
+    var videoID = videoContainer.data('video-id');
+
+    getBrightcoveVideoData(function (data) {
+        // console.log('POSTER: ' + getVideoSrcData(data).videoPosterSrc);
+        // console.log('VIDEO: ' +  getVideoSrcData(data).videoSrc);
+        // console.log('WIDTH: ' +  getVideoSrcData(data).videoWidth);
+        // console.log('HEIGHT: ' + getVideoSrcData(data).videoHeight);
+
+        var videoData = getVideoSrcData(data);
+        videoContainer.append('<video autoplay muted poster="' + videoData.videoPosterSrc + '"><source src="' + videoData.videoSrc + '" type="video/mp4"></video>');
+
+        var originalVideoWidth = videoData.videoWidth;
+        var originalVideoHeight = videoData.videoHeight;
+        var video = videoContainer.find('video');
+
+        // re-scale image/video when viewport resize
+        $(window).resize(function(){
+
+            // get the parent element size
+            var containerWidth = video.parent().width();
+            var containerHeight = video.parent().height();
+
+            // use largest scale factor of horizontal/vertical
+            var scaleWidth = containerWidth / originalVideoWidth;
+            var scaleHeight = containerHeight / originalVideoHeight;
+            var scale = scaleWidth > scaleHeight ? scaleWidth : scaleHeight;
+
+            // scale the video
+            video.width(scale * originalVideoWidth);
+            video.height(scale * originalVideoHeight);
+
+        });
+
+        // trigger re-scale on pageload
+        $(window).trigger('resize');
+        
+        video.bind('play', function (e) {
+            playBtnState(playPauseVideoBtn, 'play');
+        });
+        video.bind('pause', function (e) {
+            playBtnState(playPauseVideoBtn, 'pause');
+        });
+
+    }, videoID);
+
+    // Play/Pause button
+    playPauseVideoBtn.on('click', function () {
+        var _this = $(this);
+        var video = videoContainer.find('video').get(0);
+        if (video.paused) {
+            video.play();
+            playBtnState(_this, 'pause');
+        } else {
+            video.pause();
+            playBtnState(_this, 'play');
+        }
+    });
+
+    // Social
+    var social = {
+        facebookTitle: '100% Bloomingdale\'s | bloomingdales.com',
+        facebookDescription: 'The fall collections are here! Don\'t miss any of these utterly unique, extremely exclusive designer collaborations.',
+        facebookImageFileName: '2018-spring-campaign-100-percent-facebook.jpg',
+        twitterTitle: 'The 100% Bloomingdale\'s fall collections are here! Don\'t miss any of these exclusive designer collaborations! http://fashion.bloomingdales.com/2016-fall-campaign-100-percent-exclusive/',
+        pinterestTitle: '100% Bloomingdale\'s',
+        pinterestImageFileName: '2018-spring-campaign-100-percent-pinterest.jpg',
+        facebookURL: null,
+        twitterURL: null,
+        pinterestURL: null
+    };
+
+    setupSocial();
+
+    
     // Utils
+    
+    function setupSocial() {
+
+        var baseURL = 'http://' + window.location.host + window.location.pathname,
+            baseURLAssets = 'http://' + window.location.host + '/b/fashion/campaigns/images/2018-spring-campaign-100-percent-exclusive/social/';
+        
+        
+        var facebookURL = 'https://www.facebook.com/sharer/sharer.php';
+        facebookURL += '?u=' + encodeURIComponent(baseURL);
+        facebookURL += '&quote=' + encodeURIComponent(social.facebookTitle + " " + social.facebookDescription);
+        
+        var twitterURL = 'http://twitter.com/intent/tweet?source=webclient&text=';
+        twitterURL += encodeURIComponent(social.twitterTitle);
+        
+        var pinterestURL = 'http://pinterest.com/pin/create/button/?';
+        pinterestURL += 'url=' + encodeURIComponent(baseURL);
+        pinterestURL += '&media=' + encodeURIComponent(baseURLAssets + social.pinterestImageFileName);
+        pinterestURL += '&description=' + encodeURIComponent(social.pinterestTitle);
+
+        $('.spring-18-pinterest-link').attr('href', pinterestURL);
+        $('.spring-18-twitter-link').attr('href', twitterURL);
+        $('.spring-18-facebook-link').attr('href', facebookURL);
+
+        $('.spring-18-instagram-link').attr('href', "https://www.instagram.com/bloomingdales/");
+
+        $('.spring-18-social-links').find('a').each(function () {
+            $(this).attr('target','_blank');
+        })
+
+    }
+
+    function playBtnState(_btn, _flag) {
+        if (_flag === "play") {
+            _btn.addClass('is-playing').removeClass('is-paused');
+        } else if (_flag === "pause") {
+            _btn.addClass('is-paused').removeClass('is-playing');
+        }
+    }
+
     function toggleTabbable(item, flag) {
         if (flag) {
             item.each(function () {
@@ -99,6 +250,51 @@ $(function () {
         }
     }
     
+    function getBrightcoveVideoData(callback, videoID)  {
+        var accountID = 75934411001;
+        var policyKey = 'BCpkADawqM0NvUfP8kau23tpJMWdg09UoT0lqv-Aoqc98Q-ug4rTtp17hA99TA9yLT4-SJm-oIpkYExCvnGqb1fpbxMZM1Y8Yy1Hol4HdRpWGuJHGskT_7155ak';
+        var path = 'https://edge.api.brightcove.com/playback/v1/accounts/' + accountID + '/videos/' + videoID;
+        $.ajax({
+            type: "GET",
+            url: path,
+            cache: false,
+            contentType: 'application/json',
+            crossDomain: true,
+            processData: true,
+            headers: {
+                Accept: 'application/json;pk=' + policyKey
+            },
+            success: function (brightcoveVideoData) {
+                callback(brightcoveVideoData);
+            },
+            error: function (xhr, status, errorThrown) {
+                console.log(errorThrown + '\n' + status + '\n' + xhr.statusText);
+            }
+        });
+    }
+
+    function getVideoSrcData (data) {
+        var videos = data.sources;
+        var removeVideosIndex = [];
+        videos.forEach(function (element, index) {
+            if (element.src == undefined || element.container.toLowerCase() !== 'mp4') {
+                removeVideosIndex.push(index);
+            } else {
+                if (element.src.includes('http://')) {
+                    removeVideosIndex.push(index);
+                }
+            }
+        });
+        var finalVideosData = $.grep(videos, function (n, i) {
+            return $.inArray(i, removeVideosIndex) == -1;
+        });
+        function videoWidthComparator(a, b) {
+            return parseInt(a.width, 10) - parseInt(b.width, 10);
+        }
+        finalVideosData.sort(videoWidthComparator).reverse();
+
+        return {'videoPosterSrc': data.poster, 'videoSrc': finalVideosData[0].src, 'videoWidth': finalVideosData[0].width, 'videoHeight': finalVideosData[0].height}
+    }
     
     
 });
