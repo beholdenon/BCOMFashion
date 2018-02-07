@@ -71,7 +71,7 @@ module.exports = {
         return (new Promise( resolve => {
 
             // Resolve view template whether we have data for it or not
-            var resolveRequest = mergedArgs => {
+            let resolveRequest = mergedArgs => {
                     resolve( res.view( viewAlias, killswitches.pageViewArgsFactory(req, mergedArgs) ));
                 },
 

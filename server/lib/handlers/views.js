@@ -14,7 +14,7 @@ let killswitches = require('./../helpers/killswitchesHelper'),
     args = killswitches.argsFactory(),
 
     detectMobileDeviceView = function detectMobileDeviceView(requestPath, req) {
-        var view = requestPath + 'index',
+        let view = requestPath + 'index',
             deviceType = deviceDetectionHelper.detectDevice(req);
 
         args.isTablet = false;
@@ -34,7 +34,7 @@ let killswitches = require('./../helpers/killswitchesHelper'),
     // Reads the file passed in and checks if any of the head* helpers are used
     // Use of a head* helper is done using HTML comments <!-- -->
     headHelpers = function headHelpers(file, req) {
-        var contents,
+        let contents,
             lines,
             dir;
         try {
@@ -52,8 +52,8 @@ let killswitches = require('./../helpers/killswitchesHelper'),
             contents = fs.readFileSync(file, 'utf8');
             lines = contents.split("\n");
             // Read only first 20 lines of file
-            for (var i = 0; i < 20; i++) {
-                var headMetaMatches = headMetaRegEx.exec(lines[i]),
+            for (let i = 0; i < 20; i++) {
+                let headMetaMatches = headMetaRegEx.exec(lines[i]),
                     headTitleMatches = headTitleRegEx.exec(lines[i]),
                     headCanonicalMatches = headCanonicalRegEx.exec(lines[i]),
                     preLoadScriptsMatches = preLoadScriptsRegEx.exec(lines[i]),
@@ -114,7 +114,7 @@ let killswitches = require('./../helpers/killswitchesHelper'),
 
     // Handle URL deeplinks params: discard fragment on the server-side and handle it on client-side.
     detectDeepLinks = function detectDeepLinks(req, defaultReqPath){
-        var requestPath;
+        let requestPath;
 
         if (/\{deeplinks\?}/.test(req.route.path)){
             requestPath = req.route.path.substring(1).replace(/{.*?}/,'');
@@ -139,17 +139,17 @@ module.exports = {
         notes: 'Reading Akamai headers, and based on device type (phone, tablet, desktop), serve either index.html or index-mobile.html layout',
         tags: ['non-responsive'],
         handler: function(req, res) {
-            var requestPath = req.url.pathname;
+            let requestPath = req.url.pathname;
                 requestPath = requestPath.substring(1);
 
-            var querystring = req.url.search || '';
-            var deviceDetectProc;
-            var file;
+            let querystring = req.url.search || '',
+                deviceDetectProc,
+                file;
 
             // get rid of trailing spaces, add a trailing slash if missing, then redirect
             if ( ! /\/$/.test(requestPath) ) {
                 requestPath = requestPath.replace(/\/?\s?$/, '/');
-                var url = '/' + requestPath + querystring;
+                let url = '/' + requestPath + querystring;
 
                 return res.redirect(url);
             }
@@ -174,8 +174,8 @@ module.exports = {
         notes: 'Serve common html view for both desktop and mobile; exclude standard H&F',
         tags: ['custom header & footer', 'static'],
         handler: function(req, res) {
-            var requestPath = (req.url.pathname).replace(/^\/b\//g, "/").substring(1);
-            var file = requestPath.replace(/\\/g,"/");
+            let requestPath = (req.url.pathname).replace(/^\/b\//g, "/").substring(1),
+                file = requestPath.replace(/\\/g,"/");
 
             if ( requestPath.lastIndexOf('.') < 0 ) {
               file = file + '/index.html';
@@ -194,8 +194,8 @@ module.exports = {
         notes: 'Serve common html view for both desktop and mobile; exclude standard H&F and jQuery',
         tags: ['custom header & footer', 'static'],
         handler: function(req, res) {
-            var requestPath = (req.url.pathname).replace(/^\/b\//g, "/").substring(1);
-            var file = requestPath.replace(/\\/g,"/");
+            let requestPath = (req.url.pathname).replace(/^\/b\//g, "/").substring(1),
+                file = requestPath.replace(/\\/g,"/");
 
             if ( requestPath.lastIndexOf('.') < 0 ) {
               file = file + '/index.html';
@@ -214,10 +214,10 @@ module.exports = {
         notes: 'This is the default fallback route if not explicitly captured',
         tags: ['fallback', 'static'],
         handler: function(req, res) {
-            var querystring = req.url.search || '';
-            var requestPath = req.url.pathname;
+            let querystring = req.url.search || '',
+                requestPath = req.url.pathname;
                 requestPath = requestPath.substring(1);
-            var file;
+            let file;
 
             // (for dev only) override the user agent by passing in a query
             if (req.query.UA){
@@ -227,7 +227,7 @@ module.exports = {
             // get rid of trailing spaces, add a trailing slash if missing, then redirect
             if ( ! /\/$/.test(requestPath) ) {
                 requestPath = requestPath.replace(/\/?\s?$/, '/');
-                var url = '/' + requestPath + querystring;
+                let url = '/' + requestPath + querystring;
 
                 return res.redirect(url);
             }
