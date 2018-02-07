@@ -4,7 +4,8 @@
 
 'use strict';
 
-let sjl = require('sjljs'),
+let killswitches = require('./../helpers/killswitchesHelper'),
+    sjl = require('sjljs'),
     path = require('path'),
     staticDataRootPath = path.join(__dirname, '../data/static'),
 
@@ -15,25 +16,8 @@ let sjl = require('sjljs'),
     isMobile = deviceType => deviceType.toLowerCase() === 'mobile',
     isTablet = deviceType => deviceType.toLowerCase() === 'tablet',
 
-    argsFactory = () => {
-        return {
-            timeStamp: new Date(),
-            isMobile: false,
-            isTablet: false,
-            headTitle: '',
-            headMeta: '',
-            headCanonical: '',
-            tealiumScriptEnabled: process.env.tealiumScriptEnabled === "true",
-            tealiumType: process.env.ENV_TYPE === "prod" ? "prod" : "qa",
-            brightTagEnabled: process.env.brightTagEnabled !== "false",
-            polarisHeaderFooterEnabled: process.env.polarisHeaderFooterEnabled === "true",
-            polarisMobileHeaderFooterEnabled: process.env.polarisMobileHeaderFooterEnabled === "true",
-            breastCancerAwarenessCampaignEnabled: process.env.breastCancerAwarenessCampaignEnabled === "true"
-        };
-    },
-
     argsWithDeviceMetaData = (req, argsToUse) => {
-        var _args = argsToUse || argsFactory(),
+        let _args = argsToUse || killswitches.argsFactory(),
             detectedDeviceType = deviceDetectionHelper.detectDevice(req);
         _args.isMobile = isMobile(detectedDeviceType);
         _args.isTablet = isTablet(detectedDeviceType);
@@ -76,11 +60,10 @@ module.exports = {
     tags: ['standard-layout', 'for-mobile', 'for-desktop', 'for-tablet', 'static-data'],
 
     handler: function(req, res) {
-        let slashMinSuffix = req.query.debug ? '' : '/min',
-            requestPath = req.url.path || req.url.pathname,
+        let requestPath = req.url.path || req.url.pathname,
             requestPathPartial = stripInitialForwardSlash(requestPath),
             viewAlias = ensureTrailingForwardSlash(requestPathPartial) + 'index',
-            argsForView = argsWithDeviceMetaData(req, argsFactory());
+            argsForView = argsWithDeviceMetaData(req, killswitches.argsFactory());
         	argsForView.utagData = tagDataHelper.getPageType(req);
 
         // Check if we have any static data to merge to `args` before rendering view
@@ -88,16 +71,8 @@ module.exports = {
         return (new Promise( resolve => {
 
             // Resolve view template whether we have data for it or not
-            var resolveRequest = mergedArgs => {
-                    resolve( res.view( viewAlias, {
-                        args: mergedArgs, 
-                        isApp: req.state.ishop_app, 
-                        assetsHost: process.env.BASE_ASSETS,
-                        baseHost: process.env.BASE_HOST,
-                        secureHost: process.env.SECURE_HOST,
-                        mobileHost: process.env.MOBILE_HOST,
-                        slashMinSuffix: slashMinSuffix
-                    } ));
+            let resolveRequest = mergedArgs => {
+                    resolve( res.view( viewAlias, killswitches.pageViewArgsFactory(req, mergedArgs) ));
                 },
 
                 // curried `extend` method same signature as $.extend but more accurate

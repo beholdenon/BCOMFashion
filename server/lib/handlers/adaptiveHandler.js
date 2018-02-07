@@ -8,6 +8,7 @@ let fs = require('fs'),
     responseArgsFactory = require('./../helpers/responseArgsFactory'),
     getViewTemplateName = require('./../helpers/getViewTemplateName'),
     doesFilePathExist = require('./../helpers/doesPathExist'),
+    killswitches = require('./../helpers/killswitchesHelper'),
 
     viewsPath = path.join(__dirname, '../views'),
 
@@ -87,34 +88,17 @@ module.exports = {
         'on whether the device is a phone, a tablet, or a desktop browser.',
         tags: ['non-responsive', 'standard'],
         handler: function(req, res) {
-        let requestPath = (req.url.pathname).substring(1),
-            slashMinSuffix = req.query.debug ? '' : '/min';
+        let requestPath = (req.url.pathname).substring(1);
 
         const args = responseArgsFactory(req);
 
         let resolveRequest = viewName => {
             return headHelpers(viewName + '.html', args)
                 .then(aggregatedArgs => {
-                    return res.view(viewName, {
-                        args: aggregatedArgs, 
-                        isApp: req.state.ishop_app, 
-                        assetsHost: process.env.BASE_ASSETS,
-                        baseHost: process.env.BASE_HOST,
-                        secureHost: process.env.SECURE_HOST,
-                        mobileHost: process.env.MOBILE_HOST,
-                        slashMinSuffix: slashMinSuffix
-                    });
+                    return res.view(viewName, killswitches.pageViewArgsFactory(req, aggregatedArgs));
                 })
                 .catch(() => {
-                    return res.view(viewName, {
-                        args: args, 
-                        isApp: req.state.ishop_app, 
-                        assetsHost: process.env.BASE_ASSETS,
-                        baseHost: process.env.BASE_HOST,
-                        secureHost: process.env.SECURE_HOST,
-                        mobileHost: process.env.MOBILE_HOST,
-                        slashMinSuffix: slashMinSuffix
-                    });
+                    return res.view(viewName, killswitches.pageViewArgsFactory(req, args));
                 });
         };
 

@@ -7,7 +7,8 @@
 
 'use strict';
 
-let sjl = require('sjljs'),
+let killswitches = require('./../helpers/killswitchesHelper'),
+    sjl = require('sjljs'),
     path = require('path'),
     viewsPath = path.join(__dirname, '../views'),
     staticDataRootPath = path.join(__dirname, '../data/static'),
@@ -20,25 +21,8 @@ let sjl = require('sjljs'),
     isMobile = deviceType => deviceType.toLowerCase() === 'mobile',
     isTablet = deviceType => deviceType.toLowerCase() === 'tablet',
 
-    argsFactory = () => {
-        return {
-            timeStamp: new Date(),
-            isMobile: false,
-            isTablet: false,
-            headTitle: '',
-            headMeta: '',
-            headCanonical: '',
-            tealiumScriptEnabled: process.env.tealiumScriptEnabled === "true",
-            tealiumType: process.env.ENV_TYPE === "prod" ? "prod" : "qa",
-            brightTagEnabled: process.env.brightTagEnabled !== "false",
-            polarisHeaderFooterEnabled: process.env.polarisHeaderFooterEnabled === "true",
-            polarisMobileHeaderFooterEnabled: process.env.polarisMobileHeaderFooterEnabled === "true",
-            breastCancerAwarenessCampaignEnabled: process.env.breastCancerAwarenessCampaignEnabled === "true"
-        };
-    },
-
     argsWithDeviceMetaData = (req, argsToUse, path) => {
-        const _args = argsToUse || argsFactory(),
+        const _args = argsToUse || killswitches.argsFactory(),
             detectedDeviceType = deviceDetectionHelper.detectDevice(req);
         let canonicalHost,
             protocol;
@@ -111,11 +95,10 @@ module.exports = function (viewAlias, dataProducer, layoutObj) {
         tags: ['standard-layout', 'for-mobile', 'for-desktop', 'for-tablet', 'static-data'],
 
         handler: function (req, res) {
-            let slashMinSuffix = req.query.debug ? '' : '/min',
-                requestPath = req.url.pathname.replace(/^\/b\//g, "/"),
+            let requestPath = req.url.pathname.replace(/^\/b\//g, "/"),
                 requestPathPartial = stripInitialForwardSlash(requestPath),
                 dataProducerData = typeof dataProducer === 'function' ? dataProducer(req) : null,
-                argsForView = argsWithDeviceMetaData(req, argsFactory(), requestPathPartial),
+                argsForView = argsWithDeviceMetaData(req, killswitches.argsFactory(), requestPathPartial),
                 utagData = tagDataHelper.getPageType(req),
                 getMergedArgs = otherData => sjl.extend(true, argsForView, dataProducerData, otherData, {utagData:utagData}),
                 resolveRequest = viewTemplateName => {
@@ -124,15 +107,7 @@ module.exports = function (viewAlias, dataProducer, layoutObj) {
 
                         // Resolve view template whether we have args for it or not
                         let resolveRequest = fetchedStaticData => {
-                            resolve(res.view(viewTemplateName, {
-                                args: getMergedArgs(fetchedStaticData), 
-                                isApp: req.state.ishop_app, 
-                                assetsHost: process.env.BASE_ASSETS,
-                                baseHost: process.env.BASE_HOST,
-                                secureHost: process.env.SECURE_HOST,
-                                mobileHost: process.env.MOBILE_HOST,
-                                slashMinSuffix: slashMinSuffix
-                            }, layoutObj));
+                            resolve(res.view(viewTemplateName, killswitches.pageViewArgsFactory(req, getMergedArgs(fetchedStaticData)), layoutObj));
                         };
 
                         // Resolve request
