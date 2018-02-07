@@ -17,7 +17,7 @@ let killswitches = require('./../helpers/killswitchesHelper'),
     isTablet = deviceType => deviceType.toLowerCase() === 'tablet',
 
     argsWithDeviceMetaData = (req, argsToUse) => {
-        var _args = argsToUse || killswitches.argsFactory(),
+        let _args = argsToUse || killswitches.argsFactory(),
             detectedDeviceType = deviceDetectionHelper.detectDevice(req);
         _args.isMobile = isMobile(detectedDeviceType);
         _args.isTablet = isTablet(detectedDeviceType);
