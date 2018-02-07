@@ -145,7 +145,7 @@
   text-transform: uppercase;
   position: absolute;
 }
-.lettering-Hues {
+.lettering-large-right {
   font-size: 12vw;
   @media screen and (min-width: $container-width) {
     font-size: 190px;
@@ -154,7 +154,7 @@
   right: 35px;
   line-height: 1;
 }
-.lettering-High-impact {
+.lettering-small-left {
   font-size: 7vw;
   @media screen and (min-width: $container-width) {
     font-size: 100px;
@@ -163,6 +163,53 @@
   left: 35px;
   line-height: 1;
 }
+
+
+.spring-18-jumbotron-foo-1 {
+  position: absolute;
+  bottom: 37%;
+  right: 5%;
+  max-width: 46px !important;
+}
+.spring-18-jumbotron-foo-2 {
+  position: absolute;
+  bottom: 20.5%;
+  right: 44.5%;
+  max-width: 66px !important;
+}
+.spring-18-jumbotron-foo-3 {
+  position: absolute;
+  bottom: 19%;
+  right: 31%;
+  max-width: 66px !important;
+}
+
+.spring-18-jumbotron-foo-4 {
+  position: absolute;
+  bottom: 35%;
+  right: 13%;
+  max-width: 66px !important;
+}
+
+.spring-18-jumbotron-foo-5 {
+  position: absolute;
+  bottom: 20%;
+  right: 19%;
+  max-width: 66px !important;
+}
+.spring-18-jumbotron-foo-6 {
+  position: absolute;
+  bottom: 30%;
+  right: 45%;
+  max-width: 46px !important;
+}
+.spring-18-jumbotron-foo-7 {
+  position: absolute;
+  bottom: 36%;
+  right: 21.5%;
+  max-width: 66px !important;
+}
+
 
 // --------- jumbotron end
 
@@ -213,7 +260,7 @@
     width: 50%;
   }
   @media screen and (min-width: 1280px) {
-    width: 60%;
+    width: 50%;
   }
 
 }
@@ -235,11 +282,11 @@
   z-index: 10;
 }
 .spring-18-mr-mario-holder {
-  width: 80px;
-  height: 131px;
+  width: 49px;
+  height: 81px;
   position: absolute;
   right: -112px;
-  top: 0;
+  top: 24px;
   z-index: 1;
   @include flexbox;
   @include align-items(center);
@@ -262,7 +309,7 @@
 
   @media screen and (min-width: 600px) {
     width: 75%;
-    padding-left: 140px;
+    padding-left: 160px;
     overflow: hidden;
     text-align: left;
     @include flexbox;
@@ -275,7 +322,7 @@
     width: 50%;
   }
   @media screen and (min-width: 1280px) {
-    width: 40%;
+    width: 50%;
   }
 
 }
@@ -287,29 +334,36 @@
   text-transform: uppercase;
   white-space: nowrap;
   position: relative;
+  top: -12px;
 
   //top: -6px;
   //@media screen and (min-width: 1024px) {
   //  font-size: 36px;
   //}
   @media screen and (min-width: 600px) {
-    top: -6px;
+    //top: -6px;
     font-size: 34px;
   }
   @media screen and (min-width: 768px) {
-    top: -18px;
+    //top: -18px;
     font-size: 38px;
   }
   @media screen and (min-width: 1280px) {
+    top: -20px;
     font-size: 42px;
   }
-
+  @media screen and (min-width: 1470px) {
+    top: -6px;
+  }
 
   &:hover {
     color: #000;
   }
   span {
     display: block;
+    @media screen and (min-width: 1499px) {
+      display: inline;
+    }
   }
 
 }

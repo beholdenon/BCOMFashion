@@ -73,7 +73,10 @@
 
   &.arrow-top {
     &:after {
-      left: calc(50% - 16px);
+      left: calc(50% - 12px);
+      @media screen and (min-width: 800px) {
+        left: calc(50% - 16px);
+      }
       top: calc(50% - 10px);
     }
   }

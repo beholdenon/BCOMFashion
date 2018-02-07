@@ -117,7 +117,7 @@ $(function () {
     });
 
     
-    // console.log('spring-18-carousel-images: ' + $('.spring-18-carousel-images div').length);
+    console.log('spring-18-carousel-images: ' + $('.spring-18-carousel-images div').length);
     
     
     // Landing page video
@@ -125,58 +125,58 @@ $(function () {
     var playPauseVideoBtn = $('.spring-18-play-pause-video-btn');
     var videoContainer = $('.spring-18-landing-video-container');
     var videoID = videoContainer.data('video-id');
+    
+    if (videoID !== undefined) {
+        getBrightcoveVideoData(function (data) {
 
-    getBrightcoveVideoData(function (data) {
-        // console.log('POSTER: ' + getVideoSrcData(data).videoPosterSrc);
-        // console.log('VIDEO: ' +  getVideoSrcData(data).videoSrc);
-        // console.log('WIDTH: ' +  getVideoSrcData(data).videoWidth);
-        // console.log('HEIGHT: ' + getVideoSrcData(data).videoHeight);
+            var videoData = getVideoSrcData(data);
+            videoContainer.append('<video autoplay muted poster="' + videoData.videoPosterSrc + '"><source src="' + videoData.videoSrc + '" type="video/mp4"></video>');
 
-        var videoData = getVideoSrcData(data);
-        videoContainer.append('<video autoplay muted poster="' + videoData.videoPosterSrc + '"><source src="' + videoData.videoSrc + '" type="video/mp4"></video>');
+            var originalVideoWidth = videoData.videoWidth;
+            var originalVideoHeight = videoData.videoHeight;
+            var video = videoContainer.find('video');
 
-        var originalVideoWidth = videoData.videoWidth;
-        var originalVideoHeight = videoData.videoHeight;
-        var video = videoContainer.find('video');
+            // re-scale image/video when viewport resize
+            $(window).resize(function(){
 
-        // re-scale image/video when viewport resize
-        $(window).resize(function(){
+                // get the parent element size
+                var containerWidth = video.parent().width();
+                var containerHeight = video.parent().height();
 
-            // get the parent element size
-            var containerWidth = video.parent().width();
-            var containerHeight = video.parent().height();
+                // use largest scale factor of horizontal/vertical
+                var scaleWidth = containerWidth / originalVideoWidth;
+                var scaleHeight = containerHeight / originalVideoHeight;
+                var scale = scaleWidth > scaleHeight ? scaleWidth : scaleHeight;
 
-            // use largest scale factor of horizontal/vertical
-            var scaleWidth = containerWidth / originalVideoWidth;
-            var scaleHeight = containerHeight / originalVideoHeight;
-            var scale = scaleWidth > scaleHeight ? scaleWidth : scaleHeight;
+                // scale the video
+                video.width(scale * originalVideoWidth);
+                video.height(scale * originalVideoHeight);
 
-            // scale the video
-            video.width(scale * originalVideoWidth);
-            video.height(scale * originalVideoHeight);
+            });
 
-        });
+            // trigger re-scale on pageload
+            $(window).trigger('resize');
 
-        // trigger re-scale on pageload
-        $(window).trigger('resize');
-        
-        video.bind('play', function (e) {
-            playBtnState(playPauseVideoBtn, 'play');
-        });
-        video.bind('pause', function (e) {
-            playBtnState(playPauseVideoBtn, 'pause');
-        });
+            video.bind('play', function (e) {
+                playBtnState(playPauseVideoBtn, 'play');
+            });
+            video.bind('pause', function (e) {
+                playBtnState(playPauseVideoBtn, 'pause');
+            });
 
-    }, videoID);
-
+        }, videoID);
+    }
+    
     // Play/Pause button
     playPauseVideoBtn.on('click', function () {
         var _this = $(this);
         var video = videoContainer.find('video').get(0);
         if (video.paused) {
+            _this.attr('coremetrictag','play-video-btn');
             video.play();
             playBtnState(_this, 'pause');
         } else {
+            _this.attr('coremetrictag','pause-video-btn');
             video.pause();
             playBtnState(_this, 'play');
         }
@@ -295,6 +295,110 @@ $(function () {
 
         return {'videoPosterSrc': data.poster, 'videoSrc': finalVideosData[0].src, 'videoWidth': finalVideosData[0].width, 'videoHeight': finalVideosData[0].height}
     }
-    
-    
+
+
+    // ----------------------------------------- CoreMetrics ------------------------------------
+
+    var hasMBL = (isDevice() ? "mbl:" : "");
+
+
+    // init global app namespace object
+    window.Globals = {
+        env: window.ENV_CONFIG || 'dev',
+        deviceType: null,
+        mobileOS: window.MOBILE_OS,
+        Coremetrics: {
+            pageID: null,
+            catID: null,
+            attr42: null
+        }
+    };
+
+
+    var thisCategoryID = "spring18_100percent"; 
+    var coremetricsPageID = $('.spring-18').data('coremetrics-page-id');
+
+    $( window ).load(function() {
+        $.fn.coreTag('Pageview', thisCategoryID + '--' + coremetricsPageID);
+        $('[coremetrictag]').click(function () {
+            $.fn.coreTag('Element', $(this).attr("coremetrictag"));
+        });
+    });
+
+
+    $.fn.coreTag = function(tagType, pageID) {
+        if (tagType === 'Pageview') {
+            try {
+                window.BLOOMIES.coremetrics.cmCreatePageviewTag(hasMBL+pageID, hasMBL+thisCategoryID, '', '');
+            } catch (e) {
+                $.fn.trace('CoreM_err: ' + e);
+            }
+            $.fn.trace('###### CoreM Pageview; thisCategoryID: ' +hasMBL+ thisCategoryID + '; pageID: ' +hasMBL+ pageID);
+        } else if (tagType === 'Element') {
+            try {
+                window.BLOOMIES.coremetrics.cmCreatePageElementTag(hasMBL+pageID.substring(0, 49), hasMBL+thisCategoryID);
+            } catch (e) {
+                $.fn.trace('CoreM_err: ' + e);
+            }
+            $.fn.trace('###### CoreM Element; thisCategoryID: ' +hasMBL+ thisCategoryID + '; pageID: ' +hasMBL+ pageID.substring(0, 49));
+        }
+    };
+
+    $.fn.trace = function(log) {
+        if (window.location.href.indexOf('fashion.bloomingdales.com') < 0) {
+            window.console.info(log);
+        }
+    };
+
+    function isDevice () {
+        return ( /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) );
+    }
+
+    initCoreMetrics(thisCategoryID);
+
+    function setEnvironment() {
+        if (window.Globals.env === 'dev') {
+            return cmSetTest(); // jshint ignore:line
+        } else if (window.Globals.env === 'production') {
+            if (window.location.host === 'fashion.bloomingdales.com'){
+                return cmSetProduction(); // jshint ignore:line
+            } else {
+                return cmSetTest(); // jshint ignore:line
+            }
+        } else {
+            throw 'ERROR: unidentified env variable';
+        }
+    }
+
+    function pageName() {
+        //return the last segment of the page URL to be used as an pageview CM id
+        var path = window.location.pathname.split('/');
+        return path[path.length - 2];
+    }
+
+    function initCoreMetrics(categoryID) {
+        window.BLOOMIES.coremetrics.pageViewExploreAttributes = new window.BLOOMIES.coremetrics.exploreAttributes();
+        
+        var pageID = 'fashion_' + pageName(),
+            catID = categoryID || 'xx-xx-xx-xx',
+            attr = '';
+
+        //populate the Globals ns
+        window.Globals.Coremetrics.pageID = pageID;
+        window.Globals.Coremetrics.catID = catID;
+
+        if (window.BLOOMIES && window.BLOOMIES.coremetrics) {
+            setEnvironment();
+
+            if ($(window).width() < 980 && window.Globals.deviceType !== 'mobile'){
+                attr = 'Desktop Minimized';
+            } else {
+                attr = '';
+            }
+            window.Globals.Coremetrics.attr42 = attr;
+        }
+    }
+
+
+
 });

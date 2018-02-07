@@ -1,3 +1,4 @@
+
 .spring-18-nintendo-main-wrapper{
   overflow: hidden;
 }
@@ -13,7 +14,12 @@
 .spring-18-nintendo-grid__row {
   width: 100%;
   @include flexbox;
-  margin: 70px 0;
+  margin: 50px 0;
+  @include flex-direction(column);
+  @media screen and (min-width: 1024px) {
+    @include flex-direction(row);
+    margin: 70px 0;
+  }
 }
 
 .spring-18-nintendo-grid__square-cell {
@@ -23,6 +29,7 @@
   position: relative;
   a {
     display: block;
+    font-family: $site-font-family !important;;
     text-decoration: none !important;
     color: #000 !important;
     &:hover {
@@ -36,10 +43,18 @@
     height: auto;
   }
   span {
-    position: absolute;
     display: block;
     width: 100%;
-    top: calc(100% - 55px);
+    position: relative;
+    padding: 1em 0 2em;
+    @media screen and (min-width: 1024px) {
+      position: absolute;
+      top: calc(100% - 42px);
+      padding: 0;
+    }
+    @media screen and (min-width: 1279px) {
+      top: calc(100% - 55px);
+    }
     left: 0;
     text-align: center;
     line-height: 1.2;
@@ -48,26 +63,85 @@
 .spring-18-nintendo-grid__img-grid-holder {
   @include flexbox;
   @include flex-wrap(wrap);
+
+  width: 100%;
+  padding-bottom: 100%;
+
+  .spring-18-nintendo-grid__square-cell {
+    padding-bottom: 0;
+    height: auto;
+  }
+
+  margin-bottom: 5em;
+
+  @media screen and (min-width: 1024px) {
+    width: 50%;
+    padding-bottom: 50%;
+    margin-bottom: 0;
+  }
   a {
     &:focus {
-      position: relative;
-      z-index: 10;
+      @media screen and (min-width: 1024px) {
+        position: relative;
+        z-index: 10;
+      }
     }
   }
+
   &.right {
     a {
-      padding: 0 0 70px 70px;
+      padding: 0 10px;
+      @media screen and (min-width: 1024px) {
+        padding: 0 0 50px 50px;
+      }
+      @media screen and (min-width: 1279px) {
+        padding: 0 0 60px 60px;
+      }
+      @media screen and (min-width: 1439px) {
+        padding: 0 0 70px 70px;
+      }
     }
     span {
-      padding: 0 0 0 70px;
+      @media screen and (min-width: 1024px) {
+        padding: 0 0 0 50px;
+      }
+      @media screen and (min-width: 1279px) {
+        padding: 0 0 0 60px;
+      }
+      @media screen and (min-width: 1439px) {
+        padding: 0 0 0 70px;
+      }
     }
   }
   &.left {
+    @include order(2);
+    &.has-order {
+      @media screen and (min-width: 1024px) {
+        @include order(1);
+      }
+    }
     a {
-      padding: 0 70px 0 0 ;
+      padding: 0 10px;
+      @media screen and (min-width: 1024px) {
+        padding: 0 50px 50px 0;
+      }
+      @media screen and (min-width: 1279px) {
+        padding: 0 60px 60px 0;
+      }
+      @media screen and (min-width: 1439px) {
+        padding: 0 70px 70px 0;
+      }
     }
     span {
-      padding: 0 70px 0 0;
+      @media screen and (min-width: 1024px) {
+        padding: 0 50px 0 0;
+      }
+      @media screen and (min-width: 1279px) {
+        padding: 0 60px 0 0;
+      }
+      @media screen and (min-width: 1439px) {
+        padding: 0 70px 0 0;
+      }
     }
   }
 }
@@ -75,6 +149,14 @@
 .spring-18-nintendo-grid__single-img-holder {
   @include flexbox;
   z-index: 10;
+
+  width: 100%;
+  padding-bottom: 100%;
+  @media screen and (min-width: 1024px) {
+    width: 50%;
+    padding-bottom: 50%;
+  }
+
   a {
     display: block;
     width: 100%;
@@ -88,36 +170,84 @@
   &.left {
     a {
       right: 0;
-      padding: 0 70px 0 0;
+      padding: 0 35px;
+      @media screen and (min-width: 1024px) {
+        padding: 0 50px 0 0;
+      }
+      @media screen and (min-width: 1279px) {
+        padding: 0 60px 0 0;
+      }
+      @media screen and (min-width: 1439px) {
+        padding: 0 70px 0 0;
+      }
       span {
-        padding: 0 0 0 70px;
+        padding: 1em 0;
+        @media screen and (min-width: 1024px) {
+          padding: 0 0 0 50px;
+        }
+        @media screen and (min-width: 1279px) {
+          padding: 0 0 0 60px;
+        }
+        @media screen and (min-width: 1439px) {
+          padding: 0 0 0 70px;
+        }
       }
     }
   }
   &.right {
     a {
       left: 0;
-      padding: 0 0 0 70px ;
+      padding: 0 35px;
+      @media screen and (min-width: 1024px) {
+        padding: 0 0 0 50px;
+      }
+      @media screen and (min-width: 1279px) {
+        padding: 0 0 0 60px;
+      }
+      @media screen and (min-width: 1439px) {
+        padding: 0 0 0 70px;
+      }
       span {
-        padding: 0 70px 0 0;
+        padding: 1em 0;
+        @media screen and (min-width: 1024px) {
+          padding: 0 50px 0 0;
+        }
+        @media screen and (min-width: 1279px) {
+          padding: 0 60px 0 0;
+        }
+        @media screen and (min-width: 1439px) {
+          padding: 0 70px 0 0;
+        }
+      }
+    }
+    @include order(1);
+    &.has-order {
+      @media screen and (min-width: 1024px) {
+        @include order(2);
       }
     }
   }
 }
 
 .ntnd-lettering-bottom-right, .ntnd-lettering-top-left {
-  font-family: 'Oswald', sans-serif;
-  font-size: 100px;
+  font-family: 'Oswald', sans-serif !important;
+  font-size: 15vw;
+  @media screen and (min-width: 1024px) {
+    font-size: 80px;
+  }
+  @media screen and (min-width: 1279px) {
+    font-size: 100px;
+  }
   text-transform: uppercase;
   position: absolute;
 }
 .ntnd-lettering-bottom-right {
-  bottom: 12%;
+  bottom: 14%;
   right: 0;
 }
 
 .ntnd-lettering-top-left {
-  top: 12%;
+  top: 14%;
   left: 0;
 }
 
