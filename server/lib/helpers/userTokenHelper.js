@@ -3,16 +3,16 @@
 let crypto = require('crypto');
 
 function toHex(str) {
-    var hex = '';
-    for(var i=0; i<str.length; i++) {
+    let hex = '';
+    for(let i=0; i<str.length; i++) {
         hex += str.charCodeAt(i).toString(16);
     }
     return hex;
 }
 
 function formatDate(date) {
-    var mm = date.getMonth() + 1; // getMonth() is zero-based
-    var dd = date.getDate();
+    let mm = date.getMonth() + 1, // getMonth() is zero-based
+        dd = date.getDate();
 
     return [date.getFullYear(),
         (mm>9 ? '' : '0') + mm,
@@ -21,7 +21,7 @@ function formatDate(date) {
 }
 
 function setUserToken(req) {
-    var md5,
+    let md5,
         bvUserToken,
         date,
         key = "am9q8B",
