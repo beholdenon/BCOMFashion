@@ -1,36 +1,5 @@
 $(function () {
 
-    // $.fn.fitText = function( kompressor, options ) {
-    //
-    //     // Setup options
-    //     var compressor = kompressor || 1,
-    //         settings = $.extend({
-    //             'minFontSize' : Number.NEGATIVE_INFINITY,
-    //             'maxFontSize' : Number.POSITIVE_INFINITY
-    //         }, options);
-    //
-    //     return this.each(function(){
-    //
-    //         // Store the object
-    //         var $this = $(this);
-    //
-    //         // Resizer() resizes items based on the object width divided by the compressor * 10
-    //         var resizer = function () {
-    //             $this.css('font-size', Math.max(Math.min($this.width() / (compressor*10), parseFloat(settings.maxFontSize)), parseFloat(settings.minFontSize)));
-    //         };
-    //
-    //         // Call once to set.
-    //         resizer();
-    //
-    //         // Call on resize. Opera debounces their resize by default.
-    //         $(window).on('resize.fittext orientationchange.fittext', resizer);
-    //
-    //     });
-    //
-    // };
-    //$(".responsive-headline").fitText(0.5); // Turn the compressor up   (resizes more aggressively)
-    // $("#responsive_headline").fitText(0.8); // Turn the compressor down (resizes less aggressively)
-    //$(".responsive-headline").fitText(1.2, { minFontSize: '20px', maxFontSize: '52px' });
 
     // Prevent tabbing out of the nav items when nav is active
     var navItem = $('.spring-18-nav a'),
@@ -399,6 +368,177 @@ $(function () {
         }
     }
 
+    
+    // ----- carousel
 
+    // var imageHolder = $('.spring-18-carousel-img-holder');
+    //
+    // var rightArrowBtn = $('.spring-18-image-carousel-right-arrow');
+    // var leftArrowBtn = $('.spring-18-image-carousel-left-arrow');
+    // var carousel = $('.spring-18-carousel-images');
+    //
+    // //$(window).on('load resize scroll', function() {
+    //
+    // // $(window).on('load', function() {
+    // //
+    // //     img.each(function (index) {
+    // //         var _this = $(this);
+    // //         //addClassToElementInViewport(_this, 'trans');
+    // //         //_this.text(index);
+    // //
+    // //         if (inViewport(_this)) {
+    // //             _this.removeClass('trans');
+    // //         } else {
+    // //             _this.addClass('trans');
+    // //             var position = _this.position().left - $(window).scrollLeft();
+    // //             slider.css('left', -(position) + 'px');
+    // //             return false;
+    // //         }
+    // //
+    // //     })
+    // //
+    // // });
+    //
+    // showHideArrowBtns();
+    //
+    // //var slideWidth = 200;
+    // // $(window).on('load', function() {
+    // //     slideWidth = getSlideToLeftOffset();
+    // // });
+    //
+    // rightArrowBtn.on('click', function () {
+    //     var offset = getSlideToLeftOffset();
+    //     var carouselPosition = carousel.position().left - offset;
+    //     carousel.css('left', carouselPosition + 'px');
+    // });
+    //
+    //
+    // leftArrowBtn.on('click', function () {
+    //     var offset = getSlideToRighttOffset();
+    //     var carouselPosition = carousel.position().left + offset;
+    //     carousel.css('left', carouselPosition + 'px');
+    // });
+    //
+    // carousel.on("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd", function(){
+    //     showHideArrowBtns();
+    // });
+    //
+    // // slide to left
+    //
+    //
+    //
+    // function showHideArrowBtns() {
+    //     if(carousel.length > 0) {
+    //         if (carousel.position().left === 0) {
+    //             leftArrowBtn.fadeOut();
+    //         } else {
+    //             leftArrowBtn.fadeIn();
+    //         }
+    //
+    //         var spaceBeyondRightSide = 0;
+    //         imageHolder.each(function () {
+    //             var _this = $(this);
+    //             var thisWidth = _this.innerWidth();
+    //             if (isBeyondRightSide(_this)) {
+    //                 spaceBeyondRightSide += thisWidth;
+    //             }
+    //         });
+    //         if (spaceBeyondRightSide > 0) {
+    //             rightArrowBtn.fadeIn();
+    //         } else {
+    //             rightArrowBtn.fadeOut();
+    //         }
+    //     }
+    // }
+    //
+    // function getSlideToLeftOffset() {
+    //
+    //     var slideWidth = 0;
+    //     var spaceBeyondRightSide = 0;
+    //     var windowWidth = $(window).width();
+    //    
+    //     imageHolder.each(function () {
+    //         var _this = $(this);
+    //         var thisWidth = _this.innerWidth();
+    //         if (isBeyondRightSide(_this)) {
+    //             spaceBeyondRightSide += thisWidth;
+    //         }
+    //     });
+    //
+    //     if (spaceBeyondRightSide < windowWidth) {
+    //         slideWidth = spaceBeyondRightSide;
+    //     } else {
+    //         imageHolder.each(function () {
+    //             var _this = $(this);
+    //             var thisWidth = _this.innerWidth();
+    //             if (inViewport(_this)) {
+    //                 slideWidth += thisWidth;
+    //             }
+    //         });
+    //     }
+    //    
+    //     return slideWidth;
+    // }
+    //
+    // function getSlideToRighttOffset() {
+    //
+    //     var slideWidth = 0;
+    //     var spaceBeyondLeftSide = 0;
+    //     var windowWidth = $(window).width();
+    //
+    //     imageHolder.each(function () {
+    //         var _this = $(this);
+    //         var thisWidth = _this.innerWidth();
+    //         if (isBeyondLeftSide(_this)) {
+    //             spaceBeyondLeftSide += thisWidth;
+    //         }
+    //     });
+    //
+    //     if (spaceBeyondLeftSide < windowWidth) {
+    //         slideWidth = spaceBeyondLeftSide;
+    //     } else {
+    //         imageHolder.each(function () {
+    //             var _this = $(this);
+    //             var thisWidth = _this.innerWidth();
+    //             if (inViewport(_this)) {
+    //                 slideWidth += thisWidth;
+    //             }
+    //         });
+    //     }
+    //
+    //     return slideWidth;
+    // }
+    //
+    // // function addClassToElementInViewport(element, className) {
+    // //     if (inViewport(element)) {
+    // //         element.addClass(className);
+    // //     } else {
+    // //         element.removeClass(className);
+    // //     }
+    // // }
+    //
+    // function inViewport(element) {
+    //     var elementBounds = element[0].getBoundingClientRect();
+    //     return (
+    //         //elementBounds.top >= 0 //&&
+    //         elementBounds.left >= 0 &&
+    //         //elementBounds.bottom <= $(window).height() &&
+    //         elementBounds.right <= $(window).width()
+    //     );
+    // }
+    //
+    // function isBeyondRightSide(element) {
+    //     var elementBounds = element[0].getBoundingClientRect();
+    //     return (
+    //         elementBounds.right > $(window).width()
+    //     );
+    // }
+    //
+    // function isBeyondLeftSide(element) {
+    //     var elementBounds = element[0].getBoundingClientRect();
+    //     return (
+    //         elementBounds.left < 0
+    //     );
+    // }
 
 });
