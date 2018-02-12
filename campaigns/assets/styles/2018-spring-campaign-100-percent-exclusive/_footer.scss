@@ -89,7 +89,10 @@
   }
   &.arrow-left {
     &:after {
-      left: calc(50% - 20px);
+      left: calc(50% - 16px);
+      @media screen and (min-width: 800px) {
+        left: calc(50% - 20px);
+      }
       top: calc(50% - 8px);
       transform: rotate(-90deg);
     }

@@ -166,6 +166,7 @@ $(function () {
 
     setupSocial();
 
+
     
     // Utils
     
@@ -371,89 +372,81 @@ $(function () {
     
     // ----- carousel
 
-    // var imageHolder = $('.spring-18-carousel-img-holder');
-    //
-    // var rightArrowBtn = $('.spring-18-image-carousel-right-arrow');
-    // var leftArrowBtn = $('.spring-18-image-carousel-left-arrow');
-    // var carousel = $('.spring-18-carousel-images');
-    //
-    // //$(window).on('load resize scroll', function() {
-    //
-    // // $(window).on('load', function() {
-    // //
-    // //     img.each(function (index) {
-    // //         var _this = $(this);
-    // //         //addClassToElementInViewport(_this, 'trans');
-    // //         //_this.text(index);
-    // //
-    // //         if (inViewport(_this)) {
-    // //             _this.removeClass('trans');
-    // //         } else {
-    // //             _this.addClass('trans');
-    // //             var position = _this.position().left - $(window).scrollLeft();
-    // //             slider.css('left', -(position) + 'px');
-    // //             return false;
-    // //         }
-    // //
-    // //     })
-    // //
-    // // });
-    //
-    // showHideArrowBtns();
-    //
-    // //var slideWidth = 200;
-    // // $(window).on('load', function() {
-    // //     slideWidth = getSlideToLeftOffset();
-    // // });
-    //
-    // rightArrowBtn.on('click', function () {
-    //     var offset = getSlideToLeftOffset();
-    //     var carouselPosition = carousel.position().left - offset;
-    //     carousel.css('left', carouselPosition + 'px');
-    // });
-    //
-    //
-    // leftArrowBtn.on('click', function () {
-    //     var offset = getSlideToRighttOffset();
-    //     var carouselPosition = carousel.position().left + offset;
-    //     carousel.css('left', carouselPosition + 'px');
-    // });
-    //
-    // carousel.on("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd", function(){
-    //     showHideArrowBtns();
-    // });
-    //
-    // // slide to left
-    //
-    //
-    //
-    // function showHideArrowBtns() {
-    //     if(carousel.length > 0) {
-    //         if (carousel.position().left === 0) {
-    //             leftArrowBtn.fadeOut();
-    //         } else {
-    //             leftArrowBtn.fadeIn();
-    //         }
-    //
-    //         var spaceBeyondRightSide = 0;
-    //         imageHolder.each(function () {
-    //             var _this = $(this);
-    //             var thisWidth = _this.innerWidth();
-    //             if (isBeyondRightSide(_this)) {
-    //                 spaceBeyondRightSide += thisWidth;
-    //             }
-    //         });
-    //         if (spaceBeyondRightSide > 0) {
-    //             rightArrowBtn.fadeIn();
-    //         } else {
-    //             rightArrowBtn.fadeOut();
-    //         }
-    //     }
-    // }
-    //
+    var imageHolder = $('.spring-18-carousel-img-holder');
+    var rightArrowBtn = $('.spring-18-image-carousel-right-arrow');
+    var leftArrowBtn = $('.spring-18-image-carousel-left-arrow');
+    var carousel = $('.spring-18-carousel-images');
+    
+
+    showHideArrowBtns();
+    $(window).on('resize', function() {
+        showHideArrowBtns();
+        
+        if(isTouchSupported()) {
+            // alert("touch is enabled!");
+            carousel.addClass('touchable');
+            leftArrowBtn.hide();
+            rightArrowBtn.hide();
+        }
+    });
+
+    rightArrowBtn.on('click', function () {
+        //var offset = getSlideToLeftOffset();
+        var offset = getOffset('left');
+        var carouselPosition = carousel.position().left - offset;
+        carousel.css('left', carouselPosition + 'px');
+    });
+
+    leftArrowBtn.on('click', function () {
+        //var offset = getSlideToRighttOffset();
+        var offset = getOffset('right');
+        var carouselPosition = carousel.position().left + offset;
+        carousel.css('left', carouselPosition + 'px');
+    });
+
+    carousel.on("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd", function(){
+        showHideArrowBtns();
+    });
+
+    function getOffset(direction) {
+
+        var offset = 0;
+        var invisiblePartWidth = 0;
+        var windowWidth = $(window).width();
+        
+        imageHolder.each(function () {
+            var _this = $(this);
+            var thisWidth = _this.innerWidth();
+            var isNotVisiblePart = null;
+            
+            if (direction === 'left') {
+                isNotVisiblePart = isBeyondRightEdge(_this);
+            } else if (direction === 'right') {
+                isNotVisiblePart = isBeyondLeftEdge(_this);
+            }
+            if (isNotVisiblePart) {
+                invisiblePartWidth += thisWidth;
+            }
+        });
+
+        if (invisiblePartWidth < windowWidth) {
+            offset = invisiblePartWidth;
+        } else {
+            imageHolder.each(function () {
+                var _this = $(this);
+                var thisWidth = _this.innerWidth();
+                if (inViewport(_this)) {
+                    offset += thisWidth;
+                }
+            });
+        }
+
+        return offset;
+    }
+
     // function getSlideToLeftOffset() {
     //
-    //     var slideWidth = 0;
+    //     var offset = 0;
     //     var spaceBeyondRightSide = 0;
     //     var windowWidth = $(window).width();
     //    
@@ -466,23 +459,23 @@ $(function () {
     //     });
     //
     //     if (spaceBeyondRightSide < windowWidth) {
-    //         slideWidth = spaceBeyondRightSide;
+    //         offset = spaceBeyondRightSide;
     //     } else {
     //         imageHolder.each(function () {
     //             var _this = $(this);
     //             var thisWidth = _this.innerWidth();
     //             if (inViewport(_this)) {
-    //                 slideWidth += thisWidth;
+    //                 offset += thisWidth;
     //             }
     //         });
     //     }
     //    
-    //     return slideWidth;
+    //     return offset;
     // }
     //
     // function getSlideToRighttOffset() {
     //
-    //     var slideWidth = 0;
+    //     var offset = 0;
     //     var spaceBeyondLeftSide = 0;
     //     var windowWidth = $(window).width();
     //
@@ -495,50 +488,186 @@ $(function () {
     //     });
     //
     //     if (spaceBeyondLeftSide < windowWidth) {
-    //         slideWidth = spaceBeyondLeftSide;
+    //         offset = spaceBeyondLeftSide;
     //     } else {
     //         imageHolder.each(function () {
     //             var _this = $(this);
     //             var thisWidth = _this.innerWidth();
     //             if (inViewport(_this)) {
-    //                 slideWidth += thisWidth;
+    //                 offset += thisWidth;
     //             }
     //         });
     //     }
     //
-    //     return slideWidth;
+    //     return offset;
     // }
+
+    function inViewport(element) {
+        var elementBounds = element[0].getBoundingClientRect();
+        return (
+            //elementBounds.top >= 0 //&&
+            elementBounds.left >= 0 &&
+            //elementBounds.bottom <= $(window).height() &&
+            elementBounds.right <= $(window).width()
+        );
+    }
+
+    function isBeyondRightEdge(element) {
+        var elementBounds = element[0].getBoundingClientRect();
+        return (
+            elementBounds.right > $(window).width()
+        );
+    }
+
+    function isBeyondLeftEdge(element) {
+        var elementBounds = element[0].getBoundingClientRect();
+        return (
+            elementBounds.left < 0
+        );
+    }
+    
+    function showHideArrowBtns() {
+        if(carousel.length > 0) {
+            if (carousel.position().left >= 0) {
+                leftArrowBtn.fadeOut();
+            } else {
+                leftArrowBtn.fadeIn();
+            }
+
+            var spaceBeyondRightSide = 0;
+            imageHolder.each(function () {
+                var _this = $(this);
+                var thisWidth = _this.innerWidth();
+                if (isBeyondRightEdge(_this)) {
+                    spaceBeyondRightSide += thisWidth;
+                }
+            });
+            if (spaceBeyondRightSide > 0) {
+                rightArrowBtn.fadeIn();
+            } else {
+                rightArrowBtn.fadeOut();
+            }
+            
+        }
+    }
+
     //
-    // // function addClassToElementInViewport(element, className) {
-    // //     if (inViewport(element)) {
-    // //         element.addClass(className);
-    // //     } else {
-    // //         element.removeClass(className);
-    // //     }
-    // // }
-    //
-    // function inViewport(element) {
-    //     var elementBounds = element[0].getBoundingClientRect();
-    //     return (
-    //         //elementBounds.top >= 0 //&&
-    //         elementBounds.left >= 0 &&
-    //         //elementBounds.bottom <= $(window).height() &&
-    //         elementBounds.right <= $(window).width()
-    //     );
+    // var isTouchDevice = 'ontouchstart' in document.documentElement;
+    // if (isTouchDevice) {
+    //     // alert("touch is enabled!");
+    //     // carousel.addClass('touchable');
     // }
-    //
-    // function isBeyondRightSide(element) {
-    //     var elementBounds = element[0].getBoundingClientRect();
-    //     return (
-    //         elementBounds.right > $(window).width()
-    //     );
-    // }
-    //
-    // function isBeyondLeftSide(element) {
-    //     var elementBounds = element[0].getBoundingClientRect();
-    //     return (
-    //         elementBounds.left < 0
-    //     );
-    // }
+
+    function isTouchSupported() {
+        var msTouchEnabled = window.navigator.msMaxTouchPoints;
+        var generalTouchEnabled = "ontouchstart" in document.createElement("div");
+        
+        return msTouchEnabled || generalTouchEnabled;
+    }
+    
+    if(isTouchSupported()) {
+        // alert("touch is enabled!");
+        carousel.addClass('touchable');
+        leftArrowBtn.hide();
+        rightArrowBtn.hide();
+    }
+    
+    
+    // mobile slider
+    if (navigator.msMaxTouchPoints) {
+
+        $('#slider').addClass('ms-touch');
+
+        $('#slider').on('scroll', function() {
+            $('.slide-image').css('transform','translate3d(-' + (100-$(this).scrollLeft()/6) + 'px,0,0)');
+        });
+
+    } else {
+
+        var slider = {
+
+            el: {
+                slider: $("#slider"),
+                holder: $(".holder"),
+                imgSlide: $(".slide-image")
+            },
+
+            slideWidth: $('#slider').width(),
+            touchstartx: undefined,
+            touchmovex: undefined,
+            movex: undefined,
+            index: 0,
+            longTouch: undefined,
+
+            init: function() {
+                this.bindUIEvents();
+            },
+
+            bindUIEvents: function() {
+
+                this.el.holder.on("touchstart", function(event) {
+                    slider.start(event);
+                });
+
+                this.el.holder.on("touchmove", function(event) {
+                    slider.move(event);
+                });
+
+                this.el.holder.on("touchend", function(event) {
+                    slider.end(event);
+                });
+
+            },
+
+            start: function(event) {
+                // Test for flick.
+                this.longTouch = false;
+                setTimeout(function() {
+                    window.slider.longTouch = true;
+                }, 250);
+
+                // Get the original touch position.
+                this.touchstartx =  event.originalEvent.touches[0].pageX;
+
+                // The movement gets all janky if there's a transition on the elements.
+                $('.animate').removeClass('animate');
+            },
+
+            move: function(event) {
+                // Continuously return touch position.
+                this.touchmovex =  event.originalEvent.touches[0].pageX;
+                // Calculate distance to translate holder.
+                this.movex = this.index*this.slideWidth + (this.touchstartx - this.touchmovex);
+                // Defines the speed the images should move at.
+                var panx = 100-this.movex/6;
+                if (this.movex < 600) { // Makes the holder stop moving when there is no more content.
+                    this.el.holder.css('transform','translate3d(-' + this.movex + 'px,0,0)');
+                }
+                if (panx < 100) { // Corrects an edge-case problem where the background image moves without the container moving.
+                    this.el.imgSlide.css('transform','translate3d(-' + panx + 'px,0,0)');
+                }
+            },
+
+            end: function(event) {
+                // Calculate the distance swiped.
+                var absMove = Math.abs(this.index*this.slideWidth - this.movex);
+                // Calculate the index. All other calculations are based on the index.
+                if (absMove > this.slideWidth/2 || this.longTouch === false) {
+                    if (this.movex > this.index*this.slideWidth && this.index < 2) {
+                        this.index++;
+                    } else if (this.movex < this.index*this.slideWidth && this.index > 0) {
+                        this.index--;
+                    }
+                }
+                // Move and animate the elements.
+                this.el.holder.addClass('animate').css('transform', 'translate3d(-' + this.index*this.slideWidth + 'px,0,0)');
+                this.el.imgSlide.addClass('animate').css('transform', 'translate3d(-' + 100-this.index*50 + 'px,0,0)');
+
+            }
+
+        };
+
+        slider.init();
+    }
 
 });

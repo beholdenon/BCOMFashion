@@ -67,6 +67,7 @@
     padding: 0;
     font-family: 'Oswald', sans-serif;
     font-size: 60px;
+    color: #000;
     text-transform: uppercase;
     line-height: 1;
   }
@@ -74,6 +75,7 @@
     margin: 1em 0 0 0;
     padding: 0;
     font-family: $site-font-family;
+    color: #000;
     font-size: 16px;
     line-height: 1;
   }
@@ -84,6 +86,7 @@
   width: 100%;
   font-size: 16px;
   font-family: $site-font-family;
+  color: #000;
 }
 
 
@@ -125,7 +128,13 @@
   width: 100%;
   overflow: hidden;
   position: relative;
-  margin: 100px 0;
+  margin: 32px 0 16px 0;
+  @media screen and (min-width: 639px) {
+    margin: 52px 0 24px 0;
+  }
+  @media screen and (min-width: 1023px) {
+    margin: 100px 0;
+  }
 }
 .spring-18-jumbotron-img-container {
   width: 100%;
@@ -285,7 +294,7 @@
   width: 49px;
   height: 81px;
   position: absolute;
-  right: -112px;
+  right: -100px;
   top: 24px;
   z-index: 1;
   @include flexbox;
@@ -342,11 +351,11 @@
   //}
   @media screen and (min-width: 600px) {
     //top: -6px;
-    font-size: 34px;
+    font-size: 32px;
   }
   @media screen and (min-width: 768px) {
     //top: -18px;
-    font-size: 38px;
+    font-size: 34px;
   }
   @media screen and (min-width: 1280px) {
     top: -20px;
@@ -656,14 +665,22 @@
 
 .spring-18-image-carousel-container {
   width: 100%;
-  height: auto;
+  //height: auto;
+  height: 376px;
+  @media screen and (min-width: 420px) {
+    height: 475px;
+  }
   overflow: hidden;
   margin: 25px 0 70px 0;
 }
 .spring-18-carousel-images {
   > div {
-    min-width: 340px;
-    padding: 35px;
+    min-width: 260px;
+    padding: 14px;
+    @media screen and (min-width: 420px) {
+      min-width: 340px;
+      padding: 35px;
+    }
     img {
       width: 100%;
       max-width: 100%;
@@ -674,7 +691,44 @@
 
   position: relative;
   left: 0;
-  transition: all 1s;
+  transition: left 0.8s ease-out;
+
+  &.touchable {
+
+    padding-top: 20px;
+
+    overflow-x: scroll;
+    overflow-y: hidden;
+
+    -webkit-overflow-scrolling: touch;
+
+    + .spring-18-image-carousel-left-arrow {
+      display: none !important;
+      + .spring-18-image-carousel-right-arrow {
+        display: none !important;
+      }
+    }
+
+    //
+    //-ms-overflow-style: none;
+    ///* Hides the scrollbar. */
+    //
+    //-ms-scroll-chaining: none;
+    ///* Prevents Metro from swiping to the next tab or app. */
+    //
+    //-ms-scroll-snap-type: mandatory;
+    ///* Forces a snap scroll behavior on your images. */
+    //
+    //-ms-scroll-snap-points-x: snapInterval(0%, 100%);
+    ///* Defines the y and x intervals to snap to when scrolling. */
+    //
+    //overflow: -moz-scrollbars-none;  // Firefox
+
+  }
+  //&.touchable::-webkit-scrollbar {
+  //  display: none;  // Safari and Chrome
+  //}
+
 }
 .image-carousel__text-card {
   text-align: center;
@@ -695,11 +749,30 @@
  }
 .spring-18-image-carousel-left-arrow {
   position: absolute !important;
-  left: 140px;
+
+  left: 7vw;
+  @media screen and (min-width: 1440px) {
+    left: 140px;
+  }
+
   top: calc(50% - 36px);
+
+  display: none;
+  //@media screen and (max-width: 640px) {
+  //  display: none !important;
+  //}
 }
 .spring-18-image-carousel-right-arrow {
   position: absolute !important;
-  right: 140px;
+
+  right: 7vw;
+  @media screen and (min-width: 1440px) {
+    right: 140px;
+  }
+
   top: calc(50% - 36px);
+
+  //@media screen and (max-width: 640px) {
+  //  display: none !important;
+  //}
 }
