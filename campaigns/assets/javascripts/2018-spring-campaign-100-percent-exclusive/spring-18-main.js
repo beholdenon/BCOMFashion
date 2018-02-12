@@ -376,23 +376,15 @@ $(function () {
     var rightArrowBtn = $('.spring-18-image-carousel-right-arrow');
     var leftArrowBtn = $('.spring-18-image-carousel-left-arrow');
     var carousel = $('.spring-18-carousel-images');
-    
+    var btnsClickable = true;
     
     showHideArrowBtns();
-
+    
     ifTouchSupported();
     
     $(window).on('resize', function() {
-        
         showHideArrowBtns();
-
         ifTouchSupported();
-        
-        // if(ifTouchSupported()) {
-        //     carousel.addClass('touchable');
-        //     leftArrowBtn.hide();
-        //     rightArrowBtn.hide();
-        // }
     });
 
     rightArrowBtn.on('click', function () {
@@ -504,23 +496,15 @@ $(function () {
     function ifTouchSupported() {
         var msTouchEnabled = window.navigator.msMaxTouchPoints;
         var generalTouchEnabled = "ontouchstart" in document.createElement("div");
-        
-        //return msTouchEnabled || generalTouchEnabled;
+
         if(msTouchEnabled || generalTouchEnabled) {
             carousel.addClass('touchable');
             leftArrowBtn.hide();
             rightArrowBtn.hide();
         }
     }
-    //
-    // if(ifTouchSupported()) {
-    //     carousel.addClass('touchable');
-    //     leftArrowBtn.hide();
-    //     rightArrowBtn.hide();
-    // }
-    
-    
-    
+
+
     /*
     
     // mobile slider
