@@ -377,36 +377,44 @@ $(function () {
     var leftArrowBtn = $('.spring-18-image-carousel-left-arrow');
     var carousel = $('.spring-18-carousel-images');
     
-
+    
     showHideArrowBtns();
+
+    ifTouchSupported();
+    
     $(window).on('resize', function() {
-        showHideArrowBtns();
         
-        if(isTouchSupported()) {
-            // alert("touch is enabled!");
-            carousel.addClass('touchable');
-            leftArrowBtn.hide();
-            rightArrowBtn.hide();
-        }
+        showHideArrowBtns();
+
+        ifTouchSupported();
+        
+        // if(ifTouchSupported()) {
+        //     carousel.addClass('touchable');
+        //     leftArrowBtn.hide();
+        //     rightArrowBtn.hide();
+        // }
     });
 
     rightArrowBtn.on('click', function () {
-        //var offset = getSlideToLeftOffset();
-        var offset = getOffset('left');
-        var carouselPosition = carousel.position().left - offset;
-        carousel.css('left', carouselPosition + 'px');
+        updateCarouselPosition('left');
     });
 
     leftArrowBtn.on('click', function () {
-        //var offset = getSlideToRighttOffset();
-        var offset = getOffset('right');
-        var carouselPosition = carousel.position().left + offset;
-        carousel.css('left', carouselPosition + 'px');
+        updateCarouselPosition('right');
     });
 
     carousel.on("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd", function(){
         showHideArrowBtns();
     });
+    
+    function updateCarouselPosition (direction) {
+        var offset = getOffset(direction);
+        if (direction === 'left') {
+            offset = -(offset);
+        }
+        var carouselPosition = carousel.position().left + offset;
+        carousel.css('left', carouselPosition + 'px');
+    }
 
     function getOffset(direction) {
 
@@ -443,65 +451,7 @@ $(function () {
 
         return offset;
     }
-
-    // function getSlideToLeftOffset() {
-    //
-    //     var offset = 0;
-    //     var spaceBeyondRightSide = 0;
-    //     var windowWidth = $(window).width();
-    //    
-    //     imageHolder.each(function () {
-    //         var _this = $(this);
-    //         var thisWidth = _this.innerWidth();
-    //         if (isBeyondRightSide(_this)) {
-    //             spaceBeyondRightSide += thisWidth;
-    //         }
-    //     });
-    //
-    //     if (spaceBeyondRightSide < windowWidth) {
-    //         offset = spaceBeyondRightSide;
-    //     } else {
-    //         imageHolder.each(function () {
-    //             var _this = $(this);
-    //             var thisWidth = _this.innerWidth();
-    //             if (inViewport(_this)) {
-    //                 offset += thisWidth;
-    //             }
-    //         });
-    //     }
-    //    
-    //     return offset;
-    // }
-    //
-    // function getSlideToRighttOffset() {
-    //
-    //     var offset = 0;
-    //     var spaceBeyondLeftSide = 0;
-    //     var windowWidth = $(window).width();
-    //
-    //     imageHolder.each(function () {
-    //         var _this = $(this);
-    //         var thisWidth = _this.innerWidth();
-    //         if (isBeyondLeftSide(_this)) {
-    //             spaceBeyondLeftSide += thisWidth;
-    //         }
-    //     });
-    //
-    //     if (spaceBeyondLeftSide < windowWidth) {
-    //         offset = spaceBeyondLeftSide;
-    //     } else {
-    //         imageHolder.each(function () {
-    //             var _this = $(this);
-    //             var thisWidth = _this.innerWidth();
-    //             if (inViewport(_this)) {
-    //                 offset += thisWidth;
-    //             }
-    //         });
-    //     }
-    //
-    //     return offset;
-    // }
-
+    
     function inViewport(element) {
         var elementBounds = element[0].getBoundingClientRect();
         return (
@@ -550,28 +500,28 @@ $(function () {
             
         }
     }
-
-    //
-    // var isTouchDevice = 'ontouchstart' in document.documentElement;
-    // if (isTouchDevice) {
-    //     // alert("touch is enabled!");
-    //     // carousel.addClass('touchable');
-    // }
-
-    function isTouchSupported() {
+    
+    function ifTouchSupported() {
         var msTouchEnabled = window.navigator.msMaxTouchPoints;
         var generalTouchEnabled = "ontouchstart" in document.createElement("div");
         
-        return msTouchEnabled || generalTouchEnabled;
+        //return msTouchEnabled || generalTouchEnabled;
+        if(msTouchEnabled || generalTouchEnabled) {
+            carousel.addClass('touchable');
+            leftArrowBtn.hide();
+            rightArrowBtn.hide();
+        }
     }
+    //
+    // if(ifTouchSupported()) {
+    //     carousel.addClass('touchable');
+    //     leftArrowBtn.hide();
+    //     rightArrowBtn.hide();
+    // }
     
-    if(isTouchSupported()) {
-        // alert("touch is enabled!");
-        carousel.addClass('touchable');
-        leftArrowBtn.hide();
-        rightArrowBtn.hide();
-    }
     
+    
+    /*
     
     // mobile slider
     if (navigator.msMaxTouchPoints) {
@@ -669,5 +619,7 @@ $(function () {
 
         slider.init();
     }
-
+    */
+    
+    
 });
