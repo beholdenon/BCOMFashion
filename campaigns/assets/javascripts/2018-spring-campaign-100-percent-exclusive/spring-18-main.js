@@ -99,7 +99,7 @@ $(function () {
         getBrightcoveVideoData(function (data) {
 
             var videoData = getVideoSrcData(data);
-            videoContainer.append('<video autoplay muted poster="' + videoData.videoPosterSrc + '"><source src="' + videoData.videoSrc + '" type="video/mp4"></video>');
+            videoContainer.append('<video autoplay loop poster="' + videoData.videoPosterSrc + '"><source src="' + videoData.videoSrc + '" type="video/mp4"></video>');
 
             var originalVideoWidth = videoData.videoWidth;
             var originalVideoHeight = videoData.videoHeight;
@@ -376,7 +376,7 @@ $(function () {
     var rightArrowBtn = $('.spring-18-image-carousel-right-arrow');
     var leftArrowBtn = $('.spring-18-image-carousel-left-arrow');
     var carousel = $('.spring-18-carousel-images');
-    var btnsClickable = true;
+    // var btnsClickable = true;
     
     showHideArrowBtns();
     
