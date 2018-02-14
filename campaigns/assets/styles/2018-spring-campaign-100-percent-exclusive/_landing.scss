@@ -130,6 +130,36 @@
   }
 }
 
+
+.spring-18-scroll-to-btn {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  display: block;
+  text-indent: -9999px;
+  font-size: 0;
+  -webkit-transform-origin: 50% 50%;
+  -moz-transform-origin: 50% 50%;
+  -o-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+  transform: rotate(90deg);
+  &:hover {
+    .spring-18-scroll-down-icon {
+      fill: $site-red;
+    }
+  }
+  .spring-18-scroll-down-icon {
+    width: 40px;
+    height: auto;
+    display: block;
+    fill: #000;
+  }
+}
+
+
+
 .spring-18-landing-preamble {
   text-align: center;
   font-size: 17px;

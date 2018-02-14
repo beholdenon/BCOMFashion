@@ -86,7 +86,12 @@ $(function () {
     });
 
     
-    //console.log('spring-18-carousel-images: ' + $('.spring-18-carousel-images div').length);
+    $('.spring-18-scroll-to-btn').on('click', function () {
+        $('html, body').animate({
+            scrollTop: $('.spring-18-main-wrapper').offset().top + 'px'
+        }, 800);
+        return false;
+    });
     
     
     // Landing page video
