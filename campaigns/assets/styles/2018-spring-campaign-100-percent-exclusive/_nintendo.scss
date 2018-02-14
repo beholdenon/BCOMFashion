@@ -1,0 +1,425 @@
+.nintendo-jumbotron {
+  height: auto !important;
+  @media screen and (min-width: 600px) {
+    height: 100vh;
+  }
+}
+.spring-18-nintendo-hero-section {
+  background-color: #f7f7f9;
+
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+
+  margin: 0;
+  @media screen and (min-width: 600px) {
+    margin: 0 0 40px 0;
+  }
+  @media screen and (min-width: 600px) {
+    height: 100vh;
+    @include flexbox;
+    @include flex-direction(row);
+
+    margin: 0 0 70px 0;
+  }
+
+
+
+  //@media screen and (min-width: $tsr-18-mobile-bp) {
+  //  width: 100%;
+  //  height: 100vh;
+  //
+  //  @include flexbox;
+  //  @include flex-direction(row);
+  //}
+}
+.spring-18-nintendo-hero-section-left {
+  position: relative;
+  height: auto;
+  width: 100%;
+  margin-left: 0;
+  padding-top: 50px;
+  @media screen and (min-width: 600px) {
+    width: 50%;
+    margin-left: auto;
+    padding-top: 0;
+  }
+  @media screen and (min-width: 769px) {
+    width: 40%;
+    margin-left: auto;
+    padding-top: 0;
+  }
+
+  img {
+    height: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    @media screen and (min-width: 600px) {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      height: 100% !important;
+      width: auto !important;
+      max-width: none !important;
+    }
+  }
+}
+.spring-18-nintendo-hero-section-center {
+  position: relative;
+  @include flexbox;
+  @include align-items(center);
+  @include justify-content(center);
+
+  @include flex(1);
+}
+.spring-18-nintendo-section-cta {
+  line-height: 1.1;
+  font-family: 'Oswald', sans-serif;
+  font-size: 11vw;
+  margin: 20px 0 40px 0;
+  @media screen and (min-width: 600px) {
+    font-size: 42px;
+    margin: 58px 0;
+  }
+  padding: 0 16px;
+  @media screen and (min-width: 1400px) {
+    font-size: 52px;
+  }
+  text-transform: uppercase;
+  color: #000;
+  span {
+    display: block;
+    white-space: nowrap;
+  }
+  img {
+    display: block;
+    width: 100%;
+    max-width: 5em;
+    height: auto;
+    margin: 10px auto 1.2em auto;
+  }
+  a {
+    font-size: 18px;
+    font-family: $site-font-family;
+    text-transform: uppercase;
+    color: #000;
+    text-decoration: underline;
+    font-weight: bold;
+    display: block;
+    line-height: 1;
+  }
+}
+
+.spring-18-nintendo-hero-section-right {
+  position: relative;
+  display: none;
+  @media screen and (min-width: 769px) {
+    display: block;
+    width: 40%;
+    margin-left: auto;
+  }
+  img {
+    @media screen and (min-width: 769px) {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 100% !important;
+      width: auto !important;
+      max-width: none !important;
+    }
+  }
+}
+
+
+
+.spring-18-nintendo-main-wrapper{
+  overflow: hidden;
+}
+.spring-18-nintendo-grid {
+  width: 100%;
+  max-width: 1470px;
+  margin: 0 auto;
+  padding: 0 20px;
+  @media screen and (min-width: 1510px) {
+    padding: 0;
+  }
+}
+.spring-18-nintendo-grid__row {
+  width: 100%;
+  @include flexbox;
+  margin: 50px 0;
+  @include flex-direction(column);
+  @media screen and (min-width: 1024px) {
+    @include flex-direction(row);
+    margin: 70px 0;
+  }
+}
+.spring-18-nintendo-grid__square-cell {
+  width: 50%;
+  height: 0;
+  padding-bottom: 50%;
+  position: relative;
+  a {
+    display: block;
+    font-family: $site-font-family !important;;
+    text-decoration: none !important;
+    color: #000 !important;
+    &:hover {
+      color: #000 !important;
+    }
+  }
+  img {
+    display: block;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto;
+    &.spring-18-nintendo-foo-1, &.spring-18-nintendo-foo-2, &.spring-18-nintendo-foo-3 {
+      position: absolute;
+      width: 48px !important;
+      max-width: 48px !important;
+      height: 64px !important;
+      bottom: 21%;
+    }
+    &.spring-18-nintendo-foo-1 {
+      right: 27%;
+    }
+    &.spring-18-nintendo-foo-2 {
+      right: calc(27% - 72px);
+    }
+    &.spring-18-nintendo-foo-3 {
+      right: calc(27% - 144px);
+    }
+    &.spring-18-nintendo-foo-03-1, &.spring-18-nintendo-foo-03-2 {
+      position: absolute;
+      width: 57px !important;
+      max-width: 57px !important;
+      height: 56px !important;
+      bottom: 21%;
+    }
+    &.spring-18-nintendo-foo-03-1 {
+      left: 19%;
+    }
+    &.spring-18-nintendo-foo-03-2 {
+      left: calc(19% - 77px);
+    }
+    &.spring-18-nintendo-foo-06-1, &.spring-18-nintendo-foo-06-2 {
+      position: absolute;
+      width: 56px !important;
+      max-width: 56px !important;
+      height: 60px !important;
+      bottom: 21%;
+    }
+    &.spring-18-nintendo-foo-06-1 {
+      right: calc(6% + 76px);
+    }
+    &.spring-18-nintendo-foo-06-2 {
+      right: 6%;
+    }
+  }
+  span {
+    display: block;
+    width: 100%;
+    position: relative;
+    padding: 1em 0 2em;
+    @media screen and (min-width: 1024px) {
+      position: absolute;
+      top: calc(100% - 42px);
+      padding: 0;
+    }
+    @media screen and (min-width: 1279px) {
+      top: calc(100% - 55px);
+    }
+    left: 0;
+    text-align: center;
+    line-height: 1.2;
+  }
+}
+.spring-18-nintendo-grid__img-grid-holder {
+  @include flexbox;
+  @include flex-wrap(wrap);
+
+  width: 100%;
+  padding-bottom: 100%;
+
+  .spring-18-nintendo-grid__square-cell {
+    padding-bottom: 0;
+    height: auto;
+  }
+
+  margin-bottom: 5em;
+
+  @media screen and (min-width: 1024px) {
+    width: 50%;
+    padding-bottom: 50%;
+    margin-bottom: 0;
+  }
+  a {
+    &:focus {
+      @media screen and (min-width: 1024px) {
+        position: relative;
+        z-index: 10;
+      }
+    }
+  }
+
+  &.right {
+    a {
+      padding: 0 10px;
+      @media screen and (min-width: 1024px) {
+        padding: 0 0 50px 50px;
+      }
+      @media screen and (min-width: 1279px) {
+        padding: 0 0 60px 60px;
+      }
+      @media screen and (min-width: 1439px) {
+        padding: 0 0 70px 70px;
+      }
+    }
+    span {
+      @media screen and (min-width: 1024px) {
+        padding: 0 0 0 50px;
+      }
+      @media screen and (min-width: 1279px) {
+        padding: 0 0 0 60px;
+      }
+      @media screen and (min-width: 1439px) {
+        padding: 0 0 0 70px;
+      }
+    }
+  }
+  &.left {
+    @include order(2);
+    &.has-order {
+      @media screen and (min-width: 1024px) {
+        @include order(1);
+      }
+    }
+    a {
+      padding: 0 10px;
+      @media screen and (min-width: 1024px) {
+        padding: 0 50px 50px 0;
+      }
+      @media screen and (min-width: 1279px) {
+        padding: 0 60px 60px 0;
+      }
+      @media screen and (min-width: 1439px) {
+        padding: 0 70px 70px 0;
+      }
+    }
+    span {
+      @media screen and (min-width: 1024px) {
+        padding: 0 50px 0 0;
+      }
+      @media screen and (min-width: 1279px) {
+        padding: 0 60px 0 0;
+      }
+      @media screen and (min-width: 1439px) {
+        padding: 0 70px 0 0;
+      }
+    }
+  }
+}
+.spring-18-nintendo-grid__single-img-holder {
+  @include flexbox;
+  z-index: 10;
+
+  width: 100%;
+  padding-bottom: 100%;
+  @media screen and (min-width: 1024px) {
+    width: 50%;
+    padding-bottom: 50%;
+  }
+
+  a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    &:focus {
+      z-index: 10;
+    }
+  }
+  &.left {
+    a {
+      right: 0;
+      padding: 0 35px;
+      @media screen and (min-width: 1024px) {
+        padding: 0 50px 0 0;
+      }
+      @media screen and (min-width: 1279px) {
+        padding: 0 60px 0 0;
+      }
+      @media screen and (min-width: 1439px) {
+        padding: 0 70px 0 0;
+      }
+      span {
+        padding: 1em 0;
+        @media screen and (min-width: 1024px) {
+          padding: 0 0 0 50px;
+        }
+        @media screen and (min-width: 1279px) {
+          padding: 0 0 0 60px;
+        }
+        @media screen and (min-width: 1439px) {
+          padding: 0 0 0 70px;
+        }
+      }
+    }
+  }
+  &.right {
+    a {
+      left: 0;
+      padding: 0 35px;
+      @media screen and (min-width: 1024px) {
+        padding: 0 0 0 50px;
+      }
+      @media screen and (min-width: 1279px) {
+        padding: 0 0 0 60px;
+      }
+      @media screen and (min-width: 1439px) {
+        padding: 0 0 0 70px;
+      }
+      span {
+        padding: 1em 0;
+        @media screen and (min-width: 1024px) {
+          padding: 0 50px 0 0;
+        }
+        @media screen and (min-width: 1279px) {
+          padding: 0 60px 0 0;
+        }
+        @media screen and (min-width: 1439px) {
+          padding: 0 70px 0 0;
+        }
+      }
+    }
+    @include order(1);
+    &.has-order {
+      @media screen and (min-width: 1024px) {
+        @include order(2);
+      }
+    }
+  }
+}
+.ntnd-lettering-bottom-right, .ntnd-lettering-top-left {
+  font-family: 'Oswald', sans-serif !important;
+  font-size: 15vw;
+  @media screen and (min-width: 1024px) {
+    font-size: 80px;
+  }
+  @media screen and (min-width: 1279px) {
+    font-size: 100px;
+  }
+  text-transform: uppercase;
+  position: absolute;
+}
+.ntnd-lettering-bottom-right {
+  bottom: 14%;
+  right: 0;
+}
+.ntnd-lettering-top-left {
+  top: 14%;
+  left: 0;
+}
+
+

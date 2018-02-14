@@ -1,0 +1,54 @@
+.spring-18-grid-z {
+  @include flexbox;
+  @include flex-wrap(wrap);
+  img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 1.25rem;
+  }
+  .cell-z-x {
+    width: 100%;
+    @media screen and (min-width: 640px) {
+      width: 50%;
+    }
+    @media screen and (min-width: 1023px) {
+      width: 33.3333%;
+    }
+  }
+  .cell-z-xx {
+    width: 100%;
+    @media screen and (min-width: 1023px) {
+      width: 66.6666%;
+    }
+  }
+  .z-order-1 {
+    @include order(1);
+  }
+  .z-order-2 {
+    @include order(2);
+    &.z-re-order-3 {
+      @include order(3);
+      @media screen and (min-width: 1023px) {
+        @include order(2);
+      }
+    }
+  }
+  .z-order-3 {
+    @include order(3);
+    &.z-re-order-2 {
+      @include order(2);
+      @media screen and (min-width: 1023px) {
+        @include order(3);
+      }
+    }
+  }
+  .z-order-4 {
+    @include order(4);
+  }
+  .z-order-5 {
+    @include order(5);
+  }
+
+
+}
