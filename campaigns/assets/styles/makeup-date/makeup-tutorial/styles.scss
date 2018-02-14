@@ -2,9 +2,11 @@ $scale: 1;
 $font-size-scale: 1;
 
 $pink: #D90EAC;
-$navy: #22a8a0;
+$navy: #1F9890;
 
 $AvenirBlack: "Avenir LT W01 95 Black", sans-serif;
+
+* { margin: 0; padding: 0px; }
 
 html{
   width: 100%;
@@ -99,6 +101,10 @@ body .row #bl_main_container {
   .padding-left-100{
     padding-left: 100px;
   }
+  .padding-left-50{
+    padding-left: 50px;
+  }
+
   .padding-right-100{
     padding-right: 100px;
   }
@@ -107,6 +113,11 @@ body .row #bl_main_container {
   }
   .no-padding{
     padding: 0 !important;
+  }
+
+
+  .margin-top-60{
+    margin-top: 60px;
   }
 
 
@@ -127,6 +138,7 @@ body .row #bl_main_container {
 
   .footer-links{
     margin-left: 122px;
+    margin-top: 100px
   }
   .footer-links a{
     margin: auto $scale * 30px;
@@ -143,6 +155,7 @@ body .row #bl_main_container {
   .carousel-shell {
     position: relative;
     min-height: 200px;
+    background: none !important;
 
     .group {
       position: relative;
@@ -158,8 +171,11 @@ body .row #bl_main_container {
       transition: 1s;
       z-index: 0;
       vertical-align: top;
+      background: none !important;
+
 
       &.active {
+        outline: none;
         opacity: 1;
         z-index: 10;
       }
@@ -217,15 +233,17 @@ body .row #bl_main_container {
     .arrow {
       position: absolute;
       padding: 0;
-      background-color: transparent;
       border: 0;
-      width: 27px;
-      height: 37px;
+      width: 60px;
+      height: 80px;
       display: block;
       z-index: 20;
-      top: 45%;
+      top: 20%;
       cursor: pointer;
       background-repeat: no-repeat;
+      background-position: center;
+      background-color: transparent;
+
 
 
       &:focus,
@@ -241,11 +259,11 @@ body .row #bl_main_container {
 
     .leftArrow {
       background-image: url(/b/fashion/campaigns/images/makeup-date/makeup-tutorial/arrow-left.png);
-      left: 1.5em;
+      left: 0;
     }
     .rightArrow {
       background-image: url(/b/fashion/campaigns/images/makeup-date/makeup-tutorial/arrow-right.png);
-      right: 1.5em;
+      right: 0;
     }
 
   }
@@ -408,11 +426,11 @@ body .row #bl_main_container {
     background: transparent;
     padding: 0;
     position: relative;
-    z-index: 1;
+    z-index: 9999;
     transition: all 0.3s;
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
-    bottom: -260px;
+    bottom: -225px;
     left: 80px;
   }
   .gif_play_button:before {
@@ -459,6 +477,11 @@ body .row #bl_main_container {
   }
 
 
+  .section-3 .gif_play_button{
+    left: 30px;
+    bottom: 38px;
+  }
+
 
 
   /* Makeup Date specific style*/
@@ -469,9 +492,12 @@ body .row #bl_main_container {
     margin: 0;
     line-height: $scale * 1.65;
   }
+
+
   .text-big{
     font-size: 65px;
     line-height: 1.2;
+    font-weight: 600;
   }
   .small{
     font-size: 18px;
@@ -504,11 +530,12 @@ body .row #bl_main_container {
   .section-title {
     position: relative;
     top: 3.7%;
-    -webkit-text-stroke: 1px;
+    font-weight: bold;
   }
 
   .section-title-h {
     transform: rotate(270deg);
+    font-weight: bold;
   }
 
   .navy{
@@ -517,19 +544,39 @@ body .row #bl_main_container {
 
   .section-1 .products {
     position: absolute;
-    margin-top: 380px;
-    margin-left: -160px;
+    margin-top: -160px;
+    margin-left: -114px;
+    width: 608px;
+  }
+  .section-3 .products {
+    position: absolute;
+    margin-top: -180px;
+    margin-left: -45px;
   }
   .section-5 .products {
     position: absolute;
-    margin-top: 550px;
-    margin-left: -200px;
+    margin-top: -30px;
+    margin-left: -143px;
+    width: 608px;
+  }
+
+  #gif1-paused, #gif2-paused, #gif3-paused {
+    display: none;
+  }
+
+  .section-3 .gif{
+    width: 455px;
+    margin-top: 545px
+  }
+
+  .section-3 .gif-container{
+    width: 455px;
   }
 
   .section-1 .gif, .section-5 .gif{
     width: 465px;
     position: relative;
-    top: 300px;
+    top: 265px;
     left: 50px;
   }
 
@@ -540,22 +587,160 @@ body .row #bl_main_container {
     top: -365px;
   }
 
-  .section-4 .section-title-h {
-    position: absolute;
-    display: inline-block;
-    margin-top: -380px;
-    margin-left: 670px;
+  .section-3 .section-title{
+    top: 1.7%;
   }
 
-  .section-3 .products {
-    position: absolute;
-    margin-top: -180px;
-    margin-left: -45px;
+
+  .section-4 {
+    padding-left: 210px;
+
+    .section-title-h {
+      position: absolute;
+      display: inline-block;
+      margin-top: -380px;
+      margin-left: 670px;
+    }
   }
+
 
   .carousel{
     margin-top: 80px;
   }
+
+
+  .sec-bg{
+    background: #f7f3f1;
+    width: 1220px;
+    position: absolute;
+    z-index: -1;
+  }
+
+  .sec1-bg {
+    height: 1500px;
+    margin-top: 170px;
+  }
+  .sec3-bg {
+    height: 1442px;
+    margin-top: 200px;
+  }
+  .sec5-bg {
+    height: 1490px;
+    margin-top: 145px;
+  }
+
+
+
+
+  .header-text{
+    left: 145px;
+    position: relative
+  }
+
+  .header-promo-text{
+    padding-left: 45px
+  }
+
+  .col-swoosh-1{
+    width: 260px;
+  }
+
+  .swoosh-1{
+    position: absolute;
+    margin-top: -15px;
+  }
+
+  .swoosh-2{
+    position: relative;
+    left: -141px;
+    margin-top: -40px;
+  }
+
+  .margin-left-60{
+    margin-left: 60px;
+  }
+
+  .margin-left-100{
+    margin-left: 100px;
+  }
+
+
+  .power-couple-1-text{
+    padding-left: 50px;
+    width: 500px;
+  }
+
+  .power-couple-1-text-big{
+    margin-top: 220px;
+  }
+
+  .power-couple-2-text, .power-couple-2-text-big{
+    margin-left: 145px
+  }
+
+  .power-couple-2-text-small{
+    margin-left: 47px
+  }
+
+  .power-couple-3-col{
+    padding-left: 50px;
+    width: 500px
+  }
+
+  .power-couple-3-text-big{
+    margin-top: 230px;
+    width: 500px;
+  }
+
+  .section-3 .tip-image{
+    position: relative;
+    float: right;
+    top: -110px;
+    right: -80px;
+  }
+
+  .power-couple-4-text-big{
+    margin-left: 85px;
+  }
+
+
+
+  .power-couple-5-col{
+    width: 500px;
+
+    .text-big{
+      margin-top: 220px;
+    }
+  }
+
+  .section-5 .row-tip{
+    overflow: hidden;
+  }
+
+  .section-5 .tip-image{
+    position: relative;
+    left: -310px;
+    margin-top: -40px;
+  }
+
+  .section-6{
+    width: 102%;
+  }
+
+  .promo-banner{
+    background-color: #f0f0f0;
+  }
+
+  .footer-row-promo{
+    padding-left: 150px;
+    margin-top: 120px;
+  }
+
+ .section-6 .main-image{
+   width: 480px;
+ }
+
+
 
   /*----------------------------*/
 

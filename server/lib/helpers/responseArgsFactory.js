@@ -7,27 +7,11 @@
 
 'use strict';
 
-let deviceDetectionHelper = require('./deviceDetection'),
+let killswitches = require('./../helpers/killswitchesHelper'),
+    deviceDetectionHelper = require('./deviceDetection'),
 
     isMobile = deviceType => deviceType.toLowerCase() === 'mobile',
     isTablet = deviceType => deviceType.toLowerCase() === 'tablet',
-
-    argsFactory = () => {
-        return {
-            timeStamp: new Date(),
-            isMobile: false,
-            isTablet: false,
-            headTitle: '',
-            headMeta: '',
-            headCanonical: '',
-            tealiumScriptEnabled: process.env.tealiumScriptEnabled === "true",
-            tealiumType: process.env.ENV_TYPE === "prod" ? "prod" : "qa",
-            brightTagEnabled: process.env.brightTagEnabled !== "false",
-            polarisHeaderFooterEnabled: process.env.polarisHeaderFooterEnabled === "true",
-            polarisMobileHeaderFooterEnabled: process.env.polarisMobileHeaderFooterEnabled === "true",
-            breastCancerAwarenessCampaignEnabled: process.env.breastCancerAwarenessCampaignEnabled === "true"
-        };
-    },
 
     /**
      * Returns a purely generated args object with the `isMobile` and `isTablet` properties set
@@ -37,7 +21,7 @@ let deviceDetectionHelper = require('./deviceDetection'),
      * @returns {*|{timeStamp, isMobile, isTablet, headTitle, headMeta, headCanonical}}
      */
     argsWithDeviceMetaData = (req, argsToUse) => {
-        const _args = argsToUse || argsFactory(),
+        const _args = argsToUse || killswitches.argsFactory(),
             detectedDeviceType = deviceDetectionHelper.detectDevice(req);
         _args.isMobile = isMobile(detectedDeviceType);
         _args.isTablet = isTablet(detectedDeviceType);
