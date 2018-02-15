@@ -368,7 +368,8 @@ $(function () {
         if (window.Globals.env === 'dev') {
             return cmSetTest(); // jshint ignore:line
         } else if (window.Globals.env === 'production') {
-            if (window.location.host === 'fashion.bloomingdales.com'){
+            // if (window.location.host === 'fashion.bloomingdales.com'){
+            if (window.location.host === 'www.bloomingdales.com') {
                 return cmSetProduction(); // jshint ignore:line
             } else {
                 return cmSetTest(); // jshint ignore:line
