@@ -171,11 +171,12 @@ $(function () {
     // Social
     var social = {
         facebookTitle: '100% Bloomingdale\'s | bloomingdales.com',
-        facebookDescription: 'The fall collections are here! Don\'t miss any of these utterly unique, extremely exclusive designer collaborations.',
-        facebookImageFileName: '2018-spring-campaign-100-percent-facebook.jpg',
-        twitterTitle: 'The 100% Bloomingdale\'s fall collections are here! Don\'t miss any of these exclusive designer collaborations! http://fashion.bloomingdales.com/2016-fall-campaign-100-percent-exclusive/',
-        pinterestTitle: '100% Bloomingdale\'s',
-        pinterestImageFileName: '2018-spring-campaign-100-percent-pinterest.jpg',
+        facebookDescription: 'Exclusive pieces you won\'t find anywhere else',
+        facebookImageFileName: 'S18_100_Facebook.jpg',
+        twitterTitle: 'The new 100% @bloomingdales collection of exclusive designer collaborations has arrived.' +
+        ' https://www.bloomingdales.com/b/campaigns/2018-spring-campaign-100-percent-exclusive/',
+        pinterestTitle: '100% Bloomingdale\'s | bloomingdales.com',
+        pinterestImageFileName: 'S18_100_Pinterest.jpg',
         facebookURL: null,
         twitterURL: null,
         pinterestURL: null
@@ -212,9 +213,29 @@ $(function () {
         $('.spring-18-instagram-link').attr('href', "https://www.instagram.com/bloomingdales/");
 
         $('.spring-18-social-links').find('a').each(function () {
-            $(this).attr('target','_blank');
+            var _this = $(this);
+            _this.attr('target', '_blank');
+            _this.on("click", function (e) {
+                if (!_this.hasClass('spring-18-instagram-link')) {
+                    _this.sharePopup(e);
+                }
+            });
         })
 
+    }
+
+    $.fn.sharePopup  = function (e, intWidth, intHeight, blnResize) {
+        e.preventDefault();
+
+        // Set values for window
+        intWidth = intWidth || '500';
+        intHeight = intHeight || '400';
+        var strResize = (blnResize ? 'yes' : 'no');
+
+        // Set title and open popup with focus on it
+        var strTitle = ((typeof this.attr('title') !== 'undefined') ? this.attr('title') : 'Social Share'),
+            strParam = 'width=' + intWidth + ',height=' + intHeight + ',resizable=' + strResize,
+            objWindow = window.open(this.attr('href'), strTitle, strParam).focus();
     }
 
     function playBtnState(_btn, _flag) {
