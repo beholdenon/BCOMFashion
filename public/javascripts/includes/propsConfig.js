@@ -2,7 +2,7 @@
 define('propsConfig', [], function() {
 	'use strict';
 
-	var props = {};
+	let props = {};
 	props = {
 	    site: "BCOM",
 	    bcomLoyaltyRewardCardExpirationAlertEnabled: true,
@@ -28,7 +28,7 @@ define('propsConfig', [], function() {
 	    prosCqBcomIntegrationEnabled: true,
 	    newResetPasswordEnabled: true,
 	    revokeAccessTokenUrl: 'https://auth.bloomingdales.com/v3/oauth2/token/revoke',
-	    secureHost: 'https://www.bloomingdales.com',
+	    secureHost: 'https://'+location.host,
 	    credit22016Enabled: true,
 	    ocWalletSoftSignInViewOffersEnabled: true,
 	    nlsSearchExperimentEnabled: true,
@@ -51,7 +51,7 @@ define('propsConfig', [], function() {
 	    isblmPPC2BagEnabled: true,
 	    rnChatEnabled: true,
 	    clientName: 'ShopApp',
-	    baseHost: 'http://www.bloomingdales.com',
+	    baseHost: 'http://'+location.host,
 	    spoHFTwoRefactoredEnabled: true,
 	    responsiveCssEnabled: false,
 	    wishListAutoOptinEnabled: true,
