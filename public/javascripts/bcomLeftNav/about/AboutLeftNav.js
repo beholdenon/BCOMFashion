@@ -86,7 +86,7 @@ define( [ "LeftNav" ], function ( LeftNav ) {
                 {
                     text: 'Check Gift Card Balance',
                     //href: '/about/shopping/',
-                    href: 'https://www.bloomingdales.com/account/giftcardbalance',
+                    href: '/account/giftcardbalance',
                     id: 'about_checkGiftCardBalance',
                     secure: false
                 },

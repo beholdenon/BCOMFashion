@@ -87,7 +87,7 @@
             },
             {
               "label": "Check Gift Card Balance",
-              "href": "https://www.bloomingdales.com/account/giftcardbalance",
+              "href": "/account/giftcardbalance",
               "attributes": {
                 "data-cm": "about_checkGiftCardBalance"
               }
