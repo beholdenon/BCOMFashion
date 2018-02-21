@@ -65,7 +65,8 @@ define('propsConfig', [], function() {
 	    credit32016Enabled: false,
 	    tabletPersistentSearchBarEnabled: true,
 	    spoHFDesktopExperienceEnabled: false,
-	    experimentationHost: '//expcore.bloomingdales.com'
+	    experimentationHost: '//expcore.bloomingdales.com',
+        respLearnAndApplyEnabled: true
 	};
 
 	return props;
