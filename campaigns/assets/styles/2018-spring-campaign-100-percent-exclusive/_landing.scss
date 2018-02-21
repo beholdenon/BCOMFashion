@@ -506,6 +506,7 @@ $footer-jumbo-bp: 1200px;
     z-index: 10;
     text-align: center;
     margin: 0 0 0.7em 0;
+    color: #000 !important;
 
     @media screen and (min-width: $footer-jumbo-bp) {
       white-space: nowrap;

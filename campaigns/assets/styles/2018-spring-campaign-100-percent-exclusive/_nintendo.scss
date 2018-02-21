@@ -23,15 +23,6 @@
     margin: 0 0 70px 0;
   }
 
-
-
-  //@media screen and (min-width: $tsr-18-mobile-bp) {
-  //  width: 100%;
-  //  height: 100vh;
-  //
-  //  @include flexbox;
-  //  @include flex-direction(row);
-  //}
 }
 .spring-18-nintendo-hero-section-left {
   position: relative;
@@ -39,13 +30,14 @@
   width: 100%;
   margin-left: 0;
   padding-top: 50px;
+  z-index: 2;
   @media screen and (min-width: 600px) {
     width: 50%;
     margin-left: auto;
     padding-top: 0;
   }
   @media screen and (min-width: 769px) {
-    width: 40%;
+    width: 35.5%;
     margin-left: auto;
     padding-top: 0;
   }
@@ -66,29 +58,54 @@
 }
 .spring-18-nintendo-hero-section-center {
   position: relative;
+  z-index: 3;
+
   @include flexbox;
   @include align-items(center);
   @include justify-content(center);
 
   @include flex(1);
+
+  width: 100%;
+  @media screen and (min-width: 600px) {
+    width: 50%;
+  }
+  @media screen and (min-width: 769px) {
+    width: 29%;
+  }
 }
 .spring-18-nintendo-section-cta {
   line-height: 1.1;
   font-family: 'Oswald', sans-serif;
   font-size: 11vw;
+  text-transform: uppercase;
+  color: #000 !important;
+  font-weight: bold;
+  text-align: center;
   margin: 20px 0 40px 0;
+
+  display: block;
+  position: relative;
+  top: auto;
+  left: auto;
+  transform: translate(0, 0);
+
   @media screen and (min-width: 600px) {
     font-size: 42px;
-    margin: 58px 0;
+    margin: 0;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
   }
   padding: 0 16px;
   @media screen and (min-width: 1400px) {
     font-size: 52px;
   }
-  text-transform: uppercase;
-  color: #000;
   span {
-    display: block;
+    //display: block;
     white-space: nowrap;
   }
   img {
@@ -102,9 +119,9 @@
     font-size: 18px;
     font-family: $site-font-family;
     text-transform: uppercase;
-    color: #000;
+    color: #000 !important;
     text-decoration: underline;
-    font-weight: bold;
+    font-weight: bold !important;
     display: block;
     line-height: 1;
   }
@@ -113,9 +130,10 @@
 .spring-18-nintendo-hero-section-right {
   position: relative;
   display: none;
+  z-index: 1;
   @media screen and (min-width: 769px) {
     display: block;
-    width: 40%;
+    width: 35.5%;
     margin-left: auto;
   }
   img {
@@ -135,6 +153,7 @@
 .spring-18-nintendo-main-wrapper{
   overflow: hidden;
 }
+
 .spring-18-nintendo-grid {
   width: 100%;
   max-width: 1470px;
@@ -144,6 +163,7 @@
     padding: 0;
   }
 }
+
 .spring-18-nintendo-grid__row {
   width: 100%;
   @include flexbox;
@@ -154,6 +174,7 @@
     margin: 70px 0;
   }
 }
+
 .spring-18-nintendo-grid__square-cell {
   width: 50%;
   height: 0;
@@ -220,20 +241,28 @@
     display: block;
     width: 100%;
     position: relative;
-    padding: 1em 0 2em;
-    @media screen and (min-width: 1024px) {
-      position: absolute;
-      top: calc(100% - 42px);
-      padding: 0;
-    }
-    @media screen and (min-width: 1279px) {
-      top: calc(100% - 55px);
-    }
+    padding: 1.25em 0 2em;
     left: 0;
     text-align: center;
     line-height: 1.2;
+
+    //white-space: normal;
+
+    @media screen and (min-width: 1024px) {
+      position: absolute;
+      //top: calc(100% - 36px);
+      top: calc(100% - 50px);
+      padding: 0;
+      //white-space: nowrap;
+    }
+    @media screen and (min-width: 1279px) {
+      top: calc(100% - 50px);
+    }
   }
 }
+
+$caroline-gap: 72px;
+
 .spring-18-nintendo-grid__img-grid-holder {
   @include flexbox;
   @include flex-wrap(wrap);
@@ -266,24 +295,28 @@
     a {
       padding: 0 10px;
       @media screen and (min-width: 1024px) {
-        padding: 0 0 50px 50px;
+        //padding: 0 0 50px 50px;
+        padding: 0 0 $caroline-gap $caroline-gap;
       }
       @media screen and (min-width: 1279px) {
-        padding: 0 0 60px 60px;
+        //padding: 0 0 60px 60px;
+        padding: 0 0 $caroline-gap $caroline-gap;
       }
       @media screen and (min-width: 1439px) {
-        padding: 0 0 70px 70px;
+        padding: 0 0 $caroline-gap $caroline-gap;
       }
     }
     span {
       @media screen and (min-width: 1024px) {
-        padding: 0 0 0 50px;
+        //padding: 0 0 0 50px;
+        padding: 0 0 0 $caroline-gap;
       }
       @media screen and (min-width: 1279px) {
-        padding: 0 0 0 60px;
+        //padding: 0 0 0 60px;
+        padding: 0 0 0 $caroline-gap;
       }
       @media screen and (min-width: 1439px) {
-        padding: 0 0 0 70px;
+        padding: 0 0 0 $caroline-gap;
       }
     }
   }
@@ -297,24 +330,28 @@
     a {
       padding: 0 10px;
       @media screen and (min-width: 1024px) {
-        padding: 0 50px 50px 0;
+        //padding: 0 50px 50px 0;
+        padding: 0 $caroline-gap $caroline-gap 0;
       }
       @media screen and (min-width: 1279px) {
-        padding: 0 60px 60px 0;
+        //padding: 0 60px 60px 0;
+        padding: 0 $caroline-gap $caroline-gap 0;
       }
       @media screen and (min-width: 1439px) {
-        padding: 0 70px 70px 0;
+        padding: 0 $caroline-gap $caroline-gap 0;
       }
     }
     span {
       @media screen and (min-width: 1024px) {
-        padding: 0 50px 0 0;
+        //padding: 0 50px 0 0;
+        padding: 0 $caroline-gap 0 0;
       }
       @media screen and (min-width: 1279px) {
-        padding: 0 60px 0 0;
+        //padding: 0 60px 0 0;
+        padding: 0 $caroline-gap 0 0;
       }
       @media screen and (min-width: 1439px) {
-        padding: 0 70px 0 0;
+        padding: 0 $caroline-gap 0 0;
       }
     }
   }
@@ -345,24 +382,28 @@
       right: 0;
       padding: 0 35px;
       @media screen and (min-width: 1024px) {
-        padding: 0 50px 0 0;
+        //padding: 0 50px 0 0;
+        padding: 0 $caroline-gap 0 0;
       }
       @media screen and (min-width: 1279px) {
-        padding: 0 60px 0 0;
+        //padding: 0 60px 0 0;
+        padding: 0 $caroline-gap 0 0;
       }
       @media screen and (min-width: 1439px) {
-        padding: 0 70px 0 0;
+        padding: 0 $caroline-gap 0 0;
       }
       span {
         padding: 1em 0;
         @media screen and (min-width: 1024px) {
-          padding: 0 0 0 50px;
+          //padding: 0 0 0 50px;
+          padding: 0 0 0 $caroline-gap;
         }
         @media screen and (min-width: 1279px) {
-          padding: 0 0 0 60px;
+          //padding: 0 0 0 60px;
+          padding: 0 0 0 $caroline-gap;
         }
         @media screen and (min-width: 1439px) {
-          padding: 0 0 0 70px;
+          padding: 0 0 0 $caroline-gap;
         }
       }
     }
@@ -372,24 +413,28 @@
       left: 0;
       padding: 0 35px;
       @media screen and (min-width: 1024px) {
-        padding: 0 0 0 50px;
+        //padding: 0 0 0 50px;
+        padding: 0 0 0 $caroline-gap;
       }
       @media screen and (min-width: 1279px) {
-        padding: 0 0 0 60px;
+        //padding: 0 0 0 60px;
+        padding: 0 0 0 $caroline-gap;
       }
       @media screen and (min-width: 1439px) {
-        padding: 0 0 0 70px;
+        padding: 0 0 0 $caroline-gap;
       }
       span {
-        padding: 1em 0;
+        padding: 1.25em 0;
         @media screen and (min-width: 1024px) {
-          padding: 0 50px 0 0;
+          //padding: 0 50px 0 0;
+          padding: 0 $caroline-gap 0 0;
         }
         @media screen and (min-width: 1279px) {
-          padding: 0 60px 0 0;
+          //padding: 0 60px 0 0;
+          padding: 0 $caroline-gap 0 0;
         }
         @media screen and (min-width: 1439px) {
-          padding: 0 70px 0 0;
+          padding: 0 $caroline-gap 0 0;
         }
       }
     }
@@ -401,6 +446,7 @@
     }
   }
 }
+
 .ntnd-lettering-bottom-right, .ntnd-lettering-top-left {
   font-family: 'Oswald', sans-serif !important;
   font-size: 15vw;
