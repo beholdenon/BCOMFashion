@@ -128,6 +128,10 @@ $(function () {
                 // scale the video
                 video.width(scale * originalVideoWidth);
                 video.height(scale * originalVideoHeight);
+                
+                // temp !!!!!!!!
+                console.log('original Video Width = ' + originalVideoWidth);
+                console.log('original Video Height = ' + originalVideoHeight);
 
             });
 

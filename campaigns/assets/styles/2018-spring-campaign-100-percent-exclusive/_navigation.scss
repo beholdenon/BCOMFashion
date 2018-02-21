@@ -52,6 +52,12 @@
   }
 }
 
+//body {
+//  &.spring-18-nav-is-active {
+//    overflow: hidden;
+//  }
+//}
+
 .spring-18-nav-is-active {
   .spring-18-sticky-header {
     background-color: #fff;
@@ -88,11 +94,12 @@
 }
 
 .spring-18-nav {
+  display: block;
   width: 100vw;
   height: 100vh;
   position: fixed;
   top: 0;
-  left: -100vw;
+  left: -99.99vw;
   padding: 54px 0 0 0;
   margin: 0;
   background-color: transparent;
@@ -150,11 +157,15 @@
       &:focus {
         outline: 0 none;
       }
+      sup {
+        top: -0.4em;
+        font-size: 70%;
+      }
     }
     &.spring-18-nav__current {
       cursor: default;
-      background-color: #000 !important;
-      color: rgba(255, 255, 255, 0.38);
+      background-color: #fff !important;
+      color: #000 !important;
     }
   }
   ul {

@@ -101,6 +101,11 @@
     max-width: 100%;
     height: auto;
     margin-bottom: 1.25rem;
+    min-width: 0;
+    @media screen and (min-width: $container-width) {
+      // prevent image corruption
+      min-width: 420px;
+    }
   }
   a {
     display: block;
@@ -175,45 +180,66 @@
 
 .spring-18-jumbotron-foo-1 {
   position: absolute;
-  bottom: 37%;
+  bottom: 60%;
+  @media screen and (min-width: 640px) {
+    bottom: 37%;
+  }
   right: 5%;
   max-width: 46px !important;
 }
 .spring-18-jumbotron-foo-2 {
   position: absolute;
-  bottom: 20.5%;
+  bottom: 60%;
+  @media screen and (min-width: 640px) {
+    bottom: 20.5%;
+  }
   right: 44.5%;
   max-width: 66px !important;
 }
 .spring-18-jumbotron-foo-3 {
   position: absolute;
-  bottom: 19%;
+  bottom: 65%;
+  @media screen and (min-width: 640px) {
+    bottom: 19%;
+  }
   right: 31%;
   max-width: 66px !important;
 }
 
 .spring-18-jumbotron-foo-4 {
   position: absolute;
-  bottom: 35%;
+  bottom: 60%;
+  @media screen and (min-width: 640px) {
+    bottom: 35%;
+  }
   right: 13%;
   max-width: 66px !important;
 }
 
 .spring-18-jumbotron-foo-5 {
   position: absolute;
-  bottom: 20%;
+  bottom: 55%;
+  @media screen and (min-width: 640px) {
+    bottom: 20%;
+  }
   right: 19%;
   max-width: 66px !important;
 }
 .spring-18-jumbotron-foo-6 {
   position: absolute;
-  bottom: 30%;
+  bottom: 55%;
+  @media screen and (min-width: 640px) {
+    bottom: 30%;
+  }
   right: 45%;
   max-width: 46px !important;
 }
 .spring-18-jumbotron-foo-7 {
   position: absolute;
-  bottom: 36%;
+  bottom: 60%;
+  @media screen and (min-width: 640px) {
+    bottom: 36%;
+  }
   right: 21.5%;
   max-width: 66px !important;
 }
@@ -403,6 +429,7 @@
   }
   h3 {
     line-height: .9;
+    color: #000 !important;
     .dash {
       display: none;
       @media screen and (min-width: $footer-jumbo-bp) {
