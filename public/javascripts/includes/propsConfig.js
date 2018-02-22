@@ -66,7 +66,7 @@ define('propsConfig', [], function() {
 	    tabletPersistentSearchBarEnabled: true,
 	    spoHFDesktopExperienceEnabled: false,
 	    experimentationHost: '//expcore.bloomingdales.com',
-        respLearnAndApplyEnabled: true
+	    respLearnAndApplyEnabled: true
 	};
 
 	return props;
