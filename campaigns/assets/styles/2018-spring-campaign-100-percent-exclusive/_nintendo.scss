@@ -105,7 +105,6 @@
     font-size: 52px;
   }
   span {
-    //display: block;
     white-space: nowrap;
   }
   img {
@@ -246,22 +245,15 @@
     text-align: center;
     line-height: 1.2;
 
-    //white-space: normal;
-
     @media screen and (min-width: 1024px) {
       position: absolute;
-      //top: calc(100% - 36px);
       top: calc(100% - 50px);
       padding: 0;
-      //white-space: nowrap;
-    }
-    @media screen and (min-width: 1279px) {
-      top: calc(100% - 50px);
     }
   }
 }
 
-$caroline-gap: 72px;
+$links-gap: 72px;
 
 .spring-18-nintendo-grid__img-grid-holder {
   @include flexbox;
@@ -295,28 +287,12 @@ $caroline-gap: 72px;
     a {
       padding: 0 10px;
       @media screen and (min-width: 1024px) {
-        //padding: 0 0 50px 50px;
-        padding: 0 0 $caroline-gap $caroline-gap;
-      }
-      @media screen and (min-width: 1279px) {
-        //padding: 0 0 60px 60px;
-        padding: 0 0 $caroline-gap $caroline-gap;
-      }
-      @media screen and (min-width: 1439px) {
-        padding: 0 0 $caroline-gap $caroline-gap;
+        padding: 0 0 $links-gap $links-gap;
       }
     }
     span {
       @media screen and (min-width: 1024px) {
-        //padding: 0 0 0 50px;
-        padding: 0 0 0 $caroline-gap;
-      }
-      @media screen and (min-width: 1279px) {
-        //padding: 0 0 0 60px;
-        padding: 0 0 0 $caroline-gap;
-      }
-      @media screen and (min-width: 1439px) {
-        padding: 0 0 0 $caroline-gap;
+        padding: 0 0 0 $links-gap;
       }
     }
   }
@@ -330,28 +306,12 @@ $caroline-gap: 72px;
     a {
       padding: 0 10px;
       @media screen and (min-width: 1024px) {
-        //padding: 0 50px 50px 0;
-        padding: 0 $caroline-gap $caroline-gap 0;
-      }
-      @media screen and (min-width: 1279px) {
-        //padding: 0 60px 60px 0;
-        padding: 0 $caroline-gap $caroline-gap 0;
-      }
-      @media screen and (min-width: 1439px) {
-        padding: 0 $caroline-gap $caroline-gap 0;
+        padding: 0 $links-gap $links-gap 0;
       }
     }
     span {
       @media screen and (min-width: 1024px) {
-        //padding: 0 50px 0 0;
-        padding: 0 $caroline-gap 0 0;
-      }
-      @media screen and (min-width: 1279px) {
-        //padding: 0 60px 0 0;
-        padding: 0 $caroline-gap 0 0;
-      }
-      @media screen and (min-width: 1439px) {
-        padding: 0 $caroline-gap 0 0;
+        padding: 0 $links-gap 0 0;
       }
     }
   }
@@ -382,28 +342,12 @@ $caroline-gap: 72px;
       right: 0;
       padding: 0 35px;
       @media screen and (min-width: 1024px) {
-        //padding: 0 50px 0 0;
-        padding: 0 $caroline-gap 0 0;
-      }
-      @media screen and (min-width: 1279px) {
-        //padding: 0 60px 0 0;
-        padding: 0 $caroline-gap 0 0;
-      }
-      @media screen and (min-width: 1439px) {
-        padding: 0 $caroline-gap 0 0;
+        padding: 0 $links-gap 0 0;
       }
       span {
         padding: 1em 0;
         @media screen and (min-width: 1024px) {
-          //padding: 0 0 0 50px;
-          padding: 0 0 0 $caroline-gap;
-        }
-        @media screen and (min-width: 1279px) {
-          //padding: 0 0 0 60px;
-          padding: 0 0 0 $caroline-gap;
-        }
-        @media screen and (min-width: 1439px) {
-          padding: 0 0 0 $caroline-gap;
+          padding: 0 0 0 $links-gap;
         }
       }
     }
@@ -413,28 +357,12 @@ $caroline-gap: 72px;
       left: 0;
       padding: 0 35px;
       @media screen and (min-width: 1024px) {
-        //padding: 0 0 0 50px;
-        padding: 0 0 0 $caroline-gap;
-      }
-      @media screen and (min-width: 1279px) {
-        //padding: 0 0 0 60px;
-        padding: 0 0 0 $caroline-gap;
-      }
-      @media screen and (min-width: 1439px) {
-        padding: 0 0 0 $caroline-gap;
+        padding: 0 0 0 $links-gap;
       }
       span {
         padding: 1.25em 0;
         @media screen and (min-width: 1024px) {
-          //padding: 0 50px 0 0;
-          padding: 0 $caroline-gap 0 0;
-        }
-        @media screen and (min-width: 1279px) {
-          //padding: 0 60px 0 0;
-          padding: 0 $caroline-gap 0 0;
-        }
-        @media screen and (min-width: 1439px) {
-          padding: 0 $caroline-gap 0 0;
+          padding: 0 $links-gap 0 0;
         }
       }
     }

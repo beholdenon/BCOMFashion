@@ -112,6 +112,7 @@ $(function () {
             var originalVideoWidth = videoData.videoWidth;
             var originalVideoHeight = videoData.videoHeight;
             var video = videoContainer.find('video');
+           
 
             // re-scale image/video when viewport resize
             $(window).resize(function(){
@@ -130,8 +131,8 @@ $(function () {
                 video.height(scale * originalVideoHeight);
                 
                 // temp !!!!!!!!
-                console.log('original Video Width = ' + originalVideoWidth);
-                console.log('original Video Height = ' + originalVideoHeight);
+                // console.log('original Video Width = ' + originalVideoWidth);
+                // console.log('original Video Height = ' + originalVideoHeight);
 
             });
 
@@ -286,6 +287,13 @@ $(function () {
     }
 
     function getVideoSrcData (data) {
+
+        // temp -------------------- !!!!!!!!!!!!!!!!!!!!!!!!!!!
+        console.log('^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^');
+        console.log(data);
+        console.log('^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^');
+        
+        
         var videos = data.sources;
         var removeVideosIndex = [];
         videos.forEach(function (element, index) {
