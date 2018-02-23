@@ -89,7 +89,7 @@ $(function () {
     });
 
     
-    $('.spring-18-scroll-to-btn').on('click', function () {
+    $('.spring-18-scroll-to-btn, .spring-18-landing-heading').on('click', function () {
         $('html, body').animate({
             scrollTop: $('.spring-18-main-wrapper').offset().top + 'px'
         }, 800);
@@ -131,8 +131,10 @@ $(function () {
                 video.height(scale * originalVideoHeight);
                 
                 // temp !!!!!!!!
-                // console.log('original Video Width = ' + originalVideoWidth);
-                // console.log('original Video Height = ' + originalVideoHeight);
+                console.log('^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^');
+                console.log('original Video Width = ' + originalVideoWidth);
+                console.log('original Video Height = ' + originalVideoHeight);
+                console.log('^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^');
 
             });
 
