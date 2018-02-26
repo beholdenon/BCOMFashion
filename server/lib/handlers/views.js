@@ -59,7 +59,8 @@ let killswitches = require('./../helpers/killswitchesHelper'),
                     preLoadScriptsMatches = preLoadScriptsRegEx.exec(lines[i]),
                     headCanonicalDotComIdx,
                     headCanonicalSlashBIdx,
-                    canonicalHost;
+                    canonicalHost,
+                    protocol;
 
                 if (headMetaMatches) {
                     args.headMeta = JSON.parse(headMetaMatches[1]);
@@ -72,7 +73,9 @@ let killswitches = require('./../helpers/killswitchesHelper'),
                     headCanonicalDotComIdx = args.headCanonical.href.indexOf('.com');
                     headCanonicalSlashBIdx = args.headCanonical.href.indexOf('/b/');
 
-                    canonicalHost = args.isMobile ? process.env.PROD_MOBILE_HOST : process.env.PROD_HOST;
+                    protocol = req.server && req.server.info && req.server.info.protocol ? req.server.info.protocol + '://' : 'https://'; 
+
+                    canonicalHost = (protocol + (req && req.headers && req.headers.host ? req.headers.host.replace('m.', 'www.') : process.env.PROD_HOST));
 
                     //when on the headCanonical tag there are only a url path. Ex.: "/loyallist/top-of-the-list"
                     if (args.headCanonical.href && args.headCanonical.href.indexOf('http') === -1 && headCanonicalDotComIdx === -1 && headCanonicalSlashBIdx === -1) {
