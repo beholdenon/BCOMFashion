@@ -5,12 +5,26 @@
         .module('controllers')
         .controller('StoresCtrl', StoresCtrl);
 
-    function StoresCtrl($rootScope, $scope, $window, $timeout, AppGlobals, Coremetrics) { //uiGmapGoogleMapApi
+    function StoresCtrl($rootScope, $scope, $window, $timeout, AppGlobals, Coremetrics, $routeParams) { //uiGmapGoogleMapApi
         $scope.lang = AppGlobals.getAttr('lang');
         $scope.copy = AppGlobals.getAttr('copy');
         $scope.storeList = ($scope.lang) ? angular.copy($scope.copy[$scope.lang].stores.dropdown.list) : null;
         $scope.storeSelection = null;
         $scope.sticky = true;
+        $scope.defaultStores = $scope.copy.ENG.stores.dropdown.list;
+
+        angular.element(document).ready(function () {
+            if($routeParams.store) {
+
+                $scope.defaultStores.forEach(function(store) {
+                    if(store.url === $routeParams.store) { 
+                        $scope.storeSelection = store.id;
+                        $scope.$apply();
+                        $scope.onChange();
+                    }
+                });
+            }
+        });
 
         $scope.onChange = function() {
             $window.scrollTo(0, 0);
@@ -18,7 +32,7 @@
             //Coremetrics tag
             var pageID = AppGlobals.getAttr('cm_pageID'),
                 storeID = $scope.storeSelection,
-                stores = $scope.copy.ENG.stores.dropdown.list,
+                stores = $scope.defaultStores,
                 store = null,
                 windowWidth = $window.innerWidth,
                 prefix = (windowWidth < 641) ? 'MBL:' : '', 

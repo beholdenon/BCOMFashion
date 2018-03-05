@@ -43,6 +43,9 @@
             .when('/visit-our-stores', {
                 templateUrl: 'components/visit-our-stores.html'
             })
+            .when('/visit-our-stores/:store', {
+                templateUrl: 'components/visit-our-stores.html'
+            })
             .otherwise({
                 resolve: {
                     langSwitch : function ( $rootScope, $location, localStorageService  ) {
