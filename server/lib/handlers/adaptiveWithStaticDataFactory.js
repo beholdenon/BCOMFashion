@@ -23,14 +23,8 @@ let killswitches = require('./../helpers/killswitchesHelper'),
 
     argsWithDeviceMetaData = (req, argsToUse, path) => {
         const _args = argsToUse || killswitches.argsFactory(),
-            detectedDeviceType = deviceDetectionHelper.detectDevice(req);
-
-        let canonicalHost,
-            protocol;
-
-        protocol = req.server && req.server.info && req.server.info.protocol ? req.server.info.protocol + '://' : 'https://';
-
-        canonicalHost = (protocol + (req && req.headers && req.headers.host ? req.headers.host.replace('m.', 'www.') : process.env.PROD_HOST)).concat('/', path);
+            detectedDeviceType = deviceDetectionHelper.detectDevice(req),
+            canonicalHost = process.env.PROD_HOST.concat('/', path);
 
         _args.isMobile = isMobile(detectedDeviceType);
         _args.isTablet = isTablet(detectedDeviceType);
