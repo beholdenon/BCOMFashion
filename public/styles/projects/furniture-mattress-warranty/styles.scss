@@ -129,6 +129,8 @@ div.two-columns {
 @media ( max-width: 768px ) {
 
   .greyDivider {
+    padding-bottom: 3em;
+    padding-top: 1em;
 
     &.center {
       text-align: center;
@@ -150,9 +152,9 @@ div.two-columns {
     width: 100%;
     display: inline-block;
     vertical-align: top;
+    padding-bottom: 1em;
   }
 }
-
 
 .desktop_main_container {
   position: relative;
