@@ -16,6 +16,10 @@
         window.BLOOMIES.coremetrics.cmCreatePageElementTag(hasMBL + 'Scroll_Down-Mattress', hasMBL + 'Furniture_Mattress-WorryNoMore');
     });
 
+    $('#rug-anchor').on('click', function() {
+        window.BLOOMIES.coremetrics.cmCreatePageElementTag(hasMBL + 'Scroll_Down-Rugs', hasMBL + 'Furniture_Mattress-WorryNoMore');
+    });
+
     $( window ).scroll(function() {
         if( !isTablet ) {
             checkHeightAndShowBackToTop();

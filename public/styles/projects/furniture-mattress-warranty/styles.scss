@@ -45,10 +45,17 @@ ul {
   margin-right: 0;
   padding-top: 2em;
   padding-bottom: 2em;
-  padding-left: 5%;
 
   a {
     font-size: 1.4em;
+  }
+
+  div.two-columns:first-child {
+    padding-left: 9em;
+  }
+
+  div.two-columns:last-child {
+    padding-right: 9em;
   }
 
 }
@@ -122,7 +129,8 @@ div.two-columns {
 @media ( max-width: 768px ) {
 
   .greyDivider {
-    text-align: left;
+    padding-bottom: 3em;
+    padding-top: 1em;
 
     &.center {
       text-align: center;
@@ -131,19 +139,22 @@ div.two-columns {
     a {
       font-size: 1.1em;
     }
-  }
 
-  .responsive-large {
-    display: none;
+    div.two-columns:first-child {
+      padding-left: 0;
+    }
+    div.two-columns:last-child {
+      padding-right: 0;
+    }
   }
 
   div.two-columns {
     width: 100%;
     display: inline-block;
     vertical-align: top;
+    padding-bottom: 1em;
   }
 }
-
 
 .desktop_main_container {
   position: relative;
