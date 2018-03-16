@@ -51,11 +51,11 @@ ul {
   }
 
   div.two-columns:first-child {
-    padding-left: 9em;
+    padding-left: 1em;
   }
 
-  div.two-columns:last-child {
-    padding-right: 9em;
+  .small {
+    margin-bottom: 0;
   }
 
 }
@@ -121,16 +121,17 @@ table.plan {
 }
 
 div.two-columns {
-  width: 49%;
+  width: 40%;
   display: inline-block;
   vertical-align: top;
+  margin-top: 0.8em;
 }
 
 @media ( max-width: 768px ) {
 
   .greyDivider {
-    padding-bottom: 3em;
-    padding-top: 1em;
+    padding-bottom: 2em;
+    padding-top: 2em;
 
     &.center {
       text-align: center;
@@ -143,8 +144,12 @@ div.two-columns {
     div.two-columns:first-child {
       padding-left: 0;
     }
-    div.two-columns:last-child {
+    div.two-columns:nth-child(2) {
       padding-right: 0;
+      padding-bottom: 2em;
+    }
+    .small {
+      margin-bottom: 0.8em;
     }
   }
 
