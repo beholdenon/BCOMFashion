@@ -20,6 +20,10 @@
         window.BLOOMIES.coremetrics.cmCreatePageElementTag(hasMBL + 'Scroll_Down-Rugs', hasMBL + 'Furniture_Mattress-WorryNoMore');
     });
 
+    $('#back').on('click', function() {
+        window.history.back();
+    });
+
     $( window ).scroll(function() {
         if( !isTablet ) {
             checkHeightAndShowBackToTop();
