@@ -58,6 +58,10 @@ ul {
     margin-bottom: 0;
   }
 
+  div.two-columns {
+    width: 40%;
+  }
+
 }
 
 p.greyDivider {
@@ -121,7 +125,7 @@ table.plan {
 }
 
 div.two-columns {
-  width: 40%;
+  width: 49%;
   display: inline-block;
   vertical-align: top;
   margin-top: 0.8em;
