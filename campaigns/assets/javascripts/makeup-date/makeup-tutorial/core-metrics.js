@@ -27,8 +27,6 @@
 
             if ($(window).width() < 980 && window.Globals.deviceType !== 'mobile'){
                 attr = 'Desktop Minimized';
-            } else {
-                attr = '';
             }
             window.Globals.Coremetrics.attr42 = attr;
         }
