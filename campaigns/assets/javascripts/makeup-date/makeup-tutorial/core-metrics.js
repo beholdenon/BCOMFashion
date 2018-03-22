@@ -13,20 +13,25 @@
         return ( window.innerWidth <= 600 );
     }
 
-    // init global app namespace object
-    window.Globals = {
-        env: window.ENV_CONFIG || 'dev',
-        deviceType: null,
-        mobileOS: window.MOBILE_OS,
-        Coremetrics: {
-            pageID: null,
-            catID: null,
-            attr42: null
-        }
-    };
-
-
     $( window ).load(function() {
+
+        var pageID = 'spring18_makeupdate',
+            catID =  'xx-xx-xx-xx',
+            attr = '';
+
+        //populate the Globals ns
+        window.Globals.Coremetrics.pageID = pageID;
+        window.Globals.Coremetrics.catID = catID;
+
+        if (window.BLOOMIES && window.BLOOMIES.coremetrics) {
+
+            if ($(window).width() < 980 && window.Globals.deviceType !== 'mobile'){
+                attr = 'Desktop Minimized';
+            } else {
+                attr = '';
+            }
+            window.Globals.Coremetrics.attr42 = attr;
+        }
 
 
         $.fn.coreTag('Pageview', 'spring18_makeupdate' );
@@ -107,44 +112,5 @@
             window.console.info(log);
         }
     };
-
-    initCoreMetrics();
-
-    function setEnvironment() {
-        if (window.Globals.env === 'dev') {
-            return cmSetTest(); // jshint ignore:line
-        } else if (window.Globals.env === 'production') {
-            if (window.location.host === 'www.bloomingdales.com'){
-                return cmSetProduction(); // jshint ignore:line
-            } else {
-                return cmSetTest(); // jshint ignore:line
-            }
-        } else {
-            throw 'ERROR: unidentified env variable';
-        }
-    }
-
-    function initCoreMetrics(categoryID) {
-        window.BLOOMIES.coremetrics.pageViewExploreAttributes = new window.BLOOMIES.coremetrics.exploreAttributes();
-
-        var pageID = 'spring18_makeupdate',
-            catID = categoryID || 'xx-xx-xx-xx',
-            attr = '';
-
-        //populate the Globals ns
-        window.Globals.Coremetrics.pageID = pageID;
-        window.Globals.Coremetrics.catID = catID;
-
-        if (window.BLOOMIES && window.BLOOMIES.coremetrics) {
-            setEnvironment();
-
-            if ($(window).width() < 980 && window.Globals.deviceType !== 'mobile'){
-                attr = 'Desktop Minimized';
-            } else {
-                attr = '';
-            }
-            window.Globals.Coremetrics.attr42 = attr;
-        }
-    }
 
 })();
