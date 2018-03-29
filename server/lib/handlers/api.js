@@ -1,5 +1,6 @@
-'use strict'; 
-var serviceProxy = require('./../helpers/serviceProxy');
+'use strict';
+
+const serviceProxy = require('./../helpers/serviceProxy');
 
 module.exports = {
     v3: {
@@ -11,15 +12,18 @@ module.exports = {
                 timeout: serviceProxy.timeout,
                 passThrough: true,
                 acceptEncoding: false,
-                mapUri: function(req, res) {
+                mapUri: (req) => {
 
-                    var headers = serviceProxy.getHeaders(req, process.env.CATALOGCATEGORYV3_KEY);
+                    const headers = serviceProxy.getHeaders(req, process.env.CATALOGCATEGORYV3_KEY);
                     req.url.host = serviceProxy.getHost(req, process.env.CATEGORYINDEXV3_HOST || process.env.API_HOST);
 
                     req.app.parser = require('./../parsers/category');
                     req.url.pathname = req.url.pathname.replace(/^\/b\//g, "/");
 
-                    res(null, req.url.format(req.url), headers);
+                    return {
+                        uri: req.url.format(req.url),
+                        headers: headers
+                    };
 
                 },
 
@@ -38,15 +42,18 @@ module.exports = {
                 timeout: serviceProxy.timeout,
                 passThrough: true,
                 acceptEncoding: false,
-                mapUri: function(req, res) {
+                mapUri: (req) => {
 
-                    var headers = serviceProxy.getHeaders(req, process.env.CATALOGCATEGORYV3_KEY);
+                    const headers = serviceProxy.getHeaders(req, process.env.CATALOGCATEGORYV3_KEY);
                     req.url.host = serviceProxy.getHost(req, process.env.CATEGORYINDEXV3_HOST || process.env.API_HOST);
 
                     req.app.parser = require('./../parsers/category');
                     req.url.pathname = req.url.pathname.replace(/^\/b\//g, "/");
 
-                    res(null, req.url.format(req.url), headers);
+                    return {
+                        uri: req.url.format(req.url),
+                        headers: headers
+                    };
 
                 },
 
@@ -62,25 +69,26 @@ module.exports = {
         tags: ['developer.bloomingdales.com', 'api', 'bag'],
         handler: {
             proxy: {
-                protocol: 'https',
                 timeout: serviceProxy.timeout,
                 passThrough: true,
                 acceptEncoding: false,
-                mapUri: function(req, res) {
+                mapUri: (req) => {
 
-                    var headers = serviceProxy.getHeaders(req, process.env.SERVICES_KEY);
+                    const headers = serviceProxy.getHeaders(req, process.env.SERVICES_KEY);
                     req.url.host = serviceProxy.getHost(req, process.env.CATEGORYINDEXV3_HOST || process.env.API_HOST);
 
                     req.app.parser = require('./../parsers/category');
 
                     req.url.pathname = req.url.pathname.replace(/^\/b\//g, "/").replace(/^\/getBag\//, '');
                     
-                    res(null, req.url.format(req.url), headers);
+                    return {
+                        uri: req.url.format(req.url),
+                        headers: headers
+                    };
 
                 },
 
                 onResponse: serviceProxy.defaultOnResponse
-
             }
         }
     },
@@ -95,18 +103,21 @@ module.exports = {
         },
         handler: {
             proxy: {
-                protocol: 'https',
                 timeout: serviceProxy.timeout,
                 passThrough: true,
                 acceptEncoding: false,
-                mapUri: function(req, res) {
-                    var headers = serviceProxy.getHeaders(req, process.env.SERVICES_KEY),
-                        upstreamUrl;
+                mapUri: (req) => {
+                    const headers = serviceProxy.getHeaders(req, process.env.SERVICES_KEY);
+                    let upstreamUrl;
                     req.url.host = process.env.API_SUBDOMAIN + '.' + process.env.API_HOST;
                     req.app.parser = require('./../parsers/add-to-bag');
                     req.url.pathname = 'order/v1/bags';
                     upstreamUrl = req.url.format(req.url);
-                    res(null, upstreamUrl, headers);
+                    
+                    return {
+                        uri: upstreamUrl,
+                        headers: headers
+                    };
                 },
                 onResponse: serviceProxy.defaultOnResponse
             }
@@ -115,9 +126,9 @@ module.exports = {
 
     proxy: {
         description: 'proxy, sends any request over to bloomingdales.com',
-        handler: function (req, res) {
+        handler: (req, res) => {
             // Get base host and populate uri
-            var baseAssets = process.env.BASE_HOST,
+            const baseAssets = process.env.BASE_HOST,
 
                 // Add trailing slash if doesn't have one
                 host = baseAssets + (/\/$/.test(baseAssets) === false ? '\/' : ''),
@@ -142,16 +153,19 @@ module.exports = {
                 timeout: serviceProxy.timeout,
                 passThrough: true,
                 acceptEncoding: false,
-                mapUri: function(req, res) {
+                mapUri: (req) => {
 
-                    var headers = serviceProxy.getHeaders(req, process.env.CATALOGCATEGORYV3_KEY);
+                    const headers = serviceProxy.getHeaders(req, process.env.CATALOGCATEGORYV3_KEY);
                     req.url.host = serviceProxy.getHost(req, process.env.CATEGORYINDEXV3_HOST || process.env.API_HOST);
                     req.url.path = req.url.path.replace(/^\/b\//g, "/").replace('/press','');
                     req.url.pathname = req.url.pathname.replace(/^\/b\//g, "/").replace('/press',''); 
 
                     req.app.parser = require('./../parsers/category');
 
-                    res(null, req.url.format(req.url), headers);
+                    return {
+                        uri: req.url.format(req.url),
+                        headers: headers
+                    };
 
                 },
 

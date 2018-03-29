@@ -516,6 +516,7 @@ module.exports = function(grunt) {
         jshint: {
             options: {
                 jshintrc: '.jshintrc',
+                esversion: 6,
                 reporter: require('jshint-stylish') 
             },
             all: [
@@ -712,7 +713,7 @@ module.exports = function(grunt) {
             dev: {
                 script: '<%= node.destination %>/index.js',
                 options: {
-                    nodeArgs: ['--debug'],
+                    nodeArgs: ['--inspect'],
                     verbose: true,
                     watch: ['<%= node.destination %>'],
                     ext: 'js,html',

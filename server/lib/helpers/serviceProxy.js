@@ -1,14 +1,15 @@
 'use strict'; 
-var Wreck = require('wreck'),
+const Wreck = require('wreck'),
     Zlib = require('zlib'),
-    Boom = require('boom'),
-    serviceProxy = exports;
+    Boom = require('boom');
+
+let serviceProxy = exports;
 
 serviceProxy.timeout = 20e3;
 
-serviceProxy.getHeaders = function(request, apiKey) {
-    var headers = {};
-    var subDomain = process.env.API_SUBDOMAIN;
+serviceProxy.getHeaders = (request, apiKey) => {
+    let headers = {};
+    const subDomain = process.env.API_SUBDOMAIN;
 
     // Configure the service headers based on the the subdomain(api vs. services)
     if (subDomain === 'api') {
@@ -33,15 +34,15 @@ serviceProxy.getHeaders = function(request, apiKey) {
     return headers;
 };
 
-serviceProxy.getHost = function(request, proxyHost) {
-    var extractedHost = request.headers.host
+serviceProxy.getHost = (request, proxyHost) => {
+    const extractedHost = request.headers.host
         .split('.')
         .slice(1)
         .join('.')
-        .replace(/:[0-9]+/, '');
-    var envSubdomain = process.env.API_SUBDOMAIN;
+        .replace(/:[0-9]+/, ''),
+        envSubdomain = process.env.API_SUBDOMAIN;
 
-    var useDynamicBinding = true;
+    let useDynamicBinding = true;
 
     // We cannot use dynamic API binding if:
     //  - we are in production mode, but on a staging server (herokuapp), or
@@ -58,18 +59,19 @@ serviceProxy.getHost = function(request, proxyHost) {
     }
 };
 
-serviceProxy.getReqHeaderCookie = function(requestCookies, cookieName) {
+serviceProxy.getReqHeaderCookie = (requestCookies, cookieName) => {
     if (requestCookies && requestCookies[cookieName]) {
         return requestCookies[cookieName];
     }
     return '';
 };
 
-serviceProxy.errorHandler = function(statusCode, request, reply, payload) {
+serviceProxy.errorHandler = (statusCode, request, reply, payload) => {
     /* jshint camelcase:false */
-    var message = payload,
-        callSwitch = function() {
-            var logMessage, logErrorObject = {
+    let message = payload,
+        callSwitch = () => {
+            let logMessage;
+            const logErrorObject = {
                 macysOnlineUid: request.state ? request.state.macys_online_uid : '-',
                 upstreamStatusCode: statusCode,
                 upstreamMessage: message
@@ -97,7 +99,7 @@ serviceProxy.errorHandler = function(statusCode, request, reply, payload) {
         };
 
     if (Buffer.isBuffer(payload)) {
-        Zlib.unzip(payload, function(err, chunk) {
+        Zlib.unzip(payload, (err, chunk) => {
             try {
                 message = chunk ? JSON.parse(chunk) : JSON.parse(payload);
             } catch (err) {
@@ -110,7 +112,7 @@ serviceProxy.errorHandler = function(statusCode, request, reply, payload) {
     }
 };
 
-serviceProxy.parseHandler = function(parser, request, res, payload, reply) {
+serviceProxy.parseHandler = (parser, request, res, payload, reply) => {
     // try/catch is synchronous, one of few cases its useful, JSON.parse
     try {
         return reply(parser._parse(request, JSON.parse(payload), res))
@@ -121,7 +123,7 @@ serviceProxy.parseHandler = function(parser, request, res, payload, reply) {
     }
 };
 
-serviceProxy.defaultOnResponse = function(err, res, request, reply) {
+serviceProxy.defaultOnResponse = (err, res, request, reply) => {
     // See recommendations, reviews, or bopsUpc if status codes require custom handling
 
     if (err) {
@@ -131,10 +133,10 @@ serviceProxy.defaultOnResponse = function(err, res, request, reply) {
         return serviceProxy.errorHandler(err.output.statusCode, request, reply, err.output.payload);
     }
 
-    Wreck.read(res, {
+    return Wreck.read(res, {
         timeout: serviceProxy.timeout
-    }, function(err, payload) {
-        var statusCode = res.statusCode,
+    }, (err, payload) => {
+        const statusCode = res.statusCode,
             uri = request.url.format(request.url);
 
         if (err) {
@@ -155,29 +157,29 @@ serviceProxy.defaultOnResponse = function(err, res, request, reply) {
     });
 };
 
-serviceProxy.onResponseRedirect = function(err, res, request, reply) {
+serviceProxy.onResponseRedirect = (err, res, request, reply) => {
 
     if (err) {
         return serviceProxy.errorHandler(err.output.statusCode, request, reply, err.output.payload);
     }
 
-    Wreck.read(res, {
+    return Wreck.read(res, {
         timeout: serviceProxy.timeout
-    }, function(err, payload) {
-        var uri = request.info.host + request.url.format(request.url);
+    }, (err, payload) => {
 
         if (err) {
             return serviceProxy.errorHandler(err.output.statusCode, request, reply, err.output.payload);
         }
 
         //Start setting response headers
-        var response = reply(payload)
+        const uri = request.info.host + request.url.format(request.url),
+            response = reply(payload)
             .code(res.statusCode)
             .header('Upstream-Host', uri)
             .hold();
 
         //Copy all headers from the upstream response
-        Object.keys(res.headers).forEach(function(key) {
+        Object.keys(res.headers).forEach((key) => {
             response.header(key, res.headers[key]);
         });
 
