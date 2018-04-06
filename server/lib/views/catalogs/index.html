@@ -68,12 +68,10 @@
 
       // ensure only syndeca domain as valid sender
       if (event.origin !== syndecaOrigin) {
-        console.log("[SYN] recevied message from invalid domain: ", event.origin, syndecaOrigin);
         return;
       }
-      var message = JSON.parse(event.data);
-      console.log('message recevied:', message);
-      var product = message.product;
+      var message = JSON.parse(event.data),
+        product = message.product;
 
       if(message.fragment && !document.getElementById('innerCatalogsCss')) {
         var link = document.createElement('link');
