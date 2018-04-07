@@ -1,7 +1,9 @@
+<link href="/b/fashion/styles/projects/lookbooks/syndeca-projects/main-catalogs.css" rel="stylesheet" type="text/css" />
+
 <title>Catalogs | Bloomingdale's</title>
 <meta name="description" content="Bloomingdale's Catalogs"/>
 
-<div id="syndeca" style="height: 711px;"></div>
+<div id="syndeca" class="syndeca-container"></div>
 <!-- <script src="//5.syndeca.com/bloomingdales/scripts/syndeca-embed.js" type="text/javascript"
         data-id                       = "syndeca"
         data-guide-key                = "93CF60A3-05AE-D72A-B598-A6135CDBADAD"
@@ -66,37 +68,37 @@
 
       // ensure only syndeca domain as valid sender
       if (event.origin !== syndecaOrigin) {
-        console.log("[SYN] recevied message from invalid domain: ", event.origin, syndecaOrigin);
         return;
       }
-      var message = JSON.parse(event.data);
-      console.log('message recevied:', message);
-      var product = message.product;
+      var message = JSON.parse(event.data),
+        product = message.product;
+
+      if(message.fragment && !document.getElementById('innerCatalogsCss')) {
+        var link = document.createElement('link');
+        link.href = '/b/fashion/styles/projects/lookbooks/syndeca-projects/inner-catalogs.css';
+        link.rel = "stylesheet";
+        link.type = "text/css";
+        link.async = false;
+        link.id = "innerCatalogsCss";
+        insertAfter(link, document.getElementById('syndeca'));
+        setTimeout(function() {
+          resizeFrame();
+        }, 500);
+      }
 
       // only respond to syndeca events
       switch (message.action) {
         case "init":
           break;
         case "quickView":
-          console.log("[SYN] quickView", product.id);
           // client to add call to brand's quick view here
           break;
         case "addToBag":
-          console.log("[SYN] addToBag", product.id, product.sku, product.quantity);
+          createATBObject(product);
           // client to add call to brand's add to bag here
           break;
         case "addToFavorites":
-          console.log("[SYN] addToFavorites", product.id, product.sku);
           // client to add call to brand's add to favorites here
-          break;
-        case "resize": 
-          // resize the iframe when viewer content changes
-          // defaults to the original height set by this template
-          var newHeight = syndecaOriginalHeight;
-          if (message.height > 0) {
-             newHeight = message.height;
-          }
-          document.getElementById('syndeca').style.height = newHeight + 'px';
           break;
       }
     }
@@ -113,6 +115,44 @@
     // setup event listeners for post message
     window.addEventListener("message", receiveSyndecaMessage, false);
     window.addEventListener("scroll", scrollHandler);
+    window.addEventListener("resize", resizeFrame);
+
+    function resizeFrame() {
+      var syndecaScript = document.getElementById('syndeca'), 
+        height, 
+        maxHeight = 1242,
+        styles = document.styleSheets;
+
+      if(styles) {
+        //clear the previous height
+        for (var i=0; i<styles.length; i++) {
+          if(styles[i].href.indexOf('main-catalogs.css') !== -1){
+            styles[i]['rules'][0].style.height = '';
+            break;
+          }
+        } 
+      }
+      
+      syndecaScript.style.height = '';
+
+      height = 
+        syndecaScript.offsetWidth / 2 
+        + 
+        syndecaScript.offsetParent.offsetHeight 
+        - 
+        (syndecaScript.offsetTop * 2);
+
+      if (window.screen.width > 1919) {
+        height += syndecaScript.offsetTop / 2;
+      }
+
+      if(height > maxHeight) {
+        height = maxHeight;
+      }
+
+      syndecaScript.style.height = height + 'px';
+
+    }
 
   })();
 </script>
