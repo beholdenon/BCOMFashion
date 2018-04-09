@@ -126,7 +126,7 @@
       if(styles) {
         //clear the previous height
         for (var i=0; i<styles.length; i++) {
-          if(styles[i].href.indexOf('main-catalogs.css') !== -1){
+          if(styles[i].href && styles[i].href.indexOf('main-catalogs.css') !== -1){
             styles[i]['rules'][0].style.height = '';
             break;
           }
