@@ -103,18 +103,8 @@
       }
     }
 
-    // reposition nav when parent window is scrolled
-    function scrollHandler(event) {
-      var msg = {};
-      msg.action = "scroll";
-      msg.windowScrollY = window.scrollY;
-      msg.syndecaOffsetTop = document.getElementById('syndeca').offsetTop;
-      document.getElementById('syndeca-viewer-frame').contentWindow.postMessage(JSON.stringify(msg), syndecaOrigin);
-    }
-
     // setup event listeners for post message
     window.addEventListener("message", receiveSyndecaMessage, false);
-    window.addEventListener("scroll", scrollHandler);
     window.addEventListener("resize", resizeFrame);
 
     function resizeFrame() {
