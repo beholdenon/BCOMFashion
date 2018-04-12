@@ -68,16 +68,19 @@
         return;
       }
       var message = JSON.parse(event.data),
-        product = message.product;
+        product = message.product,
+        innerCatalogsCss = document.getElementById('innerCatalogsCss');
 
-      if(message.fragment && !document.getElementById('innerCatalogsCss')) {
+      if((message.fragment || location.hash) && !innerCatalogsCss) {
         var link = document.createElement('link');
         link.href = '/b/fashion/styles/projects/lookbooks/syndeca-projects/inner-catalogs.css';
         link.rel = "stylesheet";
         link.type = "text/css";
-        link.async = false;
         link.id = "innerCatalogsCss";
+        script.setAttribute('async',false);
         insertAfter(link, document.getElementById('syndeca'));
+      } else if (!message.fragment && !location.hash && innerCatalogsCss) {
+        innerCatalogsCss.remove()
       }
 
       // only respond to syndeca events
