@@ -60,9 +60,6 @@
       }
     }
 
-    // store original size of syndeca for iframe resize actions later
-    var syndecaOriginalHeight = document.getElementById('syndeca').clientHeight;
-
     // receive syndeca post messages
     function receiveSyndecaMessage(event) {
 
@@ -81,9 +78,6 @@
         link.async = false;
         link.id = "innerCatalogsCss";
         insertAfter(link, document.getElementById('syndeca'));
-        setTimeout(function() {
-          resizeFrame();
-        }, 2000);
       }
 
       // only respond to syndeca events
@@ -105,44 +99,6 @@
 
     // setup event listeners for post message
     window.addEventListener("message", receiveSyndecaMessage, false);
-    window.addEventListener("resize", resizeFrame);
-
-    function resizeFrame() {
-      var syndecaScript = document.getElementById('syndeca'), 
-        height, 
-        maxHeight = 1242,
-        styles = document.styleSheets;
-
-      if(styles) {
-        //clear the previous height
-        for (var i=0; i<styles.length; i++) {
-          if(styles[i].href && styles[i].href.indexOf('main-catalogs.css') !== -1){
-            styles[i]['rules'][0].style.height = '';
-            break;
-          }
-        } 
-      }
-      
-      syndecaScript.style.height = '';
-
-      height = 
-        syndecaScript.offsetWidth / 2 
-        + 
-        syndecaScript.offsetParent.offsetHeight 
-        - 
-        (syndecaScript.offsetTop * 2);
-
-      if (window.screen.width > 1919) {
-        height += syndecaScript.offsetTop / 2;
-      }
-
-      if(height > maxHeight) {
-        height = maxHeight;
-      }
-
-      syndecaScript.style.height = height + 'px';
-
-    }
 
   })();
 </script>
