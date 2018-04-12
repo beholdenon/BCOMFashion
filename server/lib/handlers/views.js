@@ -13,7 +13,7 @@ let killswitches = require('./../helpers/killswitchesHelper'),
 
     args = killswitches.argsFactory(),
 
-    detectMobileDeviceView = function detectMobileDeviceView(requestPath, req) {
+    detectMobileDeviceView = (requestPath, req) => {
         let view = requestPath + 'index',
             deviceType = deviceDetectionHelper.detectDevice(req);
 
@@ -33,7 +33,7 @@ let killswitches = require('./../helpers/killswitchesHelper'),
 
     // Reads the file passed in and checks if any of the head* helpers are used
     // Use of a head* helper is done using HTML comments <!-- -->
-    headHelpers = function headHelpers(file, req) {
+    headHelpers = (file, req) => {
         let contents,
             lines,
             dir;
@@ -100,7 +100,7 @@ let killswitches = require('./../helpers/killswitchesHelper'),
                 console.log("Error using head* helper in " + file);
                 console.log("Argument must be an object");
             }
-            	args.utagData = tagDataHelper.getPageType(req);
+                args.utagData = tagDataHelper.getPageType(req);
             
         } catch (e) {
             console.log("Error reading file name " + file + " in headHelpers function");
@@ -111,7 +111,7 @@ let killswitches = require('./../helpers/killswitchesHelper'),
     },
 
     // Handle URL deeplinks params: discard fragment on the server-side and handle it on client-side.
-    detectDeepLinks = function detectDeepLinks(req, defaultReqPath){
+    detectDeepLinks = (req, defaultReqPath) => {
         let requestPath;
 
         if (/\{deeplinks\?}/.test(req.route.path)){
@@ -136,13 +136,13 @@ module.exports = {
         description: 'Non-responsive layout',
         notes: 'Reading Akamai headers, and based on device type (phone, tablet, desktop), serve either index.html or index-mobile.html layout',
         tags: ['non-responsive'],
-        handler: function(req, res) {
-            let requestPath = req.url.pathname;
-                requestPath = requestPath.substring(1);
+        handler: (req, res) => {
 
             let querystring = req.url.search || '',
                 deviceDetectProc,
-                file;
+                file,
+                requestPath = req.url.pathname;
+                requestPath = requestPath.substring(1);
 
             // get rid of trailing spaces, add a trailing slash if missing, then redirect
             if ( ! /\/$/.test(requestPath) ) {
@@ -171,7 +171,7 @@ module.exports = {
         description: 'Responsive pages that use a custom Header&Footer',
         notes: 'Serve common html view for both desktop and mobile; exclude standard H&F',
         tags: ['custom header & footer', 'static'],
-        handler: function(req, res) {
+        handler: (req, res) => {
             let requestPath = (req.url.pathname).replace(/^\/b\//g, "/").substring(1),
                 file = requestPath.replace(/\\/g,"/");
 
@@ -191,7 +191,7 @@ module.exports = {
         description: 'Responsive pages that have been built in AngularJS. No HF',
         notes: 'Serve common html view for both desktop and mobile; exclude standard H&F and jQuery',
         tags: ['custom header & footer', 'static'],
-        handler: function(req, res) {
+        handler: (req, res) => {
             let requestPath = (req.url.pathname).replace(/^\/b\//g, "/").substring(1),
                 file = requestPath.replace(/\\/g,"/");
 
@@ -211,11 +211,12 @@ module.exports = {
         description: 'Serve responsive standard layout',
         notes: 'This is the default fallback route if not explicitly captured',
         tags: ['fallback', 'static'],
-        handler: function(req, res) {
-            let querystring = req.url.search || '',
+        handler: (req, res) => {
+            let file,
+                querystring = req.url.search || '',
                 requestPath = req.url.pathname;
                 requestPath = requestPath.substring(1);
-            let file;
+
 
             // (for dev only) override the user agent by passing in a query
             if (req.query.UA){

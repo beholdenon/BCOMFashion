@@ -1,6 +1,6 @@
 'use strict';
 
-let serviceProxy = require('./../helpers/serviceProxy'),
+const serviceProxy = require('./../helpers/serviceProxy'),
     Path = require('path');
 
 module.exports = {
@@ -8,22 +8,25 @@ module.exports = {
         description: 'Static assets',
         notes: 'All requests that begin with /fashion are assumed to be static assets in /public',
         tags: ['static'],
-        handler: function(req, res) {
+        handler: (req, res) => {
 
-            let urlPath = req.url.path.replace(/^\/b\//g, "/");
-            let env = process.env.NODE_ENV;
+            const urlPath = req.url.path.replace(/^\/b\//g, "/"),
+                env = process.env.NODE_ENV;
             let filePath = '/' + urlPath.split('/').splice(2).join('/').replace(/\?.*/,'');
 
             if (env === 'dev') {
                 filePath = '.' + filePath;
-                res.file(filePath);
+                return res.file(filePath);
             } else if (env === 'production'){
-                res.proxy({
+                return res.proxy({
                     timeout: serviceProxy.timeout,
                     passThrough: true,
-                    mapUri: function(req, callback) {
+                    mapUri: () => {
                         let uri = 'http://' + process.env.NETSTORAGE + process.env.NETSTORAGE_ROOT_DIR + filePath;
-                        callback(null, uri);
+                        
+                        return {
+                            uri: uri
+                        };
                     },
                     onResponse: serviceProxy.onResponseRedirect
                 });
@@ -34,18 +37,21 @@ module.exports = {
     },
 
     commonAssets: {
-        handler: function(req, res) {
-            var headers = {
+        handler: (req, res) => {
+            const headers = {
                 accept: 'application/json',
                 'Content-Type': 'application/json'
             };
 
-            res.proxy({
+            return res.proxy({
                 timeout: serviceProxy.timeout,
                 passThrough: true,
-                mapUri: function(req, callback) {
-                    let uri = process.env.BASE_ASSETS + req.url.path.replace(/^\/b\//g, "/");
-                    callback(null, uri, headers);
+                mapUri: (req) => {
+                    const uri = process.env.BASE_ASSETS + req.url.path.replace(/^\/b\//g, "/");
+                    return {
+                        uri: uri,
+                        headers: headers
+                    };
                 },
                 onResponse: serviceProxy.onResponseRedirect
             });
@@ -53,18 +59,21 @@ module.exports = {
     },
 
     topNav: {
-        handler: function(req, res) {
-            var headers = {
+        handler: (req, res) => {
+            const headers = {
                 accept: 'application/json',
                 'Content-Type': 'application/json'
             };
 
-            res.proxy({
+            return res.proxy({
                 timeout: serviceProxy.timeout,
                 passThrough: true,
-                mapUri: function(req, callback) {
-                    let uri = process.env.BASE_ASSETS + req.url.path.replace(/^\/b\//g, "/");
-                    callback(null, uri, headers);
+                mapUri: (req) => {
+                    const uri = process.env.BASE_ASSETS + req.url.path.replace(/^\/b\//g, "/");
+                    return {
+                        uri: uri,
+                        headers: headers
+                    };
                 },
                 onResponse: serviceProxy.onResponseRedirect
             });
@@ -72,14 +81,16 @@ module.exports = {
     },
 
     bagHandler: {
-        handler: function(req, res) {
+        handler: (req, res) => {
 
-            res.proxy({
+            return res.proxy({
                 timeout: serviceProxy.timeout,
                 passThrough: true,
-                mapUri: function(req, callback) {
-                    let uri = process.env.BASE_HOST  + req.url.path.replace(/^\/b\//g, "/");
-                    callback(null, uri);
+                mapUri: (req) => {
+                    let uri = process.env.BASE_HOST + req.url.path.replace(/^\/b\//g, "/");
+                    return {
+                        uri: uri
+                    };
                 }
             });
         },
@@ -93,9 +104,9 @@ module.exports = {
         description: 'Angular views',
         notes: 'Requests made by Angular to load template components',
         tags: ['angular views'],
-        handler: function(req, res) {
-            let ngView = Path.join(__dirname, '../views', req.url.path.replace(/^\/b\//g, "/") );
-            res.file(ngView);
+        handler: (req, res) => {
+            const ngView = Path.join(__dirname, '../views', req.url.path.replace(/^\/b\//g, "/") );
+            return res.file(ngView);
         }
     }
 };
