@@ -163,27 +163,5 @@ serviceProxy.onResponseRedirect = (err, res, request, reply) => {
         return serviceProxy.errorHandler(err.output.statusCode, request, reply, err.output.payload);
     }
 
-    return Wreck.read(res, {
-        timeout: serviceProxy.timeout
-    }, (err, payload) => {
-
-        if (err) {
-            return serviceProxy.errorHandler(err.output.statusCode, request, reply, err.output.payload);
-        }
-
-        //Start setting response headers
-        const uri = request.info.host + request.url.format(request.url),
-            response = reply(payload)
-            .code(res.statusCode)
-            .header('Upstream-Host', uri)
-            .hold();
-
-        //Copy all headers from the upstream response
-        Object.keys(res.headers).forEach((key) => {
-            response.header(key, res.headers[key]);
-        });
-
-        //Send response
-        response.send();
-    });
+    return res;
 };
