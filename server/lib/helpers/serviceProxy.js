@@ -1,6 +1,5 @@
 'use strict'; 
-const Wreck = require('wreck'),
-    Zlib = require('zlib'),
+const Zlib = require('zlib'),
     Boom = require('boom');
 
 let serviceProxy = exports;
@@ -133,28 +132,7 @@ serviceProxy.defaultOnResponse = (err, res, request, reply) => {
         return serviceProxy.errorHandler(err.output.statusCode, request, reply, err.output.payload);
     }
 
-    return Wreck.read(res, {
-        timeout: serviceProxy.timeout
-    }, (err, payload) => {
-        const statusCode = res.statusCode,
-            uri = request.url.format(request.url);
-
-        if (err) {
-            return serviceProxy.errorHandler(err.output.statusCode, request, reply, err.output.payload);
-        }
-
-        switch (true) {
-            case statusCode === 200:
-                return serviceProxy.parseHandler(request.app.parser, request, res, payload, reply);
-            case statusCode === 301 || (statusCode >= 400 && statusCode < 600):
-                return serviceProxy.errorHandler(statusCode, request, reply, payload);
-            default:
-                return reply(payload)
-                    .code(statusCode)
-                    .type(res.headers['content-type'])
-                    .header('Upstream-Host', uri);
-        }
-    });
+    return res;
 };
 
 serviceProxy.onResponseRedirect = (err, res, request, reply) => {
@@ -164,4 +142,5 @@ serviceProxy.onResponseRedirect = (err, res, request, reply) => {
     }
 
     return res;
+
 };

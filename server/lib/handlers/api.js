@@ -10,8 +10,6 @@ module.exports = {
         handler: {
             proxy: {
                 timeout: serviceProxy.timeout,
-                passThrough: true,
-                acceptEncoding: false,
                 mapUri: (req) => {
 
                     const headers = serviceProxy.getHeaders(req, process.env.CATALOGCATEGORYV3_KEY);
@@ -22,7 +20,8 @@ module.exports = {
 
                     return {
                         uri: req.url.format(req.url),
-                        headers: headers
+                        headers: headers,
+                        timeout: serviceProxy.timeout
                     };
 
                 },
@@ -40,8 +39,6 @@ module.exports = {
         handler: {
             proxy: {
                 timeout: serviceProxy.timeout,
-                passThrough: true,
-                acceptEncoding: false,
                 mapUri: (req) => {
 
                     const headers = serviceProxy.getHeaders(req, process.env.CATALOGCATEGORYV3_KEY);
@@ -52,7 +49,8 @@ module.exports = {
 
                     return {
                         uri: req.url.format(req.url),
-                        headers: headers
+                        headers: headers,
+                        timeout: serviceProxy.timeout
                     };
 
                 },
