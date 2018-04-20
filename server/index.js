@@ -118,8 +118,6 @@ const startServer = async () => {
         { method: 'GET',  path: '/fashion-tips/mattress-buying-guide/',                                         config: require('./lib/handlers/views').adaptive },
         { method: 'GET',  path: '/in-store/diane-von-furstenberg/',                                             config: require('./lib/handlers/views').adaptive },
         { method: 'GET',  path: '/in-store/louis-vuitton/',                                                     config: require('./lib/handlers/views').adaptive },
-        { method: 'GET',  path: '/in-store/givenchy-shoes/',                                                    config: require('./lib/handlers/views').adaptive },
-        { method: 'GET',  path: '/b/in-store/givenchy-shoes/',                                                  config: require('./lib/handlers/views').adaptive },
 
         { method: 'GET',  path: '/in-store/{action*}',                                                          config: viewHandlers.adaptiveWithStaticDataFactory('in-store/index') },
         { method: 'GET',  path: '/b/in-store/{action*}',                                                        config: viewHandlers.adaptiveWithStaticDataFactory('in-store/index') },
