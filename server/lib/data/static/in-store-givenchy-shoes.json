@@ -39,7 +39,7 @@
       "phoneNumber": "714-824-4600",
       "phoneNumberHrefSuffix": "+1-714-824-4600",
       "urlArgs": {
-        "addressAlias": "SOUTH-COAST-PLAZA",
+        "addressAlias": "south-coast-plaza",
         "designerAlias": "givenchy_shoes",
         "addressFullDetail": "SOUTH-COAST-PLAZA"
       }
@@ -51,7 +51,7 @@
       "phoneNumber": "310-772-2100",
       "phoneNumberHrefSuffix": "+1-310-772-2100",
       "urlArgs": {
-        "addressAlias": "CENTURY-CITY",
+        "addressAlias": "century-city",
         "designerAlias": "givenchy_shoes",
         "addressFullDetail": "CENTURY-CITY"
       }
