@@ -1,0 +1,60 @@
+{
+  "designerName": "GIVENCHY SHOES",
+  "machineReadableDesignerName": "givenchy_shoes",
+  "title2Prefix": "Givenchy Shoes",
+  "title2Suffix": "",
+  "omitTitle" : false,
+  "pageUrlDesignerAlias": "givenchy-shoes",
+  "designerDescription": "",
+  "mainImage" : "",
+  "addressColumns": [
+    [{
+      "name": "AVENTURA MALL",
+      "streetAddress": "19555 Biscayne Boulevard",
+      "cityStateZip": "The Aventura Mall<br />Aventura, FL 33180",
+      "phoneNumber": "305-792-1000",
+      "phoneNumberHrefSuffix": "+1-305-792-1000",
+      "urlArgs": {
+        "addressAlias": "aventura",
+        "designerAlias": "givenchy_shoes",
+        "addressFullDetail": "AVENTURA-MALL"
+      }
+    }],
+    [{
+      "name": "SHORT HILLS",
+      "streetAddress": "1200 Morris Turnpike",
+      "cityStateZip": "The Mall at Short Hills<br />Short Hills, NJ 07078",
+      "phoneNumber": "973-548-2200",
+      "phoneNumberHrefSuffix": "+1-973-548-2200",
+      "urlArgs": {
+        "addressAlias": "short-hills",
+        "designerAlias": "givenchy_shoes",
+        "addressFullDetail": "THE-MALL-AT-SHORT-HILLS"
+      }
+    }],
+    [{
+      "name": "SOUTH COAST PLAZA",
+      "streetAddress": "3333 South Bristol Street",
+      "cityStateZip": "Costa Mesa, CA 92626",
+      "phoneNumber": "714-824-4600",
+      "phoneNumberHrefSuffix": "+1-714-824-4600",
+      "urlArgs": {
+        "addressAlias": "SOUTH-COAST-PLAZA",
+        "designerAlias": "givenchy_shoes",
+        "addressFullDetail": "SOUTH-COAST-PLAZA"
+      }
+    }],
+    [{
+      "name": "CENTURY CITY",
+      "streetAddress": "10250 Santa Monica Boulevard",
+      "cityStateZip": "Los Angeles, CA 90067",
+      "phoneNumber": "310-772-2100",
+      "phoneNumberHrefSuffix": "+1-310-772-2100",
+      "urlArgs": {
+        "addressAlias": "CENTURY-CITY",
+        "designerAlias": "givenchy_shoes",
+        "addressFullDetail": "CENTURY-CITY"
+      }
+    }]
+  ]
+}
