@@ -2,12 +2,36 @@
   "designerName": "GIVENCHY SHOES",
   "machineReadableDesignerName": "givenchy_shoes",
   "title2Prefix": "Givenchy Shoes",
-  "title2Suffix": "",
+  "title2Suffix": "ARE ONLY AVAILABLE AT SELECT BLOOMINGDALE’S STORES.",
   "omitTitle" : false,
   "pageUrlDesignerAlias": "givenchy-shoes",
   "designerDescription": "",
   "mainImage" : "",
   "addressColumns": [
+    [{
+      "name": "59th Street",
+      "streetAddress": "1000 Third Avenue",
+      "cityStateZip": "59th Street and Lexington Avenue<br />New York, NY 10022",
+      "phoneNumber": "212-705-2000",
+      "phoneNumberHrefSuffix": "+1-212-705-2000",
+      "urlArgs": {
+        "addressAlias": "59th-street",
+        "designerAlias": "givenchy_shoes",
+        "addressFullDetail": "59TH-STREET-LEXINGTON-AVENUE"
+      }
+    },
+    {
+      "name": "CENTURY CITY",
+      "streetAddress": "10250 Santa Monica Boulevard",
+      "cityStateZip": "Los Angeles, CA 90067",
+      "phoneNumber": "310-772-2100",
+      "phoneNumberHrefSuffix": "+1-310-772-2100",
+      "urlArgs": {
+        "addressAlias": "century-city",
+        "designerAlias": "givenchy_shoes",
+        "addressFullDetail": "CENTURY-CITY"
+      }
+    }],
     [{
       "name": "AVENTURA MALL",
       "streetAddress": "19555 Biscayne Boulevard",
@@ -42,18 +66,6 @@
         "addressAlias": "south-coast-plaza",
         "designerAlias": "givenchy_shoes",
         "addressFullDetail": "SOUTH-COAST-PLAZA"
-      }
-    }],
-    [{
-      "name": "CENTURY CITY",
-      "streetAddress": "10250 Santa Monica Boulevard",
-      "cityStateZip": "Los Angeles, CA 90067",
-      "phoneNumber": "310-772-2100",
-      "phoneNumberHrefSuffix": "+1-310-772-2100",
-      "urlArgs": {
-        "addressAlias": "century-city",
-        "designerAlias": "givenchy_shoes",
-        "addressFullDetail": "CENTURY-CITY"
       }
     }]
   ]
