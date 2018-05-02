@@ -1,5 +1,5 @@
 #my-perks {
-	TD {
+	div {
 		vertical-align: top;
 	}
 
@@ -37,9 +37,7 @@
     }
 
 	#my-perks-header {
-		position: relative;
-		z-index: 9;
-		top: 13px;
+		padding-top: 13px;
 	}
 
 	#my-perks-body {
