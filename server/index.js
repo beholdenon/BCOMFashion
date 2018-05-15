@@ -22,6 +22,8 @@ const Hapi = require('hapi'),
 
     campaigns = require(__dirname + '/routes/campaign_routes');
 
+require('./lib/helpers/handlebarsHelpers');    
+
 const validate_routes = ( route, validation, validation_string ) => {
     let invalid = '';
 
