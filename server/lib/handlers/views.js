@@ -100,7 +100,8 @@ let killswitches = require('./../helpers/killswitchesHelper'),
                 console.log("Error using head* helper in " + file);
                 console.log("Argument must be an object");
             }
-                args.utagData = tagDataHelper.getPageType(req);
+
+            	args.utagData = tagDataHelper.getUtagData(req);
             
         } catch (e) {
             console.log("Error reading file name " + file + " in headHelpers function");

@@ -1,22 +1,23 @@
 'use strict';
 
 var prepareTagData = {};
-prepareTagData.getPageType = function(req) {
+prepareTagData.getUtagData = function(req) {
     var tagUrls = require('../data/static/categoryurls.json').tagUrls,
         urlsLength = tagUrls.length,
-        pageType = "";
+        utagObj = {};
     for(var i=0; i<urlsLength; i++){
         var obj = tagUrls[i];
 
         if(obj.url.indexOf(req.path) !== -1){
-            if (pageType === "") {
-                pageType = obj.pageType;
-            }
+            utagObj.pageType = obj.pageType;
+            if (obj.pageName)
+                utagObj.pageName = obj.pageName;
+            break;
         }
 
     }
 
-    return pageType;
+    return utagObj;
 };
 
 module.exports = prepareTagData;

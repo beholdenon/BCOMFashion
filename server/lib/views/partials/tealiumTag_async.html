@@ -1,10 +1,18 @@
 <!-- Loading script asynchronously -->
 <script type="text/javascript">
-var utag_data = utag_data || {},
-utag_data = jQuery.extend(utag_data,{'page_type': '{{args.utagData}}'});
-    (function(a,b,c,d){
-	    a='//tags.tiqcdn.com/utag/bcom/main/{{args.tealiumType}}/utag.js';
-	    b=document;c='script';d=b.createElement(c);d.src=a;d.type='text/java'+c;d.async=true;
-	    a=b.getElementsByTagName(c)[0];a.parentNode.insertBefore(d,a);
-    })();
+  var utag_data = utag_data || {};
+
+  utag_data = jQuery.extend(utag_data, {
+    {{#if args.utagData.pageName}}
+      'page_name': '{{args.utagData.pageName}}',
+    {{/if}}
+    {{#if args.utagData.pageType}}
+      'page_type': '{{args.utagData.pageType}}',
+    {{/if}}
+  });
+  (function(a,b,c,d){
+    a='//tags.tiqcdn.com/utag/bcom/main/{{args.tealiumType}}/utag.js';
+    b=document;c='script';d=b.createElement(c);d.src=a;d.type='text/java'+c;d.async=true;
+    a=b.getElementsByTagName(c)[0];a.parentNode.insertBefore(d,a);
+  })();
 </script>

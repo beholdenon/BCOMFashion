@@ -87,7 +87,7 @@ module.exports = function (viewAlias, dataProducer, layoutObj) {
                 requestPathPartial = stripInitialForwardSlash(requestPath),
                 dataProducerData = typeof dataProducer === 'function' ? dataProducer(req) : null,
                 argsForView = argsWithDeviceMetaData(req, killswitches.argsFactory(), requestPathPartial),
-                utagData = tagDataHelper.getPageType(req),
+                utagData = tagDataHelper.getUtagData(req),
                 getMergedArgs = otherData => sjl.extend(true, argsForView, dataProducerData, otherData, {utagData:utagData}),
                 resolveRequest = viewTemplateName => {
 

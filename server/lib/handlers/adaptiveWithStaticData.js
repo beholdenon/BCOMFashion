@@ -64,7 +64,7 @@ module.exports = {
             requestPathPartial = stripInitialForwardSlash(requestPath),
             viewAlias = ensureTrailingForwardSlash(requestPathPartial) + 'index',
             argsForView = argsWithDeviceMetaData(req, killswitches.argsFactory());
-        	argsForView.utagData = tagDataHelper.getPageType(req);
+        	argsForView.utagData = tagDataHelper.getUtagData(req);
 
         // Check if we have any static data to merge to `args` before rendering view
         // then render it and return the promise
