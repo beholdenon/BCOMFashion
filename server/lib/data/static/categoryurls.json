@@ -10,10 +10,92 @@
     "pageType":"in store"
   },{
     "url":"/b/about-us/buy-online-pickup-in-store/",
-    "pageType":"about us"
+    "pageType":"about us",
+    "pageName":"pick up in store"
   },{
     "url":"/b/about-us/affiliate-program-network-partner/",
-    "pageType":"about us"
+    "pageType":"about us",
+    "pageName":"affiliate signup"
+  },{
+    "url":"/b/about-us/amfar-b-cause-philanthropy/",
+    "pageType":"about us",
+    "pageName":"amfar"
+  },{
+    "url":"/b/about-us/appointment-scheduling-in-store-services/",
+    "pageType":"about us",
+    "pageName":"book an appointment"
+  },{
+    "url":"/b/about-us/child-mind-institute-b-cause-philanthropy/",
+    "pageType":"about us",
+    "pageName":"childmind"
+  },{
+    "url":"/b/about-us/company/press/index/",
+    "pageType":"about us",
+    "pageName":"press releases"
+  },{
+    "url":"/b/about-us/directory/",
+    "pageType":"about us",
+    "pageName":"about"
+  },{
+    "url":"/b/about-us/diversity-inclusion/",
+    "pageType":"about us",
+    "pageName":"diversity inclusion"
+  },{
+    "url":"/b/about-us/giving-back-to-community/",
+    "pageType":"about us",
+    "pageName":"giving back to community"
+  },{
+    "url":"/b/about-us/help-usa-b-cause-philanthropy/",
+    "pageType":"about us",
+    "pageName":"mentoring usa"
+  },{
+    "url":"/b/about-us/history/",
+    "pageType":"about us",
+    "pageName":"our history"
+  },{
+    "url":"/b/about-us/jdrf-b-cause-philanthropy/",
+    "pageType":"about us",
+    "pageName":"jdrf"
+  },{
+    "url":"/b/about-us/mobile-shopping-online/",
+    "pageType":"about us",
+    "pageName":"bloomingdale`s app"
+  },{
+    "url":"/b/about-us/new-store-openings/",
+    "pageType":"about us",
+    "pageName":"new stores"
+  },{
+    "url":"/b/about-us/philanthropy/",
+    "pageType":"about us",
+    "pageName":"philanthropy"
+  },{
+    "url":"/b/about-us/pink-campaign-b-cause-philanthropy/",
+    "pageType":"about us",
+    "pageName":"bcrf"
+  },{
+    "url":"/b/about-us/shopping/corporate-business-gifts/",
+    "pageType":"about us",
+    "pageName":"corporate services"
+  },{
+    "url":"/b/about-us/shopping/fashion-studio-styling-services/",
+    "pageType":"about us",
+    "pageName":"studio services"
+  },{
+    "url":"/b/about-us/shopping/international-visitor-services/",
+    "pageType":"about us",
+    "pageName":"international visitor services"
+  },{
+    "url":"/b/about-us/shopping/personal-shopper-complimentary-service/",
+    "pageType":"about us",
+    "pageName":"personal shopper"
+  },{
+    "url":"/b/about-us/shopping/shopping-services/",
+    "pageType":"about us",
+    "pageName":"shopping services"
+  },{
+    "url":"/b/about-us/store-events-ways-to-shop/",
+    "pageType":"about us",
+    "pageName":"ways to shop"
   },{
     "url":"/b/campaign/give-pink-get-more/breast-cancer-awareness/",
     "pageType":"campaign"
@@ -27,16 +109,7 @@
     "url":"/b/makeup-date/makeup-tutorial/",
     "pageType":"lookbook"
   },{
-    "url":"/b/about-us/new-store-openings/",
-    "pageType":"about us"
-  },{
     "url":"/b/about-us/shopping/at-your-service-listing/",
-    "pageType":"about us"
-  },{
-    "url":"/b/about-us/shopping/corporate-business-gifts/",
-    "pageType":"about us"
-  },{
-    "url":"/b/about-us/shopping/personal-shopper-complimentary-service/",
     "pageType":"about us"
   },{
     "url":"/b/about-us/shopping/sizecharts/kids-boys-girls-clothing/",
@@ -51,46 +124,16 @@
     "url":"/b/about-us/shopping/sizecharts/womens-petite-plus/",
     "pageType":"about us"
   },{
-    "url":"/b/about-us/shopping/fashion-studio-styling-services/",
-    "pageType":"about us"
-  },{
     "url":"/b/fashion-index/top-fashion-outlet-store/",
     "pageType":"static evergreen marketing page"
   },{
     "url":"/b/landing-page/hawaii-ala-moana/",
     "pageType":"static evergreen marketing page"
   },{
-    "url":"/b/about-us/amfar-b-cause-philanthropy/",
-    "pageType":"about us"
-  },{
-    "url":"/b/about-us/pink-campaign-b-cause-philanthropy/",
-    "pageType":"about us"
-  },{
-    "url":"/b/about-us/child-mind-institute-b-cause-philanthropy/",
-    "pageType":"about us"
-  },{
-    "url":"/b/about-us/jdrf-b-cause-philanthropy/",
-    "pageType":"about us"
-  },{
-    "url":"/b/about-us/help-usa-b-cause-philanthropy/",
-    "pageType":"about us"
-  },{
-    "url":"/b/about-us/philanthropy/",
-    "pageType":"about us"
-  },{
     "url":"/b/media/about/history/",
     "pageType":"about us"
   },{
-    "url":"/b/about-us/mobile-shopping-online/",
-    "pageType":"about us"
-  },{
-    "url":"/b/about-us/store-events-ways-to-shop/",
-    "pageType":"about us"
-  },{
     "url":"/b/about-us/company/press/background-history/",
-    "pageType":"about us"
-  },{
-    "url":"/b/about-us/company/press/index/",
     "pageType":"about us"
   },{
     "url":"/b/service/ibmdigitalanalytics_options/",
