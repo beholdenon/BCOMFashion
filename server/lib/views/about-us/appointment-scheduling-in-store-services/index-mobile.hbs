@@ -58,31 +58,6 @@
                     
                 </section>
 
-                <section class="row book-section" id="fine_jewelry">
-
-                    <img src="/b/fashion/images/projects/about-us/appointment-scheduling-in-store-services/m_Fine_Jewelry.jpg" alt=""/>
-
-                    <div class="row book-section-text">
-
-                        <h2>FINE JEWELRY</h2>
-                        <p>
-                            In addition to helping you choose an exquisite piece of jewelry, our expert consultants can assist you in ordering additional sizes, jewelry and watch repair, or learning about the 4Cs.
-                        </p>
-
-                        {{#isEnvironment 'production'}}
-
-                            <a class="button" data-cm-link="Fine_Jewelry" href="https://timetrade.com/app/bloomingdales/workflows/bloomingdales005/schedule/?&appointmentTypeGroupId=fine_jewelry&ch=BCOM_ASLP" target="_blank" onclick="return tt.launchWorkflow(this);">BOOK AN APPOINTMENT</a>
-
-                        {{else}}
-
-                            <a class="button" data-cm-link="Fine_Jewelry" href="https://ui-stage.timetradesystems.com/app/bloomingdales/workflows/bloomingdales005/schedule/?&appointmentTypeGroupId=fine_jewelry" target="_blank" onclick="return tt.launchWorkflow(this);">BOOK AN APPOINTMENT</a>
-
-                        {{/isEnvironment}}
-
-                    </div>
-                    
-                </section>
-
                 <section class="row book-section" id="shopping_services">
 
                     <img src="/b/fashion/images/projects/about-us/appointment-scheduling-in-store-services/m_Shopping_Services.jpg" alt=""/>
@@ -126,6 +101,31 @@
                         {{else}}
 
                             <a class="button" data-cm-link="The_Registry" href="https://ui-stage.timetradesystems.com/app/bloomingdales/workflows/bloomingdales005/schedule/?&appointmentTypeGroupId=gift_registry" target="_blank" onclick="return tt.launchWorkflow(this);">BOOK AN APPOINTMENT</a>
+
+                        {{/isEnvironment}}
+
+                    </div>
+                    
+                </section>
+
+                <section class="row book-section" id="fine_jewelry">
+
+                    <img src="/b/fashion/images/projects/about-us/appointment-scheduling-in-store-services/m_Fine_Jewelry.jpg" alt=""/>
+
+                    <div class="row book-section-text">
+
+                        <h2>FINE JEWELRY</h2>
+                        <p>
+                            In addition to helping you choose an exquisite piece of jewelry, our expert consultants can assist you in ordering additional sizes, jewelry and watch repair, or learning about the 4Cs.
+                        </p>
+
+                        {{#isEnvironment 'production'}}
+
+                            <a class="button" data-cm-link="Fine_Jewelry" href="https://timetrade.com/app/bloomingdales/workflows/bloomingdales005/schedule/?&appointmentTypeGroupId=fine_jewelry&ch=BCOM_ASLP" target="_blank" onclick="return tt.launchWorkflow(this);">BOOK AN APPOINTMENT</a>
+
+                        {{else}}
+
+                            <a class="button" data-cm-link="Fine_Jewelry" href="https://ui-stage.timetradesystems.com/app/bloomingdales/workflows/bloomingdales005/schedule/?&appointmentTypeGroupId=fine_jewelry" target="_blank" onclick="return tt.launchWorkflow(this);">BOOK AN APPOINTMENT</a>
 
                         {{/isEnvironment}}
 
