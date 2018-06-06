@@ -1,6 +1,8 @@
 <!-- Loading script asynchronously -->
 <script type="text/javascript">
   var utag_data = utag_data || {};
+  window.utag_cfg_ovrd = {};
+  window.utag_cfg_ovrd.noview = true;
 
   utag_data = jQuery.extend(utag_data, {
     {{#if args.utagData.pageName}}

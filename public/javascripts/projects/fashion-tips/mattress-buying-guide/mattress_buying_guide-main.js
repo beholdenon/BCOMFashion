@@ -1,4 +1,4 @@
-require(['jquery', 'coremetrics'], function($, CoreMetrics) {
+require(['jquery', 'coremetrics', 'tagManagerUtil'], function($, CoreMetrics, TagManagerUtil) {
 
     /* jshint camelcase:false */
     /* globals BLOOMIES */
@@ -480,6 +480,13 @@ require(['jquery', 'coremetrics'], function($, CoreMetrics) {
         }
     }
 
+    function firePageViewTag(aPageName, aPageType) {
+      TagManagerUtil.fireTag('view', {
+        page_name: aPageName,
+        page_type: aPageType,
+      });
+    }
+
     function changeView(hash) {
 
         var deviceView = ( namespace.state.isDesktop === true ? '_desktop_' : '_mobile_' );
@@ -514,6 +521,8 @@ require(['jquery', 'coremetrics'], function($, CoreMetrics) {
             }
 
             if (hash !== '' && hash !== 'quiz') {
+                var pageNameVal = hash.toLowerCase().replace(/_/g, " ");
+                firePageViewTag("mattressguide " + pageNameVal, "guides");
                 coreMetrics("Pageview", namespace.coremetrics, namespace.coremetrics + "--" + ( hash === 'buying_guide' ? 'hp' : hash ));
             }
             if (hash.indexOf('quiz') >= 0) {
@@ -536,10 +545,17 @@ require(['jquery', 'coremetrics'], function($, CoreMetrics) {
             $('#mattress_buying_guide_quiz' + deviceView + '01').fadeIn();
 
             coreMetrics("Pageview", namespace.coremetrics, namespace.coremetrics + "--find_your_mattress_size");
+            firePageViewTag("mattressguide find size", "guides");
         } else if (step === 1) {
             $('#mattress_buying_guide_quiz' + deviceView + '02').siblings().hide();
             $('#mattress_buying_guide_quiz' + deviceView + '02').fadeIn();
 
+            var secondHashIndex = hash.indexOf('/'),
+                secondHashVal = hash.substring(secondHashIndex + 1, hash.length).toLowerCase();
+            if (secondHashVal === "cal_king") {
+              secondHashVal = "king";
+            }
+            firePageViewTag("mattressguide " + secondHashVal + " find comfort level", "guides");
             coreMetrics("Pageview", namespace.coremetrics, namespace.coremetrics + "--find_your_mattress_comfort_level");
         } else if (step === 2) {
             $('#mattress_buying_guide_quiz' + deviceView + '03').siblings().hide();
@@ -548,7 +564,9 @@ require(['jquery', 'coremetrics'], function($, CoreMetrics) {
             var firstChoiceIndex = hash.indexOf('/'),
                 secondChoiceIndex = hash.indexOf('/', firstChoiceIndex + 1),
                 firstChoice = hash.substring(firstChoiceIndex + 1, secondChoiceIndex),
-                secondChoice = hash.substring(secondChoiceIndex + 1);
+                secondChoice = hash.substring(secondChoiceIndex + 1),
+                secondHashValue = firstChoice.toLowerCase(),
+                thirdHashVal = secondChoice.toLowerCase();
 
             $('.quiz_last_step').each(function () {
                 var stepId = this.id.replace('mattress_buying_guide_quiz' + deviceView, ''),
@@ -566,6 +584,10 @@ require(['jquery', 'coremetrics'], function($, CoreMetrics) {
 
             });
 
+            if (secondHashValue === "cal_king") {
+              secondHashValue = "king";
+            }
+            firePageViewTag("mattressguide " + secondHashValue + " " + thirdHashVal + " find style", "guides");
             coreMetrics("Pageview", namespace.coremetrics, namespace.coremetrics + "--find_your_mattress_style");
         }
 
