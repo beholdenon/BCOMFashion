@@ -12,7 +12,9 @@
             'pressReleases': '/b/fashion/javascripts/projects/about-us/company/press',
             'templates': '/b/fashion/templates',
             '_cookieHelper': '/b/fashion/javascripts/util/_cookieHelper',
-            '_multiValueCookie': '/b/fashion/javascripts/util/_multiValueCookie'
+            '_multiValueCookie': '/b/fashion/javascripts/util/_multiValueCookie',
+            'LeftNav': 'js/min/bcom/components/leftNav/LeftNav',
+            'aboutUsLeftNav': '/b/fashion/javascripts/bcomLeftNav/about/AboutLeftNav'
         }
     });  
 })();
