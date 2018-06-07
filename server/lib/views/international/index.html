@@ -10,7 +10,9 @@
 	    <div class="inner-wrap">       
 			<global-nav ng-cloak></global-nav>
 	        	<div ng-view ng-cloak></div>
-	        <contact-us ng-cloak></contact-us>
+	        	{{#if args.signUpFieldInternationalEnabled}}
+	        		<contact-us ng-cloak></contact-us>
+	        	{{/if}}
 
 	        <div ng-include="'./components/overlay.html'" ng-cloak></div>
 	    </div>
