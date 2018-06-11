@@ -1,6 +1,7 @@
 'use strict';
 
 let setUserToken = require('./../helpers/userTokenHelper'),
+    iShipCountries = require('./../helpers/iShipCountries'),
 
     killswitches = {
     argsFactory: function () {
@@ -18,9 +19,11 @@ let setUserToken = require('./../helpers/userTokenHelper'),
             polarisHeaderFooterEnabled: process.env.polarisHeaderFooterEnabled === "true",
             polarisMobileHeaderFooterEnabled: process.env.polarisMobileHeaderFooterEnabled === "true",
             breastCancerAwarenessCampaignEnabled: process.env.breastCancerAwarenessCampaignEnabled === "true"
+
         };
     },
     pageViewArgsFactory: function (req, args) {
+        args.signUpFieldInternationalEnabled = process.env.signUpFieldInternationalEnabled === "true" && !iShipCountries.includes(req.state.shippingCountry);
         return {
             args: args,
             isApp: req.state.ishop_app,
