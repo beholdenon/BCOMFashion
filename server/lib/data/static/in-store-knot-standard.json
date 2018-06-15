@@ -1,0 +1,25 @@
+{
+  "designerName": "KNOT STANDARD",
+  "machineReadableDesignerName": "knot_standard",
+  "title2Prefix": "Knot Standard",
+  "title2Suffix": "IS AVAILABLE AT OUR FLAGSHIP.",
+  "subTitle": "Please call or visit for assistance.",
+  "omitTitle" : false,
+  "pageUrlDesignerAlias": "knot_standard",
+  "designerDescription": "Founded on the belief that the perfect suit should always feel personal, Knot Standard set out to update the hands-on experience of a visit to a traditional tailor’s shop with the latest modern technology. <br /><br /> Using the brand’s Virtual Studio system, expert stylists at Bloomingdale’s will guide you through everything from the first fitting to the final fabric selection, creating a handmade garment that’s utterly unique to you in four to six weeks.",
+  "mainImage" : "/b/fashion/images/projects/in-store/knot-standard/logo.jpg",
+  "addressColumns": [
+    [{
+      "name": "59th Street",
+      "streetAddress": "1000 Third Avenue",
+      "cityStateZip": "59th Street and Lexington Avenue<br />New York, NY 10022",
+      "phoneNumber": "212-705-2000",
+      "phoneNumberHrefSuffix": "+1-212-705-2000",
+      "urlArgs": {
+        "addressAlias": "59th-street",
+        "designerAlias": "knot_standard",
+        "addressFullDetail": "59TH-STREET-LEXINGTON-AVENUE"
+      }
+    }]
+  ]
+}
