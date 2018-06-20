@@ -23,7 +23,15 @@ let setUserToken = require('./../helpers/userTokenHelper'),
         };
     },
     pageViewArgsFactory: function (req, args) {
-        args.signUpFieldInternationalEnabled = process.env.signUpFieldInternationalEnabled === "true" && !iShipCountries.includes(req.state.shippingCountry);
+        let signUpFieldInternationalEnabled = false;
+        // If signUpFieldInternationalEnabled KS is false,
+        // the fields should be visible and should not check the shippingCountry cookie value
+        if (!process.env.signUpFieldInternationalEnabled || process.env.signUpFieldInternationalEnabled === 'false') {
+            signUpFieldInternationalEnabled = true;
+        } else {
+            signUpFieldInternationalEnabled = !iShipCountries.includes(req.state.shippingCountry);
+        }
+        args.signUpFieldInternationalEnabled = signUpFieldInternationalEnabled;
         return {
             args: args,
             isApp: req.state.ishop_app,
