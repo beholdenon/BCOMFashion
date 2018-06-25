@@ -7,19 +7,19 @@ require( [ 'jquery', window.BLOOMIES.coremetrics ], function ( $, Coremetrics ) 
   		baseUrlScriptAssets = '/b/fashion/javascripts/projects/fashion-tips/good-sleep-guide/',
   		baseUrlStyleAssets = '/b/fashion/styles/projects/fashion-tips/good-sleep-guide/',
 		CHOICE_LINK_MAP = {
-			'on-my-side:down':                '/shop/home/designer-down-pillows-comforters/Bed_type,Fill_type,Pillow_density,Productsperpage/Pillow,Duck%20Down%7CAllergy%20Free%20Down%7CFeather%2FDown,Firm,180?id=1004679',
-			'on-my-side:down-alternative':    '/shop/home/designer-down-pillows-comforters/Bed_type,Fill_type_site,Pillow_density_site/Pillow,Down Alternative,Firm?id=1004679',
-			'on-my-side:memory-foam':         '/shop/home/designer-down-pillows-comforters/Bed_type,Fill_type_site,Pillow_density_site/Pillow,Memory Foam,Firm?id=1004679',
-			'on-my-back:down':                '/shop/home/designer-down-pillows-comforters/Bed_type,Fill_type,Pillow_density,Productsperpage/Pillow,Duck%20Down%7CAllergy%20Free%20Down%7CFeather%2FDown,Medium,180?id=1004679',
-			'on-my-back:down-alternative':    '/shop/home/designer-down-pillows-comforters/Bed_type,Fill_type_site,Pillow_density_site/Pillow,Down Alternative,Medium|Medium%2FFirm|Soft%2FMedium?id=1004679',
-			'on-my-back:memory-foam':         '/shop/home/designer-down-pillows-comforters/Bed_type,Fill_type_site,Pillow_density_site/Pillow,Memory Foam,Medium|Medium%2FFirm?id=1004679',
-			'on-my-stomach:down':             '/shop/home/designer-down-pillows-comforters/Bed_type,Fill_type,Pillow_density,Productsperpage/Pillow,Duck%20Down%7CAllergy%20Free%20Down%7CFeather%2FDown,Soft,180?id=1004679',
-			'on-my-stomach:down-alternative': '/shop/home/designer-down-pillows-comforters/Bed_type,Fill_type_site,Pillow_density_site/Pillow,Down Alternative,Soft?id=1004679',
-			'on-my-stomach:memory-foam':      '/shop/home/designer-down-pillows-comforters/Bed_type,Fill_type_site,Pillow_density_site/Pillow,Memory Foam,Soft?id=1004679',
-			'warm-and-cozy:yes':              '/shop/home/designer-down-pillows-comforters/Bed_type,Comforter_weight,Fill_type,Productsperpage/Comforter,Heavy%7CMedium,Down%20Alternative%7CAllergy%20Free%20Down,180?id=1004679',
-			'warm-and-cozy:no':               '/shop/home/designer-down-pillows-comforters/Bed_type,Comforter_weight_site,Fill_type_site/Comforter,Heavy|Medium,Duck Down?id=1004679',
-			'a-little-cooler:yes':            '/shop/home/designer-down-pillows-comforters/Bed_type,Comforter_weight,Fill_type,Productsperpage/Comforter,Light%7CMedium,Down%20Alternative%7CAllergy%20Free%20Down,180?id=1004679',
-			'a-little-cooler:no':             '/shop/home/designer-down-pillows-comforters/Bed_type,Comforter_weight_site,Fill_type_site/Comforter,Light|Medium,Duck Down?id=1004679'
+			'on-my-side:down':                '/shop/home/bedding-essentials-luxury-bed-pillows/Bed_type,Fill_type,Pillow_density_site/Pillow,Feather%2FDown%7CDuck%20Down%7CGoose%20Down,Firm?id=1004679',
+			'on-my-side:down-alternative':    '/shop/home/bedding-essentials-luxury-bed-pillows/Bed_type,Fill_type,Pillow_density_site/Pillow,Down%20Alternative%7CPrimaloft,Firm?id=1004679',
+			'on-my-side:memory-foam':         '/shop/home/bedding-essentials-luxury-bed-pillows/Bed_type,Fill_type,Pillow_density_site/Pillow,Memory%20Foam,Firm?id=1004679',
+			'on-my-back:down':                '/shop/home/bedding-essentials-luxury-bed-pillows/Bed_type,Fill_type,Pillow_density_site/Pillow,Feather%2FDown%7CDuck%20Down%7CGoose%20Down,Medium?id=1004679',
+			'on-my-back:down-alternative':    '/shop/home/bedding-essentials-luxury-bed-pillows/Bed_type,Fill_type,Pillow_density_site/Pillow,Down%20Alternative%7CPrimaloft,Medium?id=1004679',
+			'on-my-back:memory-foam':         '/shop/home/bedding-essentials-luxury-bed-pillows/Bed_type,Fill_type,Pillow_density_site/Pillow,Memory%20Foam,Medium?id=1004679',
+			'on-my-stomach:down':             '/shop/home/bedding-essentials-luxury-bed-pillows/Bed_type,Fill_type,Pillow_density_site/Pillow,Feather%2FDown%7CDuck%20Down%7CGoose%20Down,Soft?id=1004679',
+			'on-my-stomach:down-alternative': '/shop/home/bedding-essentials-luxury-bed-pillows/Bed_type,Fill_type,Pillow_density_site/Pillow,Down%20Alternative%7CPrimaloft,Soft?id=1004679',
+			'on-my-stomach:memory-foam':      '/shop/home/bedding-essentials-luxury-bed-pillows/Bed_type,Fill_type,Pillow_density_site/Pillow,Memory%20Foam,Soft?id=1004679',
+			'warm-and-cozy:yes':              '/shop/home/bedding-essentials-luxury-bed-pillows/Bed_type,Comforter_weight,Fill_type/Comforter,Medium%7CHeavy,Down%20Alternative?id=1004679',
+			'warm-and-cozy:no':               '/shop/home/bedding-essentials-luxury-bed-pillows/Bed_type,Comforter_weight,Fill_type/Comforter,Medium%7CHeavy,Duck%20Down%7CGoose%20Down%7CFeather%2FDown?id=1004679',
+			'a-little-cooler:yes':            '/shop/home/bedding-essentials-luxury-bed-pillows/Bed_type,Comforter_weight,Fill_type/Comforter,Medium%7CLight,Down%20Alternative?id=1004679',
+			'a-little-cooler:no':             '/shop/home/bedding-essentials-luxury-bed-pillows/Bed_type,Comforter_weight,Fill_type/Comforter,Medium%7CLight,Duck%20Down%7CGoose%20Down%7CFeather%2FDown?id=1004679'
 		};
 
 	var Utils = {};
