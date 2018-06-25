@@ -166,16 +166,18 @@ const startServer = async () => {
         { method: 'GET',  path: '/100-percent-2016/{path*}',                                                    config: require('./lib/handlers/views').responsiveCustomHF },
         { method: 'GET',  path: '/2016-fall-campaign-100-percent-exclusive/{path*}',                            config: require('./lib/handlers/views').responsiveCustomHF },
         
-        //{ method: 'GET',  path: '/b/2017-spring-campaign-100-percent-exclusive/{path*}',                        config: require('./lib/handlers/views').responsiveCustomHF },
-        //{ method: 'GET',  path: '/2017-spring-campaign-100-percent-exclusive/{path*}',                          config: require('./lib/handlers/views').responsiveCustomHF },
+        { method: 'GET',  path: '/b/2017-spring-campaign-100-percent-exclusive/{path*}',                        config: require('./lib/handlers/views').responsiveCustomHF },
+        { method: 'GET',  path: '/2017-spring-campaign-100-percent-exclusive/{path*}',                          config: require('./lib/handlers/views').responsiveCustomHF },
         { method: 'GET',  path: '/b/2017-fall-campaign-100-percent-exclusive/{path*}',                          config: require('./lib/handlers/views').responsiveCustomHF },
         { method: 'GET',  path: '/2017-fall-campaign-100-percent-exclusive/{path*}',                            config: require('./lib/handlers/views').responsiveCustomHF },
         { method: 'GET',  path: '/b/2017-glowhaus/{path*}',                                                     config: require('./lib/handlers/views').responsiveCustomHF },
         { method: 'GET',  path: '/2017-glowhaus/{path*}',                                                       config: require('./lib/handlers/views').responsiveCustomHF },
 
+        { method: 'GET',  path: '/b/glowhaus/{path*}',                                                          config: require('./lib/handlers/views').responsiveCustomHF },
+        { method: 'GET',  path: '/glowhaus/{path*}',                                                            config: require('./lib/handlers/views').responsiveCustomHF },
+
         { method: 'GET',  path: '/{path*}',                                                                     config: require('./lib/handlers/views').fallback },
 
-        { method: 'GET',  path: '/b/campaigns/2017-spring-campaign-100-percent-exclusive/{path*}',                        config: require('./lib/handlers/views').responsiveCustomHF },
     ];
 
     validate_routes(campaigns, /^(\/b)?\/campaigns\//, 'All campaigns must start with /b/campaigns/' );
