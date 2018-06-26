@@ -192,6 +192,10 @@ $(function() {
 
         // 06,07 2018
         {'type': 'img',  'action': 'html-brand-popup',   'name': 'FRENCH GIRL',         'thumb': 'landingthumb_brand39.jpg', 'height': 280},
+        {'type': 'img',  'action': 'html-brand-popup',   'name': 'Kopari Beauty',       'thumb': 'landingthumb_brand37.jpg', 'height': 280},
+        {'type': 'img',  'action': 'html-brand-popup',   'name': 'Briogeo',       'thumb': 'landingthumb_brand38.jpg', 'height': 280},
+        {'type': 'img',  'action': 'html-brand-popup',   'name': 'STARSKIN',       'thumb': 'landingthumb_brand35.jpg', 'height': 280},
+        {'type': 'img',  'action': 'html-brand-popup',   'name': 'Verb',       'thumb': 'landingthumb_brand36.jpg', 'height': 280},
 
 
 
@@ -714,12 +718,6 @@ $(function() {
         },        
 
 
-
-
-
-
-
-
         'Lano': {
             'heading': 'Lano',
             // 'theGlowDownCopy': 'Lanolin&mdash;a natural occurring wax found on sheepswool&mdash;is the star of this skin care brand out of Australia. Not only does it mimic skin lipids (aka it’s super compatible with your skin), but it can hold up to double its weight in water to deliver extreme hydration. The award&dash;winning line of lip, hand and body products is everything you need to stay moisturized year&dash;round. ',
@@ -794,16 +792,50 @@ $(function() {
         },
 
 
+
         // 06,07 2018
-        'FRENCHGIRL': {
-            'heading': 'FRENCH GIRL',
+        'FRENCH GIRL': {
+            'theGlowDownCopy': 'Founder Kristeen Griffin&dash;Grimes spent her childhood on the coast of Washington surrounded by all things natural. Fast&dash;forward to adulthood, and Griffin&dash;Grimes found herself a tour guide in the south of France. The two worlds may be thousands of miles apart, but they&#39;re kindred in spirit: fields and farms, vines and flowers, and pure and wholesome living. Inspired by her travels, in 2010 she launched a beauty line made of organic and sustainable ingredients to appeal to the French girl in all of us. On those days you wish you could escape to a lavender field in Provence (i.e., every day), unleash your joie de vivre stateside and indulge in the decadent array of creams, oils and polishes.',
             'bestsellerImgLink': 'https://www.bloomingdales.com/shop/product/--0000000--?ID=2635210',
             'bestsellerHeading': 'Rose Lip Polish',
-            'bestsellerCopy': 'Founder Kristeen Griffin&dash;Grimes spent her childhood on the coast of Washington surrounded by all things natural. Fast&dash;forward to adulthood, and Griffin&dash;Grimes found herself a tour guide in the south of France. The two worlds may be thousands of miles apart, but they&#39;re kindred in spirit: fields and farms, vines and flowers, and pure and wholesome living. Inspired by her travels, in 2010 she launched a beauty line made of organic and sustainable ingredients to appeal to the French girl in all of us. On those days you wish you could escape to a lavender field in Provence (i.e., every day), unleash your joie de vivre stateside and indulge in the decadent array of creams, oils and polishes.',
+            'bestsellerCopy': 'The blend of sugar, shea butter, coconut oil and rose essential oil sloughs, hydrates and plumps your pout for a perfect muah every time. ',
             'shopLinkUrl': 'https://www.bloomingdales.com/shop/makeup-perfume-beauty/glowhaus-makeup-skin-care/Brand/French%20Girl?id=1035059'
+        },
+        'Kopari Beauty': {
+            'theGlowDownCopy': 'The Hawaiian brand calls coconut the "jack-of-all-fruits", and it’s easy to see why. Replete with fatty acids and rich in antioxidants that easily absorb into the skin, coconut oil leaves your whole body super hydrated and supple¬. But Kopari didn’t stop there: It combined pure, organic coconut oil with potent natural ingredients—all without sulfates, silicones, parabens or GMOs to really take its products to the next level. And the result? Multitasking marvels you can use from head to toe.',
+            'bestsellerImgLink': 'https://www.bloomingdales.com/shop/product/kopari-beauty-organic-coconut-melt?ID=2989534',
+            'bestsellerHeading': 'Organic Coconut Melt',
+            'bestsellerCopy': 'The tub of 100% organic coconut oil is a workhorse: Use it as a hair mask, body moisturizer, makeup remover, dry shave oil, a bath boost, an under&dash;eye treatment and a stretch-mark preventer.',
+            'shopLinkUrl': 'https://www.bloomingdales.com/shop/makeup-perfume-beauty/glowhaus-makeup-skin-care/Brand/Kopari%20Beauty?id=1035059'
+        },
+
+        'Briogeo': {
+            'theGlowDownCopy': 'The NYC&dash;based hair care label has won a serious following for hitting the sweet spot between natural and effective. Full of nourishing, clean ingredients, and free of sulfates, parabens, phthalates, silicones, DEA or synthetic color, these winning formulas address every hair need under the sun, whether your goal is to volumize, de&dash;frizz, repair or soothe. Add it all up and the mane attraction is clear: crazy good products you can confidently feel good about using.',
+            'bestsellerImgLink': 'https://www.bloomingdales.com/shop/product/briogeo-dont-despair-repair-deep-conditioning-mask?ID=3004760',
+            'bestsellerHeading': 'Don&#39;t Despair, Repair! Deep Conditioning Mask',
+            'bestsellerCopy': 'The weekly treatment answers the SOS of straw-like strands with a luster-restoring blend of B vitamins, rosehip and argan oils, algae and biotin.',
+            'shopLinkUrl': 'https://www.bloomingdales.com/shop/makeup-perfume-beauty/glowhaus-makeup-skin-care/Brand/Briogeo?id=1035059'
+        },
+
+        'STARSKIN': {
+            'theGlowDownCopy': 'The skin care line sets the bar high: a visible difference in your complexion in one treatment. How now? Potent sheet masks, natch. Choose your mask by skin goal&mdash;plumping, hydrating, firming, brightening and more—and let the pampering begin. Cruelty&dash;free and made without parabens, phthalates, mineral oils, sulfates or synthetic dyes, the at-home treatments actually give you that "I woke up like this" star-quality skin.',
+            'bestsellerImgLink': 'https://www.bloomingdales.com/shop/product/starskin-red-carpet-ready-hydrating-bio-cellulose-second-skin-face-mask?ID=2956691',
+            'bestsellerHeading': 'Red Carpet Ready Hydrating Bio&dash;Cellulose Second Skin Face Mask',
+            'bestsellerCopy': 'The 20&dash;minute sheet mask delivers a bottle&#39;s worth of skin serum for a supersmooth, plump complexion&mdash;no filter needed.',
+            'shopLinkUrl': 'https://www.bloomingdales.com/shop/makeup-perfume-beauty/glowhaus-makeup-skin-care/Brand/STARSKIN?id=1035059'
+        },
+
+        'Verb': {
+            'theGlowDownCopy': 'Launched by Austin-based stylists, this popular line is for those who want salon-quality hair care without the price tag&mdash;and let&#39;s be honest, who doesn&#39;t? Whether you&#39;re looking for volume, texture, curl definition or hydration, the collection is full of healthy&dash;hair ingredients like sunflower seed extract and olive oil, and free of any harsh stuff, like sulfates, parabens or gluten. Tack on that every product costs $16, and it&#39;s easy to see what all the hype is about.',
+            'bestsellerImgLink': '__link__',
+            'bestsellerHeading': 'Ghost Shampoo',
+            'bestsellerCopy': 'We&#39;re all for products that ghost&mdash;aka disappear without a trace&mdash;and this wash delivers. Infused with moringa oil, it adds shine and smooths frizz without weighing down hair.',
+            'shopLinkUrl': '__link__'
         }
 
     };
+
+
 
     // video page content
     var videoPagePics = [
