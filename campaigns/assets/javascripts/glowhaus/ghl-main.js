@@ -138,13 +138,6 @@ $(function() {
 
 
 
-
-
-
-
-
-
-
         {'type': 'img',  'action': 'html-video-popup',   'name': 'MetallicLips',        'thumb': 'video-1.jpg',  'height': 222},
         {'type': 'img',  'action': 'html-video-popup',   'name': 'AllOverHighlighter',  'thumb': 'video-2.jpg',  'height': 222},
         // {'type': 'img',  'action': 'html-video-popup',   'name': 'NoMakeupMakeup',      'thumb': 'video-3.jpg',  'height': 222},
@@ -159,11 +152,7 @@ $(function() {
 
 
 
-
-
-
-
-        {'type': 'img',  'action': 'html-brand-popup',   'name': 'FLiRT Cosmetics',    'thumb': 'brand-01.jpg',  'height': 127},
+        //{'type': 'img',  'action': 'html-brand-popup',   'name': 'FLiRT Cosmetics',    'thumb': 'brand-01.jpg',  'height': 127},
         {'type': 'img',  'action': 'html-brand-popup',   'name': 'beautyblender',      'thumb': 'brand-02.jpg',  'height': 139},
         {'type': 'img',  'action': 'html-brand-popup',   'name': 'NUDESTIX',           'thumb': 'brand-03.jpg',  'height': 85},
         {'type': 'img',  'action': 'html-brand-popup',   'name': 'RMS Beauty',         'thumb': 'brand-04.jpg',  'height': 129},
@@ -188,17 +177,6 @@ $(function() {
         {'type': 'img',  'action': 'html-brand-popup',   'name': 'Shhhowercap',         'thumb': 'brand-22.jpg',  'height': 202},
 
 
-
-
-
-
-
-
-
-
-
-
-
         {'type': 'img',  'action': 'html-brand-popup',   'name': 'The Better Skin Co', 'thumb': 'landingthumb_brand1.jpg',  'height': 141},
         {'type': 'img',  'action': 'html-brand-popup',   'name': 'The BrowGal',        'thumb': 'landingthumb_brand2.jpg',  'height': 117},
         {'type': 'img',  'action': 'html-brand-popup',   'name': 'CONTEXT',            'thumb': 'landingthumb_brand3.jpg',  'height': 146},
@@ -211,6 +189,9 @@ $(function() {
         {'type': 'img',  'action': 'html-brand-popup',   'name': 'Supergoop',          'thumb': 'landingthumb_brand19.jpg', 'height': 83},
         {'type': 'img',  'action': 'html-brand-popup',   'name': 'makeuperaser',       'thumb': 'landingthumb_brand25.jpg', 'height': 98},
         {'type': 'img',  'action': 'html-brand-popup',   'name': 'makeupdrop',         'thumb': 'landingthumb_brand26.jpg', 'height': 153},
+
+        // 06,07 2018
+        {'type': 'img',  'action': 'html-brand-popup',   'name': 'FRENCH GIRL',         'thumb': 'landingthumb_brand39.jpg', 'height': 280},
 
 
 
@@ -810,7 +791,17 @@ $(function() {
             'bestsellerHeading': 'Women’s Blister Prevention Spray',
             'bestsellerCopy': 'Three years of scientific research resulted in this flexible, clear film that blocks shoe friction to stop blisters from forming. Just spray and let dry for a genius solution to breaking in new shoes or pesky rubbing.',
             'shopLinkUrl': 'https://www.bloomingdales.com/shop/product/preheels-blister-prevention-spray?ID=2635210'
-        }         
+        },
+
+
+        // 06,07 2018
+        'FRENCHGIRL': {
+            'heading': 'FRENCH GIRL',
+            'bestsellerImgLink': 'https://www.bloomingdales.com/shop/product/--0000000--?ID=2635210',
+            'bestsellerHeading': 'Rose Lip Polish',
+            'bestsellerCopy': 'Founder Kristeen Griffin&dash;Grimes spent her childhood on the coast of Washington surrounded by all things natural. Fast&dash;forward to adulthood, and Griffin&dash;Grimes found herself a tour guide in the south of France. The two worlds may be thousands of miles apart, but they&#39;re kindred in spirit: fields and farms, vines and flowers, and pure and wholesome living. Inspired by her travels, in 2010 she launched a beauty line made of organic and sustainable ingredients to appeal to the French girl in all of us. On those days you wish you could escape to a lavender field in Provence (i.e., every day), unleash your joie de vivre stateside and indulge in the decadent array of creams, oils and polishes.',
+            'shopLinkUrl': 'https://www.bloomingdales.com/shop/makeup-perfume-beauty/glowhaus-makeup-skin-care/Brand/French%20Girl?id=1035059'
+        }
 
     };
 
