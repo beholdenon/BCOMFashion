@@ -4,7 +4,6 @@
 
 (function($){
     'use strict';
-
     $.fn.extend({
         renameAttr: function (name, newName, removeData) {
             var val;
@@ -19,7 +18,6 @@
             });
         }
     });
-    
 })(jQuery);
 
 
@@ -43,96 +41,97 @@ $(function() {
     
     var landingPagePics = [
 
-        // {'type': 'img',  'action': 'img-popup',   'thumb': 'landing1-thumb.jpg',   'height': 377},
-        // {'type': 'img',  'action': 'img-popup',   'thumb': 'landing2-thumb.jpg',   'height': 199},
-        // {'type': 'img',  'action': 'img-popup',   'thumb': 'landing3-thumb.jpg',   'height': 288},
-        // {'type': 'img',  'action': 'img-popup',   'thumb': 'landing4-thumb.jpg',   'height': 250},
-        // {'type': 'img',  'action': 'img-popup',   'thumb': 'landing5-thumb.jpg',   'height': 340},
-        // {'type': 'img',  'action': 'img-popup',   'thumb': 'landing6-thumb.jpg',   'height': 420},
-        // {'type': 'img',  'action': 'img-popup',   'thumb': 'landing7-thumb.jpg',   'height': 250},
-        // {'type': 'img',  'action': 'img-popup',   'thumb': 'landing8-thumb.jpg',   'height': 289},
-        // {'type': 'img',  'action': 'img-popup',   'thumb': 'landing9-thumb.jpg',   'height': 235},
-        // {'type': 'img',  'action': 'img-popup',   'thumb': 'landing10-thumb.jpg',  'height': 420},
-        // {'type': 'img',  'action': 'img-popup',   'thumb': 'landing11-thumb.jpg',  'height': 362},
-        // {'type': 'img',  'action': 'img-popup',   'thumb': 'landing12-thumb.jpg',  'height': 187},
-        // {'type': 'img',  'action': 'img-popup',   'thumb': 'landing13-thumb.jpg',  'height': 182},
-        // {'type': 'img',  'action': 'img-popup',   'thumb': 'landing14-thumb.jpg',  'height': 187},
-        // {'type': 'img',  'action': 'img-popup',   'thumb': 'landing15-thumb.jpg',  'height': 363},
-        // {'type': 'img',  'action': 'img-popup',   'thumb': 'landing16-thumb.jpg',  'height': 161},
-        // {'type': 'img',  'action': 'img-popup',   'thumb': 'landing17-thumb.jpg',  'height': 420},
-        // {'type': 'img',  'action': 'img-popup',   'thumb': 'landing18-thumb.jpg',  'height': 200},
-        // {'type': 'img',  'action': 'img-popup',   'thumb': 'landing19-thumb.jpg',  'height': 246},
-        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing20-thumb.jpg',  'height': 420},
-        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing21-thumb.jpg',  'height': 204},
-        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing22-thumb.jpg',  'height': 187},
-        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing23-thumb.jpg',  'height': 272},
-        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing24-thumb.jpg',  'height': 277},
-        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing25-thumb.jpg',  'height': 216},
-        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing26-thumb.jpg',  'height': 420},
-        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing27-thumb.jpg',  'height': 194},
-        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing28-thumb.jpg',  'height': 420},
-        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing29-thumb.jpg',  'height': 117},
-        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing30-thumb.jpg',  'height': 243},
-        // {'type': 'img',  'action': 'img-popup',   'thumb': 'landing31-thumb.jpg',  'height': 250},
-        // {'type': 'img',  'action': 'img-popup',   'thumb': 'landing32-thumb.jpg',  'height': 144},
-        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing33-thumb.jpg',  'height': 420},
-        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing34-thumb.jpg',  'height': 293},
-        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing35-thumb.jpg',  'height': 187},
-        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing36-thumb.jpg',  'height': 138},
-        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing37-thumb.jpg',  'height': 405},
-        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing38-thumb.jpg',  'height': 288},
-        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing39-thumb.jpg',  'height': 231},
-        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing40-thumb.jpg',  'height': 124},
-        // {'type': 'img',  'action': 'img-popup',   'thumb': 'landing41-thumb.jpg',  'height': 348},
-        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing42-thumb.jpg',  'height': 149},
-        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing43-thumb.jpg',  'height': 280},
-        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing44-thumb.jpg',  'height': 187},
-        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing45-thumb.jpg',  'height': 310},
-        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing46-thumb.jpg',  'height': 334},
-        // {'type': 'img',  'action': 'img-popup',   'thumb': 'landing47-thumb.jpg',  'height': 187},
-        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing48-thumb.jpg',  'height': 187},
-        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing49-thumb.jpg',  'height': 270},
-        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing50-thumb.jpg',  'height': 208},
-        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing51-thumb.jpg',  'height': 420},
-        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing52-thumb.jpg',  'height': 331},
-        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing53-thumb.jpg',  'height': 195},
-        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing54-thumb.jpg',  'height': 183},
-        // {'type': 'img',  'action': 'img-popup',   'thumb': 'landing55-thumb.jpg',  'height': 254},
-        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing56-thumb.jpg',  'height': 379},
-        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing57-thumb.jpg',  'height': 285},
-        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing58-thumb.jpg',  'height': 389},
-        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing59-thumb.jpg',  'height': 299},
-        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing60-thumb.jpg',  'height': 103},
+        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing1-thumb.jpg',   'height': 377},
+        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing2-thumb.jpg',   'height': 199},
+        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing3-thumb.jpg',   'height': 288},
+        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing4-thumb.jpg',   'height': 250},
+        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing5-thumb.jpg',   'height': 340},
+        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing6-thumb.jpg',   'height': 420},
+        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing7-thumb.jpg',   'height': 250},
+        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing8-thumb.jpg',   'height': 289},
+        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing9-thumb.jpg',   'height': 235},
+        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing10-thumb.jpg',  'height': 420},
+        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing11-thumb.jpg',  'height': 362},
+        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing12-thumb.jpg',  'height': 187},
+        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing13-thumb.jpg',  'height': 182},
+        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing14-thumb.jpg',  'height': 187},
+        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing15-thumb.jpg',  'height': 363},
+        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing16-thumb.jpg',  'height': 161},
+        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing17-thumb.jpg',  'height': 420},
+        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing18-thumb.jpg',  'height': 200},
+        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing19-thumb.jpg',  'height': 246},
+        
+        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing20-thumb.jpg',  'height': 420},
+        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing21-thumb.jpg',  'height': 204},
+        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing22-thumb.jpg',  'height': 187},
+        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing23-thumb.jpg',  'height': 272},
+        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing24-thumb.jpg',  'height': 277},
+        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing25-thumb.jpg',  'height': 216},
+        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing26-thumb.jpg',  'height': 420},
+        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing27-thumb.jpg',  'height': 194},
+        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing28-thumb.jpg',  'height': 420},
+        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing29-thumb.jpg',  'height': 117},
+        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing30-thumb.jpg',  'height': 243},
+        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing31-thumb.jpg',  'height': 250},
+        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing32-thumb.jpg',  'height': 144},
+        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing33-thumb.jpg',  'height': 420},
+        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing34-thumb.jpg',  'height': 293},
+        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing35-thumb.jpg',  'height': 187},
+        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing36-thumb.jpg',  'height': 138},
+        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing37-thumb.jpg',  'height': 405},
+        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing38-thumb.jpg',  'height': 288},
+        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing39-thumb.jpg',  'height': 231},
+        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing40-thumb.jpg',  'height': 124},
+        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing41-thumb.jpg',  'height': 348},
+        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing42-thumb.jpg',  'height': 149},
+        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing43-thumb.jpg',  'height': 280},
+        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing44-thumb.jpg',  'height': 187},
+        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing45-thumb.jpg',  'height': 310},
+        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing46-thumb.jpg',  'height': 334},
+        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing47-thumb.jpg',  'height': 187},
+        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing48-thumb.jpg',  'height': 187},
+        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing49-thumb.jpg',  'height': 270},
+        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing50-thumb.jpg',  'height': 208},
+        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing51-thumb.jpg',  'height': 420},
+        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing52-thumb.jpg',  'height': 331},
+        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing53-thumb.jpg',  'height': 195},
+        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing54-thumb.jpg',  'height': 183},
+        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing55-thumb.jpg',  'height': 254},
+        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing56-thumb.jpg',  'height': 379},
+        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing57-thumb.jpg',  'height': 285},
+        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing58-thumb.jpg',  'height': 389},
+        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing59-thumb.jpg',  'height': 299},
+        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing60-thumb.jpg',  'height': 103},
 
-        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing61-thumb.jpg',  'height': 185},
-        // {'type': 'img',  'action': 'img-popup',   'thumb': 'landing62-thumb.jpg',  'height': 420},
-        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing63-thumb.jpg',  'height': 300},
-        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing64-thumb.jpg',  'height': 269},
-        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing65-thumb.jpg',  'height': 169},
-        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing66-thumb.jpg',  'height': 218},
-        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing67-thumb.jpg',  'height': 420},
-        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing68-thumb.jpg',  'height': 187},
-        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing69-thumb.jpg',  'height': 187},
-        // {'type': 'img',  'action': 'img-popup',   'thumb': 'landing70-thumb.jpg',  'height': 359},
-        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing71-thumb.jpg',  'height': 359},
-        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing72-thumb.jpg',  'height': 251},
-        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing73-thumb.jpg',  'height': 420},
-        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing74-thumb.jpg',  'height': 187},
-        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing75-thumb.jpg',  'height': 149},
-        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing76-thumb.jpg',  'height': 420},
-        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing77-thumb.jpg',  'height': 158},
-        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing78-thumb.jpg',  'height': 319},
-        // {'type': 'img',  'action': 'img-popup',   'thumb': 'landing79-thumb.jpg',  'height': 269},
-        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing80-thumb.jpg',  'height': 300},
+        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing61-thumb.jpg',  'height': 185},
+        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing62-thumb.jpg',  'height': 420},
+        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing63-thumb.jpg',  'height': 300},
+        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing64-thumb.jpg',  'height': 269},
+        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing65-thumb.jpg',  'height': 169},
+        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing66-thumb.jpg',  'height': 218},
+        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing67-thumb.jpg',  'height': 420},
+        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing68-thumb.jpg',  'height': 187},
+        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing69-thumb.jpg',  'height': 187},
+        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing70-thumb.jpg',  'height': 359},
+        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing71-thumb.jpg',  'height': 359},
+        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing72-thumb.jpg',  'height': 251},
+        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing73-thumb.jpg',  'height': 420},
+        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing74-thumb.jpg',  'height': 187},
+        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing75-thumb.jpg',  'height': 149},
+        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing76-thumb.jpg',  'height': 420},
+        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing77-thumb.jpg',  'height': 158},
+        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing78-thumb.jpg',  'height': 319},
+        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing79-thumb.jpg',  'height': 269},
+        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing80-thumb.jpg',  'height': 300},
 
-        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing81-thumb.jpg',  'height': 362},
-        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing82-thumb.jpg',  'height': 327},
-        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing83-thumb.jpg',  'height': 177},
-        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing84-thumb.jpg',  'height': 177},
-        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing85-thumb.jpg',  'height': 240},
-        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing86-thumb.jpg',  'height': 222},
-        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing87-thumb.jpg',  'height': 346},
-        {'type': 'img',  'action': 'img-popup',   'thumb': 'landing88-thumb.jpg',  'height': 301},
+        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing81-thumb.jpg',  'height': 362},
+        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing82-thumb.jpg',  'height': 327},
+        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing83-thumb.jpg',  'height': 177},
+        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing84-thumb.jpg',  'height': 177},
+        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing85-thumb.jpg',  'height': 240},
+        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing86-thumb.jpg',  'height': 222},
+        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing87-thumb.jpg',  'height': 346},
+        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing88-thumb.jpg',  'height': 301},
 
 
 
@@ -190,15 +189,17 @@ $(function() {
         {'type': 'img',  'action': 'html-brand-popup',   'name': 'makeuperaser',       'thumb': 'landingthumb_brand25.jpg', 'height': 98},
         {'type': 'img',  'action': 'html-brand-popup',   'name': 'makeupdrop',         'thumb': 'landingthumb_brand26.jpg', 'height': 153},
 
+
+
+
+
+
         // 06,07 2018
         {'type': 'img',  'action': 'html-brand-popup',   'name': 'FRENCH GIRL',         'thumb': 'landingthumb_brand39.jpg', 'height': 280},
         {'type': 'img',  'action': 'html-brand-popup',   'name': 'Kopari Beauty',       'thumb': 'landingthumb_brand37.jpg', 'height': 280},
-        {'type': 'img',  'action': 'html-brand-popup',   'name': 'Briogeo',       'thumb': 'landingthumb_brand38.jpg', 'height': 280},
-        {'type': 'img',  'action': 'html-brand-popup',   'name': 'STARSKIN',       'thumb': 'landingthumb_brand35.jpg', 'height': 280},
-        {'type': 'img',  'action': 'html-brand-popup',   'name': 'Verb',       'thumb': 'landingthumb_brand36.jpg', 'height': 280},
-
-
-
+        {'type': 'img',  'action': 'html-brand-popup',   'name': 'Briogeo',             'thumb': 'landingthumb_brand38.jpg', 'height': 280},
+        {'type': 'img',  'action': 'html-brand-popup',   'name': 'STARSKIN',            'thumb': 'landingthumb_brand35.jpg', 'height': 280},
+        {'type': 'img',  'action': 'html-brand-popup',   'name': 'Verb',                'thumb': 'landingthumb_brand36.jpg', 'height': 280},
 
 
 
@@ -235,10 +236,6 @@ $(function() {
 
 
 
-
-
-
-
         {'type':  'video',  'thumb': 'GH1_PinkAllOver1.mp4',    'height': 158},
         {'type':  'video',  'thumb': 'GH1_PinkAllOver2.mp4',    'height': 158},
         {'type':  'video',  'thumb': 'GH2_NextLevelCat1.mp4',   'height': 158},
@@ -268,6 +265,8 @@ $(function() {
         // {'type':  'video',  'thumb': 'Glowhaus_gif16.mp4',  'height': 280},
         {'type':  'video',  'thumb': 'Glowhaus_gif17.mp4',  'height': 280},
         {'type':  'video',  'thumb': 'Glowhaus_gif18.mp4',  'height': 162}
+
+
 
     ];
 
@@ -883,6 +882,8 @@ $(function() {
 
     var plyrPlayBtn = '<span class="plyr__play-large"><svg id="plyr-play" viewBox="0 0 18 18" width="100%" height="100%"><path d="M15.562 8.1L3.87.225C3.052-.337 2 .225 2 1.125v15.75c0 .9 1.052 1.462 1.87.9L15.563 9.9c.584-.45.584-1.35 0-1.8z"></path></svg><span class="plyr__sr-only">Play</span></span>';
 
+    var imgLinkText = "Shop the look";
+
     // create landing page image tile
     $.each(landingPagePics, function (i) {
 
@@ -892,16 +893,18 @@ $(function() {
         var fullSizeImg    = imgFullSizeDir + tileItem.thumb.replace('-thumb','');
         var thumbImg       = imgThumbsDir + tileItem.thumb;
         var typeOfAction   = tileItem.action;
+        var shopLink       = tileItem.imgShopLink;
 
         var setImgHeight = function(item) {
             var value = originalHeight * (item.width() / defaultThumbWidth);
             item.find('img').css('height', value);
             item.find('video').css('height', value);
         };
-        
-        var imgMarkup = '<img alt="glowhaus generic photo ' + i + '" data-width="' + defaultThumbWidth +
+
+        var imgMarkup = '<img title=" ' + imgLinkText + ' " alt="glowhaus generic photo ' + i + '" data-width="' + defaultThumbWidth +
             '" data-height="' + originalHeight +
             '" data-tmp-src="' + thumbImg +
+            '" data-img-shop-link="' + shopLink +
             '" src="' + imagePlaceHolder + '">';
 
         var prodImgMarkup = '<img alt="' + tileItem.name + ' ' + i + '" data-width="' + defaultThumbWidth +
@@ -1035,24 +1038,37 @@ $(function() {
             easing: 'ease-in-out'
         },
         callbacks: {
-            open: function() {
+            beforeOpen: function() {
+                //console.log(this.st.el);
+                //alert(this.st.el);
+            },
+            open: function(item) {
                 popupCloseBtnEvent = false;
                 // init coremetrics for close btn
                 popupCloseBtnMetrics ('close-btn_IMAGE-POPUP');
 
-                //$('.mfp-figure').attr('id','mfp-figure').attr('tabindex','0');
                 $('.mfp-figure').find('img')
                 .on('load', function(){
                     $(this).attr('tabindex','1').focus();
                 });
                 $('.mfp-close').attr('tabindex','0');
+
+                // Image caption with "shop the look" link
+                var imgShopLink = this.st.el.find('img').data('img-shop-link');
+                $('.mfp-title').html('<a href="' + imgShopLink + '">' + imgLinkText + '</a>');
             },
             close: function() {
                 if(!popupCloseBtnEvent) {
                     $.fn.coreTag('Element', 'closed-on-background-click__IMAGE-POPUP');
                 }
+                $('.mfp-title').html('');
             }
-        }
+        },
+        // titleSrc: 'title', // Attribute of the target element that contains caption for the slide.
+        // Or the function that should return the title. For example:
+        // titleSrc: function(item) {
+        //   return item.el.attr('title') + '<small>by Marsel Van Oosten</small>';
+        // }
     });
     
     /* ------------------------------------- HTML POPUP -------------------------------------- */
