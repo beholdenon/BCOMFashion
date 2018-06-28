@@ -271,269 +271,176 @@ $(function() {
     ];
 
     // Landing page's popups with video and products list
-
+   // 'videoID': '5713602540001',
     var videoPagePopupsData = {
 
-        'BurgundyLip': {
-            'heading': 'Burgundy Lip',
+        'LacqueredLips': {
+            'heading': 'Lacquered Lips',
             'videoID': '5713602540001',
             'productslist': [
                 {
-                    'thumb': 'thumb1.jpg',
-                    'title': 'COVER FX',
-                    'description': 'Custom Enhancer Drops in Candlelight',
-                    'link': 'https://www.bloomingdales.com/shop/product/cover-fx-custom-enhancer-drops?ID=2687217'
+                    'thumb': 'lacquered-lips-thumb1.jpg',
+                    'vendor': 'Rouge Bunny Rouge',
+                    'product': 'Sweet Excesses Glassy Gloss in Rhubarb Custard',
+                    'link': 'https://www.bloomingdales.com/shop/product/rouge-bunny-rouge-sweet-excesses-glassy-gloss?ID=2652616'
                 },
                 {
-                    'thumb': 'thumb2.jpg',
-                    'title': 'RMS Beauty',
-                    'description': 'Lipstick in Rapture',
-                    'link': 'https://www.bloomingdales.com/shop/product/?ID=2815451'
-                }
-            ]
-        },
-
-        'SkinPrep': {
-            'heading': 'Skin Prep',
-            'videoID': '5713602249001',
-            'productslist': [
-                {
-                    'thumb': 'thumb1.jpg',
-                    'title': 'Saturday Skin',
-                    'description': 'Wide Awake Brightening Eye Serum',
-                    'link': 'https://www.bloomingdales.com/shop/product/saturday-skin-wide-awake-brightening-eye-cream?ID=2629817'
-                },
-                {
-                    'thumb': 'thumb2.jpg',
-                    'title': 'Too Cool For School',
-                    'description': 'Egg Cream Sheet Mask',
-                    'link': 'https://www.bloomingdales.com/shop/product/too-cool-for-school-egg-cream-mask-firming?ID=2788522'
-                },
-                {
-                    'thumb': 'thumb3.jpg',
-                    'title': 'GLAMGLOW',
-                    'description': 'Waterburst Hydrated Glow Moisturizer',
-                    'link': 'https://www.bloomingdales.com/shop/product/index.ognc?ID=2871691'
-                },
-                {
-                    'thumb': 'thumb4.jpg',
-                    'title': 'Supergoop!',
-                    'description': 'Daily Correct CC Cream SPF 35',
-                    'link': 'https://www.bloomingdales.com/shop/product/supergoop-daily-correct-cc-cream-spf-35?ID=2635233'
-                }
-            ]
-        },
-
-        'BlurredLip': {
-            'heading': 'Blurred Lip',
-            'videoID': '5713598139001',
-            'productslist': [
-                {
-                    'thumb': 'thumb1.jpg',
-                    'title': 'Frank Body',
-                    'description': 'Lip Scrub',
-                    'link': 'https://www.bloomingdales.com/shop/product/frank-body-lip-scrub?ID=2661754'
-                },
-                {
-                    'thumb': 'thumb2.jpg',
-                    'title': 'RMS Beauty',
-                    'description': 'Lipstick in Flight of Fancy',
-                    'link': 'https://www.bloomingdales.com/shop/product/?ID=2815451'
-                },
-                {
-                    'thumb': 'thumb3.jpg',
-                    'title': 'NUDESTIX',
-                    'description': 'Nudies All Over Face Color in Bare Back',
-                    'link': 'https://www.bloomingdales.com/shop/product/nudestix-nudies-all-over-face-color?ID=2653151'
-                }
-            ]
-        },
-
-        'GraphicEye': {
-            'heading': 'Next Level Cat Eye',
-            'videoID': '5713605251001',
-            'productslist': [
-                {
-                    'thumb': 'thumb1.jpg',
-                    'title': 'The Vamp Stamp',
-                    'description': 'Vink Vortex Black Liquid Eyeliner Ink & Verge Eyeliner Brush',
-                    'link': 'https://www.bloomingdales.com/shop/product/the-vamp-stamp-vink-vortex-black-liquid-eyeliner-ink-verge-angle-eyeliner-brush?ID=2648611'
-                },
-                {
-                    'thumb': 'thumb2.jpg',
-                    'title': 'COVER FX',
-                    'description': 'Perfect Setting Powder',
-                    'link': 'https://www.bloomingdales.com/shop/product/cover-fx-perfect-setting-powder?ID=2687220'
-                },
-                {
-                    'thumb': 'thumb3.jpg',
-                    'title': 'The BrowGal',
-                    'description': 'Convertible Brow Powder & Pomade Duo',
-                    'link': 'https://www.bloomingdales.com/shop/product/the-browgal-convertible-brow-powder-pomade-duo?ID=2692371'
-                },
-                {
-                    'thumb': 'thumb4.jpg',
-                    'title': 'Lash Star Beauty',
-                    'description': 'Full Control Lash Sculpting Mascara',
-                    'link': 'https://www.bloomingdales.com/shop/product/lash-star-beauty-full-control-lash-sculpting-mascara?ID=2632934'
-                },
-                {
-                    'thumb': 'thumb5.jpg',
-                    'title': 'FLiRT Cosmetics',
-                    'description': 'Flashes False Lash Applicator',
-                    'link': 'https://www.bloomingdales.com/shop/product/flirt-cosmetics-flashes-false-lash-applicator?ID=2695132'
-                },
-                {
-                    'thumb': 'thumb6.jpg',
-                    'title': 'Sigma Beauty',
-                    'description': 'F35 Tapered Highlighter Brush',
-                    'link': 'https://www.bloomingdales.com/shop/product/sigma-beauty-f35-tapered-highlighter-brush?ID=2685183'
-                },
-                {
-                    'thumb': 'thumb7.jpg',
-                    'title': 'NUDESTIX',
-                    'description': 'Lip + Cheek Cream Pencil in Mystic',
-                    'link': 'https://www.bloomingdales.com/shop/product/nudestix-cream-lip-cheek-pencil?ID=2702737'
-                }
-            ]
-        },
-
-        'PinkAllOver': {
-            'heading': 'Pink All Over',
-            'videoID': '5713599628001',
-            'productslist': [
-                {
-                    'thumb': 'thumb1.jpg',
-                    'title': 'SUVA Beauty',
-                    'description': 'Neutral Necessity Palette',
-                    'link': 'https://www.bloomingdales.com/shop/product/suva-beauty-8-shade-eyeshadow-palette?ID=2693415'
-                },
-                {
-                    'thumb': 'thumb2.jpg',
-                    'title': 'Rouge Bunny Rouge',
-                    'description': 'Swell Bliss XXX Lip Plump in 84 Acacia Royal Jelly',
-                    'link': 'https://www.bloomingdales.com/shop/product/rouge-bunny-rouge-swell-bliss-xxx-lip-plump?ID=2652623'
-                },
-                {
-                    'thumb': 'thumb3.jpg',
-                    'title': 'Lime Crime',
-                    'description': 'Hi-Lite Palette in Blossoms',
+                    'thumb': 'lacquered-lips-thumb2.jpg',
+                    'vendor': 'Lime Crime',
+                    'product': 'Hi-Lite Highlighter Palette in Opals',
                     'link': 'https://www.bloomingdales.com/shop/product/lime-crime-hi-lite-highlighter-palette?ID=2669832'
                 },
                 {
-                    'thumb': 'thumb4.jpg',
-                    'title': 'CONTEXT',
-                    'description': 'Nail Lacquer in Take It Off',
-                    'link': 'https://www.bloomingdales.com/shop/product/context-nail-lacquer?ID=2606986'
+                    'thumb': 'lacquered-lips-thumb3.jpg',
+                    'vendor': 'CONTEXT',
+                    'product': 'Liquid Lacquer in Lay It Down',
+                    'link': 'https://www.bloomingdales.com/shop/product/context-liquid-lacquer?ID=2953405'
                 },
                 {
-                    'thumb': 'thumb5.jpg',
-                    'title': 'Kosas',
-                    'description': 'Color & Light Creme in 8th Muse',
-                    'link': 'https://www.bloomingdales.com/shop/product/kosas-color-light-creme?ID=2770476'
+                    'thumb': 'lacquered-lips-thumb4.jpg',
+                    'vendor': 'Lano',
+                    'product': 'Lanolips 101 Ointment Multipurpose Superbalm',
+                    'link': 'https://www.bloomingdales.com/shop/product/lano-lanolips-101-ointment-multipurpose-superbalm?ID=2648594'
                 },
                 {
-                    'thumb': 'thumb6.jpg',
-                    'title': 'Sigma Beauty',
-                    'description': 'E55 Eye Shading Brush',
-                    'link': 'https://www.bloomingdales.com/shop/product/sigma-beauty-e55-eye-shading-brush?ID=2685170'
+                    'thumb': 'lacquered-lips-thumb5.jpg',
+                    'vendor': 'Sigma Beauty',
+                    'product': 'F40 Large Angled Contour Brush',
+                    'link': 'https://www.bloomingdales.com/shop/product/sigma-beauty-f40-large-angled-contour-brush?ID=2685185'
+                },
+                {
+                    'thumb': 'lacquered-lips-thumb6.jpg',
+                    'vendor': 'Lime Crime',
+                    'product': 'Plushies Soft Focus Lip Veil in Grape Jelly',
+                    'link': 'https://www.bloomingdales.com/shop/product/lime-crime-plushies-soft-focus-lip-veil?ID=2866827'
                 }
             ]
         },
 
-        'MetallicLips': {
-            'heading': 'Metallic Lips',
-            'videoID': '5579707491001',
+        'PostParty': {
+            'heading': 'Post-Party Skin Care Routine',
+            'videoID': '5713602540001',
             'productslist': [
                 {
-                    'thumb': 'thumb1.jpg',
-                    'title': 'Rouge Bunny Rouge',
-                    'description': 'Long-Lasting Lip Pencil in&nbsp;Marco',
-                    'link': 'https://www.bloomingdales.com/shop/product/rouge-bunny-rouge-forever-yours-long-lasting-lip-pencil?ID=2652627'
+                    'thumb': 'postparty-thumb1.jpg',
+                    'vendor': 'Kopari Beauty',
+                    'product': 'Organic Coconut Melt',
+                    'link': 'https://www.bloomingdales.com/shop/product/kopari-beauty-organic-coconut-melt?ID=2989534'
                 },
                 {
-                    'thumb': 'thumb2.jpg',
-                    'title': 'Lime Crime',
-                    'description': 'Matte Velvetines in&nbsp;Marshmallow',
-                    'link': 'https://www.bloomingdales.com/shop/product/lime-crime-velvetines-metallic-matte-lipstick?ID=2669809'
+                    'thumb': 'postparty-thumb2.jpg',
+                    'vendor': 'Kopari Beauty',
+                    'product': 'Coconut Face Cream',
+                    'link': 'https://www.bloomingdales.com/shop/product/kopari-beauty-face-the-day-night-coconut-skin-care-essentials-kit-50-value?ID=2989535'
                 },
                 {
-                    'thumb': 'thumb3.jpg',
-                    'title': 'Lime Crime',
-                    'description': 'Diamond Crushers in&nbsp;Choke',
-                    'link': 'https://www.bloomingdales.com/shop/product/lime-crime-diamond-crushers-iridescent-lip-topper?ID=2669816'
-                }
-            ]
-        },
-        
-        'AllOverHighlighter': {
-            'heading': 'All-Over Highlighter',
-            'videoID': '5579700152001',
-            'productslist': [
-                {
-                    'thumb': 'thumb1.jpg',
-                    'title': 'Lime Crime',
-                    'description': 'Hi-Lite Palette in Blossoms',
-                    'link': 'https://www.bloomingdales.com/shop/product/lime-crime-hi-lite-highlighter-palette?ID=2669832'
+                    'thumb': 'postparty-thumb3.jpg',
+                    'vendor': 'STARSKIN',
+                    'product': 'Silkmud Pink French Clay Purifying Liftaway Mud Sheet Mask',
+                    'link': 'https://www.bloomingdales.com/shop/product/starskin-silkmud-pink-french-clay-purifying-liftaway-mud-sheet-mask?ID=2969637'
                 },
                 {
-                    'thumb': 'thumb2.jpg',
-                    'title': 'Lash Star Beauty',
-                    'description': 'Flash of Brilliance Skin Illuminator in Phosphorescence',
-                    'link': 'https://www.bloomingdales.com/shop/product/lash-star-beauty-flash-of-brilliance-skin-illuminator?ID=2642945'
+                    'thumb': 'postparty-thumb4.jpg',
+                    'vendor': 'FRENCH GIRL',
+                    'product': 'Rose Lip Polish',
+                    'link': 'https://TBD'
                 },
                 {
-                    'thumb': 'thumb3.jpg',
-                    'title': 'COVER FX',
-                    'description': 'Custom Enhancer Drops in Candlelight',
-                    'link': 'https://www.bloomingdales.com/shop/product/cover-fx-custom-enhancer-drops?ID=2687217'
+                    'thumb': 'postparty-thumb5.jpg',
+                    'vendor': 'Lit Cosmetics',
+                    'product': 'Glitter Pigment Lit Kit in Hello Sunshine',
+                    'link': 'https://www.bloomingdales.com/shop/product/lit-cosmetics-glitter-pigment-lit-kit?ID=2677290'
                 },
                 {
-                    'thumb': 'thumb4.jpg',
-                    'title': 'MakeupDrop',
-                    'description': 'Silicone Makeup Applicator',
-                    'link': 'https://www.bloomingdales.com/shop/product/makeupdrop-silicone-makeup-applicator?ID=2621052'
+                    'thumb': 'postparty-thumb6.jpg',
+                    'vendor': 'RMS Beauty',
+                    'product': 'Luminizer X Quad',
+                    'link': 'https://www.bloomingdales.com/shop/product/rms-beauty-luminizer-x-quad?ID=2696053'
                 }
             ]
         },
 
-        'UnicornEyes': {
-            'heading': 'Unicorn Eyes',
-            'videoID': '5579704123001',
+        'SportyStripes': {
+            'heading': 'Post-Party Skin Care Routine',
+            'videoID': '5713602540001',
             'productslist': [
                 {
-                    'thumb': 'thumb1.jpg',
-                    'title': 'FLiRT Cosmetics',
-                    'description': 'Molten Chic Metallic Eyeshadow&nbsp;Duo in&nbsp;Ride Ore Die',
-                    'link': 'https://www.bloomingdales.com/shop/product/flirt-cosmetics-molten-chic-metallic-duo-compact?ID=2695140'
+                    'thumb': 'sporty-stripes-thumb1.jpg',
+                    'vendor': 'SUVA Beauty',
+                    'product': 'Hydra FX in Fanny Pack & Acid Trip',
+                    'link': 'https://www.bloomingdales.com/shop/product/suva-beauty-hydra-fx?ID=2693416'
                 },
                 {
-                    'thumb': 'thumb2.jpg',
-                    'title': 'Rouge Bunny Rouge',
-                    'description': ' Loose Glitter Pigment in&nbsp;Spun from Sunny Seawater',
-                    'link': 'https://www.bloomingdales.com/shop/product/rouge-bunny-rouge-fire-drops-loose-glitter-pigment?ID=2652600'
-                },
-                {
-                    'thumb': 'thumb3.jpg',
-                    'title': 'RMS Beauty',
-                    'description': 'Lip Shine in&nbsp;Sublime',
-                    'link': 'https://www.bloomingdales.com/shop/product/rms-beauty-lip-shine?ID=2653311'
-                },
-                {
-                    'thumb': 'thumb4.jpg',
-                    'title': 'Saturday Skin',
-                    'description': 'Daily Dew Hydrating Essence Mist',
-                    'link': 'https://www.bloomingdales.com/shop/product/saturday-skin-daily-dew-hydrating-essence-mist?ID=2629815'
-                },
-                {
-                    'thumb': 'thumb5.jpg',
-                    'title': 'beautyblender',
-                    'description': 'the original beautyblender&reg;',
-                    'link': 'https://www.bloomingdales.com/shop/product/beautyblender-the-original-beautyblender?ID=2661588'
-                },
-
+                    'thumb': 'sporty-stripes-thumb2.jpg',
+                    'vendor': 'N/A',
+                    'product': 'N/A',
+                    'link': 'https://NA'
+                }
             ]
-        }
+        },
+
+        'TexturedTresses': {
+            'heading': 'Textured Tresses',
+            'videoID': '5713602540001',
+            'productslist': [
+                {
+                    'thumb': 'textured-tresses-thumb---0.jpg',
+                    'vendor': 'Verb',
+                    'product': 'Dry Shampoo',
+                    'link': 'https://NA'
+                },
+                {
+                    'thumb': 'textured-tresses-thumb1.jpg',
+                    'vendor': 'CONTEXT',
+                    'product': 'Renew Styling Mist',
+                    'link': 'https://www.bloomingdales.com/shop/product/context-renew-styling-mist?ID=2953408'
+                },
+                {
+                    'thumb': 'textured-tresses-thumb2.jpg',
+                    'vendor': 'Drybar',
+                    'product': 'The Tiny Tress Press Detailing Iron',
+                    'link': 'https://www.bloomingdales.com/shop/product/drybar-the-tiny-tress-press-detailing-iron?ID=2548967'
+                },
+                {
+                    'thumb': 'textured-tresses-thumb3.jpg',
+                    'vendor': 'Drybar',
+                    'product': 'The Kicker Finishing Spray Wax',
+                    'link': 'https://www.bloomingdales.com/shop/product/drybar-the-kicker-finishing-spray-wax?ID=2950536'
+                },
+                {
+                    'thumb': 'textured-tresses-thumb4.jpg',
+                    'vendor': 'Briogeo',
+                    'product': 'Blossom & Bloom Ginseng + Biotin Volumizing Spray',
+                    'link': 'https://www.bloomingdales.com/shop/product/briogeo-blossom-bloom-ginseng-biotin-volumizing-spray?ID=3013356'
+                }
+            ]
+        },
+
+        'WingedShadow': {
+            'heading': 'Winged Shadow',
+            'videoID': '5713602540001',
+            'productslist': [
+                {
+                    'thumb': 'winged-shadow-thumb1.jpg',
+                    'vendor': 'Lime Crime',
+                    'product': 'Venus XL Palette',
+                    'link': 'https://www.bloomingdales.com/shop/product/lime-crime-venus-xl-palette?ID=2899599'
+                },
+                {
+                    'thumb': 'winged-shadow-thumb2.jpg',
+                    'vendor': 'The Vamp Stamp',
+                    'product': 'Vink Vortex Liquid Eyeliner in Rose & Bronze',
+                    'link': 'https://www.bloomingdales.com/shop/product/index.ognc?ID=3074624'
+                },
+                {
+                    'thumb': 'winged-shadow-thumb3.jpg',
+                    'vendor': 'The Vamp Stamp',
+                    'product': 'Vixen Wing Eyeliner Stamp',
+                    'link': 'https://www.bloomingdales.com/shop/product/index.ognc?ID=2988124'
+                }
+            ]
+        },
+
 
     };
 
@@ -838,18 +745,11 @@ $(function() {
 
     // video page content
     var videoPagePics = [
-
-        {'name': 'PinkAllOver',         'thumb': 'Pink-All-Over.jpg',           'heading': 'Pink All Over'},
-        {'name': 'GraphicEye',          'thumb': 'Graphic-Eye.jpg',             'heading': 'Next Level Cat Eye'},
-        {'name': 'BlurredLip',          'thumb': 'Blurred-Lip.jpg',             'heading': 'Blurred Lip'},
-        {'name': 'SkinPrep',            'thumb': 'Skin-Prep.jpg',               'heading': 'Skin Prep'},
-        {'name': 'BurgundyLip',         'thumb': 'Burgundy-Lip.jpg',            'heading': 'Burgundy Lip'},
-
-        {'name': 'MetallicLips',        'thumb': 'Metallic-Lips.jpg',         'heading': 'Metallic Lips'},
-        {'name': 'AllOverHighlighter',  'thumb': 'All-Over-Highlighter.jpg',  'heading': 'All-Over Highlighter'},
-        {'name': 'UnicornEyes',         'thumb': 'Unicorn-Eyes.jpg',          'heading': 'Unicorn Eyes'}
-
-
+        {'name': 'LacqueredLips',   'thumb': 'lacquered-lips.jpg',   'heading': 'Lacquered Lips'},
+        {'name': 'PostParty',       'thumb': 'post-party.jpg',       'heading': 'Post-Party Skin Care Routine'},
+        {'name': 'SportyStripes',   'thumb': 'sporty-stripes.jpg',   'heading': 'Sporty Stripes'},
+        {'name': 'TexturedTresses', 'thumb': 'textured-tresses.jpg', 'heading': 'Textured Tresses'},
+        {'name': 'WingedShadow',    'thumb': 'winged-shadow.jpg',    'heading': 'Winged Shadow'}
     ];
 
 
@@ -1063,12 +963,7 @@ $(function() {
                 }
                 $('.mfp-title').html('');
             }
-        },
-        // titleSrc: 'title', // Attribute of the target element that contains caption for the slide.
-        // Or the function that should return the title. For example:
-        // titleSrc: function(item) {
-        //   return item.el.attr('title') + '<small>by Marsel Van Oosten</small>';
-        // }
+        }
     });
     
     /* ------------------------------------- HTML POPUP -------------------------------------- */
@@ -1210,15 +1105,13 @@ $(function() {
                 $('.ghl-thumbs-links-list').empty();
                 $.each(prodList, function (item) {
                     var _item = prodList[item];
-                    var itemTitle = _item.title;
-                    if(_item.title === 'The Better Skin Co') {
-                        itemTitle = itemTitle + '.';
-                    }
-                    $('.ghl-thumbs-links-list').append('<li><a coremetricTag="shop-product_' + _item.title.toUpperCase().replace(/[^A-Z0-9]/ig, '-') + '" '+
+                    var itemTitle = _item.vendor;
+
+                    $('.ghl-thumbs-links-list').append('<li><a coremetricTag="shop-product_' + itemTitle.toUpperCase().replace(/[^A-Z0-9]/ig, '-') + '" '+
                         'href="' + _item.link + '">' +
                         '<img alt="' + itemTitle + '" src="' + thisProductPath + _item.thumb + '">' +
                         '<h5>' + itemTitle + '</h5>' +
-                        '<p>' + _item.description + '</p></a></li>');
+                        '<p>' + _item.product + '</p></a></li>');
                 });
 
                 $('.ghl-thumbs-links-list a').on('click', function () {
