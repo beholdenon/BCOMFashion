@@ -1,0 +1,72 @@
+{
+  "designerName": "DIOR SHOES",
+  "machineReadableDesignerName": "dior_shoes",
+  "title2Prefix": "Dior Shoes",
+  "title2Suffix": "ARE ONLY AVAILABLE AT SELECT BLOOMINGDALE’S STORES.",
+  "omitTitle" : false,
+  "pageUrlDesignerAlias": "dior-shoes",
+  "designerDescription": "",
+  "mainImage" : "",
+  "addressColumns": [
+    [{
+      "name": "59th Street",
+      "streetAddress": "1000 Third Avenue",
+      "cityStateZip": "59th Street and Lexington Avenue<br />New York, NY 10022",
+      "phoneNumber": "212-705-2000",
+      "phoneNumberHrefSuffix": "+1-212-705-2000",
+      "urlArgs": {
+        "addressAlias": "59th-street",
+        "designerAlias": "dior_shoes",
+        "addressFullDetail": "59TH-STREET-LEXINGTON-AVENUE"
+      }
+    },
+      {
+        "name": "SOUTH COAST PLAZA",
+        "streetAddress": "3333 South Bristol Street",
+        "cityStateZip": "Costa Mesa, CA 92626",
+        "phoneNumber": "714-824-4600",
+        "phoneNumberHrefSuffix": "+1-714-824-4600",
+        "urlArgs": {
+          "addressAlias": "south-coast-plaza",
+          "designerAlias": "dior_shoes",
+          "addressFullDetail": "SOUTH-COAST-PLAZA"
+        }
+      }],
+    [{
+      "name": "SHORT HILLS",
+      "streetAddress": "1200 Morris Turnpike",
+      "cityStateZip": "The Mall at Short Hills<br />Short Hills, NJ 07078",
+      "phoneNumber": "973-548-2200",
+      "phoneNumberHrefSuffix": "+1-973-548-2200",
+      "urlArgs": {
+        "addressAlias": "short-hills",
+        "designerAlias": "dior_shoes",
+        "addressFullDetail": "THE-MALL-AT-SHORT-HILLS"
+      }
+    }],
+    [{
+      "name": "CHESTNUT HILL",
+      "streetAddress": "225 Boylston Street",
+      "cityStateZip": "Chestnut Hill Mall<br />Chestnut Hill, MA 02467",
+      "phoneNumber": "617-630-6000",
+      "phoneNumberHrefSuffix": "+1-617-630-6000",
+      "urlArgs": {
+        "addressAlias": "chestnut-hill",
+        "designerAlias": "dior_shoes",
+        "addressFullDetail": "CHESTNUT-HILL"
+      }
+    }],
+    [{
+      "name": "CENTURY CITY",
+      "streetAddress": "10250 Santa Monica Boulevard",
+      "cityStateZip": "Los Angeles, CA 90067",
+      "phoneNumber": "310-772-2100",
+      "phoneNumberHrefSuffix": "+1-310-772-2100",
+      "urlArgs": {
+        "addressAlias": "century-city",
+        "designerAlias": "dior_shoes",
+        "addressFullDetail": "CENTURY-CITY"
+      }
+    }]
+  ]
+}
