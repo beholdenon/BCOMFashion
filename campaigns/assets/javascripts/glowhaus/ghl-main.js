@@ -134,20 +134,18 @@ $(function() {
         {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing88-thumb.jpg',  'height': 301},
 
 
+        // LacqueredLips',   'thumb': 'lacquered-lips.jpg',
+        // 'PostParty',       'thumb': 'post-party.jpg',
+        // 'SportyStripes',   'thumb': 'sporty-stripes.jpg',
+        // 'TexturedTresses', 'thumb': 'textured-tresses.jpg',
+        // 'WingedShadow',    'thumb': 'winged-shadow.jpg',
 
-
-
-        {'type': 'img',  'action': 'html-video-popup',   'name': 'MetallicLips',        'thumb': 'video-1.jpg',  'height': 222},
-        {'type': 'img',  'action': 'html-video-popup',   'name': 'AllOverHighlighter',  'thumb': 'video-2.jpg',  'height': 222},
-        // {'type': 'img',  'action': 'html-video-popup',   'name': 'NoMakeupMakeup',      'thumb': 'video-3.jpg',  'height': 222},
-        // {'type': 'img',  'action': 'html-video-popup',   'name': 'UltimateSkinPrep',    'thumb': 'video-4.jpg',  'height': 222},
-        {'type': 'img',  'action': 'html-video-popup',   'name': 'UnicornEyes',         'thumb': 'video-5.jpg',  'height': 222},
-        // {'type': 'img',  'action': 'html-video-popup',   'name': 'CoolLinerLooks',      'thumb': 'video-6.jpg',  'height': 222},
-        {'type': 'img',  'action': 'html-video-popup',   'name': 'PinkAllOver',         'thumb': 'video-7.jpg',  'height': 222},
-        {'type': 'img',  'action': 'html-video-popup',   'name': 'GraphicEye',          'thumb': 'video-8.jpg',  'height': 222},
-        {'type': 'img',  'action': 'html-video-popup',   'name': 'BurgundyLip',         'thumb': 'video-9.jpg',  'height': 222},
-        {'type': 'img',  'action': 'html-video-popup',   'name': 'BlurredLip',          'thumb': 'video-10.jpg',  'height': 222},
-
+        //
+        {'type': 'img',  'action': 'html-video-popup',   'name': 'LacqueredLips',   'thumb': 'lacquered-lips_lp-video-thumb.jpg',  'height': 211},
+        {'type': 'img',  'action': 'html-video-popup',   'name': 'PostParty',       'thumb': 'post-party_lp-video-thumb.jpg',      'height': 199},
+        {'type': 'img',  'action': 'html-video-popup',   'name': 'SportyStripes',   'thumb': 'sporty-stripes_lp-video-thumb.jpg',  'height': 157},
+        {'type': 'img',  'action': 'html-video-popup',   'name': 'TexturedTresses', 'thumb': 'textured-tresses_lp-video-thumb.jpg', 'height': 233},
+        {'type': 'img',  'action': 'html-video-popup',   'name': 'WingedShadow',    'thumb': 'winged-shadow_lp-video-thumb.jpg',    'height': 199},
 
 
 
@@ -340,19 +338,19 @@ $(function() {
                     'link': 'https://www.bloomingdales.com/shop/product/starskin-silkmud-pink-french-clay-purifying-liftaway-mud-sheet-mask?ID=2969637'
                 },
                 {
-                    'thumb': 'postparty-thumb4.jpg',
+                    'thumb': 'N---------------A',
                     'vendor': 'FRENCH GIRL',
                     'product': 'Rose Lip Polish',
-                    'link': 'https://TBD'
+                    'link': 'https://N---------------A'
                 },
                 {
-                    'thumb': 'postparty-thumb5.jpg',
+                    'thumb': 'postparty-thumb4.jpg',
                     'vendor': 'Lit Cosmetics',
                     'product': 'Glitter Pigment Lit Kit in Hello Sunshine',
                     'link': 'https://www.bloomingdales.com/shop/product/lit-cosmetics-glitter-pigment-lit-kit?ID=2677290'
                 },
                 {
-                    'thumb': 'postparty-thumb6.jpg',
+                    'thumb': 'postparty-thumb5.jpg',
                     'vendor': 'RMS Beauty',
                     'product': 'Luminizer X Quad',
                     'link': 'https://www.bloomingdales.com/shop/product/rms-beauty-luminizer-x-quad?ID=2696053'
@@ -372,9 +370,9 @@ $(function() {
                 },
                 {
                     'thumb': 'sporty-stripes-thumb2.jpg',
-                    'vendor': 'N/A',
-                    'product': 'N/A',
-                    'link': 'https://NA'
+                    'vendor': 'SUVA Beauty',
+                    'product': 'Hydra FX in Acid Trip',
+                    'link': 'https://www.bloomingdales.com/shop/product/suva-beauty-hydra-fx?ID=2693416'
                 }
             ]
         },
@@ -384,10 +382,10 @@ $(function() {
             'videoID': '5713602540001',
             'productslist': [
                 {
-                    'thumb': 'textured-tresses-thumb---0.jpg',
+                    'thumb': 'N---------------A',
                     'vendor': 'Verb',
                     'product': 'Dry Shampoo',
-                    'link': 'https://NA'
+                    'link': 'https://N---------------A'
                 },
                 {
                     'thumb': 'textured-tresses-thumb1.jpg',
@@ -774,10 +772,13 @@ $(function() {
 
     // remove/clear all list elements
     landingPageTileList.empty();
+
     shuffleArray(landingPagePics);
     shuffleArray(landingPagePics);
 
     var imgPopupsCounter = 0;
+    // ------ The number of image popups is limited
+    var imgPopupsLimit = 36;
     //var itemsCounter = 0;
 
     var plyrPlayBtn = '<span class="plyr__play-large"><svg id="plyr-play" viewBox="0 0 18 18" width="100%" height="100%"><path d="M15.562 8.1L3.87.225C3.052-.337 2 .225 2 1.125v15.75c0 .9 1.052 1.462 1.87.9L15.563 9.9c.584-.45.584-1.35 0-1.8z"></path></svg><span class="plyr__sr-only">Play</span></span>';
@@ -815,7 +816,7 @@ $(function() {
         var imgItem, videoItem = '';
         if (media === 'img') {
             if (typeOfAction === 'img-popup') {
-                if (imgPopupsCounter < 36) {
+                if (imgPopupsCounter < imgPopupsLimit) {
                     imgItem = $('<li><a aria-haspopup="true" role="button" class="image-popup-link" data-name="POPUP-IMAGE" ' +
                         'href="' + fullSizeImg + '">' +  imgMarkup + '</a></li>')
                         .appendTo(landingPageTileList);
@@ -938,10 +939,6 @@ $(function() {
             easing: 'ease-in-out'
         },
         callbacks: {
-            beforeOpen: function() {
-                //console.log(this.st.el);
-                //alert(this.st.el);
-            },
             open: function(item) {
                 popupCloseBtnEvent = false;
                 // init coremetrics for close btn
@@ -1100,7 +1097,8 @@ $(function() {
 
                 //Video page – product's list
                 var thisProductName = productPageToOpen.toLowerCase();
-                var thisProductPath = videoProductsThumbsDir + thisProductName + '/' + thisProductName + '-';
+                //var thisProductPath = videoProductsThumbsDir + thisProductName + '/' + thisProductName + '-';
+                var thisProductPath = videoProductsThumbsDir + thisProductName + '/';
                 var prodList = videoPagePopupsData[productPageToOpen].productslist;
                 $('.ghl-thumbs-links-list').empty();
                 $.each(prodList, function (item) {
