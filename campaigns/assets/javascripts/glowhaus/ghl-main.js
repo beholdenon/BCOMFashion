@@ -274,6 +274,7 @@ $(function() {
 
         'LacqueredLips': {
             'heading': 'Lacquered Lips',
+            //'videoID': '55803290270001',
             'videoID': '5713602540001',
             'productslist': [
                 {
@@ -317,7 +318,7 @@ $(function() {
 
         'PostParty': {
             'heading': 'Post-Party Skin Care Routine',
-            'videoID': '5713602540001',
+            'videoID': '55803287540001',
             'productslist': [
                 {
                     'thumb': 'postparty-thumb1.jpg',
@@ -360,7 +361,7 @@ $(function() {
 
         'SportyStripes': {
             'heading': 'Post-Party Skin Care Routine',
-            'videoID': '5713602540001',
+            'videoID': '5803290950001',
             'productslist': [
                 {
                     'thumb': 'sporty-stripes-thumb1.jpg',
@@ -379,7 +380,7 @@ $(function() {
 
         'TexturedTresses': {
             'heading': 'Textured Tresses',
-            'videoID': '5713602540001',
+            'videoID': '5803295068001',
             'productslist': [
                 {
                     'thumb': 'N---------------A',
@@ -416,7 +417,7 @@ $(function() {
 
         'WingedShadow': {
             'heading': 'Winged Shadow',
-            'videoID': '5713602540001',
+            'videoID': '5803295069001',
             'productslist': [
                 {
                     'thumb': 'winged-shadow-thumb1.jpg',
@@ -738,7 +739,6 @@ $(function() {
         }
 
     };
-
 
 
     // video page content
@@ -1198,7 +1198,6 @@ $(function() {
                     }
                 } else {
                     popupBrandHeading.html(brandsPageItemHeading);
-
                     ajaxPopup.attr('aria-labelledby', brandsPageItemHeading);
 
                     $('.glh-popup__shop-link-holder').html('<a coremetricTag="shop-now-' + cormetricsValue + '" ' +
