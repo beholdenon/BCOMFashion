@@ -173,9 +173,6 @@ const startServer = async () => {
         { method: 'GET',  path: '/b/2017-glowhaus/{path*}',                                                     config: require('./lib/handlers/views').responsiveCustomHF },
         { method: 'GET',  path: '/2017-glowhaus/{path*}',                                                       config: require('./lib/handlers/views').responsiveCustomHF },
 
-        { method: 'GET',  path: '/b/glowhaus/{path*}',                                                          config: require('./lib/handlers/views').responsiveCustomHF },
-        { method: 'GET',  path: '/glowhaus/{path*}',                                                            config: require('./lib/handlers/views').responsiveCustomHF },
-
         { method: 'GET',  path: '/{path*}',                                                                     config: require('./lib/handlers/views').fallback },
 
     ];

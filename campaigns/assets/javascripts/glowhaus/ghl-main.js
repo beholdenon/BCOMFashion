@@ -35,112 +35,264 @@ $(function() {
             mainContainer.removeClass('glh-m-nav-is-open');
         }
     });
-    
-    
+
+
     // ----------- Landing page tile
+
+
     
     var landingPagePics = [
 
-        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing1-thumb.jpg',   'height': 377},
-        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing2-thumb.jpg',   'height': 199},
-        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing3-thumb.jpg',   'height': 288},
-        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing4-thumb.jpg',   'height': 250},
-        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing5-thumb.jpg',   'height': 340},
-        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing6-thumb.jpg',   'height': 420},
-        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing7-thumb.jpg',   'height': 250},
-        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing8-thumb.jpg',   'height': 289},
-        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing9-thumb.jpg',   'height': 235},
-        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing10-thumb.jpg',  'height': 420},
-        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing11-thumb.jpg',  'height': 362},
-        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing12-thumb.jpg',  'height': 187},
-        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing13-thumb.jpg',  'height': 182},
-        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing14-thumb.jpg',  'height': 187},
-        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing15-thumb.jpg',  'height': 363},
-        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing16-thumb.jpg',  'height': 161},
-        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing17-thumb.jpg',  'height': 420},
-        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing18-thumb.jpg',  'height': 200},
-        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing19-thumb.jpg',  'height': 246},
-        
-        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing20-thumb.jpg',  'height': 420},
-        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing21-thumb.jpg',  'height': 204},
-        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing22-thumb.jpg',  'height': 187},
-        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing23-thumb.jpg',  'height': 272},
-        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing24-thumb.jpg',  'height': 277},
-        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing25-thumb.jpg',  'height': 216},
-        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing26-thumb.jpg',  'height': 420},
-        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing27-thumb.jpg',  'height': 194},
-        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing28-thumb.jpg',  'height': 420},
-        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing29-thumb.jpg',  'height': 117},
-        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing30-thumb.jpg',  'height': 243},
-        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing31-thumb.jpg',  'height': 250},
-        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing32-thumb.jpg',  'height': 144},
-        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing33-thumb.jpg',  'height': 420},
-        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing34-thumb.jpg',  'height': 293},
-        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing35-thumb.jpg',  'height': 187},
-        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing36-thumb.jpg',  'height': 138},
-        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing37-thumb.jpg',  'height': 405},
-        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing38-thumb.jpg',  'height': 288},
-        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing39-thumb.jpg',  'height': 231},
-        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing40-thumb.jpg',  'height': 124},
-        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing41-thumb.jpg',  'height': 348},
-        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing42-thumb.jpg',  'height': 149},
-        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing43-thumb.jpg',  'height': 280},
-        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing44-thumb.jpg',  'height': 187},
-        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing45-thumb.jpg',  'height': 310},
-        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing46-thumb.jpg',  'height': 334},
-        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing47-thumb.jpg',  'height': 187},
-        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing48-thumb.jpg',  'height': 187},
-        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing49-thumb.jpg',  'height': 270},
-        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing50-thumb.jpg',  'height': 208},
-        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing51-thumb.jpg',  'height': 420},
-        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing52-thumb.jpg',  'height': 331},
-        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing53-thumb.jpg',  'height': 195},
-        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing54-thumb.jpg',  'height': 183},
-        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing55-thumb.jpg',  'height': 254},
-        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing56-thumb.jpg',  'height': 379},
-        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing57-thumb.jpg',  'height': 285},
-        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing58-thumb.jpg',  'height': 389},
-        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing59-thumb.jpg',  'height': 299},
-        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing60-thumb.jpg',  'height': 103},
+        // 0011_Lacquer_Lip_Bloomingdales_20180508-thumb.jpg	        https://www.bloomingdales.com/shop/search?keyword=2652616+2669832+2685185
+        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://www.bloomingdales.com/shop/search?keyword=2652616+2669832+2685185',   'thumb': '0011_Lacquer_Lip_Bloomingdales_20180508-thumb.jpg',  'height': 328 },
 
-        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing61-thumb.jpg',  'height': 185},
-        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing62-thumb.jpg',  'height': 420},
-        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing63-thumb.jpg',  'height': 300},
-        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing64-thumb.jpg',  'height': 269},
-        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing65-thumb.jpg',  'height': 169},
-        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing66-thumb.jpg',  'height': 218},
-        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing67-thumb.jpg',  'height': 420},
-        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing68-thumb.jpg',  'height': 187},
-        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing69-thumb.jpg',  'height': 187},
-        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing70-thumb.jpg',  'height': 359},
-        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing71-thumb.jpg',  'height': 359},
-        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing72-thumb.jpg',  'height': 251},
-        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing73-thumb.jpg',  'height': 420},
-        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing74-thumb.jpg',  'height': 187},
-        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing75-thumb.jpg',  'height': 149},
-        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing76-thumb.jpg',  'height': 420},
-        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing77-thumb.jpg',  'height': 158},
-        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing78-thumb.jpg',  'height': 319},
-        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing79-thumb.jpg',  'height': 269},
-        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing80-thumb.jpg',  'height': 300},
+        // 0016_Coming_Home_Bloomingdales_20180508-thumb.jpg	        https://www.bloomingdales.com/shop/search?keyword=2677290+2696053
+        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://www.bloomingdales.com/shop/search?keyword=2677290+2696053',   'thumb': '0016_Coming_Home_Bloomingdales_20180508-thumb.jpg',  'height': 187 },
 
-        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing81-thumb.jpg',  'height': 362},
-        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing82-thumb.jpg',  'height': 327},
-        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing83-thumb.jpg',  'height': 177},
-        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing84-thumb.jpg',  'height': 177},
-        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing85-thumb.jpg',  'height': 240},
-        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing86-thumb.jpg',  'height': 222},
-        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing87-thumb.jpg',  'height': 346},
-        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing88-thumb.jpg',  'height': 301},
+        // 0017_Lacquer_Lip_Bloomingdales_20180508-thumb.jpg	        https://www.bloomingdales.com/shop/search?keyword=2652616+2669832+2685185
+        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://www.bloomingdales.com/shop/search?keyword=2652616+2669832+2685185',   'thumb': '0017_Lacquer_Lip_Bloomingdales_20180508-thumb.jpg',  'height': 328 },
+
+        // 0020_Lacquer_Lip_Single_Bloomingdales_20180508-thumb.jpg	    https://www.bloomingdales.com/shop/product/lime-crime-plushies-soft-focus-lip-veil?ID=2866827
+        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://www.bloomingdales.com/shop/product/lime-crime-plushies-soft-focus-lip-veil?ID=2866827',   'thumb': '0020_Lacquer_Lip_Single_Bloomingdales_20180508-thumb.jpg',  'height': 218 },
+
+        // 0022_Pop_Of_Color_Liner_Bloomingdales_20180508-thumb.jpg	    https://www.bloomingdales.com/shop/search?keyword=2899599+3074624+2988124
+        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://www.bloomingdales.com/shop/search?keyword=2899599+3074624+2988124',   'thumb': '0022_Pop_Of_Color_Liner_Bloomingdales_20180508-thumb.jpg',  'height': 269 },
 
 
-        // LacqueredLips',   'thumb': 'lacquered-lips.jpg',
-        // 'PostParty',       'thumb': 'post-party.jpg',
-        // 'SportyStripes',   'thumb': 'sporty-stripes.jpg',
-        // 'TexturedTresses', 'thumb': 'textured-tresses.jpg',
-        // 'WingedShadow',    'thumb': 'winged-shadow.jpg',
 
+
+        // !!! --------------
+        // 0024_Hair_Bloomingdales_20180508-thumb_01.jpg	            TBD- will provide at QA
+        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://TBD- will provide at QA',   'thumb': '0024_Hair_Bloomingdales_20180508-thumb_01.jpg',  'height': 248 },
+        // !!! --------------
+
+        // 0024_Hair_Bloomingdales_20180508-thumb.jpg	                TBD- will provide at QA
+        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://TBD- will provide at QA',   'thumb': '0024_Hair_Bloomingdales_20180508-thumb.jpg',  'height': 248 },
+
+
+
+
+
+
+
+
+        // 0034_Lacquer_Lip_Single_Bloomingdales_20180508-thumb.jpg	https://www.bloomingdales.com/shop/product/lime-crime-plushies-soft-focus-lip-veil?ID=2866827
+        {'type': 'img',  'action': 'img-popup',   'imgShopLink': ' https://www.bloomingdales.com/shop/product/lime-crime-plushies-soft-focus-lip-veil?ID=2866827',   'thumb': '0034_Lacquer_Lip_Single_Bloomingdales_20180508-thumb.jpg',  'height': 229 },
+
+        // 0037_Lacquer_Lip_Bloomingdales_20180508-thumb.jpg	        https://www.bloomingdales.com/shop/search?keyword=2953405+2866827+2648594
+        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://www.bloomingdales.com/shop/search?keyword=2953405+2866827+2648594',   'thumb': '0037_Lacquer_Lip_Bloomingdales_20180508-thumb.jpg',  'height': 187 },
+
+        // 0041_Coming_Home_Bloomingdales_20180508-thumb.jpg	        https://www.bloomingdales.com/shop/search?keyword=2677290+2696053
+        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://www.bloomingdales.com/shop/search?keyword=2677290+2696053',   'thumb': ' 0041_Coming_Home_Bloomingdales_20180508-thumb.jpg',  'height': 328 },
+
+        // 0047_Coming_Home_Bloomingdales_20180508-thumb.jpg	        https://www.bloomingdales.com/shop/search?keyword=2677290+2696053
+        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://www.bloomingdales.com/shop/search?keyword=2677290+2696053',   'thumb': '0047_Coming_Home_Bloomingdales_20180508-thumb.jpg',  'height': 408 },
+
+        // 0056_Pop_Of_Color_Liner_Bloomingdales_20180508-thumb.jpg	    https://www.bloomingdales.com/shop/search?keyword=2899599+3074624+2988124
+        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://www.bloomingdales.com/shop/search?keyword=2677290+2696053',   'thumb': '0056_Pop_Of_Color_Liner_Bloomingdales_20180508-thumb.jpg',  'height': 232 },
+
+        // 0059_Lacquer_Lip_Bloomingdales_20180508-thumb.jpg	        https://www.bloomingdales.com/shop/search?keyword=2953405+2866827
+        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://www.bloomingdales.com/shop/search?keyword=2953405+2866827',   'thumb': '0059_Lacquer_Lip_Bloomingdales_20180508-thumb.jpg',  'height': 204 },
+
+        // 0065_Hair_Bloomingdales_20180508-thumb.jpg	                TBD- will provide at QA
+        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://TBD- will provide at QA',   'thumb': '0065_Hair_Bloomingdales_20180508-thumb.jpg',  'height': 285 },
+
+        // 0081_Hair_Bloomingdales_20180508-thumb.jpg	                TBD- will provide at QA
+        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://TBD- will provide at QA',   'thumb': '081_Hair_Bloomingdales_20180508-thumb.jpg',  'height': 205 },
+
+        // 0083_Lacquer_Lip_Single_Bloomingdales_20180508-thumb.jpg	    https://www.bloomingdales.com/shop/search?keyword=2652616+2669832+2685185
+        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://www.bloomingdales.com/shop/search?keyword=2652616+2669832+2685185',   'thumb': '0083_Lacquer_Lip_Single_Bloomingdales_20180508-thumb.jpg',  'height': 226 },
+
+        // 0084_Lacquer_Lip_Single_Bloomingdales_20180508-thumb.jpg	    https://www.bloomingdales.com/shop/search?keyword=2652616+2669832+2685185
+        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://www.bloomingdales.com/shop/search?keyword=2652616+2669832+2685185',   'thumb': '0084_Lacquer_Lip_Single_Bloomingdales_20180508-thumb.jpg',  'height': 245 },
+
+        // 0087_Pop_Of_Color_Liner_Bloomingdales_20180508-thumb.jpg	    https://www.bloomingdales.com/shop/search?keyword=2899599+3074624+2988124
+        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://www.bloomingdales.com/shop/search?keyword=2899599+3074624+2988124',   'thumb': '0087_Pop_Of_Color_Liner_Bloomingdales_20180508-thumb.jpg',  'height': 330 },
+
+
+        // 0091_Lacquer_Lip_Single_Bloomingdales_20180508-thumb.jpg	    https://www.bloomingdales.com/shop/product/context-liquid-lacquer?ID=2953405
+        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://www.bloomingdales.com/shop/product/context-liquid-lacquer?ID=2953405',   'thumb': '0091_Lacquer_Lip_Single_Bloomingdales_20180508-thumb.jpg',  'height': 221 },
+
+        // 0094_Lacquer_Lip_Single_Bloomingdales_20180508-thumb.jpg	    https://www.bloomingdales.com/shop/product/context-liquid-lacquer?ID=2953405
+        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://www.bloomingdales.com/shop/product/context-liquid-lacquer?ID=2953405',   'thumb': '0094_Lacquer_Lip_Single_Bloomingdales_20180508-thumb.jpg',  'height': 241 },
+
+        // 0107_Pop_Of_Color_Liner_Bloomingdales_20180508-thumb.jpg	    https://www.bloomingdales.com/shop/search?keyword=2899599+3074624+2988124
+        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://www.bloomingdales.com/shop/search?keyword=2899599+3074624+2988124',   'thumb': '0107_Pop_Of_Color_Liner_Bloomingdales_20180508-thumb.jpg',  'height': 241 },
+
+        // 0125_Hair_Bloomingdales_20180508-thumb.jpg	                TBD- will provide at QA
+        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://TBD- will provide at QA',   'thumb': '0125_Hair_Bloomingdales_20180508-thumb.jpg',  'height': 408 },
+
+        // 0126_Lacquer_Lip_Single_Bloomingdales_20180508-thumb.jpg	    https://www.bloomingdales.com/shop/product/context-liquid-lacquer?ID=2953405
+        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://www.bloomingdales.com/shop/product/context-liquid-lacquer?ID=2953405',   'thumb': '0126_Lacquer_Lip_Single_Bloomingdales_20180508-thumb.jpg',  'height': 213 },
+
+        // 0127_Pop_Of_Color_Liner_Bloomingdales_20180508-thumb.jpg	    https://www.bloomingdales.com/shop/search?keyword=2899599+3074624+2988124
+        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://www.bloomingdales.com/shop/search?keyword=2899599+3074624+2988124',   'thumb': '0127_Pop_Of_Color_Liner_Bloomingdales_20180508-thumb.jpg',  'height': 357 },
+
+        // 0135_Lacquer_Lip_Bloomingdales_20180508-thumb.jpg	        https://www.bloomingdales.com/shop/search?keyword=2866827+2652616
+        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://www.bloomingdales.com/shop/search?keyword=2866827+2652616',   'thumb': '0135_Lacquer_Lip_Bloomingdales_20180508-thumb.jpg',  'height': 313 },
+
+        // 0187_Pop_Of_Color_Liner_Bloomingdales_20180508-thumb.jpg	    https://www.bloomingdales.com/shop/product/suva-beauty-hydra-fx?ID=2693416
+        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://www.bloomingdales.com/shop/product/suva-beauty-hydra-fx?ID=2693416',   'thumb': '0187_Pop_Of_Color_Liner_Bloomingdales_20180508-thumb.jpg',  'height': 327 },
+
+
+
+
+        // -- !!!!!!!!!!!!!!!!!!!!!!
+        // 0198_Pop_Of_Color_Liner_Bloomingdales_20180508-thumb_01.jpg	https://www.bloomingdales.com/shop/product/suva-beauty-hydra-fx?ID=2693416
+        //{'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': ' ',  'height':  },
+        // -- !!!!!!!!!!!!!!!!!!!!!!
+
+        // 0198_Pop_Of_Color_Liner_Bloomingdales_20180508-thumb.jpg	    https://www.bloomingdales.com/shop/product/suva-beauty-hydra-fx?ID=2693416
+        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://www.bloomingdales.com/shop/product/suva-beauty-hydra-fx?ID=2693416',   'thumb': '0198_Pop_Of_Color_Liner_Bloomingdales_20180508-thumb.jpg',  'height': 248 },
+
+
+
+
+        // 0201_Pop_Of_Color_Liner_Bloomingdales_20180508-thumb.jpg	    https://www.bloomingdales.com/shop/product/suva-beauty-hydra-fx?ID=2693416
+        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://www.bloomingdales.com/shop/product/suva-beauty-hydra-fx?ID=2693416',   'thumb': '0201_Pop_Of_Color_Liner_Bloomingdales_20180508-thumb.jpg',  'height':  256},
+
+        // 0216_Hair_Bloomingdales_20180508-thumb.jpg	                https://www.bloomingdales.com/shop/search?keyword=2953408+2548967+2950536
+        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://www.bloomingdales.com/shop/search?keyword=2953408+2548967+2950536',   'thumb': '0216_Hair_Bloomingdales_20180508-thumb.jpg',  'height': 347 },
+
+
+
+
+
+
+        // -- !!!!!!!!!!!!!!!!!!!!!!
+        // 0218_Lacquer_Lip_Bloomingdales_20180508-thumb_01.jpg	        https://www.bloomingdales.com/shop/search?keyword=2953405+2866827+2648594
+        //{'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://www.bloomingdales.com/shop/search?keyword=2953405+2866827+2648594',   'thumb': '0218_Lacquer_Lip_Bloomingdales_20180508-thumb_01.jpg',  'height': 408 },
+        // -- !!!!!!!!!!!!!!!!!!!!!!
+
+        // 0218_Lacquer_Lip_Bloomingdales_20180508-thumb.jpg	        https://www.bloomingdales.com/shop/search?keyword=2953405+2866827+2648594
+         {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://www.bloomingdales.com/shop/search?keyword=2953405+2866827+2648594',   'thumb': '0218_Lacquer_Lip_Bloomingdales_20180508-thumb.jpg',  'height': 248 },
+
+
+
+
+
+
+
+
+
+        // 0238_Hair_Bloomingdales_20180508-thumb.jpg	                https://www.bloomingdales.com/shop/search?keyword=2953408+2548967+2950536
+        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://www.bloomingdales.com/shop/search?keyword=2953408+2548967+2950536',   'thumb': '0238_Hair_Bloomingdales_20180508-thumb.jpg',  'height': 313 },
+
+        // 0250_Pop_Of_Color_Liner_Bloomingdales_20180508-thumb.jpg	    https://www.bloomingdales.com/shop/product/suva-beauty-hydra-fx?ID=2693416
+        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://www.bloomingdales.com/shop/product/suva-beauty-hydra-fx?ID=2693416',   'thumb': '0250_Pop_Of_Color_Liner_Bloomingdales_20180508-thumb.jpg',  'height': 187 },
+
+        // 0260_Pop_Of_Color_Liner_Bloomingdales_20180508-thumb.jpg	    https://www.bloomingdales.com/shop/product/suva-beauty-hydra-fx?ID=2693416
+        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://www.bloomingdales.com/shop/product/suva-beauty-hydra-fx?ID=2693416',   'thumb': '0260_Pop_Of_Color_Liner_Bloomingdales_20180508-thumb.jpg',  'height': 278 },
+
+        // 0273_Hair_Bloomingdales_20180508-thumb.jpg	                https://www.bloomingdales.com/shop/search?keyword=2953408+2548967+2950536
+        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://www.bloomingdales.com/shop/search?keyword=2953408+2548967+2950536',   'thumb': '0273_Hair_Bloomingdales_20180508-thumb.jpg',  'height': 247 },
+
+        // 0277_Pop_Of_Color_Liner_Bloomingdales_20180508-thumb.jpg	    https://www.bloomingdales.com/shop/product/suva-beauty-hydra-fx?ID=2693416
+        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://www.bloomingdales.com/shop/product/suva-beauty-hydra-fx?ID=2693416',   'thumb': '0277_Pop_Of_Color_Liner_Bloomingdales_20180508-thumb.jpg',  'height': 313 },
+
+        // 0314_Hair_Bloomingdales_20180508-thumb.jpg	                https://www.bloomingdales.com/shop/search?keyword=2953408+2548967+2950536
+        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://www.bloomingdales.com/shop/search?keyword=2953408+2548967+2950536',   'thumb': '0314_Hair_Bloomingdales_20180508-thumb.jpg',  'height': 269 },
+
+        // 0334_Lacquer_Lip_Bloomingdales_20180508-thumb.jpg	        https://www.bloomingdales.com/shop/search?keyword=2866827+2652616
+        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://www.bloomingdales.com/shop/search?keyword=2866827+2652616',   'thumb': '0334_Lacquer_Lip_Bloomingdales_20180508-thumb.jpg',  'height': 334 },
+
+        // 0348_Hair_Bloomingdales_20180508-thumb.jpg	                TBD- will provide at QA
+        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://TBD- will provide at QA',   'thumb': '0348_Hair_Bloomingdales_20180508-thumb.jpg',  'height': 313 },
+
+        // //0385_Lacquer_Lip_Bloomingdales_20180508-thumb.jpg	             https://www.bloomingdales.com/shop/search?keyword=2866827+2652616
+         {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://www.bloomingdales.com/shop/search?keyword=2866827+2652616',   'thumb': '0385_Lacquer_Lip_Bloomingdales_20180508-thumb.jpg',  'height': 258 },
+
+        // // 0390_Lacquer_Lip_Bloomingdales_20180508-thumb.jpg	        https://www.bloomingdales.com/shop/search?keyword=2953405+2866827+2648594
+        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://www.bloomingdales.com/shop/search?keyword=2953405+2866827+2648594',   'thumb': '0390_Lacquer_Lip_Bloomingdales_20180508-thumb.jpg',  'height': 187},
+
+        // 0392_Hair_Bloomingdales_20180508-thumb.jpg                   TBD- will provide at QA
+        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://TBD- will provide at QA',   'thumb': '0392_Hair_Bloomingdales_20180508-thumb.jpg',  'height': 187},
+
+
+
+        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': ' ',  'height': 0 },
+
+
+
+        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing20-thumb.jpg',  'height': 420},
+        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing21-thumb.jpg',  'height': 204},
+        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing22-thumb.jpg',  'height': 187},
+        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing23-thumb.jpg',  'height': 272},
+        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing24-thumb.jpg',  'height': 277},
+        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing25-thumb.jpg',  'height': 216},
+        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing26-thumb.jpg',  'height': 420},
+        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing27-thumb.jpg',  'height': 194},
+        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing28-thumb.jpg',  'height': 420},
+        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing29-thumb.jpg',  'height': 117},
+        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing30-thumb.jpg',  'height': 243},
         //
+        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing33-thumb.jpg',  'height': 420},
+        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing34-thumb.jpg',  'height': 293},
+        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing35-thumb.jpg',  'height': 187},
+        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing36-thumb.jpg',  'height': 138},
+
+
+        // landing37-thumb.jpg	   https://www.bloomingdales.com/shop/product/lime-crime-diamond-dew?ID=2809238
+        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://www.bloomingdales.com/shop/product/lime-crime-diamond-dew?ID=2809238',   'thumb': 'landing37-thumb.jpg',  'height': 405},
+
+
+        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing38-thumb.jpg',  'height': 288},
+        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing39-thumb.jpg',  'height': 231},
+        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing40-thumb.jpg',  'height': 124},
+        //
+        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing42-thumb.jpg',  'height': 149},
+        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing43-thumb.jpg',  'height': 280},
+        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing44-thumb.jpg',  'height': 187},
+        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing45-thumb.jpg',  'height': 310},
+        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing46-thumb.jpg',  'height': 334},
+        //
+        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing48-thumb.jpg',  'height': 187},
+        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing49-thumb.jpg',  'height': 270},
+        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing50-thumb.jpg',  'height': 208},
+        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing51-thumb.jpg',  'height': 420},
+        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing52-thumb.jpg',  'height': 331},
+        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing53-thumb.jpg',  'height': 195},
+        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing54-thumb.jpg',  'height': 183},
+        //
+        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing56-thumb.jpg',  'height': 379},
+        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing57-thumb.jpg',  'height': 285},
+
+        // landing58-thumb.jpg	 https://www.bloomingdales.com/shop/product/lime-crime-diamond-dew?ID=2809238
+        {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://www.bloomingdales.com/shop/product/lime-crime-diamond-dew?ID=2809238',   'thumb': 'landing58-thumb.jpg',  'height': 389},
+
+        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing59-thumb.jpg',  'height': 299},
+        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing60-thumb.jpg',  'height': 103},
+        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing61-thumb.jpg',  'height': 185},
+        //
+        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing63-thumb.jpg',  'height': 300},
+        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing64-thumb.jpg',  'height': 269},
+        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing65-thumb.jpg',  'height': 169},
+        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing66-thumb.jpg',  'height': 218},
+        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing67-thumb.jpg',  'height': 420},
+        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing68-thumb.jpg',  'height': 187},
+        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing69-thumb.jpg',  'height': 187},
+        //
+        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing71-thumb.jpg',  'height': 359},
+        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing72-thumb.jpg',  'height': 251},
+        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing73-thumb.jpg',  'height': 420},
+        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing74-thumb.jpg',  'height': 187},
+        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing75-thumb.jpg',  'height': 149},
+        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing76-thumb.jpg',  'height': 420},
+        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing77-thumb.jpg',  'height': 158},
+        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing78-thumb.jpg',  'height': 319},
+        //
+        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing80-thumb.jpg',  'height': 300},
+        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing81-thumb.jpg',  'height': 362},
+        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing82-thumb.jpg',  'height': 327},
+        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing83-thumb.jpg',  'height': 177},
+        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing84-thumb.jpg',  'height': 177},
+        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing85-thumb.jpg',  'height': 240},
+        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing86-thumb.jpg',  'height': 222},
+        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing87-thumb.jpg',  'height': 346},
+        // {'type': 'img',  'action': 'img-popup',   'imgShopLink': 'https://shop-link-here',   'thumb': 'landing88-thumb.jpg',  'height': 301},
+
+
+        // html-video-popups
         {'type': 'img',  'action': 'html-video-popup',   'name': 'LacqueredLips',   'thumb': 'lacquered-lips_lp-video-thumb.jpg',  'height': 211},
         {'type': 'img',  'action': 'html-video-popup',   'name': 'PostParty',       'thumb': 'post-party_lp-video-thumb.jpg',      'height': 199},
         {'type': 'img',  'action': 'html-video-popup',   'name': 'SportyStripes',   'thumb': 'sporty-stripes_lp-video-thumb.jpg',  'height': 157},
@@ -148,63 +300,52 @@ $(function() {
         {'type': 'img',  'action': 'html-video-popup',   'name': 'WingedShadow',    'thumb': 'winged-shadow_lp-video-thumb.jpg',    'height': 199},
 
 
-
-        //{'type': 'img',  'action': 'html-brand-popup',   'name': 'FLiRT Cosmetics',    'thumb': 'brand-01.jpg',  'height': 127},
+        // html-brand-popup - Grab and Glow
         {'type': 'img',  'action': 'html-brand-popup',   'name': 'beautyblender',      'thumb': 'brand-02.jpg',  'height': 139},
-        {'type': 'img',  'action': 'html-brand-popup',   'name': 'NUDESTIX',           'thumb': 'brand-03.jpg',  'height': 85},
-        {'type': 'img',  'action': 'html-brand-popup',   'name': 'RMS Beauty',         'thumb': 'brand-04.jpg',  'height': 129},
-        {'type': 'img',  'action': 'html-brand-popup',   'name': 'Lit Cosmetics',      'thumb': 'brand-05.jpg',  'height': 174},
-        {'type': 'img',  'action': 'html-brand-popup',   'name': 'winkylux',           'thumb': 'brand-06.jpg',  'height': 68},
-        {'type': 'img',  'action': 'html-brand-popup',   'name': 'SUVA Beauty',        'thumb': 'brand-07.jpg',  'height': 119},
-        {'type': 'img',  'action': 'html-brand-popup',   'name': 'The Vamp Stamp',     'thumb': 'brand-08.jpg',  'height': 93},
-        {'type': 'img',  'action': 'html-brand-popup',   'name': 'Saturday Skin',      'thumb': 'brand-09.jpg',  'height': 173},
-        {'type': 'img',  'action': 'html-brand-popup',   'name': 'Sigma Beauty',       'thumb': 'brand-10.jpg',  'height': 64},
+        {'type': 'img',  'action': 'html-brand-popup',   'name': 'BioRepublic',        'thumb': 'brand-16.jpg',  'height': 187},
         {'type': 'img',  'action': 'html-brand-popup',   'name': 'Lano',               'thumb': 'brand-11.jpg',  'height': 171},
-        {'type': 'img',  'action': 'html-brand-popup',   'name': 'Frank Body',         'thumb': 'brand-12.jpg',  'height': 171},
-        {'type': 'img',  'action': 'html-brand-popup',   'name': 'Grown Alchemist',    'thumb': 'brand-13.jpg',  'height': 162},
-        {'type': 'img',  'action': 'html-brand-popup',   'name': 'Lash Star Beauty',   'thumb': 'brand-14.jpg',  'height': 66},
         {'type': 'img',  'action': 'html-brand-popup',   'name': 'kaprielle',          'thumb': 'brand-15.jpg',  'height': 117},
-
-        {'type': 'img',  'action': 'html-brand-popup',   'name': 'BioRepublic',         'thumb': 'brand-16.jpg',  'height': 187},
-        {'type': 'img',  'action': 'html-brand-popup',   'name': 'Bon Parfumeur',       'thumb': 'brand-17.jpg',  'height': 214},
-        {'type': 'img',  'action': 'html-brand-popup',   'name': 'Drybar',              'thumb': 'brand-18.jpg',  'height': 242},
-        {'type': 'img',  'action': 'html-brand-popup',   'name': 'Too Cool for School', 'thumb': 'brand-19.jpg',  'height': 192},
-        {'type': 'img',  'action': 'html-brand-popup',   'name': 'Patchology',          'thumb': 'brand-20.jpg',  'height': 192},
-        {'type': 'img',  'action': 'html-brand-popup',   'name': 'Preheels',            'thumb': 'brand-21.jpg',  'height': 202},
-        {'type': 'img',  'action': 'html-brand-popup',   'name': 'Shhhowercap',         'thumb': 'brand-22.jpg',  'height': 202},
-
-
-        {'type': 'img',  'action': 'html-brand-popup',   'name': 'The Better Skin Co', 'thumb': 'landingthumb_brand1.jpg',  'height': 141},
-        {'type': 'img',  'action': 'html-brand-popup',   'name': 'The BrowGal',        'thumb': 'landingthumb_brand2.jpg',  'height': 117},
-        {'type': 'img',  'action': 'html-brand-popup',   'name': 'CONTEXT',            'thumb': 'landingthumb_brand3.jpg',  'height': 146},
-        {'type': 'img',  'action': 'html-brand-popup',   'name': 'COVER FX',           'thumb': 'landingthumb_brand4.jpg',  'height': 133},
-        {'type': 'img',  'action': 'html-brand-popup',   'name': 'GLAMGLOW',           'thumb': 'landingthumb_brand7.jpg',  'height': 165},
-        {'type': 'img',  'action': 'html-brand-popup',   'name': 'Kosas',              'thumb': 'landingthumb_brand9.jpg',  'height': 64},
-        {'type': 'img',  'action': 'html-brand-popup',   'name': 'Lime Crime',         'thumb': 'landingthumb_brand12.jpg', 'height': 98},
-        {'type': 'img',  'action': 'html-brand-popup',   'name': 'Rouge Bunny Rouge',  'thumb': 'landingthumb_brand17.jpg', 'height': 177},
-        {'type': 'img',  'action': 'html-brand-popup',   'name': 'Saturday Skin',      'thumb': 'landingthumb_brand18.jpg', 'height': 141},
-        {'type': 'img',  'action': 'html-brand-popup',   'name': 'Supergoop',          'thumb': 'landingthumb_brand19.jpg', 'height': 83},
         {'type': 'img',  'action': 'html-brand-popup',   'name': 'makeuperaser',       'thumb': 'landingthumb_brand25.jpg', 'height': 98},
         {'type': 'img',  'action': 'html-brand-popup',   'name': 'makeupdrop',         'thumb': 'landingthumb_brand26.jpg', 'height': 153},
+        {'type': 'img',  'action': 'html-brand-popup',   'name': 'Patchology',         'thumb': 'brand-20.jpg',  'height': 192},
+        {'type': 'img',  'action': 'html-brand-popup',   'name': 'Preheels',           'thumb': 'brand-21.jpg',  'height': 202},
+        {'type': 'img',  'action': 'html-brand-popup',   'name': 'Shhhowercap',        'thumb': 'brand-22.jpg',  'height': 202},
+        {'type': 'img',  'action': 'html-brand-popup',   'name': 'winkylux',           'thumb': 'brand-06.jpg',  'height': 68},
 
-
-
-
-
+        // html-brand-popup - Main
+        {'type': 'img',  'action': 'html-brand-popup',   'name': 'The Better Skin Co', 'thumb': 'landingthumb_brand1.jpg',  'height': 141},
+        {'type': 'img',  'action': 'html-brand-popup',   'name': 'The BrowGal',        'thumb': 'landingthumb_brand2.jpg',  'height': 117},
+        {'type': 'img',  'action': 'html-brand-popup',   'name': 'Bon Parfumeur',      'thumb': 'brand-17.jpg',             'height': 214},
+        {'type': 'img',  'action': 'html-brand-popup',   'name': 'CONTEXT',            'thumb': 'landingthumb_brand3.jpg',  'height': 146},
+        {'type': 'img',  'action': 'html-brand-popup',   'name': 'COVER FX',           'thumb': 'landingthumb_brand4.jpg',  'height': 133},
+        {'type': 'img',  'action': 'html-brand-popup',   'name': 'Drybar',             'thumb': 'brand-18.jpg',             'height': 242},
+        {'type': 'img',  'action': 'html-brand-popup',   'name': 'Frank Body',         'thumb': 'brand-12.jpg',             'height': 171},
+        {'type': 'img',  'action': 'html-brand-popup',   'name': 'GLAMGLOW',           'thumb': 'landingthumb_brand7.jpg',  'height': 165},
+        {'type': 'img',  'action': 'html-brand-popup',   'name': 'Grown Alchemist',    'thumb': 'brand-13.jpg',             'height': 162},
+        {'type': 'img',  'action': 'html-brand-popup',   'name': 'Kosas',              'thumb': 'landingthumb_brand9.jpg',  'height': 64},
+        {'type': 'img',  'action': 'html-brand-popup',   'name': 'Lash Star Beauty',   'thumb': 'brand-14.jpg',             'height': 66},
+        {'type': 'img',  'action': 'html-brand-popup',   'name': 'Lime Crime',         'thumb': 'landingthumb_brand12.jpg', 'height': 98},
+        {'type': 'img',  'action': 'html-brand-popup',   'name': 'Lit Cosmetics',      'thumb': 'brand-05.jpg',             'height': 174},
+        {'type': 'img',  'action': 'html-brand-popup',   'name': 'Mario Badescu',      'thumb': 'landingthumb_brand18.jpg', 'height': 141},
+        {'type': 'img',  'action': 'html-brand-popup',   'name': 'NUDESTIX',           'thumb': 'brand-03.jpg',             'height': 85},
+        {'type': 'img',  'action': 'html-brand-popup',   'name': 'RMS Beauty',         'thumb': 'brand-04.jpg',             'height': 129},
+        {'type': 'img',  'action': 'html-brand-popup',   'name': 'Rouge Bunny Rouge',  'thumb': 'landingthumb_brand17.jpg', 'height': 177},
+        {'type': 'img',  'action': 'html-brand-popup',   'name': 'Saturday Skin',      'thumb': 'brand-09.jpg',             'height': 173},
+        {'type': 'img',  'action': 'html-brand-popup',   'name': 'Supergoop',          'thumb': 'landingthumb_brand19.jpg', 'height': 83},
+        {'type': 'img',  'action': 'html-brand-popup',   'name': 'Sigma Beauty',       'thumb': 'brand-10.jpg',             'height': 64},
+        {'type': 'img',  'action': 'html-brand-popup',   'name': 'SUVA Beauty',        'thumb': 'brand-07.jpg',             'height': 119},
+        {'type': 'img',  'action': 'html-brand-popup',   'name': 'The Vamp Stamp',     'thumb': 'brand-08.jpg',             'height': 93},
+        {'type': 'img',  'action': 'html-brand-popup',   'name': 'Too Cool for School','thumb': 'brand-19.jpg',             'height': 192},
 
         // 06,07 2018
-        {'type': 'img',  'action': 'html-brand-popup',   'name': 'FRENCH GIRL',         'thumb': 'landingthumb_brand39.jpg', 'height': 280},
-        {'type': 'img',  'action': 'html-brand-popup',   'name': 'Kopari Beauty',       'thumb': 'landingthumb_brand37.jpg', 'height': 280},
-        {'type': 'img',  'action': 'html-brand-popup',   'name': 'Briogeo',             'thumb': 'landingthumb_brand38.jpg', 'height': 280},
-        {'type': 'img',  'action': 'html-brand-popup',   'name': 'STARSKIN',            'thumb': 'landingthumb_brand35.jpg', 'height': 280},
-        {'type': 'img',  'action': 'html-brand-popup',   'name': 'Verb',                'thumb': 'landingthumb_brand36.jpg', 'height': 280},
+        {'type': 'img',  'action': 'html-brand-popup',   'name': 'STARSKIN',           'thumb': 'landingthumb_brand27.jpg', 'height': 168},
+        {'type': 'img',  'action': 'html-brand-popup',   'name': 'Verb',               'thumb': 'landingthumb_brand28.jpg', 'height': 195},
+        {'type': 'img',  'action': 'html-brand-popup',   'name': 'Kopari Beauty',      'thumb': 'landingthumb_brand29.jpg', 'height': 184},
+        {'type': 'img',  'action': 'html-brand-popup',   'name': 'Briogeo',            'thumb': 'landingthumb_brand30.jpg', 'height': 172},
+        {'type': 'img',  'action': 'html-brand-popup',   'name': 'FRENCH GIRL',        'thumb': 'landingthumb_brand31.jpg', 'height': 191},
 
 
-
-
-
-
-        // {'type':  'deco',  'thumb': 'deco-01.jpg',   'height': 146},
+        // deco
         {'type':  'deco',  'thumb': 'deco-02.jpg',   'height': 211},
         {'type':  'deco',  'thumb': 'deco-03.jpg',   'height': 90},
         {'type':  'deco',  'thumb': 'deco-04.jpg',   'height': 85},
@@ -222,18 +363,16 @@ $(function() {
         {'type':  'deco',  'thumb': 'deco-16.jpg',   'height': 92},
         {'type':  'deco',  'thumb': 'deco-17.jpg',   'height': 60},
         {'type':  'deco',  'thumb': 'deco-18.jpg',   'height': 171},
-
         {'type':  'deco',  'thumb': 'deco-19.jpg',   'height': 151},
         {'type':  'deco',  'thumb': 'deco-20.jpg',   'height': 151},
-        // {'type':  'deco',  'thumb': 'deco-21.jpg',   'height': 151},
+
         {'type':  'deco',  'thumb': 'deco-22.jpg',   'height': 128},
         {'type':  'deco',  'thumb': 'deco-23.jpg',   'height': 108},
-
         {'type':  'deco',  'thumb': 'deco-24.jpg',   'height': 64},
         {'type':  'deco',  'thumb': 'deco-25.jpg',   'height': 112},
 
 
-
+        // "gifs"
         {'type':  'video',  'thumb': 'GH1_PinkAllOver1.mp4',    'height': 158},
         {'type':  'video',  'thumb': 'GH1_PinkAllOver2.mp4',    'height': 158},
         {'type':  'video',  'thumb': 'GH2_NextLevelCat1.mp4',   'height': 158},
@@ -251,31 +390,20 @@ $(function() {
         {'type':  'video',  'thumb': 'Glowhaus_gif4.mp4',   'height': 280},
         {'type':  'video',  'thumb': 'Glowhaus_gif5.mp4',   'height': 280},
         {'type':  'video',  'thumb': 'Glowhaus_gif6.mp4',   'height': 162},
-        // {'type':  'video',  'thumb': 'Glowhaus_gif7.mp4',   'height': 280},
-        // {'type':  'video',  'thumb': 'Glowhaus_gif8.mp4',   'height': 280},
-        // {'type':  'video',  'thumb': 'Glowhaus_gif9.mp4',   'height': 162},
-        // {'type':  'video',  'thumb': 'Glowhaus_gif10.mp4',  'height': 280},
-        // {'type':  'video',  'thumb': 'Glowhaus_gif11.mp4',  'height': 162},
-        // {'type':  'video',  'thumb': 'Glowhaus_gif12.mp4',  'height': 280},
-        // {'type':  'video',  'thumb': 'Glowhaus_gif13.mp4',  'height': 280},
-        // {'type':  'video',  'thumb': 'Glowhaus_gif14.mp4',  'height': 280},
+
         {'type':  'video',  'thumb': 'Glowhaus_gif15.mp4',  'height': 280},
-        // {'type':  'video',  'thumb': 'Glowhaus_gif16.mp4',  'height': 280},
         {'type':  'video',  'thumb': 'Glowhaus_gif17.mp4',  'height': 280},
         {'type':  'video',  'thumb': 'Glowhaus_gif18.mp4',  'height': 162}
-
-
 
     ];
 
     // Landing page's popups with video and products list
-   // 'videoID': '5713602540001',
+   // old 'videoID': '5713602540001',
     var videoPagePopupsData = {
 
         'LacqueredLips': {
             'heading': 'Lacquered Lips',
-            //'videoID': '55803290270001',
-            'videoID': '5713602540001',
+            'videoID': '5804490501001',
             'productslist': [
                 {
                     'thumb': 'lacquered-lips-thumb1.jpg',
@@ -318,7 +446,7 @@ $(function() {
 
         'PostParty': {
             'heading': 'Post-Party Skin Care Routine',
-            'videoID': '55803287540001',
+            'videoID': '5804492994001',
             'productslist': [
                 {
                     'thumb': 'postparty-thumb1.jpg',
@@ -360,7 +488,7 @@ $(function() {
         },
 
         'SportyStripes': {
-            'heading': 'Post-Party Skin Care Routine',
+            'heading': 'Sporty Stripes',
             'videoID': '5803290950001',
             'productslist': [
                 {
@@ -380,7 +508,7 @@ $(function() {
 
         'TexturedTresses': {
             'heading': 'Textured Tresses',
-            'videoID': '5803295068001',
+            'videoID': '5804497081001',
             'productslist': [
                 {
                     'thumb': 'N---------------A',
@@ -777,6 +905,7 @@ $(function() {
     shuffleArray(landingPagePics);
 
     var imgPopupsCounter = 0;
+
     // ------ The number of image popups is limited
     var imgPopupsLimit = 36;
     //var itemsCounter = 0;
@@ -844,10 +973,8 @@ $(function() {
                     '" src="' + imagePlaceHolder + '"></video></li>')
                     .appendTo(landingPageTileList);
                 setImgHeight(videoItem);
-
-
-               
             } else {
+                // show .jpg if .mp4 is not supported
                 var videoThumb = thumbImg.substr(0, thumbImg.lastIndexOf('.')) + '.jpg';
                 imgItem = $('<li class="glh-masonry-item__deco-item">' +
                     '<img alt="glowhaus generic photo" data-width="' + defaultThumbWidth +
