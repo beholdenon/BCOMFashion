@@ -36,10 +36,7 @@ $(function() {
         }
     });
 
-
-    // ----------- Landing page tile
-
-    // Image popups ------------
+    // ----------- Pages data start
 
     var landingPopups = [
         {   'type': 'img',  'action': 'img-popup',
@@ -272,7 +269,6 @@ $(function() {
         },
     ];
 
-
     var landingPopupsVideos = [
         {'type': 'img', 'action': 'html-video-popup', 'name': 'LacqueredLips',   'thumb': 'lacquered-lips_lp-video-thumb.jpg',  'height': 211},
         {'type': 'img', 'action': 'html-video-popup', 'name': 'PostParty',       'thumb': 'post-party_lp-video-thumb.jpg',      'height': 199},
@@ -280,7 +276,6 @@ $(function() {
         {'type': 'img', 'action': 'html-video-popup', 'name': 'TexturedTresses', 'thumb': 'textured-tresses_lp-video-thumb.jpg', 'height': 233},
         {'type': 'img', 'action': 'html-video-popup', 'name': 'WingedShadow',    'thumb': 'winged-shadow_lp-video-thumb.jpg',    'height': 199},
     ];
-
 
     var landingPopupsGIFs = [
         {'type': 'video', 'thumb': 'GH1_PinkAllOver1.mp4', 'height': 158},
@@ -294,21 +289,20 @@ $(function() {
         {'type': 'video', 'thumb': 'GH5_BurgundyLip1.mp4', 'height': 158},
         {'type': 'video', 'thumb': 'GH5_BurgundyLip2.mp4', 'height': 158},
 
-        {'type': 'video', 'thumb': 'Glowhaus_gif1.mp4', 'height': 162},
-        {'type': 'video', 'thumb': 'Glowhaus_gif2.mp4', 'height': 280},
-        {'type': 'video', 'thumb': 'Glowhaus_gif3.mp4', 'height': 280},
-        {'type': 'video', 'thumb': 'Glowhaus_gif4.mp4', 'height': 280},
-        {'type': 'video', 'thumb': 'Glowhaus_gif5.mp4', 'height': 280},
-        {'type': 'video', 'thumb': 'Glowhaus_gif6.mp4', 'height': 162},
-
-        {'type': 'video', 'thumb': 'Glowhaus_gif15.mp4', 'height': 280},
-        {'type': 'video', 'thumb': 'Glowhaus_gif17.mp4', 'height': 280},
-        {'type': 'video', 'thumb': 'Glowhaus_gif18.mp4', 'height': 162}
+        // {'type': 'video', 'thumb': 'Glowhaus_gif1.mp4', 'height': 162},
+        // {'type': 'video', 'thumb': 'Glowhaus_gif2.mp4', 'height': 280},
+        // {'type': 'video', 'thumb': 'Glowhaus_gif3.mp4', 'height': 280},
+        // {'type': 'video', 'thumb': 'Glowhaus_gif4.mp4', 'height': 280},
+        // {'type': 'video', 'thumb': 'Glowhaus_gif5.mp4', 'height': 280},
+        // {'type': 'video', 'thumb': 'Glowhaus_gif6.mp4', 'height': 162},
+        //
+        // {'type': 'video', 'thumb': 'Glowhaus_gif15.mp4', 'height': 280},
+        // {'type': 'video', 'thumb': 'Glowhaus_gif17.mp4', 'height': 280},
+        // {'type': 'video', 'thumb': 'Glowhaus_gif18.mp4', 'height': 162}
     ];
 
-
     var landingPopupsBrands = [
-        // --------------- html-brand-popup - Grab and Glow -------------------- //
+        //html-brand-popup - Grab and Glow
         {'type': 'img',  'action': 'html-brand-popup',   'name': 'beautyblender',      'thumb': 'brand-02.jpg',  'height': 139},
         {'type': 'img',  'action': 'html-brand-popup',   'name': 'BioRepublic',        'thumb': 'brand-16.jpg',  'height': 187},
         {'type': 'img',  'action': 'html-brand-popup',   'name': 'Lano',               'thumb': 'brand-11.jpg',  'height': 171},
@@ -319,7 +313,7 @@ $(function() {
         {'type': 'img',  'action': 'html-brand-popup',   'name': 'Preheels',           'thumb': 'brand-21.jpg',  'height': 202},
         {'type': 'img',  'action': 'html-brand-popup',   'name': 'Shhhowercap',        'thumb': 'brand-22.jpg',  'height': 202},
         {'type': 'img',  'action': 'html-brand-popup',   'name': 'winkylux',           'thumb': 'brand-06.jpg',  'height': 68},
-        // --------------- html-brand-popup - Main -------------------- //
+        // html-brand-popup - Main
         {'type': 'img',  'action': 'html-brand-popup',   'name': 'The Better Skin Co', 'thumb': 'landingthumb_brand1.jpg',  'height': 141},
         {'type': 'img',  'action': 'html-brand-popup',   'name': 'The BrowGal',        'thumb': 'landingthumb_brand2.jpg',  'height': 117},
         {'type': 'img',  'action': 'html-brand-popup',   'name': 'Bon Parfumeur',      'thumb': 'brand-17.jpg',             'height': 214},
@@ -351,24 +345,21 @@ $(function() {
         {'type': 'img',  'action': 'html-brand-popup',   'name': 'FRENCH GIRL',        'thumb': 'landingthumb_brand31.jpg', 'height': 191},
     ];
 
+    var landingPopupsDeco = [
 
-    var landingPagePics = [
-
-        // deco
-        {'type':  'deco',  'thumb': 'deco-03.jpg',   'height': 90},
-        {'type':  'deco',  'thumb': 'deco-04.jpg',   'height': 85},
-        {'type':  'deco',  'thumb': 'deco-05.jpg',   'height': 311},
-        {'type':  'deco',  'thumb': 'deco-09.jpg',   'height': 143},
-        {'type':  'deco',  'thumb': 'deco-13.jpg',   'height': 68},
-        {'type':  'deco',  'thumb': 'deco-18.jpg',   'height': 171},
-        {'type':  'deco',  'thumb': 'deco-22.jpg',   'height': 128},
-        {'type':  'deco',  'thumb': 'deco-23.jpg',   'height': 108},
-        {'type':  'deco',  'thumb': 'deco-24.jpg',   'height': 64},
-
+        {'type': 'deco', 'thumb': 'deco-03.jpg', 'height': 90},
+        {'type': 'deco', 'thumb': 'deco-04.jpg', 'height': 85},
+        {'type': 'deco', 'thumb': 'deco-05.jpg', 'height': 311},
+        {'type': 'deco', 'thumb': 'deco-09.jpg', 'height': 143},
+        {'type': 'deco', 'thumb': 'deco-13.jpg', 'height': 68},
+        {'type': 'deco', 'thumb': 'deco-18.jpg', 'height': 171},
+        {'type': 'deco', 'thumb': 'deco-22.jpg', 'height': 128},
+        {'type': 'deco', 'thumb': 'deco-23.jpg', 'height': 108},
+        {'type': 'deco', 'thumb': 'deco-24.jpg', 'height': 64},
 
     ];
 
-    // Landing page's popups with video and products list
+    // Popup pages with video and products list
 
     var videoPagePopupsData = {
 
@@ -838,7 +829,7 @@ $(function() {
 
     };
 
-    // video page content
+    // Video pages content
     var videoPagePics = [
         {'name': 'LacqueredLips',   'thumb': 'lacquered-lips.jpg',   'heading': 'Lacquered Lips'},
         {'name': 'PostParty',       'thumb': 'post-party.jpg',       'heading': 'Post-Party Skin Care Routine'},
@@ -846,6 +837,8 @@ $(function() {
         {'name': 'TexturedTresses', 'thumb': 'textured-tresses.jpg', 'heading': 'Textured Tresses'},
         {'name': 'WingedShadow',    'thumb': 'winged-shadow.jpg',    'heading': 'Winged Shadow'}
     ];
+
+    // ----------- Pages data end
 
 
     var imagePlaceHolder       = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7'; // transparent
@@ -861,37 +854,32 @@ $(function() {
     var defaultThumbWidth    = 280;
     var videoSelector = '.glh-video';
 
+    var imgLinkText = "Shop the look";
+
     var videoAutoPlaySupported = function () {
         Modernizr.on('videoautoplay', function (result) {
             return result;
         });
     };
 
-    // remove/clear all list elements
-    landingPageTileList.empty();
-
-    //shuffleArray(landingPagePics);
-    //shuffleArray(landingPagePics);
 
     //var imgPopupsCounter = 0;
-
-    // ------ The number of image popups is limited
     //var imgPopupsLimit = 36;
 
     //var itemsCounter = 0;
 
     var plyrPlayBtn = '<span class="plyr__play-large"><svg id="plyr-play" viewBox="0 0 18 18" width="100%" height="100%"><path d="M15.562 8.1L3.87.225C3.052-.337 2 .225 2 1.125v15.75c0 .9 1.052 1.462 1.87.9L15.563 9.9c.584-.45.584-1.35 0-1.8z"></path></svg><span class="plyr__sr-only">Play</span></span>';
 
+    // remove/clear all list elements
+    landingPageTileList.empty();
+
     shuffleArray(landingPopups);
     shuffleArray(landingPopupsVideos);
-    shuffleArray(landingPopupsGIFs);
-    shuffleArray(landingPopupsBrands);
-
-    var imgLinkText = "Shop the look";
 
     var oneOrZero = 0;
     var ind = 0;
 
+    // Distribute popupsVideos
     var step = Math.floor(landingPopups.length / landingPopupsVideos.length);
     for (var i = 0; i < landingPopupsVideos.length; i++) {
         oneOrZero = Math.round(Math.random());
@@ -899,6 +887,8 @@ $(function() {
         landingPopups.splice(ind, 0, landingPopupsVideos[i]);
     }
 
+    // Distribute MP4s
+    shuffleArray(landingPopupsGIFs);
     step = Math.floor(landingPopups.length / landingPopupsGIFs.length);
     for (var e = 0; e < landingPopupsGIFs.length; e++) {
         oneOrZero = Math.round(Math.random());
@@ -906,17 +896,25 @@ $(function() {
         landingPopups.splice(ind, 0, landingPopupsGIFs[e]);
     }
 
-
-    //step = Math.floor(landingPopups.length / landingPopupsBrands.length);
-    for (var q = 0; q < landingPopupsBrands.length; q++) {
+    // Distribute brand popups
+    shuffleArray(landingPopupsBrands);
+    var brandsShortList = landingPopupsBrands.slice(0, 30);
+    for (var q = 0; q < brandsShortList.length; q++) {
         oneOrZero = Math.round(Math.random());
-        //ind = q * step  + q + step + 1;
-        ind = q * 2 + q + 2 + oneOrZero;
-        landingPopups.splice(ind, 0, landingPopupsBrands[q]);
+        ind = q * 2 + q + 1 + oneOrZero;
+        landingPopups.splice(ind, 0, brandsShortList[q]);
     }
 
+    // Distribute deco images
+    shuffleArray(landingPopupsDeco);
+    step = Math.floor(landingPopups.length / landingPopupsDeco.length);
+    for (var y = 0; y < landingPopupsDeco.length; y++) {
+        oneOrZero = Math.round(Math.random());
+        ind = y * step  + y + step + oneOrZero;
+        landingPopups.splice(ind, 0, landingPopupsDeco[y]);
+    }
 
-
+    // Create landing page image tile
     $.each(landingPopups, function (i) {
 
         var tileItem       = landingPopups[i];
@@ -933,7 +931,7 @@ $(function() {
             item.find('video').css('height', value);
         };
 
-        var imgMarkup = '<img title=" ' + imgLinkText + ' " alt="glowhaus generic photo ' + i + '" data-width="' + defaultThumbWidth +
+        var imgMarkup = '<img title="' + imgLinkText + '" alt="glowhaus generic photo ' + i + '" data-width="' + defaultThumbWidth +
             '" data-height="' + originalHeight +
             '" data-tmp-src="' + thumbImg +
             '" data-img-shop-link="' + shopLink +
@@ -945,6 +943,7 @@ $(function() {
             '" src="' + imagePlaceHolder + '">';
 
         var imgItem, videoItem = '';
+
         if (media === 'img') {
             if (typeOfAction === 'img-popup') {
                 //if (imgPopupsCounter < imgPopupsLimit) {
@@ -994,256 +993,6 @@ $(function() {
     });
 
 
-    //
-    // $.each(landingPopups, function (i) {
-    //
-    //     var tileItem       = landingPopups[i];
-    //     var originalHeight = tileItem.height;
-    //     var fullSizeImg    = imgFullSizeDir + tileItem.thumb.replace('-thumb','');
-    //     var thumbImg       = imgThumbsDir + tileItem.thumb;
-    //     var shopLink       = tileItem.imgShopLink;
-    //
-    //     var setImgHeight = function(item) {
-    //         var value = originalHeight * (item.width() / defaultThumbWidth);
-    //         item.find('img').css('height', value);
-    //         //item.find('video').css('height', value);
-    //     };
-    //
-    //     var imgMarkup = '<img title=" ' + imgLinkText + ' " alt="glowhaus generic photo ' + i + '" data-width="' + defaultThumbWidth +
-    //         '" data-height="' + originalHeight +
-    //         '" data-tmp-src="' + thumbImg +
-    //         '" data-img-shop-link="' + shopLink +
-    //         '" src="' + imagePlaceHolder + '">';
-    //
-    //     // var prodImgMarkup = '<img alt="' + tileItem.name + ' ' + i + '" data-width="' + defaultThumbWidth +
-    //     //     '" data-height="' + originalHeight +
-    //     //     '" data-tmp-src="' + thumbImg +
-    //     //     '" src="' + imagePlaceHolder + '">';
-    //
-    //     var imgItem = $('<li><a aria-haspopup="true" role="button" class="image-popup-link" data-name="POPUP-IMAGE" ' +
-    //         'href="' + fullSizeImg + '">' +  imgMarkup + '</a></li>')
-    //         .appendTo(landingPageTileList);
-    //     setImgHeight(imgItem);
-    //
-    //     //
-    //     // if (media === 'img') {
-    //     //     if (typeOfAction === 'img-popup') {
-    //     //         //if (imgPopupsCounter < imgPopupsLimit) {
-    //     //         // imgItem = $('<li><a aria-haspopup="true" role="button" class="image-popup-link" data-name="POPUP-IMAGE" ' +
-    //     //         //     'href="' + fullSizeImg + '">' +  imgMarkup + '</a></li>')
-    //     //         //     .appendTo(landingPageTileList);
-    //     //         // setImgHeight(imgItem);
-    //     //         // imgPopupsCounter++;
-    //     //         // }
-    //     //     } else if (typeOfAction === 'html-video-popup') {
-    //     //         // imgItem = $('<li><a aria-haspopup="true" role="button" class="html-video-popup" data-name="' + tileItem.name + '" ' +
-    //     //         //     'href="' + popupPageTemplateUrl + '?v=' + i +'">' +  imgMarkup +
-    //     //         //     '<span class="plyr-play-btn__holder">' + plyrPlayBtn + '</span>' +
-    //     //         //     '</a></li>')
-    //     //         //     .appendTo(landingPageTileList);
-    //     //         // setImgHeight(imgItem);
-    //     //     }else if (typeOfAction === 'html-brand-popup') {
-    //     //         // imgItem = $('<li><a aria-haspopup="true" role="button" class="html-brand-popup no-play-btn" data-name="' + tileItem.name + '" ' +
-    //     //         //     'href="' + popupPageTemplateUrl + '?v=' + i +'">' +  prodImgMarkup + '</a></li>')
-    //     //         //     .appendTo(landingPageTileList);
-    //     //         // setImgHeight(imgItem);
-    //     //     }
-    //     // } else if (media === 'video') {
-    //     //     // if (videoAutoPlaySupported) {
-    //     //     //     videoItem = $('<li class="glh-masonry-item__video-thumb"><video class="glh-video-thumb" autoplay playsinline loop data-width="' + defaultThumbWidth +
-    //     //     //         '" data-height="' + originalHeight +
-    //     //     //         '" data-tmp-src="' + thumbImg +
-    //     //     //         '" src="' + imagePlaceHolder + '"></video></li>')
-    //     //     //         .appendTo(landingPageTileList);
-    //     //     //     setImgHeight(videoItem);
-    //     //     // } else {
-    //     //     //     // show .jpg if .mp4 is not supported
-    //     //     //     var videoThumb = thumbImg.substr(0, thumbImg.lastIndexOf('.')) + '.jpg';
-    //     //     //     imgItem = $('<li class="glh-masonry-item__deco-item">' +
-    //     //     //         '<img alt="glowhaus generic photo" data-width="' + defaultThumbWidth +
-    //     //     //         '" data-height="' + originalHeight +
-    //     //     //         '" data-tmp-src="' + videoThumb +
-    //     //     //         '" src="' + imagePlaceHolder + '"></li>')
-    //     //     //         .appendTo(landingPageTileList);
-    //     //     //     setImgHeight(imgItem);
-    //     //     // }
-    //     // } else if (media === 'deco') {
-    //     //     // imgItem = $('<li class="glh-masonry-item__deco-item">' +  imgMarkup + '</li>')
-    //     //     //     .appendTo(landingPageTileList);
-    //     //     // setImgHeight(imgItem);
-    //     // }
-    // });
-
-    /*
-
-    // create landing page image tile
-    // $.each(landingPagePics, function (i) {
-    //
-    //     var tileItem       = landingPagePics[i];
-    //     var media          = tileItem.type;
-    //     var originalHeight = tileItem.height;
-    //     var fullSizeImg    = imgFullSizeDir + tileItem.thumb.replace('-thumb','');
-    //     var thumbImg       = imgThumbsDir + tileItem.thumb;
-    //     var typeOfAction   = tileItem.action;
-    //     var shopLink       = tileItem.imgShopLink;
-    //
-    //     var setImgHeight = function(item) {
-    //         var value = originalHeight * (item.width() / defaultThumbWidth);
-    //         item.find('img').css('height', value);
-    //         item.find('video').css('height', value);
-    //     };
-    //
-    //     var imgMarkup = '<img title=" ' + imgLinkText + ' " alt="glowhaus generic photo ' + i + '" data-width="' + defaultThumbWidth +
-    //         '" data-height="' + originalHeight +
-    //         '" data-tmp-src="' + thumbImg +
-    //         '" data-img-shop-link="' + shopLink +
-    //         '" src="' + imagePlaceHolder + '">';
-    //
-    //     var prodImgMarkup = '<img alt="' + tileItem.name + ' ' + i + '" data-width="' + defaultThumbWidth +
-    //         '" data-height="' + originalHeight +
-    //         '" data-tmp-src="' + thumbImg +
-    //         '" src="' + imagePlaceHolder + '">';
-    //
-    //     var imgItem, videoItem = '';
-    //     if (media === 'img') {
-    //         if (typeOfAction === 'img-popup') {
-    //             //if (imgPopupsCounter < imgPopupsLimit) {
-    //                 imgItem = $('<li><a aria-haspopup="true" role="button" class="image-popup-link" data-name="POPUP-IMAGE" ' +
-    //                     'href="' + fullSizeImg + '">' +  imgMarkup + '</a></li>')
-    //                     .appendTo(landingPageTileList);
-    //                 setImgHeight(imgItem);
-    //                // imgPopupsCounter++;
-    //            // }
-    //         } else if (typeOfAction === 'html-video-popup') {
-    //             imgItem = $('<li><a aria-haspopup="true" role="button" class="html-video-popup" data-name="' + tileItem.name + '" ' +
-    //                 'href="' + popupPageTemplateUrl + '?v=' + i +'">' +  imgMarkup +
-    //                 '<span class="plyr-play-btn__holder">' + plyrPlayBtn + '</span>' +
-    //                 '</a></li>')
-    //                 .appendTo(landingPageTileList);
-    //             setImgHeight(imgItem);
-    //         }else if (typeOfAction === 'html-brand-popup') {
-    //             imgItem = $('<li><a aria-haspopup="true" role="button" class="html-brand-popup no-play-btn" data-name="' + tileItem.name + '" ' +
-    //                 'href="' + popupPageTemplateUrl + '?v=' + i +'">' +  prodImgMarkup + '</a></li>')
-    //                 .appendTo(landingPageTileList);
-    //             setImgHeight(imgItem);
-    //         }
-    //     } else if (media === 'video') {
-    //         if (videoAutoPlaySupported) {
-    //             videoItem = $('<li class="glh-masonry-item__video-thumb"><video class="glh-video-thumb" autoplay playsinline loop data-width="' + defaultThumbWidth +
-    //                 '" data-height="' + originalHeight +
-    //                 '" data-tmp-src="' + thumbImg +
-    //                 '" src="' + imagePlaceHolder + '"></video></li>')
-    //                 .appendTo(landingPageTileList);
-    //             setImgHeight(videoItem);
-    //         } else {
-    //             // show .jpg if .mp4 is not supported
-    //             var videoThumb = thumbImg.substr(0, thumbImg.lastIndexOf('.')) + '.jpg';
-    //             imgItem = $('<li class="glh-masonry-item__deco-item">' +
-    //                 '<img alt="glowhaus generic photo" data-width="' + defaultThumbWidth +
-    //                 '" data-height="' + originalHeight +
-    //                 '" data-tmp-src="' + videoThumb +
-    //                 '" src="' + imagePlaceHolder + '"></li>')
-    //                 .appendTo(landingPageTileList);
-    //             setImgHeight(imgItem);
-    //         }
-    //     } else if (media === 'deco') {
-    //         imgItem = $('<li class="glh-masonry-item__deco-item">' +  imgMarkup + '</li>')
-    //             .appendTo(landingPageTileList);
-    //         setImgHeight(imgItem);
-    //     }
-    // });
-
-    */
-
-
-//
-//
-//     $.each(landingPopupsVideos, function (i) {
-//
-//         var tileItem       = landingPopupsVideos[i];
-//         var originalHeight = tileItem.height;
-//         var thumbImg       = imgThumbsDir + tileItem.thumb;
-//
-//         console.log(thumbImg);
-//
-//         var setImgHeight = function(item) {
-//             var value = originalHeight * (item.width() / defaultThumbWidth);
-//             item.find('img').css('height', value);
-//             //item.find('video').css('height', value);
-//         };
-//         //var _height        = originalHeight * (item.width() / defaultThumbWidth);
-// //style="height:' + _height + '"
-//         var imgMarkup = '<img alt="glowhaus generic photo ' + i + '" data-width="' + defaultThumbWidth +
-//             '" data-height="' + originalHeight +
-//             '" data-tmp-src="' + thumbImg +
-//             '" src="' + imagePlaceHolder + '">';
-//
-//         // var listItemMarkup = '<li><a aria-haspopup="true" role="button" class="html-video-popup" data-name="' + tileItem.name + '" ' +
-//         //     'href="' + popupPageTemplateUrl + '?v=' + i +'">' +  imgMarkup +
-//         //     '<span class="plyr-play-btn__holder">' + plyrPlayBtn + '</span></a></li>';
-//
-//         //$('ul#glh-images-tile li:nth-child(2)').after(listItemMarkup);
-//
-//         //var ind = (i + 1) * 9;
-//         var imgItem = $('<li><a aria-haspopup="true" role="button" class="html-video-popup" data-name="' + tileItem.name + '" ' +
-//                     'href="' + popupPageTemplateUrl + '?v=' + i +'">' +  imgMarkup +
-//                     '<span class="plyr-play-btn__holder">' + plyrPlayBtn + '</span>' +
-//                     '</a></li>');
-//                     //.appendTo(landingPageTileList);
-//                 $('ul#glh-images-tile li:nth-child(3n+3)').after(imgItem);
-//                 //setImgHeight(imgItem);
-//
-//         //setImgHeight(imgItem);
-//
-//         // if (media === 'img') {
-//         //     if (typeOfAction === 'img-popup') {
-//         //         //if (imgPopupsCounter < imgPopupsLimit) {
-//         //         //     imgItem = $('<li><a aria-haspopup="true" role="button" class="image-popup-link" data-name="POPUP-IMAGE" ' +
-//         //         //         'href="' + fullSizeImg + '">' +  imgMarkup + '</a></li>')
-//         //         //         .appendTo(landingPageTileList);
-//         //         //     setImgHeight(imgItem);
-//         //            // imgPopupsCounter++;
-//         //        // }
-//         //     } else if (typeOfAction === 'html-video-popup') {
-//         //         // imgItem = $('<li><a aria-haspopup="true" role="button" class="html-video-popup" data-name="' + tileItem.name + '" ' +
-//         //         //     'href="' + popupPageTemplateUrl + '?v=' + i +'">' +  imgMarkup +
-//         //         //     '<span class="plyr-play-btn__holder">' + plyrPlayBtn + '</span>' +
-//         //         //     '</a></li>')
-//         //         //     .appendTo(landingPageTileList);
-//         //         // setImgHeight(imgItem);
-//         //     }else if (typeOfAction === 'html-brand-popup') {
-//         //         // imgItem = $('<li><a aria-haspopup="true" role="button" class="html-brand-popup no-play-btn" data-name="' + tileItem.name + '" ' +
-//         //         //     'href="' + popupPageTemplateUrl + '?v=' + i +'">' +  prodImgMarkup + '</a></li>')
-//         //         //     .appendTo(landingPageTileList);
-//         //         // setImgHeight(imgItem);
-//         //     }
-//         // } else if (media === 'video') {
-//         //     if (videoAutoPlaySupported) {
-//         //         // videoItem = $('<li class="glh-masonry-item__video-thumb"><video class="glh-video-thumb" autoplay playsinline loop data-width="' + defaultThumbWidth +
-//         //         //     '" data-height="' + originalHeight +
-//         //         //     '" data-tmp-src="' + thumbImg +
-//         //         //     '" src="' + imagePlaceHolder + '"></video></li>')
-//         //         //     .appendTo(landingPageTileList);
-//         //         // setImgHeight(videoItem);
-//         //     } else {
-//         //         // show .jpg if .mp4 is not supported
-//         //         // var videoThumb = thumbImg.substr(0, thumbImg.lastIndexOf('.')) + '.jpg';
-//         //         // imgItem = $('<li class="glh-masonry-item__deco-item">' +
-//         //         //     '<img alt="glowhaus generic photo" data-width="' + defaultThumbWidth +
-//         //         //     '" data-height="' + originalHeight +
-//         //         //     '" data-tmp-src="' + videoThumb +
-//         //         //     '" src="' + imagePlaceHolder + '"></li>')
-//         //         //     .appendTo(landingPageTileList);
-//         //         // setImgHeight(imgItem);
-//         //     }
-//         // } else if (media === 'deco') {
-//         //     // imgItem = $('<li class="glh-masonry-item__deco-item">' +  imgMarkup + '</li>')
-//         //     //     .appendTo(landingPageTileList);
-//         //     // setImgHeight(imgItem);
-//         // }
-//     });
-//
-
     $(window).resize(function () {
         $('ul#glh-images-tile li img, ul#glh-images-tile li video').each(function () {
             $(this).css('height', $(this).attr('data-height') * $('ul#glh-images-tile li').width() / $(this).attr('data-width'));
@@ -1279,6 +1028,7 @@ $(function() {
     });
 
     // ---------------------- Stick the patches
+
     var imgPopupLink = $('.image-popup-link');
     var patchesDir        = '/b/fashion/campaigns/images/glowhaus/landing/patches/';
     var patchesNumber     = 4;
@@ -1415,9 +1165,11 @@ $(function() {
         plyr.setup(document.querySelector(videoSelector), videoPlayerOptions);
     };
 
+
+    // Create Video page image tile
+
     videoPageTileList.empty();
 
-    /*
     $.each(videoPagePics, function (i) {
         var picHeading = videoPagePics[i].heading;
         $('<li><a aria-haspopup="true" role="button" class="glh-videos-tutorial-item play-video-btn" data-name="' + videoPagePics[i].name + '" href="' + popupPageTemplateUrl +
@@ -1428,7 +1180,7 @@ $(function() {
             '</li>').appendTo(videoPageTileList);
 
     });
-    */
+
 
     $('.html-video-popup, .glh-videos-tutorial-item').magnificPopup({
         type: 'ajax',
