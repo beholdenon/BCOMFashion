@@ -25,7 +25,6 @@ $(function() {
     'use strict';
 
     // ----------- Mobile nav switcher
-
     var mainContainer = $('.glh');
     var viewportWidth = $(window).width();
     $('#m-nav-switcher').on('click', function () {
@@ -37,238 +36,243 @@ $(function() {
         }
     });
 
+
+
+
+
+
     // ----------- Pages data start
 
-    var landingPopups = [
-        {   'type': 'img',  'action': 'img-popup',
-            'height': 328,
-            'imgShopLink': 'https://www.bloomingdales.com/shop/search?keyword=2652616+2669832+2685185',
-            'thumb': '0011_Lacquer_Lip_Bloomingdales_20180508-thumb.jpg'
-        },
-        {   'type': 'img',  'action': 'img-popup',
-            'height': 187,
-            'imgShopLink': 'https://www.bloomingdales.com/shop/search?keyword=2677290+2696053',
-            'thumb': '0016_Coming_Home_Bloomingdales_20180508-thumb.jpg'
-        },
-        {   'type': 'img',  'action': 'img-popup',
-            'height': 328,
-            'imgShopLink': 'https://www.bloomingdales.com/shop/search?keyword=2652616+2669832+2685185',
-            'thumb': '0017_Lacquer_Lip_Bloomingdales_20180508-thumb.jpg'
-        },
-        {   'type': 'img',  'action': 'img-popup',
-            'height': 218,
-            'imgShopLink': 'https://www.bloomingdales.com/shop/product/lime-crime-plushies-soft-focus-lip-veil?ID=2866827',
-            'thumb': '0020_Lacquer_Lip_Single_Bloomingdales_20180508-thumb.jpg'
-        },
-        {   'type': 'img',  'action': 'img-popup',
-            'height': 269,
-            'imgShopLink': 'https://www.bloomingdales.com/shop/search?keyword=2899599+3074624+2988124',
-            'thumb': '0022_Pop_Of_Color_Liner_Bloomingdales_20180508-thumb.jpg'
-        },
-        // !!! --- renamed
-        {   'type': 'img',  'action': 'img-popup',
-            'height': 248,
-            'imgShopLink': 'https://TBD- will provide at QA',
-            'thumb': '0024_Hair_Bloomingdales_20180508_01-thumb.jpg'
-        },
-        {   'type': 'img',  'action': 'img-popup',
-            'height': 328,
-            'imgShopLink': 'https://TBD- will provide at QA',
-            'thumb': '0024_Hair_Bloomingdales_20180508-thumb.jpg'
-        },
-        {   'type': 'img',  'action': 'img-popup',
-            'height': 229,
-            'imgShopLink': 'https://www.bloomingdales.com/shop/product/lime-crime-plushies-soft-focus-lip-veil?ID=2866827',
-            'thumb': '0034_Lacquer_Lip_Single_Bloomingdales_20180508-thumb.jpg'
-        },
-        {   'type': 'img',  'action': 'img-popup',
-            'height': 187,
-            'imgShopLink': 'https://www.bloomingdales.com/shop/search?keyword=2953405+2866827+2648594',
-            'thumb': '0037_Lacquer_Lip_Bloomingdales_20180508-thumb.jpg'
-        },
-        {   'type': 'img',  'action': 'img-popup',
-            'height': 328,
-            'imgShopLink': 'https://www.bloomingdales.com/shop/search?keyword=2677290+2696053',
-            'thumb': '0041_Coming_Home_Bloomingdales_20180508-thumb.jpg'
-        },
-        {   'type': 'img',  'action': 'img-popup',
-            'height': 408,
-            'imgShopLink': 'https://www.bloomingdales.com/shop/search?keyword=2677290+2696053',
-            'thumb': '0047_Coming_Home_Bloomingdales_20180508-thumb.jpg'
-        },
-        {   'type': 'img',  'action': 'img-popup',
-            'height': 232,
-            'imgShopLink': 'https://www.bloomingdales.com/shop/search?keyword=2677290+2696053',
-            'thumb': '0056_Pop_Of_Color_Liner_Bloomingdales_20180508-thumb.jpg'
-        },
-        {   'type': 'img',  'action': 'img-popup',
-            'height': 204,
-            'imgShopLink': 'https://www.bloomingdales.com/shop/search?keyword=2953405+2866827',
-            'thumb': '0059_Lacquer_Lip_Bloomingdales_20180508-thumb.jpg'
-        },
-        {   'type': 'img',  'action': 'img-popup',
-            'height': 285,
-            'imgShopLink': 'https://TBD- will provide at QA',
-            'thumb': '0065_Hair_Bloomingdales_20180508-thumb.jpg'
-        },
-        {   'type': 'img',  'action': 'img-popup',
-            'height': 205,
-            'imgShopLink': 'https://TBD- will provide at QA',
-            'thumb': '0081_Hair_Bloomingdales_20180508-thumb.jpg'
-        },
-        {   'type': 'img',  'action': 'img-popup',
-            'height': 226,
-            'imgShopLink': 'https://www.bloomingdales.com/shop/search?keyword=2652616+2669832+2685185',
-            'thumb': '0083_Lacquer_Lip_Single_Bloomingdales_20180508-thumb.jpg'
-        },
-        {   'type': 'img',  'action': 'img-popup',
-            'height': 245,
-            'imgShopLink': 'https://www.bloomingdales.com/shop/search?keyword=2652616+2669832+2685185',
-            'thumb': '0084_Lacquer_Lip_Single_Bloomingdales_20180508-thumb.jpg'
-        },
-        {   'type': 'img',  'action': 'img-popup',
-            'height': 330,
-            'imgShopLink': 'https://www.bloomingdales.com/shop/search?keyword=2899599+3074624+2988124',
-            'thumb': '0087_Pop_Of_Color_Liner_Bloomingdales_20180508-thumb.jpg'
-        },
-        {   'type': 'img',  'action': 'img-popup',
-            'height': 221,
-            'imgShopLink': 'https://www.bloomingdales.com/shop/product/context-liquid-lacquer?ID=2953405',
-            'thumb': '0091_Lacquer_Lip_Single_Bloomingdales_20180508-thumb.jpg'
-        },
-        {   'type': 'img',  'action': 'img-popup',
-            'height': 241,
-            'imgShopLink': 'https://www.bloomingdales.com/shop/product/context-liquid-lacquer?ID=2953405',
-            'thumb': '0094_Lacquer_Lip_Single_Bloomingdales_20180508-thumb.jpg'
-        },
-        {   'type': 'img',  'action': 'img-popup',
-            'height': 241,
-            'imgShopLink': 'https://www.bloomingdales.com/shop/search?keyword=2899599+3074624+2988124',
-            'thumb': '0107_Pop_Of_Color_Liner_Bloomingdales_20180508-thumb.jpg'
-        },
-        {   'type': 'img',  'action': 'img-popup',
-            'height': 408,
-            'imgShopLink': 'https://TBD- will provide at QA',
-            'thumb': '0125_Hair_Bloomingdales_20180508-thumb.jpg'
-        },
-        {   'type': 'img',  'action': 'img-popup',
-            'height': 213,
-            'imgShopLink': 'https://www.bloomingdales.com/shop/product/context-liquid-lacquer?ID=2953405',
-            'thumb': '0126_Lacquer_Lip_Single_Bloomingdales_20180508-thumb.jpg'
-        },
-        {   'type': 'img',  'action': 'img-popup',
-            'height': 357,
-            'imgShopLink': 'https://www.bloomingdales.com/shop/search?keyword=2899599+3074624+2988124',
-            'thumb': '0127_Pop_Of_Color_Liner_Bloomingdales_20180508-thumb.jpg'
-        },
-        {   'type': 'img',  'action': 'img-popup',
-            'height': 313,
-            'imgShopLink': 'https://www.bloomingdales.com/shop/search?keyword=2866827+2652616',
-            'thumb': '0135_Lacquer_Lip_Bloomingdales_20180508-thumb.jpg'
-        },
-        {   'type': 'img',  'action': 'img-popup',
-            'height': 327,
-            'imgShopLink': 'https://www.bloomingdales.com/shop/product/suva-beauty-hydra-fx?ID=2693416',
-            'thumb': '0187_Pop_Of_Color_Liner_Bloomingdales_20180508-thumb.jpg'
-        },
-        // -- !!! ---- renamed
-        {   'type': 'img',  'action': 'img-popup',
-            'height': 248,
-            'imgShopLink': 'https://www.bloomingdales.com/shop/product/suva-beauty-hydra-fx?ID=2693416',
-            'thumb': '0198_Pop_Of_Color_Liner_Bloomingdales_20180508_01-thumb.jpg'
-        },
-        {   'type': 'img',  'action': 'img-popup',
-            'height': 408,
-            'imgShopLink': 'https://www.bloomingdales.com/shop/product/suva-beauty-hydra-fx?ID=2693416',
-            'thumb': '0198_Pop_Of_Color_Liner_Bloomingdales_20180508-thumb.jpg'
-        },
-        {   'type': 'img',  'action': 'img-popup',
-            'height': 256,
-            'imgShopLink': 'https://www.bloomingdales.com/shop/product/suva-beauty-hydra-fx?ID=2693416',
-            'thumb': '0201_Pop_Of_Color_Liner_Bloomingdales_20180508-thumb.jpg'
-        },
-        {   'type': 'img',  'action': 'img-popup',
-            'height': 347,
-            'imgShopLink': 'https://www.bloomingdales.com/shop/search?keyword=2953408+2548967+2950536',
-            'thumb': '0216_Hair_Bloomingdales_20180508-thumb.jpg'
-        },
-        // -- !!! ---- renamed
-        {   'type': 'img',  'action': 'img-popup',
-            'height': 248,
-            'imgShopLink': 'https://www.bloomingdales.com/shop/search?keyword=2953405+2866827+2648594',
-            'thumb': '0218_Lacquer_Lip_Bloomingdales_20180508_01-thumb.jpg'
-        },
-        {   'type': 'img',  'action': 'img-popup',
-            'imgShopLink': 'https://www.bloomingdales.com/shop/search?keyword=2953405+2866827+2648594',
-            'thumb': '0218_Lacquer_Lip_Bloomingdales_20180508-thumb.jpg',
-            'height': 408
-        },
-        {   'type': 'img',  'action': 'img-popup',
-            'height': 313,
-            'imgShopLink': 'https://www.bloomingdales.com/shop/search?keyword=2953408+2548967+2950536',
-            'thumb': '0238_Hair_Bloomingdales_20180508-thumb.jpg'
-        },
-        {   'type': 'img',  'action': 'img-popup',
-            'height': 187,
-            'imgShopLink': 'https://www.bloomingdales.com/shop/product/suva-beauty-hydra-fx?ID=2693416',
-            'thumb': '0250_Pop_Of_Color_Liner_Bloomingdales_20180508-thumb.jpg'
-        },
-        {   'type': 'img',  'action': 'img-popup',
-            'height': 278,
-            'imgShopLink': 'https://www.bloomingdales.com/shop/product/suva-beauty-hydra-fx?ID=2693416',
-            'thumb': '0260_Pop_Of_Color_Liner_Bloomingdales_20180508-thumb.jpg'
-        },
-        {   'type': 'img',  'action': 'img-popup',
-            'height': 247,
-            'imgShopLink': 'https://www.bloomingdales.com/shop/search?keyword=2953408+2548967+2950536',
-            'thumb': '0273_Hair_Bloomingdales_20180508-thumb.jpg'
-        },
-        {   'type': 'img',  'action': 'img-popup',
-            'height': 313,
-            'imgShopLink': 'https://www.bloomingdales.com/shop/product/suva-beauty-hydra-fx?ID=2693416',
-            'thumb': '0277_Pop_Of_Color_Liner_Bloomingdales_20180508-thumb.jpg'
-        },
-        {   'type': 'img',  'action': 'img-popup',
-            'height': 269,
-            'imgShopLink': 'https://www.bloomingdales.com/shop/search?keyword=2953408+2548967+2950536',
-            'thumb': '0314_Hair_Bloomingdales_20180508-thumb.jpg'
-        },
-        {   'type': 'img',  'action': 'img-popup',
-            'height': 334,
-            'imgShopLink': 'https://www.bloomingdales.com/shop/search?keyword=2866827+2652616',
-            'thumb': '0334_Lacquer_Lip_Bloomingdales_20180508-thumb.jpg'
-        },
-        {   'type': 'img',  'action': 'img-popup',
-            'height': 313,
-            'imgShopLink': 'https://TBD- will provide at QA',
-            'thumb': '0348_Hair_Bloomingdales_20180508-thumb.jpg'
-        },
-        {   'type': 'img',  'action': 'img-popup',
-            'height': 258,
-            'imgShopLink': 'https://www.bloomingdales.com/shop/search?keyword=2866827+2652616',
-            'thumb': '0385_Lacquer_Lip_Bloomingdales_20180508-thumb.jpg'
-        },
-        {   'type': 'img',  'action': 'img-popup',
-            'height': 187,
-            'imgShopLink': 'https://www.bloomingdales.com/shop/search?keyword=2953405+2866827+2648594',
-            'thumb': '0390_Lacquer_Lip_Bloomingdales_20180508-thumb.jpg'
-        },
-        {   'type': 'img',  'action': 'img-popup',
-            'height': 187,
-            'imgShopLink': 'https://TBD- will provide at QA',
-            'thumb': '0392_Hair_Bloomingdales_20180508-thumb.jpg'
-        },
-        {   'type': 'img', 'action': 'img-popup',
-            'height': 405,
-            'imgShopLink': 'https://www.bloomingdales.com/shop/product/lime-crime-diamond-dew?ID=2809238',
-            'thumb': 'landing37-thumb.jpg'
-        },
-        {   'type': 'img', 'action': 'img-popup',
-            'height': 389,
-            'imgShopLink': 'https://www.bloomingdales.com/shop/product/lime-crime-diamond-dew?ID=2809238',
-            'thumb': 'landing58-thumb.jpg'
-        },
-    ];
+    // var landingPopups = [
+    //     {   'type': 'img',  'action': 'img-popup',
+    //         'height': 328,
+    //         'imgShopLink': 'https://www.bloomingdales.com/shop/search?keyword=2652616+2669832+2685185',
+    //         'thumb': '0011_Lacquer_Lip_Bloomingdales_20180508-thumb.jpg'
+    //     },
+    //     {   'type': 'img',  'action': 'img-popup',
+    //         'height': 187,
+    //         'imgShopLink': 'https://www.bloomingdales.com/shop/search?keyword=2677290+2696053',
+    //         'thumb': '0016_Coming_Home_Bloomingdales_20180508-thumb.jpg'
+    //     },
+    //     {   'type': 'img',  'action': 'img-popup',
+    //         'height': 328,
+    //         'imgShopLink': 'https://www.bloomingdales.com/shop/search?keyword=2652616+2669832+2685185',
+    //         'thumb': '0017_Lacquer_Lip_Bloomingdales_20180508-thumb.jpg'
+    //     },
+    //     {   'type': 'img',  'action': 'img-popup',
+    //         'height': 218,
+    //         'imgShopLink': 'https://www.bloomingdales.com/shop/product/lime-crime-plushies-soft-focus-lip-veil?ID=2866827',
+    //         'thumb': '0020_Lacquer_Lip_Single_Bloomingdales_20180508-thumb.jpg'
+    //     },
+    //     {   'type': 'img',  'action': 'img-popup',
+    //         'height': 269,
+    //         'imgShopLink': 'https://www.bloomingdales.com/shop/search?keyword=2899599+3074624+2988124',
+    //         'thumb': '0022_Pop_Of_Color_Liner_Bloomingdales_20180508-thumb.jpg'
+    //     },
+    //     // !!! --- renamed
+    //     {   'type': 'img',  'action': 'img-popup',
+    //         'height': 248,
+    //         'imgShopLink': 'https://TBD- will provide at QA',
+    //         'thumb': '0024_Hair_Bloomingdales_20180508_01-thumb.jpg'
+    //     },
+    //     {   'type': 'img',  'action': 'img-popup',
+    //         'height': 328,
+    //         'imgShopLink': 'https://TBD- will provide at QA',
+    //         'thumb': '0024_Hair_Bloomingdales_20180508-thumb.jpg'
+    //     },
+    //     {   'type': 'img',  'action': 'img-popup',
+    //         'height': 229,
+    //         'imgShopLink': 'https://www.bloomingdales.com/shop/product/lime-crime-plushies-soft-focus-lip-veil?ID=2866827',
+    //         'thumb': '0034_Lacquer_Lip_Single_Bloomingdales_20180508-thumb.jpg'
+    //     },
+    //     {   'type': 'img',  'action': 'img-popup',
+    //         'height': 187,
+    //         'imgShopLink': 'https://www.bloomingdales.com/shop/search?keyword=2953405+2866827+2648594',
+    //         'thumb': '0037_Lacquer_Lip_Bloomingdales_20180508-thumb.jpg'
+    //     },
+    //     {   'type': 'img',  'action': 'img-popup',
+    //         'height': 328,
+    //         'imgShopLink': 'https://www.bloomingdales.com/shop/search?keyword=2677290+2696053',
+    //         'thumb': '0041_Coming_Home_Bloomingdales_20180508-thumb.jpg'
+    //     },
+    //     {   'type': 'img',  'action': 'img-popup',
+    //         'height': 408,
+    //         'imgShopLink': 'https://www.bloomingdales.com/shop/search?keyword=2677290+2696053',
+    //         'thumb': '0047_Coming_Home_Bloomingdales_20180508-thumb.jpg'
+    //     },
+    //     {   'type': 'img',  'action': 'img-popup',
+    //         'height': 232,
+    //         'imgShopLink': 'https://www.bloomingdales.com/shop/search?keyword=2677290+2696053',
+    //         'thumb': '0056_Pop_Of_Color_Liner_Bloomingdales_20180508-thumb.jpg'
+    //     },
+    //     {   'type': 'img',  'action': 'img-popup',
+    //         'height': 204,
+    //         'imgShopLink': 'https://www.bloomingdales.com/shop/search?keyword=2953405+2866827',
+    //         'thumb': '0059_Lacquer_Lip_Bloomingdales_20180508-thumb.jpg'
+    //     },
+    //     {   'type': 'img',  'action': 'img-popup',
+    //         'height': 285,
+    //         'imgShopLink': 'https://TBD- will provide at QA',
+    //         'thumb': '0065_Hair_Bloomingdales_20180508-thumb.jpg'
+    //     },
+    //     {   'type': 'img',  'action': 'img-popup',
+    //         'height': 205,
+    //         'imgShopLink': 'https://TBD- will provide at QA',
+    //         'thumb': '0081_Hair_Bloomingdales_20180508-thumb.jpg'
+    //     },
+    //     {   'type': 'img',  'action': 'img-popup',
+    //         'height': 226,
+    //         'imgShopLink': 'https://www.bloomingdales.com/shop/search?keyword=2652616+2669832+2685185',
+    //         'thumb': '0083_Lacquer_Lip_Single_Bloomingdales_20180508-thumb.jpg'
+    //     },
+    //     {   'type': 'img',  'action': 'img-popup',
+    //         'height': 245,
+    //         'imgShopLink': 'https://www.bloomingdales.com/shop/search?keyword=2652616+2669832+2685185',
+    //         'thumb': '0084_Lacquer_Lip_Single_Bloomingdales_20180508-thumb.jpg'
+    //     },
+    //     {   'type': 'img',  'action': 'img-popup',
+    //         'height': 330,
+    //         'imgShopLink': 'https://www.bloomingdales.com/shop/search?keyword=2899599+3074624+2988124',
+    //         'thumb': '0087_Pop_Of_Color_Liner_Bloomingdales_20180508-thumb.jpg'
+    //     },
+    //     {   'type': 'img',  'action': 'img-popup',
+    //         'height': 221,
+    //         'imgShopLink': 'https://www.bloomingdales.com/shop/product/context-liquid-lacquer?ID=2953405',
+    //         'thumb': '0091_Lacquer_Lip_Single_Bloomingdales_20180508-thumb.jpg'
+    //     },
+    //     {   'type': 'img',  'action': 'img-popup',
+    //         'height': 241,
+    //         'imgShopLink': 'https://www.bloomingdales.com/shop/product/context-liquid-lacquer?ID=2953405',
+    //         'thumb': '0094_Lacquer_Lip_Single_Bloomingdales_20180508-thumb.jpg'
+    //     },
+    //     {   'type': 'img',  'action': 'img-popup',
+    //         'height': 241,
+    //         'imgShopLink': 'https://www.bloomingdales.com/shop/search?keyword=2899599+3074624+2988124',
+    //         'thumb': '0107_Pop_Of_Color_Liner_Bloomingdales_20180508-thumb.jpg'
+    //     },
+    //     {   'type': 'img',  'action': 'img-popup',
+    //         'height': 408,
+    //         'imgShopLink': 'https://TBD- will provide at QA',
+    //         'thumb': '0125_Hair_Bloomingdales_20180508-thumb.jpg'
+    //     },
+    //     {   'type': 'img',  'action': 'img-popup',
+    //         'height': 213,
+    //         'imgShopLink': 'https://www.bloomingdales.com/shop/product/context-liquid-lacquer?ID=2953405',
+    //         'thumb': '0126_Lacquer_Lip_Single_Bloomingdales_20180508-thumb.jpg'
+    //     },
+    //     {   'type': 'img',  'action': 'img-popup',
+    //         'height': 357,
+    //         'imgShopLink': 'https://www.bloomingdales.com/shop/search?keyword=2899599+3074624+2988124',
+    //         'thumb': '0127_Pop_Of_Color_Liner_Bloomingdales_20180508-thumb.jpg'
+    //     },
+    //     {   'type': 'img',  'action': 'img-popup',
+    //         'height': 313,
+    //         'imgShopLink': 'https://www.bloomingdales.com/shop/search?keyword=2866827+2652616',
+    //         'thumb': '0135_Lacquer_Lip_Bloomingdales_20180508-thumb.jpg'
+    //     },
+    //     {   'type': 'img',  'action': 'img-popup',
+    //         'height': 327,
+    //         'imgShopLink': 'https://www.bloomingdales.com/shop/product/suva-beauty-hydra-fx?ID=2693416',
+    //         'thumb': '0187_Pop_Of_Color_Liner_Bloomingdales_20180508-thumb.jpg'
+    //     },
+    //     // -- !!! ---- renamed
+    //     {   'type': 'img',  'action': 'img-popup',
+    //         'height': 248,
+    //         'imgShopLink': 'https://www.bloomingdales.com/shop/product/suva-beauty-hydra-fx?ID=2693416',
+    //         'thumb': '0198_Pop_Of_Color_Liner_Bloomingdales_20180508_01-thumb.jpg'
+    //     },
+    //     {   'type': 'img',  'action': 'img-popup',
+    //         'height': 408,
+    //         'imgShopLink': 'https://www.bloomingdales.com/shop/product/suva-beauty-hydra-fx?ID=2693416',
+    //         'thumb': '0198_Pop_Of_Color_Liner_Bloomingdales_20180508-thumb.jpg'
+    //     },
+    //     {   'type': 'img',  'action': 'img-popup',
+    //         'height': 256,
+    //         'imgShopLink': 'https://www.bloomingdales.com/shop/product/suva-beauty-hydra-fx?ID=2693416',
+    //         'thumb': '0201_Pop_Of_Color_Liner_Bloomingdales_20180508-thumb.jpg'
+    //     },
+    //     {   'type': 'img',  'action': 'img-popup',
+    //         'height': 347,
+    //         'imgShopLink': 'https://www.bloomingdales.com/shop/search?keyword=2953408+2548967+2950536',
+    //         'thumb': '0216_Hair_Bloomingdales_20180508-thumb.jpg'
+    //     },
+    //     // -- !!! ---- renamed
+    //     {   'type': 'img',  'action': 'img-popup',
+    //         'height': 248,
+    //         'imgShopLink': 'https://www.bloomingdales.com/shop/search?keyword=2953405+2866827+2648594',
+    //         'thumb': '0218_Lacquer_Lip_Bloomingdales_20180508_01-thumb.jpg'
+    //     },
+    //     {   'type': 'img',  'action': 'img-popup',
+    //         'imgShopLink': 'https://www.bloomingdales.com/shop/search?keyword=2953405+2866827+2648594',
+    //         'thumb': '0218_Lacquer_Lip_Bloomingdales_20180508-thumb.jpg',
+    //         'height': 408
+    //     },
+    //     {   'type': 'img',  'action': 'img-popup',
+    //         'height': 313,
+    //         'imgShopLink': 'https://www.bloomingdales.com/shop/search?keyword=2953408+2548967+2950536',
+    //         'thumb': '0238_Hair_Bloomingdales_20180508-thumb.jpg'
+    //     },
+    //     {   'type': 'img',  'action': 'img-popup',
+    //         'height': 187,
+    //         'imgShopLink': 'https://www.bloomingdales.com/shop/product/suva-beauty-hydra-fx?ID=2693416',
+    //         'thumb': '0250_Pop_Of_Color_Liner_Bloomingdales_20180508-thumb.jpg'
+    //     },
+    //     {   'type': 'img',  'action': 'img-popup',
+    //         'height': 278,
+    //         'imgShopLink': 'https://www.bloomingdales.com/shop/product/suva-beauty-hydra-fx?ID=2693416',
+    //         'thumb': '0260_Pop_Of_Color_Liner_Bloomingdales_20180508-thumb.jpg'
+    //     },
+    //     {   'type': 'img',  'action': 'img-popup',
+    //         'height': 247,
+    //         'imgShopLink': 'https://www.bloomingdales.com/shop/search?keyword=2953408+2548967+2950536',
+    //         'thumb': '0273_Hair_Bloomingdales_20180508-thumb.jpg'
+    //     },
+    //     {   'type': 'img',  'action': 'img-popup',
+    //         'height': 313,
+    //         'imgShopLink': 'https://www.bloomingdales.com/shop/product/suva-beauty-hydra-fx?ID=2693416',
+    //         'thumb': '0277_Pop_Of_Color_Liner_Bloomingdales_20180508-thumb.jpg'
+    //     },
+    //     {   'type': 'img',  'action': 'img-popup',
+    //         'height': 269,
+    //         'imgShopLink': 'https://www.bloomingdales.com/shop/search?keyword=2953408+2548967+2950536',
+    //         'thumb': '0314_Hair_Bloomingdales_20180508-thumb.jpg'
+    //     },
+    //     {   'type': 'img',  'action': 'img-popup',
+    //         'height': 334,
+    //         'imgShopLink': 'https://www.bloomingdales.com/shop/search?keyword=2866827+2652616',
+    //         'thumb': '0334_Lacquer_Lip_Bloomingdales_20180508-thumb.jpg'
+    //     },
+    //     {   'type': 'img',  'action': 'img-popup',
+    //         'height': 313,
+    //         'imgShopLink': 'https://TBD- will provide at QA',
+    //         'thumb': '0348_Hair_Bloomingdales_20180508-thumb.jpg'
+    //     },
+    //     {   'type': 'img',  'action': 'img-popup',
+    //         'height': 258,
+    //         'imgShopLink': 'https://www.bloomingdales.com/shop/search?keyword=2866827+2652616',
+    //         'thumb': '0385_Lacquer_Lip_Bloomingdales_20180508-thumb.jpg'
+    //     },
+    //     {   'type': 'img',  'action': 'img-popup',
+    //         'height': 187,
+    //         'imgShopLink': 'https://www.bloomingdales.com/shop/search?keyword=2953405+2866827+2648594',
+    //         'thumb': '0390_Lacquer_Lip_Bloomingdales_20180508-thumb.jpg'
+    //     },
+    //     {   'type': 'img',  'action': 'img-popup',
+    //         'height': 187,
+    //         'imgShopLink': 'https://TBD- will provide at QA',
+    //         'thumb': '0392_Hair_Bloomingdales_20180508-thumb.jpg'
+    //     },
+    //     {   'type': 'img', 'action': 'img-popup',
+    //         'height': 405,
+    //         'imgShopLink': 'https://www.bloomingdales.com/shop/product/lime-crime-diamond-dew?ID=2809238',
+    //         'thumb': 'landing37-thumb.jpg'
+    //     },
+    //     {   'type': 'img', 'action': 'img-popup',
+    //         'height': 389,
+    //         'imgShopLink': 'https://www.bloomingdales.com/shop/product/lime-crime-diamond-dew?ID=2809238',
+    //         'thumb': 'landing58-thumb.jpg'
+    //     },
+    // ];
 
     var landingPopupsVideos = [
         {'type': 'img', 'action': 'html-video-popup', 'name': 'LacqueredLips',   'thumb': 'lacquered-lips_lp-video-thumb.jpg',  'height': 211},
@@ -871,127 +875,144 @@ $(function() {
 
     var plyrPlayBtn = '<span class="plyr__play-large"><svg id="plyr-play" viewBox="0 0 18 18" width="100%" height="100%"><path d="M15.562 8.1L3.87.225C3.052-.337 2 .225 2 1.125v15.75c0 .9 1.052 1.462 1.87.9L15.563 9.9c.584-.45.584-1.35 0-1.8z"></path></svg><span class="plyr__sr-only">Play</span></span>';
 
-    // remove/clear all list elements
-    landingPageTileList.empty();
 
-    shuffleArray(landingPopups);
-    shuffleArray(landingPopupsVideos);
+    var glowhausData = '/b/fashion/campaigns/javascripts/glowhaus/data.json';
+    var landingPopups = [];
 
-    var oneOrZero = 0;
-    var ind = 0;
-
-    // Distribute popupsVideos
-    var step = Math.floor(landingPopups.length / landingPopupsVideos.length);
-    for (var i = 0; i < landingPopupsVideos.length; i++) {
-        oneOrZero = Math.round(Math.random());
-        ind = i * step  + i + step + oneOrZero;
-        landingPopups.splice(ind, 0, landingPopupsVideos[i]);
-    }
-
-    // Distribute MP4s
-    shuffleArray(landingPopupsGIFs);
-    step = Math.floor(landingPopups.length / landingPopupsGIFs.length);
-    for (var e = 0; e < landingPopupsGIFs.length; e++) {
-        oneOrZero = Math.round(Math.random());
-        ind = e * step  + e + step + oneOrZero;
-        landingPopups.splice(ind, 0, landingPopupsGIFs[e]);
-    }
-
-    // Distribute brand popups
-    shuffleArray(landingPopupsBrands);
-    var brandsShortList = landingPopupsBrands.slice(0, 30);
-    for (var q = 0; q < brandsShortList.length; q++) {
-        oneOrZero = Math.round(Math.random());
-        ind = q * 2 + q + 1 + oneOrZero;
-        landingPopups.splice(ind, 0, brandsShortList[q]);
-    }
-
-    // Distribute deco images
-    shuffleArray(landingPopupsDeco);
-    step = Math.floor(landingPopups.length / landingPopupsDeco.length);
-    for (var y = 0; y < landingPopupsDeco.length; y++) {
-        oneOrZero = Math.round(Math.random());
-        ind = y * step  + y + step + oneOrZero;
-        landingPopups.splice(ind, 0, landingPopupsDeco[y]);
-    }
-
-    // Create landing page image tile
-    $.each(landingPopups, function (i) {
-
-        var tileItem       = landingPopups[i];
-        var media          = tileItem.type;
-        var originalHeight = tileItem.height;
-        var fullSizeImg    = imgFullSizeDir + tileItem.thumb.replace('-thumb','');
-        var thumbImg       = imgThumbsDir + tileItem.thumb;
-        var typeOfAction   = tileItem.action;
-        var shopLink       = tileItem.imgShopLink;
-
-        var setImgHeight = function(item) {
-            var value = originalHeight * (item.width() / defaultThumbWidth);
-            item.find('img').css('height', value);
-            item.find('video').css('height', value);
-        };
-
-        var imgMarkup = '<img title="' + imgLinkText + '" alt="glowhaus generic photo ' + i + '" data-width="' + defaultThumbWidth +
-            '" data-height="' + originalHeight +
-            '" data-tmp-src="' + thumbImg +
-            '" data-img-shop-link="' + shopLink +
-            '" src="' + imagePlaceHolder + '">';
-
-        var prodImgMarkup = '<img alt="' + tileItem.name + ' ' + i + '" data-width="' + defaultThumbWidth +
-            '" data-height="' + originalHeight +
-            '" data-tmp-src="' + thumbImg +
-            '" src="' + imagePlaceHolder + '">';
-
-        var imgItem, videoItem = '';
-
-        if (media === 'img') {
-            if (typeOfAction === 'img-popup') {
-                //if (imgPopupsCounter < imgPopupsLimit) {
-                imgItem = $('<li><a aria-haspopup="true" role="button" class="image-popup-link" data-name="POPUP-IMAGE" ' +
-                    'href="' + fullSizeImg + '">' +  imgMarkup + '</a></li>')
-                    .appendTo(landingPageTileList);
-                setImgHeight(imgItem);
-                // imgPopupsCounter++;
-                // }
-            } else if (typeOfAction === 'html-video-popup') {
-                imgItem = $('<li><a aria-haspopup="true" role="button" class="html-video-popup" data-name="' + tileItem.name + '" ' +
-                    'href="' + popupPageTemplateUrl + '?v=' + i +'">' +  imgMarkup +
-                    '<span class="plyr-play-btn__holder">' + plyrPlayBtn + '</span>' +
-                    '</a></li>')
-                    .appendTo(landingPageTileList);
-                setImgHeight(imgItem);
-            }else if (typeOfAction === 'html-brand-popup') {
-                imgItem = $('<li><a aria-haspopup="true" role="button" class="html-brand-popup no-play-btn" data-name="' + tileItem.name + '" ' +
-                    'href="' + popupPageTemplateUrl + '?v=' + i +'">' +  prodImgMarkup + '</a></li>')
-                    .appendTo(landingPageTileList);
-                setImgHeight(imgItem);
-            }
-        } else if (media === 'video') {
-            if (videoAutoPlaySupported) {
-                videoItem = $('<li class="glh-masonry-item__video-thumb"><video class="glh-video-thumb" autoplay playsinline loop data-width="' + defaultThumbWidth +
-                    '" data-height="' + originalHeight +
-                    '" data-tmp-src="' + thumbImg +
-                    '" src="' + imagePlaceHolder + '"></video></li>')
-                    .appendTo(landingPageTileList);
-                setImgHeight(videoItem);
-            } else {
-                // show .jpg if .mp4 is not supported
-                var videoThumb = thumbImg.substr(0, thumbImg.lastIndexOf('.')) + '.jpg';
-                imgItem = $('<li class="glh-masonry-item__deco-item">' +
-                    '<img alt="glowhaus generic photo" data-width="' + defaultThumbWidth +
-                    '" data-height="' + originalHeight +
-                    '" data-tmp-src="' + videoThumb +
-                    '" src="' + imagePlaceHolder + '"></li>')
-                    .appendTo(landingPageTileList);
-                setImgHeight(imgItem);
-            }
-        } else if (media === 'deco') {
-            imgItem = $('<li class="glh-masonry-item__deco-item">' +  imgMarkup + '</li>')
-                .appendTo(landingPageTileList);
-            setImgHeight(imgItem);
-        }
+    $.getJSON(glowhausData, function (data) {
+        console.log(data["Landing - Image Popup"]);
+        landingPopups = data["Landing - Image Popup"];
+        // $.each(data, function (index, value) {
+        //   console.log();
+        //});
+        initTile()
     });
+
+   function initTile() {
+       // remove/clear all list elements
+       landingPageTileList.empty();
+
+       shuffleArray(landingPopups);
+       shuffleArray(landingPopupsVideos);
+
+       var oneOrZero = 0;
+       var ind = 0;
+
+       // Distribute popupsVideos
+       var step = Math.floor(landingPopups.length / landingPopupsVideos.length);
+       for (var i = 0; i < landingPopupsVideos.length; i++) {
+           oneOrZero = Math.round(Math.random());
+           ind = i * step  + i + step + oneOrZero;
+           landingPopups.splice(ind, 0, landingPopupsVideos[i]);
+       }
+
+       // Distribute MP4s
+       shuffleArray(landingPopupsGIFs);
+       step = Math.floor(landingPopups.length / landingPopupsGIFs.length);
+       for (var e = 0; e < landingPopupsGIFs.length; e++) {
+           oneOrZero = Math.round(Math.random());
+           ind = e * step  + e + step + oneOrZero;
+           landingPopups.splice(ind, 0, landingPopupsGIFs[e]);
+       }
+
+       // Distribute brand popups
+       shuffleArray(landingPopupsBrands);
+       var brandsShortList = landingPopupsBrands.slice(0, 30);
+       for (var q = 0; q < brandsShortList.length; q++) {
+           oneOrZero = Math.round(Math.random());
+           ind = q * 2 + q + 1 + oneOrZero;
+           landingPopups.splice(ind, 0, brandsShortList[q]);
+       }
+
+       // Distribute deco images
+       shuffleArray(landingPopupsDeco);
+       step = Math.floor(landingPopups.length / landingPopupsDeco.length);
+       for (var y = 0; y < landingPopupsDeco.length; y++) {
+           oneOrZero = Math.round(Math.random());
+           ind = y * step  + y + step + oneOrZero;
+           landingPopups.splice(ind, 0, landingPopupsDeco[y]);
+       }
+
+       // Create landing page image tile
+       $.each(landingPopups, function (i) {
+
+           var tileItem       = landingPopups[i];
+           var media          = tileItem.type;
+           var originalHeight = tileItem.height;
+           var fullSizeImg    = imgFullSizeDir + tileItem.thumb.replace('-thumb','');
+           var thumbImg       = imgThumbsDir + tileItem.thumb;
+           var typeOfAction   = tileItem.action;
+           var shopLink       = tileItem.imgShopLink;
+
+           var setImgHeight = function(item) {
+               var value = originalHeight * (item.width() / defaultThumbWidth);
+               item.find('img').css('height', value);
+               item.find('video').css('height', value);
+           };
+
+           var imgMarkup = '<img title="' + imgLinkText + '" alt="glowhaus generic photo ' + i + '" data-width="' + defaultThumbWidth +
+               '" data-height="' + originalHeight +
+               '" data-tmp-src="' + thumbImg +
+               '" data-img-shop-link="' + shopLink +
+               '" src="' + imagePlaceHolder + '">';
+
+           var prodImgMarkup = '<img alt="' + tileItem.name + ' ' + i + '" data-width="' + defaultThumbWidth +
+               '" data-height="' + originalHeight +
+               '" data-tmp-src="' + thumbImg +
+               '" src="' + imagePlaceHolder + '">';
+
+           var imgItem, videoItem = '';
+
+           if (media === 'img') {
+               if (typeOfAction === 'img-popup') {
+                   //if (imgPopupsCounter < imgPopupsLimit) {
+                   imgItem = $('<li><a aria-haspopup="true" role="button" class="image-popup-link" data-name="POPUP-IMAGE" ' +
+                       'href="' + fullSizeImg + '">' +  imgMarkup + '</a></li>')
+                       .appendTo(landingPageTileList);
+                   setImgHeight(imgItem);
+                   // imgPopupsCounter++;
+                   // }
+               } else if (typeOfAction === 'html-video-popup') {
+                   imgItem = $('<li><a aria-haspopup="true" role="button" class="html-video-popup" data-name="' + tileItem.name + '" ' +
+                       'href="' + popupPageTemplateUrl + '?v=' + i +'">' +  imgMarkup +
+                       '<span class="plyr-play-btn__holder">' + plyrPlayBtn + '</span>' +
+                       '</a></li>')
+                       .appendTo(landingPageTileList);
+                   setImgHeight(imgItem);
+               }else if (typeOfAction === 'html-brand-popup') {
+                   imgItem = $('<li><a aria-haspopup="true" role="button" class="html-brand-popup no-play-btn" data-name="' + tileItem.name + '" ' +
+                       'href="' + popupPageTemplateUrl + '?v=' + i +'">' +  prodImgMarkup + '</a></li>')
+                       .appendTo(landingPageTileList);
+                   setImgHeight(imgItem);
+               }
+           } else if (media === 'video') {
+               if (videoAutoPlaySupported) {
+                   videoItem = $('<li class="glh-masonry-item__video-thumb"><video class="glh-video-thumb" autoplay playsinline loop data-width="' + defaultThumbWidth +
+                       '" data-height="' + originalHeight +
+                       '" data-tmp-src="' + thumbImg +
+                       '" src="' + imagePlaceHolder + '"></video></li>')
+                       .appendTo(landingPageTileList);
+                   setImgHeight(videoItem);
+               } else {
+                   // show .jpg if .mp4 is not supported
+                   var videoThumb = thumbImg.substr(0, thumbImg.lastIndexOf('.')) + '.jpg';
+                   imgItem = $('<li class="glh-masonry-item__deco-item">' +
+                       '<img alt="glowhaus generic photo" data-width="' + defaultThumbWidth +
+                       '" data-height="' + originalHeight +
+                       '" data-tmp-src="' + videoThumb +
+                       '" src="' + imagePlaceHolder + '"></li>')
+                       .appendTo(landingPageTileList);
+                   setImgHeight(imgItem);
+               }
+           } else if (media === 'deco') {
+               imgItem = $('<li class="glh-masonry-item__deco-item">' +  imgMarkup + '</li>')
+                   .appendTo(landingPageTileList);
+               setImgHeight(imgItem);
+           }
+       });
+    }
+
+
 
 
     $(window).resize(function () {
@@ -1057,7 +1078,7 @@ $(function() {
         mainClass: 'mfp-with-zoom',
         closeOnContentClick: true,
         zoom: {
-            enabled: true,
+            enabled: true, // By default it's false, so don't forget to enable it
             duration: 300,
             easing: 'ease-in-out'
         },
@@ -1075,7 +1096,7 @@ $(function() {
 
                 // Image caption with "shop the look" link
                 var imgShopLink = this.st.el.find('img').data('img-shop-link');
-                $('.mfp-title').html('<a coremetrictag="shop-now_IMAGE-POPUP" href="' + imgShopLink + '">' + imgLinkText + '</a>');
+                $('.mfp-title').html('<a href="' + imgShopLink + '">' + imgLinkText + '</a>');
             },
             close: function() {
                 if(!popupCloseBtnEvent) {
