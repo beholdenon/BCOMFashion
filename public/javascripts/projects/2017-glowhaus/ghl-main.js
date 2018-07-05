@@ -22,9 +22,10 @@
     
 })(jQuery);
 
+require( [ "tealiumTagUtil" ], function ( TealiumTagUtil ) {
+  'use strict';
 
 $(function() {
-    'use strict';
 
 
 
@@ -38,6 +39,14 @@ $(function() {
         if(viewportWidth >= 767){
             mainContainer.removeClass('glh-m-nav-is-open');
         }
+    });
+
+    $( window ).on('load', function(){
+      TealiumTagUtil.fireTealiumPageLoadTag( {'page_type' : 'marketing'} );
+    });
+
+    $('.glh-header__shop-btn').on('click', function () {
+      TealiumTagUtil.fireTealiumViewTag ( {'event_name' : 'shop glowhaus'} );
     });
     
     
@@ -1049,6 +1058,7 @@ $(function() {
     var currentVideoLaunched = false;
 
     var currentVideoPosition = 0;
+    var totalDuration = 0;
 
     var videoPlayerOptions = {
         iconUrl: '/b/fashion/images/projects/2017-glowhaus/assets/plyr.svg',
@@ -1086,19 +1096,28 @@ $(function() {
                 //to avoid firing pause and ended events in the same time
                 if (ct < vd) {
                     coreMetricsForVideo('video-' + productPageToOpenCleanName, 'video_Pause', ct);
+                    TealiumTagUtil.fireTealiumVideoTag('video pause',
+                      videoPagePopupsData[productPageToOpen].heading, vd, ct);
                 }
             })
             .on('play', function (e) {
                 currentVideoLaunched = true;
                 coreMetricsForVideo('video-' + productPageToOpenCleanName, 'video_Play', e.target.currentTime);
+                TealiumTagUtil.fireTealiumVideoTag('video play',
+                  videoPagePopupsData[productPageToOpen].heading, e.target.duration,
+                  e.target.currentTime);
             })
             .on('timeupdate', function (e) {
                 //console.log(e.target.currentTime);
                 currentVideoPosition = e.target.currentTime;
+                totalDuration = e.target.duration;
             })
             .on('ended', function (e) {
                 currentVideoCompleted = true;
                 coreMetricsForVideo('video-' + productPageToOpenCleanName, 'video_Completed', e.target.currentTime);
+                TealiumTagUtil.fireTealiumVideoTag('video completion',
+                  videoPagePopupsData[productPageToOpen].heading, e.target.duration,
+                  e.target.currentTime);
             });  
     };
 
@@ -1116,6 +1135,11 @@ $(function() {
         popupVideoContainer.append(videoMarkup(_data));
         setUpVideoEvents(popupVideoContainer);
         plyr.setup(document.querySelector(videoSelector), videoPlayerOptions);
+        TealiumTagUtil.fireTealiumViewTag({
+          'event_name' : 'video launch',
+          'video_name' : videoPagePopupsData[productPageToOpen].heading,
+          'video_length' : _data.duration
+        });
     };
 
     videoPageTileList.empty();
@@ -1139,6 +1163,11 @@ $(function() {
             beforeOpen: function() {
                 productPageToOpen  = this.st.el.attr('data-name');
                 productPageToOpenCleanName = productPageToOpen.toUpperCase().replace(/[^A-Z0-9]/ig, '-');
+                TealiumTagUtil.fireTealiumLinkTag({
+                  'page_type' : 'marketing',
+                  'page_name' : 'glowhaus videos',
+                  'video_name' : videoPagePopupsData[productPageToOpen].heading
+                });
             },
             open: function() {
                 popupCloseBtnEvent = false;
@@ -1153,9 +1182,15 @@ $(function() {
                 if (!currentVideoCompleted && currentVideoLaunched) {
                     coreMetricsForVideo('video-' + productPageToOpenCleanName, 'video_Aborted', currentVideoPosition);
                 }
+
+                TealiumTagUtil.fireTealiumVideoTag('video player closed',
+                  videoPagePopupsData[productPageToOpen].heading, totalDuration,
+                  currentVideoPosition);
+
                 currentVideoCompleted = false;
                 currentVideoLaunched = false;
                 currentVideoPosition = 0;
+                totalDuration = 0;
             },
             ajaxContentAdded: function () {
 
@@ -1229,6 +1264,7 @@ $(function() {
                 currentVideoCompleted = false;
                 currentVideoLaunched = false;
                 currentVideoPosition = 0;
+                totalDuration = 0;
             },
 
             ajaxContentAdded: function () {
@@ -1423,5 +1459,6 @@ $(function() {
         return array;
     }
     
+  });
     
 });

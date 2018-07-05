@@ -3,6 +3,7 @@
         paths: { 
             'coremetrics': '/b/fashion/javascripts/includes/coremetrics',
             'tagManagerUtil': '/b/fashion/javascripts/includes/tagManagerUtil',
+            'tealiumTagUtil': '/b/fashion/javascripts/includes/tealiumTagUtils',
             'globalns': '/b/fashion/javascripts/includes/globalns',
             'globalHeaderFooter': '/b/fashion/javascripts/includes/globalHeaderFooter',
             'lodash' : '/b/fashion/javascripts/libs/lodash.4',
