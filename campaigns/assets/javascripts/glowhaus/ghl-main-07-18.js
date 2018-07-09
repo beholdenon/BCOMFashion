@@ -23,122 +23,21 @@
 
 $(function () {
 
-    // ------------------------ TealiumTagUtil adaptation - Start ------------------ //
-    /*
-    // do not need it if TealiumTagUtil is added via <script>
 
-    var validEventTypes = [
-        'view',
-        'link',
-    ];
-
-    function isAllOK(eventType, data) {
-        if (_.isUndefined(eventType) || _.isUndefined(data)) {
-            console.error('Tag Manager Exception : eventType and/or data missing!');
-            return false;
-        }
-
-        if (_.indexOf(validEventTypes, eventType) < 0) {
-            console.error('Tag Manager Exception : invalid eventType!');
-            return false;
-        }
-
-        if (_.isUndefined(window.utag)) {
-            console.error('Tag Manager Exception: window.utag missing!');
-            return false;
-        }
-
-        if (_.isUndefined(window.utag[eventType])) {
-            console.error('Tag Manager Exception: utag.' + eventType + ' missing!');
-            return false;
-        }
-
-        return true;
-    }
-
-    function tealiumTagUtil() {
-
-        //Add the page names for page load tags here
-        var pageNamesObj = {
-            'glowhaus': 'glowhaus landing',
-            'makeup-looks-tutorials': 'glowhaus videos',
-            'discover-new-makeup-skin-care-brands': 'glowhaus brands',
-            'about': 'glowhaus about us'
-        };
-
-        function fireTag(eventType, data) {
-            if (isAllOK(eventType, data)) {
-                window.utag[eventType](data);
-            }
-        }
-
-        var tagManagerObj = {
-
-            //Gets the last part (after '/') in the pathname of the url
-            getLastPathName: function () {
-                var pathName = window.location.pathname,
-                    pathArrObj = pathName.split("/"),
-                    pathObjLength = pathArrObj.length;
-                if (pathArrObj[pathObjLength - 1] === "") {
-                    return pathArrObj[pathObjLength - 2];
-                }
-                else {
-                    return pathArrObj[pathObjLength - 1];
-                }
-            },
-
-            //Gets the current page name
-            getCurrentPageName: function () {
-                var currentPageName = this.getLastPathName();
-                return pageNamesObj[currentPageName];
-            },
-
-            //Fires the link tag - Do not change this
-            fireTealiumLinkTag: function (data) {
-                fireTag('link', data);
-            },
-
-            //Fires the view tag - Do not change this
-            fireTealiumViewTag: function (data) {
-                fireTag('view', data);
-            },
-
-            //Fires the view tag on page loads
-            fireTealiumPageLoadTag: function (data) {
-                var pageName = this.getCurrentPageName();
-                _.extend(data, {page_name: pageName});
-                this.fireTealiumViewTag(data);
-            },
-
-            //Fires the link tag on actions performed on the video
-            fireTealiumVideoTag: function (aEventName, aName, aLength, aElapsedTime) {
-                this.fireTealiumLinkTag({
-                    'event_name': aEventName,
-                    'video_name': aName,
-                    'video_length': aLength,
-                    'video_time_viewed': aElapsedTime
-                });
-            }
-        };
-
-        return tagManagerObj;
-    }
-
-*/
-    // ------------------------ TealiumTagUtil adaptation - End ------------------ //
-
-    // var tealiumTagMetrics = new tealiumTagUtil();
-
-    // TealiumTagUtil is added via <script>
-    var tealiumTagMetrics = $.fn.tealiumTagUtil();
+    var adobeAnalytics = $.fn.tealiumTagUtil();
 
     $(window).on('load', function () {
-        tealiumTagMetrics.fireTealiumPageLoadTag({'page_type': 'marketing'});
+        adobeAnalytics.fireTealiumPageLoadTag({
+            'page_type': 'marketing',
+            'page_name': 'glowhaus landing'
+        });
     });
 
 
     $('.glh-header__shop-btn').on('click', function () {
-        tealiumTagMetrics.fireTealiumViewTag({'event_name': 'shop glowhaus'});
+        adobeAnalytics.fireTealiumViewTag({
+            'event_name': 'shop glowhaus'
+        });
     });
     // ---- TealiumTagging end
 
@@ -148,6 +47,10 @@ $(function () {
     var viewportWidth = $(window).width();
     $('#m-nav-switcher').on('click', function () {
         mainContainer.toggleClass('glh-m-nav-is-open');
+
+        adobeAnalytics.fireTealiumLinkTag({
+            'event_name' : 'mobile nav toggle'
+        });
     });
     $(window).resize(function () {
         if (viewportWidth >= 767) {
@@ -546,8 +449,16 @@ $(function () {
             'thumb': 'brand-16.jpg',
             'height': 187
         },
-        {'type': 'img', 'action': 'html-brand-popup', 'name': 'Lano', 'thumb': 'brand-11.jpg', 'height': 171},
-        {'type': 'img', 'action': 'html-brand-popup', 'name': 'kaprielle', 'thumb': 'brand-15.jpg', 'height': 117},
+        {   'type': 'img',
+            'action': 'html-brand-popup',
+            'name': 'Lano',
+            'thumb': 'brand-11.jpg',
+            'height': 171
+        },
+        {   'type': 'img', 'action': 'html-brand-popup',
+            'name': 'kaprielle',
+            'thumb': 'brand-15.jpg',
+            'height': 117},
         {
             'type': 'img',
             'action': 'html-brand-popup',
@@ -562,8 +473,18 @@ $(function () {
             'thumb': 'landingthumb_brand26.jpg',
             'height': 153
         },
-        {'type': 'img', 'action': 'html-brand-popup', 'name': 'Patchology', 'thumb': 'brand-20.jpg', 'height': 192},
-        {'type': 'img', 'action': 'html-brand-popup', 'name': 'Preheels', 'thumb': 'brand-21.jpg', 'height': 202},
+        {   'type': 'img',
+            'action': 'html-brand-popup',
+            'name': 'Patchology',
+            'thumb': 'brand-20.jpg',
+            'height': 192
+        },
+        {   'type': 'img',
+            'action': 'html-brand-popup',
+            'name': 'Preheels',
+            'thumb': 'brand-21.jpg',
+            'height': 202
+        },
         {
             'type': 'img',
             'action': 'html-brand-popup',
@@ -571,7 +492,12 @@ $(function () {
             'thumb': 'brand-22.jpg',
             'height': 202
         },
-        {'type': 'img', 'action': 'html-brand-popup', 'name': 'winkylux', 'thumb': 'brand-06.jpg', 'height': 68},
+        {   'type': 'img',
+            'action': 'html-brand-popup',
+            'name': 'winkylux',
+            'thumb': 'brand-06.jpg',
+            'height': 68
+        },
         // html-brand-popup - Main
         {
             'type': 'img',
@@ -608,8 +534,18 @@ $(function () {
             'thumb': 'landingthumb_brand4.jpg',
             'height': 133
         },
-        {'type': 'img', 'action': 'html-brand-popup', 'name': 'Drybar', 'thumb': 'brand-18.jpg', 'height': 242},
-        {'type': 'img', 'action': 'html-brand-popup', 'name': 'Frank Body', 'thumb': 'brand-12.jpg', 'height': 171},
+        {   'type': 'img',
+            'action': 'html-brand-popup',
+            'name': 'Drybar',
+            'thumb': 'brand-18.jpg',
+            'height': 242
+        },
+        {   'type': 'img',
+            'action': 'html-brand-popup',
+            'name': 'Frank Body',
+            'thumb': 'brand-12.jpg',
+            'height': 171
+        },
         {
             'type': 'img',
             'action': 'html-brand-popup',
@@ -659,8 +595,18 @@ $(function () {
             'thumb': 'landingthumb_brand18.jpg',
             'height': 141
         },
-        {'type': 'img', 'action': 'html-brand-popup', 'name': 'NUDESTIX', 'thumb': 'brand-03.jpg', 'height': 85},
-        {'type': 'img', 'action': 'html-brand-popup', 'name': 'RMS Beauty', 'thumb': 'brand-04.jpg', 'height': 129},
+        {   'type': 'img',
+            'action': 'html-brand-popup',
+            'name': 'NUDESTIX',
+            'thumb': 'brand-03.jpg',
+            'height': 85
+        },
+        {   'type': 'img',
+            'action': 'html-brand-popup',
+            'name': 'RMS Beauty',
+            'thumb': 'brand-04.jpg',
+            'height': 129
+        },
         {
             'type': 'img',
             'action': 'html-brand-popup',
@@ -1383,8 +1329,7 @@ $(function () {
                 setImgHeight(imgItem);
             }
         } else if (media === 'deco') {
-            imgItem = $('<li class="glh-masonry-item__deco-item">' + imgMarkup + '</li>')
-                .appendTo(landingPageTileList);
+            imgItem = $('<li class="glh-masonry-item__deco-item">' + imgMarkup + '</li>').appendTo(landingPageTileList);
             setImgHeight(imgItem);
         }
     });
@@ -1526,23 +1471,20 @@ $(function () {
     };
 
     var setUpVideoEvents = function (_container) {
-        _container.find('video').on('pause', function (e) {
-            var vd = e.target.duration;
-            var ct = e.target.currentTime;
-            //to avoid firing pause and ended events in the same time
-            if (ct < vd) {
-                coreMetricsForVideo('video-' + productPageToOpenCleanName, 'video_Pause', ct);
-
-                tealiumTagMetrics.fireTealiumVideoTag('video pause', videoPagePopupsData[productPageToOpen].heading, vd, ct);
-
-            }
-        })
+        _container.find('video')
+            .on('pause', function (e) {
+                var videoDuratiion = e.target.duration;
+                var videoCurrentTime = e.target.currentTime;
+                //to avoid firing pause and ended events in the same time
+                if (videoCurrentTime < videoDuratiion) {
+                    coreMetricsForVideo('video-' + productPageToOpenCleanName, 'video_Pause', videoCurrentTime);
+                    adobeAnalytics.fireTealiumVideoTag('video pause', videoPagePopupsData[productPageToOpen].heading, videoDuratiion, videoCurrentTime);
+                }
+            })
             .on('play', function (e) {
                 currentVideoLaunched = true;
                 coreMetricsForVideo('video-' + productPageToOpenCleanName, 'video_Play', e.target.currentTime);
-
-                tealiumTagMetrics.fireTealiumVideoTag('video play', videoPagePopupsData[productPageToOpen].heading, e.target.duration, e.target.currentTime);
-
+                adobeAnalytics.fireTealiumVideoTag('video play', videoPagePopupsData[productPageToOpen].heading, e.target.duration, e.target.currentTime);
             })
             .on('timeupdate', function (e) {
                 currentVideoPosition = e.target.currentTime;
@@ -1550,11 +1492,19 @@ $(function () {
             .on('ended', function (e) {
                 currentVideoCompleted = true;
                 coreMetricsForVideo('video-' + productPageToOpenCleanName, 'video_Completed', e.target.currentTime);
-
-                tealiumTagMetrics.fireTealiumVideoTag('video completion', videoPagePopupsData[productPageToOpen].heading, e.target.duration, e.target.currentTime);
-
+                adobeAnalytics.fireTealiumVideoTag('video completion', videoPagePopupsData[productPageToOpen].heading, e.target.duration, e.target.currentTime);
             });
     };
+
+    $(document).on('webkitfullscreenchange mozfullscreenchange fullscreenchange', function(e) {
+        var state = document.fullScreen || document.mozFullScreen || document.webkitIsFullScreen;
+        var event = state ? 'video full screen on' : 'video full screen off';
+
+        adobeAnalytics.fireTealiumViewTag({
+            'event_name': event,
+            'video_name': videoPagePopupsData[productPageToOpen].heading
+        });
+    });
 
     var videoMarkup = function (_data) {
         var videoPosterSrc = getVideoPosterAndSrc(_data).videoPosterSrc;
@@ -1571,7 +1521,7 @@ $(function () {
         setUpVideoEvents(popupVideoContainer);
         plyr.setup(document.querySelector(videoSelector), videoPlayerOptions);
 
-        tealiumTagMetrics.fireTealiumViewTag({
+        adobeAnalytics.fireTealiumViewTag({
             'event_name': 'video launch',
             'video_name': videoPagePopupsData[productPageToOpen].heading,
             'video_length': _data.duration
@@ -1603,9 +1553,8 @@ $(function () {
                 productPageToOpen = this.st.el.attr('data-name');
                 productPageToOpenCleanName = productPageToOpen.toUpperCase().replace(/[^A-Z0-9]/ig, '-');
 
-                tealiumTagMetrics.fireTealiumLinkTag({
-                    'page_type' : 'marketing',
-                    'page_name' : 'glowhaus videos',
+                adobeAnalytics.fireTealiumLinkTag({
+                    'page_name' : 'video popup',
                     'video_name' : videoPagePopupsData[productPageToOpen].heading
                 });
 
@@ -1616,6 +1565,7 @@ $(function () {
                 popupCloseBtnMetrics(productPageToOpenCleanName);
             },
             close: function () {
+
                 if (!popupCloseBtnEvent) {
                     $.fn.coreTag('Element', 'closed-on-background-click__VIDEO-POPUP');
                 }
@@ -1624,7 +1574,10 @@ $(function () {
                     coreMetricsForVideo('video-' + productPageToOpenCleanName, 'video_Aborted', currentVideoPosition);
                 }
 
-                tealiumTagMetrics.fireTealiumVideoTag('video player closed', videoPagePopupsData[productPageToOpen].heading, totalDuration, currentVideoPosition);
+                adobeAnalytics.fireTealiumLinkTag({
+                    'event_name' : 'popup closed'
+                });
+                adobeAnalytics.fireTealiumVideoTag('video player closed', videoPagePopupsData[productPageToOpen].heading, totalDuration, currentVideoPosition);
 
                 currentVideoCompleted = false;
                 currentVideoLaunched = false;
@@ -1690,8 +1643,15 @@ $(function () {
                 // init coremetrics for close btn
                 popupCloseBtnMetrics(productPageToOpenCleanName);
 
+                adobeAnalytics.fireTealiumLinkTag({
+                    'page_name' : productPageToOpenCleanName + ' popup',
+                });
+
             },
             close: function () {
+                adobeAnalytics.fireTealiumLinkTag({
+                    'event_name' : 'popup closed'
+                });
                 if (!popupCloseBtnEvent) {
                     $.fn.coreTag('Element', 'closed-on-background-click__VIDEO-POPUP');
                 }
@@ -1734,29 +1694,35 @@ $(function () {
                     var theGlowDownDescription = '<h2 class="glh-popup__subheading">The Glow-Down:</h2><p class="glh-popup__description-copy">' + brandsPageItem.theGlowDownCopy + '</p>';
                     $('.glh-popup__theglowdown-description').html(theGlowDownDescription);
 
+                    // analytics cm_sp tag
+                    var cm_sp_name = '&cm_sp=shop-' + productPageToOpen.replace(/\s+/g, '-').toLowerCase();
                     // resolve '.' and '!' issue in product's name
                     if (productPageToOpen === 'The Better Skin Co') {
                         $('.glh-popup__shop-link-holder').html('<a coremetricTag="shop-now-' + cormetricsValue + '" ' +
-                            'class="glh-popup__shop-link" href="' + brandsPageItem.shopLinkUrl + '">Shop ' + productPageToOpen + '.</a>');
+                            'class="glh-popup__shop-link" href="' + brandsPageItem.shopLinkUrl + cm_sp_name + '">Shop ' + productPageToOpen + '.</a>');
                     } else if (productPageToOpen === 'Supergoop') {
                         $('.glh-popup__shop-link-holder').html('<a coremetricTag="shop-now-' + cormetricsValue + '" ' +
-                            'class="glh-popup__shop-link" href="' + brandsPageItem.shopLinkUrl + '">Shop ' + productPageToOpen + '!</a>');
+                            'class="glh-popup__shop-link" href="' + brandsPageItem.shopLinkUrl + cm_sp_name + '">Shop ' + productPageToOpen + '!</a>');
                     } else {
                         $('.glh-popup__shop-link-holder').html('<a coremetricTag="shop-now-' + cormetricsValue + '" ' +
-                            'class="glh-popup__shop-link" href="' + brandsPageItem.shopLinkUrl + '">Shop ' + productPageToOpen + '</a>');
+                            'class="glh-popup__shop-link" href="' + brandsPageItem.shopLinkUrl + cm_sp_name + '">Shop ' + productPageToOpen + '</a>');
                     }
                 } else {
                     popupBrandHeading.html(brandsPageItemHeading);
                     ajaxPopup.attr('aria-labelledby', brandsPageItemHeading);
 
+                    // analytics cm_sp tag
+                    var cm_sp_differentiated_name = '&cm_sp=shop-now_' + Math.floor(Math.random() * 1000) + 1;
                     $('.glh-popup__shop-link-holder').html('<a coremetricTag="shop-now-' + cormetricsValue + '" ' +
-                        'class="glh-popup__shop-link" href="' + brandsPageItem.shopLinkUrl + '">Shop Now</a>');
+                        'class="glh-popup__shop-link cm-sp-shop-now" href="' + brandsPageItem.shopLinkUrl + cm_sp_differentiated_name + '">Shop Now</a>');
                 }
 
 
                 var bestsellerImgUrl = brandsPageIndexPicsDir + productPageToOpen.toLowerCase().replace(/\s/g, '') + '-product.jpg';
+                // analytics cm_sp image-link tag
+                var cm_sp_image_link = '&cm_sp=' + productPageToOpen.replace(/\s+/g, '-').toLowerCase() + '_image';
                 $('.glh-popup__bestseller-img-holder').html('<a coremetricTag="shop-product_image-link_' + cormetricsValue + '" ' +
-                    'href="' + brandsPageItem.bestsellerImgLink + '">' +
+                    'href="' + brandsPageItem.bestsellerImgLink + cm_sp_image_link + '">' +
                     '<img src="' + bestsellerImgUrl + '"></a>');
 
                 $('.glh-popup__bestseller-description').html('<h3 class="glh-popup__subheading">' + brandsPageItem.bestsellerHeading + '</h3>' +
@@ -1833,14 +1799,14 @@ $(function () {
 
     // ----------- Utils
 
-    function isOdd(num) {
-        return num % 2;
-    }
+    // function isOdd(num) {
+    //     return num % 2;
+    // }
 
     //Returns a random integer between min (inclusive) and max (inclusive)
-    function getRandomInt(min, max) {
-        return Math.floor(Math.random() * (max - min + 1)) + min;
-    }
+    // function getRandomInt(min, max) {
+    //     return Math.floor(Math.random() * (max - min + 1)) + min;
+    // }
 
     //EXPECTED: Attribute 16 = Video Action ("0”=Launch; “1”=Pause; “2”=Play; “3”=Completion)
     // Attribute 17= Video Length (Total length played in seconds)
