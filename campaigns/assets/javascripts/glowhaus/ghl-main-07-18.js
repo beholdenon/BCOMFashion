@@ -27,9 +27,10 @@ $(function () {
     var adobeAnalytics = $.fn.tealiumTagUtil();
 
     $(window).on('load', function () {
+        var currentPageName = adobeAnalytics.getCurrentPageName();
         adobeAnalytics.fireTealiumPageLoadTag({
             'page_type': 'marketing',
-            'page_name': 'glowhaus landing'
+            'page_name': currentPageName
         });
     });
 
@@ -912,13 +913,6 @@ $(function () {
             'bestsellerCopy': 'Translucent, talc-free and exactly what you need to look airbrushed IRL.',
             'shopLinkUrl': 'https://www.bloomingdales.com/shop/makeup-perfume-beauty/glowhaus-makeup-skin-care/Brand/COVER%20FX?id=1035059'
         },
-        // 'FLiRT Cosmetics': {
-        //     'theGlowDownCopy': 'Born on the &#39;gram, this social media&#8211;savvy beauty brand was created in collaboration with illustrator Donald Robertson. The playful collection includes dot liner pens to create artsy eye designs, temporary tattoos for festival looks and a false&dash;lash applicator that will blow your mind. Not to mention, everything is decorated with Robertson’s punchy illustrations, making the products themselves works of art.',
-        //     'bestsellerImgLink': 'https://www.bloomingdales.com/shop/product/flirt-cosmetics-flashes-false-lash-applicator?ID=2695132',
-        //     'bestsellerHeading': 'Flashes False&dash;Lash Applicator',
-        //     'bestsellerCopy': 'This game&dash;changing tool dispenses false&dash;lash &quot;buds&quot; for a hassle&dash;free application and custom look.',
-        //     'shopLinkUrl': 'https://www.bloomingdales.com/shop/makeup-perfume-beauty/glowhaus-makeup-skin-care/Brand/FLiRT%20Cosmetics?id=1035059'
-        // },
         'Frank Body': {
             'theGlowDownCopy': 'Created in Australia and made famous by bikini-clad beach babes, this coffee-based line uses only natural and naturally derived ingredients for its skin-smoothing scrubs and creams. Coffee grinds, brown sugar and sea salt are the headliners here, so it’s no surprise everything smells good enough to eat. Why coffee? The caffeine energizes the skin and perks things up, so it works wonders on the, um, behind region.',
             'bestsellerImgLink': 'https://www.bloomingdales.com/shop/product/frank-body-original-coffee-scrub?ID=2654120',
@@ -1266,7 +1260,11 @@ $(function () {
         var fullSizeImg = imgFullSizeDir + tileItem.thumb.replace('-thumb', '');
         var thumbImg = imgThumbsDir + tileItem.thumb;
         var typeOfAction = tileItem.action;
-        var shopLink = tileItem.imgShopLink;
+
+
+        // analytics cm_sp tag
+        var cm_sp_differentiated_sffx = '&cm_sp=' + imgLinkText.replace(/\s+/g, '-').toLowerCase() + '_' + Math.floor(Math.random() * 1000) + 1;
+        var shopLink = tileItem.imgShopLink + cm_sp_differentiated_sffx;
 
         var setImgHeight = function (item) {
             var value = originalHeight * (item.width() / defaultThumbWidth);
@@ -1388,6 +1386,7 @@ $(function () {
     // pathch4
     imgPopupLink.eq(imgPopupLinkCount - 5).append(pathch4).css('z-index', '996').parent().css('z-index', '996');
 
+
     //* ------------------------------------ IMAGE POPUP ------------------------------------- */
 
     var popupCloseBtnEvent = false;
@@ -1416,12 +1415,20 @@ $(function () {
                 // Image caption with "shop the look" link
                 var imgShopLink = this.st.el.find('img').data('img-shop-link');
                 $('.mfp-title').html('<a coremetrictag="shop-now_IMAGE-POPUP" href="' + imgShopLink + '">' + imgLinkText + '</a>');
+
+                adobeAnalytics.fireTealiumLinkTag({
+                    'page_name' : 'image popup'
+                });
             },
             close: function () {
                 if (!popupCloseBtnEvent) {
                     $.fn.coreTag('Element', 'closed-on-background-click__IMAGE-POPUP');
                 }
                 $('.mfp-title').html('');
+
+                adobeAnalytics.fireTealiumLinkTag({
+                    'event_name' : 'popup closed'
+                });
             }
         }
     });
@@ -1606,9 +1613,9 @@ $(function () {
                 $.each(prodList, function (item) {
                     var _item = prodList[item];
                     var itemTitle = _item.vendor;
-
+                    var cm_sp_link = '&cm_sp=shop-' + itemTitle.replace(/\s+/g, '-').toLowerCase();
                     $('.ghl-thumbs-links-list').append('<li><a coremetricTag="shop-product_' + itemTitle.toUpperCase().replace(/[^A-Z0-9]/ig, '-') + '" ' +
-                        'href="' + _item.link + '">' +
+                        'href="' + _item.link + cm_sp_link + '">' +
                         '<img alt="' + itemTitle + '" src="' + thisProductPath + _item.thumb + '">' +
                         '<h5>' + itemTitle + '</h5>' +
                         '<p>' + _item.product + '</p></a></li>');
