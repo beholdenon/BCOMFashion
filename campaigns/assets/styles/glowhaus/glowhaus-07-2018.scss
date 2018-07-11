@@ -721,18 +721,13 @@ video {
 
 // 06,07 2018
 .mfp-bottom-bar {
-  //margin-top: -36px;
-  margin-top: -104px;
   position: absolute;
-  top: 100%;
+  top: calc(100% - 44px);
   left: 0;
   width: 100%;
   cursor: auto;
 }
 .mfp-title {
-  //text-align: left;
-  //line-height: 18px;
-  //color: #F3F3F3;
   color: #000;
   word-wrap: break-word;
   padding-right: 0;
@@ -753,5 +748,6 @@ video {
 
 img.mfp-img {
   outline: none !important;
+  padding-bottom: 80px;
 }
 

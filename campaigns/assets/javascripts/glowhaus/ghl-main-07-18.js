@@ -1378,13 +1378,13 @@ $(function () {
     var pathch4 = '<img  alt="glowhaus generic photo" style="display:none;z-index:996" class="img-tile-patch bottom" src="' + patchesDir + 'patch4.svg">';
     var pathchIndex = Math.floor(imgPopupLinkCount / 3);
     // pathch1
-    imgPopupLink.eq(5).append(pathch1).css('z-index', '996').parent().css('z-index', '996');
+    imgPopupLink.eq(5).append(pathch1).css('z-index', '996').parent().css({'z-index':'996','transform': 'translate3d(0,0,0)'});
     // pathch2
-    imgPopupLink.eq(pathchIndex).append(pathch2).css('z-index', '996').parent().css('z-index', '996');
+    imgPopupLink.eq(pathchIndex).append(pathch2).css('z-index', '996').parent().css({'z-index':'996','transform': 'translate3d(0,0,0)'});
     // pathch3
-    imgPopupLink.eq(pathchIndex * 2).append(pathch3).css('z-index', '996').parent().css('z-index', '996');
+    imgPopupLink.eq(pathchIndex * 2).append(pathch3).css('z-index', '996').parent().css({'z-index':'996','transform': 'translate3d(0,0,0)'});
     // pathch4
-    imgPopupLink.eq(imgPopupLinkCount - 5).append(pathch4).css('z-index', '996').parent().css('z-index', '996');
+    imgPopupLink.eq(imgPopupLinkCount - 5).append(pathch4).css('z-index', '996').parent().css({'z-index':'996','transform': 'translate3d(0,0,0)'});
 
 
     //* ------------------------------------ IMAGE POPUP ------------------------------------- */
@@ -1485,13 +1485,13 @@ $(function () {
                 //to avoid firing pause and ended events in the same time
                 if (videoCurrentTime < videoDuratiion) {
                     coreMetricsForVideo('video-' + productPageToOpenCleanName, 'video_Pause', videoCurrentTime);
-                    adobeAnalytics.fireTealiumVideoTag('video pause', videoPagePopupsData[productPageToOpen].heading, videoDuratiion, videoCurrentTime);
+                    adobeAnalytics.fireTealiumVideoTag('video pause', productPageToOpenCleanName, videoDuratiion, videoCurrentTime);
                 }
             })
             .on('play', function (e) {
                 currentVideoLaunched = true;
                 coreMetricsForVideo('video-' + productPageToOpenCleanName, 'video_Play', e.target.currentTime);
-                adobeAnalytics.fireTealiumVideoTag('video play', videoPagePopupsData[productPageToOpen].heading, e.target.duration, e.target.currentTime);
+                adobeAnalytics.fireTealiumVideoTag('video play', productPageToOpenCleanName, e.target.duration, e.target.currentTime);
             })
             .on('timeupdate', function (e) {
                 currentVideoPosition = e.target.currentTime;
@@ -1499,17 +1499,19 @@ $(function () {
             .on('ended', function (e) {
                 currentVideoCompleted = true;
                 coreMetricsForVideo('video-' + productPageToOpenCleanName, 'video_Completed', e.target.currentTime);
-                adobeAnalytics.fireTealiumVideoTag('video completion', videoPagePopupsData[productPageToOpen].heading, e.target.duration, e.target.currentTime);
+                adobeAnalytics.fireTealiumVideoTag('video completion', productPageToOpenCleanName, e.target.duration, e.target.currentTime);
             });
     };
 
-    $(document).on('webkitfullscreenchange mozfullscreenchange fullscreenchange', function(e) {
+    $(document).on('webkitfullscreenchange mozfullscreenchange fullscreenchange', function() {
         var state = document.fullScreen || document.mozFullScreen || document.webkitIsFullScreen;
         var event = state ? 'video full screen on' : 'video full screen off';
 
+        console.log('fullscreenchange' + event);
+
         adobeAnalytics.fireTealiumViewTag({
             'event_name': event,
-            'video_name': videoPagePopupsData[productPageToOpen].heading
+            'video_name': productPageToOpenCleanName
         });
     });
 
@@ -1530,7 +1532,7 @@ $(function () {
 
         adobeAnalytics.fireTealiumViewTag({
             'event_name': 'video launch',
-            'video_name': videoPagePopupsData[productPageToOpen].heading,
+            'video_name': productPageToOpenCleanName,
             'video_length': _data.duration
         });
     };
@@ -1644,15 +1646,15 @@ $(function () {
                 productPageToOpen = this.st.el.attr('data-name');
                 productPageToOpenCleanName = productPageToOpen.toUpperCase().replace(/[^A-Z0-9]/ig, '-');
 
+                adobeAnalytics.fireTealiumLinkTag({
+                    'page_name' : productPageToOpenCleanName + ' popup'
+                });
+
             },
             open: function () {
                 popupCloseBtnEvent = false;
                 // init coremetrics for close btn
                 popupCloseBtnMetrics(productPageToOpenCleanName);
-
-                adobeAnalytics.fireTealiumLinkTag({
-                    'page_name' : productPageToOpenCleanName + ' popup',
-                });
 
             },
             close: function () {
