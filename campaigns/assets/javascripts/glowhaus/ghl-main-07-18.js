@@ -40,7 +40,6 @@ $(function () {
             'event_name': 'shop glowhaus'
         });
     });
-    // ---- TealiumTagging end
 
     // ----------- Mobile nav switcher
 
@@ -1507,8 +1506,6 @@ $(function () {
         var state = document.fullScreen || document.mozFullScreen || document.webkitIsFullScreen;
         var event = state ? 'video full screen on' : 'video full screen off';
 
-        console.log('fullscreenchange' + event);
-
         adobeAnalytics.fireTealiumViewTag({
             'event_name': event,
             'video_name': productPageToOpenCleanName
@@ -1520,7 +1517,6 @@ $(function () {
         var videoSrc = getVideoPosterAndSrc(_data).videoSrc;
         return '<video class="glh-video" poster="' + videoPosterSrc + '" controls>' +
             '<source src="' + videoSrc + '" type="video/mp4">' +
-            //'<!-- Text track file -->' + trackTag +
             '<a href="' + videoSrc + '" download>Download</a></video>';
     };
 
@@ -1790,35 +1786,7 @@ $(function () {
     });
 
 
-    /* stop all animation button for next round*/
-    if ($('#glh-images-tile').length) {
-        /*
-        var stopAnimationDialog = '<div class="glh-stop-animation-btn-container">' +
-            '<button tabindex="0" id="stop-animation-btn" class="glh-stop-animation-btn" role="button" aria-label="Stop animation on the page" aria-controls="animation">Stop all animation</button></div>';
-        $('body').prepend(stopAnimationDialog);
-        $('#stop-animation-btn').on('click', function () {
-            $('.glh-video-thumb').each(function() {
-                $(this).removeAttr('loop autoplay playsinline').get(0).pause();
-            });
-            $(this).parent().remove();
-        });
-        */
-
-    }
-
     // ----------- Utils
-
-    // function isOdd(num) {
-    //     return num % 2;
-    // }
-
-    //Returns a random integer between min (inclusive) and max (inclusive)
-    // function getRandomInt(min, max) {
-    //     return Math.floor(Math.random() * (max - min + 1)) + min;
-    // }
-
-    //EXPECTED: Attribute 16 = Video Action ("0”=Launch; “1”=Pause; “2”=Play; “3”=Completion)
-    // Attribute 17= Video Length (Total length played in seconds)
 
     function coreMetricsForVideo(tag_value, attribute16_value, attribute17_value) {
         var categoryID = "spring18_glowhaus";
