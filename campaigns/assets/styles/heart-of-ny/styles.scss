@@ -48,8 +48,21 @@ h1, h2 {
   left: 0;
   top: 0;
   z-index: $sticky-header-zindex;
-  &.nav-border {
+  .bloom-logo {
+    transition: .3s ease-out;
+    position: absolute;
+    left: 50%;
+    top: -100px;
+    transform: translateX(-50%) translateY(-50%) scale(.5);
+  }
+}
+.heart-scrolled {
+  .heart-of-ny-sticky-header {
     border-bottom: 1px solid #000;
+    .bloom-logo {
+      top: 50%;
+      transform: translateX(-50%) translateY(-50%) scale(.5);
+    }
   }
 }
 .heart-of-ny-landing-jumbotron {
@@ -112,6 +125,18 @@ header {
     p {
       font-size: 20px;
       margin: 0 auto 60px auto;
+    }
+  }
+}
+.heart-of-ny-home {
+  @media screen and (min-width: 1280px) {
+    header {
+      h1 {
+        font-size: 83px;
+      }
+      p {
+        max-width: 718px;
+      }
     }
   }
 }
@@ -264,7 +289,7 @@ header {
     float: left;
   }
 }
-.shoe-logos {
+.logos {
   width: 100%;
   margin: 0 auto;
   max-width: $container-width;
@@ -279,6 +304,7 @@ header {
   width: 100%;
   height: auto;
 }
+// global text links
 .text-link {
   font-family: $nav-font-family;
   font-weight: 700;
@@ -304,6 +330,8 @@ header {
     line-height: 1.3;
   }
 }
+
+// box with headline and copy
 .sub-head-box {
   height: 355px;
   width: 100%;
@@ -384,7 +412,7 @@ header {
         max-width: 920px;
       }
       h2 {
-        font-size: 90px;
+        font-size: 80px;
       }
       .heart {
         right: 135px;
@@ -392,20 +420,26 @@ header {
       }
     }
   }
+  @media screen and (min-width: 1100px) {
+    .inner {
+      h2 {
+        font-size: 90px;
+      }
+    }
+  }
 
 }
 
-
+// shoe grid
 .shoe-grid {
   margin: 0 auto;
   width: 100%;
   max-width: $container-width;
-  padding-right: -20px;
   .col {
     //width: 90%;
     width: 49%;
     display: inline-block;
-    padding-right: 20px;
+    padding: 0 10px;
     vertical-align: top;
     &.half {
       width: 100%;
@@ -419,6 +453,7 @@ header {
         display: block;
       }
     }
+
     img {
       width: 100%;
       height: auto;
@@ -428,11 +463,9 @@ header {
 
   @media screen and (min-width: 767px) {
     margin: 70px auto 0 auto;
-    padding-right: -20px;
     .col {
       width: 24%;
       display: inline-block;
-      padding-right: 20px;
       &.half {
         width: 49%;
       }
@@ -454,18 +487,37 @@ header {
       text-transform: uppercase;
       font-family: $site-font-family;
       font-weight: 700;
-      font-size: 20px;
+      font-size: 14px;
       color: #000;
       margin-top: 25px;
+      @media screen and (min-width: 767px) {
+        font-size: 20px;
+      }
     }
   }
 }
 
+// variables for feature
+$small-feature-height: 220px;
+$small-feature-bg-height: 150px;
+$small-feature-bg-top: ($small-feature-height - $small-feature-bg-height)/2;
+
+$medium-feature-height: 430px;
+$medium-feature-bg-height: 310px;
+$medium-feature-bg-top: ($medium-feature-height - $medium-feature-bg-height)/2;
+  
+$large-feature-height: 675px;
+$large-feature-bg-height: 460px;
+$large-feature-bg-top: ($large-feature-height - $large-feature-bg-height)/2;
+   
+// feature with photo and content
 .new-feature {
   height: 220px;
   width: 100%;
   position: relative;
   margin-bottom: 120px;
+
+  // small only
   .small-feature-type {
     font-size: 16px;
     text-align: center;
@@ -474,10 +526,11 @@ header {
     margin: 0 auto;
     line-height: 1.3;
   }
+
   .col {
     width: 49%;
     display: inline-block;
-    height: 220px;
+    height: $small-feature-height;
     z-index: 100;
     position: relative;
     &:nth-child(2) {
@@ -502,26 +555,42 @@ header {
       bottom: 0;
       right: 0;
       line-height: 1.3;
-      padding-right: 50px;
+      padding: 0 50px 0 0;
       margin-bottom: 0;
       display: none;
     }
     img {
       float: left;
       @include vertical-align();
-      max-height: 220px;
+      max-height: $small-feature-height;
+    }
+    &.col-right {
+      width: 40%;
+      img {
+        float: right;
+      }
+    }
+    &.col-left {
+      width: 50%;
+      p, h2 {
+        text-align: left;
+        padding: 0 0 0 20px;
+        float: left;
+      }
+      p {
+        left: 0;
+      }
     }
   }
 
   .bg {
     width: 100%;
-    height: 150px;
+    height: $small-feature-bg-height;
     background: #000;
     position: absolute;
-    top: 35px;
+    top: $small-feature-bg-top;
     z-index: 1;
   }
-  $medium-feature-height: 430px;
   @media screen and (min-width: 767px) {
     .small-feature-type {
       display: none;
@@ -532,9 +601,10 @@ header {
       p {
         font-size: 16px;
         display: block;
+        top: 400px;
       }
       h2 {
-        padding-right: 50px;
+        padding: 0 50px 0 0;
       }
       img {
         max-height: $medium-feature-height;
@@ -542,13 +612,20 @@ header {
       &:nth-child(2) {
         width: 40%;
       }
+      &.col-right {
+        width: 45%;
+      }
+      &.col-left {
+        p, h2 {
+          padding: 0 0 0 50px;
+        }
+      }
     }
     .bg {
-      height: 310px;
-      top: 55px;
+      height: $medium-feature-bg-height;
+      top: $medium-feature-bg-top;
     }
   }
-  $large-feature-height: 675px;
   @media screen and (min-width: 1020px) {
     height: $large-feature-height;
     .col {
@@ -557,6 +634,7 @@ header {
       p {
         max-width: 450px;
         font-size: 20px;
+        top: 650px;
       }
       img {
         max-height: $large-feature-height;
@@ -566,8 +644,8 @@ header {
       }
     }
     .bg {
-      height: 460px;
-      top: 107px;
+      height: $large-feature-bg-height;
+      top: $large-feature-bg-top;
     }
   }
   @media screen and (min-width: 1400px) {
@@ -578,6 +656,8 @@ header {
     }
   }
 }
+
+
 @keyframes heartbeat2 {
   0%
   {

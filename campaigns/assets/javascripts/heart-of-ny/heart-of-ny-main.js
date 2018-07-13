@@ -1,21 +1,23 @@
 $(function(){
 	var navActive = false;
+	var bodyRef =$("body");
 	function initNav() {
 		var sticky = $('.heart-of-ny-sticky-header');
 		
 		//on hamburger click trigger nav roll out
 		$("#heart-of-ny-nav-switcher").on('click', function () {
-	        $("body").toggleClass('heart-of-ny-nav-is-active');
-	        navActive = $("body").hasClass('heart-of-ny-nav-is-active');
+	        bodyRef.toggleClass('heart-of-ny-nav-is-active');
+	        navActive = bodyRef.hasClass('heart-of-ny-nav-is-active');
 	    });
 	    
 	    // add border on page scroll
+	    var logoOffset = $("header .bloom-logo").offset();
 	    $(window).scroll(function () {
 	        var offsetY = $(this).scrollTop();
-	        if(offsetY > sticky.height()) {
-	            sticky.addClass('nav-border');
+	        if(offsetY > (logoOffset.top)) {
+	            bodyRef.addClass("heart-scrolled");
 	        } else {
-	            sticky.removeClass('nav-border');
+	            bodyRef.removeClass("heart-scrolled");
 	        }
 	    });
 	}
@@ -36,6 +38,9 @@ $(function(){
 		$(".sub-head-box .heart").show();
 	}
 	$(window).resize(setHeart);
+
+	
+
 	initNav();
 	initLazyLoad();
 	setHeart();
