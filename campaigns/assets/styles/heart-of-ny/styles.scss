@@ -1,0 +1,632 @@
+@import "foundation-6.4.2-custom/foundation-xy-grid";
+@import "flexbox_mixins";
+@import "variables";
+@import "nav";
+
+
+@mixin vertical-align($position: relative) {
+  position: $position;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+
+p {
+  font-family: $site-font-family;
+  font-size: 16px;
+  line-height: 1.5;
+  @media screen and (min-width: 767px) {
+    font-size: 18px;
+  }
+  @media screen and (min-width: 1020px) {
+    font-size: 20px;
+  }
+}
+h1, h2 {
+  font-family: $nav-font-family;
+  font-weight: 700;
+}
+
+.heart-of-ny-landing {
+  width: $site-width;
+  display: block;
+  padding: 0;
+  margin: 0;
+  top: 0;
+  left: 0;
+  text-align: center;
+}
+.heart-of-ny-sticky-header {
+  width: $site-width;
+  height: $sticky-header-height;
+  max-height: $sticky-header-height;
+  background: #fff;
+  position: fixed;
+  display: block;
+  left: 0;
+  top: 0;
+  z-index: $sticky-header-zindex;
+  &.nav-border {
+    border-bottom: 1px solid #000;
+  }
+}
+.heart-of-ny-landing-jumbotron {
+  width: $site-width;
+}
+header {
+  width: $site-width;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 70px 0 0 0;
+  text-align: center;
+  display: block;
+  max-width: 80%;
+  .bloom-logo {
+    margin: 0 auto;
+    display: block;
+    max-width: 300px;
+    height: auto;
+  }
+
+  h1 {
+    font-family: $nav-font-family;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #000;
+    font-size: 60px;
+    display: block;
+    margin: 0;
+  }
+  p {
+    font-size: 16px;
+    max-width: 545px;
+    display: block;
+    margin: 0 auto 40px auto;
+    line-height: 1.3;
+  }
+  @media screen and (min-width: 767px) {
+      max-width: 90%;
+      .bloom-logo {
+        max-width: 420px;
+        height: auto;
+      }
+      h1 {
+        font-size: 90px;
+      }
+      p {
+        font-size: 20px;
+        margin: 0 auto 60px auto;
+      }
+  }
+  @media screen and (min-width: 1280px) {
+    max-width: 100%;
+    .bloom-logo {
+      max-width: 100%;
+      height: auto;
+    }
+    h1 {
+      font-size: 100px;
+    }
+    p {
+      font-size: 20px;
+      margin: 0 auto 60px auto;
+    }
+  }
+}
+.caption {
+  font-size: 15px;
+  text-align: left;
+  margin-left: 10px;
+
+}
+.feature-bar {
+  width: 100%;
+  position: relative;
+  overflow: visible;
+  padding: 10px 0;
+  display: block;
+  min-height: 350px;
+
+  .inner {
+    width: 100%;
+    height: 150px;
+    margin: 10px 0 30px 0;
+    position: relative;
+    overflow: visible;
+    background: #000;
+
+    .contain {
+      width: 100%;
+      max-width: 1200px;
+      height: 150px;
+      margin: 0 auto;
+      position: relative;
+      overflow: visible;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+
+      img {
+        position: absolute;
+        right: 50%;
+        width: 40%;
+        top: 50%;
+        transform: translateY(-50%);
+        height: auto;
+        max-height: 200px;
+        width: auto;
+        &.lv {
+          top: 56%;
+        }
+      }
+      h2 {
+        font-size: 7vw;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: #fff;
+        text-align: left;
+        left: 55%;
+        position: absolute;
+        line-height: 1;
+      }
+      p {
+        display: block;
+        position: relative;
+        width: 90%;
+        margin: 0 auto;
+        font-size: 16px;
+        top: 170px;
+      }
+
+
+    }
+  }
+  &.reverse {
+    .inner {
+      .contain {
+        img {
+          left: 20%;
+        }
+        h2 {
+          left: 60%;
+        }
+      }
+    }
+  }
+  @media screen and (min-width: 767px) {
+    padding: 30px 0 120px 0;
+    .inner {
+      height: 350px;
+      margin: 40px auto 90px auto;
+      .contain {
+        height: 350px;
+        img {
+          height: 450px;
+          max-height: 450px;
+        }
+        p {
+          left: 55%;
+          width: auto;
+          position: absolute;
+          top: 380px;
+          font-size: 18px;
+          padding-right: 20px;
+          text-align: left;
+        }
+      }
+    }
+  }
+  @media screen and (min-width: 1020px) {
+    padding: 70px 0 120px 0;
+    .inner {
+      .contain {
+        img {
+          height: 550px;
+          max-height: 550px;
+        }
+        p {
+          top: 420px;
+        }
+      }
+    }
+  }
+  @media screen and (min-width: 1280px) {
+    padding: 80px 0 130px 0;
+    .inner {
+      height: 465px;
+      margin: 90px auto 170px auto;
+      .contain {
+        height: 465px;
+        img {
+          height: 760px;
+          max-height: 760px;
+        }
+        h2 {
+         font-size: 90px;
+        }
+        p {
+          top: 565px;
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}
+.two-photos {
+  width: 90%;
+  display: block;
+  max-width: 1195px;
+  margin: 0 auto;
+  img {
+    width: 50%;
+    float: left;
+  }
+}
+.shoe-logos {
+  width: 100%;
+  margin: 0 auto;
+  max-width: $container-width;
+  padding: 20px 0;
+  @include flexbox;
+  @include justify-content(center);
+  @media screen and (min-width: 767px) {
+    padding: 40px 0;
+  }
+}
+.jumbotron {
+  width: 100%;
+  height: auto;
+}
+.text-link {
+  font-family: $nav-font-family;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 1;
+  text-transform: uppercase;
+  border-bottom: 2px solid #000;
+  text-decoration: none;
+  display: inline-block;
+  color: #000;
+  transition: 0.3s ease-out;
+  margin-bottom: 60px;
+  @media screen and (min-width: 767px) {
+    border-bottom: 4px solid #000;
+    margin-bottom: 125px;
+  }
+  &:hover {
+    color: $site-red;
+    border-color: $site-red;
+  }
+  @media screen and (min-width: 767px) {
+    font-size: 50px;
+    line-height: 1.3;
+  }
+}
+.sub-head-box {
+  height: 355px;
+  width: 100%;
+  background: #000;
+
+  @include flexbox;
+  @include align-items(center);
+  @include justify-content(center);
+  .inner {
+    text-align: center;
+    width: 100%;
+    max-width: $container-width;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+    display: block;
+    h2 {
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #000;
+      font-size: 50px;
+      color: #fff;
+      line-height: 1;
+      margin-bottom: 15px;
+      z-index: 2;
+      position: relative;
+      display: inline-block;
+    }
+    p {
+      color: #fff;
+      margin: 0 auto;
+    }
+    .heart {
+      width: 158px;
+      height: 139px;
+      background-image: url(../../images/heart-of-ny/heart-icon.png);
+      position:absolute;
+      z-index: 1;
+      display: none;
+      @include flexbox;
+      @include align-items(center);
+      @include justify-content(center);
+      transform: scale(0);
+      right: 110px;
+
+      p {
+        text-align: center;
+        font-family: $site-font-family;
+        font-weight: 900;
+        font-size: 20px;
+        text-transform: uppercase;
+        line-height: 1;
+        max-width: 84px;
+        margin-top: -10px;
+      }
+    }
+  }
+  @media screen and (min-width: 767px) {
+    height: 400px;
+    .inner {
+      p {
+        max-width: 90%;
+      }
+      h2 {
+        font-size: 62px;
+        line-height: 1.3;
+      }
+      .heart {
+        right: 35px;
+        animation: heartbeat2 2s infinite;
+      }
+    }
+  }
+  @media screen and (min-width: 1020px) {
+    height: 465px;
+    .inner {
+      p {
+        max-width: 920px;
+      }
+      h2 {
+        font-size: 90px;
+      }
+      .heart {
+        right: 135px;
+        animation: heartbeat 2s infinite;
+      }
+    }
+  }
+
+}
+
+
+.shoe-grid {
+  margin: 0 auto;
+  width: 100%;
+  max-width: $container-width;
+  padding-right: -20px;
+  .col {
+    //width: 90%;
+    width: 49%;
+    display: inline-block;
+    padding-right: 20px;
+    vertical-align: top;
+    &.half {
+      width: 100%;
+    }
+    p {
+      font-weight: 700;
+      margin-top: 20px;
+      display: block;
+      span {
+        font-weight: 500;
+        display: block;
+      }
+    }
+    img {
+      width: 100%;
+      height: auto;
+      transition: 0.3s ease-out;
+    }
+  }
+
+  @media screen and (min-width: 767px) {
+    margin: 70px auto 0 auto;
+    padding-right: -20px;
+    .col {
+      width: 24%;
+      display: inline-block;
+      padding-right: 20px;
+      &.half {
+        width: 49%;
+      }
+    }
+  }
+}
+.heart-of-new-york {
+  footer {
+    width: 100%;
+    margin-bottom: 120px;
+    padding: 0 20px;
+    img {
+      max-width: 798px;
+      width: 90%;
+      height: auto;
+      margin: 0 auto;
+    }
+    h3 {
+      text-transform: uppercase;
+      font-family: $site-font-family;
+      font-weight: 700;
+      font-size: 20px;
+      color: #000;
+      margin-top: 25px;
+    }
+  }
+}
+
+.new-feature {
+  height: 220px;
+  width: 100%;
+  position: relative;
+  margin-bottom: 120px;
+  .small-feature-type {
+    font-size: 16px;
+    text-align: center;
+    padding: 0 20px;
+    max-width: 90%;
+    margin: 0 auto;
+    line-height: 1.3;
+  }
+  .col {
+    width: 49%;
+    display: inline-block;
+    height: 220px;
+    z-index: 100;
+    position: relative;
+    &:nth-child(2) {
+      width: 40%;
+    }
+    h2 {
+      float: right;
+      text-align: right;
+      padding-right: 20px;
+      text-transform: uppercase;
+      color: #fff;
+      line-height: 1;
+      font-size: 7vw;
+      @include vertical-align();
+      max-width: 700px;
+    }
+    p {
+      text-align: right;
+      font-size: 20px;
+      max-width: 380px;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      line-height: 1.3;
+      padding-right: 50px;
+      margin-bottom: 0;
+      display: none;
+    }
+    img {
+      float: left;
+      @include vertical-align();
+      max-height: 220px;
+    }
+  }
+
+  .bg {
+    width: 100%;
+    height: 150px;
+    background: #000;
+    position: absolute;
+    top: 35px;
+    z-index: 1;
+  }
+  $medium-feature-height: 430px;
+  @media screen and (min-width: 767px) {
+    .small-feature-type {
+      display: none;
+    }
+    height: $medium-feature-height;
+    .col {
+      height: $medium-feature-height;
+      p {
+        font-size: 16px;
+        display: block;
+      }
+      h2 {
+        padding-right: 50px;
+      }
+      img {
+        max-height: $medium-feature-height;
+      }
+      &:nth-child(2) {
+        width: 40%;
+      }
+    }
+    .bg {
+      height: 310px;
+      top: 55px;
+    }
+  }
+  $large-feature-height: 675px;
+  @media screen and (min-width: 1020px) {
+    height: $large-feature-height;
+    .col {
+      height: $large-feature-height;
+
+      p {
+        max-width: 450px;
+        font-size: 20px;
+      }
+      img {
+        max-height: $large-feature-height;
+      }
+      &:nth-child(2) {
+        width: 45%;
+      }
+    }
+    .bg {
+      height: 460px;
+      top: 107px;
+    }
+  }
+  @media screen and (min-width: 1400px) {
+    .col {
+      h2 {
+        font-size: 100px;
+      }
+    }
+  }
+}
+@keyframes heartbeat2 {
+  0%
+  {
+    transform: scale( .65 );
+  }
+  20%
+  {
+    transform: scale( .75 );
+  }
+  40%
+  {
+    transform: scale( .65 );
+  }
+  60%
+  {
+    transform: scale( .75 );
+  }
+  80%
+  {
+    transform: scale( .65 );
+  }
+  100%
+  {
+    transform: scale( .65 );
+  }
+}
+@keyframes heartbeat {
+  0%
+  {
+    transform: scale( .85 );
+  }
+  20%
+  {
+    transform: scale( 1 );
+  }
+  40%
+  {
+    transform: scale( .85 );
+  }
+  60%
+  {
+    transform: scale( 1 );
+  }
+  80%
+  {
+    transform: scale( .85 );
+  }
+  100%
+  {
+    transform: scale( .85 );
+  }
+}

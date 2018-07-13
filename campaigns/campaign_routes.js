@@ -1,4 +1,5 @@
 module.exports = [
+    { method: 'GET',  path: '/b/campaigns/heart-of-ny/{path*}', config: require('../lib/handlers/views').responsiveCustomHF },
     { method: 'GET',  path: '/b/campaigns/glowhaus/{path*}', config: require('../lib/handlers/views').responsiveCustomHF },
 
     { method: 'GET',  path: '/b/campaigns/2018-spring-campaign-100-percent-exclusive/{path*}', config: require('../lib/handlers/views').responsiveCustomHF },
