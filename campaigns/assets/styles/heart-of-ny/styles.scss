@@ -1,7 +1,19 @@
 @import "foundation-6.4.2-custom/foundation-xy-grid";
 @import "flexbox_mixins";
+@import "slick";
 @import "variables";
 @import "nav";
+
+body, html {
+  width: 100%;
+  height: 100%;
+}
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
 
 
 @mixin vertical-align($position: relative) {
@@ -11,8 +23,6 @@
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
 }
-
-
 p {
   font-family: $site-font-family;
   font-size: 16px;
@@ -23,13 +33,20 @@ p {
   @media screen and (min-width: 1020px) {
     font-size: 20px;
   }
+  a {
+    color: #000;
+    transition: 0.3s ease-out;
+    &:hover {
+      color: $site-red;
+    }
+  }
 }
 h1, h2 {
   font-family: $nav-font-family;
   font-weight: 700;
 }
-
-.heart-of-ny-landing {
+.heart-of-ny-landing, .heart-of-ny-home, .heart-of-ny-shoes, .heart-of-ny-men, .heart-of-ny-events {
+  opacity: 0;
   width: $site-width;
   display: block;
   padding: 0;
@@ -82,7 +99,6 @@ header {
     max-width: 300px;
     height: auto;
   }
-
   h1 {
     font-family: $nav-font-family;
     font-weight: 700;
@@ -91,6 +107,8 @@ header {
     font-size: 60px;
     display: block;
     margin: 0;
+    line-height: 1;
+    margin: 25px auto 10px;
   }
   p {
     font-size: 16px;
@@ -98,6 +116,16 @@ header {
     display: block;
     margin: 0 auto 40px auto;
     line-height: 1.3;
+  }
+  &.home-header {
+    p {
+      max-width: 730px;
+    }
+  }
+  &.mens-header {
+    p {
+      max-width: none;
+    }
   }
   @media screen and (min-width: 767px) {
       max-width: 90%;
@@ -144,7 +172,11 @@ header {
   font-size: 15px;
   text-align: left;
   margin-left: 10px;
-
+  &.events-caption {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+  }
 }
 .feature-bar {
   width: 100%;
@@ -183,6 +215,12 @@ header {
         max-height: 200px;
         width: auto;
         &.lv {
+          top: 56%;
+        }
+        &.sparrow {
+          top: 56%;
+        }
+        &.dsquared {
           top: 56%;
         }
       }
@@ -253,6 +291,7 @@ header {
         }
         p {
           top: 420px;
+          max-width: 560px;
         }
       }
     }
@@ -279,14 +318,21 @@ header {
     }
   }
 }
+.photos-container {
+  width: 100%;
+  overflow: hidden;
+}
 .two-photos {
   width: 90%;
-  display: block;
+  display: inline-block;
   max-width: 1195px;
   margin: 0 auto;
   img {
     width: 50%;
     float: left;
+  }
+  &.two-photos-home {
+    padding: 50px 0 100px 0;
   }
 }
 .logos {
@@ -333,7 +379,6 @@ header {
 
 // box with headline and copy
 .sub-head-box {
-  height: 355px;
   width: 100%;
   background: #000;
 
@@ -345,7 +390,7 @@ header {
     width: 100%;
     max-width: $container-width;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 60px 20px;
     position: relative;
     display: block;
     h2 {
@@ -390,14 +435,13 @@ header {
     }
   }
   @media screen and (min-width: 767px) {
-    height: 400px;
+   // height: 400px;
     .inner {
       p {
         max-width: 90%;
       }
       h2 {
         font-size: 62px;
-        line-height: 1.3;
       }
       .heart {
         right: 35px;
@@ -406,10 +450,13 @@ header {
     }
   }
   @media screen and (min-width: 1020px) {
-    height: 465px;
+    min-height: 400px;
     .inner {
       p {
         max-width: 920px;
+        &.streamlined-type {
+          max-width: 800px;
+        }
       }
       h2 {
         font-size: 80px;
@@ -428,6 +475,11 @@ header {
     }
   }
 
+}
+.sub-head-photo {
+  max-width: 1200px;
+  width: 90%;
+  margin: -40px auto 60px auto;
 }
 
 // shoe grid
@@ -475,8 +527,10 @@ header {
 .heart-of-new-york {
   footer {
     width: 100%;
-    margin-bottom: 120px;
+    margin: 120px auto;
     padding: 0 20px;
+    max-width: 1000px;
+    overflow: hidden;
     img {
       max-width: 798px;
       width: 90%;
@@ -512,10 +566,10 @@ $large-feature-bg-top: ($large-feature-height - $large-feature-bg-height)/2;
    
 // feature with photo and content
 .new-feature {
-  height: 220px;
+  //height: 220px;
   width: 100%;
   position: relative;
-  margin-bottom: 120px;
+  margin-bottom: 60px;
 
   // small only
   .small-feature-type {
@@ -543,9 +597,12 @@ $large-feature-bg-top: ($large-feature-height - $large-feature-bg-height)/2;
       text-transform: uppercase;
       color: #fff;
       line-height: 1;
-      font-size: 7vw;
+      font-size: 6vw;
       @include vertical-align();
       max-width: 700px;
+      span {
+        font-size: 4vw;
+      }
     }
     p {
       text-align: right;
@@ -558,6 +615,7 @@ $large-feature-bg-top: ($large-feature-height - $large-feature-bg-height)/2;
       padding: 0 50px 0 0;
       margin-bottom: 0;
       display: none;
+
     }
     img {
       float: left;
@@ -595,13 +653,14 @@ $large-feature-bg-top: ($large-feature-height - $large-feature-bg-height)/2;
     .small-feature-type {
       display: none;
     }
-    height: $medium-feature-height;
+    //height: $medium-feature-height;
     .col {
       height: $medium-feature-height;
       p {
         font-size: 16px;
         display: block;
         top: 400px;
+        max-width: 650px;
       }
       h2 {
         padding: 0 50px 0 0;
@@ -625,14 +684,15 @@ $large-feature-bg-top: ($large-feature-height - $large-feature-bg-height)/2;
       height: $medium-feature-bg-height;
       top: $medium-feature-bg-top;
     }
+
   }
   @media screen and (min-width: 1020px) {
-    height: $large-feature-height;
+    //height: $large-feature-height;
     .col {
       height: $large-feature-height;
 
       p {
-        max-width: 450px;
+        max-width: 650px;
         font-size: 20px;
         top: 650px;
       }
@@ -656,8 +716,241 @@ $large-feature-bg-top: ($large-feature-height - $large-feature-bg-height)/2;
     }
   }
 }
+.hp {
+  width: 100%;
+  height: 100%;
+  background-image: url(../../images/heart-of-ny/hp-fpo.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 
+  .hp-floor  {
+    display: block;
+    a {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .box1 {
+    width: 100%;
+    position: absolute;
+    top: 32%;
+    height: 23%;
+  }
+  .box2 {
+    width: 100%;
+    position: absolute;
+    top: 25%;
+    height: 7%;
+  }
+  .box3 {
+    width: 100%;
+    position: absolute;
+    top: 0%;
+    height: 25%;
+  }
+  &.active-1 {
+    background-image: url(../../images/heart-of-ny/hp-bg-1.jpg);
+  }
+  &.active-2 {
+    background-image: url(../../images/heart-of-ny/hp-bg-2.jpg);
+  }
+  &.active-3 {
+    background-image: url(../../images/heart-of-ny/hp-bg-3.jpg);
+  }
+}
 
+.grid-33 {
+  width: calc(33.3333% - 15px);
+}
+
+.grid-50 {
+  width: calc(50% - 15px);
+}
+.events-feature {
+  max-width: 1240px;
+  margin: 0 auto 60px auto;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 25px 15px 0 0;
+  .col {
+    padding: 10px;
+    margin: 0 0 0 15px;
+    flex: auto;
+    width: 100%;
+    p {
+      font-size: 14px;
+      font-weight: 900;
+      text-align: center;
+      text-transform: uppercase;
+      max-width: 80%;
+      margin: 10px auto;
+    }
+  } 
+  @media screen and (min-width: 767px) {
+    .col {
+      flex: 1;
+    }
+  }
+  @media screen and (min-width: 1020px) {
+    .col {
+      p {
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+$events-margin: 15px;
+.events {
+  .ev-headers {
+    max-width: 1240px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    padding: $events-margin $events-margin 0 0;
+    .col {
+      padding: $events-margin;
+      margin: 0 0 0 $events-margin;
+      width: calc(20% - 15px);
+      &:first-child {
+        width: calc(60% - 15px);
+      }
+      font-family: $nav-font-family;
+      text-transform: uppercase;
+      font-size: 50px;
+      color: #000;
+      text-align: left;
+    }
+  }
+  .ev-container {
+    width: 100%;
+    background: #fff;
+    &:nth-child(even) {
+      background: #f2f2f2;
+    }
+    .event {
+      max-width: 1240px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      padding: $events-margin $events-margin 0 0;
+      .col {
+        padding: $events-margin;
+        margin: 0 0 $events-margin $events-margin;
+        width: 100%;
+        text-align: left;
+        h3 {
+          font-family: $site-font-family;
+          font-size: 20px;
+          font-weight: 900;
+          text-transform: uppercase;
+        }
+        p {
+          font-family: $site-font-family;
+          &.events-des {
+            font-size: 20px;
+            margin-bottom: 5px;
+          }
+          &.events-fp {
+            font-size: 14px;
+            margin-bottom: 5px;
+          }
+          &.events-cta {
+            font-size: 14px;
+            font-weight: 900;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+          }
+          &.events-date {
+            font-size: 20px;
+            font-weight: 900;
+          }
+          &.events-loc {
+            font-size: 20px;
+            font-weight: 900;
+          }
+        }
+      }
+    }
+    @media screen and (min-width: 767px) {
+      .event {
+        .col {
+          width: calc(20% - 15px);
+          &:first-child {
+            width: calc(60% - 15px);
+          }
+        }
+      }
+    }
+  }
+}
+.59-carousel {
+  div {
+    img {
+      width: 100%;
+    }
+  }
+}
+.slick-slide img {
+  width: 100%!important;
+}
+.slick-dots {
+  list-style: none;
+  display: inline-block;
+  margin-bottom: 0;
+  li {
+    float: left;
+    margin-left: 15px;
+    &:first-child {
+      margin-left: 0;
+    }
+
+    button {
+      height: 10px;
+      width: 10px;
+      background-color: #CCC;
+      border-radius: 50%;
+      color: #ccc;
+      cursor: pointer;
+      font-size: 0;
+      &:hover {
+        background-color: #333;
+        color: #333;
+      }
+    }
+    &.slick-active {
+      button {
+        background-color: #333;
+        color: #333;
+      }
+    }
+  }
+}
+.slick-arrow {
+  width: 34px;
+  height: 58px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  display: none;
+
+  &.slick-next {
+    right: 0;
+    z-index: 500;
+    background-image: url(../../images/heart-of-ny/right-arrow.gif);
+  }
+  &.slick-prev {
+    left: 0;
+    z-index: 501;
+    background-image: url(../../images/heart-of-ny/left-arrow.gif);
+  }
+  @media screen and (min-width: 767px) {
+    display: block;
+  }
+}
 @keyframes heartbeat2 {
   0%
   {
