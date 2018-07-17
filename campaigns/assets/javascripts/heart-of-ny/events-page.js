@@ -37,6 +37,7 @@ function loadEventsData() {
 }
 */
 
+var converter = new showdown.Converter()
 
 const client = contentful.createClient({
   space: 'm3h9iuk14rnq',
@@ -57,14 +58,14 @@ client.getEntries({
 		buildEvent(eventName, description, finePrint, cta, dateAndTime, location);
 	})
   	
-  })
+  });
   function buildEvent(name, des, fp, cta, date, loc) {
-  	var htmlString = '<div class="ev-container"><div class="event"><div class="col"><h3>' +  name + '</h3><p class="events-des">' + des + '</p>';
+  	var htmlString = '<div class="ev-container"><div class="event"><div class="col"><h3>' +  name + '</h3><div class="events-des">' + convertMarkdown(des) + '</div>';
   	if(fp != undefined) {
   		htmlString += '<p class="events-fp">' + fp + '</p>';
   	}
   	if(cta != undefined) {
-  		htmlString += '<p class="events-cta">' + convertURL(cta) + '</p>';
+  		htmlString += '<p class="events-cta">' + convertMarkdown(cta) + '</p>';
   	}
   	htmlString += '</div>';
   	htmlString += '<div class="col"><p class="events-date">' + date + '</p></div><div class="col"><p class="events-loc">' + loc + '</p></div>';
@@ -74,6 +75,10 @@ client.getEntries({
   function convertURL(url) {
   	return url.replace('[', '<a href="').replace(']', '">').replace("(http", 'http').replace(')', '</a>');
   }
+  function convertMarkdown(str) {
+  	return converter.makeHtml(str);
+  }
+
 
 });
 

@@ -735,8 +735,9 @@ $large-feature-bg-top: ($large-feature-height - $large-feature-bg-height)/2;
   .box1 {
     width: 100%;
     position: absolute;
-    top: 32%;
-    height: 23%;
+     top: 0%;
+    height: 25%;
+
   }
   .box2 {
     width: 100%;
@@ -747,17 +748,39 @@ $large-feature-bg-top: ($large-feature-height - $large-feature-bg-height)/2;
   .box3 {
     width: 100%;
     position: absolute;
-    top: 0%;
-    height: 25%;
+    top: 32%;
+    height: 23%;
+  }
+  .box4 {
+    width: 100%;
+    position: absolute;
+    top: 55%;
+    height: 13%;
+  }
+  .box5 {
+    width: 100%;
+    position: absolute;
+    top: 69%;
+    height: 10%;
   }
   &.active-1 {
-    background-image: url(../../images/heart-of-ny/hp-bg-1.jpg);
+    background-image: url(../../images/heart-of-ny/hp-fpo.jpg);
   }
   &.active-2 {
-    background-image: url(../../images/heart-of-ny/hp-bg-2.jpg);
+    background-image: url(../../images/heart-of-ny/hp-fpo.jpg);
   }
   &.active-3 {
-    background-image: url(../../images/heart-of-ny/hp-bg-3.jpg);
+    background-image: url(../../images/heart-of-ny/hp-fpo.jpg);
+  }
+  .hp-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+    z-index: 22;
+    div {
+      display: none;
+    }
   }
 }
 
@@ -849,10 +872,6 @@ $events-margin: 15px;
         }
         p {
           font-family: $site-font-family;
-          &.events-des {
-            font-size: 20px;
-            margin-bottom: 5px;
-          }
           &.events-fp {
             font-size: 14px;
             margin-bottom: 5px;
@@ -870,6 +889,12 @@ $events-margin: 15px;
           &.events-loc {
             font-size: 20px;
             font-weight: 900;
+          }
+        }
+        .event-des {
+          p {
+            font-size: 20px;
+            margin-bottom: 5px;
           }
         }
       }
