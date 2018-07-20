@@ -1,56 +1,75 @@
 <link href="https://fonts.googleapis.com/css?family=Oswald:700" rel="stylesheet">
 <link href="/b/fashion/campaigns/styles/heart-of-ny/styles.css" rel="stylesheet">
 
-<div class="hp">
-	<div class="hp-nav">
-		<div class="nav1">
-			<img src="/b/fashion/campaigns/images/heart-of-ny/roll-over-home.gif">
+<div class="hp-outer">
+	<div class="hp">
+
+		<div class="hp-nav">
+			<div>
+				<img src="/b/fashion/campaigns/images/heart-of-ny/roll-over-home.gif">
+			</div>
+			<div>
+				<img src="/b/fashion/campaigns/images/heart-of-ny/roll-over-shoes.gif">
+			</div>
+			<div>
+				<img src="/b/fashion/campaigns/images/heart-of-ny/roll-over-women.gif">
+			</div>
+			<div>
+				<img src="/b/fashion/campaigns/images/heart-of-ny/roll-over-cosmetics.gif">
+			</div>
+			<div>
+				<img src="/b/fashion/campaigns/images/heart-of-ny/roll-over-men.gif">
+			</div>
 		</div>
-		<div class="nav2">
-			<img src="/b/fashion/campaigns/images/heart-of-ny/roll-over-shoes.gif">
+		<div class="hp-floor box1"><a href="./home">&nbsp;</a></div>
+		<div class="hp-floor box2"><a href="./shoes">&nbsp;</a></div>
+		<div class="hp-floor box3"><a href="./women">&nbsp;</a></div>
+		<div class="hp-floor box4"><a href="./beauty">&nbsp;</a></div>
+		<div class="hp-floor box5"><a href="./men">&nbsp;</a></div>
+		<div class="hp-logo">
+			<img src="/b/fashion/campaigns/images/heart-of-ny/hp-logo.png">
 		</div>
+		<div class="hp-lights"></div>
 	</div>
-	<div class="hp-floor box1"><a href="#">&nbsp;</a></div>
-	<div class="hp-floor box2"><a href="./shoes">&nbsp;</a></div>
-	<div class="hp-floor box3"><a href="./home">&nbsp;</a></div>
-	<div class="hp-floor box4"><a href="./home">&nbsp;</a></div>
-	<div class="hp-floor box5"><a href="./home">&nbsp;</a></div>
 </div>
 
 
 <script>window.jQuery || document.write('<script src="/b/fashion/campaigns/javascripts/heart-of-ny/libs/jquery.2.2.4.js"><\/script>')</script>
-<script type="text/javascript" src="/b/fashion/campaigns/javascripts/heart-of-ny/libs/jquery.lazy.min.js"></script>
-
-<script type="text/javascript" src="/b/fashion/campaigns/javascripts/heart-of-ny/libs/jquery.scrollme.js"></script>
 
 <script type="text/javascript" src="/b/fashion/campaigns/javascripts/heart-of-ny/heart-of-ny-main.js"></script>
 
 
 <script>
 	$(function(){
-		$(".hp").height($(window).height()).css("background-size", 
-			"cover");
-		$(window).resize(function() {
-			 $(".hp").height($(window).height());
-		});
-		$(".box1").on("mouseenter", function() {
-			$(".hp").addClass("active-1");
-		});
-		$(".box1").on("mouseleave", function() {
-			$(".hp").removeClass("active-1");
-		});
-		$(".box2").on("mouseenter", function() {
-			$(".hp").addClass("active-2");
-		});
-		$(".box2").on("mouseleave", function() {
-			$(".hp").removeClass("active-2");
-		});
-		$(".box3").on("mouseenter", function() {
-			$(".hp").addClass("active-3");
-		});
-		$(".box3").on("mouseleave", function() {
-			$(".hp").removeClass("active-3");
-		});
+		var hpProportion = 738 / 500;
+		function setHP() {
+			$(".hp").height($(window).height())
+					.width($(".hp").height() * hpProportion);
 
+
+			var hpOverflow = $(".hp").width() - $(window).width();
+			if(hpOverflow > 1) {
+				$(".hp-nav").css("right", hpOverflow/2 + "px");
+				$(".hp-logo").width($(window).width() * .75);
+			}
+			else {
+				$(".hp-nav").css("right", "0px");
+				$(".hp-logo").width($(".hp").width() * .75);
+
+			}
+		}
+		setHP();
+		$(window).resize(setHP);
+		
+
+		$(".hp-floor").hover(
+			function() {
+				$(".hp-nav div").eq($(this).index() - 1).addClass("active");
+				$(".hp-lights").addClass("active" + $(this).index());
+			}, function() {
+				$(".hp-nav div").eq($(this).index() - 1).removeClass("active");
+				$(".hp-lights").removeClass("active" + $(this).index());
+			}
+		);
 	});
 </script>

@@ -1,6 +1,11 @@
+
 $(function(){
 	var navActive = false;
+	
+	// create resuable reference to the body
 	var bodyRef = $("body");
+
+	// initiate the sticky nav
 	function initNav() {
 		if($('.heart-of-ny-sticky-header').length){
 			var sticky = $('.heart-of-ny-sticky-header');
@@ -23,13 +28,17 @@ $(function(){
 		    });
 		}
 	}
+
+	// initiate the lazy load instance
 	function initLazyLoad() {
-		$(function() {
-	        $('.lazy').Lazy({
-	        	effect: 'fadeIn'
-	        });
-	    });
+		if($('.lazy').length) {
+		    $('.lazy').Lazy({
+		        effect: 'fadeIn'
+		    });
+		}
 	}
+
+	// if heart icon exists (shoe page) then initiate position
 	function initHeart() {
 		if($(".sub-head-box .heart").length) {
 			setHeart();
@@ -45,6 +54,8 @@ $(function(){
 		});
 		$(".sub-head-box .heart").show();
 	}
+
+	// for pages with slick carousel
 	function initCarousel() {
 		if($(".59-carousel").length) {
 			$('.59-carousel').slick({
@@ -59,11 +70,20 @@ $(function(){
 	function animatePage() {
 		$(".heart-of-new-york").fadeOut(0).css("opacity", 1).fadeIn(1000);
 	}
+	function setFeatureBar () {
+		if($(".new-feature").length) {
+			$(".new-feature").each(function() {
+				alert( $(this).find("p").height() );
+				$(this).height( $(this).height() + $(this).find("p").height() );
+			});
+		}
+	}
 	
 	initNav();
 	initLazyLoad();
 	initHeart();
 	initCarousel();
 	animatePage();
+	setFeatureBar();
 
 });
