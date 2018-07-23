@@ -49,7 +49,7 @@ $(function(){
 		var e = $(".sub-head-box h2");
 		var o = e.position();
 		$(".sub-head-box .heart").css({
-		 'left': (o.left + e.width()-55),
+		 'left': (o.left + e.width()-45),
 		 'top': (o.top - 50)
 		});
 		$(".sub-head-box .heart").show();
@@ -73,7 +73,6 @@ $(function(){
 	function setFeatureBar () {
 		if($(".new-feature").length) {
 			$(".new-feature").each(function() {
-				alert( $(this).find("p").height() );
 				$(this).height( $(this).height() + $(this).find("p").height() );
 			});
 		}
