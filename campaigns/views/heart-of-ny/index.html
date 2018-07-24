@@ -1,35 +1,88 @@
 <link href="https://fonts.googleapis.com/css?family=Oswald:700" rel="stylesheet">
 <link href="/b/fashion/campaigns/styles/heart-of-ny/styles.css" rel="stylesheet">
 
-<div class="hp-outer">
-	<div class="hp">
+<div class="heart-of-ny-landing">
+	<div class="hp-logo">
+		<img src="/b/fashion/campaigns/images/heart-of-ny/hp-building/hp-logo.png">
+		<h1>CLICK TO Experience our legendary flagship—newly renovated and better than ever.</h1>
+	</div>
 
-		<div class="hp-nav">
-			<div>
-				<img src="/b/fashion/campaigns/images/heart-of-ny/roll-over-home.gif">
+	<div class="hp-nav">
+		<div>
+			<img src="/b/fashion/campaigns/images/heart-of-ny/roll-over-home.gif">
+		</div>
+		<div>
+			<img src="/b/fashion/campaigns/images/heart-of-ny/roll-over-shoes.gif">
+		</div>
+		<div>
+			<img src="/b/fashion/campaigns/images/heart-of-ny/roll-over-women.gif">
+		</div>
+		<div>
+			<img src="/b/fashion/campaigns/images/heart-of-ny/roll-over-cosmetics.gif">
+		</div>
+		<div>
+			<img src="/b/fashion/campaigns/images/heart-of-ny/roll-over-men.gif">
+		</div>
+		<div>
+			<img src="/b/fashion/campaigns/images/heart-of-ny/roll-over-events.gif">
+		</div>
+	</div>
+
+	<ul class="hp-strips-nav">
+		<li><a href="./home">&nbsp;</a></li>
+		<li><a href="./shoes">&nbsp;</a></li>
+		<li><a href="./women">&nbsp;</a></li>
+		<li><a href="./beauty">&nbsp;</a></li>
+		<li><a href="./men">&nbsp;</a></li>
+		<li><a href="./events">&nbsp;</a></li>
+	</ul>
+
+	<div class="hp-outer-strips hp-active">
+		<div class="hp-strips">
+			<div class="floor">
+				<img src="/b/fashion/campaigns/images/heart-of-ny/hp-building/building-1-active.jpg">
 			</div>
-			<div>
-				<img src="/b/fashion/campaigns/images/heart-of-ny/roll-over-shoes.gif">
+			<div class="floor">
+				<img src="/b/fashion/campaigns/images/heart-of-ny/hp-building/building-2-active.jpg">
 			</div>
-			<div>
-				<img src="/b/fashion/campaigns/images/heart-of-ny/roll-over-women.gif">
+			<div class="floor">
+				<img src="/b/fashion/campaigns/images/heart-of-ny/hp-building/building-3-active-new.jpg">
+				<img src="/b/fashion/campaigns/images/heart-of-ny/hp-building/building-flags-active-2.gif">
 			</div>
-			<div>
-				<img src="/b/fashion/campaigns/images/heart-of-ny/roll-over-cosmetics.gif">
+			<div class="floor">
+				<img src="/b/fashion/campaigns/images/heart-of-ny/hp-building/building-4-active.jpg">
 			</div>
-			<div>
-				<img src="/b/fashion/campaigns/images/heart-of-ny/roll-over-men.gif">
+			<div class="floor">
+				<img src="/b/fashion/campaigns/images/heart-of-ny/hp-building/building-5-active.jpg">
+			</div>
+			<div class="floor">
+				<img src="/b/fashion/campaigns/images/heart-of-ny/hp-building/building-6.jpg">
 			</div>
 		</div>
-		<div class="hp-floor box1"><a href="./home">&nbsp;</a></div>
-		<div class="hp-floor box2"><a href="./shoes">&nbsp;</a></div>
-		<div class="hp-floor box3"><a href="./women">&nbsp;</a></div>
-		<div class="hp-floor box4"><a href="./beauty">&nbsp;</a></div>
-		<div class="hp-floor box5"><a href="./men">&nbsp;</a></div>
-		<div class="hp-logo">
-			<img src="/b/fashion/campaigns/images/heart-of-ny/hp-logo.png">
+	</div>
+
+	<div class="hp-outer-strips hp-not-active">
+		<div class="hp-strips">
+			<div class="floor">
+				<img src="/b/fashion/campaigns/images/heart-of-ny/hp-building/building-1.jpg">
+			</div>
+			<div class="floor">
+				<img src="/b/fashion/campaigns/images/heart-of-ny/hp-building/building-2.jpg">
+			</div>
+			<div class="floor">
+				<img src="/b/fashion/campaigns/images/heart-of-ny/hp-building/building-3-new.jpg">
+				<img src="/b/fashion/campaigns/images/heart-of-ny/hp-building/building-flags-animated-2.gif">
+			</div>
+			<div class="floor">
+				<img src="/b/fashion/campaigns/images/heart-of-ny/hp-building/building-4.jpg">
+			</div>
+			<div class="floor">
+				<img src="/b/fashion/campaigns/images/heart-of-ny/hp-building/building-5.jpg">
+			</div>
+			<div class="floor">
+				<img src="/b/fashion/campaigns/images/heart-of-ny/hp-building/building-6.jpg">
+			</div>
 		</div>
-		<div class="hp-lights"></div>
 	</div>
 </div>
 
@@ -38,38 +91,4 @@
 
 <script type="text/javascript" src="/b/fashion/campaigns/javascripts/heart-of-ny/heart-of-ny-main.js"></script>
 
-
-<script>
-	$(function(){
-		var hpProportion = 738 / 500;
-		function setHP() {
-			$(".hp").height($(window).height())
-					.width($(".hp").height() * hpProportion);
-
-
-			var hpOverflow = $(".hp").width() - $(window).width();
-			if(hpOverflow > 1) {
-				$(".hp-nav").css("right", hpOverflow/2 + "px");
-				$(".hp-logo").width($(window).width() * .75);
-			}
-			else {
-				$(".hp-nav").css("right", "0px");
-				$(".hp-logo").width($(".hp").width() * .75);
-
-			}
-		}
-		setHP();
-		$(window).resize(setHP);
-		
-
-		$(".hp-floor").hover(
-			function() {
-				$(".hp-nav div").eq($(this).index() - 1).addClass("active");
-				$(".hp-lights").addClass("active" + $(this).index());
-			}, function() {
-				$(".hp-nav div").eq($(this).index() - 1).removeClass("active");
-				$(".hp-lights").removeClass("active" + $(this).index());
-			}
-		);
-	});
-</script>
+<script type="text/javascript" src="/b/fashion/campaigns/javascripts/heart-of-ny/heart-of-ny-landing.js"></script>
