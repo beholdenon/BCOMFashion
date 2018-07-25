@@ -56,7 +56,7 @@ $(function(){
 			});
 		}
 		function animatePage() {
-			$(".heart-of-ny-landing").fadeOut(0).css("opacity", 1).fadeIn(1000);
+			//$(".heart-of-ny-landing").fadeOut(0).css("opacity", 1).fadeIn(1000);
 		}
 		function init() {
 			resizeBuilding();
@@ -70,6 +70,16 @@ $(function(){
 				activateHover();
 			}
 			animatePage();
+		}
+		$("a").on("click", function(e) {
+			e.preventDefault();
+			callPage($(this).attr("href"));
+		})
+		function callPage(href) {
+			$(".heart-of-ny-landing").addClass("active");
+			setTimeout(function() {
+				window.location.href = href;
+			}, 300);
 		}
 		init();
 	});

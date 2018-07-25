@@ -830,6 +830,12 @@ $large-feature-bg-top: ($large-feature-height - $large-feature-bg-height)/2;
 .heart-of-ny-landing{
   width: 100%;
   height: 100%;
+  opacity: 1;
+  &.active {
+    transform: scale(4);
+    opacity: 0!important;
+    transition: 0.3s ease-out;
+  }
   .hp-outer-strips {
     position: absolute;
     left: 50%;
@@ -843,7 +849,7 @@ $large-feature-bg-top: ($large-feature-height - $large-feature-bg-height)/2;
   .hp-logo {
     position: absolute;
     left: 50%;
-    top: 9%;
+    top: 4%;
     z-index: 23;
     pointer-events: none;
     opacity: 0;
@@ -854,7 +860,7 @@ $large-feature-bg-top: ($large-feature-height - $large-feature-bg-height)/2;
     &.animate {
       opacity: 1;
       transition: all .5s ease-out;
-      transform: translateX(-50%) scale(1);
+      transform: translateX(-50%) scale(.9);
     }
     img {
       max-width: 700px;
@@ -901,6 +907,7 @@ $large-feature-bg-top: ($large-feature-height - $large-feature-bg-height)/2;
         display: block;
         height: 100%;
         width: 100%;
+        text-decoration: none;
       }
     }
   }
