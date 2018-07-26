@@ -70,12 +70,17 @@ $(function(){
 	function animatePage() {
 		$(".heart-of-new-york").fadeOut(0).css("opacity", 1).fadeIn(1000);
 	}
-	function setFeatureBar () {
+	function initFeatureBar() {
 		if($(".new-feature").length) {
-			$(".new-feature").each(function() {
-				$(this).height( $(this).height() + $(this).find("p").height() );
-			});
+			$(window).on("resize", setFeatureBar);
+			setFeatureBar();
 		}
+	}
+	function setFeatureBar () {
+		$(".new-feature").each(function() {
+			$(this).height( $(this).find(".col").height() + $(this).find("p").height() );
+			$(this).css("border", "1px solid #ff000");
+		});
 	}
 	
 	initNav();
@@ -83,6 +88,6 @@ $(function(){
 	initHeart();
 	initCarousel();
 	animatePage();
-	setFeatureBar();
+	initFeatureBar();
 
 });
