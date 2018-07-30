@@ -71,15 +71,21 @@ $(function(){
 		$(".heart-of-new-york").fadeOut(0).css("opacity", 1).fadeIn(1000);
 	}
 	function initFeatureBar() {
+		console.log("initFeatureBar");
 		if($(".new-feature").length) {
 			$(window).on("resize", setFeatureBar);
 			setFeatureBar();
 		}
 	}
 	function setFeatureBar () {
+		console.log("setFeatureBar");
 		$(".new-feature").each(function() {
-			$(this).height( $(this).find(".col").height() + $(this).find("p").height() );
-			$(this).css("border", "1px solid #ff000");
+			if($(window).width() >= 767){
+				$(this).height( $(this).find(".col").height() + $(this).find(".feature-type p").height() );
+			}
+			else {
+				$(this).height( $(this).find(".col").height() + $(this).find(".small-feature-type").height() );
+			}
 		});
 	}
 	

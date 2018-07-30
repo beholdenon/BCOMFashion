@@ -26,6 +26,9 @@ html {
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
 }
+@mixin test-borders() {
+  //border: 1px solid #ff0000;
+}
 p {
   font-family: $site-font-family;
   font-size: 16px;
@@ -330,6 +333,7 @@ header {
   display: inline-block;
   max-width: 1195px;
   margin: 0 auto;
+  @include test-borders();
   img {
     width: 50%;
     float: left;
@@ -384,7 +388,7 @@ header {
 .sub-head-box {
   width: 100%;
   background: #000;
-
+  @include test-borders();
   @include flexbox;
   @include align-items(center);
   @include justify-content(center);
@@ -483,6 +487,7 @@ header {
   max-width: 1200px;
   width: 90%;
   margin: -40px auto 60px auto;
+  @include test-borders();
 }
 
 // shoe grid
@@ -534,6 +539,7 @@ header {
     padding: 60px 20px 60px 20px;
     max-width: 1000px;
     overflow: hidden;
+    @include test-borders();
     img {
       max-width: 798px;
       width: 90%;
@@ -576,6 +582,7 @@ $large-feature-bg-top: ($large-feature-height - $large-feature-bg-height)/2;
   width: 100%;
   position: relative;
   margin-bottom: 0;
+  @include test-borders();
 
   // small only
   .small-feature-type {
@@ -610,18 +617,19 @@ $large-feature-bg-top: ($large-feature-height - $large-feature-bg-height)/2;
         font-size: 4vw;
       }
     }
-    p {
-      text-align: right;
-      font-size: 20px;
+    .feature-type {
       max-width: 380px;
       position: absolute;
       bottom: 0;
       right: 0;
-      line-height: 1.3;
       padding: 0 50px 0 0;
-      margin-bottom: 0;
       display: none;
-
+      p {
+        text-align: right;
+        font-size: 20px;
+        line-height: 1.3;
+        margin-bottom: 0;
+      }
     }
     img {
       float: left;
@@ -636,13 +644,18 @@ $large-feature-bg-top: ($large-feature-height - $large-feature-bg-height)/2;
     }
     &.col-left {
       width: 50%;
-      p, h2 {
+      h2 {
         text-align: left;
         padding: 0 0 0 20px;
         float: left;
       }
-      p {
+      .feature-type {
+        padding: 0 0 0 20px;
+        float: left;
         left: 0;
+        p {
+          text-align: left;
+        }
       }
     }
   }
@@ -662,11 +675,12 @@ $large-feature-bg-top: ($large-feature-height - $large-feature-bg-height)/2;
     //height: $medium-feature-height;
     .col {
       height: $medium-feature-height;
-      p {
-        font-size: 16px;
+      .feature-type {
         display: block;
-        top: 400px;
         max-width: 650px;
+        p {
+          font-size: 16px;
+        }
       }
       h2 {
         padding: 0 50px 0 0;
@@ -681,9 +695,10 @@ $large-feature-bg-top: ($large-feature-height - $large-feature-bg-height)/2;
         width: 45%;
       }
       &.col-left {
-        p, h2 {
+        h2, .feature-type {
           padding: 0 0 0 50px;
         }
+
       }
     }
     .bg {
@@ -880,18 +895,21 @@ $large-feature-bg-top: ($large-feature-height - $large-feature-bg-height)/2;
     h1 {
       font-family: $site-font-family;
       font-size: 20px;
-      color: #fff;
+      color: #000;
       text-transform: uppercase;
       text-align: center;
       font-weight: 900;
       line-height: 1.4;
-      font-size: 15px;
+      font-size: 13px;
+      margin-top: 1.2em;
+      padding: 5px;
       @media screen and (min-width: 960px) {
-        font-size: 1.6vw;
+        font-size: 1.3vw;
       }
       @media screen and (min-width: 1160px) {
-        font-size: 18.5px;
+        font-size: 16px;
       }
+      background: #fff;
     }
   }
   .hp-strips-nav {
@@ -1226,9 +1244,9 @@ $events-margin: 15px;
         text-transform: uppercase;
         text-align: center;
         color: #fff;
-        max-width: 80%;
         font-size: 3.4vw;
         margin: 10px auto 10px;
+        display: inline-block;
       }
     }
   }

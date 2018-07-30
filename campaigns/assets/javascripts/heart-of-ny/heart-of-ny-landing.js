@@ -94,7 +94,7 @@ $(function(){
 			},
 			{
 				title: "Men",
-				copy: "On The Lower Level",
+				copy: "On The Lower Levels",
 				inline: false,
 				offsetY: 0
 			},
