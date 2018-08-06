@@ -1,0 +1,69 @@
+// mixins
+@mixin vertical-align($position: relative) {
+  position: $position;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+@mixin test-borders() {
+  //border: 1px solid #ff0000;
+}
+@mixin avenir($weight) {
+  $font-weight: 400; 
+  @if $weight == "black" {
+    $font-weight: 900;
+  }
+  @else if $weight == "bold" {
+    $font-weight: 700;
+  }
+  @else if $weight == "normal" {
+    $font-weight: 400;
+  }
+  @else {
+    $font-weight: 400;
+  }
+  font-family: 'Avenir W01', Helvetica, Arial, sans-serif;
+  font-weight: $font-weight;
+}
+@mixin oswald() {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+}
+
+/* Hover */
+
+@mixin hover {
+  &:hover { @content; }
+}
+
+@mixin hover-focus {
+  &:hover,
+  &:focus {
+    @content;
+  }
+}
+
+@mixin plain-hover-focus {
+  &,
+  &:hover,
+  &:focus {
+    @content;
+  }
+}
+
+@mixin hover-focus-active {
+  &:hover,
+  &:focus,
+  &:active {
+    @content;
+  }
+}
+
+/* Images */
+
+@mixin img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+

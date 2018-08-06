@@ -1,56 +1,32 @@
-@import "foundation-6.4.2-custom/foundation-xy-grid";
-@import "flexbox_mixins";
-@import "slick";
+@import "flexbox/variables/main.scss";
+@import "flexbox/mixins/main.scss";
+@import "flexbox/grid";
+@import "flexbox/visibility";
 @import "variables";
+@import "flexbox_mixins";
+@import "mixins";
+@import "reboot";
+@import "slick";
 @import "nav";
 
-body, html {
-  width: 100%;
-  height: 100%;
-}
-body {
-  &.heart-of-ny-landing-body {
-    overflow: hidden;
+
+
+
+%fadeScale {
+  transition: transform 0.4s, opacity 0.4s ease-out;
+  transform: scale(1.2) rotate(10deg) translateX(20px);
+  opacity: 0;
+  &.animate {
+    opacity: 1;
+    transform: scale(1) rotate(0deg) translateX(0);
   }
 }
-html {
-  box-sizing: border-box;
+hr {
+  margin: .5em auto;
+  width: 100px;
+  border-bottom: .5em solid $secondary-color;
 }
-*, *:before, *:after {
-  box-sizing: inherit;
-}
-@mixin vertical-align($position: relative) {
-  position: $position;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-}
-@mixin test-borders() {
-  //border: 1px solid #ff0000;
-}
-p {
-  font-family: $site-font-family;
-  font-size: 16px;
-  line-height: 1.5;
-  @media screen and (min-width: 767px) {
-    font-size: 18px;
-  }
-  @media screen and (min-width: 1020px) {
-    font-size: 20px;
-  }
-  a {
-    color: #000;
-    transition: 0.3s ease-out;
-    &:hover {
-      color: $site-red;
-    }
-  }
-}
-h1, h2 {
-  font-family: $nav-font-family;
-  font-weight: 700;
-}
+
 .heart-of-ny-landing, .heart-of-ny-home, .heart-of-ny-shoes, .heart-of-ny-men, .heart-of-ny-events {
   opacity: 0;
   width: $site-width;
@@ -60,6 +36,12 @@ h1, h2 {
   top: 0;
   left: 0;
   text-align: center;
+  @media #{$breakpoint-xs-only} {
+    font-size: 51%;
+  }
+  @media #{$breakpoint-sm-only} {
+    font-size: 80%;
+  }
 }
 .heart-of-ny-sticky-header {
   width: $site-width;
@@ -91,14 +73,15 @@ h1, h2 {
 .heart-of-ny-landing-jumbotron {
   width: $site-width;
 }
+
+
 header {
   width: $site-width;
-  max-width: 600px;
   margin: 0 auto;
-  padding: 70px 0 0 0;
+  padding: 7em 0 .5em 0;
   text-align: center;
   display: block;
-  max-width: 80%;
+  background: #e7eff7;
   .bloom-logo {
     margin: 0 auto;
     display: block;
@@ -106,74 +89,50 @@ header {
     height: auto;
   }
   h1 {
-    font-family: $nav-font-family;
-    font-weight: 700;
+    @include avenir("black");
     text-transform: uppercase;
     color: #000;
-    font-size: 50px;
-    display: block;
-    margin: 0;
-    line-height: 1;
-    margin: 25px auto 10px;
+    font-size: 6.2em;
+    line-height: .9em;
+    margin: .5em 0 .3em 0;
   }
   p {
-    font-size: 16px;
-    max-width: 545px;
-    display: block;
-    margin: 0 auto 40px auto;
-    line-height: 1.3;
-  }
-  &.home-header {
-    p {
-      max-width: 730px;
-    }
-  }
-  &.mens-header {
-    p {
-      max-width: none;
-    }
-  }
-  @media screen and (min-width: 767px) {
-      max-width: 90%;
-      .bloom-logo {
-        max-width: 420px;
-        height: auto;
-      }
-      h1 {
-        font-size: 90px;
-      }
-      p {
-        font-size: 20px;
-        margin: 0 auto 60px auto;
-      }
-  }
-  @media screen and (min-width: 1280px) {
-    max-width: 100%;
-    .bloom-logo {
-      max-width: 100%;
-      height: auto;
-    }
-    h1 {
-      font-size: 100px;
-    }
-    p {
-      font-size: 20px;
-      margin: 0 auto 60px auto;
-    }
+    font-size: 1.64em;
+    line-height: 1.3em;
+    margin: 0 0 3em 0;
   }
 }
-.heart-of-ny-home {
-  @media screen and (min-width: 1280px) {
-    header {
-      h1 {
-        font-size: 83px;
-      }
-      p {
-        max-width: 718px;
-      }
-    }
+.map {
+  background: #fff;
+  width: 100%;
+  padding: 3em 0;
+  h2 {
+    @include avenir("black");
+    font-size: 2em;
   }
 }
+.flex-feature {
+  @include row();
+  @include center("sm");
+  > div {
+    @include col("xs", 12);
+    @include col("sm", 5);
+     display: flex;
+  justify-content: center;
+  }
+  h2 {
+    @include avenir("black");
+    text-transform: uppercase;
+    color: #000;
+    font-size: 6.2em;
+    line-height: .9em;
+    text-align: left;
+  }
+}
+
+
+
+
 .caption {
   font-size: 15px;
   text-align: left;
@@ -264,7 +223,7 @@ header {
       }
     }
   }
-  @media screen and (min-width: 767px) {
+  @media #{$breakpoint-md-up} {
     padding: 30px 0 120px 0;
     .inner {
       height: 350px;
@@ -287,7 +246,7 @@ header {
       }
     }
   }
-  @media screen and (min-width: 1020px) {
+  @media #{$breakpoint-lg-up} {
     padding: 70px 0 120px 0;
     .inner {
       .contain {
@@ -302,7 +261,7 @@ header {
       }
     }
   }
-  @media screen and (min-width: 1280px) {
+  @media #{$breakpoint-xl-up} {
     padding: 80px 0 130px 0;
     .inner {
       height: 465px;
@@ -345,11 +304,11 @@ header {
 .logos {
   width: 100%;
   margin: 0 auto;
-  max-width: $container-width;
+  max-width: $contained-max-width;
   padding: 20px 0;
   @include flexbox;
   @include justify-content(center);
-  @media screen and (min-width: 767px) {
+  @media #{$breakpoint-md-up} {
     padding: 40px 0;
   }
 }
@@ -359,8 +318,7 @@ header {
 }
 // global text links
 .text-link {
-  font-family: $nav-font-family;
-  font-weight: 700;
+  @include oswald();
   font-size: 30px;
   line-height: 1;
   text-transform: uppercase;
@@ -370,7 +328,7 @@ header {
   color: #000;
   transition: 0.3s ease-out;
   margin-bottom: 60px;
-  @media screen and (min-width: 767px) {
+  @media #{$breakpoint-md-up} {
     border-bottom: 4px solid #000;
     margin-bottom: 125px;
   }
@@ -378,7 +336,7 @@ header {
     color: $site-red;
     border-color: $site-red;
   }
-  @media screen and (min-width: 767px) {
+  @media #{$breakpoint-md-up} {
     font-size: 50px;
     line-height: 1.3;
   }
@@ -395,7 +353,7 @@ header {
   .inner {
     text-align: center;
     width: 100%;
-    max-width: $container-width;
+    max-width: $contained-max-width;
     margin: 0 auto;
     padding: 60px 20px;
     position: relative;
@@ -441,7 +399,7 @@ header {
       }
     }
   }
-  @media screen and (min-width: 767px) {
+  @media #{$breakpoint-md-up} {
    // height: 400px;
     .inner {
       p {
@@ -456,7 +414,7 @@ header {
       }
     }
   }
-  @media screen and (min-width: 1020px) {
+  @media #{$breakpoint-lg-up} {
     min-height: 400px;
     .inner {
       p {
@@ -494,7 +452,7 @@ header {
 .shoe-grid {
   margin: 0 auto;
   width: 100%;
-  max-width: $container-width;
+  max-width: $contained-max-width;
   .col {
     //width: 90%;
     width: 49%;
@@ -521,7 +479,7 @@ header {
     }
   }
 
-  @media screen and (min-width: 767px) {
+  @media #{$breakpoint-md-up} {
     margin: 70px auto 0 auto;
     .col {
       width: 24%;
@@ -554,7 +512,7 @@ header {
       color: #000;
       margin-top: 25px;
     }
-    @media screen and (min-width: 767px) {
+    @media #{$breakpoint-md-up} {
       padding: 60px 20px 120px 20px;
       h3 {
         font-size: 20px;
@@ -563,19 +521,6 @@ header {
   }
 }
 
-// variables for feature
-$small-feature-height: 220px;
-$small-feature-bg-height: 150px;
-$small-feature-bg-top: ($small-feature-height - $small-feature-bg-height)/2;
-
-$medium-feature-height: 430px;
-$medium-feature-bg-height: 310px;
-$medium-feature-bg-top: ($medium-feature-height - $medium-feature-bg-height)/2;
-  
-$large-feature-height: 675px;
-$large-feature-bg-height: 460px;
-$large-feature-bg-top: ($large-feature-height - $large-feature-bg-height)/2;
-   
 // feature with photo and content
 .new-feature {
   //height: 220px;
@@ -668,7 +613,7 @@ $large-feature-bg-top: ($large-feature-height - $large-feature-bg-height)/2;
     top: $small-feature-bg-top;
     z-index: 1;
   }
-  @media screen and (min-width: 767px) {
+  @media #{$breakpoint-md-up} {
     .small-feature-type {
       display: none;
     }
@@ -707,7 +652,7 @@ $large-feature-bg-top: ($large-feature-height - $large-feature-bg-height)/2;
     }
 
   }
-  @media screen and (min-width: 1020px) {
+  @media #{$breakpoint-lg-up} {
     //height: $large-feature-height;
     .col {
       height: $large-feature-height;
@@ -727,13 +672,6 @@ $large-feature-bg-top: ($large-feature-height - $large-feature-bg-height)/2;
     .bg {
       height: $large-feature-bg-height;
       top: $large-feature-bg-top;
-    }
-  }
-  @media screen and (min-width: 1400px) {
-    .col {
-      h2 {
-        font-size: 100px;
-      }
     }
   }
 }
@@ -903,10 +841,10 @@ $large-feature-bg-top: ($large-feature-height - $large-feature-bg-height)/2;
       font-size: 13px;
       margin-top: 1.2em;
       padding: 5px;
-      @media screen and (min-width: 960px) {
+      @media #{$breakpoint-lg-up} {
         font-size: 1.3vw;
       }
-      @media screen and (min-width: 1160px) {
+      @media #{$breakpoint-xl-up} {
         font-size: 16px;
       }
       background: #fff;
@@ -952,7 +890,6 @@ $large-feature-bg-top: ($large-feature-height - $large-feature-bg-height)/2;
         border-bottom: 1px solid #000;
         text-align: left;
         h3 {
-          font-family: $nav-font-family;
           font-size: 25px;
           line-height: 1;
           margin: 0;
@@ -992,7 +929,7 @@ $large-feature-bg-top: ($large-feature-height - $large-feature-bg-height)/2;
       transition: 0.3s ease-out;
       transition-delay: 0s;
       width: 75px;
-      @media screen and (min-width: 767px) {
+      @media #{$breakpoint-md-up} {
         width: 100px;
       }
       &.active {
@@ -1030,12 +967,12 @@ $large-feature-bg-top: ($large-feature-height - $large-feature-bg-height)/2;
       margin: 10px auto;
     }
   } 
-  @media screen and (min-width: 767px) {
+  @media #{$breakpoint-md-up} {
     .col {
       flex: 1;
     }
   }
-  @media screen and (min-width: 1020px) {
+  @media #{$breakpoint-lg-up} {
     .col {
       p {
         font-size: 20px;
@@ -1059,7 +996,7 @@ $events-margin: 15px;
       &:first-child {
         width: calc(60% - 15px);
       }
-      font-family: $nav-font-family;
+      @include oswald();
       text-transform: uppercase;
       font-size: 50px;
       color: #000;
@@ -1120,7 +1057,7 @@ $events-margin: 15px;
         }
       }
     }
-    @media screen and (min-width: 767px) {
+    @media #{$breakpoint-md-up} {
       .event {
         .col {
           width: calc(20% - 15px);
@@ -1149,6 +1086,7 @@ $events-margin: 15px;
   li {
     float: left;
     margin-left: 15px;
+    width: 10px;
     &:first-child {
       margin-left: 0;
     }
@@ -1193,7 +1131,7 @@ $events-margin: 15px;
     z-index: 501;
     background-image: url(../../images/heart-of-ny/left-arrow.gif);
   }
-  @media screen and (min-width: 767px) {
+  @media #{$breakpoint-md-up} {
     display: block;
   }
 }
@@ -1268,11 +1206,9 @@ $events-margin: 15px;
           display: block;
           text-decoration: none;
           h2 {
-            font-family: $nav-font-family;
-      
+            @include oswald();
             font-size: 7vw;
             text-transform: uppercase;
-            font-weight: 900;
             span {
               font-size: 3.5vw;
               font-family: $site-font-family;
