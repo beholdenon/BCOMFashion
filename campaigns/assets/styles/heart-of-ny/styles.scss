@@ -249,18 +249,32 @@ header {
   }
 }
 
+
 .two-photos-flex {
   @include row();
   @include middle();
   @include center();
   > div {
     @include col("xs", 6);
+    img{
+      width: 100%;
+      height: auto;
+    }
     &.reduce {
       @include col("xs", 5);
     }
   }
+  .pad-right {
+      padding-right: 10%;
+  }
+  .pad-left {
+      padding-left: 10%;
+  }
 }
 
+.moncler {
+  margin-top: 9%;
+}
 
 .sub-head-box {
   width: 100%;
