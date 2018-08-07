@@ -88,6 +88,19 @@ $(function(){
 			}
 		});
 	}
+
+
+	if($(".flex-container").length) {
+		checkFlex();
+		$(window).on("resize", checkFlex);
+	}
+	function checkFlex() {
+		$(".flex-container").each(function(index) {
+			var flexHeight = $(this).find(".flex-feature").height();
+			$(this).find(".flex-bg").height(flexHeight/2)
+			$(this).find(".flex-bg").css("top", (flexHeight/2) - $(this).find(".flex-bg").height()/2);
+		});
+	}
 	
 	initNav();
 	initLazyLoad();
