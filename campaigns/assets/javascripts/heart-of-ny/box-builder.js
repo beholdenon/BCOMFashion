@@ -1,0 +1,153 @@
+$(function() {
+	var w = $(window), s;
+
+	function node(type, obj, content) {
+		if(!type) return "";
+		var node = $("<" + type + "/>", obj);
+		if(content) node.append(content);
+		return node;
+	}
+	function buildBox(data) {
+		return node("div", {class: "col"})
+		.append(
+			node("div", {class: "box"})
+			.append(
+				node("img", {src: data.image, alt: data.title})
+			)
+			.append(
+				node("h2", {}, data.title)
+			)
+			.append(
+				node("p", {}, data.description)
+			)
+		);
+	}
+	function renderDom(data, el) {
+		$.each( data, function( i, val ) {
+			el.append(buildBox(val));
+		});
+	}
+	function addBoxListener() {
+		s = w.on("scroll", function() {
+			checkScrollPos();
+		});
+		checkScrollPos();
+	}
+	function checkScrollPos() {
+		var winScroll = w.scrollTop() + w.height();
+		$(".box").not(".animate").each(function() {
+			if(winScroll > $(this).position().top + 100) {
+				$(this).addClass("animate");
+			}
+		});
+		if($(".box.animate").length === $(".box").length) s.off();
+	}
+	var shoesWhatsNewData = [
+		{
+			title: "Cobbler Concierge",
+			description: "Our sole-saving experts protect and preserve your favorite pairs on demand.",
+			image: "/b/fashion/campaigns/images/heart-of-ny/shoes/concierge.jpg"
+		},
+		{
+			title: "Sneaker Bar",
+			description: "Trick out your new kicks at our personalization station.",
+			image: "/b/fashion/campaigns/images/heart-of-ny/shoes/shoes2.jpg"
+		},
+		{
+			title: "EXCITING EVENTS & POP-UPS",
+			description: "Look out for made-to-order pop-ups in partnership with covetable brands like M.Gemi, as well as special designer appearances.",
+			image: "/b/fashion/campaigns/images/heart-of-ny/shoes/shoes3.jpg"
+		}
+	];
+
+	var womenHighlightsData = [
+		{
+			title: "LEVI’S CUSTOMIZATION BAR",
+			description: "Personalize your new pair of Levi’s with embroidery, embellishments and more.",
+			image: "/b/fashion/campaigns/images/heart-of-ny/women/womens-highlights-1.jpg"
+		},
+		{
+			title: "DREAM DRESSES",
+			description: "Slay every special occasion with our elevated edit of styles from new labels like BRONX AND BANCO, Fame and Partners, LIKELY, Rachel Zoe and SAU LEE.",
+			image: "/b/fashion/campaigns/images/heart-of-ny/women/womens-highlights-2.jpg"
+		},
+		{
+			title: "EILEEN FISHER TINY FACTORY",
+			description: "Bring back your previously worn Eileen Fisher pieces and watch as they’re transformed into entirely new designs in this sustainability-driven concept shop.",
+			image: "/b/fashion/campaigns/images/heart-of-ny/women/womens-highlights-3.jpg"
+		},
+		{
+			title: "SUNSET + SPRING",
+			description: "A unique boutique inspired by America’s style capitals, NYC and L.A. Six new labels—including Rare London and Vigoss—join the roster for fall.",
+			image: "/b/fashion/campaigns/images/heart-of-ny/women/womens-highlights-4.jpg"
+		},
+		{
+			title: "AQUA",
+			description: "Our exclusive label debuts a newly expanded boutique, with limited-edition capsule collections—from names like Happily Grey blogger Mary Lawless Lee and French brand Zadig & Voltaire—dropping every month.",
+			image: "/b/fashion/campaigns/images/heart-of-ny/women/womens-highlights-5.jpg"
+		},
+		{
+			title: "MOON & MEADOW",
+			description: "Our collection of dreamy bohemian styles welcomes covetable names like Sage the Label, Little Black Bodysuit and Re:Named.",
+			image: "/b/fashion/campaigns/images/heart-of-ny/women/womens-highlights-6.jpg"
+		}
+	];
+
+	var womensWhatsNewData = [
+		{
+			title: "The Edit",
+			description: "A carefully curated collection of cutting-edge designers like Anine Bing, Preen Line and Ksenia Schnaider.",
+			image: "/b/fashion/campaigns/images/heart-of-ny/women/womens-whats-new-1.jpg"
+		},
+		{
+			title: "a buzzworthy bar opening",
+			description: "Our chic, sleek cocktail lounge will be your new favorite place to grab a drink.",
+			image: "/b/fashion/campaigns/images/heart-of-ny/women/womens-whats-new-2.jpg"
+		},
+		{
+			title: "The one-stop jean shop",
+			description: "The most comprehensive denim selection in the city is stocked with more than 20 in-demand designers.",
+			image: "/b/fashion/campaigns/images/heart-of-ny/women/womens-whats-new-3.jpg"
+		},
+		{
+			title: "STYLE ADVISORS",
+			description: "Equipped with new mobile carts, our expert stylists can shop the entire store with you and curate racks of styles tailored to your needs.",
+			image: "/b/fashion/campaigns/images/heart-of-ny/women/womens-whats-new-4.jpg"
+		},
+		{
+			title: "ALL THINGS ATHLEISURE",
+			description: "Our amped-up selection of athletic wear includes a dedicated Alo Yoga space plus six new labels, including LNDR and Varley.",
+			image: "/b/fashion/campaigns/images/heart-of-ny/women/womens-whats-new-5.jpg"
+		},
+		{
+			title: "JUICE BAR",
+			description: "Quench your thirst at our newest hydration station featuring fresh-pressed juices, smoothies and more.",
+			image: "/b/fashion/campaigns/images/heart-of-ny/women/womens-whats-new-6.jpg"
+		},
+		{
+			title: "THE VACATION SHOP",
+			description: "Going somewhere? You’ll find everything you need for your next getaway in our curated edit of resort-ready styles.",
+			image: "/b/fashion/campaigns/images/heart-of-ny/women/womens-whats-new-7.jpg"
+		},
+		{
+			title: "AT YOUR SERVICE",
+			description: "Get one-on-one attention from our personal shoppers in a new, luxurious private consultation space.",
+			image: "/b/fashion/campaigns/images/heart-of-ny/women/womens-whats-new-8.jpg"
+		},
+		{
+			title: "TEES, PLEASE",
+			description: "Stock up on T-shirts from the names you love, like Sundry and Splendid, as well as new labels like Knowlita. Look out for customization events offering embroidery and more.",
+			image: "/b/fashion/campaigns/images/heart-of-ny/women/womens-whats-new-9.jpg"
+		},
+	]
+	if($("#shoes-whats-new").length) {
+		renderDom(shoesWhatsNewData, $("#shoes-whats-new"));
+	}
+	if($("#women-whats-new").length) {
+		renderDom(womensWhatsNewData, $("#women-whats-new"));
+	}
+	if($("#women-highlights").length) {
+		renderDom(womenHighlightsData, $("#women-highlights"));
+	}
+	addBoxListener();
+});
