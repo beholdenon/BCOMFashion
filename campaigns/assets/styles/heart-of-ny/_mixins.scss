@@ -18,10 +18,10 @@
     $font-weight: 700;
   }
   @else if $weight == "book" {
-    $font-weight: 400;
+    $font-weight: 100;
   }
   @else if $weight == "normal" {
-    $font-weight: 400;
+    $font-weight: 100;
   }
   @else {
     $font-weight: 400;

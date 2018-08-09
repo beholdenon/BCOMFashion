@@ -8,12 +8,14 @@
 @import "reboot";
 @import "slick";
 @import "nav";
+@import "aos";
 
 
 h1, h2, h3, h4 p {
   color: #000;
   font-weight: normal;
 }
+
 
 %fadeScale {
   transition: transform 0.4s, opacity 0.4s ease-out;
@@ -27,6 +29,7 @@ h1, h2, h3, h4 p {
 hr {
   margin: .5em auto;
   width: 100px;
+  border-width: 0;
 }
 .heart-of-ny-men {
   hr {
@@ -35,6 +38,9 @@ hr {
   .flex-bg, header, .sub-head-box {
     background: $men-bg-color;
   }
+  .text-link:hover {
+    color: $men-accent-color;
+  }
 }
 .heart-of-ny-home {
   hr {
@@ -42,6 +48,9 @@ hr {
   }
   .flex-bg, header, .sub-head-box {
     background: $home-bg-color;
+  }
+  .text-link:hover {
+    color: $home-accent-color;
   }
 }
 .heart-of-ny-shoes {
@@ -54,6 +63,9 @@ hr {
   .flex-bg, header, .sub-head-box, .boxContainer {
     background: $shoes-bg-color;
   }
+  .text-link:hover {
+    color: $shoes-accent-color;
+  }
 }
 .heart-of-ny-women {
   hr {
@@ -65,9 +77,32 @@ hr {
   .flex-bg, header, .sub-head-box, .boxContainer {
     background: $women-bg-color;
   }
+  .text-link:hover {
+    color: $women-accent-color;
+  }
+}
+.heart-of-ny-beauty {
+  hr {
+    border-bottom: .5em solid $beauty-accent-color;
+  }
+  .boxContainer .box h2 {
+    color: $beauty-accent-color;
+  }
+  .flex-bg, header, .sub-head-box, .boxContainer {
+    background: $beauty-bg-color;
+  }
+  .text-link:hover {
+    color: $beauty-accent-color;
+  }
 }
 
-.heart-of-ny-landing, .heart-of-ny-women, .heart-of-ny-home, .heart-of-ny-shoes, .heart-of-ny-men, .heart-of-ny-events {
+.heart-of-ny-landing, 
+.heart-of-ny-beauty,
+.heart-of-ny-women,
+.heart-of-ny-home,
+.heart-of-ny-shoes,
+.heart-of-ny-men,
+.heart-of-ny-events {
   opacity: 0;
   width: $site-width;
   display: block;
@@ -120,8 +155,8 @@ hr {
   @include avenir("black");
   transition: 0.3s ease-out;
   text-decoration: underline;
-  &:hover {
-    color: $secondary-color;
+  @media #{$breakpoint-xs-only} {
+    font-size: 2em;
   }
 }
 @mixin subHeadBox() {
@@ -130,7 +165,7 @@ hr {
   color: #000;
   font-size: 3.2em;
   line-height: .9em;
-  margin: .5em 0 .3em 0;
+  margin: .5em 0 0 0;
 }
 h2.sub {
   @include subHeadBox();
@@ -140,6 +175,9 @@ p {
   line-height: 1.3em;
   margin: 0 auto 3em auto;
 }
+
+
+// Header
 header {
   width: $site-width;
   margin: 0 auto;
@@ -159,11 +197,14 @@ header {
     font-size: 6.2em;
     line-height: .9em;
     margin: .5em 0 .3em 0;
+    @media #{$breakpoint-xs-only} {
+      font-size: 6em;
+    }
   }
   p {
     font-size: 1.64em;
     line-height: 1.3em;
-    margin: 0 auto 3em auto;
+    margin: 0 auto 2em auto;
     width: 80%;
     max-width: $contained-max-width;
     @media #{$breakpoint-xs-only} {
@@ -171,6 +212,30 @@ header {
     }
   }
 }
+.heart-of-ny-home {
+  header {
+    p {
+      max-width: 1000px;
+    }
+  }
+}
+.heart-of-ny-beauty {
+  header {
+    p {
+      max-width: 1200px;
+    }
+  }
+}
+.heart-of-ny-events {
+  header {
+    p {
+      max-width: 900px;
+    }
+  }
+}
+
+
+// Map
 .map {
   background: #fff;
   width: 100%;
@@ -187,6 +252,9 @@ header {
     }
   }
 }
+
+
+// Flex Feature
 .flex-feature {
   @include row();
   @include center("sm");
@@ -253,6 +321,7 @@ header {
     }
     p {
       font-size: 1.4em;
+      margin: -2px auto 1em auto;
       @media #{$breakpoint-xs-only} {
         width: 80%;
         margin: 0 auto;
@@ -309,6 +378,7 @@ header {
 }
 
 
+// two photos
 .two-photos-flex {
   @include row();
   @include middle();
@@ -331,11 +401,12 @@ header {
       padding-left: 10%;
   }
 }
-
 .moncler {
   margin-top: 9%;
 }
 
+
+// sub head box
 .sub-head-box {
   width: 100%;
   @include test-borders();
@@ -379,6 +450,10 @@ header {
 .heart-of-ny-home {
   .sub-head-box .inner p {
     max-width: 1200px;
+    margin-bottom: 2em;
+  }
+  .sub-head-box.now-cooking .inner p {
+    max-width: 800px;
   }
 }
 .heart-of-ny-shoes {
@@ -386,12 +461,21 @@ header {
     max-width: 1150px;
   }
 }
+.heart-of-ny-men {
+  .sub-head-box .inner p {
+    margin-bottom: 2em;
+  }
+  .sub-head-box .inner h2 {
+    font-size: 5.2em;
+  }
+}
 
-
+// caption
 .caption {
   font-size: 15px;
   text-align: left;
-  margin-left: 10px;
+  margin-top: .1em;
+  margin-bottom: 0;
   &.events-caption {
     text-align: center;
     font-size: 20px;
@@ -402,8 +486,7 @@ header {
   }
 }
 
-
-
+// designers
 .designers {
   background: #fff;
   margin: 3em auto 1em auto;
@@ -419,7 +502,7 @@ header {
     margin-top: 2em;
   }
 }
-.heart-of-ny-women {
+.heart-of-ny-women, .heart-of-ny-beauty {
   .designers {
     p {
       max-width: none;
@@ -427,6 +510,7 @@ header {
   }
 }
 
+// women logos
 .women-logos {
   @include row();
   @include center();
@@ -455,7 +539,29 @@ header {
   }
 }
 
+// beauty logos
+.beauty-logos {
+  @include row();
+  @include center();
+  max-width: 1100px;
+  margin: 2.5em auto 2em auto;
+  .logo-col {
+    @include col("sm");
+  }
+}
 
+// shoe logos
+.shoe-logos {
+  @include row();
+  @include center();
+  max-width: 1100px;
+  margin: 2.5em auto 2em auto;
+  .logo-col {
+    @include col("sm", 3);
+  }
+}
+
+// box container
 .boxContainer{
   text-align: center;
   padding: 2em 0;
@@ -476,11 +582,12 @@ header {
         padding: $card-gutter;
         text-align: center;
         height: 100%;
-        @extend %fadeScale;
+        //@extend %fadeScale;
         img {
           width: 100%;
           height: auto;
         }
+
         h2 {
           @include avenir("black");
           text-transform: uppercase;
@@ -494,8 +601,9 @@ header {
         p {
           @include avenir("normal");
           font-size: 1.20em;
-          line-height: 1.3em;
-          margin: .5em 0 3em 0;
+          line-height: 1.5em;
+          margin: .5em auto 3em auto;
+          max-width: 95%;
           @media #{$breakpoint-xs-only} {
             font-size: 2em;
           }
@@ -504,6 +612,8 @@ header {
     }
   }
 }
+
+// coming soon icon
 .comingSoon {
   background: #fff;
   text-transform: uppercase;
@@ -513,17 +623,131 @@ header {
   margin-bottom: 1em;
   h3 {
     margin: 0;
+    @media #{$breakpoint-xs-only} {
+      font-size: 2em;
+    }
   }
+}
+
+// brands
+.heart-of-ny-brands {
+  @media #{$breakpoint-xs-only} {
+    font-size: 55%;
+  }
+  @media #{$breakpoint-sm-only} {
+    font-size: 80%;
+  }
+  .brand-row {
+    &:nth-child(odd) {
+      background: #f2f2f2;
+    }
+    padding: 10px;
+    .inner {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+  }
+  h1 {
+    @include avenir("black");
+    text-transform: uppercase;
+    color: #000;
+    font-size: 6.2em;
+    line-height: .9em;
+    margin: .5em 0 .3em 0;
+    text-align: center;
+    @media #{$breakpoint-xs-only} {
+      font-size: 6em;
+    }
+  }
+  .brands {
+    h3 {
+      @include avenir("black");
+      font-size: 3.1em;
+      margin-bottom: 0;
+    }
+    ul {
+      list-style: none;
+      margin: 0 auto 1em auto;
+      padding: 0;
+      @include row();
+      li {
+        @include col("sm", 3);
+        padding: 0!important;
+        width: 100%;
+        @media #{$breakpoint-xs-only} {
+          font-size: 2em;
+        }
+      }
+    }
+  }
+}
+
+// modal
+.modal-container {
+  width: 100vw;
+  height: 100vh;
+  z-index: 5999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  .modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 75vw;
+    height: 75vh;
+    background: #fff;
+    z-index: 6000;
+    padding: 20px;
+    @media #{$breakpoint-xs-only} {
+      width: 100vw;
+      height: 100vh;
+    }
+    .inner {
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+    }
+  }
+  .modal-bg {
+    width: 100vw;
+    height: 100vh;
+    z-index: 5999;
+    position: fixed;
+    background: rgba(0,0,0,.2);
+    top: 0;
+    left: 0;
+    &.close {
+      display: none;
+    }
+  }
+  transition: 0.3s ease-out;
+  &.close {
+    opacity: 0;
+    visibility: hidden;
+  }
+  &.open {
+    opacity: 1;
+    visibility: visible;
+  }
+  .model-close-button {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+  }
+}
+body.modal-open {
+  //overflow: hidden;
 }
 
 
 
 
-
-
-
-
-
+/*
 .feature-bar {
   width: 100%;
   position: relative;
@@ -701,133 +925,6 @@ header {
   width: 100%;
   height: auto;
 }
-/*
-// global text links
-.text-link {
-  @include oswald();
-  font-size: 30px;
-  line-height: 1;
-  text-transform: uppercase;
-  border-bottom: 2px solid #000;
-  text-decoration: none;
-  display: inline-block;
-  color: #000;
-  transition: 0.3s ease-out;
-  margin-bottom: 60px;
-  @media #{$breakpoint-md-up} {
-    border-bottom: 4px solid #000;
-    margin-bottom: 125px;
-  }
-  &:hover {
-    color: $site-red;
-    border-color: $site-red;
-  }
-  @media #{$breakpoint-md-up} {
-    font-size: 50px;
-    line-height: 1.3;
-  }
-}
-*/
-
-// box with headline and copy
-/*
-.sub-head-box {
-  width: 100%;
-  background: #e7eff7;
-  @include test-borders();
-  @include flexbox;
-  @include align-items(center);
-  @include justify-content(center);
-  .inner {
-    text-align: center;
-    width: 100%;
-    max-width: $contained-max-width;
-    margin: 0 auto;
-    padding: 60px 20px;
-    position: relative;
-    display: block;
-    h2 {
-      font-weight: 700;
-      text-transform: uppercase;
-      color: #000;
-      color: #fff;
-      line-height: 1;
-      margin-bottom: 15px;
-      z-index: 2;
-      position: relative;
-      display: inline-block;
-    }
-    p {
-      color: #fff;
-      margin: 0 auto;
-    }
-    .heart {
-      width: 158px;
-      height: 139px;
-      background-image: url(../../images/heart-of-ny/heart-icon.png);
-      position:absolute;
-      z-index: 1;
-      display: none;
-      @include flexbox;
-      @include align-items(center);
-      @include justify-content(center);
-      transform: scale(0);
-      right: 110px;
-
-      p {
-        text-align: center;
-        font-family: $site-font-family;
-        font-weight: 900;
-        font-size: 20px;
-        text-transform: uppercase;
-        line-height: 1;
-        max-width: 84px;
-        margin-top: -10px;
-      }
-    }
-  }
-  @media #{$breakpoint-md-up} {
-   // height: 400px;
-    .inner {
-      p {
-        max-width: 90%;
-      }
-      h2 {
-        font-size: 62px;
-      }
-      .heart {
-        right: 35px;
-        animation: heartbeat2 2s infinite;
-      }
-    }
-  }
-  @media #{$breakpoint-lg-up} {
-    min-height: 400px;
-    .inner {
-      p {
-        max-width: 920px;
-        &.streamlined-type {
-          max-width: 800px;
-        }
-      }
-      h2 {
-        font-size: 80px;
-      }
-      .heart {
-        right: 135px;
-        animation: heartbeat 2s infinite;
-      }
-    }
-  }
-  @media screen and (min-width: 1100px) {
-    .inner {
-      h2 {
-        font-size: 90px;
-      }
-    }
-  }
-
-}
 */
 .sub-head-photo {
   max-width: 1200px;
@@ -837,56 +934,44 @@ header {
 }
 
 // shoe grid
-
 .subShoeOuter {
   background: $shoes-bg-color;
 }
 .shoes-outer  {
   background: $shoes-bg-color;
-  padding: 1em;
+  padding: 0 2em 2em 2em;
 }
-.shoe-grid {
-  margin: 0 auto;
-  width: 100%;
-  max-width: $contained-max-width;
+.new-shoe-grid {
+  @include row();
+  @include bottom();
   background: #fff;
-  .col {
-    //width: 90%;
-    width: 49%;
-    display: inline-block;
-    padding: 0 10px;
-    vertical-align: top;
-    &.half {
-      width: 100%;
-    }
-    p {
-      font-weight: 500;
-      font-size: 1.4em;
-      margin-top: 20px;
-      display: block;
-      span {
-        font-weight: 500;
-        display: block;
+  .shoe-col {
+    @include col("xs", 6);
+    @include col("sm", 3);
+    @media #{$breakpoint-sm-up} {
+      &:nth-child(9) {
+        margin-top: 100px;
       }
     }
-
-    img {
-      width: 100%;
-      height: auto;
-      transition: 0.3s ease-out;
-    }
   }
-
-  @media #{$breakpoint-md-up} {
-    .col {
-      width: 24%;
-      display: inline-block;
-      &.half {
-        width: 49%;
+  p {
+    font-size: 1.2em;
+    margin: .5em auto .5em auto;
+    font-weight: 400;
+    span {
+      font-weight: 100;
+      font-size: 1em;
+    }
+    @media #{$breakpoint-xs-only} {
+      font-size: 2em;
+      span {
+        font-size: 1.5em;
       }
     }
   }
 }
+
+// footer
 .heart-of-new-york {
   footer {
     width: 100%;
@@ -919,6 +1004,7 @@ header {
 }
 
 // feature with photo and content
+/*
 .new-feature {
   //height: 220px;
   width: 100%;
@@ -1072,7 +1158,7 @@ header {
     }
   }
 }
-
+*/
 
 /*
 .hp-outer {
@@ -1383,19 +1469,22 @@ $events-margin: 15px;
   .ev-headers {
     max-width: 1240px;
     margin: 0 auto;
-    display: flex;
+    display: none;
     flex-wrap: wrap;
     padding: $events-margin $events-margin 0 0;
-    .col {
+    @media #{$breakpoint-md-up} {
+      display: flex;
+    }
+    .ev-col {
       padding: $events-margin;
-      margin: 0 0 0 $events-margin;
+      margin: 0 0 $events-margin $events-margin;
       width: calc(20% - 15px);
       &:first-child {
         width: calc(60% - 15px);
       }
-      @include oswald();
+      @include avenir("black");
       text-transform: uppercase;
-      font-size: 50px;
+      font-size: 3em;
       color: #000;
       text-align: left;
     }
@@ -1412,19 +1501,28 @@ $events-margin: 15px;
       display: flex;
       flex-wrap: wrap;
       padding: $events-margin $events-margin 0 0;
-      .col {
+      .ev-col {
         padding: $events-margin;
         margin: 0 0 $events-margin $events-margin;
         width: 100%;
         text-align: left;
+        .small-heading {
+          @include avenir("black");
+          text-transform: uppercase;
+          font-size: 4em;
+          margin: 0 0 .5em 0;
+          @media #{$breakpoint-md-up} {
+            display: none;
+          }
+        }
         h3 {
-          font-family: $site-font-family;
+          @include avenir("black");
           font-size: 20px;
-          font-weight: 900;
           text-transform: uppercase;
         }
         p {
-          font-family: $site-font-family;
+          @include avenir("book");
+          margin: 0;
           &.events-fp {
             font-size: 14px;
             margin-bottom: 5px;
@@ -1456,7 +1554,7 @@ $events-margin: 15px;
     }
     @media #{$breakpoint-md-up} {
       .event {
-        .col {
+        .ev-col {
           width: calc(20% - 15px);
           &:first-child {
             width: calc(60% - 15px);

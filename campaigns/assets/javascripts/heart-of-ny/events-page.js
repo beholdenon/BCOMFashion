@@ -35,7 +35,7 @@ $(function(){
   // build each event row
   function buildEvent(name, des, fp, cta, date, loc) {
   	var htmlString = '<div class="ev-container"><div class="event">'
-    htmlString += '<div class="col"><h3>' +  name + '</h3>';
+    htmlString += '<div class="ev-col"><div class="small-heading">What</div><h3>' +  name + '</h3>';
     htmlString += '<div class="events-des">' + convertMarkdown(des) + '</div>';
   	if(fp != undefined) {
   		htmlString += '<p class="events-fp">' + fp + '</p>';
@@ -44,7 +44,7 @@ $(function(){
   		htmlString += '<div class="events-cta">' + convertMarkdown(cta) + '</div>';
   	}
   	htmlString += '</div>';
-  	htmlString += '<div class="col"><p class="events-date">' + date + '</p></div><div class="col"><p class="events-loc">' + loc + '</p></div>';
+  	htmlString += '<div class="ev-col"><div class="small-heading">When</div><p class="events-date">' + date + '</p></div><div class="ev-col"><div class="small-heading">Where</div><p class="events-loc">' + loc + '</p></div>';
   	htmlString += '</div></div>';
   	$(".events").append(htmlString);
   }
