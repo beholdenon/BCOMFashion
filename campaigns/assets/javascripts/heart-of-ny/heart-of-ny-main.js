@@ -1,3 +1,8 @@
+// mimified coremetrics plugin
+window.bl=window.bl||{},function(e){var t=!1,i=window.ENV_CONFIG||"dev",o=window.location.host,r=["fashion.bloomingdales.com","www.bloomingdales.com","m.bloomingdales.com"],n={category_id:"",page_paths:{},call_page_tags:!0,use_attribute_tags:!0};var c=function(e,t,i){for(var o=0;o<e.length;o++)t.call(i,o,e[o])};function a(){(t=function(){try{return!(!window.BLOOMIES||!window.BLOOMIES.coremetrics)}catch(e){return d("ERROR: Could not find coremetrics library (from checkForCoremetrics method): "+e),!1}}())?(d("Library Initiated"),function(){if(window.BLOOMIES.coremetrics.pageViewExploreAttributes=new window.BLOOMIES.coremetrics.exploreAttributes,"dev"===i)return cmSetTest();if("production"===i)return r.indexOf(l)>=0?cmSetProduction():cmSetTest();throw"ERROR: Unidentified env variable (from initEnvironment method)"}(),function(){if(n.use_attribute_tags){var e=document.querySelectorAll("[coremetricTag]");c(e,function(e,t){t.onclick=function(){u({type:"element",id:t.getAttribute("coremetricTag"),cat:n.category_id})}})}}(),function(){if(n.page_paths!={}&&n.call_page_tags){var e=n.page_paths[l()];void 0!==e&&u({type:"page",id:e,cat:n.category_id})}}()):d("ERROR: Could not find coremetrics library (from init method)")}function d(e){window.console&&-1===r.indexOf(o)&&console.log(e)}function u(e){if(function(e){return t?void 0===e?(d("ERROR: Params not set"),!1):void 0!==e.id||(d("ERROR: ID not set"),!1):(d("ERROR: Coremetrics library not found"),!1)}(e)){var i=e.cat||n.category_id,o=e.id,r=e.type;if(o)switch(r){case"element":!function(e,t){try{window.BLOOMIES.coremetrics.cmCreatePageElementTag(e,t),d("Coremetrics Element: Category: "+t+" ID: "+e)}catch(e){d("cmCreatePageElementTag Error: "+e)}}(o,i);break;default:!function(e,t){try{window.BLOOMIES.coremetrics.cmCreatePageviewTag(e,t,"",""),d("Coremetrics Page: Category: "+t+" ID: "+e)}catch(e){d("cmCreatePageviewTag Error: "+e)}}(o,i)}else d("ERROR: No id specified (from fireTag Method)")}}function l(){var e=window.location.pathname.split("/");return""===e[e.length-1]?e[e.length-2]:e[e.length-1]}e.init=function(e){n=function(e,t){for(var i in t)t.hasOwnProperty(i)&&(e[i]=t[i]);return e}(n,e),a()},e.fireTag=function(e){u(e)},e.path=function(){return l()},e.category_id=function(e){if(!e)return n.category_id;n.category_id=e},e.libraryFound=function(){return t}}(window.bl.coremetrics=window.bl.coremetrics||{});
+
+// mimfied adobe analytics plugin
+window.bl=window.bl||{},function(n){var t=!1,i=window.ENV_CONFIG||"dev",o=window.location.host,e=["fashion.bloomingdales.com","www.bloomingdales.com","m.bloomingdales.com"],a=["view","link"],r={page_paths:{},call_page_tags:!0,use_attribute_tags:!0};var u=function(n,t,i){for(var o=0;o<n.length;o++)t.call(i,o,n[o])};function l(){(t=function(){try{return!!window.utag}catch(n){return c("ERROR: Could not find  library (from checkForLibrary method): "+n),!1}}())?(c("Library Initiated"),function(){if("dev"===i);else if("production"!==i)throw"ERROR: Unidentified env variable (from initEnvironment method)"}(),function(){if(r.use_attribute_tags){var n=document.querySelectorAll("[utag]");u(n,function(n,t){t.onclick=function(){f("link",{event_name:t.getAttribute("utag")})}})}}(),function(){if(r.page_paths!={}&&r.call_page_tags){var n=r.page_paths[d()];void 0!==n&&f("view",{page_type:"marketing",page_name:n})}}()):c("ERROR: Could not find coremetrics library (from init method)")}function c(n){window.console&&-1===e.indexOf(o)&&console.log(n)}function f(n,i){(function(n,i){return t?void 0===n||""===n?(c("ERROR: No type defined"),!1):-1===a.indexOf(n)?(c("ERROR: Invalid tag type"),!1):void 0!==i&&i!=={}||(c("ERROR: Params not set"),!1):(c("ERROR: Library not found"),!1)})(n,i)&&(c("fireTag: Type: "+n+" Params: "+JSON.stringify(i)),window.utag[n](i))}function d(){var n=window.location.pathname.split("/");return""===n[n.length-1]?n[n.length-2]:n[n.length-1]}n.init=function(n){r=function(n,t){for(var i in t)t.hasOwnProperty(i)&&(n[i]=t[i]);return n}(r,n),l()},n.fireTag=function(n,t){f(n,t)},n.path=function(){return d()},n.libraryFound=function(){return t}}(window.bl.utag=window.bl.utag||{});
 
 $(function(){
 
@@ -31,15 +36,6 @@ $(function(){
 		        } else {
 		            bodyRef.removeClass("heart-scrolled");
 		        }
-		    });
-		}
-	}
-
-	// initiate the lazy load instance
-	function initLazyLoad() {
-		if($('.lazy').length) {
-		    $('.lazy').Lazy({
-		        effect: 'fadeIn'
 		    });
 		}
 	}
@@ -102,21 +98,37 @@ $(function(){
 	}
 
 	initNav();
-	initLazyLoad();
 	initCarousel();
 	animatePage();
 	initFeatureBar();
 	initFlex();
 	setTimeout(initAnimations, 300);
 	
+	var pagePath = {
+			"": "landing-page",
+			"men": "mens",
+			"home": "home",
+			"shoes": "shoes",
+			"beauty": "beauty",
+			"events": "events",
+			"women": "women"
+		};
+
+	// initiate coremetrics
+    // call core.fireTag({id: "", cat: ""});
 	var core = bl.coremetrics;
     core.init({
         use_attribute_tags: true,
         category_id: "heart-of-ny",
-        page_paths: {
-			"": "landing-page",
-			"men": "mens"
-		},
+        page_paths: pagePath
+    });
+    // initiate adobe analytics
+    // call adobeTag.fireTag(type, {event_name: "" });
+    // valid types are "link" and "view"
+    var adobeTag = bl.utag;
+    adobeTag.init({
+        use_attribute_tags: true,
+        page_paths: pagePath
     });
 
 });
